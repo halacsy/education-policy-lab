@@ -1,6 +1,6 @@
 # Agent: scenario_builder
 
-Version: 3
+Version: 2
 Type: synthesis
 Provider-role: generator
 
@@ -48,4 +48,3 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
 - [round-02] DIRECTIVE:uncertainty_quantify — For every uncertainty item, state a confidence level (confidence: low|medium|high) and name what evidence would reduce it ('would be reduced by: ...'). In Hungarian output use 'megbízhatóság: alacsony|közepes|magas' and 'csökkentené: ...'.
-- [round-04] DIRECTIVE:evidence_tag_all — Attach an inline evidence tag ([evidence: strong|moderate|weak|contested]; HU: [bizonyíték: ...]) to EVERY mechanism claim and EVERY expected benefit, not only the core ones.

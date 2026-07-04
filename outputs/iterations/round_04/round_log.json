@@ -1,0 +1,31 @@
+{
+  "round": 4,
+  "fallbacks": [],
+  "reused": [
+    "expert:hungarian_education_system",
+    "expert:international_comparison",
+    "expert:portuguese_reform",
+    "expert:finnish_reform",
+    "expert:polish_reform",
+    "expert:equity_and_social_mobility",
+    "expert:school_network_planning",
+    "expert:demography",
+    "expert:education_finance",
+    "expert:legal_and_governance",
+    "expert:implementation_planning",
+    "expert:political_feasibility"
+  ],
+  "resumed": [],
+  "backends": {
+    "brief [mock]": 8,
+    "build_scenarios [mock]": 3,
+    "critic [anthropic]": 32,
+    "expert_analysis [mock]": 12,
+    "judge_score [anthropic]": 27,
+    "judge_score [mock]": 18,
+    "meta_critique [anthropic]": 3,
+    "rejected_framings [mock]": 3,
+    "synthesis [mock]": 3,
+    "translate_scenarios [mock]": 4
+  }
+}
