@@ -112,6 +112,24 @@ that call and is recorded in the call log; three consecutive provider
 failures degrade that provider for the rest of the run. The final report
 lists exactly which tasks were served by which backend. (2026-07-04)
 
+**D-18 — Generator model: `gemini-2.5-flash-lite`.**
+The provided free-tier Google key caps `gemini-2.5-flash` at 20 requests/day
+(observed: `GenerateRequestsPerDayPerProjectPerModel-FreeTier = 20`), which a
+5-round run (~100+ generator calls) exhausts mid-round-1. `flash-lite` has a
+separate, larger daily pool and passed a full scenario-builder task test.
+Overridable via `GOOGLE_MODEL`. Transient 503/"high demand" responses are
+treated like rate limits (wait and retry, no circuit-breaker penalty).
+(2026-07-05)
+
+**D-19 — Expert outputs are reused across rounds when their spec is unchanged.**
+An expert's output is a function of (spec, question, briefing); if its spec is
+byte-identical to the previous round's snapshot and the previous output was
+produced live (not a fallback), the output is reused and marked `reused` in
+round_log.json. This is caching of a deterministic-input step, not round
+faking: check 4 diffs system_state, which still changes every round, and any
+directive touching an expert forces a re-run. Motivation: daily API quota.
+(2026-07-05)
+
 **D-13 — Round 1 starts from an honest baseline, not a sandbagged one.**
 The baseline agent specs already satisfy hard constraints (all scenario
 fields present, critics name scenario id + field). Improvement therefore has

@@ -151,8 +151,32 @@ def run_round(n):
     step = Step(fallbacks)
     question = cfg["policy_question"]
 
-    # 1. experts (parallel)
+    # 1. experts (parallel; unchanged specs reuse the previous round's live
+    #    output — same deterministic input, saves daily API quota, D-19)
+    prev_rd = round_dir(n - 1) if n > 1 else None
+    prev_log = {}
+    if prev_rd and (prev_rd / "round_log.json").exists():
+        import json as _json
+        prev_log = _json.loads((prev_rd / "round_log.json").read_text())
+    reused = []
+
+    def reusable_expert(name):
+        if prev_rd is None or f"expert:{name}" in set(prev_log.get("fallbacks", [])):
+            return None
+        spec_prev = prev_rd / "system_state" / "agents" / "experts" / f"{name}.md"
+        out_prev = prev_rd / "expert_outputs" / f"{name}.md"
+        spec_now = AGENTS_DIR / "experts" / f"{name}.md"
+        if not (spec_prev.exists() and out_prev.exists()):
+            return None
+        if spec_prev.read_text(encoding="utf-8") != spec_now.read_text(encoding="utf-8"):
+            return None
+        return out_prev.read_text(encoding="utf-8")
+
     def run_expert(name):
+        cached = reusable_expert(name)
+        if cached is not None:
+            reused.append(f"expert:{name}")
+            return name, cached, "reused"
         return name, *step.run(
             f"expert:{name}",
             dict(task="expert_analysis", agent=name, round_n=n,
@@ -302,7 +326,7 @@ def run_round(n):
     write(rd / "critic_outputs" / "translation_checker.md", tr_md)
 
     write_json(rd / "round_log.json", {
-        "round": n, "fallbacks": fallbacks,
+        "round": n, "fallbacks": fallbacks, "reused": reused,
         "backends": llm.backend_stats(),
     })
 

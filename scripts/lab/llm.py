@@ -18,10 +18,6 @@ import time
 from . import mock_backend
 from .util import ROOT, load_config
 
-DEFAULT_MODELS = {
-    "anthropic": os.environ.get("ANTHROPIC_MODEL", "claude-opus-4-8"),
-    "google": os.environ.get("GOOGLE_MODEL", "gemini-2.5-flash"),
-}
 KEY_VARS = {"anthropic": "ANTHROPIC_API_KEY", "google": "GOOGLE_API_KEY"}
 
 CALL_LOG = []           # {task, agent, role, provider, backend, ms}
@@ -37,18 +33,19 @@ _MAX_FAILURES = 6       # circuit breaker: after this many consecutive HARD
 _MIN_INTERVAL = {"google": 6.5, "anthropic": 0.3}
 _throttle_lock = {p: threading.Lock() for p in _MIN_INTERVAL}
 _last_call = {p: 0.0 for p in _MIN_INTERVAL}
-_RATE_RE = re.compile(r"(429|RESOURCE_EXHAUSTED|rate.?limit|quota|overloaded)", re.I)
+_RATE_RE = re.compile(r"(429|RESOURCE_EXHAUSTED|rate.?limit|quota|overloaded|"
+                      r"503|UNAVAILABLE|high demand)", re.I)
 
 
 def _throttled(provider, fn):
+    """Reserve a start slot (spacing requests) without serializing latency."""
     with _throttle_lock[provider]:
-        wait = _MIN_INTERVAL[provider] - (time.time() - _last_call[provider])
-        if wait > 0:
-            time.sleep(wait)
-        try:
-            return fn()
-        finally:
-            _last_call[provider] = time.time()
+        now = time.time()
+        start = max(now, _last_call[provider] + _MIN_INTERVAL[provider])
+        _last_call[provider] = start
+    if start > now:
+        time.sleep(start - now)
+    return fn()
 
 
 def load_env():
@@ -62,6 +59,14 @@ def load_env():
 
 
 load_env()
+
+# Resolved AFTER .env is loaded. gemini-2.5-flash-lite: the provided free-tier
+# key caps gemini-2.5-flash at 20 requests/day; flash-lite has a separate,
+# larger pool (docs/decisions.md D-18).
+DEFAULT_MODELS = {
+    "anthropic": os.environ.get("ANTHROPIC_MODEL", "claude-opus-4-8"),
+    "google": os.environ.get("GOOGLE_MODEL", "gemini-2.5-flash-lite"),
+}
 
 
 def provider_for_role(role):
