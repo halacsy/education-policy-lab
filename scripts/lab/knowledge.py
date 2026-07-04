@@ -1,0 +1,765 @@
+"""Curated briefing pack for the mock LLM path.
+
+Human-curated, bilingual (EN/HU) knowledge about Hungarian early academic
+selection and the 6-/8-year gimnazium system. The mock backend composes all
+agent outputs from this pack; a real LLM backend replaces the composition,
+not the discipline (evidence tags, uncertainty structure, glossary terms).
+
+Evidence labels: strong / moderate / weak / contested / assumption.
+"""
+
+FACTS = {
+    "pisa_escs": dict(
+        en="In PISA, the share of reading/maths score variance explained by socio-economic status is among the highest in the OECD for Hungary (~19-25% across cycles vs ~12-14% OECD average).",
+        hu="A PISA-mérésekben a tanulói teljesítmény szórásának társadalmi-gazdasági státusz által magyarázott hányada Magyarországon az OECD egyik legmagasabbja (ciklusonként ~19-25%, szemben az OECD ~12-14%-os átlagával).",
+        evidence="strong", source="OECD PISA 2012-2022 country notes"),
+    "tracking_inequality": dict(
+        en="Cross-country difference-in-differences evidence indicates earlier between-school tracking increases inequality of outcomes without raising mean performance.",
+        hu="Országok közötti különbség-a-különbségben elemzések szerint a korábbi iskolatípus-szerinti szétválogatás növeli az eredmények egyenlőtlenségét anélkül, hogy az átlagteljesítményt emelné.",
+        evidence="strong", source="Hanushek & Woessmann 2006, Economic Journal"),
+    "gimn_share": dict(
+        en="Roughly 8-12% of a cohort enters 6- or 8-year gimnazium tracks, selected at age 10 or 12 largely via the central written admission examination; entrants are strongly skewed toward high-SES, urban families.",
+        hu="Egy korosztály nagyjából 8-12%-a lép be hat- vagy nyolcosztályos gimnáziumi képzésbe 10 vagy 12 évesen, túlnyomórészt a központi írásbeli felvételi vizsga alapján; a bekerülők erősen a magas státuszú, városi családok felé tolódnak.",
+        evidence="strong", source="KSH / Oktatási Hivatal admission statistics"),
+    "value_added": dict(
+        en="Hungarian value-added studies find the raw advantage of early-selective gimnazium tracks is mostly a selection effect; the causal (value-added) gain for admitted pupils is modest.",
+        hu="Magyar pedagógiai hozzáadottérték-vizsgálatok szerint a korai szelekciós gimnáziumi képzések nyers előnye főként szelekciós hatás; a bekerülő tanulók oksági (hozzáadott értékbeli) nyeresége szerény.",
+        evidence="moderate", source="Horn (2013); Kertesi & Kezdi school-effect studies"),
+    "poland_reform": dict(
+        en="Poland's 1999 reform postponed tracking to age 15 (gimnazjum); PISA scores rose substantially by 2012, with analyses attributing part of the gain to delayed selection. The reform was reversed in 2016-2019 for political reasons.",
+        hu="Lengyelország 1999-es reformja 15 éves korra tolta a szétválogatást (gimnazjum); a PISA-eredmények 2012-re jelentősen javultak, és az elemzések a javulás egy részét a későbbi szelekciónak tulajdonítják. A reformot 2016-2019 között politikai okokból visszafordították.",
+        evidence="moderate", source="Jakubowski et al. 2016; OECD"),
+    "finland_comprehensive": dict(
+        en="Finland's peruskoulu (comprehensive school to age 16, phased in 1972-1977) is associated with high equity and reduced dependence of outcomes on family background; effects are entangled with teacher policy and support systems.",
+        hu="A finn peruskoulu (egységes alapiskola 16 éves korig, 1972-1977 között bevezetve) magas méltányossággal és a családi háttértől való függés csökkenésével jár együtt; a hatások összefonódnak a tanárpolitikával és a támogató rendszerekkel.",
+        evidence="moderate", source="Pekkarinen, Uusitalo & Kerr 2009"),
+    "portugal_improvement": dict(
+        en="Portugal improved PISA results 2006-2015 without changing selection age, via curriculum standards, school clustering, targeted support (TEIP) and retention reduction.",
+        hu="Portugália 2006 és 2015 között a szelekciós életkor módosítása nélkül javította PISA-eredményeit: tantervi sztenderdekkel, iskolatársulásokkal, célzott támogatással (TEIP) és az évismétlés visszaszorításával.",
+        evidence="moderate", source="OECD PISA trend reports; Crato 2020"),
+    "demography": dict(
+        en="Annual births fell from ~125k (early 1990s) to ~85-95k; cohort shrinkage forces school-network consolidation decisions in the 2020s-2030s regardless of selection policy.",
+        hu="Az évi születésszám a kilencvenes évek eleji ~125 ezerről ~85-95 ezerre csökkent; a zsugorodó korosztályok a 2020-30-as években a szelekciós politikától függetlenül kikényszerítik az iskolahálózat konszolidációját.",
+        evidence="strong", source="KSH demographic yearbooks"),
+    "teacher_shortage": dict(
+        en="Hungary faces a sustained teacher shortage and an ageing teacher workforce, concentrated in disadvantaged regions and in maths/science; any structural reform competes for the same scarce teachers.",
+        hu="Magyarországon tartós pedagógushiány és elöregedő tanári kar jellemző, a hátrányos helyzetű térségekben és a matematika-természettudomány szakokon koncentrálódva; minden strukturális reform ugyanazokért a szűkös tanárokért versenyez.",
+        evidence="strong", source="OECD Education at a Glance; PSZ/PDSZ surveys"),
+    "governance": dict(
+        en="Since 2013 most state schools are run by state school district centres (tankerulet); churches and foundations maintain a growing share of schools, complicating any uniform structural mandate.",
+        hu="2013 óta az állami iskolák többségét tankerületi központok működtetik; az egyházi és alapítványi fenntartók részaránya nő, ami minden egységes szerkezeti előírást bonyolulttá tesz.",
+        evidence="strong", source="Public education act amendments; maintainer statistics"),
+    "school_choice": dict(
+        en="Free school choice plus early selective tracks produces strong between-school sorting already at the primary stage in cities; abolition of tracks alone would not eliminate sorting through catchment and choice.",
+        hu="A szabad iskolaválasztás a korai szelektív képzésekkel együtt már az általános iskolai szakaszban erős iskolák közötti szétválogatást hoz létre a városokban; a képzési formák megszüntetése önmagában nem szüntetné meg a körzeten és a választáson keresztüli szelekciót.",
+        evidence="moderate", source="Kertesi & Kezdi 2013; Berenyi-Berkovits-Erőss school choice studies"),
+    "parent_attachment": dict(
+        en="Urban middle-class parents regard 8- and 6-year gimnazium places as a key mobility/insurance asset; prior attempts to curtail structures met intense, well-organised resistance.",
+        hu="A városi középosztálybeli szülők a nyolc- és hatosztályos gimnáziumi helyeket kulcsfontosságú mobilitási és biztosítéki eszköznek tekintik; a korábbi szűkítési kísérletek heves, jól szervezett ellenállásba ütköztek.",
+        evidence="moderate", source="Domestic press and stakeholder analyses, 1990s-2010s"),
+    "fiscal": dict(
+        en="Per-pupil funding differences between track types are modest; the dominant costs of structural reform are transition costs (retraining, building use, administration), not steady-state costs.",
+        hu="A képzéstípusok közötti egy főre jutó finanszírozási különbségek mérsékeltek; a szerkezeti reform meghatározó költségei az átmenet költségei (átképzés, épülethasználat, adminisztráció), nem a tartós működésé.",
+        evidence="weak", source="Budget chapters; expert estimates"),
+    "legal": dict(
+        en="The 6/8-year gimnazium forms are anchored in the public education act and maintainer agreements; phase-out requires legislative change, multi-year notice, and transitional guarantees for enrolled pupils.",
+        hu="A hat- és nyolcosztályos gimnáziumi formákat a köznevelési törvény és a fenntartói megállapodások rögzítik; a fokozatos kivezetés törvénymódosítást, többéves felmenő rendszert és a bent lévő tanulóknak szóló átmeneti garanciákat igényel.",
+        evidence="strong", source="Nkt. (public education act) analysis"),
+}
+
+# ---------------------------------------------------------------------------
+# Expert briefs: what each expert 'knows' and argues.
+# ---------------------------------------------------------------------------
+
+EXPERT_BRIEFS = {
+    "hungarian_education_system": dict(
+        findings=["gimn_share", "school_choice", "governance"],
+        interpretation="Early selective tracks are one layer of a broader sorting system (school choice, catchments, maintainer diversity); treating the gimnazium forms in isolation overstates what their abolition would achieve.",
+        assumptions=["Admission statistics remain representative of current cohorts."],
+        position="Reform should target the whole sorting system, not only the 6/8-year forms.",
+        uncertainties=[
+            dict(text="How much sorting would migrate to church/private maintainers after a state-track phase-out.",
+                 confidence="low", reducer="maintainer-level admission data linked to SES."),
+        ]),
+    "international_comparison": dict(
+        findings=["tracking_inequality", "pisa_escs"],
+        interpretation="Hungary combines one of the OECD's earliest selection points with one of its strongest SES-performance gradients; the correlation is consistent with, but does not by itself prove, a causal link at the country level.",
+        assumptions=["PISA ESCS gradients are comparable across cycles."],
+        position="Later selection is the international default for equity-oriented systems.",
+        uncertainties=[
+            dict(text="Transferability of cross-country estimates to the Hungarian institutional mix.",
+                 confidence="medium", reducer="within-Hungary quasi-experimental studies."),
+        ]),
+    "finnish_reform": dict(
+        findings=["finland_comprehensive"],
+        interpretation="Finland shows a comprehensive school can deliver equity, but the reform bundled structure with teacher-education overhaul and pupil support; structure alone is not the treatment.",
+        assumptions=["1970s Nordic evidence remains informative for a 2020s CEE system."],
+        position="Do not copy the structure without the support system.",
+        uncertainties=[
+            dict(text="Which components of peruskoulu carried the equity effect.",
+                 confidence="low", reducer="decomposition studies; Norwegian/Swedish comparisons."),
+        ]),
+    "polish_reform": dict(
+        findings=["poland_reform"],
+        interpretation="Poland is the closest structural analogue: delayed tracking in a post-socialist system with measurable gains — and a warning that structural reforms lacking broad ownership get reversed.",
+        assumptions=["Polish PISA gains were not dominated by test-preparation artefacts."],
+        position="Delayed selection worked in a comparable system; design for irreversibility.",
+        uncertainties=[
+            dict(text="Share of the Polish gain attributable to delayed selection vs curriculum change.",
+                 confidence="medium", reducer="Jakubowski-style reanalysis with newer waves."),
+        ]),
+    "portuguese_reform": dict(
+        findings=["portugal_improvement"],
+        interpretation="Portugal demonstrates a non-structural improvement path: standards, targeted support and retention reduction moved outcomes without touching selection age.",
+        assumptions=["Portuguese gains generalise beyond its starting point (low baseline)."],
+        position="A non-structural package is a viable alternative or complement to structural reform.",
+        uncertainties=[
+            dict(text="Whether non-structural packages can offset a selection system as early as Hungary's.",
+                 confidence="low", reducer="pilot evaluation in Hungarian districts."),
+        ]),
+    "equity_and_social_mobility": dict(
+        findings=["pisa_escs", "gimn_share", "value_added"],
+        interpretation="Early selective tracks function mainly as an SES-sorting device with modest causal learning gains for the selected; the equity cost falls on pupils left in weakened general-school classes.",
+        assumptions=["Peer-composition effects on remaining classes are negative and non-trivial."],
+        position="Equity impact should be the primary criterion; the current forms fail it.",
+        uncertainties=[
+            dict(text="Magnitude of the negative peer effect on non-selected pupils.",
+                 confidence="medium", reducer="linked administrative panel (NABC) peer studies."),
+        ]),
+    "demography": dict(
+        findings=["demography"],
+        interpretation="Shrinking cohorts are a forcing function: the school network must be redesigned anyway, which lowers the marginal cost of structural reform if bundled with consolidation.",
+        assumptions=["No major fertility or migration reversal within the planning horizon."],
+        position="Bundle selection reform with the unavoidable network consolidation.",
+        uncertainties=[
+            dict(text="Regional distribution of cohort decline through 2040.",
+                 confidence="medium", reducer="KSH regional projections, updated annually."),
+        ]),
+    "school_network_planning": dict(
+        findings=["demography", "governance"],
+        interpretation="Six- and eight-year gimnazium classes anchor school-size economics in many towns; removing them without a network plan closes marginal schools chaotically.",
+        assumptions=["Current building stock and commuting tolerances constrain feasible configurations."],
+        position="Any phase-out needs a town-by-town network plan before legislation.",
+        uncertainties=[
+            dict(text="How many settlements lose secondary provision under each scenario.",
+                 confidence="low", reducer="geo-coded capacity simulation."),
+        ]),
+    "education_finance": dict(
+        findings=["fiscal"],
+        interpretation="Steady-state costs differ little between scenarios; the real money is in transition (teacher retraining, transport, building conversion) and in any serious compensation package for general schools.",
+        assumptions=["Order-of-magnitude estimates suffice at scenario stage."],
+        position="Cost honesty: publish transition-cost ranges, not point estimates.",
+        uncertainties=[
+            dict(text="Transition cost range for a nationwide phase-out.",
+                 confidence="low", reducer="bottom-up costing pilot in two districts."),
+        ]),
+    "legal_and_governance": dict(
+        findings=["legal", "governance"],
+        interpretation="Legislative anchoring and maintainer plurality mean any structural change needs statutory amendment, long notice periods, and negotiated church-maintainer compliance — otherwise a state-only reform just shifts selection to non-state schools.",
+        assumptions=["Constitutional protection of acquired pupil status is respected (felmenő rendszer)."],
+        position="Design the legal transition first; it determines the feasible speed.",
+        uncertainties=[
+            dict(text="Whether church maintainers can be bound to the same admission rules.",
+                 confidence="medium", reducer="legal opinion + precedent review."),
+        ]),
+    "political_feasibility": dict(
+        findings=["parent_attachment", "poland_reform"],
+        interpretation="The mobilised constituency is concentrated, articulate and loss-averse; Poland shows reforms without cross-party ownership get reversed. Abrupt abolition is the least survivable variant.",
+        assumptions=["No political window for constitutional-majority education reform in the short term."],
+        position="Gradualism plus visible gains for general schools is the only politically durable path.",
+        uncertainties=[
+            dict(text="Whether a grandfathered phase-down defuses or merely delays opposition.",
+                 confidence="low", reducer="deliberative polling / stakeholder panels."),
+        ]),
+    "implementation_planning": dict(
+        findings=["teacher_shortage", "fiscal"],
+        interpretation="Implementation capacity, not design, is the binding constraint: teacher supply, administrative bandwidth of district centres, and timetable of legal notice periods dictate a 6-10 year horizon for any structural variant.",
+        assumptions=["District centres retain current administrative capacity."],
+        position="Sequence: pilot, evaluate, legislate, then scale — never legislate first.",
+        uncertainties=[
+            dict(text="Realistic retraining throughput per year for upper-primary specialist teachers.",
+                 confidence="medium", reducer="teacher-education capacity audit."),
+        ]),
+}
+
+# ---------------------------------------------------------------------------
+# Disagreement geometry (Habermas-machine style: preserve, don't collapse).
+# ---------------------------------------------------------------------------
+
+CONFIDENCE_HU = {"low": "alacsony", "medium": "közepes", "high": "magas"}
+
+DISAGREEMENTS = [
+    dict(
+        topic="Structural vs. non-structural reform",
+        sides=[
+            dict(holders=["equity_and_social_mobility", "polish_reform", "international_comparison"],
+                 position=dict(en="Delayed selection (structural change) is necessary; compensation alone cannot offset sorting this early.",
+                               hu="A szelekció elhalasztása (szerkezeti változás) szükséges; a kompenzáció önmagában nem ellensúlyozhat ilyen korai szétválogatást."),
+                 rationale=dict(en="Cross-country tracking evidence and the Hungarian SES gradient.",
+                                hu="Az országok közötti tracking-kutatások és a magyar társadalmi-gazdasági státusz szerinti teljesítménygradiens.")),
+            dict(holders=["portuguese_reform", "political_feasibility"],
+                 position=dict(en="A non-structural package (standards, targeted support) is preferable: comparable gains, far lower political risk.",
+                               hu="A nem szerkezeti csomag (sztenderdek, célzott támogatás) előnyösebb: hasonló nyereség, sokkal kisebb politikai kockázat."),
+                 rationale=dict(en="Portugal's improvement without changing selection age; Poland's reversal.",
+                                hu="Portugália javulása a szelekciós életkor változtatása nélkül; a lengyel visszafordítás.")),
+        ],
+        minority_index=1),
+    dict(
+        topic="Speed of any phase-out",
+        sides=[
+            dict(holders=["equity_and_social_mobility"],
+                 position=dict(en="Cap new entries immediately; every delayed cohort pays the equity cost.",
+                               hu="Az új belépést azonnal maximálni kell; minden késleltetett évfolyam megfizeti a méltányossági költséget."),
+                 rationale=dict(en="Each admission cycle sorts ~10% of a cohort irreversibly.",
+                                hu="Minden felvételi ciklus a korosztály ~10%-át válogatja szét visszafordíthatatlanul.")),
+            dict(holders=["implementation_planning", "school_network_planning", "legal_and_governance"],
+                 position=dict(en="A sub-6-year transition is operationally and legally infeasible; forcing it guarantees chaotic failure.",
+                               hu="Hat évnél rövidebb átmenet működési és jogi szempontból kivitelezhetetlen; kikényszerítése kaotikus kudarcot garantál."),
+                 rationale=dict(en="Teacher supply, felmenő rendszer guarantees, network re-planning lead times.",
+                                hu="Pedagóguskínálat, a felmenő rendszer garanciái, az iskolahálózat újratervezésének átfutási ideje.")),
+        ],
+        minority_index=0),
+    dict(
+        topic="What the gimnazium forms actually produce",
+        sides=[
+            dict(holders=["equity_and_social_mobility", "international_comparison"],
+                 position=dict(en="Mostly selection effect; modest causal value added does not justify the system-wide equity cost.",
+                               hu="Főként szelekciós hatás; a szerény oksági hozzáadott érték nem igazolja a rendszerszintű méltányossági költséget."),
+                 rationale=dict(en="Hungarian value-added studies.",
+                                hu="Magyar pedagógiai hozzáadottérték-vizsgálatok.")),
+            dict(holders=["political_feasibility", "hungarian_education_system"],
+                 position=dict(en="Even if gains are partly positional, the forms answer a real demand for demanding academic tracks; suppressing them shifts demand to private exit.",
+                               hu="Még ha a nyereség részben pozicionális is, e formák valós keresletet elégítenek ki az igényes akadémiai képzés iránt; elfojtásuk a magánszféra felé tereli a keresletet."),
+                 rationale=dict(en="Parental attachment evidence; growth of non-state maintainers.",
+                                hu="A szülői kötődésre vonatkozó tapasztalatok; a nem állami fenntartók térnyerése.")),
+        ],
+        minority_index=1),
+    dict(
+        topic="Bundling with network consolidation",
+        sides=[
+            dict(holders=["demography", "school_network_planning"],
+                 position=dict(en="Bundle selection reform with the demography-forced network redesign to share transition costs.",
+                               hu="A szelekciós reformot össze kell kapcsolni a demográfia által kikényszerített hálózati átalakítással, hogy az átmeneti költségek megoszoljanak."),
+                 rationale=dict(en="Cohort shrinkage forces consolidation regardless.",
+                                hu="A korosztályok zsugorodása mindenképpen konszolidációt kényszerít ki.")),
+            dict(holders=["political_feasibility"],
+                 position=dict(en="Bundling couples the reform to unpopular school closures and doubles the opposition coalition.",
+                               hu="Az összekapcsolás a reformot népszerűtlen iskolabezárásokhoz köti, és megkettőzi az ellenkoalíciót."),
+                 rationale=dict(en="Closure politics historically dominates local media cycles.",
+                                hu="A bezárások politikája történetileg uralja a helyi nyilvánosságot.")),
+        ],
+        minority_index=1),
+]
+
+# ---------------------------------------------------------------------------
+# Policy scenarios (bilingual, all 10 required fields).
+# ---------------------------------------------------------------------------
+
+SCENARIOS = [
+    dict(
+        id="S1",
+        title=dict(en="Admission reform within the current structure",
+                   hu="Felvételi reform a jelenlegi szerkezeten belül"),
+        goal=dict(en="Reduce the SES bias of entry into 6- and 8-year gimnazium tracks without changing the structure, by reforming the admission examination and admission rules.",
+                  hu="A hat- és nyolcosztályos gimnáziumi képzésbe való bekerülés társadalmi-gazdasági torzításának csökkentése a szerkezet változtatása nélkül, a felvételi vizsga és a felvételi szabályok reformjával."),
+        mechanism=[
+            dict(en="Replace the coachable central written admission examination with age-appropriate, less preparation-sensitive assessment plus school recommendation quotas",
+                 hu="A felkészíthető központi írásbeli felvételi vizsga felváltása életkornak megfelelő, felkészítésre kevésbé érzékeny méréssel és iskolai ajánlási kvótákkal",
+                 evidence="moderate", source="admission-test coachability literature", core=True),
+            dict(en="SES-aware admission rules (weighted lottery above a threshold, or district quotas) reduce the composition skew of entrants",
+                 hu="A társadalmi-gazdasági státuszra érzékeny felvételi szabályok (küszöb feletti súlyozott sorsolás vagy körzeti kvóták) csökkentik a bekerülők összetételi torzítását",
+                 evidence="moderate", source="school-lottery studies (US charter, Amsterdam)", core=False),
+            dict(en="Broader entry pools weaken the incentive for early private test-preparation",
+                 hu="A szélesebb merítés gyengíti a korai magán-felkészítés ösztönzőit",
+                 evidence="weak", source="expert inference", core=False),
+        ],
+        evidence_status=dict(label="moderate",
+                             en="Moderate: admission-rule effects on intake composition are well documented abroad; effects on system-level equity are indirect.",
+                             hu="Mérsékelt: a felvételi szabályok hatása a bekerülők összetételére külföldön jól dokumentált; a rendszerszintű méltányosságra gyakorolt hatás közvetett."),
+        assumptions=[
+            dict(en="Elite gimnaziums comply rather than route selection through informal channels.",
+                 hu="Az elit gimnáziumok együttműködnek, és nem terelik a szelekciót informális csatornákba."),
+            dict(en="A workable SES indicator exists at application time.",
+                 hu="Létezik használható társadalmi-gazdasági státusz-mutató a jelentkezéskor."),
+        ],
+        expected_benefits=[
+            dict(en="More balanced intake into selective tracks within 2-3 admission cycles",
+                 hu="Kiegyensúlyozottabb bekerülés a szelektív képzésekbe 2-3 felvételi cikluson belül",
+                 evidence="moderate"),
+            dict(en="Reduced test-preparation arms race pressure on age-10 children",
+                 hu="A tízéves gyerekekre nehezedő felkészítési verseny nyomásának csökkenése",
+                 evidence="weak"),
+        ],
+        equity_impact=dict(
+            en="Directly targets the entry gate, so gains accrue to high-ability low-SES pupils; does nothing for the majority who remain in general schools, and may relabel rather than reduce sorting if compliance is weak.",
+            hu="Közvetlenül a bekerülési kaput célozza, így a nyereség a jó képességű, alacsony státuszú tanulóknál jelentkezik; nem segít a többségen, akik az általános iskolában maradnak, és gyenge végrehajtás esetén a szelekciót inkább átcímkézi, mint csökkenti."),
+        cost_categories=[
+            dict(en="One-off: assessment redesign and piloting (low, central budget)",
+                 hu="Egyszeri: a mérőeszköz újratervezése és kipróbálása (alacsony, központi költségvetés)"),
+            dict(en="Recurring: administration of new admission process (low)",
+                 hu="Folyamatos: az új felvételi eljárás lebonyolítása (alacsony)"),
+            dict(en="Political capital: moderate — concentrated on elite-school stakeholders",
+                 hu="Politikai tőke: mérsékelt — az elit iskolák érintettjeire koncentrálódik"),
+        ],
+        implementation_steps=[
+            dict(actor=dict(en="Education ministry + assessment agency", hu="Oktatásért felelős minisztérium + mérési hatóság"),
+                 action=dict(en="design and pilot the new assessment in volunteer districts", hu="az új mérés megtervezése és kipróbálása önként jelentkező tankerületekben"),
+                 timeline=dict(en="year 1-2", hu="1-2. év")),
+            dict(actor=dict(en="Legislator", hu="Jogalkotó"),
+                 action=dict(en="amend admission decree; define SES weighting", hu="a felvételi rendelet módosítása; a státusz-súlyozás meghatározása"),
+                 timeline=dict(en="year 2", hu="2. év")),
+            dict(actor=dict(en="School district centres and maintainers", hu="Tankerületi központok és fenntartók"),
+                 action=dict(en="run first reformed admission cycle with monitoring", hu="az első megreformált felvételi ciklus lebonyolítása monitorozással"),
+                 timeline=dict(en="year 3", hu="3. év")),
+            dict(actor=dict(en="Independent evaluator", hu="Független értékelő"),
+                 action=dict(en="publish intake-composition evaluation; adjust rules", hu="a bekerülési összetétel értékelésének közzététele; a szabályok kiigazítása"),
+                 timeline=dict(en="year 4", hu="4. év")),
+        ],
+        political_risks=[
+            dict(en="Elite-school and middle-class parent opposition to lottery elements; framed as 'punishing talent'.",
+                 hu="Az elit iskolák és a középosztálybeli szülők ellenállása a sorsolásos elemekkel szemben; „a tehetség büntetéseként” keretezve."),
+            dict(en="Church and private maintainers may claim exemption, hollowing out the rule.",
+                 hu="Az egyházi és magánfenntartók mentességet követelhetnek, ami kiüresíti a szabályt."),
+        ],
+        uncertainties=[
+            dict(en="Behavioural response of elite schools (informal selection channels).",
+                 hu="Az elit iskolák viselkedési válasza (informális szelekciós csatornák).",
+                 confidence="low",
+                 reducer=dict(en="compliance audit design in the pilot", hu="megfelelőségi vizsgálat beépítése a kísérleti programba")),
+            dict(en="Size of the intake-composition shift achievable by rule change alone.",
+                 hu="A pusztán szabályváltozással elérhető összetétel-változás mértéke.",
+                 confidence="medium",
+                 reducer=dict(en="pilot-district admission data after cycle 1", hu="a kísérleti tankerületek felvételi adatai az első ciklus után")),
+            dict(en="Whether reduced coachability survives the test-prep industry's adaptation.",
+                 hu="Fennmarad-e a kisebb felkészíthetőség a felkészítőipar alkalmazkodása után is.",
+                 confidence="low",
+                 reducer=dict(en="repeat coachability studies after 2 cycles", hu="megismételt felkészíthetőségi vizsgálatok két ciklus után")),
+        ],
+        framings=[
+            dict(en="Fair entry to existing excellence (chosen: keeps focus on the gate, not the track)", chosen=True,
+                 reject_reason=None),
+            dict(en="Anti-elite levelling of admissions (rejected: adversarial framing mobilises opposition and misstates the goal)", chosen=False,
+                 reject_reason="Adversarial framing mobilises opposition and misstates the goal."),
+        ]),
+    dict(
+        id="S2",
+        title=dict(en="Gradual phase-down of 6/8-year entry places",
+                   hu="A hat- és nyolcosztályos belépőhelyek fokozatos szűkítése"),
+        goal=dict(en="Shrink early-selective intake over a decade by capping and gradually reducing entry places, while investing the freed capacity in strong programmes inside general schools.",
+                  hu="A korai szelektív bekerülés egy évtized alatti szűkítése a belépőhelyek maximálásával és fokozatos csökkentésével, a felszabaduló kapacitás általános iskolai erős programokba forgatásával."),
+        mechanism=[
+            dict(en="Annual entry-place caps reduce the share of a cohort selected at 10/12, mechanically lowering early sorting",
+                 hu="Az éves belépőhely-plafonok csökkentik a 10-12 évesen kiválogatott korosztályi hányadot, mechanikusan mérsékelve a korai szelekciót",
+                 evidence="strong", source="mechanical/administrative", core=True),
+            dict(en="Advanced-programme funding in general schools retains ambitious families in the common track",
+                 hu="Az általános iskolai emelt szintű programok finanszírozása a közös képzésben tartja az ambiciózus családokat",
+                 evidence="weak", source="expert inference; magnet-school analogues", core=False),
+            dict(en="A published decade-long trajectory lets schools and families adapt without cliff effects",
+                 hu="A nyilvános, évtizedes ütemterv lehetővé teszi az iskolák és családok alkalmazkodását töréspontok nélkül",
+                 evidence="moderate", source="phase-out practice in other sectors", core=False),
+        ],
+        evidence_status=dict(label="moderate",
+                             en="Moderate: the sorting reduction is mechanical; the retention of demand in general schools is the unevidenced link.",
+                             hu="Mérsékelt: a szelekció csökkenése mechanikus; a kereslet általános iskolában tartása a nem bizonyított láncszem."),
+        assumptions=[
+            dict(en="General schools can absorb and challenge high-achievers if funded for it.",
+                 hu="Az általános iskolák megfelelő finanszírozással képesek befogadni és fejleszteni a kiemelkedő tanulókat."),
+            dict(en="Caps are enforceable across state, church and private maintainers.",
+                 hu="A plafonok az állami, egyházi és magánfenntartóknál egyaránt érvényesíthetők."),
+        ],
+        expected_benefits=[
+            dict(en="Steadily falling early-sorting share of each cohort (measurable annually)",
+                 hu="A korosztály korai szétválogatásban érintett hányadának évről évre mérhető csökkenése",
+                 evidence="strong"),
+            dict(en="Stronger peer composition in urban general-school upper grades",
+                 hu="Erősebb tanulói összetétel a városi általános iskolák felső tagozatán",
+                 evidence="moderate"),
+        ],
+        equity_impact=dict(
+            en="Benefits the non-selected majority through improved peer composition and reinvested capacity; the residual selective places become scarcer and, without S1-type admission reform, even more SES-skewed.",
+            hu="A nem kiválogatott többségnek kedvez a javuló tanulói összetételen és a visszaforgatott kapacitáson keresztül; a megmaradó szelektív helyek ritkábbá válnak, és S1-típusú felvételi reform nélkül még inkább státusz szerint torzítanak."),
+        cost_categories=[
+            dict(en="Recurring: advanced-programme funding in general schools (medium, formula-based)",
+                 hu="Folyamatos: emelt szintű programok finanszírozása az általános iskolákban (közepes, normatív alapú)"),
+            dict(en="One-off: reallocation planning per district (low-medium)",
+                 hu="Egyszeri: átcsoportosítási tervezés tankerületenként (alacsony-közepes)"),
+            dict(en="Political capital: high and sustained over a decade",
+                 hu="Politikai tőke: magas, és egy évtizeden át fenn kell tartani"),
+        ],
+        implementation_steps=[
+            dict(actor=dict(en="Legislator", hu="Jogalkotó"),
+                 action=dict(en="enact the cap trajectory with felmenő rendszer guarantees for enrolled pupils", hu="a plafonpálya törvénybe iktatása, felmenő rendszerű garanciákkal a bent lévő tanulóknak"),
+                 timeline=dict(en="year 1-2", hu="1-2. év")),
+            dict(actor=dict(en="Education ministry", hu="Oktatásért felelős minisztérium"),
+                 action=dict(en="launch the general-school advanced-programme fund", hu="az általános iskolai emelt programalap elindítása"),
+                 timeline=dict(en="year 2", hu="2. év")),
+            dict(actor=dict(en="Maintainers (state, church, private)", hu="Fenntartók (állami, egyházi, magán)"),
+                 action=dict(en="apply annual caps; report intake composition", hu="az éves plafonok alkalmazása; a bekerülési összetétel jelentése"),
+                 timeline=dict(en="years 3-10", hu="3-10. év")),
+            dict(actor=dict(en="Independent evaluator", hu="Független értékelő"),
+                 action=dict(en="mid-course evaluation at year 5 with a pre-committed adjustment rule", hu="félidős értékelés az 5. évben, előre rögzített kiigazítási szabállyal"),
+                 timeline=dict(en="year 5", hu="5. év")),
+        ],
+        political_risks=[
+            dict(en="A successor government can freeze or reverse the trajectory cheaply (Polish precedent).",
+                 hu="Egy következő kormány olcsón befagyaszthatja vagy visszafordíthatja a pályát (lengyel precedens)."),
+            dict(en="Scarcer selective places intensify the admission arms race in the transition years.",
+                 hu="A ritkuló szelektív helyek az átmeneti években felerősítik a felvételi versenyt."),
+            dict(en="Church maintainers may litigate or negotiate exemptions.",
+                 hu="Az egyházi fenntartók perelhetnek vagy mentességeket alkudhatnak ki."),
+        ],
+        uncertainties=[
+            dict(en="Whether general-school programmes actually retain high-achieving families.",
+                 hu="Valóban megtartják-e az általános iskolai programok a jól teljesítő családokat.",
+                 confidence="low",
+                 reducer=dict(en="tracked cohort study in early-cap districts", hu="követéses kohorszvizsgálat a korán plafonozó tankerületekben")),
+            dict(en="Reversal risk after a change of government.",
+                 hu="A kormányváltás utáni visszafordítás kockázata.",
+                 confidence="low",
+                 reducer=dict(en="cross-party pact or statutory entrenchment attempts", hu="pártközi megállapodás vagy törvényi megerősítés kísérlete")),
+            dict(en="Peer-effect size on remaining general-school classes.",
+                 hu="A tanulói összetétel hatásának mérete a megmaradó általános iskolai osztályokban.",
+                 confidence="medium",
+                 reducer=dict(en="NABC panel analysis as caps bite", hu="Országos kompetenciamérés paneladatainak elemzése a plafonok életbe lépésével")),
+        ],
+        framings=[
+            dict(en="Managed rebalancing of the school system (chosen: emphasises gradualism and reinvestment)", chosen=True,
+                 reject_reason=None),
+            dict(en="Closing the elite escape route (rejected: names losers, invites siege politics)", chosen=False,
+                 reject_reason="Names losers and invites siege politics."),
+        ]),
+    dict(
+        id="S3",
+        title=dict(en="Comprehensive school to age 14 (structural reform)",
+                   hu="Egységes alapiskola 14 éves korig (szerkezeti reform)"),
+        goal=dict(en="End between-school academic selection before age 14 by phasing out 6- and 8-year gimnazium entry, moving first selection to the end of grade 8, with differentiated teaching inside a common school.",
+                  hu="Az iskolák közötti tanulmányi szelekció megszüntetése 14 éves kor előtt: a hat- és nyolcosztályos gimnáziumi belépés fokozatos kivezetése, az első szelekció áthelyezése a 8. évfolyam végére, differenciált oktatással a közös iskolán belül."),
+        mechanism=[
+            dict(en="Later between-school selection weakens the SES-performance link, per cross-country tracking evidence",
+                 hu="A későbbi iskolák közötti szelekció gyengíti a társadalmi háttér és a teljesítmény kapcsolatát az országok közötti tracking-kutatások szerint",
+                 evidence="strong", source="Hanushek & Woessmann 2006; Pekkarinen et al. 2009", core=True),
+            dict(en="Common-school peer composition raises outcomes of disadvantaged pupils more than it lowers those of advantaged ones (asymmetric peer effects)",
+                 hu="A közös iskolai tanulói összetétel jobban emeli a hátrányos helyzetű tanulók eredményeit, mint amennyire rontja az előnyös helyzetűekét (aszimmetrikus kortárshatások)",
+                 evidence="contested", source="peer-effect literature, mixed findings", core=True),
+            dict(en="In-school differentiation (setting, enrichment) substitutes for between-school tracks if teachers are trained for it",
+                 hu="Az iskolán belüli differenciálás (szintezés, gazdagítás) kiváltja az iskolák közötti képzési utakat, ha a tanárok erre fel vannak készítve",
+                 evidence="moderate", source="Finnish practice; mixed-ability teaching studies", core=False),
+        ],
+        evidence_status=dict(label="contested",
+                             en="Contested overall: the strongest structural evidence supports it, but peer-effect asymmetry and Hungarian implementation capacity are genuinely disputed.",
+                             hu="Összességében vitatott: a legerősebb szerkezeti bizonyítékok mellette szólnak, de a kortárshatások aszimmetriája és a magyar megvalósítási kapacitás valóban vita tárgya."),
+        assumptions=[
+            dict(en="Teacher capacity for differentiated instruction can be built at national scale within the transition window.",
+                 hu="A differenciált oktatáshoz szükséges tanári kapacitás országos léptékben kiépíthető az átmeneti időszak alatt."),
+            dict(en="Sorting does not simply migrate to school choice between general schools and to non-state maintainers.",
+                 hu="A szelekció nem vándorol át egyszerűen az általános iskolák közötti választásba és a nem állami fenntartókhoz."),
+            dict(en="Political ownership survives at least two electoral cycles.",
+                 hu="A politikai gazdaszerep legalább két választási cikluson át fennmarad."),
+        ],
+        expected_benefits=[
+            dict(en="Weaker SES-outcome gradient within a decade of full phase-in (Polish/Finnish direction of effect)",
+                 hu="Gyengülő státusz-teljesítmény kapcsolat a teljes bevezetés utáni évtizedben (a lengyel-finn hatásiránnyal egyezően)",
+                 evidence="moderate"),
+            dict(en="Later, better-informed track choice at 14 reduces misallocation of talent",
+                 hu="A későbbi, megalapozottabb pályaválasztás 14 évesen csökkenti a tehetség rossz elosztását",
+                 evidence="moderate"),
+        ],
+        equity_impact=dict(
+            en="The largest expected equity gain of all scenarios — and the largest risk: if middle-class families exit to non-state schools, segregation could worsen relative to baseline.",
+            hu="Az összes forgatókönyv közül a legnagyobb várható méltányossági nyereség — és a legnagyobb kockázat: ha a középosztálybeli családok nem állami iskolákba menekülnek, a szegregáció a kiindulóállapothoz képest súlyosbodhat."),
+        cost_categories=[
+            dict(en="One-off: nationwide teacher retraining for differentiation (high)",
+                 hu="Egyszeri: országos tanár-továbbképzés a differenciáláshoz (magas)"),
+            dict(en="One-off: network and building reconfiguration, bundled with demographic consolidation (high)",
+                 hu="Egyszeri: hálózat- és épület-átalakítás, a demográfiai konszolidációval összevonva (magas)"),
+            dict(en="Recurring: in-school enrichment programmes (medium)",
+                 hu="Folyamatos: iskolán belüli gazdagító programok (közepes)"),
+            dict(en="Political capital: very high, sustained for a decade",
+                 hu="Politikai tőke: nagyon magas, egy évtizeden át fenntartandó"),
+        ],
+        implementation_steps=[
+            dict(actor=dict(en="Government + opposition (pact attempt)", hu="Kormány + ellenzék (paktumkísérlet)"),
+                 action=dict(en="negotiate a cross-party framework before legislation", hu="pártközi keretmegállapodás egyeztetése a törvényalkotás előtt"),
+                 timeline=dict(en="year 1", hu="1. év")),
+            dict(actor=dict(en="Education ministry + teacher-education universities", hu="Minisztérium + pedagógusképző egyetemek"),
+                 action=dict(en="launch differentiation retraining at scale; pilot comprehensive model in 2-3 districts", hu="differenciálási továbbképzés indítása nagy léptékben; az egységes modell kipróbálása 2-3 tankerületben"),
+                 timeline=dict(en="years 1-4", hu="1-4. év")),
+            dict(actor=dict(en="Legislator", hu="Jogalkotó"),
+                 action=dict(en="amend the public education act: stop new 6/8-year entry from a named year, felmenő rendszer for enrolled pupils", hu="a köznevelési törvény módosítása: új hat/nyolcosztályos belépés leállítása megnevezett évtől, felmenő rendszer a bent lévőknek"),
+                 timeline=dict(en="year 4, conditional on pilot evaluation", hu="4. év, a kísérleti értékelés függvényében")),
+            dict(actor=dict(en="Maintainers + district centres", hu="Fenntartók + tankerületi központok"),
+                 action=dict(en="execute the phase-out with town-level network plans", hu="a kivezetés végrehajtása településszintű hálózati tervekkel"),
+                 timeline=dict(en="years 5-12", hu="5-12. év")),
+        ],
+        political_risks=[
+            dict(en="Highest-intensity opposition of all scenarios: mobilised parents, elite schools, parts of the teaching profession.",
+                 hu="Az összes forgatókönyv közül a legerősebb ellenállás: mozgósított szülők, elit iskolák, a tanári szakma egy része."),
+            dict(en="Polish-style reversal after government change destroys sunk transition costs.",
+                 hu="Lengyel típusú visszafordítás kormányváltás után, ami megsemmisíti az átmenet elsüllyedt költségeit."),
+            dict(en="Non-state maintainer exemption fights could produce a two-tier system worse than baseline.",
+                 hu="A nem állami fenntartói mentességi harcok a kiindulónál rosszabb kétszintű rendszert hozhatnak létre."),
+        ],
+        uncertainties=[
+            dict(en="Scale of middle-class exit to non-state schools.",
+                 hu="A középosztály nem állami iskolákba való kivonulásának mértéke.",
+                 confidence="low",
+                 reducer=dict(en="maintainer-linked enrolment monitoring in pilot districts", hu="fenntartókhoz kötött beiskolázási monitoring a kísérleti tankerületekben")),
+            dict(en="Whether in-school differentiation reaches acceptable quality at national scale.",
+                 hu="Eléri-e az iskolán belüli differenciálás az elfogadható minőséget országos léptékben.",
+                 confidence="low",
+                 reducer=dict(en="pilot-district classroom observation + NABC results", hu="tanórai megfigyelés és kompetenciamérési eredmények a kísérleti tankerületekben")),
+            dict(en="Net peer effect on previously selected high-achievers.",
+                 hu="A korábban kiválogatott, jól teljesítő tanulókra gyakorolt nettó kortárshatás.",
+                 confidence="medium",
+                 reducer=dict(en="quasi-experimental analysis of cap-induced variation from S2-type policies", hu="kvázi-kísérleti elemzés az S2-típusú plafonok keltette variancián")),
+        ],
+        framings=[
+            dict(en="First selection at 14, like most of Europe (chosen: normalising, comparative)", chosen=True,
+                 reject_reason=None),
+            dict(en="Abolishing the gimnazium (rejected: factually wrong — 4-year gimnazium remains — and maximally mobilising)", chosen=False,
+                 reject_reason="Factually wrong (4-year gimnazium remains) and maximally mobilising."),
+        ]),
+    dict(
+        id="S4",
+        title=dict(en="Keep the structure, compensate the general schools",
+                   hu="A szerkezet megtartása, az általános iskolák megerősítése"),
+        goal=dict(en="Accept early selection as politically fixed and offset its equity costs by a Portuguese-style package: targeted funding, teacher incentives and support programmes for general schools serving disadvantaged pupils.",
+                  hu="A korai szelekció politikai adottságként való elfogadása és méltányossági költségeinek ellensúlyozása portugál típusú csomaggal: célzott finanszírozással, tanári ösztönzőkkel és támogató programokkal a hátrányos helyzetű tanulókat oktató általános iskolákban."),
+        mechanism=[
+            dict(en="Targeted resources and retention reduction improved outcomes in Portugal without changing selection age",
+                 hu="A célzott források és az évismétlés visszaszorítása Portugáliában a szelekciós életkor változtatása nélkül javította az eredményeket",
+                 evidence="moderate", source="OECD PISA trends; TEIP evaluations", core=True),
+            dict(en="Salary premia shift experienced teachers toward disadvantaged schools, raising instruction quality where sorting hurts most",
+                 hu="A bérprémiumok a tapasztalt tanárokat a hátrányos helyzetű iskolák felé terelik, ott javítva az oktatás minőségét, ahol a szelekció a legtöbbet árt",
+                 evidence="moderate", source="teacher-incentive experiments (int'l)", core=False),
+            dict(en="Compensation is additive: it does not touch the sorting mechanism itself",
+                 hu="A kompenzáció additív: magát a szelekciós mechanizmust nem érinti",
+                 evidence="strong", source="by construction", core=False),
+        ],
+        evidence_status=dict(label="moderate",
+                             en="Moderate: the package's components are individually evidenced; whether they can offset selection as early as Hungary's is the open question.",
+                             hu="Mérsékelt: a csomag elemei külön-külön bizonyítottak; az a nyitott kérdés, hogy képesek-e ellensúlyozni egy ilyen korai szelekciót."),
+        assumptions=[
+            dict(en="Compensation can meaningfully offset, not just mask, the effects of early sorting.",
+                 hu="A kompenzáció érdemben ellensúlyozni tudja a korai szétválogatás hatásait, nem csupán elfedi azokat."),
+            dict(en="Targeting formulas reach the intended schools without stigmatising them.",
+                 hu="A célzási formulák megbélyegzés nélkül érik el a szándékolt iskolákat."),
+        ],
+        expected_benefits=[
+            dict(en="Improved outcomes in disadvantaged general schools within 5 years (Portuguese trajectory)",
+                 hu="Javuló eredmények a hátrányos helyzetű általános iskolákban 5 éven belül (a portugál pályának megfelelően)",
+                 evidence="moderate"),
+            dict(en="Politically inexpensive; implementable under any government",
+                 hu="Politikailag olcsó; bármely kormány alatt megvalósítható",
+                 evidence="strong"),
+        ],
+        equity_impact=dict(
+            en="Helps the disadvantaged majority where they actually are; leaves the sorting mechanism and its signalling effects intact, so the SES gradient narrows at best partially.",
+            hu="Ott segít a hátrányos helyzetű többségen, ahol ténylegesen tanul; a szelekciós mechanizmust és annak jelzési hatásait érintetlenül hagyja, így a státusz-gradiens legfeljebb részben szűkül."),
+        cost_categories=[
+            dict(en="Recurring: targeted school funding formula (high — this is the package)",
+                 hu="Folyamatos: célzott iskolafinanszírozási formula (magas — ez maga a csomag)"),
+            dict(en="Recurring: teacher premia in disadvantaged schools (medium-high)",
+                 hu="Folyamatos: tanári bérprémium a hátrányos helyzetű iskolákban (közepes-magas)"),
+            dict(en="Political capital: low",
+                 hu="Politikai tőke: alacsony"),
+        ],
+        implementation_steps=[
+            dict(actor=dict(en="Education ministry + finance ministry", hu="Oktatási és pénzügyi tárca"),
+                 action=dict(en="define the targeting formula (SES-index based) and budget line", hu="a célzási formula (státuszindex-alapú) és a költségvetési sor meghatározása"),
+                 timeline=dict(en="year 1", hu="1. év")),
+            dict(actor=dict(en="District centres", hu="Tankerületi központok"),
+                 action=dict(en="contract participating schools with improvement plans (TEIP-style)", hu="szerződés a részt vevő iskolákkal fejlesztési tervek alapján (TEIP-minta)"),
+                 timeline=dict(en="year 2", hu="2. év")),
+            dict(actor=dict(en="Teacher policy unit", hu="Pedagóguspolitikai szervezeti egység"),
+                 action=dict(en="introduce premia and mentoring pipelines for disadvantaged schools", hu="bérprémium és mentorálási programok bevezetése a hátrányos helyzetű iskolákban"),
+                 timeline=dict(en="years 2-3", hu="2-3. év")),
+            dict(actor=dict(en="Independent evaluator", hu="Független értékelő"),
+                 action=dict(en="evaluate against pre-registered outcome targets; sunset or scale", hu="értékelés előre rögzített eredménycélokhoz képest; kivezetés vagy bővítés"),
+                 timeline=dict(en="year 5", hu="5. év")),
+        ],
+        political_risks=[
+            dict(en="Budget vulnerability: compensation lines are the first cut in fiscal consolidation.",
+                 hu="Költségvetési sérülékenység: megszorításkor először a kompenzációs sorokat vágják meg."),
+            dict(en="Risk of legitimising early selection permanently ('we already compensate').",
+                 hu="A korai szelekció tartós legitimálásának kockázata („hiszen már kompenzálunk”)."),
+        ],
+        uncertainties=[
+            dict(en="Whether compensation can offset selection effects this early; no country has demonstrated it at Hungary's selection age.",
+                 hu="Ellensúlyozható-e kompenzációval ilyen korai szelekció; ezt Magyarország szelekciós életkorán még egyetlen ország sem bizonyította.",
+                 confidence="low",
+                 reducer=dict(en="pre-registered evaluation of the pilot against matched districts", hu="a kísérleti program előregisztrált értékelése illesztett tankerületekkel szemben")),
+            dict(en="Teacher premium size needed to actually move experienced teachers.",
+                 hu="A tapasztalt tanárok tényleges átvonzásához szükséges bérprémium mértéke.",
+                 confidence="medium",
+                 reducer=dict(en="discrete-choice study on teacher mobility", hu="diszkrét választási vizsgálat a tanári mobilitásról")),
+            dict(en="Durability of the budget line across fiscal cycles.",
+                 hu="A költségvetési sor tartóssága a fiskális ciklusokon át.",
+                 confidence="low",
+                 reducer=dict(en="statutory earmarking attempt + historical budget analysis", hu="törvényi címkézés kísérlete + történeti költségvetés-elemzés")),
+        ],
+        framings=[
+            dict(en="Strengthen the schools of the majority (chosen: centres the non-selected 90%)", chosen=True,
+                 reject_reason=None),
+            dict(en="Paying off the losers of selection (rejected: stigmatising and cynical)", chosen=False,
+                 reject_reason="Stigmatising and cynical."),
+        ]),
+]
+
+SCENARIO_FIELDS = [
+    "goal", "mechanism", "evidence_status", "assumptions", "expected_benefits",
+    "equity_impact", "cost_categories", "implementation_steps",
+    "political_risks", "uncertainties",
+]
+
+FIELD_LABELS = {
+    "goal": ("Goal", "Cél"),
+    "mechanism": ("Mechanism", "Mechanizmus"),
+    "evidence_status": ("Evidence status", "Bizonyítékstátusz"),
+    "assumptions": ("Assumptions", "Feltevések"),
+    "expected_benefits": ("Expected benefits", "Várható előnyök"),
+    "equity_impact": ("Equity impact", "Méltányossági hatás"),
+    "cost_categories": ("Cost categories", "Költségkategóriák"),
+    "implementation_steps": ("Implementation steps", "Megvalósítási lépések"),
+    "political_risks": ("Political risks", "Politikai kockázatok"),
+    "uncertainties": ("Uncertainties", "Bizonytalanságok"),
+}
+
+EVIDENCE_HU = {"strong": "erős", "moderate": "mérsékelt", "weak": "gyenge",
+               "contested": "vitatott", "assumption": "feltevés"}
+
+# ---------------------------------------------------------------------------
+# Critic objections (concrete, targeted: scenario id + field).
+# ---------------------------------------------------------------------------
+
+CRITIQUES = {
+    "devil_advocate": [
+        dict(scenario="S3", field="mechanism",
+             objection="The asymmetric-peer-effect claim is the load-bearing wall of S3 and it is tagged 'contested'; if peer effects are symmetric, S3 redistributes rather than creates learning.",
+             severity="high",
+             fix="Make the peer-effect claim a named uncertainty with a pre-registered pilot test, and state the decision rule if it fails."),
+        dict(scenario="S4", field="goal",
+             objection="S4's premise that early selection is 'politically fixed' is itself a political judgment, not evidence; treating it as fixed forecloses the option space prematurely.",
+             severity="medium",
+             fix="Re-label the premise as an assumption with evidence status 'human judgment' and note what would falsify it."),
+    ],
+    "evidence_checker": [
+        dict(scenario="S2", field="mechanism",
+             objection="The claim that advanced programmes retain ambitious families in general schools cites only 'expert inference'; magnet-school analogues are US-specific and not verified for Hungary.",
+             severity="high",
+             fix="Downgrade to 'weak', add the missing Hungarian evidence gap to uncertainties, and design the retention pilot to test it."),
+        dict(scenario="S1", field="expected_benefits",
+             objection="'Reduced test-preparation arms race' benefit carries a 'weak' tag but is presented in the same list as moderately evidenced items without visual distinction.",
+             severity="low",
+             fix="Order benefit lists by evidence strength and keep the tag adjacent to each item."),
+    ],
+    "assumption_checker": [
+        dict(scenario="S3", field="assumptions",
+             objection="The assumption 'political ownership survives two electoral cycles' contradicts the political_feasibility expert's stated position that no such window exists; the tension is unresolved in the scenario.",
+             severity="high",
+             fix="Cross-reference the disagreement map inside S3.assumptions and add a contingency (pause rule) if ownership is lost."),
+        dict(scenario="S4", field="assumptions",
+             objection="'Compensation can offset, not just mask' is doing all the work in S4, yet no country evidence exists at Hungary's selection age — the assumption should be flagged as unverifiable ex ante.",
+             severity="medium",
+             fix="Mark the assumption 'contested' and tie the year-5 evaluation to a kill/scale decision."),
+    ],
+    "equity_checker": [
+        dict(scenario="S1", field="equity_impact",
+             objection="S1 helps high-ability low-SES pupils only; the equity_impact field understates that the non-selected majority sees zero direct benefit, which conflicts with the mission's equity criterion.",
+             severity="medium",
+             fix="State the coverage explicitly: percentage of the disadvantaged cohort actually touched by the reform."),
+        dict(scenario="S3", field="equity_impact",
+             objection="S3's equity_impact names middle-class exit as a risk but gives no threshold at which the reform becomes equity-negative; without it the field is not decision-ready.",
+             severity="high",
+             fix="Define a monitored exit-rate threshold and the mitigation triggered when it is crossed."),
+    ],
+    "feasibility_checker": [
+        dict(scenario="S3", field="implementation_steps",
+             objection="Step 2 requires nationwide differentiation retraining in years 1-4 while the teacher shortage is worst in exactly the schools that need it; throughput capacity is asserted, not shown.",
+             severity="high",
+             fix="Add the retraining-throughput audit as a gate before the year-4 legislative step."),
+        dict(scenario="S2", field="implementation_steps",
+             objection="The felmenő rendszer guarantee in step 1 interacts with annual caps: schools with mixed cohorts face split timetables for a decade — the steps do not name who plans this.",
+             severity="medium",
+             fix="Assign the mixed-cohort timetable problem to district centres in step 3 with a named deliverable."),
+    ],
+    "cost_checker": [
+        dict(scenario="S3", field="cost_categories",
+             objection="Two 'high' one-off items (retraining, network reconfiguration) lack even order-of-magnitude ranges, though the education_finance expert explicitly asked for published ranges.",
+             severity="medium",
+             fix="Attach bottom-up cost ranges from the two-district costing pilot before legislation."),
+        dict(scenario="S4", field="cost_categories",
+             objection="S4's recurring cost is the package itself, yet no fiscal sensitivity (what happens at -30% budget) is given despite budget vulnerability being S4's own top political risk.",
+             severity="medium",
+             fix="Add a degraded-funding variant showing which components survive a 30% cut."),
+    ],
+    "political_risk_checker": [
+        dict(scenario="S2", field="political_risks",
+             objection="Reversal risk is listed but not mitigated: the scenario has no design feature that raises the cost of freezing the cap trajectory for a successor government.",
+             severity="high",
+             fix="Add entrenchment options (statutory formula, EU-fund conditionality, pact) to the scenario and cost their feasibility."),
+        dict(scenario="S1", field="political_risks",
+             objection="The maintainer-exemption risk is understated: if church schools are exempt, S1 creates an incentive to shift selective intake there, worsening the problem it targets.",
+             severity="high",
+             fix="State the exemption scenario explicitly and make maintainer-neutral rules a precondition of proceeding."),
+    ],
+    "coherence_checker": [
+        dict(scenario="S2", field="goal",
+             objection="S2's goal says freed capacity is 'invested in strong programmes', but its cost_categories show political capital 'high and sustained' with no corresponding implementation step securing that capital — goal and steps are misaligned.",
+             severity="medium",
+             fix="Either add a coalition-maintenance step or soften the goal's implied durability."),
+        dict(scenario="S1", field="mechanism",
+             objection="Mechanism claim 3 (weaker test-prep incentives) presupposes lottery weight large enough to matter, but nothing elsewhere in S1 fixes the lottery weight — an internal free variable.",
+             severity="low",
+             fix="State the intended weighting range in the mechanism and mirror it in implementation step 2."),
+    ],
+}
+
+# ---------------------------------------------------------------------------
+# Brief / executive summary paragraphs (bilingual).
+# ---------------------------------------------------------------------------
+
+BRIEF_INTRO = dict(
+    en="This brief addresses the question: what should Hungary do with early academic selection and the 6- and 8-year gimnazium system? It separates evidence, interpretation, assumptions, recommendations and open questions, preserves expert disagreement, and marks every important claim with an evidence status. It is decision support: no recommendation below is a decision.",
+    hu="Ez az összefoglaló arra a kérdésre keres választ, hogy mit kezdjen Magyarország a korai szelekcióval és a hat- és nyolcosztályos gimnáziumi rendszerrel. Szétválasztja a bizonyítékokat, az értelmezést, a feltevéseket, az ajánlásokat és a nyitott kérdéseket, megőrzi a szakértői nézetkülönbségeket, és minden fontos állítást bizonyítékstátusszal jelöl. Döntéstámogató anyag: az alábbi ajánlások egyike sem döntés.")
+
+RECOMMENDATIONS = [
+    dict(en="Do not choose between scenarios yet: commission the S1 admission pilot and the S4 compensation pilot immediately — they are cheap, reversible, and their results discriminate between the structural and non-structural paths.",
+         hu="Egyelőre ne szülessen döntés a forgatókönyvek között: azonnal induljon el az S1 felvételi kísérlet és az S4 kompenzációs kísérlet — olcsók, visszafordíthatók, és eredményeik különbséget tesznek a szerkezeti és a nem szerkezeti út között."),
+    dict(en="Treat S3 (comprehensive school to 14) as the reference structural option, but gate any legislation on the pilot evaluations, a teacher-capacity audit, and a cross-party feasibility test.",
+         hu="Az S3 (egységes alapiskola 14 éves korig) legyen a szerkezeti referencia-lehetőség, de minden törvényalkotás előfeltétele a kísérleti értékelés, a tanárkapacitás-vizsgálat és a pártközi megvalósíthatósági próba."),
+    dict(en="Whatever path is chosen, publish annual intake-composition data by track and maintainer: every scenario's evaluation depends on it and it costs almost nothing.",
+         hu="Bármelyik utat választja a döntéshozó, évente jelenjenek meg a bekerülési összetétel adatai képzéstípus és fenntartó szerint: minden forgatókönyv értékelése ezen múlik, és szinte semmibe sem kerül."),
+]
+
+EXEC_SUMMARY = dict(
+    en=("Hungary selects children into academic tracks earlier than almost any OECD system, and the "
+        "evidence links early selection to one of the OECD's strongest dependencies of results on family "
+        "background [evidence: strong]. Four scenarios were developed: admission reform within the current "
+        "structure (S1), a gradual phase-down of early entry places (S2), a comprehensive school to age 14 "
+        "(S3), and compensation without structural change (S4). The experts do not agree on the central "
+        "question — whether structural change is necessary or a compensation package suffices — and this "
+        "disagreement is preserved, not resolved: it is a values-and-risk judgment that belongs to "
+        "accountable decision-makers. The immediate no-regret moves are the two cheap, reversible pilots "
+        "(S1 admissions, S4 compensation) and annual publication of intake-composition data."),
+    hu=("Magyarország szinte minden OECD-rendszernél korábban válogatja a gyerekeket tanulmányi utakra, és a "
+        "kutatási eredmények a korai szelekciót az OECD egyik legerősebb családi háttér szerinti "
+        "eredményfüggésével kapcsolják össze [bizonyíték: erős]. Négy forgatókönyv készült: felvételi reform a "
+        "jelenlegi szerkezeten belül (S1), a korai belépőhelyek fokozatos szűkítése (S2), egységes alapiskola 14 "
+        "éves korig (S3), valamint kompenzáció szerkezeti változás nélkül (S4). A szakértők nem értenek egyet a "
+        "központi kérdésben — szükséges-e szerkezeti változás, vagy elegendő a kompenzációs csomag —, és ezt a "
+        "nézetkülönbséget a rendszer megőrzi, nem oldja fel: ez értékekről és kockázatokról szóló mérlegelés, "
+        "amely az elszámoltatható döntéshozókra tartozik. Az azonnali, megbánásmentes lépések a két olcsó, "
+        "visszafordítható kísérleti program (S1 felvételi, S4 kompenzáció) és a bekerülési összetétel adatainak "
+        "évenkénti közzététele."))
+
+HUMAN_QUESTIONS = [
+    dict(context="Scenario choice", question="How should equity gains be weighed against risks to high-achiever outcomes and against parental choice? This weighting determines the S3-vs-S4 ranking and is a values question the system must not answer.",
+         needed="A stated weighting or a deliberative process to produce one.", blocking=True),
+    dict(context="Political risk appetite", question="Is a Polish-style reversal risk acceptable if the expected equity gain is large? Only an accountable decision-maker can accept this risk.",
+         needed="Explicit risk acceptance or rejection for structural scenarios.", blocking=False),
+    dict(context="S4 premise", question="Is early selection genuinely politically immovable, or is that assumption itself a choice? The devil_advocate flagged this as a foreclosing premise.",
+         needed="Political judgment from stakeholders across parties.", blocking=False),
+    dict(context="Translation nuance", question="Hungarian 'egységes alapiskola' carries historical connotations (1970s-80s reform debates) that 'comprehensive school' lacks; a native policy editor should confirm register in public-facing texts.",
+         needed="Native-speaker editorial review of HU deliverables.", blocking=False),
+]

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local env
+.env
+
+# NOTE: outputs/ is deliberately NOT ignored — the generated rounds are the
+# audit trail of self-improvement and must be committed.
+
+# scratch dry-run outputs (the real rounds ARE committed)
+outputs/mock_sprint/
