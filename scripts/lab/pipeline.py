@@ -2,7 +2,13 @@
 meta-critic. Every model call goes through lab.llm.call_model; every step
 validates its output, retries once with a corrective instruction, and falls
 back to the deterministic mock composition if the real backend cannot satisfy
-the format (fallbacks are recorded per step)."""
+the format (fallbacks are recorded per step).
+
+Interrupted rounds RESUME: if the round folder's system_state snapshot still
+matches the live system, existing valid artifacts are reused and their
+backend provenance is recovered from steps.jsonl (quota conservation; the
+snapshot gate guarantees they were produced by the identical system)."""
+import hashlib
 import json
 import re
 import shutil
@@ -13,7 +19,7 @@ from . import knowledge as K
 from . import llm, mock_backend, translation
 from .agents import build_prompt
 from .util import (AGENTS_DIR, CONFIG_PATH, ROOT, TEMPLATES_DIR, load_config,
-                   round_dir, write, write_json)
+                   read, read_json, round_dir, write, write_json)
 
 FIELD_KEYS = translation.FIELD_KEYS
 
@@ -78,41 +84,6 @@ def valid_scenarios(obj, require_ids=None):
     return all(_nonempty(s.get(k)) for s in sc for k in FIELD_KEYS)
 
 
-class Step:
-    """One generation step with validation, one corrective retry, and a
-    deterministic mock fallback."""
-
-    def __init__(self, fallbacks):
-        self.fallbacks = fallbacks  # shared list of step names that degraded
-
-    def run(self, name, prompt_kwargs, validate, role="generator",
-            max_tokens=8000, postprocess=lambda t: t):
-        corrective = ""
-        for attempt in (0, 1):
-            kw = dict(prompt_kwargs)
-            if corrective:
-                kw["instructions"] = kw.get("instructions", "") + "\n" + corrective
-            prompt = build_prompt(**kw)
-            text = llm.call_model(prompt, role, max_tokens=max_tokens)
-            backend = llm.CALL_LOG[-1]["backend"]
-            try:
-                result = postprocess(text)
-                if validate(result):
-                    return result, backend
-            except Exception:
-                pass
-            corrective = ("PREVIOUS ATTEMPT FAILED FORMAT VALIDATION. Follow "
-                          "the output format EXACTLY as specified, with no "
-                          "surrounding commentary.")
-        # deterministic fallback
-        self.fallbacks.append(name)
-        prompt = build_prompt(**prompt_kwargs)
-        result = postprocess(mock_backend.compose(prompt, role))
-        if not validate(result):
-            raise RuntimeError(f"mock fallback failed validation for step {name}")
-        return result, "mock-fallback"
-
-
 def render_scenarios_md(obj, lang):
     title = ("# Policy scenarios" if lang == "en"
              else "# Szakpolitikai forgatókönyvek")
@@ -131,6 +102,30 @@ def render_scenarios_md(obj, lang):
     return "\n".join(lines)
 
 
+def _current_state_hash():
+    h = hashlib.sha256()
+    for p in sorted(AGENTS_DIR.rglob("*.md")):
+        h.update(str(p.relative_to(AGENTS_DIR)).encode())
+        h.update(p.read_bytes())
+    h.update(CONFIG_PATH.read_bytes())
+    h.update((TEMPLATES_DIR / "evaluation_rubric.md").read_bytes())
+    return h.hexdigest()
+
+
+def _snapshot_state_hash(rd):
+    base = rd / "system_state"
+    if not ((base / "agents").exists() and (base / "system_config.json").exists()
+            and (base / "evaluation_rubric.md").exists()):
+        return None
+    h = hashlib.sha256()
+    for p in sorted((base / "agents").rglob("*.md")):
+        h.update(str(p.relative_to(base / "agents")).encode())
+        h.update(p.read_bytes())
+    h.update((base / "system_config.json").read_bytes())
+    h.update((base / "evaluation_rubric.md").read_bytes())
+    return h.hexdigest()
+
+
 def snapshot_system_state(rd):
     dest = rd / "system_state"
     if dest.exists():
@@ -141,24 +136,97 @@ def snapshot_system_state(rd):
     shutil.copy(TEMPLATES_DIR / "evaluation_rubric.md", dest / "evaluation_rubric.md")
 
 
+class Step:
+    """One generation step with validation, one corrective retry, a
+    deterministic mock fallback, resume-from-disk, and a step journal."""
+
+    def __init__(self, rd, resume):
+        self.rd = rd
+        self.resume = resume
+        self.fallbacks = []
+        self.resumed = []
+        self.journal_path = rd / "steps.jsonl"
+        self._prior = {}
+        if resume and self.journal_path.exists():
+            for line in self.journal_path.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    e = json.loads(line)
+                    self._prior[e["step"]] = e["backend"]
+
+    def _note(self, name, backend):
+        with open(self.journal_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps({"step": name, "backend": backend}) + "\n")
+        if backend == "mock-fallback":
+            self.fallbacks.append(name)
+
+    def run(self, name, prompt_kwargs, validate, out_path=None,
+            role="generator", max_tokens=8000, postprocess=lambda t: t,
+            loader=None, writer=None):
+        loader = loader or read
+        writer = writer or write
+        # resume: identical system state + existing valid artifact => reuse
+        if self.resume and out_path is not None and out_path.exists():
+            try:
+                result = loader(out_path)
+                if validate(result):
+                    backend = self._prior.get(name, "unknown")
+                    if backend == "mock-fallback":
+                        self.fallbacks.append(name)
+                    self.resumed.append(name)
+                    return result, backend
+            except Exception:
+                pass
+        corrective = ""
+        for _ in (0, 1):
+            kw = dict(prompt_kwargs)
+            if corrective:
+                kw["instructions"] = kw.get("instructions", "") + "\n" + corrective
+            prompt = build_prompt(**kw)
+            text = llm.call_model(prompt, role, max_tokens=max_tokens)
+            backend = llm.CALL_LOG[-1]["backend"]
+            try:
+                result = postprocess(text)
+                if validate(result):
+                    if out_path is not None:
+                        writer(out_path, result)
+                    self._note(name, backend)
+                    return result, backend
+            except Exception:
+                pass
+            corrective = ("PREVIOUS ATTEMPT FAILED FORMAT VALIDATION. Follow "
+                          "the output format EXACTLY as specified, with no "
+                          "surrounding commentary.")
+        # deterministic fallback
+        prompt = build_prompt(**prompt_kwargs)
+        result = postprocess(mock_backend.compose(prompt, role))
+        if not validate(result):
+            raise RuntimeError(f"mock fallback failed validation for step {name}")
+        if out_path is not None:
+            writer(out_path, result)
+        self._note(name, "mock-fallback")
+        return result, "mock-fallback"
+
+
 def run_round(n):
     """Generate all round-n artifacts (steps 1-6 of the workflow). Evaluation,
     meta-critique and improvement planning are orchestrated by the loop."""
     cfg = load_config()
     rd = round_dir(n, create=True)
+    resume = _snapshot_state_hash(rd) == _current_state_hash()
+    if not resume and (rd / "steps.jsonl").exists():
+        (rd / "steps.jsonl").unlink()  # stale partial attempt
     snapshot_system_state(rd)
-    fallbacks = []
-    step = Step(fallbacks)
+    step = Step(rd, resume)
     question = cfg["policy_question"]
+    write_scen = lambda p, obj: write_json(p, obj)
 
-    # 1. experts (parallel; unchanged specs reuse the previous round's live
-    #    output — same deterministic input, saves daily API quota, D-19)
+    # 1. experts (parallel; unchanged specs may reuse the previous round's
+    #    live output — same deterministic input, saves daily quota, D-19)
     prev_rd = round_dir(n - 1) if n > 1 else None
     prev_log = {}
     if prev_rd and (prev_rd / "round_log.json").exists():
-        import json as _json
-        prev_log = _json.loads((prev_rd / "round_log.json").read_text())
-    reused = []
+        prev_log = read_json(prev_rd / "round_log.json")
+    reused_prev = []
 
     def reusable_expert(name):
         if prev_rd is None or f"expert:{name}" in set(prev_log.get("fallbacks", [])):
@@ -173,11 +241,16 @@ def run_round(n):
         return out_prev.read_text(encoding="utf-8")
 
     def run_expert(name):
-        cached = reusable_expert(name)
-        if cached is not None:
-            reused.append(f"expert:{name}")
-            return name, cached, "reused"
-        return name, *step.run(
+        out_path = rd / "expert_outputs" / f"{name}.md"
+        validate = (lambda t: "[evidence:" in t and "## Position" in t
+                    and "## Uncertainties" in t)
+        if not (step.resume and out_path.exists()):
+            cached = reusable_expert(name)
+            if cached is not None and validate(cached):
+                write(out_path, cached)
+                reused_prev.append(f"expert:{name}")
+                return name, cached
+        text, _ = step.run(
             f"expert:{name}",
             dict(task="expert_analysis", agent=name, round_n=n,
                  instructions=(
@@ -187,15 +260,13 @@ def run_round(n):
                      "finding with an inline [evidence: ...] tag and source), "
                      "'## Interpretation', '## Assumptions', '## Position', "
                      "'## Uncertainties'.")),
-            validate=lambda t: "[evidence:" in t and "## Position" in t
-                               and "## Uncertainties" in t,
-            max_tokens=3000)
+            validate=validate, out_path=out_path, max_tokens=3000)
+        return name, text
 
     experts = {}
     with ThreadPoolExecutor(max_workers=4) as ex:
-        for name, text, backend in ex.map(run_expert, D.EXPERTS):
+        for name, text in ex.map(run_expert, D.EXPERTS):
             experts[name] = text
-            write(rd / "expert_outputs" / f"{name}.md", text)
 
     expert_digest = "\n\n".join(
         f"----- {name} -----\n{text}" for name, text in experts.items())
@@ -211,8 +282,8 @@ def run_round(n):
                  f"fields, every field non-empty):\n{SCENARIO_SCHEMA_HINT}"),
              inputs=expert_digest),
         validate=lambda o: valid_scenarios(o),
-        postprocess=parse_json_block, max_tokens=16000)
-    write_json(rd / "scenarios.json", scen_en)
+        out_path=rd / "scenarios.json", postprocess=parse_json_block,
+        loader=read_json, writer=write_scen, max_tokens=16000)
     scen_en_md = render_scenarios_md(scen_en, "en")
     write(rd / "scenarios.en.md", scen_en_md)
 
@@ -229,8 +300,7 @@ def run_round(n):
                  "disagreements."),
              inputs=expert_digest),
         validate=lambda t: "## Disagreement map" in t and t.count("Why:") >= 3,
-        max_tokens=4000)
-    write(rd / "synthesis.md", synthesis_text)
+        out_path=rd / "synthesis.md", max_tokens=4000)
 
     rejected, _ = step.run(
         "rejected_framings",
@@ -242,10 +312,9 @@ def run_round(n):
                  "'## S<n> — <title>' heading."),
              inputs=scen_en_md),
         validate=lambda t: "REJECTED" in t and "CHOSEN" in t,
-        max_tokens=2500)
-    write(rd / "rejected_framings.md", rejected)
+        out_path=rd / "rejected_framings.md", max_tokens=2500)
 
-    # 4. translator (HU scenarios + HU brief later)
+    # 4. translator (HU scenarios)
     glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
     scen_hu, _ = step.run(
         "translator_scenarios",
@@ -262,8 +331,8 @@ def run_round(n):
             o, require_ids=[s["id"] for s in scen_en["scenarios"]])
             and not any(s == h for s, h in zip(scen_en["scenarios"],
                                                o["scenarios"]))),
-        postprocess=parse_json_block, max_tokens=16000)
-    write_json(rd / "scenarios.hu.json", scen_hu)
+        out_path=rd / "scenarios.hu.json", postprocess=parse_json_block,
+        loader=read_json, writer=write_scen, max_tokens=16000)
     scen_hu_md = render_scenarios_md(scen_hu, "hu")
     write(rd / "scenarios.hu.md", scen_hu_md)
 
@@ -281,8 +350,7 @@ def run_round(n):
                  "human judgment. Add any section your ## Directives require."),
              inputs=scen_en_md + "\n\n" + synthesis_text),
         validate=lambda t: all(h in t for h in BRIEF_HEADERS_EN),
-        max_tokens=4000)
-    write(rd / "brief.en.md", brief_en)
+        out_path=rd / "brief.en.md", max_tokens=4000)
 
     brief_hu, _ = step.run(
         "translator_brief",
@@ -296,12 +364,11 @@ def run_round(n):
              inputs=brief_en),
         validate=lambda t: (all(h in t for h in BRIEF_HEADERS_HU)
                             and t.strip() != brief_en.strip()),
-        max_tokens=4000)
-    write(rd / "brief.hu.md", brief_hu)
+        out_path=rd / "brief.hu.md", max_tokens=4000)
 
     # 6. critics (parallel) + translation checker
     def run_critic(name):
-        return name, *step.run(
+        text, _ = step.run(
             f"critic:{name}",
             dict(task="critic", agent=name, round_n=n,
                  instructions=(
@@ -312,13 +379,14 @@ def run_round(n):
                  inputs=scen_en_md + "\n\n" + synthesis_text),
             validate=lambda t: len(CRITIC_HEADING_RE.findall(t)) >= 2
                                and "Objection:" in t,
+            out_path=rd / "critic_outputs" / f"{name}.md",
             role="judge", max_tokens=2500)
+        return name, text
 
     critics = {}
     with ThreadPoolExecutor(max_workers=4) as ex:
-        for name, text, backend in ex.map(run_critic, D.CRITICS):
+        for name, text in ex.map(run_critic, D.CRITICS):
             critics[name] = text
-            write(rd / "critic_outputs" / f"{name}.md", text)
 
     doc_pairs = [(scen_en_md, scen_hu_md), (brief_en, brief_hu)]
     tr_report = translation.check(scen_en, scen_hu, doc_pairs)
@@ -326,7 +394,8 @@ def run_round(n):
     write(rd / "critic_outputs" / "translation_checker.md", tr_md)
 
     write_json(rd / "round_log.json", {
-        "round": n, "fallbacks": fallbacks, "reused": reused,
+        "round": n, "fallbacks": step.fallbacks,
+        "reused": reused_prev, "resumed": step.resumed,
         "backends": llm.backend_stats(),
     })
 
@@ -337,13 +406,13 @@ def run_round(n):
         "synthesis": synthesis_text, "rejected": rejected,
         "brief_en": brief_en, "brief_hu": brief_hu,
         "critics": critics, "translation": tr_report,
-        "fallbacks": fallbacks,
+        "fallbacks": step.fallbacks, "_step": step,
     }
 
 
 def run_meta_critic(n, artifacts, payload):
     """Step 7: meta-critique (judge side), fed with the scores-so-far."""
-    step = Step(artifacts["fallbacks"])
+    step = artifacts["_step"]
     text, _ = step.run(
         "meta_critic",
         dict(task="meta_critique", agent="meta_critic", round_n=n,
@@ -362,7 +431,8 @@ def run_meta_critic(n, artifacts, payload):
                                  for k, v in artifacts["critics"].items()))),
         validate=lambda t: "Gaming judgment" in t
                            and ("GENUINE" in t or "RUBRIC-GAMING" in t),
+        out_path=artifacts["round_dir"] / "meta_critique.md",
         role="judge", max_tokens=2500)
-    write(artifacts["round_dir"] / "meta_critique.md", text)
+    artifacts["fallbacks"][:] = step.fallbacks
     artifacts["meta"] = text
     return text

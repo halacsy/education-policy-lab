@@ -11,7 +11,8 @@ from .util import FINAL_DIR, read, read_json, round_dir, write
 
 
 def _exec_summaries(artifacts, n):
-    step = Step(artifacts["fallbacks"])
+    FINAL_DIR.mkdir(parents=True, exist_ok=True)
+    step = Step(FINAL_DIR, resume=True)
     en, _ = step.run(
         "executive_summary_writer",
         dict(task="exec_summary", agent="executive_summary_writer", lang="en",
@@ -25,7 +26,7 @@ def _exec_summaries(artifacts, n):
              inputs=artifacts["brief_en"] + "\n\n" + artifacts["synthesis"]),
         validate=lambda t: all(s in t for s in ("S1", "S2", "S3", "S4"))
                            and len(t) > 400,
-        max_tokens=1500)
+        out_path=FINAL_DIR / "executive_summary.en.md", max_tokens=1500)
     hu, _ = step.run(
         "executive_summary_translator",
         dict(task="exec_summary", agent="translator", lang="hu", round_n=n,
@@ -38,7 +39,7 @@ def _exec_summaries(artifacts, n):
              inputs=en),
         validate=lambda t: all(s in t for s in ("S1", "S4"))
                            and t.strip() != en.strip() and "szelekció" in t,
-        max_tokens=1500)
+        out_path=FINAL_DIR / "executive_summary.hu.md", max_tokens=1500)
     return en, hu
 
 
@@ -124,9 +125,7 @@ def write_final(artifacts, history):
     write(FINAL_DIR / "scenarios.en.md", artifacts["scenarios_en_md"])
     write(FINAL_DIR / "scenarios.hu.md", artifacts["scenarios_hu_md"])
 
-    ex_en, ex_hu = _exec_summaries(artifacts, n)
-    write(FINAL_DIR / "executive_summary.en.md", ex_en)
-    write(FINAL_DIR / "executive_summary.hu.md", ex_hu)
+    _exec_summaries(artifacts, n)  # writes executive_summary.{en,hu}.md
 
     write(FINAL_DIR / "final_scorecard.md", _scorecard(history))
     agent_log, wf_log = _change_logs(history)
