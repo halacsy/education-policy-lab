@@ -1,0 +1,21 @@
+# Critique: political_risk_checker
+
+## S1.political_risks
+Objection: The listed risks omit the most consequential reversal pathway for this scenario: because the reform lives entirely in an amendable admission decree (per implementation_steps) with no entrenchment design, a successor administration or even the same ministry can quietly revert the SES-weighting or lottery threshold via decree — far cheaper than the statutory reversals flagged in S2/S3. The scenario treats reversal as negligible while its own mechanism is the most administratively fragile of the four. It also understates that "framed as punishing talent" opposition is not merely rhetorical but has a concrete mobilization vehicle (elite-school parent associations) that the scenario never names or plans against.
+Severity: high
+Suggested revision: Add a political risk: "The reform rests on an amendable decree with no entrenchment; SES-weighting can be silently reversed by a later ministry at near-zero cost." Add an entrenchment element to implementation_steps (e.g. embedding SES-weighting principles in primary legislation or a published, monitored standard) and identify the parent-association mobilization channel explicitly.
+
+## S2.political_risks
+Objection: The scenario correctly names cheap reversal (Polish precedent) but treats it as an uncertainty rather than designing against it — the only listed mitigation is a "cross-party pact or statutory entrenchment attempts" buried in uncertainties, not in political_risks or implementation_steps. For a decade-long trajectory whose entire benefit is back-loaded, an undefended reversal risk is not a residual risk but a first-order design flaw: the mid-course year-5 evaluation with a "pre-committed adjustment rule" is itself reversible and gives an incoming government a natural cancellation point.
+Severity: high
+Suggested revision: Move entrenchment into implementation_steps as a precondition (statutory trajectory lock, cross-party framework signed before enactment) and add a political risk noting the year-5 review is itself a reversal-enabling decision point that should be insulated (e.g. automatic continuation absent supermajority repeal).
+
+## S3.political_risks
+Objection: The risks list "Polish-style reversal" but the assumptions field admits "political ownership survives at least two electoral cycles" as an assumption — meaning the single largest threat to the highest-equity scenario is booked as an assumption rather than a defended risk. There is no entrenchment mechanism in implementation_steps beyond a "pact attempt"; a failed pact leaves the reform fully exposed, and the scenario does not state what happens to the phase-out if the pact collapses mid-transition (partial phase-out may be worse than either endpoint).
+Severity: high
+Suggested revision: Add a political risk describing the partial-phase-out trap (a reform reversed mid-transition leaves a hybrid worse than baseline) and specify a fallback/entrenchment design if the cross-party pact fails — e.g. sequencing that front-loads irreversible gains, or statutory triggers that make partial reversal costly.
+
+## S4.political_risks
+Objection: The scenario names budget vulnerability but understates the entrenchment problem given its own evidence tag: expected_benefits marks "implementable under any government [evidence: strong]" while political_risks admits compensation lines are "first cut in fiscal consolidation" — these are in tension. Cross-government implementability is worthless if the funding is the most reversible line item; the scenario claims durability as a benefit while its own risk field concedes the opposite, and offers no entrenchment beyond an "earmarking attempt" listed only in uncertainties.
+Severity: medium
+Suggested revision: Reconcile the tension by downgrading the "implementable under any government" benefit to "adoptable, but durability is the binding constraint," and add a political_risks entry plus an implementation step for statutory earmarking / multi-year budget protection rather than leaving it as an uncertainty.
