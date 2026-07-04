@@ -152,8 +152,13 @@ def call_model(prompt, role, max_tokens=8000, retries=4):
             except Exception as e:  # noqa: BLE001 — any API error degrades
                 msg = f"{type(e).__name__}: {e}"
                 entry.setdefault("errors", []).append(msg[:200])
+                if "PerDay" in msg or "check your plan and billing" in msg:
+                    # daily quota exhausted: no point retrying today — degrade
+                    # this provider to the deterministic mock for the run
+                    _failures[provider] = _MAX_FAILURES
+                    break
                 if _RATE_RE.search(msg):
-                    # rate limit: wait it out, don't count toward the breaker
+                    # per-minute rate limit: wait it out, no breaker penalty
                     time.sleep(min(60, 15 * (attempt + 1)))
                     continue
                 _failures[provider] += 1
