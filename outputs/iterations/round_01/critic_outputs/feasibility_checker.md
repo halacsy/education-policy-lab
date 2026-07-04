@@ -1,0 +1,13 @@
+# Critique: feasibility_checker
+
+## S3.assumptions
+Objection: The assumption that "teacher capacity for differentiated instruction can be built at national scale within the transition window" is asserted without engaging the actual teacher-supply constraint the synthesis itself flags as binding ([evidence: strong] on the 6-12 year horizon). Differentiated instruction retraining for the entire lower-secondary teaching corps is a far larger bandwidth demand than the phase-out timetable — Hungary faces a documented teacher shortage and aging workforce. The scenario needs a numeric estimate of retraining throughput (teachers/year vs. corps size) to show the window is achievable; without it, the central mechanism (in-school differentiation substituting for tracks) rests on capacity that may not exist.
+
+## S3.implementation_steps
+Objection: The step "launch differentiation retraining at scale; pilot comprehensive model in 2-3 districts" sequences pilots concurrently with national-scale retraining, but the evidence_status marks Hungarian implementation capacity as "genuinely disputed." Running national retraining before pilot results validate that differentiation reaches acceptable quality (itself listed as an uncertainty) commits the largest cost line — "nationwide teacher retraining (high)" — ahead of the evidence that would justify it. The steps should gate scale-up on pilot outcomes; as written they assume success.
+
+## S2.implementation_steps
+Objection: The step "Maintainers (state, church, private) — apply annual caps; report intake composition" presumes enforceability across church and private maintainers, but the scenario's own political_risks and assumptions concede church maintainers "may litigate or negotiate exemptions." There is no implementation step establishing the legal instrument that binds non-state maintainers to the cap trajectory. Without a specified legal mechanism and its lead time, the cap is enforceable only against state schools — which would displace, not reduce, early sorting into exempt maintainers, defeating the goal.
+
+## S4.cost_categories
+Objection: The cost line "teacher premia in disadvantaged schools (medium-high)" is not reconciled with the uncertainty the scenario itself raises — "teacher premium size needed to actually move experienced teachers" is unknown. A premium sized "medium-high" is asserted as adequate to redirect experienced teachers, but if the true premium needed to overcome the teacher-supply imbalance is higher, the cost category understates the recurring budget and the mechanism (salary premia shifting experienced teachers) fails at the budgeted level. The cost estimate presupposes an answer to the scenario's own open question.

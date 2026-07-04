@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "policy_question": "What should Hungary do with early academic selection and the 6- and 8-year secondary grammar school (gimnazium) system?",
+  "providers": {
+    "generator_default": "google",
+    "judge_default": "anthropic"
+  },
+  "workflow": {
+    "steps": [
+      "experts",
+      "scenario_builder",
+      "editor_synthesis",
+      "translator",
+      "critics",
+      "meta_critic",
+      "evaluation",
+      "improvement_plan"
+    ],
+    "candidate_framings_per_scenario": 2,
+    "synthesis_minority_report": false
+  },
+  "evaluation": {
+    "llm_judge_trials": 3,
+    "judge_divergence_threshold": 1.5,
+    "verbosity_cap_per_scenario": 6
+  },
+  "stopping": {
+    "plateau_delta": 0.15,
+    "plateau_rounds": 2
+  }
+}

@@ -1,0 +1,13 @@
+# Critique: equity_checker
+
+## S1.equity_impact
+Objection: The field claims "gains accrue to high-ability low-SES pupils" but does not confront who is left out by the SES indicator itself. The assumptions field concedes only that "a workable SES indicator exists at application time" — yet a threshold-based weighted lottery or district quota systematically misses near-threshold and mislabeled families (e.g., asset-rich/income-poor rural households, or non-poor-but-first-generation applicants). The equity_impact should state that the reform's reach is bounded by the coarseness of the SES proxy, which in the Hungarian context tends to under-identify Roma and rural disadvantaged pupils who never enter the applicant pool at all. As written it overstates who is reached.
+
+## S1.equity_impact
+Objection: The field ignores a plausible equity-negative pathway: broadening entry pools and SES quotas induce a small number of low-SES pupils into elite tracks while stripping the highest-achieving disadvantaged pupils out of general schools, worsening peer composition for the disadvantaged majority who stay behind. S2's equity_impact explicitly reasons about peer composition; S1's does not, despite running the same creaming risk in reverse. This is a concrete equity cost, not merely "does nothing for the majority." (speculative on magnitude, but the direction is a real omission.)
+
+## S3.equity_impact
+Objection: The field rests the "largest expected equity gain" on the mechanism's peer-effect claim, which is tagged [evidence: contested] in the same scenario. The equity_impact presents the gain as the strongest of all scenarios without flagging that its central benefit channel (asymmetric peer effects favoring the disadvantaged) is precisely the disputed link. The source supports the direction of delayed-selection effects but not the asymmetric-peer-effect magnitude; the equity claim should be conditioned on that, or it overstates the reachable gain relative to S2/S4.
+
+## S4.equity_impact
+Objection: The field says the package "helps the disadvantaged majority where they actually are," but the uncertainties field concedes "no country has demonstrated [compensation offsetting selection] at Hungary's selection age." The equity_impact therefore asserts a reach ("helps the disadvantaged majority") that its own evidence rates as undemonstrated at the relevant selection age. It should distinguish helping (undemonstrated at this selection age) from masking — the scenario itself raises the "we already compensate" legitimation risk but does not carry that equity-negative possibility into the equity_impact field, where it belongs.
