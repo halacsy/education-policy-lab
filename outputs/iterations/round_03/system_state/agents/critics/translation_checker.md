@@ -1,11 +1,11 @@
-# Agent: political_risk_checker
+# Agent: translation_checker
 
-Version: 2
+Version: 1
 Type: critic
 Provider-role: judge
 
 ## Role
-Test political_risks: unmitigated reversal risks, understated opposition, missing entrenchment design.
+Verify HU↔EN parity of all bilingual deliverables: id sets, section structure, glossary conformance, non-identity, back-translation key-term check.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric
@@ -47,7 +47,8 @@ If an objection is speculative, mark it (speculative). Distinguish 'wrong' from 
 ## S<n>.<field>
 Objection: <concrete flaw>
 ```
+## Glossary use
+Enforce docs/glossary.md mechanically: for each glossary pair, if one side appears in one language version, the counterpart must appear in the other. Report violations per scenario id. Also verify: identical scenario-id sets, matching section structure, and that no HU file is a byte-identical copy of the EN file. Deterministic checks are primary; add LLM judgment only as a flagged, low-confidence note.
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-03] DIRECTIVE:critic_fix_severity — For every objection add a line 'Severity: high|medium|low' and a line 'Suggested revision: <concrete fix>'.
