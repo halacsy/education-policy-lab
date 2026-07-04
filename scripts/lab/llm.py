@@ -11,6 +11,8 @@ back to the deterministic mock backend built on the curated briefing pack
 the final report can state precisely what was mocked.
 """
 import os
+import re
+import threading
 import time
 
 from . import mock_backend
@@ -25,8 +27,28 @@ KEY_VARS = {"anthropic": "ANTHROPIC_API_KEY", "google": "GOOGLE_API_KEY"}
 CALL_LOG = []           # {task, agent, role, provider, backend, ms}
 _clients = {}
 _failures = {"anthropic": 0, "google": 0}
-_MAX_FAILURES = 3       # circuit breaker: after this many consecutive
+_MAX_FAILURES = 6       # circuit breaker: after this many consecutive HARD
                         # failures a provider degrades to mock for the run
+                        # (rate limits do not count — they wait instead)
+
+# Per-provider request spacing: burst-parallel calls trip per-minute quotas
+# (observed with Gemini free-tier keys), so calls to the same provider are
+# serialized with a minimum interval.
+_MIN_INTERVAL = {"google": 6.5, "anthropic": 0.3}
+_throttle_lock = {p: threading.Lock() for p in _MIN_INTERVAL}
+_last_call = {p: 0.0 for p in _MIN_INTERVAL}
+_RATE_RE = re.compile(r"(429|RESOURCE_EXHAUSTED|rate.?limit|quota|overloaded)", re.I)
+
+
+def _throttled(provider, fn):
+    with _throttle_lock[provider]:
+        wait = _MIN_INTERVAL[provider] - (time.time() - _last_call[provider])
+        if wait > 0:
+            time.sleep(wait)
+        try:
+            return fn()
+        finally:
+            _last_call[provider] = time.time()
 
 
 def load_env():
@@ -94,7 +116,7 @@ def _call_real(provider, prompt, max_tokens):
     raise ValueError(provider)
 
 
-def call_model(prompt, role, max_tokens=8000, retries=2):
+def call_model(prompt, role, max_tokens=8000, retries=4):
     """The single entry point for every model call in the lab.
 
     Returns the model's text. The prompt carries a structured header
@@ -113,7 +135,8 @@ def call_model(prompt, role, max_tokens=8000, retries=2):
     if provider_available(provider):
         for attempt in range(retries + 1):
             try:
-                text = _call_real(provider, prompt, max_tokens)
+                text = _throttled(provider,
+                                  lambda: _call_real(provider, prompt, max_tokens))
                 if not text.strip():
                     raise RuntimeError("empty response")
                 _failures[provider] = 0
@@ -122,11 +145,16 @@ def call_model(prompt, role, max_tokens=8000, retries=2):
                 CALL_LOG.append(entry)
                 return text
             except Exception as e:  # noqa: BLE001 — any API error degrades
+                msg = f"{type(e).__name__}: {e}"
+                entry.setdefault("errors", []).append(msg[:200])
+                if _RATE_RE.search(msg):
+                    # rate limit: wait it out, don't count toward the breaker
+                    time.sleep(min(60, 15 * (attempt + 1)))
+                    continue
                 _failures[provider] += 1
-                entry.setdefault("errors", []).append(f"{type(e).__name__}: {e}"[:200])
                 if _failures[provider] >= _MAX_FAILURES:
                     break
-                time.sleep(1.5 * (attempt + 1))
+                time.sleep(2.0 * (attempt + 1))
 
     text = mock_backend.compose(prompt, role)
     entry["backend"] = "mock"
