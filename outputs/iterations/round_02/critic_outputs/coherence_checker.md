@@ -1,0 +1,13 @@
+# Critique: coherence_checker
+
+## S1.expected_benefits
+Objection: The benefit "Reduced test-preparation arms race pressure on age-10 children [evidence: weak]" contradicts the scenario's own political_risks and uncertainties. The mechanism claims broader entry pools "weaken the incentive for early private test-preparation," but this is tagged weak and the third uncertainty admits reduced coachability may not "survive the test-prep industry's adaptation" (confidence: low). Listing arms-race reduction as an expected benefit overstates what the scenario elsewhere concedes is unsupported and low-confidence.
+
+## S2.equity_impact
+Objection: The equity_impact field internally contradicts the goal/mechanism. The mechanism relies on advanced-programme funding to "retain ambitious families in the common track," but equity_impact concedes residual selective places become "even more SES-skewed" without S1-type admission reform. Since S2 contains no admission reform, the scenario's own logic implies it worsens SES-skew at the entry gate it leaves standing — yet this is presented as a side note rather than a direct tension with the "shrink early sorting" goal. The net equity claim is therefore unresolved within the scenario.
+
+## S3.mechanism
+Objection: The mechanism's three planks rest on incompatible evidence tags that the scenario never reconciles. Plank 1 (later selection weakens SES-link) is [strong], but plank 2 (asymmetric peer effects) is [contested] and plank 3 (in-school differentiation substitutes for tracks) is conditional on national-scale teacher training that assumptions and uncertainties both flag as low-confidence. The goal ("differentiated teaching inside a common school") depends on plank 3, the weakest link — so the strong tag on plank 1 cannot carry the mechanism as stated.
+
+## S4.expected_benefits
+Objection: "Politically inexpensive; implementable under any government [evidence: strong]" contradicts cost_categories and political_risks within the same scenario. Cost_categories rates targeted school funding "high — this is the package" and teacher premia "medium-high" recurring; political_risks names budget vulnerability as "the first cut in fiscal consolidation." A high recurring-cost package whose funding line is the first to be cut cannot also be "politically inexpensive... under any government" with strong evidence — the strong tag applies at most to legislative ease, not fiscal durability, which uncertainties rate low-confidence.

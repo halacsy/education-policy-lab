@@ -1,0 +1,13 @@
+# Critique: assumption_checker
+
+## S1.assumptions
+Objection: The assumption "A workable SES indicator exists at application time" is asserted but the expert record provides no support that such an indicator is available at the individual-application level in Hungary. The scenario's entire SES-aware admission mechanism (weighted lottery above a threshold, district quotas) depends on this indicator existing and being non-gameable, yet only the "agree on" list mentions intake-composition data at the aggregate level — which is a different thing from a validated per-applicant SES measure resistant to parental misreporting. This unverified assumption should be reclassified as a core uncertainty, not a background assumption.
+
+## S2.expected_benefits
+Objection: The benefit "Steadily falling early-sorting share of each cohort" is tagged [evidence: strong], but this conflates a mechanical accounting effect with a policy outcome. The evidence_status field itself concedes "the retention of demand in general schools is the unevidenced link." If capped families exit to non-state maintainers or private tutoring rather than staying in general schools, the sorting share falls only nominally while actual segregation persists. The [strong] tag overstates what is supported: the source supports that capping places reduces *labelled* selective seats, not that early sorting of pupils falls.
+
+## S3.mechanism
+Objection: The mechanism relies on "asymmetric peer effects" tagged [evidence: contested], yet the equity_impact and expected_benefits fields treat the largest equity gain as the expected case. This is internally inconsistent: if the peer-effect asymmetry is genuinely contested (as evidence_status admits), then "the largest expected equity gain of all scenarios" cannot be simultaneously asserted as the expected benefit. The scenario should not claim the upside as expected while flagging its foundational mechanism as disputed.
+
+## S4.expected_benefits
+Objection: The claim "Politically inexpensive; implementable under any government" is tagged [evidence: strong], but this contradicts the scenario's own political_risks ("Budget vulnerability: compensation lines are the first cut in fiscal consolidation") and its own uncertainties ("Durability of the budget line across fiscal cycles," confidence: low). A high-recurring-cost package (funding formula tagged "high," premia "medium-high") that is first to be cut cannot be "politically inexpensive" with [strong] evidence. The tag confuses low political-capital cost with low fiscal cost and durability.
