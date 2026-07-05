@@ -2,7 +2,7 @@
 
 slug: kertesi-kezdi-2013-berenyi-berkovits-erőss-school-choice-stu
 type: citation  # citation | paper | report | dataset
-library_doc: none  # path under knowledge/library/ once the full document is added
+library_doc: knowledge/library/kertesi-kezdi-2013-berenyi-berkovits-erőss-school-choice-stu/
 admitted_by: system-bootstrap (2026-07-04, pre-governance)
 
 ## Facts

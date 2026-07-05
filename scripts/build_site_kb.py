@@ -79,10 +79,14 @@ def main():
     facts = reg["facts"]
     e = html.escape
 
+    repo = "https://github.com/halacsy/education-policy-lab/tree/main"
     fact_cards = []
     for fid, f in facts.items():
         ev = f["evidence"]
         used = ", ".join(f.get("used_by", [])) or "—"
+        lib = f.get("library_doc")
+        lib_html = (f'<a href="{repo}/{e(lib)}">teljes dokumentum</a>'
+                    if lib else "")
         fact_cards.append(f"""
     <article class="fact" id="{e(fid)}">
       <p class="hu">{e(f['hu'])}</p>
@@ -91,6 +95,7 @@ def main():
         <span class="tag {e(ev)}">bizonyíték: {e(EVIDENCE_HU.get(ev, ev))} / {e(ev)}</span>
         <span>forrás: {e(f['source'])}</span>
         <span>használja: {e(used)}</span>
+        {lib_html}
       </p>
     </article>""")
 

@@ -2,7 +2,7 @@
 
 slug: hanushek-woessmann-2006-economic-journal
 type: citation  # citation | paper | report | dataset
-library_doc: none  # path under knowledge/library/ once the full document is added
+library_doc: knowledge/library/hanushek-woessmann-2006-economic-journal/
 admitted_by: system-bootstrap (2026-07-04, pre-governance)
 
 ## Facts

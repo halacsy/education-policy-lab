@@ -2,7 +2,7 @@
 
 slug: public-education-act-amendments-maintainer-statistics
 type: citation  # citation | paper | report | dataset
-library_doc: none  # path under knowledge/library/ once the full document is added
+library_doc: knowledge/library/public-education-act-amendments-maintainer-statistics/
 admitted_by: system-bootstrap (2026-07-04, pre-governance)
 
 ## Facts

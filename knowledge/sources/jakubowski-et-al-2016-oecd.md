@@ -2,7 +2,7 @@
 
 slug: jakubowski-et-al-2016-oecd
 type: citation  # citation | paper | report | dataset
-library_doc: none  # path under knowledge/library/ once the full document is added
+library_doc: knowledge/library/jakubowski-et-al-2016-oecd/
 admitted_by: system-bootstrap (2026-07-04, pre-governance)
 
 ## Facts

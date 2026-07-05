@@ -2,7 +2,7 @@
 
 slug: pekkarinen-uusitalo-kerr-2009
 type: citation  # citation | paper | report | dataset
-library_doc: none  # path under knowledge/library/ once the full document is added
+library_doc: knowledge/library/pekkarinen-uusitalo-kerr-2009/
 admitted_by: system-bootstrap (2026-07-04, pre-governance)
 
 ## Facts

@@ -2,7 +2,7 @@
 
 slug: domestic-press-and-stakeholder-analyses-1990s-2010s
 type: citation  # citation | paper | report | dataset
-library_doc: none  # path under knowledge/library/ once the full document is added
+library_doc: knowledge/library/domestic-press-and-stakeholder-analyses-1990s-2010s/
 admitted_by: system-bootstrap (2026-07-04, pre-governance)
 
 ## Facts

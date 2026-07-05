@@ -2,7 +2,7 @@
 
 slug: oecd-pisa-2012-2022-country-notes
 type: citation  # citation | paper | report | dataset
-library_doc: none  # path under knowledge/library/ once the full document is added
+library_doc: knowledge/library/oecd-pisa-2012-2022-country-notes/
 admitted_by: system-bootstrap (2026-07-04, pre-governance)
 
 ## Facts

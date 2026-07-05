@@ -2,7 +2,7 @@
 
 slug: budget-chapters-expert-estimates
 type: citation  # citation | paper | report | dataset
-library_doc: none  # path under knowledge/library/ once the full document is added
+library_doc: knowledge/library/budget-chapters-expert-estimates/
 admitted_by: system-bootstrap (2026-07-04, pre-governance)
 
 ## Facts
