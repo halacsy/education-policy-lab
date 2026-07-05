@@ -60,13 +60,33 @@ def load_env():
 
 load_env()
 
-# Resolved AFTER .env is loaded. gemini-2.5-flash-lite: the provided free-tier
-# key caps gemini-2.5-flash at 20 requests/day; flash-lite has a separate,
-# larger pool (docs/decisions.md D-18).
-DEFAULT_MODELS = {
-    "anthropic": os.environ.get("ANTHROPIC_MODEL", "claude-opus-4-8"),
-    "google": os.environ.get("GOOGLE_MODEL", "gemini-2.5-flash-lite"),
+# Env overrides pin a provider to ONE model (bypasses the ladder). Resolved
+# after .env is loaded. See D-18 (free-tier daily caps) and D-26 (per-task
+# cheapest-adequate ladder with escalation).
+MODEL_OVERRIDES = {
+    "anthropic": os.environ.get("ANTHROPIC_MODEL"),
+    "google": os.environ.get("GOOGLE_MODEL"),
 }
+
+
+def resolve_model(provider, task=None, dimension=None, escalation=0):
+    """Cheapest-adequate model for a task (D-26).
+
+    Tier comes from config (task_tiers; dimension_tier_overrides may raise it
+    for judge_score); each escalation step (validation-failure retry) climbs
+    one rung. An env override (ANTHROPIC_MODEL / GOOGLE_MODEL) wins outright.
+    """
+    if MODEL_OVERRIDES.get(provider):
+        return MODEL_OVERRIDES[provider]
+    m = load_config().get("models", {})
+    ladder = m.get("ladder", {}).get(provider)
+    if not ladder:
+        return {"anthropic": "claude-opus-4-8",
+                "google": "gemini-2.5-flash-lite"}[provider]
+    tier = m.get("task_tiers", {}).get(task, len(ladder) - 1)
+    if dimension:
+        tier = max(tier, m.get("dimension_tier_overrides", {}).get(dimension, 0))
+    return ladder[min(tier + max(0, escalation), len(ladder) - 1)]
 
 
 def provider_for_role(role):
@@ -98,10 +118,10 @@ def _client(provider):
     return _clients[provider]
 
 
-def _call_real(provider, prompt, max_tokens):
+def _call_real(provider, model, prompt, max_tokens):
     if provider == "anthropic":
         resp = _client(provider).messages.create(
-            model=DEFAULT_MODELS["anthropic"],
+            model=model,
             max_tokens=max_tokens,
             messages=[{"role": "user", "content": prompt}],
         )
@@ -116,17 +136,20 @@ def _call_real(provider, prompt, max_tokens):
             cfg = types.GenerateContentConfig(
                 temperature=0.2, max_output_tokens=max_tokens)
         resp = _client(provider).models.generate_content(
-            model=DEFAULT_MODELS["google"], contents=prompt, config=cfg)
+            model=model, contents=prompt, config=cfg)
         return resp.text or ""
     raise ValueError(provider)
 
 
-def call_model(prompt, role, max_tokens=8000, retries=4):
+def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
+               dimension=None):
     """The single entry point for every model call in the lab.
 
     Returns the model's text. The prompt carries a structured header
     (TASK/AGENT/LANG/PROVIDER lines) which real models may ignore but the
-    mock backend uses for deterministic composition.
+    mock backend uses for deterministic composition. `escalation` climbs the
+    model ladder (D-26): validation-failure retries pass attempt numbers so
+    a cheap model that produced unusable output is replaced by a stronger one.
     """
     provider = provider_for_role(role)
     t0 = time.time()
@@ -136,12 +159,16 @@ def call_model(prompt, role, max_tokens=8000, retries=4):
             entry["task"] = line[5:].strip()
         if line.startswith("AGENT:"):
             entry["agent"] = line[6:].strip()
+    model = resolve_model(provider, task=entry.get("task"),
+                          dimension=dimension, escalation=escalation)
+    entry["model"] = model
 
     if provider_available(provider):
         for attempt in range(retries + 1):
             try:
                 text = _throttled(provider,
-                                  lambda: _call_real(provider, prompt, max_tokens))
+                                  lambda: _call_real(provider, model, prompt,
+                                                     max_tokens))
                 if not text.strip():
                     raise RuntimeError("empty response")
                 _failures[provider] = 0
@@ -174,9 +201,11 @@ def call_model(prompt, role, max_tokens=8000, retries=4):
 
 
 def backend_stats():
-    """Summary of which backend served which task — for the final report."""
+    """Summary of which backend/model served which task — final report input."""
     stats = {}
     for e in CALL_LOG:
-        key = (e.get("task", "?"), e["backend"])
+        label = e["backend"] if e["backend"] == "mock" else \
+            f"{e['backend']}:{e.get('model', '?')}"
+        key = (e.get("task", "?"), label)
         stats[key] = stats.get(key, 0) + 1
-    return {f"{task} [{backend}]": n for (task, backend), n in sorted(stats.items())}
+    return {f"{task} [{label}]": n for (task, label), n in sorted(stats.items())}

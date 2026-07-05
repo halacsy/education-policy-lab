@@ -27,5 +27,35 @@
   "stopping": {
     "plateau_delta": 0.15,
     "plateau_rounds": 2
+  },
+  "models": {
+    "_policy": "Cheapest model that is still good enough per task (owner decision); assignment by Claude Fable 5, rationale in docs/decisions.md D-26. Tier = rung on the provider's ladder; validation-failure retries escalate one rung.",
+    "ladder": {
+      "google": [
+        "gemini-2.5-flash-lite",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro"
+      ],
+      "anthropic": [
+        "claude-haiku-4-5",
+        "claude-sonnet-5",
+        "claude-opus-4-8"
+      ]
+    },
+    "task_tiers": {
+      "expert_analysis": 0,
+      "rejected_framings": 0,
+      "judge_score": 0,
+      "build_scenarios": 1,
+      "synthesis": 1,
+      "translate_scenarios": 1,
+      "brief": 1,
+      "exec_summary": 1,
+      "critic": 1,
+      "meta_critique": 2
+    },
+    "dimension_tier_overrides": {
+      "translation_fidelity": 1
+    }
   }
 }

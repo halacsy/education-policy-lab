@@ -182,6 +182,31 @@ the criticized field actually changes (relevance-based retention, hard cap
 of 40 carried lines; small recipients keep newest-3 sections). This replaces
 the age-based newest-5-rounds rule. (2026-07-05)
 
+**D-26 — Per-task model ladder: cheapest model that is still good enough
+(owner decision; assignment by Claude Fable 5).**
+Each provider has a cost ladder (google: flash-lite → flash → pro; anthropic:
+haiku-4-5 → sonnet-5 → opus-4-8); each task gets the lowest adequate rung in
+`config/system_config.json: models.task_tiers`. Assignment rationale:
+- tier 0 (cheapest): `expert_analysis` (structured domain summary, validated
+  format, registry-grounded — flash-lite passed it in testing);
+  `rejected_framings` (simple enumeration); `judge_score` (two-line output,
+  0.3 weight, deterministic component dominates, variance recorded).
+- tier 1: `build_scenarios` (heaviest structured JSON), `synthesis`
+  (disagreement mapping), `translate_scenarios`/`brief` (Hungarian quality),
+  `exec_summary` (public-facing), `critic` (targeted objections need real
+  reasoning); `translation_fidelity` scoring is raised to tier 1 via
+  dimension_tier_overrides (cross-language judging is fragile).
+- tier 2 (strongest): `meta_critique` only — system-level gaming judgment is
+  the hardest call and the evaluator-circularity guard depends on it.
+"Still good enough" is enforced empirically, not just by judgment: a
+validation-failure retry escalates one rung (Step.run passes the attempt
+number), so a too-cheap model is replaced immediately and the call log
+records which model actually served each task. Env overrides
+(GOOGLE_MODEL/ANTHROPIC_MODEL) pin a provider to one model and bypass the
+ladder (needed while the free-tier key is in use). The ladder lives in
+config → snapshotted per round → tier changes are diffable system changes.
+(2026-07-05)
+
 **D-13 — Round 1 starts from an honest baseline, not a sandbagged one.**
 The baseline agent specs already satisfy hard constraints (all scenario
 fields present, critics name scenario id + field). Improvement therefore has

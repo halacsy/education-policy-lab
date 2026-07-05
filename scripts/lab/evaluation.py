@@ -192,7 +192,7 @@ def llm_component(dim, a, round_n):
                 "presented in randomized order. Respond with exactly two "
                 "lines:\nSCORE: <number>\nREASON: <one sentence>"),
             inputs="=== ARTIFACT ===\n" + "\n".join(shuffled))
-        out = llm.call_model(prompt, role, max_tokens=800)
+        out = llm.call_model(prompt, role, max_tokens=800, dimension=dim)
         m = re.search(r"SCORE:\s*([0-9]+(?:\.[0-9]+)?)", out)
         score = float(m.group(1)) if m else None
         if score is None:

@@ -177,12 +177,15 @@ class Step:
             except Exception:
                 pass
         corrective = ""
-        for _ in (0, 1):
+        for attempt in (0, 1):
             kw = dict(prompt_kwargs)
             if corrective:
                 kw["instructions"] = kw.get("instructions", "") + "\n" + corrective
             prompt = build_prompt(**kw)
-            text = llm.call_model(prompt, role, max_tokens=max_tokens)
+            # a validation-failure retry escalates one rung on the model
+            # ladder (D-26): cheap model produced unusable output
+            text = llm.call_model(prompt, role, max_tokens=max_tokens,
+                                  escalation=attempt)
             backend = llm.CALL_LOG[-1]["backend"]
             try:
                 result = postprocess(text)
