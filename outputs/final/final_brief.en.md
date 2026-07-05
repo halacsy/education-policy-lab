@@ -2,6 +2,12 @@
 
 This brief addresses the question: what should Hungary do with early academic selection and the 6- and 8-year gimnazium system? It separates evidence, interpretation, assumptions, recommendations and open questions, preserves expert disagreement, and marks every important claim with an evidence status. It is decision support: no recommendation below is a decision.
 
+## Scenario key (full detail: scenarios.en.md)
+- S1 — Admission reform within the current structure
+- S2 — Gradual phase-down of 6/8-year entry places
+- S3 — Comprehensive school to age 14 (structural reform)
+- S4 — Keep the structure, compensate the general schools
+
 ## Evidence
 - In PISA, the share of reading/maths score variance explained by socio-economic status is among the highest in the OECD for Hungary (~19-25% across cycles vs ~12-14% OECD average). [evidence: strong]
 - Cross-country difference-in-differences evidence indicates earlier between-school tracking increases inequality of outcomes without raising mean performance. [evidence: strong]

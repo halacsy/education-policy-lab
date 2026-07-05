@@ -194,7 +194,15 @@ def brief(lang, d):
                  ass="## Feltevések", rec="## Ajánlások",
                  open="## Nyitott kérdések (emberi mérlegelésre)",
                  minority="## Különvélemények")
-    lines = [H["title"], "", K.BRIEF_INTRO[L], "", H["ev"]]
+    lines = [H["title"], "", K.BRIEF_INTRO[L]]
+    if "scenario_crossref" in d:
+        if L == "en":
+            lines += ["", "## Scenario key (full detail: scenarios.en.md)"]
+            lines += [f"- {s['id']} — {s['title']['en']}" for s in K.SCENARIOS]
+        else:
+            lines += ["", "## Forgatókönyv-kulcs (részletesen: scenarios.hu.md)"]
+            lines += [f"- {s['id']} — {s['title']['hu']}" for s in K.SCENARIOS]
+    lines += ["", H["ev"]]
     for fid in ["pisa_escs", "tracking_inequality", "gimn_share", "poland_reform", "demography"]:
         f = K.FACTS[fid]
         ev = f["evidence"] if L == "en" else K.EVIDENCE_HU[f["evidence"]]

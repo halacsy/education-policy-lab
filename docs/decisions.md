@@ -130,6 +130,14 @@ faking: check 4 diffs system_state, which still changes every round, and any
 directive touching an expert forces a re-run. Motivation: daily API quota.
 (2026-07-05)
 
+**D-20 — Human feedback enters through the same change machinery as the loop.**
+A reader found that the final brief referenced "the S1 pilot" without defining
+S1 anywhere in the document. The fix was applied as a catalog change
+(`scenario_crossref`, origin recorded in attempts_log.jsonl): a directive on
+`final_brief_writer` and `translator` requiring a scenario-key section, then
+regeneration of the affected deliverables. Human critique is a first-class
+input to Level 4, not an out-of-band edit to Level 1 outputs. (2026-07-05)
+
 **D-13 — Round 1 starts from an honest baseline, not a sandbagged one.**
 The baseline agent specs already satisfy hard constraints (all scenario
 fields present, critics name scenario id + field). Improvement therefore has

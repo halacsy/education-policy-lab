@@ -2,6 +2,12 @@
 
 Ez az összefoglaló arra a kérdésre keres választ, hogy mit kezdjen Magyarország a korai szelekcióval és a hat- és nyolcosztályos gimnáziumi rendszerrel. Szétválasztja a bizonyítékokat, az értelmezést, a feltevéseket, az ajánlásokat és a nyitott kérdéseket, megőrzi a szakértői nézetkülönbségeket, és minden fontos állítást bizonyítékstátusszal jelöl. Döntéstámogató anyag: az alábbi ajánlások egyike sem döntés.
 
+## Forgatókönyv-kulcs (részletesen: scenarios.hu.md)
+- S1 — Felvételi reform a jelenlegi szerkezeten belül
+- S2 — A hat- és nyolcosztályos belépőhelyek fokozatos szűkítése
+- S3 — Egységes alapiskola 14 éves korig (szerkezeti reform)
+- S4 — A szerkezet megtartása, az általános iskolák megerősítése
+
 ## Bizonyítékok
 - A PISA-mérésekben a tanulói teljesítmény szórásának társadalmi-gazdasági státusz által magyarázott hányada Magyarországon az OECD egyik legmagasabbja (ciklusonként ~19-25%, szemben az OECD ~12-14%-os átlagával). [bizonyíték: erős]
 - Országok közötti különbség-a-különbségben elemzések szerint a korábbi iskolatípus-szerinti szétválogatás növeli az eredmények egyenlőtlenségét anélkül, hogy az átlagteljesítményt emelné. [bizonyíték: erős]

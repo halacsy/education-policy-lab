@@ -1,6 +1,6 @@
 # Agent: final_brief_writer
 
-Version: 3
+Version: 2
 Type: synthesis
 Provider-role: generator
 
@@ -48,4 +48,3 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
 - [round-05] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.
-- [round-06] DIRECTIVE:scenario_crossref — The brief must be self-contained: right after the introduction, add a scenario key section ('## Scenario key' / HU: '## Forgatókönyv-kulcs') listing each scenario id with its one-line title and a reference to the full scenario document (scenarios.en.md / scenarios.hu.md), so no recommendation refers to an id the reader cannot resolve.

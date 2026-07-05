@@ -68,6 +68,17 @@ CATALOG = [
          text=("Before returning, verify every glossary term mapping you "
                "used against docs/glossary.md and correct deviations."),
          expected_delta=0.2),
+    dict(id="scenario_crossref", dimension="layer_separation",
+         kind="directive", targets=["final_brief_writer", "translator"],
+         text=("The brief must be self-contained: right after the "
+               "introduction, add a scenario key section ('## Scenario key' / "
+               "HU: '## Forgatókönyv-kulcs') listing each scenario id with "
+               "its one-line title and a reference to the full scenario "
+               "document (scenarios.en.md / scenarios.hu.md), so no "
+               "recommendation refers to an id the reader cannot resolve."),
+         expected_delta=0.2,
+         origin="human feedback 2026-07-05: brief referenced 'S1 felvételi "
+                "kísérlet' without defining S1 anywhere in the document"),
 ]
 
 # ADAS safety caveat: edits that would raise scores by weakening the system.
@@ -149,12 +160,15 @@ def apply_change(change, round_n):
             node = node[key]
         node[change["config_path"][-1]] = change["config_value"]
         save_config(cfg)
-    log_attempt(dict(round_applied=round_n, id=change["id"],
-                     dimension=change["dimension"], kind=change["kind"],
-                     targets=touched,
-                     expected_delta=change["expected_delta"],
-                     actual_delta=None, reverted=False,
-                     what=change["text"][:160]))
+    entry = dict(round_applied=round_n, id=change["id"],
+                 dimension=change["dimension"], kind=change["kind"],
+                 targets=touched,
+                 expected_delta=change["expected_delta"],
+                 actual_delta=None, reverted=False,
+                 what=change["text"][:160])
+    if change.get("origin"):
+        entry["origin"] = change["origin"]
+    log_attempt(entry)
     return touched
 
 
