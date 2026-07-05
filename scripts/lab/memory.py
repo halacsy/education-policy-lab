@@ -1,32 +1,34 @@
 """Per-agent episodic memory (issue #1).
 
-At the end of every round each agent that received signal gets an appended
-entry in agents/memory/<name>.md:
+Owner decisions (2026-07-05, docs/decisions.md D-21/D-25):
+- CRITICS ARE MEMORYLESS — fresh eyes each round beat consistent escalation;
+  objection follow-through is tracked in the generation-side memory instead.
+- Retention is RELEVANCE-based, not age-based: unresolved objections are
+  carried forward until the criticized field actually changes; resolved items
+  appear once and drop; a hard line-cap bounds token cost.
 
-- scenario_builder      — every critic objection (it owns all scenario fields),
-                          plus whether last round's objections were addressed
-                          (field text changed) or not;
-- each critic           — its own objections and their resolution status;
-- translator            — the deterministic translation report;
-- editor                — objections touching disagreement/consensus language;
-- experts               — meta-critique lines naming them.
+Recipients:
+- scenario_builder — unresolved objections carried forward + this round's
+  received/resolved record (it owns every scenario field);
+- translator      — deterministic parity results (last few rounds);
+- editor          — disagreement/consensus-related objections (last few rounds);
+- experts         — meta-critique lines naming them (last few rounds).
 
-Memory files live under agents/ so every round's system_state snapshot
-versions them (verify check 4), and build_prompt() feeds them back to the
-agent. Distillation is deterministic code, not another model call: the memory
-must be an auditable record, not a paraphrase. Retention: the newest
-MAX_ROUNDS_KEPT round-sections per agent (docs/decisions.md D-21).
+Memory files live under agents/memory/ so every round's system_state snapshot
+versions them, build_prompt() feeds them back, and changed memory invalidates
+expert-output reuse. Distillation is deterministic code, not a model call:
+memory must be an auditable record, not a paraphrase.
 """
 import re
 
 from .util import AGENTS_DIR, read, read_json, round_dir, write
 
 MEM_DIR = AGENTS_DIR / "memory"
-MAX_ROUNDS_KEPT = 5
+MAX_SECTIONS_SMALL = 3     # translator / editor / experts: newest N sections
+MAX_UNRESOLVED_LINES = 40  # scenario_builder carry-forward cap (token bound)
 
-OBJ_RE = re.compile(
-    r"^## (S\d+)\.([a-z_]+)\s*\n(?:Objection:\s*)(.*?)$", re.M)
-SEV_RE = re.compile(r"^Severity:\s*(high|medium|low)", re.M)
+OBJ_RE = re.compile(r"^## (S\d+)\.([a-z_]+)\s*\n(?:Objection:\s*)(.*?)$", re.M)
+CARRY_RE = re.compile(r"\[(\w+) on (S\d+)\.([a-z_]+)\]")
 
 
 def memory_path(name):
@@ -39,11 +41,9 @@ def load_memory(name):
 
 
 def parse_objections(critic_name, text):
-    objs = []
-    for m in OBJ_RE.finditer(text):
-        objs.append(dict(critic=critic_name, scenario=m.group(1),
-                         field=m.group(2), text=m.group(3).strip()[:220]))
-    return objs
+    return [dict(critic=critic_name, scenario=m.group(1), field=m.group(2),
+                 text=m.group(3).strip()[:220])
+            for m in OBJ_RE.finditer(text)]
 
 
 def _scenario_field_text(scenarios, sid, field):
@@ -54,35 +54,87 @@ def _scenario_field_text(scenarios, sid, field):
     return ""
 
 
-def _append(name, round_n, lines):
+def _field_changed(prev_scen, cur_scen, sid, field):
+    before = _scenario_field_text(prev_scen, sid, field)
+    after = _scenario_field_text(cur_scen, sid, field)
+    return bool(before and after and before != after)
+
+
+def _header(name):
+    return (f"# Episodic memory: {name}\n\n"
+            "Deterministic distillation from previous rounds (lab/memory.py); "
+            "fed back into this agent's prompt. Unresolved items persist "
+            "until the criticized field changes; resolved items drop.\n")
+
+
+# -- small recipients: newest-N sections ------------------------------------
+
+def _append_sectioned(name, round_n, lines):
     if not lines:
         return
-    p = memory_path(name)
-    existing = load_memory(name)
-    if not existing:
-        existing = (f"# Episodic memory: {name}\n\n"
-                    "Deterministic distillation of what this agent should "
-                    "remember from previous rounds (see lab/memory.py). Fed "
-                    "back into the agent's prompt each round.\n")
+    existing = load_memory(name) or _header(name)
     body = existing.rstrip() + f"\n\n## round {round_n:02d}\n" + "\n".join(lines) + "\n"
-    body = _prune(body)
-    write(p, body)
-
-
-def _prune(body):
     parts = re.split(r"(?=^## round )", body, flags=re.M)
-    head, sections = parts[0], parts[1:]
-    return head + "".join(sections[-MAX_ROUNDS_KEPT:])
+    write(memory_path(name), parts[0] + "".join(parts[1:][-MAX_SECTIONS_SMALL:]))
+
+
+# -- scenario_builder: relevance-based carry-forward -------------------------
+
+def _rewrite_builder_memory(round_n, objections, resolutions, prev_scen, cur_scen):
+    # previously carried, still-unresolved items (recheck against this round)
+    carried = []
+    for line in load_memory("scenario_builder").splitlines():
+        m = CARRY_RE.search(line)
+        if not m or not line.strip().startswith("-"):
+            continue
+        critic, sid, field = m.groups()
+        if prev_scen is not None and _field_changed(prev_scen, cur_scen, sid, field):
+            continue  # resolved this round — drops out
+        carried.append(line.strip())
+
+    # this round's outcomes for last round's objections
+    resolved_now, unresolved_new = [], []
+    for o in resolutions:
+        tag = f"[{o['critic']} on {o['scenario']}.{o['field']}]"
+        if o["addressed"]:
+            resolved_now.append(f"- RESOLVED {tag} (field changed)")
+        else:
+            unresolved_new.append(f"- UNRESOLVED {tag}: {o['text']}")
+
+    seen, unresolved = set(), []
+    for line in carried + unresolved_new:
+        m = CARRY_RE.search(line)
+        if m is None or m.groups() in seen:
+            continue
+        seen.add(m.groups())
+        unresolved.append(line)
+    dropped = max(0, len(unresolved) - MAX_UNRESOLVED_LINES)
+    unresolved = unresolved[-MAX_UNRESOLVED_LINES:]
+
+    received = [f"- received [{o['critic']} on {o['scenario']}.{o['field']}]: {o['text']}"
+                for o in objections]
+
+    parts = [_header("scenario_builder")]
+    if unresolved:
+        parts.append("\n## unresolved objections (carried until the field changes)\n"
+                     + "\n".join(unresolved)
+                     + (f"\n- (+{dropped} older unresolved items dropped by cap)" if dropped else ""))
+    parts.append(f"\n## round {round_n:02d} — received\n"
+                 + ("\n".join(received) if received else "- none"))
+    if resolved_now:
+        parts.append(f"\n## round {round_n:02d} — resolved from previous round\n"
+                     + "\n".join(resolved_now))
+    write(memory_path("scenario_builder"), "\n".join(parts) + "\n")
 
 
 def update_memories(n, artifacts):
-    """Called at the end of round n, after critique and meta-critique."""
+    """Called at the end of round n, after critique and meta-critique.
+    Critics are deliberately NOT written to (owner decision, D-25)."""
     objections = []
     for cname, text in artifacts["critics"].items():
         objections.extend(parse_objections(cname, text))
 
-    # resolution status of last round's objections
-    resolutions = []
+    resolutions, prev_scen = [], None
     prev = round_dir(n - 1)
     if n > 1 and (prev / "scenarios.json").exists():
         prev_scen = read_json(prev / "scenarios.json")
@@ -90,51 +142,30 @@ def update_memories(n, artifacts):
             if p.stem == "translation_checker":
                 continue
             for o in parse_objections(p.stem, read(p)):
-                before = _scenario_field_text(prev_scen, o["scenario"], o["field"])
-                after = _scenario_field_text(artifacts["scenarios_en"],
-                                             o["scenario"], o["field"])
-                o["addressed"] = bool(before and after and before != after)
+                o["addressed"] = _field_changed(prev_scen, artifacts["scenarios_en"],
+                                                o["scenario"], o["field"])
                 resolutions.append(o)
 
-    # scenario_builder: owns all fields
-    lines = [f"- received {o['critic']} on {o['scenario']}.{o['field']}: {o['text']}"
-             for o in objections]
-    lines += [f"- resolution of round {n-1:02d} objection "
-              f"({o['critic']} on {o['scenario']}.{o['field']}): "
-              f"{'ADDRESSED (field changed)' if o['addressed'] else 'NOT ADDRESSED (field unchanged)'}"
-              for o in resolutions]
-    _append("scenario_builder", n, lines)
+    _rewrite_builder_memory(n, objections, resolutions, prev_scen,
+                            artifacts["scenarios_en"])
 
-    # critics: own objections + own resolution feedback
-    for cname in artifacts["critics"]:
-        own = [o for o in objections if o["critic"] == cname]
-        own_res = [o for o in resolutions if o["critic"] == cname]
-        lines = [f"- you objected to {o['scenario']}.{o['field']}: {o['text']}"
-                 for o in own]
-        lines += [f"- your round {n-1:02d} objection on {o['scenario']}.{o['field']} was "
-                  f"{'addressed — verify the fix, do not re-litigate' if o['addressed'] else 'NOT addressed — escalate or explain why it stands'}"
-                  for o in own_res]
-        _append(cname, n, lines)
-
-    # translator: deterministic parity results
     tr = artifacts["translation"]
-    _append("translator", n, [
+    _append_sectioned("translator", n, [
         f"- parity ok={tr['ok']}; glossary violations: "
         f"{tr['glossary_violations'] or 'none'}; untranslated fields: "
         f"{tr['untranslated_fields'] or 'none'}"])
 
-    # editor: disagreement/consensus-related objections
     dis = [o for o in objections
            if re.search(r"disagree|minorit|consensus|dissent", o["text"], re.I)]
-    _append("editor", n, [f"- {o['critic']} on {o['scenario']}.{o['field']}: {o['text']}"
-                          for o in dis])
+    _append_sectioned("editor", n,
+                      [f"- {o['critic']} on {o['scenario']}.{o['field']}: {o['text']}"
+                       for o in dis])
 
-    # experts: meta-critique lines that name them
     meta = artifacts.get("meta", "")
     for line in meta.splitlines():
         for name in _expert_names():
             if name in line and line.strip().startswith("-"):
-                _append(name, n, [line.strip()[:300]])
+                _append_sectioned(name, n, [line.strip()[:300]])
 
 
 def _expert_names():

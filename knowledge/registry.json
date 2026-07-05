@@ -1,17 +1,27 @@
 {
   "_meta": {
-    "description": "Curated source registry (v1). Canonical store of the facts the lab's agents may cite; scripts/lab/knowledge.py loads FACTS from here, the website knowledge page is generated from here.",
-    "governance": "Changes require a PR; evidence grades follow templates/evaluation_rubric.md labels (strong/moderate/weak/contested)."
+    "description": "Curated source registry — GENERATED from knowledge/sources/*.md by scripts/build_registry.py. Edit the per-source files, not this index.",
+    "governance": "New facts and sources enter as agent proposals (knowledge/proposals/) and require human approval via PR review before entering knowledge/sources/. Evidence grades follow templates/evaluation_rubric.md.",
+    "library": "knowledge/library/ holds full reference documents (papers, reports, data tables); a source file's library_doc field points at its document once ingested."
   },
   "facts": {
-    "pisa_escs": {
-      "en": "In PISA, the share of reading/maths score variance explained by socio-economic status is among the highest in the OECD for Hungary (~19-25% across cycles vs ~12-14% OECD average).",
-      "hu": "A PISA-mérésekben a tanulói teljesítmény szórásának társadalmi-gazdasági státusz által magyarázott hányada Magyarországon az OECD egyik legmagasabbja (ciklusonként ~19-25%, szemben az OECD ~12-14%-os átlagával).",
-      "evidence": "strong",
-      "source": "OECD PISA 2012-2022 country notes",
+    "fiscal": {
+      "en": "Per-pupil funding differences between track types are modest; the dominant costs of structural reform are transition costs (retraining, building use, administration), not steady-state costs.",
+      "hu": "A képzéstípusok közötti egy főre jutó finanszírozási különbségek mérsékeltek; a szerkezeti reform meghatározó költségei az átmenet költségei (átképzés, épülethasználat, adminisztráció), nem a tartós működésé.",
+      "evidence": "weak",
+      "source": "Budget chapters; expert estimates",
       "used_by": [
-        "international_comparison",
-        "equity_and_social_mobility"
+        "education_finance",
+        "implementation_planning"
+      ]
+    },
+    "parent_attachment": {
+      "en": "Urban middle-class parents regard 8- and 6-year gimnazium places as a key mobility/insurance asset; prior attempts to curtail structures met intense, well-organised resistance.",
+      "hu": "A városi középosztálybeli szülők a nyolc- és hatosztályos gimnáziumi helyeket kulcsfontosságú mobilitási és biztosítéki eszköznek tekintik; a korábbi szűkítési kísérletek heves, jól szervezett ellenállásba ütköztek.",
+      "evidence": "moderate",
+      "source": "Domestic press and stakeholder analyses, 1990s-2010s",
+      "used_by": [
+        "political_feasibility"
       ]
     },
     "tracking_inequality": {
@@ -21,16 +31,6 @@
       "source": "Hanushek & Woessmann 2006, Economic Journal",
       "used_by": [
         "international_comparison"
-      ]
-    },
-    "gimn_share": {
-      "en": "Roughly 8-12% of a cohort enters 6- or 8-year gimnazium tracks, selected at age 10 or 12 largely via the central written admission examination; entrants are strongly skewed toward high-SES, urban families.",
-      "hu": "Egy korosztály nagyjából 8-12%-a lép be hat- vagy nyolcosztályos gimnáziumi képzésbe 10 vagy 12 évesen, túlnyomórészt a központi írásbeli felvételi vizsga alapján; a bekerülők erősen a magas státuszú, városi családok felé tolódnak.",
-      "evidence": "strong",
-      "source": "KSH / Oktatási Hivatal admission statistics",
-      "used_by": [
-        "hungarian_education_system",
-        "equity_and_social_mobility"
       ]
     },
     "value_added": {
@@ -52,22 +52,13 @@
         "political_feasibility"
       ]
     },
-    "finland_comprehensive": {
-      "en": "Finland's peruskoulu (comprehensive school to age 16, phased in 1972-1977) is associated with high equity and reduced dependence of outcomes on family background; effects are entangled with teacher policy and support systems.",
-      "hu": "A finn peruskoulu (egységes alapiskola 16 éves korig, 1972-1977 között bevezetve) magas méltányossággal és a családi háttértől való függés csökkenésével jár együtt; a hatások összefonódnak a tanárpolitikával és a támogató rendszerekkel.",
+    "school_choice": {
+      "en": "Free school choice plus early selective tracks produces strong between-school sorting already at the primary stage in cities; abolition of tracks alone would not eliminate sorting through catchment and choice.",
+      "hu": "A szabad iskolaválasztás a korai szelektív képzésekkel együtt már az általános iskolai szakaszban erős iskolák közötti szétválogatást hoz létre a városokban; a képzési formák megszüntetése önmagában nem szüntetné meg a körzeten és a választáson keresztüli szelekciót.",
       "evidence": "moderate",
-      "source": "Pekkarinen, Uusitalo & Kerr 2009",
+      "source": "Kertesi & Kezdi 2013; Berenyi-Berkovits-Erőss school choice studies",
       "used_by": [
-        "finnish_reform"
-      ]
-    },
-    "portugal_improvement": {
-      "en": "Portugal improved PISA results 2006-2015 without changing selection age, via curriculum standards, school clustering, targeted support (TEIP) and retention reduction.",
-      "hu": "Portugália 2006 és 2015 között a szelekciós életkor módosítása nélkül javította PISA-eredményeit: tantervi sztenderdekkel, iskolatársulásokkal, célzott támogatással (TEIP) és az évismétlés visszaszorításával.",
-      "evidence": "moderate",
-      "source": "OECD PISA trend reports; Crato 2020",
-      "used_by": [
-        "portuguese_reform"
+        "hungarian_education_system"
       ]
     },
     "demography": {
@@ -80,6 +71,25 @@
         "school_network_planning"
       ]
     },
+    "gimn_share": {
+      "en": "Roughly 8-12% of a cohort enters 6- or 8-year gimnazium tracks, selected at age 10 or 12 largely via the central written admission examination; entrants are strongly skewed toward high-SES, urban families.",
+      "hu": "Egy korosztály nagyjából 8-12%-a lép be hat- vagy nyolcosztályos gimnáziumi képzésbe 10 vagy 12 évesen, túlnyomórészt a központi írásbeli felvételi vizsga alapján; a bekerülők erősen a magas státuszú, városi családok felé tolódnak.",
+      "evidence": "strong",
+      "source": "KSH / Oktatási Hivatal admission statistics",
+      "used_by": [
+        "hungarian_education_system",
+        "equity_and_social_mobility"
+      ]
+    },
+    "legal": {
+      "en": "The 6/8-year gimnazium forms are anchored in the public education act and maintainer agreements; phase-out requires legislative change, multi-year notice, and transitional guarantees for enrolled pupils.",
+      "hu": "A hat- és nyolcosztályos gimnáziumi formákat a köznevelési törvény és a fenntartói megállapodások rögzítik; a fokozatos kivezetés törvénymódosítást, többéves felmenő rendszert és a bent lévő tanulóknak szóló átmeneti garanciákat igényel.",
+      "evidence": "strong",
+      "source": "Nkt. (public education act) analysis",
+      "used_by": [
+        "legal_and_governance"
+      ]
+    },
     "teacher_shortage": {
       "en": "Hungary faces a sustained teacher shortage and an ageing teacher workforce, concentrated in disadvantaged regions and in maths/science; any structural reform competes for the same scarce teachers.",
       "hu": "Magyarországon tartós pedagógushiány és elöregedő tanári kar jellemző, a hátrányos helyzetű térségekben és a matematika-természettudomány szakokon koncentrálódva; minden strukturális reform ugyanazokért a szűkös tanárokért versenyez.",
@@ -87,6 +97,34 @@
       "source": "OECD Education at a Glance; PSZ/PDSZ surveys",
       "used_by": [
         "implementation_planning"
+      ]
+    },
+    "pisa_escs": {
+      "en": "In PISA, the share of reading/maths score variance explained by socio-economic status is among the highest in the OECD for Hungary (~19-25% across cycles vs ~12-14% OECD average).",
+      "hu": "A PISA-mérésekben a tanulói teljesítmény szórásának társadalmi-gazdasági státusz által magyarázott hányada Magyarországon az OECD egyik legmagasabbja (ciklusonként ~19-25%, szemben az OECD ~12-14%-os átlagával).",
+      "evidence": "strong",
+      "source": "OECD PISA 2012-2022 country notes",
+      "used_by": [
+        "international_comparison",
+        "equity_and_social_mobility"
+      ]
+    },
+    "portugal_improvement": {
+      "en": "Portugal improved PISA results 2006-2015 without changing selection age, via curriculum standards, school clustering, targeted support (TEIP) and retention reduction.",
+      "hu": "Portugália 2006 és 2015 között a szelekciós életkor módosítása nélkül javította PISA-eredményeit: tantervi sztenderdekkel, iskolatársulásokkal, célzott támogatással (TEIP) és az évismétlés visszaszorításával.",
+      "evidence": "moderate",
+      "source": "OECD PISA trend reports; Crato 2020",
+      "used_by": [
+        "portuguese_reform"
+      ]
+    },
+    "finland_comprehensive": {
+      "en": "Finland's peruskoulu (comprehensive school to age 16, phased in 1972-1977) is associated with high equity and reduced dependence of outcomes on family background; effects are entangled with teacher policy and support systems.",
+      "hu": "A finn peruskoulu (egységes alapiskola 16 éves korig, 1972-1977 között bevezetve) magas méltányossággal és a családi háttértől való függés csökkenésével jár együtt; a hatások összefonódnak a tanárpolitikával és a támogató rendszerekkel.",
+      "evidence": "moderate",
+      "source": "Pekkarinen, Uusitalo & Kerr 2009",
+      "used_by": [
+        "finnish_reform"
       ]
     },
     "governance": {
@@ -97,43 +135,6 @@
       "used_by": [
         "hungarian_education_system",
         "school_network_planning",
-        "legal_and_governance"
-      ]
-    },
-    "school_choice": {
-      "en": "Free school choice plus early selective tracks produces strong between-school sorting already at the primary stage in cities; abolition of tracks alone would not eliminate sorting through catchment and choice.",
-      "hu": "A szabad iskolaválasztás a korai szelektív képzésekkel együtt már az általános iskolai szakaszban erős iskolák közötti szétválogatást hoz létre a városokban; a képzési formák megszüntetése önmagában nem szüntetné meg a körzeten és a választáson keresztüli szelekciót.",
-      "evidence": "moderate",
-      "source": "Kertesi & Kezdi 2013; Berenyi-Berkovits-Erőss school choice studies",
-      "used_by": [
-        "hungarian_education_system"
-      ]
-    },
-    "parent_attachment": {
-      "en": "Urban middle-class parents regard 8- and 6-year gimnazium places as a key mobility/insurance asset; prior attempts to curtail structures met intense, well-organised resistance.",
-      "hu": "A városi középosztálybeli szülők a nyolc- és hatosztályos gimnáziumi helyeket kulcsfontosságú mobilitási és biztosítéki eszköznek tekintik; a korábbi szűkítési kísérletek heves, jól szervezett ellenállásba ütköztek.",
-      "evidence": "moderate",
-      "source": "Domestic press and stakeholder analyses, 1990s-2010s",
-      "used_by": [
-        "political_feasibility"
-      ]
-    },
-    "fiscal": {
-      "en": "Per-pupil funding differences between track types are modest; the dominant costs of structural reform are transition costs (retraining, building use, administration), not steady-state costs.",
-      "hu": "A képzéstípusok közötti egy főre jutó finanszírozási különbségek mérsékeltek; a szerkezeti reform meghatározó költségei az átmenet költségei (átképzés, épülethasználat, adminisztráció), nem a tartós működésé.",
-      "evidence": "weak",
-      "source": "Budget chapters; expert estimates",
-      "used_by": [
-        "education_finance",
-        "implementation_planning"
-      ]
-    },
-    "legal": {
-      "en": "The 6/8-year gimnazium forms are anchored in the public education act and maintainer agreements; phase-out requires legislative change, multi-year notice, and transitional guarantees for enrolled pupils.",
-      "hu": "A hat- és nyolcosztályos gimnáziumi formákat a köznevelési törvény és a fenntartói megállapodások rögzítik; a fokozatos kivezetés törvénymódosítást, többéves felmenő rendszert és a bent lévő tanulóknak szóló átmeneti garanciákat igényel.",
-      "evidence": "strong",
-      "source": "Nkt. (public education act) analysis",
-      "used_by": [
         "legal_and_governance"
       ]
     }

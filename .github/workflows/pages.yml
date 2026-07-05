@@ -23,6 +23,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - run: python3 scripts/build_registry.py --check
       - run: python3 scripts/build_site_kb.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
