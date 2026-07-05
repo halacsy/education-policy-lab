@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Education Policy Lab — ember és AI közösen tervez oktatáspolitikát</title>
+<meta name="description" content="Önjavító, kétnyelvű, többágenses szakpolitikai műhely. Az AI az információfeldolgozást gyorsítja; a döntés emberé marad.">
+<body>
+<style>
+  /* ------------------------------------------------------------------
+     TARTALMI VÁZLAT — a végleges vizuális identitás a designer feladata.
+     Jelen stílus csak olvashatóságot és hierarchiát ad (ld. DESIGN_BRIEF.md).
+     Színrendszer-javaslat: két jelentéshordozó szín —
+       fenyőzöld  = bizonyíték / megbízhatóság,
+       rozsda     = különvélemény / nyitott kérdés.
+     ------------------------------------------------------------------ */
+  :root {
+    --paper: #F7F8F6;
+    --ink: #1A2321;
+    --muted: #5A6662;
+    --line: #D8DDD9;
+    --evidence: #1F6E5C;   /* fenyőzöld — bizonyíték, rendszer */
+    --dissent: #A34A26;    /* rozsda — különvélemény, emberi kérdés */
+    --panel: #EEF1EE;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: Charter, Georgia, 'Times New Roman', serif;
+    font-size: 1.0625rem; line-height: 1.65;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+  .wide { max-width: 62rem; }
+  h1, h2, h3 {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.15; text-wrap: balance; letter-spacing: -0.015em;
+  }
+  h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 750; margin: 0 0 1rem; }
+  h2 { font-size: 1.45rem; font-weight: 700; margin: 0 0 1rem; }
+  h3 { font-size: 1.05rem; font-weight: 700; margin: 0 0 .5rem; }
+  p { margin: 0 0 1rem; }
+  a { color: var(--evidence); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--evidence); outline-offset: 2px; }
+  .eyebrow {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--evidence); margin: 0 0 .75rem;
+  }
+  .eyebrow.dissent { color: var(--dissent); }
+  header.site {
+    border-bottom: 1px solid var(--line); padding: 1rem 0;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: .8rem;
+  }
+  header.site .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  header.site .lang { color: var(--muted); }
+  section { padding: 3.25rem 0; border-bottom: 1px solid var(--line); }
+  .lede { font-size: 1.2rem; color: var(--ink); max-width: 40rem; }
+  .tag {
+    display: inline-block; font-family: ui-monospace, Menlo, monospace;
+    font-size: .74rem; padding: .1rem .45rem; border: 1px solid var(--line);
+    border-radius: 3px; background: #fff; white-space: nowrap;
+  }
+  .tag.strong  { color: var(--evidence); border-color: var(--evidence); }
+  .tag.contest { color: var(--dissent);  border-color: var(--dissent); }
+  .grid { display: grid; gap: 1.25rem; }
+  @media (min-width: 720px) { .grid.cols2 { grid-template-columns: 1fr 1fr; } }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: 6px;
+    padding: 1.25rem 1.4rem;
+  }
+  .card .id {
+    font-family: ui-monospace, Menlo, monospace; font-weight: 700;
+    color: var(--evidence); margin-right: .5rem;
+  }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+  .steps li {
+    display: grid; grid-template-columns: 2.2rem 1fr; gap: .75rem;
+    padding: .55rem .75rem; background: var(--panel); border-radius: 4px;
+    align-items: baseline;
+  }
+  .steps .n {
+    font-family: ui-monospace, Menlo, monospace; font-size: .8rem;
+    color: var(--evidence); font-variant-numeric: tabular-nums;
+  }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; background: #fff; }
+  .tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
+  th, td { padding: .55rem .8rem; border-bottom: 1px solid var(--line); text-align: left; }
+  td.num, th.num { text-align: right; font-family: ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+  thead th { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: .8rem; letter-spacing: .04em; }
+  .commitlog {
+    font-family: ui-monospace, Menlo, monospace; font-size: .8rem; line-height: 1.7;
+    background: var(--ink); color: #E7EEE9; border-radius: 6px;
+    padding: 1rem 1.2rem; overflow-x: auto; white-space: pre;
+  }
+  .commitlog b { color: #8FD4BC; font-weight: 600; }
+  .split { display: grid; gap: 1rem; }
+  @media (min-width: 720px) { .split { grid-template-columns: 1fr 1fr; } }
+  .pos { border-left: 3px solid var(--evidence); padding: .2rem 0 .2rem 1rem; }
+  .pos.min { border-left-color: var(--dissent); }
+  .pos .who { font-family: ui-monospace, Menlo, monospace; font-size: .74rem; color: var(--muted); display: block; margin-bottom: .25rem; }
+  form.mock { display: grid; gap: .9rem; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem; }
+  form.mock label { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: .85rem; font-weight: 600; display: grid; gap: .35rem; }
+  form.mock input, form.mock textarea, form.mock select {
+    font: inherit; padding: .55rem .7rem; border: 1px solid var(--line);
+    border-radius: 4px; background: var(--paper); width: 100%;
+  }
+  form.mock input:focus-visible, form.mock textarea:focus-visible, form.mock select:focus-visible { outline: 2px solid var(--evidence); }
+  form.mock button {
+    font: inherit; font-weight: 700; padding: .65rem 1.3rem; border: none;
+    border-radius: 4px; background: var(--evidence); color: #fff; cursor: pointer;
+    justify-self: start;
+  }
+  .note { font-size: .85rem; color: var(--muted); }
+  footer { padding: 2.5rem 0 3.5rem; font-size: .85rem; color: var(--muted); }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<header class="site">
+  <div class="wrap wide">
+    <span><strong>EDUCATION POLICY LAB</strong> · kísérleti műhely</span>
+    <span class="lang">HU (elsődleges) · <a href="#english">English abstract ↓</a></span>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Mi ez a projekt?</p>
+    <h1>Ember és mesterséges intelligencia közösen tervez oktatáspolitikát — ellenőrizhetően.</h1>
+    <p class="lede">Az Education Policy Lab egy önjavító, kétnyelvű, többágenses
+    kísérleti rendszer: az AI-csapat végzi az információfeldolgozást —
+    összehasonlítás, szintézis, kritika, forgatókönyv-építés —, az ember pedig
+    megtartja, ami az övé: az értékek közötti mérlegelést, a kockázatvállalást
+    és a döntést.</p>
+    <p>Három elv, amiből nem engedünk:</p>
+    <div class="grid cols2">
+      <div class="card"><h3>Az AI soha nem dönt</h3><p>A rendszer minden kimenete
+      döntés<em>támogatás</em>. Ahol emberi mérlegelés kell, azt a rendszer nem
+      megválaszolja, hanem <strong>kérdésként visszaadja</strong>.</p></div>
+      <div class="card"><h3>Minden állításon bizonyítékcímke</h3><p>Minden fontos
+      állítás jelölt: <span class="tag strong">[bizonyíték: erős]</span>
+      <span class="tag">[mérsékelt]</span> <span class="tag contest">[vitatott]</span>
+      — a bizonyíték, az értelmezés, a feltevés és az ajánlás soha nem keveredik.</p></div>
+      <div class="card"><h3>A nézeteltérés érték</h3><p>A rendszer nem gyárt
+      kényszerkonszenzust: a szakértői vitákat <strong>nézeteltérés-térképen</strong>
+      őrzi meg, a kisebbségi álláspontok indoklással együtt jutnak el a döntéshozóig.</p></div>
+      <div class="card"><h3>Minden lépés visszakövethető</h3><p>Minden kör minden
+      változtatása git-commitban rögzül — a javulás útja bárki által auditálható.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Hogyan működik?</p>
+    <h2>Egy kör: szakértők → forgatókönyvek → kritika → értékelés → önjavítás</h2>
+    <p>Egy beküldött szakpolitikai kérdésre a rendszer körökben dolgozik.
+    Minden körben:</p>
+    <ol class="steps">
+      <li><span class="n">01</span><span><strong>12 szakértő-ágens</strong> elemzi a kérdést a saját területéről (nemzetközi összehasonlítás, demográfia, jog, finanszírozás, politikai megvalósíthatóság…), minden állítást forrással és bizonyítékcímkével.</span></li>
+      <li><span class="n">02</span><span>A <strong>forgatókönyv-építő</strong> 3–4 alternatívát épít, mindegyikben tíz kötelező mezővel: cél, mechanizmus, bizonyítékstátusz, feltevések, várható előnyök, méltányossági hatás, költségek, megvalósítási lépések, politikai kockázatok, bizonytalanságok.</span></li>
+      <li><span class="n">03</span><span>A <strong>szerkesztő</strong> szintézist ír — konszenzus helyett nézeteltérés-térképpel. A <strong>fordító</strong> minden anyagot magyarul és angolul is elkészít, ellenőrzött szószedettel.</span></li>
+      <li><span class="n">04</span><span><strong>9 kritikus-ágens</strong> támadja az anyagot (ördög ügyvédje, bizonyíték-ellenőr, méltányosság-, költség-, megvalósíthatóság-ellenőr…). Minden kifogás konkrét: forgatókönyvet és mezőt nevez meg, súlyossággal és javítási javaslattal.</span></li>
+      <li><span class="n">05</span><span>A <strong>meta-kritikus</strong> magát a rendszert bírálja: melyik ágens gyenge, valódi-e a javulás, vagy csak a mérőszámot játssza ki.</span></li>
+      <li><span class="n">06</span><span>Egy nyolcdimenziós <strong>rubrika</strong> pontoz (determinisztikus ellenőrzések + két különböző modellcsalád keresztbírálata), a rendszer megnevezi a leggyengébb dimenziót, és a következő kör <em>egyetlen, dokumentált változtatással</em> javít önmagán.</span></li>
+    </ol>
+    <p>A generáló és a bíráló modell szándékosan <strong>különböző gyártótól</strong>
+    származik (jelenleg: Google Gemini generál, Anthropic Claude bírál), hogy egyik
+    modell se osztályozhassa a saját munkáját.</p>
+  </div>
+  <div class="wrap wide" style="margin-top:2rem">
+    <div class="split">
+      <div>
+        <h3>A javulás számokban (első futás, 5 kör)</h3>
+        <div class="tablebox"><table>
+          <thead><tr><th>Kör</th><th>Alkalmazott változtatás</th><th class="num">Összpontszám</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>alapfutás</td><td class="num">7.072</td></tr>
+            <tr><td>2</td><td>bizonytalanságok számszerűsítése</td><td class="num">7.752</td></tr>
+            <tr><td>3</td><td>kritikák: súlyosság + javítási javaslat</td><td class="num">8.551</td></tr>
+            <tr><td>4</td><td>minden oksági állításra bizonyítékcímke</td><td class="num">8.813</td></tr>
+            <tr><td>5</td><td>különvélemények külön szakaszban</td><td class="num">9.230</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div>
+        <h3>…és a git-naplóban</h3>
+        <div class="commitlog"><b>round-05:</b> apply minority_report — 8.813→9.23
+<b>round-04:</b> apply evidence_tag_all — 8.551→8.813
+<b>round-03:</b> apply critic_fix_severity — 7.752→8.551
+<b>round-02:</b> apply uncertainty_quantify — 7.072→7.752
+<b>round-01:</b> baseline run (total 7.072)</div>
+        <p class="note" style="margin-top:.75rem">Minden kör külön commit; a
+        változtatás neve a commit-üzenetben. Semmi sem írható felül utólag.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Az első kérdés</p>
+    <h2>Mit kezdjen Magyarország a korai szelekcióval és a hat-/nyolcosztályos gimnáziummal?</h2>
+    <p>A demonstrációs futás négy forgatókönyvet dolgozott ki — szándékosan
+    <strong>nem rangsorolva</strong> őket, mert a köztük való választás
+    értékkérdés, ami a döntéshozóé:</p>
+  </div>
+  <div class="wrap wide" style="margin-top:1.5rem">
+    <div class="grid cols2">
+      <div class="card"><p><span class="id">S1</span><strong>Felvételi reform a jelenlegi szerkezeten belül</strong></p>
+        <p class="note">A bekerülési kapu igazságosabbá tétele: felkészítésre kevésbé érzékeny mérés, státusz-érzékeny felvételi szabályok. Olcsó, visszafordítható kísérlet.</p></div>
+      <div class="card"><p><span class="id">S2</span><strong>A belépőhelyek fokozatos szűkítése</strong></p>
+        <p class="note">Évtizedes, kiszámítható ütemterv; a felszabaduló kapacitás az általános iskolák erős programjaiba fordul.</p></div>
+      <div class="card"><p><span class="id">S3</span><strong>Egységes alapiskola 14 éves korig</strong></p>
+        <p class="note">Szerkezeti reform a lengyel–finn irányban. A legnagyobb várható méltányossági nyereség — és a legnagyobb kockázat. <span class="tag contest">[bizonyíték: vitatott]</span></p></div>
+      <div class="card"><p><span class="id">S4</span><strong>Szerkezet megtartása, kompenzáció</strong></p>
+        <p class="note">Portugál típusú csomag: célzott finanszírozás és tanári ösztönzők a hátrányos helyzetű iskolákban, szerkezetváltás nélkül.</p></div>
+    </div>
+    <div style="margin-top:1.5rem" class="split">
+      <div class="pos">
+        <span class="who">TÖBBSÉGI ÁLLÁSPONT — méltányosság, lengyel reform, nemzetközi összehasonlítás</span>
+        A szelekció elhalasztása (szerkezeti változás) szükséges; a kompenzáció önmagában nem ellensúlyozhat ilyen korai szétválogatást.
+      </div>
+      <div class="pos min">
+        <span class="who">KISEBBSÉGI ÁLLÁSPONT — portugál reform, politikai megvalósíthatóság</span>
+        A nem szerkezeti csomag előnyösebb: hasonló nyereség, sokkal kisebb politikai kockázat. <em>Ez az álláspont indoklással együtt szerepel a záróanyagban.</em>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem">A rendszer megbánásmentes első lépésként az S1
+    és S4 kísérleti programját, valamint a bekerülési adatok évenkénti
+    közzétételét azonosította — a szerkezeti alapkérdést pedig nyitott emberi
+    döntésként adta vissza.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow dissent">Kérdés beküldése</p>
+    <h2>Hozd a saját szakpolitikai kérdésed</h2>
+    <p>A műhely bármilyen oktatáspolitikai kérdésre lefuttatható. Egy beküldött
+    kérdésből a következő készül: kétnyelvű forgatókönyv-készlet, szakpolitikai
+    összefoglaló, nézeteltérés-térkép — és egy lista azokról a kérdésekről,
+    amelyeket <strong>csak ember dönthet el</strong>.</p>
+    <form class="mock" aria-label="Kérdésbeküldő űrlap — vázlat">
+      <label>Név vagy szervezet
+        <input type="text" name="name" placeholder="pl. önkormányzat, iskola, kutató, szülő" autocomplete="name"></label>
+      <label>E-mail (válaszhoz)
+        <input type="email" name="email" autocomplete="email"></label>
+      <label>A szakpolitikai kérdés
+        <textarea name="question" rows="4" placeholder="pl. Hogyan csökkenthető a pedagógushiány a hátrányos helyzetű térségekben?"></textarea></label>
+      <label>Érintettséged
+        <select name="role"><option>döntéshozó</option><option>intézményvezető / pedagógus</option><option>kutató</option><option>szülő / diák</option><option>egyéb</option></select></label>
+      <button type="button">Kérdés beküldése</button>
+      <p class="note">Vázlat — a beküldés mechanikáját (űrlap → futás → publikus
+      eredményoldal) a tervezés következő köre dönti el. Addig: kérdés e-mailben
+      vagy GitHub-issue-ként is beadható.</p>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Átláthatóság</p>
+    <h2>Minden nyilvános: a módszertan, a kód és a hibák is</h2>
+    <p>A teljes rendszer — az ágensek specifikációja, az értékelési rubrika, a
+    körök összes kimenete és minden önjavító változtatás — verziókövetett és
+    nyilvánosan auditálható. A záróanyag pontosan jelöli, mely tartalmat
+    generálta élő nyelvi modell és mi származik a kurált tudáscsomagból.
+    A rendszer a saját korlátait is dokumentálja: a fordítási árnyalatoktól a
+    bírálómodellek nézetkülönbségéig minden emberi felülvizsgálatra váró pont
+    a <em>human_questions</em> listára kerül.</p>
+  </div>
+</section>
+
+<section id="english">
+  <div class="wrap">
+    <p class="eyebrow">English abstract</p>
+    <h2>A self-improving, bilingual, multi-agent policy-design lab</h2>
+    <p>The Education Policy Lab is an experiment in whether AI agents plus human
+    experts can dramatically accelerate education policy design. Twelve expert
+    agents analyse a policy question, a scenario builder drafts alternatives
+    with mandatory evidence status on every claim, nine critics attack the
+    result, and a meta-critic reviews the system itself. An eight-dimension
+    rubric — deterministic checks plus cross-family LLM judging — scores each
+    round, and the system applies one documented improvement per round, with
+    every change committed to git. AI never makes the policy decision: value
+    trade-offs are returned to accountable humans as explicit open questions.
+    All deliverables are produced in Hungarian and English. The first
+    demonstration question — early academic selection and Hungary's 6/8-year
+    gimnázium tracks — produced four scenarios and a preserved disagreement
+    map rather than a forced consensus.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Education Policy Lab</strong> — kísérleti, kutatási célú rendszer.
+    Kimenetei döntéstámogató anyagok, nem döntések; minden ajánlás emberi
+    mérlegelést igényel. · Kapcsolat: <em>[e-mail placeholder]</em> ·
+    Repo: <em>[link placeholder]</em></p>
+  </div>
+</footer>
+</body>
+</html>
