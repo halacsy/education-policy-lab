@@ -8,64 +8,16 @@ not the discipline (evidence tags, uncertainty structure, glossary terms).
 Evidence labels: strong / moderate / weak / contested / assumption.
 """
 
-FACTS = {
-    "pisa_escs": dict(
-        en="In PISA, the share of reading/maths score variance explained by socio-economic status is among the highest in the OECD for Hungary (~19-25% across cycles vs ~12-14% OECD average).",
-        hu="A PISA-mérésekben a tanulói teljesítmény szórásának társadalmi-gazdasági státusz által magyarázott hányada Magyarországon az OECD egyik legmagasabbja (ciklusonként ~19-25%, szemben az OECD ~12-14%-os átlagával).",
-        evidence="strong", source="OECD PISA 2012-2022 country notes"),
-    "tracking_inequality": dict(
-        en="Cross-country difference-in-differences evidence indicates earlier between-school tracking increases inequality of outcomes without raising mean performance.",
-        hu="Országok közötti különbség-a-különbségben elemzések szerint a korábbi iskolatípus-szerinti szétválogatás növeli az eredmények egyenlőtlenségét anélkül, hogy az átlagteljesítményt emelné.",
-        evidence="strong", source="Hanushek & Woessmann 2006, Economic Journal"),
-    "gimn_share": dict(
-        en="Roughly 8-12% of a cohort enters 6- or 8-year gimnazium tracks, selected at age 10 or 12 largely via the central written admission examination; entrants are strongly skewed toward high-SES, urban families.",
-        hu="Egy korosztály nagyjából 8-12%-a lép be hat- vagy nyolcosztályos gimnáziumi képzésbe 10 vagy 12 évesen, túlnyomórészt a központi írásbeli felvételi vizsga alapján; a bekerülők erősen a magas státuszú, városi családok felé tolódnak.",
-        evidence="strong", source="KSH / Oktatási Hivatal admission statistics"),
-    "value_added": dict(
-        en="Hungarian value-added studies find the raw advantage of early-selective gimnazium tracks is mostly a selection effect; the causal (value-added) gain for admitted pupils is modest.",
-        hu="Magyar pedagógiai hozzáadottérték-vizsgálatok szerint a korai szelekciós gimnáziumi képzések nyers előnye főként szelekciós hatás; a bekerülő tanulók oksági (hozzáadott értékbeli) nyeresége szerény.",
-        evidence="moderate", source="Horn (2013); Kertesi & Kezdi school-effect studies"),
-    "poland_reform": dict(
-        en="Poland's 1999 reform postponed tracking to age 15 (gimnazjum); PISA scores rose substantially by 2012, with analyses attributing part of the gain to delayed selection. The reform was reversed in 2016-2019 for political reasons.",
-        hu="Lengyelország 1999-es reformja 15 éves korra tolta a szétválogatást (gimnazjum); a PISA-eredmények 2012-re jelentősen javultak, és az elemzések a javulás egy részét a későbbi szelekciónak tulajdonítják. A reformot 2016-2019 között politikai okokból visszafordították.",
-        evidence="moderate", source="Jakubowski et al. 2016; OECD"),
-    "finland_comprehensive": dict(
-        en="Finland's peruskoulu (comprehensive school to age 16, phased in 1972-1977) is associated with high equity and reduced dependence of outcomes on family background; effects are entangled with teacher policy and support systems.",
-        hu="A finn peruskoulu (egységes alapiskola 16 éves korig, 1972-1977 között bevezetve) magas méltányossággal és a családi háttértől való függés csökkenésével jár együtt; a hatások összefonódnak a tanárpolitikával és a támogató rendszerekkel.",
-        evidence="moderate", source="Pekkarinen, Uusitalo & Kerr 2009"),
-    "portugal_improvement": dict(
-        en="Portugal improved PISA results 2006-2015 without changing selection age, via curriculum standards, school clustering, targeted support (TEIP) and retention reduction.",
-        hu="Portugália 2006 és 2015 között a szelekciós életkor módosítása nélkül javította PISA-eredményeit: tantervi sztenderdekkel, iskolatársulásokkal, célzott támogatással (TEIP) és az évismétlés visszaszorításával.",
-        evidence="moderate", source="OECD PISA trend reports; Crato 2020"),
-    "demography": dict(
-        en="Annual births fell from ~125k (early 1990s) to ~85-95k; cohort shrinkage forces school-network consolidation decisions in the 2020s-2030s regardless of selection policy.",
-        hu="Az évi születésszám a kilencvenes évek eleji ~125 ezerről ~85-95 ezerre csökkent; a zsugorodó korosztályok a 2020-30-as években a szelekciós politikától függetlenül kikényszerítik az iskolahálózat konszolidációját.",
-        evidence="strong", source="KSH demographic yearbooks"),
-    "teacher_shortage": dict(
-        en="Hungary faces a sustained teacher shortage and an ageing teacher workforce, concentrated in disadvantaged regions and in maths/science; any structural reform competes for the same scarce teachers.",
-        hu="Magyarországon tartós pedagógushiány és elöregedő tanári kar jellemző, a hátrányos helyzetű térségekben és a matematika-természettudomány szakokon koncentrálódva; minden strukturális reform ugyanazokért a szűkös tanárokért versenyez.",
-        evidence="strong", source="OECD Education at a Glance; PSZ/PDSZ surveys"),
-    "governance": dict(
-        en="Since 2013 most state schools are run by state school district centres (tankerulet); churches and foundations maintain a growing share of schools, complicating any uniform structural mandate.",
-        hu="2013 óta az állami iskolák többségét tankerületi központok működtetik; az egyházi és alapítványi fenntartók részaránya nő, ami minden egységes szerkezeti előírást bonyolulttá tesz.",
-        evidence="strong", source="Public education act amendments; maintainer statistics"),
-    "school_choice": dict(
-        en="Free school choice plus early selective tracks produces strong between-school sorting already at the primary stage in cities; abolition of tracks alone would not eliminate sorting through catchment and choice.",
-        hu="A szabad iskolaválasztás a korai szelektív képzésekkel együtt már az általános iskolai szakaszban erős iskolák közötti szétválogatást hoz létre a városokban; a képzési formák megszüntetése önmagában nem szüntetné meg a körzeten és a választáson keresztüli szelekciót.",
-        evidence="moderate", source="Kertesi & Kezdi 2013; Berenyi-Berkovits-Erőss school choice studies"),
-    "parent_attachment": dict(
-        en="Urban middle-class parents regard 8- and 6-year gimnazium places as a key mobility/insurance asset; prior attempts to curtail structures met intense, well-organised resistance.",
-        hu="A városi középosztálybeli szülők a nyolc- és hatosztályos gimnáziumi helyeket kulcsfontosságú mobilitási és biztosítéki eszköznek tekintik; a korábbi szűkítési kísérletek heves, jól szervezett ellenállásba ütköztek.",
-        evidence="moderate", source="Domestic press and stakeholder analyses, 1990s-2010s"),
-    "fiscal": dict(
-        en="Per-pupil funding differences between track types are modest; the dominant costs of structural reform are transition costs (retraining, building use, administration), not steady-state costs.",
-        hu="A képzéstípusok közötti egy főre jutó finanszírozási különbségek mérsékeltek; a szerkezeti reform meghatározó költségei az átmenet költségei (átképzés, épülethasználat, adminisztráció), nem a tartós működésé.",
-        evidence="weak", source="Budget chapters; expert estimates"),
-    "legal": dict(
-        en="The 6/8-year gimnazium forms are anchored in the public education act and maintainer agreements; phase-out requires legislative change, multi-year notice, and transitional guarantees for enrolled pupils.",
-        hu="A hat- és nyolcosztályos gimnáziumi formákat a köznevelési törvény és a fenntartói megállapodások rögzítik; a fokozatos kivezetés törvénymódosítást, többéves felmenő rendszert és a bent lévő tanulóknak szóló átmeneti garanciákat igényel.",
-        evidence="strong", source="Nkt. (public education act) analysis"),
-}
+# Facts are loaded from the canonical curated source registry
+# (knowledge/registry.json). The registry is the single source of truth for
+# citable facts: agents ground on it, the evidence_checker verifies against
+# it, and the public website's knowledge page is generated from it.
+import json as _json
+
+from .util import ROOT as _ROOT
+
+FACTS = _json.loads((_ROOT / "knowledge" / "registry.json")
+                    .read_text(encoding="utf-8"))["facts"]
 
 # ---------------------------------------------------------------------------
 # Expert briefs: what each expert 'knows' and argues.

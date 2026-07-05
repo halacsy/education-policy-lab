@@ -161,6 +161,12 @@ def build_prompt(task, agent=None, lang=None, provider=None, round_n=None,
     if agent:
         parts += ["=== AGENT SPEC (follow strictly, including ## Directives) ===",
                   load_spec(agent), ""]
+        from .memory import load_memory
+        mem = load_memory(agent)
+        if mem:
+            parts += ["=== EPISODIC MEMORY (yours, from previous rounds — "
+                      "respond to unresolved items, do not repeat resolved "
+                      "ones) ===", mem, ""]
     if instructions:
         parts += ["=== TASK INSTRUCTIONS ===", instructions, ""]
     if payload_json is not None:

@@ -15,7 +15,7 @@ import time
 
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 
-from lab import agents, evaluation, finalize, gitutil, improve, llm, pipeline
+from lab import agents, evaluation, finalize, gitutil, improve, llm, memory, pipeline
 from lab.util import load_config, round_dir
 
 
@@ -129,6 +129,7 @@ def main():
                         "tracked in human_questions.md).")
 
         improve.write_plan(rd, n, ev, next_change, artifacts, applied, decision)
+        memory.update_memories(n, artifacts)
 
         if applied:
             msg = (f"round-{n:02d}: apply {applied['id']} to "

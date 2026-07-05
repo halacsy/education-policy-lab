@@ -238,7 +238,25 @@ def run_round(n):
             return None
         if spec_prev.read_text(encoding="utf-8") != spec_now.read_text(encoding="utf-8"):
             return None
+        # episodic memory is part of the effective prompt: changed memory
+        # means the expert must actually re-run (issue #1)
+        mem_prev = prev_rd / "system_state" / "agents" / "memory" / f"{name}.md"
+        mem_now = AGENTS_DIR / "memory" / f"{name}.md"
+        prev_mem = mem_prev.read_text(encoding="utf-8") if mem_prev.exists() else ""
+        now_mem = mem_now.read_text(encoding="utf-8") if mem_now.exists() else ""
+        if prev_mem != now_mem:
+            return None
         return out_prev.read_text(encoding="utf-8")
+
+    def curated_sources(name):
+        fids = K.EXPERT_BRIEFS.get(name, {}).get("findings", [])
+        if not fids:
+            return ""
+        rows = [f"- [{K.FACTS[f]['evidence']}] {K.FACTS[f]['en']} "
+                f"(source: {K.FACTS[f]['source']})" for f in fids]
+        return ("\nCURATED SOURCES (registry-backed; cite these with their "
+                "evidence grade; anything beyond them must be flagged as "
+                "model knowledge):\n" + "\n".join(rows))
 
     def run_expert(name):
         out_path = rd / "expert_outputs" / f"{name}.md"
@@ -259,7 +277,7 @@ def run_round(n):
                      "Sections required: '## Findings (evidence)' (each "
                      "finding with an inline [evidence: ...] tag and source), "
                      "'## Interpretation', '## Assumptions', '## Position', "
-                     "'## Uncertainties'.")),
+                     "'## Uncertainties'." + curated_sources(name))),
             validate=validate, out_path=out_path, max_tokens=3000)
         return name, text
 
@@ -367,7 +385,17 @@ def run_round(n):
         out_path=rd / "brief.hu.md", max_tokens=4000)
 
     # 6. critics (parallel) + translation checker
+    registry_digest = "\n".join(
+        f"- {fid} [{f['evidence']}]: {f['en'][:120]}... (source: {f['source']})"
+        for fid, f in K.FACTS.items())
+
     def run_critic(name):
+        extra = ""
+        if name == "evidence_checker":
+            extra = ("\nCURATED SOURCE REGISTRY (the only registry-backed "
+                     "facts; a claim tagged stronger than its registry grade, "
+                     "or citing a source not listed here without flagging it "
+                     "as model knowledge, is a defect):\n" + registry_digest)
         text, _ = step.run(
             f"critic:{name}",
             dict(task="critic", agent=name, round_n=n,
@@ -375,7 +403,7 @@ def run_round(n):
                      "Critique the scenarios below. Output format per "
                      "objection:\n## S<n>.<field>\nObjection: <concrete flaw>\n"
                      "plus any lines your ## Directives require. <field> must "
-                     "be one of: " + ", ".join(FIELD_KEYS) + "."),
+                     "be one of: " + ", ".join(FIELD_KEYS) + "." + extra),
                  inputs=scen_en_md + "\n\n" + synthesis_text),
             validate=lambda t: len(CRITIC_HEADING_RE.findall(t)) >= 2
                                and "Objection:" in t,

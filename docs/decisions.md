@@ -138,6 +138,30 @@ S1 anywhere in the document. The fix was applied as a catalog change
 regeneration of the affected deliverables. Human critique is a first-class
 input to Level 4, not an out-of-band edit to Level 1 outputs. (2026-07-05)
 
+**D-21 — Episodic memory is deterministic distillation, not model paraphrase.**
+Per-agent memory (agents/memory/<name>.md, issue #1) is written by code from
+the round's actual artifacts: objections received, resolution status (field
+text changed or not), parity results, meta-critique mentions. A model-written
+memory could drift or flatter; a distilled record is auditable. Memory is part
+of the effective prompt, so it is versioned in every system_state snapshot,
+invalidates expert-output reuse (D-19), and is pruned to the newest 5 round
+sections per agent. Retention policy and the critic-anchoring question are
+flagged as open human decisions. (2026-07-05)
+
+**D-22 — knowledge/registry.json is the canonical source registry (v1).**
+FACTS in lab/knowledge.py now load from the registry; expert prompts inject
+their registry-backed sources with evidence grades; the evidence_checker
+receives the registry and must flag claims graded above it or citing
+unregistered sources as model knowledge. Storage/retrieval at scale, source
+admissibility policy and update governance are CTO-level decisions (issue #2)
+— v1 deliberately stays flat-file and PR-governed. (2026-07-05)
+
+**D-23 — The public knowledge page is generated, never hand-edited.**
+site/knowledge.html is built by scripts/build_site_kb.py from the registry +
+glossary on every Pages deploy and is gitignored locally, so the public
+credibility surface cannot drift from what the agents actually use.
+(2026-07-05)
+
 **D-13 — Round 1 starts from an honest baseline, not a sandbagged one.**
 The baseline agent specs already satisfy hard constraints (all scenario
 fields present, critics name scenario id + field). Improvement therefore has

@@ -215,6 +215,25 @@ def main():
     check(14, "no critic/evidence/disagreement constraint was removed", ok14,
           "; ".join(det14[:3]))
 
+    # episodic memory (issue #1) — enforced for rounds run after the feature
+    mem_rounds = [n for n in rs if (ITER_DIR / f"round_{n:02d}" / "system_state"
+                                    / "agents" / "memory").exists()]
+    if mem_rounds:
+        def mem_hash(n):
+            base = ITER_DIR / f"round_{n:02d}" / "system_state" / "agents" / "memory"
+            h = hashlib.sha256()
+            for p in sorted(base.rglob("*.md")):
+                h.update(p.name.encode())
+                h.update(p.read_bytes())
+            return h.hexdigest()
+        hashes_m = [mem_hash(n) for n in mem_rounds]
+        okM = all(a != b for a, b in zip(hashes_m, hashes_m[1:]))
+        check("M", "episodic memory versioned in snapshots and non-static",
+              okM, f"memory present in rounds {mem_rounds}")
+    else:
+        print("[SKIP] check    M: episodic memory (no rounds run since the "
+              "feature landed — next loop run will populate agents/memory/)")
+
     # held-out qualitative checks (not visible to the improvement step)
     artifacts = load_artifacts(last)
     for name, ok, msg in holdout_checks.run_all(artifacts):
