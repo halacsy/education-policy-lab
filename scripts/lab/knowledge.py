@@ -452,7 +452,7 @@ SCENARIOS = [
             dict(en="Teacher capacity for differentiated instruction can be built at national scale within the transition window.",
                  hu="A differenciált oktatáshoz szükséges tanári kapacitás országos léptékben kiépíthető az átmeneti időszak alatt."),
             dict(en="Sorting does not simply migrate to school choice between general schools and to non-state maintainers.",
-                 hu="A szelekció nem vándorol át egyszerűen az általános iskolák közötti választásba és a nem állami fenntartókhoz."),
+                 hu="A szelekció nem vándorol át egyszerűen az általános iskolák közötti szabad iskolaválasztásba és a nem állami fenntartókhoz."),
             dict(en="Political ownership survives at least two electoral cycles.",
                  hu="A politikai gazdaszerep legalább két választási cikluson át fennmarad."),
         ],

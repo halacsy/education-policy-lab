@@ -101,7 +101,7 @@ vitatott — Összességében vitatott: a legerősebb szerkezeti bizonyítékok 
 
 **Feltevések**
 - A differenciált oktatáshoz szükséges tanári kapacitás országos léptékben kiépíthető az átmeneti időszak alatt.
-- A szelekció nem vándorol át egyszerűen az általános iskolák közötti választásba és a nem állami fenntartókhoz.
+- A szelekció nem vándorol át egyszerűen az általános iskolák közötti szabad iskolaválasztásba és a nem állami fenntartókhoz.
 - A politikai gazdaszerep legalább két választási cikluson át fennmarad.
 
 **Várható előnyök**
