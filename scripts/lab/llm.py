@@ -20,12 +20,12 @@ from .util import ROOT, load_config
 
 KEY_VARS = {"anthropic": "ANTHROPIC_API_KEY", "google": "GOOGLE_API_KEY"}
 
-CALL_LOG = []           # {task, agent, role, provider, backend, ms}
+CALL_LOG = []           # {task, agent, role, provider, backend, model, ms}
 _clients = {}
-_failures = {"anthropic": 0, "google": 0}
-_MAX_FAILURES = 6       # circuit breaker: after this many consecutive HARD
-                        # failures a provider degrades to mock for the run
-                        # (rate limits do not count — they wait instead)
+_failures = {}          # (provider, model) -> consecutive hard-failure count;
+                        # daily quotas are PER MODEL, so the breaker is too:
+                        # a dead rung is skipped and the ladder climbs on
+_MAX_FAILURES = 6
 
 # Per-provider request spacing: burst-parallel calls trip per-minute quotas
 # (observed with Gemini free-tier keys), so calls to the same provider are
@@ -101,9 +101,26 @@ def provider_for_role(role):
 def provider_available(provider):
     if os.environ.get("LAB_FORCE_MOCK"):
         return False
-    if _failures[provider] >= _MAX_FAILURES:
-        return False
     return bool(os.environ.get(KEY_VARS[provider]))
+
+
+def _model_dead(provider, model):
+    return _failures.get((provider, model), 0) >= _MAX_FAILURES
+
+
+def _pick_live_model(provider, task, dimension, escalation):
+    """Resolve the cheapest adequate rung, skipping breaker-tripped models
+    by climbing the ladder; None if every candidate rung is dead."""
+    seen = []
+    for bump in range(8):
+        m = resolve_model(provider, task=task, dimension=dimension,
+                          escalation=escalation + bump)
+        if m in seen:
+            break
+        seen.append(m)
+        if not _model_dead(provider, m):
+            return m
+    return None
 
 
 def _client(provider):
@@ -159,11 +176,10 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
             entry["task"] = line[5:].strip()
         if line.startswith("AGENT:"):
             entry["agent"] = line[6:].strip()
-    model = resolve_model(provider, task=entry.get("task"),
-                          dimension=dimension, escalation=escalation)
+    model = _pick_live_model(provider, entry.get("task"), dimension, escalation)
     entry["model"] = model
 
-    if provider_available(provider):
+    if provider_available(provider) and model is not None:
         for attempt in range(retries + 1):
             try:
                 text = _throttled(provider,
@@ -171,7 +187,7 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
                                                      max_tokens))
                 if not text.strip():
                     raise RuntimeError("empty response")
-                _failures[provider] = 0
+                _failures[(provider, model)] = 0
                 entry["backend"] = provider
                 entry["ms"] = int((time.time() - t0) * 1000)
                 CALL_LOG.append(entry)
@@ -180,16 +196,22 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
                 msg = f"{type(e).__name__}: {e}"
                 entry.setdefault("errors", []).append(msg[:200])
                 if "PerDay" in msg or "check your plan and billing" in msg:
-                    # daily quota exhausted: no point retrying today — degrade
-                    # this provider to the deterministic mock for the run
-                    _failures[provider] = _MAX_FAILURES
-                    break
+                    # daily quota exhausted for THIS model — kill the rung
+                    # and climb to the next live one (D-27)
+                    _failures[(provider, model)] = _MAX_FAILURES
+                    model = _pick_live_model(provider, entry.get("task"),
+                                             dimension, escalation)
+                    entry["model"] = model
+                    if model is None:
+                        break
+                    continue
                 if _RATE_RE.search(msg):
                     # per-minute rate limit: wait it out, no breaker penalty
                     time.sleep(min(60, 15 * (attempt + 1)))
                     continue
-                _failures[provider] += 1
-                if _failures[provider] >= _MAX_FAILURES:
+                _failures[(provider, model)] = \
+                    _failures.get((provider, model), 0) + 1
+                if _model_dead(provider, model):
                     break
                 time.sleep(2.0 * (attempt + 1))
 

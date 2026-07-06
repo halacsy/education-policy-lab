@@ -207,6 +207,12 @@ ladder (needed while the free-tier key is in use). The ladder lives in
 config → snapshotted per round → tier changes are diffable system changes.
 (2026-07-05)
 
+**D-27 — Circuit breaker is per (provider, model), with ladder climb.**
+Daily free-tier quotas are per model, so a "PerDay" quota error kills only the
+affected rung; call_model climbs to the next live rung on the D-26 ladder and
+degrades to mock only when every rung is dead. This also makes judge-swap
+experiments feasible within free quotas. (2026-07-06)
+
 **D-13 — Round 1 starts from an honest baseline, not a sandbagged one.**
 The baseline agent specs already satisfy hard constraints (all scenario
 fields present, critics name scenario id + field). Improvement therefore has
