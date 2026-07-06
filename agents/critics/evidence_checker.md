@@ -1,6 +1,6 @@
 # Agent: evidence_checker
 
-Version: 2
+Version: 1
 Type: critic
 Provider-role: judge
 
@@ -50,4 +50,3 @@ Objection: <concrete flaw>
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-03] DIRECTIVE:critic_fix_severity — For every objection add a line 'Severity: high|medium|low' and a line 'Suggested revision: <concrete fix>'.
