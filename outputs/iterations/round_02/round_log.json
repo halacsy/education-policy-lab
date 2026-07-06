@@ -1,0 +1,24 @@
+{
+  "round": 2,
+  "fallbacks": [],
+  "reused": [],
+  "resumed": [],
+  "backends": {
+    "brief [anthropic:claude-sonnet-5]": 2,
+    "brief [mock]": 2,
+    "build_scenarios [anthropic:claude-opus-4-8]": 2,
+    "build_scenarios [anthropic:claude-sonnet-5]": 2,
+    "critic [google:gemini-2.5-flash]": 7,
+    "critic [mock]": 10,
+    "expert_analysis [anthropic:claude-haiku-4-5]": 24,
+    "judge_score [anthropic:claude-haiku-4-5]": 6,
+    "judge_score [google:gemini-2.5-flash]": 6,
+    "judge_score [mock]": 3,
+    "meta_critique [mock]": 1,
+    "rejected_framings [anthropic:claude-haiku-4-5]": 2,
+    "synthesis [anthropic:claude-opus-4-8]": 2,
+    "synthesis [anthropic:claude-sonnet-5]": 2,
+    "translate_scenarios [anthropic:claude-opus-4-8]": 2,
+    "translate_scenarios [anthropic:claude-sonnet-5]": 2
+  }
+}

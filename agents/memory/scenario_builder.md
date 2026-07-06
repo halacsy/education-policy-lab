@@ -3,31 +3,49 @@
 Deterministic distillation from previous rounds (lab/memory.py); fed back into this agent's prompt. Unresolved items persist until the criticized field changes; resolved items drop.
 
 
-## round 01 — received
-- received [devil_advocate on S1.expected_benefits]: The claim of "Reduced SES concentration at entry without dismantling institutional structures [evidence: contested]" is directly contradicted by the `Evidence status` field, which states "the effect of admission-rule cha
-- received [devil_advocate on S2.assumptions]: The assumption "Staged reform reduces reversal risk relative to abrupt change (untested — may merely extend conflict)" is presented as an assumption, but the parenthetical "untested — may merely extend conflict" directly
-- received [devil_advocate on S3.expected_benefits]: The claim of "Consistent reduction of the SES-score gradient, which in Hungary is elevated at 19–25% vs 12–14% OECD average [evidence: strong]" is too strong. While the high SES gradient in Hungary is strongly evidenced,
-- received [devil_advocate on S4.equity_impact]: The statement "Aims to raise the floor for non-selected pupils rather than remove the age-10–12 gatekeeper; leaves the early-selection sorting mechanism and its high-SES skew intact, so it mitigates rather than reverses 
-- received [evidence_checker on S1.mechanism]: The claim "Entry to 6/8-year tracks is currently dominated by centralized written examination that filters for test-prep advantage and parental investment, not purely innate ability [evidence: strong]" is tagged as stron
-- received [evidence_checker on S1.expected_benefits]: The claim "Lower transition-cost burden than structural reform since buildings and staffing remain in place [evidence: weak]" is tagged as weak, but the `fiscal [weak]` source in the registry states: "Per-pupil funding d
-- received [evidence_checker on S3.assumptions]: The assumption "The Hanushek & Woessmann findings on timing generalise to Hungary despite differences in school quality variance, teacher composition, and curriculum coherence. [assumption]" is listed as an assumption, b
+## round 02 — received
+- received [devil_advocate on S3.mechanism]: The asymmetric-peer-effect claim is the load-bearing wall of S3 and it is tagged 'contested'; if peer effects are symmetric, S3 redistributes rather than creates learning.
+- received [devil_advocate on S4.goal]: S4's premise that early selection is 'politically fixed' is itself a political judgment, not evidence; treating it as fixed forecloses the option space prematurely.
+- received [evidence_checker on S2.mechanism]: The claim that advanced programmes retain ambitious families in general schools cites only 'expert inference'; magnet-school analogues are US-specific and not verified for Hungary.
+- received [evidence_checker on S1.expected_benefits]: 'Reduced test-preparation arms race' benefit carries a 'weak' tag but is presented in the same list as moderately evidenced items without visual distinction.
 - received [assumption_checker on S3.assumptions]: The assumption 'political ownership survives two electoral cycles' contradicts the political_feasibility expert's stated position that no such window exists; the tension is unresolved in the scenario.
 - received [assumption_checker on S4.assumptions]: 'Compensation can offset, not just mask' is doing all the work in S4, yet no country evidence exists at Hungary's selection age — the assumption should be flagged as unverifiable ex ante.
-- received [equity_checker on S1.equity_impact]: The claim that admission reform alone would "likely displace rather than fully reduce stratification" is unsupported. While the scenario acknowledges other factors like choice and catchment, it doesn't provide evidence t
-- received [equity_checker on S2.equity_impact]: The statement "partial retention of early places during phase-down means residual stratification persists through the transition" is an understatement. The scenario's mechanism explicitly states a *gradual reduction* of 
-- received [equity_checker on S3.equity_impact]: The claim that "gains are contingent on bundled teacher and support investment — without it, inequality may reappear as within-school ability grouping" is a strong assertion of a causal link without sufficient supporting
-- received [equity_checker on S4.equity_impact]: The statement "does not address the loss of political voice/resources that follows departed top students" is a speculative claim about political voice and resources. While it's plausible that the departure of high-SES st
-- received [feasibility_checker on S1.implementation_steps]: The implementation steps assume the Ministry of Education can unilaterally "negotiate equity thresholds with church and foundation maintainers." Given the "fragmented maintainers (state centres, churches, foundations)" a
-- received [feasibility_checker on S2.implementation_steps]: The step "Ministry — front-load teacher recruitment/retraining during the 2025–2035 retirement window" is presented as a feasible action, but `S2.uncertainties` explicitly states: "No published estimate of cost/timeline 
-- received [feasibility_checker on S3.implementation_steps]: The step "Ministry — reform free-choice rules and catchment boundaries simultaneously to curb between-school sorting" is a significant undertaking that is likely to face substantial administrative and political resistanc
-- received [feasibility_checker on S4.implementation_steps]: The step "Ministry — pilot intensive TEIP-style support in underperforming vocational and lower-track schools in selected regions" is presented without acknowledging the significant fiscal commitment required for such a 
-- received [cost_checker on S1.cost_categories]: The cost categories are incomplete. "Administrative/legislative amendment costs" is too vague and likely underestimates the full scope of legal and administrative work required for legislative change, especially given th
-- received [cost_checker on S2.cost_categories]: The cost categories are incomplete and lack fiscal sensitivity. "Multi-year transition budgeting (staff retraining in mixed-ability pedagogy)" is too broad. It does not specify the scale or cost per teacher for retrainin
-- received [cost_checker on S3.cost_categories]: The cost categories are incomplete and lack fiscal sensitivity. "Teacher recruitment to offset the ~15% below-OECD staffing gap and ageing workforce" is a significant, ongoing cost that should be quantified or at least a
-- received [cost_checker on S4.cost_categories]: The cost categories are incomplete. "Sustained targeted remedial funding (TEIP-style) for disadvantaged schools" is a critical, ongoing cost that needs to be acknowledged as a long-term fiscal commitment, not just a one-
+- received [equity_checker on S1.equity_impact]: S1 helps high-ability low-SES pupils only; the equity_impact field understates that the non-selected majority sees zero direct benefit, which conflicts with the mission's equity criterion.
+- received [equity_checker on S3.equity_impact]: S3's equity_impact names middle-class exit as a risk but gives no threshold at which the reform becomes equity-negative; without it the field is not decision-ready.
+- received [feasibility_checker on S3.implementation_steps]: Step 2 requires nationwide differentiation retraining in years 1-4 while the teacher shortage is worst in exactly the schools that need it; throughput capacity is asserted, not shown.
+- received [feasibility_checker on S2.implementation_steps]: The felmenő rendszer guarantee in step 1 interacts with annual caps: schools with mixed cohorts face split timetables for a decade — the steps do not name who plans this.
+- received [cost_checker on S3.cost_categories]: Two 'high' one-off items (retraining, network reconfiguration) lack even order-of-magnitude ranges, though the education_finance expert explicitly asked for published ranges.
+- received [cost_checker on S4.cost_categories]: S4's recurring cost is the package itself, yet no fiscal sensitivity (what happens at -30% budget) is given despite budget vulnerability being S4's own top political risk.
 - received [political_risk_checker on S2.political_risks]: Reversal risk is listed but not mitigated: the scenario has no design feature that raises the cost of freezing the cap trajectory for a successor government.
 - received [political_risk_checker on S1.political_risks]: The maintainer-exemption risk is understated: if church schools are exempt, S1 creates an incentive to shift selective intake there, worsening the problem it targets.
-- received [coherence_checker on S1.mechanism]: The mechanism states that reforming admission criteria "could reduce SES concentration while preserving legal forms [evidence: contested]". However, the "Evidence status" for S1 states that "the effect of admission-rule 
-- received [coherence_checker on S2.assumptions]: The assumption "Staged reform reduces reversal risk relative to abrupt change (untested — may merely extend conflict). [assumption]" directly contradicts the uncertainty "Whether staged reform reduces reversal risk or me
-- received [coherence_checker on S3.expected_benefits]: The expected benefit "Consistent reduction of the SES-score gradient, which in Hungary is elevated at 19–25% vs 12–14% OECD average [evidence: strong]" is too strong given the "Evidence status" and "Uncertainties" for S3
-- received [coherence_checker on S4.equity_impact]: The equity impact states that this scenario "mitigates rather than reverses stratification and does not address the loss of political voice/resources that follows departed top students." However, the "Expected benefits" 
+- received [coherence_checker on S2.goal]: S2's goal says freed capacity is 'invested in strong programmes', but its cost_categories show political capital 'high and sustained' with no corresponding implementation step securing that capital — goal and steps are m
+- received [coherence_checker on S1.mechanism]: Mechanism claim 3 (weaker test-prep incentives) presupposes lottery weight large enough to matter, but nothing elsewhere in S1 fixes the lottery weight — an internal free variable.
+
+## round 02 — resolved from previous round
+- RESOLVED [assumption_checker on S3.assumptions] (field changed)
+- RESOLVED [assumption_checker on S4.assumptions] (field changed)
+- RESOLVED [coherence_checker on S1.mechanism] (field changed)
+- RESOLVED [coherence_checker on S2.assumptions] (field changed)
+- RESOLVED [coherence_checker on S3.expected_benefits] (field changed)
+- RESOLVED [coherence_checker on S4.equity_impact] (field changed)
+- RESOLVED [cost_checker on S1.cost_categories] (field changed)
+- RESOLVED [cost_checker on S2.cost_categories] (field changed)
+- RESOLVED [cost_checker on S3.cost_categories] (field changed)
+- RESOLVED [cost_checker on S4.cost_categories] (field changed)
+- RESOLVED [devil_advocate on S1.expected_benefits] (field changed)
+- RESOLVED [devil_advocate on S2.assumptions] (field changed)
+- RESOLVED [devil_advocate on S3.expected_benefits] (field changed)
+- RESOLVED [devil_advocate on S4.equity_impact] (field changed)
+- RESOLVED [equity_checker on S1.equity_impact] (field changed)
+- RESOLVED [equity_checker on S2.equity_impact] (field changed)
+- RESOLVED [equity_checker on S3.equity_impact] (field changed)
+- RESOLVED [equity_checker on S4.equity_impact] (field changed)
+- RESOLVED [evidence_checker on S1.mechanism] (field changed)
+- RESOLVED [evidence_checker on S1.expected_benefits] (field changed)
+- RESOLVED [evidence_checker on S3.assumptions] (field changed)
+- RESOLVED [feasibility_checker on S1.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S2.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S3.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S4.implementation_steps] (field changed)
+- RESOLVED [political_risk_checker on S2.political_risks] (field changed)
+- RESOLVED [political_risk_checker on S1.political_risks] (field changed)
