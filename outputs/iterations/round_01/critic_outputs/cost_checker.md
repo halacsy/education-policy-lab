@@ -1,0 +1,12 @@
+# Critique: cost_checker
+## S1.cost_categories
+Objection: The cost categories are incomplete. "Administrative/legislative amendment costs" is too vague and likely underestimates the full scope of legal and administrative work required for legislative change, especially given the "fragmented maintainers" mentioned in the scenario. It also omits the costs associated with potential legal challenges or negotiations with maintainers, which are highlighted as political risks.
+
+## S2.cost_categories
+Objection: The cost categories are incomplete and lack fiscal sensitivity. "Multi-year transition budgeting (staff retraining in mixed-ability pedagogy)" is too broad. It does not specify the scale or cost per teacher for retraining, which is highlighted as an uncertainty in S2 and S3. Given the "5,000–8,000 teachers" mentioned in the uncertainties, this is a significant omission. It also doesn't account for potential compensation for staff redeployment or redundancy, which is mentioned as a management cost but not explicitly budgeted.
+
+## S3.cost_categories
+Objection: The cost categories are incomplete and lack fiscal sensitivity. "Teacher recruitment to offset the ~15% below-OECD staffing gap and ageing workforce" is a significant, ongoing cost that should be quantified or at least acknowledged as a major fiscal commitment beyond "front-loaded transition costs." The scenario also mentions "reallocation of scarce teachers is zero-sum under shortage" in political risks, implying a need for more than just recruitment, but also incentives or structural changes to attract and retain teachers, which are not captured in the cost categories.
+
+## S4.cost_categories
+Objection: The cost categories are incomplete. "Sustained targeted remedial funding (TEIP-style) for disadvantaged schools" is a critical, ongoing cost that needs to be acknowledged as a long-term fiscal commitment, not just a one-off. The political risks section explicitly states that "Sustained targeted funding requires fiscal commitment that may not match Portugal's; funding could lapse across cycles," indicating that the "sustained" aspect is a major cost and risk that should be more explicitly detailed or quantified in the cost categories.

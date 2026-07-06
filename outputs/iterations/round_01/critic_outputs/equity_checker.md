@@ -1,0 +1,12 @@
+# Critique: equity_checker
+## S1.equity_impact
+Objection: The claim that admission reform alone would "likely displace rather than fully reduce stratification" is unsupported. While the scenario acknowledges other factors like choice and catchment, it doesn't provide evidence that these factors would *displace* the stratification rather than simply *coexist* with a reduced SES skew from admission reform. The statement implies a zero-sum game where addressing one layer of stratification merely shifts the problem, which is a stronger claim than the evidence supports.
+
+## S2.equity_impact
+Objection: The statement "partial retention of early places during phase-down means residual stratification persists through the transition" is an understatement. The scenario's mechanism explicitly states a *gradual reduction* of places, implying that the early-entry gatekeeper, and thus the mechanism for high-SES/urban concentration, remains in place, albeit for a smaller cohort. The impact is not merely "residual stratification" but a continued, albeit diminished, operation of the very mechanism that creates the SES skew.
+
+## S3.equity_impact
+Objection: The claim that "gains are contingent on bundled teacher and support investment — without it, inequality may reappear as within-school ability grouping" is a strong assertion of a causal link without sufficient supporting evidence within the scenario. While the Finnish reform section mentions bundled supports, it does not provide direct evidence that *without* these specific investments, inequality *will* reappear as within-school ability grouping in Hungary. This is a speculative leap from a correlation in one context to a causal necessity in another.
+
+## S4.equity_impact
+Objection: The statement "does not address the loss of political voice/resources that follows departed top students" is a speculative claim about political voice and resources. While it's plausible that the departure of high-SES students could lead to a loss of resources or political influence for general schools, the scenario provides no evidence or mechanism to support this specific consequence. The equity impact should focus on the direct effects on students and educational outcomes, not unquantified political dynamics.

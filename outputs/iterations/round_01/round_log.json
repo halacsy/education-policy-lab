@@ -1,0 +1,20 @@
+{
+  "round": 1,
+  "fallbacks": [],
+  "reused": [],
+  "resumed": [],
+  "backends": {
+    "brief [anthropic:claude-sonnet-5]": 1,
+    "brief [mock]": 1,
+    "build_scenarios [anthropic:claude-opus-4-8]": 1,
+    "build_scenarios [anthropic:claude-sonnet-5]": 1,
+    "critic [google:gemini-2.5-flash]": 7,
+    "critic [mock]": 2,
+    "expert_analysis [anthropic:claude-haiku-4-5]": 12,
+    "rejected_framings [anthropic:claude-haiku-4-5]": 1,
+    "synthesis [anthropic:claude-opus-4-8]": 1,
+    "synthesis [anthropic:claude-sonnet-5]": 1,
+    "translate_scenarios [anthropic:claude-opus-4-8]": 1,
+    "translate_scenarios [anthropic:claude-sonnet-5]": 1
+  }
+}

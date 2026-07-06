@@ -1,0 +1,209 @@
+# Policy scenarios
+
+## S1 — Admission reform within the current structure
+**Goal**
+Reduce the socioeconomic skew of 6/8-year gimnazium entry while preserving existing school forms and selection timing.
+
+**Mechanism**
+- Entry to 6/8-year tracks is currently dominated by centralized written examination that filters for test-prep advantage and parental investment, not purely innate ability [evidence: strong]
+- Entrants are strongly skewed toward high-SES, urban families, creating an early segmentation mechanism correlated with family resources [evidence: strong]
+- Reforming admission criteria (e.g., flattening entry criteria, quotas, diagnostic rather than purely competitive scoring) could reduce SES concentration while preserving legal forms [evidence: contested]
+- Early selection is separable from the length question: Hungary could flatten entry criteria while preserving the forms [evidence: strong]
+
+**Evidence status**
+moderate — strong evidence on the SES skew and examination filtering, but the effect of admission-rule changes on composition is contested and not directly quantified for Hungary.
+
+**Assumptions**
+- The examination-based selection mechanism is the primary driver of early tracking effects (not school choice or catchment alone). [assumption]
+- The KSH/Hivatal statistics accurately capture SES composition at entry; unmeasured advantages (test prep, language exposure) may be even more concentrated. [assumption]
+- Legislative change is the necessary baseline; administrative reform alone will not suffice for binding rule changes. [assumption]
+- Maintainer agreements are enforceable contracts; their modification requires renegotiation or legislative override. [assumption]
+
+**Expected benefits**
+- Reduced SES concentration at entry without dismantling institutional structures [evidence: contested]
+- Preserves the legal forms, avoiding statutory abolition barriers and multi-year transition guarantees [evidence: strong]
+- Lower transition-cost burden than structural reform since buildings and staffing remain in place [evidence: weak]
+
+**Equity impact**
+Potentially narrows entry-stage SES skew, but sorting problem is structural and multi-layered: choice, catchment, and maintainer diversity fragment the system independently of admission rules, so admission reform alone would likely displace rather than fully reduce stratification.
+
+**Cost categories**
+- Admission-system redesign and new diagnostic instrument development
+- Administrative/legislative amendment costs
+- Monitoring and enforcement across fragmented maintainers (state centres, churches, foundations)
+
+**Implementation steps**
+- Ministry of Education — draft legislative amendment flattening/reforming entry criteria while preserving 6/8-year forms
+- Oktatási Hivatal — redesign centralized admission instrument toward diagnostic and equity-weighted scoring
+- State school district centres (tankerulet) — implement revised admission rules in state schools
+- Ministry — negotiate equity thresholds with church and foundation maintainers
+
+**Political risks**
+- Urban middle-class parents treat early grammar school selection as a non-negotiable asset; prior reform attempts faced organised, sustained opposition that blocked change
+- Maintainers (church, foundation) may resist admission mandates via admissions practice or legal dispute
+- Perception of redistributing scarce elite places downward could mobilise the beneficiary constituency
+
+**Uncertainties**
+- Whether admission-rule changes reduce SES skew or are absorbed by parental navigation of choice — mechanism of SES skew (examination score vs. application rate vs. navigation) is unclear from citations.
+- Whether church/foundation schools would accept flattened selection mandates or resist via admissions practice is unstudied in provided sources.
+- Whether abolishing/reforming tracks alone would eliminate tracking, since choice and catchment-based sorting would persist [evidence: moderate].
+- No robust causal evidence on total inequality or sorting effects if admission changes leave choice/catchment unchanged.
+
+## S2 — Gradual phase-down of 6/8-year entry places
+**Goal**
+Progressively reduce the number of early-entry (age 10–12) gimnazium places over multiple electoral cycles, shifting selection later without immediate abolition.
+
+**Mechanism**
+- Early between-school tracking (selection before age 11) increases socio-economic stratification of outcomes without raising mean achievement across OECD systems [evidence: strong]
+- Postponing early selection shows modest or neutral effects on mean performance but consistently reduces the SES-score gradient [evidence: moderate]
+- Reducing early-entry places gradually distributes network-consolidation pain more evenly and lets mixed-ability secondaries retain critical mass longer [evidence: moderate]
+- Staged phase-down with grandfathering avoids the enrolled-pupil legal guarantees that abrupt abolition triggers [evidence: strong]
+
+**Evidence status**
+moderate — strong international evidence on early-tracking equity costs, but the specific gradient reduction and reversal risk for a phased Hungarian path are not quantified in curated sources.
+
+**Assumptions**
+- Political durability of reform depends on sustained public legitimacy or structural lock-in (e.g., teaching workforce reorientation). [assumption]
+- Staged reform reduces reversal risk relative to abrupt change (untested — may merely extend conflict). [assumption]
+- Current selective-school capacity does not contract as rapidly as overall cohort. [assumption]
+- Funding formulas remain unchanged during transition. [assumption]
+
+**Expected benefits**
+- Gradual reduction of SES-score gradient as fewer pupils selected early [evidence: moderate]
+- Later selection permits longer exposure to mixed-ability environments, reducing inequality of opportunity [evidence: moderate]
+- Smoother alignment with unavoidable demographic consolidation, reducing small-town closures [evidence: moderate]
+
+**Equity impact**
+Progressively reduces the high-SES/urban concentration at early-entry stage and returns high-ability, high-resource peers to general schools over time; but partial retention of early places during phase-down means residual stratification persists through the transition, and sorting via choice/catchment continues.
+
+**Cost categories**
+- Multi-year transition budgeting (staff retraining in mixed-ability pedagogy)
+- Building repurposing and administrative restructuring as places contract
+- Redundancy/staff redeployment management
+- Parental communication campaigns to sustain legitimacy
+
+**Implementation steps**
+- Ministry of Education — legislate a scheduled annual reduction of 6/8-year entry places with grandfathering for enrolled pupils
+- Oktatási Hivatal — set and publish declining place caps per cycle
+- State school district centres — redeploy capacity and staff toward mixed-ability lower-secondary provision
+- Ministry — front-load teacher recruitment/retraining during the 2025–2035 retirement window
+
+**Political risks**
+- Even evidence-backed improvements can be reversed within 5–10 years if the beneficiary middle class perceives loss of positional advantage (Polish precedent)
+- Phasing may merely extend the conflict across multiple cycles rather than resolving it
+- Small, concentrated, politically articulate constituency defending early selection can mobilise at each reduction step
+
+**Uncertainties**
+- Whether staged reform reduces reversal risk or merely extends the conflict is untested.
+- Elasticity of prestige-school demand to selection age is unknown.
+- No published estimate of cost/timeline for retraining ~5,000–8,000 teachers in mixed-ability pedagogy exists for Hungary.
+- Precise forecast of selective-school enrollment demand under cohort shrinkage (elasticity unknown).
+
+## S3 — Comprehensive school to age 14 (structural reform)
+**Goal**
+Integrate the 6/8-year gimnazium tracks into a unified secondary system with deferred selection post-14, coupled with reform of choice rules and catchment boundaries.
+
+**Mechanism**
+- Early selection at ages 10–12 via high-stakes examination serves as a gatekeeper that legitimizes and locks in existing socioeconomic advantage [evidence: strong]
+- Postponing or eliminating early selection reduces the SES-score gradient with modest or neutral mean-performance effects [evidence: moderate]
+- Finland's peruskoulu reform shows abolishing selection alone does not produce equity gains; the effect was bundled with teacher professionalization, curriculum standardization, and integrated support [evidence: moderate]
+- Removing selection without rebuilding teacher capacity and support could reproduce inequality through de facto within-school tracking [evidence: moderate]
+- Track abolition alone risks masking rather than addressing stratification because choice and catchment sorting persist [evidence: moderate]
+
+**Evidence status**
+moderate — the direction (reduced SES gradient from deferred selection) is supported, but the Hungary-specific magnitude and the bundled-supports requirement introduce substantial conditionality and unquantified risk.
+
+**Assumptions**
+- Hungarian comprehensive schools would have sufficient instructional capacity to serve heterogeneous intake without de facto re-tracking. [assumption]
+- The political economy of Hungarian secondary education allows resource reallocation from selective to comprehensive institutions. [assumption]
+- The Hanushek & Woessmann findings on timing generalise to Hungary despite differences in school quality variance, teacher composition, and curriculum coherence. [assumption]
+- Teacher retraining is feasible within 2–3 years for a mixed-ability method shift. [assumption]
+- Selective tracks are embedded in broader structural choices (curriculum, teacher allocation, regional inequality) that would need joint reform. [assumption]
+
+**Expected benefits**
+- Consistent reduction of the SES-score gradient, which in Hungary is elevated at 19–25% vs 12–14% OECD average [evidence: strong]
+- Returns cognitive diversity and resources to previously non-selective schools depleted by cream-skimming [evidence: moderate]
+- Mixed-ability secondaries retain critical mass longer under demographic decline, reducing small-town closures [evidence: moderate]
+- Longer mixed-ability exposure reduces inequality of opportunity [evidence: moderate]
+
+**Equity impact**
+Largest potential equity gain of the four scenarios by removing the age-10–12 gatekeeper that concentrates high-SES peers; but gains are contingent on bundled teacher and support investment — without it, inequality may reappear as within-school ability grouping, and residual choice/catchment sorting persists unless jointly reformed.
+
+**Cost categories**
+- Front-loaded transition costs: staff retraining, building repurposing, administrative restructuring, redundancy management
+- Teacher recruitment to offset the ~15% below-OECD staffing gap and ageing workforce
+- Integrated student-support/remedial infrastructure inside comprehensive schools
+- Curriculum standardization and coherence development
+
+**Implementation steps**
+- Parliament/Ministry of Education — enact legislative amendment integrating 6/8-year forms into unified secondary with post-14 selection and multi-year transitional notice
+- Ministry — reform free-choice rules and catchment boundaries simultaneously to curb between-school sorting
+- Ministry — front-load teacher recruitment and mixed-ability retraining during the 2025–2035 retirement window, protecting supply in disadvantaged regions
+- State school district centres — build integrated support/remedial services within comprehensive schools
+- Ministry — negotiate deferred-selection compliance with church and foundation maintainers
+
+**Political risks**
+- Strong, organised middle-class opposition that has blocked prior reform attempts
+- High reversal risk within one electoral cycle absent sustained consensus (Polish precedent)
+- Maintainer fragmentation means no uniform mandate is enforceable; church/foundation schools may resist or litigate
+- Reallocation of scarce teachers is zero-sum under shortage, risking hollowing-out of rural schools if mismanaged
+
+**Uncertainties**
+- Magnitude of equity gain attributable specifically to selection abolition vs. bundled supports is not decomposed in Finnish evidence.
+- No curated source directly quantifies the SES-gradient reduction Hungary would achieve; international elasticities may not transfer.
+- Whether Hungarian comprehensive schools have instructional capacity to avoid de facto re-tracking is unknown.
+- Whether fragmented governance (state centres, churches, foundations) will permit a coherent network plan is unknown.
+- No robust causal evidence on total inequality if tracks are abolished while choice/catchment remain unchanged.
+- Reversibility and transition costs of moving away from the 6/8-year system are not addressed in comparative literature.
+
+## S4 — Keep the structure, compensate general schools (Portuguese-style package)
+**Goal**
+Retain the 6/8-year selective forms but intensify non-structural supports (curriculum standards, school clustering, targeted remedial funding, retention alternatives) to offset selection's stratifying effects.
+
+**Mechanism**
+- Portugal raised PISA scores substantially (2006–2015) without lowering selection age or dismantling early-tracked structures [evidence: moderate]
+- The improvement combined curriculum standards alignment, school clustering (agrupamentos), targeted intensive support (TEIP) for disadvantaged schools, and grade-retention reduction [evidence: moderate]
+- Quality within tracks and better support at the lower end can offset selection's stratifying effects by narrowing the skill gap before tracking decisions [evidence: moderate]
+- Selection timing alone does not determine performance: systems with and without early selection show variable outcomes [evidence: moderate]
+
+**Evidence status**
+moderate — the Portuguese trajectory is documented but effects are not decomposed across levers, and transfer to Hungary's specific 6/8-year structure and stratification dynamics is unverified.
+
+**Assumptions**
+- Portugal's curriculum and teacher-quality baseline are comparable enough to Hungary's that TEIP-style support would transfer. [assumption]
+- Retention reduction works partly through confidence/motivation effects that operate similarly across Central European contexts. [assumption]
+- Hungary's political appetite for targeted school funding matches Portugal's 2006–2015 fiscal commitment. [assumption]
+- Church and foundation schools will not be mandated into a uniform system; policy must work within pluralist governance. [assumption]
+
+**Expected benefits**
+- Possible equity and quality gains without triggering structural-abolition political conflict [evidence: moderate]
+- Avoids statutory abolition barriers and enrolled-pupil transition guarantees by preserving legal forms [evidence: strong]
+- Targeted support narrows the skill gap in depleted non-selective schools [evidence: moderate]
+- Retention reduction may amplify the effect of other interventions [evidence: moderate]
+
+**Equity impact**
+Aims to raise the floor for non-selected pupils rather than remove the age-10–12 gatekeeper; leaves the early-selection sorting mechanism and its high-SES skew intact, so it mitigates rather than reverses stratification and does not address the loss of political voice/resources that follows departed top students.
+
+**Cost categories**
+- Sustained targeted remedial funding (TEIP-style) for disadvantaged schools
+- Curriculum standards development and alignment across pathways
+- School clustering/administrative reorganization
+- Retention-alternative programmes (support for at-risk pupils)
+
+**Implementation steps**
+- Ministry of Education — establish curriculum standards coherence across all secondary pathways
+- Ministry — pilot intensive TEIP-style support in underperforming vocational and lower-track schools in selected regions
+- State school district centres — implement school clustering (agrupamentos-style) organization
+- Ministry — introduce grade-retention alternatives and measure whether selection effects narrow before considering structural change
+
+**Political risks**
+- Preserving selection retains the inequality-reproducing mechanism, drawing criticism that reform is cosmetic
+- Sustained targeted funding requires fiscal commitment that may not match Portugal's; funding could lapse across cycles
+- Least conflictual with the mobilised middle-class constituency, but may entrench positional advantage
+
+**Uncertainties**
+- What proportion of Portugal's gain came from retention reduction vs. TEIP vs. standards alignment — sources do not decompose effects.
+- Whether Hungary's 6/8-year structure creates different stratification dynamics than Portugal's lycée model.
+- How long a TEIP-style intervention must run before effects on downstream selection outcomes are visible (5, 10, 15 years).
+- Whether Hungarian pilot data on targeted support efficacy exist, or whether this would be an untested import.
+- Peer effects on non-selected pupils cannot be quantified from curated Hungarian sources.
