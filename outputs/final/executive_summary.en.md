@@ -1,0 +1,11 @@
+# Executive Summary: Early Academic Selection Reform in Hungary
+
+Hungary's gimnazium system selects pupils at age 10–12 into 6- or 8-year academic tracks. Experts agree the descriptive pattern is settled: this selection is heavily concentrated among high-SES, urban families, and Hungary's SES-achievement gradient is exceptionally high [evidence: strong]. They also agree the measured gimnazium advantage is largely a selection effect rather than causal value-added [evidence: moderate], and that no Hungary-specific study isolates the causal contribution of track existence net of choice and catchment effects [evidence: absent/low].
+
+Beyond this, expert inputs diverge sharply on which of four scenarios is best supported — and this disagreement is not resolved here. **S1 (admission reform)** and **S4 (Portuguese-style compensation)** work within the existing structure, betting that non-structural investment or fairer entry criteria can offset inequity without removing the selective gatekeeper — though both risk a "durability trap" of absorbing political capital without proportionate gains. **S2 (gradual phase-down)** and **S3 (comprehensive schooling to 14)** bet on removing or shrinking the structural gatekeeper itself, following cross-country evidence that early tracking amplifies SES gradients without raising mean performance [evidence: strong] — but face high transition costs, a 6–8 year minimum implementation timeline, and uncertain political durability, illustrated by Poland's 1999 deferral gains and 2016–2019 reversal. Whether staged reform (S2) reduces reversal risk or merely prolongs conflict is explicitly unresolved among experts. Maintainer fragmentation (state vs. church/foundation) and locked-in demographic contraction (~25–30% cohort decline by 2035–2040) constrain all four scenarios equally, without favoring any one path.
+
+**No-regret moves, regardless of which scenario is eventually chosen:**
+- Commission Hungary-specific evaluation isolating track effects from choice/catchment effects before committing structurally.
+- Pair any track-side reform with simultaneous catchment and school-choice reform to prevent displacement of stratification.
+- Negotiate (or document the absence of) church/foundation maintainer cooperation early.
+- Begin SES-quartile and regional monitoring now, regardless of pathway chosen.
