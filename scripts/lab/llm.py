@@ -101,6 +101,8 @@ def provider_for_role(role):
 def provider_available(provider):
     if os.environ.get("LAB_FORCE_MOCK"):
         return False
+    if _cli_backend(provider):
+        return True  # CLI backends authenticate via their own login
     return bool(os.environ.get(KEY_VARS[provider]))
 
 
@@ -135,7 +137,38 @@ def _client(provider):
     return _clients[provider]
 
 
+def _cli_backend(provider):
+    """CLI backends (issue #7): subscription/free-tier compute instead of API
+    keys. ANTHROPIC_BACKEND=claude-code -> `claude -p` (subscription quota);
+    GOOGLE_BACKEND=gemini-cli -> `gemini -p` (free-tier OAuth)."""
+    return os.environ.get({"anthropic": "ANTHROPIC_BACKEND",
+                           "google": "GOOGLE_BACKEND"}[provider], "")
+
+
+def _call_cli(provider, model, prompt, max_tokens):
+    import subprocess
+    env = dict(os.environ)
+    if provider == "anthropic":
+        # strip the API key so the CLI bills the subscription, not the key
+        env.pop("ANTHROPIC_API_KEY", None)
+        cmd = ["claude", "-p", "--model", model]
+    else:
+        # strip API keys so the CLI uses its OAuth login (free tier)
+        env.pop("GOOGLE_API_KEY", None)
+        env.pop("GEMINI_API_KEY", None)
+        env["GEMINI_CLI_TRUST_WORKSPACE"] = "true"
+        cmd = ["gemini", "-p", "-m", model]
+    env["PATH"] = os.path.expanduser("~/.local/bin") + os.pathsep + env.get("PATH", "")
+    r = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
+                       timeout=600, env=env)
+    if r.returncode != 0:
+        raise RuntimeError(f"{cmd[0]} CLI failed: {r.stderr.strip()[:300]}")
+    return r.stdout.strip()
+
+
 def _call_real(provider, model, prompt, max_tokens):
+    if _cli_backend(provider):
+        return _call_cli(provider, model, prompt, max_tokens)
     if provider == "anthropic":
         resp = _client(provider).messages.create(
             model=model,
@@ -188,7 +221,8 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
                 if not text.strip():
                     raise RuntimeError("empty response")
                 _failures[(provider, model)] = 0
-                entry["backend"] = provider
+                entry["backend"] = provider + (
+                    f"({_cli_backend(provider)})" if _cli_backend(provider) else "")
                 entry["ms"] = int((time.time() - t0) * 1000)
                 CALL_LOG.append(entry)
                 return text
