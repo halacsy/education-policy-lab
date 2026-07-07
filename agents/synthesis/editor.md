@@ -1,6 +1,6 @@
 # Agent: editor
 
-Version: 2
+Version: 1
 Type: synthesis
 Provider-role: generator
 
@@ -47,4 +47,3 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-05] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.
