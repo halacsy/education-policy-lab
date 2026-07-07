@@ -132,6 +132,15 @@ EXPERT_BRIEFS = {
             dict(text="Realistic retraining throughput per year for upper-primary specialist teachers.",
                  confidence="medium", reducer="teacher-education capacity audit."),
         ]),
+    "conservative_education": dict(
+        findings=["parent_attachment", "school_choice", "value_added"],
+        interpretation="Parental demand for the 6/8-year tracks is a revealed preference for academic depth, ethos and peer environment; restricting supply does not remove that demand, it redirects it into private tutoring, church/private schools and residential sorting — so abolishing the tracks buys less equity than its advocates assume, at a real cost in liberty and talent development.",
+        assumptions=["Families denied a selective state track substitute private, church or residential alternatives rather than accept the local general school."],
+        position="Preserve parental choice and the existing tracks; direct reform energy at raising general-school quality and talent access within them, not at restricting options.",
+        uncertainties=[
+            dict(text="How much of the tracks' appeal is academic quality versus peer-group exclusivity.",
+                 confidence="low", reducer="parent-survey conjoint studies on track attributes."),
+        ]),
 }
 
 # ---------------------------------------------------------------------------
