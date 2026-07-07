@@ -213,6 +213,18 @@ affected rung; call_model climbs to the next live rung on the D-26 ladder and
 degrades to mock only when every rung is dead. This also makes judge-swap
 experiments feasible within free quotas. (2026-07-06)
 
+**D-28 — Directives are validated contracts, not polite requests (issue #11).**
+The 2026-07-07 panel-sensitivity experiment showed the cheapest ladder rung
+silently dropping the round-04 `minority_report` section in BOTH experiment
+arms — a forbidden regression (D-16) passing format validation unnoticed.
+Therefore every directive change in the improvement catalog declares its
+deterministically checkable output markers (`checks` in improve.CATALOG), and
+pipeline.Step composes the markers of the agent's active directives into the
+step validator. A dropped section is now a validation failure that escalates
+the model ladder (D-26); the mock backend already honors directives, so the
+fallback also satisfies the contract. Markers guard against total omission;
+partial-compliance quality stays with the judges. (2026-07-07)
+
 **D-13 — Round 1 starts from an honest baseline, not a sandbagged one.**
 The baseline agent specs already satisfy hard constraints (all scenario
 fields present, critics name scenario id + field). Improvement therefore has

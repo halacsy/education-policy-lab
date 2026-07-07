@@ -15,6 +15,7 @@ import shutil
 from concurrent.futures import ThreadPoolExecutor
 
 from . import agent_defs as D
+from . import improve
 from . import knowledge as K
 from . import llm, mock_backend, translation
 from .agents import build_prompt
@@ -51,6 +52,26 @@ CRITIC_HEADING_RE = re.compile(
     r"^## S\d+\.(goal|mechanism|evidence_status|assumptions|expected_benefits|"
     r"equity_impact|cost_categories|implementation_steps|political_risks|"
     r"uncertainties)", re.M)
+
+
+def directive_validator(validate, prompt_kwargs):
+    """Compose the base validator with the output markers mandated by the
+    agent's active directives (issue #11, D-28). A directive is a contract:
+    if the model silently drops a promised section, the step FAILS validation
+    and escalates the model ladder (D-26) instead of passing unnoticed."""
+    markers = improve.required_markers(prompt_kwargs.get("agent"),
+                                       prompt_kwargs.get("task"),
+                                       prompt_kwargs.get("lang"))
+    if not markers:
+        return validate
+
+    def _validate(result):
+        if not validate(result):
+            return False
+        text = result if isinstance(result, str) else \
+            json.dumps(result, ensure_ascii=False)
+        return all(m in text for m in markers)
+    return _validate
 
 
 def parse_json_block(text):
@@ -164,6 +185,7 @@ class Step:
             loader=None, writer=None):
         loader = loader or read
         writer = writer or write
+        validate = directive_validator(validate, prompt_kwargs)
         # resume: identical system state + existing valid artifact => reuse
         if self.resume and out_path is not None and out_path.exists():
             try:
@@ -263,8 +285,10 @@ def run_round(n):
 
     def run_expert(name):
         out_path = rd / "expert_outputs" / f"{name}.md"
-        validate = (lambda t: "[evidence:" in t and "## Position" in t
-                    and "## Uncertainties" in t)
+        validate = directive_validator(
+            lambda t: "[evidence:" in t and "## Position" in t
+                      and "## Uncertainties" in t,
+            dict(task="expert_analysis", agent=name))
         if not (step.resume and out_path.exists()):
             cached = reusable_expert(name)
             if cached is not None and validate(cached):
