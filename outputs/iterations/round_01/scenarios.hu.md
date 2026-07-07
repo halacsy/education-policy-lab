@@ -1,0 +1,157 @@
+# Szakpolitikai forgatókönyvek
+
+## S1 — Felvételi reform a jelenlegi struktúrán belül
+**Cél**
+A társadalmi-gazdasági szegregáció és a korai iskolatípus-szerinti szétválogatás mérséklése a 6 és 8 osztályos gimnáziumok központosított írásbeli felvételi eljárásának reformján keresztül, az iskolahálózat megváltoztatása nélkül.
+
+**Mechanizmus**
+- A központosított felvételi követelmények reformja és a hátrányos helyzetű tanulókra vonatkozó kvótarendszerek bevezetése csökkenti a társadalmi-gazdasági státusz alapú szelekciót [bizonyíték: mérsékelt — Modellismeret / magyar szakpolitikai irodalom].
+- A szigorú társadalmi-gazdasági kvóták bevezetése vagy a központi írásbeli felvételi vizsga súlyozásának módosítása korlátozza a magas társadalmi-gazdasági státuszú, városi tanulók elszívását [bizonyíték: erős — KSH / Oktatási Hivatal felvételi statisztikák].
+
+**Bizonyítékstátusz**
+Összességében mérsékelt — A felvételi statisztikák erősen mutatják a magas társadalmi-gazdasági státuszúak felé való eltolódást, de a felvételi módosításoknak a teljes szegregációra gyakorolt hatása vitatott az általános iskolai szakaszban történő szétválogatás miatt.
+
+**Feltevések**
+- Az elit gimnáziumok nem kerülik meg a reformált felvételi követelményeket szóbeli felvételik vagy alternatív értékelési módszerek révén.
+- A középosztálybeli szülők elfogadják a felvételi kvótákat, ahelyett, hogy egyházi vagy alapítványi fenntartású iskolákba való beiratkozással próbálnák megkerülni azokat.
+
+**Várható előnyök**
+- Az alacsony társadalmi-gazdasági státuszú és a vidéki tanulók nagyobb arányú képviselete az elit 6 és 8 osztályos képzésekben [bizonyíték: mérsékelt].
+- A privilégiumok koncentrációjának csökkenése a városi gimnáziumokban magas átmeneti költségek nélkül [bizonyíték: gyenge].
+
+**Méltányossági hatás**
+Mérsékelten javítja a méltányosságot a szelektív képzéseken belül, de nem kezeli az általános iskolai szinten zajló szélesebb körű strukturális szétválogatást.
+
+**Költségkategóriák**
+- Felvételi adminisztráció és a tesztek felépítésének módosításai
+- A tankerületi központok megfelelési, ellenőrzési és jogérvényesítési költségei
+
+**Megvalósítási lépések**
+- Köznevelésért felelős minisztérium — Módosítja a középiskolai felvételi eljárást szabályozó miniszteri rendeletet a társadalmi-gazdasági státusz alapú kvóták bevezetése vagy az írásbeli vizsgák súlyozásának módosítása érdekében.
+- Oktatási Hivatal — Újratervezi a központi írásbeli felvételi vizsgákat a torzítások csökkentése és a megszerzett privilégiumok helyett a nyers potenciál mérése érdekében.
+- Tankerületi központok — Nyomon követik és kikényszerítik az új felvételi szabályoknak és kvótáknak való megfelelést az állami iskolákban.
+
+**Politikai kockázatok**
+- Intenzív ellenállás a városi középosztálybeli szülők részéről, akik ezeket a helyeket kulcsfontosságú mobilitási eszköznek tekintik.
+- Lehetséges jogi kihívások a nem állami iskolafenntartók részéről a tanulók kiválasztásával kapcsolatos intézményi autonómiát illetően.
+
+**Bizonytalanságok**
+- Hogy a felvételi követelmények módosítása képes-e jelentősen csökkenteni a szétválogatást, tekintve, hogy a szabad iskolaválasztás és a lakóhelyi szegregáció már az általános iskolai szinten beágyazódott.
+- Az egyházi és alapítványi iskolafenntartók hajlandósága arra, hogy önkéntesen igazodjanak a reformált felvételi követelményekhez.
+
+## S2 — A 6 és 8 osztályos felvételi helyek fokozatos kivezetése
+**Cél**
+A 6 és 8 osztályos gimnáziumi felvételi helyek fokozatos csökkentése és végső kivezetése felmenő rendszerben, a sztenderd 14 éves kori iskolatípus-szerinti szétválogatás modelljére való átmenet érdekében.
+
+**Mechanizmus**
+- A 6 és 8 osztályos képzések felvételi keretszámainak fokozatos csökkentése korlátozza a korai iskolatípus-szerinti szétválogatást 10 és 12 éves korban [bizonyíték: erős — Modellismeret / nemzeti köznevelési törvény].
+- Ezen belépési pontok fokozatos kivezetése csökkenti a korai társadalmi-gazdasági szétválogatást azáltal, hogy a jobban teljesítő tanulókat hosszabb ideig az általános iskolai rendszerben tartja [bizonyíték: mérsékelt — Modellismeret / magyar szakpolitikai irodalom].
+
+**Bizonyítékstátusz**
+Összességében erős-mérsékelt — Kiváló minőségű nemzeti adminisztratív adatok igazolják a szelekciós életkorokat és a demográfiai mutatókat, míg a késleltetett szelekció hatását nemzetközi bizonyítékok támasztják alá.
+
+**Feltevések**
+- A fokozatos kivezetés (felmenő rendszer) megfelel a jogbiztonság és a szerzett jogok alkotmányos elveinek.
+- A csökkenő korosztályi létszámok strukturálisan szükségessé teszik a szelektív belépő helyek csökkentését a helyi iskolahálózat életképességének fenntartásához.
+
+**Várható előnyök**
+- Csökkenti a korai társadalmi-gazdasági szétválogatást a szelekciónak a 14 éves korra való halasztásával [bizonyíték: mérsékelt].
+- Stabilizálja a vidéki általános iskolák felső tagozatának demográfiai és tanulmányi életképességét a tanulói elszívás megakadályozásával [bizonyíték: mérsékelt].
+
+**Méltányossági hatás**
+Jelentősen javítja a méltányosságot azáltal, hogy a jól teljesítő és magas társadalmi-gazdasági státuszú tanulókat 14 éves korig a normál általános iskolákban tartja, csökkentve az iskolák közötti szétválogatást.
+
+**Költségkategóriák**
+- Kétoldalú szerződések újratárgyalása a nem állami fenntartókkal
+- Az általános iskolai tanterv és a személyzet alkalmazkodásának költségei az átmenet során
+
+**Megvalósítási lépések**
+- Parlament — Módosítja a nemzeti köznevelésről szóló törvényt (Nkt.) a 6 és 8 osztályos gimnáziumi férőhelyek többéves időszakra vetített fokozatos csökkentésének előírására.
+- Köznevelésért felelős minisztérium — Újratárgyalja a kétoldalú megállapodásokat az egyházi és alapítványi iskolák fenntartóival az egységes felvételi keretszámok alkalmazása érdekében.
+- Tankerületi központok — Irányítják a helyi iskolahálózat tervezését, hogy a megmaradó tanulókat a normál általános iskolai felső tagozatok befogadják.
+
+**Politikai kockázatok**
+- Nagy a kockázata a középosztálybeli elégedetlenségnek és a politikai mobilizációnak a rendkívül áhított akadémiai képzések csökkentése miatt.
+- Jogi viták és kártérítési igények az egyházi és alapítványi fenntartók részéről a működési autonómia csorbulása miatt.
+
+**Bizonytalanságok**
+- A jogi felelősség és kártérítési igények kérdése, ha az egyházi/alapítványi fenntartókkal kötött kétoldalú megállapodásokat egyoldalúan módosítják.
+- Hogy a középosztálybeli szülők megkerülik-e a reformot azáltal, hogy gyermekeiket olyan magán- vagy egyházi iskolákba viszik át, amelyek ellenállnak az állami előírásoknak.
+
+## S3 — Egységes alapiskola 14 éves korig (Strukturális reform)
+**Cél**
+A 6 és 8 osztályos gimnáziumi struktúra eltörlése, és egy egységes alsó-középfokú iskolarendszer bevezetése minden tanuló számára 14 éves korig (vagy a finn mintát követve 16 éves korig).
+
+**Mechanizmus**
+- A tanulók iskolatípus-szerinti szétválogatásának későbbi életkorra történő halasztása csökkenti az oktatási eredmények közötti egyenlőtlenséget anélkül, hogy rontaná az átlagos teljesítményt [bizonyíték: erős — Hanushek & Woessmann 2006].
+- A korai iskolatípus-szerinti szétválogatás késleltetése összefügg a teszteredmények jelentős javulásával, különösen a gyengébben teljesítő tanulók esetében [bizonyíték: mérsékelt — Jakubowski et al. 2016; OECD].
+
+**Bizonyítékstátusz**
+Összességében erős — Szilárd nemzetközi különbségek különbsége (difference-in-differences) elemzések és regionális esettanulmányok támasztják alá, bár a megvalósítási képesség Magyarországon gyenge.
+
+**Feltevések**
+- A lengyel és finn strukturális reformok eredményei alkalmazhatók a magyar intézményi és társadalmi-politikai kontextusra.
+- A normál általános iskolák képesek támogatni és fejleszteni a kiemelkedő képességű tanulókat, ha a korai szelekció megszűnik.
+
+**Várható előnyök**
+- A tanulói társadalmi-gazdasági státusz által magyarázott teljesítményvariancia részarányának jelentős csökkenése [bizonyíték: erős].
+- Rendszerszintű oktatási méltányosság javulása és a gyengébben teljesítő tanulók magasabb átlagteljesítménye [bizonyíték: mérsékelt].
+
+**Méltányossági hatás**
+Maximalizálja az oktatási méltányosságot és minimalizálja a társadalmi-gazdasági szétválogatást azáltal, hogy teljesen megszünteti a tanulókat 10 és 12 éves korban szétválogató strukturális utakat.
+
+**Költségkategóriák**
+- Nagyszabású pedagógus-továbbképzési és módszertani támogató programok
+- Iskolaépületek átszervezése és az adminisztratív átmenet költségei
+
+**Megvalósítási lépések**
+- Parlament — Újrafogalmazza a nemzeti köznevelési törvényt a 6 és 8 osztályos gimnáziumi képzések eltörlése és egy egységes alsó-középfokú szint létrehozása érdekében.
+- Köznevelésért felelős minisztérium — Országos pedagógus-továbbképzési programot indít, és újraosztja az iskolaépületeket az egységes modellhez való igazodás érdekében.
+- Klebelsberg Központ — Irányítja a pedagógusok és az iskolai erőforrások újraosztását az egységes osztályok kezelésére.
+
+**Politikai kockázatok**
+- Rendkívüli ellenállás a hangos városi középosztály részéről, ami magában hordozza a lengyel mintájú politikai visszafordítás veszélyét a következő választási ciklusokban.
+- Súlyos szakszervezeti ellenállás az adminisztratív zavarok miatt a jelenlegi pedagógushiány okozta válság közepette.
+
+**Bizonytalanságok**
+- Rendelkezik-e Magyarország a szükséges költségvetési mozgástérrel és pedagógus-munkaerőpiaci kapacitással a szükséges pedagógiai támogató rendszerek megvalósításához.
+- A regionális iskolai infrastruktúra pontos kapacitása az épületek újraosztásának befogadására, drága új építkezések nélkül.
+
+## S4 — A struktúra megtartása, az általános iskolák kompenzálása (Portugál mintájú csomag)
+**Cél**
+A 6 és 8 osztályos gimnáziumi rendszer érintetlenül hagyása, de célzott erőforrások, tantervi sztenderdek és támogatás biztosítása a hátrányos helyzetű általános iskoláknak a korai szelekciós egyenlőtlenségek ellensúlyozására.
+
+**Mechanizmus**
+- Világos sztenderdek felállítása, iskolák klaszteresítése (iskolaszövetségek), a hátrányos helyzetű iskolák célzott támogatása (TEIP) és az évismétlés csökkentése javíthatja az oktatási eredményeket a szelekciós életkor megváltoztatása nélkül [bizonyíték: mérsékelt — OECD PISA trendjelentések; Crato 2020].
+- A források átcsoportosítása a normál iskolákban megvalósuló célzott beavatkozásokra kezeli a méltányossági problémákat a meglévő strukturális kereteken belül [bizonyíték: gyenge — Költségvetési fejezetek; szakértői becslések].
+
+**Bizonyítékstátusz**
+Összességében mérsékelt-gyenge — A portugál esettanulmányok alátámasztják, de a központosított Klebelsberg Központ képessége a rugalmas, célzott programok végrehajtására erősen bizonytalan.
+
+**Feltevések**
+- A magyar központosított iskolarendszeren belül megvan az adminisztratív kapacitás a célzott iskolatámogatási programok sikeres koordinálására.
+- A korai szelekcióból adódó társadalmi rétegződés és társhatások (peer effects) semlegesíthetők célzott, nem strukturális forrásmódosításokkal.
+
+**Várható előnyök**
+- Elkerüli a jelentős, előre jelentkező strukturális átmeneti költségeket [bizonyíték: gyenge].
+- Javítja a tanulói teljesítményt a hátrányos helyzetű területeken a középosztály ellenállása vagy politikai visszacsapás nélkül [bizonyíték: mérsékelt].
+
+**Méltányossági hatás**
+Megkísérli javítani a méltányosságot a normál általános iskolák minőségének emelésével, bár a korai társadalmi-gazdasági szétválogatás fő motorját érintetlenül hagyja.
+
+**Költségkategóriák**
+- Célzott finanszírozási programok a hátrányos helyzetű területek iskolái számára (TEIP-szerű)
+- Nemzeti tantervi sztenderdek és a felzárkóztatást támogató infrastruktúra fejlesztése és bevezetése
+
+**Megvalósítási lépések**
+- Köznevelésért felelős minisztérium — Kidolgozza és finanszírozza a gyengén teljesítő iskolák célzott támogatási keretrendszerét, az erőforrásokra és a pedagógusok ösztönzésére összpontosítva.
+- Klebelsberg Központ — Megvalósítja az iskolák klaszteresítését és koordinálja a célzott erőforrás-elosztást a hátrányos helyzetű régiókban.
+- Oktatási Hivatal — Felügyeli az új nemzeti tantervi sztenderdeket és az évismétlés csökkentését célzó programokat.
+
+**Politikai kockázatok**
+- Nagyon alacsony a középosztálybeli elégedetlenség kockázata, mivel az elit képzések teljes mértékben megmaradnak.
+- Lehetséges kritika a reformpártiak részéről, hogy a politika nem kezeli az oktatási szegregáció gyökerét jelentő strukturális okokat.
+
+**Bizonytalanságok**
+- Milyen mértékben képes a magyarországi erősen központosított iskolairányítási rendszer rugalmasan végrehajtani a portugál modellhez hasonló célzott támogató programokat.
+- Hogy a társhatások és a társadalmi-gazdasági szegregáció mérsékelhetőek-e a korai iskolatípus-szerinti szétválogatás rendszerének strukturális megváltoztatása nélkül.

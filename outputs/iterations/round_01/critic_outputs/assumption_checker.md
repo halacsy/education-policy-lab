@@ -1,0 +1,10 @@
+# Critique: assumption_checker
+
+## S1.assumptions
+Objection: The assumption that "middle-class parents will accept admissions quotas rather than seeking to bypass them through church- or foundation-run school entry" is asserted as a load-bearing premise for the entire mechanism, yet S1's own uncertainties section states "the willingness of church and foundation school maintainers to voluntarily align with reformed admissions criteria" is unresolved. The mechanism's evidence tag (moderate, "Hungarian educational policy literature") supports only that quotas *can* reduce SES-based sorting in principle, not that non-state maintainers — who the synthesis notes maintain a "growing share of schools" — will actually adopt them. Since the ministerial decree route (implementation_steps) only binds state-run tankerület schools, the core equity claim is unsupported for the segment of elite admissions least likely to comply.
+
+## S2.equity_impact
+Objection: The claim "significantly improves equity" is not warranted by the evidence actually cited. The mechanism tag for delayed tracking reducing sorting is "moderate," not strong, and S2's own uncertainties admit "whether middle-class parents will bypass the reform by moving children to private or church schools that resist state mandates" — a bypass channel that would directly hollow out the mechanism (peer drainage prevention) that equity_impact depends on. Given non-state maintainers can refuse uniform enrollment caps (also flagged in implementation_steps as requiring "renegotiation," not mandate), the "significant" qualifier overstates what moderate-evidence delayed-tracking literature plus an unresolved bypass risk can support; "moderate, conditional on maintainer compliance" would be the defensible claim.
+
+## S3.mechanism
+Objection: Citing Hanushek & Woessmann 2006 as "strong" evidence that postponing tracking "reduces inequality of outcomes without lowering overall performance" overstates what that literature establishes — the finding is about average

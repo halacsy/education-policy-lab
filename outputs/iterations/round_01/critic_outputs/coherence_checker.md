@@ -1,0 +1,7 @@
+# Critique: coherence_checker
+
+## S1.mechanism
+Objection: The second mechanism bullet claims strict SES quotas or reweighted written exams "limit the siphoning off of high-SES, urban pupils" and tags this [evidence: strong — KSH/Oktatási Hivatal admission statistics]. But KSH/OH admission statistics are descriptive records of who currently enrolls (the SES skew itself); they contain no data on the causal effect of quota or weighting reforms, which don't yet exist. The "strong" tag is being borrowed from evidence of the problem's existence and misapplied to a claim about an untested intervention's effectiveness. This is directly contradicted by the scenario's own evidence_status field, which says "the effectiveness of admissions adjustments on overall segregation is contested." The mechanism tag should be downgraded to weak/speculative, not strong.
+
+## S2.assumptions
+Objection: The assumptions field asserts that a felmenő rendszer (gradual phase-out) "satisfies the constitutional principles of legal certainty and acquired rights" — stated as a settled premise. This directly conflicts with the scenario's own uncertainties field, which lists "the legal liability and compensation claims if bilateral agreements with church/foundation maintainers are unilaterally altered" as an open question, and with
