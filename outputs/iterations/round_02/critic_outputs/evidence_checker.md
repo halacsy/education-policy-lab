@@ -1,0 +1,10 @@
+# Critique: evidence_checker
+
+## S3.evidence_status
+Objection: The overall evidence_status is tagged "strong," but this aggregates three registry entries of different strength: tracking_inequality [strong], finnish_comprehensive [moderate], and poland_reform [moderate]. Two of the three pillars supporting the core causal claim (delaying tracking reduces SES-driven inequality) are only moderately supported, and poland_reform itself notes the reform was later politically reversed — a fact omitted from the evidence_status summary. Rolling this up to "strong" overstates what the cited sources jointly establish; the correct grade is moderate given the mixed strength of the underlying comparative evidence.
+
+## S3.mechanism
+Objection: The claim "Phasing out selective tracks prevents demographic shrinkage from accelerating the collapse of rural primary school networks" is tagged [evidence: moderate — KSH demographic yearbooks; model knowledge]. The registry's demography entry [strong] only supports the fact that births have declined and consolidation is forced regardless of tracking policy — it says nothing about whether abolishing selective tracks prevents or mitigates rural network collapse. That causal link is pure model knowledge (correctly flagged as such) but is bundled with a strong-graded demographic fact into a single "moderate" tag, which launders an unsupported causal inference under the credibility of a strong source. The claim should be labeled speculative/unsupported, not moderate.
+
+## S2.mechanism
+Objection: "Gradually reducing enrollment caps... reduces between-school sorting" cites [evidence: moderate — OECD PISA country notes; Kertesi & Kezdi 2013]. The OECD PISA country notes registry entry (pisa_escs, graded strong) documents that SES explains a high share of PISA variance in Hungary — it is descriptive of the outcome gap, not evidence that reducing 6/

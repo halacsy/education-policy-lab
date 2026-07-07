@@ -16,7 +16,7 @@ import time
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 
 from lab import agents, evaluation, finalize, gitutil, improve, llm, memory, pipeline
-from lab.util import load_config, round_dir
+from lab.util import load_config, read_json, round_dir
 
 
 def meta_payload(n, dims7, prev_eval, artifacts, applied):
@@ -56,6 +56,10 @@ def evaluate_round(n, prev_eval, applied):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-rounds", type=int, default=5)
+    ap.add_argument("--start-round", type=int, default=1,
+                    help="restart an interrupted run: completed rounds before "
+                         "this are loaded from disk, the interrupted round "
+                         "resumes from its valid artifacts")
     args = ap.parse_args()
     cfg = load_config()
     plateau_delta = cfg["stopping"]["plateau_delta"]
@@ -70,7 +74,18 @@ def main():
     planned = None
     stop_reason = None
 
-    for n in range(1, args.max_rounds + 1):
+    if args.start_round > 1:
+        for k in range(1, args.start_round):
+            history.append(read_json(round_dir(k) / "evaluation.json"))
+        prev_eval = history[-1]
+        plan = read_json(round_dir(args.start_round - 1) / "plan.json")
+        planned = next((c for c in improve.CATALOG
+                        if c["id"] == plan.get("next_change_id")), None)
+        print(f"restarting at round {args.start_round} "
+              f"(prev total {prev_eval['total']}, planned change: "
+              f"{planned['id'] if planned else 'none'})")
+
+    for n in range(args.start_round, args.max_rounds + 1):
         t0 = time.time()
         applied, touched = None, []
         if planned is not None:

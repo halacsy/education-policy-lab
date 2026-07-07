@@ -1,0 +1,19 @@
+{
+  "round": 2,
+  "fallbacks": [],
+  "reused": [],
+  "resumed": [],
+  "backends": {
+    "brief [google(agy):gemini-2.5-flash-lite]": 4,
+    "build_scenarios [google(agy):gemini-2.5-flash-lite]": 2,
+    "critic [anthropic:claude-sonnet-5]": 16,
+    "expert_analysis [google(agy):gemini-2.5-flash-lite]": 24,
+    "judge_score [anthropic:claude-haiku-4-5]": 6,
+    "judge_score [anthropic:claude-sonnet-5]": 3,
+    "judge_score [google(agy):gemini-2.5-flash-lite]": 6,
+    "meta_critique [anthropic:claude-opus-4-8]": 1,
+    "rejected_framings [google(agy):gemini-2.5-flash-lite]": 2,
+    "synthesis [google(agy):gemini-2.5-flash-lite]": 3,
+    "translate_scenarios [google(agy):gemini-2.5-flash-lite]": 2
+  }
+}

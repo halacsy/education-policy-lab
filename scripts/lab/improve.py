@@ -160,6 +160,10 @@ def apply_change(change, round_n):
             node = node[key]
         node[change["config_path"][-1]] = change["config_value"]
         save_config(cfg)
+    # idempotent on restart: the attempt may already be logged for this round
+    if any(a["id"] == change["id"] and a["round_applied"] == round_n
+           for a in read_attempts()):
+        return [t for t in change["targets"]]
     entry = dict(round_applied=round_n, id=change["id"],
                  dimension=change["dimension"], kind=change["kind"],
                  targets=touched,
