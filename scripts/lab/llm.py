@@ -140,9 +140,20 @@ def _client(provider):
 def _cli_backend(provider):
     """CLI backends (issue #7): subscription/free-tier compute instead of API
     keys. ANTHROPIC_BACKEND=claude-code -> `claude -p` (subscription quota);
-    GOOGLE_BACKEND=gemini-cli -> `gemini -p` (free-tier OAuth)."""
+    GOOGLE_BACKEND=gemini-cli -> `gemini` (API-key auth);
+    GOOGLE_BACKEND=agy -> Antigravity CLI (Google-account quota)."""
     return os.environ.get({"anthropic": "ANTHROPIC_BACKEND",
                            "google": "GOOGLE_BACKEND"}[provider], "")
+
+
+# D-26 ladder ids -> Antigravity model names (Gemini only: the agy backend
+# serves the GOOGLE provider side, and cross-family (check 13) must hold even
+# though Antigravity could also serve Claude models.
+AGY_MODEL_MAP = {
+    "gemini-2.5-flash-lite": "Gemini 3.5 Flash (Low)",
+    "gemini-2.5-flash": "Gemini 3.5 Flash (High)",
+    "gemini-2.5-pro": "Gemini 3.1 Pro (High)",
+}
 
 
 def _call_cli(provider, model, prompt, max_tokens):
@@ -152,17 +163,35 @@ def _call_cli(provider, model, prompt, max_tokens):
         # strip the API key so the CLI bills the subscription, not the key
         env.pop("ANTHROPIC_API_KEY", None)
         cmd = ["claude", "-p", "--model", model]
+    elif _cli_backend(provider) == "agy":
+        # Antigravity CLI: prompt must be an argv argument (no stdin mode).
+        # agy is an agent — without the directive below it writes its answer
+        # to a workspace file instead of printing it.
+        agy_model = AGY_MODEL_MAP.get(model, "Gemini 3.5 Flash (Low)")
+        directive = ("IMPORTANT: You are used as a text-generation backend. "
+                     "Print your COMPLETE answer directly as your response "
+                     "text. Do NOT create, write or edit any files. Do NOT "
+                     "use any tools. Do NOT summarize what you did — output "
+                     "only the requested document itself.\n\n")
+        cmd = ["agy", "-p", directive + prompt, "--model", agy_model,
+               "--print-timeout", "9m"]
     else:
-        # strip API keys so the CLI uses its OAuth login (free tier)
+        # strip API keys so the CLI uses its own configured auth
         env.pop("GOOGLE_API_KEY", None)
         env.pop("GEMINI_API_KEY", None)
         env["GEMINI_CLI_TRUST_WORKSPACE"] = "true"
         # headless mode reads the prompt from stdin when it is not a TTY;
         # passing it as the -p argument would hit argv size limits
         cmd = ["gemini", "-m", model]
-    env["PATH"] = os.path.expanduser("~/.local/bin") + os.pathsep + env.get("PATH", "")
-    r = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
-                       timeout=600, env=env)
+    env["PATH"] = (os.path.expanduser("~/.local/bin") + os.pathsep
+                   + os.path.expanduser("~/.antigravity/antigravity/bin")
+                   + os.pathsep + env.get("PATH", ""))
+    stdin_text = None if cmd[0] == "agy" else prompt
+    # isolated empty cwd: an agentic CLI must not read or write the repo
+    import tempfile
+    with tempfile.TemporaryDirectory(prefix="lab-cli-") as tmpdir:
+        r = subprocess.run(cmd, input=stdin_text, capture_output=True,
+                           text=True, timeout=600, env=env, cwd=tmpdir)
     if r.returncode != 0:
         raise RuntimeError(f"{cmd[0]} CLI failed: {r.stderr.strip()[:300]}")
     return r.stdout.strip()
