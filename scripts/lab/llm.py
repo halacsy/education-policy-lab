@@ -157,7 +157,9 @@ def _call_cli(provider, model, prompt, max_tokens):
         env.pop("GOOGLE_API_KEY", None)
         env.pop("GEMINI_API_KEY", None)
         env["GEMINI_CLI_TRUST_WORKSPACE"] = "true"
-        cmd = ["gemini", "-p", "-m", model]
+        # headless mode reads the prompt from stdin when it is not a TTY;
+        # passing it as the -p argument would hit argv size limits
+        cmd = ["gemini", "-m", model]
     env["PATH"] = os.path.expanduser("~/.local/bin") + os.pathsep + env.get("PATH", "")
     r = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
                        timeout=600, env=env)
