@@ -99,6 +99,39 @@ def render_field(v):
     return f"<p>{html.escape(v)}</p>"
 
 
+def _inline_md(line):
+    return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", html.escape(line))
+
+
+def md_html(text):
+    """Minimal deterministic Markdown→HTML for agent artifacts (issue #8):
+    #/##/### headings, - bullets, **bold**, blank-line paragraphs. Escaping
+    happens first, so no artifact content reaches the page unescaped."""
+    out, bullets = [], []
+
+    def flush():
+        if bullets:
+            out.append("<ul>" + "".join(f"<li>{b}</li>" for b in bullets) + "</ul>")
+            bullets.clear()
+
+    for raw in text.splitlines():
+        line = raw.strip()
+        if line.startswith("- "):
+            bullets.append(_inline_md(line[2:]))
+            continue
+        flush()
+        if not line:
+            continue
+        m = re.match(r"(#{1,4})\s+(.*)", line)
+        if m:
+            level = min(len(m.group(1)) + 3, 6)  # # -> h4 ... inside the card
+            out.append(f"<h{level}>{_inline_md(m.group(2))}</h{level}>")
+        else:
+            out.append(f"<p>{_inline_md(line)}</p>")
+    flush()
+    return "".join(out)
+
+
 def main():
     n = last_round()
     rd = ITER / f"round_{n:02d}"
@@ -214,7 +247,7 @@ def main():
     disagreement_html = "".join(disagreement_card(d) for d in disagreement)
 
     def expert_card(name, data):
-        body_html = "<br>".join(e(line) for line in data["full"].splitlines())
+        body_html = md_html(data["full"])
         return f"""
     <details class="expert" id="expert-{e(name)}">
       <summary>
@@ -303,6 +336,12 @@ def main():
   .expert-name { font-family:ui-monospace,Menlo,monospace; font-weight:700; font-size:.86rem; white-space:nowrap; }
   .expert-position { color:var(--muted); font-size:.88rem; }
   .expert-full { border-top:1px solid var(--line); padding:.9rem 1.1rem; font-size:.92rem; }
+  .expert-full h4 { margin:.2rem 0 .6rem; font-size:1rem; }
+  .expert-full h5 { margin:1rem 0 .35rem; font-size:.9rem; }
+  .expert-full h6 { margin:.8rem 0 .3rem; font-size:.84rem; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; }
+  .expert-full p { margin:.35rem 0; }
+  .expert-full ul { margin:.35rem 0 .6rem; padding-left:1.2rem; }
+  .expert-full li { margin:.25rem 0; }
 
   .note { font-size:.85rem; color:var(--muted); }
   nav.jump { display:flex; gap:1rem; font-family:ui-monospace,Menlo,monospace; font-size:.8rem; flex-wrap:wrap; }
