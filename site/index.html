@@ -119,7 +119,7 @@
 <header class="site">
   <div class="wrap wide">
     <span><strong>EDUCATION POLICY LAB</strong> · kísérleti műhely</span>
-    <span class="lang"><a href="knowledge.html">Tudásbázis</a> · HU · <a href="#english">EN ↓</a></span>
+    <span class="lang"><a href="explorer.html">Forgatókönyv-feltáró</a> · <a href="knowledge.html">Tudásbázis</a> · HU · <a href="#english">EN ↓</a></span>
   </div>
 </header>
 
@@ -171,27 +171,35 @@
   <div class="wrap wide" style="margin-top:2rem">
     <div class="split">
       <div>
-        <h3>A javulás számokban (első futás, 5 kör)</h3>
+        <h3>A javulás számokban (legutóbbi futás, 5 kör)</h3>
         <div class="tablebox"><table>
           <thead><tr><th>Kör</th><th>Alkalmazott változtatás</th><th class="num">Összpontszám</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>alapfutás</td><td class="num">7.072</td></tr>
-            <tr><td>2</td><td>bizonytalanságok számszerűsítése</td><td class="num">7.752</td></tr>
-            <tr><td>3</td><td>kritikák: súlyosság + javítási javaslat</td><td class="num">8.551</td></tr>
-            <tr><td>4</td><td>minden oksági állításra bizonyítékcímke</td><td class="num">8.813</td></tr>
-            <tr><td>5</td><td>különvélemények külön szakaszban</td><td class="num">9.230</td></tr>
+            <tr><td>1</td><td>alapfutás</td><td class="num">7.322</td></tr>
+            <tr><td>2</td><td>bizonytalanságok számszerűsítése</td><td class="num">8.053</td></tr>
+            <tr><td>3</td><td>kritikák: súlyosság + javítási javaslat</td><td class="num">8.798</td></tr>
+            <tr><td>4</td><td>különvélemények külön szakaszban</td><td class="num">9.038</td></tr>
+            <tr><td>5</td><td>minden oksági állításra bizonyítékcímke</td><td class="num">9.265</td></tr>
           </tbody>
         </table></div>
+        <p class="note" style="margin-top:.6rem">A 4–5. kör felcserélt sorrendje
+        nem véletlen: ebben a futásban a nézeteltérés-megőrzés bizonyult
+        korábban gyengébbnek — a rendszer a tényleges tartalomra reagál, nem
+        forgatókönyvet ismétel.</p>
       </div>
       <div>
         <h3>…és a git-naplóban</h3>
-        <div class="commitlog"><b>round-05:</b> apply minority_report — 8.813→9.23
-<b>round-04:</b> apply evidence_tag_all — 8.551→8.813
-<b>round-03:</b> apply critic_fix_severity — 7.752→8.551
-<b>round-02:</b> apply uncertainty_quantify — 7.072→7.752
-<b>round-01:</b> baseline run (total 7.072)</div>
+        <div class="commitlog"><b>round-05:</b> apply evidence_tag_all — 9.038→9.265
+<b>round-04:</b> apply minority_report — 8.798→9.038
+<b>round-03:</b> apply critic_fix_severity — 8.053→8.798
+<b>round-02:</b> apply uncertainty_quantify — 7.322→8.053
+<b>round-01:</b> baseline run (total 7.322)</div>
         <p class="note" style="margin-top:.75rem">Minden kör külön commit; a
-        változtatás neve a commit-üzenetben. Semmi sem írható felül utólag.</p>
+        változtatás neve a commit-üzenetben. Semmi sem írható felül utólag.
+        Ez a futás nagyrészt élő modellel készült: a szakértői elemzések és a
+        bírálatok mind élőben íródtak, néhány kör forgatókönyv-szövege a napi
+        modellkeret kimerülése miatt a kurált tartalékból épült — pontosan
+        nyomon követhető a <a href="explorer.html">feltárón</a>.</p>
       </div>
     </div>
   </div>
@@ -230,6 +238,14 @@
     és S4 kísérleti programját, valamint a bekerülési adatok évenkénti
     közzétételét azonosította — a szerkezeti alapkérdést pedig nyitott emberi
     döntésként adta vissza.</p>
+    <div class="card" style="margin-top:1.5rem; border-color:var(--evidence)">
+      <h3>Ez a négy mondat honnan jön?</h3>
+      <p>A fenti összefoglalók mögött teljes, kattintva bejárható anyag áll:
+      forgatókönyvenként az összes kritikai észrevétel (melyik kritikus, melyik
+      mezőt, milyen súllyal kifogásolta), a négy fő nézeteltérés — ki állt
+      melyik oldalon és miért —, és mind a 12 szakértő teljes elemzése.</p>
+      <p style="margin-bottom:0"><a href="explorer.html"><strong>Forgatókönyv-feltáró megnyitása →</strong></a></p>
+    </div>
   </div>
 </section>
 
