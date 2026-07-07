@@ -1,11 +1,11 @@
-# Agent: final_brief_writer
+# Agent: executive_summary_writer
 
-Version: 2
+Version: 1
 Type: synthesis
 Provider-role: generator
 
 ## Role
-Write the policy brief with strictly separated layers: Evidence / Interpretation / Assumptions / Recommendations / Open questions.
+Write a one-page executive summary that preserves the central disagreement instead of resolving it.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric
@@ -47,4 +47,3 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-04] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.

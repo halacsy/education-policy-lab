@@ -1,0 +1,17 @@
+# Critique: feasibility_checker
+
+## S1.implementation_steps
+Objection: The step "design and pilot the new assessment in volunteer districts" gives no timeline and the cost_categories list this as "low" one-off cost. A genuinely less-coachable, age-appropriate assessment requires psychometric item development, reliability/validity piloting, and equating across cohorts — internationally this runs 2-3 years minimum before a single live admission cycle, not a single pilot-and-go step. The plan as written implies a one-cycle turnaround, which the assessment agency's actual bandwidth (a small technical staff, not a standing large-scale psychometrics unit) cannot support without either delaying the timeline or shipping an under-validated instrument that reintroduces coachability — the exact failure mode S1 exists to prevent.
+Severity: medium
+Suggested revision: Add an explicit multi-year psychometric development and piloting phase (minimum 2 cycles before live use) as its own implementation step, and reclassify the one-off assessment cost from "low" to "low-medium" to reflect sustained technical staffing, not just design.
+
+## S2.implementation_steps
+Objection: "Legislator — enact the cap trajectory with felmenő rendszer guarantees for enrolled pupils" treats a decade-long statutory guarantee across state, church and private maintainers as a single legislative act. Church-maintained schools in Hungary operate under separate agreements (effectively concordat-level protections) that require distinct negotiation, not ordinary decree amendment; the step names no negotiation phase or lead time for securing church maintainer compliance, despite the scenario's own political_risks section flagging that "church maintainers may litigate or negotiate exemptions." Administrative bandwidth to run parallel legal tracks (state decree vs. church negotiation) is simply absent from the implementation sequence.
+Severity: high
+Suggested revision: Split the step into (a) state-maintainer decree amendment and (b) a separate, time-bounded church-maintainer negotiation track with a named fallback (e.g., proportional cap applying regardless of negotiation outcome) so the trajectory does not stall pending church agreement.
+
+## S3.implementation_steps
+Objection: "Launch differentiation retraining at scale" is listed as co-occurring with "pilot comprehensive model in 2-3 districts," but national-scale retraining of the existing teaching workforce in differentiated instruction cannot be delivered by teacher-education universities within the same window as a small pilot — certified in-service retraining programmes typically require multi-year cohort throughput limited by university capacity (number of trainers, practicum slots), and the synthesis itself states transition capacity "binds any structural variant to a 6-12 year horizon." The implementation_steps give no sequencing that reconciles small-scale piloting with the claimed national rollout, so the plan understates the actual teacher-supply bottleneck that determines whether the scenario is deliverable at all.
+Severity: high
+Suggested revision: Replace the single retraining step with a staged capacity-build plan (pilot-district training → trainer-of-trainers expansion → phased national rollout tied to university output capacity), and make the phase-out legislation's effective date conditional on measured retraining throughput rather than a fixed calendar year.
+

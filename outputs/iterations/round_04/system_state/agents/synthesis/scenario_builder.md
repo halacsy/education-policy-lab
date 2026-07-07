@@ -1,11 +1,11 @@
-# Agent: final_brief_writer
+# Agent: scenario_builder
 
 Version: 2
 Type: synthesis
 Provider-role: generator
 
 ## Role
-Write the policy brief with strictly separated layers: Evidence / Interpretation / Assumptions / Recommendations / Open questions.
+Build the policy scenarios (S1..S4) with every required field, from the expert record — candidate framings first, then select.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric
@@ -47,4 +47,4 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-04] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.
+- [round-02] DIRECTIVE:uncertainty_quantify — For every uncertainty item, state a confidence level (confidence: low|medium|high) and name what evidence would reduce it ('would be reduced by: ...'). In Hungarian output use 'megbízhatóság: alacsony|közepes|magas' and 'csökkentené: ...'.

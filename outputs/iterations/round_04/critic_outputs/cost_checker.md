@@ -1,0 +1,19 @@
+# Critique: cost_checker
+
+## S3.cost_categories
+Objection: The one-off costs for "network and building reconfiguration" are explicitly "bundled with demographic consolidation," but no incremental cost attributable to S3 alone is given. Demographic consolidation will happen regardless of this reform (cohort shrinkage is exogenous, per the synthesis's own agreed point). By bundling, the scenario lets S3 appear to inherit a "high" cost label while hiding whether the reform's marginal fiscal burden is actually small (piggybacking on already-planned closures) or large (accelerating/redirecting closures in ways that cost more than baseline consolidation would). This is a transition-cost/steady-state confusion: it never states what the system costs to run per pupil after full phase-in versus during the multi-year overlap when old gimnazium cohorts still exist under felmenő rendszer alongside new comprehensive intakes (double-running costs).
+Severity: high
+Suggested revision: Split into (a) incremental network/building cost attributable to S3 beyond baseline demographic consolidation, with an explicit range, and (b) a separate transition-year line for double-running costs (old track cohorts + new intake) versus (c) projected steady-state recurring cost once phase-out completes.
+
+## S2.cost_categories
+Objection: "Recurring: advanced-programme funding in general schools (medium, formula-based)" is given as a single static value for a policy explicitly designed to run for a decade with an annually shifting cap. As caps bite and selective intake shrinks year over year, the general-school population needing "advanced programmes" grows correspondingly — the recurring cost cannot be flat "medium" across the whole trajectory; it should rise over the ten years. The scenario also omits any cost for the compliance monitoring/reporting mechanism ("maintainers... report intake composition") which is a distinct recurring administrative cost from the funding formula itself.
+Severity: medium
+Suggested revision: Replace the single "medium" figure with a year-1 vs year-10 range (or per-cohort marginal cost) reflecting the growing absorbed population, and add a separate recurring line for cross-maintainer compliance monitoring/audit infrastructure.
+
+## S4.cost_categories
+Objection: Both recurring cost lines ("high" and "medium-high") lack any numeric range or share-of-budget estimate, which is a serious gap given that the scenario's own political-risk section flags "compensation lines are the first cut in fiscal consolidation." Without a magnitude estimate, the fiscal-sensitivity claim in political_risks cannot be evaluated — a "high" recurring package that is 0.1% of the education budget survives cuts very differently than one that is 5%. The cost_categories section also omits any one-off setup cost (designing the SES-index targeting formula, building TEIP-style contracting infrastructure, premium-eligibility administration), listing only recurring items, which understates the resourcing needed before the "5-year" outcome window in expected_benefits can even begin.
+Severity: high
+Suggested revision: Add an explicit one-off implementation-cost line (formula design, contracting infrastructure) and convert "high"/"medium-high" into ranges as a share of the general-school budget, then cross-reference that figure against the stated fiscal-cut risk.
+
+## S1.cost_categories
+Objection: The cost categories list only assessment redesign and routine administration but omit any cost for the compliance-audit mechanism that the scenario's own uncertainties section says is needed ("would be reduced by: compliance audit design in the pilot") to detect elite schools routing selection through informal channels. If auditing is required to make the reform's central mechanism credible, it is a real recurring cost, not a free monitoring afterthought, and its absence lets the "low" recurring estimate stand unchallenged despite the

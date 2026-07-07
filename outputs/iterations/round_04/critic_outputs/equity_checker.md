@@ -1,0 +1,21 @@
+# Critique: equity_checker
+
+## S1.equity_impact
+Objection: The equity_impact claims gains "accrue to high-ability low-SES pupils" but this presumes a working SES indicator exists at application time — which the scenario's own assumptions section flags as unresolved ("A workable SES indicator exists"). If no reliable indicator exists (common where formal poverty/ethnicity proxies are politically unusable in Hungary, as with Roma status), the SES-aware lottery/quota mechanism cannot function as described, and the equity claim collapses to the weaker "less-coachable test" channel alone, which the evidence tag rates only [weak] for reduced test-prep pressure. The equity_impact field should state this conditionality rather than asserting the benefit as though the indicator problem were already solved.
+Severity: high
+Suggested revision: Rewrite equity_impact to make the benefit explicitly conditional on indicator availability, and add a fallback equity assessment for the scenario where only the assessment-format change (not SES weighting) is achievable.
+
+## S2.equity_impact
+Objection: The text concedes residual selective places "become...even more SES-skewed" absent S1-type reform — but this residual-skew effect is mechanical and near-certain (fewer seats, same demand, no admission-rule change), whereas the offsetting majority benefit ("stronger peer composition," "reinvested capacity") rests on the assumption flagged as unevidenced in evidence_status ("the retention of demand in general schools is the unevidenced link") and tagged only [moderate]/[weak] in expected_benefits. The equity_impact field presents these as a balanced trade-off, but one side is near-certain harm and the other is speculative benefit; that asymmetry is not disclosed.
+Severity: high
+Suggested revision: State explicitly that the worsening of residual-place SES skew is mechanically near-certain while the general-school compensation benefit is unevidenced, and recommend S1-style admission reform as a precondition rather than an optional pairing.
+
+## S3.equity_impact
+Objection: The equity_impact identifies "largest expected gain" and "largest risk" (middle-class exit to non-state schools) only in aggregate terms; it never addresses distributional equity within the disadvantaged population — e.g., rural/Roma pupils with no non-state exit option would capture the peer-composition gain, while urban middle-class flight could concentrate disadvantage in a shrinking non-exited general-school population, potentially producing worse segregation for the pupils with the least capacity to move at all. This is a materially different equity outcome from the "largest gain" framing and is not speculative — it follows directly from the scenario's own stated exit-risk assumption plus known non-state maintainer growth (cited in the synthesis's disagreement map).
+Severity: medium
+Suggested revision: Split equity_impact into at least two sub-populations (mobile/exit-capable vs. immobile disadvantaged pupils) and state the net effect could be regressive for the immobile group even under a system-wide "largest gain" outcome.
+
+## S4.equity_impact
+Objection: equity_impact states compensation "narrows the SES gradient at best partially" but omits the dynamic equity cost flagged in political_risks — that compensation risks "legitimising early selection permanently." If compensation reduces political pressure for S1/S2/S3-type reform, the long-run equity trajectory is worse than the static partial-narrowing description suggests, since the sorting mechanism causing the gradient is entrenched rather than merely left untouched. This is a first-order equity consequence of the mechanism (compensation is explicitly "additive: does not touch the sorting mechanism") and should be assessed as part of equity_impact, not left solely to political_risks.
+Severity: medium
+Suggested revision: Add a sentence to equity_impact naming the entrenchment risk as an equity cost (not just a political risk), e.g., "by reducing pressure for structural reform, compensation may lock in the current SES gradient as a permanent floor rather than a transitional one."

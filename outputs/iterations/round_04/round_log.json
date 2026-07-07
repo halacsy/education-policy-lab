@@ -1,0 +1,37 @@
+{
+  "round": 4,
+  "fallbacks": [],
+  "reused": [
+    "expert:hungarian_education_system",
+    "expert:international_comparison",
+    "expert:finnish_reform",
+    "expert:polish_reform",
+    "expert:demography",
+    "expert:portuguese_reform",
+    "expert:equity_and_social_mobility",
+    "expert:school_network_planning",
+    "expert:political_feasibility",
+    "expert:education_finance",
+    "expert:legal_and_governance",
+    "expert:implementation_planning"
+  ],
+  "resumed": [],
+  "backends": {
+    "brief [google(agy):gemini-2.5-flash-lite]": 2,
+    "brief [mock]": 2,
+    "build_scenarios [google(agy):gemini-2.5-flash-lite]": 1,
+    "build_scenarios [mock]": 1,
+    "critic [anthropic:claude-sonnet-5]": 16,
+    "judge_score [anthropic:claude-haiku-4-5]": 12,
+    "judge_score [anthropic:claude-sonnet-5]": 6,
+    "judge_score [google(agy):gemini-2.5-flash-lite]": 10,
+    "judge_score [mock]": 2,
+    "meta_critique [anthropic:claude-opus-4-8]": 2,
+    "rejected_framings [google(agy):gemini-2.5-flash-lite]": 1,
+    "rejected_framings [mock]": 1,
+    "synthesis [google(agy):gemini-2.5-flash-lite]": 2,
+    "synthesis [mock]": 1,
+    "translate_scenarios [google(agy):gemini-2.5-flash-lite]": 1,
+    "translate_scenarios [mock]": 1
+  }
+}
