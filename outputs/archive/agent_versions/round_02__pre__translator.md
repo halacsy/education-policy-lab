@@ -1,6 +1,6 @@
 # Agent: translator
 
-Version: 1
+Version: 2
 Type: synthesis
 Provider-role: generator
 
@@ -49,3 +49,4 @@ Read the term table in docs/glossary.md before translating. Every EN term appear
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
+- [round-02] DIRECTIVE:uncertainty_quantify — For every uncertainty item, state a confidence level (confidence: low|medium|high) and name what evidence would reduce it ('would be reduced by: ...'). In Hungarian output use 'megbízhatóság: alacsony|közepes|magas' and 'csökkentené: ...'.
