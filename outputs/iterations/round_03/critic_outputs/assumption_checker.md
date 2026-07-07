@@ -1,0 +1,19 @@
+# Critique: assumption_checker
+
+## S1.assumptions
+Objection: The assumption "Middle-class parents will accept admissions quotas rather than seeking to bypass them through non-state alternatives" is directly contradicted elsewhere in the same scenario and by the expert record. S1's own political_risks section states there is "intense, well-organized resistance from urban middle-class parents," and its equity_impact field admits "risk of displacement to unregulated non-state schools remains high." The disagreement map (hungarian_education_system/school_network_planning) explicitly warns that regulating state admissions "will likely push selective demand into the growing non-state sector." The scenario cannot simultaneously assume quiet parental acceptance and predict active flight/litigation; the mechanism's effectiveness estimate (moderate) is built on the false premise, not on the evidence that actually exists (which points to displacement, not acceptance).
+Severity: high
+Suggested revision: Drop the acceptance assumption; instead model the expected non-state enrollment shift explicitly and downgrade expected_benefits/evidence_status to reflect that regulation is likely to be partially self-defeating absent joint state/non-state quota enforcement.
+
+## S2.assumptions
+Objection: The assumption "Non-state school maintainers can be restricted from absorbing the phased-out selective capacity" is unsupported and appears to contradict the expert record's agreed fact on "maintainer fragmentation" — that church/foundation schools "are governed by separate agreements or legal frameworks" that "complicate uniform structural mandates." The hungarian_education_system/school_network_planning minority position was formed precisely because state-only bans on selection are expected to shift demand to non-state providers. S2's own uncertainties section even flags "the exact proportion of 6- and 8-year gimnazium seats currently operated by non-state... maintainers" as unresolved (confidence: medium), yet the equity claim treats the restriction as achievable. This is an unverified legal/political capacity claim load-bearing for the "significantly improves equity" conclusion.
+Severity: high
+Suggested revision: Either cite a specific legal mechanism (e.g., subsidy conditionality, quota-linked funding formulas) that could bind non-state maintainers, or revise equity_impact downward to "improves equity only in the state sector, with high risk of non-state capacity absorption" and mark this as a genuine open risk rather than a background assumption.
+
+## S3.mechanism
+Objection: The mechanism claims "phasing out early selection prevents demographic cohort shrinkage from accelerating the collapse and forced consolidation of rural primary school networks" [evidence: moderate]. This contradicts the expert record's "What the experts agree on" section, which states demographic contraction "will force school-network consolidations in the 2020s–2030s regardless of tracking policy" [evidence: strong — KSH demographic yearbooks]. If consolidation is agreed to occur independent of tracking policy, then abolishing tracking cannot be credited with "preventing" the collapse it is meant to forestall — at most it changes which schools consolidate, not whether consolidation happens. The "moderate" tag overstates what demography findings actually support.
+Severity: medium
+Suggested revision: Revise the mechanism to claim comprehensivization changes the pattern/distribution of unavoidable consolidation (e.g., preserves rural comprehensive schools rather than allowing selective urban tracks to hollow them out first) rather than claiming it "prevents" collapse driven by demographics.
+
+## S4.assumptions
+Objection: The assumption "The teacher shortage cannot be mitig

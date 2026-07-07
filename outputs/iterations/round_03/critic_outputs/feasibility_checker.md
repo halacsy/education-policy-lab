@@ -1,0 +1,19 @@
+# Critique: feasibility_checker
+
+## S2.implementation_steps
+Objection: The step assigns Klebelsberg Centre (KK) to "coordinate the shift of secondary teaching hours toward standard 4-year tracks," treating teacher redeployment as an administrative logistics task. But the expert record's implementation_planning cluster states this redistribution is "functionally impossible" in the near term because of acute science/math teacher shortages [evidence: strong — OECD Education at a Glance; PSZ/PDSZ surveys, per synthesis]. S2 does not reconcile this direct contradiction; it merely lists redeployment as an assumption rather than testing it against the cited shortage data. The mechanism's feasibility rests on capacity that other experts say does not exist.
+Severity: high
+Suggested revision: Add a staffing feasibility sub-step requiring KK to publish a subject-by-subject supply audit before any redeployment order, and stage the phase-down timeline explicitly to teacher pipeline (training college output), not just admissions caps.
+
+## S1.implementation_steps
+Objection: The step has the Ministry "issue a ministerial decree governing secondary admissions and establishing equity-based quotas," but S1's own assumptions concede "the government lacks the immediate political or legal leverage to fully homogenize admissions and funding policies across state, church, and foundation schools." A decree that cannot bind non-state maintainers cannot itself "govern secondary admissions" as stated — only the state-run subset, which the tankerület audit step confirms is the only enforcement target. The implementation step overstates its own jurisdictional reach relative to the goal of system-wide equity quotas.
+Severity: high
+Suggested revision: Rewrite the step to explicitly scope the decree to state-maintained gimnaziums only, and add a separate, distinct step (with named legal instrument, e.g., negotiated maintainer agreements or subsidy conditionality) for extending any quota logic to church/foundation schools, with an explicit lead-time estimate for that negotiation.
+
+## S3.implementation_steps
+Objection: The step calls for a "comprehensive legislative ban on all academic selection before grade 8, effective in a gradual teach-out system," but does not specify how this satisfies the acquired-rights constitutional constraint that S2 identifies as requiring a "felmenő rendszer" (Nkt. analysis, evidence: strong) to avoid "immediate legal termination conflicts." S3 never engages this legal lead-time requirement, and simultaneously assumes a "nationwide teacher retraining program" can be executed on a timeline compatible with a full ban, despite the same shortage evidence used against S2's more modest redeployment plan. Two feasibility constraints (legal transition timing, teacher retraining capacity) are asserted away rather than sequenced.
+Severity: high
+Suggested revision: Insert a legal-compliance sub-step mirroring S2's felmenő approach (cohort-by-cohort phase-out matched to acquired-rights protections) and attach the teacher retraining program to a multi-year capacity-building timeline benchmarked against current teacher training college throughput, not a single "launch" step.
+
+## S4.implementation_steps
+Objection: The step directs KK to "route discretionary funding packages and deployment incentives to designated low-performing primary schools," but the synthesis explicitly characterizes Hungary's school administration as "fragile" and "understaffed" (implementation_planning cluster, evidence: strong), and S4's own uncertainty section rates the teacher-shortage risk to this program as "confidence: high." The implementation step assumes KK has spare discretionary administrative bandwidth to manage a new incentive-

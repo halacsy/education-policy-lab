@@ -1,0 +1,21 @@
+# Critique: coherence_checker
+
+## S1.assumptions
+Objection: The assumption "Middle-class parents will accept admissions quotas rather than seeking to bypass them through non-state alternatives" directly contradicts two other fields in the same scenario: political_risks states "Intense, well-organized resistance from urban middle-class parents who view early tracks as a key mobility asset," and equity_impact states "risk of displacement to unregulated non-state schools remains high." A scenario cannot simultaneously assume compliant acceptance and document evidence-backed high displacement risk; the mechanism's projected effectiveness rests on the false half of this contradiction.
+Severity: high
+Suggested revision: Drop the "will accept quotas" assumption or reframe it as a risk factor, and make expected_benefits conditional on demonstrated non-state absorption capacity, citing the same admissions-statistics evidence used elsewhere.
+
+## S2.assumptions
+Objection: The assumption "Non-state school maintainers can be restricted from absorbing the phased-out selective capacity" is contradicted by the scenario's own political_risks ("Middle-class flight to private or shadow education providers"), its own uncertainties (low confidence on exactly this flight risk), and by the disagreement map itself, where hungarian_education_system experts explicitly warn that banning/restricting state selective tracks "will likely push selective demand into the growing non-state sector" [evidence: strong — Public education act amendments; maintainer statistics]. The scenario's equity_impact is therefore built on an assumption the record's own strongest-rated evidence contradicts.
+Severity: high
+Suggested revision: Replace the assumption with an explicit mechanism for capping non-state admissions growth (e.g., subsidy conditionality) and downgrade equity_impact from "significantly improves" to conditional/uncertain pending that mechanism's feasibility.
+
+## S3.evidence_status
+Objection: Evidence_status and expected_benefits claim "strong" support (Hanushek & Woessmann 2006; Pekkarinen et al. 2009; Jakubowski et al. 2016) for the causal effect of postponing tracking on reducing the SES gradient, yet the scenario's own assumptions concede Hungary "currently lacks the equivalent teacher quality and support systems that supported the Finnish transition." The cited studies' strong causal identification applies to systems (Finland, Poland) with those preconditions in place; the "strong" rating is not warranted for the Hungarian application absent those inputs, and the uncertainties section itself lists as unresolved "the precise causal weight of postponed tracking itself versus accompanying teacher reforms" (confidence: low). The evidence_status should not be rated "Strong" for a policy whose success-conditions are explicitly unmet and whose isolating mechanism is admittedly unverified.
+Severity: high
+Suggested revision: Downgrade evidence_status to "moderate, conditional on teacher-quality upgrades" and cross-reference the teacher-quality assumption directly in the evidence_status text rather than leaving it isolated in assumptions.
+
+## S4.cost_categories
+Objection: Cost_categories includes "Teacher retention and relocation incentive schemes for marginalized regions" — a wage/incentive-based intervention — while the scenario's own assumptions state "The teacher shortage cannot be mitigated in the short term through wage increases or recruitment alone." The scenario budgets for the very lever it assumes is ineffective, without explaining why a partial/regional application would succeed where the general mechanism is assumed to fail; this is an unsupported (not merely speculative) internal inconsistency between assumptions and cost_categories.
+Severity: medium
+Suggested revision: Either remove the incentive-scheme cost line and substitute a non-wage mechanism (e.g., mandatory rotation, training pipeline expansion), or revise the assumption to state that wage/relocation incentives can partially (not fully) mitigate shortages, and align expected_benefits accordingly.

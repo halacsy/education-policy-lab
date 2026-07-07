@@ -1,0 +1,159 @@
+# Policy scenarios
+
+## S1 — Admissions Reform Within Current Structure
+**Goal**
+Mitigate socio-economic segregation within the existing 6- and 8-year gimnazium structure by regulating admissions processes and establishing equity-based quotas.
+
+**Mechanism**
+- Aligning entry requirements and quotas with regional equity targets and regulating admissions in non-state schools restricts socio-demographic sorting [evidence: moderate — hungarian_education_system findings].
+- Enforcing admissions rules through tankerület audits and ministerial decrees restricts selective enrollment [evidence: weak — model knowledge].
+
+**Evidence status**
+Moderate — Supported by local admissions statistics and school choice dynamics, but limited by jurisdictional reach over non-state maintainers.
+
+**Assumptions**
+- Parent behavior is primarily driven by the desire to maximize educational advantage for their children [assumption].
+- The government lacks the immediate political or legal leverage to fully homogenize admissions and funding policies across state, church, and foundation schools [assumption].
+- Elite gimnaziums will not bypass reformed admissions rules via oral exams or alternative diagnostic pathways [assumption].
+- Middle-class parents will accept admissions quotas rather than seeking to bypass them through non-state alternatives [assumption].
+
+**Expected benefits**
+- Moderately reduces socio-economic sorting in urban centers by regulating selective tracks [evidence: moderate — hungarian_education_system findings].
+
+**Equity impact**
+Moderately improves equity within selective tracks by restricting sorting, but risk of displacement to unregulated non-state schools remains high.
+
+**Cost categories**
+- Admissions administration, monitoring, and enforcement costs under centralized Tankerületek supervision.
+- Legal costs arising from potential litigation with church and foundation school maintainers.
+
+**Implementation steps**
+- Ministry of Education — Issue ministerial decree governing secondary admissions and establishing equity-based quotas.
+- School District Centres (Tankerületek) — Monitor and audit state-run gimnaziums for compliance with the new admissions criteria.
+
+**Political risks**
+- Intense, well-organized resistance from urban middle-class parents who view early tracks as a key mobility asset [evidence: moderate — domestic press and stakeholder analyses, 1990s-2010s].
+- Litigation from church maintainers defending their autonomous admissions policies.
+
+**Uncertainties**
+- The exact proportion of students from disadvantaged backgrounds who successfully access non-state selective tracks (confidence: low | would be reduced by: Oktatási Hivatal student registry data cross-referenced with family tax/benefit records).
+- The willingness of church maintainers to accept uniform equity-based quotas under threat of subsidy withdrawal (confidence: medium | would be reduced by: surveys and qualitative interviews with church maintainer representatives and Ministry officials).
+
+## S2 — Gradual Phase-down of 6- and 8-year Entry Places
+**Goal**
+Gradually reduce the enrollment capacity of early selective tracks to transition toward a standard secondary structure without violating acquired rights.
+
+**Mechanism**
+- Gradually reducing enrollment caps and restricting tracks to regional urban hubs reduces between-school sorting [evidence: moderate — OECD PISA country notes; school_network_planning findings].
+- A gradual phase-out ('felmenő rendszer') satisfies the constitutional protection of acquired rights and avoids immediate legal termination conflicts [evidence: strong — Nkt. analysis].
+
+**Evidence status**
+Moderate — Supported by PISA sorting trends and legal requirements for transitional systems, though dependent on non-state compliance.
+
+**Assumptions**
+- Non-state school maintainers can be restricted from absorbing the phased-out selective capacity [assumption].
+- Teachers currently assigned to 6- and 8-year academic tracks can be successfully redeployed into standard 4-year programs [assumption].
+- Church and private maintainers will eventually comply with the phased contraction under structural rules [assumption].
+
+**Expected benefits**
+- Mitigates geographic sorting by limiting early selection to regional hubs [evidence: moderate — school_network_planning findings].
+- Reduces the socio-economic gradient in student outcomes over the long term [evidence: moderate — international_comparison findings].
+
+**Equity impact**
+Significantly improves equity in the long run by reducing early selection slots, provided non-state sectors do not absorb the phased-out capacity.
+
+**Cost categories**
+- One-time transition costs including teacher retraining, curriculum adjustments, and staff reorganization.
+- Long-term structural reorganization costs and contract renegotiations for redundant secondary staff.
+
+**Implementation steps**
+- National Assembly — Amend the National Public Education Act (Nkt.) to mandate a gradual reduction in selective admissions caps.
+- Klebelsberg Centre (KK) — Oversee transitional staffing and coordinate the shift of secondary teaching hours toward standard 4-year tracks.
+
+**Political risks**
+- Concentrated resistance from elite schools and university-affiliated gimnaziums.
+- Middle-class flight to private or shadow education providers if early public tracking is restricted.
+
+**Uncertainties**
+- The potential flight of high-SES students to private or shadow education providers if early public tracking is abolished (confidence: low | would be reduced by: evaluation of private school enrollment trends in countries that recently postponed tracking, such as Poland).
+- The exact proportion of 6- and 8-year gimnazium seats currently operated by non-state (church and foundation) maintainers in rural districts (confidence: medium | would be reduced by: registry data on school maintainers by settlement type).
+
+## S3 — Comprehensive School to Age 14 (Structural Reform)
+**Goal**
+Abolish all academic tracking before age 14 to establish a comprehensive lower-secondary school system.
+
+**Mechanism**
+- Postponing academic tracking until age 14 or 15 significantly reduces the impact of parental background on achievement [evidence: strong — Hanushek & Woessmann 2006; Pekkarinen et al. 2009; Jakubowski et al. 2016].
+- Phasing out early selection prevents demographic cohort shrinkage from accelerating the collapse and forced consolidation of rural primary school networks [evidence: moderate — model knowledge; demography findings].
+
+**Evidence status**
+Strong — Supported by robust international difference-in-differences and longitudinal reform studies from Finland and Poland.
+
+**Assumptions**
+- Postponing academic selection requires a school infrastructure capable of handling high student heterogeneity [assumption].
+- The Hungarian comprehensive track (general school) currently lacks the equivalent teacher quality and support systems that supported the Finnish transition [assumption].
+- Hungarian PISA performance and social mobility metrics are currently depressed by the early selection processes [assumption].
+
+**Expected benefits**
+- Substantially reduces the socio-economic gradient in reading and mathematics scores [evidence: strong — OECD PISA country notes; Pekkarinen et al. 2009].
+- Improves average achievement levels over the long term through delayed selection [evidence: moderate — Jakubowski et al. 2016].
+
+**Equity impact**
+Maximizes educational equity by unifying the student body and preventing early segregation, but effectiveness depends on quality upgrades in general schools.
+
+**Cost categories**
+- Significant front-loaded transition costs including nationwide teacher retraining in differentiated instruction.
+- Capital expenditure for physical building adjustments and municipal school mergers.
+- Expanded student transportation budgets to support rural school consolidation networks.
+
+**Implementation steps**
+- National Assembly — Pass a comprehensive legislative ban on all academic selection before grade 8, effective in a gradual teach-out system.
+- Ministry of Education — Launch a nationwide teacher retraining program focused on differentiated instruction and remedial support.
+
+**Political risks**
+- High risk of a Polish-style political reversal due to middle-class resentment and lack of consensus [evidence: moderate — Jakubowski et al. 2016].
+- Severe backlash from vocal, resourceful urban parents and prestigious secondary schools.
+
+**Uncertainties**
+- The precise causal weight of the postponed tracking itself versus the accompanying teacher reforms in achieving Finland's equity outcomes (confidence: low | would be reduced by: comparative natural experiments isolating tracking from teacher reform policy).
+- The precise cost of retraining programs and building reallocations required to phase out early selection (confidence: medium | would be reduced by: detailed Ministry of Finance transition budget forecasts and regional audit data).
+
+## S4 — Compensate General Schools (Portuguese-style Package)
+**Goal**
+Retain the early selective structure but deploy targeted resources and rigorous standards to close the achievement gap between tracks.
+
+**Mechanism**
+- Deploying targeted funding for disadvantaged schools (TEIP-style) and rigorous national curriculum standards improves outcomes without structural reorganization [evidence: moderate — OECD PISA trend reports; Crato 2020].
+- Avoiding the transition and friction costs of structural reorganization maintains administrative stability [evidence: weak — implementation_planning findings].
+
+**Evidence status**
+Moderate — Supported by Portuguese performance trends from 2006 to 2015, although Hungarian teacher shortages limit applicability.
+
+**Assumptions**
+- Non-structural interventions (standards, targeted funding) are politically easier to implement and sustain than structural changes like altering school tracking ages [assumption].
+- The mechanisms of Portugal's TEIP and curriculum standards are transferable to the Hungarian socio-economic and institutional context [assumption].
+- The teacher shortage cannot be mitigated in the short term through wage increases or recruitment alone [assumption].
+
+**Expected benefits**
+- Averts massive administrative friction and transition costs [evidence: weak — education_finance findings].
+- Improves student performance in targeted disadvantaged schools without altering the tracking age [evidence: moderate — Crato 2020].
+
+**Equity impact**
+Improves equity for students in targeted disadvantaged schools, but leaves the overall selective sorting structure intact, limiting systemic desegregation.
+
+**Cost categories**
+- Recurring operational budgets for targeted school intervention packages (TEIP-style funding).
+- Teacher retention and relocation incentive schemes for marginalized regions.
+- Development and implementation of standardized curriculum assessments.
+
+**Implementation steps**
+- Ministry of Education — Design and implement a targeted school support program (TEIP-style) and establish rigorous curriculum standards.
+- Klebelsberg Centre (KK) — Route discretionary funding packages and deployment incentives to designated low-performing primary schools.
+
+**Political risks**
+- Middle-class backlash if targeted funding is perceived as disproportionately routing resources away from standard urban schools.
+- Risk of reform dilution due to lack of sustained budgetary commitments across electoral cycles.
+
+**Uncertainties**
+- The precise impact of Hungarian teacher shortages on the viability of implementing Portuguese-style curriculum standards and targeted school support plans (confidence: high | would be reduced by: comparative studies on teacher supply and qualifications in Hungarian disadvantaged schools versus historical Portuguese levels).
+- Whether Hungarian political consensus can support sustained, long-term funding for targeted school intervention programs without policy reversals (confidence: medium | would be reduced by: analysis of Hungarian budgetary commitments and legislative continuity in education policy).

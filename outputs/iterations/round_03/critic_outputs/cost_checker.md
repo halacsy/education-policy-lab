@@ -1,0 +1,21 @@
+# Critique: cost_checker
+
+## S1.cost_categories
+Objection: The cost list (admissions administration/monitoring/enforcement, litigation) omits the fiscal cost of the "displacement to unregulated non-state schools" risk that the scenario's own equity_impact field flags as "high." If middle-class families exit to non-state tracks, the state faces either forgone per-pupil normatíva reallocation or pressure to subsidize expanded non-state capacity — neither is costed. No numeric range (even order-of-magnitude) is given for audit/monitoring costs, despite the scenario claiming "moderate" evidence for its mechanism; the cost estimate is purely categorical, not fiscally sensitive to the scale of non-state expansion it itself predicts.
+Severity: high
+Suggested revision: Add a cost line for "potential normatíva/voucher outflow to non-state maintainers if displacement occurs," with a low/high range tied to the uncertainty item on disadvantaged-student access, and separate one-time audit-setup costs from recurring annual monitoring costs.
+
+## S2.cost_categories
+Objection: The field conflates transition and steady-state costs, contradicting the cross-scenario agreement ("Flat steady-state operational costs: Per-pupil operational funding differences... are modest; structural reform costs are primarily transition-driven"). Listing "long-term structural reorganization costs and contract renegotiations for redundant secondary staff" as a distinct ongoing category implies persistent post-transition cost exposure, but the shared evidence base says steady-state operating costs should converge to near-parity once the felmenő rendszer completes. This is exactly the transition-vs-steady-state confusion this role is meant to catch.
+Severity: high
+Suggested revision: Split into (a) one-time transition costs (retraining, curriculum, severance/redeployment during the felmenő period, with a duration estimate, e.g. 8-12 years) and (b) confirm explicitly that post-transition steady-state costs are expected to be flat per the education_finance evidence, rather than listing "long-term structural reorganization costs" as an open-ended category.
+
+## S3.cost_categories
+Objection: The category list (retraining, capital expenditure, transportation) has no quantification or range despite the uncertainties section explicitly flagging cost as unresolved ("would be reduced by: detailed Ministry of Finance transition budget forecasts") — meaning the scenario's own authors admit the cost basis is unknown, yet expected_benefits and equity_impact are stated with "strong"/confident language. Additionally, a major cost item is missing: Finland's comprehensive model required sustained higher per-pupil funding for differentiated instruction and remedial support staff at the classroom level, not just one-time retraining — this recurring instructional-support cost is absent, understating the steady-state fiscal burden of the reform relative to S2/S4.
+Severity: high
+Suggested revision: Add a recurring cost line for "ongoing differentiated-instruction staffing (learning support assistants, smaller class sizes in heterogeneous cohorts)" and attach at least a rough range (e.g., % of current secondary budget) sourced from Finnish/Polish per-pupil comparators, rather than leaving all costs as unquantified categories.
+
+## S4.cost_categories
+Objection: The recurring TEIP-style funding and retention-incentive lines are not tied to any fiscal range or duration, despite political_risks explicitly citing "risk of reform dilution due to lack of sustained budgetary commitments across electoral cycles" — the cost_categories field should but does not state the minimum multi-year commitment size needed to avoid dilution, making the political-risk claim unfalsifiable. Separately, the scenario ignores demographic contraction (agreed by experts elsewhere) which will shrink the disadvantaged-school pupil base over the reform horizon, meaning TEIP-style recurring costs should be modeled as declining or reallocated per capita, not as a flat recurring budget line.
+Severity: medium
+Suggested revision: Specify an indicative annual funding floor (e.g., % of GDP or Ft/pupil) required to sustain TEIP-style support across at least
