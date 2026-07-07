@@ -1,0 +1,38 @@
+{
+  "round": 5,
+  "fallbacks": [],
+  "reused": [
+    "expert:hungarian_education_system",
+    "expert:polish_reform",
+    "expert:finnish_reform",
+    "expert:international_comparison",
+    "expert:equity_and_social_mobility",
+    "expert:demography",
+    "expert:portuguese_reform",
+    "expert:school_network_planning",
+    "expert:education_finance",
+    "expert:legal_and_governance",
+    "expert:political_feasibility",
+    "expert:implementation_planning"
+  ],
+  "resumed": [],
+  "backends": {
+    "brief [google(agy):gemini-2.5-flash-lite]": 2,
+    "brief [mock]": 4,
+    "build_scenarios [google(agy):gemini-2.5-flash-lite]": 1,
+    "build_scenarios [mock]": 2,
+    "critic [anthropic:claude-opus-4-8]": 1,
+    "critic [anthropic:claude-sonnet-5]": 24,
+    "judge_score [anthropic:claude-haiku-4-5]": 18,
+    "judge_score [anthropic:claude-sonnet-5]": 9,
+    "judge_score [google(agy):gemini-2.5-flash-lite]": 10,
+    "judge_score [mock]": 8,
+    "meta_critique [anthropic:claude-opus-4-8]": 3,
+    "rejected_framings [google(agy):gemini-2.5-flash-lite]": 1,
+    "rejected_framings [mock]": 2,
+    "synthesis [google(agy):gemini-2.5-flash-lite]": 2,
+    "synthesis [mock]": 2,
+    "translate_scenarios [google(agy):gemini-2.5-flash-lite]": 1,
+    "translate_scenarios [mock]": 2
+  }
+}

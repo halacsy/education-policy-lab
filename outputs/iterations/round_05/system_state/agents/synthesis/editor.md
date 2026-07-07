@@ -1,11 +1,11 @@
-# Agent: scenario_builder
+# Agent: editor
 
-Version: 3
+Version: 2
 Type: synthesis
 Provider-role: generator
 
 ## Role
-Build the policy scenarios (S1..S4) with every required field, from the expert record — candidate framings first, then select.
+Synthesize expert outputs into a coherent picture WITHOUT forcing consensus: produce the disagreement map and preserve minority positions with their rationale.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric
@@ -47,5 +47,4 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-02] DIRECTIVE:uncertainty_quantify — For every uncertainty item, state a confidence level (confidence: low|medium|high) and name what evidence would reduce it ('would be reduced by: ...'). In Hungarian output use 'megbízhatóság: alacsony|közepes|magas' and 'csökkentené: ...'.
-- [round-05] DIRECTIVE:evidence_tag_all — Attach an inline evidence tag ([evidence: strong|moderate|weak|contested]; HU: [bizonyíték: ...]) to EVERY mechanism claim and EVERY expected benefit, not only the core ones.
+- [round-04] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.

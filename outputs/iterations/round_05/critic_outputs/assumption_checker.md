@@ -1,0 +1,21 @@
+# Critique: assumption_checker
+
+## S3.assumptions
+Objection: The assumption "Sorting does not simply migrate to school choice between general schools and to non-state maintainers" directly contradicts the scenario's own equity_impact field, which states this exact migration is "the largest risk" and could make "segregation... worsen relative to baseline." A scenario cannot both list a risk as its largest acknowledged danger and simultaneously assume it away as a background condition for the mechanism to work. The expected_benefits (weaker SES-outcome gradient) are only valid if this assumption holds, so the scenario's headline benefit and its own stated biggest risk are in direct tension, unresolved by any mechanism or evidence tag.
+Severity: high
+Suggested revision: Remove the assumption or reframe it as an uncertainty with an explicit trigger/threshold (e.g., "non-state enrolment share must stay below X% for the peer-effect benefit to hold"), and cross-reference it to the equity_impact risk so the two fields are consistent rather than contradictory.
+
+## S1.assumptions
+Objection: "A workable SES indicator exists at application time" is asserted as an assumption but is empirically unverified for Hungary and carries no evidence tag anywhere in the scenario — not in mechanism, not in evidence_status. The entire SES-aware admission mechanism (weighted lottery/district quotas) is downstream of this indicator existing and being legally usable (e.g., GDPR/data-protection constraints on collecting SES data for 10-12 year-olds), yet neither the mechanism nor the implementation_steps address indicator construction, legal basis, or data availability. This is a load-bearing assumption treated as a footnote.
+Severity: high
+Suggested revision: Either cite an existing usable proxy (e.g., school-level free-meal/subsidy rates as a legally available district-quota input) with an evidence tag, or add an explicit implementation step ("legal/data feasibility study of an SES proxy") and downgrade evidence_status to reflect that the mechanism's core input is unverified.
+
+## S2.mechanism
+Objection: The mechanism claims "Advanced-programme funding in general schools retains ambitious families in the common track [evidence: weak]," but expected_benefits then asserts "Stronger peer composition in urban general-school upper grades [evidence: moderate]" — the same causal chain (funding → retention → peer composition) is tagged weak at the mechanism stage and moderate at the benefit stage. This is an internal evidence-strength escalation with no new evidence introduced between the two fields; the benefit cannot be better-evidenced than the mechanism that produces it.
+Severity: medium
+Suggested revision: Align the tags — either downgrade the peer-composition benefit to weak/speculative pending the tracked-cohort study already listed under uncertainties, or explain what additional (mechanical, not behavioural) evidence supports peer-composition improvement independent of the retention mechanism.
+
+## S4.evidence_status
+Objection: evidence_status labels the whole package "moderate," and mechanism items are each tagged moderate/strong, yet the single uncertainty that determines whether the scenario's goal is achievable at all — "Whether compensation can offset selection effects this early; no country has demonstrated it at Hungary's selection age" — is rated confidence: low with no comparator evidence. A package whose core untested claim (compensation offsets Hungary's unusually early selection) has zero precedent cannot be honestly summarized as "moderate" overall; the moderate tag applies only to the sub-components (funding effects, teacher premia) observed in different (later-selection) contexts, not to the scenario's actual goal claim.
+Severity: high
+Suggested revision: Split evidence_status into two explicit lines — "component evidence: moderate" and "applicability to Hungary's selection age: low/unsupported" — so the summary tag does not launder an untested extrapolation as moderately evidenced.

@@ -1,0 +1,21 @@
+# Critique: devil_advocate
+
+## S3.expected_benefits
+Objection: The claim "weaker SES-outcome gradient within a decade... [evidence: moderate]" is load-bearing but rests entirely on the asymmetric-peer-effects mechanism, which the scenario itself tags [evidence: contested] in the mechanism section. The evidence_status field admits peer-effect asymmetry is "genuinely disputed," yet the benefit derived from it is rated moderate rather than contested. The source support (cross-country tracking studies) only shows a correlation between later selection and a flatter SES gradient at a system level; it does not establish that the mechanism is asymmetric peer effects specifically rather than curriculum, funding, or teacher-allocation differences that happen to co-occur with later tracking. If the peer-effect channel fails, the benefit's causal story collapses even though the correlational headline evidence remains.
+Severity: high
+Suggested revision: Downgrade the expected_benefits tag to [evidence: contested] to match the mechanism tag, and separate the "structural correlation" claim (strong) from the "mechanism is asymmetric peer effects" claim (contested) so readers can see the benefit survives even if the mechanism explanation is wrong.
+
+## S4.expected_benefits
+Objection: "Improved outcomes in disadvantaged general schools within 5 years (Portuguese trajectory) [evidence: moderate]" implicitly imports the Portuguese effect size into the Hungarian context, but the scenario's own uncertainties field states "no country has demonstrated it at Hungary's selection age (confidence: low)." Portugal's TEIP package operated within a system without Hungary's age-10/12 selective exit, so the source evidence supports "targeted funding + teacher premia improve outcomes in a non-selective or later-selective system" — it does not support "this offsets the specific equity cost created by selection at age 10." The moderate tag overstates transferability of the effect size, not just its existence.
+Severity: high
+Suggested revision: Split the tag: mechanism-level evidence (targeted funding, premia work) stays moderate; the offset-of-early-selection claim in expected_benefits should be downgraded to [evidence: weak] or explicitly flagged as an extrapolation beyond the evidence base.
+
+## S2.expected_benefits
+Objection: "Stronger peer composition in urban general-school upper grades [evidence: moderate]" is presented as following from the entry-cap mechanism, but the retention mechanism it depends on — "advanced-programme funding... retains ambitious families in the common track" — is tagged [evidence: weak]. Peer composition can only improve if ambitious/high-SES families stay in general schools rather than exiting to private or non-state alternatives; the scenario itself, in equity_impact and political_risks, acknowledges this retention is uncertain. A moderate-confidence benefit cannot rest on a weak-confidence mechanism without the chain being explicitly flagged as weak.
+Severity: medium
+Suggested revision: Retag the peer-composition benefit as [evidence: weak], or add a conditional: "moderate if retention mechanism holds (weak evidence it will)."
+
+## S1.assumptions
+Objection: "A workable SES indicator exists at application time" is stated as a bare assumption with no evidence tag and no engagement with the actual difficulty: Hungary has no administrative student-level SES register usable at age 10 application (proxies like parental education/postcode are legally and practically contested, and are exactly what "informal channels" in the political_risks section could route around). The scenario treats this as a design detail; it is instead a precondition without which the entire SES-aware admission mechanism (weighted lottery/quotas) cannot be implemented at all — a harder blocker than the compliance risk that IS discussed in uncertainties.
+Severity: high
+Suggested revision: Add an evidence tag to this assumption (likely [evidence: weak/unsupported] given no cited Hungarian data source), and add a corresponding uncertainty entry with a confidence rating and a concrete step to test indicator feasibility (e.g., a data-availability audit) before the pilot is designed, not after.

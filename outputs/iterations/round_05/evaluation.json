@@ -1,0 +1,110 @@
+{
+  "round": 5,
+  "dimensions": {
+    "scenario_completeness": {
+      "deterministic": 7.375,
+      "score": 7.375,
+      "method": "deterministic"
+    },
+    "evidence_discipline": {
+      "deterministic": 7.323,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          8.0,
+          8.0,
+          9.0
+        ],
+        "mean": 8.333,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 7.626,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "critic_concreteness": {
+      "deterministic": 9.516,
+      "llm": {
+        "provider": "google",
+        "trials": [
+          5.34,
+          5.1,
+          5.15
+        ],
+        "mean": 5.197,
+        "variance": 0.0107,
+        "divergence_flagged": true
+      },
+      "score": 9.516,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    },
+    "layer_separation": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "meta_system_eval": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "google",
+        "trials": [
+          4.4,
+          4.36,
+          4.4
+        ],
+        "mean": 4.387,
+        "variance": 0.0004,
+        "divergence_flagged": true
+      },
+      "score": 10.0,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    },
+    "disagreement_preservation": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          9.0,
+          9.0,
+          8.0
+        ],
+        "mean": 8.667,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 9.6,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "uncertainty_explicitness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "translation_fidelity": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "mean": 10.0,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 10.0,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    }
+  },
+  "total": 9.265,
+  "prev_total": 9.038,
+  "delta": 0.227,
+  "generator_provider": "google",
+  "judge_provider": "anthropic",
+  "divergence_flagged": [
+    "critic_concreteness",
+    "meta_system_eval"
+  ],
+  "step_fallbacks": []
+}
