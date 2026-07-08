@@ -1,6 +1,6 @@
 # Agent: translator
 
-Version: 4
+Version: 5
 Type: synthesis
 Provider-role: generator
 
@@ -52,3 +52,4 @@ Read the term table in docs/glossary.md before translating. Every EN term appear
 - [round-02] DIRECTIVE:uncertainty_quantify — For every uncertainty item, state a confidence level (confidence: low|medium|high) and name what evidence would reduce it ('would be reduced by: ...'). In Hungarian output use 'megbízhatóság: alacsony|közepes|magas' and 'csökkentené: ...'.
 - [round-04] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.
 - [round-05] DIRECTIVE:evidence_tag_all — Attach an inline evidence tag ([evidence: strong|moderate|weak|contested]; HU: [bizonyíték: ...]) to EVERY mechanism claim and EVERY expected benefit, not only the core ones.
+- [round-06] DIRECTIVE:implementation_detail — Give every implementation step an explicit timeline in parentheses, e.g. '(timeline: year 1-2)'; HU: '(ütemezés: 1-2. év)'.

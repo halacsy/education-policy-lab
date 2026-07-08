@@ -1,0 +1,29 @@
+{
+  "voice": "eselyegyenlosegi_civil",
+  "responses": [
+    {
+      "cluster": "A10",
+      "response": "A10 correctly identifies that quotas address gatekeeping fairness at the selection point, not the age-10/12 early-selection mechanism itself. But the agent's S1 conditional support is not a claim that quotas achieve equity alone—it claims they improve intake composition IF [conditions on SES validity, rural participation, non-state evasion] hold. A10 identifies the limitation: quotas cannot reach families with no advocacy. This is precisely why the position is conditional, not unconditional. However, A10 raises a valid principle: S1, even if all conditions are met, still legitimizes age-10/12 selection as 'fair' while leaving the mechanism unchanged, risking foreclosure of structural reform. The agent agrees with this limitation; the honest position should clarify that S1 is supportable only as a partial interim step paired with a timeline to structural reform, not as a substitute.",
+      "outcome": "revise",
+      "new_condition": "S1 supportable only if explicitly bundled with a documented timeline toward structural reform (S2 or S3), not as a substitute for addressing the selection mechanism itself. Intake fairness at an unjust selection point is not equity."
+    },
+    {
+      "cluster": "A23",
+      "response": "A23 identifies a genuine asymmetry in the agent's logic: demanding proof that general schools will replicate selective-track quality before endorsing phasedown, yet asking families to surrender access to something demonstrably valued for something unproven. More critically, A23 implies a catch-22: the agent's conditions require proof that non-state evasion will not happen and general schools will retain high-achievers. But announcing phasedown itself triggers the non-state evasion the conditions assume can be prevented, making both proofs impossible to obtain in practice. The policy creates the very condition (evasion) that violates the agent's conditions. This makes the conditional logic incoherent: the conditions are un-satisfiable because the announcement itself triggers evasion. The agent cannot prove non-state evasion will not happen if it begins the moment phasedown is announced.",
+      "outcome": "revise",
+      "new_condition": "S2 only acceptable if non-state evasion is prevented by legislation enacted BEFORE phasedown announcement (not after), and general schools receive legally guaranteed funding and staffing parity in place from Day 1. Without legislative prevention upfront, the announcement triggers the evasion the conditions assume can be prevented, making them un-satisfiable in practice."
+    },
+    {
+      "cluster": "A37",
+      "response": "A37 identifies a logical tension in the agent's categorical opposition: if implementation failure would lead to revising implementation methods (not reverting to early selection), then the agent actually endorses the no-early-selection principle. The objection is to execution risk, not to the principle itself. If that is true, then opposition to S3-as-written is not opposition to the principle, but opposition to this inadequate implementation of it. Yet categorical opposition reads as rejection of the principle; conditional support (S3 yes IF [fallbacks, entrenchment, pilot data]) would signal that the principle is sound but the plan is not. The agent's actual position—'I agree with no-early-selection, I oppose S3's execution risk'—is more coherent expressed as conditional support with specified guardrails than as categorical opposition.",
+      "outcome": "revise",
+      "new_condition": "Support structural reform (eliminating age-10/12 selection) IF: (1) legislation prevents school-choice and non-state evasion BEFORE implementation; (2) teacher-retraining funding is binding and specified by law; (3) explicit fallback exists if political pact fails, protecting mid-transition cohorts; (4) pilot data shows no widening SES gradient within general-school cohorts before rollout. Without these, implementation risk to the poorest is unacceptable and opposition is justified."
+    },
+    {
+      "cluster": "A50",
+      "response": "A50 provides empirical evidence that contradicts the agent's core claim: the Portuguese TEIP model (targeted funding + curriculum standards + school clustering within a tracking system) produced measurable PISA gains, falsifying the assertion that S4 'cannot offset selection effects' or is merely a 'band-aid.' However, A50's evidence supports a narrower claim: S4 can improve outcomes if adequately designed and sustained. The agent's objection is not to theoretical effectiveness but to political durability: the scenario's own risk section confirms compensation is the first item cut in consolidation. So the honest engagement is: S4 works in principle (Portugal proves this), but will it be sustained in practice (Hungary's fiscal politics)? The agent should acknowledge A50 while clarifying that opposition rests on political sustainability, not on whether targeted investment can work.",
+      "outcome": "maintain",
+      "new_condition": "S4 acceptable only if compensation funding is constitutionally protected or has multi-year binding budget authority (not discretionary policy), ensuring durability across fiscal consolidation cycles. Portuguese evidence shows targeted investment can improve outcomes; objection to S4 is not theoretical but political: without legal entrenchment, S4 is a temporary promise that will be cut, leaving families worse off than if the commitment had never been made."
+    }
+  ]
+}
