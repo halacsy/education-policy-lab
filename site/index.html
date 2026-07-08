@@ -160,13 +160,15 @@
       <li><span class="n">01</span><span><strong>12 szakértő-ágens</strong> elemzi a kérdést a saját területéről (nemzetközi összehasonlítás, demográfia, jog, finanszírozás, politikai megvalósíthatóság…), minden állítást forrással és bizonyítékcímkével.</span></li>
       <li><span class="n">02</span><span>A <strong>forgatókönyv-építő</strong> 3–4 alternatívát épít, mindegyikben tíz kötelező mezővel: cél, mechanizmus, bizonyítékstátusz, feltevések, várható előnyök, méltányossági hatás, költségek, megvalósítási lépések, politikai kockázatok, bizonytalanságok.</span></li>
       <li><span class="n">03</span><span>A <strong>szerkesztő</strong> szintézist ír — konszenzus helyett nézeteltérés-térképpel. A <strong>fordító</strong> minden anyagot magyarul és angolul is elkészít, ellenőrzött szószedettel.</span></li>
-      <li><span class="n">04</span><span><strong>9 kritikus-ágens</strong> támadja az anyagot (ördög ügyvédje, bizonyíték-ellenőr, méltányosság-, költség-, megvalósíthatóság-ellenőr…). Minden kifogás konkrét: forgatókönyvet és mezőt nevez meg, súlyossággal és javítási javaslattal.</span></li>
-      <li><span class="n">05</span><span>A <strong>meta-kritikus</strong> magát a rendszert bírálja: melyik ágens gyenge, valódi-e a javulás, vagy csak a mérőszámot játssza ki.</span></li>
-      <li><span class="n">06</span><span>Egy nyolcdimenziós <strong>rubrika</strong> pontoz (determinisztikus ellenőrzések + két különböző modellcsalád keresztbírálata), a rendszer megnevezi a leggyengébb dimenziót, és a következő kör <em>egyetlen, dokumentált változtatással</em> javít önmagán.</span></li>
+      <li><span class="n">04</span><span><strong>10 diskurzus-hang</strong> — a modellezett társadalmi vita — reagál a forgatókönyvekre: érdekeket és értékeket képviselnek, minden álláspontjuk episztemikus címkével. Az érveiket egy mediátor érv-főkönyvbe rendezi, és a záróanyag mindegyikre köteles válaszolni. <em>(Részletek lent.)</em></span></li>
+      <li><span class="n">05</span><span><strong>9 kritikus-ágens</strong> támadja az anyagot (ördög ügyvédje, bizonyíték-ellenőr, méltányosság-, költség-, megvalósíthatóság-ellenőr…). Minden kifogás konkrét: forgatókönyvet és mezőt nevez meg, súlyossággal és javítási javaslattal.</span></li>
+      <li><span class="n">06</span><span>A <strong>meta-kritikus</strong> magát a rendszert bírálja: melyik ágens gyenge, valódi-e a javulás, vagy csak a mérőszámot játssza ki.</span></li>
+      <li><span class="n">07</span><span>Egy nyolcdimenziós <strong>rubrika</strong> pontoz (determinisztikus ellenőrzések + két különböző modellcsalád keresztbírálata), a rendszer megnevezi a leggyengébb dimenziót, és a következő kör <em>egyetlen, dokumentált változtatással</em> javít önmagán.</span></li>
     </ol>
     <p>A generáló és a bíráló modell szándékosan <strong>különböző gyártótól</strong>
     származik (jelenleg: Google Gemini generál, Anthropic Claude bírál), hogy egyik
-    modell se osztályozhassa a saját munkáját.</p>
+    modell se osztályozhassa a saját munkáját. A szereposztás felcserélve is
+    működik — a robusztusságot dokumentált szerepcsere-kísérlet igazolta.</p>
   </div>
   <div class="wrap wide" style="margin-top:2rem">
     <div class="split">
@@ -202,6 +204,56 @@
         nyomon követhető a <a href="explorer.html">feltárón</a>.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Társadalmi diskurzus — érv-főkönyv</p>
+    <h2>Nem csak a szakértőket modellezzük: a társadalmi vitát is</h2>
+    <p>A szakpolitika nem laborban dől el. Ezért a szakértői réteg mellett
+    <strong>tíz diskurzus-hang</strong> modellezi a nyilvános vitát: hat
+    érdek/érték-archetípus (pedagógus-érdekvédő, kisgyerekes szülői,
+    esélyegyenlőségi civil, konzervatív értékvédő, digitálisgazdasági,
+    egyházi-fenntartói) és négy valós szereplő dokumentált álláspontokkal
+    (CKP/Tanítanék, PDSZ, a kormányzó Tisza, Egyensúly Intézet). Ők nem
+    szakértők: <em>képviselnek</em> — és pont ettől látszik előre, ki mit
+    fog támogatni, blokkolni, és milyen feltétellel nyerhető meg.</p>
+    <p>A kiértékelés szabályait négy nemzetközi gyakorlatból gyúrtuk össze:</p>
+  </div>
+  <div class="wrap wide" style="margin-top:1.5rem">
+    <div class="grid cols2">
+      <div class="card"><p><strong>Válaszkötelezettség</strong> <span class="note">— francia CNDP (débat public)</span></p>
+        <p class="note">Egyetlen felvetett érv sem tűnhet el csöndben: a záróanyag minden érvklaszterre tételesen válaszol — elfogad, elutasít indoklással, vagy nyitva hagy. Ezt nem jóindulat, hanem gépi validáció kényszeríti ki.</p></div>
+      <div class="card"><p><strong>Reprezentativitás + átláthatóság</strong> <span class="note">— OECD deliberatív sztenderdek</span></p>
+        <p class="note">Minden álláspont episztemikus címkét visel: <em>dokumentált</em> (forrással), <em>értékekből modellezett</em> (a levezetés alapjával) — vagy <em>nincs álláspont</em>, mert az őszinte „erről ez a szereplő nem mondana semmit” is érvényes válasz. Valós szervezetnek címkézetlen álláspontot tulajdonítani gépi hiba.</p></div>
+      <div class="card"><p><strong>Vitaminőség</strong> <span class="note">— Discourse Quality Index (habermasi iskola)</span></p>
+        <p class="note">Indoklás nélküli álláspont érvénytelen. Minden hang kimondja, kinek az érdekét védi és mi a közjó-kerete — és megkapja a legerősebb ellenérvet, amire érdemben válaszolnia kell (reciprocitás-kör).</p></div>
+      <div class="card"><p><strong>Érv-könyvelés, nem fejszámlálás</strong> <span class="note">— Habermas Machine (DeepMind, 2024)</span></p>
+        <p class="note">A mediátor érvklasztereket épít, nem szavazatokat számol — így új hangok felvétele gazdagítja a képet, de nem billenti. Az érvek ténybeli állításait a szakértői réteg bizonyítékfokozattal látja el; az értékállítás értékkérdésként jelölődik.</p></div>
+    </div>
+    <p style="margin-top:1.5rem" class="note">Az egészet ki is próbálhatod: az
+    <a href="explorer.html#diskurzus">érv-főkönyv a feltáróban</a> —
+    forgatókönyvenként ki mit mond, milyen címkével, mi lett az érvével.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Költségfegyelem</p>
+    <h2>Mindig a legolcsóbb modell — ami még elég jó</h2>
+    <p>Minden feladat a modell-létra legolcsóbb, még megfelelő fokán fut:
+    a rövid szakértői elemzéshez nem kell csúcsmodell, a meta-kritikához igen.
+    Ha egy olcsó modell kimenete megbukik a gépi formátum-ellenőrzésen, a
+    rendszer <strong>automatikusan egy fokot lép feljebb</strong> a létrán és
+    újrapróbálja; ha egy modell napi kerete elfogy, a megszakító azt az egy
+    fokot zárja le, nem az egész futást. Így az olcsó modellek biztonságosan
+    használhatók: nem a jóindulatukban bízunk, hanem validált szerződésekben —
+    egy csöndben eldobott kötelező szekció formátumhiba, nem stílusdöntés.</p>
+    <div class="commitlog" style="margin-top:1rem">google:    flash-lite → flash → pro
+anthropic: haiku → sonnet → opus
+feladat-szintek: szakértői elemzés / diskurzus-hang = 0 · szintézis / brief / kritika = 1 · meta-kritika = 2
+formátumhiba → +1 fok · napi keret elfogyott → fok lezárva, létra mászik</div>
   </div>
 </section>
 
