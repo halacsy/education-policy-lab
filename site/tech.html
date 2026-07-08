@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hogyan van megépítve? — Education Policy Lab</title>
+<meta name="description" content="Technikai implementáció: modell-létra, validált szerződések, keresztcsaládos bírálat, folytatható futások, determinisztikus tartalék.">
+<body>
+<style>
+  :root {
+    --paper: #F7F8F6; --ink: #1A2321; --muted: #5A6662; --line: #D8DDD9;
+    --evidence: #1F6E5C; --dissent: #A34A26; --panel: #EEF1EE;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink);
+         font-family: Charter, Georgia, 'Times New Roman', serif;
+         font-size: 1.0625rem; line-height: 1.65; }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+  h1, h2, h3 { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+               line-height: 1.15; text-wrap: balance; letter-spacing: -0.015em; }
+  h1 { font-size: clamp(1.6rem, 4.5vw, 2.3rem); font-weight: 750; margin: 0 0 1rem; }
+  h2 { font-size: 1.35rem; font-weight: 700; margin: 0 0 1rem; }
+  p { margin: 0 0 1rem; }
+  a { color: var(--evidence); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--evidence); outline-offset: 2px; }
+  .eyebrow { font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+             font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+             color: var(--evidence); margin: 0 0 .75rem; }
+  header.site { border-bottom: 1px solid var(--line); padding: 1rem 0;
+                font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: .8rem; }
+  header.site .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  section { padding: 2.75rem 0; border-bottom: 1px solid var(--line); }
+  .lede { font-size: 1.15rem; max-width: 40rem; }
+  .commitlog { font-family: ui-monospace, Menlo, monospace; font-size: .8rem; line-height: 1.7;
+               background: var(--ink); color: #E7EEE9; border-radius: 6px;
+               padding: 1rem 1.2rem; overflow-x: auto; white-space: pre; }
+  .commitlog b { color: #8FD4BC; font-weight: 600; }
+  .note { font-size: .85rem; color: var(--muted); }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; background: #fff; }
+  .tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
+  th, td { padding: .55rem .8rem; border-bottom: 1px solid var(--line); text-align: left; }
+  tr:last-child td { border-bottom: none; }
+  thead th { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+             font-size: .8rem; letter-spacing: .04em; }
+  footer { padding: 2.5rem 0 3.5rem; font-size: .85rem; color: var(--muted); }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<header class="site">
+  <div class="wrap">
+    <span><strong>EDUCATION POLICY LAB</strong> · technikai jegyzetek</span>
+    <span><a href="./">← főoldal</a> · <a href="explorer.html">feltáró</a> · <a href="knowledge.html">tudásbázis</a></span>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Hogyan van megépítve?</p>
+    <h1>Nem a modellek jóindulatában bízunk, hanem validált szerződésekben</h1>
+    <p class="lede">A <a href="./">főoldal</a> arról szól, mit csinál a rendszer.
+    Ez az oldal arról, hogyan éri el, hogy olcsó legyen, ellenőrizhető,
+    és ne tudjon csöndben hazudni. A teljes forráskód és a döntésnapló
+    nyilvános a <a href="https://github.com/halacsy/education-policy-lab">GitHub-repóban</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Költségfegyelem</p>
+    <h2>Mindig a legolcsóbb modell — ami még elég jó</h2>
+    <p>Minden feladat a modell-létra legolcsóbb, még megfelelő fokán fut: a
+    rövid szakértői elemzéshez nem kell csúcsmodell, a meta-kritikához igen.
+    Ha egy olcsó modell kimenete megbukik a gépi formátum-ellenőrzésen, a
+    rendszer <strong>automatikusan egy fokot lép feljebb</strong> a létrán és
+    újrapróbálja. Ha egy modell napi kerete elfogy, a megszakító csak azt az
+    egy fokot zárja le — a létra tovább mászik, a futás nem áll meg.</p>
+    <div class="commitlog"><b>google:</b>    flash-lite → flash → pro
+<b>anthropic:</b> haiku → sonnet → opus
+feladat-szintek: szakértői elemzés / diskurzus-hang = 0
+                 szintézis / brief / kritika / fordítás = 1
+                 meta-kritika = 2
+formátumhiba          → +1 fok, újrapróbálás
+napi keret elfogyott  → az adott fok lezárva, a létra mászik</div>
+    <p class="note" style="margin-top:.75rem">Döntésnapló: D-26 (létra), D-27
+    (fokonkénti megszakító). A hívások modell-szintű elszámolása minden kör
+    naplójában szerepel.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Validált szerződések</p>
+    <h2>Egy eldobott kötelező szekció formátumhiba, nem stílusdöntés</h2>
+    <p>A rendszer önjavító: körönként egy dokumentált direktívát ad az
+    ágensek specifikációjához (pl. „a különvélemények külön szekcióban,
+    soha fel nem oldva”). Egy kísérletünk megmutatta, hogy a legolcsóbb
+    modellek az ilyen direktívákat néha <em>csöndben eldobják</em> — ezért
+    minden direktíva deklarálja a gépileg ellenőrizhető lenyomatát, és a
+    kimenet-validátor ezekből épül. Ha a szekció hiányzik, az futási hiba,
+    ami a létrán eszkalál — nem vélemény kérdése. Ugyanez vonatkozik a
+    diskurzus-réteg címkéire: valós szervezetnek címkézetlen álláspontot
+    tulajdonítani gépi hiba.</p>
+    <p class="note">Döntésnapló: D-28 (szerződések), D-29 (diskurzus-réteg
+    címkéi és válaszkötelezettsége).</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Elfogulatlanság</p>
+    <h2>Senki nem osztályozza a saját dolgozatát</h2>
+    <p>A generáló és a bíráló modell <strong>kötelezően különböző
+    gyártótól</strong> származik (a gépi kapu ezt is ellenőrzi) — a modellek
+    mérhetően felülpontozzák a saját családjuk stílusát. A pontozás
+    determinisztikus ellenőrzésekre épül (≥70% súllyal), az LLM-bírói
+    komponens három, véletlen sorrendű próba átlaga szórással; ha a két
+    modellcsalád bírálata széttart, a rendszer nem átlagol, hanem a
+    determinisztikus pontszámot használja és <em>embernek jelöli ki</em> a
+    kérdést. A szereposztás felcserélve is működik — a robusztusságot
+    dokumentált szerepcsere-kísérlet igazolta (±0,06 azonos anyagon).</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Üzembiztonság</p>
+    <h2>Folytatható futások, determinisztikus tartalék</h2>
+    <p>Minden kör minden lépése naplózza, melyik backend szolgálta ki
+    (API-kulcs, előfizetéses CLI, vagy tartalék). Egy megszakadt futás
+    <strong>onnan folytatódik, ahol elakadt</strong>: a rendszerállapot
+    lenyomata garantálja, hogy csak azonos rendszerrel készült artefaktum
+    használódik újra — így egy napi kvóta-limit nem dobja el a már kifizetett
+    munkát. Ha egyetlen élő modell sem elérhető, egy determinisztikus,
+    kurált tartalék-kompozíció lép be, és ez a tény lépésenként, letagadhatatlanul
+    naplózódik — a „mi készült élőben és mi nem” minden körnél nyilvános.</p>
+    <p>A „kész” definíciója gépi kapu: 14 specifikációs ellenőrzés + a
+    memória-, diskurzus- és kitartott (a javító lépés elől elrejtett)
+    anti-Goodhart ellenőrzések. Gyengíteni őket tilos; a rendszer csak úgy
+    mehet át, ha tényleg teljesíti őket.</p>
+    <p class="note">Részletek a repóban: <code>docs/architecture.md</code>,
+    <code>docs/decisions.md</code> (D-01…D-29), <code>scripts/verify.py</code>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Education Policy Lab — kísérleti műhely. A tartalom gépi úton generált,
+    emberi döntést nem helyettesít.</p>
+  </div>
+</footer>
+</body>
+</html>
