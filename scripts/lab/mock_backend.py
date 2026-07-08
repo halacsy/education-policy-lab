@@ -46,7 +46,7 @@ def compose(prompt, role):
         "judge_score": lambda: judge_score(prompt, h, _payload(prompt)),
         "discourse_voice": lambda: discourse_voice(h["agent"]),
         "argument_map": lambda: argument_map(),
-        "grade_arguments": lambda: grade_arguments(),
+        "grade_arguments": lambda: grade_arguments(prompt),
         "discourse_reciprocity": lambda: discourse_reciprocity(h["agent"]),
         "translate_ledger": lambda: translate_ledger(int(h.get("round", 1))),
     }.get(task)
@@ -335,15 +335,25 @@ def argument_map():
                       ensure_ascii=False, indent=2)
 
 
-def grade_arguments():
+def grade_arguments(prompt):
+    """Grade the clusters ACTUALLY in the prompt (a live argument map's ids
+    differ from the curated pack's): known curated ids get their curated
+    grade, everything else is honestly marked not-registry-backed."""
+    curated = {c["id"]: c for c in K.ARGUMENT_CLUSTERS}
+    m = re.search(r"=== INPUTS ===\n(.*)", prompt, re.S)
+    try:
+        clusters = json.loads(m.group(1)) if m else K.ARGUMENT_CLUSTERS
+    except (json.JSONDecodeError, AttributeError):
+        clusters = K.ARGUMENT_CLUSTERS
     lines = []
-    for c in K.ARGUMENT_CLUSTERS:
-        if c["kind"] not in ("fact", "mixed"):
+    for c in clusters:
+        if c.get("kind") not in ("fact", "mixed"):
             continue
-        if c.get("grade"):
-            f = K.FACTS[c["grade_source"]]
-            lines.append(f"{c['id']}: [evidence: {c['grade']} — "
-                         f"{f['source']}] registry fact {c['grade_source']}")
+        cur = curated.get(c.get("id"))
+        if cur and cur.get("grade"):
+            f = K.FACTS[cur["grade_source"]]
+            lines.append(f"{c['id']}: [evidence: {cur['grade']} — "
+                         f"{f['source']}] registry fact {cur['grade_source']}")
         else:
             lines.append(f"{c['id']}: [not registry-backed — treat as model "
                          "knowledge] no curated source supports this claim")
@@ -362,12 +372,9 @@ def discourse_reciprocity(name):
 
 
 def translate_ledger(round_n):
-    from .ledger import render_ledger
+    from .ledger import grade_lines, render_ledger
     voices = {n: _voice_json(n, "hu") for n in K.DISCOURSE_VOICES}
-    grades = {}
-    for line in grade_arguments().splitlines():
-        cid, _, rest = line.partition(":")
-        grades[cid.strip()] = rest.strip()
+    grades = grade_lines(grade_arguments(""))  # curated clusters, HU twin
     responses = {n: _response_json(n, "hu") for n in K.DISCOURSE_VOICES}
     return render_ledger(round_n, voices, _clusters("hu"), grades,
                          responses, "hu")

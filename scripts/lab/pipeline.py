@@ -152,11 +152,13 @@ def valid_reciprocity(obj, cluster_ids):
 
 def responds_to_clusters(text, lang, cluster_ids):
     """Response obligation (CNDP): the brief answers the argument clusters.
-    Coverage threshold (not all-ids) so a mock fallback whose id set differs
-    slightly from a live argument map cannot deadlock the round."""
+    Word-boundary match (A1 must not count via A10); coverage threshold (not
+    all-ids) so a mock fallback whose id set differs slightly from a live
+    argument map cannot deadlock the round."""
     if RESPONSES_HEADER[lang] not in text:
         return False
-    hits = sum(1 for cid in cluster_ids if cid in text)
+    hits = sum(1 for cid in cluster_ids
+               if re.search(rf"\b{cid}\b", text))
     return hits >= max(6, int(0.8 * len(cluster_ids)))
 
 CRITIC_HEADING_RE = re.compile(
@@ -387,11 +389,13 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                  "Cluster the voices' arguments into an argument map. "
                  "Return ONLY a JSON object with this exact schema:\n"
                  + ARGMAP_SCHEMA_HINT +
-                 "\nRules: stable sequential ids A1..An; every claim in "
-                 "canonical one-sentence form; classify fact vs value vs "
-                 "mixed; raised_by lists ONLY voice names that actually "
-                 "raise it; NEVER drop a minority argument; do not count "
-                 "heads."),
+                 "\nRules: stable sequential ids A1..An; aim for 8-24 "
+                 "clusters — MERGE near-duplicate arguments across voices "
+                 "and scenarios into one canonical claim instead of "
+                 "enumerating variants; every claim in canonical "
+                 "one-sentence form; classify fact vs value vs mixed; "
+                 "raised_by lists ONLY voice names that actually raise it; "
+                 "NEVER drop a minority argument; do not count heads."),
              inputs=voices_digest),
         validate=lambda o: valid_argmap(o, voice_names),
         out_path=ddir / "argument_map.json", postprocess=parse_json_block,
@@ -419,10 +423,13 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                  "Value claims are NOT graded.\n\nREGISTRY:\n"
                  + registry_digest),
              inputs=json.dumps(clusters, ensure_ascii=False)),
-        validate=lambda t: all(
-            re.search(rf"^{cid}:.*(\[evidence:|not registry-backed)",
-                      t, re.M) for cid in factual),
-        out_path=ddir / "argument_grades.md", role="judge", max_tokens=2000)
+        # lenient prefixes ('- ', '**') and 90% coverage: a judge that skips
+        # one cluster of thirty must not force a full mock fallback
+        validate=lambda t: sum(
+            1 for cid in factual if re.search(
+                rf"^[\s\-\*]*{cid}\**\s*:.*(\[evidence:|not registry-backed)",
+                t, re.M)) >= max(1, int(0.9 * len(factual))),
+        out_path=ddir / "argument_grades.md", role="judge", max_tokens=4000)
     grades = LG.grade_lines(grades_text)
 
     responses = {name: None for name in voice_names}

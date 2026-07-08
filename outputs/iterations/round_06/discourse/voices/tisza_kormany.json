@@ -1,0 +1,49 @@
+{
+  "voice": "tisza_kormany",
+  "reactions": [
+    {
+      "scenario": "S1",
+      "stance": "conditional",
+      "label": "documented",
+      "source": "Tisza 2026 oktatási program; miniszter Lannert nyilvános nyilatkozatai az admissions-eljárás felülvizsgálatáról és konzultációról (as documented in the task's actor brief for this agent — no independently verifiable URL provided)",
+      "basis": "",
+      "interest": "the governing party's own program commitment to reviewing the admissions process, and the pupils/parents affected by SES-skewed selection whom the government has publicly named as a concern",
+      "public_good_frame": "reducing unfair SES-linked advantage in access to selective tracks while keeping the existing school structure and avoiding disruptive institutional change",
+      "argument": "The documented position names SES-skewed admissions as a problem and commits to reviewing the admissions procedure and consulting stakeholders — this is exactly the terrain S1 occupies (assessment redesign, quota mechanics) without touching track structure or entry age, so it matches what has actually been promised. Support is conditional because the documented base commits only to a review and consultation, not to specific quota parameters or a specific assessment design; committing further than that would be extrapolation beyond what has been said.",
+      "condition_to_change": "Would move to full support if the announced consultation and technical review conclude that a workable SES indicator and less-coachable assessment are feasible within a manageable timeline; would move to opposition if piloting shows quotas are easily circumvented or that non-state maintainers cannot be brought into equivalent constraints, undermining the review's stated purpose."
+    },
+    {
+      "scenario": "S2",
+      "stance": "no_position",
+      "label": "no_position",
+      "source": "",
+      "basis": "",
+      "interest": "",
+      "public_good_frame": "",
+      "argument": "The documented base (2026 program plus Minister Lannert's public statements) names the admissions problem and commits to review and consultation, but explicitly stops short of any structural commitment. A pre-announced statutory cap trajectory that shrinks selective-entry capacity year by year is a structural change to the system's size and shape, not an admissions-procedure review — taking a stance for or against it here would mean inventing a position the documented record does not contain.",
+      "condition_to_change": ""
+    },
+    {
+      "scenario": "S3",
+      "stance": "no_position",
+      "label": "no_position",
+      "source": "",
+      "basis": "",
+      "interest": "",
+      "public_good_frame": "",
+      "argument": "Abolishing 6-/8-year entry points and moving first selection to age 14 is the most structural of the four options, and the documented base is specific that the government has named the problem without making a structural commitment. Nothing in the 2026 program or Minister Lannert's public statements addresses changing the age of selection or the existence of the tracks, so asserting a stance here — support, opposition, or conditional — would be presenting extrapolation as the government's position, which this voice is not permitted to do.",
+      "condition_to_change": ""
+    },
+    {
+      "scenario": "S4",
+      "stance": "conditional",
+      "label": "value_modeled",
+      "source": "",
+      "basis": "documented pattern in the 2026 program and Minister Lannert's public statements of naming the SES-skew problem while committing only to admission-process review and consultation, not to structural change — implying a revealed preference for non-structural remedies that leave the 6-/8-year track structure intact",
+      "interest": "the government's stated aim of addressing the named equity problem while preserving political and administrative manageability, and disadvantaged pupils in general schools who are named as affected by the current structure",
+      "public_good_frame": "addressing the socio-economic inequities of early selection through resourcing and standards rather than through disruptive restructuring of school entry ages or track existence",
+      "argument": "This is a value-modeled inference, not a documented position: the government has not spoken to compensation packages, targeted funding formulas, or school clustering specifically. But its documented avoidance of structural commitment, paired with its documented willingness to name the underlying problem, is consistent with favoring a non-structural remedy of this kind over S2 or S3. Support is conditional because feasibility depends on budget commitments and on Hungary's teacher shortage, neither of which the documented base speaks to.",
+      "condition_to_change": "Would strengthen toward support if a costed, protected multi-year funding line were proposed consistent with the government's own fiscal commitments; would withdraw support if compensation were used merely to defer the admissions review already promised, since that would contradict the documented commitment to address the named problem through the admissions process itself."
+    }
+  ]
+}
