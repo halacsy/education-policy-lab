@@ -18,6 +18,25 @@ EXPERTS = {
     "implementation_planning": "Sequencing, teacher-supply constraints, administrative bandwidth, and realistic timelines.",
 }
 
+# Societal-discourse layer (D-29): voices REPRESENT interests and values, they
+# do not give evidence-based expert judgment. Archetypes are defined by the
+# interest they defend (topic-independent); named actors are modelled voices
+# of real organisations and may only carry a position with an epistemic label:
+# documented (source URL) / value-modeled (derived from documented values) /
+# no_position. Unlabelled attribution is a validation failure.
+DISCOURSE = {
+    "pedagogus_erdekvedo": "Archetype: the teacher-interest voice — workload, professional autonomy, pay, staffing feasibility of any reform.",
+    "kisgyerekes_szuloi": "Archetype: the parent-of-young-children voice — child wellbeing, predictability, school choice, safety, commuting.",
+    "eselyegyenlosegi_civil": "Archetype: the equity-NGO voice — disadvantaged and Roma pupils, segregation, access; the child who has no advocate in the room.",
+    "konzervativ_ertekvedo": "Archetype: the conservative value voice — parental rights, tradition, merit and talent development, subsidiarity.",
+    "digitalisgazdasagi": "Archetype: the digital-economy / labour-market voice — what employers and the tech sector need from schools.",
+    "egyhazi_fenntartoi": "Archetype: the church-maintainer voice — institutional autonomy, maintainer plurality, the interests of non-state school networks.",
+    "ckp_tanitanek": "Named actor: modelled voice of the CKP / Tanítanék movement. Documented base: Kockás könyv (2016), Tanítanék javaslatcsomag (2026). Attribute ONLY sourced positions as theirs; label everything else value-modeled or no_position.",
+    "pdsz": "Named actor: modelled voice of the PDSZ teachers' union. Documented base: PDSZ Program 2024, 2026 statements (keep 6/8 tracks + reduce segregation + admission reform). Attribute ONLY sourced positions; label everything else.",
+    "tisza_kormany": "Named actor: modelled voice of the governing Tisza party / ministry. Documented base: 2026 program + minister Lannert's public statements (problem named, no structural commitment, admission review + consultation). Attribute ONLY sourced positions; label everything else.",
+    "egyensuly_intezet": "Named actor: modelled voice of the Egyensúly Intézet think tank. Documented base: 'Hogyan legyünk okos nemzet?' (2021, unified 8-year primary, no selective entry). Attribute ONLY sourced positions; label everything else.",
+}
+
 CRITICS = {
     "devil_advocate": "Attack each scenario's load-bearing claim; find the assumption whose failure collapses the scenario.",
     "evidence_checker": "Verify every evidence tag: is the cited support real, current, and correctly graded? Flag claims tagged stronger than their source warrants.",
@@ -31,6 +50,7 @@ CRITICS = {
 
 SYNTHESIS = {
     "editor": "Synthesize expert outputs into a coherent picture WITHOUT forcing consensus: produce the disagreement map and preserve minority positions with their rationale.",
+    "discourse_mediator": "Aggregate the discourse voices into an argument map (Habermas-Machine style): cluster arguments with stable ids (A1..An), record who raises each, classify fact vs value claims — NEVER count heads, never drop a minority argument.",
     "scenario_builder": "Build the policy scenarios (S1..S4) with every required field, from the expert record — candidate framings first, then select.",
     "translator": "Produce the Hungarian versions of all policy deliverables using docs/glossary.md; mirror structure and scenario ids exactly.",
     "final_brief_writer": "Write the policy brief with strictly separated layers: Evidence / Interpretation / Assumptions / Recommendations / Open questions.",
@@ -73,6 +93,14 @@ TYPE_RULES = {
         "Consult outputs/archive/attempts_log.jsonl before proposing any change; never repeat an archived failure.",
         "State explicitly whether score gains are GENUINE or RUBRIC-GAMING, with reasons.",
     ],
+    "discourse": [
+        "You REPRESENT an interest/value, you do not give expert judgment: state whose interest you defend and your public-good frame separately.",
+        "Every position carries an epistemic label: documented (with source), value_modeled (with the documented values it derives from), or no_position.",
+        "Having no position is legitimate and honest — never invent a stance the represented interest does not imply.",
+        "A stance without a justification is invalid (DQI: bare assertions score zero).",
+        "For every non-neutral stance, state the condition that would change it ('what would win me over / lose me').",
+        "Never present an extrapolated view as an organisation's stated position — that is the one unforgivable failure of this layer.",
+    ],
 }
 
 TYPE_EVIDENCE = {
@@ -80,6 +108,7 @@ TYPE_EVIDENCE = {
     "critic": "Objections must engage the evidence tags: an objection that a tag is too strong must say what the source actually supports.",
     "synthesis": "Carry tags through verbatim; assumptions stay labelled [assumption]; recommendations never masquerade as evidence.",
     "meta": "Claims about system performance must cite the round's numeric scores or concrete artifacts.",
+    "discourse": "Position labels: documented (source URL/document required) / value_modeled (documented value base required) / no_position. Factual claims inside arguments will be graded by the evidence layer — do not grade them yourself; value claims are marked value claims, not facts.",
 }
 
 TYPE_UNCERTAINTY = {
@@ -87,6 +116,7 @@ TYPE_UNCERTAINTY = {
     "critic": "If an objection is speculative, mark it (speculative). Distinguish 'wrong' from 'unsupported'.",
     "synthesis": "Uncertainties survive synthesis; a synthesis with fewer uncertainties than its inputs is broken.",
     "meta": "Attribution of score deltas is uncertain with one change per round at n=1; say so.",
+    "discourse": "no_position is the honest answer when the represented interest implies nothing about the question. Prefer it over invented stances.",
 }
 
 TYPE_FAILURES = {
@@ -94,6 +124,7 @@ TYPE_FAILURES = {
     "critic": ["Generic feedback naming no scenario/field", "Style nitpicks", "Repeating another critic's objection without adding force"],
     "synthesis": ["Consensus laundering (dropping minority views)", "Upgrading evidence status while summarising", "Structure drift between language versions"],
     "meta": ["Judging the policy instead of the system", "Rubber-stamping score gains as genuine without evidence", "Proposing changes the archive shows already failed"],
+    "discourse": ["Presenting extrapolation as an organisation's stated view", "Inventing a stance where the interest implies none", "Bare stance without justification or change-condition", "Slipping into expert voice (grading evidence, recommending policy)"],
 }
 
 TYPE_SELFCRIT = {
@@ -101,13 +132,15 @@ TYPE_SELFCRIT = {
     "critic": ["Does each objection name id+field?", "Would fixing my objections actually improve the scenario?", "Did I attack the strongest version of the claim?"],
     "synthesis": ["Did any dissent disappear?", "Are the language versions structurally identical?", "Did I add any claim not present in the inputs?"],
     "meta": ["Did I evaluate the system, not the policy?", "Is my gaming judgment backed by artifact evidence?", "Did I check the archive?"],
+    "discourse": ["Would the represented group recognise itself in this?", "Is every position labelled and every label justified?", "Did I state what would change my mind?", "Did I mark no_position where honesty requires it?"],
 }
 
 TYPE_TEMPLATE = {
     "expert": "# Expert analysis: <name>\\n## Findings (evidence)\\n- <claim> [evidence: <status> — <source>]\\n## Interpretation\\n## Assumptions\\n- <assumption> [assumption]\\n## Position\\n## Uncertainties\\n- <unknown>",
     "critic": "# Critique: <name>\\n## S<n>.<field>\\nObjection: <concrete flaw>",
-    "synthesis": "(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 5-section brief)",
+    "synthesis": "(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 5-section brief; discourse_mediator returns the argument-map JSON)",
     "meta": "# Meta-critique — round <n>\\n## Agent performance\\n## Workflow\\n## Critique quality\\n## Gaming judgment (explicit)\\n## Translation consistency",
+    "discourse": "(JSON — the exact schema is given in the task instructions: one reaction per scenario with stance / label / source-or-basis / interest / public_good_frame / argument / condition_to_change)",
 }
 
 EXTRA_SECTIONS = {
@@ -134,6 +167,8 @@ def all_agents():
     """Yield (type, name, focus) for every agent."""
     for name, focus in EXPERTS.items():
         yield "experts", name, focus
+    for name, focus in DISCOURSE.items():
+        yield "discourse", name, focus
     for name, focus in CRITICS.items():
         yield "critics", name, focus
     yield "critics", "translation_checker", (
@@ -146,8 +181,8 @@ def all_agents():
         yield "meta", name, focus
 
 
-TYPE_OF_DIR = {"experts": "expert", "critics": "critic",
-               "synthesis": "synthesis", "meta": "meta"}
+TYPE_OF_DIR = {"experts": "expert", "discourse": "discourse",
+               "critics": "critic", "synthesis": "synthesis", "meta": "meta"}
 
-PROVIDER_ROLE = {"expert": "generator", "synthesis": "generator",
-                 "critic": "judge", "meta": "judge"}
+PROVIDER_ROLE = {"expert": "generator", "discourse": "generator",
+                 "synthesis": "generator", "critic": "judge", "meta": "judge"}

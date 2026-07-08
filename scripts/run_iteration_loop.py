@@ -35,6 +35,7 @@ def meta_payload(n, dims7, prev_eval, artifacts, applied):
                             "targets": applied["targets"][:6]} if applied else None),
         "translation": {k: artifacts["translation"][k] for k in
                         ("id_sets_equal", "structure_equal", "glossary_violations")},
+        "discourse": artifacts.get("discourse"),
         "fallbacks": artifacts["fallbacks"],
         "judge_divergence": None,  # known only after finalize; prior rounds' flags:
         "prev_divergence_flagged": (prev_eval or {}).get("divergence_flagged"),

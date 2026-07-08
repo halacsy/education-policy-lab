@@ -225,6 +225,25 @@ the model ladder (D-26); the mock backend already honors directives, so the
 fallback also satisfies the contract. Markers guard against total omission;
 partial-compliance quality stays with the judges. (2026-07-07)
 
+**D-29 — Societal-discourse layer: the argument ledger (issues #13, #12, #9).**
+Owner decision (2026-07-08): the system models the societal debate as a second
+layer beside the expert layer. Ten voices (6 interest/value archetypes + 4
+named actors with documented positions) react to the scenarios; a mediator
+builds an argument map; the evidence layer grades factual claims; a
+reciprocity pass makes voices answer their strongest counter-argument; the
+brief answers every argument cluster. The evaluation model is a synthesis of
+four international practices: CNDP débat public (response obligation — no
+argument disappears silently), OECD deliberative standards (representativeness
++ transparency), Discourse Quality Index (justification required, reciprocity,
+explicit change-conditions) and the Habermas Machine (argument aggregation
+without head-counting). Epistemic labels are mandatory and validated (D-28):
+documented (source) / value_modeled (basis) / no_position — no_position is
+legitimate; presenting extrapolation as an organisation's stated view is the
+layer's one unforgivable failure. Named-actor position summaries are sent to
+the organisations for review before public claims are made about them
+(issue #12). Not yet a scored rubric dimension (comparability with earlier
+rounds); quality metrics are reported in round_log/meta instead. (2026-07-08)
+
 **D-13 — Round 1 starts from an honest baseline, not a sandbagged one.**
 The baseline agent specs already satisfy hard constraints (all scenario
 fields present, critics name scenario id + field). Improvement therefore has

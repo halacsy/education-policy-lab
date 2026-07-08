@@ -57,14 +57,16 @@ is embedded verbatim in your prompt.
 TYPE_INPUTS = {
     "expert": "The policy question; docs/mission.md discipline; your domain knowledge.",
     "critic": "scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and docs/glossary.md.",
-    "synthesis": "Expert outputs (editor/scenario_builder); EN deliverables + docs/glossary.md (translator); scenarios + synthesis (brief/summary writers).",
+    "synthesis": "Expert outputs (editor/scenario_builder); EN deliverables + docs/glossary.md (translator); scenarios + synthesis (brief/summary writers); discourse reactions (discourse_mediator).",
     "meta": "The round's artifacts, evaluation.json, attempts_log.jsonl, previous round's scores.",
+    "discourse": "The scenarios (EN markdown) and, for named actors, your documented source base; in the reciprocity pass also the argument map with the strongest counter-arguments.",
 }
 TYPE_OUTPUTS = {
     "expert": "expert_outputs/<name>.md",
     "critic": "critic_outputs/<name>.md",
-    "synthesis": "scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / brief.<lang>.md / executive_summary.<lang>.md (per agent)",
+    "synthesis": "scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / brief.<lang>.md / executive_summary.<lang>.md / discourse/argument_map.json (per agent)",
     "meta": "meta_critique.md (meta_critic); design documents and config/spec edits (other meta agents, executed via lab/improve.py).",
+    "discourse": "discourse/voices/<name>.json (reactions), discourse/responses/<name>.json (reciprocity pass)",
 }
 
 
@@ -98,7 +100,7 @@ def scaffold(force=False):
 
 
 def spec_path(name):
-    for dirname in ("experts", "critics", "synthesis", "meta"):
+    for dirname in ("experts", "discourse", "critics", "synthesis", "meta"):
         p = AGENTS_DIR / dirname / f"{name}.md"
         if p.exists():
             return p

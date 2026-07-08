@@ -161,6 +161,14 @@ def update_memories(n, artifacts):
                       [f"- {o['critic']} on {o['scenario']}.{o['field']}: {o['text']}"
                        for o in dis])
 
+    # discourse conditions feed the political-feasibility expert (D-29):
+    # "what would win each voice over / lose it" is exactly the stakeholder
+    # information that expert otherwise has to guess.
+    conds = artifacts.get("ledger_conditions") or []
+    _append_sectioned("political_feasibility", n,
+                      [f"- condition from discourse: {c[:220]}"
+                       for c in conds[:8]])
+
     meta = artifacts.get("meta", "")
     for line in meta.splitlines():
         for name in _expert_names():

@@ -68,6 +68,11 @@ the mitigation we implement.
    1 EXPERTS (12)  ── generator ──► expert_outputs/*.md               │
    2 SCENARIO_BUILDER ─ generator ─► scenarios.json + scenarios.en.md │
    3 EDITOR (synthesis) ─ generator ─► synthesis.md, rejected_framings│
+   3.5 DISCOURSE (10 voices + mediator, D-29) ─ generator ─►          │
+        discourse/*.json + argument_ledger.en/.hu.md                  │
+        voices REPRESENT interests (labels: documented / value_modeled│
+        / no_position); evidence layer grades factual claims; the     │
+        brief must answer every A<i> cluster (response obligation)    │
    4 TRANSLATOR ── generator ──► scenarios.hu.md, brief.hu.md         │
    5 CRITICS (9, incl. translation_checker) ── judge-side inputs ──►  │
         critic_outputs/*.md  (targeted objections: scenario id+field) │

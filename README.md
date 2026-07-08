@@ -28,9 +28,16 @@ curated briefing pack in `scripts/lab/knowledge.py`.
 
 ## How it works
 
-Each round: **experts → scenario builder → editor synthesis → translator →
-critics (incl. translation_checker) → meta-critic → evaluation → improvement
-plan → git commit**. The next round *applies* the plan's single change
+Each round: **experts → scenario builder → editor synthesis → societal
+discourse (argument ledger) → translator → critics (incl.
+translation_checker) → meta-critic → evaluation → improvement plan → git
+commit**. The discourse layer (D-29) models the public debate beside the
+expert one: ten voices — six interest/value archetypes and four named actors
+(CKP/Tanítanék, PDSZ, Tisza, Egyensúly Intézet) — react to every scenario
+with epistemically labelled positions (documented / value-modeled /
+no-position), a mediator clusters the arguments without counting heads, the
+evidence layer grades their factual claims, and the policy brief must answer
+every argument cluster (CNDP-style response obligation). The next round *applies* the plan's single change
 (verified by byte-level diff of the `system_state/` snapshot), consults the
 Reflexion/ADAS archive (`outputs/archive/attempts_log.jsonl`) to never repeat
 a failed change, and re-measures. Changes that regress are reverted and

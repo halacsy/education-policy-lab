@@ -44,6 +44,11 @@ def compose(prompt, role):
         "critic": lambda: critic(h["agent"], d),
         "meta_critique": lambda: meta_critique(_payload(prompt), d),
         "judge_score": lambda: judge_score(prompt, h, _payload(prompt)),
+        "discourse_voice": lambda: discourse_voice(h["agent"]),
+        "argument_map": lambda: argument_map(),
+        "grade_arguments": lambda: grade_arguments(),
+        "discourse_reciprocity": lambda: discourse_reciprocity(h["agent"]),
+        "translate_ledger": lambda: translate_ledger(int(h.get("round", 1))),
     }.get(task)
     if fn is None:
         raise ValueError(f"mock backend: unknown task {task!r}")
@@ -237,6 +242,29 @@ def brief(lang, d):
     lines += ["", H["rec"]]
     for r in K.RECOMMENDATIONS:
         lines.append(f"- {r[L]}")
+    # response obligation (D-29, CNDP model): answer every argument cluster
+    lines += ["", "## Responses to public arguments" if L == "en"
+              else "## Válaszok a társadalmi érvekre"]
+    for c in K.ARGUMENT_CLUSTERS:
+        claim = c["claim"][L]
+        if c["kind"] == "value":
+            verdict = ("left open — a value question requiring human judgment"
+                       if L == "en" else
+                       "nyitva marad — emberi mérlegelést igénylő értékkérdés")
+        elif not c.get("grade"):
+            verdict = ("rejected as evidence — no curated source backs it; "
+                       "treated as unverified model knowledge" if L == "en"
+                       else "bizonyítékként elutasítva — kurált forrás nem "
+                       "támasztja alá; ellenőrizetlen modelltudásként kezelve")
+        elif c["side"] == "con":
+            verdict = ("accepted as a binding constraint on the affected "
+                       "scenario" if L == "en" else
+                       "elfogadva mint az érintett forgatókönyv kötelező "
+                       "korlátja")
+        else:
+            verdict = ("accepted — reflected in the recommendations"
+                       if L == "en" else "elfogadva — az ajánlások tükrözik")
+        lines.append(f"- {c['id']} ({claim[:80]}…): {verdict}")
     if "minority_report" in d:
         lines += ["", H["minority"]]
         for dis in K.DISAGREEMENTS:
@@ -273,6 +301,76 @@ def critic(agent, d):
             lines.append(f"Suggested revision: {o['fix']}")
         lines.append("")
     return "\n".join(lines)
+
+
+# -- societal discourse (D-29) ------------------------------------------------
+
+def _voice_json(name, lang):
+    v = K.DISCOURSE_VOICES[name]
+    reactions = []
+    for sid in ("S1", "S2", "S3", "S4"):
+        r = v["reactions"][sid]
+        reactions.append(dict(
+            scenario=sid, stance=r["stance"], label=r["label"],
+            source=r.get("source", ""), basis=r.get("basis", ""),
+            interest=v["interest"][lang], public_good_frame=v["frame"][lang],
+            argument=r["argument"][lang],
+            condition_to_change=r["condition"][lang]))
+    return dict(voice=name, reactions=reactions)
+
+
+def discourse_voice(name):
+    return json.dumps(_voice_json(name, "en"), ensure_ascii=False, indent=2)
+
+
+def _clusters(lang):
+    return [dict(id=c["id"], scenario=c["scenario"], kind=c["kind"],
+                 side=c["side"], claim=c["claim"][lang],
+                 raised_by=list(c["raised_by"]))
+            for c in K.ARGUMENT_CLUSTERS]
+
+
+def argument_map():
+    return json.dumps({"clusters": _clusters("en")},
+                      ensure_ascii=False, indent=2)
+
+
+def grade_arguments():
+    lines = []
+    for c in K.ARGUMENT_CLUSTERS:
+        if c["kind"] not in ("fact", "mixed"):
+            continue
+        if c.get("grade"):
+            f = K.FACTS[c["grade_source"]]
+            lines.append(f"{c['id']}: [evidence: {c['grade']} — "
+                         f"{f['source']}] registry fact {c['grade_source']}")
+        else:
+            lines.append(f"{c['id']}: [not registry-backed — treat as model "
+                         "knowledge] no curated source supports this claim")
+    return "\n".join(lines) + "\n"
+
+
+def _response_json(name, lang):
+    r = K.DISCOURSE_VOICES[name]["response"]
+    return dict(voice=name, responses=[dict(
+        cluster=r["cluster"], response=r[lang], outcome=r["outcome"],
+        new_condition="")])
+
+
+def discourse_reciprocity(name):
+    return json.dumps(_response_json(name, "en"), ensure_ascii=False, indent=2)
+
+
+def translate_ledger(round_n):
+    from .ledger import render_ledger
+    voices = {n: _voice_json(n, "hu") for n in K.DISCOURSE_VOICES}
+    grades = {}
+    for line in grade_arguments().splitlines():
+        cid, _, rest = line.partition(":")
+        grades[cid.strip()] = rest.strip()
+    responses = {n: _response_json(n, "hu") for n in K.DISCOURSE_VOICES}
+    return render_ledger(round_n, voices, _clusters("hu"), grades,
+                         responses, "hu")
 
 
 # -- meta critique -----------------------------------------------------------

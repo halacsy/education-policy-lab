@@ -17,6 +17,7 @@ from concurrent.futures import ThreadPoolExecutor
 from . import agent_defs as D
 from . import improve
 from . import knowledge as K
+from . import ledger as LG
 from . import llm, mock_backend, translation
 from .agents import build_prompt
 from .util import (AGENTS_DIR, CONFIG_PATH, ROOT, TEMPLATES_DIR, load_config,
@@ -47,6 +48,116 @@ BRIEF_HEADERS_EN = ["## Evidence", "## Interpretation", "## Assumptions",
                     "## Recommendations", "## Open questions"]
 BRIEF_HEADERS_HU = ["## Bizonyítékok", "## Értelmezés", "## Feltevések",
                     "## Ajánlások", "## Nyitott kérdések"]
+RESPONSES_HEADER = {"en": "## Responses to public arguments",
+                    "hu": "## Válaszok a társadalmi érvekre"}
+
+# -- societal discourse layer (D-29) -----------------------------------------
+
+STANCES = ("support", "oppose", "conditional", "no_position")
+POSITION_LABELS = ("documented", "value_modeled", "no_position")
+
+VOICE_SCHEMA_HINT = json.dumps({
+    "voice": "<your agent name>",
+    "reactions": [{
+        "scenario": "S1", "stance": "support|oppose|conditional|no_position",
+        "label": "documented|value_modeled|no_position",
+        "source": "<document/URL — REQUIRED when label=documented, else empty>",
+        "basis": "<the documented values it derives from — REQUIRED when "
+                 "label=value_modeled, else empty>",
+        "interest": "<whose interest you defend>",
+        "public_good_frame": "<your public-good framing>",
+        "argument": "<justification; a bare stance is invalid. For "
+                    "no_position: one line on why the interest implies "
+                    "nothing here>",
+        "condition_to_change": "<what would change your stance; empty only "
+                               "for no_position>",
+    }]
+}, indent=2)
+
+ARGMAP_SCHEMA_HINT = json.dumps({
+    "clusters": [{
+        "id": "A1", "scenario": "S1", "kind": "fact|value|mixed",
+        "side": "pro|con|conditional",
+        "claim": "<one-sentence canonical form of the argument>",
+        "raised_by": ["<voice name>"],
+    }]
+}, indent=2)
+
+
+def valid_voice(obj):
+    try:
+        rs = obj["reactions"]
+    except (TypeError, KeyError):
+        return False
+    if not isinstance(rs, list) or \
+            {r.get("scenario") for r in rs} != {"S1", "S2", "S3", "S4"}:
+        return False
+    for r in rs:
+        if r.get("stance") not in STANCES:
+            return False
+        if r.get("label") not in POSITION_LABELS:
+            return False
+        if (r["stance"] == "no_position") != (r["label"] == "no_position"):
+            return False
+        if len(str(r.get("argument", "")).strip()) < 10:
+            return False
+        if r["label"] == "documented" and not str(r.get("source", "")).strip():
+            return False
+        if r["label"] == "value_modeled" and not str(r.get("basis", "")).strip():
+            return False
+        if r["stance"] != "no_position" and \
+                not str(r.get("condition_to_change", "")).strip():
+            return False
+    return True
+
+
+def valid_argmap(obj, voice_names):
+    try:
+        cl = obj["clusters"]
+    except (TypeError, KeyError):
+        return False
+    if not isinstance(cl, list) or len(cl) < 6:
+        return False
+    ids = [c.get("id", "") for c in cl]
+    if len(set(ids)) != len(ids):
+        return False
+    for c in cl:
+        if not re.fullmatch(r"A\d+", c.get("id", "")):
+            return False
+        if c.get("scenario") not in ("S1", "S2", "S3", "S4"):
+            return False
+        if c.get("kind") not in ("fact", "value", "mixed"):
+            return False
+        if c.get("side") not in ("pro", "con", "conditional"):
+            return False
+        rb = c.get("raised_by")
+        if not rb or not set(rb) <= set(voice_names):
+            return False
+        if not str(c.get("claim", "")).strip():
+            return False
+    return True
+
+
+def valid_reciprocity(obj, cluster_ids):
+    try:
+        rs = obj["responses"]
+    except (TypeError, KeyError):
+        return False
+    if not isinstance(rs, list) or not rs:
+        return False
+    return all(r.get("cluster") in cluster_ids
+               and len(str(r.get("response", "")).strip()) >= 10
+               and r.get("outcome") in ("maintain", "revise") for r in rs)
+
+
+def responds_to_clusters(text, lang, cluster_ids):
+    """Response obligation (CNDP): the brief answers the argument clusters.
+    Coverage threshold (not all-ids) so a mock fallback whose id set differs
+    slightly from a live argument map cannot deadlock the round."""
+    if RESPONSES_HEADER[lang] not in text:
+        return False
+    hits = sum(1 for cid in cluster_ids if cid in text)
+    return hits >= max(6, int(0.8 * len(cluster_ids)))
 
 CRITIC_HEADING_RE = re.compile(
     r"^## S\d+\.(goal|mechanism|evidence_status|assumptions|expected_benefits|"
@@ -232,6 +343,165 @@ class Step:
         return result, "mock-fallback"
 
 
+def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
+    """Societal-discourse layer (D-29): voices react to the scenarios, the
+    mediator builds the argument map, the evidence layer grades factual
+    claims, an optional reciprocity pass makes the voices answer their
+    strongest counter-argument, and the argument ledger is rendered
+    deterministically (EN) + translated (HU)."""
+    voice_names = list(D.DISCOURSE)
+    ddir = rd / "discourse"
+
+    def run_voice(name):
+        obj, _ = step.run(
+            f"voice:{name}",
+            dict(task="discourse_voice", agent=name, round_n=n,
+                 instructions=(
+                     "React to each scenario below AS THE INTEREST/VALUE "
+                     "VOICE your spec defines — you represent, you do not "
+                     "give expert judgment. Return ONLY a JSON object with "
+                     f"this exact schema:\n{VOICE_SCHEMA_HINT}\n"
+                     "Rules: one reaction per scenario (S1..S4); a stance "
+                     "without justification is invalid; no_position is the "
+                     "honest choice when your interest implies nothing; "
+                     "NEVER attribute an unsourced position to a real "
+                     "organisation — use value_modeled with its basis."),
+                 inputs=scen_en_md),
+            validate=valid_voice, out_path=ddir / "voices" / f"{name}.json",
+            postprocess=parse_json_block, loader=read_json,
+            writer=lambda p, o: write_json(p, o), max_tokens=4000)
+        return name, obj
+
+    voices = {}
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        for name, obj in ex.map(run_voice, voice_names):
+            voices[name] = obj
+
+    voices_digest = json.dumps(
+        {k: v["reactions"] for k, v in voices.items()}, ensure_ascii=False)
+
+    arg_map, _ = step.run(
+        "argument_map",
+        dict(task="argument_map", agent="discourse_mediator", round_n=n,
+             instructions=(
+                 "Cluster the voices' arguments into an argument map. "
+                 "Return ONLY a JSON object with this exact schema:\n"
+                 + ARGMAP_SCHEMA_HINT +
+                 "\nRules: stable sequential ids A1..An; every claim in "
+                 "canonical one-sentence form; classify fact vs value vs "
+                 "mixed; raised_by lists ONLY voice names that actually "
+                 "raise it; NEVER drop a minority argument; do not count "
+                 "heads."),
+             inputs=voices_digest),
+        validate=lambda o: valid_argmap(o, voice_names),
+        out_path=ddir / "argument_map.json", postprocess=parse_json_block,
+        loader=read_json, writer=lambda p, o: write_json(p, o),
+        max_tokens=6000)
+    clusters = arg_map["clusters"]
+    cluster_ids = [c["id"] for c in clusters]
+    factual = [c["id"] for c in clusters if c["kind"] in ("fact", "mixed")]
+
+    registry_digest = "\n".join(
+        f"- {fid} [{f['evidence']}]: {f['en'][:120]} (source: {f['source']})"
+        for fid, f in K.FACTS.items())
+    grades_text, _ = step.run(
+        "grade_arguments",
+        dict(task="grade_arguments", agent="evidence_checker", round_n=n,
+             instructions=(
+                 "Grade the FACTUAL claim of every fact/mixed argument "
+                 "cluster below against the curated registry. Output one "
+                 "line per cluster, nothing else:\n"
+                 "A<i>: [evidence: strong|moderate|weak|contested — "
+                 "<registry source>] <one-line note>\n"
+                 "or, when no registry fact supports it:\n"
+                 "A<i>: [not registry-backed — treat as model knowledge] "
+                 "<one-line note>\n"
+                 "Value claims are NOT graded.\n\nREGISTRY:\n"
+                 + registry_digest),
+             inputs=json.dumps(clusters, ensure_ascii=False)),
+        validate=lambda t: all(
+            re.search(rf"^{cid}:.*(\[evidence:|not registry-backed)",
+                      t, re.M) for cid in factual),
+        out_path=ddir / "argument_grades.md", role="judge", max_tokens=2000)
+    grades = LG.grade_lines(grades_text)
+
+    responses = {name: None for name in voice_names}
+    if disc_cfg.get("reciprocity", True):
+        clusters_digest = json.dumps(clusters, ensure_ascii=False)
+
+        def run_response(name):
+            obj, _ = step.run(
+                f"response:{name}",
+                dict(task="discourse_reciprocity", agent=name, round_n=n,
+                     instructions=(
+                         "Reciprocity pass (DQI): from the argument map "
+                         "below, pick the strongest argument AGAINST your "
+                         "stated positions and answer it. Return ONLY JSON: "
+                         '{"voice": "<name>", "responses": [{"cluster": '
+                         '"A<i>", "response": "<engage the argument on its '
+                         'merits>", "outcome": "maintain|revise", '
+                         '"new_condition": "<if revised>"}]} — answering '
+                         "means engaging, not repeating yourself."),
+                     inputs=("YOUR REACTIONS:\n"
+                             + json.dumps(voices[name]["reactions"],
+                                          ensure_ascii=False)
+                             + "\n\nARGUMENT MAP:\n" + clusters_digest)),
+                validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
+                out_path=ddir / "responses" / f"{name}.json",
+                postprocess=parse_json_block, loader=read_json,
+                writer=lambda p, o: write_json(p, o), max_tokens=2000)
+            return name, obj
+
+        with ThreadPoolExecutor(max_workers=4) as ex:
+            for name, obj in ex.map(run_response, voice_names):
+                responses[name] = obj
+
+    ledger_en = LG.render_ledger(n, voices, clusters, grades, responses, "en")
+    write(rd / "argument_ledger.en.md", ledger_en)
+
+    ledger_hu, _ = step.run(
+        "translate_ledger",
+        dict(task="translate_ledger", agent="translator", lang="hu",
+             round_n=n,
+             instructions=(
+                 "Translate this argument ledger into Hungarian. Use EXACTLY "
+                 f"these headings: '# Érv-főkönyv — {n}. kör', "
+                 "'## Álláspont-mátrix', '## Érvklaszterek', "
+                 "'## Reciprocitás-kör' (only if present in the source), "
+                 "'## Feltétel-regiszter'. Keep every A<i> id and every "
+                 "voice name unchanged. Use the glossary strictly.\n\n"
+                 "GLOSSARY:\n" + glossary),
+             inputs=ledger_en),
+        validate=lambda t: ("## Álláspont-mátrix" in t
+                            and "## Érvklaszterek" in t
+                            and "## Feltétel-regiszter" in t
+                            and len(re.findall(r"\*\*A\d+\*\*", t)) >= 6
+                            and t.strip() != ledger_en.strip()),
+        out_path=rd / "argument_ledger.hu.md", max_tokens=8000)
+
+    stances = [r["stance"] for v in voices.values() for r in v["reactions"]]
+    labels = [r["label"] for v in voices.values() for r in v["reactions"]]
+    conditions = [f"{name} ({r['scenario']}): {r['condition_to_change']}"
+                  for name, v in voices.items() for r in v["reactions"]
+                  if r["stance"] != "no_position"
+                  and str(r.get("condition_to_change", "")).strip()]
+    metrics = {
+        "voices": len(voices),
+        "stance_counts": {s: stances.count(s) for s in STANCES},
+        "label_counts": {lb: labels.count(lb) for lb in POSITION_LABELS},
+        "clusters": len(clusters),
+        "factual_clusters_graded": len([c for c in factual if c in grades]),
+        "reciprocity": {"ran": bool(disc_cfg.get("reciprocity", True)),
+                        "revised": sum(1 for rp in responses.values() if rp
+                                       for it in rp["responses"]
+                                       if it["outcome"] == "revise")},
+    }
+    return dict(voices=voices, argument_map=arg_map, grades=grades,
+                responses=responses, ledger_en=ledger_en,
+                ledger_hu=ledger_hu, cluster_ids=cluster_ids,
+                conditions=conditions, metrics=metrics)
+
+
 def run_round(n):
     """Generate all round-n artifacts (steps 1-6 of the workflow). Evaluation,
     meta-critique and improvement planning are orchestrated by the loop."""
@@ -359,8 +629,15 @@ def run_round(n):
         validate=lambda t: "REJECTED" in t and "CHOSEN" in t,
         out_path=rd / "rejected_framings.md", max_tokens=2500)
 
-    # 4. translator (HU scenarios)
     glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
+
+    # 3.5 societal-discourse layer (D-29): argument ledger
+    disc_cfg = cfg.get("discourse", {})
+    disc = None
+    if disc_cfg.get("enabled"):
+        disc = run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg)
+
+    # 4. translator (HU scenarios)
     scen_hu, _ = step.run(
         "translator_scenarios",
         dict(task="translate_scenarios", agent="translator", lang="hu",
@@ -381,35 +658,56 @@ def run_round(n):
     scen_hu_md = render_scenarios_md(scen_hu, "hu")
     write(rd / "scenarios.hu.md", scen_hu_md)
 
-    # 5. briefs (EN by final_brief_writer, HU by translator)
+    # 5. briefs (EN by final_brief_writer, HU by translator). With the
+    #    discourse layer on, the brief carries the response obligation
+    #    (D-29, CNDP model): every argument cluster gets an answer.
+    brief_instr = (
+        "Write the policy brief. It MUST contain exactly these "
+        "sections in order: " + ", ".join(f"'{h}'" for h in BRIEF_HEADERS_EN)
+        + ". Every bullet in Evidence carries an [evidence: ...] tag; "
+        "Interpretation bullets carry [interpretation]; Assumptions "
+        "carry [assumption]. Recommendations must NOT pick a single "
+        "scenario as the answer. Open questions lists what needs "
+        "human judgment. Add any section your ## Directives require.")
+    brief_inputs = scen_en_md + "\n\n" + synthesis_text
+    if disc:
+        brief_instr += (
+            " After Recommendations, add a section "
+            f"'{RESPONSES_HEADER['en']}' answering EVERY argument cluster "
+            "from the ledger by id (one bullet per cluster: '- A<i> "
+            "(<short restatement>): accepted / rejected / left open — "
+            "<one-line reason>'). An argument answered by no one is a "
+            "defect (response obligation).")
+        brief_inputs += ("\n\n=== ARGUMENT LEDGER (public arguments that "
+                         "MUST each be answered) ===\n" + disc["ledger_en"])
     brief_en, _ = step.run(
         "final_brief_writer",
         dict(task="brief", agent="final_brief_writer", lang="en", round_n=n,
-             instructions=(
-                 "Write the policy brief. It MUST contain exactly these "
-                 "sections in order: " + ", ".join(f"'{h}'" for h in BRIEF_HEADERS_EN)
-                 + ". Every bullet in Evidence carries an [evidence: ...] tag; "
-                 "Interpretation bullets carry [interpretation]; Assumptions "
-                 "carry [assumption]. Recommendations must NOT pick a single "
-                 "scenario as the answer. Open questions lists what needs "
-                 "human judgment. Add any section your ## Directives require."),
-             inputs=scen_en_md + "\n\n" + synthesis_text),
-        validate=lambda t: all(h in t for h in BRIEF_HEADERS_EN),
-        out_path=rd / "brief.en.md", max_tokens=4000)
+             instructions=brief_instr, inputs=brief_inputs),
+        validate=lambda t: (all(h in t for h in BRIEF_HEADERS_EN)
+                            and (not disc or responds_to_clusters(
+                                t, "en", disc["cluster_ids"]))),
+        out_path=rd / "brief.en.md", max_tokens=6000)
 
+    brief_hu_instr = (
+        "Translate this policy brief into Hungarian. Use EXACTLY "
+        "these section headers in place of the English ones: "
+        + ", ".join(f"'{h}'" for h in BRIEF_HEADERS_HU)
+        + ". Keep bullet counts identical. Use the glossary strictly.")
+    if disc:
+        brief_hu_instr += (f" Translate '{RESPONSES_HEADER['en']}' as "
+                           f"'{RESPONSES_HEADER['hu']}' and keep every "
+                           "A<i> id unchanged.")
     brief_hu, _ = step.run(
         "translator_brief",
         dict(task="brief", agent="translator", lang="hu", round_n=n,
-             instructions=(
-                 "Translate this policy brief into Hungarian. Use EXACTLY "
-                 "these section headers in place of the English ones: "
-                 + ", ".join(f"'{h}'" for h in BRIEF_HEADERS_HU)
-                 + ". Keep bullet counts identical. Use the glossary strictly."
-                 "\n\nGLOSSARY:\n" + glossary),
+             instructions=brief_hu_instr + "\n\nGLOSSARY:\n" + glossary,
              inputs=brief_en),
         validate=lambda t: (all(h in t for h in BRIEF_HEADERS_HU)
-                            and t.strip() != brief_en.strip()),
-        out_path=rd / "brief.hu.md", max_tokens=4000)
+                            and t.strip() != brief_en.strip()
+                            and (not disc or responds_to_clusters(
+                                t, "hu", disc["cluster_ids"]))),
+        out_path=rd / "brief.hu.md", max_tokens=6000)
 
     # 6. critics (parallel) + translation checker
     registry_digest = "\n".join(
@@ -451,6 +749,7 @@ def run_round(n):
     write_json(rd / "round_log.json", {
         "round": n, "fallbacks": step.fallbacks,
         "reused": reused_prev, "resumed": step.resumed,
+        "discourse": disc["metrics"] if disc else None,
         "backends": llm.backend_stats(),
     })
 
@@ -461,6 +760,8 @@ def run_round(n):
         "synthesis": synthesis_text, "rejected": rejected,
         "brief_en": brief_en, "brief_hu": brief_hu,
         "critics": critics, "translation": tr_report,
+        "discourse": disc["metrics"] if disc else None,
+        "ledger_conditions": disc["conditions"] if disc else [],
         "fallbacks": step.fallbacks, "_step": step,
     }
 

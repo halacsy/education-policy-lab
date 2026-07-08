@@ -24,12 +24,26 @@ Round 3+ REPEAT  until acceptance criteria met, max rounds, marginal gain,
 | 1 | Expert analysis | 12 experts | generator | `expert_outputs/<name>.md` |
 | 2 | Scenario building | scenario_builder | generator | `scenarios.json`, `scenarios.en.md` |
 | 3 | Synthesis | editor | generator | `synthesis.md` (incl. disagreement map), `rejected_framings.md` |
-| 4 | Translation | translator | generator | `scenarios.hu.md`, `brief.hu.md` |
+| 3.5 | Societal discourse (D-29) | 10 discourse voices + discourse_mediator + evidence_checker | generator (grading: judge) | `discourse/` (voice JSONs, argument map, grades, reciprocity), `argument_ledger.en.md` / `.hu.md` |
+| 4 | Translation | translator | generator | `scenarios.hu.md`, `brief.hu.md`, `argument_ledger.hu.md` |
 | 5 | Critique | 8 policy critics + translation_checker | judge | `critic_outputs/<name>.md` |
 | 6 | Meta-critique | meta_critic | judge | `meta_critique.md` |
 | 7 | Evaluation | evaluation_designer's rubric, run by `lab/evaluation.py` | judge + deterministic | `evaluation.json`, `evaluation.md` |
 | 8 | Improvement planning | iteration_manager + archive | judge | `improvement_plan.md`, `revised_agents.md`, `revised_workflow.md` |
 | 9 | Commit | — | — | `round-XX: <concrete change>` |
+
+Step 3.5 (the argument ledger, model: CNDP response obligation + OECD
+deliberative standards + DQI format rules + Habermas-Machine aggregation):
+voices REPRESENT interests/values — they are not experts. Each voice reacts
+to every scenario with stance {support / oppose / conditional / no_position},
+a justification, a change-condition and an epistemic label {documented(source)
+/ value_modeled(basis) / no_position}. The mediator clusters arguments
+(A1..An, never counting heads); the evidence layer grades factual claims
+against the registry; a reciprocity pass (config: `discourse.reciprocity`)
+makes each voice answer its strongest counter-argument. The brief MUST answer
+every cluster ('## Responses to public arguments' / '## Válaszok a társadalmi
+érvekre') — enforced by validation, not good will. Voice conditions feed the
+political_feasibility expert's memory next round.
 
 At the **start** of round N+1 the change planned in round N is actually applied
 to the agent specs / config (verified by diff), after consulting

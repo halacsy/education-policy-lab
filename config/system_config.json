@@ -10,6 +10,7 @@
       "experts",
       "scenario_builder",
       "editor_synthesis",
+      "discourse",
       "translator",
       "critics",
       "meta_critic",
@@ -18,6 +19,11 @@
     ],
     "candidate_framings_per_scenario": 2,
     "synthesis_minority_report": false
+  },
+  "discourse": {
+    "_policy": "Societal-discourse layer (D-29, issue #13): voices represent interests/values with epistemic labels (documented / value_modeled / no_position); argument ledger with response obligation in the brief; reciprocity pass toggleable for quota-constrained runs.",
+    "enabled": true,
+    "reciprocity": true
   },
   "evaluation": {
     "llm_judge_trials": 3,
@@ -46,9 +52,14 @@
       "expert_analysis": 0,
       "rejected_framings": 0,
       "judge_score": 0,
+      "discourse_voice": 0,
+      "discourse_reciprocity": 0,
       "build_scenarios": 1,
       "synthesis": 1,
+      "argument_map": 1,
+      "grade_arguments": 1,
       "translate_scenarios": 1,
+      "translate_ledger": 1,
       "brief": 1,
       "exec_summary": 1,
       "critic": 1,

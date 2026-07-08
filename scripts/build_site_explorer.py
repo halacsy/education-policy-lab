@@ -93,6 +93,60 @@ def parse_expert(text):
     return position
 
 
+# -- argument ledger (D-29 societal-discourse layer) --------------------------
+
+LEDGER_VOICE_RE = re.compile(r"^- \*\*(\w+)\*\* — (.+?) \[(.+?)\] — (.*)$", re.M)
+LEDGER_CLUSTER_RE = re.compile(
+    r"^- \*\*(A\d+)\*\* \((S\d+), (\w+), (\w+)\): (.*?) — felvetette: (.*)$", re.M)
+LEDGER_RESP_RE = re.compile(r"^- \*\*(\w+)\*\* → (A\d+): (.*) \(kimenetel: (\w+)\)$", re.M)
+
+STANCE_CLASS = {"támogatja": "sup", "ellenzi": "opp",
+                "feltételesen támogatja": "cond", "nincs álláspontja": "nop"}
+
+
+def _ledger_section(text, header):
+    m = re.search(rf"{re.escape(header)}\s*\n(.*?)(?=\n## |\Z)", text, re.S)
+    return m.group(1) if m else ""
+
+
+def parse_ledger(rd):
+    p = rd / "argument_ledger.hu.md"
+    if not p.exists():
+        return None
+    text = p.read_text(encoding="utf-8")
+    matrix = {}
+    for chunk in re.split(r"(?=^### )", _ledger_section(text, "## Álláspont-mátrix"),
+                          flags=re.M):
+        sm = re.match(r"### (S\d+)", chunk.strip())
+        if not sm:
+            continue
+        rows = []
+        for m in LEDGER_VOICE_RE.finditer(chunk):
+            arg, _, cond = m.group(4).partition(" Feltétel: ")
+            rows.append(dict(voice=m.group(1), stance=m.group(2).strip(),
+                             label=m.group(3), argument=arg.strip(),
+                             condition=cond.strip()))
+        matrix[sm.group(1)] = rows
+    clusters = [dict(id=m.group(1), scenario=m.group(2), kind=m.group(3),
+                     side=m.group(4), claim=m.group(5).strip(),
+                     raised_by=[v.strip() for v in m.group(6).split(",")])
+                for m in LEDGER_CLUSTER_RE.finditer(
+                    _ledger_section(text, "## Érvklaszterek"))]
+    recipro = [dict(voice=m.group(1), cluster=m.group(2),
+                    response=m.group(3).strip(), outcome=m.group(4))
+               for m in LEDGER_RESP_RE.finditer(
+                   _ledger_section(text, "## Reciprocitás-kör"))]
+    return dict(matrix=matrix, clusters=clusters, recipro=recipro)
+
+
+def parse_brief_responses(brief_hu_text):
+    body = _ledger_section(brief_hu_text, "## Válaszok a társadalmi érvekre")
+    out = {}
+    for m in re.finditer(r"^- (A\d+)\s*(.*)$", body, re.M):
+        out[m.group(1)] = m.group(2).strip().lstrip("(").strip()
+    return out
+
+
 def render_field(v):
     if isinstance(v, list):
         return "<ul>" + "".join(f"<li>{html.escape(x)}</li>" for x in v) + "</ul>"
@@ -259,6 +313,70 @@ def main():
 
     expert_html = "".join(expert_card(k, v) for k, v in experts.items())
 
+    # -- societal discourse: argument ledger (D-29) ---------------------------
+    ledger = parse_ledger(rd)
+    brief_resp = {}
+    if ledger and (rd / "brief.hu.md").exists():
+        brief_resp = parse_brief_responses(
+            (rd / "brief.hu.md").read_text(encoding="utf-8"))
+
+    def stance_chip(row):
+        cls = STANCE_CLASS.get(row["stance"], "cond")
+        cond = (f'<p class="cond-note"><b>Feltétel:</b> {e(row["condition"])}</p>'
+                if row["condition"] else "")
+        return f"""
+        <div class="voice-row">
+          <span class="voice-name">{e(row['voice'])}</span>
+          <span class="stance stance-{cls}">{e(row['stance'])}</span>
+          <span class="pos-label">{e(row['label'])}</span>
+          <p>{e(row['argument'])}</p>
+          {cond}
+        </div>"""
+
+    def discourse_section():
+        if not ledger:
+            return """
+    <p class="note">Az érv-főkönyv a következő futástól jelenik meg itt: a
+    diskurzus-réteg (D-29) most épült be a rendszerbe, a korábbi körök még a
+    réteg nélkül futottak. A hangok, a szabályok és a válaszkötelezettség
+    leírása: <a href="https://github.com/halacsy/education-policy-lab/blob/main/docs/workflow.md">docs/workflow.md</a>.</p>"""
+        parts = []
+        for sid, rows in ledger["matrix"].items():
+            parts.append(f"""
+    <details class="scenario">
+      <summary><span class="id">{e(sid)}</span>
+        <span class="title">Ki mit mond erről a forgatókönyvről?</span>
+        <span class="count">{len(rows)} hang</span></summary>
+      <div class="voice-grid">{''.join(stance_chip(r) for r in rows)}</div>
+    </details>""")
+        cl_parts = []
+        for c in ledger["clusters"]:
+            resp = brief_resp.get(c["id"])
+            resp_html = (f'<p class="brief-resp"><b>A brief válasza:</b> '
+                         f'{e(resp)}</p>' if resp else "")
+            rec = [r for r in ledger["recipro"] if r["cluster"] == c["id"]]
+            rec_html = "".join(
+                f'<p class="recipro"><b>{e(r["voice"])}</b> válasza '
+                f'({e(r["outcome"])}): {e(r["response"])}</p>' for r in rec)
+            cl_parts.append(f"""
+      <div class="cluster">
+        <div class="obj-head"><span class="critic-name">{e(c['id'])} · {e(c['scenario'])}</span>
+          <span class="pos-label">{e(c['kind'])} / {e(c['side'])}</span></div>
+        <p>{e(c['claim'])}</p>
+        <p class="note">Felvetette: {e(', '.join(c['raised_by']))}</p>
+        {rec_html}{resp_html}
+      </div>""")
+        return (parts and cl_parts and (
+            "".join(parts)
+            + '<h3 style="margin-top:1.4rem">Érvklaszterek — és mi lett velük</h3>'
+            + '<p class="note">Fejszámlálás helyett érv-könyvelés: minden '
+            'érvklaszterre a szakpolitikai összefoglaló köteles válaszolni '
+            '(elfogad / elutasít / nyitva hagy — indoklással). A ténybeli '
+            'állításokat az evidencia-réteg fokozatolja.</p>'
+            + "".join(cl_parts))) or ""
+
+    discourse_html = discourse_section()
+
     css = """
   :root {
     --paper:#F7F8F6; --ink:#1A2321; --muted:#5A6662; --line:#D8DDD9;
@@ -343,6 +461,23 @@ def main():
   .expert-full ul { margin:.35rem 0 .6rem; padding-left:1.2rem; }
   .expert-full li { margin:.25rem 0; }
 
+  .voice-grid { border-top:1px solid var(--line); padding:1rem 1.2rem; display:grid; gap:.8rem; }
+  @media (min-width:800px) { .voice-grid { grid-template-columns:1fr 1fr; } }
+  .voice-row { background:var(--panel); border-radius:6px; padding:.7rem .9rem; font-size:.9rem; }
+  .voice-row p { margin:.35rem 0 0; }
+  .voice-name { font-family:ui-monospace,Menlo,monospace; font-weight:700; font-size:.82rem; margin-right:.5rem; }
+  .stance { display:inline-block; font-family:-apple-system,Arial,sans-serif; font-size:.74rem; font-weight:700;
+            padding:.1rem .5rem; border-radius:999px; margin-right:.4rem; }
+  .stance-sup { background:var(--evidence-bg); color:var(--evidence); }
+  .stance-opp { background:var(--dissent-bg); color:var(--dissent); }
+  .stance-cond { background:#F5EFDF; color:#95681E; }
+  .stance-nop { background:#ECECEC; color:var(--muted); }
+  .pos-label { font-family:ui-monospace,Menlo,monospace; font-size:.7rem; color:var(--muted); }
+  .cond-note { font-size:.84rem; color:var(--muted); }
+  .cluster { background:#fff; border:1px solid var(--line); border-radius:6px; padding:.8rem 1rem; margin-bottom:.7rem; }
+  .cluster p { margin:.3rem 0; }
+  .brief-resp { font-size:.88rem; background:var(--evidence-bg); border-radius:4px; padding:.4rem .6rem; }
+  .recipro { font-size:.86rem; color:var(--muted); border-left:3px solid var(--line); padding-left:.6rem; }
   .note { font-size:.85rem; color:var(--muted); }
   nav.jump { display:flex; gap:1rem; font-family:ui-monospace,Menlo,monospace; font-size:.8rem; flex-wrap:wrap; }
   footer { padding:2rem 0 3rem; font-size:.85rem; color:var(--muted); }
@@ -377,6 +512,7 @@ def main():
     <nav class="jump">
       <a href="#S1">S1</a><a href="#S2">S2</a><a href="#S3">S3</a><a href="#S4">S4</a>
       <a href="#nezetelteres">Nézeteltérés-térkép</a>
+      <a href="#diskurzus">Társadalmi diskurzus</a>
       <a href="#szakertok">Szakértői elemzések</a>
     </nav>
   </div>
@@ -398,6 +534,18 @@ def main():
     többségi és a kisebbségi álláspont is, indoklással. A szakértő nevére
     kattintva a teljes elemzése megnyílik lent.</p>
     {disagreement_html}
+  </div>
+</section>
+
+<section id="diskurzus">
+  <div class="wrap">
+    <p class="eyebrow">Társadalmi diskurzus — érv-főkönyv</p>
+    <h2>Ki mit mondana — és mi lett az érveikkel</h2>
+    <p class="lede">A szakértői réteg mellett tíz érdek/érték-hang modellezi a
+    társadalmi vitát: hat archetípus és négy valós szereplő. Minden álláspont
+    episztemikus címkét visel (dokumentált forrással · értékekből modellezett ·
+    nincs álláspont), és egyetlen felvetett érv sem tűnhet el válasz nélkül.</p>
+    {discourse_html}
   </div>
 </section>
 

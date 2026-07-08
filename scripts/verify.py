@@ -234,6 +234,40 @@ def main():
         print("[SKIP] check    M: episodic memory (no rounds run since the "
               "feature landed — next loop run will populate agents/memory/)")
 
+    # societal discourse, D-29 — enforced for rounds run after the feature
+    disc_rounds = [n for n in rs if (ITER_DIR / f"round_{n:02d}"
+                                     / "argument_ledger.en.md").exists()]
+    if disc_rounds:
+        from lab.pipeline import (POSITION_LABELS, STANCES,
+                                  responds_to_clusters)
+        okD, detD = True, []
+        for n in disc_rounds:
+            rdp = ITER_DIR / f"round_{n:02d}"
+            amap = rdp / "discourse" / "argument_map.json"
+            if not (amap.exists() and (rdp / "argument_ledger.hu.md").exists()):
+                okD, _ = False, detD.append(f"r{n}: ledger/map missing")
+                continue
+            ids = [c["id"] for c in read_json(amap)["clusters"]]
+            for vp in sorted((rdp / "discourse" / "voices").glob("*.json")):
+                for r in read_json(vp)["reactions"]:
+                    if (r.get("label") not in POSITION_LABELS
+                            or r.get("stance") not in STANCES):
+                        okD, _ = False, detD.append(
+                            f"r{n}:{vp.stem} unlabelled position")
+                    elif (r["label"] == "documented"
+                          and not str(r.get("source", "")).strip()):
+                        okD, _ = False, detD.append(
+                            f"r{n}:{vp.stem} documented without source")
+            for lang, f in (("en", "brief.en.md"), ("hu", "brief.hu.md")):
+                if not responds_to_clusters(read(rdp / f), lang, ids):
+                    okD, _ = False, detD.append(
+                        f"r{n}: {f} misses the response obligation")
+        check("D", "discourse layer: labelled positions + brief answers "
+                   "every argument cluster", okD, "; ".join(detD[:3]))
+    else:
+        print("[SKIP] check    D: societal discourse (no rounds run since "
+              "the feature landed — next loop run will produce the ledger)")
+
     # held-out qualitative checks (not visible to the improvement step)
     artifacts = load_artifacts(last)
     for name, ok, msg in holdout_checks.run_all(artifacts):
