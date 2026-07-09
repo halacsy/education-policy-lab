@@ -90,7 +90,16 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
   2026-07-09: the owner bought Anthropic API credit — the generator runs on
   the API now, NOT the claude-code CLI (the CLI's 600s subprocess timeout
   kept killing the long translate_ledger call, and the subscription usage
-  cap was hit). MERGE PENDING OWNER REVIEW of results.
+  cap was hit).
+  **2026-07-09 evening — READ ISSUE #15 FIRST**: round 6 scored 9.041
+  (-0.224); the regression rule reverted implementation_detail and a re-run
+  with a replacement change was interrupted by the owner. Root cause is
+  partly a MEASUREMENT ARTIFACT (the brief's D-29 responses section dilutes
+  the density denominators in evaluation.py) — issue #15 is fully
+  self-contained: exact code refs, the fix, a no-model-calls verification
+  path (evaluate_outputs.py re-scoring), and the owner framing decision
+  (new baseline series vs canonical continuation). Do the #15 fix BEFORE
+  resuming the round. MERGE PENDING OWNER REVIEW.
 - **Branch `site/split-tech`**: landing page split — "what it does" stays on
   index, implementation moved to site/tech.html. Merge with/after the run
   branch (index.html conflicts trivially with a699f03: split-tech supersedes).
