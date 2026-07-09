@@ -52,3 +52,20 @@ must appear in a round's `revised_workflow.md`.
 | contested | vitatott |
 | assumption | feltevés |
 | human judgment | emberi mérlegelés |
+
+## Societal-discourse layer (D-29)
+
+| English | Hungarian | Note |
+|---------|-----------|------|
+| societal-discourse layer | társadalmi diskurzus-réteg | second layer beside the expert layer |
+| discourse voice | diskurzus-hang | represents an interest/value, not expertise |
+| argument ledger | érv-főkönyv | the layer's deliverable |
+| argument cluster | érvklaszter | canonical one-sentence argument, id A1..An |
+| stance matrix | álláspont-mátrix | voice × scenario stances |
+| documented position | dokumentált álláspont | label; requires a source |
+| value-modeled position | értékekből modellezett álláspont | label; requires a stated value base |
+| no position | nincs álláspont | legitimate, honest label |
+| response obligation | válaszkötelezettség | the brief must answer every cluster (CNDP) |
+| reciprocity round | reciprocitás-kör | each voice answers its strongest counter-argument |
+| conditions register | feltétel-regiszter | "what would change my stance" inventory |
+| supports / opposes / conditionally supports | támogatja / ellenzi / feltételesen támogatja | stances |

@@ -14,6 +14,9 @@ where human judgment is required, and how the system asks for it.
 | Resolving judge divergences | When two model families disagree beyond threshold, a human adjudicates |
 | Confirming translation nuance | Residual translation uncertainty (connotation, register) is flagged, not auto-resolved |
 | Stopping or redirecting the lab | Humans own the research agenda |
+| Adjudicating value-kind argument clusters | The discourse layer marks value claims as value questions; the ledger's "left open" responses are addressed to humans |
+| Approving named-actor position summaries | What the system publicly attributes to a real organisation is reviewed with that organisation before launch (D-29, issue #12) |
+| Admitting new voices or experts to the panel | Panel composition shifts the picture; a seat requires a new position, verified by a sensitivity rerun (issue #9/#12) |
 
 ## How the system requests human input
 
@@ -27,6 +30,11 @@ where human judgment is required, and how the system asks for it.
   `docs/workflow.md`).
 
 ## What humans should inspect each round
+
+The argument ledger deserves the same scrutiny as the scenarios: are the
+value-modeled positions fair to the organisations they model? Is any
+"no position" actually a dodge? Did the brief's responses engage the
+arguments or wave at them?
 
 1. `evaluation.md` — are the scores plausible? Any judge divergence flags?
 2. `meta_critique.md` — is the gaming judgment convincing?

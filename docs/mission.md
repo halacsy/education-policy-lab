@@ -48,3 +48,11 @@ The pipeline must remain reusable for any policy question.
 
 Most early effort goes into L2–L4. L1 output quality is the *measurement*, not
 the product.
+
+L1 has two layers (D-29): the **expert layer** (evidence-graded domain
+analysis) and the **societal-discourse layer** (voices that REPRESENT
+interests and values — archetypes and named actors with epistemically
+labelled positions). The discourse layer exists because policy is decided in
+public, not in a lab: the argument ledger records who would support, oppose
+or conditionally accept each scenario and why, and the brief must answer
+every argument (response obligation).
