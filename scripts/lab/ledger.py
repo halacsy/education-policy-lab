@@ -96,12 +96,12 @@ def render_ledger(n, voices, clusters, grades, responses, lang):
 
 
 def grade_lines(text):
-    """Parse the evidence layer's grading output into {cluster_id: line}."""
+    """Parse the evidence layer's grading output into {cluster_id: line}.
+    Lenient about list/bold prefixes ('- A3:', '**A3**:', 'A3 :')."""
+    import re
     out = {}
     for line in text.splitlines():
-        line = line.strip().lstrip("- ")
-        if line[:1] == "A" and ":" in line:
-            cid, _, rest = line.partition(":")
-            if cid[1:].isdigit():
-                out[cid.strip()] = rest.strip()
+        m = re.match(r"^[\s\-\*]*(A\d+)\**\s*:\s*(.*)$", line.strip())
+        if m:
+            out[m.group(1)] = m.group(2).strip()
     return out
