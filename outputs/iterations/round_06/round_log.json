@@ -1,0 +1,79 @@
+{
+  "round": 6,
+  "fallbacks": [
+    "expert:international_comparison",
+    "expert:legal_and_governance",
+    "translate_ledger",
+    "final_brief_writer"
+  ],
+  "reused": [],
+  "resumed": [
+    "expert:international_comparison",
+    "expert:hungarian_education_system",
+    "expert:polish_reform",
+    "expert:finnish_reform",
+    "expert:school_network_planning",
+    "expert:portuguese_reform",
+    "expert:demography",
+    "expert:equity_and_social_mobility",
+    "expert:political_feasibility",
+    "expert:education_finance",
+    "expert:legal_and_governance",
+    "expert:implementation_planning",
+    "scenario_builder",
+    "editor",
+    "rejected_framings",
+    "voice:konzervativ_ertekvedo",
+    "voice:pedagogus_erdekvedo",
+    "voice:kisgyerekes_szuloi",
+    "voice:eselyegyenlosegi_civil",
+    "voice:digitalisgazdasagi",
+    "voice:ckp_tanitanek",
+    "voice:egyhazi_fenntartoi",
+    "voice:pdsz",
+    "voice:tisza_kormany",
+    "voice:egyensuly_intezet",
+    "argument_map",
+    "grade_arguments",
+    "response:eselyegyenlosegi_civil",
+    "response:konzervativ_ertekvedo",
+    "response:kisgyerekes_szuloi",
+    "response:pedagogus_erdekvedo",
+    "response:digitalisgazdasagi",
+    "response:ckp_tanitanek",
+    "response:egyhazi_fenntartoi",
+    "response:pdsz",
+    "response:tisza_kormany",
+    "response:egyensuly_intezet"
+  ],
+  "discourse": {
+    "voices": 10,
+    "stance_counts": {
+      "support": 3,
+      "oppose": 8,
+      "conditional": 27,
+      "no_position": 2
+    },
+    "label_counts": {
+      "documented": 6,
+      "value_modeled": 32,
+      "no_position": 2
+    },
+    "clusters": 50,
+    "factual_clusters_graded": 38,
+    "reciprocity": {
+      "ran": true,
+      "revised": 18
+    }
+  },
+  "backends": {
+    "brief [anthropic:claude-opus-4-8]": 2,
+    "brief [anthropic:claude-sonnet-5]": 1,
+    "brief [mock]": 1,
+    "critic [google:gemini-2.5-flash]": 8,
+    "critic [mock]": 1,
+    "translate_ledger [anthropic:claude-opus-4-8]": 1,
+    "translate_ledger [anthropic:claude-sonnet-5]": 1,
+    "translate_scenarios [mock]": 1
+  }
+}

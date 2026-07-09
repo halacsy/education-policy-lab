@@ -1,6 +1,6 @@
 # Agent: final_brief_writer
 
-Version: 2
+Version: 3
 Type: synthesis
 Provider-role: generator
 
@@ -48,3 +48,4 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
 - [round-04] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.
+- [round-06] DIRECTIVE:layer_tighten — Every bullet in Evidence/Interpretation/Assumptions carries its status tag inline; a bullet without a tag is a defect.
