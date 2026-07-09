@@ -39,7 +39,7 @@ def compose(prompt, role):
         "translate_scenarios": lambda: scenarios_json("hu", d),
         "synthesis": lambda: synthesis(d),
         "rejected_framings": lambda: rejected_framings(),
-        "brief": lambda: brief(h.get("lang", "en"), d),
+        "brief": lambda: brief(h.get("lang", "en"), d, prompt),
         "exec_summary": lambda: K.EXEC_SUMMARY[h.get("lang", "en")],
         "critic": lambda: critic(h["agent"], d),
         "meta_critique": lambda: meta_critique(_payload(prompt), d),
@@ -185,7 +185,7 @@ def rejected_framings():
 
 # -- brief -------------------------------------------------------------------
 
-def brief(lang, d):
+def brief(lang, d, prompt=""):
     L = lang
     if L == "en":
         H = dict(title="# Policy brief — early selection and the 6/8-year gimnázium",
@@ -242,10 +242,29 @@ def brief(lang, d):
     lines += ["", H["rec"]]
     for r in K.RECOMMENDATIONS:
         lines.append(f"- {r[L]}")
-    # response obligation (D-29, CNDP model): answer every argument cluster
+    # response obligation (D-29, CNDP model): answer every argument cluster.
+    # A LIVE argument map's ids differ from the curated pack's — answer the
+    # clusters actually referenced in the prompt's ledger; curated ids keep
+    # their curated verdicts, unknown ids are honestly left open.
     lines += ["", "## Responses to public arguments" if L == "en"
               else "## Válaszok a társadalmi érvekre"]
+    prompt_ids = list(dict.fromkeys(re.findall(r"\*\*(A\d+)\*\*", prompt)))
+    curated_by_id = {c["id"]: c for c in K.ARGUMENT_CLUSTERS}
+    if prompt_ids and set(prompt_ids) - set(curated_by_id):
+        for cid in prompt_ids:
+            if cid in curated_by_id:
+                continue
+            lines.append(
+                f"- {cid}: " + ("left open — deterministic fallback "
+                                "composition cannot adjudicate a live "
+                                "argument; flagged for human review."
+                                if L == "en" else
+                                "nyitva marad — a determinisztikus tartalék "
+                                "nem dönthet el élő érvet; emberi "
+                                "felülvizsgálatra jelölve."))
     for c in K.ARGUMENT_CLUSTERS:
+        if prompt_ids and c["id"] not in prompt_ids:
+            continue
         claim = c["claim"][L]
         if c["kind"] == "value":
             verdict = ("left open — a value question requiring human judgment"
