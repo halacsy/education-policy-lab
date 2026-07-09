@@ -519,6 +519,7 @@ def run_round(n):
         (rd / "steps.jsonl").unlink()  # stale partial attempt
     snapshot_system_state(rd)
     step = Step(rd, resume)
+    usage_since = len(llm.CALL_LOG)  # per-round token accounting window
     question = cfg["policy_question"]
     write_scen = lambda p, obj: write_json(p, obj)
 
@@ -758,6 +759,7 @@ def run_round(n):
         "reused": reused_prev, "resumed": step.resumed,
         "discourse": disc["metrics"] if disc else None,
         "backends": llm.backend_stats(),
+        "usage": llm.token_stats(since=usage_since),
     })
 
     return {

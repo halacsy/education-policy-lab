@@ -172,6 +172,12 @@ def main():
         f"(total {history[0]['total']}->{history[-1]['total']})")
     print("final outputs written to outputs/final/ and committed")
     print("backend usage:", llm.backend_stats())
+    u = llm.token_stats()
+    print("token usage (this process):", u["total"])
+    for k, v in u["per_model"].items():
+        print(f"  {k}: {v['calls']} calls, {v['tokens_in']} in / "
+              f"{v['tokens_out']} out tokens, {v['ms']/1000:.0f}s"
+              + (" (estimated)" if v["estimated"] else ""))
 
 
 if __name__ == "__main__":

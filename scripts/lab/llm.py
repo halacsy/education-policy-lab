@@ -198,15 +198,23 @@ def _call_cli(provider, model, prompt, max_tokens):
 
 
 def _call_real(provider, model, prompt, max_tokens):
+    """-> (text, usage) where usage = {tokens_in, tokens_out, estimated}.
+    API backends report exact counts; CLI backends don't expose usage, so
+    counts are chars/4 estimates and flagged as such."""
     if _cli_backend(provider):
-        return _call_cli(provider, model, prompt, max_tokens)
+        text = _call_cli(provider, model, prompt, max_tokens)
+        return text, {"tokens_in": len(prompt) // 4,
+                      "tokens_out": len(text) // 4, "estimated": True}
     if provider == "anthropic":
         resp = _client(provider).messages.create(
             model=model,
             max_tokens=max_tokens,
             messages=[{"role": "user", "content": prompt}],
         )
-        return "".join(b.text for b in resp.content if b.type == "text")
+        text = "".join(b.text for b in resp.content if b.type == "text")
+        return text, {"tokens_in": resp.usage.input_tokens,
+                      "tokens_out": resp.usage.output_tokens,
+                      "estimated": False}
     if provider == "google":
         from google.genai import types
         try:
@@ -218,7 +226,17 @@ def _call_real(provider, model, prompt, max_tokens):
                 temperature=0.2, max_output_tokens=max_tokens)
         resp = _client(provider).models.generate_content(
             model=model, contents=prompt, config=cfg)
-        return resp.text or ""
+        text = resp.text or ""
+        um = getattr(resp, "usage_metadata", None)
+        if um is not None:
+            usage = {"tokens_in": um.prompt_token_count or 0,
+                     "tokens_out": (um.candidates_token_count or 0)
+                     + (getattr(um, "thoughts_token_count", 0) or 0),
+                     "estimated": False}
+        else:
+            usage = {"tokens_in": len(prompt) // 4,
+                     "tokens_out": len(text) // 4, "estimated": True}
+        return text, usage
     raise ValueError(provider)
 
 
@@ -246,15 +264,16 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
     if provider_available(provider) and model is not None:
         for attempt in range(retries + 1):
             try:
-                text = _throttled(provider,
-                                  lambda: _call_real(provider, model, prompt,
-                                                     max_tokens))
+                text, usage = _throttled(
+                    provider, lambda: _call_real(provider, model, prompt,
+                                                 max_tokens))
                 if not text.strip():
                     raise RuntimeError("empty response")
                 _failures[(provider, model)] = 0
                 entry["backend"] = provider + (
                     f"({_cli_backend(provider)})" if _cli_backend(provider) else "")
                 entry["ms"] = int((time.time() - t0) * 1000)
+                entry.update(usage)
                 CALL_LOG.append(entry)
                 return text
             except Exception as e:  # noqa: BLE001 — any API error degrades
@@ -283,6 +302,8 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
     text = mock_backend.compose(prompt, role)
     entry["backend"] = "mock"
     entry["ms"] = int((time.time() - t0) * 1000)
+    entry.update({"tokens_in": len(prompt) // 4,
+                  "tokens_out": len(text) // 4, "estimated": True})
     CALL_LOG.append(entry)
     return text
 
@@ -296,3 +317,29 @@ def backend_stats():
         key = (e.get("task", "?"), label)
         stats[key] = stats.get(key, 0) + 1
     return {f"{task} [{label}]": n for (task, label), n in sorted(stats.items())}
+
+
+def token_stats(since=0):
+    """Token/time accounting over CALL_LOG[since:] — a full-run cost report.
+
+    Per (backend, model): calls, tokens in/out, wall-clock ms; totals per
+    provider and overall. Counts from API backends are exact; CLI/mock
+    entries are chars/4 estimates and reported separately ('estimated').
+    Pass `since` (a CALL_LOG index captured at round start) for per-round
+    deltas."""
+    per = {}
+    for e in CALL_LOG[since:]:
+        key = f"{e['backend']}:{e.get('model') or '-'}"
+        d = per.setdefault(key, {"calls": 0, "tokens_in": 0, "tokens_out": 0,
+                                 "ms": 0, "estimated": 0})
+        d["calls"] += 1
+        d["tokens_in"] += e.get("tokens_in", 0)
+        d["tokens_out"] += e.get("tokens_out", 0)
+        d["ms"] += e.get("ms", 0)
+        d["estimated"] += 1 if e.get("estimated") else 0
+    total = {"calls": sum(d["calls"] for d in per.values()),
+             "tokens_in": sum(d["tokens_in"] for d in per.values()),
+             "tokens_out": sum(d["tokens_out"] for d in per.values()),
+             "ms": sum(d["ms"] for d in per.values()),
+             "estimated_calls": sum(d["estimated"] for d in per.values())}
+    return {"per_model": dict(sorted(per.items())), "total": total}
