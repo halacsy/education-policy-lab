@@ -24,6 +24,12 @@ HEAD = {
                matrix="## Stance matrix", clusters="## Argument clusters",
                recipro="## Reciprocity round",
                conditions="## Conditions register",
+               gumicsontok="## Attention sinks (gumicsontok)",
+               gumicsontok_intro=(
+                   "High-attention arguments that would NOT change the "
+                   "decision if resolved — flagged so real participants can "
+                   "see which debates move the decision and which mostly "
+                   "consume attention."),
                stance_w={"support": "supports", "oppose": "opposes",
                          "conditional": "conditionally supports",
                          "no_position": "no position"},
@@ -48,6 +54,12 @@ HEAD = {
                matrix="## Álláspont-mátrix", clusters="## Érvklaszterek",
                recipro="## Reciprocitás-kör",
                conditions="## Feltétel-regiszter",
+               gumicsontok="## Gumicsontok",
+               gumicsontok_intro=(
+                   "Olyan nagy figyelmet kapó érvek, amelyek megoldása NEM "
+                   "változtatna a döntésen — azért jelöltük meg őket, hogy a "
+                   "valódi résztvevők lássák, mely viták viszik előre a "
+                   "döntést, és melyek főleg figyelmet fogyasztanak."),
                stance_w={"support": "támogatja", "oppose": "ellenzi",
                          "conditional": "feltételesen támogatja",
                          "no_position": "nincs álláspontja"},
@@ -56,6 +68,14 @@ HEAD = {
                         "no_position": "nincs álláspont"},
                cond="Feltétel", raised="felvetette", outcome="kimenetel"),
 }
+
+
+def is_gumicsont(cluster):
+    """High attention, low decision-relevance: a debate that draws energy
+    but wouldn't change the decision if resolved — flag it, never hide it."""
+    attn = cluster.get("attention", {})
+    return bool(attn.get("high_attention")) and \
+        cluster.get("decision_relevance") == "low"
 
 
 def render_ledger(n, voices, clusters, grades, responses, lang):
@@ -115,6 +135,20 @@ def render_ledger(n, voices, clusters, grades, responses, lang):
             if r.get("condition_to_change") and r["stance"] != "no_position":
                 L.append(f"- {name} ({r['scenario']}): "
                          f"{r['condition_to_change']}")
+    L += ["", H["gumicsontok"], "", H["gumicsontok_intro"], ""]
+    flagged = [c for c in clusters if is_gumicsont(c)]
+    if flagged:
+        for c in flagged:
+            attn = c.get("attention", {})
+            reasons = [k for k in ("new_information", "changes_evaluation",
+                                   "already_answered", "primarily_rhetorical")
+                      if attn.get(k)]
+            why = ", ".join(reasons) if reasons else \
+                "high attention, low decision relevance"
+            L.append(f"- **{c['id']}** ({c['scenario']}): {c['claim']} — "
+                     f"{why}")
+    else:
+        L.append("- none flagged this round")
     return "\n".join(L) + "\n"
 
 

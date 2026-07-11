@@ -260,6 +260,20 @@ def main():
                 if c.get("decision_relevance") not in ("high", "medium", "low"):
                     okD, _ = False, detD.append(
                         f"r{n}:{c.get('id')} bad decision_relevance")
+                attn = c.get("attention")
+                if not isinstance(attn, dict) or not all(
+                        isinstance(attn.get(k), bool) for k in (
+                            "high_attention", "new_information",
+                            "changes_evaluation", "already_answered",
+                            "primarily_rhetorical")):
+                    okD, _ = False, detD.append(
+                        f"r{n}:{c.get('id')} missing/bad attention block")
+            for lang, header in (("en", "## Attention sinks (gumicsontok)"),
+                                 ("hu", "## Gumicsontok")):
+                fname = f"argument_ledger.{lang}.md"
+                if header not in read(rdp / fname):
+                    okD, _ = False, detD.append(
+                        f"r{n}: {fname} missing gumicsont section")
             for vp in sorted((rdp / "discourse" / "voices").glob("*.json")):
                 for r in read_json(vp)["reactions"]:
                     if (r.get("label") not in POSITION_LABELS

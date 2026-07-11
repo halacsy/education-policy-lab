@@ -92,8 +92,24 @@ ARGMAP_SCHEMA_HINT = json.dumps({
                                  "contested, or unknown — and why>",
         "decision_relevance": "high|medium|low — how much would resolving "
                               "this change the actual decision",
+        "attention": {
+            "high_attention": "true|false — does this argument draw a lot "
+                              "of public/media attention",
+            "new_information": "true|false — does it carry information "
+                               "not already covered by another cluster",
+            "changes_evaluation": "true|false — would resolving it change "
+                                  "how a scenario is evaluated",
+            "already_answered": "true|false — is this substantively "
+                                "answered elsewhere in the record already",
+            "primarily_rhetorical": "true|false — is its main role "
+                                    "rhetorical/identity-signalling rather "
+                                    "than substantive",
+        },
     }]
 }, indent=2)
+
+ATTENTION_KEYS = ("high_attention", "new_information", "changes_evaluation",
+                  "already_answered", "primarily_rhetorical")
 
 
 def valid_voice(obj):
@@ -155,6 +171,10 @@ def valid_argmap(obj, voice_names):
         if not affected or not all(str(a).strip() for a in affected):
             return False
         if c.get("decision_relevance") not in RELEVANCE_LEVELS:
+            return False
+        attn = c.get("attention")
+        if not isinstance(attn, dict) or \
+                not all(isinstance(attn.get(k), bool) for k in ATTENTION_KEYS):
             return False
     return True
 
@@ -421,6 +441,14 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                  "unstated assumption it rests on, whether its factual part "
                  "is settled/contested/unknown, and how much resolving it "
                  "would actually change the decision (decision_relevance). "
+                 "Also screen each cluster for 'gumicsont' status (a debate "
+                 "that draws a lot of attention but would not change the "
+                 "decision if resolved): does it draw high attention, does "
+                 "it carry new information, would resolving it change a "
+                 "scenario's evaluation, is it already answered elsewhere, "
+                 "is its main role rhetorical/identity-signalling. High "
+                 "attention + low decision_relevance is exactly what real "
+                 "participants need flagged, not hidden. "
                  "Return ONLY a JSON object with this exact schema:\n"
                  + ARGMAP_SCHEMA_HINT +
                  "\nRules: stable sequential ids A1..An; aim for 8-24 "

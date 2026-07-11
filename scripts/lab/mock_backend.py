@@ -331,7 +331,8 @@ def _clusters(lang):
                  fear=c["fear"][lang], affected=list(c["affected"][lang]),
                  assumption=c["assumption"][lang],
                  empirical_uncertainty=c["empirical_uncertainty"][lang],
-                 decision_relevance=c["decision_relevance"])
+                 decision_relevance=c["decision_relevance"],
+                 attention=dict(c["attention"]))
             for c in K.ARGUMENT_CLUSTERS]
 
 
