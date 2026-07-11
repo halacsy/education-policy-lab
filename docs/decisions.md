@@ -250,3 +250,42 @@ fields present, critics name scenario id + field). Improvement therefore has
 to come from real depth increases (quantified uncertainty, severity-ranked
 critiques, minority-report synthesis), not from fixing artificial omissions.
 (2026-07-04)
+
+**D-30 — Mission reframe: deliberation acceleration, not policy production
+(owner refactor brief, 2026-07-11).**
+Owner decision: the system's stated purpose changes from "produce a policy
+recommendation" to "accelerate the thinking and public debate that must
+precede a policy decision." Concretely, in this pass ("Phase A"):
+(1) the societal-discourse layer (D-29) is reframed from voices that
+"represent" interests/values to an explicit **stakeholder stress test** —
+the system never claims to simulate real reactions; ledger and agent
+instructions carry an explicit disclaimer, and outputs are framed as
+"objections/fears/interest-conflicts to verify with real stakeholders," not
+predictions;
+(2) argument clusters are decomposed into `interest` / `value` / `fear` /
+`affected` / `assumption` / `empirical_uncertainty` / `decision_relevance`
+fields (previously only `kind`/`side`/`claim`/`raised_by`) — implements the
+brief's "structured counter-argument processing";
+(3) argument clusters gain a red-herring ("gumicsont") classification —
+`high_attention` / `new_information` / `changes_evaluation` /
+`already_answered` / `primarily_rhetorical` — rendered as a distinct ledger
+section, so real participants can see which debates move the decision and
+which don't;
+(4) the brief's response obligation becomes typed (7 categories:
+evidence_answerable / policy_design_fixable / communication_fixable /
+value_conflict / irreducible_tradeoff / needs_more_info /
+not_decision_relevant) instead of a bare accepted/rejected/left-open verdict;
+(5) the final brief is restructured from the 5-layer
+Evidence/Interpretation/Assumptions/Recommendations/Open-questions split into
+the 10 sections the brief specifies (what we know / what we consider likely
+/ where experts disagree / what we don't know / what could be done / what
+each option costs / what research could resolve / what people must decide /
+what to verify with real stakeholders / where the red herrings are); the old
+per-claim fact/estimate/assumption/value-judgment tagging discipline is kept,
+just moved from a page-level split to a per-bullet tag.
+Sections of the owner's brief that amount to net-new subsystems — evidence
+context/transferability tagging, a formal unknowns taxonomy, a research
+agenda artifact, mandatory no-intervention/pilot/intensity scenario variants,
+and a decision-readiness verdict — are deliberately deferred; see D-31.
+Built on branch `refactor/deliberation-mission`, reviewed as a whole before
+merge (2026-07-11).
