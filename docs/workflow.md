@@ -32,17 +32,23 @@ Round 3+ REPEAT  until acceptance criteria met, max rounds, marginal gain,
 | 8 | Improvement planning | iteration_manager + archive | judge | `improvement_plan.md`, `revised_agents.md`, `revised_workflow.md` |
 | 9 | Commit | — | — | `round-XX: <concrete change>` |
 
-Step 3.5 (the argument ledger, model: CNDP response obligation + OECD
+Step 3.5 (the argument ledger — a **stakeholder stress test**, not a
+simulation of real reactions (D-30); model: CNDP response obligation + OECD
 deliberative standards + DQI format rules + Habermas-Machine aggregation):
-voices REPRESENT interests/values — they are not experts. Each voice reacts
-to every scenario with stance {support / oppose / conditional / no_position},
-a justification, a change-condition and an epistemic label {documented(source)
-/ value_modeled(basis) / no_position}. The mediator clusters arguments
-(A1..An, never counting heads); the evidence layer grades factual claims
-against the registry; a reciprocity pass (config: `discourse.reciprocity`)
-makes each voice answer its strongest counter-argument. The brief MUST answer
-every cluster ('## Responses to public arguments' / '## Válaszok a társadalmi
-érvekre') — enforced by validation, not good will. Voice conditions feed the
+voices REPRESENT interests/values — they are not experts, and their output
+must never be read as a prediction of what real people or organisations will
+actually think. Each voice reacts to every scenario with stance {support /
+oppose / conditional / no_position}, a justification, a change-condition and
+an epistemic label {documented(source) / value_modeled(basis) / no_position}.
+The mediator clusters arguments (A1..An, never counting heads) and decomposes
+each cluster into interest / value / fear / affected actors / underlying
+assumption / empirical uncertainty / decision relevance, and screens it for
+"gumicsont" status (high attention, low decision-relevance); the evidence
+layer grades factual claims against the registry; a reciprocity pass (config:
+`discourse.reciprocity`) makes each voice answer its strongest
+counter-argument. The brief MUST answer every cluster with a typed response
+('## Responses to public arguments' / '## Válaszok a társadalmi érvekre') —
+enforced by validation, not good will. Voice conditions feed the
 political_feasibility expert's memory next round.
 
 At the **start** of round N+1 the change planned in round N is actually applied

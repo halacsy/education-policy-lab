@@ -359,10 +359,15 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
             f"voice:{name}",
             dict(task="discourse_voice", agent=name, round_n=n,
                  instructions=(
-                     "React to each scenario below AS THE INTEREST/VALUE "
-                     "VOICE your spec defines — you represent, you do not "
-                     "give expert judgment. Return ONLY a JSON object with "
-                     f"this exact schema:\n{VOICE_SCHEMA_HINT}\n"
+                     "This is a STAKEHOLDER STRESS TEST, not a simulation: "
+                     "you model a plausible objection/interest-conflict for "
+                     "real stakeholders to verify later — you are NOT "
+                     "predicting what real people or organisations will "
+                     "actually think. React to each scenario below AS THE "
+                     "INTEREST/VALUE VOICE your spec defines — you "
+                     "represent, you do not give expert judgment. Return "
+                     f"ONLY a JSON object with this exact schema:\n"
+                     f"{VOICE_SCHEMA_HINT}\n"
                      "Rules: one reaction per scenario (S1..S4); a stance "
                      "without justification is invalid; no_position is the "
                      "honest choice when your interest implies nothing; "

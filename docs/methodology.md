@@ -53,11 +53,15 @@ Each round, after evaluation:
 - Removal of *generative* agents is allowed with evidence; removal of
   *critics* and *safety checks* is a forbidden regression.
 
-## The discourse layer's method (argument accounting, D-29)
+## The discourse layer's method (argument accounting, D-29, reframed D-30)
 
-The societal-discourse layer is evaluated by ARGUMENT ACCOUNTING, never head
-counting — a synthesis of four documented practices: CNDP débat public
-(response obligation: the brief answers every argument cluster, enforced by
+The societal-discourse layer is a **stakeholder stress test**, not a
+simulation of real reactions — it exists to surface, in advance, the
+objections, fears and interest-conflicts a real deliberation will have to
+answer, never to predict what real people or organisations will actually
+think. It is evaluated by ARGUMENT ACCOUNTING, never head counting — a
+synthesis of four documented practices: CNDP débat public (response
+obligation: the brief answers every argument cluster, enforced by
 validation), OECD deliberative standards (representativeness of the voice
 roster; epistemic labels: documented / value-modeled / no-position),
 Discourse Quality Index (a stance without justification is invalid;
@@ -65,9 +69,14 @@ reciprocity: every voice answers its strongest counter-argument; explicit
 change-conditions), and the Habermas Machine (aggregation that preserves
 minority arguments). Factual claims inside arguments are graded by the
 evidence layer against the curated registry; value claims are marked value
-questions and routed to humans. Quality metrics (coverage, label counts,
-reciprocity outcomes) are reported in each round's log — deliberately NOT a
-scored rubric dimension, so the optimizer cannot game them.
+questions and routed to humans. Every argument cluster is additionally
+decomposed (interest, value, fear, affected actors, underlying assumption,
+empirical uncertainty, decision relevance — D-30) and screened for
+"gumicsont" status: high attention but low decision-relevance, so real
+participants can see which debates move the decision and which are mostly
+noise. Quality metrics (coverage, label counts, reciprocity outcomes) are
+reported in each round's log — deliberately NOT a scored rubric dimension, so
+the optimizer cannot game them.
 
 ## Anti-Goodhart measures
 

@@ -18,12 +18,18 @@ EXPERTS = {
     "implementation_planning": "Sequencing, teacher-supply constraints, administrative bandwidth, and realistic timelines.",
 }
 
-# Societal-discourse layer (D-29): voices REPRESENT interests and values, they
-# do not give evidence-based expert judgment. Archetypes are defined by the
-# interest they defend (topic-independent); named actors are modelled voices
-# of real organisations and may only carry a position with an epistemic label:
-# documented (source URL) / value-modeled (derived from documented values) /
-# no_position. Unlabelled attribution is a validation failure.
+# Societal-discourse layer (D-29, reframed D-30): this is a STAKEHOLDER STRESS
+# TEST, not a simulation of real reactions. Voices REPRESENT interests and
+# values to surface the objections, fears and interest-conflicts a real
+# deliberation will have to answer — they do not predict what real people or
+# organisations will think, and they do not give evidence-based expert
+# judgment. Archetypes are defined by the interest they defend
+# (topic-independent); named actors are modelled voices of real organisations
+# and may only carry a position with an epistemic label: documented (source
+# URL) / value-modeled (derived from documented values) / no_position.
+# Unlabelled attribution is a validation failure. Every output must read as
+# "this is a modelled concern to verify with real stakeholders," never as
+# "this is what they think."
 DISCOURSE = {
     "pedagogus_erdekvedo": "Archetype: the teacher-interest voice — workload, professional autonomy, pay, staffing feasibility of any reform.",
     "kisgyerekes_szuloi": "Archetype: the parent-of-young-children voice — child wellbeing, predictability, school choice, safety, commuting.",
@@ -94,6 +100,7 @@ TYPE_RULES = {
         "State explicitly whether score gains are GENUINE or RUBRIC-GAMING, with reasons.",
     ],
     "discourse": [
+        "This is a STRESS TEST, not a simulation: you model a plausible objection/interest-conflict for real stakeholders to verify, you never claim this is what real people or organisations will actually think.",
         "You REPRESENT an interest/value, you do not give expert judgment: state whose interest you defend and your public-good frame separately.",
         "Every position carries an epistemic label: documented (with source), value_modeled (with the documented values it derives from), or no_position.",
         "Having no position is legitimate and honest — never invent a stance the represented interest does not imply.",
@@ -124,7 +131,7 @@ TYPE_FAILURES = {
     "critic": ["Generic feedback naming no scenario/field", "Style nitpicks", "Repeating another critic's objection without adding force"],
     "synthesis": ["Consensus laundering (dropping minority views)", "Upgrading evidence status while summarising", "Structure drift between language versions"],
     "meta": ["Judging the policy instead of the system", "Rubber-stamping score gains as genuine without evidence", "Proposing changes the archive shows already failed"],
-    "discourse": ["Presenting extrapolation as an organisation's stated view", "Inventing a stance where the interest implies none", "Bare stance without justification or change-condition", "Slipping into expert voice (grading evidence, recommending policy)"],
+    "discourse": ["Presenting extrapolation as an organisation's stated view", "Inventing a stance where the interest implies none", "Bare stance without justification or change-condition", "Slipping into expert voice (grading evidence, recommending policy)", "Framing modelled output as a prediction of real reactions rather than a stress test to verify"],
 }
 
 TYPE_SELFCRIT = {
@@ -132,7 +139,7 @@ TYPE_SELFCRIT = {
     "critic": ["Does each objection name id+field?", "Would fixing my objections actually improve the scenario?", "Did I attack the strongest version of the claim?"],
     "synthesis": ["Did any dissent disappear?", "Are the language versions structurally identical?", "Did I add any claim not present in the inputs?"],
     "meta": ["Did I evaluate the system, not the policy?", "Is my gaming judgment backed by artifact evidence?", "Did I check the archive?"],
-    "discourse": ["Would the represented group recognise itself in this?", "Is every position labelled and every label justified?", "Did I state what would change my mind?", "Did I mark no_position where honesty requires it?"],
+    "discourse": ["Would the represented group recognise itself in this?", "Is every position labelled and every label justified?", "Did I state what would change my mind?", "Did I mark no_position where honesty requires it?", "Does this read as a claim about real reactions rather than a stress test to verify?"],
 }
 
 TYPE_TEMPLATE = {

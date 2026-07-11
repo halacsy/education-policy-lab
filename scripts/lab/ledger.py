@@ -9,12 +9,18 @@ lab.pipeline (EN, from live/mock artifacts) and by lab.mock_backend
 
 HEAD = {
     "en": dict(title="# Argument ledger — round {n}",
-               intro=("Societal-discourse layer output: voices REPRESENT "
-                      "interests and values (they are not experts). Every "
-                      "position carries an epistemic label; factual claims "
-                      "inside arguments are graded by the evidence layer; "
-                      "the policy brief must answer every argument cluster "
-                      "(response obligation)."),
+               intro=("Societal-discourse layer output: this is a "
+                      "STAKEHOLDER STRESS TEST, not a simulation of real "
+                      "reactions. Voices REPRESENT interests and values "
+                      "(they are not experts) to surface objections a real "
+                      "deliberation will have to answer — nothing here "
+                      "should be read as a prediction of what real people "
+                      "or organisations will actually think; positions must "
+                      "be verified with real stakeholders before being "
+                      "treated as fact. Every position carries an "
+                      "epistemic label; factual claims inside arguments are "
+                      "graded by the evidence layer; the policy brief must "
+                      "answer every argument cluster (response obligation)."),
                matrix="## Stance matrix", clusters="## Argument clusters",
                recipro="## Reciprocity round",
                conditions="## Conditions register",
@@ -25,12 +31,20 @@ HEAD = {
                         "value-modeled", "no_position": "no position"},
                cond="Condition", raised="raised by", outcome="outcome"),
     "hu": dict(title="# Érv-főkönyv — {n}. kör",
-               intro=("A társadalmi diskurzus-réteg kimenete: a hangok "
-                      "érdekeket és értékeket KÉPVISELNEK (nem szakértők). "
-                      "Minden álláspont episztemikus címkét visel; az érvek "
-                      "ténybeli állításait az evidencia-réteg fokozatolja; a "
-                      "szakpolitikai összefoglaló minden érvklaszterre "
-                      "köteles válaszolni (válaszkötelezettség)."),
+               intro=("A társadalmi diskurzus-réteg kimenete: ez egy "
+                      "STAKEHOLDER STRESSZTESZT, nem valós reakciók "
+                      "szimulációja. A hangok érdekeket és értékeket "
+                      "KÉPVISELNEK (nem szakértők), hogy feltárják azokat az "
+                      "ellenérveket, amelyekre egy valódi vitának választ "
+                      "kell adnia — semmi itt nem olvasható úgy, mint "
+                      "előrejelzés arról, hogy valódi emberek vagy "
+                      "szervezetek mit fognak gondolni; az álláspontokat "
+                      "valódi érintettekkel kell ellenőrizni, mielőtt "
+                      "tényként kezelnénk őket. Minden álláspont episztemikus "
+                      "címkét visel; az érvek ténybeli állításait az "
+                      "evidencia-réteg fokozatolja; a szakpolitikai "
+                      "összefoglaló minden érvklaszterre köteles válaszolni "
+                      "(válaszkötelezettség)."),
                matrix="## Álláspont-mátrix", clusters="## Érvklaszterek",
                recipro="## Reciprocitás-kör",
                conditions="## Feltétel-regiszter",
