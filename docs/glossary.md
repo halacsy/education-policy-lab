@@ -69,3 +69,29 @@ must appear in a round's `revised_workflow.md`.
 | reciprocity round | reciprocitás-kör | each voice answers its strongest counter-argument |
 | conditions register | feltétel-regiszter | "what would change my stance" inventory |
 | supports / opposes / conditionally supports | támogatja / ellenzi / feltételesen támogatja | stances |
+
+## Deliberation-acceleration reframe (D-30)
+
+Response-type tokens and cluster fields below stay in their literal
+English snake_case form in every language version (like the A&lt;i&gt; ids) —
+this table exists for human readability, not for the translator to render
+a Hungarian token.
+
+| English | Hungarian gloss | Note |
+|---------|-----------------|------|
+| stakeholder stress test | stakeholder stressteszt | the discourse layer's self-description; never "simulation" |
+| interest (cluster field) | érdek | whose interest is behind an argument cluster |
+| value (cluster field) | érték | which value is in tension |
+| fear (cluster field) | félelem | the anticipated loss/harm driving the argument |
+| affected (cluster field) | érintett szereplők | actor group(s) affected |
+| assumption (cluster field) | feltételezés | the unstated assumption the claim rests on |
+| empirical uncertainty (cluster field) | empirikus bizonytalanság | settled / contested / unknown, and why |
+| decision relevance | döntési relevancia | high / medium / low |
+| gumicsont / attention sink | gumicsont | high attention, low decision relevance |
+| `evidence_answerable` | evidenciával megválaszolható | evidence settles or meaningfully refines it |
+| `policy_design_fixable` | policy designnal kezelhető | a design change/guarantee/phase-in reduces it |
+| `communication_fixable` | kommunikációval kezelhető | already addressed but not visibly/legibly |
+| `value_conflict` | valódi értékkonfliktus | legitimate values collide, no technical fix |
+| `irreducible_tradeoff` | feloldhatatlan trade-off | improving one goal necessarily costs another |
+| `needs_more_info` | további információ szükséges | not yet decidable from the evidence |
+| `not_decision_relevant` | nem döntésreleváns | attention-worthy but would not change the decision |

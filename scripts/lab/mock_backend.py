@@ -242,29 +242,38 @@ def brief(lang, d):
     lines += ["", H["rec"]]
     for r in K.RECOMMENDATIONS:
         lines.append(f"- {r[L]}")
-    # response obligation (D-29, CNDP model): answer every argument cluster
+    # typed response obligation (D-29 CNDP model, D-30 7-way typology):
+    # answer every argument cluster with a stable type token + reason
     lines += ["", "## Responses to public arguments" if L == "en"
               else "## Válaszok a társadalmi érvekre"]
+    reasons = {
+        "policy_design_fixable": dict(
+            en="a design change (guarantee, phase-in, compensation) reduces this",
+            hu="egy tervezési változtatás (garancia, fokozatosság, kompenzáció) csökkenti ezt"),
+        "evidence_answerable": dict(
+            en="the registry evidence settles this claim",
+            hu="a regiszter-evidencia eldönti ezt az állítást"),
+        "value_conflict": dict(
+            en="legitimate values collide here; there is no technical fix",
+            hu="itt legitim értékek ütköznek; nincs technikai megoldás"),
+        "needs_more_info": dict(
+            en="not yet decidable from the current evidence",
+            hu="a jelenlegi evidenciából még nem dönthető el"),
+        "not_decision_relevant": dict(
+            en="attention-worthy but would not change the decision (see gumicsontok)",
+            hu="figyelmet érdemel, de nem változtatna a döntésen (lásd: gumicsontok)"),
+        "irreducible_tradeoff": dict(
+            en="improving one goal here necessarily costs another",
+            hu="az egyik cél javítása itt szükségképpen ront egy másikon"),
+        "communication_fixable": dict(
+            en="already addressed but not visibly or legibly enough",
+            hu="már kezelve van, de nem eléggé láthatóan vagy érthetően"),
+    }
     for c in K.ARGUMENT_CLUSTERS:
         claim = c["claim"][L]
-        if c["kind"] == "value":
-            verdict = ("left open — a value question requiring human judgment"
-                       if L == "en" else
-                       "nyitva marad — emberi mérlegelést igénylő értékkérdés")
-        elif not c.get("grade"):
-            verdict = ("rejected as evidence — no curated source backs it; "
-                       "treated as unverified model knowledge" if L == "en"
-                       else "bizonyítékként elutasítva — kurált forrás nem "
-                       "támasztja alá; ellenőrizetlen modelltudásként kezelve")
-        elif c["side"] == "con":
-            verdict = ("accepted as a binding constraint on the affected "
-                       "scenario" if L == "en" else
-                       "elfogadva mint az érintett forgatókönyv kötelező "
-                       "korlátja")
-        else:
-            verdict = ("accepted — reflected in the recommendations"
-                       if L == "en" else "elfogadva — az ajánlások tükrözik")
-        lines.append(f"- {c['id']} ({claim[:80]}…): {verdict}")
+        rtype = c["response_type"]
+        reason = reasons[rtype][L]
+        lines.append(f"- {c['id']} ({claim[:80]}…): {rtype} — {reason}")
     if "minority_report" in d:
         lines += ["", H["minority"]]
         for dis in K.DISAGREEMENTS:

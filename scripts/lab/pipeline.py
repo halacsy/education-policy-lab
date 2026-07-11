@@ -202,6 +202,25 @@ def responds_to_clusters(text, lang, cluster_ids):
                if re.search(rf"\b{cid}\b", text))
     return hits >= max(6, int(0.8 * len(cluster_ids)))
 
+
+RESPONSE_TYPES = ("evidence_answerable", "policy_design_fixable",
+                  "communication_fixable", "value_conflict",
+                  "irreducible_tradeoff", "needs_more_info",
+                  "not_decision_relevant")
+
+
+def response_types_valid(text, cluster_ids, valid_types=RESPONSE_TYPES):
+    """Typed response obligation (D-30): a bare accepted/rejected/left-open
+    verdict is replaced by one of 7 tokens naming HOW the argument can be
+    resolved (or honestly can't). The token is a stable identifier, like the
+    A<i> ids — unchanged across languages, translated prose around it.
+    Additive to responds_to_clusters(): same coverage threshold, does not
+    change its behaviour."""
+    type_alt = "|".join(valid_types)
+    hits = sum(1 for cid in cluster_ids
+               if re.search(rf"\b{cid}\b[^\n]*\b(?:{type_alt})\b", text))
+    return hits >= max(6, int(0.8 * len(cluster_ids)))
+
 CRITIC_HEADING_RE = re.compile(
     r"^## S\d+\.(goal|mechanism|evidence_status|assumptions|expected_benefits|"
     r"equity_impact|cost_categories|implementation_steps|political_risks|"
@@ -744,9 +763,21 @@ def run_round(n):
             " After Recommendations, add a section "
             f"'{RESPONSES_HEADER['en']}' answering EVERY argument cluster "
             "from the ledger by id (one bullet per cluster: '- A<i> "
-            "(<short restatement>): accepted / rejected / left open — "
-            "<one-line reason>'). An argument answered by no one is a "
-            "defect (response obligation).")
+            "(<short restatement>): <type> — <one-line reason>'). <type> "
+            "MUST be exactly one of these 7 tokens, unchanged in every "
+            "language version (like the A<i> ids): evidence_answerable "
+            "(evidence settles or meaningfully refines it), "
+            "policy_design_fixable (a design change, guarantee, "
+            "compensation or phase-in reduces it), communication_fixable "
+            "(already addressed but not visibly or legibly), value_conflict "
+            "(legitimate values collide, there is no technical fix), "
+            "irreducible_tradeoff (improving one goal necessarily costs "
+            "another), needs_more_info (not yet decidable from the "
+            "evidence), not_decision_relevant (attention-worthy but would "
+            "not change the decision). Do NOT force every cluster into "
+            "artificial consensus — value_conflict and irreducible_tradeoff "
+            "are legitimate final answers, not failures. An argument "
+            "answered by no one is a defect (response obligation).")
         brief_inputs += ("\n\n=== ARGUMENT LEDGER (public arguments that "
                          "MUST each be answered) ===\n" + disc["ledger_en"])
     brief_en, _ = step.run(
@@ -754,8 +785,10 @@ def run_round(n):
         dict(task="brief", agent="final_brief_writer", lang="en", round_n=n,
              instructions=brief_instr, inputs=brief_inputs),
         validate=lambda t: (all(h in t for h in BRIEF_HEADERS_EN)
-                            and (not disc or responds_to_clusters(
-                                t, "en", disc["cluster_ids"]))),
+                            and (not disc or (responds_to_clusters(
+                                t, "en", disc["cluster_ids"])
+                                and response_types_valid(
+                                    t, disc["cluster_ids"])))),
         out_path=rd / "brief.en.md", max_tokens=6000)
 
     brief_hu_instr = (
@@ -765,8 +798,13 @@ def run_round(n):
         + ". Keep bullet counts identical. Use the glossary strictly.")
     if disc:
         brief_hu_instr += (f" Translate '{RESPONSES_HEADER['en']}' as "
-                           f"'{RESPONSES_HEADER['hu']}' and keep every "
-                           "A<i> id unchanged.")
+                           f"'{RESPONSES_HEADER['hu']}'; keep every A<i> id "
+                           "AND every response-type token (evidence_"
+                           "answerable / policy_design_fixable / "
+                           "communication_fixable / value_conflict / "
+                           "irreducible_tradeoff / needs_more_info / "
+                           "not_decision_relevant) unchanged — translate "
+                           "only the restatement and reason around them.")
     brief_hu, _ = step.run(
         "translator_brief",
         dict(task="brief", agent="translator", lang="hu", round_n=n,
@@ -774,8 +812,10 @@ def run_round(n):
              inputs=brief_en),
         validate=lambda t: (all(h in t for h in BRIEF_HEADERS_HU)
                             and t.strip() != brief_en.strip()
-                            and (not disc or responds_to_clusters(
-                                t, "hu", disc["cluster_ids"]))),
+                            and (not disc or (responds_to_clusters(
+                                t, "hu", disc["cluster_ids"])
+                                and response_types_valid(
+                                    t, disc["cluster_ids"])))),
         out_path=rd / "brief.hu.md", max_tokens=6000)
 
     # 6. critics (parallel) + translation checker

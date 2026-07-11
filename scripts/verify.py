@@ -239,7 +239,7 @@ def main():
                                      / "argument_ledger.en.md").exists()]
     if disc_rounds:
         from lab.pipeline import (POSITION_LABELS, STANCES,
-                                  responds_to_clusters)
+                                  responds_to_clusters, response_types_valid)
         okD, detD = True, []
         for n in disc_rounds:
             rdp = ITER_DIR / f"round_{n:02d}"
@@ -285,11 +285,16 @@ def main():
                         okD, _ = False, detD.append(
                             f"r{n}:{vp.stem} documented without source")
             for lang, f in (("en", "brief.en.md"), ("hu", "brief.hu.md")):
-                if not responds_to_clusters(read(rdp / f), lang, ids):
+                text = read(rdp / f)
+                if not responds_to_clusters(text, lang, ids):
                     okD, _ = False, detD.append(
                         f"r{n}: {f} misses the response obligation")
+                elif not response_types_valid(text, ids):
+                    okD, _ = False, detD.append(
+                        f"r{n}: {f} responses missing a valid type token")
         check("D", "discourse layer: labelled positions + brief answers "
-                   "every argument cluster", okD, "; ".join(detD[:3]))
+                   "every argument cluster with a typed response",
+              okD, "; ".join(detD[:3]))
     else:
         print("[SKIP] check    D: societal discourse (no rounds run since "
               "the feature landed — next loop run will produce the ledger)")
