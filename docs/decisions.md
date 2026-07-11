@@ -289,3 +289,33 @@ agenda artifact, mandatory no-intervention/pilot/intensity scenario variants,
 and a decision-readiness verdict — are deliberately deferred; see D-31.
 Built on branch `refactor/deliberation-mission`, reviewed as a whole before
 merge (2026-07-11).
+
+**D-31 — Deliberation-acceleration refactor, Phase B (deferred scope).**
+D-30 implemented the highest-leverage, most self-contained parts of the
+owner's refactor brief. Four further pieces amount to net-new subsystems
+each — implementing them alongside D-30 would have made one branch
+unreviewable and violated the one-attributable-change discipline (D-04).
+Deferred, with a design sketch so a future round can pick any one up:
+(1) **Evidence context/transferability tagging** — extend
+`knowledge/sources/*.md` facts with origin-context fields (institutional/
+political/legal/economic/cultural conditions, what's missing locally, risk
+of mechanical transfer) and add a `context_transferability_checker` critic
+or evidence-layer pass that separates the generalizable mechanism from the
+context-bound result for every cross-country citation used in a scenario;
+(2) **Explicit unknowns taxonomy** — a new `unknowns.md` artifact per round
+distinguishing known uncertainties / data gaps / research gaps / local-
+knowledge gaps / implementation unknowns / cost-capacity uncertainty /
+stakeholder-political uncertainty / value-only questions / potential
+unknown-unknowns, richer than the current per-expert `## Uncertainties`;
+(3) **Research/information agenda** — a `research_agenda.md` artifact
+mapping each major unknown to what data/method/pilot would resolve it, who
+holds it, and whether it's critical or deferrable;
+(4) **Mandatory alternative spread + decision-readiness** — require
+`scenario_builder` to always include a no-intervention/status-quo baseline
+and at least one pilot/low-intensity variant (not just four structurally
+distinct options), and add a `decision_readiness.md` verdict (ready /
+pilot-only / needs-research / needs-political-decision) synthesizing
+evidence strength, disagreement, and the unknowns map.
+Each would need its own agent/schema/verify-gate work, matching how D-29 and
+D-30 were each built as dedicated efforts, not squeezed into a round's
+one-change budget. (2026-07-11)

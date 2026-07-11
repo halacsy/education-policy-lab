@@ -67,8 +67,28 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
   the cheapest generator path; a discourse-enabled round ≈ 40 generator +
   15-25 judge calls (reciprocity off: −10).
 
-## Current state (2026-07-08, end of session)
+## Current state (2026-07-11, end of session)
 
+- **Branch `refactor/deliberation-mission`** (D-30, this session): mission
+  reframed from "produce a policy" to "accelerate deliberation"; discourse
+  layer relabelled as a stakeholder stress test (explicit disclaimer in
+  every discourse-facing instruction + the ledger itself); argument clusters
+  decomposed (interest/value/fear/affected/assumption/empirical_uncertainty/
+  decision_relevance) and screened for gumicsont (attention-sink) status;
+  brief response obligation is now typed (7-way: evidence_answerable /
+  policy_design_fixable / communication_fixable / value_conflict /
+  irreducible_tradeoff / needs_more_info / not_decision_relevant); final
+  brief restructured from the 5-layer Evidence/.../Open-questions split into
+  the 10-section deliberation deliverable. Also directly updated the
+  committed `agents/**/*.md` specs (agent_defs.py only seeds them once;
+  scaffold(force=False) never touches existing files — the canonical run's
+  specs still had pre-refactor language baked in). `run_mock_sprint.py`
+  passes clean end to end. `verify.py` checks 8 and 12 now correctly FAIL
+  against the old-schema canonical rounds 1-5 on disk (expected — those
+  rounds don't meet the new definition of done); a real round run under the
+  new code is needed before merging to main. D-31 records Phase B
+  (deliberately deferred: context/transferability tagging, unknowns
+  taxonomy, research agenda, decision-readiness) as follow-up.
 - Canonical run on main: rounds 1–5, total 7.322 → 9.265; site deployed via
   Pages (index + explorer + knowledge + tech).
 - **Discourse layer (D-29) built and merged to main** (645a59f + fixes):
@@ -113,6 +133,12 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
   permission (contacts in the proposal file); draft emails on request
 - Follow-up idea (in #13 comments): ingest Facebook/journalist voices to
   forecast civil reactions (depends on #6)
+- D-31 Phase B (deliberation-acceleration refactor, follow-up): evidence
+  context/transferability tagging, an explicit unknowns taxonomy artifact,
+  a research/information agenda artifact, mandatory no-intervention/pilot
+  scenario variants, and a decision-readiness verdict. Each is a net-new
+  subsystem (own agent/schema/verify-gate); no GitHub issue opened yet —
+  ask if you want one filed.
 
 ## Experiments so far
 
