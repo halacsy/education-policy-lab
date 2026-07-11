@@ -326,7 +326,12 @@ def discourse_voice(name):
 def _clusters(lang):
     return [dict(id=c["id"], scenario=c["scenario"], kind=c["kind"],
                  side=c["side"], claim=c["claim"][lang],
-                 raised_by=list(c["raised_by"]))
+                 raised_by=list(c["raised_by"]),
+                 interest=c["interest"][lang], value=c["value"][lang],
+                 fear=c["fear"][lang], affected=list(c["affected"][lang]),
+                 assumption=c["assumption"][lang],
+                 empirical_uncertainty=c["empirical_uncertainty"][lang],
+                 decision_relevance=c["decision_relevance"])
             for c in K.ARGUMENT_CLUSTERS]
 
 

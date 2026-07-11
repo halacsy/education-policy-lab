@@ -74,12 +74,24 @@ VOICE_SCHEMA_HINT = json.dumps({
     }]
 }, indent=2)
 
+RELEVANCE_LEVELS = ("high", "medium", "low")
+
 ARGMAP_SCHEMA_HINT = json.dumps({
     "clusters": [{
         "id": "A1", "scenario": "S1", "kind": "fact|value|mixed",
         "side": "pro|con|conditional",
         "claim": "<one-sentence canonical form of the argument>",
         "raised_by": ["<voice name>"],
+        "interest": "<whose interest is behind this argument>",
+        "value": "<which value is in tension, e.g. equity vs. excellence>",
+        "fear": "<the anticipated loss or harm driving it — emotional "
+                "framing here is not a defect, name the real need behind it>",
+        "affected": ["<actor group affected by this argument>"],
+        "assumption": "<the unstated assumption the claim rests on>",
+        "empirical_uncertainty": "<is the factual part of this settled, "
+                                 "contested, or unknown — and why>",
+        "decision_relevance": "high|medium|low — how much would resolving "
+                              "this change the actual decision",
     }]
 }, indent=2)
 
@@ -134,6 +146,15 @@ def valid_argmap(obj, voice_names):
         if not rb or not set(rb) <= set(voice_names):
             return False
         if not str(c.get("claim", "")).strip():
+            return False
+        for field in ("interest", "value", "fear", "assumption",
+                      "empirical_uncertainty"):
+            if not str(c.get(field, "")).strip():
+                return False
+        affected = c.get("affected")
+        if not affected or not all(str(a).strip() for a in affected):
+            return False
+        if c.get("decision_relevance") not in RELEVANCE_LEVELS:
             return False
     return True
 
@@ -391,7 +412,15 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
         "argument_map",
         dict(task="argument_map", agent="discourse_mediator", round_n=n,
              instructions=(
-                 "Cluster the voices' arguments into an argument map. "
+                 "Cluster the voices' arguments into an argument map, and "
+                 "decompose EACH cluster (structured counter-argument "
+                 "processing): the interest behind it, the value in "
+                 "tension, the fear/anticipated loss driving it (name the "
+                 "real need behind emotional framing, do not dismiss it as "
+                 "a defect), which actor group(s) are affected, the "
+                 "unstated assumption it rests on, whether its factual part "
+                 "is settled/contested/unknown, and how much resolving it "
+                 "would actually change the decision (decision_relevance). "
                  "Return ONLY a JSON object with this exact schema:\n"
                  + ARGMAP_SCHEMA_HINT +
                  "\nRules: stable sequential ids A1..An; aim for 8-24 "

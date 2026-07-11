@@ -89,6 +89,15 @@ def render_ledger(n, voices, clusters, grades, responses, lang):
         L.append(f"- **{c['id']}** ({c['scenario']}, {c['kind']}, "
                  f"{c['side']}): {c['claim']}{gtxt} — {H['raised']}: "
                  f"{', '.join(c['raised_by'])}")
+        if c.get("interest") or c.get("value"):
+            L.append(f"  - interest: {c.get('interest', '')} · "
+                     f"value: {c.get('value', '')} · "
+                     f"fear: {c.get('fear', '')} · "
+                     f"relevance: {c.get('decision_relevance', '')}")
+            L.append(f"  - affected: {', '.join(c.get('affected', []))} · "
+                     f"assumption: {c.get('assumption', '')} · "
+                     f"empirical uncertainty: "
+                     f"{c.get('empirical_uncertainty', '')}")
     L.append("")
     if any(responses.values()):
         L += [H["recipro"], ""]

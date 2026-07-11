@@ -247,7 +247,19 @@ def main():
             if not (amap.exists() and (rdp / "argument_ledger.hu.md").exists()):
                 okD, _ = False, detD.append(f"r{n}: ledger/map missing")
                 continue
-            ids = [c["id"] for c in read_json(amap)["clusters"]]
+            clusters = read_json(amap)["clusters"]
+            ids = [c["id"] for c in clusters]
+            for c in clusters:
+                for field in ("interest", "value", "fear", "assumption",
+                             "empirical_uncertainty"):
+                    if not str(c.get(field, "")).strip():
+                        okD, _ = False, detD.append(
+                            f"r{n}:{c.get('id')} missing {field}")
+                if not c.get("affected"):
+                    okD, _ = False, detD.append(f"r{n}:{c.get('id')} missing affected")
+                if c.get("decision_relevance") not in ("high", "medium", "low"):
+                    okD, _ = False, detD.append(
+                        f"r{n}:{c.get('id')} bad decision_relevance")
             for vp in sorted((rdp / "discourse" / "voices").glob("*.json")):
                 for r in read_json(vp)["reactions"]:
                     if (r.get("label") not in POSITION_LABELS
