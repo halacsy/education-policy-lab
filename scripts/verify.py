@@ -129,11 +129,12 @@ def main():
             ok7 = False
     check(7, "meta-critique evaluates the agent system (incl. gaming judgment)", ok7)
 
-    # 8 — final brief separates the five layers
+    # 8 — final brief has all 10 deliberation sections (D-30)
     fb = read(FINAL_DIR / "final_brief.en.md") if (FINAL_DIR / "final_brief.en.md").exists() else ""
     ok8 = all(h in fb for h in BRIEF_HEADERS_EN)
-    check(8, "final brief separates evidence/interpretation/assumptions/"
-             "recommendations/open questions", ok8)
+    check(8, "final brief has all 10 deliberation sections (know/likely/"
+             "disagree/unknown/could/costs/research/decide/verify/gumicsontok)",
+          ok8)
 
     # 9 — human_questions.md non-empty
     hq = FINAL_DIR / "human_questions.md"

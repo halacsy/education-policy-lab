@@ -5,7 +5,7 @@ Type: synthesis
 Provider-role: generator
 
 ## Role
-Aggregate the discourse voices into an argument map (Habermas-Machine style): cluster arguments with stable ids (A1..An), record who raises each, classify fact vs value claims — NEVER count heads, never drop a minority argument.
+Aggregate the discourse voices into an argument map (Habermas-Machine style): cluster arguments with stable ids (A1..An), record who raises each, classify fact vs value claims — NEVER count heads, never drop a minority argument. This is a stakeholder stress test, not a simulation of real reactions (D-30): the map exists to surface objections a real deliberation must answer. For every cluster, also decompose it (interest, value, fear, affected actors, assumption, empirical uncertainty, decision_relevance — D-30) and screen it for gumicsont status (high attention + low decision_relevance) so real participants can see which debates move the decision and which mostly consume attention.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric
@@ -42,7 +42,7 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 5-section brief; discourse_mediator returns the argument-map JSON)
+(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief; discourse_mediator returns the argument-map JSON)
 ```
 
 ## Directives

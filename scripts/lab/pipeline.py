@@ -44,12 +44,30 @@ SCENARIO_ANCHORS = (
     "reform); S4 keep the structure, compensate general schools "
     "(Portuguese-style package).")
 
-BRIEF_HEADERS_EN = ["## Evidence", "## Interpretation", "## Assumptions",
-                    "## Recommendations", "## Open questions"]
-BRIEF_HEADERS_HU = ["## Bizonyítékok", "## Értelmezés", "## Feltevések",
-                    "## Ajánlások", "## Nyitott kérdések"]
-RESPONSES_HEADER = {"en": "## Responses to public arguments",
-                    "hu": "## Válaszok a társadalmi érvekre"}
+# The 10-section deliberation deliverable (D-30), replacing the old 5-layer
+# Evidence/Interpretation/Assumptions/Recommendations/Open-questions split.
+# The per-claim tagging discipline that split used to enforce is NOT
+# dropped — it moves from a page-level split to a per-bullet [fact] /
+# [estimate] / [assumption] / [value] tag, applied wherever the claim lands.
+BRIEF_HEADERS_EN = [
+    "## What we know", "## What we consider likely",
+    "## Where experts disagree", "## What we don't know",
+    "## What could be done", "## What each option costs",
+    "## What research could resolve", "## What people must decide",
+    "## What to verify with real stakeholders",
+    "## Where the red herrings are",
+]
+BRIEF_HEADERS_HU = [
+    "## Amit már tudunk", "## Amit valószínűnek tartunk",
+    "## Amiben nincs szakértői egyetértés", "## Amit nem tudunk",
+    "## Mit lehetne tenni", "## Mi az egyes alternatívák ára",
+    "## Mit lehet még kutatással eldönteni",
+    "## Mit kell embereknek eldönteniük",
+    "## Mit kell valódi stakeholderekkel ellenőrizni",
+    "## Hol vannak a gumicsontok",
+]
+RESPONSES_HEADER = {"en": BRIEF_HEADERS_EN[8], "hu": BRIEF_HEADERS_HU[8]}
+CLAIM_TAGS = ("fact", "estimate", "assumption", "value")
 
 # -- societal discourse layer (D-29) -----------------------------------------
 
@@ -746,22 +764,38 @@ def run_round(n):
     scen_hu_md = render_scenarios_md(scen_hu, "hu")
     write(rd / "scenarios.hu.md", scen_hu_md)
 
-    # 5. briefs (EN by final_brief_writer, HU by translator). With the
-    #    discourse layer on, the brief carries the response obligation
-    #    (D-29, CNDP model): every argument cluster gets an answer.
+    # 5. briefs (EN by final_brief_writer, HU by translator) — the 10-section
+    #    deliberation deliverable (D-30). With the discourse layer on, the
+    #    "What to verify with real stakeholders" section carries the
+    #    response obligation (D-29, CNDP model): every argument cluster
+    #    gets a typed answer.
     brief_instr = (
         "Write the policy brief. It MUST contain exactly these "
         "sections in order: " + ", ".join(f"'{h}'" for h in BRIEF_HEADERS_EN)
-        + ". Every bullet in Evidence carries an [evidence: ...] tag; "
-        "Interpretation bullets carry [interpretation]; Assumptions "
-        "carry [assumption]. Recommendations must NOT pick a single "
-        "scenario as the answer. Open questions lists what needs "
-        "human judgment. Add any section your ## Directives require.")
+        + ". Tag every substantive claim by kind, wherever it appears: "
+        "[fact] (evidence-backed — cite the evidence status), [estimate] "
+        "(a reasoned but uncertain figure or probability), [assumption] "
+        "(an unverified premise the argument needs), or [value] (a value "
+        "judgment, not a factual claim — never let one pass as a fact). "
+        "'What we know' = the strongest evidence-backed findings. 'What we "
+        "consider likely' = weaker or indirect-evidence conclusions. "
+        "'Where experts disagree' = the disagreement map's substance, with "
+        "reasons, not just labels. 'What we don't know' = the critical "
+        "gaps and uncertainties, distinguishing known-unknowns from mere "
+        "assumptions. 'What could be done' lists the real alternatives "
+        "(including a do-nothing baseline where relevant) and must NOT "
+        "crown a single scenario as the answer. 'What each option costs' "
+        "states trade-offs, harms, risks and who wins/loses per "
+        "alternative — never hide a trade-off behind neutral language. "
+        "'What research could resolve' names what new data or study would "
+        "most change the decision. 'What people must decide' names the "
+        "value choices and political decisions this needs — these are not "
+        "failures to resolve, they are the honest answer. Add any section "
+        "your ## Directives require.")
     brief_inputs = scen_en_md + "\n\n" + synthesis_text
     if disc:
         brief_instr += (
-            " After Recommendations, add a section "
-            f"'{RESPONSES_HEADER['en']}' answering EVERY argument cluster "
+            f" In '{RESPONSES_HEADER['en']}', answer EVERY argument cluster "
             "from the ledger by id (one bullet per cluster: '- A<i> "
             "(<short restatement>): <type> — <one-line reason>'). <type> "
             "MUST be exactly one of these 7 tokens, unchanged in every "
@@ -777,7 +811,12 @@ def run_round(n):
             "not change the decision). Do NOT force every cluster into "
             "artificial consensus — value_conflict and irreducible_tradeoff "
             "are legitimate final answers, not failures. An argument "
-            "answered by no one is a defect (response obligation).")
+            "answered by no one is a defect (response obligation). In "
+            f"'{BRIEF_HEADERS_EN[9]}', summarise the ledger's Attention "
+            "sinks (gumicsontok) section: which debates draw attention "
+            "without being decision-relevant, and why — so readers can "
+            "tell which arguments move the decision from which mostly "
+            "consume attention.")
         brief_inputs += ("\n\n=== ARGUMENT LEDGER (public arguments that "
                          "MUST each be answered) ===\n" + disc["ledger_en"])
     brief_en, _ = step.run(
@@ -795,7 +834,10 @@ def run_round(n):
         "Translate this policy brief into Hungarian. Use EXACTLY "
         "these section headers in place of the English ones: "
         + ", ".join(f"'{h}'" for h in BRIEF_HEADERS_HU)
-        + ". Keep bullet counts identical. Use the glossary strictly.")
+        + ". Keep bullet counts identical. Use the glossary strictly. Keep "
+        f"every claim-kind tag ({', '.join(CLAIM_TAGS)}) unchanged, in "
+        "English, exactly like the A<i> ids — translate only the "
+        "surrounding prose.")
     if disc:
         brief_hu_instr += (f" Translate '{RESPONSES_HEADER['en']}' as "
                            f"'{RESPONSES_HEADER['hu']}'; keep every A<i> id "

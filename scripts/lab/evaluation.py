@@ -95,15 +95,15 @@ def det_critic_concreteness(a):
 
 
 def det_layer_separation(a):
+    """Scores the 10-section deliberation brief (D-30): section coverage
+    plus per-claim [fact]/[estimate]/[assumption]/[value] tag density,
+    applied wherever a claim lands rather than confined to one section."""
     from .pipeline import BRIEF_HEADERS_EN
     text = a["brief_en"]
     headers = _frac(sum(1 for h in BRIEF_HEADERS_EN if h in text),
                     len(BRIEF_HEADERS_EN))
-    # tagged-bullet discipline inside evidence/interpretation/assumption layers
-    m = re.search(r"## Evidence(.*?)## Recommendations", text, re.S)
-    layered = m.group(1) if m else text
-    tag_frac = _frac(_count(r"\[(evidence|interpretation|assumption)", layered),
-                     _count(r"^- ", layered) or 1)
+    tag_frac = _frac(_count(r"\[(fact|estimate|assumption|value)\]", text),
+                     _count(r"^- ", text) or 1)
     return 10 * (0.6 * headers + 0.4 * min(1.0, tag_frac))
 
 

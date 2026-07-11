@@ -5,7 +5,14 @@ Type: synthesis
 Provider-role: generator
 
 ## Role
-Write the policy brief with strictly separated layers: Evidence / Interpretation / Assumptions / Recommendations / Open questions.
+Write the deliberation brief in its 10 required sections (D-30): what we
+know, what we consider likely, where experts disagree, what we don't know,
+what could be done, what each option costs, what research could resolve,
+what people must decide, what to verify with real stakeholders, and where
+the red herrings are. Tag every substantive claim [fact]/[estimate]/
+[assumption]/[value] wherever it appears — this replaces the old
+Evidence/Interpretation/Assumptions/Recommendations/Open-questions page
+split; the tagging discipline moves to a per-claim basis instead.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric
@@ -25,7 +32,7 @@ scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / bri
 - Follow every line in the ## Directives section strictly.
 
 ## Evidence discipline
-Carry tags through verbatim; assumptions stay labelled [assumption]; recommendations never masquerade as evidence.
+Carry tags through verbatim; every claim carries a kind tag ([fact]/[estimate]/[assumption]/[value]) — a value judgment never masquerades as a fact.
 
 ## Uncertainty discipline
 Uncertainties survive synthesis; a synthesis with fewer uncertainties than its inputs is broken.
@@ -42,7 +49,7 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 5-section brief)
+(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief)
 ```
 
 ## Directives

@@ -59,7 +59,7 @@ SYNTHESIS = {
     "discourse_mediator": "Aggregate the discourse voices into an argument map (Habermas-Machine style): cluster arguments with stable ids (A1..An), record who raises each, classify fact vs value claims — NEVER count heads, never drop a minority argument.",
     "scenario_builder": "Build the policy scenarios (S1..S4) with every required field, from the expert record — candidate framings first, then select.",
     "translator": "Produce the Hungarian versions of all policy deliverables using docs/glossary.md; mirror structure and scenario ids exactly.",
-    "final_brief_writer": "Write the policy brief with strictly separated layers: Evidence / Interpretation / Assumptions / Recommendations / Open questions.",
+    "final_brief_writer": "Write the deliberation brief in its 10 required sections (D-30): what we know, what we consider likely, where experts disagree, what we don't know, what could be done, what each option costs, what research could resolve, what people must decide, what to verify with real stakeholders, and where the red herrings are — with every claim tagged [fact]/[estimate]/[assumption]/[value].",
     "executive_summary_writer": "Write a one-page executive summary that preserves the central disagreement instead of resolving it.",
 }
 
@@ -145,7 +145,7 @@ TYPE_SELFCRIT = {
 TYPE_TEMPLATE = {
     "expert": "# Expert analysis: <name>\\n## Findings (evidence)\\n- <claim> [evidence: <status> — <source>]\\n## Interpretation\\n## Assumptions\\n- <assumption> [assumption]\\n## Position\\n## Uncertainties\\n- <unknown>",
     "critic": "# Critique: <name>\\n## S<n>.<field>\\nObjection: <concrete flaw>",
-    "synthesis": "(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 5-section brief; discourse_mediator returns the argument-map JSON)",
+    "synthesis": "(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief; discourse_mediator returns the argument-map JSON)",
     "meta": "# Meta-critique — round <n>\\n## Agent performance\\n## Workflow\\n## Critique quality\\n## Gaming judgment (explicit)\\n## Translation consistency",
     "discourse": "(JSON — the exact schema is given in the task instructions: one reaction per scenario with stance / label / source-or-basis / interest / public_good_frame / argument / condition_to_change)",
 }

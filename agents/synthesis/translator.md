@@ -22,10 +22,11 @@ scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / bri
 - Never force consensus: disagreement is signal, not noise to remove.
 - Preserve every evidence tag from the inputs; never upgrade an evidence status.
 - Keep scenario ids (S1..S4) stable and identical across languages.
+- Keep every stable identifier unchanged across languages — scenario ids (S1..S4), argument cluster ids (A1..An), response-type tokens (evidence_answerable/policy_design_fixable/communication_fixable/value_conflict/irreducible_tradeoff/needs_more_info/not_decision_relevant), and claim-kind tags (fact/estimate/assumption/value); translate only the prose around them.
 - Follow every line in the ## Directives section strictly.
 
 ## Evidence discipline
-Carry tags through verbatim; assumptions stay labelled [assumption]; recommendations never masquerade as evidence.
+Carry tags through verbatim; every claim carries a kind tag ([fact]/[estimate]/[assumption]/[value]) — a value judgment never masquerades as a fact.
 
 ## Uncertainty discipline
 Uncertainties survive synthesis; a synthesis with fewer uncertainties than its inputs is broken.
@@ -42,7 +43,7 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 5-section brief)
+(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief)
 ```
 ## Glossary use
 Read the term table in docs/glossary.md before translating. Every EN term appearing in the source MUST be rendered with its listed HU equivalent (and vice versa for back-translation checks). If a needed term is missing from the glossary, add a proposal to the round's improvement_plan notes rather than improvising silently; the translation_checker will flag undocumented terminology.

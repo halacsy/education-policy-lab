@@ -9,9 +9,10 @@ import re
 
 
 def check_no_single_answer(brief_en):
-    """The brief must not crown one scenario as THE answer."""
-    m = re.search(r"## Recommendations(.*?)(\n## |\Z)", brief_en, re.S)
-    body = m.group(1).lower() if m else brief_en.lower()
+    """The brief must not crown one scenario as THE answer. Checked across
+    the whole brief (D-30 dropped the dedicated 'Recommendations' section —
+    'What could be done' lists alternatives, it does not pick one)."""
+    body = brief_en.lower()
     bad = re.search(r"(the government should (adopt|choose|implement) s\d\b|"
                     r"scenario s\d is the (best|right|correct) (choice|answer)|"
                     r"we recommend (adopting |choosing )?s\d\b(?! and))", body)

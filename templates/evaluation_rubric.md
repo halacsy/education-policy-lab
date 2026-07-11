@@ -9,9 +9,9 @@ divergence flagging, verbosity caps).
 | Dimension | Method | What scores |
 |-----------|--------|-------------|
 | scenario_completeness | deterministic | every scenario has all 10 required fields, each substantive (not a stub); implementation steps have actor+timeline |
-| evidence_discipline | deterministic + judge | share of important claims carrying an evidence-status tag; strict separation of evidence / interpretation / assumption / recommendation; no confidence invented |
+| evidence_discipline | deterministic + judge | share of important claims carrying an evidence-status tag; every claim tagged by kind ([fact]/[estimate]/[assumption]/[value], D-30) — a value judgment never passes as a fact; no confidence invented |
 | critic_concreteness | deterministic + judge | each objection names a specific scenario id AND field; states the flaw; (higher levels) proposes a fix and a severity |
-| layer_separation | deterministic | brief separates evidence / interpretation / assumptions / recommendations / open questions into distinct sections |
+| layer_separation | deterministic | brief has all 10 deliberation sections (D-30: what we know / consider likely / where experts disagree / don't know / could be done / each option's cost / research agenda / people must decide / verify with stakeholders / red herrings) and tags claims by kind throughout |
 | meta_system_eval | deterministic + judge | meta_critique evaluates the agent SYSTEM (agent/workflow failures, removal candidates, gaming judgment), not just the policy |
 | disagreement_preservation | deterministic + judge | disagreement map exists and is populated; minority positions appear in synthesis/brief with rationale; no forced consensus language |
 | uncertainty_explicitness | deterministic | uncertainties enumerated per scenario; confidence levels present; "what would reduce this uncertainty" present at higher levels |
