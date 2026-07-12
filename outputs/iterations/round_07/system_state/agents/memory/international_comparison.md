@@ -4,6 +4,3 @@ Deterministic distillation from previous rounds (lab/memory.py); fed back into t
 
 ## round 06
 - The `international_comparison` and `hungarian_education_system` experts partially overlap in findings; if neither uniquely raises a dimension across two rounds, one becomes a removal candidate (insufficient evidence yet — tracking).
-
-## round 07
-- The `international_comparison` and `hungarian_education_system` experts partially overlap in findings; if neither uniquely raises a dimension across two rounds, one becomes a removal candidate (insufficient evidence yet — tracking).
