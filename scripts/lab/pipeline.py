@@ -454,7 +454,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                  inputs=scen_en_md),
             validate=valid_voice, out_path=ddir / "voices" / f"{name}.json",
             postprocess=parse_json_block, loader=read_json,
-            writer=lambda p, o: write_json(p, o), max_tokens=4000)
+            writer=lambda p, o: write_json(p, o), max_tokens=6000)
         return name, obj
 
     voices = {}
@@ -488,8 +488,11 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                  "participants need flagged, not hidden. "
                  "Return ONLY a JSON object with this exact schema:\n"
                  + ARGMAP_SCHEMA_HINT +
-                 "\nRules: stable sequential ids A1..An; aim for 8-24 "
-                 "clusters — MERGE near-duplicate arguments across voices "
+                 "\nRules: stable sequential ids A1..An; aim for 8-16 "
+                 "clusters (each now carries a much richer per-cluster "
+                 "breakdown than before, so favour fewer, well-decomposed "
+                 "clusters over many thin ones) — MERGE near-duplicate "
+                 "arguments across voices "
                  "and scenarios into one canonical claim instead of "
                  "enumerating variants; every claim in canonical "
                  "one-sentence form; classify fact vs value vs mixed; "
@@ -499,7 +502,11 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
         validate=lambda o: valid_argmap(o, voice_names),
         out_path=ddir / "argument_map.json", postprocess=parse_json_block,
         loader=read_json, writer=lambda p, o: write_json(p, o),
-        max_tokens=6000)
+        # D-30 added 8 fields/cluster (interest/value/fear/affected/
+        # assumption/empirical_uncertainty/decision_relevance/attention) —
+        # the schema is much larger than the original kind/side/claim/
+        # raised_by, hence the higher budget than the pre-D-30 6000.
+        max_tokens=16000)
     clusters = arg_map["clusters"]
     cluster_ids = [c["id"] for c in clusters]
     factual = [c["id"] for c in clusters if c["kind"] in ("fact", "mixed")]
@@ -528,7 +535,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
             1 for cid in factual if re.search(
                 rf"^[\s\-\*]*{cid}\**\s*:.*(\[evidence:|not registry-backed)",
                 t, re.M)) >= max(1, int(0.9 * len(factual))),
-        out_path=ddir / "argument_grades.md", role="judge", max_tokens=4000)
+        out_path=ddir / "argument_grades.md", role="judge", max_tokens=6000)
     grades = LG.grade_lines(grades_text)
 
     responses = {name: None for name in voice_names}
@@ -555,7 +562,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                 validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
                 out_path=ddir / "responses" / f"{name}.json",
                 postprocess=parse_json_block, loader=read_json,
-                writer=lambda p, o: write_json(p, o), max_tokens=2000)
+                writer=lambda p, o: write_json(p, o), max_tokens=3000)
             return name, obj
 
         with ThreadPoolExecutor(max_workers=4) as ex:
@@ -574,16 +581,22 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                  f"these headings: '# Érv-főkönyv — {n}. kör', "
                  "'## Álláspont-mátrix', '## Érvklaszterek', "
                  "'## Reciprocitás-kör' (only if present in the source), "
-                 "'## Feltétel-regiszter'. Keep every A<i> id and every "
-                 "voice name unchanged. Use the glossary strictly.\n\n"
-                 "GLOSSARY:\n" + glossary),
+                 "'## Feltétel-regiszter', '## Gumicsontok'. Keep every A<i> "
+                 "id, every voice name, and every interest/value/fear/"
+                 "affected/assumption/empirical-uncertainty/relevance line "
+                 "per cluster (translate the prose, keep the structure). "
+                 "Use the glossary strictly.\n\nGLOSSARY:\n" + glossary),
              inputs=ledger_en),
         validate=lambda t: ("## Álláspont-mátrix" in t
                             and "## Érvklaszterek" in t
                             and "## Feltétel-regiszter" in t
+                            and "## Gumicsontok" in t
                             and len(re.findall(r"\*\*A\d+\*\*", t)) >= 6
                             and t.strip() != ledger_en.strip()),
-        out_path=rd / "argument_ledger.hu.md", max_tokens=8000)
+        # D-30 clusters carry ~5x the text of the pre-D-30 ledger
+        # (per-cluster decomposition + gumicsont section); the pre-D-30
+        # budget of 8000 was already tight before that content existed.
+        out_path=rd / "argument_ledger.hu.md", max_tokens=16000)
 
     stances = [r["stance"] for v in voices.values() for r in v["reactions"]]
     labels = [r["label"] for v in voices.values() for r in v["reactions"]]
@@ -828,7 +841,10 @@ def run_round(n):
                                 t, "en", disc["cluster_ids"])
                                 and response_types_valid(
                                     t, disc["cluster_ids"])))),
-        out_path=rd / "brief.en.md", max_tokens=6000)
+        # D-30 asks for 10 sections + a typed response per argument cluster
+        # in one shot — a materially bigger deliverable than the pre-D-30
+        # 5-section brief, hence the higher budget than the old 6000.
+        out_path=rd / "brief.en.md", max_tokens=12000)
 
     brief_hu_instr = (
         "Translate this policy brief into Hungarian. Use EXACTLY "
@@ -858,7 +874,7 @@ def run_round(n):
                                 t, "hu", disc["cluster_ids"])
                                 and response_types_valid(
                                     t, disc["cluster_ids"])))),
-        out_path=rd / "brief.hu.md", max_tokens=6000)
+        out_path=rd / "brief.hu.md", max_tokens=12000)
 
     # 6. critics (parallel) + translation checker
     registry_digest = "\n".join(
