@@ -1,6 +1,6 @@
 # Agent: meta_critic
 
-Version: 2
+Version: 1
 Type: meta
 Provider-role: judge
 
@@ -52,4 +52,3 @@ Attribution of score deltas is uncertain with one change per round at n=1; say s
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-07] DIRECTIVE:meta_quant — Quantify: cite per-dimension scores versus the previous round and name the agent(s) most responsible for the weakest dimension and any removal candidate.
