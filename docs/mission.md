@@ -111,13 +111,18 @@ the product.
 
 L1 has two layers (D-29): the **expert layer** (evidence-graded domain
 analysis) and the **societal-discourse layer**, now framed as a **stakeholder
-stress test** rather than a simulation of real reactions (D-30) — archetypes
-and named actors surface the interests, values, fears and likely objections a
-real deliberation will have to answer, each epistemically labelled. The
-discourse layer exists because policy is decided in public, not in a lab: the
-argument ledger records the expected objections to each scenario and why, and
-the brief must answer every argument cluster (response obligation) — but the
-ledger is a preparation for real deliberation, not a replacement for it.
+stress test** rather than a simulation of real reactions (D-30) — generic
+civil-expert archetypes surface the interests, values, fears and likely
+objections a real deliberation will have to answer, each epistemically
+labelled. No voice is named after or claims to speak for a real organisation
+(D-32): some archetypes are informed by real public documents (a reform
+proposal, a union programme, a governing party's statements, a think-tank
+report), cited as a value basis, never as an attributed quote — "a seat for
+the position, a source for the document" (D-24). The discourse layer exists
+because policy is decided in public, not in a lab: the argument ledger
+records the expected objections to each scenario and why, and the brief must
+answer every argument cluster (response obligation) — but the ledger is a
+preparation for real deliberation, not a replacement for it.
 
 ## The core promise
 

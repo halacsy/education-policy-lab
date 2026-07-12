@@ -59,7 +59,7 @@ TYPE_INPUTS = {
     "critic": "scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and docs/glossary.md.",
     "synthesis": "Expert outputs (editor/scenario_builder); EN deliverables + docs/glossary.md (translator); scenarios + synthesis (brief/summary writers); discourse reactions (discourse_mediator).",
     "meta": "The round's artifacts, evaluation.json, attempts_log.jsonl, previous round's scores.",
-    "discourse": "The scenarios (EN markdown) and, for named actors, your documented source base; in the reciprocity pass also the argument map with the strongest counter-arguments.",
+    "discourse": "The scenarios (EN markdown) and, where your archetype is informed by a real public document, that document as basis; in the reciprocity pass also the argument map with the strongest counter-arguments.",
 }
 TYPE_OUTPUTS = {
     "expert": "expert_outputs/<name>.md",

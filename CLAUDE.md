@@ -128,9 +128,13 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
 - #7 distributed contributor runs (SETI@home-style, subscription quota)
 - #9 panel-composition sensitivity mitigations (evidence-weighted sides,
   perspective-expert type — partially addressed by D-29)
-- #12 stakeholder sources: 4 registry facts await human admission; position
-  summaries should be SENT TO THE ORGANISATIONS for review + mirroring
-  permission (contacts in the proposal file); draft emails on request
+- #12 stakeholder sources: 4 registry facts await human admission for the
+  expert/evidence layer; mirroring their PDFs into knowledge/library/ still
+  needs permission (contacts in the proposal file, draft emails on request)
+  — this is now the ONLY open part of #12. The discourse-layer half (voices
+  named after these orgs, needing their pre-publication review) is resolved
+  by D-32 (2026-07-12): the voices were genericized into civil-expert
+  archetypes that cite the documents as a source, not an identity.
 - Follow-up idea (in #13 comments): ingest Facebook/journalist voices to
   forecast civil reactions (depends on #6)
 - D-31 Phase B (deliberation-acceleration refactor, follow-up): evidence

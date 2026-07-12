@@ -13,7 +13,7 @@ dimensions your type is responsible for; your spec (including ## Directives)
 is embedded verbatim in your prompt.
 
 ## Inputs
-The scenarios (EN markdown) and, for named actors, your documented source base; in the reciprocity pass also the argument map with the strongest counter-arguments.
+The scenarios (EN markdown) and, where your archetype is informed by a real public document, that document as basis; in the reciprocity pass also the argument map with the strongest counter-arguments.
 
 ## Outputs
 discourse/voices/<name>.json (reactions), discourse/responses/<name>.json (reciprocity pass)

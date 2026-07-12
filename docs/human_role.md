@@ -15,7 +15,7 @@ where human judgment is required, and how the system asks for it.
 | Confirming translation nuance | Residual translation uncertainty (connotation, register) is flagged, not auto-resolved |
 | Stopping or redirecting the lab | Humans own the research agenda |
 | Adjudicating value-kind argument clusters | The discourse layer marks value claims as value questions; the ledger's "left open" responses are addressed to humans |
-| Approving named-actor position summaries | What the system publicly attributes to a real organisation is reviewed with that organisation before launch (D-29, issue #12) |
+| Reintroducing a real named actor as a voice | The current roster has none (D-32: all archetypes, "a seat for the position, a source for the document"); if a future round ever attributes a position to a real organisation by name, that organisation reviews it before launch (issue #12) |
 | Admitting new voices or experts to the panel | Panel composition shifts the picture; a seat requires a new position, verified by a sensitivity rerun (issue #9/#12) |
 
 ## How the system requests human input
@@ -32,9 +32,9 @@ where human judgment is required, and how the system asks for it.
 ## What humans should inspect each round
 
 The argument ledger deserves the same scrutiny as the scenarios: are the
-value-modeled positions fair to the organisations they model? Is any
-"no position" actually a dodge? Did the brief's responses engage the
-arguments or wave at them?
+value-modeled positions a fair reading of the public documents they cite as
+basis? Is any "no position" actually a dodge? Did the brief's typed
+responses engage the arguments or wave at them?
 
 1. `evaluation.md` — are the scores plausible? Any judge divergence flags?
 2. `meta_critique.md` — is the gaming judgment convincing?

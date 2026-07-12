@@ -1,5 +1,14 @@
 # Proposal: Hungarian stakeholder education programs (4 organisations) as sources for stakeholder/perspective experts
 
+**Scope note (D-32, 2026-07-12):** the discourse layer no longer has voices
+named after these 4 organisations — they were genericized into civil-expert
+archetypes that cite these documents as `basis`, never claim to speak for the
+organisation, and require no pre-publication review by them for that purpose.
+This proposal's copyright/permission question is separate and still open: it
+is about whether these PDFs can be mirrored into `knowledge/library/` as
+citable evidence facts for the expert layer, which still needs the
+permission contacts below regardless of the discourse-layer change.
+
 proposed_by: Claude (owner-directed research, 2026-07-07; 4 parallel research agents)
 date: 2026-07-07
 rationale: The owner wants stakeholder voices in the panel (teacher movements,

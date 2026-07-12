@@ -319,3 +319,36 @@ evidence strength, disagreement, and the unknowns map.
 Each would need its own agent/schema/verify-gate work, matching how D-29 and
 D-30 were each built as dedicated efforts, not squeezed into a round's
 one-change budget. (2026-07-11)
+
+**D-32 — Genericize the 4 named-actor discourse voices (owner decision,
+2026-07-12).**
+Owner observation after reviewing the D-30 branch's first live round: naming
+discourse voices after real organisations (CKP/Tanítanék, PDSZ, the Tisza
+government, Egyensúly Intézet) means the system is really just modelling
+what each would say based on what they've already publicly said — so name
+the voice as a **civil-expert archetype**, not the organisation, and treat
+the organisation's public document as a **source**, not the voice's
+identity. This directly re-applies D-24's already-stated principle ("szék a
+pozíciónak, forrás a dokumentumnak" — a seat for the position, a source for
+the document) to the discourse layer, which had drifted from it. Renamed:
+`ckp_tanitanek` → `oktataspolitikai_reformmozgalom` (grassroots
+reform-movement voice), `pdsz` → `pedagogus_szakszervezeti_hang`
+(teacher-union voice), `tisza_kormany` → `kormanyzati_reformrealizmus`
+(governing-realism voice), `egyensuly_intezet` →
+`fuggetlen_szakpolitikai_kutatomuhely` (independent policy-institute voice).
+Every reaction previously labelled `documented` (with `source`, i.e. a
+literal claim to speak for the named entity) is relabelled `value_modeled`
+(with `basis` citing the same document) — the document still informs the
+archetype's position, but the position is never presented as the
+organisation's own stated view. Effect: (1) removes the misattribution risk
+structurally, not just via disclaimer — there is no name left to
+misattribute; (2) the discourse-layer pre-publication review need in
+issue #12 no longer applies (a *separate* copyright/permission question —
+whether these orgs' PDFs may be mirrored into `knowledge/library/` as
+citable evidence facts — remains open and unaffected, see the scope note in
+`knowledge/proposals/2026-07-07-stakeholder-programs.md`); (3) more
+consistent with D-30's "stress test, not simulation" reframe than a
+disclaimer next to a real org's name ever was. No voice in the current
+roster uses the `documented` epistemic label; it remains a valid schema
+value for a future round that reintroduces a reviewed, permissioned named
+actor (`docs/human_role.md` decision-rights table).

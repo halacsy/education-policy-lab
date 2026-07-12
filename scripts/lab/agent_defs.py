@@ -18,18 +18,23 @@ EXPERTS = {
     "implementation_planning": "Sequencing, teacher-supply constraints, administrative bandwidth, and realistic timelines.",
 }
 
-# Societal-discourse layer (D-29, reframed D-30): this is a STAKEHOLDER STRESS
-# TEST, not a simulation of real reactions. Voices REPRESENT interests and
-# values to surface the objections, fears and interest-conflicts a real
+# Societal-discourse layer (D-29, reframed D-30, D-32): this is a STAKEHOLDER
+# STRESS TEST, not a simulation of real reactions. Voices REPRESENT interests
+# and values to surface the objections, fears and interest-conflicts a real
 # deliberation will have to answer — they do not predict what real people or
 # organisations will think, and they do not give evidence-based expert
-# judgment. Archetypes are defined by the interest they defend
-# (topic-independent); named actors are modelled voices of real organisations
-# and may only carry a position with an epistemic label: documented (source
-# URL) / value-modeled (derived from documented values) / no_position.
-# Unlabelled attribution is a validation failure. Every output must read as
-# "this is a modelled concern to verify with real stakeholders," never as
-# "this is what they think."
+# judgment. Every voice is a generic archetype (topic-independent); NONE is
+# named after or claims to speak for a real organisation (D-32: "szék a
+# pozíciónak, forrás a dokumentumnak" — a seat for the position, a source for
+# the document). Some archetypes are informed by real public documents
+# (a reform proposal, a union programme, a governing party's statements, a
+# think-tank report) cited as `basis`, but every such position is labelled
+# value_modeled, never documented — documented (source URL, i.e. a literal
+# claim to speak for a named real entity) is reserved for a future round
+# that reintroduces a reviewed, permissioned named actor, and is not used by
+# any voice currently in the roster. Unlabelled attribution is a validation
+# failure. Every output must read as "this is a modelled concern to verify
+# with real stakeholders," never as "this is what they think."
 DISCOURSE = {
     "pedagogus_erdekvedo": "Archetype: the teacher-interest voice — workload, professional autonomy, pay, staffing feasibility of any reform.",
     "kisgyerekes_szuloi": "Archetype: the parent-of-young-children voice — child wellbeing, predictability, school choice, safety, commuting.",
@@ -37,10 +42,10 @@ DISCOURSE = {
     "konzervativ_ertekvedo": "Archetype: the conservative value voice — parental rights, tradition, merit and talent development, subsidiarity.",
     "digitalisgazdasagi": "Archetype: the digital-economy / labour-market voice — what employers and the tech sector need from schools.",
     "egyhazi_fenntartoi": "Archetype: the church-maintainer voice — institutional autonomy, maintainer plurality, the interests of non-state school networks.",
-    "ckp_tanitanek": "Named actor: modelled voice of the CKP / Tanítanék movement. Documented base: Kockás könyv (2016), Tanítanék javaslatcsomag (2026). Attribute ONLY sourced positions as theirs; label everything else value-modeled or no_position.",
-    "pdsz": "Named actor: modelled voice of the PDSZ teachers' union. Documented base: PDSZ Program 2024, 2026 statements (keep 6/8 tracks + reduce segregation + admission reform). Attribute ONLY sourced positions; label everything else.",
-    "tisza_kormany": "Named actor: modelled voice of the governing Tisza party / ministry. Documented base: 2026 program + minister Lannert's public statements (problem named, no structural commitment, admission review + consultation). Attribute ONLY sourced positions; label everything else.",
-    "egyensuly_intezet": "Named actor: modelled voice of the Egyensúly Intézet think tank. Documented base: 'Hogyan legyünk okos nemzet?' (2021, unified 8-year primary, no selective entry). Attribute ONLY sourced positions; label everything else.",
+    "oktataspolitikai_reformmozgalom": "Archetype: the grassroots education-reform-movement voice — child-centred comprehensive schooling, teacher workload/autonomy. Informed by (not attributed to) a documented reform proposal (Kockás könyv, 2016) and a 2026 workload/autonomy package; label everything value_modeled with that basis, never documented — this archetype does not speak for any named organisation.",
+    "pedagogus_szakszervezeti_hang": "Archetype: the organised-labour teacher-union voice — wages, workload, strike rights, structure only via professional reconsideration. Informed by (not attributed to) a documented 2024 union programme and 2026 statements; label everything value_modeled with that basis, never documented — this archetype does not speak for any named organisation.",
+    "kormanyzati_reformrealizmus": "Archetype: the governing-realism voice — a governing majority balancing reform ambition against political durability and consultation. Informed by (not attributed to) documented governing-party programme statements; label everything value_modeled with that basis, never documented — this archetype does not speak for any named government or party.",
+    "fuggetlen_szakpolitikai_kutatomuhely": "Archetype: the independent policy-research-institute voice — evidence-driven, willing to follow uncomfortable conclusions. Informed by (not attributed to) a documented 2021 policy proposal; label everything value_modeled with that basis, never documented — this archetype does not speak for any named institute.",
 }
 
 CRITICS = {
