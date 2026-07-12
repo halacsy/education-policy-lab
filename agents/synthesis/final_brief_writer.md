@@ -1,6 +1,6 @@
 # Agent: final_brief_writer
 
-Version: 2
+Version: 3
 Type: synthesis
 Provider-role: generator
 
@@ -55,3 +55,4 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
 - [round-04] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.
+- [round-07] DIRECTIVE:layer_tighten — Every substantive claim across the brief's 10 sections carries a claim-kind tag ([fact]/[estimate]/[assumption]/[value], unchanged in every language); a substantive claim without one is a defect.

@@ -74,10 +74,12 @@ CATALOG = [
          expected_delta=0.5),
     dict(id="layer_tighten", dimension="layer_separation",
          kind="directive", targets=["final_brief_writer", "translator"],
-         text=("Every bullet in Evidence/Interpretation/Assumptions carries "
-               "its status tag inline; a bullet without a tag is a defect."),
-         checks={"brief:en": ["[interpretation]", "[assumption]"],
-                 "brief:hu": ["[értelmezés]", "[feltevés]"]},
+         text=("Every substantive claim across the brief's 10 sections "
+               "carries a claim-kind tag ([fact]/[estimate]/[assumption]/"
+               "[value], unchanged in every language); a substantive claim "
+               "without one is a defect."),
+         checks={"brief:en": ["[estimate]", "[assumption]"],
+                 "brief:hu": ["[estimate]", "[assumption]"]},
          expected_delta=0.3),
     dict(id="meta_quant", dimension="meta_system_eval",
          kind="directive", targets=["meta_critic"],
