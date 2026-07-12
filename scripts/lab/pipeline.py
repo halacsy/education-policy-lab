@@ -12,6 +12,7 @@ import hashlib
 import json
 import re
 import shutil
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 from . import agent_defs as D
@@ -352,13 +353,16 @@ class Step:
     """One generation step with validation, one corrective retry, a
     deterministic mock fallback, resume-from-disk, and a step journal."""
 
-    def __init__(self, rd, resume):
+    def __init__(self, rd, resume, round_n=None):
         self.rd = rd
         self.resume = resume
+        self.round_n = round_n
         self.fallbacks = []
         self.resumed = []
         self.journal_path = rd / "steps.jsonl"
         self._prior = {}
+        self._t0 = time.time()
+        self._count = 0
         if resume and self.journal_path.exists():
             for line in self.journal_path.read_text(encoding="utf-8").splitlines():
                 if line.strip():
@@ -370,6 +374,11 @@ class Step:
             f.write(json.dumps({"step": name, "backend": backend}) + "\n")
         if backend == "mock-fallback":
             self.fallbacks.append(name)
+        self._count += 1
+        elapsed = time.time() - self._t0
+        rlabel = f"round {self.round_n:02d}" if self.round_n else "round"
+        print(f"[{rlabel}] {self._count:>3}. {name:<32} {backend:<20} "
+             f"(+{elapsed:6.0f}s)", flush=True)
 
     def run(self, name, prompt_kwargs, validate, out_path=None,
             role="generator", max_tokens=8000, postprocess=lambda t: t,
@@ -630,7 +639,8 @@ def run_round(n):
     if not resume and (rd / "steps.jsonl").exists():
         (rd / "steps.jsonl").unlink()  # stale partial attempt
     snapshot_system_state(rd)
-    step = Step(rd, resume)
+    step = Step(rd, resume, round_n=n)
+    print(f"[round {n:02d}] starting...", flush=True)
     question = cfg["policy_question"]
     write_scen = lambda p, obj: write_json(p, obj)
 
@@ -683,6 +693,8 @@ def run_round(n):
             if cached is not None and validate(cached):
                 write(out_path, cached)
                 reused_prev.append(f"expert:{name}")
+                print(f"[round {n:02d}] {'':>3} {'expert:' + name:<32} "
+                     f"{'cached (unchanged spec)':<20}", flush=True)
                 return name, cached
         text, _ = step.run(
             f"expert:{name}",
