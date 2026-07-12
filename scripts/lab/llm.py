@@ -198,15 +198,21 @@ def _call_cli(provider, model, prompt, max_tokens):
 
 
 def _call_real(provider, model, prompt, max_tokens):
+    """Returns (text, usage). usage is {"input_tokens", "output_tokens"} when
+    the backend reports it (API backends do; CLI/subscription backends
+    don't meter per-call, so usage is None for those)."""
     if _cli_backend(provider):
-        return _call_cli(provider, model, prompt, max_tokens)
+        return _call_cli(provider, model, prompt, max_tokens), None
     if provider == "anthropic":
         resp = _client(provider).messages.create(
             model=model,
             max_tokens=max_tokens,
             messages=[{"role": "user", "content": prompt}],
         )
-        return "".join(b.text for b in resp.content if b.type == "text")
+        text = "".join(b.text for b in resp.content if b.type == "text")
+        usage = dict(input_tokens=resp.usage.input_tokens,
+                     output_tokens=resp.usage.output_tokens)
+        return text, usage
     if provider == "google":
         from google.genai import types
         try:
@@ -218,7 +224,13 @@ def _call_real(provider, model, prompt, max_tokens):
                 temperature=0.2, max_output_tokens=max_tokens)
         resp = _client(provider).models.generate_content(
             model=model, contents=prompt, config=cfg)
-        return resp.text or ""
+        usage = None
+        um = getattr(resp, "usage_metadata", None)
+        if um is not None:
+            usage = dict(
+                input_tokens=getattr(um, "prompt_token_count", None),
+                output_tokens=getattr(um, "candidates_token_count", None))
+        return resp.text or "", usage
     raise ValueError(provider)
 
 
@@ -246,15 +258,18 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
     if provider_available(provider) and model is not None:
         for attempt in range(retries + 1):
             try:
-                text = _throttled(provider,
-                                  lambda: _call_real(provider, model, prompt,
-                                                     max_tokens))
+                text, usage = _throttled(provider,
+                                         lambda: _call_real(provider, model, prompt,
+                                                            max_tokens))
                 if not text.strip():
                     raise RuntimeError("empty response")
                 _failures[(provider, model)] = 0
                 entry["backend"] = provider + (
                     f"({_cli_backend(provider)})" if _cli_backend(provider) else "")
                 entry["ms"] = int((time.time() - t0) * 1000)
+                if usage:
+                    entry["input_tokens"] = usage.get("input_tokens")
+                    entry["output_tokens"] = usage.get("output_tokens")
                 CALL_LOG.append(entry)
                 return text
             except Exception as e:  # noqa: BLE001 — any API error degrades
@@ -296,3 +311,34 @@ def backend_stats():
         key = (e.get("task", "?"), label)
         stats[key] = stats.get(key, 0) + 1
     return {f"{task} [{label}]": n for (task, label), n in sorted(stats.items())}
+
+
+def token_stats():
+    """Input/output token totals per (task, backend) and a grand total —
+    API backends report usage per call; CLI/subscription backends don't
+    meter per call, so their calls are counted but contribute no tokens."""
+    per_key = {}
+    total_in = total_out = 0
+    metered_calls = 0
+    for e in CALL_LOG:
+        if e.get("input_tokens") is None and e.get("output_tokens") is None:
+            continue
+        label = e["backend"] if e["backend"] == "mock" else \
+            f"{e['backend']}:{e.get('model', '?')}"
+        key = (e.get("task", "?"), label)
+        i, o = e.get("input_tokens") or 0, e.get("output_tokens") or 0
+        cur = per_key.setdefault(key, {"input_tokens": 0, "output_tokens": 0})
+        cur["input_tokens"] += i
+        cur["output_tokens"] += o
+        total_in += i
+        total_out += o
+        metered_calls += 1
+    return {
+        "by_task_backend": {f"{task} [{label}]": v
+                            for (task, label), v in sorted(per_key.items())},
+        "total_input_tokens": total_in,
+        "total_output_tokens": total_out,
+        "total_tokens": total_in + total_out,
+        "metered_calls": metered_calls,
+        "unmetered_calls": len(CALL_LOG) - metered_calls,
+    }

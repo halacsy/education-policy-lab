@@ -135,5 +135,6 @@ def write_final(artifacts, history):
     write(FINAL_DIR / "translation_report.md",
           "# Translation report (final)\n\n"
           + read(rd / "critic_outputs" / "translation_checker.md")
-          + "\nBackend note: " + json.dumps(llm.backend_stats(), indent=2) + "\n")
+          + "\nBackend note: " + json.dumps(llm.backend_stats(), indent=2)
+          + "\nToken usage: " + json.dumps(llm.token_stats(), indent=2) + "\n")
     write(FINAL_DIR / "human_questions.md", _human_questions(history))

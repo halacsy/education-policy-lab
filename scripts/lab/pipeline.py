@@ -918,6 +918,7 @@ def run_round(n):
         "reused": reused_prev, "resumed": step.resumed,
         "discourse": disc["metrics"] if disc else None,
         "backends": llm.backend_stats(),
+        "tokens": llm.token_stats(),
     })
 
     return {

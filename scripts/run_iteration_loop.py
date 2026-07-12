@@ -172,6 +172,7 @@ def main():
         f"(total {history[0]['total']}->{history[-1]['total']})")
     print("final outputs written to outputs/final/ and committed")
     print("backend usage:", llm.backend_stats())
+    print("token usage:", llm.token_stats())
 
 
 if __name__ == "__main__":
