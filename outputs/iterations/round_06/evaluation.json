@@ -1,0 +1,119 @@
+{
+  "round": 6,
+  "dimensions": {
+    "scenario_completeness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "evidence_discipline": {
+      "deterministic": 6.349,
+      "llm": {
+        "provider": "google",
+        "trials": [
+          7.0,
+          8.0,
+          8.0
+        ],
+        "mean": 7.667,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 6.744,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "critic_concreteness": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          7.0,
+          7.0,
+          7.0
+        ],
+        "mean": 7.0,
+        "variance": 0.0,
+        "divergence_flagged": true
+      },
+      "score": 10.0,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    },
+    "layer_separation": {
+      "deterministic": 9.102,
+      "score": 9.102,
+      "method": "deterministic"
+    },
+    "meta_system_eval": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          8.0,
+          8.0,
+          9.0
+        ],
+        "mean": 8.333,
+        "variance": 0.2222,
+        "divergence_flagged": true
+      },
+      "score": 10.0,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    },
+    "disagreement_preservation": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "google",
+        "trials": [
+          8.0,
+          8.0,
+          4.93
+        ],
+        "mean": 6.977,
+        "variance": 2.0944,
+        "divergence_flagged": true
+      },
+      "score": 10.0,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    },
+    "uncertainty_explicitness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "translation_fidelity": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "google",
+        "trials": [
+          9.92,
+          9.92,
+          9.92
+        ],
+        "mean": 9.92,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 9.976,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    }
+  },
+  "total": 9.478,
+  "prev_total": 9.265,
+  "delta": 0.213,
+  "generator_provider": "anthropic",
+  "judge_provider": "google",
+  "divergence_flagged": [
+    "critic_concreteness",
+    "disagreement_preservation",
+    "meta_system_eval"
+  ],
+  "step_fallbacks": [
+    "voice:egyhazi_fenntartoi",
+    "voice:tisza_kormany",
+    "grade_arguments",
+    "translate_ledger",
+    "final_brief_writer",
+    "translator_brief",
+    "critic:assumption_checker"
+  ]
+}

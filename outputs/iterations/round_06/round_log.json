@@ -1,0 +1,64 @@
+{
+  "round": 6,
+  "fallbacks": [
+    "voice:egyhazi_fenntartoi",
+    "voice:tisza_kormany",
+    "grade_arguments",
+    "translate_ledger",
+    "final_brief_writer",
+    "translator_brief",
+    "critic:assumption_checker"
+  ],
+  "reused": [
+    "expert:finnish_reform",
+    "expert:hungarian_education_system",
+    "expert:polish_reform",
+    "expert:portuguese_reform",
+    "expert:equity_and_social_mobility",
+    "expert:demography",
+    "expert:school_network_planning",
+    "expert:education_finance",
+    "expert:political_feasibility",
+    "expert:implementation_planning"
+  ],
+  "resumed": [],
+  "discourse": {
+    "voices": 10,
+    "stance_counts": {
+      "support": 5,
+      "oppose": 13,
+      "conditional": 20,
+      "no_position": 2
+    },
+    "label_counts": {
+      "documented": 3,
+      "value_modeled": 35,
+      "no_position": 2
+    },
+    "clusters": 10,
+    "factual_clusters_graded": 6,
+    "reciprocity": {
+      "ran": true,
+      "revised": 12
+    }
+  },
+  "backends": {
+    "argument_map [mock]": 1,
+    "brief [anthropic:claude-opus-4-8]": 4,
+    "build_scenarios [anthropic:claude-opus-4-8]": 1,
+    "build_scenarios [anthropic:claude-sonnet-5]": 1,
+    "critic [google:gemini-2.5-flash-lite]": 10,
+    "discourse_reciprocity [anthropic:claude-haiku-4-5]": 10,
+    "discourse_reciprocity [anthropic:claude-opus-4-8]": 2,
+    "discourse_reciprocity [mock]": 3,
+    "discourse_voice [anthropic:claude-haiku-4-5]": 10,
+    "discourse_voice [anthropic:claude-sonnet-5]": 2,
+    "expert_analysis [anthropic:claude-haiku-4-5]": 2,
+    "grade_arguments [google:gemini-2.5-flash-lite]": 2,
+    "rejected_framings [anthropic:claude-haiku-4-5]": 1,
+    "synthesis [anthropic:claude-opus-4-8]": 1,
+    "synthesis [anthropic:claude-sonnet-5]": 1,
+    "translate_ledger [anthropic:claude-opus-4-8]": 2,
+    "translate_scenarios [anthropic:claude-opus-4-8]": 1
+  }
+}
