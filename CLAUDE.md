@@ -52,8 +52,14 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
   ANTHROPIC_API_KEY, GOOGLE_MODEL pin. Use the repo `.venv` (has google-genai).
 - Backends: default = API keys. `ANTHROPIC_BACKEND=claude-code` → `claude -p`
   on the subscription. `GOOGLE_BACKEND=agy` → Antigravity CLI (subscription).
-  Set `GOOGLE_MODEL=` (empty) to un-pin and let the D-26 ladder work.
-- Role swap: `GENERATOR_PROVIDER=anthropic JUDGE_PROVIDER=google`.
+  `OPENAI_BACKEND=codex` → `codex exec` on the ChatGPT subscription (D-33;
+  third provider, no API key needed — auth is `codex login`'s own stored
+  credentials). Set `GOOGLE_MODEL=` (empty) to un-pin and let the D-26
+  ladder work (openai has no ladder yet — omit `OPENAI_MODEL` to use the
+  account's default model).
+- Role swap: `GENERATOR_PROVIDER=anthropic JUDGE_PROVIDER=google` (or
+  `JUDGE_PROVIDER=openai OPENAI_BACKEND=codex` to judge on Codex instead —
+  useful when Gemini's free-tier daily cap is exhausted).
 - Interrupted runs RESUME (state-hash gate + steps.jsonl); quota limits are
   survivable — relaunch the same command.
 

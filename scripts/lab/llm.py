@@ -18,7 +18,8 @@ import time
 from . import mock_backend
 from .util import ROOT, load_config
 
-KEY_VARS = {"anthropic": "ANTHROPIC_API_KEY", "google": "GOOGLE_API_KEY"}
+KEY_VARS = {"anthropic": "ANTHROPIC_API_KEY", "google": "GOOGLE_API_KEY",
+           "openai": "OPENAI_API_KEY"}
 
 CALL_LOG = []           # {task, agent, role, provider, backend, model, ms}
 _clients = {}
@@ -30,7 +31,7 @@ _MAX_FAILURES = 6
 # Per-provider request spacing: burst-parallel calls trip per-minute quotas
 # (observed with Gemini free-tier keys), so calls to the same provider are
 # serialized with a minimum interval.
-_MIN_INTERVAL = {"google": 6.5, "anthropic": 0.3}
+_MIN_INTERVAL = {"google": 6.5, "anthropic": 0.3, "openai": 0.5}
 _throttle_lock = {p: threading.Lock() for p in _MIN_INTERVAL}
 _last_call = {p: 0.0 for p in _MIN_INTERVAL}
 _RATE_RE = re.compile(r"(429|RESOURCE_EXHAUSTED|rate.?limit|quota|overloaded|"
@@ -66,6 +67,10 @@ load_env()
 MODEL_OVERRIDES = {
     "anthropic": os.environ.get("ANTHROPIC_MODEL"),
     "google": os.environ.get("GOOGLE_MODEL"),
+    # unset (None) by default: no config ladder exists for openai yet (D-33),
+    # so resolve_model() falls through to codex's own configured default
+    # model — set OPENAI_MODEL to pin one explicitly.
+    "openai": os.environ.get("OPENAI_MODEL"),
 }
 
 
@@ -81,8 +86,12 @@ def resolve_model(provider, task=None, dimension=None, escalation=0):
     m = load_config().get("models", {})
     ladder = m.get("ladder", {}).get(provider)
     if not ladder:
+        # openai (D-33) has no configured ladder: "" (falsy, but NOT None —
+        # call_model()'s `model is not None` guard means to distinguish "no
+        # live model available" from "no override needed") means omit -m
+        # and let codex use its account's own default model.
         return {"anthropic": "claude-opus-4-8",
-                "google": "gemini-2.5-flash-lite"}[provider]
+                "google": "gemini-2.5-flash-lite"}.get(provider, "")
     tier = m.get("task_tiers", {}).get(task, len(ladder) - 1)
     if dimension:
         tier = max(tier, m.get("dimension_tier_overrides", {}).get(dimension, 0))
@@ -141,9 +150,11 @@ def _cli_backend(provider):
     """CLI backends (issue #7): subscription/free-tier compute instead of API
     keys. ANTHROPIC_BACKEND=claude-code -> `claude -p` (subscription quota);
     GOOGLE_BACKEND=gemini-cli -> `gemini` (API-key auth);
-    GOOGLE_BACKEND=agy -> Antigravity CLI (Google-account quota)."""
+    GOOGLE_BACKEND=agy -> Antigravity CLI (Google-account quota);
+    OPENAI_BACKEND=codex -> `codex exec` (ChatGPT subscription quota, D-33)."""
     return os.environ.get({"anthropic": "ANTHROPIC_BACKEND",
-                           "google": "GOOGLE_BACKEND"}[provider], "")
+                           "google": "GOOGLE_BACKEND",
+                           "openai": "OPENAI_BACKEND"}[provider], "")
 
 
 # D-26 ladder ids -> Antigravity model names (Gemini only: the agy backend
@@ -158,43 +169,66 @@ AGY_MODEL_MAP = {
 
 def _call_cli(provider, model, prompt, max_tokens):
     import subprocess
-    env = dict(os.environ)
-    if provider == "anthropic":
-        # strip the API key so the CLI bills the subscription, not the key
-        env.pop("ANTHROPIC_API_KEY", None)
-        cmd = ["claude", "-p", "--model", model]
-    elif _cli_backend(provider) == "agy":
-        # Antigravity CLI: prompt must be an argv argument (no stdin mode).
-        # agy is an agent — without the directive below it writes its answer
-        # to a workspace file instead of printing it.
-        agy_model = AGY_MODEL_MAP.get(model, "Gemini 3.5 Flash (Low)")
-        directive = ("IMPORTANT: You are used as a text-generation backend. "
-                     "Print your COMPLETE answer directly as your response "
-                     "text. Do NOT create, write or edit any files. Do NOT "
-                     "use any tools. Do NOT summarize what you did — output "
-                     "only the requested document itself.\n\n")
-        cmd = ["agy", "-p", directive + prompt, "--model", agy_model,
-               "--print-timeout", "9m"]
-    else:
-        # strip API keys so the CLI uses its own configured auth
-        env.pop("GOOGLE_API_KEY", None)
-        env.pop("GEMINI_API_KEY", None)
-        env["GEMINI_CLI_TRUST_WORKSPACE"] = "true"
-        # headless mode reads the prompt from stdin when it is not a TTY;
-        # passing it as the -p argument would hit argv size limits
-        cmd = ["gemini", "-m", model]
-    env["PATH"] = (os.path.expanduser("~/.local/bin") + os.pathsep
-                   + os.path.expanduser("~/.antigravity/antigravity/bin")
-                   + os.pathsep + env.get("PATH", ""))
-    stdin_text = None if cmd[0] == "agy" else prompt
-    # isolated empty cwd: an agentic CLI must not read or write the repo
     import tempfile
+    env = dict(os.environ)
+    output_file = None
+    # isolated empty cwd: an agentic CLI must not read or write the repo
     with tempfile.TemporaryDirectory(prefix="lab-cli-") as tmpdir:
+        if provider == "anthropic":
+            # strip the API key so the CLI bills the subscription, not the key
+            env.pop("ANTHROPIC_API_KEY", None)
+            cmd = ["claude", "-p", "--model", model]
+        elif provider == "openai":
+            # Codex CLI (D-33): ChatGPT-subscription quota. `codex exec` has
+            # no -a/--ask-for-approval of its own (that's an interactive-CLI
+            # flag); -s read-only keeps it a pure text-generation call (no
+            # filesystem writes from model-invoked commands, so nothing ever
+            # needs an approval prompt). -o writes ONLY the agent's final
+            # message, avoiding TUI/log noise in stdout. --skip-git-repo-check:
+            # the isolated tmpdir is deliberately not a git repo.
+            env.pop("OPENAI_API_KEY", None)
+            output_file = os.path.join(tmpdir, "codex_output.txt")
+            directive = ("IMPORTANT: You are used as a text-generation "
+                        "backend. Print your COMPLETE answer directly as "
+                        "your response text. Do NOT explore the filesystem, "
+                        "do NOT run shell commands, do NOT create or edit "
+                        "any files. Do NOT summarize what you did — output "
+                        "only the requested document itself.\n\n")
+            cmd = ["codex", "exec"] + (["-m", model] if model else []) + [
+                "-s", "read-only", "--skip-git-repo-check", "-o", output_file]
+            prompt = directive + prompt
+        elif _cli_backend(provider) == "agy":
+            # Antigravity CLI: prompt must be an argv argument (no stdin mode).
+            # agy is an agent — without the directive below it writes its
+            # answer to a workspace file instead of printing it.
+            agy_model = AGY_MODEL_MAP.get(model, "Gemini 3.5 Flash (Low)")
+            directive = ("IMPORTANT: You are used as a text-generation backend. "
+                        "Print your COMPLETE answer directly as your response "
+                        "text. Do NOT create, write or edit any files. Do NOT "
+                        "use any tools. Do NOT summarize what you did — output "
+                        "only the requested document itself.\n\n")
+            cmd = ["agy", "-p", directive + prompt, "--model", agy_model,
+                  "--print-timeout", "9m"]
+        else:
+            # strip API keys so the CLI uses its own configured auth
+            env.pop("GOOGLE_API_KEY", None)
+            env.pop("GEMINI_API_KEY", None)
+            env["GEMINI_CLI_TRUST_WORKSPACE"] = "true"
+            # headless mode reads the prompt from stdin when it is not a TTY;
+            # passing it as the -p argument would hit argv size limits
+            cmd = ["gemini", "-m", model]
+        env["PATH"] = (os.path.expanduser("~/.local/bin") + os.pathsep
+                       + os.path.expanduser("~/.antigravity/antigravity/bin")
+                       + os.pathsep + env.get("PATH", ""))
+        stdin_text = None if cmd[0] == "agy" else prompt
         r = subprocess.run(cmd, input=stdin_text, capture_output=True,
                            text=True, timeout=600, env=env, cwd=tmpdir)
-    if r.returncode != 0:
-        raise RuntimeError(f"{cmd[0]} CLI failed: {r.stderr.strip()[:300]}")
-    return r.stdout.strip()
+        if r.returncode != 0:
+            raise RuntimeError(f"{cmd[0]} CLI failed: {r.stderr.strip()[:300]}")
+        if output_file is not None:
+            with open(output_file, encoding="utf-8") as f:
+                return f.read().strip()
+        return r.stdout.strip()
 
 
 def _call_real(provider, model, prompt, max_tokens):

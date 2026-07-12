@@ -352,3 +352,29 @@ disclaimer next to a real org's name ever was. No voice in the current
 roster uses the `documented` epistemic label; it remains a valid schema
 value for a future round that reintroduces a reviewed, permissioned named
 actor (`docs/human_role.md` decision-rights table).
+
+**D-33 — Third provider: OpenAI via the Codex CLI (ChatGPT-subscription
+quota), 2026-07-12.**
+Owner has a ChatGPT subscription; the Gemini free-tier's 20 req/day cap on
+a pinned model (`GOOGLE_MODEL=gemini-2.5-flash-lite`) was exhausted mid-day
+by repeated live-run attempts, stalling the judge role entirely. Added
+OpenAI as a third CLI-backed provider option — `OPENAI_BACKEND=codex` runs
+`codex exec` (analogous to `ANTHROPIC_BACKEND=claude-code`'s `claude -p`),
+authenticating via the CLI's own stored ChatGPT login, not an API key.
+Implementation notes (`lab/llm.py`): `codex exec` has no `-a/
+--ask-for-approval` of its own (that's an interactive-CLI-only flag);
+`-s read-only` keeps every call a pure text-generation request (no
+filesystem writes a model-invoked command could make, so nothing needs an
+approval prompt); `-o <file>` captures only the agent's final message,
+avoiding TUI/log noise in stdout; `--skip-git-repo-check` because the
+isolated per-call tmpdir (same isolation policy as every other CLI backend)
+is deliberately not a git repo. No model ladder configured for openai yet
+(D-26's ladder is Anthropic/Google-only) — `resolve_model()` returns `""`
+(omit `-m`, let codex use the account's configured default model), a
+distinct sentinel from `None` (which still means "every ladder rung is
+dead," so cheaply confusing the two would have silently skipped every live
+attempt — and did, until fixed: `resolve_model`'s no-ladder fallback
+originally returned `None` for any unconfigured provider, which
+`call_model()`'s `model is not None` guard reads as "no live model
+available," routing straight to mock without ever calling the CLI). Set
+`OPENAI_MODEL` to pin a specific model once ladder tiers are worth adding.
