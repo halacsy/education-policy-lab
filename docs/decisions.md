@@ -301,7 +301,14 @@ Deferred, with a design sketch so a future round can pick any one up:
 political/legal/economic/cultural conditions, what's missing locally, risk
 of mechanical transfer) and add a `context_transferability_checker` critic
 or evidence-layer pass that separates the generalizable mechanism from the
-context-bound result for every cross-country citation used in a scenario;
+context-bound result for every cross-country citation used in a scenario.
+**DONE** (branch `refactor/deliberation-phase-b`, 2026-07-14): added
+`transferability_en`/`transferability_hu` fields to the four foreign-sourced
+facts (Hanushek-Woessmann, Poland, Portugal, Finland), threaded through
+`build_registry.py`; new critic `context_transferability_checker` checks
+every scenario/synthesis citation of one of those facts against its
+precondition note, fed via the same registry digest experts already see.
+Additive verify.py check + held-out `transferability_engaged` check;
 (2) **Explicit unknowns taxonomy** — a new `unknowns.md` artifact per round
 distinguishing known uncertainties / data gaps / research gaps / local-
 knowledge gaps / implementation unknowns / cost-capacity uncertainty /
