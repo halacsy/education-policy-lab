@@ -376,3 +376,21 @@ def token_stats():
         "metered_calls": metered_calls,
         "unmetered_calls": len(CALL_LOG) - metered_calls,
     }
+
+
+def error_stats():
+    """Captured error messages per (task, final backend) — surfaces WHY a
+    step needed to retry/escalate/fall back, not just that it did (issue
+    #17). Errors accumulate on `entry` across every live attempt inside one
+    call_model() invocation, so they're attributed to whatever backend that
+    invocation ultimately landed on (a live model, or mock)."""
+    out = {}
+    for e in CALL_LOG:
+        errs = e.get("errors")
+        if not errs:
+            continue
+        label = e["backend"] if e["backend"] == "mock" else \
+            f"{e['backend']}:{e.get('model', '?')}"
+        key = f"{e.get('task', '?')} [{label}]"
+        out.setdefault(key, []).extend(errs)
+    return out

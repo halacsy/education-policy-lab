@@ -173,6 +173,7 @@ def main():
     print("final outputs written to outputs/final/ and committed")
     print("backend usage:", llm.backend_stats())
     print("token usage:", llm.token_stats())
+    print("errors seen:", llm.error_stats())
 
 
 if __name__ == "__main__":

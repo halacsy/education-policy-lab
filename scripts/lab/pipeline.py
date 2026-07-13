@@ -412,6 +412,12 @@ class Step:
                     if backend == "mock-fallback":
                         self.fallbacks.append(name)
                     self.resumed.append(name)
+                    self._count += 1
+                    elapsed = time.time() - self._t0
+                    rlabel = f"round {self.round_n:02d}" if self.round_n else "round"
+                    print(f"[{rlabel}] {self._count:>3}. {name:<32} "
+                         f"{'resumed (' + backend + ')':<20} "
+                         f"(+{elapsed:6.0f}s)", flush=True)
                     return result, backend
             except Exception:
                 pass
@@ -985,6 +991,7 @@ def run_round(n):
         "discourse": disc["metrics"] if disc else None,
         "backends": llm.backend_stats(),
         "tokens": llm.token_stats(),
+        "errors": llm.error_stats(),
     })
 
     return {
