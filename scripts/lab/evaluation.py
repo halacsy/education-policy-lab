@@ -102,7 +102,7 @@ def det_layer_separation(a):
     text = a["brief_en"]
     headers = _frac(sum(1 for h in BRIEF_HEADERS_EN if h in text),
                     len(BRIEF_HEADERS_EN))
-    tag_frac = _frac(_count(r"\[(fact|estimate|assumption|value)\]", text),
+    tag_frac = _frac(_count(r"\[(?:fact|estimate|assumption|value)\b[^\]]*\]", text),
                      _count(r"^- ", text) or 1)
     return 10 * (0.6 * headers + 0.4 * min(1.0, tag_frac))
 
