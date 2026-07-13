@@ -238,9 +238,17 @@ def _call_real(provider, model, prompt, max_tokens):
     if _cli_backend(provider):
         return _call_cli(provider, model, prompt, max_tokens), None
     if provider == "anthropic":
+        # Extended thinking (when the model/account defaults it on) counts
+        # against max_tokens — on a long input (e.g. the 10-voice digest)
+        # the model can burn the ENTIRE budget on thinking and hit
+        # stop_reason=max_tokens with zero actual text, silently degrading
+        # every call for this task to mock. Every call here wants a clean,
+        # deterministic, directly-parseable answer (prose or JSON), never
+        # visible chain-of-thought, so thinking is explicitly off.
         resp = _client(provider).messages.create(
             model=model,
             max_tokens=max_tokens,
+            thinking={"type": "disabled"},
             messages=[{"role": "user", "content": prompt}],
         )
         text = "".join(b.text for b in resp.content if b.type == "text")
