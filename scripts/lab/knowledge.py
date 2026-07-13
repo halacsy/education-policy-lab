@@ -715,6 +715,65 @@ EXEC_SUMMARY = dict(
         "visszafordítható kísérleti program (S1 felvételi, S4 kompenzáció) és a bekerülési összetétel adatainak "
         "évenkénti közzététele."))
 
+# ---------------------------------------------------------------------------
+# Unknowns taxonomy + research agenda (D-31 B2/B3) — curated mock pack.
+# ---------------------------------------------------------------------------
+
+UNKNOWNS_MAP = dict(
+    en=(
+        "# Unknowns\n\n"
+        "## Known uncertainties\n"
+        "- Whether the contested peer-effect mechanism behind S2/S3's equity rationale materializes at a magnitude that matters in practice.\n\n"
+        "## Data gaps\n"
+        "- No student-level SES register exists that could be used at application time to build or audit an SES-aware quota.\n\n"
+        "## Research gaps\n"
+        "- No Hungary-specific longitudinal study follows pupils through a selection event to measure the actual peer-effect and labeling impact.\n\n"
+        "## Local-knowledge gaps\n"
+        "- How much of current selective-track demand is driven by genuine academic differentiation versus status-signalling among urban middle-class parents is not measured, only inferred from press/stakeholder analysis.\n\n"
+        "## Implementation unknowns\n"
+        "- Whether church/foundation maintainers would expand selective intake to absorb state-sector caps, and at what magnitude, is asserted but not measured.\n\n"
+        "## Cost-capacity uncertainty\n"
+        "- Retraining and assessment-redesign costs are given as 'medium' or 'high' labels with no bottom-up unit-cost estimate.\n\n"
+        "## Stakeholder-political uncertainty\n"
+        "- Whether cross-party political ownership can survive two electoral cycles, which every structural scenario's durability depends on, is untested.\n\n"
+        "## Value-only questions\n"
+        "- Whether early selection on ability is itself objectionable, or only its unequal access, is a values question no further evidence resolves.\n\n"
+        "## Potential unknown-unknowns\n"
+        "- This analysis has not modeled how families would adapt behaviorally to any reform (e.g. new private tutoring markets, geographic relocation) — adaptive responses this pipeline structurally does not simulate.\n\n"
+        "## Research agenda\n"
+        "- Whether a gaming-resistant SES proxy can be built without a student-level register: resolves via a KSH/Oktatási Hivatal administrative-data-linkage feasibility study — holder: KSH / Oktatási Hivatal — priority: critical\n"
+        "- Actual peer-effect and labeling magnitude around selection events: resolves via a Hungary-specific longitudinal cohort study following pupils through a selection event — holder: Oktatási Hivatal / a university research consortium — priority: critical\n"
+        "- Whether non-state maintainers would expand selective intake to offset state caps: resolves via registry data on maintainer-level admission-policy responses during a pilot — holder: Oktatási Hivatal (maintainer admission registry) — priority: deferrable\n"
+        "- Bottom-up unit costs for retraining and assessment redesign: resolves via a two-district costing pilot with published ranges — holder: Ministry of Education / district (tankerulet) finance offices — priority: deferrable\n"
+    ),
+    hu=(
+        "# Ismeretlenek\n\n"
+        "## Ismert bizonytalanságok\n"
+        "- Hogy a vitatott kortárshatás-mechanizmus, amelyre az S2/S3 méltányossági indoklása épül, a gyakorlatban is számottevő mértékben jelentkezik-e.\n\n"
+        "## Adathiányok\n"
+        "- Nincs olyan tanulói szintű SES-nyilvántartás, amely a jelentkezés pillanatában felhasználható lenne egy SES-alapú kvóta felépítésére vagy ellenőrzésére.\n\n"
+        "## Kutatási hiányok\n"
+        "- Nincs Magyarországra vonatkozó longitudinális vizsgálat, amely a diákokat egy szelekciós eseményen keresztül követné a tényleges kortárshatás és címkézési hatás mérésére.\n\n"
+        "## Helyi ismerethiányok\n"
+        "- Nem mért, csak sajtó- és érdekhordozói elemzésekből következtetett, hogy a jelenlegi szelektív kereslet mekkora része ered valódi tanulmányi differenciálásból, és mekkora a városi középosztálybeli státuszjelzésből.\n\n"
+        "## Megvalósítási ismeretlenek\n"
+        "- Állítás, de nem mérés, hogy az egyházi/alapítványi fenntartók mennyiben bővítenék a szelektív felvételt az állami plafonok ellensúlyozására.\n\n"
+        "## Költség-kapacitás bizonytalanság\n"
+        "- Az átképzési és értékelés-átalakítási költségek 'közepes' vagy 'magas' címkével szerepelnek, alulról építkező egységköltség-becslés nélkül.\n\n"
+        "## Érdekhordozói-politikai bizonytalanság\n"
+        "- Nem tesztelt, hogy a pártokon átívelő politikai tulajdonlás túlél-e két választási ciklust, amitől minden szerkezeti forgatókönyv tartóssága függ.\n\n"
+        "## Kizárólag értékkérdések\n"
+        "- Hogy maga a képesség szerinti korai szelekció kifogásolható-e, vagy csak az ahhoz való egyenlőtlen hozzáférés, olyan értékkérdés, amit további bizonyíték nem dönt el.\n\n"
+        "## Lehetséges ismeretlen ismeretlenek\n"
+        "- Ez az elemzés nem modellezte, hogyan alkalmazkodnának a családok viselkedésben egy esetleges reformhoz (pl. új magánkorrepetálási piacok, lakóhely-változtatás) — ilyen alkalmazkodó válaszokat ez a rendszer szerkezetileg nem szimulál.\n\n"
+        "## Kutatási napirend\n"
+        "- Építhető-e manipulációval szemben ellenálló SES-proxy tanulói szintű nyilvántartás nélkül: eldönthető egy KSH/Oktatási Hivatal adminisztratív adatösszekapcsolási megvalósíthatósági tanulmánnyal — holder: KSH / Oktatási Hivatal — priority: critical\n"
+        "- A tényleges kortárshatás és címkézési hatás mértéke szelekciós események körül: eldönthető egy Magyarországra vonatkozó longitudinális kohorszvizsgálattal, amely a diákokat a szelekciós eseményen át követi — holder: Oktatási Hivatal / egyetemi kutatókonzorcium — priority: critical\n"
+        "- Bővítenék-e a nem állami fenntartók a szelektív felvételt az állami plafonok ellensúlyozására: eldönthető a fenntartói szintű felvételi-politikai válaszokra vonatkozó regiszteradatokkal egy kísérleti program során — holder: Oktatási Hivatal (fenntartói felvételi nyilvántartás) — priority: deferrable\n"
+        "- Az átképzés és értékelés-átalakítás alulról építkező egységköltségei: eldönthető egy kétjárási költségbecslési kísérlettel közzétett tartományokkal — holder: oktatási tárca / tankerületi pénzügyi hivatalok — priority: deferrable\n"
+    ),
+)
+
 HUMAN_QUESTIONS = [
     dict(context="Scenario choice", question="How should equity gains be weighed against risks to high-achiever outcomes and against parental choice? This weighting determines the S3-vs-S4 ranking and is a values question the system must not answer.",
          needed="A stated weighting or a deliberative process to produce one.", blocking=True),

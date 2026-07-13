@@ -16,7 +16,8 @@ sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 from lab import holdout_checks, translation
 from lab.evaluation import DIMENSIONS, LLM_SCORED
 from lab.loadround import load_artifacts
-from lab.pipeline import BRIEF_HEADERS_EN, BRIEF_HEADERS_HU, CRITIC_HEADING_RE
+from lab.pipeline import (BRIEF_HEADERS_EN, BRIEF_HEADERS_HU,
+                          CRITIC_HEADING_RE, valid_unknowns)
 from lab.util import FINAL_DIR, ITER_DIR, ROOT, load_config, read, read_json
 
 FAILURES = []
@@ -139,6 +140,15 @@ def main():
     check(8, "final brief has all 10 deliberation sections (know/likely/"
              "disagree/unknown/could/costs/research/decide/verify/gumicsontok)",
           ok8)
+
+    # U — unknowns taxonomy + research agenda (D-31 B2/B3)
+    okU = True
+    for lang, path in (("en", FINAL_DIR / "unknowns.en.md"),
+                       ("hu", FINAL_DIR / "unknowns.hu.md")):
+        if not path.exists() or not valid_unknowns(read(path), lang):
+            okU = False
+    check("U", "unknowns taxonomy (9 categories) + research agenda "
+               "(holder + priority per item) exist in EN and HU", okU)
 
     # 9 — human_questions.md non-empty
     hq = FINAL_DIR / "human_questions.md"

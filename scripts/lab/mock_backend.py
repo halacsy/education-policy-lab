@@ -53,6 +53,8 @@ def compose(prompt, role):
         "translate_voice": lambda: translate_voice(prompt),
         "translate_cluster": lambda: translate_cluster(prompt),
         "translate_reciprocity": lambda: translate_reciprocity(prompt),
+        "unknowns_map": lambda: K.UNKNOWNS_MAP["en"],
+        "translate_unknowns": lambda: K.UNKNOWNS_MAP["hu"],
     }.get(task)
     if fn is None:
         raise ValueError(f"mock backend: unknown task {task!r}")

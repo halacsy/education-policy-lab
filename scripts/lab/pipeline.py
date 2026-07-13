@@ -70,6 +70,26 @@ BRIEF_HEADERS_HU = [
 RESPONSES_HEADER = {"en": BRIEF_HEADERS_EN[8], "hu": BRIEF_HEADERS_HU[8]}
 CLAIM_TAGS = ("fact", "estimate", "assumption", "value")
 
+# -- unknowns taxonomy + research agenda (D-31 B2/B3) -----------------------
+# Richer than the brief's compact "What we don't know" bullet list: every
+# item is placed in exactly one of 9 categories and, where it names a real
+# resolution path, carried into the research agenda with a holder+priority.
+UNKNOWNS_CATEGORIES_EN = [
+    "Known uncertainties", "Data gaps", "Research gaps",
+    "Local-knowledge gaps", "Implementation unknowns",
+    "Cost-capacity uncertainty", "Stakeholder-political uncertainty",
+    "Value-only questions", "Potential unknown-unknowns",
+]
+UNKNOWNS_CATEGORIES_HU = [
+    "Ismert bizonytalanságok", "Adathiányok", "Kutatási hiányok",
+    "Helyi ismerethiányok", "Megvalósítási ismeretlenek",
+    "Költség-kapacitás bizonytalanság", "Érdekhordozói-politikai bizonytalanság",
+    "Kizárólag értékkérdések", "Lehetséges ismeretlen ismeretlenek",
+]
+UNKNOWNS_HEADERS_EN = ["## " + c for c in UNKNOWNS_CATEGORIES_EN]
+UNKNOWNS_HEADERS_HU = ["## " + c for c in UNKNOWNS_CATEGORIES_HU]
+RESEARCH_AGENDA_HEADER = {"en": "## Research agenda", "hu": "## Kutatási napirend"}
+
 # -- societal discourse layer (D-29) -----------------------------------------
 
 STANCES = ("support", "oppose", "conditional", "no_position")
@@ -296,6 +316,28 @@ def response_types_valid(text, cluster_ids, valid_types=RESPONSE_TYPES):
     hits = sum(1 for cid in cluster_ids
                if re.search(rf"\b{cid}\b[^\n]*\b(?:{type_alt})\b", text))
     return hits >= max(6, int(0.8 * len(cluster_ids)))
+
+
+def valid_unknowns(text, lang):
+    """D-31 B2/B3: every one of the 9 taxonomy categories must appear with
+    at least one item, and the research agenda must map items to a holder
+    and a critical|deferrable priority — not just restate the unknown."""
+    headers = UNKNOWNS_HEADERS_EN if lang == "en" else UNKNOWNS_HEADERS_HU
+    if not all(h in text for h in headers):
+        return False
+    m = re.search(r"^- ", text, re.M)
+    if not m:
+        return False
+    ra_header = RESEARCH_AGENDA_HEADER[lang]
+    if ra_header not in text:
+        return False
+    ra_body = text.split(ra_header, 1)[1]
+    ra_items = re.findall(r"^- .+$", ra_body, re.M)
+    tagged = sum(1 for line in ra_items
+                 if re.search(r"holder:", line, re.I)
+                 and re.search(r"priority:\s*(critical|deferrable)", line, re.I))
+    return len(ra_items) >= 4 and tagged >= max(4, int(0.8 * len(ra_items)))
+
 
 CRITIC_HEADING_RE = re.compile(
     r"^## S\d+\.(goal|mechanism|evidence_status|assumptions|expected_benefits|"
@@ -1096,6 +1138,45 @@ def run_round(n):
         for name, text in ex.map(run_critic, D.CRITICS):
             critics[name] = text
 
+    # 6.5 unknowns taxonomy + research agenda (D-31 B2/B3)
+    critics_digest = "\n\n".join(
+        f"----- {name} -----\n{text}" for name, text in critics.items())
+    unknowns_en, _ = step.run(
+        "unknowns_mapper",
+        dict(task="unknowns_map", agent="unknowns_mapper", lang="en", round_n=n,
+             instructions=(
+                 f"Policy question: {question}\n"
+                 "Sort every real unknown raised by the experts, scenarios, "
+                 "synthesis and critics below into EXACTLY these 9 category "
+                 "headings (use every heading even if a category gets only "
+                 "one item; do not invent a 10th category):\n"
+                 + "\n".join(UNKNOWNS_HEADERS_EN) + "\n\n"
+                 "Then write a '" + RESEARCH_AGENDA_HEADER["en"] + "' section: "
+                 "for each unknown worth resolving (not every value-only "
+                 "question needs one), one line:\n"
+                 "- <unknown, in your own words>: resolves via <data/method/"
+                 "pilot design> — holder: <who holds this data/could run "
+                 "this> — priority: critical|deferrable\n"
+                 "At least 4 research-agenda lines, each with both "
+                 "'holder:' and 'priority:' literally present."),
+             inputs=expert_digest + "\n\n" + synthesis_text + "\n\n"
+                    + brief_en + "\n\n" + critics_digest),
+        validate=lambda t: valid_unknowns(t, "en"),
+        out_path=rd / "unknowns.en.md", max_tokens=4000)
+    unknowns_hu, _ = step.run(
+        "unknowns_translator",
+        dict(task="translate_unknowns", agent="translator", lang="hu", round_n=n,
+             instructions=(
+                 "Translate this unknowns taxonomy + research agenda into "
+                 "Hungarian using docs/glossary.md. Keep the structure "
+                 "(9 category headings + the research agenda) and the "
+                 "'holder:'/'priority:' labels exactly as literal English "
+                 "tokens (translate only the prose around them); priority "
+                 "values stay 'critical'/'deferrable'."),
+             inputs=unknowns_en),
+        validate=lambda t: valid_unknowns(t, "hu") and t.strip() != unknowns_en.strip(),
+        out_path=rd / "unknowns.hu.md", max_tokens=4000)
+
     doc_pairs = [(scen_en_md, scen_hu_md), (brief_en, brief_hu)]
     tr_report = translation.check(scen_en, scen_hu, doc_pairs)
     tr_md = translation.render_report(tr_report, n)
@@ -1117,6 +1198,7 @@ def run_round(n):
         "synthesis": synthesis_text, "rejected": rejected,
         "brief_en": brief_en, "brief_hu": brief_hu,
         "critics": critics, "translation": tr_report,
+        "unknowns_en": unknowns_en, "unknowns_hu": unknowns_hu,
         "discourse": disc["metrics"] if disc else None,
         "ledger_conditions": disc["conditions"] if disc else [],
         "fallbacks": step.fallbacks, "_step": step,

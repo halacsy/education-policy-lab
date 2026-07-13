@@ -124,6 +124,8 @@ def write_final(artifacts, history):
     write(FINAL_DIR / "final_brief.hu.md", artifacts["brief_hu"])
     write(FINAL_DIR / "scenarios.en.md", artifacts["scenarios_en_md"])
     write(FINAL_DIR / "scenarios.hu.md", artifacts["scenarios_hu_md"])
+    write(FINAL_DIR / "unknowns.en.md", artifacts["unknowns_en"])
+    write(FINAL_DIR / "unknowns.hu.md", artifacts["unknowns_hu"])
 
     _exec_summaries(artifacts, n)  # writes executive_summary.{en,hu}.md
 

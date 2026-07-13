@@ -67,6 +67,7 @@ SYNTHESIS = {
     "translator": "Produce the Hungarian versions of all policy deliverables using docs/glossary.md; mirror structure and scenario ids exactly.",
     "final_brief_writer": "Write the deliberation brief in its 10 required sections (D-30): what we know, what we consider likely, where experts disagree, what we don't know, what could be done, what each option costs, what research could resolve, what people must decide, what to verify with real stakeholders, and where the red herrings are — with every claim tagged [fact]/[estimate]/[assumption]/[value].",
     "executive_summary_writer": "Write a one-page executive summary that preserves the central disagreement instead of resolving it.",
+    "unknowns_mapper": "Sort every real unknown raised by experts, scenarios, synthesis and critics into the 9-category unknowns taxonomy (D-31 B2), then write a research agenda mapping each resolvable unknown to a data/method/pilot, a holder, and a critical/deferrable priority (D-31 B3).",
 }
 
 META = {
