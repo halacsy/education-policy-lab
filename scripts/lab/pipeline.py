@@ -113,29 +113,40 @@ CLUSTER_BASIC_SCHEMA_HINT = json.dumps({
     }]
 }, indent=2)
 
+CLUSTER_DECOMPOSE_FIELD_GUIDE = (
+    "Field meanings: interest = whose interest is behind this argument; "
+    "value = which value is in tension (e.g. equity vs. excellence); "
+    "fear = the anticipated loss or harm driving it (emotional framing "
+    "here is not a defect, name the real need behind it); affected = "
+    "actor group(s) affected; assumption = the unstated assumption the "
+    "claim rests on; empirical_uncertainty = is the factual part of this "
+    "settled, contested, or unknown, and why; decision_relevance = how "
+    "much would resolving this change the actual decision; "
+    "attention.high_attention = does this argument draw a lot of "
+    "public/media attention; attention.new_information = does it carry "
+    "information not already covered by another cluster; "
+    "attention.changes_evaluation = would resolving it change how a "
+    "scenario is evaluated; attention.already_answered = is this "
+    "substantively answered elsewhere in the record already; "
+    "attention.primarily_rhetorical = is its main role rhetorical/"
+    "identity-signalling rather than substantive.")
+
+# Literal example values, not "true|false — <explanation>" placeholders: a
+# placeholder that mixes an enum/boolean with an inline explanation reliably
+# gets echoed back literally (e.g. "true — teacher shortages are a salient
+# public topic" as the STRING value of a boolean field) instead of producing
+# a bare boolean/enum — every field's semantics live in
+# CLUSTER_DECOMPOSE_FIELD_GUIDE (prose) instead, and the schema stays a
+# clean structural example.
 CLUSTER_DECOMPOSE_SCHEMA_HINT = json.dumps({
-    "interest": "<whose interest is behind this argument>",
-    "value": "<which value is in tension, e.g. equity vs. excellence>",
-    "fear": "<the anticipated loss or harm driving it — emotional framing "
-            "here is not a defect, name the real need behind it>",
-    "affected": ["<actor group affected by this argument>"],
-    "assumption": "<the unstated assumption the claim rests on>",
-    "empirical_uncertainty": "<is the factual part of this settled, "
-                             "contested, or unknown — and why>",
-    "decision_relevance": "high|medium|low — how much would resolving this "
-                          "change the actual decision",
+    "interest": "<one sentence>", "value": "<one sentence>",
+    "fear": "<one sentence>", "affected": ["<actor group>", "..."],
+    "assumption": "<one sentence>", "empirical_uncertainty": "<one sentence>",
+    "decision_relevance": "high",
     "attention": {
-        "high_attention": "true|false — does this argument draw a lot of "
-                          "public/media attention",
-        "new_information": "true|false — does it carry information not "
-                           "already covered by another cluster",
-        "changes_evaluation": "true|false — would resolving it change how "
-                              "a scenario is evaluated",
-        "already_answered": "true|false — is this substantively answered "
-                            "elsewhere in the record already",
-        "primarily_rhetorical": "true|false — is its main role "
-                                "rhetorical/identity-signalling rather "
-                                "than substantive",
+        "high_attention": True, "new_information": False,
+        "changes_evaluation": False, "already_answered": False,
+        "primarily_rhetorical": False,
     },
 }, indent=2)
 
@@ -543,21 +554,21 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                      f"For argument cluster {cid} (scenario "
                      f"{c['scenario']}, {c['kind']}/{c['side']}): "
                      f"\"{c['claim']}\"\ndecompose it for the stakeholder "
-                     "stress test digest: the interest behind it, the "
-                     "value in tension, the fear/anticipated loss driving "
-                     "it (name the real need behind emotional framing, do "
-                     "not dismiss it as a defect), which actor group(s) "
-                     "are affected, the unstated assumption it rests on, "
-                     "whether its factual part is settled/contested/"
-                     "unknown, how much resolving it would actually "
-                     "change the decision (decision_relevance), and "
-                     "screen it for 'gumicsont' status (a debate that "
-                     "draws a lot of attention but would not change the "
-                     "decision if resolved: high attention + low "
-                     "decision_relevance is exactly what real "
-                     "participants need flagged, not hidden). Return "
-                     "ONLY a JSON object with this exact schema:\n"
-                     + CLUSTER_DECOMPOSE_SCHEMA_HINT),
+                     "stress test digest, and screen it for 'gumicsont' "
+                     "status (a debate that draws a lot of attention but "
+                     "would not change the decision if resolved: high "
+                     "attention + low decision_relevance is exactly what "
+                     "real participants need flagged, not hidden).\n"
+                     + CLUSTER_DECOMPOSE_FIELD_GUIDE +
+                     "\nReturn ONLY a JSON object with this exact "
+                     "schema:\n" + CLUSTER_DECOMPOSE_SCHEMA_HINT +
+                     "\nRules: decision_relevance MUST be the bare word "
+                     "high, medium, or low — no explanation in that field. "
+                     "Every attention.* value MUST be a literal JSON "
+                     "boolean (true or false) — no explanation in that "
+                     "field either; put any reasoning in the prose fields "
+                     "(interest/value/fear/assumption/"
+                     "empirical_uncertainty) instead."),
                  inputs=("ORIGINAL VOICE ARGUMENTS RAISING THIS CLUSTER:\n"
                         + "\n".join(context_lines))),
             validate=valid_cluster_decomposition,
