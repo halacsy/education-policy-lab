@@ -2,194 +2,189 @@
 
 ## S1 — Felvételi reform a jelenlegi struktúrán belül
 **Cél**
-A hatosztályos és nyolcosztályos gimnáziumi képzések megtartása, de a belépési szabályok és kvóták újraírása úgy, hogy a szelektív helyekhez való hozzáférés kevésbé erősen torzuljon a magas társadalmi-gazdasági státuszú, városi családok felé, elismerve ugyanakkor, hogy a forgatókönyv saját bizonyítékai és bizonytalanságai megkérdőjelezik, hogy építhető-e működőképes társadalmi-gazdasági státusz-mutató a jelentkezés időpontjában.
+A 6 és 8 osztályos gimnáziumi képzési utak megtartása, de a belépési szabályok és kvóták újraírása úgy, hogy a szelektív helyekhez való hozzáférés kevésbé erősen torzuljon a magas társadalmi-gazdasági státuszú, városi családok javára.
 
 **Mechanizmus**
-- A központi írásbeli felvételi vizsga kevésbé felkészítés-érzékeny értékeléssel való felváltása azt célozza, hogy gyengítse azt az előnyt, amelyet a fizetett vizsgafelkészítés nyújt a magas társadalmi-gazdasági státuszú jelentkezőknek [bizonyíték: vitatott — a pedagógiai hozzáadott érték-vizsgálatok (Horn 2013; Kertesi & Kézdi 2013) azt mutatják, hogy a nyers gimnáziumi előny többnyire szelekciós hatás, de nem igazolják, hogy egy átalakított értékelés ellenállna a betanításnak]
-- A szelektív helyek egy részének fenntartása az alacsony társadalmi-gazdasági státuszú vagy aluljelentkező településről érkező jelentkezők számára mechanikusan növeli képviseletüket a szelektív képzésekben [bizonyíték: mérsékelt — a KSH/Oktatási Hivatal felvételi statisztikái megerősítik a jelenlegi torzulást; az újrasúlyozási hatás számtani, de működőképes társadalmi-gazdasági státusz-proxytól függ]
-- Az alacsony társadalmi-gazdasági státuszú és roma családok felé irányuló, finanszírozott, nyomon követett elérés az aluljelentkező településeken növeli a jelentkezési arányokat, amely nélkül a fenntartott helyek betöltetlenül maradnak [bizonyíték: mérsékelt — 06. köri diskurzuselemzés; a méltányossági szószólók dokumentált igénybevételt követelnek, nem passzív befogadást]
+- A központi írásbeli felvételi vizsga lecserélése egy kevésbé felkészítés-érzékeny, életkorhoz igazított mérésre gyengíti azt az előnyt, amelyet a fizetett vizsgafelkészítés biztosít a magas társadalmi-gazdasági státuszú jelentkezőknek [bizonyíték: mérsékelt — Kertesi & Kézdi 2013; Horn 2013 pedagógiai hozzáadott érték-vizsgálatok azt mutatják, hogy a szelektív előny nagyrészt szelekciós hatás]
+- A regionális méltányossági kvóták, amelyek a szelektív helyek egy részét az alacsonyabb társadalmi-gazdasági státuszú vagy hátrányos helyzetű területekről érkező jelentkezőknek tartják fenn, mechanikusan eltolják a jelentkezők közötti bekerülési összetételt [bizonyíték: mérsékelt — KSH/Oktatási Hivatal felvételi statisztikái megállapítják a jelenlegi torzulást]
+- A nem állami (egyházi/alapítványi) felvételek párhuzamos szabályozása megakadályozza, hogy a szelektív kereslet szabályozatlan fenntartókhoz vándoroljon [bizonyíték: mérsékelt — fenntartói statisztikák; Berényi-Berkovits-Erőss szabad iskolaválasztás-vizsgálatok]
+- A reform újrasúlyozza, hogy a jelentkezők közül kiket választanak ki, de nem változtatja meg, hogy kik jelentkeznek; a vidéki és rossz információellátottságú, alacsony társadalmi-gazdasági státuszú családok továbbra is aluljelentkezhetnek [bizonyíték: gyenge — modelltudás a szülői információs aszimmetriákról]
 
 **Bizonyítékstátusz**
-vegyes — a kezelt méltányossági torzulás erős, de a központi betanítás-ellenállási és társadalmi-gazdasági státusz-proxy mechanizmusok vitatottak/mérsékeltek, és Magyarországon még nem demonstrált eszközöktől függenek.
+mérsékelt — a bekerülési összetételre gyakorolt hatás iránya jól megalapozott a felvételi statisztikák és a pedagógiai hozzáadott érték-vizsgálatok alapján, de a hatás nagysága és a nem állami fenntartók kötelezésének képessége nem megállapított.
 
 **Feltevések**
-- Létezik vagy építhető működőképes társadalmi-gazdasági státusz-mutató a jelentkezés időpontjában [feltevés — közvetlenül vitatott: Magyarországnak nincs a jelentkezésnél használható, tanulói szintű társadalmi-gazdasági státusz-nyilvántartása, és bármely proxy manipulálható a politikai megvalósíthatóság szerint]
-- Az Oktatási Hivatal képes olyan értékelést tervezni, amely érdemben ellenáll a betanításnak [feltevés — az idézett pedagógiai hozzáadott érték-bizonyíték nem igazolja]
-- A nem állami fenntartók (egyházi/alapítványi) hasonló felvételi szabályokat alkalmaznak majd, ahelyett hogy felszívnák a kiszorult szelektív keresletet [feltevés]
-- A standardokat útmutatásként teszik közzé, nem megfelelési mércéként, így a pedagógus-szakszervezetek nem lépnek ki [feltevés]
+- Létezik egy működőképes társadalmi-gazdasági státusz-mutató a jelentkezés időpontjában [feltevés — Magyarországon nincs a jelentkezéskor használható, tanulói szintű adminisztratív társadalmi-gazdasági státusz-nyilvántartás; egy proxit (cím alapú hátrányos helyzet, családi juttatások igénybevétele) fel kellene építeni, és az tökéletlen és kijátszható lenne]
+- A nem állami fenntartók egységes, méltányosság-alapú felvételi szabályok alá vonhatók, legalábbis a támogatás feltételességén keresztül [feltevés]
+- Egy kevésbé felkészíthető mérés ténylegesen felépíthető és validálható a reform időkeretén belül [feltevés]
 
 **Várható előnyök**
-- Az alacsony társadalmi-gazdasági státuszú és vidéki tanulók magasabb képviselete a szelektív belépők között ott, ahol a fenntartott helyek betöltésre kerülnek [bizonyíték: mérsékelt — számtani újrasúlyozás erős felvételi-statisztikai alapon, működőképes proxy feltételével]
-- Csökkentett vizsgafelkészítési fegyverkezési verseny-nyomás a 10 éves gyermekekre annyiban, amennyiben az új értékelés ellenáll a betanításnak [bizonyíték: gyenge — modelltudás; megjegyzendő az ellentmondás a politikai kockázatokkal, ahol a szűkebb/reformált csatornák informális szelekciót vonhatnak maguk után, amely reprodukálja a szétválogatást]
-- Alacsonyabb alkotmányos esélyegyenlőségi kitettség, ha a szelekció kevésbé korrelál a társadalmi-gazdasági státusszal [bizonyíték: mérsékelt — a magyar Alkotmánybíróság gyakorlata; EU egyenlő bánásmódról szóló jog]
+- Kiegyensúlyozottabb bekerülés a szelektív képzési utakba a jelentkezők között [bizonyíték: mérsékelt — a felvételi statisztikák azt mutatják, hogy a jelenlegi torzulás nagy; a hatás iránya mechanikusan következik a kvótákból, a nagyságát és a 2-3 ciklusos ütemezését egyetlen nyilvántartási forrás sem állapítja meg]
+- Csökkent vizsgafelkészítési fegyverkezési nyomás a 10 éves gyermekekre, amennyiben az új mérés ellenáll a felkészítésnek [bizonyíték: gyenge — modelltudás; megjegyzendő az ellentmondás a political_risks-szel, ahol a szűkösebb/reformált csatornák informális szelekciót vonzhatnak]
+- Alacsonyabb alkotmányos/EU egyenlő bánásmódra vonatkozó kitettség, mivel a szelekció megszűnik ilyen erősen korrelálni a társadalmi-gazdasági státusszal/régióval [bizonyíték: gyenge — a magyar Alkotmánybíróság joggyakorlata; EU méltányossági keretrendszerek, nincs Magyarországra specifikus döntés erre a kialakításra]
 
 **Méltányossági hatás**
-A nyereség feltételes, nem automatikus: csak akkor jut a magas képességű, alacsony társadalmi-gazdasági státuszú tanulóknak, ha (a) létezik működőképes társadalmi-gazdasági státusz-mutató a jelentkezésnél és (b) az elérés növeli a jelentkezési arányokat. A forgatókönyv saját feltevései az (a)-t vitatottként jelzik, így a méltányossági nyereség inkább feltételes, mint biztosított.
+A nyereség azoknak a magas képességű, alacsony társadalmi-gazdasági státuszú tanulóknak jut, akik már jelentkeznek, és akiket újrasúlyozva szelektív helyekre sorolnak; ez feltételez egy működő társadalmi-gazdasági státusz-mutatót, amelyet a feltevések megoldatlanként jeleznek. Mivel a mechanizmus csak a jelentkezők közötti szelekciót érinti, azokat az alacsony társadalmi-gazdasági státuszú vidéki családokat, akik soha nem jelentkeznek, nem éri el, így a hátrányos helyzetűeken belüli elosztási nyereség egyenetlen.
 
 **Költségkategóriák**
-- Értékelés-újratervezés, pszichometriai validálás és több éves kísérleti kipróbálás [költség: közepes-magas — maga a leírás több éves pszichometriai fejlesztést igényel, ami a tipikus közepes szint fölé emeli]
-- Finanszírozott elérési kampányok nyomon követett jelentkezési-igénybevétel méréssel [költség: közepes, ismétlődő]
-- A fenntartott helyek kvóta-ellenőrzésének és fellebbezéseinek adminisztrációja [költség: közepes]
+- Egyszeri: a mérés újratervezése, pszichometriai validálás és kipróbálás (közepes — egy valóban kevésbé felkészíthető eszköz többéves pszichometriai fejlesztést igényel, nem alacsony egyszeri költség)
+- Ismétlődő: rutin felvételi adminisztráció (alacsony)
+- Ismétlődő: megfelelőség-ellenőrzési és monitoring mechanizmus a kvótákhoz és a nem állami fenntartókhoz (közepes — a bizonytalanságokban és a political_risks-ben szükségesként jelezve, korábban kihagyva)
 
 **Megvalósítási lépések**
-- Oktatási Hivatal — kevésbé betanítható értékelés tervezése és kipróbálása pszichometriai validálással (ütemezés: 1-3. év)
-- Oktatási Minisztérium — a társadalmi-gazdasági státusz-proxy mutató és a fenntartott hely-kvóta meghatározása, összehasonlító csoporttal kipróbálva (ütemezés: 1-2. év)
-- Helyi oktatási hatóságok — finanszírozott, nyomon követett elérés lebonyolítása az aluljelentkező településeken (ütemezés: 1. évtől, ismétlődő)
-- Minisztérium + fenntartók — az egyházi/alapítványi felvételi szabályok önkéntes összehangolásának egyeztetése (ütemezés: 2-4. év)
-- Független értékelő — az összehasonlító csoportos kísérlet eredményeinek közzététele a következő tanévi besorolás előtt (ütemezés: 3-4. év)
+- Oktatási Hivatal — az új, kevésbé felkészíthető mérés megtervezése és kipróbálása önkéntes iskolai körzetekben, beleértve a pszichometriai validálást (ütemezés: 1-3. év)
+- Jogalkotó/Minisztérium — a regionális méltányossági kvóták és a társadalmi-gazdasági státusz-proxi mutató definíciójának törvénybe iktatása (ütemezés: 2-3. év)
+- Minisztérium — a támogatás-feltételes felvételi szabályok megtárgyalása az egyházi és alapítványi fenntartókkal (ütemezés: 2-4. év)
+- Oktatási Hivatal — a megfelelőség-ellenőrzési mechanizmus felállítása és éves bekerülési összetétel-jelentések közzététele (ütemezés: 3. évtől)
 
 **Politikai kockázatok**
-- A reformált/szűkebb szelekciós csatornák informális szelekciót (interjúk, hírnév) vonhatnak maguk után, amely reprodukálja a társadalmi-gazdasági státusz szerinti szétválogatást [feltevés — valószerű, de a bemenetekben nem bizonyított]
-- A társadalmi-gazdasági státusz-proxy eszközök manipulálhatók; az ellenállás csak akkor enyhül, ha a kísérleti adatok gyenge manipulálást mutatnak, nem ha az elmélet valószínűtlennek állítja [bizonyíték: mérsékelt — politikai megvalósíthatóság]
-- A középosztálybeli szülők a szabályváltozásokat egy mobilitási vagyontárgy leértékeléseként érzékelik és mozgósítanak [bizonyíték: mérsékelt — hazai sajtó és érintett szereplői elemzések]
+- Az elitiskolák és a középosztálybeli szülők ellenállása a szelektív hozzáférés kvóta-alapú hígításával szemben
+- Egyházi/magánfenntartói mentességi igények az egységes felvételi szabályokkal szemben
+- A magánkorrepetálási / vizsgafelkészítő iparág szervezett ellenállása, amelynek üzleti modelljét a kevésbé felkészíthető mérés közvetlenül fenyegeti
+- A reformált/szűkösebb szelekciós csatornák informális szelekciót vonzhatnak (interjúk, hírnév), amely reprodukálja a társadalmi-gazdasági státusz szerinti szétválogatást
 
 **Bizonytalanságok**
-- Építhető és validálható-e ténylegesen betanítás-ellenálló értékelés? [megbízhatóság: alacsony — csökkentené: a vizsgatartalom item-elemzése az alapfokú tanterv alapján; randomizált betanítási vizsgálatok]
-- Létezik-e működőképes, alacsony manipulálhatóságú társadalmi-gazdasági státusz-proxy a jelentkezés időpontjában? [megbízhatóság: alacsony — csökkentené: kísérleti adatok a proxy manipulálásáról; adminisztratív adat-elérhetőség auditja]
-- A nem állami fenntartók önkéntesen összehangolódnak-e, vagy felszívják a kiszorult szelektív keresletet? [megbízhatóság: alacsony — csökkentené: fenntartói nyilvántartási adatok és tárgyalási pozíciós dokumentumok]
-- Az elérés mérhetően növeli-e az alacsony társadalmi-gazdasági státuszú/roma jelentkezési arányokat? [megbízhatóság: alacsony — csökkentené: helyi elérés-értékelési vizsgálatok]
+- Hogy definiálható-e egy működőképes, ki nem játszható társadalmi-gazdasági státusz-mutató a jelentkezés időpontjában [megbízhatóság: alacsony | csökkentené: a jelölt proxik kipróbálása az Oktatási Hivatal nyilvántartásával szemben, a családi juttatások adataival összevetve]
+- Hogy a nem állami fenntartók elfogadják-e a támogatás-feltételes méltányossági kvótákat [megbízhatóság: közepes | csökkentené: felmérések/interjúk az egyházi fenntartói képviselőkkel és minisztériumi tisztviselőkkel]
+- A bekerülési összetétel eltolódásának nagysága és időzítése [megbízhatóság: alacsony | csökkentené: szakaszos értékelés 2-3 felvételi cikluson át, a kísérleti programba épített megfelelőség-ellenőrzési kialakítással]
 
 ## S2 — A 6/8 osztályos belépési helyek fokozatos leépítése
 **Cél**
-Az állami fenntartású hatosztályos és nyolcosztályos belépési helyek számának fokozatos csökkentése egy évtized alatt, minden korosztály nagyobb részét a közös képzésbe terelve 14 éves korig, elismerve ugyanakkor, hogy a korlátozásokat a nem állami fenntartók ellensúlyozhatják.
+Az egyes évfolyamokból 10 és 12 éves korban a szelektív képzési utakba lépők arányának csökkentése a belépési helyek előre bejelentett, többéves pályán történő korlátozásával és csökkentésével, az iskolák teljes megszüntetése nélkül.
 
 **Mechanizmus**
-- A szelektív felvétel korlátozása és zsugorítása több magas teljesítményű tanulót tart a közös képzésben hosszabb ideig, késleltetve a szétválogatást 14 éves kor felé [bizonyíték: mérsékelt — Hanushek & Woessmann 2006 a korábbi szétválogatást nagyobb társadalmi-gazdasági státusz-gradiensekkel köti össze]
-- A kevesebb szelektív hely javíthatja a kortárs-összetételt a városi általános iskolák felső évfolyamain [bizonyíték: vitatott — az aszimmetrikus kortárshatás-mechanizmus a méltányossági bemenetekben gyenge/vitatott jelöléssel szerepel (modelltudás)]
-- A már beiratkozott korosztályok szerzett jogainak megtartása az új felvétel korlátozása mellett kielégíti az átmeneti jogi garanciákat [bizonyíték: erős — az Nkt. elemzése többéves értesítést és átmeneti garanciákat igényel]
+- A 6/8 osztályos belépési helyek csökkenő törvényi felső határa mechanikusan csökkenti az egyes évfolyamok korán szétválogatott arányát [bizonyíték: mérsékelt — a felső határok aritmetikája közvetlen; a KSH/Oktatási Hivatal statisztikái megállapítják a jelenlegi 8-12%-os alapot]
+- A kevesebb szelektív hely több jó teljesítményű tanulót tart az egységes képzési útban, ami javíthatja a kortárs-összetételt a városi általános iskolák felső évfolyamaiban [bizonyíték: vitatott — az aszimmetrikus kortárshatás-állítás gyenge a forrásban (az equity_and_social_mobility gyengének jelöli), és ez ugyanaz a vitatott kapcsolat, amelyre az S3 támaszkodik]
+- Az általános iskolákban indított emelt szintű programok finanszírozása arra irányul, hogy megtartsa az ambiciózus családokat az egységes képzési útban [bizonyíték: gyenge — ez a bizonyíték nélküli megtartási kapcsolat; egyetlen forrás sem mutatja ki a megtartási hatást]
+- A felmenő rendszer garanciái védik a már beiratkozott évfolyamokat, egy évtizedre elosztva a változást [bizonyíték: erős — Nkt. átmeneti garancia-követelmények]
 
 **Bizonyítékstátusz**
-mérsékelt-vitatott — a korábbi-szétválogatás/egyenlőtlenség kapcsolat nemzetközileg erős, de a konkrét kortárs-összetételi haszon és az a feltevés, hogy a korlátozásokat nem ellensúlyozza a nem állami bővülés, vitatott/gyenge.
+mérsékelt — a korán szétválogatott arány mechanikus csökkenése jól megalapozott, de a downstream kortárs-összetétel és család-megtartási előnyök egy vitatott/bizonyíték nélküli kapcsolaton nyugszanak.
 
 **Feltevések**
-- Az állami fenntartású iskolák korlátozásait nem ellensúlyozza a nem állami fenntartók szelektív felvételének bővülése [feltevés — közvetlenül ellentmond ennek a forgatókönyvnek a saját politikai kockázatai és bizonytalanságai]
-- Az Nkt. jogszabályi módosítása megvalósítható a reform-ablakon belül [feltevés]
-- A maradék szelektív helyek nem válnak még inkább társadalmi-gazdasági státusz szerint torzítottá, ahogy szűkülnek [feltevés — lásd equity_impact, amely az ellenkezőjét jelzi közel biztosnak egy S1-típusú szabályváltozás hiányában]
+- Az általános iskolák be tudják fogadni és kihívás elé tudják állítani a jó teljesítményű tanulókat, ha erre finanszírozzák őket [feltevés — az evidence_status ezt bizonyíték nélküli kapcsolatnak nevezi; a várt kortárs-előny ettől függ]
+- Az állami fenntartású iskolákra vonatkozó felső határokat nem ellensúlyozza egyszerűen az, hogy a nem állami fenntartók bővítik a szelektív bekerülést [feltevés]
+- Egy utódkormány nem fagyasztja be vagy fordítja vissza a pályát (lengyel precedens) [feltevés]
 
 **Várható előnyök**
-- Késleltetett szétválogatás minden korosztály növekvő része számára, csökkentve a korai társadalmi-gazdasági státusz alapú elkülönülést [bizonyíték: mérsékelt — Hanushek & Woessmann 2006; Brunello & Checchi 2007]
-- Erősebb kortárs-összetétel a városi általános iskolák felső évfolyamain [bizonyíték: vitatott/gyenge — aszimmetrikus kortárshatás-mechanizmus, modelltudás]
-- Csökkentett vidéki iskolahálózat-kiüresedés, mivel kevesebb magas teljesítményű tanulót szívnak el korán [bizonyíték: mérsékelt — iskolahálózat-tervezés; demográfiai bemenetek]
+- Az egyes évfolyamok folyamatosan csökkenő korai szétválogatási aránya, évente mérhetően a felső határ közvetlen függvényeként [bizonyíték: mérsékelt — ez a mechanikus felső határ-hatás, nem a felső határok szétválogatásra gyakorolt, nyilvántartással mért hatása; egyetlen forrás sem méri specifikusan a felső határok→szétválogatás kapcsolatot]
+- Erősebb kortárs-összetétel a városi általános iskolák felső évfolyamaiban [bizonyíték: vitatott — az aszimmetrikus kortárshatás- és megtartási kapcsolatok downstream következménye, amelyek mindegyike vitatott/gyenge a forrásokban]
+- Az általános iskolák csökkent demográfiai kiürülése, mivel kevesebb jó teljesítményű tanulót vonnak el korán [bizonyíték: mérsékelt — demográfiai és iskolahálózat-tervezési elemzések az évfolyamkoncentrációról]
 
 **Méltányossági hatás**
-Vegyes és belsőleg feszült: a késleltetett szétválogatás csökkentheti a korai elkülönülést, de ahogy a korlátozások szigorodnak, a maradék szelektív helyek még inkább társadalmi-gazdasági státusz szerint torzítottá válnak egy S1-típusú felvételi-szabályváltozás hiányában — ez a maradék-torzulási hatás mechanikus és közel biztos (kevesebb hely, ugyanaz a torzított jelentkezői állomány). A nettó méltányossági nyereség attól függ, hogy a nem állami csatornák felszívják-e a kiszorult keresletet.
+Ahogy a felső határok szigorodnak, a maradék szelektív helyek még inkább társadalmi-gazdasági státusz szerint torzulttá válnak egy S1-típusú felvételi szabály-változtatás hiányában — ez a maradék-torzulás hatás mechanikus és közel biztos (kevesebb hely, azonos kereslet, változatlan szabályok). Az átmeneti évfolyamok kárt szenvedhetnek, mert a benn lévő magasabb társadalmi-gazdasági státuszú családok, több információval és felkészülési erőforrással, először foglalhatják el a zsugorodó helyek körét. A méltányossági nyereség ezért a felvételi reformmal való párosítástól függ.
 
 **Költségkategóriák**
-- Párhuzamos rendszer adminisztrációja, amíg a szerzett jogú korosztályok a korlátozott felvétel mellett futnak [költség: közepes — de megjegyzendő, hogy ez az átmeneti tétel egy teljes évtizeden át fut, így közelebb áll a tartóshoz, mint a rövid távúhoz]
-- Befogadó kapacitás az általános iskolák felső évfolyamain (személyzet, hely) [költség: közepes-magas]
-- Jogalkotási és jogi-átmeneti költségek (értesítési időszakok, garanciák) [költség: közepes]
+- Egyszeri: jogszabály-szövegezés és a felső határ-pálya megtervezése (alacsony)
+- Ismétlődő: emelt szintű programok finanszírozása az általános iskolákban (közepes, képlet-alapú) — az évtized során emelkedő, ahogy a felső határok harapnak (átmeneti felfutás), elkülönülve az alacsonyabb, egyensúlyi szinttől, miután a pálya befejeződik
+- Ismétlődő: párhuzamos rendszer adminisztrációja, amíg a régi szabályok szerint futó, védett évfolyamok a korlátozott bekerülés mellett futnak (közepes, átmeneti)
 
 **Megvalósítási lépések**
-- Országgyűlés — az Nkt. módosítása fokozatos felvételi korlátozások engedélyezésére átmeneti garanciákkal (ütemezés: 1-2. év)
-- Oktatási Minisztérium — csökkenő éves kvóta meghatározása az új 6/8 osztályos helyekre (ütemezés: 2. évtől, az évtizedre ütemezve)
-- Tankerületi központok — a felső évfolyami kapacitás bővítése a befogadó általános iskolákban (ütemezés: 2-6. év)
-- Minisztérium + fenntartók — a korlátozás kiterjesztésének egyeztetése az egyházi/alapítványi szolgáltatókra az ellensúlyozás megelőzésére (ütemezés: 1-3. év)
-- Független értékelő — a magas teljesítményűek megtartásának nyomon követése összehasonlító csoporttal szemben (ütemezés: 3. évtől)
+- Jogalkotó — a felső határ-pálya törvénybe iktatása az Nkt.-ban, felmenő rendszer garanciákkal a beiratkozott tanulók számára (ütemezés: 1. év)
+- Minisztérium — a felső határ kiterjesztése az egyházi és alapítványi fenntartókra külön fenntartói megállapodás tárgyalásán keresztül, mivel egyetlen jogszabály nem kötelezheti őket egységesen (ütemezés: 1-3. év)
+- Klebelsberg Központ — az emelt szintű programok finanszírozásának felfuttatása az általános iskolákban, ahogy a felső határok szigorodnak (ütemezés: 2-10. év)
+- Minisztérium — bebetonozási mechanizmus törvénybe iktatása (pl. többéves előzetes értesítés és minősített többségű/minősített visszavonási követelmény) a lengyel típusú visszafordítás költségének megemelésére (ütemezés: 1-2. év)
 
 **Politikai kockázatok**
-- A középosztálybeli szülők a helyek szűkülését egy mobilitási/biztosítási vagyontárgy fenyegetéseként érzékelik és mozgósítanak [bizonyíték: mérsékelt — hazai sajtó és érintett szereplői elemzések]
-- A nem állami fenntartók bővítik a szelektív felvételt, hogy megszerezzék a kiszorult keresletet, meghiúsítva a korlátozást [bizonyíték: mérsékelt — iskolahálózat-tervezés; jogi és kormányzási elemzés a fenntartói széttagoltságról]
-- Visszafordítási kockázat, ahogy a koalíciók váltakoznak, a lengyel precedens szerint [bizonyíték: mérsékelt — Jakubowski és mtsai. 2016; OECD]
+- Egy utódkormány olcsón befagyaszthatja vagy visszafordíthatja a pályát (lengyel precedens), hacsak nem iktatnak törvénybe bebetonozási mechanizmust
+- A középosztálybeli szülők a zsugorodó helyeket egy mobilitási/biztosítási eszközt fenyegető veszélyként érzékelik és mozgósítanak
+- Az egyházi/alapítványi fenntartók bővítik a szelektív bekerülést a korlátozott állami kereslet felszívására, meghiúsítva a célt
 
 **Bizonytalanságok**
-- Felszívják-e a nem állami fenntartók a korlátozott szelektív keresletet? [megbízhatóság: alacsony — csökkentené: fenntartói nyilvántartási adatok településtípus szerint]
-- Ténylegesen megvalósul-e a kortárs-összetételi haszon az általános iskolákban? [megbízhatóság: közepes — csökkentené: longitudinális kortárshatás-vizsgálatok a szelekciós eseményeket követve]
-- Tartós-e a reform a választási ciklusokon át? [megbízhatóság: közepes — csökkentené: koalíció-stabilitási előrejelzések]
-- Hogyan hat kölcsönösen a szerzett jogok megtartása a méltányossági célokkal az átmenet során? [megbízhatóság: alacsony — csökkentené: a reform-forgatókönyvek jogpolitikai modellezése]
+- Hogy az általános iskolák ténylegesen be tudják-e fogadni és kihívás elé tudják-e állítani a megtartott jó teljesítményű tanulókat [megbízhatóság: alacsony | csökkentené: kipróbált emelt szintű program-értékelés az általános iskolákban, kortárs-összetétel követéssel]
+- Hogy a nem állami fenntartók ellensúlyozzák-e a felső határt [megbízhatóság: közepes | csökkentené: nyilvántartási adatok a szelektív helyekről fenntartó és településtípus szerint]
+- Tartósság egy kormányváltáson át [megbízhatóság: alacsony | csökkentené: összehasonlító közvélemény-kutatás és a bebetonozási mechanizmus hatékonyságának elemzése]
 
 ## S3 — Egységes alapiskola 14 éves korig (strukturális reform)
 **Cél**
-A 6/8 osztályos szelektív belépés eltörlése és az akadémiai szétválogatás 14 éves korra halasztása egy közös, egységes alsó-középfokú szakasz révén, (finn mintára) a pedagógusminőség és a diagnosztikai támogatás beruházásával csomagolva.
+Az iskolák közötti tanulmányi szelekció elhalasztása 14 éves korig a 6/8 osztályos belépés fokozatos kivezetésével, pedagógusminőség- és diagnosztikai támogatási beruházással összekötve.
 
 **Mechanizmus**
-- A szétválogatás 14 éves korra halasztása csökkenti a családi háttér hatását a teljesítményre [bizonyíték: mérsékelt — Pekkarinen, Uusitalo & Kerr 2009 (Finnország); Jakubowski és mtsai. 2016 (Lengyelország)]
-- Gyengébb társadalmi-gazdasági státusz-eredmény gradiens alakulhat ki egy évtizeden belül a magas teljesítményű kortársakhoz való szélesebb hozzáférés révén [bizonyíték: vitatott — az aszimmetrikus kortárshatás-mechanizmus gyenge/vitatott jelöléssel szerepel; az aggregált méltányossági kapcsolat ezen nyugszik]
-- A standardizált pedagógusképzéssel és korai diagnosztikai támogatással való csomagolás megakadályozza, hogy az osztályon belüli szórás középosztálybeli menekülést hajtson [bizonyíték: mérsékelt — Pekkarinen és mtsai. 2009: a finn méltányossági nyereségek nem különíthetők el ezektől a csomagolt reformoktól]
+- A szelekció 14 éves korig való elhalasztása csökkenti a szülői háttér teljesítményre gyakorolt hatását, mint a finn és lengyel reformokban [bizonyíték: mérsékelt — Pekkarinen, Uusitalo & Kerr 2009; Jakubowski et al. 2016]
+- A későbbi, jobban informált iskolatípus-választás 14 éves korban csökkentheti a tehetség téves elosztását [bizonyíték: gyenge — egyetlen közvetlen nyilvántartási forrás sem méri ezt; a késleltetett szelekció szakirodalmából következtetve, nem Magyarországra kimutatva]
+- Egy gyengébb társadalmi-gazdasági státusz–eredmény gradiens alakulhat ki egy évtizeden belül a jó teljesítményű kortársakhoz való szélesebb hozzáférés révén [bizonyíték: vitatott — az aszimmetrikus kortárshatás-mechanizmus gyengének/vitatottnak van jelölve az equity_and_social_mobility-ben; az évtizednyi léptékű eredmény Magyarországra nincs megállapítva]
+- A méltányossági nyereség pedagógusképzéssel és diagnosztikai támogatással való összekötést igényel; az elhalasztás önmagában nem elegendő [bizonyíték: mérsékelt — Pekkarinen et al. 2009 a finn összekötésről]
 
 **Bizonyítékstátusz**
-mérsékelt a késleltetett-szétválogatás/méltányosság kapcsolatra, vitatott a kortárshatás-csatornára, és gyenge a magyar megvalósítási kapacitásra a pedagógushiány miatt.
+mérsékelt — az országok közötti bizonyíték alátámasztja, hogy a késleltetett szelekció javítja a méltányosságot, de a teherhordó kortárshatás-csatorna vitatott, és a Magyarországra specifikus hatásnagyság és szétválogatás-vándorlási kockázat megoldatlan.
 
 **Feltevések**
-- A szétválogatás nem egyszerűen a szabad iskolaválasztásra tolódik át az általános iskolák között és a nem állami fenntartókhoz [feltevés — ez itt állításként szerepel, mégis az equity_impact mező pontosan ezt a migrációt nevezi a legnagyobb kockázatnak; a feszültség feloldatlan]
-- A politikai tulajdonlás túléli két választási ciklust [feltevés — ellentmond a politikai megvalósíthatóságnak, amely szerint nincs tartós ablak, és a visszafordítási kockázat magasabb Lengyelországénál]
-- A pedagóguskínálat eléggé stabilizálható a heterogén egységes alapiskolai osztályok személyzettel való ellátásához [feltevés — ellentmond a megvalósítás-tervezés erős pedagógushiány-megállapításának]
+- A szétválogatás nem egyszerűen az általános iskolák közötti szabad iskolaválasztásba és a nem állami fenntartókhoz vándorol [feltevés — ezt itt állítják, de az equity_impact mező éppen ezt a vándorlást nevezi a legnagyobb kockázatnak; teherhordó és bizonyíték nélküli]
+- A pedagógus-ellátottság, különösen matematikából és természettudományból, támogatni tudja a szétválogatás-mentes heterogén tantermeket [feltevés — az implementation_planning az akut hiányt kötelező érvényű korlátként jelzi]
+- Az adminisztratív kapacitás le tudja bonyolítani a strukturális átszervezést és átképzést anélkül, hogy összeomlana a szolgáltatásnyújtás a hátrányos helyzetű régiókban [feltevés]
 
 **Várható előnyök**
-- A négy forgatókönyv közül a legnagyobb várható aggregált csökkenés a társadalmi-gazdasági státusz-eredmény gradiensben [bizonyíték: mérsékelt a késleltetett-szétválogatás kapcsolatra, de a részben erre támaszkodó kortárshatás-csatorna vitatott]
-- Csökkentett vidéki iskolahálózat-összeomlás azáltal, hogy a magas teljesítményűeket hosszabb ideig a helyi iskolákban tartja [bizonyíték: mérsékelt — demográfia; iskolahálózat-tervezés]
-- Alacsonyabb alkotmányos esélyegyenlőségi kitettség a 10/12 éves kori megkülönböztetés eltávolításából [bizonyíték: mérsékelt — Alkotmánybíróság gyakorlata; EU egyenlő bánásmódról szóló jog]
+- Gyengébb társadalmi-gazdasági státusz–eredmény gradiens egy évtizeden belül [bizonyíték: vitatott — az aszimmetrikus kortárshatás-mechanizmuson nyugszik, amelyet maga a mechanism mező is vitatottnak jelöl; a mérsékeltnek jelölt országok közötti méltányossági eredmény önmagában nem eredményezi az évtizednyi léptékű magyar gradienst]
+- A későbbi, jobban informált iskolatípus-választás 14 éves korban csökkenti a tehetség téves elosztását [bizonyíték: gyenge — nincs nyilvántartási forrás; a késleltetett szelekció szakirodalmából következtetve]
+- A vidéki alapiskolai hálózatok csökkent demográfiai kiürülése, mivel a jó teljesítményű tanulókat nem vonják el korán [bizonyíték: mérsékelt — demográfia; iskolahálózat-tervezés]
 
 **Méltányossági hatás**
-A négy forgatókönyv közül a legnagyobb várható aggregált méltányossági nyereség, de egyben a legnagyobb kockázat is: a középosztály és az egyházi/alapítványi kilépés a nem állami vagy magániskolákba. Ez a kilépés nem árt a kilépő tanulóknak, de áthelyezheti, nem pedig megszünteti a szétválogatást, így a nettó méltányossági nyereséget behatárolja, hogy mennyi kiszorulás történik — egy nagyságrend, amelyet a bemenetek nem oldanak fel.
+A négy forgatókönyv közül a legnagyobb várt összesített méltányossági nyereség, de egyben a legnagyobb kockázat is: a középosztály kivándorlása nem állami vagy magániskolákba. Ez a kivándorlás nem árt a kivándorló családoknak; a hátrányt a hátrahagyott alacsony társadalmi-gazdasági státuszú tanulókra koncentrálja, így a hátrányos helyzetűeken belüli elosztási kár lehetséges akkor is, ha az összesített gradiens szűkül. A vándorlási kockázat közvetlenül aláássa azt a feltevést, hogy a szétválogatás nem egyszerűen áthelyeződik.
 
 **Költségkategóriák**
-- Országos pedagógus-átképzés a differenciált oktatásban [költség: magas — nincs elérhető korosztályonkénti/körzetenkénti egységköltség, így a nagyságrend bizonytalan, nem feltétlenül maximális]
-- Korai diagnosztikai és felzárkóztató támogató rendszerek [költség: magas, ismétlődő]
-- Létesítmény- és tanterv-újratervezés a kiterjesztett közös szakaszra [költség: közepes-magas, előre terhelt átmeneti költség]
+- Egyszeri: országos pedagógus-átképzés a differenciált oktatásban (magas — nincs évfolyamonkénti/körzetenkénti egységköltség elérhető)
+- Egyszeri: hálózat- és épület-átalakítás (magas — részben összekötve a demográfiai konszolidációval, amely amúgy is bekövetkezne; a csak S3-hoz köthető inkrementális költség nincs külön becsülve)
+- Ismétlődő: egyetemes diagnosztikai és korrekciós támogatási rendszerek, a finn típusú csomag, amely nélkül a reform alulteljesít (közepes-magas — folyamatos, elkülönül az egyszeri átmeneti költségektől)
 
 **Megvalósítási lépések**
-- Országgyűlés — a 6/8 osztályos belépés eltörlésének jogszabályba iktatása többéves értesítéssel és szerzett jogok megtartásával (ütemezés: 1-2. év)
-- Oktatási Minisztérium — az egységes alapiskola-modell összehasonlító csoportos kísérleteinek indítása az országos bevezetés előtt (ütemezés: 1-4. év)
-- Pedagógusképző intézmények — a standardizált képzés és a differenciált oktatás átképzés felskálázása (ütemezés: 1-6. év)
-- Tankerületi központok — egyetemes korai diagnosztikai/felzárkóztató támogatás kiépítése (ütemezés: 2-6. év)
-- Minisztérium + fenntartók — a közös-szakasz mandátum kiterjesztése az egyházi/alapítványi iskolákra a menekülés korlátozására (ütemezés: 1-4. év)
-- Független értékelő — a kísérleti méltányossági és megtartási eredmények közzététele a bevezetési döntések előtt (ütemezés: 3-5. év)
+- Minisztérium + egyetemek — a pedagógus-differenciálási átképzés ütemezése a kísérlet előtt, majd annak során, nem pedig egyidejűleg (ütemezés: átképzés 1-4. év; kísérlet 2. évtől)
+- Minisztérium — a 14 évig egységes modell kipróbálása 2-3 iskolai körzetben és értékelése az országos bevezetés előtt (ütemezés: 2-5. év)
+- Parlament — pártközi megállapodásra való kísérlet a reform visszafordítás elleni rögzítésére, egy meghatározott visszavonulási lehetőséggel (szakaszos, visszafordítható kísérlet-bővítés), ha a megállapodás elbukik (ütemezés: 1-2. év)
+- Klebelsberg Központ — a hálózatok átalakítása a demográfiai konszolidációval párhuzamosan (ütemezés: 3-8. év)
 
 **Politikai kockázatok**
-- A középosztálybeli és egyházi/alapítványi menekülés áthelyezi a szétválogatást, nem pedig megszünteti [feltevés — a menekülési kockázat bizonyított, de ez a konkrét áthelyezési kimenetel a bemenetekben állításként, nem bizonyítottként szerepel]
-- Pedagógus-szakszervezeti kilépés, ha a standardokat teljesítmény-auditokkal csomagolják [bizonyíték: mérsékelt — politikai megvalósíthatóság]
-- Politikai visszafordítás koalícióváltáskor, a lengyel precedens szerint [bizonyíték: mérsékelt — Jakubowski és mtsai. 2016; OECD]
+- Az összes forgatókönyv közül a legnagyobb intenzitású ellenállás a városi középosztálybeli szülők és a presztízsiskolák részéről; a visszavonulási lehetőség, ha a pártközi megállapodás elbukik, egy visszafordítható, szakaszos kísérlet, nem pedig egy törvénybe iktatott országos kötelezés
+- Lengyel típusú visszafordítás egy kormányváltás után megsemmisíti az elsüllyedt átmeneti költségeket
+- A középosztály és az egyházi/alapítványi menekülés áthelyezi a szétválogatást, ahelyett, hogy megszüntetné
+- A pedagógushiány miatt a szétválogatás-mentes szolgáltatásnyújtás rontja a tanulmányi minőséget, ami táplálja a menekülés kockázatát
 
 **Bizonytalanságok**
-- Mennyi szétválogatás migrál a szabad iskolaválasztásra és a nem állami fenntartókhoz? [megbízhatóság: alacsony — csökkentené: rendszeren belüli szétválogatás-összehasonlítások különböző felvételi szabályok mellett; fenntartói nyilvántartási adatok]
-- Mekkora a késleltetett szétválogatás oksági súlya a csomagolt pedagógusreformokhoz képest? [megbízhatóság: alacsony — csökkentené: a kettőt elkülönítő összehasonlító természetes kísérletek]
-- Támogathatja-e a pedagóguskínálat a heterogén osztályokat országos léptékben? [megbízhatóság: alacsony — csökkentené: munkaerő-kilépés nyomon követése és szakszervezeti felmérési adatok]
-- Túléli-e a tulajdonlás két választási ciklust? [megbízhatóság: közepes — csökkentené: koalíció-stabilitási előrejelzések]
+- A késleltetett szelekció Magyarországra specifikus oksági hatásnagysága [megbízhatóság: közepes | csökkentené: a késleltetett szelekció Magyarországra specifikus kvázi-kísérleti kialakítása vagy RCT-je]
+- Hogy a szétválogatás a nem állami fenntartókhoz és a szabad iskolaválasztásba vándorol-e [megbízhatóság: alacsony | csökkentené: nyilvántartási adatok a fenntartói bekerülésről településtípus szerint a kísérlet előtt és során]
+- Hogy a pedagógus-ellátottság fenn tudja-e tartani a heterogén tantermeket [megbízhatóság: alacsony | csökkentené: munkaerő-audit és átképzés-igénybevétel követése a kísérleti körzetekben]
 
-## S4 — A struktúra megtartása, az általános iskolák kompenzálása (portugál mintájú csomag)
+## S4 — A struktúra megtartása, az általános iskolák kompenzálása (portugál típusú csomag)
 **Cél**
-A hatosztályos és nyolcosztályos gimnáziumi struktúra változatlan megtartása, és intenzív nem-strukturális támogatás (TEIP-jellegű célzott finanszírozás, tantervi standardok, csökkentett évismétlés) irányítása a hátrányos helyzetű általános iskolákhoz, elismerve ugyanakkor, hogy ez a lánc végén kompenzál, nem pedig magát a szétválogatási mechanizmust változtatja meg.
+A 6 és 8 osztályos gimnáziumi képzési utak változatlan megtartása és méltányossági hatásaik semlegesítése nem strukturális, TEIP típusú, a hátrányos helyzetű általános iskoláknak nyújtott célzott támogatással, valamint szigorú tantervi standardokkal.
 
 **Mechanizmus**
-- A célzott finanszírozás és a szigorú standardok strukturális változás nélkül emelik a teljesítményt a hátrányos helyzetű iskolákban [bizonyíték: mérsékelt — OECD PISA trend-jelentések; Crato 2020 (Portugália 2006-2015)]
-- A kompenzáció célja a korai szétválogatás hatásainak ellensúlyozása, nem pusztán elfedése [bizonyíték: gyenge — egyetlen ország sem demonstrálta az ellensúlyozást Magyarország 10/12 éves szelekciós korában; a portugál eset nem szelektált ilyen korán]
-- Az iskolák klaszterezése és a csökkentett évismétlés javítja az áteresztőképességet az alacsonyabb társadalmi-gazdasági státuszú tanulók számára [bizonyíték: mérsékelt — Crato 2020; OECD]
+- A hátrányos helyzetű iskoláknak nyújtott célzott finanszírozás és támogatás (TEIP típusú) plusz szigorú standardok javították a portugál eredményeket strukturális változtatás nélkül [bizonyíték: mérsékelt — OECD PISA trendjelentések; Crato 2020]
+- Az évismétlés csökkentése és az iskolaadminisztráció csoportosítása javítja az eredményeket a lemaradó iskolákban [bizonyíték: mérsékelt — OECD PISA trendjelentések; Crato 2020]
+- A kompenzáció célja a korai szétválogatás hatásainak ellensúlyozása, nem pusztán elfedése [bizonyíték: gyenge — egyetlen ország sem mutatta ki az ellensúlyozást Magyarország szelekciós korában; a portugál eset nem alkalmazott korai szelekciót 10-12 éves korban]
 
 **Bizonyítékstátusz**
-mérsékelt a portugál nem-strukturális csomagra összességében, de gyenge kifejezetten arra, hogy a lánc végén álló kompenzáció ellensúlyozhatja-e a 10-12 éves korban megkezdett szétválogatást.
+mérsékelt — a portugál nem strukturális csomagnak mérsékelt bizonyítékalapja van, de hogy a kompenzáció képes-e ellensúlyozni (nem pedig elfedni vagy legitimálni) a szelekciót Magyarország korai szelekciós korában, bizonyíték nélküli, és ez a döntő bizonytalanság.
 
 **Feltevések**
-- A kompenzáció érdemben ellensúlyozhatja, nem csak elfedheti a korai szétválogatás hatásait [feltevés — előzetesen ellenőrizhetetlen: nincs ország-bizonyíték Magyarország szelekciós korában; közvetlenül feszültségben áll ennek a forgatókönyvnek a saját gyenge bizonyítékstátuszával]
-- A politikai konszenzus fenntartja a hosszú távú célzott finanszírozást visszafordítás nélkül [feltevés — vitatott; a célzott sorok az elsők, amelyeket a fiskális konszolidációnál megvágnak]
-- A portugál TEIP mechanizmusok átvihetők a magyar intézményi és pedagóguskínálati kontextusba [feltevés]
+- A kompenzáció érdemben ellensúlyozni tudja, nem csupán elfedni a korai szétválogatás hatásait [feltevés — ez ellentmond a forgatókönyv saját bizonytalanságainak, amelyek elismerik, hogy egyetlen ország sem mutatta ki ezt Magyarország szelekciós korában]
+- A társadalmi-gazdasági státusz-alapú célzási képletek ténylegesen elérik a hátrányos helyzetű többséget ott, ahol van, téves célzás vagy megbélyegzés nélkül [feltevés]
+- A hátrányos helyzetű iskolákban lévő pedagógushiány nem hiúsítja meg a standard/támogatási csomagot [feltevés — az implementation_planning akut hiányt jelez]
 
 **Várható előnyök**
-- Teljesítménynyereség a hátrányos helyzetű általános iskolákban politikailag zavaró átstrukturálás nélkül [bizonyíték: mérsékelt — Crato 2020; OECD PISA trend-jelentések]
-- Elkerüli az átmeneti költséget és a pedagógus-újraelosztási terhet, amelyet a strukturális reform ró [bizonyíték: mérsékelt — oktatásfinanszírozás; megvalósítás-tervezés]
-- Politikailag strukturálisan kevésbé zavaró, mint az S2/S3, bár NEM alacsony kockázatú — lásd a politikai kockázatokat a költségvetési sebezhetőségről és a korai szelekció legitimálásáról [bizonyíték: gyenge — a 'kevésbé zavaró' állításnak ellentmondanak a költségvetési törékenységi és beágyazódási kockázatok]
+- Javuló eredmények a hátrányos helyzetű általános iskolákban körülbelül 5 éven belül, a portugál pályán [bizonyíték: mérsékelt — Crato 2020; megjegyzendő, hogy ez importálja a portugál hatásnagyságot egy olyan kontextusba, amelyben korai szelekció van, ami Portugáliában hiányzott, így az átvitel bizonytalan]
+- Politikailag kevésbé zavaró, mint a strukturális reform, mert érintetlenül hagyja a gimnáziumi struktúrát [bizonyíték: gyenge — a political_feasibility és portuguese_reform feltevések; NEM erős, és megjegyzendő az ellentmondás az alábbi költségvetési sérülékenységi politikai kockázattal]
+- Alacsonyabb jogi kitettség, mint a bezárás esetén, mert nincs differenciálási szabály eltávolítva vagy hozzáadva [bizonyíték: gyenge — legal_and_governance; nincs Magyarországra specifikus döntés]
 
 **Méltányossági hatás**
-Legjobb esetben is csak részlegesen szűkíti a társadalmi-gazdasági státusz-gradienst, mivel érintetlenül hagyja magát a szétválogatási mechanizmust, és csak a lánc végén kompenzál. Nem kezeli a gyökérokot (a 10-12 éves kori korai szelekciót), így a maradék rétegződés fennmarad; a méltányossági nyereség plafonját a nem tesztelt ellensúlyozási feltevés szabja meg.
+Legjobb esetben is csak részben szűkíti a társadalmi-gazdasági státusz-gradienst, mivel érintetlenül hagyja magát a szétválogatási mechanizmust, és csak downstream kompenzál. A megbélyegzési kockázaton túl, ha a kompenzáció csak elfedi és nem ellensúlyozza a szétválogatást, egy dinamikus méltányossági költséget hordoz, amelyet a political_risks jelez: azt kockáztatja, hogy tartósan legitimálja a korai szelekciót, bebetonozva éppen azt a gradienst, amelyet csökkenteni kíván.
 
 **Költségkategóriák**
-- TEIP-jellegű célzott finanszírozás a hátrányos helyzetű iskolák számára [költség: magas — nincs elérhető számszerű tartomány; ez a sor az első, amelyet a fiskális konszolidációnál megvágnak, így a kitettség komoly tartóssági kockázat]
-- Nemzeti tantervi-standardok kidolgozása és bevezetése [költség: közepes]
-- Csökkentett évismétlés és klaszterezés adminisztrációja [költség: közepes, ismétlődő]
+- Ismétlődő: TEIP típusú célzott finanszírozás a hátrányos helyzetű iskoláknak (magas — nincs elérhető számszerű tartomány; ez a sor az első, amit levágnak a fiskális konszolidációban, így a kitettség komoly hiányosság)
+- Ismétlődő: pedagógusi pótlékok a hátrányos helyzetű iskoláknak és a standard/tanterv megvalósítása (közepes-magas — az implementation_steps által megkövetelt, inkonzisztens bármely 'alacsony politikai tőke' keretezéssel)
+- Egyszeri: tantervi standard-alkotás és iskola-csoportosítási adminisztráció (közepes)
 
 **Megvalósítási lépések**
-- Oktatási Minisztérium — szigorú nemzeti tantervi standardok közzététele útmutatásként, nem megfelelési mércéként (ütemezés: 1-2. év)
-- Pénzügyminisztérium — többéves TEIP-jellegű célzott finanszírozás elkülönítése a hátrányos helyzetű iskolák számára (ütemezés: 1. évtől, ismétlődő)
-- Tankerületi központok — iskolai klaszterezés és csökkentett évismétlési protokollok bevezetése (ütemezés: 2-4. év)
-- Hátrányos helyzetű iskolák — célzott támogatás bevezetése összehasonlító csoporttal szemben kipróbálva (ütemezés: 1-3. év)
-- Független értékelő — az összehasonlító csoportos eredmények közzététele a teljesítményről és a magas teljesítményűek megtartásáról (ütemezés: 3-4. év)
+- Minisztérium — szigorú nemzeti tantervi standardok és az évismétlés csökkentésének törvénybe iktatása (ütemezés: 1-2. év)
+- Minisztérium + Klebelsberg Központ — a társadalmi-gazdasági státusz-alapú célzási képletek meghatározása és a hátrányos helyzetű iskolák adminisztrációjának csoportosítása (ütemezés: 1-2. év)
+- Klebelsberg Központ — pedagógusi pótlékok és támogatási csomagok bevezetése a hátrányos helyzetű iskolák számára (ütemezés: 2. évtől)
+- Minisztérium — a kompenzációs költségvetési sor elkülönített védelme a fiskális ciklus vágásaival szemben (ütemezés: 1. év, ismétlődő felülvizsgálat)
 
 **Politikai kockázatok**
-- A korai szelekció tartós legitimálása: a kompenzáció beágyazhatja, nem pedig lebonthatja a szétválogatási motort [feltevés — valószerű beágyazódási kockázat, a bemenetekben állításként, nem bizonyítottként szerepel]
-- A célzott finanszírozás az első sor, amelyet a fiskális konszolidációnál megvágnak, veszélyeztetve a tartósságot [bizonyíték: gyenge — szakértői becslés; költségvetési fejezetek]
-- A hátrányos helyzetű iskolákban tapasztalható pedagógushiány aláássa a csomag megvalósítását [bizonyíték: erős — OECD Education at a Glance; PSZ/PDSZ felmérések]
+- Költségvetési sérülékenység: a kompenzációs sorok az elsők, amelyeket levágnak a fiskális konszolidációban, így a nyereségek visszafordíthatók a fiskális ciklusokon át — ez a kitettség azt jelenti, hogy a csomag NEM költségmentesen 'megvalósítható bármely kormány alatt'
+- A korai szelekció tartós legitimálása: a kompenzáció bebetonozhatja, ahelyett, hogy leszerelné a szétválogatási motort
+- A hátrányos helyzetű iskolákban lévő pedagógushiány aláássa a standard/támogatási csomagot
 
 **Bizonytalanságok**
-- A lánc végén álló kompenzáció ellensúlyozhatja-e, nem pusztán elfedheti a 10-12 éves kori korai szétválogatást? [megbízhatóság: alacsony — csökkentené: párosított-korosztályos pedagógiai hozzáadott érték-vizsgálatok Magyarország szelekciós korában]
-- Túléli-e a célzott finanszírozás a fiskális konszolidációs ciklusokat? [megbízhatóság: közepes — csökkentené: költségvetési kötelezettségvállalások és jogalkotási folytonosság elemzése]
-- Átvihetők-e a portugál pedagóguskínálati feltételek, tekintettel a magyar hiányokra? [megbízhatóság: magas — csökkentené: összehasonlító pedagóguskínálati vizsgálatok hátrányos helyzetű iskolákban]
-- Átvihetők-e a TEIP mechanizmusok a magyar intézményi kontextusba? [megbízhatóság: alacsony — csökkentené: kísérleti értékelés magyar hátrányos helyzetű iskolákban]
+- Hogy a kompenzáció képes-e ellensúlyozni, nem pedig elfedni vagy legitimálni a korai szelekciót Magyarország korában [megbízhatóság: alacsony | csökkentené: kipróbált TEIP típusú csomag a hátrányos helyzetű évfolyamok eredményeinek követésével egy összehasonlító csoporthoz képest]
+- Hogy a kompenzációs költségvetés túléli-e a fiskális ciklusokat [megbízhatóság: alacsony | csökkentené: a magyar költségvetési kötelezettségvállalások és az oktatásfinanszírozás jogalkotási folytonosságának elemzése]
+- Hogy a hátrányos helyzetű iskolákban a pedagógus-ellátottság képes-e megvalósítani a csomagot [megbízhatóság: közepes | csökkentené: összehasonlító pedagógus-ellátottsági vizsgálatok a magyar hátrányos helyzetű iskolákban a történelmi portugál szintekhez képest]

@@ -2,194 +2,189 @@
 
 ## S1 — Admission reform within the current structure
 **Goal**
-Retain the 6- and 8-year gimnazium tracks but rewrite entry rules and quotas so that access to selective places is less strongly skewed toward high-SES, urban families, while acknowledging that the scenario's own evidence and uncertainties question whether a workable SES indicator can be built at application time.
+Retain the 6- and 8-year gimnázium tracks but rewrite entry rules and quotas so that access to selective places is less strongly skewed toward high-SES, urban families.
 
 **Mechanism**
-- Replacing the central written admission exam with a less preparation-sensitive assessment aims to weaken the advantage that paid test-prep confers on high-SES applicants [evidence: contested — the value-added studies (Horn 2013; Kertesi & Kezdi 2013) show the raw gimnazium advantage is mostly a selection effect, but they do not establish that a redesigned assessment would resist coaching]
-- Reserving a share of selective seats for low-SES or under-applying-settlement applicants mechanically raises their representation in selective tracks [evidence: moderate — KSH/Oktatasi Hivatal admission statistics confirm current skew; the reweighting effect is arithmetic but depends on a workable SES proxy]
-- Funded, tracked outreach to low-SES and Roma families in under-applying settlements raises application rates, without which reserved seats go unfilled [evidence: moderate — Round 06 discourse analysis; equity advocates require documented uptake, not passive inclusion]
+- Replacing the central written admission exam with a less preparation-sensitive, age-appropriate assessment weakens the advantage that paid test-prep confers on high-SES applicants [evidence: moderate — Kertesi & Kezdi 2013; Horn 2013 value-added studies show selective advantage is largely a selection effect]
+- Regional equity quotas reserving a share of selective seats for lower-SES or disadvantaged-area applicants mechanically shift intake composition among applicants [evidence: moderate — KSH/Oktatási Hivatal admission statistics establish current skew]
+- Regulating non-state (church/foundation) admissions in parallel prevents selective demand from migrating to unregulated maintainers [evidence: moderate — maintainer statistics; Berényi-Berkovits-Erőss school-choice studies]
+- The reform reweights who is selected among applicants but does not change who applies; rural and low-information low-SES families may still under-apply [evidence: weak — model knowledge on parental information asymmetries]
 
 **Evidence status**
-mixed — the equity skew being addressed is strong, but the core coaching-resistance and SES-proxy mechanisms are contested/moderate and depend on instruments not yet demonstrated in Hungary.
+moderate — the direction of the intake-composition effect is well grounded in admission statistics and value-added studies, but the size and the ability to bind non-state maintainers are unestablished.
 
 **Assumptions**
-- A workable SES indicator exists or can be built at application time [assumption — directly contested: Hungary has no administrative student-level SES register usable at application, and any proxy is gameable per political_feasibility]
-- The Oktatasi Hivatal can design an assessment that meaningfully resists coaching [assumption — not established by the cited value-added evidence]
-- Non-state maintainers (church/foundation) will apply comparable admission rules rather than absorbing the displaced selective demand [assumption]
-- Standards are published as guidance, not compliance benchmarks, so teacher unions do not defect [assumption]
+- A workable SES indicator exists at application time [assumption — Hungary has no administrative student-level SES register usable at application; a proxy (address-based disadvantage, family benefit receipt) would have to be built and would be imperfect and gameable]
+- Non-state maintainers can be brought under uniform equity-based admission rules, at least via subsidy conditionality [assumption]
+- A less-coachable assessment can actually be built and validated within the reform's timeframe [assumption]
 
 **Expected benefits**
-- Higher representation of low-SES and rural pupils among selective entrants where reserved seats are filled [evidence: moderate — arithmetic reweighting on strong admission-statistics baseline, conditional on a workable proxy]
-- Reduced test-preparation arms-race pressure on age-10 children insofar as the new assessment resists coaching [evidence: weak — model knowledge; note contradiction with political risks, where scarcer/reformed channels may invite informal selection that reproduces sorting]
-- Lower constitutional equality-of-opportunity exposure if selection correlates less with SES [evidence: moderate — Hungarian Constitutional Court jurisprudence; EU equal treatment law]
+- More balanced intake into selective tracks among applicants [evidence: moderate — admission statistics show current skew is large; direction of effect follows mechanically from quotas, magnitude and 2-3 cycle timeline are not established by any registry source]
+- Reduced test-preparation arms-race pressure on age-10 children insofar as the new assessment resists coaching [evidence: weak — model knowledge; note contradiction with political_risks, where scarcer/reformed channels may invite informal selection]
+- Lower constitutional/EU equal-treatment exposure as selection ceases to correlate so strongly with SES/region [evidence: weak — Hungarian Constitutional Court jurisprudence; EU equity frameworks, no Hungary-specific ruling on this design]
 
 **Equity impact**
-Gains are conditional, not automatic: they accrue to high-ability low-SES pupils only if (a) a workable SES indicator exists at application and (b) outreach lifts application rates. The scenario's own assumptions flag (a) as contested, so the equity gain is contingent rather than assured.
+Gains accrue to high-ability low-SES pupils who already apply and are reweighted into selective seats; this presumes a working SES indicator, which the assumptions flag as unresolved. Because the mechanism touches selection among applicants only, low-SES rural families who never apply are not reached, so within-disadvantaged distributional gains are uneven.
 
 **Cost categories**
-- Assessment redesign, psychometric validation and multi-year piloting [cost: medium-to-high — description itself requires multi-year psychometric development, which pushes above a typical medium line]
-- Funded outreach campaigns with tracked application-uptake measurement [cost: medium, recurring]
-- Administration of reserved-seat quota verification and appeals [cost: medium]
+- One-off: assessment redesign, psychometric validation and piloting (medium — a genuinely less-coachable instrument requires multi-year psychometric development, not a low one-off cost)
+- Recurring: routine admission administration (low)
+- Recurring: compliance-audit and monitoring mechanism for quotas and non-state maintainers (medium — flagged as needed in uncertainties and political_risks, previously omitted)
 
 **Implementation steps**
-- Oktatasi Hivatal — design and pilot a less-coachable assessment with psychometric validation (timeline: year 1-3)
-- Ministry of Education — define SES-proxy indicator and reserved-seat quota, piloted against a comparison group (timeline: year 1-2)
-- Local education authorities — run funded, tracked outreach in under-applying settlements (timeline: year 1 onward, recurring)
-- Ministry + maintainers — negotiate voluntary alignment of church/foundation admission rules (timeline: year 2-4)
-- Independent evaluator — publish comparison-group pilot results before next-term assignment (timeline: year 3-4)
+- Oktatási Hivatal — design and pilot the new less-coachable assessment in volunteer districts, including psychometric validation (timeline: year 1-3)
+- Legislator/Ministry — enact regional equity quotas and the SES-proxy indicator definition (timeline: year 2-3)
+- Ministry — negotiate subsidy-conditional admission rules with church and foundation maintainers (timeline: year 2-4)
+- Oktatási Hivatal — stand up the compliance-audit mechanism and publish annual intake-composition reports (timeline: year 3 onward)
 
 **Political risks**
-- Reformed/scarcer selection channels may invite informal selection (interviews, reputation) that reproduces SES sorting [assumption — plausible but not evidenced in inputs]
-- SES-proxy instruments are gameable; opposition softens only if pilot data show weak gaming, not if theory claims it unlikely [evidence: moderate — political_feasibility]
-- Middle-class parents perceive rule changes as devaluing a mobility asset and mobilize [evidence: moderate — domestic press and stakeholder analyses]
+- Elite-school and middle-class parent opposition to quota-based dilution of selective access
+- Church/private maintainer exemption claims against uniform admission rules
+- Organized resistance from the private tutoring / test-prep industry, whose business model the less-coachable assessment directly threatens
+- Reformed/scarcer selection channels may invite informal selection (interviews, reputation) that reproduces SES sorting
 
 **Uncertainties**
-- Can a coaching-resistant assessment actually be built and validated? [confidence: low — would be reduced by: item-analysis of exam content against primary curriculum; randomized coaching studies]
-- Does a workable, low-gaming SES proxy exist at application time? [confidence: low — would be reduced by: pilot data on proxy gaming; audit of administrative data availability]
-- Will non-state maintainers align voluntarily or absorb displaced selective demand? [confidence: low — would be reduced by: maintainer registry data and negotiation position papers]
-- Will outreach measurably raise low-SES/Roma application rates? [confidence: low — would be reduced by: local outreach-evaluation studies]
+- Whether a workable, non-gameable SES indicator can be defined at application time [confidence: low | would be reduced by: piloting candidate proxies against Oktatási Hivatal registry cross-referenced with family benefit records]
+- Whether non-state maintainers will accept subsidy-conditional equity quotas [confidence: medium | would be reduced by: surveys/interviews with church maintainer representatives and Ministry officials]
+- Size and timing of the intake-composition shift [confidence: low | would be reduced by: staged evaluation over 2-3 admission cycles with a compliance-audit design built into the pilot]
 
 ## S2 — Gradual phase-down of 6/8-year entry places
 **Goal**
-Progressively reduce the number of state-maintained 6- and 8-year entry places over a decade, shifting more of each cohort into the common track until age 14, while acknowledging that caps may be offset by non-state maintainers.
+Shrink the share of each cohort entering selective tracks at ages 10 and 12 by capping and reducing entry places on a pre-announced multi-year trajectory, without abolishing the schools outright.
 
 **Mechanism**
-- Capping and shrinking selective intake keeps more high-achievers in the common track for longer, delaying sorting toward age 14 [evidence: moderate — Hanushek & Woessmann 2006 links earlier tracking to larger SES gradients]
-- Fewer selective seats can improve peer composition in urban general-school upper grades [evidence: contested — the asymmetric peer-effect mechanism is tagged weak/contested in equity inputs (model knowledge)]
-- Grandfathering enrolled cohorts while capping new intake satisfies transitional legal guarantees [evidence: strong — Nkt. analysis requires multi-year notice and transitional guarantees]
+- A declining statutory cap on 6/8-year entry places mechanically reduces the early-sorted share of each cohort [evidence: moderate — the arithmetic of caps is direct; KSH/Oktatási Hivatal statistics establish the current 8-12% base]
+- Fewer selective seats keep more high-achievers in the common track, which can improve peer composition in urban general-school upper grades [evidence: contested — the asymmetric peer-effect claim is weak in the source (equity_and_social_mobility tags it weak) and is the same contested link S3 relies on]
+- Advanced-programme funding in general schools is intended to retain ambitious families in the common track [evidence: weak — this is the unevidenced retention link; no source demonstrates the retention effect]
+- Felmenő rendszer guarantees protect already-enrolled cohorts, spreading the change over a decade [evidence: strong — Nkt. transitional-guarantee requirements]
 
 **Evidence status**
-moderate-to-contested — the earlier-tracking/inequality link is strong internationally, but the specific peer-composition benefit and the assumption that caps are not offset by non-state expansion are contested/weak.
+moderate — the mechanical reduction in early-sorted share is well grounded, but the downstream peer-composition and family-retention benefits rest on a contested/unevidenced link.
 
 **Assumptions**
-- Caps on state-maintained schools are not offset by non-state maintainers expanding selective intake [assumption — directly contradicted by this scenario's own political risks and uncertainties]
-- Legislative amendment to the Nkt. is achievable within the reform window [assumption]
-- Residual selective places do not become even more SES-skewed as they scarcen [assumption — see equity_impact, which flags the opposite as near-certain absent an S1-type rule change]
+- General schools can absorb and challenge high-achievers if funded for it [assumption — evidence_status calls this the unevidenced link; the expected peer benefit depends on it]
+- Caps on state-maintained schools are not simply offset by non-state maintainers expanding selective intake [assumption]
+- A successor government does not freeze or reverse the trajectory (Polish precedent) [assumption]
 
 **Expected benefits**
-- Delayed sorting for a growing share of each cohort, reducing early SES-based separation [evidence: moderate — Hanushek & Woessmann 2006; Brunello & Checchi 2007]
-- Stronger peer composition in urban general-school upper grades [evidence: contested/weak — asymmetric peer-effect mechanism, model knowledge]
-- Reduced rural-network hollowing as fewer high-achievers are drained early [evidence: moderate — school_network_planning; demography inputs]
+- Steadily falling early-sorting share of each cohort, measurable annually as a direct function of the cap [evidence: moderate — this is the mechanical cap effect, not a registry-measured effect of caps on sorting; no source measures caps→sorting specifically]
+- Stronger peer composition in urban general-school upper grades [evidence: contested — downstream of the asymmetric peer-effect and retention links, both of which are contested/weak in the sources]
+- Reduced demographic hollowing of general schools as fewer high-achievers are drained early [evidence: moderate — demography and school_network_planning analyses on cohort concentration]
 
 **Equity impact**
-Mixed and internally tensioned: delayed sorting can reduce early separation, but as caps tighten, residual selective places become even more SES-skewed absent an S1-type admission-rule change — this residual-skew effect is mechanical and near-certain (fewer seats, same skewed applicant pool). Net equity gain depends on whether non-state channels absorb displaced demand.
+As caps tighten, residual selective places become even more SES-skewed absent an S1-type admission-rule change — this residual-skew effect is mechanical and near-certain (fewer seats, same demand, unchanged rules). Transition cohorts risk harm because incumbent higher-SES families, with more information and preparation resources, may capture the shrinking pool of seats first. The equity gain therefore depends on pairing with admission reform.
 
 **Cost categories**
-- Parallel-regime administration while grandfathered cohorts run alongside capped intake [cost: medium — but note this transitional line runs a full decade, so it is closer to sustained than short-term]
-- Absorption capacity in general-school upper grades (staffing, space) [cost: medium-to-high]
-- Legislative and legal-transition costs (notice periods, guarantees) [cost: medium]
+- One-off: legislative drafting and cap-trajectory design (low)
+- Recurring: advanced-programme funding in general schools (medium, formula-based) — rising over the decade as caps bite (transition ramp), distinct from the lower steady-state level once the trajectory completes
+- Recurring: parallel-regime administration while grandfathered cohorts run under old rules alongside capped intake (medium, transitional)
 
 **Implementation steps**
-- Parliament — amend the Nkt. to authorize graduated intake caps with transitional guarantees (timeline: year 1-2)
-- Ministry of Education — set a declining annual quota of new 6/8-year places (timeline: year 2 onward, phased over the decade)
-- Tankerulet centres — expand upper-grade capacity in receiving general schools (timeline: year 2-6)
-- Ministry + maintainers — negotiate cap coverage for church/foundation providers to prevent offset (timeline: year 1-3)
-- Independent evaluator — track high-achiever retention against a comparison group (timeline: year 3 onward)
+- Legislator — enact the cap trajectory in the Nkt. with felmenő rendszer guarantees for enrolled pupils (timeline: year 1)
+- Ministry — extend the cap to church and foundation maintainers via separate maintainer-agreement negotiation, since a single act cannot bind them uniformly (timeline: year 1-3)
+- Klebelsberg Centre — ramp advanced-programme funding in general schools as caps tighten (timeline: year 2-10)
+- Ministry — legislate an entrenchment mechanism (e.g. multi-year notice and supermajority/qualified reversal requirement) to raise the cost of Polish-style reversal (timeline: year 1-2)
 
 **Political risks**
-- Middle-class parents perceive shrinking seats as a threat to a mobility/insurance asset and mobilize [evidence: moderate — domestic press and stakeholder analyses]
-- Non-state maintainers expand selective intake to capture displaced demand, defeating the cap [evidence: moderate — school_network_planning; legal_and_governance on maintainer fragmentation]
-- Reversal risk as coalitions alternate, per the Polish precedent [evidence: moderate — Jakubowski et al. 2016; OECD]
+- A successor government can freeze or reverse the trajectory cheaply (Polish precedent) unless an entrenchment mechanism is legislated
+- Middle-class parents perceive shrinking seats as a threat to a mobility/insurance asset and mobilize
+- Church/foundation maintainers expand selective intake to absorb capped state demand, defeating the goal
 
 **Uncertainties**
-- Will non-state maintainers absorb the capped selective demand? [confidence: low — would be reduced by: maintainer registry data by settlement type]
-- Does the peer-composition benefit in general schools actually materialize? [confidence: medium — would be reduced by: longitudinal peer-effect studies following selection events]
-- Is the reform durable across electoral cycles? [confidence: medium — would be reduced by: coalition-stability forecasts]
-- How does grandfathering interact with equity goals during the transition? [confidence: low — would be reduced by: legal-policy modeling of reform scenarios]
+- Whether general schools can actually absorb and challenge retained high-achievers [confidence: low | would be reduced by: piloted advanced-programme evaluation in general schools with peer-composition tracking]
+- Whether non-state maintainers offset the cap [confidence: medium | would be reduced by: registry data on selective seats by maintainer and settlement type]
+- Durability across a government change [confidence: low | would be reduced by: comparative opinion polling and analysis of entrenchment-mechanism efficacy]
 
 ## S3 — Comprehensive school to age 14 (structural reform)
 **Goal**
-Abolish 6- and 8-year selective entry and defer academic tracking to age 14 via a common comprehensive lower-secondary phase, bundled (Finnish-style) with teacher-quality and diagnostic-support investment.
+Postpone between-school academic selection to age 14 by phasing out 6/8-year entry, bundled with teacher-quality and diagnostic-support investment.
 
 **Mechanism**
-- Postponing tracking to age 14 reduces the impact of family background on achievement [evidence: moderate — Pekkarinen, Uusitalo & Kerr 2009 (Finland); Jakubowski et al. 2016 (Poland)]
-- A weaker SES-outcome gradient can emerge within a decade via broader access to high-achieving peers [evidence: contested — the asymmetric peer-effect mechanism is tagged weak/contested; the aggregate equity link rests on it]
-- Bundling with standardized teacher training and early diagnostic support prevents within-class variance from driving middle-class flight [evidence: moderate — Pekkarinen et al. 2009: Finnish equity gains cannot be isolated from these bundled reforms]
+- Delaying selection to age 14 reduces the impact of parental background on achievement, as in the Finnish and Polish reforms [evidence: moderate — Pekkarinen, Uusitalo & Kerr 2009; Jakubowski et al. 2016]
+- Later, better-informed track choice at 14 can reduce misallocation of talent [evidence: weak — no direct registry source measures this; inferred from delayed-selection literature, not demonstrated for Hungary]
+- A weaker SES-outcome gradient can emerge within a decade via broader access to high-achieving peers [evidence: contested — the asymmetric peer-effect mechanism is tagged weak/contested in equity_and_social_mobility; the decade-scale outcome is not established for Hungary]
+- Equity gains require bundling with teacher-training and diagnostic support; delay alone is insufficient [evidence: moderate — Pekkarinen et al. 2009 on Finnish bundling]
 
 **Evidence status**
-moderate on the delayed-tracking/equity link, contested on the peer-effect channel, and weak on Hungarian implementation capacity given teacher shortage.
+moderate — cross-country evidence supports delayed selection improving equity, but the load-bearing peer-effect channel is contested and the Hungary-specific effect size and sorting-migration risk are unresolved.
 
 **Assumptions**
-- Sorting does not simply migrate to school choice between general schools and to non-state maintainers [assumption — this is asserted here yet the equity_impact field calls exactly this migration the largest risk; the tension is unresolved]
-- Political ownership survives two electoral cycles [assumption — contradicted by political_feasibility, which states no durable window exists and reversal risk is higher than Poland's]
-- Teacher supply can be stabilized enough to staff heterogeneous comprehensive classes [assumption — contradicted by implementation_planning's strong teacher-shortage finding]
+- Sorting does not simply migrate to school choice between general schools and to non-state maintainers [assumption — this is asserted here yet the equity_impact field calls exactly this migration the largest risk; it is load-bearing and unevidenced]
+- Teacher supply, especially in maths and science, can support de-tracked heterogeneous classrooms [assumption — implementation_planning flags acute shortage as a binding constraint]
+- Administrative capacity can run structural reorganization and retraining without collapsing delivery in disadvantaged regions [assumption]
 
 **Expected benefits**
-- Largest expected aggregate reduction in the SES-outcome gradient of the four scenarios [evidence: moderate on the delayed-tracking link, but the peer-effect channel it partly relies on is contested]
-- Reduced rural-network collapse by keeping high-achievers in local schools longer [evidence: moderate — demography; school_network_planning]
-- Lower constitutional equality-of-opportunity exposure from removing age-10/12 differentiation [evidence: moderate — Constitutional Court jurisprudence; EU equal treatment law]
+- Weaker SES-outcome gradient within a decade [evidence: contested — rests on the asymmetric-peer-effects mechanism, which the mechanism field itself tags contested; the moderate-tagged cross-country equity result does not by itself deliver the decade-scale Hungarian gradient]
+- Later, better-informed track choice at 14 reduces misallocation of talent [evidence: weak — no registry source; inferred from delayed-selection literature]
+- Reduced demographic hollowing of rural primary networks as high-achievers are not drained early [evidence: moderate — demography; school_network_planning]
 
 **Equity impact**
-Largest expected aggregate equity gain of the four scenarios, but also the largest risk: middle-class and church/foundation exit to non-state or private schools. That exit does not harm the exiting pupils, but it can relocate rather than remove sorting, so the net equity gain is bounded by how much displacement occurs — a magnitude the inputs do not resolve.
+Largest expected aggregate equity gain of the four scenarios, but also the largest risk: middle-class exit to non-state or private schools. That exit does not harm the exiting families; it concentrates the downside on the low-SES pupils left behind, so within-disadvantaged distributional harm is possible even if the aggregate gradient narrows. The migration risk directly undercuts the assumption that sorting does not simply relocate.
 
 **Cost categories**
-- Nationwide teacher retraining in differentiated instruction [cost: high — no per-cohort/per-district unit cost available, so magnitude is uncertain, not necessarily maximal]
-- Early diagnostic and remedial support systems [cost: high, recurring]
-- Facility and curriculum redesign for extended common phase [cost: medium-to-high, front-loaded transition cost]
+- One-off: nationwide teacher retraining in differentiated instruction (high — no per-cohort/per-district unit cost available)
+- One-off: network and building reconfiguration (high — partly bundled with demographic consolidation that would occur regardless; incremental S3-only cost is not separately estimated)
+- Recurring: universal diagnostic and remedial support systems, the Finnish-style bundle without which the reform underperforms (medium-high — ongoing, distinct from the one-off transition costs)
 
 **Implementation steps**
-- Parliament — legislate abolition of 6/8-year entry with multi-year notice and grandfathering (timeline: year 1-2)
-- Ministry of Education — launch comparison-group pilots of the comprehensive model before national rollout (timeline: year 1-4)
-- Teacher-training institutions — scale standardized training and differentiated-instruction retraining (timeline: year 1-6)
-- Tankerulet centres — build universal early diagnostic/remedial support (timeline: year 2-6)
-- Ministry + maintainers — extend the common-phase mandate to church/foundation schools to limit flight (timeline: year 1-4)
-- Independent evaluator — publish pilot equity and retention results before rollout decisions (timeline: year 3-5)
+- Ministry + universities — sequence teacher differentiation retraining before, then during, the pilot rather than concurrently (timeline: retraining year 1-4; pilot year 2 onward)
+- Ministry — pilot the comprehensive-to-14 model in 2-3 districts and evaluate before national rollout (timeline: year 2-5)
+- Parliament — attempt a cross-party pact to anchor the reform against reversal, with a defined fallback (staged, reversible pilot expansion) if the pact fails (timeline: year 1-2)
+- Klebelsberg Centre — reconfigure networks alongside demographic consolidation (timeline: year 3-8)
 
 **Political risks**
-- Middle-class and church/foundation flight relocates sorting rather than removing it [assumption — flight risk is evidenced, but this specific relocation outcome is asserted, not evidenced, in inputs]
-- Teacher-union defection if standards are bundled with performance audits [evidence: moderate — political_feasibility]
-- Political reversal on coalition change, per the Polish precedent [evidence: moderate — Jakubowski et al. 2016; OECD]
+- Highest-intensity opposition of all scenarios from urban middle-class parents and prestige schools; fallback if the cross-party pact fails is a reversible, staged pilot rather than a legislated national mandate
+- Polish-style reversal after a government change destroys sunk transition costs
+- Middle-class and church/foundation flight relocates sorting rather than removing it
+- Teacher shortage makes de-tracked delivery degrade academic quality, feeding the flight risk
 
 **Uncertainties**
-- How much sorting migrates to school choice and non-state maintainers? [confidence: low — would be reduced by: within-system sorting comparisons under different admission rules; maintainer registry data]
-- What is the causal weight of delayed tracking vs. bundled teacher reforms? [confidence: low — would be reduced by: comparative natural experiments isolating the two]
-- Can teacher supply support heterogeneous classes at national scale? [confidence: low — would be reduced by: workforce-exit tracking and union survey data]
-- Will ownership survive two electoral cycles? [confidence: medium — would be reduced by: coalition-stability forecasts]
+- Hungary-specific causal effect size of delayed selection [confidence: medium | would be reduced by: Hungary-specific quasi-experimental design or RCT of delayed selection]
+- Whether sorting migrates to non-state maintainers and school choice [confidence: low | would be reduced by: registry data on maintainer intake by settlement type before and during the pilot]
+- Whether teacher supply can sustain heterogeneous classrooms [confidence: low | would be reduced by: workforce audit and retraining-uptake tracking in pilot districts]
 
 ## S4 — Keep the structure, compensate general schools (Portuguese-style package)
 **Goal**
-Retain the 6- and 8-year gimnazium structure unchanged and route intensive non-structural support (TEIP-style targeted funding, curriculum standards, reduced retention) to disadvantaged general schools, while acknowledging that this compensates downstream rather than altering the sorting mechanism.
+Retain the 6- and 8-year gimnázium tracks unchanged and neutralize their equity effects through non-structural, TEIP-style targeted support for disadvantaged general schools plus rigorous curriculum standards.
 
 **Mechanism**
-- Targeted funding and rigorous standards raise attainment in disadvantaged schools without structural change [evidence: moderate — OECD PISA trend reports; Crato 2020 (Portugal 2006-2015)]
-- Compensation is intended to offset, not merely mask, the effects of early sorting [evidence: weak — no country has demonstrated offsetting at Hungary's age-10/12 selection age; the Portuguese case did not select as early]
-- School clustering and reduced grade retention improve throughput for lower-SES pupils [evidence: moderate — Crato 2020; OECD]
+- Targeted funding and support for disadvantaged schools (TEIP-style) plus rigorous standards raised Portuguese outcomes without structural change [evidence: moderate — OECD PISA trend reports; Crato 2020]
+- Reducing grade retention and clustering school administration improves outcomes in lagging schools [evidence: moderate — OECD PISA trend reports; Crato 2020]
+- Compensation is intended to offset, not merely mask, the effects of early sorting [evidence: weak — no country has demonstrated offsetting at Hungary's selection age; the Portuguese case did not run early selection at ages 10-12]
 
 **Evidence status**
-moderate on the Portuguese non-structural package overall, but weak specifically on whether downstream compensation can offset sorting begun at ages 10-12.
+moderate — the Portuguese non-structural package has a moderate evidence base, but whether compensation can offset (rather than mask or legitimise) selection at Hungary's early selection age is unevidenced and is the pivotal uncertainty.
 
 **Assumptions**
-- Compensation can meaningfully offset, not just mask, the effects of early sorting [assumption — unverifiable ex ante: no country evidence exists at Hungary's selection age; directly in tension with this scenario's own weak evidence status]
-- Political consensus sustains long-term targeted funding without reversal [assumption — contested; targeted lines are the first cut in fiscal consolidation]
-- Portuguese TEIP mechanisms transfer to the Hungarian institutional and teacher-supply context [assumption]
+- Compensation can meaningfully offset, not just mask, the effects of early sorting [assumption — this contradicts the scenario's own uncertainties, which concede no country has demonstrated it at Hungary's selection age]
+- SES-based targeting formulas actually reach the disadvantaged majority where they are, without mis-targeting or stigma [assumption]
+- Teacher shortage in disadvantaged schools does not defeat the standards/support package [assumption — implementation_planning flags acute shortage]
 
 **Expected benefits**
-- Attainment gains in disadvantaged general schools without politically disruptive restructuring [evidence: moderate — Crato 2020; OECD PISA trend reports]
-- Avoids the transition-cost and teacher-redistribution burden that structural reform imposes [evidence: moderate — education_finance; implementation_planning]
-- Politically less structurally disruptive than S2/S3, though NOT low-risk — see political risks on budget vulnerability and legitimizing early selection [evidence: weak — the 'less disruptive' claim is contradicted by budget-fragility and entrenchment risks]
+- Improved outcomes in disadvantaged general schools within about 5 years, on the Portuguese trajectory [evidence: moderate — Crato 2020; note this imports the Portuguese effect size into a context with early selection that Portugal lacked, so transfer is uncertain]
+- Politically less disruptive than structural reform because it leaves the gimnázium structure intact [evidence: weak — political_feasibility and portuguese_reform assumptions; NOT strong, and note the contradiction with the budget-vulnerability political risk below]
+- Lower legal exposure than closure because no differentiation rule is removed or added [evidence: weak — legal_and_governance; no Hungary-specific ruling]
 
 **Equity impact**
-Narrows the SES gradient at best partially, since it leaves the sorting mechanism itself intact and only compensates downstream. It does not address the root cause (early selection at ages 10-12), so residual stratification persists; the ceiling on equity gain is set by the untested offsetting assumption.
+Narrows the SES gradient at best partially, since it leaves the sorting mechanism itself intact and only compensates downstream. Beyond stigma risk, if compensation only masks rather than offsets sorting it carries a dynamic equity cost flagged in political_risks: it risks legitimising early selection permanently, entrenching the very gradient it aims to reduce.
 
 **Cost categories**
-- TEIP-style targeted funding for disadvantaged schools [cost: high — no numeric range available; this line is the first cut in fiscal consolidation, so exposure is a serious durability risk]
-- National curriculum-standards development and rollout [cost: medium]
-- Reduced-retention and clustering administration [cost: medium, recurring]
+- Recurring: TEIP-style targeted funding for disadvantaged schools (high — no numeric range available; this line is the first cut in fiscal consolidation, so exposure is a serious gap)
+- Recurring: teacher premia for disadvantaged schools and standards/curriculum implementation (medium-high — required by implementation_steps, inconsistent with any 'low political capital' framing)
+- One-off: curriculum standard-setting and school-clustering administration (medium)
 
 **Implementation steps**
-- Ministry of Education — publish rigorous national curriculum standards as guidance, not compliance benchmarks (timeline: year 1-2)
-- Ministry of Finance — ring-fence multi-year TEIP-style targeted funding for disadvantaged schools (timeline: year 1 onward, recurring)
-- Tankerulet centres — implement school clustering and reduced-retention protocols (timeline: year 2-4)
-- Disadvantaged schools — deploy targeted support piloted against a comparison group (timeline: year 1-3)
-- Independent evaluator — publish comparison-group results on attainment and high-achiever retention (timeline: year 3-4)
+- Ministry — legislate rigorous national curriculum standards and grade-retention reduction (timeline: year 1-2)
+- Ministry + Klebelsberg Centre — define SES-based targeting formulas and cluster disadvantaged-school administration (timeline: year 1-2)
+- Klebelsberg Centre — introduce teacher premia and support packages for disadvantaged schools (timeline: year 2 onward)
+- Ministry — ring-fence the compensation budget line against fiscal-cycle cuts (timeline: year 1, recurring review)
 
 **Political risks**
-- Legitimising early selection permanently: compensation may entrench rather than dismantle the sorting engine [assumption — plausible entrenchment risk, asserted rather than evidenced in inputs]
-- Targeted funding is the first line cut in fiscal consolidation, threatening durability [evidence: weak — expert estimate; budget chapters]
-- Teacher shortage in disadvantaged schools undermines delivery of the package [evidence: strong — OECD Education at a Glance; PSZ/PDSZ surveys]
+- Budget vulnerability: compensation lines are the first cut in fiscal consolidation, so gains are reversible across fiscal cycles — this exposure means the package is NOT costlessly 'implementable under any government'
+- Legitimising early selection permanently: compensation may entrench rather than dismantle the sorting engine
+- Teacher shortage in disadvantaged schools undercuts the standards/support package
 
 **Uncertainties**
-- Can downstream compensation offset, not merely mask, early sorting at ages 10-12? [confidence: low — would be reduced by: matched-cohort value-added studies at Hungary's selection age]
-- Will targeted funding survive fiscal-consolidation cycles? [confidence: medium — would be reduced by: analysis of budgetary commitments and legislative continuity]
-- Do Portuguese teacher-supply conditions transfer, given Hungarian shortages? [confidence: high — would be reduced by: comparative teacher-supply studies in disadvantaged schools]
-- Do TEIP mechanisms transfer to the Hungarian institutional context? [confidence: low — would be reduced by: pilot evaluation in Hungarian disadvantaged schools]
+- Whether compensation can offset, rather than mask or legitimise, early selection at Hungary's age [confidence: low | would be reduced by: piloted TEIP-style package with disadvantaged-cohort outcome tracking against a comparison group]
+- Whether the compensation budget survives fiscal cycles [confidence: low | would be reduced by: analysis of Hungarian budgetary commitments and legislative continuity in education funding]
+- Whether teacher supply in disadvantaged schools can deliver the package [confidence: medium | would be reduced by: comparative teacher-supply studies in Hungarian disadvantaged schools versus historical Portuguese levels]
