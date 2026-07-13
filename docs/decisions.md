@@ -316,7 +316,17 @@ stakeholder-political uncertainty / value-only questions / potential
 unknown-unknowns, richer than the current per-expert `## Uncertainties`;
 (3) **Research/information agenda** — a `research_agenda.md` artifact
 mapping each major unknown to what data/method/pilot would resolve it, who
-holds it, and whether it's critical or deferrable;
+holds it, and whether it's critical or deferrable.
+**DONE, combined** (branch `refactor/deliberation-phase-b`, 2026-07-14): one
+new synthesis step, `unknowns_mapper`, run after critics (so it can absorb
+critic-surfaced gaps too) writes both the 9-category taxonomy and the
+research agenda into one bilingual artifact (`unknowns.en.md`/`.hu.md`,
+translated via the existing `translator` agent, same pattern as every other
+deliverable); a combined artifact rather than two was chosen since the
+research agenda is directly derived from the taxonomy's own items. Each
+research-agenda line requires a named holder (not "researchers") and a
+critical/deferrable priority — enforced by `pipeline.valid_unknowns()` and
+additive `verify.py` check U;
 (4) **Mandatory alternative spread + decision-readiness** — require
 `scenario_builder` to always include a no-intervention/status-quo baseline
 and at least one pilot/low-intensity variant (not just four structurally
