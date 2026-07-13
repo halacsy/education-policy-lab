@@ -40,7 +40,7 @@ def compose(prompt, role):
         "translate_scenarios": lambda: scenarios_json("hu", d),
         "synthesis": lambda: synthesis(d),
         "rejected_framings": lambda: rejected_framings(),
-        "brief": lambda: brief(h.get("lang", "en"), d),
+        "brief": lambda: brief(h.get("lang", "en"), d, prompt),
         "exec_summary": lambda: K.EXEC_SUMMARY[h.get("lang", "en")],
         "critic": lambda: critic(h["agent"], d),
         "meta_critique": lambda: meta_critique(_payload(prompt), d),
@@ -189,7 +189,7 @@ def rejected_framings():
 
 # -- brief -------------------------------------------------------------------
 
-def brief(lang, d):
+def brief(lang, d, prompt=""):
     """The 10-section deliberation deliverable (D-30). Claim-kind tags
     ([fact]/[estimate]/[assumption]/[value]) stay literal English tokens in
     both language versions, like the A<i> ids and response-type tokens."""
@@ -349,11 +349,22 @@ def brief(lang, d):
             en="already addressed but not visibly or legibly enough",
             hu="már kezelve van, de nem eléggé láthatóan vagy érthetően"),
     }
-    for c in K.ARGUMENT_CLUSTERS:
-        claim = c["claim"][L]
-        rtype = c["response_type"]
+    # Answer every REAL cluster id in THIS round's ledger — a live mediator
+    # can (and does) produce more clusters than the curated pack's 10, and
+    # this mock must stay valid regardless of that count (it is the crash
+    # backstop of last resort; failing its own validation is fatal, not a
+    # graceful degrade — see pipeline.Step.run).
+    curated_by_id = {c["id"]: c for c in K.ARGUMENT_CLUSTERS}
+    real_ids = sorted(set(re.findall(r"\*\*(A\d+)\*\*", prompt)),
+                      key=lambda s: int(s[1:])) or list(curated_by_id)
+    for cid in real_ids:
+        cur = curated_by_id.get(cid)
+        if cur:
+            claim, rtype = cur["claim"][L], cur["response_type"]
+        else:
+            claim, rtype = "(see argument ledger)", "needs_more_info"
         reason = reasons[rtype][L]
-        lines.append(f"- {c['id']} ({claim[:80]}…): {rtype} — {reason}")
+        lines.append(f"- {cid} ({claim[:80]}…): {rtype} — {reason}")
 
     # 10. Where the red herrings are — the ledger's gumicsont summary
     lines += ["", H["gumicsontok"]]
