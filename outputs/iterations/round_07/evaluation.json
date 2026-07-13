@@ -7,19 +7,19 @@
       "method": "deterministic"
     },
     "evidence_discipline": {
-      "deterministic": 6.297,
+      "deterministic": 6.313,
       "llm": {
-        "provider": "openai",
+        "provider": "google",
         "trials": [
-          9.0,
-          9.0,
-          8.0
+          8.08,
+          8.05,
+          8.12
         ],
-        "mean": 8.667,
-        "variance": 0.2222,
+        "mean": 8.083,
+        "variance": 0.0008,
         "divergence_flagged": true
       },
-      "score": 6.297,
+      "score": 6.313,
       "method": "deterministic (LLM diverged; flagged for human)"
     },
     "critic_concreteness": {
@@ -27,16 +27,16 @@
       "llm": {
         "provider": "anthropic",
         "trials": [
-          9.0,
-          9.0,
+          8.0,
+          8.0,
           9.0
         ],
-        "mean": 9.0,
-        "variance": 0.0,
-        "divergence_flagged": false
+        "mean": 8.333,
+        "variance": 0.2222,
+        "divergence_flagged": true
       },
-      "score": 9.7,
-      "method": "mixed (0.7 det + 0.3 llm)"
+      "score": 10.0,
+      "method": "deterministic (LLM diverged; flagged for human)"
     },
     "layer_separation": {
       "deterministic": 9.102,
@@ -48,32 +48,32 @@
       "llm": {
         "provider": "anthropic",
         "trials": [
-          9.0,
+          8.0,
           9.0,
           9.0
         ],
-        "mean": 9.0,
-        "variance": 0.0,
+        "mean": 8.667,
+        "variance": 0.2222,
         "divergence_flagged": false
       },
-      "score": 9.7,
+      "score": 9.6,
       "method": "mixed (0.7 det + 0.3 llm)"
     },
     "disagreement_preservation": {
       "deterministic": 10.0,
       "llm": {
-        "provider": "openai",
+        "provider": "google",
         "trials": [
-          9.0,
-          9.0,
-          9.0
+          5.2,
+          5.19,
+          5.05
         ],
-        "mean": 9.0,
-        "variance": 0.0,
-        "divergence_flagged": false
+        "mean": 5.147,
+        "variance": 0.0047,
+        "divergence_flagged": true
       },
-      "score": 9.7,
-      "method": "mixed (0.7 det + 0.3 llm)"
+      "score": 10.0,
+      "method": "deterministic (LLM diverged; flagged for human)"
     },
     "uncertainty_explicitness": {
       "deterministic": 10.0,
@@ -81,35 +81,36 @@
       "method": "deterministic"
     },
     "translation_fidelity": {
-      "deterministic": 9.167,
+      "deterministic": 10.0,
       "llm": {
-        "provider": "openai",
+        "provider": "google",
         "trials": [
-          9.0,
-          9.0,
-          9.0
+          9.89,
+          9.89,
+          9.89
         ],
-        "mean": 9.0,
+        "mean": 9.89,
         "variance": 0.0,
         "divergence_flagged": false
       },
-      "score": 9.117,
+      "score": 9.967,
       "method": "mixed (0.7 det + 0.3 llm)"
     }
   },
-  "total": 9.202,
+  "total": 9.373,
   "prev_total": 9.478,
-  "delta": -0.276,
+  "delta": -0.105,
   "generator_provider": "anthropic",
-  "judge_provider": "openai",
+  "judge_provider": "google",
   "divergence_flagged": [
-    "evidence_discipline"
+    "evidence_discipline",
+    "critic_concreteness",
+    "disagreement_preservation"
   ],
   "step_fallbacks": [
     "argument_map",
-    "response:egyhazi_fenntartoi",
-    "response:oktataspolitikai_reformmozgalom",
     "response:pedagogus_szakszervezeti_hang",
+    "response:kormanyzati_reformrealizmus",
     "translate_ledger",
     "final_brief_writer"
   ]

@@ -3,47 +3,42 @@
 
 ## Findings (evidence)
 
-- **Selection volume and timing:** Approximately 8–12% of each cohort enters 6- or 8-year gimnazium tracks via centralized written examination at ages 10 or 12. [evidence: strong — KSH / Oktatási Hivatal admission statistics]
+- Approximately 8–12% of each cohort enters 6- or 8-year gimnazium tracks via centralized written examination at ages 10–12. [evidence: strong — KSH / Oktatási Hivatal admission statistics]
 
-- **Demographic skew:** Entrants to selective tracks are strongly skewed toward high-SES, urban families. [evidence: strong — KSH / Oktatási Hivatal admission statistics]
+- Entrants to selective tracks are strongly skewed toward high-SES and urban families, indicating that early selection amplifies existing inequality. [evidence: strong — KSH / Oktatási Hivatal admission statistics]
 
-- **Sorting persistence under choice:** Free school choice combined with early selective tracks produces strong between-school sorting already at primary stage in urban areas; abolition of tracks alone would not eliminate sorting through catchment and choice mechanisms. [evidence: moderate — Kertesi & Kezdi 2013; Berenyi-Berkovits-Erőss school choice studies]
+- Free school choice combined with early selective tracks produces measurable between-school sorting at primary stage, particularly in urban areas; this sorting operates independently of track abolition. [evidence: moderate — Kertesi & Kezdi 2013; Berenyi-Berkovits-Erőss school choice studies]
 
-- **Maintainer fragmentation:** Since 2013, most state schools are operated by state school district centres (tankerulet); churches and foundations maintain a growing and diversifying share of schools. This structural heterogeneity complicates uniform policy mandates across the system. [evidence: strong — Public Education Act amendments; maintainer statistics]
+- Since 2013, most state schools operate under state school district centres (tankerület); churches and foundations manage an expanding share of provision, fragmenting uniform policy reach. [evidence: strong — Public Education Act amendments; maintainer statistics]
 
-- **Track interaction with admissions:** The 6/8-year gimnazium structure creates early branching points that interact with school choice and catchment rules; removal of tracks does not automatically equalize access without coordinating choice architecture and catchment design. [evidence: moderate — implicit in school choice literature; needs direct Hungarian study]
+- Catchment-based admission rules coexist with choice mechanisms; their interaction creates multiple pathways to stratification even within non-selective systems. [evidence: moderate — school choice literature; Hungarian policy design documents]
 
 ## Interpretation
 
-Hungary's selective tracks operate as a *concentrated* selection mechanism: ~10% of cohort, early age, high SES skew, urban concentration. However, they are **not the only** sorting force. Choice-based sorting and catchment-based segregation persist independently. 
+Early selection via the gimnazium system operates as a structural inequality amplifier rather than a meritocratic filter. The 8–12% selection rate, combined with SES skewing, suggests the system locks advantage early and narrows the pool of high-track peers to already-privileged students. However, abolishing tracks alone will not equalize outcomes because sorting continues through catchment geography and parental choice. The fragmented maintainer landscape (state, church, foundation) means uniform policy—whether abolition or reform—faces implementation barriers; some schools operate under different governance regimes with different incentives.
 
-A policy that removes tracks but leaves choice and catchments unchanged risks displacing rather than eliminating inequality: high-SES families would sort through other mechanisms (neighborhood choice, private school entry, catchment switching).
-
-The maintainer fragmentation (state, church, foundation) adds a second-order constraint: any structural reform must either harmonize rules across maintainers or accept continued heterogeneity in admission rules.
+The policy problem is not selection *per se* but the timing (age 10–12), the mechanism (written exam favoring prepared, tutored students), and the interaction with choice and catchment. A selective system that genuinely identifies talent across all SES groups would require either (a) prior equalization of preparation quality, or (b) alternative selection methods less sensitive to family background.
 
 ## Assumptions
 
-- The 8–12% figure reflects a stable, representative recent cohort. [assumption]
-- "Abolition of tracks" is interpreted as removal of separate admission pathways and curricula, not closure of high-performing schools. [assumption]
-- Sorting through choice and catchment is substantial enough that track removal alone produces <20% reduction in between-school inequality. [assumption — no Hungarian quantification found]
+- The centralized examination is the primary selection mechanism; coaching and tutoring rates are assumed to vary by SES (not verified here). [assumption]
+
+- Abolition of tracks is treated as feasible within the current maintainer structure; enforcement capacity across state, church, and foundation sectors is assumed uniform. [assumption]
+
+- "Early selection" is assumed to refer to entry at ages 10–12; later selection (post-16) is not addressed. [assumption]
 
 ## Position
 
-Hungary should retain 6/8-year gimnazium tracks only if coupled with simultaneous reform of school choice and catchment rules to reduce parallel sorting; standalone track removal without choice redesign would redistribute rather than reduce segregation.
+Hungary should not abolish the 6/8-year gimnazium system without first addressing inequality in primary-stage preparation and implementing parallel reforms to catchment-based sorting and maintainer fragmentation; abolition alone will displace stratification rather than reduce it.
 
 ## Uncertainties
 
-- **What is the joint contribution of tracks, choice, and catchments to between-school inequality?** [confidence: low — would be reduced by: decomposition study isolating each mechanism's effect on school composition variance in Hungarian context]
+- **What proportion ofSelection advantage is attributable to the exam itself vs. prior family investment in tutoring?** [confidence: low — would be reduced by: audit of tuition-market penetration by SES; item-analysis of exam content against primary curriculum; randomized assignment studies]. Current sources do not isolate mechanism.
 
-- **Do track removals in other countries (e.g., Germany länder) show measurable equity gains after controlling for choice and catchment?** [confidence: medium — would be reduced by: systematic review of post-reform cohort tracking in comparable systems]
+- **How many high-ability, low-SES students are excluded by the current system?** [confidence: low — would be reduced by: counterfactual tracking of non-selected students' secondary attainment; value-added analysis across schools]. Existing statistics report entrant composition, not false negatives.
 
-- **What is the effective diversity of admission rules across different maintainer types (state tankerulet vs. church vs. foundation)?** [confidence: low — would be reduced by: comprehensive audit of actual admission criteria by maintainer type and region]
+- **What is the actual implementation capacity of a nationwide track-abolition policy across the fragmented maintainer landscape?** [confidence: medium — would be reduced by: audit of prior enforcement of uniform structural mandates (e.g., 2013 tankerület transition); interviews with state, church, and foundation school leaders]. Maintainer diversity is confirmed; compliance leakage is plausible but undocumented.
 
-- **What proportion of high-SES sorting into selective tracks reflects genuine academic merit vs. test-prep access and information asymmetry?** [confidence: low — would be reduced by: value-added or randomized admission study]
+- **Do catchment-based alternatives (e.g., magnet schools, open-catchment enrollment) reduce or merely relocate stratification?** [confidence: medium — would be reduced by: comparative analysis of within-system sorting under different admission rules; international evidence from track-abolition contexts]. Hungarian empirical comparison is absent.
 
 ```
-
----
-
-### Self-critique note:
-All claims tagged. The Position is falsifiable (predicts that track removal *without* choice reform will not reduce inequality). Stayed within domain (system structure, admission rules, maintainer roles). Avoided inventing evidence; flagged unknowns explicitly. Recognized episodic note (overlap with international_comparison agent) but maintained distinct focus on Hungarian institutional architecture rather than comparative outcomes.

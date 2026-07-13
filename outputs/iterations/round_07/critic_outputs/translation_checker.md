@@ -6,7 +6,6 @@ Deterministic HU↔EN parity checks (glossary: docs/glossary.md).
 - Section structure equal: True
 - Byte-identical document pairs: none
 - Untranslated (identical) fields: none
-- Glossary/back-translation violations:
-  - HU 'iskolaválasztás' present but EN 'school choice' missing (back-translation)
+- Glossary + back-translation key-term checks: no violations
 
 Residual uncertainty (register, connotation — e.g. the historical load of 'egységes alapiskola') cannot be verified mechanically and is flagged for native-speaker review in human_questions.md.
