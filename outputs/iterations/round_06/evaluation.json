@@ -7,7 +7,7 @@
       "method": "deterministic"
     },
     "evidence_discipline": {
-      "deterministic": 6.349,
+      "deterministic": 8.084,
       "llm": {
         "provider": "google",
         "trials": [
@@ -19,8 +19,8 @@
         "variance": 0.2222,
         "divergence_flagged": false
       },
-      "score": 6.744,
-      "method": "mixed (0.7 det + 0.3 llm)"
+      "score": 7.959,
+      "method": "mixed (0.7 det + 0.3 llm) [rescored: scripts/rescore_round.py]"
     },
     "critic_concreteness": {
       "deterministic": 10.0,
@@ -39,9 +39,9 @@
       "method": "deterministic (LLM diverged; flagged for human)"
     },
     "layer_separation": {
-      "deterministic": 9.102,
-      "score": 9.102,
-      "method": "deterministic"
+      "deterministic": 9.184,
+      "score": 9.184,
+      "method": "deterministic (rescored: scripts/rescore_round.py)"
     },
     "meta_system_eval": {
       "deterministic": 10.0,
@@ -97,15 +97,15 @@
       "method": "mixed (0.7 det + 0.3 llm)"
     }
   },
-  "total": 9.478,
+  "total": 9.64,
   "prev_total": 9.265,
-  "delta": 0.213,
+  "delta": 0.375,
   "generator_provider": "anthropic",
   "judge_provider": "google",
   "divergence_flagged": [
     "critic_concreteness",
-    "disagreement_preservation",
-    "meta_system_eval"
+    "meta_system_eval",
+    "disagreement_preservation"
   ],
   "step_fallbacks": [
     "voice:egyhazi_fenntartoi",

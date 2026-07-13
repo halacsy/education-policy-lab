@@ -7,7 +7,7 @@
       "method": "deterministic"
     },
     "evidence_discipline": {
-      "deterministic": 6.216,
+      "deterministic": 7.959,
       "llm": {
         "provider": "openai",
         "trials": [
@@ -17,10 +17,10 @@
         ],
         "mean": 9.0,
         "variance": 0.0,
-        "divergence_flagged": true
+        "divergence_flagged": false
       },
-      "score": 6.216,
-      "method": "deterministic (LLM diverged; flagged for human)"
+      "score": 8.271,
+      "method": "mixed (0.7 det + 0.3 llm) [rescored: scripts/rescore_round.py]"
     },
     "critic_concreteness": {
       "deterministic": 10.0,
@@ -39,9 +39,9 @@
       "method": "mixed (0.7 det + 0.3 llm)"
     },
     "layer_separation": {
-      "deterministic": 7.0,
-      "score": 7.0,
-      "method": "deterministic"
+      "deterministic": 9.053,
+      "score": 9.053,
+      "method": "deterministic (rescored: scripts/rescore_round.py)"
     },
     "meta_system_eval": {
       "deterministic": 10.0,
@@ -97,14 +97,12 @@
       "method": "mixed (0.7 det + 0.3 llm)"
     }
   },
-  "total": 8.995,
-  "prev_total": 9.478,
-  "delta": -0.483,
+  "total": 9.508,
+  "prev_total": 9.64,
+  "delta": -0.132,
   "generator_provider": "anthropic",
   "judge_provider": "openai",
-  "divergence_flagged": [
-    "evidence_discipline"
-  ],
+  "divergence_flagged": [],
   "step_fallbacks": [
     "translate_voice:eselyegyenlosegi_civil",
     "translate_voice:pedagogus_erdekvedo",

@@ -76,7 +76,7 @@ def det_evidence_discipline(a):
     expert_text = "\n".join(a["experts"].values())
     expert_frac = _frac(_count(r"\[evidence:", expert_text),
                         _count(r"^- ", expert_text) or 1)
-    brief_frac = _frac(_count(r"\[(evidence|interpretation|assumption)", a["brief_en"]),
+    brief_frac = _frac(_count(r"\[(?:fact|estimate|assumption|value)\b", a["brief_en"]),
                        _count(r"^- ", a["brief_en"]) or 1)
     return 10 * (0.5 * tag_frac(a["scenarios_en"]) + 0.25 * min(1.0, expert_frac)
                  + 0.25 * min(1.0, brief_frac))

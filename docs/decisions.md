@@ -378,3 +378,33 @@ originally returned `None` for any unconfigured provider, which
 `call_model()`'s `model is not None` guard reads as "no live model
 available," routing straight to mock without ever calling the CLI). Set
 `OPENAI_MODEL` to pin a specific model once ladder tiers are worth adding.
+
+**Bugfix note — stale tag vocabulary in two deterministic scorers, round 7
+(2026-07-13/14).** Round 7 (first fully-live run of the whole D-30
+pipeline, generator=anthropic/judge=openai-codex) scored 8.995 total, a
+-0.483 regression against round 6's 9.478. Root cause: `evaluation.py`'s
+`det_layer_separation` and `det_evidence_discipline` (the deterministic
+score components) still matched the *pre-D-30* tag vocabulary
+(`[evidence: ...]`/`[interpretation]`) against the brief, which under D-30
+uses `[fact]`/`[estimate]`/`[assumption]`/`[value]` — so richly-tagged real
+content (e.g. `[fact — evidence: strong, OECD PISA 2012-2022]`) was scored
+as untagged. Fixed both regexes to match the current vocabulary (any
+bracket starting with one of the four words, not requiring an exact bare
+`[fact]` token). Added `scripts/rescore_round.py` — a permanent,
+re-runnable tool that recomputes only the deterministic components of an
+existing round from its real on-disk artifacts under corrected code (never
+re-calling the LLM, never hand-setting a score) — and used it on rounds 6
+and 7: round 6 total 9.478→9.64, round 7 total 8.995→9.508. This recovered
+73% of the apparent regression (-0.483→-0.132). The residual -0.132 is not
+further explained by any known bug: round 6 and round 7 used different
+judge providers (google vs. openai-codex) for the three remaining
+LLM-scored dimensions that still show a gap (`critic_concreteness`,
+`meta_system_eval`, `disagreement_preservation` — round 6 hit the judge
+divergence flag on all three, meaning round 6's recorded score for them
+*is* the deterministic value with no LLM blended in at all; round 7's judge
+agreed with its deterministic score and so used the real 0.7/0.3 blend),
+consistent with ordinary cross-judge scoring variance
+(docs/experiments/2026-07-06-role-swap-robustness.md documented ±0.06 on a
+smaller sample; this is a larger but same-direction effect). `verify.py`
+check 3 is expected to still show this round pair as a small, explained,
+non-regression-driven dip — recorded here rather than weakening the check.

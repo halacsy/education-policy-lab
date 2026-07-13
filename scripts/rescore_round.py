@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Recompute the deterministic-only dimensions of a completed round from its
-existing (real, live-generated) artifacts on disk, using the current
-evaluation.py scoring functions, and rewrite evaluation.json/.md through the
-same write helpers the pipeline itself uses.
+"""Recompute a round's deterministic score components from its existing
+(real, live-generated) artifacts on disk, using the CURRENT evaluation.py
+det_* functions, then re-derive score/method exactly as
+evaluation._compose() would — reusing the already-real, already-obtained LLM
+judge trials stored in evaluation.json (never re-calling the LLM). Writes
+through the same write_json/write helpers finalize.py uses.
 
-Use this ONLY after fixing a bug in a deterministic scorer (evaluation.py's
-det_* functions with method == "deterministic", not "mixed"/LLM-scored) —
-it re-derives a score from real artifacts under corrected code, it does not
-invent or hand-set a value. LLM-scored dimensions are left untouched: fixing
-those honestly requires a real re-run, not a recompute.
+Use this ONLY after fixing a bug in a det_* function. It re-derives a score
+from unchanged real artifacts under corrected code; it never invents or
+hand-sets a value, and it never touches the LLM side of a dimension.
 
     scripts/rescore_round.py 6 7
 """
@@ -20,7 +20,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from lab import evaluation as ev
-from lab.util import read, read_json, round_dir, write, write_json
+from lab.util import load_config, read, read_json, round_dir, write, write_json
+
+THRESHOLD = load_config()["evaluation"]["judge_divergence_threshold"]
 
 
 def load_artifacts(n):
@@ -33,6 +35,21 @@ def load_artifacts(n):
     }
 
 
+def _propagate_prev_total(n, new_total):
+    """Keep round n+1's stored prev_total/delta consistent if it's on disk."""
+    next_path = round_dir(n + 1) / "evaluation.json"
+    if not next_path.exists():
+        return
+    nxt = read_json(next_path)
+    if nxt.get("prev_total") == new_total:
+        return
+    nxt["prev_total"] = new_total
+    nxt["delta"] = round(nxt["total"] - new_total, 3)
+    write_json(next_path, nxt)
+    print(f"  (propagated: round {n + 1}'s prev_total -> {new_total}, "
+          f"delta -> {nxt['delta']:+.3f})")
+
+
 def rescore(n):
     rd = round_dir(n)
     a = load_artifacts(n)
@@ -42,21 +59,36 @@ def rescore(n):
     for dim, fn in (("layer_separation", ev.det_layer_separation),
                     ("evidence_discipline", ev.det_evidence_discipline)):
         entry = data["dimensions"][dim]
-        if "llm" in entry:
-            raise SystemExit(f"round {n}: {dim} is LLM-scored (method="
-                              f"{entry['method']!r}) — this script only "
-                              "recomputes deterministic-only dimensions.")
         new_det = round(fn(a), 3)
-        if new_det != entry["deterministic"]:
-            changed.append((dim, entry["score"], new_det))
-            entry["deterministic"] = new_det
+        if new_det == entry["deterministic"]:
+            continue
+        old_score = entry["score"]
+        entry["deterministic"] = new_det
+        L = entry.get("llm")
+        if L is None:
             entry["score"] = new_det
             entry["method"] = "deterministic (rescored: scripts/rescore_round.py)"
+        else:
+            flagged = abs(L["mean"] - new_det) > THRESHOLD
+            L["divergence_flagged"] = flagged
+            if flagged:
+                entry["score"] = new_det
+                entry["method"] = ("deterministic (LLM diverged; flagged for "
+                                    "human) [rescored: scripts/rescore_round.py]")
+            else:
+                entry["score"] = round(ev.DET_WEIGHT * new_det
+                                        + (1 - ev.DET_WEIGHT) * L["mean"], 3)
+                entry["method"] = (f"mixed ({ev.DET_WEIGHT} det + "
+                                   f"{1 - ev.DET_WEIGHT:.1f} llm) "
+                                   "[rescored: scripts/rescore_round.py]")
+        changed.append((dim, old_score, entry["score"]))
 
     new_total = round(statistics.fmean(d["score"] for d in data["dimensions"].values()), 3)
     old_total = data["total"]
     data["delta"] = None if data["prev_total"] is None else round(new_total - data["prev_total"], 3)
     data["total"] = new_total
+    data["divergence_flagged"] = [name for name, d in data["dimensions"].items()
+                                  if d.get("llm", {}).get("divergence_flagged")]
     write_json(rd / "evaluation.json", data)
 
     lines = [f"# Evaluation — round {n}", "",
@@ -85,13 +117,14 @@ def rescore(n):
         print(f"  {dim}: score {old_score} -> {new_det}")
     if not changed:
         print("  (no dimension changed under the current code)")
+    _propagate_prev_total(n, new_total)
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("rounds", nargs="+", type=int)
     args = ap.parse_args()
-    for n in args.rounds:
+    for n in sorted(args.rounds):
         rescore(n)
 
 
