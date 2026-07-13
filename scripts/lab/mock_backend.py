@@ -47,6 +47,7 @@ def compose(prompt, role):
         "judge_score": lambda: judge_score(prompt, h, _payload(prompt)),
         "discourse_voice": lambda: discourse_voice(h["agent"]),
         "argument_map": lambda: argument_map(),
+        "argument_decompose": lambda: argument_decompose(prompt),
         "grade_arguments": lambda: grade_arguments(prompt),
         "discourse_reciprocity": lambda: discourse_reciprocity(h["agent"]),
         "translate_ledger": lambda: translate_ledger(int(h.get("round", 1))),
@@ -416,6 +417,45 @@ def _clusters(lang):
 def argument_map():
     return json.dumps({"clusters": _clusters("en")},
                       ensure_ascii=False, indent=2)
+
+
+def argument_decompose(prompt):
+    """Decompose ONE cluster (phase 2 of the D-30 split — see the comment
+    above CLUSTER_BASIC_SCHEMA_HINT in pipeline.py). Curated ids get their
+    curated decomposition; a live cluster id outside the curated pack (the
+    live phase-1 clustering produced more/different clusters than the
+    curated 10) gets an honest, generic templated decomposition instead of
+    failing outright — so a single unmatched cluster degrades alone rather
+    than discarding the whole live argument map."""
+    m = re.search(r"argument cluster (A\d+)", prompt)
+    cid = m.group(1) if m else None
+    curated = {c["id"]: c for c in K.ARGUMENT_CLUSTERS}
+    cur = curated.get(cid)
+    if cur:
+        return json.dumps(dict(
+            interest=cur["interest"]["en"], value=cur["value"]["en"],
+            fear=cur["fear"]["en"], affected=list(cur["affected"]["en"]),
+            assumption=cur["assumption"]["en"],
+            empirical_uncertainty=cur["empirical_uncertainty"]["en"],
+            decision_relevance=cur["decision_relevance"],
+            attention=dict(cur["attention"]),
+        ), ensure_ascii=False, indent=2)
+    names = re.findall(r"^- (\S+) \(", prompt, re.M) or ["unspecified stakeholders"]
+    return json.dumps(dict(
+        interest=f"the concern(s) raised by {', '.join(names)}",
+        value="a trade-off between the scenario's stated goal and the "
+              "concern raised",
+        fear="the benefit claimed will not materialise as described",
+        affected=names,
+        assumption="the claim's premise holds under implementation as "
+                   "designed",
+        empirical_uncertainty="not independently graded here — see the "
+                              "evidence layer",
+        decision_relevance="medium",
+        attention=dict(high_attention=len(names) >= 3, new_information=False,
+                       changes_evaluation=True, already_answered=False,
+                       primarily_rhetorical=False),
+    ), ensure_ascii=False, indent=2)
 
 
 def grade_arguments(prompt):

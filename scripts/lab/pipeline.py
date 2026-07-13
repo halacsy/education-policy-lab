@@ -94,41 +94,50 @@ VOICE_SCHEMA_HINT = json.dumps({
 }, indent=2)
 
 RELEVANCE_LEVELS = ("high", "medium", "low")
+ATTENTION_KEYS = ("high_attention", "new_information", "changes_evaluation",
+                  "already_answered", "primarily_rhetorical")
 
-ARGMAP_SCHEMA_HINT = json.dumps({
+# Argument-map generation is split into two phases (issue: the D-30 8-field
+# per-cluster decomposition made one giant one-shot call too failure-prone —
+# a single dropped field anywhere in 8-16 clusters failed the whole map, and
+# the mock fallback then discarded ALL the live clustering work). Phase 1
+# clusters cheaply (small schema, same shape as pre-D-30); phase 2 decomposes
+# EACH cluster in its own small, parallel, independently-retryable/resumable
+# call — a bad cluster degrades alone, live clustering is never thrown away.
+CLUSTER_BASIC_SCHEMA_HINT = json.dumps({
     "clusters": [{
         "id": "A1", "scenario": "S1", "kind": "fact|value|mixed",
         "side": "pro|con|conditional",
         "claim": "<one-sentence canonical form of the argument>",
         "raised_by": ["<voice name>"],
-        "interest": "<whose interest is behind this argument>",
-        "value": "<which value is in tension, e.g. equity vs. excellence>",
-        "fear": "<the anticipated loss or harm driving it — emotional "
-                "framing here is not a defect, name the real need behind it>",
-        "affected": ["<actor group affected by this argument>"],
-        "assumption": "<the unstated assumption the claim rests on>",
-        "empirical_uncertainty": "<is the factual part of this settled, "
-                                 "contested, or unknown — and why>",
-        "decision_relevance": "high|medium|low — how much would resolving "
-                              "this change the actual decision",
-        "attention": {
-            "high_attention": "true|false — does this argument draw a lot "
-                              "of public/media attention",
-            "new_information": "true|false — does it carry information "
-                               "not already covered by another cluster",
-            "changes_evaluation": "true|false — would resolving it change "
-                                  "how a scenario is evaluated",
-            "already_answered": "true|false — is this substantively "
-                                "answered elsewhere in the record already",
-            "primarily_rhetorical": "true|false — is its main role "
-                                    "rhetorical/identity-signalling rather "
-                                    "than substantive",
-        },
     }]
 }, indent=2)
 
-ATTENTION_KEYS = ("high_attention", "new_information", "changes_evaluation",
-                  "already_answered", "primarily_rhetorical")
+CLUSTER_DECOMPOSE_SCHEMA_HINT = json.dumps({
+    "interest": "<whose interest is behind this argument>",
+    "value": "<which value is in tension, e.g. equity vs. excellence>",
+    "fear": "<the anticipated loss or harm driving it — emotional framing "
+            "here is not a defect, name the real need behind it>",
+    "affected": ["<actor group affected by this argument>"],
+    "assumption": "<the unstated assumption the claim rests on>",
+    "empirical_uncertainty": "<is the factual part of this settled, "
+                             "contested, or unknown — and why>",
+    "decision_relevance": "high|medium|low — how much would resolving this "
+                          "change the actual decision",
+    "attention": {
+        "high_attention": "true|false — does this argument draw a lot of "
+                          "public/media attention",
+        "new_information": "true|false — does it carry information not "
+                           "already covered by another cluster",
+        "changes_evaluation": "true|false — would resolving it change how "
+                              "a scenario is evaluated",
+        "already_answered": "true|false — is this substantively answered "
+                            "elsewhere in the record already",
+        "primarily_rhetorical": "true|false — is its main role "
+                                "rhetorical/identity-signalling rather "
+                                "than substantive",
+    },
+}, indent=2)
 
 
 def valid_voice(obj):
@@ -158,7 +167,8 @@ def valid_voice(obj):
     return True
 
 
-def valid_argmap(obj, voice_names):
+def valid_argmap_basic(obj, voice_names):
+    """Phase 1 (clustering only — id/scenario/kind/side/claim/raised_by)."""
     try:
         cl = obj["clusters"]
     except (TypeError, KeyError):
@@ -182,19 +192,26 @@ def valid_argmap(obj, voice_names):
             return False
         if not str(c.get("claim", "")).strip():
             return False
-        for field in ("interest", "value", "fear", "assumption",
-                      "empirical_uncertainty"):
-            if not str(c.get(field, "")).strip():
-                return False
-        affected = c.get("affected")
-        if not affected or not all(str(a).strip() for a in affected):
+    return True
+
+
+def valid_cluster_decomposition(d):
+    """Phase 2 (per-cluster decomposition — one cluster's extra fields)."""
+    if not isinstance(d, dict):
+        return False
+    for field in ("interest", "value", "fear", "assumption",
+                  "empirical_uncertainty"):
+        if not str(d.get(field, "")).strip():
             return False
-        if c.get("decision_relevance") not in RELEVANCE_LEVELS:
-            return False
-        attn = c.get("attention")
-        if not isinstance(attn, dict) or \
-                not all(isinstance(attn.get(k), bool) for k in ATTENTION_KEYS):
-            return False
+    affected = d.get("affected")
+    if not affected or not all(str(a).strip() for a in affected):
+        return False
+    if d.get("decision_relevance") not in RELEVANCE_LEVELS:
+        return False
+    attn = d.get("attention")
+    if not isinstance(attn, dict) or \
+            not all(isinstance(attn.get(k), bool) for k in ATTENTION_KEYS):
+        return False
     return True
 
 
@@ -474,49 +491,86 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
     voices_digest = json.dumps(
         {k: v["reactions"] for k, v in voices.items()}, ensure_ascii=False)
 
-    arg_map, _ = step.run(
+    # Phase 1: cluster only (small schema — the same shape as pre-D-30).
+    arg_map_basic, _ = step.run(
         "argument_map",
         dict(task="argument_map", agent="discourse_mediator", round_n=n,
              instructions=(
-                 "Cluster the voices' arguments into an argument map, and "
-                 "decompose EACH cluster (structured counter-argument "
-                 "processing): the interest behind it, the value in "
-                 "tension, the fear/anticipated loss driving it (name the "
-                 "real need behind emotional framing, do not dismiss it as "
-                 "a defect), which actor group(s) are affected, the "
-                 "unstated assumption it rests on, whether its factual part "
-                 "is settled/contested/unknown, and how much resolving it "
-                 "would actually change the decision (decision_relevance). "
-                 "Also screen each cluster for 'gumicsont' status (a debate "
-                 "that draws a lot of attention but would not change the "
-                 "decision if resolved): does it draw high attention, does "
-                 "it carry new information, would resolving it change a "
-                 "scenario's evaluation, is it already answered elsewhere, "
-                 "is its main role rhetorical/identity-signalling. High "
-                 "attention + low decision_relevance is exactly what real "
-                 "participants need flagged, not hidden. "
+                 "Cluster the voices' arguments into an argument map. "
                  "Return ONLY a JSON object with this exact schema:\n"
-                 + ARGMAP_SCHEMA_HINT +
+                 + CLUSTER_BASIC_SCHEMA_HINT +
                  "\nRules: stable sequential ids A1..An; aim for 8-16 "
-                 "clusters (each now carries a much richer per-cluster "
-                 "breakdown than before, so favour fewer, well-decomposed "
-                 "clusters over many thin ones) — MERGE near-duplicate "
-                 "arguments across voices "
+                 "clusters — MERGE near-duplicate arguments across voices "
                  "and scenarios into one canonical claim instead of "
                  "enumerating variants; every claim in canonical "
                  "one-sentence form; classify fact vs value vs mixed; "
                  "raised_by lists ONLY voice names that actually raise it; "
                  "NEVER drop a minority argument; do not count heads."),
              inputs=voices_digest),
-        validate=lambda o: valid_argmap(o, voice_names),
-        out_path=ddir / "argument_map.json", postprocess=parse_json_block,
+        validate=lambda o: valid_argmap_basic(o, voice_names),
+        out_path=ddir / "argument_map_basic.json", postprocess=parse_json_block,
         loader=read_json, writer=lambda p, o: write_json(p, o),
-        # D-30 added 8 fields/cluster (interest/value/fear/affected/
-        # assumption/empirical_uncertainty/decision_relevance/attention) —
-        # the schema is much larger than the original kind/side/claim/
-        # raised_by, hence the higher budget than the pre-D-30 6000.
-        max_tokens=16000)
-    clusters = arg_map["clusters"]
+        max_tokens=6000)
+    clusters_basic = arg_map_basic["clusters"]
+
+    # Phase 2: decompose EACH cluster in its own small, parallel,
+    # independently-resumable call (issue: one dropped field anywhere in
+    # 8-16 clusters used to fail the WHOLE map and discard all the live
+    # clustering work — see the comment above CLUSTER_BASIC_SCHEMA_HINT).
+    def decompose_cluster(c):
+        cid = c["id"]
+        context_lines = []
+        for name in c["raised_by"]:
+            v = voices.get(name)
+            r = next((x for x in v["reactions"]
+                     if x["scenario"] == c["scenario"]), None) if v else None
+            if r:
+                context_lines.append(
+                    f"- {name} ({r['stance']}, {r['label']}): "
+                    f"{r['argument']} Condition: "
+                    f"{r.get('condition_to_change', '')}")
+        obj, _ = step.run(
+            f"decompose:{cid}",
+            dict(task="argument_decompose", agent="discourse_mediator",
+                 round_n=n,
+                 instructions=(
+                     f"For argument cluster {cid} (scenario "
+                     f"{c['scenario']}, {c['kind']}/{c['side']}): "
+                     f"\"{c['claim']}\"\ndecompose it for the stakeholder "
+                     "stress test digest: the interest behind it, the "
+                     "value in tension, the fear/anticipated loss driving "
+                     "it (name the real need behind emotional framing, do "
+                     "not dismiss it as a defect), which actor group(s) "
+                     "are affected, the unstated assumption it rests on, "
+                     "whether its factual part is settled/contested/"
+                     "unknown, how much resolving it would actually "
+                     "change the decision (decision_relevance), and "
+                     "screen it for 'gumicsont' status (a debate that "
+                     "draws a lot of attention but would not change the "
+                     "decision if resolved: high attention + low "
+                     "decision_relevance is exactly what real "
+                     "participants need flagged, not hidden). Return "
+                     "ONLY a JSON object with this exact schema:\n"
+                     + CLUSTER_DECOMPOSE_SCHEMA_HINT),
+                 inputs=("ORIGINAL VOICE ARGUMENTS RAISING THIS CLUSTER:\n"
+                        + "\n".join(context_lines))),
+            validate=valid_cluster_decomposition,
+            out_path=ddir / "clusters" / f"{cid}.json",
+            postprocess=parse_json_block, loader=read_json,
+            writer=lambda p, o: write_json(p, o), max_tokens=1500)
+        return cid, obj
+
+    decompositions = {}
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        for cid, obj in ex.map(decompose_cluster, clusters_basic):
+            decompositions[cid] = obj
+
+    clusters = []
+    for c in clusters_basic:
+        merged = dict(c)
+        merged.update(decompositions[c["id"]])
+        clusters.append(merged)
+    write_json(ddir / "argument_map.json", {"clusters": clusters})
     cluster_ids = [c["id"] for c in clusters]
     factual = [c["id"] for c in clusters if c["kind"] in ("fact", "mixed")]
 
@@ -624,8 +678,8 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                                        for it in rp["responses"]
                                        if it["outcome"] == "revise")},
     }
-    return dict(voices=voices, argument_map=arg_map, grades=grades,
-                responses=responses, ledger_en=ledger_en,
+    return dict(voices=voices, argument_map={"clusters": clusters},
+                grades=grades, responses=responses, ledger_en=ledger_en,
                 ledger_hu=ledger_hu, cluster_ids=cluster_ids,
                 conditions=conditions, metrics=metrics)
 

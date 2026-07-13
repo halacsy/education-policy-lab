@@ -14,13 +14,18 @@ FIELD_KEYS = ["goal", "mechanism", "evidence_status", "assumptions",
 
 # Glossary terms mechanically checkable by substring (lowercased). Pairs whose
 # EN side is too generic for substring matching are excluded from the
-# automated sweep and left to the human-review flag.
+# automated sweep and left to the human-review flag. The EN side may be a
+# single string or a tuple of accepted paraphrases (any one counts as
+# present) — live generation legitimately varies phrasing (e.g. "school
+# choice" as "choice and catchment redesign") without that being a
+# translation defect; a literal-only match would false-positive on faithful
+# paraphrase instead of catching a real back-translation gap.
 CHECKABLE = [
     ("early selection", "korai szelekció"),
     ("comprehensive school", "egységes alapiskola"),
     ("equity", "méltányosság"),
     ("social mobility", "társadalmi mobilitás"),
-    ("school choice", "iskolaválasztás"),
+    (("school choice", "choice and catchment"), "iskolaválasztás"),
     ("phase-", "fokozatos"),          # phase-out/phase-down family
     ("teacher shortage", "pedagógushiány"),
 ]
@@ -77,10 +82,12 @@ def check(en_json, hu_json, doc_pairs):
     hu_all = "\n".join(hu for _, hu in doc_pairs).lower()
     violations = []
     for en_term, hu_term in CHECKABLE:
-        if en_term in en_all and hu_term not in hu_all:
-            violations.append(f"EN '{en_term}' present but HU '{hu_term}' missing")
-        if hu_term in hu_all and en_term not in en_all:
-            violations.append(f"HU '{hu_term}' present but EN '{en_term}' missing (back-translation)")
+        en_terms = en_term if isinstance(en_term, tuple) else (en_term,)
+        en_present = any(t in en_all for t in en_terms)
+        if en_present and hu_term not in hu_all:
+            violations.append(f"EN '{en_terms[0]}' present but HU '{hu_term}' missing")
+        if hu_term in hu_all and not en_present:
+            violations.append(f"HU '{hu_term}' present but EN '{en_terms[0]}' missing (back-translation)")
     report["glossary_violations"] = violations
 
     report["ok"] = (report["id_sets_equal"] and report["structure_equal"]
