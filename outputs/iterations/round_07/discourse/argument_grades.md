@@ -1,9 +1,0 @@
-A2: [not registry-backed — treat as model knowledge] Registry has no fact on whether Hungary has a validated, gaming-resistant SES indicator for admissions quotas.
-A3: [evidence: strong — governance] Registry supports mixed state/non-state governance and church/foundation maintainer role, but not the full prediction that retained discretion will create a two-tier SES-sorting system.
-A6: [evidence: strong — governance] Registry supports non-state maintainers as a distinct sector, but the near-certain expansion/offset and minimal-or-negative equity gain are not directly registry-backed.
-A7: [not registry-backed — treat as model knowledge] Registry does not support the decade-long dual-regime workload, electoral-cycle durability, or lack-of-precedent claims.
-A9: [evidence: strong — tracking_inequality] Registry strongly supports that earlier tracking increases inequality; it does not fully support the “without harming mean performance” or Hungary-specific peer-effect caveat.
-A10: [evidence: strong — tracking_inequality] Registry supports the structural-equity rationale against early tracking; safeguards against middle-class/non-state flight are only indirectly supported by school_choice/governance.
-A11: [evidence: strong — teacher_shortage] Registry supports capacity risk through sustained teacher shortage and ageing workforce, but not the specific need for unprecedented retraining or binding class-size caps.
-A13: [evidence: moderate — portugal_improvement] Registry supports that Portugal improved without changing selection age, making transferability limited; it does not prove no comparator has demonstrated compensation offsets at Hungary’s age 10-12.
-A15: [not registry-backed — treat as model knowledge] Registry contains no fact on TEIP-style funding being first cut during fiscal consolidation or constitutional ring-fencing.
