@@ -57,6 +57,7 @@ CRITICS = {
     "cost_checker": "Test cost_categories: missing items, missing ranges, fiscal sensitivity, transition vs steady-state confusion.",
     "political_risk_checker": "Test political_risks: unmitigated reversal risks, understated opposition, missing entrenchment design.",
     "coherence_checker": "Find internal contradictions within and between scenario fields (goal vs steps, mechanism vs costs).",
+    "context_transferability_checker": "For every claim drawn from evidence outside Hungary, check whether the scenario states the precondition that made it work there and whether Hungary has it — not just that international evidence supports the direction.",
 }
 
 SYNTHESIS = {

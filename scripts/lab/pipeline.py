@@ -840,10 +840,16 @@ def run_round(n):
         if not fids:
             return ""
         rows = [f"- [{K.FACTS[f]['evidence']}] {K.FACTS[f]['en']} "
-                f"(source: {K.FACTS[f]['source']})" for f in fids]
+                f"(source: {K.FACTS[f]['source']})"
+                + (f" TRANSFERABILITY: {K.FACTS[f]['transferability_en']}"
+                   if "transferability_en" in K.FACTS[f] else "")
+                for f in fids]
         return ("\nCURATED SOURCES (registry-backed; cite these with their "
                 "evidence grade; anything beyond them must be flagged as "
-                "model knowledge):\n" + "\n".join(rows))
+                "model knowledge; where a TRANSFERABILITY note is given, "
+                "state the precondition in your own claim rather than "
+                "citing the foreign result as directly applicable):\n"
+                + "\n".join(rows))
 
     def run_expert(name):
         out_path = rd / "expert_outputs" / f"{name}.md"
@@ -1054,6 +1060,8 @@ def run_round(n):
     # 6. critics (parallel) + translation checker
     registry_digest = "\n".join(
         f"- {fid} [{f['evidence']}]: {f['en'][:120]}... (source: {f['source']})"
+        + (f" | transferability: {f['transferability_en']}"
+           if "transferability_en" in f else "")
         for fid, f in K.FACTS.items())
 
     def run_critic(name):
@@ -1063,6 +1071,11 @@ def run_round(n):
                      "facts; a claim tagged stronger than its registry grade, "
                      "or citing a source not listed here without flagging it "
                      "as model knowledge, is a defect):\n" + registry_digest)
+        elif name == "context_transferability_checker":
+            extra = ("\nCURATED SOURCE REGISTRY (facts with a "
+                     "'transferability' note are drawn from outside Hungary; "
+                     "a scenario citing one of these without engaging its "
+                     "named precondition is a defect):\n" + registry_digest)
         text, _ = step.run(
             f"critic:{name}",
             dict(task="critic", agent=name, round_n=n,

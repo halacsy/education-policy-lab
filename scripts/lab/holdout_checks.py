@@ -61,6 +61,21 @@ def check_critics_disagree_with_output(critics_texts):
     return (ok, f"{pushback}/{len(critics_texts)} critics contain real pushback")
 
 
+def check_transferability_engaged(critics_texts):
+    """D-31 B1: context_transferability_checker must name a real, specific
+    missing precondition, not generic 'context differs somewhere' filler."""
+    text = critics_texts.get("context_transferability_checker", "")
+    if not text:
+        return (False, "context_transferability_checker produced no output")
+    headed = len(re.findall(r"^## \S+\.\S+", text, re.M))
+    specific = re.search(
+        r"(precondition|teacher[- ]?(training|supply|shortage)|"
+        r"maintainer|funding model|political(ly)? revers|"
+        r"bundled?( with)?|entangled)", text, re.I)
+    ok = headed >= 1 and bool(specific)
+    return (ok, f"{headed} objection(s), names a specific precondition: {bool(specific)}")
+
+
 def run_all(artifacts):
     """artifacts: dict with brief_en, synthesis, scenarios_hu_md,
     scenarios_en(json), critics(dict). Returns list of (name, ok, msg)."""
@@ -70,4 +85,5 @@ def run_all(artifacts):
         ("hu_not_transliteration", *check_hu_not_transliteration(artifacts["scenarios_hu_md"])),
         ("uncertainty_not_boilerplate", *check_uncertainty_not_boilerplate(artifacts["scenarios_en"])),
         ("critics_disagree", *check_critics_disagree_with_output(artifacts["critics"])),
+        ("transferability_engaged", *check_transferability_engaged(artifacts["critics"])),
     ]

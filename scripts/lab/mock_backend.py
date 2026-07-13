@@ -387,7 +387,10 @@ def critic(agent, d):
     for o in objections:
         lines.append(f"## {o['scenario']}.{o['field']}")
         lines.append(f"Objection: {o['objection']}")
-        if "critic_fix_severity" in d:
+        # context_transferability_checker's own base spec (no directive
+        # needed) already requires these; older critics gained them via the
+        # round-03 critic_fix_severity directive.
+        if "critic_fix_severity" in d or agent == "context_transferability_checker":
             lines.append(f"Severity: {o['severity']}")
             lines.append(f"Suggested revision: {o['fix']}")
         lines.append("")

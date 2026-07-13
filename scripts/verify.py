@@ -31,7 +31,8 @@ SCENARIO_FIELDS = ["goal", "mechanism", "evidence_status", "assumptions",
                    "implementation_steps", "political_risks", "uncertainties"]
 POLICY_CRITICS = ["devil_advocate", "evidence_checker", "assumption_checker",
                   "equity_checker", "feasibility_checker", "cost_checker",
-                  "political_risk_checker", "coherence_checker"]
+                  "political_risk_checker", "coherence_checker",
+                  "context_transferability_checker"]
 
 
 def check(num, name, ok, detail=""):
@@ -109,7 +110,10 @@ def main():
     # 6 — critics: concrete targeted objections (scenario id AND field)
     ok6, det6 = True, []
     for n in rs:
+        st = ITER_DIR / f"round_{n:02d}" / "system_state"
         for c in POLICY_CRITICS:
+            if not (st / "agents" / "critics" / f"{c}.md").exists():
+                continue  # critic added in a later round; not a defect here
             p = ITER_DIR / f"round_{n:02d}" / "critic_outputs" / f"{c}.md"
             if not p.exists():
                 ok6, _ = False, det6.append(f"r{n}:{c} missing")
@@ -210,7 +214,10 @@ def main():
         if missing:
             ok14, _ = False, det14.append(f"r{n}: rubric lost {missing}")
         for c in POLICY_CRITICS:
-            spec = read(st / "agents" / "critics" / f"{c}.md")
+            spec_path = st / "agents" / "critics" / f"{c}.md"
+            if not spec_path.exists():
+                continue  # critic added in a later round; not a removal
+            spec = read(spec_path)
             if "scenario id AND field" not in spec:
                 ok14, _ = False, det14.append(f"r{n}: {c} concreteness rule removed")
     check(14, "no critic/evidence/disagreement constraint was removed", ok14,

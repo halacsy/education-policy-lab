@@ -62,6 +62,16 @@ def parse_source_file(path):
         }
         if library_doc:
             facts[fid]["library_doc"] = library_doc
+        # optional: context/transferability note (D-31 B1) — for facts drawn
+        # from a different country/system, what condition Hungary may lack
+        if "transferability_en" in fields or "transferability_hu" in fields:
+            missing_t = {"transferability_en", "transferability_hu"} - set(fields)
+            if missing_t:
+                raise ValueError(f"{path.name}:{fid}: has one of "
+                                 f"transferability_en/hu but not both "
+                                 f"(missing {missing_t})")
+            facts[fid]["transferability_en"] = fields["transferability_en"]
+            facts[fid]["transferability_hu"] = fields["transferability_hu"]
     return facts
 
 

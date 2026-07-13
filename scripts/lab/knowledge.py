@@ -665,6 +665,16 @@ CRITIQUES = {
              severity="low",
              fix="State the intended weighting range in the mechanism and mirror it in implementation step 2."),
     ],
+    "context_transferability_checker": [
+        dict(scenario="S4", field="mechanism",
+             objection="Mechanism claim 1 cites Portugal's TEIP-style gains as support for the compensation package, but the registry's own transferability note says Portugal's selection structure isn't Hungary's 6/8-year gimnazium system and the effect is entangled with the whole reform bundle — the scenario states the result, not the precondition.",
+             severity="high",
+             fix="Name explicitly which of TEIP's bundled components (targeted funding, curriculum standards, retention policy) Hungary would need to replicate together, and flag that the effect size is not isolated to any one of them."),
+        dict(scenario="S3", field="mechanism",
+             objection="S3's structural-reform mechanism leans on the finnish_reform and polish_reform findings without stating either country's precondition: Finland bundled the reform with a highly selective teacher-training system Hungary does not have (documented teacher shortage, per teacher_shortage), and Poland's own gain was politically reversed within two decades.",
+             severity="high",
+             fix="State the Finnish teacher-supply precondition as a named prerequisite (not an assumption to verify later) and add Poland's reversal as a durability risk in political_risks, not just as background."),
+    ],
 }
 
 # ---------------------------------------------------------------------------
