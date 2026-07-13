@@ -150,6 +150,35 @@ CLUSTER_DECOMPOSE_SCHEMA_HINT = json.dumps({
     },
 }, indent=2)
 
+# The ledger's HU version used to come from ONE call translating the fully
+# rendered document — at 17 clusters that's 200KB+ of source text, which
+# needs more output than the Anthropic SDK allows without switching to
+# streaming (a >10-minute non-streamed call is rejected outright). Instead
+# translate the underlying DATA in small per-voice/per-cluster pieces (same
+# principle as the argument-map split), then call ledger.render_ledger()
+# again — the EXACT same deterministic renderer already used for EN — to
+# produce the HU document. Scales to any cluster count; no separate
+# "translate the whole document" step needed at all.
+TRANSLATE_CLUSTER_SCHEMA_HINT = json.dumps({
+    "claim": "<translated>", "interest": "<translated>",
+    "value": "<translated>", "fear": "<translated>",
+    "affected": ["<translated>", "..."], "assumption": "<translated>",
+    "empirical_uncertainty": "<translated>",
+}, indent=2)
+
+
+def valid_cluster_translation(d):
+    if not isinstance(d, dict):
+        return False
+    for field in ("claim", "interest", "value", "fear", "assumption",
+                  "empirical_uncertainty"):
+        if not str(d.get(field, "")).strip():
+            return False
+    affected = d.get("affected")
+    if not affected or not all(str(a).strip() for a in affected):
+        return False
+    return True
+
 
 def valid_voice(obj):
     try:
@@ -652,31 +681,94 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
     ledger_en = LG.render_ledger(n, voices, clusters, grades, responses, "en")
     write(rd / "argument_ledger.en.md", ledger_en)
 
-    ledger_hu, _ = step.run(
-        "translate_ledger",
-        dict(task="translate_ledger", agent="translator", lang="hu",
-             round_n=n,
-             instructions=(
-                 "Translate this argument ledger into Hungarian. Use EXACTLY "
-                 f"these headings: '# Érv-főkönyv — {n}. kör', "
-                 "'## Álláspont-mátrix', '## Érvklaszterek', "
-                 "'## Reciprocitás-kör' (only if present in the source), "
-                 "'## Feltétel-regiszter', '## Gumicsontok'. Keep every A<i> "
-                 "id, every voice name, and every interest/value/fear/"
-                 "affected/assumption/empirical-uncertainty/relevance line "
-                 "per cluster (translate the prose, keep the structure). "
-                 "Use the glossary strictly.\n\nGLOSSARY:\n" + glossary),
-             inputs=ledger_en),
-        validate=lambda t: ("## Álláspont-mátrix" in t
-                            and "## Érvklaszterek" in t
-                            and "## Feltétel-regiszter" in t
-                            and "## Gumicsontok" in t
-                            and len(re.findall(r"\*\*A\d+\*\*", t)) >= 6
-                            and t.strip() != ledger_en.strip()),
-        # D-30 clusters carry ~5x the text of the pre-D-30 ledger
-        # (per-cluster decomposition + gumicsont section); the pre-D-30
-        # budget of 8000 was already tight before that content existed.
-        out_path=rd / "argument_ledger.hu.md", max_tokens=16000)
+    # HU: translate the data in small parallel pieces, then render with the
+    # same deterministic renderer used for EN (see the comment above
+    # TRANSLATE_CLUSTER_SCHEMA_HINT).
+    def translate_voice(name):
+        v = voices[name]
+        obj, _ = step.run(
+            f"translate_voice:{name}",
+            dict(task="translate_voice", agent="translator", lang="hu",
+                 round_n=n,
+                 instructions=(
+                     "Translate this discourse voice's reactions into "
+                     "Hungarian. Keep the exact same JSON schema and every "
+                     "scenario id, stance, and label value unchanged — "
+                     "translate only the prose fields (interest, "
+                     "public_good_frame, argument, condition_to_change, "
+                     "basis). Return ONLY the JSON object.\n\nGLOSSARY:\n"
+                     + glossary),
+                 inputs=json.dumps(v, ensure_ascii=False)),
+            validate=valid_voice, out_path=ddir / "voices_hu" / f"{name}.json",
+            postprocess=parse_json_block, loader=read_json,
+            writer=lambda p, o: write_json(p, o), max_tokens=6000)
+        return name, obj
+
+    voices_hu = {}
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        for name, obj in ex.map(translate_voice, voice_names):
+            voices_hu[name] = obj
+
+    def translate_cluster(c):
+        cid = c["id"]
+        obj, _ = step.run(
+            f"translate_cluster:{cid}",
+            dict(task="translate_cluster", agent="translator", lang="hu",
+                 round_n=n,
+                 instructions=(
+                     f"Translate argument cluster {cid}'s text fields into "
+                     "Hungarian. Return ONLY a JSON object with this exact "
+                     "schema:\n" + TRANSLATE_CLUSTER_SCHEMA_HINT
+                     + "\n\nGLOSSARY:\n" + glossary),
+                 inputs=json.dumps(
+                     {k: c[k] for k in ("claim", "interest", "value", "fear",
+                                        "affected", "assumption",
+                                        "empirical_uncertainty")},
+                     ensure_ascii=False)),
+            validate=valid_cluster_translation,
+            out_path=ddir / "clusters_hu" / f"{cid}.json",
+            postprocess=parse_json_block, loader=read_json,
+            writer=lambda p, o: write_json(p, o), max_tokens=1500)
+        merged = dict(c)
+        merged.update(obj)
+        return cid, merged
+
+    clusters_hu_by_id = {}
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        for cid, merged in ex.map(translate_cluster, clusters):
+            clusters_hu_by_id[cid] = merged
+    clusters_hu = [clusters_hu_by_id[c["id"]] for c in clusters]
+
+    responses_hu = {name: None for name in voice_names}
+    if any(responses.values()):
+        def translate_response(name):
+            r = responses[name]
+            if not r:
+                return name, None
+            obj, _ = step.run(
+                f"translate_reciprocity:{name}",
+                dict(task="translate_reciprocity", agent="translator",
+                     lang="hu", round_n=n,
+                     instructions=(
+                         "Translate this reciprocity response into "
+                         "Hungarian. Keep the cluster id and outcome "
+                         "unchanged — translate only the response prose "
+                         "(and new_condition, if present). Return ONLY the "
+                         "JSON object.\n\nGLOSSARY:\n" + glossary),
+                     inputs=json.dumps(r, ensure_ascii=False)),
+                validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
+                out_path=ddir / "responses_hu" / f"{name}.json",
+                postprocess=parse_json_block, loader=read_json,
+                writer=lambda p, o: write_json(p, o), max_tokens=2000)
+            return name, obj
+
+        with ThreadPoolExecutor(max_workers=4) as ex:
+            for name, obj in ex.map(translate_response, voice_names):
+                responses_hu[name] = obj
+
+    ledger_hu = LG.render_ledger(n, voices_hu, clusters_hu, grades,
+                                 responses_hu, "hu")
+    write(rd / "argument_ledger.hu.md", ledger_hu)
 
     stances = [r["stance"] for v in voices.values() for r in v["reactions"]]
     labels = [r["label"] for v in voices.values() for r in v["reactions"]]

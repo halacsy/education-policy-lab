@@ -50,7 +50,9 @@ def compose(prompt, role):
         "argument_decompose": lambda: argument_decompose(prompt),
         "grade_arguments": lambda: grade_arguments(prompt),
         "discourse_reciprocity": lambda: discourse_reciprocity(h["agent"]),
-        "translate_ledger": lambda: translate_ledger(int(h.get("round", 1))),
+        "translate_voice": lambda: translate_voice(prompt),
+        "translate_cluster": lambda: translate_cluster(prompt),
+        "translate_reciprocity": lambda: translate_reciprocity(prompt),
     }.get(task)
     if fn is None:
         raise ValueError(f"mock backend: unknown task {task!r}")
@@ -494,13 +496,71 @@ def discourse_reciprocity(name):
     return json.dumps(_response_json(name, "en"), ensure_ascii=False, indent=2)
 
 
-def translate_ledger(round_n):
-    from .ledger import grade_lines, render_ledger
-    voices = {n: _voice_json(n, "hu") for n in K.DISCOURSE_VOICES}
-    grades = grade_lines(grade_arguments(""))  # curated clusters, HU twin
-    responses = {n: _response_json(n, "hu") for n in K.DISCOURSE_VOICES}
-    return render_ledger(round_n, voices, _clusters("hu"), grades,
-                         responses, "hu")
+def _mock_inputs(prompt):
+    """Parse the free-form (no END marker) '=== INPUTS ===' block."""
+    m = re.search(r"=== INPUTS ===\n(.*)", prompt, re.S)
+    try:
+        return json.loads(m.group(1)) if m else {}
+    except (json.JSONDecodeError, AttributeError):
+        return {}
+
+
+def translate_voice(prompt):
+    """D-30: per-voice HU translation (replaces the old one-shot ledger
+    translation). Curated voice names get their curated HU twin; a live
+    voice name always matches (voice names are fixed), so this path exists
+    mainly for the initial mock-sprint smoke test."""
+    v = _mock_inputs(prompt)
+    name = v.get("voice")
+    if name in K.DISCOURSE_VOICES:
+        return json.dumps(_voice_json(name, "hu"), ensure_ascii=False, indent=2)
+    reactions = [dict(r, argument="(HU fordítás nem elérhető) "
+                                  + str(r.get("argument", "")))
+                for r in v.get("reactions", [])]
+    return json.dumps(dict(voice=name, reactions=reactions),
+                      ensure_ascii=False, indent=2)
+
+
+def translate_cluster(prompt):
+    """D-30: per-cluster HU translation. Curated ids get their curated HU
+    twin; an id outside the curated pack (a live phase-1 clustering
+    produced more clusters than the curated 10) gets an honestly-labelled
+    untranslated fallback instead of failing outright."""
+    m = re.search(r"argument cluster (A\d+)", prompt)
+    cid = m.group(1) if m else None
+    curated = {c["id"]: c for c in _clusters("hu")}
+    cur = curated.get(cid)
+    if cur:
+        return json.dumps({k: cur[k] for k in (
+            "claim", "interest", "value", "fear", "affected", "assumption",
+            "empirical_uncertainty")}, ensure_ascii=False, indent=2)
+    src = _mock_inputs(prompt)
+    prefix = "(HU fordítás nem elérhető) "
+    return json.dumps(dict(
+        claim=prefix + str(src.get("claim", "")),
+        interest=prefix + str(src.get("interest", "")),
+        value=prefix + str(src.get("value", "")),
+        fear=prefix + str(src.get("fear", "")),
+        affected=src.get("affected") or ["érintett felek"],
+        assumption=prefix + str(src.get("assumption", "")),
+        empirical_uncertainty=prefix + str(src.get("empirical_uncertainty", "")),
+    ), ensure_ascii=False, indent=2)
+
+
+def translate_reciprocity(prompt):
+    """D-30: per-voice HU translation of the reciprocity response."""
+    r = _mock_inputs(prompt)
+    name = r.get("voice")
+    if name in K.DISCOURSE_VOICES:
+        return json.dumps(_response_json(name, "hu"), ensure_ascii=False, indent=2)
+    responses = [dict(cluster=it.get("cluster"),
+                      response="(HU fordítás nem elérhető) "
+                              + str(it.get("response", "")),
+                      outcome=it.get("outcome"),
+                      new_condition=it.get("new_condition", ""))
+                for it in r.get("responses", [])]
+    return json.dumps(dict(voice=name, responses=responses),
+                      ensure_ascii=False, indent=2)
 
 
 # -- meta critique -----------------------------------------------------------
