@@ -209,9 +209,86 @@ DISAGREEMENTS = [
 
 SCENARIOS = [
     dict(
+        id="S0",
+        title=dict(en="No-intervention baseline: audit first, fixed deadline",
+                   hu="Nulladik alapforgatókönyv: előbb audit, rögzített határidővel"),
+        intervention_type="none",
+        goal=dict(en="Make no structural or admission change now; commission an independent, Hungary-specific equity audit of the 6/8-year tracks' actual mobility impact, with a fixed 18-month deadline after which a directional decision is made either way.",
+                  hu="Most semmilyen szerkezeti vagy felvételi változtatást nem hajtunk végre; független, Magyarországra vonatkozó méltányossági auditot rendelünk el a hat-/nyolcosztályos képzések tényleges mobilitási hatásáról, rögzített 18 hónapos határidővel, amely után mindenképp irányadó döntés születik."),
+        mechanism=[
+            dict(en="No Hungary-specific impact study currently exists, so any directional decision now would be evidence-free on the one question that matters most: how much the tracks actually affect mobility here",
+                 hu="Jelenleg nem létezik Magyarországra vonatkozó hatásvizsgálat, így bármely irányadó döntés most bizonyíték nélkül születne a legfontosabb kérdésben: mennyire befolyásolják ténylegesen a képzések a mobilitást itthon",
+                 evidence="strong", source="legal_and_governance expert position", core=True),
+            dict(en="A fixed deadline prevents the audit from becoming a permanent delay tactic",
+                 hu="A rögzített határidő megakadályozza, hogy az audit tartós halogatási taktikává váljon",
+                 evidence="strong", source="by construction", core=False),
+        ],
+        evidence_status=dict(label="strong",
+                             en="Strong: that the local evidence gap exists is well documented; what the audit will find is, by definition, unknown.",
+                             hu="Erős: hogy a hazai bizonyítékhiány fennáll, jól dokumentált; hogy az audit mit fog találni, az definíció szerint ismeretlen."),
+        assumptions=[
+            dict(en="An 18-month audit can be genuinely independent and is not itself captured by either side of the debate.",
+                 hu="A 18 hónapos audit valóban független lehet, és nem foglalja el a vita egyik oldala sem."),
+            dict(en="A fixed deadline will be politically honored rather than extended indefinitely.",
+                 hu="A rögzített határidőt politikailag betartják, nem tolják ki a végtelenségig."),
+        ],
+        expected_benefits=[
+            dict(en="Avoids locking in an expensive structural choice before the one decisive local fact is known",
+                 hu="Elkerüli, hogy egy költséges szerkezeti döntés szülessen, mielőtt a döntő hazai tény ismertté válna",
+                 evidence="strong"),
+            dict(en="Buys time to build the SES-linkage data infrastructure S1 and S2 both depend on",
+                 hu="Időt nyer az SES-összekapcsolási adatinfrastruktúra kiépítésére, amelytől S1 és S2 is függ",
+                 evidence="moderate"),
+        ],
+        equity_impact=dict(
+            en="Neutral in the short run: the current SES skew persists unchanged for the audit's duration, which is itself an equity cost, not a free option — this is the scenario's central trade-off, not something the goal statement should obscure.",
+            hu="Rövid távon semleges: a jelenlegi státusz szerinti torzítás az audit időtartama alatt változatlanul fennmarad, ami önmagában is méltányossági ár, nem ingyenes választás — ez a forgatókönyv központi kompromisszuma, amit a célkitűzés nem fedhet el."),
+        cost_categories=[
+            dict(en="One-off: audit commissioning and fieldwork (low-to-medium, central budget)",
+                 hu="Egyszeri: az audit megbízása és lebonyolítása (alacsony-közepes, központi költségvetés)"),
+            dict(en="Opportunity cost: the SES gradient persists unaddressed for 18 months (unquantified but real)",
+                 hu="Alkalmazási költség: a státusz szerinti torzítás 18 hónapig kezeletlenül fennmarad (nem számszerűsített, de valós)"),
+            dict(en="Political capital: low to commission, but high if the deadline is later broken",
+                 hu="Politikai tőke: alacsony a megbízáshoz, de magas, ha a határidőt később megszegik"),
+        ],
+        implementation_steps=[
+            dict(actor=dict(en="Education ministry", hu="Oktatásért felelős minisztérium"),
+                 action=dict(en="commission an independent audit body with statutory 18-month deadline and published terms of reference", hu="független audit-testület megbízása törvényben rögzített 18 hónapos határidővel és nyilvános megbízási feltételekkel"),
+                 timeline=dict(en="month 1", hu="1. hónap")),
+            dict(actor=dict(en="Independent auditor + KSH/Oktatási Hivatal", hu="Független auditor + KSH/Oktatási Hivatal"),
+                 action=dict(en="run the Hungary-specific mobility-impact study using linked administrative data", hu="a Magyarországra vonatkozó mobilitási hatásvizsgálat lefolytatása összekapcsolt közigazgatási adatok felhasználásával"),
+                 timeline=dict(en="months 2-16", hu="2-16. hónap")),
+            dict(actor=dict(en="Legislator", hu="Jogalkotó"),
+                 action=dict(en="make the directional decision (retain, S1-4, or a combination) based on the audit's findings", hu="az irányadó döntés meghozatala (megtartás, S1-4, vagy ezek kombinációja) az audit eredményei alapján"),
+                 timeline=dict(en="month 18", hu="18. hónap")),
+        ],
+        political_risks=[
+            dict(en="The deadline is quietly extended or the audit's findings are shelved, turning the baseline into indefinite status quo by default.",
+                 hu="A határidőt csendben meghosszabbítják, vagy az audit eredményeit elfektetik, így az alapforgatókönyv alapértelmezetten határidő nélküli status quóvá válik."),
+            dict(en="Advocates on both sides frame the audit itself as a delay tactic before it even starts.",
+                 hu="Mindkét oldal képviselői már az audit megkezdése előtt halogatási taktikaként keretezik azt."),
+        ],
+        uncertainties=[
+            dict(en="Whether an 18-month timeline is enough for a genuinely rigorous Hungary-specific study.",
+                 hu="Elegendő-e a 18 hónapos ütemezés egy valóban alapos, Magyarországra vonatkozó vizsgálathoz.",
+                 confidence="medium",
+                 reducer=dict(en="a scoping study in month 1 confirming feasibility of the full timeline", hu="egy 1. havi előkészítő vizsgálat, amely megerősíti a teljes ütemezés megvalósíthatóságát")),
+            dict(en="Whether political actors will treat the audit's findings as binding once available.",
+                 hu="A politikai szereplők kötelező érvényűnek tekintik-e majd az audit eredményeit, ha azok elkészülnek.",
+                 confidence="low",
+                 reducer=dict(en="a pre-committed, cross-party agreement on the decision procedure before the audit starts", hu="előzetesen vállalt, pártokon átívelő megállapodás a döntési eljárásról az audit megkezdése előtt")),
+        ],
+        framings=[
+            dict(en="Evidence-first governance (chosen: frames the delay as rigor, not avoidance)", chosen=True,
+                 reject_reason=None),
+            dict(en="Doing nothing (rejected: factually wrong — the audit and fixed deadline are themselves actions — and invites the 'delay tactic' framing)", chosen=False,
+                 reject_reason="Factually wrong (the audit and fixed deadline are themselves actions) and invites the 'delay tactic' framing."),
+        ]),
+    dict(
         id="S1",
         title=dict(en="Admission reform within the current structure",
                    hu="Felvételi reform a jelenlegi szerkezeten belül"),
+        intervention_type="pilot",
         goal=dict(en="Reduce the SES bias of entry into 6- and 8-year gimnazium tracks without changing the structure, by reforming the admission examination and admission rules.",
                   hu="A hat- és nyolcosztályos gimnáziumi képzésbe való bekerülés társadalmi-gazdasági torzításának csökkentése a szerkezet változtatása nélkül, a felvételi vizsga és a felvételi szabályok reformjával."),
         mechanism=[
@@ -297,6 +374,7 @@ SCENARIOS = [
         id="S2",
         title=dict(en="Gradual phase-down of 6/8-year entry places",
                    hu="A hat- és nyolcosztályos belépőhelyek fokozatos szűkítése"),
+        intervention_type="full",
         goal=dict(en="Shrink early-selective intake over a decade by capping and gradually reducing entry places, while investing the freed capacity in strong programmes inside general schools.",
                   hu="A korai szelektív bekerülés egy évtized alatti szűkítése a belépőhelyek maximálásával és fokozatos csökkentésével, a felszabaduló kapacitás általános iskolai erős programokba forgatásával."),
         mechanism=[
@@ -384,6 +462,7 @@ SCENARIOS = [
         id="S3",
         title=dict(en="Comprehensive school to age 14 (structural reform)",
                    hu="Egységes alapiskola 14 éves korig (szerkezeti reform)"),
+        intervention_type="full",
         goal=dict(en="End between-school academic selection before age 14 by phasing out 6- and 8-year gimnazium entry, moving first selection to the end of grade 8, with differentiated teaching inside a common school.",
                   hu="Az iskolák közötti tanulmányi szelekció megszüntetése 14 éves kor előtt: a hat- és nyolcosztályos gimnáziumi belépés fokozatos kivezetése, az első szelekció áthelyezése a 8. évfolyam végére, differenciált oktatással a közös iskolán belül."),
         mechanism=[
@@ -475,6 +554,7 @@ SCENARIOS = [
         id="S4",
         title=dict(en="Keep the structure, compensate the general schools",
                    hu="A szerkezet megtartása, az általános iskolák megerősítése"),
+        intervention_type="full",
         goal=dict(en="Accept early selection as politically fixed and offset its equity costs by a Portuguese-style package: targeted funding, teacher incentives and support programmes for general schools serving disadvantaged pupils.",
                   hu="A korai szelekció politikai adottságként való elfogadása és méltányossági költségeinek ellensúlyozása portugál típusú csomaggal: célzott finanszírozással, tanári ösztönzőkkel és támogató programokkal a hátrányos helyzetű tanulókat oktató általános iskolákban."),
         mechanism=[
@@ -697,23 +777,29 @@ RECOMMENDATIONS = [
 EXEC_SUMMARY = dict(
     en=("Hungary selects children into academic tracks earlier than almost any OECD system, and the "
         "evidence links early selection to one of the OECD's strongest dependencies of results on family "
-        "background [evidence: strong]. Four scenarios were developed: admission reform within the current "
-        "structure (S1), a gradual phase-down of early entry places (S2), a comprehensive school to age 14 "
-        "(S3), and compensation without structural change (S4). The experts do not agree on the central "
-        "question — whether structural change is necessary or a compensation package suffices — and this "
-        "disagreement is preserved, not resolved: it is a values-and-risk judgment that belongs to "
-        "accountable decision-makers. The immediate no-regret moves are the two cheap, reversible pilots "
-        "(S1 admissions, S4 compensation) and annual publication of intake-composition data."),
+        "background [evidence: strong]. Five scenarios were developed, spanning a real no-intervention "
+        "baseline to full structural change: an audit-first baseline with a fixed 18-month deadline (S0), "
+        "a pilotable admission reform within the current structure (S1), a gradual phase-down of early "
+        "entry places (S2), a comprehensive school to age 14 (S3), and compensation without structural "
+        "change (S4). The experts do not agree on the central question — whether structural change is "
+        "necessary or a compensation package suffices — and this disagreement is preserved, not resolved: "
+        "it is a values-and-risk judgment that belongs to accountable decision-makers. The immediate "
+        "no-regret moves are the two cheap, reversible pilots (S1 admissions, S4 compensation) and annual "
+        "publication of intake-composition data; S0 remains the honest fallback if no structural pact can "
+        "be reached."),
     hu=("Magyarország szinte minden OECD-rendszernél korábban válogatja a gyerekeket tanulmányi utakra, és a "
         "kutatási eredmények a korai szelekciót az OECD egyik legerősebb családi háttér szerinti "
-        "eredményfüggésével kapcsolják össze [bizonyíték: erős]. Négy forgatókönyv készült: felvételi reform a "
-        "jelenlegi szerkezeten belül (S1), a korai belépőhelyek fokozatos szűkítése (S2), egységes alapiskola 14 "
-        "éves korig (S3), valamint kompenzáció szerkezeti változás nélkül (S4). A szakértők nem értenek egyet a "
-        "központi kérdésben — szükséges-e szerkezeti változás, vagy elegendő a kompenzációs csomag —, és ezt a "
-        "nézetkülönbséget a rendszer megőrzi, nem oldja fel: ez értékekről és kockázatokról szóló mérlegelés, "
-        "amely az elszámoltatható döntéshozókra tartozik. Az azonnali, megbánásmentes lépések a két olcsó, "
-        "visszafordítható kísérleti program (S1 felvételi, S4 kompenzáció) és a bekerülési összetétel adatainak "
-        "évenkénti közzététele."))
+        "eredményfüggésével kapcsolják össze [bizonyíték: erős]. Öt forgatókönyv készült, a valódi "
+        "beavatkozás-nélküli alapforgatókönyvtől a teljes szerkezeti változásig: audit-előbb "
+        "alapforgatókönyv rögzített 18 hónapos határidővel (S0), kísérleti jelleggel bevezethető felvételi "
+        "reform a jelenlegi szerkezeten belül (S1), a korai belépőhelyek fokozatos szűkítése (S2), egységes "
+        "alapiskola 14 éves korig (S3), valamint kompenzáció szerkezeti változás nélkül (S4). A szakértők "
+        "nem értenek egyet a központi kérdésben — szükséges-e szerkezeti változás, vagy elegendő a "
+        "kompenzációs csomag —, és ezt a nézetkülönbséget a rendszer megőrzi, nem oldja fel: ez értékekről "
+        "és kockázatokról szóló mérlegelés, amely az elszámoltatható döntéshozókra tartozik. Az azonnali, "
+        "megbánásmentes lépések a két olcsó, visszafordítható kísérleti program (S1 felvételi, S4 "
+        "kompenzáció) és a bekerülési összetétel adatainak évenkénti közzététele; az S0 marad a becsületes "
+        "tartalék, ha nem érhető el szerkezeti megállapodás."))
 
 # ---------------------------------------------------------------------------
 # Unknowns taxonomy + research agenda (D-31 B2/B3) — curated mock pack.
@@ -774,6 +860,24 @@ UNKNOWNS_MAP = dict(
     ),
 )
 
+# ---------------------------------------------------------------------------
+# Decision readiness verdict (D-31 B4) — curated mock pack. EN only (like
+# synthesis.md): a system-transparency artifact, not a translated deliverable.
+# ---------------------------------------------------------------------------
+
+DECISION_READINESS = (
+    "# Decision readiness\n"
+    "Verdict: needs-political-decision\n\n"
+    "## Evidence strength\n"
+    "The strongest structural claim (early tracking raises inequality without raising mean performance) is graded strong at the cross-country level, but every Hungary-specific mechanism claim beneath it (peer effects, non-state absorption, compensation offsetting) is graded moderate-to-weak; the evidence is strong enough to name the trade-off, not strong enough to declare one structural option empirically superior.\n\n"
+    "## Disagreement\n"
+    "The core split (abolish/restrict vs. retain) is not primarily an evidence disagreement — every expert accepts the same SES-gradient facts — it is a values-and-risk judgment about which harm (persistent SES sorting vs. transition disruption to a system under a documented teacher shortage) is more acceptable to bear, which is exactly the kind of disagreement further research does not resolve.\n\n"
+    "## Unknowns\n"
+    "Two 'critical' items remain open in the research agenda (a gaming-resistant SES proxy; Hungary-specific peer-effect magnitude) but neither one, if resolved, would flip the values question above — they would only make whichever option is chosen better-designed, not settle whether to choose it.\n\n"
+    "## Why not the other verdicts\n"
+    "Not ready: no single option is decision-ready without deciding the values question first, which this system does not do. Not pilot-only: S1 is already independently pilotable and that does not resolve the larger structural fork. Not needs-research: the two open critical items would refine, not resolve, the central disagreement.\n"
+)
+
 HUMAN_QUESTIONS = [
     dict(context="Scenario choice", question="How should equity gains be weighed against risks to high-achiever outcomes and against parental choice? This weighting determines the S3-vs-S4 ranking and is a values question the system must not answer.",
          needed="A stated weighting or a deliberative process to produce one.", blocking=True),
@@ -825,6 +929,12 @@ DISCOURSE_VOICES = {
                    hu="nincs sikeres reform, amelyet a pedagógusok nem bírnak el"),
         values="documented union/movement value base: workload, staffing, autonomy",
         reactions={
+            "S0": _rx("conditional", "value_modeled",
+                      "An audit is acceptable as long as it does not become an excuse to keep piling reform announcements onto an already-exhausted profession while nothing is funded.",
+                      "Az audit elfogadható, amíg nem válik ürüggyé arra, hogy a kimerült pedagóguskarra tovább halmozzák a reformbejelentéseket úgy, hogy közben semmi nem kap forrást.",
+                      "Publish the 18-month deadline in law, not as a promise.",
+                      "A 18 hónapos határidő törvénybe kerüljön, ne csak ígéret legyen.",
+                      basis="workload protection"),
             "S1": _rx("conditional", "value_modeled",
                       "Fairer admissions are acceptable if they add no unpaid administrative burden on schools.",
                       "A méltányosabb felvétel elfogadható, ha nem ró újabb fizetetlen adminisztrációt az iskolákra.",
@@ -863,6 +973,12 @@ DISCOURSE_VOICES = {
                    hu="a szülők által megbízhatónak tartott rendszer önmagában közjó"),
         values="parental attachment to selective places as mobility insurance",
         reactions={
+            "S0": _rx("support", "value_modeled",
+                      "No change now is the safest option for a child already inside the current system — better a careful audit than an untested structural gamble with our children as the test cohort.",
+                      "A mostani változatlanság a legbiztonságosabb egy már a rendszerben lévő gyereknek — jobb egy alapos audit, mint egy kipróbálatlan szerkezeti kockázat, amelyben a mi gyerekeink a próba-kohorsz.",
+                      "Keep the deadline real; do not let 'audit' quietly become the permanent answer.",
+                      "A határidő legyen valódi; az 'audit' ne váljon csendben végleges válasszá.",
+                      basis="predictability"),
             "S1": _rx("conditional", "value_modeled",
                       "Fairer entry is welcome, but opaque quotas or lotteries would destroy trust in admissions.",
                       "A méltányosabb bekerülés jó, de az átláthatatlan kvóták vagy sorsolás lerombolnák a felvételi iránti bizalmat.",
@@ -901,6 +1017,12 @@ DISCOURSE_VOICES = {
                    hu="az iskolarendszert az minősíti, mit tesz a leggyengébb helyzetű tanulóiért"),
         values="desegregation practice (Van Helyed / Igazgyöngy type field experience)",
         reactions={
+            "S0": _rx("oppose", "value_modeled",
+                      "The SES gradient is already documented strongly enough that another 18 months of unchanged sorting is itself a cost paid by exactly the pupils this voice speaks for, not a neutral wait.",
+                      "A státusz szerinti lejtő már most is elég erősen dokumentált ahhoz, hogy a szétválogatás további 18 hónapja önmagában is ár legyen — pontosan azoknak a tanulóknak, akikért ez a hang szól, nem semleges várakozás.",
+                      "Shorten the deadline and start a parallel, immediate desegregation pilot alongside the audit.",
+                      "Rövidebb határidő, és az audittal párhuzamosan azonnali deszegregációs kísérleti program induljon.",
+                      basis="field experience with partial reforms"),
             "S1": _rx("conditional", "value_modeled",
                       "Admission reform is a first step, but alone it re-labels the queue instead of shortening it.",
                       "A felvételi reform első lépésnek jó, de önmagában csak átcímkézi a sort, nem rövidíti.",
@@ -939,6 +1061,12 @@ DISCOURSE_VOICES = {
                    hu="plurális társadalomhoz plurális iskola kell; a kiválóság közvagyon"),
         values="subsidiarity, parental primacy, talent development (cf. conservative_education expert brief)",
         reactions={
+            "S0": _rx("support", "value_modeled",
+                      "A system that has served talented children well for decades should not be restructured on a hunch; an independent audit before any directional decision is exactly the right order of operations.",
+                      "Egy évtizedek óta a tehetséges gyerekeket jól szolgáló rendszert nem szabad megérzés alapján átalakítani; egy független audit bármely irányadó döntés előtt pontosan a helyes sorrend.",
+                      "The audit's terms of reference must not presuppose the answer (e.g. by defining 'equity' in a way that treats selection itself as the problem).",
+                      "Az audit megbízási feltételei ne előlegezzék meg a választ (pl. úgy definiálva a 'méltányosságot', hogy magát a szelekciót tekinti problémának).",
+                      basis="subsidiarity and talent development"),
             "S1": _rx("conditional", "value_modeled",
                       "Reform admissions if you must, but merit must remain the basis — SES quotas replace one injustice with another.",
                       "A felvételi reformja elfogadható, de az alap az érdem maradjon — a státuszkvóta egyik igazságtalanságot a másikra cseréli.",
@@ -977,6 +1105,12 @@ DISCOURSE_VOICES = {
                    hu="az ország versenyképessége az osztálytermekben dől el"),
         values="labour-market skills demand; STEM/digital pipeline",
         reactions={
+            "S0": _rx("conditional", "value_modeled",
+                      "An audit costs us nothing directly, but 18 months without any movement on the STEM-teacher shortage that binds every scenario equally is 18 months the skills pipeline keeps eroding regardless of which structural option eventually wins.",
+                      "Az audit önmagában nem kerül nekünk semmibe, de 18 hónap, amely alatt semmi nem történik a minden forgatókönyvet egyformán korlátozó STEM-tanárhiány ügyében, 18 hónap, amelyben a készség-utánpótlás tovább erodálódik, függetlenül attól, melyik szerkezeti opció győz végül.",
+                      "Use the 18 months to fix the teacher-supply bottleneck in parallel, not to wait on it.",
+                      "A 18 hónapot a tanár-utánpótlási szűkkeresztmetszet párhuzamos megoldására kell fordítani, nem a rá való várakozásra.",
+                      basis="competitiveness pipeline"),
             "S1": _rx("no_position", "no_position",
                       "Admission mechanics within the same structure do not change the skills output we depend on; we defer to others on fairness design.",
                       "Az azonos szerkezeten belüli felvételi technika nem változtat a számunkra fontos készség-kibocsátáson; a méltányosság kérdését másokra bízzuk."),
@@ -1012,6 +1146,12 @@ DISCOURSE_VOICES = {
                    hu="az oktatás szabadságába belefér az iskolák eltérő működtetése is"),
         values="maintainer autonomy; bilateral church-state agreements",
         reactions={
+            "S0": _rx("support", "value_modeled",
+                      "No structural or admission change is the outcome that best preserves maintainer autonomy in the short run, and an audit is preferable to a directional decision made without Hungary-specific evidence.",
+                      "A szerkezeti és felvételi változás elmaradása rövid távon a legjobban szolgálja a fenntartói autonómiát, és az audit jobb megoldás, mint egy Magyarországra vonatkozó bizonyíték nélküli irányadó döntés.",
+                      "The audit's scope must respect existing bilateral church-state agreements and not presuppose uniform cross-maintainer mandates as its conclusion.",
+                      "Az audit hatóköre tartsa tiszteletben a meglévő kétoldalú egyházi-állami megállapodásokat, és ne előlegezze meg következtetésként az egységes, fenntartók közötti kötelezettségeket.",
+                      basis="maintainer autonomy"),
             "S1": _rx("conditional", "value_modeled",
                       "Transparency in admissions is acceptable; uniform state-imposed admission rules on church schools are not.",
                       "A felvételi átláthatósága elfogadható; az egyházi iskolákra kényszerített egységes állami felvételi szabály nem.",
@@ -1051,6 +1191,12 @@ DISCOURSE_VOICES = {
         basis=_KK,
         values="Informed by (not attributed to) a documented comprehensive-school reform proposal (Kockás könyv) and a 2026 teacher-workload/autonomy package in the public record",
         reactions={
+            "S0": _rx("oppose", "value_modeled",
+                      "The diagnosis and a written way out already exist; commissioning yet another audit before acting on a well-documented crisis reads as institutionalised delay, not caution.",
+                      "A diagnózis és a leírt kiút már megvan; egy jól dokumentált válság kezelése előtt újabb auditot megrendelni intézményesített halogatásnak hat, nem óvatosságnak.",
+                      "If an audit must happen, bind it to the existing documented reform proposal's timeline, not a fresh 18-month reset.",
+                      "Ha mindenképp kell audit, kösse a meglévő, dokumentált reformjavaslat ütemtervéhez, ne egy új 18 hónapos nullázáshoz.",
+                      basis=_KK),
             "S1": _rx("conditional", "value_modeled",
                       "A fairer gate on the same building is progress, but the documented reform trajectory this archetype draws on aims to need no gate before 14 at all.",
                       "A méltányosabb kapu ugyanazon az épületen előrelépés, de az ehhez az archetípushoz tartozó dokumentált reform-irány szerint 14 éves kor előtt nem kellene kapu egyáltalán.",
@@ -1090,6 +1236,12 @@ DISCOURSE_VOICES = {
         basis=_PDSZ_SRC,
         values="Informed by (not attributed to) a documented 2024 teacher-union programme: structure only via 'professional reconsideration'; wages, workload, strike rights first",
         reactions={
+            "S0": _rx("conditional", "value_modeled",
+                      "An audit is acceptable, but the wage, workload and strike-rights demands this archetype draws on do not depend on selection-structure findings and must not be shelved pending the audit's outcome.",
+                      "Az audit elfogadható, de a bér-, terhelés- és sztrájkjogi követelések, amelyekre ez az archetípus épül, nem függnek a szelekciós szerkezetről szóló megállapításoktól, és nem tehetők félre az audit eredményéig.",
+                      "Run the wage/workload negotiation on its own, parallel track, not gated on the audit.",
+                      "A bér-/terhelési tárgyalás önálló, párhuzamos sávon fusson, ne az audittól függjön.",
+                      basis=_PDSZ_SRC),
             "S1": _rx("support", "value_modeled",
                       "A documented 2026 union position this archetype draws on: if the tracks continue, the admission system must be corrected and segregation actively reduced.",
                       "Egy dokumentált 2026-os szakszervezeti álláspont, amelyre ez az archetípus épül: ha a képzések működnek tovább, a felvételi rendszert korrigálni kell és a szegregációt aktívan csökkenteni.",
@@ -1129,6 +1281,12 @@ DISCOURSE_VOICES = {
         basis=_TISZA_SRC,
         values="Informed by (not attributed to) documented governing-party program statements: early selection named as a problem, no structural commitment; consultation-first governing style",
         reactions={
+            "S0": _rx("support", "value_modeled",
+                      "An audit with a fixed deadline lets a governing majority say it is acting on a named problem without spending political capital on a structural fight before the evidence and consultation groundwork exist.",
+                      "Egy rögzített határidejű audit lehetővé teszi, hogy a kormányzó többség cselekvést mutasson egy megnevezett probléma ügyében anélkül, hogy politikai tőkét áldozna egy szerkezeti harcra, mielőtt megvan hozzá a bizonyíték és az egyeztetési alap.",
+                      "The deadline must be public and specific enough that it cannot quietly become an indefinite postponement.",
+                      "A határidő legyen nyilvános és annyira konkrét, hogy ne válhasson csendben határidő nélküli halogatássá.",
+                      basis=_TISZA_SRC),
             "S1": _rx("support", "value_modeled",
                       "Documented public statements this archetype draws on: the admission system will be reviewed — the tracks' advantage is selection, not value-added.",
                       "Az ehhez az archetípushoz tartozó dokumentált nyilvános nyilatkozatok szerint: a felvételi rendszer felülvizsgálata jön — a képzések előnye szelekció, nem hozzáadott érték.",
@@ -1168,6 +1326,12 @@ DISCOURSE_VOICES = {
         basis=_EI_SRC,
         values="Informed by (not attributed to) a documented 2021 independent-institute proposal: uniformly 8-year primary, no performance-based selection during it",
         reactions={
+            "S0": _rx("support", "value_modeled",
+                      "Commissioning a genuine Hungary-specific mobility-impact study before a directional decision is exactly the evidence-first posture this archetype holds — provided it is real research, not a pretext, and its independence is structurally guaranteed rather than merely asserted.",
+                      "Egy valódi, Magyarországra vonatkozó mobilitási hatásvizsgálat megrendelése bármely irányadó döntés előtt pontosan az az evidenciaalapú hozzáállás, amelyet ez az archetípus képvisel — feltéve, hogy valódi kutatásról van szó, nem ürügyről, és a függetlensége szerkezetileg garantált, nem csak kijelentett.",
+                      "Publish the auditor's selection process and funding source before the study begins, and bind the 18-month deadline in law.",
+                      "Az auditor kiválasztási folyamatát és finanszírozási forrását a vizsgálat megkezdése előtt nyilvánosságra kell hozni, és a 18 hónapos határidőt törvénybe kell foglalni.",
+                      basis=_EI_SRC),
             "S1": _rx("conditional", "value_modeled",
                       "A fairer gate reduces harm but the documented proposal this archetype draws on removes the gate: selection at 10 or 12 has no demonstrated benefit to justify keeping it in any form.",
                       "A méltányosabb kapu csökkenti a kárt, de az ehhez az archetípushoz tartozó dokumentált javaslat magát a kaput szünteti meg: a 10-12 éves kori szelekciónak nincs kimutatott haszna, ami bármilyen formáját igazolná.",

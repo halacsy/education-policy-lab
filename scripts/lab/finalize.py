@@ -12,6 +12,7 @@ from .util import FINAL_DIR, read, read_json, round_dir, write
 
 def _exec_summaries(artifacts, n):
     FINAL_DIR.mkdir(parents=True, exist_ok=True)
+    ids = [s["id"] for s in artifacts["scenarios_en"]["scenarios"]]
     step = Step(FINAL_DIR, resume=True)
     en, _ = step.run(
         "executive_summary_writer",
@@ -19,13 +20,13 @@ def _exec_summaries(artifacts, n):
              round_n=n,
              instructions=(
                  "Write a one-page executive summary (<= 350 words) of the "
-                 "policy work below. It must: name all four scenarios with "
-                 "their ids, state the central expert disagreement WITHOUT "
-                 "resolving it, carry at least one [evidence: ...] tag, and "
-                 "end with the immediate no-regret moves."),
+                 f"policy work below. It must: name all {len(ids)} scenarios "
+                 f"with their ids ({', '.join(ids)}), state the central "
+                 "expert disagreement WITHOUT resolving it, carry at least "
+                 "one [evidence: ...] tag, and end with the immediate "
+                 "no-regret moves."),
              inputs=artifacts["brief_en"] + "\n\n" + artifacts["synthesis"]),
-        validate=lambda t: all(s in t for s in ("S1", "S2", "S3", "S4"))
-                           and len(t) > 400,
+        validate=lambda t: all(s in t for s in ids) and len(t) > 400,
         out_path=FINAL_DIR / "executive_summary.en.md", max_tokens=1500)
     hu, _ = step.run(
         "executive_summary_translator",
@@ -33,11 +34,11 @@ def _exec_summaries(artifacts, n):
              instructions=(
                  "Translate this executive summary into Hungarian using the "
                  "glossary in docs/glossary.md strictly (e.g. korai "
-                 "szelekció, méltányosság, egységes alapiskola). Keep the "
-                 "scenario ids S1-S4. Translate evidence tags as "
-                 "[bizonyíték: ...]."),
+                 f"szelekció, méltányosság, egységes alapiskola). Keep the "
+                 f"scenario ids ({', '.join(ids)}) unchanged. Translate "
+                 "evidence tags as [bizonyíték: ...]."),
              inputs=en),
-        validate=lambda t: all(s in t for s in ("S1", "S4"))
+        validate=lambda t: all(s in t for s in (ids[0], ids[-1]))
                            and t.strip() != en.strip() and "szelekció" in t,
         out_path=FINAL_DIR / "executive_summary.hu.md", max_tokens=1500)
     return en, hu
@@ -126,6 +127,7 @@ def write_final(artifacts, history):
     write(FINAL_DIR / "scenarios.hu.md", artifacts["scenarios_hu_md"])
     write(FINAL_DIR / "unknowns.en.md", artifacts["unknowns_en"])
     write(FINAL_DIR / "unknowns.hu.md", artifacts["unknowns_hu"])
+    write(FINAL_DIR / "decision_readiness.md", artifacts["decision_readiness"])
 
     _exec_summaries(artifacts, n)  # writes executive_summary.{en,hu}.md
 

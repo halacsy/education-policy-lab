@@ -55,6 +55,7 @@ def compose(prompt, role):
         "translate_reciprocity": lambda: translate_reciprocity(prompt),
         "unknowns_map": lambda: K.UNKNOWNS_MAP["en"],
         "translate_unknowns": lambda: K.UNKNOWNS_MAP["hu"],
+        "decision_readiness": lambda: K.DECISION_READINESS,
     }.get(task)
     if fn is None:
         raise ValueError(f"mock backend: unknown task {task!r}")
@@ -118,6 +119,7 @@ def _render_scenario(s, lang, d):
         id=s["id"],
         title=s["title"][L],
         goal=s["goal"][L],
+        intervention_type=s.get("intervention_type", "full"),
         mechanism=mech,
         evidence_status=f"{ev_label(s['evidence_status']['label'])} — {s['evidence_status'][L]}",
         assumptions=[a[L] for a in s["assumptions"]],
@@ -141,12 +143,15 @@ def scenarios_json(lang, d):
 def synthesis(d):
     lines = ["# Synthesis", "",
              "## Overview",
-             "Four scenarios span the real option space: reform the entry gate "
-             "(S1), shrink early-selective intake gradually (S2), end "
-             "between-school selection before 14 (S3), or compensate without "
-             "structural change (S4). The scenarios are not mutually exclusive: "
-             "S1 and S4 are cheap, reversible pilots that inform the structural "
-             "choice between S2 and S3.",
+             "Five scenarios span the real option space, from no intervention "
+             "to full structural change: audit first with a fixed deadline "
+             "(S0), reform the entry gate (S1), shrink early-selective intake "
+             "gradually (S2), end between-school selection before 14 (S3), or "
+             "compensate without structural change (S4). The scenarios are not "
+             "mutually exclusive: S1 is itself pilotable, and S1/S4 are cheap, "
+             "reversible moves that inform the structural choice between S2 "
+             "and S3, with S0 as the honest fallback if no structural pact is "
+             "reached.",
              "",
              "## Disagreement map"]
     for dis in K.DISAGREEMENTS:
@@ -404,7 +409,8 @@ def critic(agent, d):
 def _voice_json(name, lang):
     v = K.DISCOURSE_VOICES[name]
     reactions = []
-    for sid in ("S1", "S2", "S3", "S4"):
+    for s in K.SCENARIOS:
+        sid = s["id"]
         r = v["reactions"][sid]
         reactions.append(dict(
             scenario=sid, stance=r["stance"], label=r["label"],

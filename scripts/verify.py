@@ -17,7 +17,8 @@ from lab import holdout_checks, translation
 from lab.evaluation import DIMENSIONS, LLM_SCORED
 from lab.loadround import load_artifacts
 from lab.pipeline import (BRIEF_HEADERS_EN, BRIEF_HEADERS_HU,
-                          CRITIC_HEADING_RE, valid_unknowns)
+                          CRITIC_HEADING_RE, INTERVENTION_TYPES,
+                          valid_decision_readiness, valid_unknowns)
 from lab.util import FINAL_DIR, ITER_DIR, ROOT, load_config, read, read_json
 
 FAILURES = []
@@ -107,6 +108,17 @@ def main():
     ok5 = len(scen) >= 3 and all(full(s) for s in scen)
     check(5, ">=3 scenarios, each with all 10 required fields",
           ok5, f"{len(scen)} scenarios")
+
+    # B — D-31 B4: scenario set spans a real no-intervention baseline and a
+    # genuinely pilotable option, and a decision-readiness verdict exists
+    types_last = [s.get("intervention_type") for s in scen]
+    okB = (all(t in INTERVENTION_TYPES for t in types_last)
+           and "none" in types_last and "pilot" in types_last)
+    dr_path = FINAL_DIR / "decision_readiness.md"
+    okB = okB and dr_path.exists() and valid_decision_readiness(read(dr_path))
+    check("B", "D-31 B4: scenario set spans none+pilot intervention types; "
+               "decision_readiness.md has a verdict + justification",
+          okB, f"intervention_types: {types_last}")
 
     # 6 — critics: concrete targeted objections (scenario id AND field)
     ok6, det6 = True, []

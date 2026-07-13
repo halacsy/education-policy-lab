@@ -29,6 +29,7 @@ FIELD_KEYS = translation.FIELD_KEYS
 SCENARIO_SCHEMA_HINT = json.dumps({
     "scenarios": [{
         "id": "S1", "title": "...", "goal": "...",
+        "intervention_type": "none | pilot | full",
         "mechanism": ["causal claim with inline [evidence: strong|moderate|weak|contested] tag where required"],
         "evidence_status": "overall label — one-sentence justification",
         "assumptions": ["..."], "expected_benefits": ["... [evidence: ...]"],
@@ -38,12 +39,29 @@ SCENARIO_SCHEMA_HINT = json.dumps({
     }]
 }, indent=2)
 
+# D-31 B4: the scenario set must always span a real no-intervention baseline
+# and a genuinely pilotable/low-intensity option, not just structurally
+# distinct full-scale alternatives — every scenario needs intervention_type
+# and the SET must contain >=1 "none" and >=1 "pilot" (checked by
+# valid_scenarios()).
+INTERVENTION_TYPES = ("none", "pilot", "full")
+
 SCENARIO_ANCHORS = (
-    "Produce EXACTLY four scenarios with stable ids:\n"
-    "S1 admission reform within the current structure; S2 gradual phase-down "
-    "of 6/8-year entry places; S3 comprehensive school to age 14 (structural "
-    "reform); S4 keep the structure, compensate general schools "
-    "(Portuguese-style package).")
+    "Produce AT LEAST five scenarios with stable ids. Every scenario needs "
+    "an intervention_type field (none|pilot|full); the SET must include at "
+    "least one 'none' and at least one 'pilot' (D-31 B4 — a real "
+    "no-intervention baseline and a genuinely low-intensity/reversible "
+    "option, not just structurally distinct full-scale alternatives):\n"
+    "S0 no-intervention baseline (intervention_type=none): keep the current "
+    "structure, commission an independent equity audit, but set a fixed "
+    "decision deadline rather than deferring indefinitely;\n"
+    "S1 admission reform within the current structure (intervention_type="
+    "pilot): scope it so it can run as a 2-3 district pilot before any "
+    "national rollout;\n"
+    "S2 gradual phase-down of 6/8-year entry places (intervention_type="
+    "full); S3 comprehensive school to age 14, structural reform "
+    "(intervention_type=full); S4 keep the structure, compensate general "
+    "schools, Portuguese-style package (intervention_type=full).")
 
 # The 10-section deliberation deliverable (D-30), replacing the old 5-layer
 # Evidence/Interpretation/Assumptions/Recommendations/Open-questions split.
@@ -200,13 +218,13 @@ def valid_cluster_translation(d):
     return True
 
 
-def valid_voice(obj):
+def valid_voice(obj, scen_ids):
     try:
         rs = obj["reactions"]
     except (TypeError, KeyError):
         return False
     if not isinstance(rs, list) or \
-            {r.get("scenario") for r in rs} != {"S1", "S2", "S3", "S4"}:
+            {r.get("scenario") for r in rs} != set(scen_ids):
         return False
     for r in rs:
         if r.get("stance") not in STANCES:
@@ -227,7 +245,7 @@ def valid_voice(obj):
     return True
 
 
-def valid_argmap_basic(obj, voice_names):
+def valid_argmap_basic(obj, voice_names, scen_ids):
     """Phase 1 (clustering only — id/scenario/kind/side/claim/raised_by)."""
     try:
         cl = obj["clusters"]
@@ -241,7 +259,7 @@ def valid_argmap_basic(obj, voice_names):
     for c in cl:
         if not re.fullmatch(r"A\d+", c.get("id", "")):
             return False
-        if c.get("scenario") not in ("S1", "S2", "S3", "S4"):
+        if c.get("scenario") not in scen_ids:
             return False
         if c.get("kind") not in ("fact", "value", "mixed"):
             return False
@@ -339,6 +357,31 @@ def valid_unknowns(text, lang):
     return len(ra_items) >= 4 and tagged >= max(4, int(0.8 * len(ra_items)))
 
 
+# -- decision readiness (D-31 B4) -------------------------------------------
+DECISION_READINESS_VERDICTS = (
+    "ready", "pilot-only", "needs-research", "needs-political-decision",
+)
+DECISION_READINESS_HEADER = "# Decision readiness"
+VERDICT_LINE_RE = re.compile(
+    r"^Verdict:\s*(ready|pilot-only|needs-research|needs-political-decision)\s*$",
+    re.M)
+
+
+def valid_decision_readiness(text):
+    """D-31 B4: a single explicit verdict token plus justification that
+    actually engages evidence strength, disagreement and the unknowns map —
+    not a restatement of the brief's own recommendation-free stance."""
+    if DECISION_READINESS_HEADER not in text:
+        return False
+    m = VERDICT_LINE_RE.search(text)
+    if not m:
+        return False
+    for section in ("## Evidence strength", "## Disagreement", "## Unknowns"):
+        if section not in text:
+            return False
+    return len(text) > 300
+
+
 CRITIC_HEADING_RE = re.compile(
     r"^## S\d+\.(goal|mechanism|evidence_status|assumptions|expected_benefits|"
     r"equity_impact|cost_categories|implementation_steps|political_risks|"
@@ -393,7 +436,18 @@ def valid_scenarios(obj, require_ids=None):
         return False
     if require_ids and set(ids) != set(require_ids):
         return False
-    return all(_nonempty(s.get(k)) for s in sc for k in FIELD_KEYS)
+    if not all(_nonempty(s.get(k)) for s in sc for k in FIELD_KEYS):
+        return False
+    if require_ids is None:
+        # D-31 B4: only enforced on the EN build (the HU translation must
+        # mirror it exactly via require_ids/set(ids) equality above, not
+        # re-derive it independently).
+        types = [s.get("intervention_type") for s in sc]
+        if not all(t in INTERVENTION_TYPES for t in types):
+            return False
+        if "none" not in types or "pilot" not in types:
+            return False
+    return True
 
 
 def render_scenarios_md(obj, lang):
@@ -402,6 +456,9 @@ def render_scenarios_md(obj, lang):
     lines = [title, ""]
     for s in obj["scenarios"]:
         lines.append(f"## {s['id']} — {s['title']}")
+        if s.get("intervention_type"):
+            lines.append(f"*intervention_type: {s['intervention_type']}*")
+            lines.append("")
         for key in FIELD_KEYS:
             label = K.FIELD_LABELS[key][0 if lang == "en" else 1]
             lines.append(f"**{label}**")
@@ -537,7 +594,7 @@ class Step:
         return result, "mock-fallback"
 
 
-def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
+def run_discourse(step, rd, n, scen_en_md, scen_ids, glossary, disc_cfg):
     """Societal-discourse layer (D-29): voices react to the scenarios, the
     mediator builds the argument map, the evidence layer grades factual
     claims, an optional reciprocity pass makes the voices answer their
@@ -560,13 +617,15 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                      "represent, you do not give expert judgment. Return "
                      f"ONLY a JSON object with this exact schema:\n"
                      f"{VOICE_SCHEMA_HINT}\n"
-                     "Rules: one reaction per scenario (S1..S4); a stance "
-                     "without justification is invalid; no_position is the "
-                     "honest choice when your interest implies nothing; "
-                     "NEVER attribute an unsourced position to a real "
+                     "Rules: exactly one reaction per scenario "
+                     f"({', '.join(scen_ids)}); a stance without "
+                     "justification is invalid; no_position is the honest "
+                     "choice when your interest implies nothing; NEVER "
+                     "attribute an unsourced position to a real "
                      "organisation — use value_modeled with its basis."),
                  inputs=scen_en_md),
-            validate=valid_voice, out_path=ddir / "voices" / f"{name}.json",
+            validate=lambda o: valid_voice(o, scen_ids),
+            out_path=ddir / "voices" / f"{name}.json",
             postprocess=parse_json_block, loader=read_json,
             writer=lambda p, o: write_json(p, o), max_tokens=6000)
         return name, obj
@@ -595,7 +654,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                  "raised_by lists ONLY voice names that actually raise it; "
                  "NEVER drop a minority argument; do not count heads."),
              inputs=voices_digest),
-        validate=lambda o: valid_argmap_basic(o, voice_names),
+        validate=lambda o: valid_argmap_basic(o, voice_names, scen_ids),
         out_path=ddir / "argument_map_basic.json", postprocess=parse_json_block,
         loader=read_json, writer=lambda p, o: write_json(p, o),
         max_tokens=6000)
@@ -741,7 +800,8 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                      "basis). Return ONLY the JSON object.\n\nGLOSSARY:\n"
                      + glossary),
                  inputs=json.dumps(v, ensure_ascii=False)),
-            validate=valid_voice, out_path=ddir / "voices_hu" / f"{name}.json",
+            validate=lambda o: valid_voice(o, scen_ids),
+            out_path=ddir / "voices_hu" / f"{name}.json",
             postprocess=parse_json_block, loader=read_json,
             writer=lambda p, o: write_json(p, o), max_tokens=6000)
         return name, obj
@@ -943,6 +1003,7 @@ def run_round(n):
         loader=read_json, writer=write_scen, max_tokens=16000)
     scen_en_md = render_scenarios_md(scen_en, "en")
     write(rd / "scenarios.en.md", scen_en_md)
+    scen_ids = [s["id"] for s in scen_en["scenarios"]]
 
     # 3. editor synthesis + rejected framings
     synthesis_text, _ = step.run(
@@ -963,8 +1024,9 @@ def run_round(n):
         "rejected_framings",
         dict(task="rejected_framings", agent="scenario_builder", round_n=n,
              instructions=(
-                 "For each scenario S1-S4, list the candidate framings you "
-                 "considered: exactly one line starting '- CHOSEN: ' and at "
+                 f"For each scenario ({', '.join(scen_ids)}), list the "
+                 "candidate framings you considered: exactly one line "
+                 "starting '- CHOSEN: ' and at "
                  "least one starting '- REJECTED: ... — reason: ...' under a "
                  "'## S<n> — <title>' heading."),
              inputs=scen_en_md),
@@ -977,7 +1039,7 @@ def run_round(n):
     disc_cfg = cfg.get("discourse", {})
     disc = None
     if disc_cfg.get("enabled"):
-        disc = run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg)
+        disc = run_discourse(step, rd, n, scen_en_md, scen_ids, glossary, disc_cfg)
 
     # 4. translator (HU scenarios)
     scen_hu, _ = step.run(
@@ -1177,6 +1239,41 @@ def run_round(n):
         validate=lambda t: valid_unknowns(t, "hu") and t.strip() != unknowns_en.strip(),
         out_path=rd / "unknowns.hu.md", max_tokens=4000)
 
+    # decision readiness verdict (D-31 B4): synthesizes evidence strength,
+    # disagreement and the unknowns map into one of 4 verdicts — the system
+    # states whether the evidence base is mature enough to decide, it does
+    # not decide.
+    decision_readiness, _ = step.run(
+        "decision_readiness_writer",
+        dict(task="decision_readiness", agent="decision_readiness_writer",
+             round_n=n,
+             instructions=(
+                 f"Policy question: {question}\n"
+                 "Write a decision-readiness verdict. Output EXACTLY this "
+                 "structure:\n"
+                 f"{DECISION_READINESS_HEADER}\n"
+                 "Verdict: <ready|pilot-only|needs-research|"
+                 "needs-political-decision>\n"
+                 "## Evidence strength\n<1-2 sentences: how strong is the "
+                 "evidence for the strongest option, citing evidence grades>\n"
+                 "## Disagreement\n<1-2 sentences: is the expert "
+                 "disagreement empirical (evidence would resolve it) or a "
+                 "genuine value conflict (it would not)>\n"
+                 "## Unknowns\n<1-2 sentences: do any 'critical'-priority "
+                 "items in the research agenda block a responsible decision "
+                 "right now>\n"
+                 "## Why not the other verdicts\n<1 sentence each ruling "
+                 "out the 3 verdicts you did not choose>\n"
+                 "The verdict must follow from the three sections above, "
+                 "not be asserted first and rationalized after. "
+                 "needs-political-decision means the evidence is adequate "
+                 "but the remaining gap is a value conflict, not an "
+                 "empirical one."),
+             inputs=synthesis_text + "\n\n" + unknowns_en + "\n\n"
+                    + critics_digest),
+        validate=valid_decision_readiness,
+        out_path=rd / "decision_readiness.md", max_tokens=2000)
+
     doc_pairs = [(scen_en_md, scen_hu_md), (brief_en, brief_hu)]
     tr_report = translation.check(scen_en, scen_hu, doc_pairs)
     tr_md = translation.render_report(tr_report, n)
@@ -1199,6 +1296,7 @@ def run_round(n):
         "brief_en": brief_en, "brief_hu": brief_hu,
         "critics": critics, "translation": tr_report,
         "unknowns_en": unknowns_en, "unknowns_hu": unknowns_hu,
+        "decision_readiness": decision_readiness,
         "discourse": disc["metrics"] if disc else None,
         "ledger_conditions": disc["conditions"] if disc else [],
         "fallbacks": step.fallbacks, "_step": step,
