@@ -1,0 +1,127 @@
+{
+  "round": 7,
+  "dimensions": {
+    "scenario_completeness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "evidence_discipline": {
+      "deterministic": 6.216,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          9.0,
+          9.0,
+          9.0
+        ],
+        "mean": 9.0,
+        "variance": 0.0,
+        "divergence_flagged": true
+      },
+      "score": 6.216,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    },
+    "critic_concreteness": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          9.0,
+          9.0,
+          8.0
+        ],
+        "mean": 8.667,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 9.6,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "layer_separation": {
+      "deterministic": 7.0,
+      "score": 7.0,
+      "method": "deterministic"
+    },
+    "meta_system_eval": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          9.0,
+          9.0,
+          8.0
+        ],
+        "mean": 8.667,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 9.6,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "disagreement_preservation": {
+      "deterministic": 9.778,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "mean": 10.0,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 9.844,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "uncertainty_explicitness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "translation_fidelity": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          9.0,
+          9.0,
+          9.0
+        ],
+        "mean": 9.0,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 9.7,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    }
+  },
+  "total": 8.995,
+  "prev_total": 9.478,
+  "delta": -0.483,
+  "generator_provider": "anthropic",
+  "judge_provider": "openai",
+  "divergence_flagged": [
+    "evidence_discipline"
+  ],
+  "step_fallbacks": [
+    "translate_voice:eselyegyenlosegi_civil",
+    "translate_voice:pedagogus_erdekvedo",
+    "translate_voice:kisgyerekes_szuloi",
+    "translate_voice:konzervativ_ertekvedo",
+    "translate_voice:digitalisgazdasagi",
+    "translate_voice:egyhazi_fenntartoi",
+    "translate_voice:oktataspolitikai_reformmozgalom",
+    "translate_voice:pedagogus_szakszervezeti_hang",
+    "translate_voice:kormanyzati_reformrealizmus",
+    "translate_voice:fuggetlen_szakpolitikai_kutatomuhely",
+    "translate_reciprocity:pedagogus_erdekvedo",
+    "translate_reciprocity:kisgyerekes_szuloi",
+    "translate_reciprocity:digitalisgazdasagi",
+    "translate_reciprocity:egyhazi_fenntartoi",
+    "translate_reciprocity:oktataspolitikai_reformmozgalom",
+    "translate_reciprocity:kormanyzati_reformrealizmus",
+    "translate_reciprocity:fuggetlen_szakpolitikai_kutatomuhely"
+  ]
+}

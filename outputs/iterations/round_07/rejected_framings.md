@@ -1,0 +1,59 @@
+# rejected_framings.md
+
+## S1 — Admission reform within the current structure
+
+- CHOSEN: Retain the 6- and 8-year gimnazium tracks but rewrite entry rules and quotas so that access to selective places is less strongly skewed toward high-SES, urban families, while acknowledging this does not touch the wider choice/catchment sorting landscape.
+
+- REJECTED: "Admission reform can meaningfully equalize opportunity for low-SES applicants" — reason: The scenario's own assumptions section admits that a workable SES indicator does not exist in Hungary at application time; the feasibility_checker and equity_checker both flag that equity gains are contingent on an unresolved infrastructure problem (no student-level SES register), and the expected_benefits field itself limits gains to "high-ability low-SES pupils who already apply" — excluding the non-applicant population, which contradicts a claim of meaningful equalization.
+
+- REJECTED: "A less-coachable assessment format can be designed and validated within the implementation timeline (year 1-3)" — reason: The assumptions section and evidence_status both note that no validated Hungarian instrument exists; the confidence level for this uncertainty is explicitly low; and cost_checker flagged the original 'medium' cost estimate as understated given the "multi-year psychometric development" required. The timeline is optimistic relative to the feasibility evidence.
+
+- REJECTED: "Reformed/scarcer selection channels eliminate test-preparation pressure on age-10 children" — reason: The expected_benefits field itself qualifies this claim with "insofar as the new assessment resists coaching" and tags it as weak/model knowledge; simultaneously, the political_risks section identifies that reformed channels may invite informal selection (interviews, reputation) that reproduces SES sorting — directly undermining the benefit claim. This framing suppresses internal contradiction.
+
+- REJECTED: "Church and foundation maintainers can be brought under uniform admission-equity rules without a separate legislative fight" — reason: The assumptions section acknowledges this is asserted but untested; legal_and_governance flags maintainer plurality as a structural obstacle; and the political_risks section notes that non-state maintainers may resist uniform mandates. This framing overstates consensus where the evidence documents institutional resistance.
+
+---
+
+## S2 — Gradual phase-down of 6/8-year entry places
+
+- CHOSEN: Reduce over time the number and share of 6- and 8-year gimnazium entry places, shrinking the selective sector gradually rather than abolishing it outright, to lower the share of the cohort exposed to early sorting while managing legal, maintainer, and demographic constraints.
+
+- REJECTED: "Demographic contraction provides a natural, politically easier occasion for quota reduction without net school closures" — reason: The mechanism cites demographic decline as providing "political cover," but this is flagged as an [assumption] not an evidence claim; the coherence_checker and equity_checker both note that "residual selective places become even more SES-skewed" as seats shrink, which means demographic decline does not solve the equity problem — it may even sharpen it. This framing instrumentalizes demography without addressing the sorting intensification it produces.
+
+- REJECTED: "Fewer selective seats automatically improve peer composition in urban general-school upper grades" — reason: The mechanism tags this as "contested" and "weak/contested"; the devil_advocate and evidence_checker both flag that the asymmetric peer-effect mechanism is unverified; and the equity_impact section itself states that "net system-wide equity gain depends heavily on whether non-state maintainers absorb displaced demand." This framing asserts a causal benefit that the scenario's own evidence does not support.
+
+- REJECTED: "Caps on state-maintained schools will not be offset by non-state maintainers expanding selective intake" — reason: This is the core assumption the scenario acknowledges but does not resolve; school_network_planning directly documents that non-state maintainers can "absorb selective tracks and bypass national consolidation plans"; the political_risks and uncertainties sections both identify this as the largest single threat to the reform's equity intent. This framing treats a falsifiable assumption as settled.
+
+- REJECTED: "Grandfathering of enrolled cohorts is a straightforward administrative exercise" — reason: Cost_checker flagged that the original 'medium, transitional' label for parallel-regime administration likely understates actual costs over a decade-long phase; no per-cohort unit cost is available; and the implementation steps show this runs "year 1-10, continuous," making it a major, not minor, administrative burden. This framing minimizes the complexity.
+
+---
+
+## S3 — Comprehensive school to age 14 (structural reform)
+
+- CHOSEN: Abolish 6- and 8-year gimnazium entry points and move to a comprehensive lower-secondary structure until age 14, aligning Hungary with the international evidence base on delayed tracking and equity.
+
+- REJECTED: "Removing early-selection entry points eliminates sorting and reduces the SES-outcome gradient within a decade" — reason: The mechanism and expected_benefits sections both cite the cross-national Hanushek & Woessmann relationship as "strong," but the evidence_status field immediately flags that this is "contested on whether Hungary-specific peer-effect and displacement mechanisms will deliver the promised gains." The equity_impact section then directly contradicts the benefit claim by identifying "the largest risk: middle-class exit to non-state or private schools" which "relocates rather than removes" sorting. This framing asserts that the reform solves the problem while the scenario's own structure documents that it relocates it.
+
+- REJECTED: "Sorting does not simply migrate to school choice between general schools and to non-state maintainers" — reason: This is an explicit assumption the scenario acknowledges; the coherence_checker flags it as internally contradicted by the scenario's own equity_impact field, which identifies exactly this migration as "the largest single risk"; and feasibility_checker notes the same contradiction. This is a falsified assumption still framed as operative.
+
+- REJECTED: "Political ownership will survive two electoral cycles" — reason: The assumptions section states this directly; the political_feasibility expert explicitly contradicts this by finding "no such durability window is assured"; and the Polish precedent (reversal within ~17 years) is cited in the political_risks section as the closest precedent. The scenario's own implementation steps require "multi-year implementation and legal transition timelines," making this assumption critical and known to be unverified. This framing treats an impossible assumption as necessary and plausible.
+
+- REJECTED: "Teacher supply and quality can be upgraded fast enough to prevent increased-heterogeneity effects" — reason: Implementation_planning flags Hungary's teacher shortage as "binding" and "likely to worsen under this scenario"; the uncertainties section flags confidence as low; the mechanism explicitly notes that bundled Finnish-style investment is "necessary for equity gains to materialize" but cost categories show this will not be funded at the required level. This framing assumes a resource condition the scenario does not provide.
+
+- REJECTED: "Comprehensive schooling aligns Hungary with international best practice and guarantees lower SES gradients" — reason: The expected_benefits section qualifies this with "Alignment of Hungary's structural framework with OECD systems whose SES gradients are lower despite comparable or higher mean achievement" but immediately tags this as "moderate" and notes that "causal attribution is contested because tracking co-varies with other institutional features." This framing overstates the causal weight of structural form alone.
+
+---
+
+## S4 — Keep the structure, compensate general schools (Portuguese-style package)
+
+- CHOSEN: Retain the 6- and 8-year gimnazium system unchanged but neutralize its socio-economic inequities through non-structural interventions: targeted funding for disadvantaged schools (TEIP-style), rigorous national curriculum standards, and reduced grade retention.
+
+- REJECTED: "Compensation can offset, not merely mask, the effects of early sorting at Hungary's selection age" — reason: The mechanism section tags this as [assumption] and notes that "no country has demonstrated offsetting at Hungary's selection age (10-12)"; the assumption_checker explicitly flags it as "unverifiable ex ante"; and the equity_impact section contradicts the claim by stating it "does not address the root selection event" and that "equity gains are bounded by the depth and permanence of funding commitments rather than by structural change." This framing asserts a core claim that the scenario's own evidence and structure explicitly reject.
+
+- REJECTED: "Non-structural interventions are politically easier to implement and sustain than structural changes" — reason: The expected_benefits field states this is the scenario's own "framing," but it is directly contradicted by the political_risks section, which identifies "budget vulnerability" as a "plausible first-cut target in fiscal consolidation, undermining the durability of the compensation mechanism" and notes that cost_checker flags this as a high-risk/low-durability commitment. The political_risks section also identifies "legitimising early selection permanently" as a risk that may foreclose future reform. This framing suppresses evidence of equal or greater political vulnerability.
+
+- REJECTED: "Portuguese TEIP and curriculum standards can be directly transferred to Hungary despite different institutional and socio-economic contexts" — reason: The mechanism tags transferability as an [assumption]; implementation_planning documents that "Hungary's teacher shortage is 'binding' even absent any structural reform" and notes this is more acute than Portugal's baseline; and the uncertainties section gives this conditional a confidence level of high that teacher shortage will "blunt the effectiveness of Portuguese-style interventions." This framing assumes similarity where documented differences are material.
+
+- REJECTED: "This scenario avoids transition costs and legal disruption because the structure remains untouched" — reason: The expected_benefits section cites legal_and_governance and education_finance as supporting that "structural change carries high procedural and transition cost, which this scenario avoids" — but the cost_categories section shows high costs for TEIP-style funding, curriculum development, grade-retention support, and monitoring infrastructure. The scenario does not eliminate costs; it relocates them from structure to compensation. This framing falsely claims cost avoidance.
+
+- REJECTED: "Targeted funding for disadvantaged schools will narrow the SES-outcome gradient even while leaving the sorting mechanism intact" — reason: The equity_impact section explicitly states this does not work: "Narrows the SES gradient at best partially, since it leaves the sorting mechanism itself intact and only compensates downstream"; the mechanism and expected_benefits both acknowledge they address effects only downstream, not the "root selection event"; and the uncertainties section flags confidence as low that "compensation can genuinely offset rather than mask" the sorting. This framing claims equity benefit that the scenario's own structure denies.

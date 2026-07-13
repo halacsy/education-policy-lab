@@ -1,0 +1,148 @@
+{
+  "round": 7,
+  "fallbacks": [
+    "translate_voice:eselyegyenlosegi_civil",
+    "translate_voice:pedagogus_erdekvedo",
+    "translate_voice:kisgyerekes_szuloi",
+    "translate_voice:konzervativ_ertekvedo",
+    "translate_voice:digitalisgazdasagi",
+    "translate_voice:egyhazi_fenntartoi",
+    "translate_voice:oktataspolitikai_reformmozgalom",
+    "translate_voice:pedagogus_szakszervezeti_hang",
+    "translate_voice:kormanyzati_reformrealizmus",
+    "translate_voice:fuggetlen_szakpolitikai_kutatomuhely",
+    "translate_reciprocity:pedagogus_erdekvedo",
+    "translate_reciprocity:kisgyerekes_szuloi",
+    "translate_reciprocity:digitalisgazdasagi",
+    "translate_reciprocity:egyhazi_fenntartoi",
+    "translate_reciprocity:oktataspolitikai_reformmozgalom",
+    "translate_reciprocity:kormanyzati_reformrealizmus",
+    "translate_reciprocity:fuggetlen_szakpolitikai_kutatomuhely"
+  ],
+  "reused": [
+    "expert:finnish_reform",
+    "expert:polish_reform",
+    "expert:portuguese_reform",
+    "expert:equity_and_social_mobility",
+    "expert:demography",
+    "expert:school_network_planning",
+    "expert:education_finance",
+    "expert:legal_and_governance",
+    "expert:implementation_planning"
+  ],
+  "resumed": [],
+  "discourse": {
+    "voices": 10,
+    "stance_counts": {
+      "support": 3,
+      "oppose": 18,
+      "conditional": 19,
+      "no_position": 0
+    },
+    "label_counts": {
+      "documented": 0,
+      "value_modeled": 40,
+      "no_position": 0
+    },
+    "clusters": 18,
+    "factual_clusters_graded": 12,
+    "reciprocity": {
+      "ran": true,
+      "revised": 12
+    }
+  },
+  "backends": {
+    "argument_decompose [anthropic:claude-opus-4-8]": 18,
+    "argument_map [anthropic:claude-opus-4-8]": 1,
+    "argument_map [anthropic:claude-sonnet-5]": 1,
+    "brief [anthropic:claude-opus-4-8]": 1,
+    "brief [anthropic:claude-sonnet-5]": 2,
+    "build_scenarios [anthropic:claude-sonnet-5]": 1,
+    "critic [openai(codex):]": 8,
+    "discourse_reciprocity [anthropic:claude-haiku-4-5]": 10,
+    "discourse_reciprocity [anthropic:claude-sonnet-5]": 9,
+    "discourse_voice [anthropic:claude-haiku-4-5]": 10,
+    "expert_analysis [anthropic:claude-haiku-4-5]": 3,
+    "grade_arguments [openai(codex):]": 1,
+    "rejected_framings [anthropic:claude-haiku-4-5]": 1,
+    "synthesis [anthropic:claude-sonnet-5]": 1,
+    "translate_cluster [anthropic:claude-opus-4-8]": 18,
+    "translate_reciprocity [anthropic:claude-opus-4-8]": 17,
+    "translate_scenarios [anthropic:claude-sonnet-5]": 1,
+    "translate_voice [anthropic:claude-opus-4-8]": 20
+  },
+  "tokens": {
+    "by_task_backend": {
+      "argument_decompose [anthropic:claude-opus-4-8]": {
+        "input_tokens": 117080,
+        "output_tokens": 10767
+      },
+      "argument_map [anthropic:claude-opus-4-8]": {
+        "input_tokens": 51213,
+        "output_tokens": 4185
+      },
+      "argument_map [anthropic:claude-sonnet-5]": {
+        "input_tokens": 51156,
+        "output_tokens": 5838
+      },
+      "brief [anthropic:claude-opus-4-8]": {
+        "input_tokens": 93663,
+        "output_tokens": 6669
+      },
+      "brief [anthropic:claude-sonnet-5]": {
+        "input_tokens": 104604,
+        "output_tokens": 18965
+      },
+      "build_scenarios [anthropic:claude-sonnet-5]": {
+        "input_tokens": 18301,
+        "output_tokens": 9303
+      },
+      "discourse_reciprocity [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 133185,
+        "output_tokens": 29385
+      },
+      "discourse_reciprocity [anthropic:claude-sonnet-5]": {
+        "input_tokens": 177860,
+        "output_tokens": 11454
+      },
+      "discourse_voice [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 69156,
+        "output_tokens": 39717
+      },
+      "expert_analysis [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 3486,
+        "output_tokens": 2940
+      },
+      "rejected_framings [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 9392,
+        "output_tokens": 2409
+      },
+      "synthesis [anthropic:claude-sonnet-5]": {
+        "input_tokens": 13988,
+        "output_tokens": 3793
+      },
+      "translate_cluster [anthropic:claude-opus-4-8]": {
+        "input_tokens": 83258,
+        "output_tokens": 18171
+      },
+      "translate_reciprocity [anthropic:claude-opus-4-8]": {
+        "input_tokens": 93567,
+        "output_tokens": 33178
+      },
+      "translate_scenarios [anthropic:claude-sonnet-5]": {
+        "input_tokens": 12933,
+        "output_tokens": 14283
+      },
+      "translate_voice [anthropic:claude-opus-4-8]": {
+        "input_tokens": 180758,
+        "output_tokens": 120000
+      }
+    },
+    "total_input_tokens": 1213600,
+    "total_output_tokens": 331057,
+    "total_tokens": 1544657,
+    "metered_calls": 114,
+    "unmetered_calls": 9
+  },
+  "errors": {}
+}
