@@ -1,6 +1,0 @@
-A1: [evidence: weak — teacher_shortage] Registry strongly supports a sustained teacher shortage, but not that near-term structural reorganisation is infeasible.
-A2: [evidence: moderate — school_choice; value_added; pisa_escs] Registry supports strong socio-economic sorting and selection effects, though “more than by ability” is stronger than directly shown.
-A4: [not registry-backed — treat as model knowledge] Registry notes church/foundation maintainers exist, but does not support demand shifting to them after state-track restrictions.
-A5: [evidence: moderate — portugal_improvement] Registry supports Portugal’s PISA improvement without changing selection age, but transfer to broad Hungarian general-school investment is inferential.
-A7: [not registry-backed — treat as model knowledge] Registry states central written exams are used, but not that they measure tutoring-driven preparation more than ability.
-A8: [not registry-backed — treat as model knowledge] Registry supports Finland’s comprehensive reform association with equity, but not the claimed bundle decomposition.
