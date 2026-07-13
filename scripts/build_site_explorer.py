@@ -84,6 +84,18 @@ def parse_disagreement_map(synthesis_text):
                               rationale=sm.group(4).strip()))
         if sides:
             topics.append(dict(topic=tm.group(1).strip(), sides=sides))
+    if not topics:
+        # current format has no "### " sub-topics: each "- **holders**:
+        # position Why: rationale" bullet is its own position on the single
+        # underlying question — group them all under one card.
+        sides = []
+        for sm in DIS_SIDE_RE.finditer(body):
+            holders = [h.strip() for h in sm.group(1).split(",")]
+            sides.append(dict(holders=holders, minority=bool(sm.group(2)),
+                              position=sm.group(3).strip(),
+                              rationale=sm.group(4).strip()))
+        if sides:
+            topics.append(dict(topic="Fő nézeteltérés", sides=sides))
     return topics
 
 

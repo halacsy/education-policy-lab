@@ -172,14 +172,15 @@
       <li><span class="n">07</span><span>Egy nyolcdimenziós <strong>rubrika</strong> pontoz (determinisztikus ellenőrzések + két különböző modellcsalád keresztbírálata), a rendszer megnevezi a leggyengébb dimenziót, és a következő kör <em>egyetlen, dokumentált változtatással</em> javít önmagán.</span></li>
     </ol>
     <p>A generáló és a bíráló modell szándékosan <strong>különböző gyártótól</strong>
-    származik (jelenleg: Google Gemini generál, Anthropic Claude bírál), hogy egyik
-    modell se osztályozhassa a saját munkáját. A szereposztás felcserélve is
-    működik — a robusztusságot dokumentált szerepcsere-kísérlet igazolta.</p>
+    származik, hogy egyik modell se osztályozhassa a saját munkáját — a
+    szereposztás körönként változott (Gemini/Claude, majd Claude/Gemini, majd
+    Claude/OpenAI), ami a dokumentált szerepcsere-kísérlet robusztussági
+    eredményét élesben is igazolta.</p>
   </div>
   <div class="wrap wide" style="margin-top:2rem">
     <div class="split">
       <div>
-        <h3>A javulás számokban (legutóbbi futás, 5 kör)</h3>
+        <h3>A javulás számokban (legutóbbi futás, 7 kör)</h3>
         <div class="tablebox"><table>
           <thead><tr><th>Kör</th><th>Alkalmazott változtatás</th><th class="num">Összpontszám</th></tr></thead>
           <tbody>
@@ -188,26 +189,32 @@
             <tr><td>3</td><td>kritikák: súlyosság + javítási javaslat</td><td class="num">8.798</td></tr>
             <tr><td>4</td><td>különvélemények külön szakaszban</td><td class="num">9.038</td></tr>
             <tr><td>5</td><td>minden oksági állításra bizonyítékcímke</td><td class="num">9.265</td></tr>
+            <tr><td>6</td><td>megvalósítási részletek a forgatókönyvekben</td><td class="num">9.64</td></tr>
+            <tr><td>7</td><td>alapfutás (első teljesen élő kör az új, tízszakaszos brief-formátummal)</td><td class="num">9.508</td></tr>
           </tbody>
         </table></div>
-        <p class="note" style="margin-top:.6rem">A 4–5. kör felcserélt sorrendje
-        nem véletlen: ebben a futásban a nézeteltérés-megőrzés bizonyult
-        korábban gyengébbnek — a rendszer a tényleges tartalomra reagál, nem
-        forgatókönyvet ismétel.</p>
+        <p class="note" style="margin-top:.6rem">A 7. kör pontszáma a bíráló
+        modell körönkénti váltása miatt kicsit alacsonyabb, mint a 6. köré —
+        nem a tartalom, hanem a mérés varianciája (részletek:
+        docs/decisions.md, „Bugfix note”).</p>
       </div>
       <div>
         <h3>…és a git-naplóban</h3>
-        <div class="commitlog"><b>round-05:</b> apply evidence_tag_all — 9.038→9.265
+        <div class="commitlog"><b>round-07:</b> baseline run — 9.64→9.508
+<b>round-06:</b> apply implementation_detail — 9.265→9.64
+<b>round-05:</b> apply evidence_tag_all — 9.038→9.265
 <b>round-04:</b> apply minority_report — 8.798→9.038
 <b>round-03:</b> apply critic_fix_severity — 8.053→8.798
 <b>round-02:</b> apply uncertainty_quantify — 7.322→8.053
 <b>round-01:</b> baseline run (total 7.322)</div>
         <p class="note" style="margin-top:.75rem">Minden kör külön commit; a
-        változtatás neve a commit-üzenetben. Semmi sem írható felül utólag.
-        Ez a futás nagyrészt élő modellel készült: a szakértői elemzések és a
-        bírálatok mind élőben íródtak, néhány kör forgatókönyv-szövege a napi
-        modellkeret kimerülése miatt a kurált tartalékból épült — pontosan
-        nyomon követhető a <a href="explorer.html">feltárón</a>.</p>
+        változtatás neve a commit-üzenetben. Semmi sem írható felül utólag —
+        egy utólag felfedezett pontozási hibát is csak dokumentált,
+        újrafuttatható script (scripts/rescore_round.py) javított ki, kézi
+        szerkesztés nélkül. A 6–7. kör csaknem teljesen élő modellel készült;
+        néhány hosszú fordítási lépés (a magyar érv-főkönyv néhány szakasza)
+        a hívás időkorlátja miatt a determinisztikus tartalékból épült —
+        pontosan nyomon követhető a <a href="explorer.html">feltárón</a>.</p>
       </div>
     </div>
   </div>
