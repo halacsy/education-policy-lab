@@ -3,75 +3,74 @@
 Deterministic distillation from previous rounds (lab/memory.py); fed back into this agent's prompt. Unresolved items persist until the criticized field changes; resolved items drop.
 
 
-## round 07 — received
-- received [devil_advocate on S1.assumptions]: The scenario collapses on its own SES-indicator assumption. It proposes SES-conscious quotas or reweighting while explicitly stating that Hungary has no student-level SES register usable at application time and that prox
-- received [devil_advocate on S2.equity_impact]: The claim that the equity impact is “directionally positive” is unsupported because the scenario’s dominant risk is that non-state maintainers absorb displaced selective demand. The evidence tag for maintainer offset is 
-- received [devil_advocate on S3.expected_benefits]: “Largest aggregate equity gain of the four scenarios” is too strong. The evidence supports the general proposition that earlier tracking increases inequality, but the Hungary-specific scenario depends on three unresolved
-- received [devil_advocate on S4.mechanism]: The mechanism’s load-bearing claim that targeted funding and standards can “offset” early sorting is unsupported. The Portugal evidence supports improvement without structural change in Portugal, not compensation for Hun
-- received [evidence_checker on S1.mechanism]: The documented-outreach lever is tagged moderate, but the cited support (“stakeholder discourse analysis, Round 6”) is not in the curated source registry and is not flagged as model knowledge. The registry contains no so
-- received [evidence_checker on S2.political_risks]: The claim that non-state maintainers “expand selective intake to capture displaced demand” is tagged strong, but the registry’s governance source only supports maintainer plurality and uneven control across state, church
-- received [evidence_checker on S2.equity_impact]: The field asserts that residual selective places becoming “even more SES-skewed” is “mechanical and near-certain,” but no registry source supports that tightening seat supply with the same applicant pool necessarily incr
-- received [evidence_checker on S3.mechanism]: The claim that equity gains “only materialise if bundled with teacher-quality and early-support investment” is tagged moderate from Finnish evidence, but the registry’s Finland item only supports an association between c
-- received [assumption_checker on S2.equity_impact]: The claim that residual selective places become “even more SES-skewed” is asserted as “mechanical and near-certain,” but the cited evidence only establishes that existing intake is SES-skewed and that caps retain more pu
-- received [assumption_checker on S3.expected_benefits]: “Lower SES-achievement correlation over the long run without loss of mean performance” is tagged strong with Hanushek & Woessmann 2006, but the expert record says that comparative evidence supports the direction that ear
-- received [assumption_checker on S4.mechanism]: The statement “Portugal raised PISA outcomes without structural change via TEIP and standards” over-attributes causality. The expert record gives Portuguese non-structural improvement only as moderately evidenced, and th
-- received [assumption_checker on S1.assumptions]: The first assumption says “A workable SES indicator can be built at application time,” while the goal explicitly says no workable SES indicator has yet been demonstrated and the mechanism says no usable register exists a
-- received [equity_checker on S1.equity_impact]: The equity impact correctly says benefits are limited to low-SES pupils who already apply, but it leaves out Roma pupils and rural pupils as distinct groups despite the mechanism explicitly naming outreach to low-SES and
-- received [equity_checker on S2.equity_impact]: The claim that residual selective places become “even more SES-skewed” is too strong as stated. The evidence supports a mechanical reduction in state selective seats and a strong risk of non-state offset, but it does not
-- received [equity_checker on S3.equity_impact]: The field says this scenario has the “largest expected aggregate equity gain,” but the evidence record only supports that delayed tracking generally reduces inequality and that Poland/Finland-style gains require bundled 
-- received [equity_checker on S4.equity_impact]: The field identifies that S4 leaves the sorting mechanism intact, but it does not say who is actually reached: pupils who remain in disadvantaged general schools. It also omits who is left out: disadvantaged pupils in no
-- received [feasibility_checker on S1.implementation_steps]: The year 1-3 timeline for designing and piloting a less-coachable assessment with psychometric validation is unsupported. The scenario itself says no such instrument has been demonstrated, so the step compresses inventio
-- received [feasibility_checker on S2.implementation_steps]: The Ministry step to “negotiate or legislate parallel intake limits for non-state maintainers” in years 1-3 understates the legal and administrative lead time. The evidence tag says maintainer plurality is strong and non
-- received [feasibility_checker on S3.implementation_steps]: The national scale-up in years 5-10 is not feasible under the scenario’s own teacher-supply evidence. The evidence status calls teacher supply a strong binding constraint, but the implementation sequence treats teacher-s
-- received [feasibility_checker on S4.implementation_steps]: The steps omit the hardest feasibility condition: staffing disadvantaged schools for the compensatory package. The political_risks field says teacher shortage blocks staffing exactly in the target schools with strong evi
-- received [cost_checker on S2.cost_categories]: The capacity-expansion cost is understated as merely "medium" despite the scenario spanning a decade and shifting pupils from selective tracks into general-school upper grades. The evidence says transition costs dominate
-- received [cost_checker on S3.cost_categories]: The field correctly labels major components as high, but it misses the fiscal sensitivity of making early diagnostic and special-education support systems recurring. The evidence from Finnish-style bundling supports that
-- received [cost_checker on S3.cost_categories]: Transition and steady-state costs are blurred. "Facility and curriculum realignment" is tagged as high and front-loaded, while teacher retraining is high, but the field does not distinguish one-off transition costs from 
-- received [cost_checker on S4.cost_categories]: The TEIP-style targeted funding category is too vague for the scenario's core mechanism. It says "high" with no numeric range, duration, per-school basis, or protected-funding mechanism, even though the scenario itself i
-- received [political_risk_checker on S1.political_risks]: The maintainer-plurality risk is named but not operationalized as a reversal/avoidance pathway. The field says non-state maintainers may decline reformed rules [evidence: strong], but it does not spell out that this coul
-- received [political_risk_checker on S2.political_risks]: The scenario understates the reversal risk from prestigious state gimnaziums by tagging exemptions as merely “plausible.” Given the scenario’s mechanism depends on a decade-long cap, organised exemption-seeking by elite 
-- received [political_risk_checker on S3.political_risks]: The field identifies Poland-style reversal but gives no entrenchment design despite the evidence saying evidence of success did not prevent reversal. “Cross-party or constitutional insulation” appears in uncertainties, b
-- received [political_risk_checker on S4.political_risks]: The funding durability risk is too weakly evidenced and too vaguely designed. The claim that ring-fenced equity funding is “the first cut” is admitted as asserted from finance inputs, but the scenario then relies on sust
-- received [coherence_checker on S1.assumptions]: The scenario's goal explicitly says "no workable SES indicator has yet been demonstrated at application time," while the assumptions field then requires that "a workable SES indicator can be built at application time." T
-- received [coherence_checker on S2.equity_impact]: The claim that residual selective places become "even more SES-skewed" is presented as mechanical and near-certain, but the mechanism does not establish that the same applicant pool persists as seats shrink. If shrinking
-- received [coherence_checker on S3.implementation_steps]: The implementation steps include "Civil society — document and track outreach to low-SES and Roma families by application uptake," but the scenario abolishes 6/8-year entry and postpones formal selection to age 14-15. Tr
-- received [coherence_checker on S4.expected_benefits]: "Lowest structural and legislative disruption" is supported by "no Nkt. structural amendment required," but the mechanism also requires rigorous national curriculum standards, TEIP-style targeting, ring-fenced multi-year
+## round 06 — received
+- received [devil_advocate on S1.assumptions]: The assumption that a workable SES indicator can be built at application time is contradicted by the scenario's own evidence and uncertainties.
+- received [devil_advocate on S1.expected_benefits]: The claim that reduced test-preparation pressure is an expected benefit is undermined by the political risks section, which states that reformed/scarcer channels may invite informal selection.
+- received [devil_advocate on S2.assumptions]: The assumption that caps on state-maintained schools will not be offset by non-state maintainers expanding selective intake is directly contradicted by the political risks and uncertainties sections.
+- received [devil_advocate on S2.expected_benefits]: The benefit of stronger peer composition in urban general-school upper grades is based on a contested and weak link, as noted in the mechanism and evidence status.
+- received [devil_advocate on S3.assumptions]: The assumption that sorting does not simply migrate to school choice between general schools and to non-state maintainers is directly contradicted by the equity impact section, which identifies this migration as the larg
+- received [devil_advocate on S3.expected_benefits]: The benefit of a weaker SES-outcome gradient within a decade is presented with moderate evidence, but the mechanism itself is tagged as contested and weak.
+- received [devil_advocate on S4.assumptions]: The assumption that compensation can meaningfully offset, not just mask, the effects of early sorting is directly contradicted by the scenario's own uncertainties and evidence status.
+- received [devil_advocate on S4.expected_benefits]: The claim that the reform is "politically less disruptive" is contradicted by the political risks, which highlight budget vulnerability and the risk of legitimizing early selection permanently.
+- received [evidence_checker on S1.goal]: The goal states "Retain the 6- and 8-year gimnázium tracks but rewrite entry rules and quotas so that access to selective places is less strongly skewed toward high-SES, urban families." This is contradicted by the "Over
+- received [evidence_checker on S1.mechanism]: The mechanism states that replacing the central written admission exam with a less preparation-sensitive assessment "weakens the advantage that paid test-prep confers on high-SES applicants". However, the evidence cited 
+- received [evidence_checker on S1.expected_benefits]: The expected benefit states "Reduced test-preparation arms-race pressure on age-10 children insofar as the new assessment resists coaching". The evidence cited is "weak — model knowledge; note contradiction with politica
+- received [evidence_checker on S2.mechanism]: The mechanism states "Fewer selective seats keep more high-achievers in the common track, which can improve peer composition in urban general-school upper grades". The evidence cited is "contested — the asymmetric peer-e
+- received [evidence_checker on S3.mechanism]: The mechanism claims "A weaker SES-outcome gradient can emerge within a decade via broader access to high-achieving peers". The evidence cited is "contested — the asymmetric peer-effect mechanism is tagged weak/contested
+- received [evidence_checker on S3.equity_impact]: The equity impact states "Largest expected aggregate equity gain of the four scenarios, but also the largest risk: middle-class exit to non-state or private schools." This is followed by "That exit does not harm the exit
+- received [evidence_checker on S4.mechanism]: The mechanism states "Compensation is intended to offset, not merely mask, the effects of early sorting". The evidence cited is "weak — no country has demonstrated offsetting at Hungary's selection age; the Portuguese ca
+- received [assumption_checker on S3.assumptions]: The assumption 'political ownership survives two electoral cycles' contradicts the political_feasibility expert's stated position that no such window exists; the tension is unresolved in the scenario.
+- received [assumption_checker on S4.assumptions]: 'Compensation can offset, not just mask' is doing all the work in S4, yet no country evidence exists at Hungary's selection age — the assumption should be flagged as unverifiable ex ante.
+- received [equity_checker on S1.equity_impact]: The scenario claims that "Gains accrue to high-ability low-SES pupils who already apply and are reweighted into selective seats," but this is contradicted by the assumption that "A workable SES indicator exists at applic
+- received [equity_checker on S2.equity_impact]: The scenario states that "As caps tighten, residual selective places become even more SES-skewed absent an S1-type admission-rule change," which is a direct contradiction to the goal of improving equity. If the residual 
+- received [equity_checker on S3.equity_impact]: The scenario states that "The largest expected aggregate equity gain of the four scenarios, but also the largest risk: middle-class exit to non-state or private schools." It then claims that "That exit does not harm the 
+- received [equity_checker on S4.equity_impact]: The scenario claims that "Narrows the SES gradient at best partially, since it leaves the sorting mechanism itself intact and only compensates downstream." This implies that the scenario does not fully address the root c
+- received [feasibility_checker on S1.assumptions]: The assumption that a workable SES indicator exists at application time is contradicted by the scenario's own admission that Hungary has no administrative student-level SES register usable at application, and any proxy w
+- received [feasibility_checker on S1.implementation_steps]: The timeline for the Oktatási Hivatal to design and pilot a new, genuinely less-coachable assessment, including psychometric validation, is stated as year 1-3. However, the scenario's own assumptions and cost categories 
+- received [feasibility_checker on S2.assumptions]: The assumption that caps on state-maintained schools are not simply offset by non-state maintainers expanding selective intake is presented as an assumption, but the scenario's political risks and uncertainties directly 
+- received [feasibility_checker on S3.assumptions]: The assumption that sorting does not simply migrate to school choice between general schools and to non-state maintainers is directly contradicted by the scenario's own equity impact assessment, which states that middle-
+- received [cost_checker on S1.cost_categories]: The cost estimate for "assessment redesign, psychometric validation and piloting" is labeled as "medium" but the description states it requires "multi-year psychometric development," which suggests a higher cost than typ
+- received [cost_checker on S2.cost_categories]: The recurring cost for "parallel-regime administration while grandfathered cohorts run under old rules alongside capped intake" is listed as "medium, transitional." However, the scenario spans a decade, implying this tra
+- received [cost_checker on S3.cost_categories]: The cost for "nationwide teacher retraining in differentiated instruction" is listed as "high" with the justification "no per-cohort/per-district unit cost available." While the lack of a precise unit cost is a valid rea
+- received [cost_checker on S4.cost_categories]: The cost category "TEIP-style targeted funding for disadvantaged schools" is listed as "high" with the justification "no numeric range available; this line is the first cut in fiscal consolidation, so exposure is a serio
+- received [political_risk_checker on S1.political_risks]: The scenario claims that "Reformed/scarcer selection channels may invite informal selection (interviews, reputation) that reproduces SES sorting" but provides no evidence for this claim. While this is a plausible risk, t
+- received [political_risk_checker on S2.political_risks]: The scenario states that "Middle-class parents perceive shrinking seats as a threat to a mobility/insurance asset and mobilize" but does not provide evidence for this perception or the likelihood of mobilization. While p
+- received [political_risk_checker on S3.political_risks]: The scenario asserts that "Middle-class and church/foundation flight relocates sorting rather than removing it" but does not offer evidence to support this specific outcome. While the risk of flight is mentioned, the sce
+- received [political_risk_checker on S4.political_risks]: The scenario claims that "Legitimising early selection permanently: compensation may entrench rather than dismantle the sorting engine" but does not provide evidence for this specific consequence. While the risk of legit
+- received [coherence_checker on S1.mechanism]: The mechanism claims that replacing the central written admission exam with a less preparation-sensitive assessment weakens the advantage of paid test-prep, citing Kertesi & Kezdi 2013 and Horn 2013. However, the evidenc
+- received [coherence_checker on S1.expected_benefits]: The expected benefits state that reduced test-preparation pressure on children is expected "insofar as the new assessment resists coaching", citing "weak — model knowledge". This contradicts the "political_risks" section
+- received [coherence_checker on S2.equity_impact]: The equity impact states that "As caps tighten, residual selective places become even more SES-skewed absent an S1-type admission-rule change — this residual-skew effect is mechanical and near-certain (fewer seats, same 
+- received [coherence_checker on S3.assumptions]: The assumptions section states, "Sorting does not simply migrate to school choice between general schools and to non-state maintainers [assumption — this is asserted here yet the equity_impact field calls exactly this mi
 
-## round 07 — resolved from previous round
+## round 06 — resolved from previous round
 - RESOLVED [assumption_checker on S3.assumptions] (field changed)
-- RESOLVED [assumption_checker on S4.assumptions] (field changed)
-- RESOLVED [coherence_checker on S1.mechanism] (field changed)
+- RESOLVED [assumption_checker on S1.assumptions] (field changed)
+- RESOLVED [assumption_checker on S2.mechanism] (field changed)
+- RESOLVED [assumption_checker on S4.evidence_status] (field changed)
 - RESOLVED [coherence_checker on S1.expected_benefits] (field changed)
 - RESOLVED [coherence_checker on S2.equity_impact] (field changed)
-- RESOLVED [coherence_checker on S3.assumptions] (field changed)
+- RESOLVED [coherence_checker on S3.mechanism] (field changed)
+- RESOLVED [coherence_checker on S4.expected_benefits] (field changed)
 - RESOLVED [cost_checker on S1.cost_categories] (field changed)
 - RESOLVED [cost_checker on S2.cost_categories] (field changed)
 - RESOLVED [cost_checker on S3.cost_categories] (field changed)
 - RESOLVED [cost_checker on S4.cost_categories] (field changed)
-- RESOLVED [devil_advocate on S1.assumptions] (field changed)
-- RESOLVED [devil_advocate on S1.expected_benefits] (field changed)
-- RESOLVED [devil_advocate on S2.assumptions] (field changed)
-- RESOLVED [devil_advocate on S2.expected_benefits] (field changed)
-- RESOLVED [devil_advocate on S3.assumptions] (field changed)
 - RESOLVED [devil_advocate on S3.expected_benefits] (field changed)
-- RESOLVED [devil_advocate on S4.assumptions] (field changed)
 - RESOLVED [devil_advocate on S4.expected_benefits] (field changed)
+- RESOLVED [devil_advocate on S2.expected_benefits] (field changed)
+- RESOLVED [devil_advocate on S1.assumptions] (field changed)
 - RESOLVED [equity_checker on S1.equity_impact] (field changed)
 - RESOLVED [equity_checker on S2.equity_impact] (field changed)
 - RESOLVED [equity_checker on S3.equity_impact] (field changed)
 - RESOLVED [equity_checker on S4.equity_impact] (field changed)
-- RESOLVED [evidence_checker on S1.goal] (field changed)
-- RESOLVED [evidence_checker on S1.mechanism] (field changed)
-- RESOLVED [evidence_checker on S1.expected_benefits] (field changed)
-- RESOLVED [evidence_checker on S2.mechanism] (field changed)
-- RESOLVED [evidence_checker on S3.mechanism] (field changed)
-- RESOLVED [evidence_checker on S3.equity_impact] (field changed)
-- RESOLVED [evidence_checker on S4.mechanism] (field changed)
-- RESOLVED [feasibility_checker on S1.assumptions] (field changed)
-- RESOLVED [feasibility_checker on S1.implementation_steps] (field changed)
-- RESOLVED [feasibility_checker on S2.assumptions] (field changed)
-- RESOLVED [feasibility_checker on S3.assumptions] (field changed)
-- RESOLVED [political_risk_checker on S1.political_risks] (field changed)
+- RESOLVED [evidence_checker on S4.expected_benefits] (field changed)
+- RESOLVED [evidence_checker on S2.expected_benefits] (field changed)
+- RESOLVED [evidence_checker on S3.expected_benefits] (field changed)
+- RESOLVED [feasibility_checker on S1.expected_benefits] (field changed)
+- RESOLVED [feasibility_checker on S2.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S3.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S4.cost_categories] (field changed)
 - RESOLVED [political_risk_checker on S2.political_risks] (field changed)
 - RESOLVED [political_risk_checker on S3.political_risks] (field changed)
+- RESOLVED [political_risk_checker on S1.political_risks] (field changed)
 - RESOLVED [political_risk_checker on S4.political_risks] (field changed)
