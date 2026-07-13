@@ -22,12 +22,13 @@ Round 3+ REPEAT  until acceptance criteria met, max rounds, marginal gain,
 | # | Step | Agents | Provider | Output |
 |---|------|--------|----------|--------|
 | 1 | Expert analysis | 12 experts | generator | `expert_outputs/<name>.md` |
-| 2 | Scenario building | scenario_builder | generator | `scenarios.json`, `scenarios.en.md` |
+| 2 | Scenario building | scenario_builder (>=5 scenarios incl. a "none" no-intervention baseline and a "pilot" variant, D-31 B4) | generator | `scenarios.json`, `scenarios.en.md` |
 | 3 | Synthesis | editor | generator | `synthesis.md` (incl. disagreement map), `rejected_framings.md` |
 | 3.5 | Societal discourse (D-29) | 10 discourse voices + discourse_mediator + evidence_checker | generator (grading: judge) | `discourse/` (voice JSONs, argument map, grades, reciprocity), `argument_ledger.en.md` / `.hu.md` |
 | 4 | Translation | translator | generator | `scenarios.hu.md`, `brief.hu.md`, `argument_ledger.hu.md` |
 | 5 | Critique | 9 policy critics (incl. context_transferability_checker, D-31 B1) + translation_checker | judge | `critic_outputs/<name>.md` |
 | 5.5 | Unknowns + research agenda (D-31 B2/B3) | unknowns_mapper + translator | generator | `unknowns.en.md`, `unknowns.hu.md` |
+| 5.6 | Decision readiness (D-31 B4) | decision_readiness_writer | generator | `decision_readiness.md` |
 | 6 | Meta-critique | meta_critic | judge | `meta_critique.md` |
 | 7 | Evaluation | evaluation_designer's rubric, run by `lab/evaluation.py` | judge + deterministic | `evaluation.json`, `evaluation.md` |
 | 8 | Improvement planning | iteration_manager + archive | judge | `improvement_plan.md`, `revised_agents.md`, `revised_workflow.md` |

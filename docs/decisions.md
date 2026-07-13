@@ -333,6 +333,20 @@ and at least one pilot/low-intensity variant (not just four structurally
 distinct options), and add a `decision_readiness.md` verdict (ready /
 pilot-only / needs-research / needs-political-decision) synthesizing
 evidence strength, disagreement, and the unknowns map.
+**DONE** (branch `refactor/deliberation-phase-b`, 2026-07-14): scenarios gained
+an `intervention_type` field (none|pilot|full); `valid_scenarios()` requires
+the EN set to contain both a "none" and a "pilot" scenario. Added S0
+(audit-first baseline, fixed 18-month deadline) as the curated no-intervention
+scenario; S1 (already designed to run as a district pilot) is the "pilot"
+scenario — no 6th scenario was needed. New agent `decision_readiness_writer`
+runs after `unknowns_mapper` and writes an EN-only (system-transparency,
+like `synthesis.md`) verdict that must be derived from, not asserted before,
+its evidence/disagreement/unknowns sections. This surfaced and fixed a
+larger latent bug: several places (`valid_voice()`, `valid_argmap_basic()`,
+discourse instructions, `finalize.py`'s executive-summary logic) hardcoded
+"exactly S1..S4" instead of deriving ids from the actual scenario set —
+worth knowing before task #20 (multi-topic architecture), since those fixes
+also make the scenario count topic-agnostic going forward.
 Each would need its own agent/schema/verify-gate work, matching how D-29 and
 D-30 were each built as dedicated efforts, not squeezed into a round's
 one-change budget. (2026-07-11)
