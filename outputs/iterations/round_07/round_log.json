@@ -1,0 +1,136 @@
+{
+  "round": 7,
+  "fallbacks": [
+    "translate_ledger",
+    "translator_brief"
+  ],
+  "reused": [
+    "expert:polish_reform",
+    "expert:finnish_reform",
+    "expert:portuguese_reform",
+    "expert:equity_and_social_mobility",
+    "expert:demography",
+    "expert:school_network_planning",
+    "expert:education_finance",
+    "expert:legal_and_governance",
+    "expert:implementation_planning"
+  ],
+  "resumed": [],
+  "discourse": {
+    "voices": 10,
+    "stance_counts": {
+      "support": 2,
+      "oppose": 17,
+      "conditional": 20,
+      "no_position": 1
+    },
+    "label_counts": {
+      "documented": 0,
+      "value_modeled": 39,
+      "no_position": 1
+    },
+    "clusters": 10,
+    "factual_clusters_graded": 6,
+    "reciprocity": {
+      "ran": true,
+      "revised": 10
+    }
+  },
+  "backends": {
+    "argument_decompose [anthropic:claude-opus-4-8]": 10,
+    "argument_map [mock]": 1,
+    "brief [anthropic:claude-opus-4-8]": 3,
+    "build_scenarios [anthropic:claude-opus-4-8]": 1,
+    "build_scenarios [anthropic:claude-sonnet-5]": 1,
+    "critic [openai(codex):]": 8,
+    "discourse_reciprocity [anthropic:claude-haiku-4-5]": 10,
+    "discourse_reciprocity [anthropic:claude-opus-4-8]": 2,
+    "discourse_reciprocity [mock]": 3,
+    "discourse_voice [anthropic:claude-haiku-4-5]": 10,
+    "expert_analysis [anthropic:claude-haiku-4-5]": 3,
+    "grade_arguments [openai(codex):]": 1,
+    "rejected_framings [anthropic:claude-haiku-4-5]": 1,
+    "synthesis [anthropic:claude-opus-4-8]": 1,
+    "synthesis [anthropic:claude-sonnet-5]": 1,
+    "translate_ledger [anthropic:claude-opus-4-8]": 2,
+    "translate_scenarios [anthropic:claude-opus-4-8]": 1
+  },
+  "tokens": {
+    "by_task_backend": {
+      "argument_decompose [anthropic:claude-opus-4-8]": {
+        "input_tokens": 37622,
+        "output_tokens": 5691
+      },
+      "brief [anthropic:claude-opus-4-8]": {
+        "input_tokens": 99248,
+        "output_tokens": 27340
+      },
+      "build_scenarios [anthropic:claude-opus-4-8]": {
+        "input_tokens": 18445,
+        "output_tokens": 7323
+      },
+      "build_scenarios [anthropic:claude-sonnet-5]": {
+        "input_tokens": 18388,
+        "output_tokens": 16000
+      },
+      "discourse_reciprocity [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 80649,
+        "output_tokens": 28514
+      },
+      "discourse_reciprocity [anthropic:claude-opus-4-8]": {
+        "input_tokens": 24422,
+        "output_tokens": 1503
+      },
+      "discourse_voice [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 56566,
+        "output_tokens": 35301
+      },
+      "expert_analysis [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 3486,
+        "output_tokens": 3043
+      },
+      "rejected_framings [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 8133,
+        "output_tokens": 2020
+      },
+      "synthesis [anthropic:claude-opus-4-8]": {
+        "input_tokens": 14132,
+        "output_tokens": 2660
+      },
+      "synthesis [anthropic:claude-sonnet-5]": {
+        "input_tokens": 14075,
+        "output_tokens": 4000
+      },
+      "translate_ledger [anthropic:claude-opus-4-8]": {
+        "input_tokens": 138173,
+        "output_tokens": 32000
+      },
+      "translate_scenarios [anthropic:claude-opus-4-8]": {
+        "input_tokens": 10964,
+        "output_tokens": 11715
+      }
+    },
+    "total_input_tokens": 524303,
+    "total_output_tokens": 177110,
+    "total_tokens": 701413,
+    "metered_calls": 46,
+    "unmetered_calls": 13
+  },
+  "errors": {
+    "synthesis [anthropic:claude-sonnet-5]": [
+      "RuntimeError: empty response"
+    ],
+    "argument_map [mock]": [
+      "RuntimeError: empty response",
+      "RuntimeError: empty response",
+      "RuntimeError: empty response",
+      "RuntimeError: empty response",
+      "RuntimeError: empty response"
+    ],
+    "discourse_reciprocity [mock]": [
+      "RuntimeError: empty response",
+      "RuntimeError: empty response",
+      "RuntimeError: empty response"
+    ]
+  }
+}

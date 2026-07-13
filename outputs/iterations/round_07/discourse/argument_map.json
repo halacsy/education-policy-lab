@@ -1,0 +1,322 @@
+{
+  "clusters": [
+    {
+      "id": "A1",
+      "scenario": "S3",
+      "kind": "fact",
+      "side": "con",
+      "claim": "The teacher shortage makes a near-term structural reorganisation infeasible.",
+      "raised_by": [
+        "pedagogus_erdekvedo",
+        "pedagogus_szakszervezeti_hang",
+        "digitalisgazdasagi"
+      ],
+      "interest": "Teacher-side actors (union and teacher advocate) whose members would bear the burden of structural reform without the human-capital base to deliver it, joined by employers who want reliable credential signals that degraded comprehensive staffing would erode.",
+      "value": "Feasibility and equity-in-delivery are in tension with the abstract equity ambition of S3: a reform that cannot be staffed will harm the very equity it promises.",
+      "fear": "That comprehensive upper grades will be staffed by under-qualified, overworked or burnt-out teachers, concentrating shortage effects on the reform and harming equity more than current early selection, with teachers bearing retraining costs for a reform that may be reversed.",
+      "affected": [
+        "teachers (comprehensive-track and general)",
+        "teacher unions",
+        "students in comprehensive upper grades",
+        "employers seeking comparable credentials",
+        "ministry/reform implementers"
+      ],
+      "assumption": "It assumes teacher supply cannot be stabilised on the reform's timeline and that the shortage is a binding, non-negotiable precondition S3 does not resolve rather than a parameter that could be addressed by wage/retention measures before scale-up.",
+      "empirical_uncertainty": "The teacher-shortage constraint is documented as 'strong'/binding with 'low' confidence on stabilisation, so the factual core (shortage exists) is settled but whether it can be stabilised in time is contested/unknown and pivotal to the argument.",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": false,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A2",
+      "scenario": "S3",
+      "kind": "fact",
+      "side": "pro",
+      "claim": "Early selective tracks sort by social status more than by ability.",
+      "raised_by": [
+        "eselyegyenlosegi_civil",
+        "oktataspolitikai_reformmozgalom",
+        "fuggetlen_szakpolitikai_kutatomuhely"
+      ],
+      "interest": "The interest behind this claim is that of equity advocates and low-SES/rural families who want early selection abolished because it functions as a status-sorting rather than talent-sorting mechanism.",
+      "value": "Equity (equal opportunity independent of family background) is in tension with excellence/selection-based efficiency.",
+      "fear": "The driving fear is that children with potential from low-status families are being permanently locked out of higher tracks by their origin rather than their ability, wasting human potential and reproducing class hierarchy.",
+      "affected": [
+        "low-SES urban families",
+        "rural primary pupils",
+        "middle-class families who benefit from early selection",
+        "teachers in disadvantaged schools",
+        "church/foundation non-state maintainers"
+      ],
+      "assumption": "It assumes that the SES-achievement gradient observed at the point of selection reflects social sorting rather than genuine ability differences that themselves correlate with background, and that removing the gate would redistribute opportunity rather than merely relocate the sorting.",
+      "empirical_uncertainty": "The direction of the effect is strongly supported (Hanushek & Woessmann 2006; Jakubowski et al. 2016 on Poland), but whether abolition improves net equity is contested because the scenario explicitly notes exit/relocation to non-state schools is not established as harmless and peer-effect gains are contested with a 10-15 year lag.",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": true,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A3",
+      "scenario": "S3",
+      "kind": "value",
+      "side": "con",
+      "claim": "Parents have the right to choose an academically intensive track for their child.",
+      "raised_by": [
+        "konzervativ_ertekvedo",
+        "kisgyerekes_szuloi"
+      ],
+      "interest": "The interest behind this argument is that of parents (especially aspirational and middle-class families) who want to secure a selective, high-intensity academic pathway for their own child, and of non-state maintainers (church, foundation, private schools) who serve that selective demand.",
+      "value": "The tension is parental autonomy/choice and meritocratic excellence versus system-wide equity and equal dignity via a comprehensive structure.",
+      "fear": "The driving fear is that a centrally-mandated comprehensive track strips families of the ability to protect their child's academic trajectory, leaving able children under-stretched and the family's mobility investment lost.",
+      "affected": [
+        "Parents (aspirational/middle-class)",
+        "Academically high-achieving pupils",
+        "Non-state maintainers (church, foundation, private schools)",
+        "State comprehensive schools and their residual cohorts",
+        "Lower-SES pupils affected by sorting migration"
+      ],
+      "assumption": "The unstated assumption is that choosing an academically intensive track actually benefits the child and that this choice can be exercised without displacing sorting into opaque school-choice channels that harm others.",
+      "empirical_uncertainty": "The factual core is contested: the peer-effect and early-tracking evidence (Hanushek & Woessmann 2006) points to equity harm from early selection, but whether banning it improves or merely relocates sorting to non-state maintainers is the scenario's own 'largest risk' and is unresolved for Hungary.",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": false,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A4",
+      "scenario": "S2",
+      "kind": "fact",
+      "side": "con",
+      "claim": "Restricting state selective tracks shifts demand to church and private schools.",
+      "raised_by": [
+        "egyhazi_fenntartoi",
+        "konzervativ_ertekvedo",
+        "pedagogus_szakszervezeti_hang"
+      ],
+      "interest": "Non-state maintainers (church, foundation, private) seek to protect their institutional autonomy and selective intake, while the state sector and general-track teachers fear absorbing displaced disadvantage without relief.",
+      "value": "Institutional autonomy and parental choice in tension with equity — a state-only cap that redistributes rather than reduces early selection.",
+      "fear": "That capping only state-maintained selective seats privatises selection rather than reducing it, leaving high-ability low-SES pupils stranded in a deeper-disadvantage general track staffed by overloaded teachers.",
+      "affected": [
+        "church and foundation maintainers",
+        "private schools",
+        "state-maintained selective schools",
+        "state-maintained general-track schools and their teachers",
+        "high-ability low-SES pupils",
+        "families with resources",
+        "the Ministry / policymakers"
+      ],
+      "assumption": "The claim assumes non-state maintainers will and legally can expand selective intake to absorb displaced demand, and that the state cannot compel parallel caps on them.",
+      "empirical_uncertainty": "The offset mechanism is well-supported (maintainer-plurality and school-network findings, tagged strong / near-certain), but the enforceability of parallel non-state intake limits is contested with low confidence because it is 'legally and politically contested'.",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": true,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A5",
+      "scenario": "S4",
+      "kind": "mixed",
+      "side": "pro",
+      "claim": "Investing in general schools lifts the skills of the whole cohort, as Portugal showed.",
+      "raised_by": [
+        "digitalisgazdasagi",
+        "kormanyzati_reformrealizmus"
+      ],
+      "interest": "Broad public and equity advocates interested in lifting the whole cohort's skills without dismantling the selective track structure, plus governments seeking a politically durable, non-structural reform.",
+      "value": "Equity vs. excellence, framed as whether raising the floor for the general-school cohort can be achieved without threatening selective-track excellence.",
+      "fear": "The fear driving it is that structural reform would mobilise middle-class opposition and prove politically unsustainable, so a within-system compensation route feels like the only durable way to avoid leaving disadvantaged pupils behind.",
+      "affected": [
+        "General-school pupils (especially low-SES)",
+        "Selective-track pupils and their families",
+        "Teachers in disadvantaged schools",
+        "Employers relying on talent identification",
+        "Governing coalition / education budget holders"
+      ],
+      "assumption": "It assumes the Portuguese TEIP result transfers to Hungary despite Portugal's later selection age (12-15) versus Hungary's 6/8-year entry, i.e. that downstream compensation can offset rather than merely mask a 6-8 year selective-track head-start.",
+      "empirical_uncertainty": "Contested-to-unknown: the scenario labels the offset claim 'weak' evidence and 'unverifiable ex ante' because no country has offset early-sorting effects at Hungary's selection age, while the TEIP improvement itself rests on 'moderate' evidence (OECD PISA trends, Crato 2020).",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": true,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A6",
+      "scenario": "S1",
+      "kind": "value",
+      "side": "pro",
+      "claim": "Admission reform is a low-risk, reversible first step that builds trust for larger reform.",
+      "raised_by": [
+        "kormanyzati_reformrealizmus",
+        "pedagogus_szakszervezeti_hang",
+        "pedagogus_erdekvedo"
+      ],
+      "interest": "This argument serves reform-minded government and policy actors who want a politically survivable entry point that secures momentum for deeper structural change without triggering opposition mobilisation.",
+      "value": "Pragmatism and incrementalism (reversibility, trust-building) are in tension with equity ambition, since the scenario's own actors note the equity gain is 'modest by design'.",
+      "fear": "The driving fear is that an ambitious frontal reform would collapse against maintainer plurality and middle-class mobilisation, so the real need is to protect the possibility of any reform at all by starting small.",
+      "affected": [
+        "reform-minded government/policy actors",
+        "low-SES high-ability applicants already in the system",
+        "affluent parents facing reweighting",
+        "teachers and school leaders (workload)",
+        "non-state maintainers"
+      ],
+      "assumption": "The claim rests on the unstated assumptions that this first step is genuinely reversible, that a modest success builds rather than exhausts political trust, and that momentum from a small step actually transfers to larger reform rather than substituting for it.",
+      "empirical_uncertainty": "The factual core is contested-to-unknown: reversibility is plausible but the 'less-coachable assessment' is unverified (needs ~3 years piloting), any SES proxy is documented as gameable, and outreach efficacy is untested, so whether the step is low-risk or trust-building cannot be settled in advance.",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": false,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A7",
+      "scenario": "S1",
+      "kind": "fact",
+      "side": "con",
+      "claim": "The central written exam measures tutoring-driven preparation more than ability.",
+      "raised_by": [
+        "eselyegyenlosegi_civil",
+        "oktataspolitikai_reformmozgalom"
+      ],
+      "interest": "This argument is raised on behalf of low-SES and Roma families in segregated primaries who lack access to test-prep, seeking to expose that the central written exam functions as a preparation-wealth filter rather than an ability filter.",
+      "value": "Equity vs. meritocratic legibility — the claim pits fair access for the under-resourced against the assumption that a standardised written exam objectively measures ability.",
+      "fear": "The fear is that renaming or reweighting the exam legitimises the status quo as 'reformed' while the real sorting mechanism — preparation inequality bought by tutoring — remains untouched, leaving disadvantaged children no better off.",
+      "affected": [
+        "low-SES families",
+        "Roma students",
+        "children in segregated primary schools",
+        "families who can afford private tutoring",
+        "selective schools and their admissions gatekeepers"
+      ],
+      "assumption": "The claim rests on the unstated assumption that a genuinely less-coachable assessment instrument exists or can be built, and that current exam performance is substantially driven by paid preparation rather than underlying ability.",
+      "empirical_uncertainty": "Contested and partly unknown: the scenario itself flags that no validated less-coachable instrument exists and that the degree to which exam scores reflect coaching versus ability is not settled by published psychometric data in this system.",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": false,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A8",
+      "scenario": "S3",
+      "kind": "fact",
+      "side": "con",
+      "claim": "Finland's equity gains came from a bundle (structure + teacher policy + support), not from structure alone.",
+      "raised_by": [
+        "konzervativ_ertekvedo",
+        "kisgyerekes_szuloi"
+      ],
+      "interest": "Reform-implementation realists and evidence-driven policy designers have an interest in ensuring S3's predicted equity gains are attributed to the full causal bundle, so the policy is not adopted as a single-lever structural change stripped of the teacher-policy and support components that actually produced Finland's outcomes.",
+      "value": "Fidelity of evidence (correct causal attribution) is in tension with the political appeal of a simple, low-cost structural intervention.",
+      "fear": "The anticipated harm is that Hungary copies only the cheap, visible structural change (delaying selection) while omitting the costly teacher stabilization, retraining, and early-support infrastructure, and thereby harms the very learners the reform claims to help.",
+      "affected": [
+        "pupils in comprehensive upper grades (esp. lower-SES learners)",
+        "teachers in comprehensive schools",
+        "parents of young children",
+        "policymakers and budget authorities",
+        "rural primary schools"
+      ],
+      "assumption": "The claim rests on the unstated assumption that the equity effect is separable into components and that the non-structural components (teacher policy + support) are causally necessary rather than merely correlated with Finland's structural design.",
+      "empirical_uncertainty": "The bundling claim is contested-to-supported in the comparative literature (multiple confounded co-reforms make single-factor attribution genuinely hard), and for Hungary specifically the within-decade equity gain is asserted rather than evidenced, while the teacher-supply shortfall is a documented strong binding constraint.",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": true,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A9",
+      "scenario": "S2",
+      "kind": "value",
+      "side": "conditional",
+      "claim": "A phase-down is acceptable only with enforceable teacher guarantees.",
+      "raised_by": [
+        "pedagogus_erdekvedo",
+        "pedagogus_szakszervezeti_hang"
+      ],
+      "interest": "General-track teachers and their unions want binding protection against workload, wage, and job losses that a selective-track phase-down would otherwise dump on them.",
+      "value": "Work dignity and wage/workload equity for teachers is in tension with the reform's equity-for-pupils rationale and with fiscal/administrative feasibility.",
+      "fear": "The real fear is that teachers bear the entire transition burden — layoffs or forced retraining for selective-track staff, 20–35% workload increases for general-track staff — while the policy delivers no equity gain because non-state maintainers absorb displaced demand.",
+      "affected": [
+        "selective-track teachers facing closure",
+        "general-school upper-grade teachers absorbing retained cohorts",
+        "school leaders managing parallel regimes",
+        "teacher unions and their negotiating cohesion",
+        "grandfathered and capped pupil cohorts"
+      ],
+      "assumption": "The claim assumes guarantees can be made genuinely enforceable (statutory notice, funded class-size caps, simultaneous non-state intake limits) and that without them the phase-down predictably harms teachers.",
+      "empirical_uncertainty": "The workload-increase magnitude (20–35% union figure) and the non-state offset ('strong'/'near-certain') are contested/modeled estimates, and whether non-state intake limits are legislatively achievable is unknown.",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": true,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    },
+    {
+      "id": "A10",
+      "scenario": "S4",
+      "kind": "value",
+      "side": "con",
+      "claim": "Compensation without structural change entrenches a two-tier system while appearing to fix it.",
+      "raised_by": [
+        "eselyegyenlosegi_civil",
+        "fuggetlen_szakpolitikai_kutatomuhely",
+        "oktataspolitikai_reformmozgalom"
+      ],
+      "interest": "The interest behind this argument is that of equity advocates and disadvantaged/Roma pupils who want the sorting mechanism itself dismantled rather than its downstream effects merely funded.",
+      "value": "Equity-as-access (ending early selection) is in tension with pragmatic harm-mitigation and political feasibility.",
+      "fear": "The real fear is that a fundable, politically easy 'equity solution' will be adopted as the endpoint, locking in early selection permanently while giving cover to segregation and leaving a generation tracked into better-funded but still segregated schools.",
+      "affected": [
+        "disadvantaged pupils",
+        "Roma pupils",
+        "talented children in segregated primary schools",
+        "teachers in disadvantaged schools",
+        "middle-class families invested in selective tracks",
+        "church-school maintainers"
+      ],
+      "assumption": "The claim rests on the unstated assumption that compensation cannot genuinely offset early-sorting effects and that adopting S4 forecloses rather than enables later structural reform.",
+      "empirical_uncertainty": "The factual core is contested-to-unknown: the scenario itself flags 'can compensation offset rather than merely mask?' at [confidence: low], no comparable early-selection system has demonstrated offsetting at Hungary's age-10 selection, and the durability/fiscal-cut risk is tagged [evidence: weak — inferred].",
+      "decision_relevance": "high",
+      "attention": {
+        "high_attention": true,
+        "new_information": true,
+        "changes_evaluation": true,
+        "already_answered": false,
+        "primarily_rhetorical": false
+      }
+    }
+  ]
+}
