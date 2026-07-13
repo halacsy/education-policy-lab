@@ -33,6 +33,7 @@ Input needed: Native-speaker editorial review of HU deliverables.
 - Round 6: judge/deterministic divergence on `critic_concreteness` — human should adjudicate which signal to trust.
 - Round 6: judge/deterministic divergence on `disagreement_preservation` — human should adjudicate which signal to trust.
 - Round 6: judge/deterministic divergence on `meta_system_eval` — human should adjudicate which signal to trust.
+- Round 7: judge/deterministic divergence on `evidence_discipline` — human should adjudicate which signal to trust.
 
 ## Standing translation review
 Native-speaker review of register and connotation in the HU deliverables (flagged by translation_checker each round; mechanical parity checks all pass but nuance is not machine-verifiable).
