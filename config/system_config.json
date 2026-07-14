@@ -25,6 +25,10 @@
     "enabled": true,
     "reciprocity": true
   },
+  "research": {
+    "_policy": "P4 (D-34, issue #6 first half): experts run a live web-search phase before the structured call; findings are cited sources in the expert output only and NEVER enter the curated registry (knowledge admission stays human-gated, D-24). Anthropic-API generator only.",
+    "web_search": true
+  },
   "evaluation": {
     "llm_judge_trials": 3,
     "judge_divergence_threshold": 1.5,
@@ -50,6 +54,7 @@
     },
     "task_tiers": {
       "expert_analysis": 0,
+      "expert_research": 1,
       "rejected_framings": 0,
       "judge_score": 0,
       "discourse_voice": 0,

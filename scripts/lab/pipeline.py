@@ -524,7 +524,7 @@ class Step:
 
     def run(self, name, prompt_kwargs, validate, out_path=None,
             role="generator", max_tokens=8000, postprocess=lambda t: t,
-            loader=None, writer=None, schema=None):
+            loader=None, writer=None, schema=None, web_search=False):
         """With schema= (D-34): the call goes through llm.call_structured,
         the result is the parsed (schema-valid) dict, and JSON IO is the
         default. Everything else — validation, corrective retry with D-26
@@ -569,7 +569,8 @@ class Step:
                                                  escalation=attempt)
                 else:
                     text = llm.call_model(prompt, role, max_tokens=max_tokens,
-                                          escalation=attempt)
+                                          escalation=attempt,
+                                          web_search=web_search)
             except llm.StepFailed:
                 self._note(name, "FAILED")
                 raise
@@ -861,6 +862,12 @@ def run_round(n):
                 "model knowledge):\n" + "\n".join(rows))
 
     glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
+    # P4 (D-34, issue #6 first half): optional live-retrieval phase before
+    # the structured expert call. Web findings are CITED SOURCES in the
+    # expert output only — they NEVER enter the curated registry (knowledge
+    # admission stays human-gated, D-24).
+    web_search_on = bool(cfg.get("research", {}).get("web_search")) \
+        and llm.web_search_supported("generator")
 
     def run_expert(name):
         out_path = rd / "expert_outputs" / f"{name}.json"
@@ -879,6 +886,34 @@ def run_round(n):
                 print(f"[round {n:02d}] {'':>3} {'expert:' + name:<32} "
                      f"{'cached (unchanged spec)':<20}", flush=True)
                 obj = cached
+        research_notes = ""
+        if obj is None and web_search_on:
+            # two-phase call: the server-side web-search tool and structured
+            # output are not combined in one request — a free research call
+            # produces cited notes, the structured call consumes them
+            research_text, _ = step.run(
+                f"research:{name}",
+                dict(task="expert_research", agent=name, round_n=n,
+                     instructions=(
+                         f"Policy question: {question}\n"
+                         "RESEARCH PHASE (web search enabled): search the "
+                         "web for the most current, load-bearing evidence "
+                         "in YOUR domain (fresh statistics, new studies, "
+                         "recent policy changes). For every finding note "
+                         "the claim, the number/year, and the exact source "
+                         "(title + URL). 5-10 findings as prose notes — a "
+                         "later call turns them into your structured "
+                         "analysis. Web findings are cited sources only; "
+                         "they never enter the curated registry (knowledge "
+                         "admission is human-gated).")),
+                validate=lambda t: len(t.strip()) > 200,
+                out_path=rd / "research" / f"{name}.md",
+                max_tokens=4000, web_search=True)
+            research_notes = (
+                "\n\nLIVE RESEARCH NOTES (from web search this round; cite "
+                "them with their URL as the source and an honest evidence "
+                "grade; registry-backed facts keep their registry source):\n"
+                + research_text)
         if obj is None:
             obj, _ = step.run(
                 f"expert:{name}",
@@ -895,7 +930,7 @@ def run_round(n):
                          "position = exactly one falsifiable sentence; "
                          "uncertainties = known unknowns with confidence "
                          "and what evidence would reduce them."
-                         + curated_sources(name)
+                         + curated_sources(name) + research_notes
                          + "\n\nGLOSSARY:\n" + glossary)),
                 validate=valid_expert, out_path=out_path,
                 schema=S.EXPERT_ANALYSIS, max_tokens=8000)

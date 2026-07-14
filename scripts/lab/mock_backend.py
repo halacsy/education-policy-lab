@@ -36,6 +36,7 @@ def compose(prompt, role):
     d = _directives(prompt)
     fn = {
         "expert_analysis": lambda: expert_analysis(h["agent"], d),
+        "expert_research": lambda: expert_research(h["agent"]),
         "build_scenarios": lambda: scenarios_json(d),
         "synthesis": lambda: synthesis(d),
         "rejected_framings": lambda: rejected_framings(),
@@ -61,6 +62,21 @@ def _hu_pair(en, hu=None):
     """Bilingual leaf; the curated pack is EN-only for some expert fields,
     so the mock's HU side is an honestly-labelled placeholder there."""
     return {"en": en, "hu": hu if hu is not None else "(HU) " + en}
+
+
+def expert_research(agent):
+    """Deterministic stand-in for the live web-search phase (P4): honest
+    no-retrieval notes built from the agent's curated findings, so a dry
+    run with research.web_search=true still exercises the plumbing."""
+    b = K.EXPERT_BRIEFS[agent]
+    lines = [f"Research notes ({agent}) — MOCK RUN, no live retrieval "
+             "performed; the curated registry findings below stand in for "
+             "web results:"]
+    for fid in b["findings"]:
+        f = K.FACTS[fid]
+        lines.append(f"- {f['en']} (source: {f['source']}; "
+                     f"evidence: {f['evidence']})")
+    return "\n".join(lines) + "\n"
 
 
 def expert_analysis(agent, d):

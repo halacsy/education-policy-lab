@@ -252,19 +252,63 @@ def _call_cli(provider, model, prompt, max_tokens):
         return r.stdout.strip()
 
 
-def _call_real(provider, model, prompt, max_tokens, schema=None):
+def web_search_supported(role="generator"):
+    """The server-side web-search tool (P4/D-34) is implemented for the
+    Anthropic API backend only; the mock path serves it deterministically."""
+    if os.environ.get("LAB_FORCE_MOCK"):
+        return True
+    return provider_for_role(role) == "anthropic" and \
+        not _cli_backend("anthropic")
+
+
+def _call_search(provider, model, prompt, max_tokens, max_uses):
+    """Free-text call with the server-side web-search tool. The server-side
+    tool loop can pause (stop_reason == "pause_turn"); resume it. Adaptive
+    thinking stays ON for this call — with thinking disabled the model is
+    much less likely to actually search."""
+    tools = [{"type": "web_search_20260209", "name": "web_search",
+              "max_uses": max_uses}]
+    messages = [{"role": "user", "content": prompt}]
+    parts = []
+    usage = {"input_tokens": 0, "output_tokens": 0}
+    for _ in range(6):
+        resp = _client(provider).messages.create(
+            model=model, max_tokens=max_tokens, tools=tools,
+            messages=messages)
+        usage["input_tokens"] += resp.usage.input_tokens
+        usage["output_tokens"] += resp.usage.output_tokens
+        parts += [b.text for b in resp.content if b.type == "text"]
+        if resp.stop_reason == "pause_turn":
+            messages = [{"role": "user", "content": prompt},
+                        {"role": "assistant", "content": resp.content}]
+            continue
+        break
+    return "\n".join(parts), usage
+
+
+def _call_real(provider, model, prompt, max_tokens, schema=None,
+               web_search=False):
     """Returns (text, usage). usage is {"input_tokens", "output_tokens"} when
     the backend reports it (API backends do; CLI/subscription backends
     don't meter per-call, so usage is None for those). With `schema`, the
-    response is constrained to that JSON schema (API backends only)."""
+    response is constrained to that JSON schema (API backends only).
+    `web_search` and `schema` are never combined (two-phase expert call)."""
     if _cli_backend(provider):
-        if schema is not None:
+        if schema is not None or web_search:
             raise StepFailed(
-                f"structured output needs the {provider} API backend; the "
-                f"{_cli_backend(provider)!r} CLI cannot constrain decoding — "
-                "unset the *_BACKEND env var for this role and set "
+                f"structured output / web search needs the {provider} API "
+                f"backend; the {_cli_backend(provider)!r} CLI cannot serve "
+                "it — unset the *_BACKEND env var for this role and set "
                 f"{KEY_VARS[provider]}")
         return _call_cli(provider, model, prompt, max_tokens), None
+    if web_search:
+        if provider != "anthropic":
+            raise StepFailed(
+                "web search (P4) is implemented for the anthropic provider "
+                "only — set GENERATOR_PROVIDER=anthropic or disable "
+                "research.web_search")
+        return _call_search(provider, model, prompt, max_tokens,
+                            max_uses=5)
     if provider == "anthropic":
         # Extended thinking (when the model/account defaults it on) counts
         # against max_tokens — on a long input (e.g. the 10-voice digest)
@@ -328,7 +372,7 @@ def _call_real(provider, model, prompt, max_tokens, schema=None):
 
 
 def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
-               dimension=None, schema=None):
+               dimension=None, schema=None, web_search=False):
     """The single entry point for every model call in the lab.
 
     Returns the model's text. The prompt carries a structured header
@@ -376,7 +420,8 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
         try:
             text, usage = _throttled(provider,
                                      lambda: _call_real(provider, model, prompt,
-                                                        max_tokens, schema))
+                                                        max_tokens, schema,
+                                                        web_search))
             if not text.strip():
                 raise RuntimeError("empty response")
             _failures[(provider, model)] = 0
