@@ -2,6 +2,12 @@
 """Definition of done, encoded as assertions. Exits non-zero unless ALL
 checks pass. Do not weaken these checks to pass them; fix the system.
 
+Era scoping (D-34, owner decision 2026-07-14): rounds before
+config evaluation.era_start_round are a CLOSED ARCHIVE produced under the
+pre-D-34 schema — they are not re-verified and not compared against. Every
+check runs over the new-era rounds; the multi-round checks (monotonic
+improvement, state diffs) arm once the era has >= 2 rounds.
+
 Checks 1-14 mirror the specification; the held-out qualitative checks
 (lab/holdout_checks.py — invisible to the improvement step) run at the end.
 """
@@ -15,14 +21,15 @@ sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 
 from lab import holdout_checks, translation
 from lab.evaluation import DIMENSIONS, LLM_SCORED
-from lab.loadround import load_artifacts
+from lab.loadround import load_artifacts, load_scenario_views
 from lab.pipeline import BRIEF_HEADERS_EN, BRIEF_HEADERS_HU, CRITIC_HEADING_RE
 from lab.util import FINAL_DIR, ITER_DIR, ROOT, load_config, read, read_json
 
 FAILURES = []
 REQUIRED_ROUND_FILES = [
-    "scenarios.json", "scenarios.en.md", "scenarios.hu.md", "synthesis.md",
-    "rejected_framings.md", "brief.en.md", "brief.hu.md", "meta_critique.md",
+    "scenarios.json", "scenarios.en.md", "scenarios.hu.md", "synthesis.json",
+    "synthesis.md", "synthesis.hu.md", "rejected_framings.md", "brief.json",
+    "brief.en.md", "brief.hu.md", "meta_critique.json", "meta_critique.md",
     "evaluation.json", "evaluation.md", "improvement_plan.md",
     "revised_agents.md", "revised_workflow.md",
 ]
@@ -44,7 +51,10 @@ def check(num, name, ok, detail=""):
 def rounds():
     if not ITER_DIR.exists():
         return []
-    return sorted(int(p.name.split("_")[1]) for p in ITER_DIR.glob("round_*"))
+    era_start = load_config().get("evaluation", {}).get("era_start_round", 0)
+    return sorted(n for n in (int(p.name.split("_")[1])
+                              for p in ITER_DIR.glob("round_*"))
+                  if n >= era_start)
 
 
 def state_hash(rd):
@@ -59,12 +69,12 @@ def state_hash(rd):
 
 def main():
     rs = rounds()
-    # 1 — at least 2 complete rounds
+    # 1 — at least one complete new-era round with all required files
     complete = all((ITER_DIR / f"round_{n:02d}" / f).exists()
-                   for n in rs[:2] for f in REQUIRED_ROUND_FILES) if len(rs) >= 2 else False
-    check(1, "at least 2 complete rounds with all required files",
-          len(rs) >= 2 and complete, f"rounds found: {rs}")
-    if len(rs) < 2:
+                   for n in rs for f in REQUIRED_ROUND_FILES) if rs else False
+    check(1, "at least 1 complete new-era round with all required files",
+          bool(rs) and complete, f"new-era rounds found: {rs}")
+    if not rs:
         return finish()
 
     evs = {n: read_json(ITER_DIR / f"round_{n:02d}" / "evaluation.json") for n in rs}
@@ -84,17 +94,25 @@ def main():
     check(2, "evaluation.json: numeric per-dimension scores (+variance) and total",
           ok2, "; ".join(det2[:3]))
 
-    # 3 — strictly increasing r1->r2, non-decreasing overall
+    # 3 — improvement within the era (arms once the era has >= 2 rounds;
+    # the first era round is the baseline by definition)
     totals = [evs[n]["total"] for n in rs]
-    ok3 = totals[1] > totals[0] and all(
-        b >= a - 1e-9 for a, b in zip(totals[1:], totals[2:]))
-    check(3, "total(r2) > total(r1), non-decreasing after",
-          ok3, f"totals: {totals}")
+    if len(rs) >= 2:
+        ok3 = totals[1] > totals[0] and all(
+            b >= a - 1e-9 for a, b in zip(totals[1:], totals[2:]))
+        check(3, "era total(r2) > total(r1), non-decreasing after",
+              ok3, f"totals: {totals}")
+    else:
+        print(f"[SKIP] check    3: era improvement (single baseline round; "
+              f"totals: {totals})")
 
     # 4 — every round differs from the previous by a real system change
-    hashes = [state_hash(ITER_DIR / f"round_{n:02d}") for n in rs]
-    ok4 = all(a != b for a, b in zip(hashes, hashes[1:]))
-    check(4, "system_state differs between consecutive rounds (anti-faking)", ok4)
+    if len(rs) >= 2:
+        hashes = [state_hash(ITER_DIR / f"round_{n:02d}") for n in rs]
+        ok4 = all(a != b for a, b in zip(hashes, hashes[1:]))
+        check(4, "system_state differs between consecutive rounds (anti-faking)", ok4)
+    else:
+        print("[SKIP] check    4: system_state diff (single era round)")
 
     # 5 — >=3 scenarios with every required field
     last = rs[-1]
@@ -164,8 +182,7 @@ def main():
     # 12 — translation parity (ids, structure, glossary, non-identity)
     ok12, det12 = True, []
     if ok11:
-        scen_en = read_json(ITER_DIR / f"round_{last:02d}" / "scenarios.json")
-        scen_hu = read_json(ITER_DIR / f"round_{last:02d}" / "scenarios.hu.json")
+        scen_en, scen_hu = load_scenario_views(ITER_DIR / f"round_{last:02d}")
         doc_pairs = [(read(FINAL_DIR / a), read(FINAL_DIR / b)) for a, b in pairs]
         rep = translation.check(scen_en, scen_hu, doc_pairs)
         if not rep["id_sets_equal"]:

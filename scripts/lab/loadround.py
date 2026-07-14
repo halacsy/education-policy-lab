@@ -1,13 +1,26 @@
 """Load a completed round folder back into the artifacts dict used by
-evaluation, holdout checks and verification."""
-from . import translation
+evaluation, holdout checks and verification.
+
+New-era rounds (D-34, round 8+) store ONE bilingual scenarios.json; the
+legacy EN/HU views are projected deterministically (render.scenario_view),
+exactly the way the pipeline itself derives them."""
+from . import render, translation
 from .util import read, read_json, round_dir
+
+
+def load_scenario_views(rd):
+    """(scen_en, scen_hu) legacy-shape views from either era's artifacts."""
+    scen = read_json(rd / "scenarios.json")
+    if scen.get("scenarios") and \
+            isinstance(scen["scenarios"][0].get("title"), dict):
+        return (render.scenario_view(scen, "en"),
+                render.scenario_view(scen, "hu"))
+    return scen, read_json(rd / "scenarios.hu.json")
 
 
 def load_artifacts(n):
     rd = round_dir(n)
-    scen_en = read_json(rd / "scenarios.json")
-    scen_hu = read_json(rd / "scenarios.hu.json")
+    scen_en, scen_hu = load_scenario_views(rd)
     scen_en_md = read(rd / "scenarios.en.md")
     scen_hu_md = read(rd / "scenarios.hu.md")
     brief_en = read(rd / "brief.en.md")

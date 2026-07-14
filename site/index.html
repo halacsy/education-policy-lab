@@ -163,53 +163,23 @@
     <p>Egy beküldött szakpolitikai kérdésre a rendszer körökben dolgozik.
     Minden körben:</p>
     <ol class="steps">
-      <li><span class="n">01</span><span><strong>12 szakértő-ágens</strong> elemzi a kérdést a saját területéről (nemzetközi összehasonlítás, demográfia, jog, finanszírozás, politikai megvalósíthatóság…), minden állítást forrással és bizonyítékcímkével.</span></li>
+      <li><span class="n">01</span><span><strong>12 szakértő-ágens</strong> elemzi a kérdést a saját területéről (nemzetközi összehasonlítás, demográfia, jog, finanszírozás, politikai megvalósíthatóság…). Mindegyik <strong>élő webes kutatással</strong> indít: friss statisztikákat, tanulmányokat, szakpolitikai fejleményeket keres, és minden állítást megnevezett forrással és őszinte bizonyítékfokozattal ad le. A webes találat mindig csak idézett forrás — a kurált tényregiszterbe csak emberi jóváhagyással kerülhet be bármi.</span></li>
       <li><span class="n">02</span><span>A <strong>forgatókönyv-építő</strong> 3–4 alternatívát épít, mindegyikben tíz kötelező mezővel: cél, mechanizmus, bizonyítékstátusz, feltevések, várható előnyök, méltányossági hatás, költségek, megvalósítási lépések, politikai kockázatok, bizonytalanságok.</span></li>
-      <li><span class="n">03</span><span>A <strong>szerkesztő</strong> szintézist ír — konszenzus helyett nézeteltérés-térképpel. A <strong>fordító</strong> minden anyagot magyarul és angolul is elkészít, ellenőrzött szószedettel.</span></li>
+      <li><span class="n">03</span><span>A <strong>szerkesztő</strong> szintézist ír — konszenzus helyett nézeteltérés-térképpel, a kisebbségi oldal külön jelölve. Külön fordító nincs: <strong>minden ágens egyszerre, natívan írja magyarul és angolul</strong> a maga anyagát, gépileg kikényszerített szerkezeti egyezéssel és ellenőrzött szószedettel.</span></li>
       <li><span class="n">04</span><span><strong>10 diskurzus-hang</strong> — a modellezett társadalmi vita — reagál a forgatókönyvekre: érdekeket és értékeket képviselnek, minden álláspontjuk episztemikus címkével. Az érveiket egy mediátor érv-főkönyvbe rendezi, és a záróanyag mindegyikre köteles válaszolni. <em>(Részletek lent.)</em></span></li>
       <li><span class="n">05</span><span><strong>9 kritikus-ágens</strong> támadja az anyagot (ördög ügyvédje, bizonyíték-ellenőr, méltányosság-, költség-, megvalósíthatóság-ellenőr…). Minden kifogás konkrét: forgatókönyvet és mezőt nevez meg, súlyossággal és javítási javaslattal.</span></li>
       <li><span class="n">06</span><span>A <strong>meta-kritikus</strong> magát a rendszert bírálja: melyik ágens gyenge, valódi-e a javulás, vagy csak a mérőszámot játssza ki.</span></li>
-      <li><span class="n">07</span><span>Egy nyolcdimenziós <strong>rubrika</strong> pontoz (determinisztikus ellenőrzések + két különböző modellcsalád keresztbírálata), a rendszer megnevezi a leggyengébb dimenziót, és a következő kör <em>egyetlen, dokumentált változtatással</em> javít önmagán.</span></li>
+      <li><span class="n">07</span><span>Egy nyolcdimenziós <strong>rubrika</strong> pontoz (determinisztikus ellenőrzések + két különböző modellcsalád keresztbírálata), a rendszer megnevezi a leggyengébb dimenziót, és a következő kör <em>egyetlen, dokumentált változtatással</em> javít önmagán. Minden kör külön git-commit; semmi sem írható felül utólag.</span></li>
     </ol>
     <p>A generáló és a bíráló modell szándékosan <strong>különböző gyártótól</strong>
-    származik (jelenleg: Google Gemini generál, Anthropic Claude bírál), hogy egyik
-    modell se osztályozhassa a saját munkáját. A szereposztás felcserélve is
-    működik — a robusztusságot dokumentált szerepcsere-kísérlet igazolta.</p>
-  </div>
-  <div class="wrap wide" style="margin-top:2rem">
-    <div class="split">
-      <div>
-        <h3>A javulás számokban (legutóbbi futás, 5 kör)</h3>
-        <div class="tablebox"><table>
-          <thead><tr><th>Kör</th><th>Alkalmazott változtatás</th><th class="num">Összpontszám</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>alapfutás</td><td class="num">7.322</td></tr>
-            <tr><td>2</td><td>bizonytalanságok számszerűsítése</td><td class="num">8.053</td></tr>
-            <tr><td>3</td><td>kritikák: súlyosság + javítási javaslat</td><td class="num">8.798</td></tr>
-            <tr><td>4</td><td>különvélemények külön szakaszban</td><td class="num">9.038</td></tr>
-            <tr><td>5</td><td>minden oksági állításra bizonyítékcímke</td><td class="num">9.265</td></tr>
-          </tbody>
-        </table></div>
-        <p class="note" style="margin-top:.6rem">A 4–5. kör felcserélt sorrendje
-        nem véletlen: ebben a futásban a nézeteltérés-megőrzés bizonyult
-        korábban gyengébbnek — a rendszer a tényleges tartalomra reagál, nem
-        forgatókönyvet ismétel.</p>
-      </div>
-      <div>
-        <h3>…és a git-naplóban</h3>
-        <div class="commitlog"><b>round-05:</b> apply evidence_tag_all — 9.038→9.265
-<b>round-04:</b> apply minority_report — 8.798→9.038
-<b>round-03:</b> apply critic_fix_severity — 8.053→8.798
-<b>round-02:</b> apply uncertainty_quantify — 7.322→8.053
-<b>round-01:</b> baseline run (total 7.322)</div>
-        <p class="note" style="margin-top:.75rem">Minden kör külön commit; a
-        változtatás neve a commit-üzenetben. Semmi sem írható felül utólag.
-        Ez a futás nagyrészt élő modellel készült: a szakértői elemzések és a
-        bírálatok mind élőben íródtak, néhány kör forgatókönyv-szövege a napi
-        modellkeret kimerülése miatt a kurált tartalékból épült — pontosan
-        nyomon követhető a <a href="explorer.html">feltárón</a>.</p>
-      </div>
-    </div>
+    származik, hogy egyik modell se osztályozhassa a saját munkáját — a gépi
+    kapu ezt minden futásnál ellenőrzi. A szereposztás cserélhető, és a
+    robusztusságát dokumentált szerepcsere-kísérlet igazolta.</p>
+    <p>Minden ágens kimenete <strong>gépileg kikényszerített, kétnyelvű
+    szerkezetben</strong> születik: az azonosítók, a címkék és az elemszámok a
+    két nyelvben szerkezetileg nem térhetnek el, a kötelező mezők nem
+    maradhatnak ki. Ami a validáción nem megy át, az futási hiba — a rendszer
+    nem tud csöndben gyengébb anyagot leadni.</p>
   </div>
 </section>
 
@@ -279,18 +249,17 @@
     </div>
     <div style="margin-top:1.5rem" class="split">
       <div class="pos">
-        <span class="who">TÖBBSÉGI ÁLLÁSPONT — méltányosság, lengyel reform, nemzetközi összehasonlítás</span>
-        A szelekció elhalasztása (szerkezeti változás) szükséges; a kompenzáció önmagában nem ellensúlyozhat ilyen korai szétválogatást.
+        <span class="who">EGY NÉZETELTÉRÉS A TÉRKÉPRŐL — TÖBBSÉGI OLDAL: nemzetközi összehasonlítás, finn és lengyel reform, méltányosság</span>
+        A nemzetközi bizonyíték (Finnország, Lengyelország, Portugália) irányadó Magyarországra: a korai szelekció egyenlőtlenség-hatása országokon átívelően konzisztens.
       </div>
       <div class="pos min">
-        <span class="who">KISEBBSÉGI ÁLLÁSPONT — portugál reform, politikai megvalósíthatóság</span>
-        A nem szerkezeti csomag előnyösebb: hasonló nyereség, sokkal kisebb politikai kockázat. <em>Ez az álláspont indoklással együtt szerepel a záróanyagban.</em>
+        <span class="who">KISEBBSÉGI OLDAL — finn, portugál és lengyel reform-szakértők</span>
+        Az átvihetőség feltételes és valószínűleg túlbecsült: a finn és portugál méltányossági eredmények a kísérő támogatási rendszeren múltak, nem a szerkezeten. <em>Ez az álláspont indoklással együtt szerepel a záróanyagban.</em>
       </div>
     </div>
-    <p style="margin-top:1.5rem">A rendszer megbánásmentes első lépésként az S1
-    és S4 kísérleti programját, valamint a bekerülési adatok évenkénti
-    közzétételét azonosította — a szerkezeti alapkérdést pedig nyitott emberi
-    döntésként adta vissza.</p>
+    <p style="margin-top:1.5rem">A záróanyag megbánásmentes első lépéseket is
+    azonosít (kísérleti programok, a bekerülési adatok évenkénti közzététele) —
+    a szerkezeti alapkérdést pedig nyitott emberi döntésként adja vissza.</p>
     <div class="card" style="margin-top:1.5rem; border-color:var(--evidence)">
       <h3>Ez a négy mondat honnan jön?</h3>
       <p>A fenti összefoglalók mögött teljes, kattintva bejárható anyag áll:
@@ -334,11 +303,12 @@
     <p>A teljes rendszer — az ágensek specifikációja, az értékelési rubrika, a
     körök összes kimenete és minden önjavító változtatás — verziókövetett és
     nyilvánosan auditálható a
-    <a href="https://github.com/halacsy/education-policy-lab">GitHub-repóban</a>. A záróanyag pontosan jelöli, mely tartalmat
-    generálta élő nyelvi modell és mi származik a kurált tudáscsomagból.
-    A rendszer a saját korlátait is dokumentálja: a fordítási árnyalatoktól a
-    bírálómodellek nézetkülönbségéig minden emberi felülvizsgálatra váró pont
-    a <em>human_questions</em> listára kerül.</p>
+    <a href="https://github.com/halacsy/education-policy-lab">GitHub-repóban</a>. Minden publikált tartalom élő nyelvi modelltől
+    származik: tartalék-generálás nincs — ha egy lépés nem megy át a
+    validáción, a futás megáll és naplózottan folytatható, gyengébb anyag
+    csöndben nem születhet. A rendszer a saját korlátait is dokumentálja: a
+    fordítási árnyalatoktól a bírálómodellek nézetkülönbségéig minden emberi
+    felülvizsgálatra váró pont a <em>human_questions</em> listára kerül.</p>
     <p><a href="knowledge.html"><strong>Tudásbázis böngészése →</strong></a> — a kurált
     tényregiszter bizonyítékstátusszal és forrással, tényenként magyarul és angolul.</p>
     <p><a href="tech.html"><strong>Hogyan van megépítve? →</strong></a> — a technikai
@@ -381,10 +351,14 @@
     red herrings are — with every claim tagged fact/estimate/assumption/
     value. AI never makes the policy decision: value trade-offs and political
     choices are returned to accountable humans as explicit open questions.
-    All deliverables are produced in Hungarian and English. The first
-    demonstration question — early academic selection and Hungary's 6/8-year
-    gimnázium tracks — produced four scenarios and a preserved disagreement
-    map rather than a forced consensus.</p>
+    Experts open each round with live web research (findings are cited
+    sources only — nothing enters the curated fact registry without human
+    approval), and every agent authors its output natively in BOTH Hungarian
+    and English inside one schema-constrained structure, so the two language
+    versions cannot structurally diverge. The first demonstration question —
+    early academic selection and Hungary's 6/8-year gimnázium tracks —
+    produced four scenarios and a preserved disagreement map rather than a
+    forced consensus.</p>
   </div>
 </section>
 
