@@ -7,12 +7,15 @@ data.
 
 ## What this is
 
-A self-improving, bilingual (HU/EN), multi-agent policy-design lab. First
-question: early academic selection and the 6/8-year gimnázium in Hungary.
-Architecture: orchestrator-workers + evaluator-optimizer, Reflexion/ADAS
-archive, Habermas-Machine disagreement preservation. Read `docs/architecture.md`,
-`docs/workflow.md`, and the decision log `docs/decisions.md` (D-01…D-29) —
-the decision log is the single source of truth for design rationale.
+A self-improving, bilingual (HU/EN), multi-agent, MULTI-TOPIC
+deliberation-acceleration lab: many policy problems run through the same
+system and shared expert hub (D-35), each as a topic under `topics/<slug>/`.
+First topic: `korai-szelekcio` (early academic selection and the 6/8-year
+gimnázium). Architecture: orchestrator-workers + evaluator-optimizer,
+Reflexion/ADAS archive, Habermas-Machine disagreement preservation. Read
+`docs/architecture.md`, `docs/workflow.md`, and the decision log
+`docs/decisions.md` (D-01…D-36) — the decision log is the single source of
+truth for design rationale.
 
 ## Ground rules (owner-set, do not violate)
 
@@ -41,11 +44,19 @@ the decision log is the single source of truth for design rationale.
 
 ## How to run
 
+Multi-topic since D-35: every entry point takes `--topic <slug>` (default:
+config `default_topic` = korai-szelekcio). New topic (D-36): `new_topic.py
+draft` (free text → problem-brief proposal) → human `approve` → round 1
+stops at the emergent-framing gate → human `approve-frames` → relaunch
+resumes with the expert outputs reused.
+
 ```
-.venv/bin/python scripts/run_mock_sprint.py      # scratch dry-run (gitignored output)
-.venv/bin/python scripts/verify.py               # definition-of-done gate (must stay green)
-.venv/bin/python scripts/run_iteration_loop.py --max-rounds N [--start-round K]
-python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
+.venv/bin/python scripts/run_mock_sprint.py [--topic S]   # scratch dry-run (gitignored)
+.venv/bin/python scripts/verify.py [--topic S]            # definition-of-done gate, PER TOPIC
+.venv/bin/python scripts/run_iteration_loop.py [--topic S] --max-rounds N [--start-round K]
+.venv/bin/python scripts/new_topic.py draft --text "..."  # intake; then: approve, approve-frames
+python3 scripts/build_registry.py --check                 # knowledge freshness gate (CI)
+python3 scripts/build_site_topics.py                      # topic-browser pages (CI)
 ```
 
 - `.env` (gitignored — COPY IT MANUALLY to a new machine): GOOGLE_API_KEY,
@@ -176,17 +187,24 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
 
 ## Open issues (tracker)
 
-- **NEXT SPRINT PROMPT (kész, add az agensnek):**
-  `docs/proposals/2026-07-14-sprint-multi-topic-prompt.md` — probléma-lap
-  bemenet (intake + human gate), emergens keretezés (#21), multi-topic
-  plumbing (#18), idő/token/költség-mérés, téma-böngésző site, acceptance:
-  második probléma end-to-end (elnéptelenedő falvak kisiskolái).
+- **MULTI-TOPIC SPRINT (2026-07-15, this session, on main): CODE DONE —
+  D-35 + D-36.** Delivered: per-topic config/state/outputs + scoped round
+  commits (D-35); problem-brief intake + emergent framing with human gates,
+  SCENARIO_ANCHORS deleted (D-36, closes the #21 mechanism); per-topic
+  time/token/USD metering (lab/metering.py, cost_report in final + site);
+  topic-browser site (build_site_topics.py). Mock e2e green for a 3-frame
+  test topic; verify green on korai-szelekcio. REMAINING from the sprint
+  prompt: the kisiskolák topic LIVE end-to-end (intake → frames gate →
+  round → published page) — awaiting owner cost-budget approval; then
+  comment/close #21 and update #18.
 - **OWNER DIRECTION (2026-07-14): multi-topic a cél** — sok policy-kérdés
   ugyanazzal a rendszerrel és expert-csoporttal, SEMMI kérdés-specifikus
   hardkód; az opcióteret (mit lehet csinálni) is a szakértői válaszokból
-  kell derivalni. Út: #21 (emergens keretezés, előfeltétel) → #18
-  (multi-topic architektúra; a másik gépen folyó munka). Példa következő
-  kérdés: elnéptelenedő falvak kisiskolái.
+  kell derivalni. Példa következő kérdés: elnéptelenedő falvak kisiskolái.
+  A `refactor/deliberation-phase-b` branch (másik gép) D-31 Phase B munkát
+  hordoz (unknowns/research-agenda/decision-readiness + saját round 6-8
+  outputok a RÉGI sémával) — merge-nél a KÓD érdekes, az outputjai a main
+  round 8-cal ütköznek; owner döntsön.
 - #4 fully live run on billing-enabled keys
 - #5 question submission before launch (LAUNCH BLOCKER)
 - #6 retrieval over knowledge/library + corpus ingestion
@@ -220,10 +238,24 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
 
 ## Gotchas
 
-- The iteration loop's git commit is `git add -A` — NEVER leave unrelated
-  uncommitted work in the tree while a round is running (use a worktree).
-- site/explorer.html + site/knowledge.html are GENERATED (gitignored),
-  built by CI; edit the build scripts, not the HTML.
+- Round commits are PATH-SCOPED since D-35 (topics/<slug> +
+  outputs/topics/<slug> + config/system_config.json) — the old `git add -A`
+  sweep is gone; concurrent topics don't cross-commit.
+- Everything question-specific is per-topic: problem brief/frames/rosters/
+  expert_facts/human_questions in topics/<slug>/topic.json; glossary in
+  topics/<slug>/glossary.md (docs/glossary.md MOVED there, incl. the
+  machine-checked pairs section); episodic memory in
+  topics/<slug>/agents/memory/; improvement directives in
+  topics/<slug>/agents/directives/ (the shared agents/**/*.md specs never
+  carry topic learnings); attempts_log + era_start_round per topic under
+  outputs/topics/<slug>/.
+- Approved frames are FROZEN: change them only via new_topic.py
+  approve-frames (the round state hash deliberately excludes the frames
+  block, so a manual topic.json edit could silently reuse stale scenario
+  artifacts — D-36).
+- site/explorer.html + site/knowledge.html + site/topics/ are GENERATED
+  (gitignored), built by CI; site/index.html is committed but its
+  TOPICS:START/END region is regenerated by build_site_topics.py.
 - outputs/ is deliberately committed (audit trail); outputs/mock_sprint/ is
   the gitignored scratch.
 - Pyright shows false-positive import errors for lab/* relative imports —

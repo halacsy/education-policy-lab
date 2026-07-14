@@ -25,7 +25,7 @@ the mitigation we implement.
 
 ### 2. Self-Refine / Reflexion (episodic memory of failure)
 
-- `outputs/archive/attempts_log.jsonl` records every attempted system change:
+- `outputs/topics/<slug>/archive/attempts_log.jsonl` records every attempted system change:
   what was changed, the expected score delta, and the actual delta measured in
   the following round.
 - The improvement step **must read this log first** and may not re-try a change

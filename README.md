@@ -39,14 +39,14 @@ no-position), a mediator clusters the arguments without counting heads, the
 evidence layer grades their factual claims, and the policy brief must answer
 every argument cluster (CNDP-style response obligation). The next round *applies* the plan's single change
 (verified by byte-level diff of the `system_state/` snapshot), consults the
-Reflexion/ADAS archive (`outputs/archive/attempts_log.jsonl`) to never repeat
+Reflexion/ADAS archive (`outputs/topics/<slug>/archive/attempts_log.jsonl`) to never repeat
 a failed change, and re-measures. Changes that regress are reverted and
 archived as failures.
 
 Design docs: `docs/architecture.md` (pattern basis + cautions),
 `docs/workflow.md`, `docs/methodology.md` (the Level-4 method),
 `docs/human_role.md`, `docs/decisions.md` (every consequential decision),
-`docs/glossary.md` (controlled HU↔EN terminology).
+per-topic glossaries (`topics/<slug>/glossary.md`, controlled HU↔EN terminology).
 
 ## Guarantees enforced by `scripts/verify.py`
 

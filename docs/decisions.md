@@ -507,3 +507,37 @@ hardcoded. Decisions:
    `run_mock_sprint`, `rescore_round`, `evaluate_outputs`, site
    builders); default is `default_topic`, so existing automation works
    unchanged. `verify.py` must be green PER TOPIC.
+
+**D-36 — Problem-brief intake and emergent scenario framing, both
+human-gated (2026-07-15, issue #21; sprint deliverables 1-2).** The system's
+input is a DESCRIBED PROBLEM, not a bare question (owner decision
+2026-07-14): a bilingual problem brief (title, problem statement, 2-4
+learning goals, scope) frozen into topics/<slug>/topic.json. Decisions:
+
+1. *Intake gate (D-24 pattern).* `scripts/new_topic.py draft` turns a
+   free-text submission into a structured problem-brief PROPOSAL (one
+   schema-constrained model call); a human reviews/edits the file and
+   approves (`approve`), which creates topic.json + a glossary skeleton.
+   No round runs before approval.
+2. *Emergent framing (issue #21).* `pipeline.SCENARIO_ANCHORS` is DELETED.
+   On a topic with no approved frames, round 1 runs the experts, then a
+   `frame_scenarios` step derives the OPTION SPACE from the expert record:
+   2-5 frames (sequential S<i> ids, bilingual title+scope) plus the
+   rejected framings as the audit trail of the option-space choice. The
+   round then STOPS at a human gate (`FramesPending`); approval
+   (`new_topic.py approve-frames`) freezes the frames into topic.json and
+   a relaunch resumes the round.
+3. *The expert outputs survive the gate.* The round state hash includes
+   topic.json EXCEPT its frames block (Topic.state_fingerprint), so frame
+   approval does not invalidate the expert outputs the frames were derived
+   from; scenario-dependent validators re-check the id set anyway, and
+   approve-frames defensively purges any scenario-dependent artifact of
+   the deriving round. Editing approved frames outside approve-frames is
+   unsupported (documented footgun).
+4. *Everything downstream is id-count-agnostic.* Schemas became per-topic
+   factories (lab/schemas.py: SCENARIOS(ids), VOICE(ids), BRIEF(ids), ...),
+   validators take the frame id set, prompts carry a "SCENARIO IDS" line,
+   and verify check 5 demands an EXACT match with the approved frames
+   (stricter than the old fixed ">=3 of S1..S4"). The retrofit topic
+   korai-szelekcio carries the archive era's four anchors as its approved
+   frames.

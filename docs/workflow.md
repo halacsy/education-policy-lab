@@ -53,7 +53,7 @@ political_feasibility expert's memory next round.
 
 At the **start** of round N+1 the change planned in round N is actually applied
 to the agent specs / config (verified by diff), after consulting
-`the topic archive (outputs/topics/<slug>/archive/attempts_log.jsonl)` to avoid repeating failed changes.
+the topic archive (`outputs/topics/<slug>/archive/attempts_log.jsonl`) to avoid repeating failed changes.
 
 ## Every round must answer (in `improvement_plan.md`)
 
@@ -91,7 +91,7 @@ Early stops are explained in the final report and in `human_questions.md`.
 
 - System artifacts: English.
 - Policy deliverables: bilingual. The translator produces `*.hu.md` from the
-  English originals using `docs/glossary.md`; the `translation_checker`
+  English originals using the topic glossary (`topics/<slug>/glossary.md`); the `translation_checker`
   enforces ID-set parity, section-structure parity, glossary conformance and
   non-identity (a HU file byte-identical to EN fails).
 
