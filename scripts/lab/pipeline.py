@@ -636,7 +636,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                      "value_modeled with its basis. " + bilingual_note),
                  inputs=scen_en_md),
             validate=valid_voice, out_path=ddir / "voices" / f"{name}.json",
-            schema=S.VOICE, max_tokens=12000)
+            schema=S.VOICE, max_tokens=24000)
         return name, obj
 
     voices = {}
@@ -665,7 +665,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
              inputs=voices_digest),
         validate=lambda o: valid_argmap_basic(o, voice_names),
         out_path=ddir / "argument_map_basic.json",
-        schema=S.CLUSTER_BASIC, max_tokens=10000)
+        schema=S.CLUSTER_BASIC, max_tokens=16000)
     clusters_basic = arg_map_basic["clusters"]
 
     # Phase 2: decompose EACH cluster in its own small, parallel,
@@ -702,7 +702,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                         + "\n".join(context_lines))),
             validate=valid_cluster_decomposition,
             out_path=ddir / "clusters" / f"{cid}.json",
-            schema=S.CLUSTER_DECOMPOSE, max_tokens=4000)
+            schema=S.CLUSTER_DECOMPOSE, max_tokens=8000)
         return cid, obj
 
     decompositions = {}
@@ -764,7 +764,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                              + "\n\nARGUMENT MAP:\n" + clusters_digest)),
                 validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
                 out_path=ddir / "responses" / f"{name}.json",
-                schema=S.RECIPROCITY, max_tokens=6000)
+                schema=S.RECIPROCITY, max_tokens=10000)
             return name, obj
 
         with ThreadPoolExecutor(max_workers=4) as ex:
@@ -991,7 +991,7 @@ def run_round(n):
                  "an honest evidence grade.\n\nGLOSSARY:\n" + glossary),
              inputs=expert_digest),
         validate=valid_synthesis, out_path=rd / "synthesis.json",
-        schema=S.SYNTHESIS, max_tokens=12000)
+        schema=S.SYNTHESIS, max_tokens=20000)
     synthesis_text = render.synthesis_md(synthesis_obj, "en")
     write(rd / "synthesis.md", synthesis_text)
     write(rd / "synthesis.hu.md", render.synthesis_md(synthesis_obj, "hu"))
