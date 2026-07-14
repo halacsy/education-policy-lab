@@ -147,6 +147,41 @@ baseline. A final_scorecard mindkét érát mutatja, jelölve a törést.
 2. A round 1–7 érát lezárjuk-e véglegesen? → **Igen, archív.**
 3. A P4 (web search) mehet-e a P2-vel egy körben? → **Igen, együtt.**
 
+## Újraszerkesztés, nem újraírás (2026-07-14 döntés)
+
+A Phase 2 **fokozatos migráció** (strangler-minta), NEM zöldmezős újraírás.
+Indoklás:
+
+1. **Az architektúra a megtartandó érték.** A determinisztikus DAG +
+   steps.jsonl-resume + state-hash + D-19 cache + D-26 ladder + D-27 breaker
+   pont az, amiért a frameworköket is elvetettük — újraírásnál ezt kellene
+   újra-levezetni, a 33 decision-log-döntés csendes elvesztésének kockázatával
+   (pontosan ez történt a D-30-nál az agent-specekkel: seed vs committed fájl).
+2. **A változás széles, de sekély.** Minden lépés megtartja a helyét a
+   DAG-ban, a prompt-tartalmát és a szerepét — csak az output-kontraktus
+   változik (markdown → kétnyelvű JSON). Ez tankönyvi inkrementális eset.
+3. **A dry-run végig zöld maradhat.** Taskonkénti migrációnál a
+   run_mock_sprint minden commit után fut; újraírásnál hosszú "minden törött"
+   völgy lenne.
+4. A Phase 1 (`call_structured` + `StepFailed`) már eleve inkrementális
+   beszúrási pontnak készült.
+
+**A kulcstrükk, ami a migrációt lépés-lokálissá teszi:** a JSON→md renderer
+nem csak embernek szól — a downstream promptok (pl. az expert_digest a
+scenario_buildernek) a renderelt markdownt kapják, így egy task migrálása
+NEM kényszeríti a fogyasztóinak egyidejű átírását.
+
+**Javasolt migrációs sorrend** (kockázat szerint, mindegyik önálló commit,
+utána zöld mock sprint): `expert_analysis` (a minta validálása) →
+`build_scenarios` (már JSON, csak {en,hu}-sítás) → critics → synthesis +
+rejected_framings → discourse (voice/decompose/map/reciprocity — a
+legnagyobb) → brief (a legnagyobb token-budget) → meta_critic. A
+translate_* lépések mindig az adott task migrálásakor törlődnek.
+
+Modul-szinten VAN helye teljes újraírásnak, ahol a modul feladata alapjaiban
+változik: `translation.py` → `bilingual_parity` ellenőrző; mock-composerek
+taskonként; új `lab/schemas.py` és `lab/render.py` tiszta lapról.
+
 ## Megvalósítási jegyzetek a Phase 2-höz (a Phase 1 tanulságai)
 
 A Phase 1 (kész, commit `8f81df8`) által lefektetett interfész:
