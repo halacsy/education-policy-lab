@@ -176,10 +176,17 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
 
 ## Open issues (tracker)
 
+- **OWNER DIRECTION (2026-07-14): multi-topic a cél** — sok policy-kérdés
+  ugyanazzal a rendszerrel és expert-csoporttal, SEMMI kérdés-specifikus
+  hardkód; az opcióteret (mit lehet csinálni) is a szakértői válaszokból
+  kell derivalni. Út: #21 (emergens keretezés, előfeltétel) → #18
+  (multi-topic architektúra; a másik gépen folyó munka). Példa következő
+  kérdés: elnéptelenedő falvak kisiskolái.
 - #4 fully live run on billing-enabled keys
 - #5 question submission before launch (LAUNCH BLOCKER)
 - #6 retrieval over knowledge/library + corpus ingestion
 - #7 distributed contributor runs (SETI@home-style, subscription quota)
+- #20 Phase 3 (D-34): evaluation/verify a JSON-mezőkön, bilingual_parity, strukturált judge
 - #9 panel-composition sensitivity mitigations (evidence-weighted sides,
   perspective-expert type — partially addressed by D-29)
 - #12 stakeholder sources: 4 registry facts await human admission for the
