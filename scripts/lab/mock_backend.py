@@ -360,9 +360,13 @@ def brief(lang, d, prompt=""):
     # can (and does) produce more clusters than the curated pack's 10, and
     # this mock must stay valid regardless of that count (it is the crash
     # backstop of last resort; failing its own validation is fatal, not a
-    # graceful degrade — see pipeline.Step.run).
+    # graceful degrade — see pipeline.Step.run). Matches BOTH the live
+    # ledger's bold '**A12**' markup AND this same mock's own EN brief
+    # rendering ('- A12 (...)'), since translator_brief's input is brief_en
+    # — which, if final_brief_writer ALSO fell back to mock this round, is
+    # this function's own plain-format output, not the bold ledger text.
     curated_by_id = {c["id"]: c for c in K.ARGUMENT_CLUSTERS}
-    real_ids = sorted(set(re.findall(r"\*\*(A\d+)\*\*", prompt)),
+    real_ids = sorted(set(re.findall(r"\b(A\d+)\b", prompt)),
                       key=lambda s: int(s[1:])) or list(curated_by_id)
     for cid in real_ids:
         cur = curated_by_id.get(cid)
