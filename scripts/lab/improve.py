@@ -35,7 +35,10 @@ CATALOG = [
                "reduce it ('would be reduced by: ...'). In Hungarian output "
                "use 'megbízhatóság: alacsony|közepes|magas' and "
                "'csökkentené: ...'."),
-         checks={"expert_analysis": ["confidence:"],
+         # structured-output era (D-34): the marker is checked against the
+         # JSON dump of the artifact, where the schema guarantees a
+         # "confidence" field — total omission is impossible by construction
+         checks={"expert_analysis": ['"confidence":'],
                  "build_scenarios": ["confidence:"],
                  "translate_scenarios": ["megbízhatóság:"]},
          expected_delta=0.8),

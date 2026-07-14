@@ -61,24 +61,29 @@ def compose(prompt, role):
 
 # -- experts ----------------------------------------------------------------
 
+def _hu_pair(en, hu=None):
+    """Bilingual leaf; the curated pack is EN-only for some expert fields,
+    so the mock's HU side is an honestly-labelled placeholder there."""
+    return {"en": en, "hu": hu if hu is not None else "(HU) " + en}
+
+
 def expert_analysis(agent, d):
     b = K.EXPERT_BRIEFS[agent]
-    lines = [f"# Expert analysis: {agent}", "", "## Findings (evidence)"]
+    findings = []
     for fid in b["findings"]:
         f = K.FACTS[fid]
-        lines.append(f"- {f['en']} [evidence: {f['evidence']} — {f['source']}]")
-    lines += ["", "## Interpretation", b["interpretation"],
-              "", "## Assumptions"]
-    lines += [f"- {a} [assumption]" for a in b["assumptions"]]
-    lines += ["", "## Position", b["position"]]
-    lines += ["", "## Uncertainties"]
-    for u in b["uncertainties"]:
-        item = f"- {u['text']}"
-        if "uncertainty_quantify" in d:
-            item += (f" (confidence: {u['confidence']}; evidence that would"
-                     f" reduce it: {u['reducer']})")
-        lines.append(item)
-    return "\n".join(lines) + "\n"
+        findings.append(dict(claim={"en": f["en"], "hu": f["hu"]},
+                             evidence=f["evidence"], source=f["source"]))
+    return json.dumps(dict(
+        findings=findings,
+        interpretation=_hu_pair(b["interpretation"]),
+        assumptions=[_hu_pair(a) for a in b["assumptions"]],
+        position=_hu_pair(b["position"]),
+        uncertainties=[dict(text=_hu_pair(u["text"]),
+                            confidence=u["confidence"],
+                            reduced_by=_hu_pair(u["reducer"]))
+                       for u in b["uncertainties"]],
+    ), ensure_ascii=False, indent=2)
 
 
 # -- scenarios ---------------------------------------------------------------

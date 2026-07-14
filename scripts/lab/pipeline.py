@@ -19,7 +19,8 @@ from . import agent_defs as D
 from . import improve
 from . import knowledge as K
 from . import ledger as LG
-from . import llm, translation
+from . import llm, render, translation
+from . import schemas as S
 from .agents import build_prompt
 from .util import (AGENTS_DIR, CONFIG_PATH, ROOT, TEMPLATES_DIR, load_config,
                    read, read_json, round_dir, write, write_json)
@@ -165,6 +166,35 @@ TRANSLATE_CLUSTER_SCHEMA_HINT = json.dumps({
     "affected": ["<translated>", "..."], "assumption": "<translated>",
     "empirical_uncertainty": "<translated>",
 }, indent=2)
+
+
+def pair_ok(v):
+    """A bilingual {en, hu} leaf with both sides non-empty."""
+    return (isinstance(v, dict)
+            and str(v.get("en", "")).strip() != ""
+            and str(v.get("hu", "")).strip() != "")
+
+
+def valid_expert(o):
+    try:
+        findings = o["findings"]
+    except (TypeError, KeyError):
+        return False
+    if not isinstance(findings, list) or not findings:
+        return False
+    for f in findings:
+        if not pair_ok(f.get("claim")) or not str(f.get("source", "")).strip():
+            return False
+    if not pair_ok(o.get("interpretation")) or not pair_ok(o.get("position")):
+        return False
+    assumptions = o.get("assumptions")
+    if not assumptions or not all(pair_ok(a) for a in assumptions):
+        return False
+    uncertainties = o.get("uncertainties")
+    if not uncertainties:
+        return False
+    return all(pair_ok(u.get("text")) and pair_ok(u.get("reduced_by"))
+               for u in uncertainties)
 
 
 def valid_cluster_translation(d):
@@ -842,7 +872,7 @@ def run_round(n):
         if prev_rd is None or f"expert:{name}" in set(prev_log.get("fallbacks", [])):
             return None
         spec_prev = prev_rd / "system_state" / "agents" / "experts" / f"{name}.md"
-        out_prev = prev_rd / "expert_outputs" / f"{name}.md"
+        out_prev = prev_rd / "expert_outputs" / f"{name}.json"
         spec_now = AGENTS_DIR / "experts" / f"{name}.md"
         if not (spec_prev.exists() and out_prev.exists()):
             return None
@@ -856,7 +886,10 @@ def run_round(n):
         now_mem = mem_now.read_text(encoding="utf-8") if mem_now.exists() else ""
         if prev_mem != now_mem:
             return None
-        return out_prev.read_text(encoding="utf-8")
+        try:
+            return read_json(out_prev)  # pre-D-34 rounds stored .md: no reuse
+        except Exception:
+            return None
 
     def curated_sources(name):
         fids = K.EXPERT_BRIEFS.get(name, {}).get("findings", [])
@@ -868,37 +901,53 @@ def run_round(n):
                 "evidence grade; anything beyond them must be flagged as "
                 "model knowledge):\n" + "\n".join(rows))
 
+    glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
+
     def run_expert(name):
-        out_path = rd / "expert_outputs" / f"{name}.md"
+        out_path = rd / "expert_outputs" / f"{name}.json"
         validate = directive_validator(
-            lambda t: "[evidence:" in t and "## Position" in t
-                      and "## Uncertainties" in t,
-            dict(task="expert_analysis", agent=name))
+            valid_expert, dict(task="expert_analysis", agent=name))
+        obj = None
         if not (step.resume and out_path.exists()):
             cached = reusable_expert(name)
-            if cached is not None and validate(cached):
-                write(out_path, cached)
+            try:
+                cached_ok = cached is not None and validate(cached)
+            except Exception:
+                cached_ok = False
+            if cached_ok:
+                write_json(out_path, cached)
                 reused_prev.append(f"expert:{name}")
                 print(f"[round {n:02d}] {'':>3} {'expert:' + name:<32} "
                      f"{'cached (unchanged spec)':<20}", flush=True)
-                return name, cached
-        text, _ = step.run(
-            f"expert:{name}",
-            dict(task="expert_analysis", agent=name, round_n=n,
-                 instructions=(
-                     f"Policy question: {question}\n"
-                     "Write your analysis following your Output template. "
-                     "Sections required: '## Findings (evidence)' (each "
-                     "finding with an inline [evidence: ...] tag and source), "
-                     "'## Interpretation', '## Assumptions', '## Position', "
-                     "'## Uncertainties'." + curated_sources(name))),
-            validate=validate, out_path=out_path, max_tokens=3000)
-        return name, text
+                obj = cached
+        if obj is None:
+            obj, _ = step.run(
+                f"expert:{name}",
+                dict(task="expert_analysis", agent=name, round_n=n,
+                     instructions=(
+                         f"Policy question: {question}\n"
+                         "Produce your analysis as the required JSON object, "
+                         "in BOTH English and Hungarian: every {en, hu} pair "
+                         "carries the SAME statement written natively in "
+                         "each language (parallel authoring, never "
+                         "machine-translation flavour; use the glossary "
+                         "terms strictly). findings = factual claims, each "
+                         "with an honest evidence grade and a named source; "
+                         "position = exactly one falsifiable sentence; "
+                         "uncertainties = known unknowns with confidence "
+                         "and what evidence would reduce them."
+                         + curated_sources(name)
+                         + "\n\nGLOSSARY:\n" + glossary)),
+                validate=valid_expert, out_path=out_path,
+                schema=S.EXPERT_ANALYSIS, max_tokens=8000)
+        md = render.expert_md(name, obj, "en")
+        write(rd / "expert_outputs" / f"{name}.md", md)
+        return name, md
 
     experts = {}
     with ThreadPoolExecutor(max_workers=4) as ex:
-        for name, text in ex.map(run_expert, D.EXPERTS):
-            experts[name] = text
+        for name, md in ex.map(run_expert, D.EXPERTS):
+            experts[name] = md
 
     expert_digest = "\n\n".join(
         f"----- {name} -----\n{text}" for name, text in experts.items())
@@ -945,8 +994,6 @@ def run_round(n):
              inputs=scen_en_md),
         validate=lambda t: "REJECTED" in t and "CHOSEN" in t,
         out_path=rd / "rejected_framings.md", max_tokens=2500)
-
-    glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
 
     # 3.5 societal-discourse layer (D-29): argument ledger
     disc_cfg = cfg.get("discourse", {})

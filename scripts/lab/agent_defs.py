@@ -79,11 +79,11 @@ META = {
 
 TYPE_RULES = {
     "expert": [
-        "Tag every factual claim with an evidence status: [evidence: strong|moderate|weak|contested] plus the source.",
-        "Keep Findings (evidence), Interpretation, Assumptions, Position and Uncertainties in separate sections; never mix layers.",
+        "Grade every finding's evidence field honestly (strong|moderate|weak|contested) and name its source.",
+        "Keep findings, interpretation, assumptions, position and uncertainties in their separate fields; never mix layers.",
         "Never invent statistics or citations; if you do not know, say so as an explicit uncertainty.",
         "State your Position in one sentence so the disagreement map can cite it.",
-        "Stay under ~450 words; density beats volume (length is not rewarded).",
+        "Stay under ~450 words per language; density beats volume (length is not rewarded).",
     ],
     "critic": [
         "Every objection MUST name a specific scenario id AND field, as a heading: `## S<n>.<field>`.",
@@ -148,7 +148,7 @@ TYPE_SELFCRIT = {
 }
 
 TYPE_TEMPLATE = {
-    "expert": "# Expert analysis: <name>\\n## Findings (evidence)\\n- <claim> [evidence: <status> — <source>]\\n## Interpretation\\n## Assumptions\\n- <assumption> [assumption]\\n## Position\\n## Uncertainties\\n- <unknown>",
+    "expert": "(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using docs/glossary.md terminology — parallel authoring, not translation. Fields: findings[{claim{en,hu}, evidence, source}], interpretation{en,hu}, assumptions[{en,hu}], position{en,hu}, uncertainties[{text{en,hu}, confidence, reduced_by{en,hu}}])",
     "critic": "# Critique: <name>\\n## S<n>.<field>\\nObjection: <concrete flaw>",
     "synthesis": "(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief; discourse_mediator returns the argument-map JSON)",
     "meta": "# Meta-critique — round <n>\\n## Agent performance\\n## Workflow\\n## Critique quality\\n## Gaming judgment (explicit)\\n## Translation consistency",
