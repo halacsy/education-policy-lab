@@ -845,8 +845,6 @@ def run_round(n):
                 "evidence grade; anything beyond them must be flagged as "
                 "model knowledge):\n" + "\n".join(rows))
 
-    glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
-
     def run_expert(name):
         out_path = rd / "expert_outputs" / f"{name}.md"
         validate = directive_validator(
@@ -861,36 +859,17 @@ def run_round(n):
                 print(f"[round {n:02d}] {'':>3} {'expert:' + name:<32} "
                      f"{'cached (unchanged spec)':<20}", flush=True)
                 return name, cached
-
-        # TEST: bilingual prompt for demography expert
-        is_bilingual_test = (name == "demography")
-        if is_bilingual_test:
-            instr = (
-                f"Policy question: {question}\n"
-                "Output BOTH English and Hungarian analysis.\n\n"
-                "English sections: ## Findings (evidence), ## Interpretation, "
-                "## Assumptions, ## Position, ## Uncertainties\n"
-                "Hungarian sections (same content, Hungarian labels): ## Megállapítások, "
-                "## Értelmezés, ## Feltevések, ## Álláspontom, ## Bizonytalanságok\n\n"
-                "Use this glossary for consistency:\n" + glossary + "\n\n"
-                "Write your analysis following your Output template. "
-                "Each finding must have an inline [evidence: ...] tag and source. "
-                + curated_sources(name))
-        else:
-            instr = (
-                f"Policy question: {question}\n"
-                "Write your analysis following your Output template. "
-                "Sections required: '## Findings (evidence)' (each "
-                "finding with an inline [evidence: ...] tag and source), "
-                "'## Interpretation', '## Assumptions', '## Position', "
-                "'## Uncertainties'." + curated_sources(name))
-
         text, _ = step.run(
             f"expert:{name}",
             dict(task="expert_analysis", agent=name, round_n=n,
-                 lang="hu" if is_bilingual_test else "en",
-                 instructions=instr),
-            validate=validate, out_path=out_path, max_tokens=6000 if is_bilingual_test else 3000)
+                 instructions=(
+                     f"Policy question: {question}\n"
+                     "Write your analysis following your Output template. "
+                     "Sections required: '## Findings (evidence)' (each "
+                     "finding with an inline [evidence: ...] tag and source), "
+                     "'## Interpretation', '## Assumptions', '## Position', "
+                     "'## Uncertainties'." + curated_sources(name))),
+            validate=validate, out_path=out_path, max_tokens=3000)
         return name, text
 
     experts = {}
