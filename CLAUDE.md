@@ -176,6 +176,11 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
 
 ## Open issues (tracker)
 
+- **NEXT SPRINT PROMPT (kész, add az agensnek):**
+  `docs/proposals/2026-07-14-sprint-multi-topic-prompt.md` — probléma-lap
+  bemenet (intake + human gate), emergens keretezés (#21), multi-topic
+  plumbing (#18), idő/token/költség-mérés, téma-böngésző site, acceptance:
+  második probléma end-to-end (elnéptelenedő falvak kisiskolái).
 - **OWNER DIRECTION (2026-07-14): multi-topic a cél** — sok policy-kérdés
   ugyanazzal a rendszerrel és expert-csoporttal, SEMMI kérdés-specifikus
   hardkód; az opcióteret (mit lehet csinálni) is a szakértői válaszokból
