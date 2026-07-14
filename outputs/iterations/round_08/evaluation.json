@@ -7,22 +7,43 @@
       "method": "deterministic"
     },
     "evidence_discipline": {
-      "deterministic": 7.32,
+      "deterministic": 7.359,
       "llm": {
         "provider": "openai",
         "trials": [
           10.0,
-          10.0,
-          10.0
+          9.0,
+          9.0
         ],
-        "mean": 10.0,
-        "variance": 0.0,
+        "mean": 9.333,
+        "variance": 0.2222,
         "divergence_flagged": true
       },
-      "score": 7.32,
+      "score": 7.359,
       "method": "deterministic (LLM diverged; flagged for human)"
     },
     "critic_concreteness": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          9.0,
+          8.0,
+          9.0
+        ],
+        "mean": 8.667,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 9.6,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "layer_separation": {
+      "deterministic": 7.701,
+      "score": 7.701,
+      "method": "deterministic"
+    },
+    "meta_system_eval": {
       "deterministic": 10.0,
       "llm": {
         "provider": "anthropic",
@@ -36,27 +57,6 @@
         "divergence_flagged": false
       },
       "score": 9.7,
-      "method": "mixed (0.7 det + 0.3 llm)"
-    },
-    "layer_separation": {
-      "deterministic": 7.701,
-      "score": 7.701,
-      "method": "deterministic"
-    },
-    "meta_system_eval": {
-      "deterministic": 10.0,
-      "llm": {
-        "provider": "anthropic",
-        "trials": [
-          8.0,
-          9.0,
-          9.0
-        ],
-        "mean": 8.667,
-        "variance": 0.2222,
-        "divergence_flagged": false
-      },
-      "score": 9.6,
       "method": "mixed (0.7 det + 0.3 llm)"
     },
     "disagreement_preservation": {
@@ -97,9 +97,9 @@
       "method": "mixed (0.7 det + 0.3 llm)"
     }
   },
-  "total": 9.228,
-  "prev_total": 9.508,
-  "delta": -0.28,
+  "total": 9.232,
+  "prev_total": null,
+  "delta": null,
   "generator_provider": "anthropic",
   "judge_provider": "openai",
   "divergence_flagged": [

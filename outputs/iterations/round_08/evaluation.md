@@ -1,14 +1,14 @@
 # Evaluation — round 8
 
-Total: **9.228** (delta -0.280)
+Total: **9.232** (baseline)
 
 | dimension | score | method | det | llm mean | llm var |
 |---|---|---|---|---|---|
 | scenario_completeness | 10.0 | deterministic | 10.0 | — | — |
-| evidence_discipline | 7.32 | deterministic (LLM diverged; flagged for human) | 7.32 | 10.0 | 0.0 |
-| critic_concreteness | 9.7 | mixed (0.7 det + 0.3 llm) | 10.0 | 9.0 | 0.0 |
+| evidence_discipline | 7.359 | deterministic (LLM diverged; flagged for human) | 7.359 | 9.333 | 0.2222 |
+| critic_concreteness | 9.6 | mixed (0.7 det + 0.3 llm) | 10.0 | 8.667 | 0.2222 |
 | layer_separation | 7.701 | deterministic | 7.701 | — | — |
-| meta_system_eval | 9.6 | mixed (0.7 det + 0.3 llm) | 10.0 | 8.667 | 0.2222 |
+| meta_system_eval | 9.7 | mixed (0.7 det + 0.3 llm) | 10.0 | 9.0 | 0.0 |
 | disagreement_preservation | 10.0 | mixed (0.7 det + 0.3 llm) | 10.0 | 10.0 | 0.0 |
 | uncertainty_explicitness | 9.5 | deterministic | 9.5 | — | — |
 | translation_fidelity | 10.0 | mixed (0.7 det + 0.3 llm) | 10.0 | 10.0 | 0.0 |
