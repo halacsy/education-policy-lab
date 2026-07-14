@@ -1,0 +1,115 @@
+{
+  "round": 8,
+  "dimensions": {
+    "scenario_completeness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "evidence_discipline": {
+      "deterministic": 7.823,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          9.0,
+          9.0,
+          9.0
+        ],
+        "mean": 9.0,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 8.176,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "critic_concreteness": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          5.56,
+          5.45,
+          5.52
+        ],
+        "mean": 5.51,
+        "variance": 0.0021,
+        "divergence_flagged": true
+      },
+      "score": 10.0,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    },
+    "layer_separation": {
+      "deterministic": 8.947,
+      "score": 8.947,
+      "method": "deterministic"
+    },
+    "meta_system_eval": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          4.55,
+          4.84,
+          4.69
+        ],
+        "mean": 4.693,
+        "variance": 0.014,
+        "divergence_flagged": true
+      },
+      "score": 10.0,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    },
+    "disagreement_preservation": {
+      "deterministic": 9.4,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          9.0,
+          10.0,
+          9.0
+        ],
+        "mean": 9.333,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 9.38,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "uncertainty_explicitness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "translation_fidelity": {
+      "deterministic": 6.667,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "mean": 4.0,
+        "variance": 0.0,
+        "divergence_flagged": true
+      },
+      "score": 6.667,
+      "method": "deterministic (LLM diverged; flagged for human)"
+    }
+  },
+  "total": 9.146,
+  "prev_total": 9.508,
+  "delta": -0.362,
+  "generator_provider": "anthropic",
+  "judge_provider": "openai",
+  "divergence_flagged": [
+    "critic_concreteness",
+    "translation_fidelity",
+    "meta_system_eval"
+  ],
+  "step_fallbacks": [
+    "voice:pedagogus_erdekvedo",
+    "voice:eselyegyenlosegi_civil",
+    "voice:oktataspolitikai_reformmozgalom"
+  ]
+}

@@ -1,0 +1,29 @@
+## S0 — Status quo with mandated independent equity audit and fixed decision deadline
+- CHOSEN: Status quo maintained with a mandated independent equity audit and a statutory decision deadline, framed as a governance/evidence-generation intervention rather than a reform choice.
+- REJECTED: Pure "do-nothing" status quo with no audit or deadline — reason: offers no evidence-generation pathway and no commitment device against indefinite deferral, which the expert record identifies as the central political risk of inaction.
+- REJECTED: Status quo framed as implicit endorsement of current selection pending audit results — reason: pre-judges an audit that has not yet been conducted, upgrading an assumption to a conclusion in violation of evidence discipline.
+- REJECTED: Audit-only framing without a statutory deadline — reason: political_feasibility findings flag indefinite deferral as likely; dropping the deadline device removes the only commitment mechanism and understates political risk.
+
+## S1 — SES-aware admission reform to the 6/8-year gimnazium tracks, piloted in 2-3 districts
+- CHOSEN: SES-aware admission reform piloted in 2-3 districts, framed explicitly as evidence-generating rather than a proven equity fix.
+- REJECTED: Immediate national SES-weighted admission rollout without piloting — reason: feasibility_checker and political_feasibility findings show no validated Hungarian assessment or SES proxy exists; framing as immediate national rollout overstates feasibility and evidence.
+- REJECTED: Pilot framed as a guaranteed precursor to structural abolition of tracking — reason: conflates S1's admission-side reform with S3's structural goal, laundering a distinction the expert record keeps separate.
+- REJECTED: Pilot limited to assessment redesign only, omitting SES-weighting/quotas — reason: drops the admission-weighting mechanism the diagnostic skew evidence (KSH/Oktatási Hivatal) is meant to address, weakening the equity rationale.
+
+## S2 — Gradual phase-down of 6/8-year gimnazium entry places over a fixed multi-year schedule
+- CHOSEN: Legislated year-on-year phase-down of state-maintained 6/8-year entry places, with equity gains explicitly conditioned on regulatory containment of non-state offsetting expansion.
+- REJECTED: Phase-down framed as a guaranteed reduction in cohort exposure to early sorting — reason: coherence_checker and assumption_checker findings show the scenario's own assumptions/uncertainties concede non-state maintainers may absorb displaced demand; an unconditional framing would contradict the scenario's own equity_impact field.
+- REJECTED: Place-count regulation extended uniformly to non-state maintainers by year 1 — reason: legal_and_governance record shows no current legal mechanism compels non-state maintainer compliance; this framing overstates legal/administrative feasibility.
+- REJECTED: Full immediate abolition of entry places relabeled as "gradual" — reason: collapses S2 into S3's structural-abolition goal, erasing the design distinction between incremental place-count regulation and full statutory repeal.
+
+## S3 — Structural reform: abolish 6/8-year entry, comprehensive schooling to age 14
+- CHOSEN: Structural abolition of 6/8-year entry with comprehensive schooling to age 14, framed as a hypothesis to be tested via bundled implementation, not a guaranteed replication of Finnish/Polish equity gains.
+- REJECTED: Abolition framed as aligning Hungary with "the international evidence base" on delayed tracking and equity — reason: devil_advocate and assumption_checker findings show Hanushek & Woessmann 2006 supports only a cross-national association, not a Hungary-specific causal guarantee; this framing upgrades evidence status.
+- REJECTED: Abolition-alone framing without bundled choice/catchment and teacher-capacity reform — reason: the scenario's own mechanism and equity_impact fields show sorting could migrate to school choice/catchment/non-state tracks if abolition is not bundled; an abolition-only framing omits a risk the expert record treats as central.
+- REJECTED: Abolition framed as politically self-entrenching once enacted — reason: political_risk_checker findings on the 1999-2019 Polish reversal show no binding entrenchment mechanism is specified; assuming durability without a lock mechanism understates reversal risk.
+
+## S4 — Retain 6/8-year gimnazium structure; deploy Portuguese-style non-structural equity package for general schools
+- CHOSEN: Retain the 6/8-year structure unchanged and deploy a Portuguese-style non-structural equity package for general schools, framed as harm mitigation/partial gap-narrowing, not neutralization of selection-driven inequity.
+- REJECTED: Package framed as able to "neutralize" the socio-economic inequities of selection — reason: coherence_checker and devil_advocate findings show no cited evidence supports offsetting Hungary's age-10/12 selection gradient through non-structural means alone; this framing upgrades a moderate/bounded evidence base to a strong causal claim.
+- REJECTED: Package framed as "politically safe" or durable given lower near-term opposition — reason: political_risk_checker findings show TEIP-style targeted funding is flagged as a likely early casualty of fiscal consolidation; a "safe" framing would mask this risk.
+- REJECTED: Package framed as a temporary bridge pending eventual structural reform — reason: the scenario's own assumptions and equity_impact identify a real risk that retaining selection while compensating general schools legitimizes and entrenches selection rather than serving as a bridge; framing it as transitional drops this dissenting risk.

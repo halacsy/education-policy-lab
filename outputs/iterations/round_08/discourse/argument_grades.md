@@ -1,0 +1,10 @@
+A1: [not registry-backed — treat as model knowledge] Registry supports legal anchoring of 6/8-year tracks, not enforceability of statutory audit deadlines.
+A3: [evidence: strong — Hanushek & Woessmann 2006; OECD PISA 2012-2022 country notes] Registry strongly supports early tracking/SES inequality harms, but not that a reform pathway is already implementation-ready.
+A5: [not registry-backed — treat as model knowledge] Registry does not cover SES proxies, coachability, pilot monitoring, or publication timing.
+A6: [not registry-backed — treat as model knowledge] Registry supports school sorting generally, but not gameability or validity of SES-weighted quotas.
+A8: [evidence: moderate — Hanushek & Woessmann 2006, Economic Journal] Registry supports equity gains from later tracking, but not the specific peer-effect mechanism or pace/support threshold.
+A9: [evidence: moderate — Public education act amendments; maintainer statistics; OECD Education at a Glance; PSZ/PDSZ surveys] Registry supports maintainer pluralism and teacher shortage, but not legal non-state absorption dynamics or guaranteed overcrowding effects.
+A10: [evidence: strong — OECD Education at a Glance; PSZ/PDSZ surveys] Registry strongly supports systemic teacher shortage; exact retraining/redeployment timeline feasibility remains an inference.
+A12: [evidence: contested — Hanushek & Woessmann 2006; Kertesi & Kezdi 2013; Berenyi-Berkovits-Erőss studies] Registry contradicts the “only cross-national” framing because it includes Hungary-specific school-choice sorting evidence, though displacement risk is plausible.
+A14: [evidence: moderate — Jakubowski et al. 2016; OECD] Registry supports Poland’s reform and later PISA gains, but not the 2016-2019 reversal or entrenchment claim.
+A15: [evidence: weak — Budget chapters; expert estimates; OECD PISA trend reports; Crato 2020] Registry supports transition-cost vulnerability and Portugal-style non-structural improvement, but not TEIP-style funding durability or “only scenario” exclusivity.

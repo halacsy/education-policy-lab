@@ -1,0 +1,60 @@
+{
+  "voice": "kisgyerekes_szuloi",
+  "reactions": [
+    {
+      "scenario": "S0",
+      "stance": "conditional",
+      "label": "value_modeled",
+      "source": "",
+      "basis": "Parental preference for predictability in school planning and minimal disruption to children already enrolled or about to apply, consistent with the scenario's own framing that status quo avoids transition costs during the audit period",
+      "interest": "families with children currently enrolled in or approaching gimnazium application age (roughly ages 8-11)",
+      "public_good_frame": "children's need for a stable, knowable set of rules while planning school applications, transfers, and commuting arrangements years in advance",
+      "argument": "Keeping the structure unchanged while the audit runs means families making 6/8-year gimnazium application decisions now are not blindsided mid-cycle, which matters because these decisions involve multi-year commitments (tutoring, address planning, sibling coordination). But an audit with no enforceable deadline risks years of 'reform is coming, maybe' uncertainty, which is itself disruptive to family planning even without any rule actually changing.",
+      "condition_to_change": "Would move to oppose if the statutory deadline is missed or extended without a firm rescheduled date, since open-ended limbo is worse for family planning than either keeping the status quo firmly or committing to a clear reform timeline."
+    },
+    {
+      "scenario": "S1",
+      "stance": "conditional",
+      "label": "value_modeled",
+      "source": "",
+      "basis": "Parental concern for predictability and fairness of the admission process directly affecting where and how a child attends school, plus safety/commuting stability for the specific cohort subject to new rules",
+      "interest": "families with children of admission age residing in the 2-3 pilot districts",
+      "public_good_frame": "protecting children in the pilot cohort from being test subjects for an unvalidated admission mechanism that could unpredictably change which school, and therefore which commute, they end up with",
+      "argument": "A family in a pilot district planning around the existing exam-based admission process could see the rules of the game change under their own child's application cycle, with a proxy or assessment design that is explicitly acknowledged as unvalidated. Families need to know well in advance of application deadlines what criteria will apply and have assurance that a gaming-detection failure won't retroactively disadvantage compliant applicants.",
+      "condition_to_change": "Would move to support if pilot districts commit to publishing final admission criteria at least one full school year before the affected application cycle, and to oppose if criteria changes are announced with less lead time or applied retroactively to families already in the pipeline."
+    },
+    {
+      "scenario": "S2",
+      "stance": "conditional",
+      "label": "value_modeled",
+      "source": "",
+      "basis": "Parental value placed on preserving school choice as a mobility and safety-net option, and on not overcrowding the general schools their other children may attend",
+      "interest": "families who currently rely on, or are counting on, a state-maintained selective place as one of several school options, and families whose children remain in general schools that would absorb displaced pupils",
+      "public_good_frame": "ensuring no child's school assignment is destabilized by capacity strain, and that reducing one option doesn't quietly reduce total choice without a genuine substitute",
+      "argument": "A shrinking pool of state-maintained selective places, without matched capacity investment in general schools, risks larger class sizes or resource strain for the children who stay in or are pushed into general schools — a direct child-wellbeing and safety concern, not just an abstract equity one. At the same time, if non-state maintainers expand to absorb demand, the choice that families valued doesn't disappear so much as become costlier or less geographically convenient, which affects commuting and family budgets differently across income levels.",
+      "condition_to_change": "Would support if compensatory general-school capacity funding is confirmed and disbursed ahead of each year's place reduction (as the scenario's own implementation steps intend); would oppose if capacity funding lags the schedule, since that directly risks overcrowding for children with no other option."
+    },
+    {
+      "scenario": "S3",
+      "stance": "oppose",
+      "label": "value_modeled",
+      "source": "",
+      "basis": "Parental priority on retaining school choice and predictable, known assignment mechanisms for young children, and on avoiding forced catchment-based placement that can lengthen commutes or place a child outside a known community",
+      "interest": "families who currently choose or plan around the 6/8-year gimnazium track as a specific school-choice and mobility option for their child",
+      "public_good_frame": "children's need for continuity of school community and manageable commute distance, which catchment-based comprehensive assignment can disrupt if not carefully regulated",
+      "argument": "Abolishing 6/8-year entry removes a school-choice option many families actively plan around years in advance (tutoring schedules, sibling timing, even residence choice), replacing it with catchment/comprehensive assignment whose zone rules are not yet specified. The scenario's own uncertainties concede sorting may simply migrate into catchment and private/church choice, which for a family without means to move address or pay private tuition means losing an option without gaining anything — and possibly ending up with a longer or less safe commute if catchment boundaries don't match current community ties. The scenario's own political-risk section acknowledges teacher shortages and multi-year facility disruption during the exact years today's young children would be transitioning through lower secondary.",
+      "condition_to_change": "Would move to conditional support if catchment/choice-zone rules were published and locked in well before implementation, with binding neighborhood-continuity and commute-distance safeguards for currently young children, and if grandfathering covers not just already-enrolled pupils but siblings in the same family."
+    },
+    {
+      "scenario": "S4",
+      "stance": "support",
+      "label": "value_modeled",
+      "source": "",
+      "basis": "Parental preference for stability of existing school-choice arrangements combined with improved quality/safety-net for children who attend general schools, without disrupting current admission planning",
+      "interest": "families with children in general schools not accessing selective tracks, and families who value keeping the existing gimnazium choice option intact for their other or future children",
+      "public_good_frame": "improving outcomes and resources for the majority of children who stay in general schools, without forcing any family to give up an existing, already-planned-for school option",
+      "argument": "This scenario changes nothing about admission timing, catchment rules, or school choice that families are currently planning around, which matters directly for predictability. At the same time, TEIP-style targeted funding and reduced grade retention could materially help children in general schools, who are the majority and who currently have no compensating investment. The main risk to my interest is that the scenario's own cost analysis flags targeted funding as vulnerable to being cut in a fiscal squeeze, which would leave general-school families with a promise that quietly evaporates.",
+      "condition_to_change": "Would move to conditional/oppose if TEIP-style funding is not made durable (e.g., ring-fenced or multi-year legislated) as the scenario itself recommends, since a compensatory package that gets cut after a few years leaves general-school children worse off than before, having foregone structural reform for a benefit that didn't last."
+    }
+  ]
+}
