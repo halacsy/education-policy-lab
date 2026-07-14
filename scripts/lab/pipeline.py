@@ -932,8 +932,11 @@ def run_round(n):
                          "and what evidence would reduce them."
                          + curated_sources(name) + research_notes
                          + "\n\nGLOSSARY:\n" + glossary)),
+                # bilingual output ≈ 2x the monolingual token count, and the
+                # live research notes add material — 8000 truncated in the
+                # round-8 acceptance run (structured truncation is terminal)
                 validate=valid_expert, out_path=out_path,
-                schema=S.EXPERT_ANALYSIS, max_tokens=8000)
+                schema=S.EXPERT_ANALYSIS, max_tokens=16000)
         md = render.expert_md(name, obj, "en")
         write(rd / "expert_outputs" / f"{name}.md", md)
         return name, md
