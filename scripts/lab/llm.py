@@ -525,14 +525,22 @@ def backend_stats():
     return {f"{task} [{label}]": n for (task, label), n in sorted(stats.items())}
 
 
-def token_stats():
+def call_log_len():
+    """Marker for since= slicing (per-round token attribution, D-35)."""
+    return len(CALL_LOG)
+
+
+def token_stats(since=0):
     """Input/output token totals per (task, backend) and a grand total —
     API backends report usage per call; CLI/subscription backends don't
-    meter per call, so their calls are counted but contribute no tokens."""
+    meter per call, so their calls are counted but contribute no tokens.
+    since= restricts the aggregation to calls made after that CALL_LOG
+    marker (llm.call_log_len()) — per-round attribution in a multi-round
+    process."""
     per_key = {}
     total_in = total_out = 0
     metered_calls = 0
-    for e in CALL_LOG:
+    for e in CALL_LOG[since:]:
         if e.get("input_tokens") is None and e.get("output_tokens") is None:
             continue
         label = e["backend"] if e["backend"] == "mock" else \
@@ -552,7 +560,7 @@ def token_stats():
         "total_output_tokens": total_out,
         "total_tokens": total_in + total_out,
         "metered_calls": metered_calls,
-        "unmetered_calls": len(CALL_LOG) - metered_calls,
+        "unmetered_calls": len(CALL_LOG[since:]) - metered_calls,
     }
 
 

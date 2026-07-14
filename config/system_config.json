@@ -40,6 +40,19 @@
     "plateau_delta": 0.15,
     "plateau_rounds": 2
   },
+  "pricing": {
+    "_policy": "USD per 1M tokens [input, output] for the transparency cost report (lab/metering.py, D-35). CONFIGURABLE estimates — update when a provider reprices; a model missing from this table is reported as unpriced, never silently costed at zero. Anthropic prices per the official reference (2026-07; Sonnet 5 intro pricing $2/$10 runs through 2026-08-31 — sticker listed here); Google/OpenAI from their public price lists. CLI/subscription backends report no per-call usage: their calls appear in the report as unmetered.",
+    "usd_per_mtok": {
+      "claude-haiku-4-5": [1.0, 5.0],
+      "claude-sonnet-5": [3.0, 15.0],
+      "claude-opus-4-8": [5.0, 25.0],
+      "gemini-2.5-flash-lite": [0.1, 0.4],
+      "gemini-2.5-flash": [0.3, 2.5],
+      "gemini-2.5-pro": [1.25, 10.0],
+      "gpt-5-mini": [0.25, 2.0],
+      "gpt-5": [1.25, 10.0]
+    }
+  },
   "models": {
     "_policy": "Cheapest model that is still good enough per task (owner decision); assignment by Claude Fable 5, rationale in docs/decisions.md D-26. Tier = rung on the provider's ladder; validation-failure retries escalate one rung.",
     "ladder": {

@@ -16,7 +16,7 @@ import time
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 
 from lab import agents, evaluation, finalize, gitutil, improve, llm, memory, \
-    pipeline, topic
+    metering, pipeline, topic
 from lab.util import load_config, read_json, round_dir
 
 
@@ -44,6 +44,8 @@ def meta_payload(n, dims7, prev_eval, artifacts, applied):
 
 
 def evaluate_round(n, prev_eval, applied):
+    t0 = time.time()
+    mark = llm.call_log_len()
     artifacts = pipeline.run_round(n)
     dims7 = evaluation.score_seven(artifacts, n)
     payload = meta_payload(n, dims7, prev_eval, artifacts, applied)
@@ -52,6 +54,9 @@ def evaluate_round(n, prev_eval, applied):
     dims["meta_system_eval"] = evaluation.meta_dimension(meta_text, artifacts, n)
     ev = evaluation.finalize(n, dims, artifacts,
                              prev_eval["total"] if prev_eval else None)
+    # transparency metering (D-35): this round's OWN wall clock, tokens
+    # (generation + judging + meta, via the call-log marker) and USD estimate
+    metering.update_round_log(artifacts["round_dir"], mark, time.time() - t0)
     return artifacts, ev
 
 

@@ -2,7 +2,7 @@
 import json
 import re
 
-from . import llm, topic
+from . import llm, metering, topic
 from . import schemas as S
 from .evaluation import DIMENSIONS
 from .improve import read_attempts
@@ -146,3 +146,6 @@ def write_final(artifacts, history):
           + "\nToken usage: " + json.dumps(llm.token_stats(), indent=2)
           + "\nErrors seen: " + json.dumps(llm.error_stats(), indent=2) + "\n")
     write(fdir / "human_questions.md", _human_questions(history))
+    # transparency: time/token/cost report (D-35 deliverable 4) — part of
+    # the public record, feeds the website's topic page
+    metering.write_cost_report()
