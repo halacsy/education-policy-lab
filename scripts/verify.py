@@ -125,15 +125,21 @@ def main():
     else:
         print("[SKIP] check    4: system_state diff (single era round)")
 
-    # 5 — >=3 scenarios with every required field
+    # 5 — the scenario set matches the topic's human-approved frames
+    # (issue #21: 2-5 emergent frames; EXACT id-set match is stricter than
+    # the old fixed ">=3" — a dropped or invented scenario now fails)
     last = rs[-1]
     scen = read_json(ITER / f"round_{last:02d}" / "scenarios.json")["scenarios"]
     def full(s):
         return all((s.get(k) and (s[k].strip() if isinstance(s[k], str)
                     else all(str(x).strip() for x in s[k]))) for k in SCENARIO_FIELDS)
-    ok5 = len(scen) >= 3 and all(full(s) for s in scen)
-    check(5, ">=3 scenarios, each with all 10 required fields",
-          ok5, f"{len(scen)} scenarios")
+    frame_ids = T.scenario_ids
+    ok5 = (len(frame_ids) >= 2
+           and {s["id"] for s in scen} == set(frame_ids)
+           and all(full(s) for s in scen))
+    check(5, "scenarios match the approved frames exactly, each with all "
+             "10 required fields",
+          ok5, f"{len(scen)} scenarios, frames: {frame_ids}")
 
     # 6 — critics: concrete targeted objections (scenario id AND field)
     ok6, det6 = True, []

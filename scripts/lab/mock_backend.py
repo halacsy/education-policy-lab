@@ -30,6 +30,24 @@ def _payload(prompt):
     return json.loads(m.group(1)) if m else {}
 
 
+def _scenario_ids(prompt):
+    """The topic's frame ids, from the pipeline's 'SCENARIO IDS:' line
+    (issue #21: 2-5 frames, not a fixed four). Falls back to the curated
+    pack's four ids for prompts that carry no such line."""
+    m = re.search(r"SCENARIO IDS:\s*((?:S\d+(?:\s*,\s*)?)+)", prompt)
+    if m:
+        return re.findall(r"S\d+", m.group(1))
+    return [s["id"] for s in K.SCENARIOS]
+
+
+def _curated_for(ids):
+    """Map the requested frame ids onto the curated scenario pack (cycled
+    when the counts differ) with the id overridden — the mock's content is
+    demonstration filler, its STRUCTURE must follow the topic."""
+    return [dict(K.SCENARIOS[i % len(K.SCENARIOS)], id=sid)
+            for i, sid in enumerate(ids)]
+
+
 def compose(prompt, role):
     h = _headers(prompt)
     task = h.get("task", "")
@@ -37,16 +55,18 @@ def compose(prompt, role):
     fn = {
         "expert_analysis": lambda: expert_analysis(h["agent"], d),
         "expert_research": lambda: expert_research(h["agent"]),
-        "build_scenarios": lambda: scenarios_json(d),
+        "build_scenarios": lambda: scenarios_json(d, prompt),
         "synthesis": lambda: synthesis(d),
-        "rejected_framings": lambda: rejected_framings(),
+        "rejected_framings": lambda: rejected_framings(prompt),
         "brief": lambda: brief(d, prompt),
-        "exec_summary": lambda: json.dumps(dict(en=K.EXEC_SUMMARY["en"], hu=K.EXEC_SUMMARY["hu"]), ensure_ascii=False),
+        "exec_summary": lambda: exec_summary(prompt),
         "critic": lambda: critic(h["agent"], d),
         "meta_critique": lambda: meta_critique(_payload(prompt), d),
         "judge_score": lambda: judge_score(prompt, h, _payload(prompt)),
-        "discourse_voice": lambda: discourse_voice(h["agent"]),
-        "argument_map": lambda: argument_map(),
+        "discourse_voice": lambda: discourse_voice(h["agent"], prompt),
+        "argument_map": lambda: argument_map(prompt),
+        "frame_scenarios": lambda: frame_scenarios(),
+        "problem_brief": lambda: problem_brief(prompt),
         "argument_decompose": lambda: argument_decompose(prompt),
         "grade_arguments": lambda: grade_arguments(prompt),
         "discourse_reciprocity": lambda: discourse_reciprocity(h["agent"]),
@@ -105,10 +125,11 @@ def _pair(x):
     return {"en": x["en"], "hu": x["hu"]}
 
 
-def scenarios_json(d):
-    """Bilingual structured scenarios (D-34) from the curated pack."""
+def scenarios_json(d, prompt=""):
+    """Bilingual structured scenarios (D-34) from the curated pack, mapped
+    onto the topic's frame ids."""
     scenarios = []
-    for s in K.SCENARIOS:
+    for s in _curated_for(_scenario_ids(prompt)):
         scenarios.append(dict(
             id=s["id"], title=_pair(s["title"]), goal=_pair(s["goal"]),
             mechanism=[dict(text=_pair(c), evidence=c["evidence"])
@@ -163,9 +184,9 @@ def synthesis(d):
     ), ensure_ascii=False, indent=2)
 
 
-def rejected_framings():
+def rejected_framings(prompt=""):
     scenarios = []
-    for s in K.SCENARIOS:
+    for s in _curated_for(_scenario_ids(prompt)):
         chosen = next(f["en"] for f in s["framings"] if f["chosen"])
         rejected = [dict(framing=f["en"], reason=f["reject_reason"])
                     for f in s["framings"] if not f["chosen"]]
@@ -261,14 +282,16 @@ def brief(d, prompt=""):
                                      rationale=_pair(side["rationale"])))
         disagree.append(dict(topic=_hu_pair(dis["topic"]), positions=positions))
 
+    curated = _curated_for(_scenario_ids(prompt))
+
     unknown = [dict(text=dict(u), kind="assumption") for u in _UNKNOWN]
-    for s in K.SCENARIOS[:2]:
+    for s in curated[:2]:
         if s["uncertainties"]:
             unknown.append(dict(text=_pair(s["uncertainties"][0]),
                                 kind="assumption"))
 
     costs = []
-    for s in K.SCENARIOS:
+    for s in curated:
         cost = s["cost_categories"][0] if s["cost_categories"] else None
         risk = s["political_risks"][0] if s["political_risks"] else None
         text = {L: " — ".join(filter(None, [
@@ -281,7 +304,7 @@ def brief(d, prompt=""):
     return json.dumps(dict(
         intro=_pair(K.BRIEF_INTRO),
         scenario_key=[dict(id=s["id"], title=_pair(s["title"]))
-                      for s in K.SCENARIOS],
+                      for s in curated],
         what_we_know=[dict(text=_pair(K.FACTS[fid]), kind="fact",
                            evidence=K.FACTS[fid]["evidence"])
                       for fid in ["pisa_escs", "tracking_inequality",
@@ -292,7 +315,7 @@ def brief(d, prompt=""):
         what_we_dont_know=unknown,
         what_could_be_done=[dict(scenario_id=s["id"], title=_pair(s["title"]),
                                  summary=_pair(s["goal"]))
-                            for s in K.SCENARIOS],
+                            for s in curated],
         what_each_option_costs=costs,
         what_research_could_resolve=[_pair(r) for r in K.RECOMMENDATIONS],
         what_people_must_decide=[_hu_pair(q["question"])
@@ -315,11 +338,13 @@ def critic(agent, d):
 
 # -- societal discourse (D-29) ------------------------------------------------
 
-def discourse_voice(name):
+def discourse_voice(name, prompt=""):
     v = K.DISCOURSE_VOICES[name]
+    curated_ids = sorted(v["reactions"])
     reactions = []
-    for sid in ("S1", "S2", "S3", "S4"):
-        r = v["reactions"][sid]
+    for i, sid in enumerate(_scenario_ids(prompt)):
+        r = v["reactions"].get(sid) or \
+            v["reactions"][curated_ids[i % len(curated_ids)]]
         reactions.append(dict(
             scenario=sid, stance=r["stance"], label=r["label"],
             source=r.get("source", ""), basis=r.get("basis", ""),
@@ -331,12 +356,109 @@ def discourse_voice(name):
                       ensure_ascii=False, indent=2)
 
 
-def argument_map():
-    clusters = [dict(id=c["id"], scenario=c["scenario"], kind=c["kind"],
+def argument_map(prompt=""):
+    ids = _scenario_ids(prompt)
+    id_set = set(ids)
+    clusters = [dict(id=c["id"],
+                     scenario=(c["scenario"] if c["scenario"] in id_set
+                               else ids[int(c["id"][1:]) % len(ids)]),
+                     kind=c["kind"],
                      side=c["side"], claim=_pair(c["claim"]),
                      raised_by=list(c["raised_by"]))
                 for c in K.ARGUMENT_CLUSTERS]
     return json.dumps({"clusters": clusters}, ensure_ascii=False, indent=2)
+
+
+def exec_summary(prompt=""):
+    """The curated summary text plus a scenario-key tail listing the
+    topic's actual frame ids (the validator requires every id in both
+    languages)."""
+    ids = _scenario_ids(prompt)
+    curated = _curated_for(ids)
+    key_en = "\n\nScenario key: " + "; ".join(
+        f"{s['id']} — {s['title']['en']}" for s in curated)
+    key_hu = "\n\nForgatókönyv-kulcs: " + "; ".join(
+        f"{s['id']} — {s['title']['hu']}" for s in curated)
+    return json.dumps(dict(en=K.EXEC_SUMMARY["en"] + key_en,
+                           hu=K.EXEC_SUMMARY["hu"] + key_hu),
+                      ensure_ascii=False)
+
+
+# -- emergent framing + intake (issue #21, D-36) --------------------------------
+
+def frame_scenarios():
+    """A deterministic 3-frame option space (deliberately NOT four — the
+    dry run must exercise the 2-5 logic downstream). Generic policy frames
+    applicable to any problem; the mock's content is filler, its structure
+    is the contract."""
+    frames = [
+        dict(id="S1",
+             title=dict(en="Targeted support without structural change",
+                        hu="Célzott támogatás szerkezeti változtatás nélkül"),
+             scope=dict(en="Compensate the identified harms with targeted "
+                           "funding and support programmes, leaving the "
+                           "structure untouched.",
+                        hu="Az azonosított károk ellensúlyozása célzott "
+                           "finanszírozással és támogató programokkal, a "
+                           "szerkezet érintése nélkül.")),
+        dict(id="S2",
+             title=dict(en="Gradual restructuring with guarantees",
+                        hu="Fokozatos átalakítás garanciákkal"),
+             scope=dict(en="Change the structure gradually, with acquired "
+                           "rights protected and reversible steps first.",
+                        hu="A szerkezet fokozatos átalakítása szerzett "
+                           "jogok védelmével, először visszafordítható "
+                           "lépésekkel.")),
+        dict(id="S3",
+             title=dict(en="Comprehensive structural reform",
+                        hu="Átfogó szerkezeti reform"),
+             scope=dict(en="Redesign the structure itself, bundled with the "
+                           "support system the expert record shows it "
+                           "needs.",
+                        hu="Maga a szerkezet újratervezése, a szakértői "
+                           "anyag szerint szükséges támogató rendszerrel "
+                           "együtt.")),
+    ]
+    rejected = [
+        dict(framing=dict(en="Do nothing (pure status quo)",
+                          hu="Ne történjen semmi (tiszta status quo)"),
+             reason=dict(en="The expert record documents ongoing harm; a "
+                            "no-action frame without compensation is not a "
+                            "defensible member of the option space.",
+                         hu="A szakértői anyag folyamatos kárt dokumentál; "
+                            "a kompenzáció nélküli nem-cselekvés nem "
+                            "védhető eleme az opciótérnek.")),
+    ]
+    return json.dumps(dict(frames=frames, rejected_framings=rejected),
+                      ensure_ascii=False, indent=2)
+
+
+def problem_brief(prompt=""):
+    """Deterministic intake draft: a structured problem brief templated
+    from the free-text input (between the INPUTS markers)."""
+    m = re.search(r"=== INPUTS ===\n(.*)", prompt, re.S)
+    raw = (m.group(1).strip() if m else "").splitlines()
+    first = raw[0].strip() if raw else "the submitted problem"
+    return json.dumps(dict(
+        slug="mock-topic",
+        title=dict(en=first[:60] or "Untitled problem",
+                   hu="(HU) " + (first[:55] or "Cím nélküli probléma")),
+        problem_statement=dict(
+            en=f"MOCK DRAFT — restate of the submitted text: {first}",
+            hu=f"MOCK VÁZLAT — a beküldött szöveg átfogalmazása: {first}"),
+        learning_goals=[
+            dict(en="What does the evidence say about the problem's causes "
+                    "and effects?",
+                 hu="Mit mond az evidencia a probléma okairól és "
+                    "hatásairól?"),
+            dict(en="What alternatives exist and what does each cost?",
+                 hu="Milyen alternatívák léteznek, és mi az áruk?"),
+        ],
+        scope=dict(en="MOCK: in scope — the submitted problem; out of "
+                      "scope — everything else.",
+                   hu="MOCK: a beküldött probléma van fókuszban; minden "
+                      "más kívül esik."),
+    ), ensure_ascii=False, indent=2)
 
 
 def _pair_list(x):

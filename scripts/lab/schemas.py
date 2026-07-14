@@ -16,10 +16,11 @@ Conventions:
   until Phase 3 moves it onto the JSON fields.
 """
 
+from functools import lru_cache
+
 EVIDENCE_LEVELS = ["strong", "moderate", "weak", "contested"]
 CONFIDENCE_LEVELS = ["low", "medium", "high"]
 CLAIM_KINDS = ["fact", "estimate", "assumption", "value"]
-SCENARIO_IDS = ["S1", "S2", "S3", "S4"]
 STANCES = ["support", "oppose", "conditional", "no_position"]
 POSITION_LABELS = ["documented", "value_modeled", "no_position"]
 RELEVANCE_LEVELS = ["high", "medium", "low"]
@@ -90,10 +91,16 @@ EXPERT_ANALYSIS = obj({
 
 
 # -- build_scenarios ----------------------------------------------------------
+# Scenario-dependent schemas are FACTORIES over the topic's frozen frame ids
+# (issue #21/D-36: 2-5 frames, not a fixed four) — call with
+# tuple(topic.scenario_ids); lru_cache keeps them singletons per topic.
 
-SCENARIOS = obj({
+
+@lru_cache(maxsize=None)
+def SCENARIOS(ids):
+    return obj({
     "scenarios": arr(obj({
-        "id": enum(SCENARIO_IDS),
+        "id": enum(ids),
         "title": B(),
         "goal": B(),
         "mechanism": arr(obj({
@@ -128,9 +135,11 @@ SCENARIOS = obj({
 
 # -- critics (EN-only: internal QA artifacts, never published) ----------------
 
-CRITIC = obj({
+@lru_cache(maxsize=None)
+def CRITIC(ids):
+    return obj({
     "objections": arr(obj({
-        "scenario": enum(SCENARIO_IDS),
+        "scenario": enum(ids),
         "field": enum(CRITIC_FIELDS),
         "objection": s("the concrete flaw — specific, actionable, non-generic"),
         "severity": enum(SEVERITIES),
@@ -159,9 +168,11 @@ SYNTHESIS = obj({
     })),
 })
 
-REJECTED_FRAMINGS = obj({
+@lru_cache(maxsize=None)
+def REJECTED_FRAMINGS(ids):
+    return obj({
     "scenarios": arr(obj({
-        "id": enum(SCENARIO_IDS),
+        "id": enum(ids),
         "chosen": s("the framing selected"),
         "rejected": arr(obj({
             "framing": s("a candidate framing considered"),
@@ -173,10 +184,12 @@ REJECTED_FRAMINGS = obj({
 
 # -- societal discourse (D-29) -------------------------------------------------
 
-VOICE = obj({
+@lru_cache(maxsize=None)
+def VOICE(ids):
+    return obj({
     "voice": s("your agent name"),
     "reactions": arr(obj({
-        "scenario": enum(SCENARIO_IDS),
+        "scenario": enum(ids),
         "stance": enum(STANCES),
         "label": enum(POSITION_LABELS),
         "source": s("document/URL — REQUIRED when label=documented, else empty"),
@@ -190,10 +203,12 @@ VOICE = obj({
     })),
 })
 
-CLUSTER_BASIC = obj({
+@lru_cache(maxsize=None)
+def CLUSTER_BASIC(ids):
+    return obj({
     "clusters": arr(obj({
         "id": s("stable sequential id A1..An"),
-        "scenario": enum(SCENARIO_IDS),
+        "scenario": enum(ids),
         "kind": enum(["fact", "value", "mixed"]),
         "side": enum(["pro", "con", "conditional"]),
         "claim": B("canonical one-sentence form of the argument"),
@@ -251,9 +266,12 @@ GRADES = obj({
 # sent to the Gemini backend.
 BI = {"$ref": "#/$defs/bi"}
 
-BRIEF = obj({
+
+@lru_cache(maxsize=None)
+def BRIEF(ids):
+    B_ = obj({
     "intro": BI,
-    "scenario_key": arr(obj({"id": enum(SCENARIO_IDS), "title": BI})),
+    "scenario_key": arr(obj({"id": enum(ids), "title": BI})),
     "what_we_know": arr(obj({
         "text": BI, "kind": enum(CLAIM_KINDS), "evidence": enum(EVIDENCE_LEVELS),
     })),
@@ -271,10 +289,10 @@ BRIEF = obj({
         "text": BI, "kind": enum(CLAIM_KINDS),
     })),
     "what_could_be_done": arr(obj({
-        "scenario_id": enum(SCENARIO_IDS), "title": BI, "summary": BI,
+        "scenario_id": enum(ids), "title": BI, "summary": BI,
     })),
     "what_each_option_costs": arr(obj({
-        "scenario_id": enum(SCENARIO_IDS), "text": BI, "kind": enum(CLAIM_KINDS),
+        "scenario_id": enum(ids), "text": BI, "kind": enum(CLAIM_KINDS),
     })),
     "what_research_could_resolve": arr(BI),
     "what_people_must_decide": arr(BI),
@@ -291,11 +309,12 @@ BRIEF = obj({
     "minority_positions": arr(obj({
         "holders": arr(s()), "position": BI, "rationale": BI,
     })),
-})
-BRIEF["$defs"] = {"bi": obj({
-    "en": s("the statement in native English"),
-    "hu": s("ugyanez az állítás natív magyarul"),
-})}
+    })
+    B_["$defs"] = {"bi": obj({
+        "en": s("the statement in native English"),
+        "hu": s("ugyanez az állítás natív magyarul"),
+    })}
+    return B_
 
 
 # -- meta critique (EN-only: internal system-evaluation artifact) --------------
@@ -311,6 +330,38 @@ META_CRITIQUE = obj({
     }),
     "translation_consistency": arr(s()),
     "removal_candidates": arr(s("agent name + why; empty list if none")),
+})
+
+
+# -- emergent scenario framing (issue #21, D-36) --------------------------------
+# Round 1 derives the option space (2-5 solution frames) from the expert
+# record; a human approves it (D-24 pattern) and it freezes into topic.json.
+
+FRAMES = obj({
+    "frames": arr(obj({
+        "id": s("stable sequential id: S1, S2, ... (at most S5)"),
+        "title": B("short frame title (what family of solutions this is)"),
+        "scope": B("one sentence: what is inside this frame"),
+    })),
+    "rejected_framings": arr(obj({
+        "framing": B("a candidate framing considered for the option space"),
+        "reason": B("why it was rejected"),
+    })),
+})
+
+
+# -- problem-brief intake (D-36) -------------------------------------------------
+# scripts/new_topic.py drafts a structured problem brief from free text;
+# a human approves/edits it before the topic runs.
+
+PROBLEM_BRIEF = obj({
+    "slug": s("short ascii-kebab-case slug (directory, URL, git reference)"),
+    "title": B("short title for the website"),
+    "problem_statement": B("1-3 paragraphs: the situation and its tension — "
+                           "a described problem or opportunity, NOT a bare "
+                           "question"),
+    "learning_goals": arr(B("one explicit learning goal (2-4 total)")),
+    "scope": B("what is in scope and what is explicitly out"),
 })
 
 

@@ -44,7 +44,7 @@ If an objection is speculative, mark it (speculative). Distinguish 'wrong' from 
 ## Output template
 ```
 (JSON — the exact schema is enforced by the API)
-{"objections": [{"scenario": "S1..S4", "field": "<scenario field>",
+{"objections": [{"scenario": "S1..Sn", "field": "<scenario field>",
                  "objection": "<the concrete flaw>",
                  "severity": "high|medium|low",
                  "suggested_revision": "<concrete fix>"}]}

@@ -21,7 +21,7 @@ scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / bri
 ## Rules
 - Never force consensus: disagreement is signal, not noise to remove.
 - Preserve every evidence tag from the inputs; never upgrade an evidence status.
-- Keep scenario ids (S1..S4) stable and identical across languages.
+- Keep scenario ids (S1..Sn) stable and identical across languages.
 - Follow every line in the ## Directives section strictly.
 
 ## Evidence discipline

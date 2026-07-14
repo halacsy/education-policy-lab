@@ -171,6 +171,25 @@ def synthesis_md(o, lang="en"):
     return "\n".join(lines) + "\n"
 
 
+def frames_md(o, T, round_n):
+    """Human-readable view of an emergent-framing proposal (issue #21) —
+    the file the owner reads before approving the option space."""
+    lines = [f"# Javasolt forgatókönyv-keretek — {T.title('hu')}", "",
+             f"A(z) {round_n}. kör szakértői elemzéséből derivált opciótér "
+             f"({len(o['frames'])} keret). EMBERI JÓVÁHAGYÁSRA VÁR: "
+             "szerkeszd a frames.json-t, ha kell, majd futtasd: "
+             f"`scripts/new_topic.py approve-frames --topic {T.slug}`.", ""]
+    for f in o["frames"]:
+        lines += [f"## {f['id']} — {f['title']['hu']}",
+                  f"*{f['title']['en']}*", "",
+                  f"- Scope (HU): {f['scope']['hu']}",
+                  f"- Scope (EN): {f['scope']['en']}", ""]
+    lines += ["## Elvetett keretezések (audit)", ""]
+    for r in o["rejected_framings"]:
+        lines += [f"- {r['framing']['hu']} — **indok:** {r['reason']['hu']}"]
+    return "\n".join(lines) + "\n"
+
+
 def rejected_md(o):
     lines = ["# Rejected framings", "",
              "Candidate framings generated per scenario; one selected, the "

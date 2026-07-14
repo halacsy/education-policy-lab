@@ -27,12 +27,16 @@ from .util import (AGENTS_DIR, CONFIG_PATH, TEMPLATES_DIR, load_config,
 
 FIELD_KEYS = translation.FIELD_KEYS
 
-SCENARIO_ANCHORS = (
-    "Produce EXACTLY four scenarios with stable ids:\n"
-    "S1 admission reform within the current structure; S2 gradual phase-down "
-    "of 6/8-year entry places; S3 comprehensive school to age 14 (structural "
-    "reform); S4 keep the structure, compensate general schools "
-    "(Portuguese-style package).")
+
+class FramesPending(RuntimeError):
+    """Round 1 proposed the topic's scenario frames from the expert record
+    and stopped at the human gate (issue #21, D-36): a human must approve
+    (or edit) the proposal before any scenario-dependent step runs. The
+    relaunch resumes the round — the expert outputs are reused."""
+
+
+MAX_FRAMES = 5
+MIN_FRAMES = 2
 
 # The 10-section deliberation deliverable (D-30), replacing the old 5-layer
 # Evidence/Interpretation/Assumptions/Recommendations/Open-questions split.
@@ -120,13 +124,37 @@ def valid_expert(o):
                for u in uncertainties)
 
 
-def valid_voice(obj):
+def valid_frames(o):
+    """Emergent-framing proposal (issue #21): 2-5 frames with sequential
+    S<i> ids, bilingual title+scope, and at least one rejected framing
+    (the audit trail of the option-space choice)."""
+    try:
+        frames = o["frames"]
+    except (TypeError, KeyError):
+        return False
+    if not isinstance(frames, list) or \
+            not MIN_FRAMES <= len(frames) <= MAX_FRAMES:
+        return False
+    if [f.get("id") for f in frames] != \
+            [f"S{i + 1}" for i in range(len(frames))]:
+        return False
+    if not all(pair_ok(f.get("title")) and pair_ok(f.get("scope"))
+               for f in frames):
+        return False
+    rejected = o.get("rejected_framings")
+    if not rejected:
+        return False
+    return all(pair_ok(r.get("framing")) and pair_ok(r.get("reason"))
+               for r in rejected)
+
+
+def valid_voice(obj, id_set):
     try:
         rs = obj["reactions"]
     except (TypeError, KeyError):
         return False
     if not isinstance(rs, list) or \
-            {r.get("scenario") for r in rs} != {"S1", "S2", "S3", "S4"}:
+            {r.get("scenario") for r in rs} != id_set:
         return False
     for r in rs:
         if r.get("stance") not in STANCES:
@@ -151,7 +179,7 @@ def valid_voice(obj):
     return True
 
 
-def valid_argmap_basic(obj, voice_names):
+def valid_argmap_basic(obj, voice_names, id_set):
     """Phase 1 (clustering only — id/scenario/kind/side/claim/raised_by)."""
     try:
         cl = obj["clusters"]
@@ -165,7 +193,7 @@ def valid_argmap_basic(obj, voice_names):
     for c in cl:
         if not re.fullmatch(r"A\d+", c.get("id", "")):
             return False
-        if c.get("scenario") not in ("S1", "S2", "S3", "S4"):
+        if c.get("scenario") not in id_set:
             return False
         if c.get("kind") not in ("fact", "value", "mixed"):
             return False
@@ -307,7 +335,7 @@ def valid_meta(o):
     return True  # removal_candidates may legitimately be empty
 
 
-def valid_brief(o, cluster_ids=None):
+def valid_brief(o, id_set, cluster_ids=None):
     """Bilingual 10-section brief (D-30/D-34). With a live argument map the
     response obligation is checked on the JSON fields directly (same
     coverage threshold as the old text check: a ledger whose id set differs
@@ -317,8 +345,7 @@ def valid_brief(o, cluster_ids=None):
             return False
     except (TypeError, KeyError):
         return False
-    if {k.get("id") for k in o.get("scenario_key", [])} != \
-            {"S1", "S2", "S3", "S4"}:
+    if {k.get("id") for k in o.get("scenario_key", [])} != id_set:
         return False
     for key in ("what_we_know", "what_we_consider_likely",
                 "what_we_dont_know", "what_each_option_costs"):
@@ -336,8 +363,7 @@ def valid_brief(o, cluster_ids=None):
                              and pair_ok(p.get("why")) for p in ps):
             return False
     could = o.get("what_could_be_done")
-    if not could or {c.get("scenario_id") for c in could} != \
-            {"S1", "S2", "S3", "S4"}:
+    if not could or {c.get("scenario_id") for c in could} != id_set:
         return False
     if not all(pair_ok(c.get("title")) and pair_ok(c.get("summary"))
                for c in could):
@@ -392,13 +418,12 @@ def valid_synthesis(o):
     return minority_seen  # a map with no minority side is consensus laundering
 
 
-def valid_rejected(o):
+def valid_rejected(o, id_set):
     try:
         sc = o["scenarios"]
     except (TypeError, KeyError):
         return False
-    if not isinstance(sc, list) or \
-            {s.get("id") for s in sc} != {"S1", "S2", "S3", "S4"}:
+    if not isinstance(sc, list) or {s.get("id") for s in sc} != id_set:
         return False
     return all(str(s.get("chosen", "")).strip() and s.get("rejected")
                and all(str(r.get("framing", "")).strip()
@@ -419,15 +444,16 @@ def valid_critic(o):
                for ob in obs)
 
 
-def valid_scenarios_bi(o):
-    """Bilingual scenarios (D-34): exactly S1..S4, every prose leaf a
-    non-empty {en, hu} pair, every structured sub-field present."""
+def valid_scenarios_bi(o, id_set):
+    """Bilingual scenarios (D-34): exactly the topic's frozen frame ids,
+    every prose leaf a non-empty {en, hu} pair, every structured sub-field
+    present."""
     try:
         sc = o["scenarios"]
     except (TypeError, KeyError):
         return False
-    if not isinstance(sc, list) or len(sc) != 4 or \
-            {s.get("id") for s in sc} != {"S1", "S2", "S3", "S4"}:
+    if not isinstance(sc, list) or len(sc) != len(id_set) or \
+            {s.get("id") for s in sc} != id_set:
         return False
     for s in sc:
         if not all(pair_ok(s.get(k)) for k in ("title", "goal", "equity_impact")):
@@ -645,6 +671,9 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
     artifact is bilingual JSON; BOTH ledgers are rendered deterministically
     from the same data (render.project) — no translation steps at all."""
     voice_names = T.voices
+    ids = tuple(T.scenario_ids)
+    id_set = set(ids)
+    ids_line = "SCENARIO IDS: " + ", ".join(ids)
     ddir = rd / "discourse"
     bilingual_note = (
         "Write every {en, hu} pair as the SAME statement authored natively "
@@ -664,14 +693,16 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                      "INTEREST/VALUE VOICE your spec defines — you "
                      "represent, you do not give expert judgment. Return "
                      "the required JSON object. Rules: one reaction per "
-                     "scenario (S1..S4); a stance without justification is "
-                     "invalid; no_position is the honest choice when your "
-                     "interest implies nothing; NEVER attribute an "
-                     "unsourced position to a real organisation — use "
-                     "value_modeled with its basis. " + bilingual_note),
+                     f"scenario ({ids_line}); a stance without "
+                     "justification is invalid; no_position is the honest "
+                     "choice when your interest implies nothing; NEVER "
+                     "attribute an unsourced position to a real "
+                     "organisation — use value_modeled with its basis. "
+                     + bilingual_note),
                  inputs=scen_en_md),
-            validate=valid_voice, out_path=ddir / "voices" / f"{name}.json",
-            schema=S.VOICE, max_tokens=24000)
+            validate=lambda o: valid_voice(o, id_set),
+            out_path=ddir / "voices" / f"{name}.json",
+            schema=S.VOICE(ids), max_tokens=24000)
         return name, obj
 
     voices = {}
@@ -696,11 +727,11 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                  "canonical one-sentence form; classify fact vs value vs "
                  "mixed; raised_by lists ONLY voice names that actually "
                  "raise it; NEVER drop a minority argument; do not count "
-                 "heads. " + bilingual_note),
+                 "heads. " + ids_line + ". " + bilingual_note),
              inputs=voices_digest),
-        validate=lambda o: valid_argmap_basic(o, voice_names),
+        validate=lambda o: valid_argmap_basic(o, voice_names, id_set),
         out_path=ddir / "argument_map_basic.json",
-        schema=S.CLUSTER_BASIC, max_tokens=16000)
+        schema=S.CLUSTER_BASIC(ids), max_tokens=16000)
     clusters_basic = arg_map_basic["clusters"]
 
     # Phase 2: decompose EACH cluster in its own small, parallel,
@@ -844,6 +875,41 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                 grades=grades, responses=responses, ledger_en=ledger_en,
                 ledger_hu=ledger_hu, cluster_ids=cluster_ids,
                 conditions=conditions, metrics=metrics)
+
+
+def propose_frames(step, rd, n, T, question, expert_digest, glossary):
+    """Emergent framing (issue #21, D-36): derive the option space (2-5
+    solution frames) from THIS round's expert record as a human-gated
+    proposal (D-24 pattern). The proposal is a round artifact (resumable)
+    AND a file pair under topics/<slug>/proposals/ for the human to review,
+    edit and approve."""
+    obj, _ = step.run(
+        "frame_scenarios",
+        dict(task="frame_scenarios", agent="scenario_builder", round_n=n,
+             instructions=(
+                 f"{question}\n"
+                 "FRAMING STEP: from the expert record below, derive the "
+                 "OPTION SPACE of this problem: 2-5 solution frames "
+                 "(families of interventions worth developing into full "
+                 "scenarios). Return the required JSON object. Rules: "
+                 "sequential ids S1, S2, ...; each frame carries a short "
+                 "bilingual title and a one-sentence bilingual scope; the "
+                 "frames together must span the REAL option space the "
+                 "expert record describes (including a low-intervention or "
+                 "compensatory frame when the record supports one) — never "
+                 "converge on a single answer; record every considered-but-"
+                 "rejected framing with its reason (this is the audit "
+                 "trail of the option-space choice). Write every {en, hu} "
+                 "pair as the SAME statement authored natively in both "
+                 "languages.\n\nGLOSSARY:\n" + glossary),
+             inputs=expert_digest),
+        validate=valid_frames, out_path=rd / "frames_proposal.json",
+        schema=S.FRAMES, max_tokens=8000)
+    write_json(T.proposals_dir / "frames.json",
+               {"topic": T.slug, "derived_from_round": n,
+                "status": "proposed", **obj})
+    write(T.proposals_dir / "frames.md", render.frames_md(obj, T, n))
+    return obj
 
 
 def run_round(n):
@@ -990,13 +1056,35 @@ def run_round(n):
     expert_digest = "\n\n".join(
         f"----- {name} -----\n{text}" for name, text in experts.items())
 
-    # 2. scenario builder (bilingual, schema-constrained — D-34; the old
-    #    separate translate_scenarios step is gone)
+    # 1.5 emergent scenario framing (issue #21, D-36): on a topic with no
+    #     approved frames yet, round 1 derives the option space (2-5 frames)
+    #     from the expert record, writes a human-gated proposal, and STOPS.
+    #     Approval (scripts/new_topic.py approve-frames) freezes the frames
+    #     into topic.json; the relaunch resumes this round and the expert
+    #     outputs are reused (the state hash excludes the frames block).
+    if not T.frames_approved:
+        propose_frames(step, rd, n, T, question, expert_digest, glossary)
+        raise FramesPending(
+            f"topic {T.slug!r}: scenario frames were derived from the "
+            f"round-{n} expert record and await HUMAN APPROVAL.\n"
+            f"  review/edit: {T.proposals_dir / 'frames.json'}\n"
+            f"  (readable view: {T.proposals_dir / 'frames.md'})\n"
+            f"  approve:     .venv/bin/python scripts/new_topic.py "
+            f"approve-frames --topic {T.slug}\n"
+            "  then relaunch the same run command — the round resumes and "
+            "the expert outputs are reused.")
+
+    ids = tuple(T.scenario_ids)
+    id_set = set(ids)
+    ids_line = "SCENARIO IDS: " + ", ".join(ids)
+
+    # 2. scenario builder (bilingual, schema-constrained — D-34; anchored
+    #    on the topic's frozen, human-approved frames — issue #21/D-36)
     scen_bi, _ = step.run(
         "scenario_builder",
         dict(task="build_scenarios", agent="scenario_builder", round_n=n,
              instructions=(
-                 f"Policy question: {question}\n{SCENARIO_ANCHORS}\n"
+                 f"{question}\n{T.frame_anchors()}\n{ids_line}\n"
                  "Return the scenarios in the required JSON schema, in BOTH "
                  "English and Hungarian: every {en, hu} pair carries the "
                  "SAME statement written natively in each language "
@@ -1007,8 +1095,9 @@ def run_round(n):
                  "give every uncertainty a confidence level and what "
                  "evidence would reduce it.\n\nGLOSSARY:\n" + glossary),
              inputs=expert_digest),
-        validate=valid_scenarios_bi, out_path=rd / "scenarios.json",
-        schema=S.SCENARIOS, max_tokens=30000)
+        validate=lambda o: valid_scenarios_bi(o, id_set),
+        out_path=rd / "scenarios.json",
+        schema=S.SCENARIOS(ids), max_tokens=30000)
     scen_en = render.scenario_view(scen_bi, "en")
     scen_hu = render.scenario_view(scen_bi, "hu")
     scen_en_md = render.scenarios_md(scen_en, "en")
@@ -1041,13 +1130,14 @@ def run_round(n):
         "rejected_framings",
         dict(task="rejected_framings", agent="scenario_builder", round_n=n,
              instructions=(
-                 "For each scenario S1-S4, record the candidate framings "
-                 "you considered as the required JSON object: the chosen "
-                 "framing plus at least one rejected framing with the "
-                 "reason for its rejection."),
+                 f"For each scenario ({ids_line}), record the candidate "
+                 "framings you considered as the required JSON object: the "
+                 "chosen framing plus at least one rejected framing with "
+                 "the reason for its rejection."),
              inputs=scen_en_md),
-        validate=valid_rejected, out_path=rd / "rejected_framings.json",
-        schema=S.REJECTED_FRAMINGS, max_tokens=4000)
+        validate=lambda o: valid_rejected(o, id_set),
+        out_path=rd / "rejected_framings.json",
+        schema=S.REJECTED_FRAMINGS(ids), max_tokens=4000)
     rejected = render.rejected_md(rejected_obj)
     write(rd / "rejected_framings.md", rejected)
 
@@ -1113,13 +1203,14 @@ def run_round(n):
     brief_obj, _ = step.run(
         "final_brief_writer",
         dict(task="brief", agent="final_brief_writer", round_n=n,
-             instructions=brief_instr + "\n\nGLOSSARY:\n" + glossary,
+             instructions=brief_instr + "\n" + ids_line
+             + "\n\nGLOSSARY:\n" + glossary,
              inputs=brief_inputs),
         validate=lambda o: valid_brief(
-            o, disc["cluster_ids"] if disc else None),
+            o, id_set, disc["cluster_ids"] if disc else None),
         # bilingual 10 sections + a typed response per argument cluster in
         # one shot — the largest deliverable in the round
-        out_path=rd / "brief.json", schema=S.BRIEF, max_tokens=64000)
+        out_path=rd / "brief.json", schema=S.BRIEF(ids), max_tokens=64000)
     brief_en = render.brief_md(brief_obj, "en")
     brief_hu = render.brief_md(brief_obj, "hu")
     write(rd / "brief.en.md", brief_en)
@@ -1152,7 +1243,7 @@ def run_round(n):
                  inputs=scen_en_md + "\n\n" + synthesis_text),
             validate=valid_critic,
             out_path=rd / "critic_outputs" / f"{name}.json",
-            schema=S.CRITIC, role="judge", max_tokens=4000)
+            schema=S.CRITIC(ids), role="judge", max_tokens=4000)
         md = render.critic_md(name, obj)
         write(rd / "critic_outputs" / f"{name}.md", md)
         return name, md

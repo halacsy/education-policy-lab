@@ -5,7 +5,7 @@ Type: synthesis
 Provider-role: generator
 
 ## Role
-Build the policy scenarios (S1..S4) with every required field, from the expert record — candidate framings first, then select.
+Build the policy scenarios (S1..Sn) with every required field, from the expert record — candidate framings first, then select.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric
@@ -21,7 +21,7 @@ scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / bri
 ## Rules
 - Never force consensus: disagreement is signal, not noise to remove.
 - Preserve every evidence tag from the inputs; never upgrade an evidence status.
-- Keep scenario ids (S1..S4) stable and identical across languages.
+- Keep scenario ids (S1..Sn) stable and identical across languages.
 - Follow every line in the ## Directives section strictly.
 
 ## Evidence discipline
@@ -42,7 +42,7 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using the topic glossary (topics/<slug>/glossary.md) terminology. scenarios[S1..S4] each with: title, goal, mechanism[{text, evidence}], evidence_status{label, note}, assumptions[], expected_benefits[{text, evidence}], equity_impact, cost_categories[], implementation_steps[{actor, action, timeline}], political_risks[], uncertainties[{text, confidence, reduced_by}])
+(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using the topic glossary (topics/<slug>/glossary.md) terminology. scenarios[S1..Sn] each with: title, goal, mechanism[{text, evidence}], evidence_status{label, note}, assumptions[], expected_benefits[{text, evidence}], equity_impact, cost_categories[], implementation_steps[{actor, action, timeline}], political_risks[], uncertainties[{text, confidence, reduced_by}])
 ```
 
 ## Directives

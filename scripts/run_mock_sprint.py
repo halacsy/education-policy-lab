@@ -21,7 +21,11 @@ def main():
     # gitignored scratch — never the committed outputs/topics/<slug>/ tree
     T.out_root = util.OUTPUTS_DIR / "mock_sprint" / T.slug
     agents.scaffold()
-    artifacts = pipeline.run_round(1)
+    try:
+        artifacts = pipeline.run_round(1)
+    except pipeline.FramesPending as e:
+        print(f"\nHUMAN GATE — {e}")
+        sys.exit(2)
     dims7 = evaluation.score_seven(artifacts, 1)
     payload = {"round": 1, "prev_total": None,
                "total": round(sum(d["score"] for d in dims7.values()) / 7, 3),

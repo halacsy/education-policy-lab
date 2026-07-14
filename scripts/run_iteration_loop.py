@@ -101,6 +101,19 @@ def main():
     # triggered a full revert-and-rerun).
     era_start = T.era_start_round
 
+    try:
+        run_rounds(args, cfg, plateau_delta, plateau_rounds, history,
+                   prev_eval, planned, stop_reason, era_start)
+    except pipeline.FramesPending as e:
+        # emergent-framing human gate (issue #21, D-36): not an error —
+        # the run stops here BY DESIGN until a human approves the frames
+        print(f"\nHUMAN GATE — {e}")
+        sys.exit(2)
+
+
+def run_rounds(args, cfg, plateau_delta, plateau_rounds, history,
+               prev_eval, planned, stop_reason, era_start):
+    artifacts = ev = None
     for n in range(args.start_round, args.max_rounds + 1):
         t0 = time.time()
         if era_start and n == era_start:
@@ -187,7 +200,7 @@ def main():
     gitutil.commit(
         f"final: bilingual deliverables + scorecard after {len(history)} rounds "
         f"(total {history[0]['total']}->{history[-1]['total']})")
-    print("final outputs written to outputs/final/ and committed")
+    print(f"final outputs written to {topic.current().final_dir} and committed")
     print("backend usage:", llm.backend_stats())
     print("token usage:", llm.token_stats())
     print("errors seen:", llm.error_stats())

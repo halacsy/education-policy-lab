@@ -35,9 +35,11 @@ def _exec_summaries(artifacts, n):
                  "object with an en and a hu field — the SAME summary "
                  "authored natively in each language (glossary strictly). "
                  f"It must: name all {len(T.scenario_ids)} scenarios with "
-                 "their ids, state the central expert disagreement WITHOUT "
-                 "resolving it, and end with the immediate no-regret "
-                 "moves.\n\nGLOSSARY:\n" + T.glossary()),
+                 "their ids (SCENARIO IDS: "
+                 + ", ".join(T.scenario_ids) + "), state the central "
+                 "expert disagreement WITHOUT resolving it, and end with "
+                 "the immediate no-regret moves.\n\nGLOSSARY:\n"
+                 + T.glossary()),
              inputs=artifacts["brief_en"] + "\n\n" + artifacts["synthesis"]),
         validate=_valid_exec_summary,
         out_path=fdir / "executive_summary.json",
