@@ -88,13 +88,26 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
   steps (CLI 600s timeout on ~180K-token batches); instruction-based
   bilingual output does NOT work, schema-constrained does (test scripts on
   the branch); web search upgrades expert evidence weak→strong
-  (test_websearch_expert.py, includes the pause_turn loop). **Phase 2 NEXT**:
-  bilingual {en,hu} schemas for all artifacts + delete the ~46 translate_*
-  calls + JSON→md renderers + web-search toggle for experts; then Phase 3
-  (evaluation/verify on JSON fields, translation_fidelity→bilingual_parity,
-  two-era scorecard; also remove evaluation.py's judge-score mock fallback).
+  (test_websearch_expert.py, includes the pause_turn loop). **Phase 2 + P4
+  DONE** (this session, task-by-task commits d03ac7d..): every
+  generator/judge artifact is bilingual {en,hu} schema-constrained JSON
+  (`lab/schemas.py`), every .md a deterministic view (`lab/render.py`;
+  `project()` collapses bilingual→monolingual for legacy consumers); ALL
+  translate_* steps deleted (round: 88→~58 steps); translator agent
+  RETIRED (spec+memory deleted, CATALOG retargeted); Step.run(schema=) +
+  anthropic streaming for >8K-token calls; web search live
+  (`research.web_search`, two-phase expert call: free search call with
+  pause_turn loop → structured call; D-24 gate intact). Artifacts:
+  scenarios.json/synthesis.json/brief.json/meta_critique.json bilingual;
+  expert_outputs/*.json; discourse/* bilingual; both ledgers rendered from
+  one data set. **Phase 3 NEXT**: evaluation/verify on JSON fields,
+  translation_fidelity→bilingual_parity, two-era scorecard (1–7 archive,
+  8+ new baseline), remove evaluation.py's judge-score mock fallback
+  (~line 199) + SCORE:-regex→Gemini response_schema. Round 8 acceptance
+  run started this session (GENERATOR_PROVIDER=anthropic API + web search,
+  JUDGE_PROVIDER=google ladder) — check outputs/iterations/round_08.
   NOTE: API keys were exposed in the 2026-07-14 session transcript — ROTATE
-  before serious use (Phase 0).
+  before serious use (Phase 0; not yet confirmed done).
 - **Branch `refactor/deliberation-mission`** (D-30, 2026-07-11): mission
   reframed from "produce a policy" to "accelerate deliberation"; discourse
   layer relabelled as a stakeholder stress test (explicit disclaimer in
