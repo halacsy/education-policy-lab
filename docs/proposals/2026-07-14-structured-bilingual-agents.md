@@ -140,10 +140,51 @@ kisebb ugrás, nem a LangChain.
 a D-30 utáni tanulság, hogy a két éra nem összehasonlítható); a round 8 új
 baseline. A final_scorecard mindkét érát mutatja, jelölve a törést.
 
-## Nyitott kérdések az ownernek
+## Nyitott kérdések az ownernek — MEGVÁLASZOLVA (2026-07-14)
 
-1. Generator-költség: a CLI-subscription→API váltás pénzbe kerül. Elfogadható-e,
-   vagy hibrid kell (structured-igényes lépések API-n, többi CLI-n)?
-2. A round 1–7 érát lezárjuk-e véglegesen (javaslat: igen, archív)?
-3. A P4 (web search) mehet-e a P2-vel egy körben, vagy külön kör legyen a
-   "one documented change per round" szellemében? (Javaslat: külön.)
+1. Generator-költség: a CLI-subscription→API váltás pénzbe kerül. →
+   **Elfogadva, teljes API-út (nem hibrid).**
+2. A round 1–7 érát lezárjuk-e véglegesen? → **Igen, archív.**
+3. A P4 (web search) mehet-e a P2-vel egy körben? → **Igen, együtt.**
+
+## Megvalósítási jegyzetek a Phase 2-höz (a Phase 1 tanulságai)
+
+A Phase 1 (kész, commit `8f81df8`) által lefektetett interfész:
+`llm.call_structured(prompt, schema, role, max_tokens=..., ...)` → parsed
+dict; hibára `llm.StepFailed` (SOHA mock). A Phase 2 végrehajtójának:
+
+- **`Step.run` structured-változat kell**: `schema=` paraméter, ami
+  `call_structured`-ot hív; `loader=read_json`, `writer=write_json`; a
+  `validate` a parsed dictet kapja. A corrective-retry (2 kísérlet,
+  D-26 escalation) marad.
+- **A mock_backendnek schema-tudatos composerek kellenek** minden áttért
+  taskhoz, különben a `run_mock_sprint.py` (LAB_FORCE_MOCK=1 dry-run,
+  plumbing-teszt) eltörik — a mock most markdownt ad, a `call_structured`
+  json.loads-a StepFailed-et dob rá. Taskonként együtt kell átállítani:
+  pipeline-schema + mock-composer + validátor.
+- **A D-19 expert-reuse cache** (`reusable_expert`) a régi markdown-artifactot
+  validálná — az első új-sémás körben a validátor-váltás miatt automatikusan
+  cache-miss lesz (helyes), de a `validate(cached)` hívásnak dict/str
+  mindkettőt túl kell élnie kivétel nélkül.
+- **Az `agents/**/*.md` specek Output template-jei markdownt írnak le** —
+  a D-30 tanulsága szerint a committed specfájlokat KÖZVETLENÜL kell
+  szerkeszteni (a scaffold(force=False) soha nem nyúl meglévő fájlhoz).
+  A schema mellett a spec-template is frissítendő, különben a prompt
+  ellentmond a schemának.
+- **Anthropic structured-output korlátok**: minden objektumra
+  `additionalProperties: false` kötelező; nincs minLength/maxLength/minimum;
+  truncation (`stop_reason=max_tokens`) StepFailed — a token-budgeteket
+  bőven kell méretezni (a kétnyelvű brief a legnagyobb: 16K+).
+- **Gemini-oldal**: a `_gemini_schema()` sanitizer strippeli az
+  additionalProperties-t; a judge `{score, reason}` schemára állítása a
+  SCORE:-regex kiváltásához Phase 3.
+- **Web search (P4)**: a `pause_turn`-resume loop mintája a
+  `scripts/test_websearch_expert.py`-ban; `web_search_20260209` server-side
+  tool NEM kombinálható structured output-tal egy hívásban tetszőlegesen —
+  ellenőrizendő; ha ütközik, az expert-hívás két fázis legyen (search-es
+  szabad hívás → structured összefoglaló hívás). A D-24 gate: webes találat
+  csak idézett forrás, registry-be sosem kerül automatikusan.
+- **Maradék mock-hívóhely**: `evaluation.py` ~199. sor (judge-score parse
+  fallback) — Phase 3-ban törlendő.
+- **Éra-váltás**: rounds 1–7 NEM rescore-olandó; verify/scorecard két érát
+  jelöl; a round 8 az új baseline és az acceptance-teszt (élő kör).
