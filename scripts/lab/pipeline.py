@@ -290,6 +290,64 @@ def parse_json_block(text):
     return json.loads(text[start:end + 1])
 
 
+def valid_brief(o, cluster_ids=None):
+    """Bilingual 10-section brief (D-30/D-34). With a live argument map the
+    response obligation is checked on the JSON fields directly (same
+    coverage threshold as the old text check: a ledger whose id set differs
+    slightly must not deadlock the round)."""
+    try:
+        if not pair_ok(o["intro"]):
+            return False
+    except (TypeError, KeyError):
+        return False
+    if {k.get("id") for k in o.get("scenario_key", [])} != \
+            {"S1", "S2", "S3", "S4"}:
+        return False
+    for key in ("what_we_know", "what_we_consider_likely",
+                "what_we_dont_know", "what_each_option_costs"):
+        items = o.get(key)
+        if not items or not all(pair_ok(i.get("text")) for i in items):
+            return False
+    dis = o.get("where_experts_disagree")
+    if not dis:
+        return False
+    for d in dis:
+        if not pair_ok(d.get("topic")):
+            return False
+        ps = d.get("positions")
+        if not ps or not all(p.get("holders") and pair_ok(p.get("position"))
+                             and pair_ok(p.get("why")) for p in ps):
+            return False
+    could = o.get("what_could_be_done")
+    if not could or {c.get("scenario_id") for c in could} != \
+            {"S1", "S2", "S3", "S4"}:
+        return False
+    if not all(pair_ok(c.get("title")) and pair_ok(c.get("summary"))
+               for c in could):
+        return False
+    for key in ("what_research_could_resolve", "what_people_must_decide"):
+        items = o.get(key)
+        if not items or not all(pair_ok(i) for i in items):
+            return False
+    minority = o.get("minority_positions")
+    if not minority or not all(m.get("holders") and pair_ok(m.get("position"))
+                               and pair_ok(m.get("rationale"))
+                               for m in minority):
+        return False
+    if not all(pair_ok(a.get("text")) for a in o.get("attention_sinks", [])):
+        return False
+    responses = o.get("stakeholder_responses", [])
+    if not all(pair_ok(r.get("restatement")) and pair_ok(r.get("reason"))
+               for r in responses):
+        return False
+    if cluster_ids:
+        answered = {r.get("cluster_id") for r in responses}
+        hits = sum(1 for cid in cluster_ids if cid in answered)
+        if hits < max(6, int(0.8 * len(cluster_ids))):
+            return False
+    return True
+
+
 def valid_synthesis(o):
     try:
         dis = o["disagreements"]
@@ -902,104 +960,72 @@ def run_round(n):
     if disc_cfg.get("enabled"):
         disc = run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg)
 
-    # 5. briefs (EN by final_brief_writer, HU by translator) — the 10-section
-    #    deliberation deliverable (D-30). With the discourse layer on, the
-    #    "What to verify with real stakeholders" section carries the
-    #    response obligation (D-29, CNDP model): every argument cluster
-    #    gets a typed answer.
+    # 5. brief — the bilingual 10-section deliberation deliverable
+    #    (D-30/D-34; the old translator_brief step is gone). With the
+    #    discourse layer on, stakeholder_responses carries the response
+    #    obligation (D-29, CNDP model): every argument cluster gets a
+    #    typed answer.
     brief_instr = (
-        "Write the policy brief. It MUST contain exactly these "
-        "sections in order: " + ", ".join(f"'{h}'" for h in BRIEF_HEADERS_EN)
-        + ". Tag every substantive claim by kind, wherever it appears: "
-        "[fact] (evidence-backed — cite the evidence status), [estimate] "
-        "(a reasoned but uncertain figure or probability), [assumption] "
-        "(an unverified premise the argument needs), or [value] (a value "
-        "judgment, not a factual claim — never let one pass as a fact). "
-        "'What we know' = the strongest evidence-backed findings. 'What we "
-        "consider likely' = weaker or indirect-evidence conclusions. "
-        "'Where experts disagree' = the disagreement map's substance, with "
-        "reasons, not just labels. 'What we don't know' = the critical "
-        "gaps and uncertainties, distinguishing known-unknowns from mere "
-        "assumptions. 'What could be done' lists the real alternatives "
-        "(including a do-nothing baseline where relevant) and must NOT "
-        "crown a single scenario as the answer. 'What each option costs' "
-        "states trade-offs, harms, risks and who wins/loses per "
-        "alternative — never hide a trade-off behind neutral language. "
-        "'What research could resolve' names what new data or study would "
-        "most change the decision. 'What people must decide' names the "
-        "value choices and political decisions this needs — these are not "
-        "failures to resolve, they are the honest answer. Add any section "
-        "your ## Directives require.")
+        "Write the deliberation brief as the required JSON object, in BOTH "
+        "English and Hungarian: every {en, hu} pair carries the SAME "
+        "statement authored natively in each language (glossary strictly; "
+        "never machine-translation flavour). The renderer produces the 10 "
+        "public sections from your fields — fill each with substance: "
+        "what_we_know = the strongest evidence-backed findings, honest "
+        "evidence grades; what_we_consider_likely = weaker or "
+        "indirect-evidence conclusions (kind: estimate); "
+        "where_experts_disagree = the disagreement map's substance with "
+        "reasons (why), minority sides marked; what_we_dont_know = the "
+        "critical gaps, distinguishing known-unknowns from mere "
+        "assumptions; what_could_be_done = the real alternatives (never "
+        "crown a single scenario as the answer); what_each_option_costs = "
+        "trade-offs, harms, risks and who wins/loses per alternative — "
+        "never hide a trade-off behind neutral language; "
+        "what_research_could_resolve = what new data or study would most "
+        "change the decision; what_people_must_decide = the value choices "
+        "and political decisions this needs — these are the honest answer, "
+        "not failures; minority_positions = every minority view with "
+        "holders and rationale, never resolved away; scenario_key = one "
+        "line per scenario so the brief is self-contained. Set every "
+        "item's kind honestly ([fact]/[estimate]/[assumption]/[value] in "
+        "the rendered view) — never let a value judgment pass as a fact.")
     brief_inputs = scen_en_md + "\n\n" + synthesis_text
     if disc:
         brief_instr += (
-            f" In '{RESPONSES_HEADER['en']}', answer EVERY argument cluster "
-            "from the ledger by id (one bullet per cluster: '- A<i> "
-            "(<short restatement>): <type> — <one-line reason>'). <type> "
-            "MUST be exactly one of these 7 tokens, unchanged in every "
-            "language version (like the A<i> ids): evidence_answerable "
-            "(evidence settles or meaningfully refines it), "
-            "policy_design_fixable (a design change, guarantee, "
-            "compensation or phase-in reduces it), communication_fixable "
-            "(already addressed but not visibly or legibly), value_conflict "
-            "(legitimate values collide, there is no technical fix), "
-            "irreducible_tradeoff (improving one goal necessarily costs "
-            "another), needs_more_info (not yet decidable from the "
-            "evidence), not_decision_relevant (attention-worthy but would "
-            "not change the decision). Do NOT force every cluster into "
-            "artificial consensus — value_conflict and irreducible_tradeoff "
-            "are legitimate final answers, not failures. An argument "
-            "answered by no one is a defect (response obligation). In "
-            f"'{BRIEF_HEADERS_EN[9]}', summarise the ledger's Attention "
-            "sinks (gumicsontok) section: which debates draw attention "
-            "without being decision-relevant, and why — so readers can "
-            "tell which arguments move the decision from which mostly "
-            "consume attention.")
+            " stakeholder_responses: answer EVERY argument cluster from "
+            "the ledger by its A<i> id. response_type MUST be one of the 7 "
+            "tokens: evidence_answerable (evidence settles or meaningfully "
+            "refines it), policy_design_fixable (a design change, "
+            "guarantee, compensation or phase-in reduces it), "
+            "communication_fixable (already addressed but not visibly or "
+            "legibly), value_conflict (legitimate values collide, there is "
+            "no technical fix), irreducible_tradeoff (improving one goal "
+            "necessarily costs another), needs_more_info (not yet "
+            "decidable from the evidence), not_decision_relevant "
+            "(attention-worthy but would not change the decision). Do NOT "
+            "force every cluster into artificial consensus — "
+            "value_conflict and irreducible_tradeoff are legitimate final "
+            "answers, not failures. An argument answered by no one is a "
+            "defect (response obligation). attention_sinks: the ledger's "
+            "gumicsont clusters (high attention, would not change the "
+            "decision) with why — so readers can tell which arguments "
+            "move the decision from which mostly consume attention.")
         brief_inputs += ("\n\n=== ARGUMENT LEDGER (public arguments that "
                          "MUST each be answered) ===\n" + disc["ledger_en"])
-    brief_en, _ = step.run(
+    brief_obj, _ = step.run(
         "final_brief_writer",
-        dict(task="brief", agent="final_brief_writer", lang="en", round_n=n,
-             instructions=brief_instr, inputs=brief_inputs),
-        validate=lambda t: (all(h in t for h in BRIEF_HEADERS_EN)
-                            and (not disc or (responds_to_clusters(
-                                t, "en", disc["cluster_ids"])
-                                and response_types_valid(
-                                    t, disc["cluster_ids"])))),
-        # D-30 asks for 10 sections + a typed response per argument cluster
-        # in one shot — a materially bigger deliverable than the pre-D-30
-        # 5-section brief, hence the higher budget than the old 6000.
-        out_path=rd / "brief.en.md", max_tokens=12000)
-
-    brief_hu_instr = (
-        "Translate this policy brief into Hungarian. Use EXACTLY "
-        "these section headers in place of the English ones: "
-        + ", ".join(f"'{h}'" for h in BRIEF_HEADERS_HU)
-        + ". Keep bullet counts identical. Use the glossary strictly. Keep "
-        f"every claim-kind tag ({', '.join(CLAIM_TAGS)}) unchanged, in "
-        "English, exactly like the A<i> ids — translate only the "
-        "surrounding prose.")
-    if disc:
-        brief_hu_instr += (f" Translate '{RESPONSES_HEADER['en']}' as "
-                           f"'{RESPONSES_HEADER['hu']}'; keep every A<i> id "
-                           "AND every response-type token (evidence_"
-                           "answerable / policy_design_fixable / "
-                           "communication_fixable / value_conflict / "
-                           "irreducible_tradeoff / needs_more_info / "
-                           "not_decision_relevant) unchanged — translate "
-                           "only the restatement and reason around them.")
-    brief_hu, _ = step.run(
-        "translator_brief",
-        dict(task="brief", agent="translator", lang="hu", round_n=n,
-             instructions=brief_hu_instr + "\n\nGLOSSARY:\n" + glossary,
-             inputs=brief_en),
-        validate=lambda t: (all(h in t for h in BRIEF_HEADERS_HU)
-                            and t.strip() != brief_en.strip()
-                            and (not disc or (responds_to_clusters(
-                                t, "hu", disc["cluster_ids"])
-                                and response_types_valid(
-                                    t, disc["cluster_ids"])))),
-        out_path=rd / "brief.hu.md", max_tokens=12000)
+        dict(task="brief", agent="final_brief_writer", round_n=n,
+             instructions=brief_instr + "\n\nGLOSSARY:\n" + glossary,
+             inputs=brief_inputs),
+        validate=lambda o: valid_brief(
+            o, disc["cluster_ids"] if disc else None),
+        # bilingual 10 sections + a typed response per argument cluster in
+        # one shot — the largest deliverable in the round
+        out_path=rd / "brief.json", schema=S.BRIEF, max_tokens=32000)
+    brief_en = render.brief_md(brief_obj, "en")
+    brief_hu = render.brief_md(brief_obj, "hu")
+    write(rd / "brief.en.md", brief_en)
+    write(rd / "brief.hu.md", brief_hu)
 
     # 6. critics (parallel) + translation checker
     registry_digest = "\n".join(

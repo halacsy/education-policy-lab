@@ -39,7 +39,7 @@ def compose(prompt, role):
         "build_scenarios": lambda: scenarios_json(d),
         "synthesis": lambda: synthesis(d),
         "rejected_framings": lambda: rejected_framings(),
-        "brief": lambda: brief(h.get("lang", "en"), d, prompt),
+        "brief": lambda: brief(d, prompt),
         "exec_summary": lambda: K.EXEC_SUMMARY[h.get("lang", "en")],
         "critic": lambda: critic(h["agent"], d),
         "meta_critique": lambda: meta_critique(_payload(prompt), d),
@@ -159,194 +159,132 @@ def rejected_framings():
 
 # -- brief -------------------------------------------------------------------
 
-def brief(lang, d, prompt=""):
-    """The 10-section deliberation deliverable (D-30). Claim-kind tags
-    ([fact]/[estimate]/[assumption]/[value]) stay literal English tokens in
-    both language versions, like the A<i> ids and response-type tokens."""
-    L = lang
-    if L == "en":
-        H = dict(title="# Policy brief — early selection and the 6/8-year gimnázium",
-                 know="## What we know", likely="## What we consider likely",
-                 disagree="## Where experts disagree",
-                 unknown="## What we don't know",
-                 could="## What could be done",
-                 costs="## What each option costs",
-                 research="## What research could resolve",
-                 decide="## What people must decide",
-                 verify="## What to verify with real stakeholders",
-                 gumicsontok="## Where the red herrings are",
-                 minority="## Minority positions")
-    else:
-        H = dict(title="# Szakpolitikai összefoglaló — korai szelekció és a hat-/nyolcosztályos gimnázium",
-                 know="## Amit már tudunk", likely="## Amit valószínűnek tartunk",
-                 disagree="## Amiben nincs szakértői egyetértés",
-                 unknown="## Amit nem tudunk",
-                 could="## Mit lehetne tenni",
-                 costs="## Mi az egyes alternatívák ára",
-                 research="## Mit lehet még kutatással eldönteni",
-                 decide="## Mit kell embereknek eldönteniük",
-                 verify="## Mit kell valódi stakeholderekkel ellenőrizni",
-                 gumicsontok="## Hol vannak a gumicsontok",
-                 minority="## Különvélemények")
-    lines = [H["title"], "", K.BRIEF_INTRO[L]]
-    if "scenario_crossref" in d:
-        if L == "en":
-            lines += ["", "## Scenario key (full detail: scenarios.en.md)"]
-            lines += [f"- {s['id']} — {s['title']['en']}" for s in K.SCENARIOS]
-        else:
-            lines += ["", "## Forgatókönyv-kulcs (részletesen: scenarios.hu.md)"]
-            lines += [f"- {s['id']} — {s['title']['hu']}" for s in K.SCENARIOS]
+_LIKELY = [
+    {"en": "The Hungarian SES gradient is consistent with the causal "
+           "tracking evidence, but country-level causality is an "
+           "inference, not a measured fact.",
+     "hu": "A magyar társadalmi-gazdasági gradiens összhangban áll az "
+           "oksági tracking-kutatásokkal, de az országszintű okság "
+           "következtetés, nem mért tény."},
+    {"en": "The gimnázium tracks' raw advantage is mostly selection "
+           "effect; their causal value added is modest.",
+     "hu": "A gimnáziumi képzések nyers előnye főként szelekciós hatás; "
+           "oksági hozzáadott értékük szerény."},
+]
 
-    # 1. What we know — strongest evidence-backed findings [fact]
-    lines += ["", H["know"]]
-    for fid in ["pisa_escs", "tracking_inequality", "gimn_share",
-               "poland_reform", "demography"]:
-        f = K.FACTS[fid]
-        ev = f["evidence"] if L == "en" else K.EVIDENCE_HU[f["evidence"]]
-        label = "evidence" if L == "en" else "bizonyíték"
-        lines.append(f"- {f[L]} [fact] ({label}: {ev})")
+_UNKNOWN = [
+    {"en": "Whether institutional capacity for a structural reform can be "
+           "built within a decade is unresolved.",
+     "hu": "Nyitott, hogy egy szerkezeti reform intézményi kapacitása "
+           "felépíthető-e egy évtizeden belül."},
+    {"en": "Whether published intake data would stay accurate and "
+           "politically survivable is untested.",
+     "hu": "Nem próbált még ki, hogy a közzétett bekerülési adatok "
+           "pontosak és politikailag fenntarthatók maradnának-e."},
+]
 
-    # 2. What we consider likely — weaker/indirect-evidence conclusions [estimate]
-    if L == "en":
-        lines += ["", H["likely"],
-                  "- The Hungarian SES gradient is consistent with the causal "
-                  "tracking evidence, but country-level causality is an "
-                  "inference, not a measured fact. [estimate]",
-                  "- The gimnázium tracks' raw advantage is mostly selection "
-                  "effect; their causal value added is modest. [estimate, "
-                  "based on moderate evidence]"]
-    else:
-        lines += ["", H["likely"],
-                  "- A magyar társadalmi-gazdasági gradiens összhangban áll az "
-                  "oksági tracking-kutatásokkal, de az országszintű okság "
-                  "következtetés, nem mért tény. [estimate]",
-                  "- A gimnáziumi képzések nyers előnye főként szelekciós "
-                  "hatás; oksági hozzáadott értékük szerény. [estimate, "
-                  "mérsékelt bizonyítékra építve]"]
+_RESPONSE_REASONS = {
+    "policy_design_fixable": dict(
+        en="a design change (guarantee, phase-in, compensation) reduces this",
+        hu="egy tervezési változtatás (garancia, fokozatosság, kompenzáció) csökkenti ezt"),
+    "evidence_answerable": dict(
+        en="the registry evidence settles this claim",
+        hu="a regiszter-evidencia eldönti ezt az állítást"),
+    "value_conflict": dict(
+        en="legitimate values collide here; there is no technical fix",
+        hu="itt legitim értékek ütköznek; nincs technikai megoldás"),
+    "needs_more_info": dict(
+        en="not yet decidable from the current evidence",
+        hu="a jelenlegi evidenciából még nem dönthető el"),
+    "not_decision_relevant": dict(
+        en="attention-worthy but would not change the decision (see gumicsontok)",
+        hu="figyelmet érdemel, de nem változtatna a döntésen (lásd: gumicsontok)"),
+    "irreducible_tradeoff": dict(
+        en="improving one goal here necessarily costs another",
+        hu="az egyik cél javítása itt szükségképpen ront egy másikon"),
+    "communication_fixable": dict(
+        en="already addressed but not visibly or legibly enough",
+        hu="már kezelve van, de nem eléggé láthatóan vagy érthetően"),
+}
 
-    # 3. Where experts disagree — the disagreement map's substance, with reasons
-    lines += ["", H["disagree"]]
-    for dis in K.DISAGREEMENTS:
-        lines.append(f"### {dis['topic']}")
-        for i, side in enumerate(dis["sides"]):
-            who = ", ".join(side["holders"])
-            mark = " (minority)" if i == dis["minority_index"] else ""
-            why = "Why" if L == "en" else "Miért"
-            lines.append(f"- **{who}**{mark}: {side['position'][L]} [value] "
-                         f"{why}: {side['rationale'][L]}")
-    if "minority_report" in d:
-        lines += ["", H["minority"]]
-        for dis in K.DISAGREEMENTS:
-            side = dis["sides"][dis["minority_index"]]
-            who = ", ".join(side["holders"])
-            lines.append(f"- ({who}) {side['position'][L]} — {side['rationale'][L]}")
 
-    # 4. What we don't know — the assumptions the previous structure carried,
-    #    reframed as unresolved gaps, plus scenario-specific uncertainties
-    lines += ["", H["unknown"]]
-    if L == "en":
-        lines += ["- Whether institutional capacity for a structural reform "
-                  "can be built within a decade is unresolved. [assumption]",
-                  "- Whether published intake data would stay accurate and "
-                  "politically survivable is untested. [assumption]"]
-    else:
-        lines += ["- Nyitott, hogy egy szerkezeti reform intézményi "
-                  "kapacitása felépíthető-e egy évtizeden belül. [assumption]",
-                  "- Nem próbált még ki, hogy a közzétett bekerülési adatok "
-                  "pontosak és politikailag fenntarthatók maradnának-e. "
-                  "[assumption]"]
-    for s in K.SCENARIOS[:2]:
-        u = s["uncertainties"][0][L] if s["uncertainties"] else ""
-        if u:
-            lines.append(f"- {s['id']}: {u} [assumption]")
-
-    # 5. What could be done — the real alternatives, none crowned as THE answer
-    lines += ["", H["could"]]
-    for s in K.SCENARIOS:
-        lines.append(f"- **{s['id']} — {s['title'][L]}**: {s['goal'][L]}")
-
-    # 6. What each option costs — trade-offs, harms, risks, winners/losers
-    lines += ["", H["costs"]]
-    for s in K.SCENARIOS:
-        cost = s["cost_categories"][0][L] if s["cost_categories"] else ""
-        risk = s["political_risks"][0][L] if s["political_risks"] else ""
-        lines.append(f"- **{s['id']}**: {s['equity_impact'][L]} [value] "
-                     f"— {cost} [estimate] — {risk} [estimate]")
-
-    # 7. What research could resolve — the sharpest deferrable gaps
-    lines += ["", H["research"]]
-    for r in K.RECOMMENDATIONS:
-        lines.append(f"- {r[L]}")
-
-    # 8. What people must decide — value choices and political decisions
-    lines += ["", H["decide"]]
-    for q in K.HUMAN_QUESTIONS:
-        if L == "en":
-            lines.append(f"- {q['question']} [value]")
-    if L == "hu":
-        lines += ["- Hogyan súlyozandók a méltányossági nyereségek a jól "
-                  "teljesítők kockázataival és a szülői választással szemben? "
-                  "Ez értékkérdés, amelyet a rendszer nem dönthet el. [value]",
-                  "- Elfogadható-e a lengyel típusú visszafordítás kockázata, "
-                  "ha a várható méltányossági nyereség nagy? [value]",
-                  "- Valóban politikailag megváltoztathatatlan-e a korai "
-                  "szelekció, vagy ez a feltevés maga is döntés? [value]"]
-
-    # typed response obligation (D-29 CNDP model, D-30 7-way typology):
-    # answer every argument cluster with a stable type token + reason,
-    # in the "What to verify with real stakeholders" section
-    lines += ["", H["verify"]]
-    reasons = {
-        "policy_design_fixable": dict(
-            en="a design change (guarantee, phase-in, compensation) reduces this",
-            hu="egy tervezési változtatás (garancia, fokozatosság, kompenzáció) csökkenti ezt"),
-        "evidence_answerable": dict(
-            en="the registry evidence settles this claim",
-            hu="a regiszter-evidencia eldönti ezt az állítást"),
-        "value_conflict": dict(
-            en="legitimate values collide here; there is no technical fix",
-            hu="itt legitim értékek ütköznek; nincs technikai megoldás"),
-        "needs_more_info": dict(
-            en="not yet decidable from the current evidence",
-            hu="a jelenlegi evidenciából még nem dönthető el"),
-        "not_decision_relevant": dict(
-            en="attention-worthy but would not change the decision (see gumicsontok)",
-            hu="figyelmet érdemel, de nem változtatna a döntésen (lásd: gumicsontok)"),
-        "irreducible_tradeoff": dict(
-            en="improving one goal here necessarily costs another",
-            hu="az egyik cél javítása itt szükségképpen ront egy másikon"),
-        "communication_fixable": dict(
-            en="already addressed but not visibly or legibly enough",
-            hu="már kezelve van, de nem eléggé láthatóan vagy érthetően"),
-    }
-    # Answer every REAL cluster id in THIS round's ledger — a live mediator
-    # can (and does) produce more clusters than the curated pack's 10, and
-    # this mock must stay valid regardless of that count (it is the crash
-    # backstop of last resort; failing its own validation is fatal, not a
-    # graceful degrade — see pipeline.Step.run).
+def brief(d, prompt=""):
+    """The bilingual 10-section deliberation deliverable (D-30/D-34).
+    Answers every REAL cluster id in THIS round's ledger — the mock must
+    stay valid regardless of the live cluster count."""
     curated_by_id = {c["id"]: c for c in K.ARGUMENT_CLUSTERS}
     real_ids = sorted(set(re.findall(r"\*\*(A\d+)\*\*", prompt)),
                       key=lambda s: int(s[1:])) or list(curated_by_id)
+    responses = []
     for cid in real_ids:
         cur = curated_by_id.get(cid)
         if cur:
-            claim, rtype = cur["claim"][L], cur["response_type"]
+            restatement, rtype = _pair(cur["claim"]), cur["response_type"]
         else:
-            claim, rtype = "(see argument ledger)", "needs_more_info"
-        reason = reasons[rtype][L]
-        lines.append(f"- {cid} ({claim[:80]}…): {rtype} — {reason}")
+            restatement = {"en": "(see argument ledger)",
+                           "hu": "(lásd az érv-főkönyvet)"}
+            rtype = "needs_more_info"
+        responses.append(dict(cluster_id=cid, restatement=restatement,
+                              response_type=rtype,
+                              reason=dict(_RESPONSE_REASONS[rtype])))
+    sinks = [dict(cluster_id=c["id"], text=_pair(c["claim"]))
+             for c in K.ARGUMENT_CLUSTERS
+             if LG.is_gumicsont(c) and c["id"] in set(real_ids)]
 
-    # 10. Where the red herrings are — the ledger's gumicsont summary
-    lines += ["", H["gumicsontok"]]
-    flagged = [c for c in K.ARGUMENT_CLUSTERS if LG.is_gumicsont(c)]
-    if flagged:
-        for c in flagged:
-            lines.append(f"- {c['id']}: {c['claim'][L]}")
-    elif L == "en":
-        lines.append("- none flagged this round")
-    else:
-        lines.append("- ebben a körben nincs megjelölve ilyen")
-    return "\n".join(lines) + "\n"
+    disagree, minority = [], []
+    for dis in K.DISAGREEMENTS:
+        positions = []
+        for i, side in enumerate(dis["sides"]):
+            positions.append(dict(holders=list(side["holders"]),
+                                  position=_pair(side["position"]),
+                                  why=_pair(side["rationale"]),
+                                  minority=(i == dis["minority_index"])))
+            if i == dis["minority_index"]:
+                minority.append(dict(holders=list(side["holders"]),
+                                     position=_pair(side["position"]),
+                                     rationale=_pair(side["rationale"])))
+        disagree.append(dict(topic=_hu_pair(dis["topic"]), positions=positions))
+
+    unknown = [dict(text=dict(u), kind="assumption") for u in _UNKNOWN]
+    for s in K.SCENARIOS[:2]:
+        if s["uncertainties"]:
+            unknown.append(dict(text=_pair(s["uncertainties"][0]),
+                                kind="assumption"))
+
+    costs = []
+    for s in K.SCENARIOS:
+        cost = s["cost_categories"][0] if s["cost_categories"] else None
+        risk = s["political_risks"][0] if s["political_risks"] else None
+        text = {L: " — ".join(filter(None, [
+                    s["equity_impact"][L],
+                    cost[L] if cost else None,
+                    risk[L] if risk else None]))
+                for L in ("en", "hu")}
+        costs.append(dict(scenario_id=s["id"], text=text, kind="estimate"))
+
+    return json.dumps(dict(
+        intro=_pair(K.BRIEF_INTRO),
+        scenario_key=[dict(id=s["id"], title=_pair(s["title"]))
+                      for s in K.SCENARIOS],
+        what_we_know=[dict(text=_pair(K.FACTS[fid]), kind="fact",
+                           evidence=K.FACTS[fid]["evidence"])
+                      for fid in ["pisa_escs", "tracking_inequality",
+                                  "gimn_share", "poland_reform", "demography"]],
+        what_we_consider_likely=[dict(text=dict(x), kind="estimate")
+                                 for x in _LIKELY],
+        where_experts_disagree=disagree,
+        what_we_dont_know=unknown,
+        what_could_be_done=[dict(scenario_id=s["id"], title=_pair(s["title"]),
+                                 summary=_pair(s["goal"]))
+                            for s in K.SCENARIOS],
+        what_each_option_costs=costs,
+        what_research_could_resolve=[_pair(r) for r in K.RECOMMENDATIONS],
+        what_people_must_decide=[_hu_pair(q["question"])
+                                 for q in K.HUMAN_QUESTIONS],
+        stakeholder_responses=responses,
+        attention_sinks=sinks,
+        minority_positions=minority,
+    ), ensure_ascii=False, indent=2)
 
 
 # -- critics -----------------------------------------------------------------

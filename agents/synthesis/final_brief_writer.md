@@ -49,10 +49,10 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief)
+(JSON — the exact schema is enforced by the API; BILINGUAL {en, hu} pairs authored natively in both languages with docs/glossary.md terminology. Fields: intro, scenario_key[], what_we_know[{text, kind, evidence}], what_we_consider_likely[], where_experts_disagree[{topic, positions[]}], what_we_dont_know[], what_could_be_done[], what_each_option_costs[], what_research_could_resolve[], what_people_must_decide[], stakeholder_responses[{cluster_id, restatement, response_type, reason}], attention_sinks[], minority_positions[] — the renderer produces the 10-section deliberation brief from these)
 ```
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-04] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.
-- [round-07] DIRECTIVE:layer_tighten — Every substantive claim across the brief's 10 sections carries a claim-kind tag ([fact]/[estimate]/[assumption]/[value], unchanged in every language); a substantive claim without one is a defect.
+- [round-04] DIRECTIVE:minority_report — Fill minority_positions with every minority/dissenting position (holders + rationale), proportionally, never resolved away.
+- [round-07] DIRECTIVE:layer_tighten — Every substantive claim carries an honest kind field (fact/estimate/assumption/value — rendered as the language-independent claim-kind tag); a substantive claim without one is a defect.

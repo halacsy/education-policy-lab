@@ -47,11 +47,11 @@ CATALOG = [
                "'## Különvélemények') carrying every minority/dissenting "
                "position with its holders and rationale, proportionally, "
                "never resolved away."),
-         # synthesis is structured (D-34): the schema guarantees per-side
-         # minority flags; the marker verifies at least one side is marked
+         # structured era (D-34): synthesis carries per-side minority flags
+         # (the marker verifies at least one side is marked); the brief
+         # carries a dedicated minority_positions field
          checks={"synthesis": ['"minority": true'],
-                 "brief:en": ["## Minority positions"],
-                 "brief:hu": ["## Különvélemények"]},
+                 "brief": ['"minority_positions":']},
          expected_delta=0.5),
     dict(id="critic_fix_severity", dimension="critic_concreteness",
          kind="directive", targets=ALL_CRITICS,
@@ -80,8 +80,7 @@ CATALOG = [
                "carries a claim-kind tag ([fact]/[estimate]/[assumption]/"
                "[value], unchanged in every language); a substantive claim "
                "without one is a defect."),
-         checks={"brief:en": ["[estimate]", "[assumption]"],
-                 "brief:hu": ["[estimate]", "[assumption]"]},
+         checks={"brief": ['"kind": "estimate"', '"kind": "assumption"']},
          expected_delta=0.3),
     dict(id="meta_quant", dimension="meta_system_eval",
          kind="directive", targets=["meta_critic"],
@@ -104,8 +103,7 @@ CATALOG = [
                "its one-line title and a reference to the full scenario "
                "document (scenarios.en.md / scenarios.hu.md), so no "
                "recommendation refers to an id the reader cannot resolve."),
-         checks={"brief:en": ["## Scenario key"],
-                 "brief:hu": ["## Forgatókönyv-kulcs"]},
+         checks={"brief": ['"scenario_key":']},
          expected_delta=0.2,
          origin="human feedback 2026-07-05: brief referenced 'S1 felvételi "
                 "kísérlet' without defining S1 anywhere in the document"),
