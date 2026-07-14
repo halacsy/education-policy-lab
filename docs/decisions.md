@@ -426,7 +426,7 @@ implemented and accepted:
    `output_config.format` / Gemini `response_schema` / OpenAI
    `json_schema` strict); every `.md` is a deterministic rendered view
    (`lab/render.py`). No regex parsing of model output remains in the
-   round (the judge-score `SCORE:` line moves in Phase 3, issue #14).
+   round (the judge-score `SCORE:` line moves in Phase 3, issue #20).
 2. *Bilingual by construction.* Every prose leaf is an `{en, hu}` pair
    authored natively in one call; ids/enums/counts are stored once, so
    structural parity between the languages cannot break. All ~46
