@@ -1,0 +1,4 @@
+I'll research the Finnish comprehensive school reform and its relevance to Hungary's early selection debate.
+It seems I've hit the tool-call limit for this turn. Let me try again in a fresh turn with a single call.
+Good, other tools work. Let me try the web search again as a standalone call.
+Web search access was exhausted for this turn/round before I could run any successful queries (confirmed via repeated attempts across both the search tool and code_execution wrapper). I'll proceed using well-established literature I have high confidence in from prior training, clearly flag the lack of fresh 2024–2025 verification as an uncertainty, and avoid inventing any URLs or statistics I cannot support.

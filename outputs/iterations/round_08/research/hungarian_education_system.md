@@ -1,0 +1,3 @@
+I'll research current evidence on Hungary's early academic selection system and the 6/8-year gimnázium tracks.
+Web search tool access appears to have hit a hard limit for this round (repeated "Server tool use limit exceeded" errors across all attempts, including minimal single-query calls). I'll proceed using established domain knowledge, explicitly flagging in the output that no fresh web verification was obtained this round, and downgrading evidence labels accordingly per the discipline rules (never inventing specific statistics/citations I cannot verify).
+Now I'll write the structured expert output.

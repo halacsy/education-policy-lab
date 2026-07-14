@@ -242,50 +242,60 @@ GRADES = obj({
 
 # -- brief (the 10-section deliberation deliverable, D-30) ---------------------
 
+# The brief is the largest schema; written with inline {en, hu} objects its
+# compiled constrained-decoding grammar exceeds Anthropic's size limit
+# ("The compiled grammar is too large" 400, round-8 acceptance run). A
+# single $defs/bi definition referenced everywhere compiles compactly.
+# NOTE: $ref is Anthropic-only here — the brief runs on the generator side;
+# llm._gemini_schema() does not resolve refs, so this schema must not be
+# sent to the Gemini backend.
+BI = {"$ref": "#/$defs/bi"}
+
 BRIEF = obj({
-    "intro": B("one-paragraph framing of the brief"),
-    "scenario_key": arr(obj({
-        "id": enum(SCENARIO_IDS),
-        "title": B("one-line title"),
-    })),
+    "intro": BI,
+    "scenario_key": arr(obj({"id": enum(SCENARIO_IDS), "title": BI})),
     "what_we_know": arr(obj({
-        "text": B(), "kind": enum(CLAIM_KINDS), "evidence": enum(EVIDENCE_LEVELS),
+        "text": BI, "kind": enum(CLAIM_KINDS), "evidence": enum(EVIDENCE_LEVELS),
     })),
     "what_we_consider_likely": arr(obj({
-        "text": B(), "kind": enum(CLAIM_KINDS),
+        "text": BI, "kind": enum(CLAIM_KINDS),
     })),
     "where_experts_disagree": arr(obj({
-        "topic": B(),
+        "topic": BI,
         "positions": arr(obj({
-            "holders": arr(s()), "position": B(), "why": B(),
+            "holders": arr(s()), "position": BI, "why": BI,
             "minority": {"type": "boolean"},
         })),
     })),
     "what_we_dont_know": arr(obj({
-        "text": B(), "kind": enum(CLAIM_KINDS),
+        "text": BI, "kind": enum(CLAIM_KINDS),
     })),
     "what_could_be_done": arr(obj({
-        "scenario_id": enum(SCENARIO_IDS), "title": B(), "summary": B(),
+        "scenario_id": enum(SCENARIO_IDS), "title": BI, "summary": BI,
     })),
     "what_each_option_costs": arr(obj({
-        "scenario_id": enum(SCENARIO_IDS), "text": B(), "kind": enum(CLAIM_KINDS),
+        "scenario_id": enum(SCENARIO_IDS), "text": BI, "kind": enum(CLAIM_KINDS),
     })),
-    "what_research_could_resolve": arr(B()),
-    "what_people_must_decide": arr(B("a value choice or political decision")),
+    "what_research_could_resolve": arr(BI),
+    "what_people_must_decide": arr(BI),
     "stakeholder_responses": arr(obj({
         "cluster_id": s("A<i>"),
-        "restatement": B("short restatement of the argument"),
+        "restatement": BI,
         "response_type": enum(RESPONSE_TYPES),
-        "reason": B("one-line reason"),
+        "reason": BI,
     })),
     "attention_sinks": arr(obj({
         "cluster_id": s("A<i>"),
-        "text": B("why it draws attention without moving the decision"),
+        "text": BI,
     })),
     "minority_positions": arr(obj({
-        "holders": arr(s()), "position": B(), "rationale": B(),
+        "holders": arr(s()), "position": BI, "rationale": BI,
     })),
 })
+BRIEF["$defs"] = {"bi": obj({
+    "en": s("the statement in native English"),
+    "hu": s("ugyanez az állítás natív magyarul"),
+})}
 
 
 # -- meta critique (EN-only: internal system-evaluation artifact) --------------

@@ -1,0 +1,76 @@
+{
+  "scenarios": [
+    {
+      "id": "S1",
+      "chosen": "Admission reform with validated assessment redesign and explicit SES-proxy infrastructure pilot",
+      "rejected": [
+        {
+          "framing": "Admission reform through lottery-among-qualified design alone",
+          "reason": "Lacks evidence of gaming-resistance in Hungarian context and does not address the absence of a usable SES-proxy infrastructure; the rejected framing would defer critical feasibility questions (SES-proxy legality and data availability) rather than confront them head-on in a piloted, validatable form."
+        },
+        {
+          "framing": "Admission reform via portfolio assessment without parallel SES-proxy mechanism",
+          "reason": "International evidence on portfolio resistance to SES advantage is weak, and this framing would shift rather than reduce coaching-market advantage toward portfolio-building services; it also leaves unaddressed the core assumption that a gaming-resistant proxy can be constructed, which the chosen framing treats as an explicit, piloted hypothesis rather than an implicit hope."
+        },
+        {
+          "framing": "Quota-only approach without alternative assessment format redesign",
+          "reason": "Mechanically raises disadvantaged-entrant share but does nothing to reduce the underlying coaching-sensitivity of the exam itself, so it leaves intact the incentive for high-SES families to invest in test-prep while quotas absorb the residual space; the chosen framing pairs the two mechanisms precisely to decouple SES advantage from exam performance itself."
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "chosen": "Gradual phase-down with explicit non-state maintainer monitoring and compensatory general-school funding",
+      "rejected": [
+        {
+          "framing": "Rapid phase-down over 3-5 years without compensatory general-school investment",
+          "reason": "Accelerates the equity-negative residual-place skewing effect identified in the scenario's own equity_impact field without allowing time for peer-composition benefits to materialise or for general schools to absorb displaced pupils; the chosen framing paces the reduction alongside compensatory funding to allow transitional adjustment and preserve evidence-collection opportunity."
+        },
+        {
+          "framing": "Phase-down via unilateral state-sector reduction without regulatory-lever specification for non-state maintainers",
+          "reason": "Leaves unaddressed the offsetting-expansion risk that the scenario treats as unquantified but real; the chosen framing explicitly names regulatory levers (capital-grant conditionality, licensing review) and commits to annual monitoring to make the offsetting-risk assumption testable rather than invisible."
+        },
+        {
+          "framing": "Phase-down paired with school-choice restrictions without statutory guarantee of maintained funding",
+          "reason": "Would address the sorting-migration risk but at the cost of political durability; the chosen framing works within maintainer plurality by using statutory admission caps (durable against decree reversal) while pairing this with monitoring of non-state dynamics rather than attempting to restrict choice itself, which would provoke fiercer veto-player resistance."
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "chosen": "Comprehensive school to age 14 with segregation-tracking dashboard and capacity-realistic teacher retraining",
+      "rejected": [
+        {
+          "framing": "Abolition of 6/8-year tracks with idealized simultaneous national teacher retraining and classroom restructuring",
+          "reason": "The scenario's own uncertainties and political_risks identify teacher-retraining capacity as constrained by workforce aging and regional shortages; this rejected framing would ignore those constraints and claim transformation-at-scale is administratively feasible within 2-3 years, while the chosen framing explicitly sequences retraining against documented constraints, starting with high-shortage regions."
+        },
+        {
+          "framing": "Comprehensive-school reform without independent segregation-tracking or sorting-migration measurement",
+          "reason": "Removes the mechanism that allows the policy's equity assumption (sorting does not simply migrate elsewhere) to be tested; the chosen framing installs a segregation dashboard from year 1 to create accountability for whether the equity logic is actually playing out, allowing course-correction rather than wishful thinking."
+        },
+        {
+          "framing": "Structural reform secured by cross-party pact alone, without statutory safeguards or monitoring triggers",
+          "reason": "The scenario cites Poland's reversal as moderate evidence of political vulnerability; this rejected framing would rely on good-faith inter-party agreement, while the chosen framing calls for the pact to be buttressed with statutory budget locks and independent triggers, making reversal more costly and observable."
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "chosen": "Compensatory package with pilot evaluation of selection-offset risk and explicit teacher-capacity sequencing",
+      "rejected": [
+        {
+          "framing": "Portuguese-model replication without testing whether compensatory support offsets selection effects in a retained-selection context",
+          "reason": "Treats the mechanism applicability question as settled when the scenario's own evidence_status field marks it contested; the chosen framing mandates an interim evaluation explicitly designed to test the TIMSS-2023-style risk that within-track support fails to narrow between-track gaps, deferring full national rollout until this is resolved."
+        },
+        {
+          "framing": "TEIP-style funding rollout at national scale without teacher-capacity filtering or segregation-output testing",
+          "reason": "Ignores the political_risks finding that teacher shortage undermines delivery fidelity and the uncertain value-add once selection has sorted pupils; the chosen framing pilots in regions with demonstrated staffing readiness and ties further rollout to evidence of actual gap-narrowing, not merely fidelity-of-implementation."
+        },
+        {
+          "framing": "Compensatory package without statutory funding floor or first-line-cut protection against fiscal consolidation",
+          "reason": "The scenario identifies TEIP-style targeted lines as likely first cuts in budget crises; this rejected framing treats funding durability as a political hope rather than an institutional design problem, while the chosen framing explicitly requires a statutory floor and fiscal-stress-testing commitment to make the cost-categories assumption testable."
+        }
+      ]
+    }
+  ]
+}

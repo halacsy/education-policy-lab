@@ -1,0 +1,117 @@
+{
+  "findings": [
+    {
+      "claim": {
+        "en": "Annual births fell from approximately 125,000 in the early 1990s to 85,000–95,000 by the 2020s, forcing school-network consolidation decisions independent of selection-policy choices.",
+        "hu": "A születések száma az 1990-es évek elején körülbelül 125 ezerről a 2020-as évekre 85–95 ezerre csökkent, így az iskolahálózat konszolidációs döntések függetlenek a korai szelekciós politikától."
+      },
+      "evidence": "strong",
+      "source": "KSH demographic yearbooks"
+    },
+    {
+      "claim": {
+        "en": "Since 2013, most state primary and secondary schools operate under state school district centres (tankerületi központok); churches and foundations maintain and expanding share, complicating any uniform structural mandate on selection tracks.",
+        "hu": "2013 óta a legtöbb állami általános és középiskola tankerületi központok felügyelete alá tartozik; az egyházak és alapítványok növekvő hányadot tartanak fenn, ami megnehezíti az egységes korai szelekciós politikai mandátumot."
+      },
+      "evidence": "strong",
+      "source": "Public Education Act amendments; maintainer statistics"
+    },
+    {
+      "claim": {
+        "en": "Hungary's public education framework maintains three entry points for akademic secondary tracks: age 10 (8-year gimnazium), age 12 (6-year gimnazium), and age 14 (4-year secondary), creating de facto early selection regardless of formal policy intent.",
+        "hu": "Magyarország közoktatási rendszere három bejutási pontot tart fenn: 10 éves kor (nyolcosztályos gimnázium), 12 éves kor (hatosztályos gimnázium) és 14 éves kor (négyosztályos középiskola), amely de facto korai szelekciót hoz létre, függetlenül a formális politikai szándéktól."
+      },
+      "evidence": "moderate",
+      "source": "Public Education Act structure; domain knowledge"
+    },
+    {
+      "claim": {
+        "en": "6- and 8-year gimnaziums are concentrated historically in Budapest, county seats, and larger towns; they are rarely found in villages or small settlements, reflecting settlement-network geography and school-size economies.",
+        "hu": "A hat- és nyolcosztályos gimnáziumok történeti concentration Budapest, vármegyeszékhelyek és nagyobb városok szintjén található; községekben és kisvárosokban alig fordulnak elő, a településhálózati geográfia és az iskolaméret-gazdaságtan tükrében."
+      },
+      "evidence": "moderate",
+      "source": "Hungarian education-geography literature; domain knowledge"
+    },
+    {
+      "claim": {
+        "en": "Children in rural and small-town settlements who pass entrance examinations at ages 10–12 face daily commuting or boarding, creating materially different logistical and welfare burdens compared to standard 14+ year-old commuting patterns.",
+        "hu": "A vidéki és kisvárosi településeken élő gyermekek, akik 10–12 éves korban megfelelnek a felvételi vizsga követelményeinek, napi ingázásra vagy kollégisták elhelyezésre szorulnak, ami lényegesen eltérő logisztikai és szociális terhet jelent a 14+ évesek ingázásához képest."
+      },
+      "evidence": "weak",
+      "source": "Geographic feasibility inference; domain knowledge"
+    },
+    {
+      "claim": {
+        "en": "Hungarian education-research consensus (e.g., KRTK strands) links early selection via 8- and 6-year tracks to sorting of higher-SES and higher-achieving students away from comprehensive primary cohorts, concentrating disadvantage in remaining schools.",
+        "hu": "A magyar oktatáskutatás konszenzusa (pl. KRTK kutatási vonalak) a nyolc- és hatosztályos pályák korai szelekciós mechanizmusát összekapcsolják a magasabb társadalmi-gazdasági státuszú és magasabb teljesítményű tanulók szétválogatásával az egységes alapiskola-kohorszok közül, amely hátrányt koncentrál a megmaradt iskolákban."
+      },
+      "evidence": "moderate",
+      "source": "Hungarian education-economics literature (KRTK); domain knowledge"
+    },
+    {
+      "claim": {
+        "en": "Smaller Hungarian school settlements face rising cost-per-pupil above staffing thresholds and subject-specialist availability constraints, limiting realistic capacity to host or sustain selective academic tracks locally.",
+        "hu": "A kisebb magyar településeken az iskolák az egy tanulóra jutó költség emelkedésével szembesülnek, felül a minimális pedagógus-elosztás és szakterületi szakértői elérhetőségi küszöbeit, ami korlátozza a korai szelekciós iskolák helyi fenntartásának reális kapacitását."
+      },
+      "evidence": "moderate",
+      "source": "School-size economics literature; domain knowledge"
+    }
+  ],
+  "interpretation": {
+    "en": "Hungary faces a structural mismatch: declining cohorts require consolidation, yet the 8-year track (entry at age 10) exists in a distributed maintainer landscape (state, church, foundation) where no uniform policy mandate takes direct effect. The concentration of selective secondary schools in urban areas, combined with genuine school-size economics, means rural children who pass early exams incur commuting or boarding costs urban peers avoid. Research consensus suggests this sorting mechanism (whether intended or incidental) reinforces socio-economic segregation. Abolishing or radically restructuring the 8-year track is politically difficult given entrenched stakeholder preferences and the need to manage a contracting network; a phase-in of reform toward later (age 14) entry is feasible but requires transparent cost-transfer dialogue, building-stock investments in smaller towns, and teacher-deployment planning.",
+    "hu": "Magyarország strukturális eltéréssel néz szembe: a csökkenő létszámok konszolidációt igényelnek, mégis a nyolcosztályos pálya (10 éves korabejutás) fragmentált fenntartói rendszerben működik (állami, egyházi, alapítványi), ahol sem egyetlen politikai mandátum sem határozottan érvényes. A szegregáció mechanizmusa – a város centrikus szegmentáció – vidéki gyermekekre ró ingázási vagy kollégisták terhet, amelyet városi társaik elkerülnek. A kutatás konszenzusa szerint ez a szelekciós hatás (szándékos vagy járulékos) erősíti a társadalmi-gazdasági szegregációt. A nyolcosztályos pálya eltörlése vagy radikális átstrukturálása politikailag nehéz, figyelembe véve az érdekelt szereplők mélyen gyökerező preferenciáit és a zsugorodó hálózat kezelésének szükségességét; a későbbi (14 éves) bejutás felé irányuló fokozatos átmenet megvalósítható, de átlátható költségátvezetési párbeszéd, kisvárosok iskolaépület-befektetéseit és pedagógus-elosztási tervezés szükséges."
+  },
+  "assumptions": [
+    {
+      "en": "The 8-year and 6-year gimnazium system will continue to exist in some form through the decade unless an explicit legislative phase-out is mandated; no automatic structural convergence is assumed.",
+      "hu": "A nyolc- és hatosztályos gimnázium-rendszer valamilyen formában létezni fog az évtized során, ha azt explicit jogalkotásiłag nem szüntetik meg; nem tételezzünk fel automatikus strukturális konvergenciát."
+    },
+    {
+      "en": "School building stock in smaller towns remains largely state-owned or church-maintained, and capital investment capacity is constrained by current fiscal and governance arrangements.",
+      "hu": "Az iskolaépületek kisvárosokban nagyrészt állami vagy egyházi tulajdonban vannak, és a tőkebefektetési kapacitás a jelenlegi költségvetési és irányítási szabályozás által korlátozott."
+    },
+    {
+      "en": "Teacher recruitment and retention constraints will continue; early-selective-track staffing competes directly with general-school staffing for specialists.",
+      "hu": "A pedagógus-toborzás és megtartás korlátai továbbra is fennmaradnak; a korai szelekciós pályák pedagógus-ellátása közvetlenül verseng az általános iskolák szakterületi szakemberei után."
+    }
+  ],
+  "position": {
+    "en": "Hungary should phase out the 8-year gimnazium track over 10–15 years, consolidating academic selection at age 14, while simultaneously investing in building stock, teacher deployment, and transparent cost-sharing mechanisms for affected small-town and rural school networks to mitigate equity and operational risks.",
+    "hu": "Magyarország a nyolcosztályos gimnazium-pályát fokozatosan, 10–15 év alatt szüntetné meg, az 14 éves korabeli szelekciót conszolidálva, miközben egyidejűleg iskolaépület-beruházások, pedagógus-elosztási tervek és az érintett kisvárosi és vidéki iskolahálózatok költségmegosztási mechanizmusainak átlátható koordinálása szükséges a méltányossági és működési kockázatok csökkentésére."
+  },
+  "uncertainties": [
+    {
+      "text": {
+        "en": "Current school-by-school enrollment and building-condition inventory for 6- and 8-year track facilities across Hungary is not available; cannot accurately model closure/consolidation feasibility town-by-town without this data.",
+        "hu": "Magyarország 6- és nyolcosztályos gimnazium-intézményeinek jelenlegi létszám- és épületállapot-nyilvántartása nem elérhető; település szintű konszolidáció-megvalósíthatósági modellezés ezen adatok nélkül lehetetlen."
+      },
+      "confidence": "high",
+      "reduced_by": {
+        "en": "Publication of a detailed KSH or education ministry database of 6/8-year track school counts, enrollment projections, and building-asset condition surveys by settlement size and maintainer type.",
+        "hu": "A KSH vagy az oktatási minisztérium által közzétett részletes adatbázis a 6/8-osztályos pályák intézményleírása, létszám-előrejelzéseit és az épületek állapot-felméréseit településméret és fenntartótípus szerint."
+      }
+    },
+    {
+      "text": {
+        "en": "Commuting distance and time burden for age 10–12 entrants to selective schools from rural/small-town origins is not quantified; cannot model welfare or retention trade-offs without empirical commuting data.",
+        "hu": "A 10–12 éves szegmentált iskolai belépésnek vidéki/kisvárosi származású tanulókra gyakorolt ingázási távolság- és időterhei nincsenek számszerűsítve; az ingázási adatok nélkül nem lehet szociális vagy megtartási kompromisszumokat modellezni."
+      },
+      "confidence": "medium",
+      "reduced_by": {
+        "en": "Survey or ministry dataset on commuting patterns, travel time, and boarding/family-relocation incidence for 8-year track students from non-urban origins; cost and health impact analysis.",
+        "hu": "Felmérés vagy oktatási minisztériumi adatsor a nyolcosztályos pálya nem-városi leszármazású tanulóinak ingázási mintáiról, utazási időről, kollégisták/család-áttelepülési gyakoriságáról; költség- és egészségügyi hatáselemzéssel."
+      }
+    },
+    {
+      "text": {
+        "en": "Mechanism and timeline for transferring or closing 8-year track capacity in smaller towns without triggering political backlash or unmanaged student displacement is unclear; stakeholder-tolerance constraints are not empirically mapped.",
+        "hu": "A nyolcosztályos gimnazium-kapacitások kisvárosokban történő átadásának vagy bezárásának mechanizmusa és ütemezése, anélkül hogy politikai ellenreakcióval vagy irányítatlan tanulói térbeli elmozdulással szembesülne, nem egyértelmű; az érdekelt szereplők tolerancia-korlátai empirikusan nem feltérképezhetők."
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Deliberative citizen-panel and stakeholder-consultation process (CNDP-style) documenting local preferences, school-maintainer capacity, and feasibility boundaries for phased reform; cost-allocation and communication strategy testing.",
+        "hu": "Deliberatív polgár-panel és érdekelt szereplő-konzultációs folyamat (CNDP-típusú) helyi preferenciákról, iskolafenntartói kapacitásról és a fokozatos reform megvalósíthatósági határairól; költségelosztási és kommunikációs stratégia tesztelésével."
+      }
+    }
+  ]
+}
