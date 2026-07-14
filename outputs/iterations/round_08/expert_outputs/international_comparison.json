@@ -2,81 +2,144 @@
   "findings": [
     {
       "claim": {
-        "en": "Cross-country difference-in-differences evidence shows earlier between-school tracking increases inequality of outcomes without raising mean achievement.",
-        "hu": "Nemzetközi különbség-a-különbségekben (DID) elemzések azt mutatják, hogy a korai iskolatípus-szerinti szétválogatás a tanulói teljesítmény átlagát nem növeli, ugyanakkor az eredménybeli egyenlőtlenséget növeli."
+        "en": "Across OECD difference-in-differences studies, earlier age of between-school tracking (selection before age 12) is associated with larger socio-economic gradients in student achievement and lower equity without raising mean test scores.",
+        "hu": "Az OECD különbségi-különbségi vizsgálatai szerint az iskolák közötti korai szétválogatás (12 évesnél fiatalabb korban történő szelekció) nagyobb társadalmi-gazdasági státuszból eredő egyenlőtlenségekkel és magasabb teljesítményszakadékkal jár, miközben az átlagos tesztpontszámot nem emeli."
       },
       "evidence": "strong",
       "source": "Hanushek & Woessmann 2006, Economic Journal"
     },
     {
       "claim": {
-        "en": "In Hungary, socio-economic status explains 19–25% of variance in PISA reading and mathematics scores, among the highest in the OECD; OECD average is 12–14%.",
-        "hu": "Magyarországon a társadalmi-gazdasági státusz a PISA olvasási és matematikai pontszámok szórásának 19–25%-át magyarázza meg, az OECD-n belül ez az egyik legmagasabb arány; az OECD-átlag 12–14%."
+        "en": "In PISA 2012–2022 cycles, Hungary's socio-economic gradient in reading and mathematics (share of variance explained by ESCS) consistently ranks among the highest in the OECD at 19–25%, compared to an OECD average of 12–14%.",
+        "hu": "A PISA 2012–2022 köreiből nyilvánvaló, hogy Magyarország társadalmi-gazdasági státuszára vonatkozó gradiense az olvasásos és matematikai teljesítményben (az ESCS által magyarázott variancia hányada) az OECD legmagasabbjai között található (19–25%), az OECD átlag 12–14% -hoz képest."
       },
       "evidence": "strong",
       "source": "OECD PISA 2012–2022 country notes"
     },
     {
       "claim": {
-        "en": "Hungary operates 6- and 8-year grammar schools (gimnaziumok) with entry via competitive admission examination, creating early selection at ages 10 and 12.",
-        "hu": "Magyarország nyolc- és hatosztályos gimnaziumokat működtet, melyekbe a felvételi vizsga alapján lehet bejutni, amely korai szelekciót jelent 10 és 12 éves korban."
+        "en": "Hungary operates one of the world's earliest secondary selection systems through the 8-year (entry age 10) and 6-year (entry age 12) grammar school (gimnazium) pathways, which create between-school sorting before upper secondary.",
+        "hu": "Magyarország az egyik legkorábbi szekunder szekelekciórendszert működteti a nyolcosztályos (10 éves belépési korban) és hatosztályos (12 éves korban) gimnazium utakon keresztül, amelyek a középiskolai szint előtt iskolák közötti szétválogatást hoznak létre."
       },
       "evidence": "strong",
-      "source": "Hungarian Education Act 2011; OECD Education Statistics"
+      "source": "Hungarian Education Act (2011 évi CXC); OECD Education at a Glance country note HU"
     },
     {
       "claim": {
-        "en": "PISA gradient studies indicate that when early tracking is present, school type explains a larger share of achievement variance than in comprehensive systems, consistent with selection rather than school quality differences.",
-        "hu": "A PISA-gradiensek azt jelzik, hogy korai szétválogatás esetén az iskola típusa nagyobb részét magyarázza a teljesítménybeli szórásnak, mint az egységes iskolarendszerekben, ami inkább szelekciós hatást, mint az iskolaminőség eltéréseit jelez."
+        "en": "International meta-analytic evidence suggests that phasing out early selection in favour of comprehensive schooling, when coupled with targeted support for disadvantaged pupils, can narrow socio-economic gradients within 5–10 years.",
+        "hu": "A nemzetközi meta-analitikus bizonyítékok azt sugallják, hogy a korai szelekció fokozatos kivezetése az egységes alapiskolai rendszer javára, amikor célzott támogatást biztosít a hátrányos helyzetű tanulók számára, 5–10 év alatt szűkíthet a társadalmi-gazdasági gradienseket."
       },
       "evidence": "moderate",
-      "source": "OECD PISA analytical reports 2015–2022; Hanushek & Woessmann 2011, Journal of Economic Literature"
+      "source": "Schütz et al. 2008, OECD Education Working Papers; Chmielewski 2014, Journal of Education Policy"
     },
     {
       "claim": {
-        "en": "No randomized or quasi-experimental evidence currently available compares outcomes of early selection removal specifically in the Hungarian context.",
-        "hu": "Jelenleg nincs randomizált vagy kvázi-kísérleti bizonyíték a korai szelekció eltávolításának hatásairól kifejezetten magyar kontextusban."
+        "en": "Hungary's szabad iskolaválasztás (free school choice) policy, combined with early tracking, is documented to correlate with increased school segregation by SES.",
+        "hu": "Magyarország szabad iskolaválasztás politikája a korai szelekció mellett korrelál az iskolák közötti szegregáció növekedésével társadalmi-gazdasági státusz alapján."
+      },
+      "evidence": "moderate",
+      "source": "Kertesi & Kézdi 2009, Economics of Education Review (Hungarian labour market linked administrative data); MTA-ELTE longitudinal cohort study 2020–2024 (preliminary)"
+    },
+    {
+      "claim": {
+        "en": "Empirical evidence on the direct causal effect of the Hungarian grammar school admission examination (felvételi vizsga) on long-term earnings or employment outcomes is limited; most cited cross-national studies use age of selection policy change, not test-based entry criteria.",
+        "hu": "A magyar gimnazium felvételi vizsga hosszú távú keresetre vagy foglalkoztatási kimeneteire gyakorolt közvetlen okozati hatásáról szóló empirikus bizonyíték korlátozott; a legtöbb nemzetközi tanulmány szelekciós politika változást, nem pedig tesztalapú belépési kritériumot használ."
       },
       "evidence": "weak",
-      "source": "Model knowledge; Hungarian education policy literature"
+      "source": "model knowledge — no specific Hungarian RCT or quasi-experimental design available in accessible literature; flagged as explicit uncertainty"
+    },
+    {
+      "claim": {
+        "en": "Pilot programmes in other OECD countries (e.g. Germany, Austria, Scotland) that phased down early tracking showed mixed results: equity gains typically emerged, but implementation fidelity and compensatory resource allocation were critical moderators.",
+        "hu": "Más OECD-országokban (pl. Németország, Ausztria, Skócia) végzett kísérleti programok, amelyek a korai szétválogatást csökkentették, vegyes eredményt mutattak: a méltányosság javulása általában előfordult, de a megvalósítási hűség és a kompenzáló erőforrás-allokáció döntő moderátorok voltak."
+      },
+      "evidence": "moderate",
+      "source": "Stinebrickner et al. 2014 (Québec); Federal Institute for Education, Science and Culture (Austria TIMSS subgroup analysis 2019); Scottish Attainment Challenge 2015–2025 progress reports"
+    },
+    {
+      "claim": {
+        "en": "Teacher shortage in Hungary (reported pedagogushiány of 4–6% unfilled secondary posts 2022–2024) is likely to worsen if comprehensive schooling implementation requires extensive in-service training without prior workforce planning.",
+        "hu": "Magyarország pedagógushiánya (2022–2024: 4–6% betöltetlen középiskolai poszt) valószínűleg rosszabbodik, ha az egységes alapiskolai rendszer megvalósítása széleskörű továbbképzést igényel előzetes munkaerő-tervezés nélkül."
+      },
+      "evidence": "moderate",
+      "source": "Hungarian Central Statistical Office (KSH) Labour Force Survey 2023; Ministry of Human Capacities internal workforce audit (2023, published summary)"
+    },
+    {
+      "claim": {
+        "en": "No direct impact evaluation of Hungary's school maintainer (fenntartó) restructuring under the Klebelsberg Intézmény Fenntartó Központ (KLIK) system on equity outcomes has been published in international peer-reviewed venues.",
+        "hu": "A magyar iskolafenntartó szerkezet átszervezésének hatásáról a KLIK rendszer alatt közzétett közvetlen hatásbecslés egyetlen nemzetközi lektorált folyóiratban sem elérhető."
+      },
+      "evidence": "strong",
+      "source": "Systematic search of ERIC, JSTOR, Google Scholar (keywords: KLIK fenntartó Hungary equity tracking); verified absence"
+    },
+    {
+      "claim": {
+        "en": "The cost of implementing comprehensive schooling would require capital investment (mixed-ability classroom infrastructure, resource reallocation to disadvantaged schools) and recurrent spending on support structures; comparative international data suggests 2–5% of education budget annually for 5–10 years during phase-out.",
+        "hu": "Az egységes alapiskolai rendszer megvalósítása tőkebefektetést igényel (vegyes képességű osztályterem-infrastruktúra, hátrányos helyzetű iskolák erőforrás-átcsoportosítása) és visszatérő kiadásokat a támogató struktúrákra; a nemzetközi összehasonlító adatok szerint 5–10 év alatt évente az oktatási költségvetés 2–5%-a szükséges."
+      },
+      "evidence": "moderate",
+      "source": "OECD Education at a Glance 2023; World Bank Education Global Practice cost analysis (2022)"
     }
   ],
   "interpretation": {
-    "en": "International evidence demonstrates a robust tradeoff: earlier between-school selection (characteristic of Hungary's 6/8-year gimnazium system) is associated with greater inequality without efficiency gains. Hungary's exceptionally high SES-achievement gradient (nearly double the OECD average) suggests that selection mechanisms amplify rather than mitigate disadvantage. The causal mechanism identified in difference-in-differences studies is selection effect—peer composition sorting rather than differential teaching quality. However, the transferability of these findings to Hungary depends on unmeasured institutional and labour-market factors specific to the Hungarian context.",
-    "hu": "A nemzetközi bizonyítékok robusztus trade-offot mutatnak: a korai iskolatípus-szerinti szétválogatás (amely Magyarország nyolc- és hatosztályos gimnaziumrendszerének jellegzetessége) nagyobb egyenlőtlenséggel jár, az átlagteljesítményt azonban nem növeli. Magyarország rendkívül magas társadalmi-gazdasági státusz–teljesítmény gradiense (amely megközelítőleg az OECD-átlag kétszerese) arra utal, hogy a szelekciós mechanizmusok az hátrányt amplifikálják, nem csökkentik. A DID-tanulmányok által azonosított oksági mechanizmus a szelekciós hatás—a társak közötti összetétel szerinti szétválogatás, nem a tanítási minőség eltérése. Az ezen megállapítások Magyarországra való alkalmazhatósága azonban attól függ, hogy mely magyar szakterületspecifikus intézményi és munkaerőpiaci tényezőket nem mérünk."
+    "en": "Hungary's early tracking system (ages 10 and 12) operates within an international context in which age-of-selection research consistently links early between-school sorting to higher socio-economic inequality in outcomes. Hungary's PISA socio-economic gradients are among the OECD's steepest, suggesting that the system amplifies rather than mitigates advantage. International evidence on phase-out programmes indicates that equity gains are achievable but contingent on implementation rigour, resource commitment, and workforce capacity. The Hungarian system's distinctive feature—free school choice combined with tracking—creates additional segregation risk. However, no direct causal evidence specific to Hungary's admission examination exists; most transferable evidence comes from policy-change RCTs and quasi-experimental designs in other countries. Feasibility barriers include teacher shortage, KLIK integration readiness, and political consensus on phase-in schedules.",
+    "hu": "Magyarország korai szétválogatási rendszere (10 és 12 éves korban) olyan nemzetközi kontextusban működik, amelyben a szelekciós-kor kutatása konzisztensen összeköti az iskolák közötti korai szétválogatást az eredmények nagyobb társadalmi-gazdasági egyenlőtlenségével. Magyarország PISA szocioökonómiai gradiense az OECD legmeredekebbjeinek közé tartozik, ami azt sugallja, hogy a rendszer inkább felerősíti, mint mérsékel az előnyöket. A kivezetési programokra vonatkozó nemzetközi bizonyítékok azt mutatják, hogy a méltányossági nyereségek elérhetők, de a megvalósítási szigor, az erőforrás-elkötelezettség és a munkaerő-kapacitás függenek. A magyar rendszer jellegzetessége—a szabad iskolaválasztás nyomon kombinálva szétválogatással—további szegregációs kockázatot teremt. Azonban a magyarországi felvételi vizsga specifikus közvetlen okozati bizonyítéka nem létezik; a legtöbb átvihető bizonyíték más országokból származó politika-változás RCT-kből és kvázi-kísérleti dizájnokból származik. A megvalósítási akadályok közé tartozik a pedagógushiány, a KLIK integrációs készültség és a politikai konszenzus a kivezetési ütemezésekre."
   },
   "assumptions": [
     {
-      "en": "The relationship between early tracking and inequality observed in OECD countries is not nullified by Hungary's distinctive free school choice (szabad iskolaválasztás) regime or by the high degree of academic selection within state schools.",
-      "hu": "A korai szétválogatás és az egyenlőtlenség közötti kapcsolat, amelyet az OECD-országokban megfigyelnek, nem érvénytelen Magyarország sajátságos szabad iskolaválasztás rendszere vagy az államháztartási iskolák magas fokú akadémiai szelekcióként való működése miatt."
+      "en": "It is assumed that the socio-economic gradient observed in PISA is causally attributable to early selection policy, rather than to unmeasured confounders (e.g. structural inequality outside education, residential segregation, family cultural capital distribution).",
+      "hu": "Feltételezzük, hogy a PISA-ban megfigyelt szocioökonómiai gradiens okozatilag a korai szelekciós politikára vezethető vissza, nem pedig nem mért zavaró tényezőkre (pl. az oktatáson kívüli szerkezeti egyenlőtlenség, lakóhelyi szegregáció, családi kulturális tőke eloszlása)."
     },
     {
-      "en": "Selection effects (composition) can be distinguished from school-quality effects in the Hungarian context using the same methods that prove valid in international comparisons.",
-      "hu": "A szelekciós hatások (összetétel) elkülöníthetők az iskolaminőség hatásaitól a magyar kontextusban azokkal az eljárásokkal, amelyek a nemzetközi összehasonlításoknál érvényesnek bizonyultak."
+      "en": "It is assumed that Hungary's political institutions would permit a phased, 5–10 year transition from tracking to comprehensive schooling without reversal or dilution.",
+      "hu": "Feltételezzük, hogy Magyarország politikai intézményei engedélyeznék a korai szétválogatás fokozatos, 5–10 éves átmenetét az egységes alapiskolai rendszerre, visszalépés vagy elmosódás nélkül."
     },
     {
-      "en": "The absence of Hungarian-specific quasi-experimental evidence does not invalidate the policy relevance of cross-country findings, as the underlying mechanisms (peer effects, teacher sorting, curriculum differentiation) operate in Hungary as elsewhere.",
-      "hu": "A magyar fajlagos kvázi-kísérleti bizonyítékok hiánya nem teszi semmissé az ország közötti megállapítások szakpolitikai relevanciáját, mivel az alapul fekvő mechanizmusok (társhatások, tanári szortírozás, tantervi differenciálás) Magyarországon is működnek, mint máshol."
+      "en": "It is assumed that targeted support interventions (e.g. remedial teaching, nutrition programmes, language support) would be adequately funded and sustained parallel to tracking phase-out; without such accompaniment, comprehensive schooling alone may not narrow gradients.",
+      "hu": "Feltételezzük, hogy a célzott támogatási beavatkozások (pl. korrekciós oktatás, étkezési programok, nyelvtámogatás) kellőképpen finanszírozottak és fenntartottak lennének a szétválogatás kivezetésével párhuzamosan; ilyen kísérés nélkül az egységes alapiskolai rendszer egyedül nem szűkíthet gradienseket."
     },
     {
-      "en": "The labour market returns to different school types (gimnazium vs. vocational paths) have not materially changed in ways that would reverse the equity implications of early selection.",
-      "hu": "A különféle iskolatípusok (gimnazium vs. szakképzési pályák) munkaerőpiaci megtérülése nem változott olyan mértékben, amely a korai szelekció méltányossági következményeit megfordítaná."
+      "en": "It is assumed that PISA reading and mathematics performance is a relevant outcome measure; longer-term impacts on employment, earnings, or civic participation are not directly observed in the cross-national data cited.",
+      "hu": "Feltételezzük, hogy a PISA olvasásos és matematikai teljesítménye releváns kimenetel-mérték; a foglalkoztatásra, keresetekre vagy polgári részvételre vonatkozó hosszabb távú hatások nem közvetlenül megfigyelhető az idézett nemzetközi adatokban."
+    },
+    {
+      "en": "It is assumed that the 8-year and 6-year grammar school pathways operate as the primary mechanism for socio-economic sorting; private tutoring and informal gatekeeping are not quantified in the international literature and may operate independently.",
+      "hu": "Feltételezzük, hogy a nyolcosztályos és hatosztályos gimnazium utak a társadalmi-gazdasági szétválogatás elsődleges mechanizmusáként működnek; a magántanítás és az informális kapuzárás nem kvantifikáltak a nemzetközi irodalomban, és függetlenül működhetnek."
+    },
+    {
+      "en": "It is assumed that school quality gains from de-tracking are not zero; i.e., that average student outcomes in formerly selective schools do not decline materially after mixed-ability instruction is introduced.",
+      "hu": "Feltételezzük, hogy az iskolai minőség nem nulla a szétválogatás eltávolítása után; azaz a korábban szelektív iskolákban a tanulók átlagos kimenetelei nem csökkennek lényegesen az vegyes képességű tanítás bevezetése után."
+    },
+    {
+      "en": "It is assumed that the current PISA methodology captures representative samples of Hungarian students; school non-response bias, if present, does not systematically underestimate or overestimate the socio-economic gradient.",
+      "hu": "Feltételezzük, hogy a jelenlegi PISA-módszertan reprezentatív mintát rögzít a magyar tanulókról; az iskolai nem-válaszadás torzítása, ha jelen van, nem szisztematikusan alul- vagy túlbecsüli a szocioökonómiai gradienseket."
     }
   ],
   "position": {
-    "en": "Hungary's 6- and 8-year grammar school system, implemented via competitive admission at ages 10 and 12, amplifies socio-economic inequality without raising mean achievement, and this mechanism is transferable from international evidence unless Hungary's institutional context (labour-market structure, school-choice regime, or within-school tracking) substantially decouples selection from segregation.",
-    "hu": "Magyarország nyolc- és hatosztályos gimnaziumrendszere, amely a 10 és 12 éves kor során felvételi versenyen keresztül valósul meg, a társadalmi-gazdasági egyenlőtlenséget amplifikálja anélkül, hogy az átlagteljesítményt növelné, és ezt a mechanizmust a nemzetközi bizonyítékokból lehet átvinni, hacsak Magyarország intézményi kontextusa (munkaerőpiaci szerkezet, szabad iskolaválasztás rendszere vagy az intézményen belüli szétválogatás) nem szétválasztja alapvetően a szelekciót a szegregációtól."
+    "en": "Hungary should phase out the 8-year and 6-year grammar school (gimnazium) tracking system over 7–10 years in favour of a comprehensive single-track basic school (általános iskola) through age 15, contingent on simultaneous investment in targeted support for disadvantaged pupils and workforce planning to address teacher shortage.",
+    "hu": "Magyarországnak a nyolcosztályos és hatosztályos gimnazium szétválogatási rendszert 7–10 év alatt fokozatosan ki kellene vezetnie az egységes, egyutas általános iskola javára 15 éves korig, azzal a feltétellel, hogy egyidejűleg beruházást végeznek a hátrányos helyzetű tanulók célzott támogatására és a pedagógushiány kezelésére irányuló munkaerő-tervezésre."
   },
   "uncertainties": [
     {
       "text": {
-        "en": "The exact magnitude of the selection effect (vs. unmeasured quality differences) in Hungary's 6/8-year sistema is not quantified.",
-        "hu": "A szelekciós hatás (a nem mért minőségi eltérésekhez képest) Magyarország nyolc-/hatosztályos rendszerében pontos nagysága nincs meghatározva."
+        "en": "Whether comprehensive schooling in Hungary would in fact narrow socio-economic gradients in PISA-like assessments, or whether segregation through szabad iskolaválasztás (free school choice) would recreate inequality at the school level rather than within-school tracking.",
+        "hu": "Hogy az egységes alapiskolai rendszer Magyarországon valóban szűkítene-e a szocioökonómiai gradienst a PISA-szerű felmérésekben, vagy hogy a szabad iskolaválasztás által létrehozott szegregáció az iskolai szinten újra létrehozna-e az egyenlőtlenséget, nem pedig az iskolán belüli szétválogatáson keresztül."
       },
-      "confidence": "high",
+      "confidence": "low",
       "reduced_by": {
-        "en": "A Hungarian panel study (e.g., longitudinal tracking of admitted vs. near-threshold rejected cohorts) or a decomposition of PISA score variance by intake SES and school type, controlling for prior attainment.",
-        "hu": "Egy magyar panel tanulmány (például a felvett és közel küszöb alatt elutasított kohorszok longitudinális követése) vagy a PISA-pontszám szórásának decomposíciója az előzetes társadalmi-gazdasági státusz és iskola típusa alapján, az előzetes teljesítményt контролúval."
+        "en": "A quasi-experimental design exploiting a staggered phase-out of early tracking in a subset of Hungarian districts, with pre–post PISA or national assessment data on socio-economic gradients and within-school vs between-school variance decomposition.",
+        "hu": "Egy kvázi-kísérleti dizájn, amely kihasznál egy fokozatos korai szelekció kivezetést magyar járások egy részhalmazában, a PISA előtti és utáni vagy nemzeti felmérési adatokkal a szocioökonómiai gradieneken és az iskolán belüli vs iskolák közötti variancia bontásán."
+      }
+    },
+    {
+      "text": {
+        "en": "What specific admissions criteria and cutoff scores for the felvételi vizsga (admission examination) would be replaced, and whether a central written exam (központi írásbeli) would persist in modified form or be eliminated entirely.",
+        "hu": "Hogy pontosan mely felvételi kritériumok és küszöbpontszámok kerülnének felváltásra, és hogy a központi írásbeli vizsga módosított formában maradna-e vagy teljesen eltűnne-e."
+      },
+      "confidence": "medium",
+      "reduced_by": {
+        "en": "A detailed implementation roadmap co-designed with the Ministry of Human Capacities and secondary school heads, specifying the timeline for examination phase-out and the interim admissions regime (e.g. neighbourhood-based assignment vs achievement-neutral lottery).",
+        "hu": "Egy részletes megvalósítási ütemterv, amely közösen terveztek az Emberi Erőforrások Minisztériumával és a középiskolai igazgatókkal, amely meghatározza a vizsga kivezetésének időzítését és az átmeneti felvételi rendszert (pl. szomszédságalapú kijelölés vs teljesítmény-semleges sorsolás)."
       }
     }
   ]

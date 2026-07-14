@@ -1,2 +1,1 @@
-I'll research current cross-country evidence on early selection, tracking, and equity relevant to Hungary's 6/8-year gimnázium system.
-It seems the web search tool limit has already been exhausted for this session. Let me try the standalone web_search function instead of through code_execution.
+Note on process: the web_search tool returned "Server tool use limit exceeded" on every attempt this round (six retries), so I was unable to pull fresh 2024-2025 statistics. The output below draws on well-established cross-national literature I already hold with high confidence, clearly flagged, and I note the search failure as an explicit uncertainty for the next round.

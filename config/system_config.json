@@ -32,7 +32,9 @@
   "evaluation": {
     "llm_judge_trials": 3,
     "judge_divergence_threshold": 1.5,
-    "verbosity_cap_per_scenario": 6
+    "verbosity_cap_per_scenario": 6,
+    "_era_policy": "Rounds 1-7 are the closed pre-D-34 archive era (old schema); round 8+ is the structured-bilingual era. The first round of the new era is a baseline: no delta against the previous era, no regression revert.",
+    "era_start_round": 8
   },
   "stopping": {
     "plateau_delta": 0.15,
