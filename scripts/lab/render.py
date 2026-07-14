@@ -214,11 +214,12 @@ BRIEF_HEADERS = {
            "## Hol vannak a gumicsontok"],
 }
 
-BRIEF_TITLE = {
-    "en": "# Policy brief — early selection and the 6/8-year gimnázium",
-    "hu": "# Szakpolitikai összefoglaló — korai szelekció és a "
-          "hat-/nyolcosztályos gimnázium",
-}
+def brief_title(lang):
+    """The brief's H1 comes from the topic's problem brief (D-35 — the old
+    BRIEF_TITLE literal was question-specific)."""
+    from . import topic
+    return topic.current().brief_title(lang)
+
 
 SCENARIO_KEY_HEADER = {"en": "## Scenario key (full detail: scenarios.en.md)",
                        "hu": "## Forgatókönyv-kulcs (részletesen: scenarios.hu.md)"}
@@ -230,7 +231,7 @@ def brief_md(o, lang):
     H = BRIEF_HEADERS[L]
     ev_label = "evidence" if L == "en" else "bizonyíték"
     why = "Why" if L == "en" else "Miért"
-    lines = [BRIEF_TITLE[L], "", o["intro"][L], "", SCENARIO_KEY_HEADER[L]]
+    lines = [brief_title(L), "", o["intro"][L], "", SCENARIO_KEY_HEADER[L]]
     for k in o["scenario_key"]:
         lines.append(f"- {k['id']} — {k['title'][L]}")
 

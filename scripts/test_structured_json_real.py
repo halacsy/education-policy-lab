@@ -9,7 +9,7 @@ from pathlib import Path
 
 import anthropic
 
-GLOSSARY = (Path(__file__).parent.parent / "docs" / "glossary.md").read_text()
+GLOSSARY = (Path(__file__).parent.parent / "topics" / "korai-szelekcio" / "glossary.md").read_text()
 
 # Structured output schema
 EXPERT_SCHEMA = {

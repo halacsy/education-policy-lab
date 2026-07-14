@@ -13,7 +13,7 @@ dimensions your type is responsible for; your spec (including ## Directives)
 is embedded verbatim in your prompt.
 
 ## Inputs
-scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and docs/glossary.md.
+scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and the topic glossary (topics/<slug>/glossary.md).
 
 ## Outputs
 critic_outputs/<name>.md
@@ -48,7 +48,7 @@ If an objection is speculative, mark it (speculative). Distinguish 'wrong' from 
 Objection: <concrete flaw>
 ```
 ## Glossary use
-Enforce docs/glossary.md mechanically: for each glossary pair, if one side appears in one language version, the counterpart must appear in the other. Report violations per scenario id. Also verify: identical scenario-id sets, matching section structure, and that no HU file is a byte-identical copy of the EN file. Deterministic checks are primary; add LLM judgment only as a flagged, low-confidence note.
+Enforce the topic glossary (topics/<slug>/glossary.md) mechanically: for each glossary pair, if one side appears in one language version, the counterpart must appear in the other. Report violations per scenario id. Also verify: identical scenario-id sets, matching section structure, and that no HU file is a byte-identical copy of the EN file. Deterministic checks are primary; add LLM judgment only as a flagged, low-confidence note.
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->

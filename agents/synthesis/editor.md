@@ -13,7 +13,7 @@ dimensions your type is responsible for; your spec (including ## Directives)
 is embedded verbatim in your prompt.
 
 ## Inputs
-Expert outputs (editor/scenario_builder); EN deliverables + docs/glossary.md (translator); scenarios + synthesis (brief/summary writers).
+Expert outputs (editor/scenario_builder); EN deliverables + the topic glossary (topics/<slug>/glossary.md) (translator); scenarios + synthesis (brief/summary writers).
 
 ## Outputs
 scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / brief.<lang>.md / executive_summary.<lang>.md (per agent)
@@ -42,9 +42,8 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(JSON — the exact schema is enforced by the API; BILINGUAL {en, hu} pairs authored natively in both languages with docs/glossary.md terminology: {overview{en,hu}, disagreements[{topic{en,hu}, sides[{holders[], position{en,hu}, rationale{en,hu}, minority}]}], agreements[{text{en,hu}, evidence}]})
+(JSON — the exact schema is enforced by the API; BILINGUAL {en, hu} pairs authored natively in both languages with the topic glossary (topics/<slug>/glossary.md) terminology: {overview{en,hu}, disagreements[{topic{en,hu}, sides[{holders[], position{en,hu}, rationale{en,hu}, minority}]}], agreements[{text{en,hu}, evidence}]})
 ```
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-04] DIRECTIVE:minority_report — Mark every minority/dissenting side (minority=true) with its holders and rationale, proportionally, never resolved away; the renderer carries every marked side into the '## Minority positions' section.

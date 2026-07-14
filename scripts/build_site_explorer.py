@@ -15,8 +15,19 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-FINAL = ROOT / "outputs" / "final"
-ITER = ROOT / "outputs" / "iterations"
+# Per-topic outputs (D-35). Default: the config default_topic; a --topic
+# argument selects another one (the topic browser builds every topic).
+import argparse as _argparse
+
+_ap = _argparse.ArgumentParser()
+_ap.add_argument("--topic", default=None)
+_ARGS, _ = _ap.parse_known_args()
+_CFG = json.loads((ROOT / "config" / "system_config.json")
+                  .read_text(encoding="utf-8"))
+SLUG = _ARGS.topic or _CFG["default_topic"]
+TOPIC_DIR = ROOT / "topics" / SLUG
+FINAL = ROOT / "outputs" / "topics" / SLUG / "final"
+ITER = ROOT / "outputs" / "topics" / SLUG / "iterations"
 
 FIELD_KEYS = ["goal", "mechanism", "evidence_status", "assumptions",
               "expected_benefits", "equity_impact", "cost_categories",
@@ -787,8 +798,8 @@ def main():
 
 <footer>
   <div class="wrap">
-    <p>Generálva a repóból (<code>outputs/iterations/round_{n:02d}/</code>) minden
-    publikáláskor. <a href="https://github.com/halacsy/education-policy-lab/tree/main/outputs/iterations/round_{n:02d}">Nyers adat a GitHubon</a>.</p>
+    <p>Generálva a repóból (<code>outputs/topics/{SLUG}/iterations/round_{n:02d}/</code>) minden
+    publikáláskor. <a href="https://github.com/halacsy/education-policy-lab/tree/main/outputs/topics/{SLUG}/iterations/round_{n:02d}">Nyers adat a GitHubon</a>.</p>
   </div>
 </footer>
 </body>

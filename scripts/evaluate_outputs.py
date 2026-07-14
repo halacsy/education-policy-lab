@@ -10,7 +10,7 @@ import sys
 
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 
-from lab import evaluation
+from lab import evaluation, topic
 from lab.loadround import load_artifacts
 from lab.util import read_json, round_dir
 
@@ -18,8 +18,11 @@ from lab.util import read_json, round_dir
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--round", type=int, required=True)
+    ap.add_argument("--topic", default=None,
+                    help="topic slug; default: config default_topic")
     ap.add_argument("--write", action="store_true")
     args = ap.parse_args()
+    topic.set_current(args.topic)
     n = args.round
     a = load_artifacts(n)
     dims = evaluation.score_seven(a, n)

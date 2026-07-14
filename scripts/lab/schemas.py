@@ -63,7 +63,7 @@ def enum(values, description=None):
 def B(description=None):
     """Bilingual prose leaf: the SAME statement in native English (en) and
     native Hungarian (hu) — parallel authoring, not translation of one from
-    the other. Glossary terms must follow docs/glossary.md."""
+    the other. Glossary terms must follow the topic glossary (topics/<slug>/glossary.md)."""
     d = {"en": s("English version" + (f": {description}" if description else "")),
          "hu": s("Magyar változat" + (f": {description}" if description else ""))}
     return obj(d)

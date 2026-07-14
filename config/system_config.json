@@ -1,6 +1,7 @@
 {
   "version": 1,
-  "policy_question": "What should Hungary do with early academic selection and the 6- and 8-year secondary grammar school (gimnazium) system?",
+  "_topic_policy": "Multi-topic architecture (D-35): the question-specific input is a per-topic problem brief in topics/<slug>/topic.json (the old policy_question literal moved there, together with era_start_round); default_topic names the topic used when a script gets no --topic flag.",
+  "default_topic": "korai-szelekcio",
   "providers": {
     "generator_default": "google",
     "judge_default": "anthropic"
@@ -33,8 +34,7 @@
     "llm_judge_trials": 3,
     "judge_divergence_threshold": 1.5,
     "verbosity_cap_per_scenario": 6,
-    "_era_policy": "Rounds 1-7 are the closed pre-D-34 archive era (old schema); round 8+ is the structured-bilingual era. The first round of the new era is a baseline: no delta against the previous era, no regression revert.",
-    "era_start_round": 8
+    "_era_policy": "era_start_round is per-topic since D-35 (topics/<slug>/topic.json evaluation.era_start_round). The first round of a new era is a baseline: no delta against the previous era, no regression revert."
   },
   "stopping": {
     "plateau_delta": 0.15,

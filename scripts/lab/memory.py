@@ -13,16 +13,17 @@ Recipients:
 - editor          — disagreement/consensus-related objections (last few rounds);
 - experts         — meta-critique lines naming them (last few rounds).
 
-Memory files live under agents/memory/ so every round's system_state snapshot
-versions them, build_prompt() feeds them back, and changed memory invalidates
+Memory is PER TOPIC (D-35: it is question-specific by nature) and lives
+under topics/<slug>/agents/memory/ so every round's system_state snapshot
+versions it, build_prompt() feeds it back, and changed memory invalidates
 expert-output reuse. Distillation is deterministic code, not a model call:
 memory must be an auditable record, not a paraphrase.
 """
 import re
 
-from .util import AGENTS_DIR, read, read_json, round_dir, write
+from . import topic
+from .util import read, read_json, round_dir, write
 
-MEM_DIR = AGENTS_DIR / "memory"
 MAX_SECTIONS_SMALL = 3     # translator / editor / experts: newest N sections
 MAX_UNRESOLVED_LINES = 40  # scenario_builder carry-forward cap (token bound)
 
@@ -31,7 +32,7 @@ CARRY_RE = re.compile(r"\[(\w+) on (S\d+)\.([a-z_]+)\]")
 
 
 def memory_path(name):
-    return MEM_DIR / f"{name}.md"
+    return topic.current().memory_dir / f"{name}.md"
 
 
 def load_memory(name):

@@ -1,29 +1,30 @@
-"""Write outputs/final/* from the completed rounds."""
+"""Write the topic's final outputs (outputs/topics/<slug>/final/*)."""
 import json
 import re
 
-from . import knowledge as K
-from . import llm
+from . import llm, topic
 from . import schemas as S
 from .evaluation import DIMENSIONS
 from .improve import read_attempts
 from .pipeline import Step
-from .util import FINAL_DIR, ROOT, read, read_json, round_dir, write
+from .util import final_dir, read, read_json, round_dir, write
 
 
 def _valid_exec_summary(o):
     if not isinstance(o, dict):
         return False
+    ids = topic.current().scenario_ids
     en, hu = str(o.get("en", "")), str(o.get("hu", ""))
-    return (all(sid in en and sid in hu for sid in ("S1", "S2", "S3", "S4"))
+    return (all(sid in en and sid in hu for sid in ids)
             and len(en) > 400 and len(hu) > 400
             and en.strip() != hu.strip())
 
 
 def _exec_summaries(artifacts, n):
-    FINAL_DIR.mkdir(parents=True, exist_ok=True)
-    glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
-    step = Step(FINAL_DIR, resume=True)
+    T = topic.current()
+    fdir = final_dir()
+    fdir.mkdir(parents=True, exist_ok=True)
+    step = Step(fdir, resume=True)
     obj, _ = step.run(
         "executive_summary_writer",
         dict(task="exec_summary", agent="executive_summary_writer",
@@ -33,16 +34,16 @@ def _exec_summaries(artifacts, n):
                  "language) of the policy work below, as the required JSON "
                  "object with an en and a hu field — the SAME summary "
                  "authored natively in each language (glossary strictly). "
-                 "It must: name all four scenarios with their ids, state "
-                 "the central expert disagreement WITHOUT resolving it, and "
-                 "end with the immediate no-regret moves.\n\nGLOSSARY:\n"
-                 + glossary),
+                 f"It must: name all {len(T.scenario_ids)} scenarios with "
+                 "their ids, state the central expert disagreement WITHOUT "
+                 "resolving it, and end with the immediate no-regret "
+                 "moves.\n\nGLOSSARY:\n" + T.glossary()),
              inputs=artifacts["brief_en"] + "\n\n" + artifacts["synthesis"]),
         validate=_valid_exec_summary,
-        out_path=FINAL_DIR / "executive_summary.json",
+        out_path=fdir / "executive_summary.json",
         schema=S.EXEC_SUMMARY, max_tokens=4000)
-    write(FINAL_DIR / "executive_summary.en.md", obj["en"])
-    write(FINAL_DIR / "executive_summary.hu.md", obj["hu"])
+    write(fdir / "executive_summary.en.md", obj["en"])
+    write(fdir / "executive_summary.hu.md", obj["hu"])
     return obj["en"], obj["hu"]
 
 
@@ -64,8 +65,8 @@ def _change_logs(history):
     attempts = read_attempts()
     agent_lines = ["# Agent change log", "",
                    "Every attempted system change, with expected and actual "
-                   "effect (from outputs/archive/attempts_log.jsonl; "
-                   "pre/post spec versions in outputs/archive/agent_versions/).",
+                   "effect (from the topic archive (outputs/topics/<slug>/archive/attempts_log.jsonl); "
+                   "pre/post spec versions in the topic archive (outputs/topics/<slug>/archive/agent_versions/)).",
                    ""]
     if not attempts:
         agent_lines.append("- No changes were applied (single-round run).")
@@ -99,7 +100,7 @@ def _human_questions(history):
     lines = ["# Questions requiring human expert judgment", "",
              "The system does not decide these; they block or bound the "
              "policy decision (see docs/human_role.md).", ""]
-    for q in K.HUMAN_QUESTIONS:
+    for q in topic.current().human_questions:
         lines += [f"## {q['context']}" + (" (blocking)" if q["blocking"] else ""),
                   q["question"],
                   f"Input needed: {q['needed']}", ""]
@@ -121,24 +122,25 @@ def _human_questions(history):
 def write_final(artifacts, history):
     n = history[-1]["round"]
     rd = round_dir(n)
-    FINAL_DIR.mkdir(parents=True, exist_ok=True)
+    fdir = final_dir()
+    fdir.mkdir(parents=True, exist_ok=True)
 
-    write(FINAL_DIR / "final_brief.en.md", artifacts["brief_en"])
-    write(FINAL_DIR / "final_brief.hu.md", artifacts["brief_hu"])
-    write(FINAL_DIR / "scenarios.en.md", artifacts["scenarios_en_md"])
-    write(FINAL_DIR / "scenarios.hu.md", artifacts["scenarios_hu_md"])
+    write(fdir / "final_brief.en.md", artifacts["brief_en"])
+    write(fdir / "final_brief.hu.md", artifacts["brief_hu"])
+    write(fdir / "scenarios.en.md", artifacts["scenarios_en_md"])
+    write(fdir / "scenarios.hu.md", artifacts["scenarios_hu_md"])
 
     _exec_summaries(artifacts, n)  # writes executive_summary.{en,hu}.md
 
-    write(FINAL_DIR / "final_scorecard.md", _scorecard(history))
+    write(fdir / "final_scorecard.md", _scorecard(history))
     agent_log, wf_log = _change_logs(history)
-    write(FINAL_DIR / "agent_change_log.md", agent_log)
-    write(FINAL_DIR / "workflow_change_log.md", wf_log)
-    write(FINAL_DIR / "disagreement_map.md", _disagreement_map(artifacts))
-    write(FINAL_DIR / "translation_report.md",
+    write(fdir / "agent_change_log.md", agent_log)
+    write(fdir / "workflow_change_log.md", wf_log)
+    write(fdir / "disagreement_map.md", _disagreement_map(artifacts))
+    write(fdir / "translation_report.md",
           "# Translation report (final)\n\n"
           + read(rd / "critic_outputs" / "translation_checker.md")
           + "\nBackend note: " + json.dumps(llm.backend_stats(), indent=2)
           + "\nToken usage: " + json.dumps(llm.token_stats(), indent=2)
           + "\nErrors seen: " + json.dumps(llm.error_stats(), indent=2) + "\n")
-    write(FINAL_DIR / "human_questions.md", _human_questions(history))
+    write(fdir / "human_questions.md", _human_questions(history))

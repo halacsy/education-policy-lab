@@ -7,7 +7,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from lab import agents, llm, util
 
-GLOSSARY = (Path(__file__).parent.parent / "docs" / "glossary.md").read_text()
+GLOSSARY = (Path(__file__).parent.parent / "topics" / "korai-szelekcio" / "glossary.md").read_text()
 
 def test_bilingual_expert():
     """Test: run demography expert with bilingual instruction."""

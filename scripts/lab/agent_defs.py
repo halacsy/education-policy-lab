@@ -100,7 +100,7 @@ TYPE_RULES = {
     "meta": [
         "Judge the SYSTEM (agents, workflow, rubric), not the policy content.",
         "Never propose removing a critic, weakening evidence discipline, or reducing preserved disagreement — these are forbidden regressions.",
-        "Consult outputs/archive/attempts_log.jsonl before proposing any change; never repeat an archived failure.",
+        "Consult the topic archive (outputs/topics/<slug>/archive/attempts_log.jsonl) before proposing any change; never repeat an archived failure.",
         "State explicitly whether score gains are GENUINE or RUBRIC-GAMING, with reasons.",
     ],
     "discourse": [
@@ -147,7 +147,7 @@ TYPE_SELFCRIT = {
 }
 
 TYPE_TEMPLATE = {
-    "expert": "(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using docs/glossary.md terminology — parallel authoring, not translation. Fields: findings[{claim{en,hu}, evidence, source}], interpretation{en,hu}, assumptions[{en,hu}], position{en,hu}, uncertainties[{text{en,hu}, confidence, reduced_by{en,hu}}])",
+    "expert": "(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using the topic glossary (topics/<slug>/glossary.md) terminology — parallel authoring, not translation. Fields: findings[{claim{en,hu}, evidence, source}], interpretation{en,hu}, assumptions[{en,hu}], position{en,hu}, uncertainties[{text{en,hu}, confidence, reduced_by{en,hu}}])",
     "critic": "(JSON — the exact schema is enforced by the API: {\"objections\": [{\"scenario\": \"S1..S4\", \"field\": \"<scenario field>\", \"objection\": \"<the concrete flaw>\", \"severity\": \"high|medium|low\", \"suggested_revision\": \"<concrete fix>\"}]})",
     "synthesis": "(per agent — see Mission; every output is schema-enforced JSON: scenario_builder returns the bilingual scenarios, editor the bilingual synthesis (disagreement map with minority flags), final_brief_writer the bilingual 10-section deliberation brief, discourse_mediator the argument-map; bilingual means every {en, hu} pair is authored natively in both languages)",
     "meta": "(meta_critic: JSON — the exact schema is enforced by the API: {agent_performance[], workflow[], critique_quality[], gaming_judgment{verdict: GENUINE|RUBRIC-GAMING|NO_BASELINE, reasons[]}, translation_consistency[], removal_candidates[]}; other meta agents: design documents)",
@@ -157,7 +157,7 @@ TYPE_TEMPLATE = {
 EXTRA_SECTIONS = {
     "translation_checker": (
         "## Glossary use\n"
-        "Enforce docs/glossary.md mechanically: for each glossary pair, if one "
+        "Enforce the topic glossary (topics/<slug>/glossary.md) mechanically: for each glossary pair, if one "
         "side appears in one language version, the counterpart must appear in "
         "the other. Report violations per scenario id. Also verify: identical "
         "scenario-id sets, matching section structure, and that no HU file is "

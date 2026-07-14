@@ -13,7 +13,7 @@ dimensions your type is responsible for; your spec (including ## Directives)
 is embedded verbatim in your prompt.
 
 ## Inputs
-Expert outputs (editor/scenario_builder); EN deliverables + docs/glossary.md (translator); scenarios + synthesis (brief/summary writers).
+Expert outputs (editor/scenario_builder); EN deliverables + the topic glossary (topics/<slug>/glossary.md) (translator); scenarios + synthesis (brief/summary writers).
 
 ## Outputs
 scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / brief.<lang>.md / executive_summary.<lang>.md (per agent)
@@ -42,11 +42,8 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using docs/glossary.md terminology. scenarios[S1..S4] each with: title, goal, mechanism[{text, evidence}], evidence_status{label, note}, assumptions[], expected_benefits[{text, evidence}], equity_impact, cost_categories[], implementation_steps[{actor, action, timeline}], political_risks[], uncertainties[{text, confidence, reduced_by}])
+(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using the topic glossary (topics/<slug>/glossary.md) terminology. scenarios[S1..S4] each with: title, goal, mechanism[{text, evidence}], evidence_status{label, note}, assumptions[], expected_benefits[{text, evidence}], equity_impact, cost_categories[], implementation_steps[{actor, action, timeline}], political_risks[], uncertainties[{text, confidence, reduced_by}])
 ```
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-02] DIRECTIVE:uncertainty_quantify — For every uncertainty item, fill the confidence field (low|medium|high) and the reduced_by pair (what evidence would reduce it) in both languages.
-- [round-05] DIRECTIVE:evidence_tag_all — Grade EVERY mechanism claim and EVERY expected benefit via its evidence field (strong|moderate|weak|contested), not only the core ones.
-- [round-06] DIRECTIVE:implementation_detail — Give every implementation step an explicit timeline field, e.g. 'year 1-2' / '1-2. év'.

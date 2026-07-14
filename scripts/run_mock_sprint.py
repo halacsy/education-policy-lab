@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
 """Dry-run one round entirely on the deterministic mock backend, into a
-scratch folder (outputs/mock_sprint/) — no git commits, no API calls. Used to
-test the pipeline plumbing and as the no-keys demo path."""
+scratch folder (outputs/mock_sprint/<slug>/) — no git commits, no API calls.
+Used to test the pipeline plumbing and as the no-keys demo path."""
+import argparse
 import os
 import sys
 
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 os.environ["LAB_FORCE_MOCK"] = "1"
 
-from lab import agents, evaluation, pipeline, util
-
-util.ITER_DIR = util.OUTPUTS_DIR / "mock_sprint"
+from lab import agents, evaluation, pipeline, topic, util
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--topic", default=None,
+                    help="topic slug; default: config default_topic")
+    args = ap.parse_args()
+    T = topic.set_current(args.topic)
+    # gitignored scratch — never the committed outputs/topics/<slug>/ tree
+    T.out_root = util.OUTPUTS_DIR / "mock_sprint" / T.slug
     agents.scaffold()
     artifacts = pipeline.run_round(1)
     dims7 = evaluation.score_seven(artifacts, 1)

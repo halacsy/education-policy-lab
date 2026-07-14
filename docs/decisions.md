@@ -459,3 +459,51 @@ terminal; very large schemas must use `$defs`/`$ref` (the inline brief
 schema exceeded Anthropic's compiled-grammar limit; note
 `_gemini_schema()` does not resolve `$ref`, so ref-based schemas are
 Anthropic-only).
+
+**D-35 — Multi-topic architecture: per-topic state, scoped round commits
+(2026-07-15, sprint: docs/proposals/2026-07-14-sprint-multi-topic-prompt.md,
+issues #18/#21).** Owner direction (2026-07-14): many policy problems must
+run through the SAME system and expert hub with nothing question-specific
+hardcoded. Decisions:
+
+1. *The system input is a problem brief, not a question.* Per-topic config
+   `topics/<slug>/topic.json` carries a bilingual problem brief (title,
+   problem statement, 2–4 learning goals, scope, optional seed sources) —
+   `config/system_config.json` lost `policy_question` and gained
+   `default_topic`. The old single question was retrofitted as topic
+   `korai-szelekcio` using the owner's example problem statement.
+2. *Everything question-specific is per-topic.* Under `topics/<slug>/`:
+   the glossary (including the machine-checked key pairs
+   `translation.checkable_pairs()` parses — the old `CHECKABLE` literal),
+   episodic memory (`agents/memory/` moved here: memory is
+   question-specific by nature), and the improvement-directive OVERLAY
+   (`agents/directives/<agent>.md`): the improvement step appends
+   directives here, never into the shared specs, so one topic's learnings
+   cannot leak into another topic's prompts (`build_prompt` composes
+   spec + overlay; the pre-existing round 2–8 directives were extracted
+   from the shared specs into the korai-szelekcio overlay — composed
+   prompts are byte-identical). Outputs move to
+   `outputs/topics/<slug>/{iterations,final,archive}` — the attempts log
+   (Reflexion/ADAS memory) and `evaluation.era_start_round` are therefore
+   per-topic too. Expert/voice rosters are per-topic SELECTIONS from the
+   shared hub (`agent_defs.py` stays the hub; no per-topic agent specs).
+   Registry facts (D-24 gated, shared) get per-topic scoping
+   (`registry_facts`, `expert_facts` in topic.json).
+3. *Round snapshots and the resume gate cover the topic state.* Each
+   round's `system_state/` snapshots shared specs + topic memory +
+   directive overlay + `topic.json`; the state hash includes them, EXCEPT
+   the frames block (see D-36: approving frames mid-round-1 must not
+   invalidate the expert outputs the frames were derived from).
+4. *Round commits are path-scoped, no worktrees.* The round commit was
+   `git add -A` — with concurrent topics that would cross-commit. Now
+   `gitutil.commit` stages and commits ONLY the current topic's paths
+   (`topics/<slug>`, `outputs/topics/<slug>`) plus
+   `config/system_config.json`. Chosen over per-topic git worktrees:
+   concurrent topics touch disjoint paths by construction, so pathspec
+   scoping is sufficient, keeps one working tree, and also fixes the old
+   gotcha that unrelated uncommitted work got swept into round commits
+   (a worktree remains advisable for unrelated dev work during a run).
+5. Entry points take `--topic <slug>` (`run_iteration_loop`, `verify`,
+   `run_mock_sprint`, `rescore_round`, `evaluate_outputs`, site
+   builders); default is `default_topic`, so existing automation works
+   unchanged. `verify.py` must be green PER TOPIC.

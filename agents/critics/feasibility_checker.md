@@ -13,7 +13,7 @@ dimensions your type is responsible for; your spec (including ## Directives)
 is embedded verbatim in your prompt.
 
 ## Inputs
-scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and docs/glossary.md.
+scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and the topic glossary (topics/<slug>/glossary.md).
 
 ## Outputs
 critic_outputs/<name>.md
@@ -52,4 +52,3 @@ If an objection is speculative, mark it (speculative). Distinguish 'wrong' from 
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-03] DIRECTIVE:critic_fix_severity — Fill every objection's severity (high|medium|low) and suggested_revision (a concrete fix) fields.

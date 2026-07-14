@@ -18,12 +18,11 @@ from concurrent.futures import ThreadPoolExecutor
 
 from . import agent_defs as D
 from . import improve
-from . import knowledge as K
 from . import ledger as LG
-from . import llm, render, translation
+from . import llm, render, topic, translation
 from . import schemas as S
 from .agents import build_prompt
-from .util import (AGENTS_DIR, CONFIG_PATH, ROOT, TEMPLATES_DIR, load_config,
+from .util import (AGENTS_DIR, CONFIG_PATH, TEMPLATES_DIR, load_config,
                    read, read_json, round_dir, write, write_json)
 
 FIELD_KEYS = translation.FIELD_KEYS
@@ -455,36 +454,72 @@ def valid_scenarios_bi(o):
     return True
 
 
-def _current_state_hash():
-    h = hashlib.sha256()
-    for p in sorted(AGENTS_DIR.rglob("*.md")):
-        h.update(str(p.relative_to(AGENTS_DIR)).encode())
+def _hash_md_tree(h, base, root):
+    for p in sorted(root.rglob("*.md")) if root.exists() else []:
+        h.update(str(p.relative_to(base)).encode())
         h.update(p.read_bytes())
+
+
+def _current_state_hash():
+    """Effective system state: shared agent specs + THIS topic's overlay
+    (memory + directives) + config + rubric + the topic's problem brief.
+    The topic fingerprint deliberately excludes the frames — see
+    Topic.state_fingerprint (frame approval must not invalidate the expert
+    outputs it was derived from)."""
+    T = topic.current()
+    h = hashlib.sha256()
+    _hash_md_tree(h, AGENTS_DIR, AGENTS_DIR)
+    _hash_md_tree(h, T.memory_dir, T.memory_dir)
+    _hash_md_tree(h, T.directives_dir, T.directives_dir)
     h.update(CONFIG_PATH.read_bytes())
     h.update((TEMPLATES_DIR / "evaluation_rubric.md").read_bytes())
+    h.update(T.state_fingerprint())
     return h.hexdigest()
 
 
 def _snapshot_state_hash(rd):
     base = rd / "system_state"
     if not ((base / "agents").exists() and (base / "system_config.json").exists()
-            and (base / "evaluation_rubric.md").exists()):
+            and (base / "evaluation_rubric.md").exists()
+            and (base / "topic.json").exists()):
         return None
     h = hashlib.sha256()
-    for p in sorted((base / "agents").rglob("*.md")):
-        h.update(str(p.relative_to(base / "agents")).encode())
+    agents_base = base / "agents"
+    # shared specs (the overlay dirs are hashed separately, exactly like
+    # the live side hashes AGENTS_DIR without them)
+    for p in sorted(agents_base.rglob("*.md")):
+        rel = p.relative_to(agents_base)
+        if rel.parts[0] in ("memory", "directives"):
+            continue
+        h.update(str(rel).encode())
         h.update(p.read_bytes())
+    _hash_md_tree(h, agents_base / "memory", agents_base / "memory")
+    _hash_md_tree(h, agents_base / "directives", agents_base / "directives")
     h.update((base / "system_config.json").read_bytes())
     h.update((base / "evaluation_rubric.md").read_bytes())
+    snap_cfg = json.loads((base / "topic.json").read_text(encoding="utf-8"))
+    snap_cfg = {k: v for k, v in snap_cfg.items() if k != "frames"}
+    h.update(json.dumps(snap_cfg, ensure_ascii=False,
+                        sort_keys=True).encode("utf-8"))
     return h.hexdigest()
 
 
 def snapshot_system_state(rd):
+    """Snapshot everything the round's behaviour depends on. Layout matches
+    the pre-D-35 one (memory under system_state/agents/memory — verify
+    check M globs it there), with the per-topic overlay and topic.json
+    added."""
+    T = topic.current()
     dest = rd / "system_state"
     if dest.exists():
         shutil.rmtree(dest)
     dest.mkdir(parents=True)
     shutil.copytree(AGENTS_DIR, dest / "agents")
+    if T.memory_dir.exists():
+        shutil.copytree(T.memory_dir, dest / "agents" / "memory")
+    if T.directives_dir.exists():
+        shutil.copytree(T.directives_dir, dest / "agents" / "directives")
+    shutil.copy(T.path, dest / "topic.json")
     shutil.copy(CONFIG_PATH, dest / "system_config.json")
     shutil.copy(TEMPLATES_DIR / "evaluation_rubric.md", dest / "evaluation_rubric.md")
 
@@ -602,14 +637,14 @@ class Step:
             f"(backend {backend})")
 
 
-def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
+def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
     """Societal-discourse layer (D-29, structured+bilingual since D-34):
     voices react to the scenarios, the mediator builds the argument map,
     the evidence layer grades factual claims, an optional reciprocity pass
     makes the voices answer their strongest counter-argument. Every
     artifact is bilingual JSON; BOTH ledgers are rendered deterministically
     from the same data (render.project) — no translation steps at all."""
-    voice_names = list(D.DISCOURSE)
+    voice_names = T.voices
     ddir = rd / "discourse"
     bilingual_note = (
         "Write every {en, hu} pair as the SAME statement authored natively "
@@ -721,7 +756,8 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
 
     registry_digest = "\n".join(
         f"- {fid} [{f['evidence']}]: {f['en'][:120]} (source: {f['source']})"
-        for fid, f in K.FACTS.items())
+        for fid, f in facts.items()) or \
+        "(no registry-backed facts admitted for this topic yet)"
     grades_obj, _ = step.run(
         "grade_arguments",
         dict(task="grade_arguments", agent="evidence_checker", round_n=n,
@@ -814,14 +850,16 @@ def run_round(n):
     """Generate all round-n artifacts (steps 1-6 of the workflow). Evaluation,
     meta-critique and improvement planning are orchestrated by the loop."""
     cfg = load_config()
+    T = topic.current()
     rd = round_dir(n, create=True)
     resume = _snapshot_state_hash(rd) == _current_state_hash()
     if not resume and (rd / "steps.jsonl").exists():
         (rd / "steps.jsonl").unlink()  # stale partial attempt
     snapshot_system_state(rd)
     step = Step(rd, resume, round_n=n)
-    print(f"[round {n:02d}] starting...", flush=True)
-    question = cfg["policy_question"]
+    print(f"[round {n:02d}] starting... (topic: {T.slug})", flush=True)
+    question = T.question_block()
+    facts = T.registry_facts()
 
     # 1. experts (parallel; unchanged specs may reuse the previous round's
     #    live output — same deterministic input, saves daily quota, D-19)
@@ -844,7 +882,7 @@ def run_round(n):
         # episodic memory is part of the effective prompt: changed memory
         # means the expert must actually re-run (issue #1)
         mem_prev = prev_rd / "system_state" / "agents" / "memory" / f"{name}.md"
-        mem_now = AGENTS_DIR / "memory" / f"{name}.md"
+        mem_now = T.memory_dir / f"{name}.md"
         prev_mem = mem_prev.read_text(encoding="utf-8") if mem_prev.exists() else ""
         now_mem = mem_now.read_text(encoding="utf-8") if mem_now.exists() else ""
         if prev_mem != now_mem:
@@ -855,16 +893,16 @@ def run_round(n):
             return None
 
     def curated_sources(name):
-        fids = K.EXPERT_BRIEFS.get(name, {}).get("findings", [])
+        fids = [f for f in T.expert_facts(name) if f in facts]
         if not fids:
             return ""
-        rows = [f"- [{K.FACTS[f]['evidence']}] {K.FACTS[f]['en']} "
-                f"(source: {K.FACTS[f]['source']})" for f in fids]
+        rows = [f"- [{facts[f]['evidence']}] {facts[f]['en']} "
+                f"(source: {facts[f]['source']})" for f in fids]
         return ("\nCURATED SOURCES (registry-backed; cite these with their "
                 "evidence grade; anything beyond them must be flagged as "
                 "model knowledge):\n" + "\n".join(rows))
 
-    glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
+    glossary = T.glossary()
     # P4 (D-34, issue #6 first half): optional live-retrieval phase before
     # the structured expert call. Web findings are CITED SOURCES in the
     # expert output only — they NEVER enter the curated registry (knowledge
@@ -946,7 +984,7 @@ def run_round(n):
 
     experts = {}
     with ThreadPoolExecutor(max_workers=4) as ex:
-        for name, md in ex.map(run_expert, D.EXPERTS):
+        for name, md in ex.map(run_expert, T.experts):
             experts[name] = md
 
     expert_digest = "\n\n".join(
@@ -1017,7 +1055,8 @@ def run_round(n):
     disc_cfg = cfg.get("discourse", {})
     disc = None
     if disc_cfg.get("enabled"):
-        disc = run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg)
+        disc = run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg,
+                             T, facts)
 
     # 5. brief — the bilingual 10-section deliberation deliverable
     #    (D-30/D-34; the old translator_brief step is gone). With the
@@ -1089,7 +1128,8 @@ def run_round(n):
     # 6. critics (parallel) + translation checker
     registry_digest = "\n".join(
         f"- {fid} [{f['evidence']}]: {f['en'][:120]}... (source: {f['source']})"
-        for fid, f in K.FACTS.items())
+        for fid, f in facts.items()) or \
+        "(no registry-backed facts admitted for this topic yet)"
 
     def run_critic(name):
         extra = ""

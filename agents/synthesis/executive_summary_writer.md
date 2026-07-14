@@ -13,7 +13,7 @@ dimensions your type is responsible for; your spec (including ## Directives)
 is embedded verbatim in your prompt.
 
 ## Inputs
-Expert outputs (editor/scenario_builder); EN deliverables + docs/glossary.md (translator); scenarios + synthesis (brief/summary writers).
+Expert outputs (editor/scenario_builder); EN deliverables + the topic glossary (topics/<slug>/glossary.md) (translator); scenarios + synthesis (brief/summary writers).
 
 ## Outputs
 scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / brief.<lang>.md / executive_summary.<lang>.md (per agent)

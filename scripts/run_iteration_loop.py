@@ -15,7 +15,8 @@ import time
 
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 
-from lab import agents, evaluation, finalize, gitutil, improve, llm, memory, pipeline
+from lab import agents, evaluation, finalize, gitutil, improve, llm, memory, \
+    pipeline, topic
 from lab.util import load_config, read_json, round_dir
 
 
@@ -56,12 +57,17 @@ def evaluate_round(n, prev_eval, applied):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--topic", default=None,
+                    help="topic slug (topics/<slug>/topic.json); default: "
+                         "config default_topic")
     ap.add_argument("--max-rounds", type=int, default=5)
     ap.add_argument("--start-round", type=int, default=1,
                     help="restart an interrupted run: completed rounds before "
                          "this are loaded from disk, the interrupted round "
                          "resumes from its valid artifacts")
     args = ap.parse_args()
+    T = topic.set_current(args.topic)
+    print(f"topic: {T.slug} — {T.title('hu')}")
     cfg = load_config()
     plateau_delta = cfg["stopping"]["plateau_delta"]
     plateau_rounds = cfg["stopping"]["plateau_rounds"]
@@ -86,13 +92,14 @@ def main():
               f"(prev total {prev_eval['total']}, planned change: "
               f"{planned['id'] if planned else 'none'})")
 
-    # Era boundary (D-34): rounds before era_start_round are a closed
-    # archive scored under the old schema — the first round of a new era
-    # is a BASELINE (no delta against the previous era, no regression
-    # revert), because the two eras are not comparable (owner decision
-    # 2026-07-14; the round-8 acceptance run demonstrated the failure:
-    # a meaningless -0.28 cross-era delta triggered a full revert-and-rerun).
-    era_start = cfg.get("evaluation", {}).get("era_start_round")
+    # Era boundary (D-34, per-topic since D-35): rounds before the topic's
+    # era_start_round are a closed archive scored under the old schema —
+    # the first round of a new era is a BASELINE (no delta against the
+    # previous era, no regression revert), because the two eras are not
+    # comparable (owner decision 2026-07-14; the round-8 acceptance run
+    # demonstrated the failure: a meaningless -0.28 cross-era delta
+    # triggered a full revert-and-rerun).
+    era_start = T.era_start_round
 
     for n in range(args.start_round, args.max_rounds + 1):
         t0 = time.time()

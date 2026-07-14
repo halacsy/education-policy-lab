@@ -95,3 +95,20 @@ a Hungarian token.
 | `irreducible_tradeoff` | feloldhatatlan trade-off | improving one goal necessarily costs another |
 | `needs_more_info` | további információ szükséges | not yet decidable from the evidence |
 | `not_decision_relevant` | nem döntésreleváns | attention-worthy but would not change the decision |
+
+## Machine-checked key pairs
+
+<!-- Parsed by lab/translation.py (per-topic since D-35): each line
+     "- <en> = <hu>"; alternative EN phrasings separated by " / " (any one
+     counts as present); matching is lowercase substring, so a trailing
+     hyphen acts as a prefix ("phase-" covers phase-out/phase-down). Pairs
+     whose EN side is too generic for substring matching stay out of this
+     list and are left to the human-review flag. -->
+
+- early selection = korai szelekció
+- comprehensive school = egységes alapiskola
+- equity = méltányosság
+- social mobility = társadalmi mobilitás
+- school choice / choice and catchment = iskolaválasztás
+- phase- = fokozatos
+- teacher shortage = pedagógushiány

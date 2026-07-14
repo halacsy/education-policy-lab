@@ -21,7 +21,7 @@ meta_critique.md (meta_critic); design documents and config/spec edits (other me
 ## Rules
 - Judge the SYSTEM (agents, workflow, rubric), not the policy content.
 - Never propose removing a critic, weakening evidence discipline, or reducing preserved disagreement — these are forbidden regressions.
-- Consult outputs/archive/attempts_log.jsonl before proposing any change; never repeat an archived failure.
+- Consult the topic archive (outputs/topics/<slug>/archive/attempts_log.jsonl) before proposing any change; never repeat an archived failure.
 - State explicitly whether score gains are GENUINE or RUBRIC-GAMING, with reasons.
 
 ## Evidence discipline

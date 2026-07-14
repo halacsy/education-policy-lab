@@ -6,35 +6,39 @@ back-translation key-term check. Residual nuance is flagged for a human.
 """
 import re
 
-from .util import DOCS_DIR, read
+from . import topic
 
 FIELD_KEYS = ["goal", "mechanism", "evidence_status", "assumptions",
               "expected_benefits", "equity_impact", "cost_categories",
               "implementation_steps", "political_risks", "uncertainties"]
 
-# Glossary terms mechanically checkable by substring (lowercased). Pairs whose
-# EN side is too generic for substring matching are excluded from the
-# automated sweep and left to the human-review flag. The EN side may be a
-# single string or a tuple of accepted paraphrases (any one counts as
-# present) — live generation legitimately varies phrasing (e.g. "school
-# choice" as "choice and catchment redesign") without that being a
-# translation defect; a literal-only match would false-positive on faithful
-# paraphrase instead of catching a real back-translation gap.
-CHECKABLE = [
-    ("early selection", "korai szelekció"),
-    ("comprehensive school", "egységes alapiskola"),
-    ("equity", "méltányosság"),
-    ("social mobility", "társadalmi mobilitás"),
-    (("school choice", "choice and catchment"), "iskolaválasztás"),
-    ("phase-", "fokozatos"),          # phase-out/phase-down family
-    ("teacher shortage", "pedagógushiány"),
-]
+
+def checkable_pairs():
+    """Glossary terms mechanically checkable by substring (lowercased),
+    parsed from the topic glossary's '## Machine-checked key pairs' section
+    (per-topic since D-35 — the pairs are question-specific). Line format:
+    '- <en> = <hu>'; alternative EN phrasings separated by ' / ' (any one
+    counts as present — live generation legitimately varies phrasing, e.g.
+    'school choice' as 'choice and catchment redesign', without that being
+    a translation defect); a trailing hyphen acts as a prefix ('phase-').
+    Pairs whose EN side is too generic for substring matching stay out of
+    the section and are left to the human-review flag."""
+    text = topic.current().glossary()
+    m = re.search(r"^## Machine-checked key pairs\s*$(.*?)(?=^## |\Z)",
+                  text, re.M | re.S)
+    pairs = []
+    for line in (m.group(1) if m else "").splitlines():
+        pm = re.match(r"^- (.+?) = (.+?)\s*$", line)
+        if pm:
+            en_alts = tuple(a.strip() for a in pm.group(1).split(" / "))
+            pairs.append((en_alts, pm.group(2).strip()))
+    return pairs
 
 
 def load_glossary_pairs():
-    """Parse the EN↔HU table from docs/glossary.md."""
+    """Parse the EN↔HU table from the topic glossary (topics/<slug>/glossary.md)."""
     pairs = []
-    for line in read(DOCS_DIR / "glossary.md").splitlines():
+    for line in topic.current().glossary().splitlines():
         m = re.match(r"^\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|", line)
         if m and m.group(1) not in ("English", "---------", "English "):
             en, hu = m.group(1).strip(), m.group(2).strip()
@@ -81,8 +85,7 @@ def check(en_json, hu_json, doc_pairs):
     en_all = "\n".join(en for en, _ in doc_pairs).lower()
     hu_all = "\n".join(hu for _, hu in doc_pairs).lower()
     violations = []
-    for en_term, hu_term in CHECKABLE:
-        en_terms = en_term if isinstance(en_term, tuple) else (en_term,)
+    for en_terms, hu_term in checkable_pairs():
         en_present = any(t in en_all for t in en_terms)
         if en_present and hu_term not in hu_all:
             violations.append(f"EN '{en_terms[0]}' present but HU '{hu_term}' missing")
@@ -98,7 +101,7 @@ def check(en_json, hu_json, doc_pairs):
 
 def render_report(report, round_n):
     lines = [f"# Critique: translation_checker — round {round_n}", "",
-             "Deterministic HU↔EN parity checks (glossary: docs/glossary.md).", ""]
+             "Deterministic HU↔EN parity checks (glossary: the topic glossary (topics/<slug>/glossary.md)).", ""]
     lines.append(f"- Scenario-id sets equal: {report['id_sets_equal']} "
                  f"(EN {report['en_ids']}, HU {report['hu_ids']})")
     lines.append(f"- Section structure equal: {report['structure_equal']}")

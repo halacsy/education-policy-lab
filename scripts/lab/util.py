@@ -9,9 +9,6 @@ AGENTS_DIR = ROOT / "agents"
 DOCS_DIR = ROOT / "docs"
 TEMPLATES_DIR = ROOT / "templates"
 OUTPUTS_DIR = ROOT / "outputs"
-ITER_DIR = OUTPUTS_DIR / "iterations"
-ARCHIVE_DIR = OUTPUTS_DIR / "archive"
-FINAL_DIR = OUTPUTS_DIR / "final"
 
 
 def load_config():
@@ -23,8 +20,26 @@ def save_config(cfg):
                            encoding="utf-8")
 
 
+# Output paths are per-topic (D-35): outputs/topics/<slug>/{iterations,
+# final,archive}. Lazy import — lab.topic imports this module.
+
+def iter_dir():
+    from . import topic
+    return topic.current().iter_dir
+
+
+def final_dir():
+    from . import topic
+    return topic.current().final_dir
+
+
+def archive_dir():
+    from . import topic
+    return topic.current().archive_dir
+
+
 def round_dir(n, create=False):
-    d = ITER_DIR / f"round_{n:02d}"
+    d = iter_dir() / f"round_{n:02d}"
     if create:
         (d / "expert_outputs").mkdir(parents=True, exist_ok=True)
         (d / "critic_outputs").mkdir(parents=True, exist_ok=True)

@@ -45,7 +45,7 @@ List what you do not know in ## Uncertainties. Never state confidence you do not
 ```
 (JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu}
 pair carries the SAME statement written natively in both languages, using
-docs/glossary.md terminology — parallel authoring, not translation)
+the topic glossary (topics/<slug>/glossary.md) terminology — parallel authoring, not translation)
 {"findings": [{"claim": {en, hu}, "evidence": "strong|moderate|weak|contested",
                "source": "<registry id / study / dataset>"}],
  "interpretation": {en, hu},
@@ -57,4 +57,3 @@ docs/glossary.md terminology — parallel authoring, not translation)
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-02] DIRECTIVE:uncertainty_quantify — For every uncertainty item, state a confidence level (confidence: low|medium|high) and name what evidence would reduce it ('would be reduced by: ...'). In Hungarian output use 'megbízhatóság: alacsony|közepes|magas' and 'csökkentené: ...'.

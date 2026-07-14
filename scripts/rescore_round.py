@@ -20,6 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from lab import evaluation as ev
+from lab import topic
 from lab.util import load_config, read, read_json, round_dir, write, write_json
 
 THRESHOLD = load_config()["evaluation"]["judge_divergence_threshold"]
@@ -123,7 +124,10 @@ def rescore(n):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("rounds", nargs="+", type=int)
+    ap.add_argument("--topic", default=None,
+                    help="topic slug; default: config default_topic")
     args = ap.parse_args()
+    topic.set_current(args.topic)
     for n in sorted(args.rounds):
         rescore(n)
 

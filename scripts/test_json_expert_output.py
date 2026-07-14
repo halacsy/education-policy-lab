@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from lab import llm
 
-GLOSSARY = (Path(__file__).parent.parent / "docs" / "glossary.md").read_text()
+GLOSSARY = (Path(__file__).parent.parent / "topics" / "korai-szelekcio" / "glossary.md").read_text()
 
 # JSON schema for expert output (bilingual, guaranteed)
 EXPERT_SCHEMA = {

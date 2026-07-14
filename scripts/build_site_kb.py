@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the public, bilingual knowledge-base page (site/knowledge.html)
 from the canonical source registry (knowledge/registry.json) and the
-terminology glossary (docs/glossary.md).
+terminology glossary (topics/<default_topic>/glossary.md).
 
 Run by the GitHub Pages workflow on every deploy — the page is generated from
 repo data, never hand-maintained (issue #3). Standard library only."""
@@ -12,6 +12,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+_CFG = json.loads((ROOT / "config" / "system_config.json")
+                  .read_text(encoding="utf-8"))
+GLOSSARY = ROOT / "topics" / _CFG["default_topic"] / "glossary.md"
 
 EVIDENCE_HU = {"strong": "erős", "moderate": "mérsékelt", "weak": "gyenge",
                "contested": "vitatott"}
@@ -62,7 +65,7 @@ CSS = """
 
 def load_glossary_rows():
     rows, in_main = [], False
-    for line in (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8").splitlines():
+    for line in GLOSSARY.read_text(encoding="utf-8").splitlines():
         if line.startswith("## Evidence-status"):
             in_main = False
         m = re.match(r"^\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]*?)\s*\|?$", line)
@@ -161,7 +164,7 @@ def main():
 <footer>
   <div class="wrap">
     <p>Generálva a <a href="https://github.com/halacsy/education-policy-lab">repóból</a>
-    (knowledge/registry.json + docs/glossary.md) minden publikáláskor.</p>
+    (knowledge/registry.json + topics/&lt;slug&gt;/glossary.md) minden publikáláskor.</p>
   </div>
 </footer>
 </body>

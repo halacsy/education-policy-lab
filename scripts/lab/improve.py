@@ -5,14 +5,21 @@ One substantive change per round (D-04). Never repeats a change the archive
 shows produced no gain. Never applies a forbidden regression (ADAS caveat).
 """
 import json
-import shutil
 
 from . import agent_defs as D
-from .agents import append_directive, remove_directive, spec_path
-from .util import ARCHIVE_DIR, load_config, save_config, write
+from .agents import append_directive, load_overlay, \
+    remove_directive, spec_path
+from .util import archive_dir, load_config, save_config, write
 
-ATTEMPTS_LOG = ARCHIVE_DIR / "attempts_log.jsonl"
-AGENT_VERSIONS = ARCHIVE_DIR / "agent_versions"
+
+def attempts_log_path():
+    """Per-topic Reflexion/ADAS archive (D-35): one topic's failed change is
+    not another topic's failed change."""
+    return archive_dir() / "attempts_log.jsonl"
+
+
+def agent_versions_dir():
+    return archive_dir() / "agent_versions"
 
 ALL_EXPERTS = list(D.EXPERTS)
 ALL_CRITICS = list(D.CRITICS)
@@ -133,15 +140,17 @@ FORBIDDEN = (
 
 
 def read_attempts():
-    if not ATTEMPTS_LOG.exists():
+    log = attempts_log_path()
+    if not log.exists():
         return []
     return [json.loads(line) for line in
-            ATTEMPTS_LOG.read_text(encoding="utf-8").splitlines() if line.strip()]
+            log.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def _write_attempts(attempts):
-    ATTEMPTS_LOG.parent.mkdir(parents=True, exist_ok=True)
-    ATTEMPTS_LOG.write_text(
+    log = attempts_log_path()
+    log.parent.mkdir(parents=True, exist_ok=True)
+    log.write_text(
         "".join(json.dumps(a, ensure_ascii=False) + "\n" for a in attempts),
         encoding="utf-8")
 
@@ -186,16 +195,23 @@ def select_change(evaluation, exclude=()):
 
 
 def apply_change(change, round_n):
-    """Apply next round's change; archive every touched agent version."""
-    AGENT_VERSIONS.mkdir(parents=True, exist_ok=True)
+    """Apply next round's change; archive every touched agent's effective
+    version (shared spec + this topic's directive overlay, D-35)."""
+    versions = agent_versions_dir()
+    versions.mkdir(parents=True, exist_ok=True)
+
+    def effective(target):
+        return spec_path(target).read_text(encoding="utf-8") \
+            + load_overlay(target)
+
     touched = []
     for target in change["targets"]:
-        src = spec_path(target)
-        shutil.copy(src, AGENT_VERSIONS / f"round_{round_n:02d}__pre__{src.name}")
+        name = spec_path(target).name
+        write(versions / f"round_{round_n:02d}__pre__{name}", effective(target))
         if append_directive(target, change["id"], change["text"], round_n):
             touched.append(target)
-            shutil.copy(spec_path(target),
-                        AGENT_VERSIONS / f"round_{round_n:02d}__post__{src.name}")
+            write(versions / f"round_{round_n:02d}__post__{name}",
+                  effective(target))
     if change.get("config_path"):
         cfg = load_config()
         node = cfg
@@ -245,7 +261,7 @@ def write_change_docs(rd, round_n, change, touched, evaluation_prev):
         f"Directive appended to: {', '.join(touched)}.", "",
         f"Directive text: {change['text']}", "",
         "Pre/post versions of every touched spec are archived in "
-        "outputs/archive/agent_versions/.",
+        "the topic archive (outputs/topics/<slug>/archive/agent_versions/).",
     ]) + "\n")
     write(rd / "revised_workflow.md", "\n".join([
         f"# Revised workflow — round {round_n}", "",

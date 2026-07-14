@@ -56,8 +56,8 @@ is embedded verbatim in your prompt.
 
 TYPE_INPUTS = {
     "expert": "The policy question; docs/mission.md discipline; your domain knowledge.",
-    "critic": "scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and docs/glossary.md.",
-    "synthesis": "Expert outputs (editor/scenario_builder); scenarios + synthesis + docs/glossary.md (brief/summary writers — bilingual output); discourse reactions (discourse_mediator).",
+    "critic": "scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and the topic glossary (topics/<slug>/glossary.md).",
+    "synthesis": "Expert outputs (editor/scenario_builder); scenarios + synthesis + the topic glossary (topics/<slug>/glossary.md) (brief/summary writers — bilingual output); discourse reactions (discourse_mediator).",
     "meta": "The round's artifacts, evaluation.json, attempts_log.jsonl, previous round's scores.",
     "discourse": "The scenarios (EN markdown) and, where your archetype is informed by a real public document, that document as basis; in the reciprocity pass also the argument map with the strongest counter-arguments.",
 }
@@ -111,34 +111,52 @@ def load_spec(name):
     return read(spec_path(name))
 
 
+def overlay_path(name):
+    """Per-topic directive overlay (D-35): the improvement step writes here,
+    never into the shared spec — one topic's learnings must not leak into
+    another topic's prompts."""
+    from . import topic
+    return topic.current().directives_dir / f"{name}.md"
+
+
+def load_overlay(name):
+    p = overlay_path(name)
+    return p.read_text(encoding="utf-8") if p.exists() else ""
+
+
+def overlay_lines(name):
+    return re.findall(r"^- \[round-\d+\] DIRECTIVE:[a-z_]+ — .*$",
+                      load_overlay(name), re.M)
+
+
 def directives_of(name):
-    return set(re.findall(r"DIRECTIVE:([a-z_]+)", load_spec(name)))
+    ids = set(re.findall(r"DIRECTIVE:([a-z_]+)", load_spec(name)))
+    ids |= set(re.findall(r"DIRECTIVE:([a-z_]+)", load_overlay(name)))
+    return ids
 
 
 def append_directive(name, directive_id, text, round_n):
-    path = spec_path(name)
-    spec = read(path)
-    if f"DIRECTIVE:{directive_id}" in spec:
+    spec_path(name)  # the target must exist in the shared hub
+    if f"DIRECTIVE:{directive_id}" in load_overlay(name):
         return False
+    from . import topic
+    overlay = load_overlay(name) or (
+        f"# Topic directives: {name} ({topic.current().slug})\n\n"
+        "Improvement-step directives for THIS topic only (D-35): the\n"
+        "shared spec in agents/ never carries topic learnings; the\n"
+        "improvement step appends here, build_prompt() composes this\n"
+        "into the prompt after the spec's ## Directives header.\n\n")
     line = f"- [round-{round_n:02d}] DIRECTIVE:{directive_id} — {text}\n"
-    if not spec.endswith("\n"):
-        spec += "\n"
-    spec += line
-    # bump version
-    spec = re.sub(r"^Version: (\d+)$",
-                  lambda m: f"Version: {int(m.group(1)) + 1}", spec, count=1,
-                  flags=re.M)
-    write(path, spec)
+    write(overlay_path(name), overlay.rstrip("\n") + "\n" + line)
     return True
 
 
 def remove_directive(name, directive_id):
-    path = spec_path(name)
-    spec = read(path)
+    overlay = load_overlay(name)
     new = re.sub(rf"^- \[round-\d+\] DIRECTIVE:{directive_id} — .*\n", "",
-                 spec, flags=re.M)
-    if new != spec:
-        write(path, new)
+                 overlay, flags=re.M)
+    if new != overlay:
+        write(overlay_path(name), new)
         return True
     return False
 
@@ -161,8 +179,15 @@ def build_prompt(task, agent=None, lang=None, provider=None, round_n=None,
         header.append(f"ROUND: {round_n}")
     parts = ["\n".join(header), ""]
     if agent:
+        # topic directive lines are appended right after the spec's trailing
+        # ## Directives header — the composed prompt is identical to the
+        # pre-D-35 one, where directives were baked into the spec file
+        spec = load_spec(agent)
+        extra = overlay_lines(agent)
+        if extra:
+            spec = spec.rstrip("\n") + "\n" + "\n".join(extra) + "\n"
         parts += ["=== AGENT SPEC (follow strictly, including ## Directives) ===",
-                  load_spec(agent), ""]
+                  spec, ""]
         from .memory import load_memory
         mem = load_memory(agent)
         if mem:
