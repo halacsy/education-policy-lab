@@ -408,3 +408,54 @@ consistent with ordinary cross-judge scoring variance
 smaller sample; this is a larger but same-direction effect). `verify.py`
 check 3 is expected to still show this round pair as a small, explained,
 non-regression-driven dip — recorded here rather than weakening the check.
+
+**D-34 — Structured, bilingual, tool-using agents; rounds 1–7 closed as an
+archive era (owner decisions 2026-07-14; merged to main 2026-07-14).**
+Full plan and evidence: `docs/proposals/2026-07-14-structured-bilingual-agents.md`.
+Motivating diagnosis (2026-07-14 session): round 6's brief was entirely
+mock-written under the silent fallback (scoring inflated by the mock's
+tag-density); all 17 of round 7's fallbacks were `translate_*` steps (CLI
+600s timeout on large batches) — and the mock "translator" returns the
+curated pack's canned text, so the published HU ledger did not say what
+the EN one said; the whole validation machinery regex-parsed free text;
+experts answered from trained knowledge only. Four pillars, all
+implemented and accepted:
+
+1. *Structured output everywhere.* Every generator/judge artifact is
+   schema-constrained JSON (`lab/schemas.py`, Anthropic
+   `output_config.format` / Gemini `response_schema` / OpenAI
+   `json_schema` strict); every `.md` is a deterministic rendered view
+   (`lab/render.py`). No regex parsing of model output remains in the
+   round (the judge-score `SCORE:` line moves in Phase 3, issue #14).
+2. *Bilingual by construction.* Every prose leaf is an `{en, hu}` pair
+   authored natively in one call; ids/enums/counts are stored once, so
+   structural parity between the languages cannot break. All ~46
+   `translate_*` calls per round are deleted; the translator agent is
+   retired (glossary discipline lives in every agent's prompt; the
+   deterministic `translation.check` parity gate stays).
+3. *No mock fallback.* Retry exhaustion or a dead ladder raises
+   `StepFailed`; the round stops and a relaunch resumes (state-hash gate).
+   Mock exists only under explicit `LAB_FORCE_MOCK=1` (dry-run plumbing).
+4. *Web research for experts* (`research.web_search`, first half of issue
+   #6): a free-text search call (server-side `web_search` tool,
+   `pause_turn` resume loop) produces cited notes; the structured call
+   consumes them. Web findings are cited sources in the expert output
+   only — the knowledge-admission gate (D-24) is untouched.
+
+Era decision: rounds 1–7 are a CLOSED ARCHIVE under the pre-D-34 schema —
+never rescored, never compared against (`evaluation.era_start_round: 8`;
+the loop treats the first era round as a baseline with no delta and no
+regression revert; `verify.py` checks the new era). The public site
+describes only the present system, with no archive numbers. Backend
+consequence: the generator moved from the subscription CLI to the
+Anthropic API (structured output requires it; owner accepted the cost);
+a native OpenAI API judge backend was added mid-acceptance when the
+Gemini free tier exhausted (`JUDGE_PROVIDER=openai`, default gpt-5-mini).
+Acceptance: round 8 ran fully live (total 9.232, zero failed steps in the
+final log, native-quality HU, fresh sourced numbers from live search).
+Hard-won API limits recorded for future schemas: bilingual structured
+outputs need ~2–3× the monolingual token budget and truncation is
+terminal; very large schemas must use `$defs`/`$ref` (the inline brief
+schema exceeded Anthropic's compiled-grammar limit; note
+`_gemini_schema()` does not resolve `$ref`, so ref-based schemas are
+Anthropic-only).
