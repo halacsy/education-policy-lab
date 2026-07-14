@@ -155,14 +155,6 @@ TYPE_TEMPLATE = {
 }
 
 EXTRA_SECTIONS = {
-    "translator": (
-        "## Glossary use\n"
-        "Read the term table in docs/glossary.md before translating. Every EN "
-        "term appearing in the source MUST be rendered with its listed HU "
-        "equivalent (and vice versa for back-translation checks). If a needed "
-        "term is missing from the glossary, add a proposal to the round's "
-        "improvement_plan notes rather than improvising silently; the "
-        "translation_checker will flag undocumented terminology.\n"),
     "translation_checker": (
         "## Glossary use\n"
         "Enforce docs/glossary.md mechanically: for each glossary pair, if one "

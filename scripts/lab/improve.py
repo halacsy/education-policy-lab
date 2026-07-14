@@ -280,12 +280,13 @@ def write_plan(rd, round_n, evaluation, next_change, artifacts, applied_change,
               f"({dims[strongest]['score']})."]
     lines += ["", "## Which agent failed? Which workflow step failed?"]
     if artifacts["fallbacks"]:
-        lines.append(f"- Steps degraded to deterministic mock fallback: "
+        lines.append(f"- Steps that FAILED and needed a relaunch (no mock "
+                     f"fallback exists since D-34): "
                      f"{', '.join(artifacts['fallbacks'])} — these agents' "
                      "prompts/validators are the weakest links.")
     else:
         lines.append("- No step failed; all artifacts were produced by the "
-                     "live backends and passed format validation.")
+                     "live backends and passed validation.")
     lines += ["", "## Which critique was too vague?"]
     from .pipeline import CRITIC_HEADING_RE
     vague = [name for name, text in artifacts["critics"].items()

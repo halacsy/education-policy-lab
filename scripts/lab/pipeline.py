@@ -1,8 +1,9 @@
-"""Round runner: experts → scenarios → synthesis → translation → critics →
-meta-critic. Every model call goes through lab.llm.call_model; every step
-validates its output, retries once with a corrective instruction, and falls
-back to the deterministic mock composition if the real backend cannot satisfy
-the format (fallbacks are recorded per step).
+"""Round runner: experts → scenarios → synthesis → discourse → brief →
+critics → meta-critic. Every artifact is bilingual, schema-constrained JSON
+(D-34): model calls go through lab.llm.call_structured, validators check
+the parsed object, and lab/render.py produces every .md view
+deterministically — there are no translation steps and no mock fallback
+(a step that cannot be served raises llm.StepFailed and the round stops).
 
 Interrupted rounds RESUME: if the round folder's system_state snapshot still
 matches the live system, existing valid artifacts are reused and their
