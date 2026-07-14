@@ -1,0 +1,21 @@
+# Critique: evidence_checker
+
+## S1.mechanism
+Objection: The claim that a less coaching-sensitive assessment format would reduce the weight of family test-prep resources is tagged as 'weak' evidence, but the statement 'no Hungarian evidence confirms any specific alternative format resists SES advantage in practice' directly contradicts the possibility of even weak evidence for this specific claim. The evidence status for the mechanism is therefore misgraded.
+Severity: high
+Suggested revision: Change the evidence tag for the first bullet point in 'Mechanism' from 'weak' to 'unverified' or 'no evidence' to accurately reflect the lack of Hungarian evidence for any alternative format resisting SES advantage. Alternatively, if there is weak evidence, specify what that evidence is.
+
+## S2.expected_benefits
+Objection: The claim that reduced state-sector selective capacity 'may incrementally improve peer composition in urban general-school upper grades' is tagged as 'contested' evidence. However, the supporting statement 'the international literature treats as contested and Hungarian-specific evidence is absent' indicates there is no specific Hungarian evidence and the international evidence is not conclusive, making 'contested' too strong. It should be 'weak' or 'unverified' for the Hungarian context.
+Severity: medium
+Suggested revision: Change the evidence tag for the second bullet point in 'Expected benefits' from 'contested' to 'weak' or 'unverified' to accurately reflect the absence of Hungarian evidence and the contested nature of international literature regarding peer effects in this specific context.
+
+## S3.mechanism
+Objection: The claim that cross-national difference-in-differences evidence 'associates earlier between-school tracking with greater inequality of outcomes without raising mean achievement' is tagged as 'moderate' evidence. However, the curated source registry lists 'tracking_inequality [strong]' for 'Cross-country difference-in-differences evidence indicates earlier between-school tracking increases inequality of outcomes'. This suggests the evidence tag in the scenario is too low.
+Severity: low
+Suggested revision: Change the evidence tag for the first bullet point in 'Mechanism' from 'moderate' to 'strong' to align with the curated source registry's 'tracking_inequality [strong]' evidence for this type of cross-national evidence.
+
+## S4.expected_benefits
+Objection: The claim that the scenario is 'Politically less disruptive than structural reform' is tagged as 'weak' evidence, but the subsequent text 'though this should not be read as evidence the package is politically risk-free, since targeted funding lines are themselves identified as fiscally vulnerable to being cut first in consolidation' directly undermines the 'less disruptive' claim, suggesting the political risk is higher than implied by 'weak' evidence for being less disruptive.
+Severity: medium
+Suggested revision: Revise the 'expected_benefits' to acknowledge the significant political risk associated with the funding lines, or re-evaluate the 'weak' evidence tag for 'politically less disruptive' to reflect the identified fiscal vulnerability. A more accurate tag might be 'contested' or 'unverified' given the internal contradiction.

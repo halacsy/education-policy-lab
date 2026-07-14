@@ -164,6 +164,9 @@ def _client(provider):
     elif provider == "google":
         from google import genai
         _clients[provider] = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+    elif provider == "openai":
+        import openai
+        _clients[provider] = openai.OpenAI()
     return _clients[provider]
 
 
@@ -368,6 +371,33 @@ def _call_real(provider, model, prompt, max_tokens, schema=None,
                 input_tokens=getattr(um, "prompt_token_count", None),
                 output_tokens=getattr(um, "candidates_token_count", None))
         return resp.text or "", usage
+    if provider == "openai":
+        # OpenAI API judge path (owner decision 2026-07-14: the OpenAI key
+        # has more headroom than the Gemini free tier). Structured output
+        # via chat.completions response_format json_schema strict — the
+        # lab's schemas already satisfy strict mode (additionalProperties
+        # false + all-required everywhere; $defs supported).
+        kwargs = {}
+        if schema is not None:
+            kwargs["response_format"] = {
+                "type": "json_schema",
+                "json_schema": {"name": "artifact", "strict": True,
+                                "schema": schema}}
+        resp = _client(provider).chat.completions.create(
+            model=model or "gpt-5-mini",
+            max_completion_tokens=max_tokens,
+            messages=[{"role": "user", "content": prompt}],
+            **kwargs)
+        choice = resp.choices[0]
+        if schema is not None and choice.finish_reason == "length":
+            raise StepFailed(
+                f"structured output truncated at max_tokens={max_tokens} — "
+                "raise this step's token budget")
+        usage = None
+        if resp.usage is not None:
+            usage = dict(input_tokens=resp.usage.prompt_tokens,
+                         output_tokens=resp.usage.completion_tokens)
+        return choice.message.content or "", usage
     raise ValueError(provider)
 
 
