@@ -1080,7 +1080,7 @@ def run_round(n):
             o, disc["cluster_ids"] if disc else None),
         # bilingual 10 sections + a typed response per argument cluster in
         # one shot — the largest deliverable in the round
-        out_path=rd / "brief.json", schema=S.BRIEF, max_tokens=32000)
+        out_path=rd / "brief.json", schema=S.BRIEF, max_tokens=64000)
     brief_en = render.brief_md(brief_obj, "en")
     brief_hu = render.brief_md(brief_obj, "hu")
     write(rd / "brief.en.md", brief_en)
