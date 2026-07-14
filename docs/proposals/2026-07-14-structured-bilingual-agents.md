@@ -1,7 +1,13 @@
 # Javaslat: strukturált, kétnyelvű, eszközhasználó agensek (D-34 tervezet)
 
-Státusz: **TERVEZET — owner-döntésre vár.** Elfogadás után D-34-ként kerül a
-decision logba (angolul, a decisions.md konvenciója szerint).
+Státusz: **ELFOGADVA (owner, 2026-07-14).** A nyitott kérdésekre adott
+válaszok:
+1. API-költség elfogadható — a generator-út API-ra kerül (nem hibrid).
+2. A rounds 1–7 éra véglegesen lezárva, archív; a round 8 új baseline.
+3. A P4 (web search) a P2-vel egy körben mehet.
+
+A megvalósítás a `refactor/structured-agents` branchen folyik; merge után
+D-34-ként kerül a decision logba (angolul, a decisions.md konvenciója szerint).
 
 Branch: `test/bilingual-expert-prompt` — a bizonyító tesztek itt vannak:
 - `scripts/test_bilingual_prompt.py` — instrukcióval kért kétnyelvűség NEM működik

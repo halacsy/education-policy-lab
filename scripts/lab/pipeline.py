@@ -19,7 +19,7 @@ from . import agent_defs as D
 from . import improve
 from . import knowledge as K
 from . import ledger as LG
-from . import llm, mock_backend, translation
+from . import llm, translation
 from .agents import build_prompt
 from .util import (AGENTS_DIR, CONFIG_PATH, ROOT, TEMPLATES_DIR, load_config,
                    read, read_json, round_dir, write, write_json)
@@ -407,8 +407,10 @@ def snapshot_system_state(rd):
 
 
 class Step:
-    """One generation step with validation, one corrective retry, a
-    deterministic mock fallback, resume-from-disk, and a step journal."""
+    """One generation step with validation, one corrective retry,
+    resume-from-disk, and a step journal. No mock fallback (D-34):
+    a step that cannot be served or validated raises llm.StepFailed —
+    the journal records it and a relaunch resumes from this step."""
 
     def __init__(self, rd, resume, round_n=None):
         self.rd = rd
@@ -462,6 +464,7 @@ class Step:
             except Exception:
                 pass
         corrective = ""
+        backend = "?"
         for attempt in (0, 1):
             kw = dict(prompt_kwargs)
             if corrective:
@@ -469,8 +472,12 @@ class Step:
             prompt = build_prompt(**kw)
             # a validation-failure retry escalates one rung on the model
             # ladder (D-26): cheap model produced unusable output
-            text = llm.call_model(prompt, role, max_tokens=max_tokens,
-                                  escalation=attempt)
+            try:
+                text = llm.call_model(prompt, role, max_tokens=max_tokens,
+                                      escalation=attempt)
+            except llm.StepFailed:
+                self._note(name, "FAILED")
+                raise
             backend = llm.CALL_LOG[-1]["backend"]
             try:
                 result = postprocess(text)
@@ -484,15 +491,12 @@ class Step:
             corrective = ("PREVIOUS ATTEMPT FAILED FORMAT VALIDATION. Follow "
                           "the output format EXACTLY as specified, with no "
                           "surrounding commentary.")
-        # deterministic fallback
-        prompt = build_prompt(**prompt_kwargs)
-        result = postprocess(mock_backend.compose(prompt, role))
-        if not validate(result):
-            raise RuntimeError(f"mock fallback failed validation for step {name}")
-        if out_path is not None:
-            writer(out_path, result)
-        self._note(name, "mock-fallback")
-        return result, "mock-fallback"
+        # No mock fallback (D-34): journal the failure and stop the round;
+        # a relaunch resumes from this step via the state-hash gate.
+        self._note(name, "FAILED")
+        raise llm.StepFailed(
+            f"step {name!r} failed format validation after 2 attempts "
+            f"(backend {backend})")
 
 
 def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):

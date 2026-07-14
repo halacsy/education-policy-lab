@@ -1,15 +1,18 @@
-"""Single LLM harness. Every model call in the lab goes through call_model().
+"""Single LLM harness. Every model call in the lab goes through call_model()
+(free text) or call_structured() (JSON-schema-constrained output, D-34).
 
-Two provider backends (Anthropic / Google), selected by role:
+Provider backends (Anthropic / Google / OpenAI), selected by role:
   generator -> GENERATOR_PROVIDER (default: google)
   judge     -> JUDGE_PROVIDER     (default: anthropic)
 The two must differ (verified by verify.py, check 13).
 
-If a provider's key is missing, or its SDK/API fails repeatedly, calls fall
-back to the deterministic mock backend built on the curated briefing pack
-(lab/knowledge.py). Every call records which backend actually served it, so
-the final report can state precisely what was mocked.
+Failure policy (D-34): there is NO silent mock fallback. If a provider's key
+is missing or its API fails past the retry/breaker budget, StepFailed is
+raised — the round stops, the failure is journaled, and a relaunch resumes
+from the same step. The deterministic mock backend serves calls only under
+LAB_FORCE_MOCK=1 (explicit dry run, e.g. run_mock_sprint.py).
 """
+import json
 import os
 import re
 import threading
@@ -96,6 +99,24 @@ def resolve_model(provider, task=None, dimension=None, escalation=0):
     if dimension:
         tier = max(tier, m.get("dimension_tier_overrides", {}).get(dimension, 0))
     return ladder[min(tier + max(0, escalation), len(ladder) - 1)]
+
+
+class StepFailed(RuntimeError):
+    """A pipeline step could not be served by any live backend (or its
+    output failed validation past the retry budget). Replaces the old
+    silent mock fallback (D-34): callers let it propagate, the iteration
+    loop stops, and a relaunch resumes from the failed step."""
+
+
+def _gemini_schema(schema):
+    """Gemini's OpenAPI-subset schema language rejects additionalProperties
+    (it is implicitly false there) — strip it recursively, keep the rest."""
+    if isinstance(schema, dict):
+        return {k: _gemini_schema(v) for k, v in schema.items()
+                if k != "additionalProperties"}
+    if isinstance(schema, list):
+        return [_gemini_schema(v) for v in schema]
+    return schema
 
 
 def provider_for_role(role):
@@ -231,39 +252,62 @@ def _call_cli(provider, model, prompt, max_tokens):
         return r.stdout.strip()
 
 
-def _call_real(provider, model, prompt, max_tokens):
+def _call_real(provider, model, prompt, max_tokens, schema=None):
     """Returns (text, usage). usage is {"input_tokens", "output_tokens"} when
     the backend reports it (API backends do; CLI/subscription backends
-    don't meter per-call, so usage is None for those)."""
+    don't meter per-call, so usage is None for those). With `schema`, the
+    response is constrained to that JSON schema (API backends only)."""
     if _cli_backend(provider):
+        if schema is not None:
+            raise StepFailed(
+                f"structured output needs the {provider} API backend; the "
+                f"{_cli_backend(provider)!r} CLI cannot constrain decoding — "
+                "unset the *_BACKEND env var for this role and set "
+                f"{KEY_VARS[provider]}")
         return _call_cli(provider, model, prompt, max_tokens), None
     if provider == "anthropic":
         # Extended thinking (when the model/account defaults it on) counts
         # against max_tokens — on a long input (e.g. the 10-voice digest)
         # the model can burn the ENTIRE budget on thinking and hit
-        # stop_reason=max_tokens with zero actual text, silently degrading
-        # every call for this task to mock. Every call here wants a clean,
+        # stop_reason=max_tokens with zero actual text, silently failing
+        # every call for this task. Every call here wants a clean,
         # deterministic, directly-parseable answer (prose or JSON), never
         # visible chain-of-thought, so thinking is explicitly off.
+        kwargs = {}
+        if schema is not None:
+            kwargs["output_config"] = {
+                "format": {"type": "json_schema", "schema": schema}}
         resp = _client(provider).messages.create(
             model=model,
             max_tokens=max_tokens,
             thinking={"type": "disabled"},
             messages=[{"role": "user", "content": prompt}],
+            **kwargs,
         )
+        if schema is not None and resp.stop_reason == "max_tokens":
+            # truncated JSON can never validate — retrying at the same
+            # budget reproduces it, so fail loudly instead
+            raise StepFailed(
+                f"structured output truncated at max_tokens={max_tokens} — "
+                "raise this step's token budget")
         text = "".join(b.text for b in resp.content if b.type == "text")
         usage = dict(input_tokens=resp.usage.input_tokens,
                      output_tokens=resp.usage.output_tokens)
         return text, usage
     if provider == "google":
         from google.genai import types
+        extra = {}
+        if schema is not None:
+            extra = dict(response_mime_type="application/json",
+                         response_schema=_gemini_schema(schema))
         try:
             cfg = types.GenerateContentConfig(
                 temperature=0.2, max_output_tokens=max_tokens,
-                thinking_config=types.ThinkingConfig(thinking_budget=0))
+                thinking_config=types.ThinkingConfig(thinking_budget=0),
+                **extra)
         except Exception:  # older SDK without thinking_config
             cfg = types.GenerateContentConfig(
-                temperature=0.2, max_output_tokens=max_tokens)
+                temperature=0.2, max_output_tokens=max_tokens, **extra)
         resp = _client(provider).models.generate_content(
             model=model, contents=prompt, config=cfg)
         usage = None
@@ -277,7 +321,7 @@ def _call_real(provider, model, prompt, max_tokens):
 
 
 def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
-               dimension=None):
+               dimension=None, schema=None):
     """The single entry point for every model call in the lab.
 
     Returns the model's text. The prompt carries a structured header
@@ -285,6 +329,12 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
     mock backend uses for deterministic composition. `escalation` climbs the
     model ladder (D-26): validation-failure retries pass attempt numbers so
     a cheap model that produced unusable output is replaced by a stronger one.
+    With `schema`, the response is constrained to that JSON schema (D-34;
+    API backends only — prefer call_structured(), which also parses).
+
+    Failure policy (D-34): NO silent mock fallback. Missing credentials,
+    a fully breaker-tripped ladder, or retry exhaustion raise StepFailed.
+    The mock backend serves only under LAB_FORCE_MOCK=1 (explicit dry run).
     """
     provider = provider_for_role(role)
     t0 = time.time()
@@ -294,54 +344,92 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
             entry["task"] = line[5:].strip()
         if line.startswith("AGENT:"):
             entry["agent"] = line[6:].strip()
+
+    if os.environ.get("LAB_FORCE_MOCK"):
+        text = mock_backend.compose(prompt, role)
+        entry["model"] = None
+        entry["ms"] = int((time.time() - t0) * 1000)
+        CALL_LOG.append(entry)
+        return text
+
+    if not provider_available(provider):
+        raise StepFailed(
+            f"provider {provider!r} (role {role}) has no credentials or CLI "
+            f"backend configured — set {KEY_VARS[provider]} or the "
+            "*_BACKEND env var")
+
     model = _pick_live_model(provider, entry.get("task"), dimension, escalation)
     entry["model"] = model
+    if model is None:
+        raise StepFailed(
+            f"every {provider} ladder rung is breaker-tripped (daily quotas "
+            "exhausted?) — relaunch after the quota resets; the run resumes")
 
-    if provider_available(provider) and model is not None:
-        for attempt in range(retries + 1):
-            try:
-                text, usage = _throttled(provider,
-                                         lambda: _call_real(provider, model, prompt,
-                                                            max_tokens))
-                if not text.strip():
-                    raise RuntimeError("empty response")
-                _failures[(provider, model)] = 0
-                entry["backend"] = provider + (
-                    f"({_cli_backend(provider)})" if _cli_backend(provider) else "")
-                entry["ms"] = int((time.time() - t0) * 1000)
-                if usage:
-                    entry["input_tokens"] = usage.get("input_tokens")
-                    entry["output_tokens"] = usage.get("output_tokens")
-                CALL_LOG.append(entry)
-                return text
-            except Exception as e:  # noqa: BLE001 — any API error degrades
-                msg = f"{type(e).__name__}: {e}"
-                entry.setdefault("errors", []).append(msg[:200])
-                if "PerDay" in msg or "check your plan and billing" in msg:
-                    # daily quota exhausted for THIS model — kill the rung
-                    # and climb to the next live one (D-27)
-                    _failures[(provider, model)] = _MAX_FAILURES
-                    model = _pick_live_model(provider, entry.get("task"),
-                                             dimension, escalation)
-                    entry["model"] = model
-                    if model is None:
-                        break
-                    continue
-                if _RATE_RE.search(msg):
-                    # per-minute rate limit: wait it out, no breaker penalty
-                    time.sleep(min(60, 15 * (attempt + 1)))
-                    continue
-                _failures[(provider, model)] = \
-                    _failures.get((provider, model), 0) + 1
-                if _model_dead(provider, model):
+    for attempt in range(retries + 1):
+        try:
+            text, usage = _throttled(provider,
+                                     lambda: _call_real(provider, model, prompt,
+                                                        max_tokens, schema))
+            if not text.strip():
+                raise RuntimeError("empty response")
+            _failures[(provider, model)] = 0
+            entry["backend"] = provider + (
+                f"({_cli_backend(provider)})" if _cli_backend(provider) else "")
+            entry["ms"] = int((time.time() - t0) * 1000)
+            if usage:
+                entry["input_tokens"] = usage.get("input_tokens")
+                entry["output_tokens"] = usage.get("output_tokens")
+            CALL_LOG.append(entry)
+            return text
+        except StepFailed:
+            raise  # terminal by design (config error, truncation, ...)
+        except Exception as e:  # noqa: BLE001 — any API error is retryable
+            msg = f"{type(e).__name__}: {e}"
+            entry.setdefault("errors", []).append(msg[:200])
+            if "PerDay" in msg or "check your plan and billing" in msg:
+                # daily quota exhausted for THIS model — kill the rung
+                # and climb to the next live one (D-27)
+                _failures[(provider, model)] = _MAX_FAILURES
+                model = _pick_live_model(provider, entry.get("task"),
+                                         dimension, escalation)
+                entry["model"] = model
+                if model is None:
                     break
-                time.sleep(2.0 * (attempt + 1))
+                continue
+            if _RATE_RE.search(msg):
+                # per-minute rate limit: wait it out, no breaker penalty
+                time.sleep(min(60, 15 * (attempt + 1)))
+                continue
+            _failures[(provider, model)] = \
+                _failures.get((provider, model), 0) + 1
+            if _model_dead(provider, model):
+                break
+            time.sleep(2.0 * (attempt + 1))
 
-    text = mock_backend.compose(prompt, role)
-    entry["backend"] = "mock"
-    entry["ms"] = int((time.time() - t0) * 1000)
-    CALL_LOG.append(entry)
-    return text
+    CALL_LOG.append({**entry, "backend": "failed",
+                     "ms": int((time.time() - t0) * 1000)})
+    raise StepFailed(
+        f"{provider} call failed past the retry budget for task "
+        f"{entry.get('task', '?')!r}; last errors: "
+        f"{entry.get('errors', ['?'])[-2:]}")
+
+
+def call_structured(prompt, schema, role, max_tokens=8000, retries=4,
+                    escalation=0, dimension=None):
+    """call_model() with a JSON-schema-constrained response (D-34); returns
+    the parsed object. Requires an API backend — constrained decoding
+    guarantees schema-valid JSON, so a parse failure here means truncation
+    (already raised as StepFailed) or a mock without a structured composer."""
+    text = call_model(prompt, role, max_tokens=max_tokens, retries=retries,
+                      escalation=escalation, dimension=dimension,
+                      schema=schema)
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as e:
+        raise StepFailed(
+            f"structured call returned unparseable JSON ({e}) — under "
+            "LAB_FORCE_MOCK this means the mock backend has no structured "
+            "composer for this task yet") from e
 
 
 def backend_stats():
