@@ -49,7 +49,8 @@ EXPERT_SCHEMA = {
                         "description": "Known unknowns with (confidence: level; would be reduced by: ...)"
                     }
                 },
-                "required": ["findings", "interpretation", "assumptions", "position", "uncertainties"]
+                "required": ["findings", "interpretation", "assumptions", "position", "uncertainties"],
+                "additionalProperties": False
             },
             "hu": {
                 "type": "object",
@@ -78,10 +79,12 @@ EXPERT_SCHEMA = {
                         "description": "Bizonytalanságok (megbízhatóság: level; csökkentené: ...)"
                     }
                 },
-                "required": ["findings", "interpretation", "assumptions", "position", "uncertainties"]
+                "required": ["findings", "interpretation", "assumptions", "position", "uncertainties"],
+                "additionalProperties": False
             }
         },
-        "required": ["expert_name", "en", "hu"]
+        "required": ["expert_name", "en", "hu"],
+        "additionalProperties": False
     }
 }
 
@@ -114,30 +117,29 @@ Return valid JSON matching the schema."""
     print("STRUCTURED JSON EXPERT TEST (Real Anthropic API, No Mock)")
     print("=" * 80)
     print(f"\nPolicy question: {question}\n")
-    print(f"Using model: claude-3-5-sonnet-20241022")
+    print(f"Using model: claude-haiku-4-5")
     print(f"Response format: JSON Schema (structured output enforced)\n")
 
     try:
         response = client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            max_tokens=4000,
+            model="claude-haiku-4-5",
+            max_tokens=8000,
             messages=[
                 {
                     "role": "user",
                     "content": prompt
                 }
             ],
-            betas=["interleaved-thinking-2025-05-14"],
             output_config={
                 "format": {
                     "type": "json_schema",
-                    "json_schema": EXPERT_SCHEMA
+                    "schema": EXPERT_SCHEMA["schema"],
                 }
             }
         )
 
-        # Extract JSON from response
-        text = response.content[0].text
+        # output_config.format guarantees the first text block is valid JSON
+        text = next(b.text for b in response.content if b.type == "text")
         output = json.loads(text)
 
         print("✅ STRUCTURED JSON RECEIVED!\n")
