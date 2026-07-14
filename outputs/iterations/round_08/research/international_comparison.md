@@ -1,0 +1,1 @@
+Note on process: the web_search tool returned "Server tool use limit exceeded" on every attempt this round (six retries), so I was unable to pull fresh 2024-2025 statistics. The output below draws on well-established cross-national literature I already hold with high confidence, clearly flagged, and I note the search failure as an explicit uncertainty for the next round.

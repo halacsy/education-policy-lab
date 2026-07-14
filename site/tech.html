@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hogyan van megépítve? — Education Policy Lab</title>
-<meta name="description" content="Technikai implementáció: modell-létra, validált szerződések, keresztcsaládos bírálat, folytatható futások, determinisztikus tartalék.">
+<meta name="description" content="Technikai implementáció: strukturált kétnyelvű kimenetek, élő webes kutatás, modell-létra, validált szerződések, keresztcsaládos bírálat, folytatható futások.">
 <body>
 <style>
   :root {
@@ -77,13 +77,36 @@
     <div class="commitlog"><b>google:</b>    flash-lite → flash → pro
 <b>anthropic:</b> haiku → sonnet → opus
 feladat-szintek: szakértői elemzés / diskurzus-hang = 0
-                 szintézis / brief / kritika / fordítás = 1
+                 kutatás / szintézis / brief / kritika = 1
                  meta-kritika = 2
 formátumhiba          → +1 fok, újrapróbálás
 napi keret elfogyott  → az adott fok lezárva, a létra mászik</div>
     <p class="note" style="margin-top:.75rem">Döntésnapló: D-26 (létra), D-27
     (fokonkénti megszakító). A hívások modell-szintű elszámolása minden kör
     naplójában szerepel.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Strukturált, kétnyelvű kimenet</p>
+    <h2>Az ágensek nem szabad szöveget írnak — sémát töltenek ki</h2>
+    <p>Minden ágens kimenete gépileg kikényszerített JSON-séma
+    (constrained decoding): a kötelező mezők nem maradhatnak ki, a címkék
+    csak megengedett értéket vehetnek fel, és nincs törékeny
+    szövegértelmezés. A séma minden szöveges mezője <strong>{magyar,
+    angol} pár</strong> — az ágens a két nyelvet egyszerre, natívan írja,
+    nem fordít. Az azonosítók és elemszámok a két nyelvben szerkezetileg
+    nem térhetnek el; a publikus dokumentumok mind determinisztikus
+    renderelők kimenetei, kézzel írt tartalom nincs köztük.</p>
+    <p>A szakértők minden kört <strong>élő webes kutatással</strong>
+    nyitnak: friss statisztikát, tanulmányt, szakpolitikai fejleményt
+    keresnek, és a találatokat forrással, őszinte bizonyítékfokozattal
+    idézik. A webes találat mindig csak idézett forrás marad — a kurált
+    tényregiszterbe kizárólag emberi jóváhagyással (PR-review) kerülhet
+    be bármi.</p>
+    <p class="note">Döntésnapló: D-24 (tudásbeviteli kapu), D-34
+    (strukturált kétnyelvű ágensek, webes kutatás).</p>
   </div>
 </section>
 
@@ -125,20 +148,20 @@ napi keret elfogyott  → az adott fok lezárva, a létra mászik</div>
   <div class="wrap">
     <p class="eyebrow">Üzembiztonság</p>
     <h2>Folytatható futások, determinisztikus tartalék</h2>
-    <p>Minden kör minden lépése naplózza, melyik backend szolgálta ki
-    (API-kulcs, előfizetéses CLI, vagy tartalék). Egy megszakadt futás
-    <strong>onnan folytatódik, ahol elakadt</strong>: a rendszerállapot
-    lenyomata garantálja, hogy csak azonos rendszerrel készült artefaktum
-    használódik újra — így egy napi kvóta-limit nem dobja el a már kifizetett
-    munkát. Ha egyetlen élő modell sem elérhető, egy determinisztikus,
-    kurált tartalék-kompozíció lép be, és ez a tény lépésenként, letagadhatatlanul
-    naplózódik — a „mi készült élőben és mi nem” minden körnél nyilvános.</p>
+    <p>Minden kör minden lépése naplózza, melyik backend szolgálta ki.
+    Egy megszakadt futás <strong>onnan folytatódik, ahol elakadt</strong>:
+    a rendszerállapot lenyomata garantálja, hogy csak azonos rendszerrel
+    készült artefaktum használódik újra — így egy napi kvóta-limit nem
+    dobja el a már kifizetett munkát. Tartalék-generálás nincs: ha egy
+    lépést egyetlen élő modell sem tud kiszolgálni, vagy a kimenet nem megy
+    át a validáción, a futás <strong>hibával megáll</strong> és naplózottan
+    újraindítható — gyengébb vagy nem-élő anyag csöndben nem születhet.</p>
     <p>A „kész” definíciója gépi kapu: 14 specifikációs ellenőrzés + a
     memória-, diskurzus- és kitartott (a javító lépés elől elrejtett)
     anti-Goodhart ellenőrzések. Gyengíteni őket tilos; a rendszer csak úgy
     mehet át, ha tényleg teljesíti őket.</p>
     <p class="note">Részletek a repóban: <code>docs/architecture.md</code>,
-    <code>docs/decisions.md</code> (D-01…D-31), <code>scripts/verify.py</code>.</p>
+    <code>docs/decisions.md</code> (D-01…D-34), <code>scripts/verify.py</code>.</p>
   </div>
 </section>
 

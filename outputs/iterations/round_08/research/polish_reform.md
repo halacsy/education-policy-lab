@@ -1,0 +1,2 @@
+I'll research Poland's 1999 tracking reform and its 2016-2019 reversal to gather current evidence for this analysis.
+I've hit search rate limits, but I have substantial material from the first round of searches. Let me extract more detail from what I already collected before writing the final output.

@@ -73,9 +73,57 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
   the cheapest generator path; a discourse-enabled round ≈ 40 generator +
   15-25 judge calls (reciprocity off: −10).
 
-## Current state (2026-07-11, end of session)
+## Current state (2026-07-14, end of session)
 
-- **Branch `refactor/deliberation-mission`** (D-30, this session): mission
+- **Branch `refactor/structured-agents`** (D-34 draft, this session, off
+  refactor/deliberation-mission): structured/bilingual/tool-using agent
+  refactor. Owner-approved plan + evidence in
+  `docs/proposals/2026-07-14-structured-bilingual-agents.md` (owner answers
+  recorded: API cost OK, rounds 1-7 closed as archive era, web search rides
+  with Phase 2). **Phase 1 DONE** (8f81df8): `llm.call_structured()`
+  (output_config.format / Gemini response_schema), silent mock fallback
+  REMOVED — StepFailed + resume instead; mock only under LAB_FORCE_MOCK=1.
+  Session findings that motivated it: round 6's brief was entirely
+  mock-written (inflated scores); all 17 round-7 fallbacks were translate_*
+  steps (CLI 600s timeout on ~180K-token batches); instruction-based
+  bilingual output does NOT work, schema-constrained does (test scripts on
+  the branch); web search upgrades expert evidence weak→strong
+  (test_websearch_expert.py, includes the pause_turn loop). **Phase 2 + P4
+  DONE** (this session, task-by-task commits d03ac7d..): every
+  generator/judge artifact is bilingual {en,hu} schema-constrained JSON
+  (`lab/schemas.py`), every .md a deterministic view (`lab/render.py`;
+  `project()` collapses bilingual→monolingual for legacy consumers); ALL
+  translate_* steps deleted (round: 88→~58 steps); translator agent
+  RETIRED (spec+memory deleted, CATALOG retargeted); Step.run(schema=) +
+  anthropic streaming for >8K-token calls; web search live
+  (`research.web_search`, two-phase expert call: free search call with
+  pause_turn loop → structured call; D-24 gate intact). Artifacts:
+  scenarios.json/synthesis.json/brief.json/meta_critique.json bilingual;
+  expert_outputs/*.json; discourse/* bilingual; both ledgers rendered from
+  one data set. **Phase 3 NEXT**: evaluation/verify on JSON fields,
+  translation_fidelity→bilingual_parity, two-era scorecard (1–7 archive,
+  8+ new baseline; era_start_round=8 is already in config and the loop —
+  the baseline-round logic is DONE, only scorecard labelling remains),
+  remove evaluation.py's judge-score mock fallback (~line 199) +
+  SCORE:-regex→structured judge. **ROUND 8 ACCEPTANCE PASSED**
+  (2026-07-14/15): total 9.232 (new-era baseline, delta=None by design),
+  zero fallbacks/failed steps in the final log, all 12 experts ran live
+  web search (fresh KSH/Portugal/Poland numbers with sources in the
+  outputs), native-quality HU brief with 36 typed cluster responses.
+  Generator: anthropic API; judge finished on the NEW OpenAI API backend
+  (JUDGE_PROVIDER=openai, gpt-5-mini default, structured via json_schema
+  strict) after the Gemini free tier exhausted mid-round. Acceptance
+  lessons (all committed as fixes): bilingual structured outputs need
+  ~2-3x the monolingual token budgets (expert 16K, voice 24K, reciprocity
+  16K + max-3-answers cap, brief 64K); very large schemas must use
+  $defs/$ref (inline BRIEF hit 'compiled grammar too large'; $ref version
+  compiles — but llm._gemini_schema does NOT resolve refs, keep BRIEF off
+  Gemini); the era boundary must disable delta/regression-revert (a bogus
+  cross-era -0.28 triggered a full revert-and-rerun before the fix).
+  NOTE: API keys were exposed in the 2026-07-14 session transcript — ROTATE
+  before serious use (Phase 0; not yet confirmed done). OPENAI_API_KEY was
+  added to .env by the owner (billing-enabled).
+- **Branch `refactor/deliberation-mission`** (D-30, 2026-07-11): mission
   reframed from "produce a policy" to "accelerate deliberation"; discourse
   layer relabelled as a stakeholder stress test (explicit disclaimer in
   every discourse-facing instruction + the ledger itself); argument clusters

@@ -1,0 +1,21 @@
+# Critique: coherence_checker
+
+## S1.assumptions
+Objection: The assumption that uniform admission-equity rules can be applied across state, church, and foundation maintainers contradicts the political risks section, which states that "maintainer fragmentation is treated in the expert record as a structural complication, not merely a difficult-but-solvable administrative matter, so resistance risk is at least moderate rather than weak." This creates an internal inconsistency regarding the feasibility of applying uniform rules.
+Severity: high
+Suggested revision: Revise the assumption to acknowledge the significant challenge of applying uniform rules across all maintainer types, perhaps by stating it as a goal with known structural hurdles, or by explicitly outlining how this structural complication would be overcome.
+
+## S2.assumptions
+Objection: The assumption that church and foundation maintainers can be regulated or incentivized not to expand selective places directly contradicts the 'Disagreement map' in the Synthesis, which states that 'This restriction assumption is not credible: church and foundation maintainers... constitute an independent veto-player likely to absorb high-achieving students into selective foundation schools regardless of state-track phase-down'. This is a fundamental contradiction regarding a core mechanism of the scenario.
+Severity: high
+Suggested revision: Remove or significantly rephrase this assumption to align with the expert consensus that non-state maintainers are likely to offset state-sector reductions. The scenario should then address how to mitigate this acknowledged risk, rather than assuming it away.
+
+## S3.assumptions
+Objection: The assumption that sorting does not simply migrate to other channels (school choice, non-state maintainers, etc.) is directly stated as being 'in tension with this scenario's own equity_impact, political_risks, and uncertainties, which identify exactly this migration as the largest risk'. This is a clear internal contradiction within the scenario's own fields.
+Severity: high
+Suggested revision: Revise the assumption to acknowledge the high likelihood of sorting migration, and instead focus on how the scenario plans to monitor and mitigate this known risk, rather than assuming it won't happen to a neutralizing extent.
+
+## S4.assumptions
+Objection: The assumption that non-structural reform can operate independently of decisions about selection age and intensity is contradicted by the scenario's own mechanism field, which notes that 'early selection may offset some benefits of compensatory support'. This creates an internal tension regarding the effectiveness of the proposed mechanisms.
+Severity: medium
+Suggested revision: Clarify the assumption to acknowledge the potential for early selection to limit the benefits of non-structural reforms, and explain how the scenario intends to address or account for this interaction, rather than assuming independence.

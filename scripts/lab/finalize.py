@@ -4,43 +4,46 @@ import re
 
 from . import knowledge as K
 from . import llm
+from . import schemas as S
 from .evaluation import DIMENSIONS
 from .improve import read_attempts
 from .pipeline import Step
-from .util import FINAL_DIR, read, read_json, round_dir, write
+from .util import FINAL_DIR, ROOT, read, read_json, round_dir, write
+
+
+def _valid_exec_summary(o):
+    if not isinstance(o, dict):
+        return False
+    en, hu = str(o.get("en", "")), str(o.get("hu", ""))
+    return (all(sid in en and sid in hu for sid in ("S1", "S2", "S3", "S4"))
+            and len(en) > 400 and len(hu) > 400
+            and en.strip() != hu.strip())
 
 
 def _exec_summaries(artifacts, n):
     FINAL_DIR.mkdir(parents=True, exist_ok=True)
+    glossary = (ROOT / "docs" / "glossary.md").read_text(encoding="utf-8")
     step = Step(FINAL_DIR, resume=True)
-    en, _ = step.run(
+    obj, _ = step.run(
         "executive_summary_writer",
-        dict(task="exec_summary", agent="executive_summary_writer", lang="en",
+        dict(task="exec_summary", agent="executive_summary_writer",
              round_n=n,
              instructions=(
-                 "Write a one-page executive summary (<= 350 words) of the "
-                 "policy work below. It must: name all four scenarios with "
-                 "their ids, state the central expert disagreement WITHOUT "
-                 "resolving it, carry at least one [evidence: ...] tag, and "
-                 "end with the immediate no-regret moves."),
+                 "Write a one-page executive summary (<= 350 words per "
+                 "language) of the policy work below, as the required JSON "
+                 "object with an en and a hu field — the SAME summary "
+                 "authored natively in each language (glossary strictly). "
+                 "It must: name all four scenarios with their ids, state "
+                 "the central expert disagreement WITHOUT resolving it, and "
+                 "end with the immediate no-regret moves.\n\nGLOSSARY:\n"
+                 + glossary),
              inputs=artifacts["brief_en"] + "\n\n" + artifacts["synthesis"]),
-        validate=lambda t: all(s in t for s in ("S1", "S2", "S3", "S4"))
-                           and len(t) > 400,
-        out_path=FINAL_DIR / "executive_summary.en.md", max_tokens=1500)
-    hu, _ = step.run(
-        "executive_summary_translator",
-        dict(task="exec_summary", agent="translator", lang="hu", round_n=n,
-             instructions=(
-                 "Translate this executive summary into Hungarian using the "
-                 "glossary in docs/glossary.md strictly (e.g. korai "
-                 "szelekció, méltányosság, egységes alapiskola). Keep the "
-                 "scenario ids S1-S4. Translate evidence tags as "
-                 "[bizonyíték: ...]."),
-             inputs=en),
-        validate=lambda t: all(s in t for s in ("S1", "S4"))
-                           and t.strip() != en.strip() and "szelekció" in t,
-        out_path=FINAL_DIR / "executive_summary.hu.md", max_tokens=1500)
-    return en, hu
+        validate=_valid_exec_summary,
+        out_path=FINAL_DIR / "executive_summary.json",
+        schema=S.EXEC_SUMMARY, max_tokens=4000)
+    write(FINAL_DIR / "executive_summary.en.md", obj["en"])
+    write(FINAL_DIR / "executive_summary.hu.md", obj["hu"])
+    return obj["en"], obj["hu"]
 
 
 def _scorecard(history):

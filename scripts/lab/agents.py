@@ -57,7 +57,7 @@ is embedded verbatim in your prompt.
 TYPE_INPUTS = {
     "expert": "The policy question; docs/mission.md discipline; your domain knowledge.",
     "critic": "scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also the HU deliverables and docs/glossary.md.",
-    "synthesis": "Expert outputs (editor/scenario_builder); EN deliverables + docs/glossary.md (translator); scenarios + synthesis (brief/summary writers); discourse reactions (discourse_mediator).",
+    "synthesis": "Expert outputs (editor/scenario_builder); scenarios + synthesis + docs/glossary.md (brief/summary writers — bilingual output); discourse reactions (discourse_mediator).",
     "meta": "The round's artifacts, evaluation.json, attempts_log.jsonl, previous round's scores.",
     "discourse": "The scenarios (EN markdown) and, where your archetype is informed by a real public document, that document as basis; in the reciprocity pass also the argument map with the strongest counter-arguments.",
 }

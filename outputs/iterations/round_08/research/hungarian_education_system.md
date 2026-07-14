@@ -1,0 +1,2 @@
+I'll research current evidence on Hungary's early academic selection and 6/8-year gimnázium system.
+Web search access was exhausted for this round before returning any results (a server-side tool-use limit was hit on every retry). I'll proceed using well-established domain knowledge, explicitly downgrading evidence confidence and flagging the lack of fresh 2024/2025 verification as an uncertainty, per the "never invent statistics" rule.

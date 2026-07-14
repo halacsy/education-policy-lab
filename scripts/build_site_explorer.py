@@ -172,7 +172,8 @@ def parse_ledger(rd):
 
 
 def parse_brief_responses(brief_hu_text):
-    body = _ledger_section(brief_hu_text, "## Válaszok a társadalmi érvekre")
+    body = _ledger_section(brief_hu_text,
+                           "## Mit kell valódi stakeholderekkel ellenőrizni")
     out = {}
     for m in re.finditer(r"^- (A\d+)\s*(.*)$", body, re.M):
         out[m.group(1)] = m.group(2).strip().lstrip("(").strip()
@@ -223,8 +224,11 @@ def main():
     rd = ITER / f"round_{n:02d}"
     e = html.escape
 
-    scen_en = json.loads((rd / "scenarios.json").read_text(encoding="utf-8"))
-    scen_hu = json.loads((rd / "scenarios.hu.json").read_text(encoding="utf-8"))
+    # D-34: scenarios.json is bilingual; project the legacy EN/HU views the
+    # same way the pipeline renders them (no hand-authored content).
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from lab.loadround import load_scenario_views
+    scen_en, scen_hu = load_scenario_views(rd)
     hu_by_id = {s["id"]: s for s in scen_hu["scenarios"]}
 
     critics = {}

@@ -1,0 +1,25 @@
+I'll research the Finnish comprehensive school reform evidence and its relevance to Hungary's early selection debate.
+**Note on process:** The web_search tool returned "Server tool use limit exceeded" on every attempt this round (6 tries, including after a delay) — the shared search budget for this task/round appears exhausted before my turn. Per the mission's evidence discipline, I am not inventing fresh 2024 statistics or fabricating URLs I cannot verify. Below are research notes drawn from well-established, peer-reviewed literature I can identify with reasonable confidence from training knowledge, flagged as *not freshly re-verified this round*. I recommend the orchestrator note this gap explicitly in the disagreement map/uncertainty ledger.
+
+## Research notes (prose, pre-structuring)
+
+1. **Design of the reform**: Finland replaced a parallel system (grammar-school track vs. civic school track, selection at ~age 11) with a unified 9-year *peruskoulu* comprehensive school, implemented municipality-by-municipality between 1972 (north) and 1977 (south), which is what enables quasi-experimental identification (staggered rollout as natural experiment). Source: Pekkarinen, Uusitalo & Kerr, "School tracking and development of cognitive skills," Journal of Public Economics / earlier NBER-style working papers (~2009-2013); exact URL not re-verified this session.
+
+2. **Bundled elements, not tracking-removal alone**: the reform combined (a) abolition of early tracking, (b) curriculum unification, (c) teacher-training upgrades to master's-level, (d) a national core curriculum with local autonomy, and (e) expanded student welfare/support services — meaning "delayed selection" is one ingredient among several, complicating single-factor causal attribution.
+
+3. **Earnings/mobility effect**: the Pekkarinen/Uusitalo/Kerr line of research found the reform reduced the effect of parental background (father's education/earnings) on children's earnings and education, i.e., delayed tracking increased intergenerational mobility — a frequently cited "load-bearing" finding for the equity claim.
+
+4. **Hungary's own tracking literature**: Kertesi & Kézdi (Institute of Economics, Budapest / IZA working papers, ~2005-2014) documented that Hungary's 6- and 8-grade gimnázium system selects the highest-SES and highest-ability students out of standard primary schools at ages 10-12, intensifying residual classroom segregation by SES and Roma ethnicity in the schools left behind.
+
+5. **PISA equity trend (pre-2018 data, my last confident knowledge)**: Finland historically showed comparatively low between-school variance in PISA scores relative to OECD average, attributed partly to comprehensive, untracked lower-secondary structure; Finland's PISA scores have declined since ~2006 peak, and some Finnish scholars debate whether equity has eroded even as the untracked structure remains — I cannot confirm the 2022 cycle figures without live search.
+
+6. **Hungary's PISA profile**: Hungary has consistently shown one of the OECD's highest school-to-school variance shares and strongest ISCED/SES-to-score gradients, a pattern researchers link partly to early selection into gimnázium and vocational tracks — again citing pre-2018 knowledge, not freshly verified.
+
+7. **Transferability caveat in the literature**: comparative-education scholars (e.g., work summarized in Finnish Ministry of Education retrospectives) caution that Finland's reform succeeded inside a specific bundle (strong teacher professionalization, small elite-private-school sector, high social trust, near-universal comprehensive enrollment) — meaning transplanting "delay tracking to 16" alone, without the complementary reforms, is not supported as sufficient by the causal literature.
+
+## Uncertainties flagged for this round
+- I could not access the web_search tool this round (persistent "server tool use limit exceeded" error across 6 attempts); therefore no 2023-2025 statistics or exact URLs are confirmed — confidence: low that any specific recent figure I might have stated would be current or precisely correct, so I omitted numeric point-estimates rather than risk fabrication.
+- Exact citation details (journal volume, page, precise URL) for Pekkarinen/Uusitalo/Kerr and Kertesi/Kézdi are stated from memory and should be verified before entering the curated registry.
+
+Given the tool outage, I'll proceed to produce the structured bilingual analysis based on these flagged, unverified-this-round notes, explicitly marking evidence grades conservatively (moderate rather than strong where I cannot cite a fresh verified source) and adding a high-salience uncertainty about the missed live-search step.
+Confirmed the search tool remains unavailable this round. I'll finalize the structured output now, built strictly from the flagged research notes above, with evidence grades kept conservative and the tool-outage explicitly logged as an uncertainty.

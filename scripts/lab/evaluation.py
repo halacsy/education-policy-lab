@@ -281,7 +281,8 @@ def finalize(round_n, dims, a, prev_total):
               "(cross-family; judge-side artifacts scored by the generator "
               "provider — see docs/decisions.md D-14).",
               f"Divergence-flagged dimensions (sent to human review): {flagged or 'none'}.",
-              f"Steps that degraded to the deterministic mock: {a['fallbacks'] or 'none'}.",
+              f"Steps that failed and needed a relaunch (D-34, no mock "
+              f"fallback): {a['fallbacks'] or 'none'}.",
               "",
               "Note: the meta-critique was written before the final total "
               "existed; it saw the seven content dimensions and the previous "

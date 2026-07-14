@@ -10,7 +10,6 @@ Owner decisions (2026-07-05, docs/decisions.md D-21/D-25):
 Recipients:
 - scenario_builder — unresolved objections carried forward + this round's
   received/resolved record (it owns every scenario field);
-- translator      — deterministic parity results (last few rounds);
 - editor          — disagreement/consensus-related objections (last few rounds);
 - experts         — meta-critique lines naming them (last few rounds).
 
@@ -138,6 +137,12 @@ def update_memories(n, artifacts):
     prev = round_dir(n - 1)
     if n > 1 and (prev / "scenarios.json").exists():
         prev_scen = read_json(prev / "scenarios.json")
+        # D-34: a bilingual scenarios.json is projected to the same legacy
+        # EN view the rest of this module (and artifacts["scenarios_en"]) uses
+        if prev_scen.get("scenarios") and \
+                isinstance(prev_scen["scenarios"][0].get("title"), dict):
+            from . import render
+            prev_scen = render.scenario_view(prev_scen, "en")
         for p in sorted((prev / "critic_outputs").glob("*.md")):
             if p.stem == "translation_checker":
                 continue
@@ -148,12 +153,6 @@ def update_memories(n, artifacts):
 
     _rewrite_builder_memory(n, objections, resolutions, prev_scen,
                             artifacts["scenarios_en"])
-
-    tr = artifacts["translation"]
-    _append_sectioned("translator", n, [
-        f"- parity ok={tr['ok']}; glossary violations: "
-        f"{tr['glossary_violations'] or 'none'}; untranslated fields: "
-        f"{tr['untranslated_fields'] or 'none'}"])
 
     dis = [o for o in objections
            if re.search(r"disagree|minorit|consensus|dissent", o["text"], re.I)]

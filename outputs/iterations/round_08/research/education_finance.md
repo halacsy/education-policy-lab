@@ -1,0 +1,2 @@
+I'll research the financial/cost dimension of Hungary's early-selection gimnázium system (6- and 8-year grammar schools) — funding formulas, per-pupil costs, capacity/transition costs of reform, and any recent data.
+Web search access appears to be exhausted for this session (likely a shared budget across the multi-agent task that prior rounds/agents have used up). I'll proceed using verified domain knowledge I already hold with high confidence, but I will grade evidence conservatively and flag the lack of a fresh web check as an explicit uncertainty, per the Directives.

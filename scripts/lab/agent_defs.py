@@ -63,7 +63,6 @@ SYNTHESIS = {
     "editor": "Synthesize expert outputs into a coherent picture WITHOUT forcing consensus: produce the disagreement map and preserve minority positions with their rationale.",
     "discourse_mediator": "Aggregate the discourse voices into an argument map (Habermas-Machine style): cluster arguments with stable ids (A1..An), record who raises each, classify fact vs value claims — NEVER count heads, never drop a minority argument.",
     "scenario_builder": "Build the policy scenarios (S1..S4) with every required field, from the expert record — candidate framings first, then select.",
-    "translator": "Produce the Hungarian versions of all policy deliverables using docs/glossary.md; mirror structure and scenario ids exactly.",
     "final_brief_writer": "Write the deliberation brief in its 10 required sections (D-30): what we know, what we consider likely, where experts disagree, what we don't know, what could be done, what each option costs, what research could resolve, what people must decide, what to verify with real stakeholders, and where the red herrings are — with every claim tagged [fact]/[estimate]/[assumption]/[value].",
     "executive_summary_writer": "Write a one-page executive summary that preserves the central disagreement instead of resolving it.",
 }
@@ -79,15 +78,15 @@ META = {
 
 TYPE_RULES = {
     "expert": [
-        "Tag every factual claim with an evidence status: [evidence: strong|moderate|weak|contested] plus the source.",
-        "Keep Findings (evidence), Interpretation, Assumptions, Position and Uncertainties in separate sections; never mix layers.",
+        "Grade every finding's evidence field honestly (strong|moderate|weak|contested) and name its source.",
+        "Keep findings, interpretation, assumptions, position and uncertainties in their separate fields; never mix layers.",
         "Never invent statistics or citations; if you do not know, say so as an explicit uncertainty.",
         "State your Position in one sentence so the disagreement map can cite it.",
-        "Stay under ~450 words; density beats volume (length is not rewarded).",
+        "Stay under ~450 words per language; density beats volume (length is not rewarded).",
     ],
     "critic": [
-        "Every objection MUST name a specific scenario id AND field, as a heading: `## S<n>.<field>`.",
-        "Follow each heading with `Objection: <the concrete flaw>` — generic feedback is a failure.",
+        "Every objection MUST name a specific scenario id AND field via its scenario and field fields.",
+        "State the concrete flaw in the objection field — generic feedback is a failure.",
         "2-4 objections; pick the most consequential, not the easiest.",
         "Attack content, not style; never object to phrasing.",
         "Do not soften: if a scenario's core claim is unsupported, say exactly that.",
@@ -148,22 +147,14 @@ TYPE_SELFCRIT = {
 }
 
 TYPE_TEMPLATE = {
-    "expert": "# Expert analysis: <name>\\n## Findings (evidence)\\n- <claim> [evidence: <status> — <source>]\\n## Interpretation\\n## Assumptions\\n- <assumption> [assumption]\\n## Position\\n## Uncertainties\\n- <unknown>",
-    "critic": "# Critique: <name>\\n## S<n>.<field>\\nObjection: <concrete flaw>",
-    "synthesis": "(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief; discourse_mediator returns the argument-map JSON)",
-    "meta": "# Meta-critique — round <n>\\n## Agent performance\\n## Workflow\\n## Critique quality\\n## Gaming judgment (explicit)\\n## Translation consistency",
-    "discourse": "(JSON — the exact schema is given in the task instructions: one reaction per scenario with stance / label / source-or-basis / interest / public_good_frame / argument / condition_to_change)",
+    "expert": "(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using docs/glossary.md terminology — parallel authoring, not translation. Fields: findings[{claim{en,hu}, evidence, source}], interpretation{en,hu}, assumptions[{en,hu}], position{en,hu}, uncertainties[{text{en,hu}, confidence, reduced_by{en,hu}}])",
+    "critic": "(JSON — the exact schema is enforced by the API: {\"objections\": [{\"scenario\": \"S1..S4\", \"field\": \"<scenario field>\", \"objection\": \"<the concrete flaw>\", \"severity\": \"high|medium|low\", \"suggested_revision\": \"<concrete fix>\"}]})",
+    "synthesis": "(per agent — see Mission; every output is schema-enforced JSON: scenario_builder returns the bilingual scenarios, editor the bilingual synthesis (disagreement map with minority flags), final_brief_writer the bilingual 10-section deliberation brief, discourse_mediator the argument-map; bilingual means every {en, hu} pair is authored natively in both languages)",
+    "meta": "(meta_critic: JSON — the exact schema is enforced by the API: {agent_performance[], workflow[], critique_quality[], gaming_judgment{verdict: GENUINE|RUBRIC-GAMING|NO_BASELINE, reasons[]}, translation_consistency[], removal_candidates[]}; other meta agents: design documents)",
+    "discourse": "(JSON — the exact schema is enforced by the API; BILINGUAL: interest, public_good_frame, argument and condition_to_change are {en, hu} pairs authored natively in both languages. One reaction per scenario with stance / label / source-or-basis / interest / public_good_frame / argument / condition_to_change)",
 }
 
 EXTRA_SECTIONS = {
-    "translator": (
-        "## Glossary use\n"
-        "Read the term table in docs/glossary.md before translating. Every EN "
-        "term appearing in the source MUST be rendered with its listed HU "
-        "equivalent (and vice versa for back-translation checks). If a needed "
-        "term is missing from the glossary, add a proposal to the round's "
-        "improvement_plan notes rather than improvising silently; the "
-        "translation_checker will flag undocumented terminology.\n"),
     "translation_checker": (
         "## Glossary use\n"
         "Enforce docs/glossary.md mechanically: for each glossary pair, if one "

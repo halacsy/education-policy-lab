@@ -29,57 +29,58 @@ ALL_CRITICS = list(D.CRITICS)
 CATALOG = [
     dict(id="uncertainty_quantify", dimension="uncertainty_explicitness",
          kind="directive",
-         targets=["scenario_builder", "translator"] + ALL_EXPERTS,
+         targets=["scenario_builder"] + ALL_EXPERTS,
          text=("For every uncertainty item, state a confidence level "
                "(confidence: low|medium|high) and name what evidence would "
                "reduce it ('would be reduced by: ...'). In Hungarian output "
                "use 'megbízhatóság: alacsony|közepes|magas' and "
                "'csökkentené: ...'."),
-         checks={"expert_analysis": ["confidence:"],
-                 "build_scenarios": ["confidence:"],
-                 "translate_scenarios": ["megbízhatóság:"]},
+         # structured-output era (D-34): the marker is checked against the
+         # JSON dump of the artifact, where the schema guarantees a
+         # "confidence" field — total omission is impossible by construction
+         checks={"expert_analysis": ['"confidence":'],
+                 "build_scenarios": ['"confidence":']},
          expected_delta=0.8),
     dict(id="minority_report", dimension="disagreement_preservation",
-         kind="directive", targets=["editor", "final_brief_writer", "translator"],
+         kind="directive", targets=["editor", "final_brief_writer"],
          text=("Include a '## Minority positions' section (HU: "
                "'## Különvélemények') carrying every minority/dissenting "
                "position with its holders and rationale, proportionally, "
                "never resolved away."),
-         checks={"synthesis": ["## Minority positions"],
-                 "brief:en": ["## Minority positions"],
-                 "brief:hu": ["## Különvélemények"]},
+         # structured era (D-34): synthesis carries per-side minority flags
+         # (the marker verifies at least one side is marked); the brief
+         # carries a dedicated minority_positions field
+         checks={"synthesis": ['"minority": true'],
+                 "brief": ['"minority_positions":']},
          expected_delta=0.5),
     dict(id="critic_fix_severity", dimension="critic_concreteness",
          kind="directive", targets=ALL_CRITICS,
          text=("For every objection add a line 'Severity: high|medium|low' "
                "and a line 'Suggested revision: <concrete fix>'."),
-         checks={"critic": ["Severity:", "Suggested revision:"]},
+         checks={"critic": ['"severity":', '"suggested_revision":']},
          expected_delta=0.6),
     dict(id="evidence_tag_all", dimension="evidence_discipline",
-         kind="directive", targets=["scenario_builder", "translator"],
+         kind="directive", targets=["scenario_builder"],
          text=("Attach an inline evidence tag ([evidence: "
                "strong|moderate|weak|contested]; HU: [bizonyíték: ...]) to "
                "EVERY mechanism claim and EVERY expected benefit, not only "
                "the core ones."),
-         checks={"build_scenarios": ["[evidence:"],
-                 "translate_scenarios": ["[bizonyíték:"]},
+         checks={"build_scenarios": ['"evidence":']},
          expected_delta=0.4),
     dict(id="implementation_detail", dimension="scenario_completeness",
-         kind="directive", targets=["scenario_builder", "translator"],
+         kind="directive", targets=["scenario_builder"],
          text=("Give every implementation step an explicit timeline in "
                "parentheses, e.g. '(timeline: year 1-2)'; HU: "
                "'(ütemezés: 1-2. év)'."),
-         checks={"build_scenarios": ["timeline:"],
-                 "translate_scenarios": ["ütemezés:"]},
+         checks={"build_scenarios": ['"timeline":']},
          expected_delta=0.5),
     dict(id="layer_tighten", dimension="layer_separation",
-         kind="directive", targets=["final_brief_writer", "translator"],
+         kind="directive", targets=["final_brief_writer"],
          text=("Every substantive claim across the brief's 10 sections "
                "carries a claim-kind tag ([fact]/[estimate]/[assumption]/"
                "[value], unchanged in every language); a substantive claim "
                "without one is a defect."),
-         checks={"brief:en": ["[estimate]", "[assumption]"],
-                 "brief:hu": ["[estimate]", "[assumption]"]},
+         checks={"brief": ['"kind": "estimate"', '"kind": "assumption"']},
          expected_delta=0.3),
     dict(id="meta_quant", dimension="meta_system_eval",
          kind="directive", targets=["meta_critic"],
@@ -88,22 +89,15 @@ CATALOG = [
                "dimension and any removal candidate."),
          checks={"meta_critique": ["removal candidate"]},
          expected_delta=0.3),
-    dict(id="glossary_selfcheck", dimension="translation_fidelity",
-         kind="directive", targets=["translator"],
-         text=("Before returning, verify every glossary term mapping you "
-               "used against docs/glossary.md and correct deviations."),
-         # self-check leaves no output marker; enforced by translation.check
-         expected_delta=0.2),
     dict(id="scenario_crossref", dimension="layer_separation",
-         kind="directive", targets=["final_brief_writer", "translator"],
+         kind="directive", targets=["final_brief_writer"],
          text=("The brief must be self-contained: right after the "
                "introduction, add a scenario key section ('## Scenario key' / "
                "HU: '## Forgatókönyv-kulcs') listing each scenario id with "
                "its one-line title and a reference to the full scenario "
                "document (scenarios.en.md / scenarios.hu.md), so no "
                "recommendation refers to an id the reader cannot resolve."),
-         checks={"brief:en": ["## Scenario key"],
-                 "brief:hu": ["## Forgatókönyv-kulcs"]},
+         checks={"brief": ['"scenario_key":']},
          expected_delta=0.2,
          origin="human feedback 2026-07-05: brief referenced 'S1 felvételi "
                 "kísérlet' without defining S1 anywhere in the document"),
@@ -286,12 +280,13 @@ def write_plan(rd, round_n, evaluation, next_change, artifacts, applied_change,
               f"({dims[strongest]['score']})."]
     lines += ["", "## Which agent failed? Which workflow step failed?"]
     if artifacts["fallbacks"]:
-        lines.append(f"- Steps degraded to deterministic mock fallback: "
+        lines.append(f"- Steps that FAILED and needed a relaunch (no mock "
+                     f"fallback exists since D-34): "
                      f"{', '.join(artifacts['fallbacks'])} — these agents' "
                      "prompts/validators are the weakest links.")
     else:
         lines.append("- No step failed; all artifacts were produced by the "
-                     "live backends and passed format validation.")
+                     "live backends and passed validation.")
     lines += ["", "## Which critique was too vague?"]
     from .pipeline import CRITIC_HEADING_RE
     vague = [name for name, text in artifacts["critics"].items()

@@ -86,8 +86,18 @@ def main():
               f"(prev total {prev_eval['total']}, planned change: "
               f"{planned['id'] if planned else 'none'})")
 
+    # Era boundary (D-34): rounds before era_start_round are a closed
+    # archive scored under the old schema — the first round of a new era
+    # is a BASELINE (no delta against the previous era, no regression
+    # revert), because the two eras are not comparable (owner decision
+    # 2026-07-14; the round-8 acceptance run demonstrated the failure:
+    # a meaningless -0.28 cross-era delta triggered a full revert-and-rerun).
+    era_start = cfg.get("evaluation", {}).get("era_start_round")
+
     for n in range(args.start_round, args.max_rounds + 1):
         t0 = time.time()
+        if era_start and n == era_start:
+            prev_eval = None
         applied, touched = None, []
         if planned is not None:
             touched = improve.apply_change(planned, n)
@@ -98,7 +108,7 @@ def main():
         excluded, artifacts, ev = [], None, None
         for retry in range(3):
             artifacts, ev = evaluate_round(n, prev_eval, applied)
-            if applied is not None:
+            if applied is not None and ev["delta"] is not None:
                 improve.set_actual_delta(applied["id"], n, ev["delta"])
             if applied is None or ev["delta"] is None or ev["delta"] >= -0.02:
                 break

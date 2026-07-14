@@ -1,0 +1,1 @@
+I'll research the statutory and legal-governance dimensions of Hungary's early academic selection system (6- and 8-year gimnáziums), focusing on the Nkt. framework, maintainer plurality, and felmenő rendszer constraints.
