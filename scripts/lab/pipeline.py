@@ -349,6 +349,18 @@ def parse_json_block(text):
     return json.loads(text[start:end + 1])
 
 
+def valid_critic(o):
+    try:
+        obs = o["objections"]
+    except (TypeError, KeyError):
+        return False
+    if not isinstance(obs, list) or len(obs) < 2:
+        return False
+    return all(len(str(ob.get("objection", "")).strip()) >= 10
+               and str(ob.get("suggested_revision", "")).strip()
+               for ob in obs)
+
+
 def valid_scenarios_bi(o):
     """Bilingual scenarios (D-34): exactly S1..S4, every prose leaf a
     non-empty {en, hu} pair, every structured sub-field present."""
@@ -1103,25 +1115,29 @@ def run_round(n):
                      "facts; a claim tagged stronger than its registry grade, "
                      "or citing a source not listed here without flagging it "
                      "as model knowledge, is a defect):\n" + registry_digest)
-        text, _ = step.run(
+        obj, _ = step.run(
             f"critic:{name}",
             dict(task="critic", agent=name, round_n=n,
                  instructions=(
-                     "Critique the scenarios below. Output format per "
-                     "objection:\n## S<n>.<field>\nObjection: <concrete flaw>\n"
-                     "plus any lines your ## Directives require. <field> must "
-                     "be one of: " + ", ".join(FIELD_KEYS) + "." + extra),
+                     "Critique the scenarios below as the required JSON "
+                     "object. 2-4 objections — pick the most consequential, "
+                     "not the easiest. Each objection names the specific "
+                     "scenario and field it attacks, states the concrete "
+                     "flaw (generic feedback is a failure), a severity, and "
+                     "a concrete suggested revision. Attack content, not "
+                     "style." + extra),
                  inputs=scen_en_md + "\n\n" + synthesis_text),
-            validate=lambda t: len(CRITIC_HEADING_RE.findall(t)) >= 2
-                               and "Objection:" in t,
-            out_path=rd / "critic_outputs" / f"{name}.md",
-            role="judge", max_tokens=2500)
-        return name, text
+            validate=valid_critic,
+            out_path=rd / "critic_outputs" / f"{name}.json",
+            schema=S.CRITIC, role="judge", max_tokens=4000)
+        md = render.critic_md(name, obj)
+        write(rd / "critic_outputs" / f"{name}.md", md)
+        return name, md
 
     critics = {}
     with ThreadPoolExecutor(max_workers=4) as ex:
-        for name, text in ex.map(run_critic, D.CRITICS):
-            critics[name] = text
+        for name, md in ex.map(run_critic, D.CRITICS):
+            critics[name] = md
 
     doc_pairs = [(scen_en_md, scen_hu_md), (brief_en, brief_hu)]
     tr_report = translation.check(scen_en, scen_hu, doc_pairs)

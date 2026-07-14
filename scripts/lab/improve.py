@@ -55,7 +55,7 @@ CATALOG = [
          kind="directive", targets=ALL_CRITICS,
          text=("For every objection add a line 'Severity: high|medium|low' "
                "and a line 'Suggested revision: <concrete fix>'."),
-         checks={"critic": ["Severity:", "Suggested revision:"]},
+         checks={"critic": ['"severity":', '"suggested_revision":']},
          expected_delta=0.6),
     dict(id="evidence_tag_all", dimension="evidence_discipline",
          kind="directive", targets=["scenario_builder", "translator"],

@@ -367,16 +367,11 @@ def brief(lang, d, prompt=""):
 # -- critics -----------------------------------------------------------------
 
 def critic(agent, d):
-    objections = K.CRITIQUES[agent]
-    lines = [f"# Critique: {agent}", ""]
-    for o in objections:
-        lines.append(f"## {o['scenario']}.{o['field']}")
-        lines.append(f"Objection: {o['objection']}")
-        if "critic_fix_severity" in d:
-            lines.append(f"Severity: {o['severity']}")
-            lines.append(f"Suggested revision: {o['fix']}")
-        lines.append("")
-    return "\n".join(lines)
+    return json.dumps({"objections": [
+        dict(scenario=o["scenario"], field=o["field"],
+             objection=o["objection"], severity=o["severity"],
+             suggested_revision=o["fix"])
+        for o in K.CRITIQUES[agent]]}, ensure_ascii=False, indent=2)
 
 
 # -- societal discourse (D-29) ------------------------------------------------

@@ -86,8 +86,8 @@ TYPE_RULES = {
         "Stay under ~450 words per language; density beats volume (length is not rewarded).",
     ],
     "critic": [
-        "Every objection MUST name a specific scenario id AND field, as a heading: `## S<n>.<field>`.",
-        "Follow each heading with `Objection: <the concrete flaw>` — generic feedback is a failure.",
+        "Every objection MUST name a specific scenario id AND field via its scenario and field fields.",
+        "State the concrete flaw in the objection field — generic feedback is a failure.",
         "2-4 objections; pick the most consequential, not the easiest.",
         "Attack content, not style; never object to phrasing.",
         "Do not soften: if a scenario's core claim is unsupported, say exactly that.",
@@ -149,7 +149,7 @@ TYPE_SELFCRIT = {
 
 TYPE_TEMPLATE = {
     "expert": "(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using docs/glossary.md terminology — parallel authoring, not translation. Fields: findings[{claim{en,hu}, evidence, source}], interpretation{en,hu}, assumptions[{en,hu}], position{en,hu}, uncertainties[{text{en,hu}, confidence, reduced_by{en,hu}}])",
-    "critic": "# Critique: <name>\\n## S<n>.<field>\\nObjection: <concrete flaw>",
+    "critic": "(JSON — the exact schema is enforced by the API: {\"objections\": [{\"scenario\": \"S1..S4\", \"field\": \"<scenario field>\", \"objection\": \"<the concrete flaw>\", \"severity\": \"high|medium|low\", \"suggested_revision\": \"<concrete fix>\"}]})",
     "synthesis": "(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief; discourse_mediator returns the argument-map JSON)",
     "meta": "# Meta-critique — round <n>\\n## Agent performance\\n## Workflow\\n## Critique quality\\n## Gaming judgment (explicit)\\n## Translation consistency",
     "discourse": "(JSON — the exact schema is given in the task instructions: one reaction per scenario with stance / label / source-or-basis / interest / public_good_frame / argument / condition_to_change)",

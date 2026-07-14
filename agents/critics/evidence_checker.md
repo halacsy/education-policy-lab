@@ -19,8 +19,8 @@ scenarios.json (EN), synthesis.md, expert outputs; for translation_checker also 
 critic_outputs/<name>.md
 
 ## Rules
-- Every objection MUST name a specific scenario id AND field, as a heading: `## S<n>.<field>`.
-- Follow each heading with `Objection: <the concrete flaw>` — generic feedback is a failure.
+- Every objection MUST name a specific scenario id AND field via its scenario and field fields.
+- State the concrete flaw in the objection field — generic feedback is a failure.
 - 2-4 objections; pick the most consequential, not the easiest.
 - Attack content, not style; never object to phrasing.
 - Do not soften: if a scenario's core claim is unsupported, say exactly that.
@@ -43,11 +43,13 @@ If an objection is speculative, mark it (speculative). Distinguish 'wrong' from 
 
 ## Output template
 ```
-# Critique: <name>
-## S<n>.<field>
-Objection: <concrete flaw>
+(JSON — the exact schema is enforced by the API)
+{"objections": [{"scenario": "S1..S4", "field": "<scenario field>",
+                 "objection": "<the concrete flaw>",
+                 "severity": "high|medium|low",
+                 "suggested_revision": "<concrete fix>"}]}
 ```
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-03] DIRECTIVE:critic_fix_severity — For every objection add a line 'Severity: high|medium|low' and a line 'Suggested revision: <concrete fix>'.
+- [round-03] DIRECTIVE:critic_fix_severity — Fill every objection's severity (high|medium|low) and suggested_revision (a concrete fix) fields.
