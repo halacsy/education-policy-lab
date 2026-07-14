@@ -42,9 +42,9 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 5-section brief)
+(JSON — the exact schema is enforced by the API; BILINGUAL {en, hu} pairs authored natively in both languages with docs/glossary.md terminology: {overview{en,hu}, disagreements[{topic{en,hu}, sides[{holders[], position{en,hu}, rationale{en,hu}, minority}]}], agreements[{text{en,hu}, evidence}]})
 ```
 
 ## Directives
 <!-- Appended by the improvement step; one line per directive. -->
-- [round-04] DIRECTIVE:minority_report — Include a '## Minority positions' section (HU: '## Különvélemények') carrying every minority/dissenting position with its holders and rationale, proportionally, never resolved away.
+- [round-04] DIRECTIVE:minority_report — Mark every minority/dissenting side (minority=true) with its holders and rationale, proportionally, never resolved away; the renderer carries every marked side into the '## Minority positions' section.

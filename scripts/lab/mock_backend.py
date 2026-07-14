@@ -122,54 +122,42 @@ def scenarios_json(d):
 # -- synthesis ---------------------------------------------------------------
 
 def synthesis(d):
-    lines = ["# Synthesis", "",
-             "## Overview",
-             "Four scenarios span the real option space: reform the entry gate "
-             "(S1), shrink early-selective intake gradually (S2), end "
-             "between-school selection before 14 (S3), or compensate without "
-             "structural change (S4). The scenarios are not mutually exclusive: "
-             "S1 and S4 are cheap, reversible pilots that inform the structural "
-             "choice between S2 and S3.",
-             "",
-             "## Disagreement map"]
+    disagreements = []
     for dis in K.DISAGREEMENTS:
-        lines.append(f"### {dis['topic']}")
-        for i, side in enumerate(dis["sides"]):
-            who = ", ".join(side["holders"])
-            mark = " (minority)" if i == dis["minority_index"] else ""
-            lines.append(f"- **{who}**{mark}: {side['position']['en']} "
-                         f"Why: {side['rationale']['en']}")
-        lines.append("")
-    if "minority_report" in d:
-        lines += ["## Minority positions (preserved in full)"]
-        for dis in K.DISAGREEMENTS:
-            side = dis["sides"][dis["minority_index"]]
-            who = ", ".join(side["holders"])
-            lines.append(f"- On *{dis['topic']}*, the minority ({who}) holds: "
-                         f"{side['position']['en']} Rationale: "
-                         f"{side['rationale']['en']} This position is carried "
-                         f"into the final brief, not resolved away.")
-        lines.append("")
-    lines += ["## What the experts agree on",
-              "- Annual publication of intake-composition data is a no-regret "
-              "move under every scenario. [evidence: strong]",
-              "- Transition capacity (teachers, legal notice periods) binds any "
-              "structural variant to a 6-12 year horizon. [evidence: strong]"]
-    return "\n".join(lines) + "\n"
+        sides = [dict(holders=list(side["holders"]),
+                      position=_pair(side["position"]),
+                      rationale=_pair(side["rationale"]),
+                      minority=(i == dis["minority_index"]))
+                 for i, side in enumerate(dis["sides"])]
+        disagreements.append(dict(topic=_hu_pair(dis["topic"]), sides=sides))
+    return json.dumps(dict(
+        overview=_hu_pair(
+            "Four scenarios span the real option space: reform the entry "
+            "gate (S1), shrink early-selective intake gradually (S2), end "
+            "between-school selection before 14 (S3), or compensate without "
+            "structural change (S4). The scenarios are not mutually "
+            "exclusive: S1 and S4 are cheap, reversible pilots that inform "
+            "the structural choice between S2 and S3."),
+        disagreements=disagreements,
+        agreements=[
+            dict(text=_hu_pair("Annual publication of intake-composition "
+                               "data is a no-regret move under every "
+                               "scenario."), evidence="strong"),
+            dict(text=_hu_pair("Transition capacity (teachers, legal notice "
+                               "periods) binds any structural variant to a "
+                               "6-12 year horizon."), evidence="strong"),
+        ],
+    ), ensure_ascii=False, indent=2)
 
 
 def rejected_framings():
-    lines = ["# Rejected framings", "",
-             "Candidate framings generated per scenario; one selected, the "
-             "rest recorded here with the reason for rejection."]
+    scenarios = []
     for s in K.SCENARIOS:
-        lines.append(f"\n## {s['id']} — {s['title']['en']}")
-        for f in s["framings"]:
-            if f["chosen"]:
-                lines.append(f"- CHOSEN: {f['en']}")
-            else:
-                lines.append(f"- REJECTED: {f['en']} — reason: {f['reject_reason']}")
-    return "\n".join(lines) + "\n"
+        chosen = next(f["en"] for f in s["framings"] if f["chosen"])
+        rejected = [dict(framing=f["en"], reason=f["reject_reason"])
+                    for f in s["framings"] if not f["chosen"]]
+        scenarios.append(dict(id=s["id"], chosen=chosen, rejected=rejected))
+    return json.dumps({"scenarios": scenarios}, ensure_ascii=False, indent=2)
 
 
 # -- brief -------------------------------------------------------------------

@@ -150,7 +150,7 @@ TYPE_SELFCRIT = {
 TYPE_TEMPLATE = {
     "expert": "(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using docs/glossary.md terminology — parallel authoring, not translation. Fields: findings[{claim{en,hu}, evidence, source}], interpretation{en,hu}, assumptions[{en,hu}], position{en,hu}, uncertainties[{text{en,hu}, confidence, reduced_by{en,hu}}])",
     "critic": "(JSON — the exact schema is enforced by the API: {\"objections\": [{\"scenario\": \"S1..S4\", \"field\": \"<scenario field>\", \"objection\": \"<the concrete flaw>\", \"severity\": \"high|medium|low\", \"suggested_revision\": \"<concrete fix>\"}]})",
-    "synthesis": "(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief; discourse_mediator returns the argument-map JSON)",
+    "synthesis": "(per agent — see Mission; every output is schema-enforced JSON: scenario_builder returns the bilingual scenarios, editor the bilingual synthesis (disagreement map with minority flags), final_brief_writer the bilingual 10-section deliberation brief, discourse_mediator the argument-map; bilingual means every {en, hu} pair is authored natively in both languages)",
     "meta": "# Meta-critique — round <n>\\n## Agent performance\\n## Workflow\\n## Critique quality\\n## Gaming judgment (explicit)\\n## Translation consistency",
     "discourse": "(JSON — the exact schema is given in the task instructions: one reaction per scenario with stance / label / source-or-basis / interest / public_good_frame / argument / condition_to_change)",
 }

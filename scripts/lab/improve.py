@@ -47,7 +47,9 @@ CATALOG = [
                "'## Különvélemények') carrying every minority/dissenting "
                "position with its holders and rationale, proportionally, "
                "never resolved away."),
-         checks={"synthesis": ["## Minority positions"],
+         # synthesis is structured (D-34): the schema guarantees per-side
+         # minority flags; the marker verifies at least one side is marked
+         checks={"synthesis": ['"minority": true'],
                  "brief:en": ["## Minority positions"],
                  "brief:hu": ["## Különvélemények"]},
          expected_delta=0.5),

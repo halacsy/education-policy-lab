@@ -349,6 +349,48 @@ def parse_json_block(text):
     return json.loads(text[start:end + 1])
 
 
+def valid_synthesis(o):
+    try:
+        dis = o["disagreements"]
+    except (TypeError, KeyError):
+        return False
+    if not pair_ok(o.get("overview")):
+        return False
+    if not isinstance(dis, list) or len(dis) < 2:
+        return False
+    minority_seen = False
+    for d in dis:
+        if not pair_ok(d.get("topic")):
+            return False
+        sides = d.get("sides")
+        if not sides or len(sides) < 2:
+            return False
+        for side in sides:
+            if not side.get("holders") or not pair_ok(side.get("position")) \
+                    or not pair_ok(side.get("rationale")):
+                return False
+            minority_seen = minority_seen or bool(side.get("minority"))
+    agreements = o.get("agreements")
+    if not agreements or not all(pair_ok(a.get("text")) for a in agreements):
+        return False
+    return minority_seen  # a map with no minority side is consensus laundering
+
+
+def valid_rejected(o):
+    try:
+        sc = o["scenarios"]
+    except (TypeError, KeyError):
+        return False
+    if not isinstance(sc, list) or \
+            {s.get("id") for s in sc} != {"S1", "S2", "S3", "S4"}:
+        return False
+    return all(str(s.get("chosen", "")).strip() and s.get("rejected")
+               and all(str(r.get("framing", "")).strip()
+                       and str(r.get("reason", "")).strip()
+                       for r in s["rejected"])
+               for s in sc)
+
+
 def valid_critic(o):
     try:
         obs = o["objections"]
@@ -972,31 +1014,39 @@ def run_round(n):
     write(rd / "scenarios.hu.md", scen_hu_md)
 
     # 3. editor synthesis + rejected framings
-    synthesis_text, _ = step.run(
+    synthesis_obj, _ = step.run(
         "editor",
         dict(task="synthesis", agent="editor", round_n=n,
              instructions=(
-                 "Synthesize the expert record. Required sections: "
-                 "'## Overview', '## Disagreement map' (each entry: "
-                 "'- **<holders>**: <position> Why: <rationale>'; mark the "
-                 "minority side '(minority)'), '## What the experts agree on'. "
-                 "Add any section your ## Directives require. Do NOT resolve "
-                 "disagreements."),
+                 "Synthesize the expert record as the required JSON object, "
+                 "in BOTH English and Hungarian: every {en, hu} pair carries "
+                 "the SAME statement written natively in each language (use "
+                 "the glossary strictly). overview = the coherent picture "
+                 "WITHOUT forcing consensus; disagreements = the "
+                 "disagreement map (per side: holders, position, rationale, "
+                 "minority flag — mark the minority side, never resolve it "
+                 "away); agreements = what the experts agree on, each with "
+                 "an honest evidence grade.\n\nGLOSSARY:\n" + glossary),
              inputs=expert_digest),
-        validate=lambda t: "## Disagreement map" in t and t.count("Why:") >= 3,
-        out_path=rd / "synthesis.md", max_tokens=4000)
+        validate=valid_synthesis, out_path=rd / "synthesis.json",
+        schema=S.SYNTHESIS, max_tokens=12000)
+    synthesis_text = render.synthesis_md(synthesis_obj, "en")
+    write(rd / "synthesis.md", synthesis_text)
+    write(rd / "synthesis.hu.md", render.synthesis_md(synthesis_obj, "hu"))
 
-    rejected, _ = step.run(
+    rejected_obj, _ = step.run(
         "rejected_framings",
         dict(task="rejected_framings", agent="scenario_builder", round_n=n,
              instructions=(
-                 "For each scenario S1-S4, list the candidate framings you "
-                 "considered: exactly one line starting '- CHOSEN: ' and at "
-                 "least one starting '- REJECTED: ... — reason: ...' under a "
-                 "'## S<n> — <title>' heading."),
+                 "For each scenario S1-S4, record the candidate framings "
+                 "you considered as the required JSON object: the chosen "
+                 "framing plus at least one rejected framing with the "
+                 "reason for its rejection."),
              inputs=scen_en_md),
-        validate=lambda t: "REJECTED" in t and "CHOSEN" in t,
-        out_path=rd / "rejected_framings.md", max_tokens=2500)
+        validate=valid_rejected, out_path=rd / "rejected_framings.json",
+        schema=S.REJECTED_FRAMINGS, max_tokens=4000)
+    rejected = render.rejected_md(rejected_obj)
+    write(rd / "rejected_framings.md", rejected)
 
     # 3.5 societal-discourse layer (D-29): argument ledger
     disc_cfg = cfg.get("discourse", {})
