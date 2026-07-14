@@ -39,8 +39,7 @@ CATALOG = [
          # JSON dump of the artifact, where the schema guarantees a
          # "confidence" field — total omission is impossible by construction
          checks={"expert_analysis": ['"confidence":'],
-                 "build_scenarios": ["confidence:"],
-                 "translate_scenarios": ["megbízhatóság:"]},
+                 "build_scenarios": ['"confidence":']},
          expected_delta=0.8),
     dict(id="minority_report", dimension="disagreement_preservation",
          kind="directive", targets=["editor", "final_brief_writer", "translator"],
@@ -64,16 +63,14 @@ CATALOG = [
                "strong|moderate|weak|contested]; HU: [bizonyíték: ...]) to "
                "EVERY mechanism claim and EVERY expected benefit, not only "
                "the core ones."),
-         checks={"build_scenarios": ["[evidence:"],
-                 "translate_scenarios": ["[bizonyíték:"]},
+         checks={"build_scenarios": ['"evidence":']},
          expected_delta=0.4),
     dict(id="implementation_detail", dimension="scenario_completeness",
          kind="directive", targets=["scenario_builder", "translator"],
          text=("Give every implementation step an explicit timeline in "
                "parentheses, e.g. '(timeline: year 1-2)'; HU: "
                "'(ütemezés: 1-2. év)'."),
-         checks={"build_scenarios": ["timeline:"],
-                 "translate_scenarios": ["ütemezés:"]},
+         checks={"build_scenarios": ['"timeline":']},
          expected_delta=0.5),
     dict(id="layer_tighten", dimension="layer_separation",
          kind="directive", targets=["final_brief_writer", "translator"],

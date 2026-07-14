@@ -27,18 +27,6 @@ from .util import (AGENTS_DIR, CONFIG_PATH, ROOT, TEMPLATES_DIR, load_config,
 
 FIELD_KEYS = translation.FIELD_KEYS
 
-SCENARIO_SCHEMA_HINT = json.dumps({
-    "scenarios": [{
-        "id": "S1", "title": "...", "goal": "...",
-        "mechanism": ["causal claim with inline [evidence: strong|moderate|weak|contested] tag where required"],
-        "evidence_status": "overall label — one-sentence justification",
-        "assumptions": ["..."], "expected_benefits": ["... [evidence: ...]"],
-        "equity_impact": "...", "cost_categories": ["..."],
-        "implementation_steps": ["Actor — action"],
-        "political_risks": ["..."], "uncertainties": ["..."],
-    }]
-}, indent=2)
-
 SCENARIO_ANCHORS = (
     "Produce EXACTLY four scenarios with stable ids:\n"
     "S1 admission reform within the current structure; S2 gradual phase-down "
@@ -361,45 +349,39 @@ def parse_json_block(text):
     return json.loads(text[start:end + 1])
 
 
-def _nonempty(v):
-    if isinstance(v, str):
-        return bool(v.strip())
-    if isinstance(v, list):
-        return bool(v) and all(isinstance(x, str) and x.strip() for x in v)
-    return False
-
-
-def valid_scenarios(obj, require_ids=None):
+def valid_scenarios_bi(o):
+    """Bilingual scenarios (D-34): exactly S1..S4, every prose leaf a
+    non-empty {en, hu} pair, every structured sub-field present."""
     try:
-        sc = obj["scenarios"]
+        sc = o["scenarios"]
     except (TypeError, KeyError):
         return False
-    if len(sc) < 3:
+    if not isinstance(sc, list) or len(sc) != 4 or \
+            {s.get("id") for s in sc} != {"S1", "S2", "S3", "S4"}:
         return False
-    ids = [s.get("id", "") for s in sc]
-    if len(set(ids)) != len(ids) or not all(re.fullmatch(r"S\d+", i) for i in ids):
-        return False
-    if require_ids and set(ids) != set(require_ids):
-        return False
-    return all(_nonempty(s.get(k)) for s in sc for k in FIELD_KEYS)
-
-
-def render_scenarios_md(obj, lang):
-    title = ("# Policy scenarios" if lang == "en"
-             else "# Szakpolitikai forgatókönyvek")
-    lines = [title, ""]
-    for s in obj["scenarios"]:
-        lines.append(f"## {s['id']} — {s['title']}")
-        for key in FIELD_KEYS:
-            label = K.FIELD_LABELS[key][0 if lang == "en" else 1]
-            lines.append(f"**{label}**")
-            v = s[key]
-            if isinstance(v, list):
-                lines += [f"- {item}" for item in v]
-            else:
-                lines.append(v)
-            lines.append("")
-    return "\n".join(lines)
+    for s in sc:
+        if not all(pair_ok(s.get(k)) for k in ("title", "goal", "equity_impact")):
+            return False
+        es = s.get("evidence_status")
+        if not isinstance(es, dict) or not pair_ok(es.get("note")):
+            return False
+        for key in ("mechanism", "expected_benefits"):
+            items = s.get(key)
+            if not items or not all(pair_ok(i.get("text")) for i in items):
+                return False
+        for key in ("assumptions", "cost_categories", "political_risks"):
+            items = s.get(key)
+            if not items or not all(pair_ok(i) for i in items):
+                return False
+        steps = s.get("implementation_steps")
+        if not steps or not all(pair_ok(st.get("actor")) and pair_ok(st.get("action"))
+                                and pair_ok(st.get("timeline")) for st in steps):
+            return False
+        us = s.get("uncertainties")
+        if not us or not all(pair_ok(u.get("text")) and pair_ok(u.get("reduced_by"))
+                             for u in us):
+            return False
+    return True
 
 
 def _current_state_hash():
@@ -858,7 +840,6 @@ def run_round(n):
     step = Step(rd, resume, round_n=n)
     print(f"[round {n:02d}] starting...", flush=True)
     question = cfg["policy_question"]
-    write_scen = lambda p, obj: write_json(p, obj)
 
     # 1. experts (parallel; unchanged specs may reuse the previous round's
     #    live output — same deterministic input, saves daily quota, D-19)
@@ -952,21 +933,31 @@ def run_round(n):
     expert_digest = "\n\n".join(
         f"----- {name} -----\n{text}" for name, text in experts.items())
 
-    # 2. scenario builder (EN, machine-readable)
-    scen_en, _ = step.run(
+    # 2. scenario builder (bilingual, schema-constrained — D-34; the old
+    #    separate translate_scenarios step is gone)
+    scen_bi, _ = step.run(
         "scenario_builder",
-        dict(task="build_scenarios", agent="scenario_builder", lang="en",
-             round_n=n,
+        dict(task="build_scenarios", agent="scenario_builder", round_n=n,
              instructions=(
                  f"Policy question: {question}\n{SCENARIO_ANCHORS}\n"
-                 "Return ONLY a JSON object with this exact schema (all ten "
-                 f"fields, every field non-empty):\n{SCENARIO_SCHEMA_HINT}"),
+                 "Return the scenarios in the required JSON schema, in BOTH "
+                 "English and Hungarian: every {en, hu} pair carries the "
+                 "SAME statement written natively in each language "
+                 "(parallel authoring, never machine-translation flavour; "
+                 "use the glossary terms strictly). Grade every mechanism "
+                 "claim's and expected benefit's evidence honestly; give "
+                 "every implementation step an actor, action and timeline; "
+                 "give every uncertainty a confidence level and what "
+                 "evidence would reduce it.\n\nGLOSSARY:\n" + glossary),
              inputs=expert_digest),
-        validate=lambda o: valid_scenarios(o),
-        out_path=rd / "scenarios.json", postprocess=parse_json_block,
-        loader=read_json, writer=write_scen, max_tokens=16000)
-    scen_en_md = render_scenarios_md(scen_en, "en")
+        validate=valid_scenarios_bi, out_path=rd / "scenarios.json",
+        schema=S.SCENARIOS, max_tokens=30000)
+    scen_en = render.scenario_view(scen_bi, "en")
+    scen_hu = render.scenario_view(scen_bi, "hu")
+    scen_en_md = render.scenarios_md(scen_en, "en")
+    scen_hu_md = render.scenarios_md(scen_hu, "hu")
     write(rd / "scenarios.en.md", scen_en_md)
+    write(rd / "scenarios.hu.md", scen_hu_md)
 
     # 3. editor synthesis + rejected framings
     synthesis_text, _ = step.run(
@@ -1000,27 +991,6 @@ def run_round(n):
     disc = None
     if disc_cfg.get("enabled"):
         disc = run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg)
-
-    # 4. translator (HU scenarios)
-    scen_hu, _ = step.run(
-        "translator_scenarios",
-        dict(task="translate_scenarios", agent="translator", lang="hu",
-             round_n=n,
-             instructions=(
-                 "Translate the scenarios JSON below into Hungarian. Keep the "
-                 "EXACT same JSON schema, ids and item counts. Use the "
-                 "glossary equivalents strictly. Translate inline tags as "
-                 "[bizonyíték: erős|mérsékelt|gyenge|vitatott]. Return ONLY "
-                 "the JSON object.\n\nGLOSSARY:\n" + glossary),
-             inputs=json.dumps(scen_en, ensure_ascii=False)),
-        validate=lambda o: (valid_scenarios(
-            o, require_ids=[s["id"] for s in scen_en["scenarios"]])
-            and not any(s == h for s, h in zip(scen_en["scenarios"],
-                                               o["scenarios"]))),
-        out_path=rd / "scenarios.hu.json", postprocess=parse_json_block,
-        loader=read_json, writer=write_scen, max_tokens=16000)
-    scen_hu_md = render_scenarios_md(scen_hu, "hu")
-    write(rd / "scenarios.hu.md", scen_hu_md)
 
     # 5. briefs (EN by final_brief_writer, HU by translator) — the 10-section
     #    deliberation deliverable (D-30). With the discourse layer on, the

@@ -36,8 +36,7 @@ def compose(prompt, role):
     d = _directives(prompt)
     fn = {
         "expert_analysis": lambda: expert_analysis(h["agent"], d),
-        "build_scenarios": lambda: scenarios_json("en", d),
-        "translate_scenarios": lambda: scenarios_json("hu", d),
+        "build_scenarios": lambda: scenarios_json(d),
         "synthesis": lambda: synthesis(d),
         "rejected_framings": lambda: rejected_framings(),
         "brief": lambda: brief(h.get("lang", "en"), d, prompt),
@@ -88,55 +87,36 @@ def expert_analysis(agent, d):
 
 # -- scenarios ---------------------------------------------------------------
 
-def _render_scenario(s, lang, d):
-    L = lang
-    ev_label = (lambda e: e if L == "en" else K.EVIDENCE_HU[e])
-    tag = (lambda e: f" [evidence: {e}]" if L == "en"
-           else f" [bizonyíték: {K.EVIDENCE_HU[e]}]")
-    mech = []
-    for c in s["mechanism"]:
-        t = c[L]
-        if c["core"] or "evidence_tag_all" in d:
-            t += tag(c["evidence"])
-        mech.append(t)
-    benefits = [b[L] + tag(b["evidence"]) for b in s["expected_benefits"]]
-    steps = []
-    for st in s["implementation_steps"]:
-        line = f"{st['actor'][L]} — {st['action'][L]}"
-        if "implementation_detail" in d:
-            line += f" ({'timeline' if L=='en' else 'ütemezés'}: {st['timeline'][L]})"
-        steps.append(line)
-    uncertainties = []
-    for u in s["uncertainties"]:
-        t = u[L]
-        if "uncertainty_quantify" in d:
-            if L == "en":
-                t += (f" (confidence: {u['confidence']}; would be reduced by:"
-                      f" {u['reducer']['en']})")
-            else:
-                t += (f" (megbízhatóság: {K.CONFIDENCE_HU[u['confidence']]};"
-                      f" csökkentené: {u['reducer']['hu']})")
-        uncertainties.append(t)
-    return dict(
-        id=s["id"],
-        title=s["title"][L],
-        goal=s["goal"][L],
-        mechanism=mech,
-        evidence_status=f"{ev_label(s['evidence_status']['label'])} — {s['evidence_status'][L]}",
-        assumptions=[a[L] for a in s["assumptions"]],
-        expected_benefits=benefits,
-        equity_impact=s["equity_impact"][L],
-        cost_categories=[c[L] for c in s["cost_categories"]],
-        implementation_steps=steps,
-        political_risks=[r[L] for r in s["political_risks"]],
-        uncertainties=uncertainties,
-    )
+def _pair(x):
+    """Project a curated {en, hu, ...} record to a bilingual leaf pair."""
+    return {"en": x["en"], "hu": x["hu"]}
 
 
-def scenarios_json(lang, d):
-    return json.dumps(
-        {"scenarios": [_render_scenario(s, lang, d) for s in K.SCENARIOS]},
-        ensure_ascii=False, indent=2)
+def scenarios_json(d):
+    """Bilingual structured scenarios (D-34) from the curated pack."""
+    scenarios = []
+    for s in K.SCENARIOS:
+        scenarios.append(dict(
+            id=s["id"], title=_pair(s["title"]), goal=_pair(s["goal"]),
+            mechanism=[dict(text=_pair(c), evidence=c["evidence"])
+                       for c in s["mechanism"]],
+            evidence_status=dict(label=s["evidence_status"]["label"],
+                                 note=_pair(s["evidence_status"])),
+            assumptions=[_pair(a) for a in s["assumptions"]],
+            expected_benefits=[dict(text=_pair(b), evidence=b["evidence"])
+                               for b in s["expected_benefits"]],
+            equity_impact=_pair(s["equity_impact"]),
+            cost_categories=[_pair(c) for c in s["cost_categories"]],
+            implementation_steps=[dict(actor=_pair(st["actor"]),
+                                       action=_pair(st["action"]),
+                                       timeline=_pair(st["timeline"]))
+                                  for st in s["implementation_steps"]],
+            political_risks=[_pair(r) for r in s["political_risks"]],
+            uncertainties=[dict(text=_pair(u), confidence=u["confidence"],
+                                reduced_by=_pair(u["reducer"]))
+                           for u in s["uncertainties"]],
+        ))
+    return json.dumps({"scenarios": scenarios}, ensure_ascii=False, indent=2)
 
 
 # -- synthesis ---------------------------------------------------------------

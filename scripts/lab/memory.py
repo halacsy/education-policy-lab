@@ -138,6 +138,12 @@ def update_memories(n, artifacts):
     prev = round_dir(n - 1)
     if n > 1 and (prev / "scenarios.json").exists():
         prev_scen = read_json(prev / "scenarios.json")
+        # D-34: a bilingual scenarios.json is projected to the same legacy
+        # EN view the rest of this module (and artifacts["scenarios_en"]) uses
+        if prev_scen.get("scenarios") and \
+                isinstance(prev_scen["scenarios"][0].get("title"), dict):
+            from . import render
+            prev_scen = render.scenario_view(prev_scen, "en")
         for p in sorted((prev / "critic_outputs").glob("*.md")):
             if p.stem == "translation_checker":
                 continue
