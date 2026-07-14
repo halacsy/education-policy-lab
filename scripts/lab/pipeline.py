@@ -753,9 +753,12 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                      instructions=(
                          "Reciprocity pass (DQI): from the argument map "
                          "below, pick the strongest argument AGAINST your "
-                         "stated positions and answer it as the required "
-                         "JSON object — answering means engaging the "
-                         "argument on its merits, not repeating yourself. "
+                         "stated positions — AT MOST THREE clusters, the "
+                         "ones that hit your position hardest — and answer "
+                         "them as the required JSON object. Answering means "
+                         "engaging the argument on its merits, not "
+                         "repeating yourself; depth on the strongest "
+                         "counter-argument beats coverage. "
                          + bilingual_note),
                      inputs=("YOUR REACTIONS:\n"
                              + json.dumps(render.project(
@@ -764,7 +767,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                              + "\n\nARGUMENT MAP:\n" + clusters_digest)),
                 validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
                 out_path=ddir / "responses" / f"{name}.json",
-                schema=S.RECIPROCITY, max_tokens=10000)
+                schema=S.RECIPROCITY, max_tokens=16000)
             return name, obj
 
         with ThreadPoolExecutor(max_workers=4) as ex:
