@@ -73,9 +73,29 @@ python3 scripts/build_registry.py --check        # knowledge freshness gate (CI)
   the cheapest generator path; a discourse-enabled round ≈ 40 generator +
   15-25 judge calls (reciprocity off: −10).
 
-## Current state (2026-07-11, end of session)
+## Current state (2026-07-14, end of session)
 
-- **Branch `refactor/deliberation-mission`** (D-30, this session): mission
+- **Branch `refactor/structured-agents`** (D-34 draft, this session, off
+  refactor/deliberation-mission): structured/bilingual/tool-using agent
+  refactor. Owner-approved plan + evidence in
+  `docs/proposals/2026-07-14-structured-bilingual-agents.md` (owner answers
+  recorded: API cost OK, rounds 1-7 closed as archive era, web search rides
+  with Phase 2). **Phase 1 DONE** (8f81df8): `llm.call_structured()`
+  (output_config.format / Gemini response_schema), silent mock fallback
+  REMOVED — StepFailed + resume instead; mock only under LAB_FORCE_MOCK=1.
+  Session findings that motivated it: round 6's brief was entirely
+  mock-written (inflated scores); all 17 round-7 fallbacks were translate_*
+  steps (CLI 600s timeout on ~180K-token batches); instruction-based
+  bilingual output does NOT work, schema-constrained does (test scripts on
+  the branch); web search upgrades expert evidence weak→strong
+  (test_websearch_expert.py, includes the pause_turn loop). **Phase 2 NEXT**:
+  bilingual {en,hu} schemas for all artifacts + delete the ~46 translate_*
+  calls + JSON→md renderers + web-search toggle for experts; then Phase 3
+  (evaluation/verify on JSON fields, translation_fidelity→bilingual_parity,
+  two-era scorecard; also remove evaluation.py's judge-score mock fallback).
+  NOTE: API keys were exposed in the 2026-07-14 session transcript — ROTATE
+  before serious use (Phase 0).
+- **Branch `refactor/deliberation-mission`** (D-30, 2026-07-11): mission
   reframed from "produce a policy" to "accelerate deliberation"; discourse
   layer relabelled as a stakeholder stress test (explicit disclaimer in
   every discourse-facing instruction + the ledger itself); argument clusters
