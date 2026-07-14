@@ -42,7 +42,7 @@ Uncertainties survive synthesis; a synthesis with fewer uncertainties than its i
 
 ## Output template
 ```
-(per agent — see Mission; scenario_builder/translator return the scenarios JSON schema, editor returns synthesis.md with '## Disagreement map', final_brief_writer returns the 10-section deliberation brief; discourse_mediator returns the argument-map JSON)
+(JSON — the exact schema is enforced by the API; BILINGUAL {en, hu} pairs authored natively in both languages. Phase 1: clusters[{id A1..An, scenario, kind, side, claim{en,hu}, raised_by[]}]; phase 2 per cluster: interest, value, fear, affected[], assumption, empirical_uncertainty (all {en,hu}), decision_relevance, attention{5 booleans})
 ```
 
 ## Directives

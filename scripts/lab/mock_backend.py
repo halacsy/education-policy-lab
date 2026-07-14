@@ -49,9 +49,6 @@ def compose(prompt, role):
         "argument_decompose": lambda: argument_decompose(prompt),
         "grade_arguments": lambda: grade_arguments(prompt),
         "discourse_reciprocity": lambda: discourse_reciprocity(h["agent"]),
-        "translate_voice": lambda: translate_voice(prompt),
-        "translate_cluster": lambda: translate_cluster(prompt),
-        "translate_reciprocity": lambda: translate_reciprocity(prompt),
     }.get(task)
     if fn is None:
         raise ValueError(f"mock backend: unknown task {task!r}")
@@ -364,7 +361,7 @@ def critic(agent, d):
 
 # -- societal discourse (D-29) ------------------------------------------------
 
-def _voice_json(name, lang):
+def discourse_voice(name):
     v = K.DISCOURSE_VOICES[name]
     reactions = []
     for sid in ("S1", "S2", "S3", "S4"):
@@ -372,66 +369,56 @@ def _voice_json(name, lang):
         reactions.append(dict(
             scenario=sid, stance=r["stance"], label=r["label"],
             source=r.get("source", ""), basis=r.get("basis", ""),
-            interest=v["interest"][lang], public_good_frame=v["frame"][lang],
-            argument=r["argument"][lang],
-            condition_to_change=r["condition"][lang]))
-    return dict(voice=name, reactions=reactions)
-
-
-def discourse_voice(name):
-    return json.dumps(_voice_json(name, "en"), ensure_ascii=False, indent=2)
-
-
-def _clusters(lang):
-    return [dict(id=c["id"], scenario=c["scenario"], kind=c["kind"],
-                 side=c["side"], claim=c["claim"][lang],
-                 raised_by=list(c["raised_by"]),
-                 interest=c["interest"][lang], value=c["value"][lang],
-                 fear=c["fear"][lang], affected=list(c["affected"][lang]),
-                 assumption=c["assumption"][lang],
-                 empirical_uncertainty=c["empirical_uncertainty"][lang],
-                 decision_relevance=c["decision_relevance"],
-                 attention=dict(c["attention"]))
-            for c in K.ARGUMENT_CLUSTERS]
-
-
-def argument_map():
-    return json.dumps({"clusters": _clusters("en")},
+            interest=_pair(v["interest"]),
+            public_good_frame=_pair(v["frame"]),
+            argument=_pair(r["argument"]),
+            condition_to_change=_pair(r["condition"])))
+    return json.dumps(dict(voice=name, reactions=reactions),
                       ensure_ascii=False, indent=2)
 
 
+def argument_map():
+    clusters = [dict(id=c["id"], scenario=c["scenario"], kind=c["kind"],
+                     side=c["side"], claim=_pair(c["claim"]),
+                     raised_by=list(c["raised_by"]))
+                for c in K.ARGUMENT_CLUSTERS]
+    return json.dumps({"clusters": clusters}, ensure_ascii=False, indent=2)
+
+
+def _pair_list(x):
+    """Curated {'en': [...], 'hu': [...]} parallel lists -> [{en, hu}, ...]."""
+    return [{"en": e, "hu": h} for e, h in zip(x["en"], x["hu"])]
+
+
 def argument_decompose(prompt):
-    """Decompose ONE cluster (phase 2 of the D-30 split — see the comment
-    above CLUSTER_BASIC_SCHEMA_HINT in pipeline.py). Curated ids get their
-    curated decomposition; a live cluster id outside the curated pack (the
-    live phase-1 clustering produced more/different clusters than the
-    curated 10) gets an honest, generic templated decomposition instead of
-    failing outright — so a single unmatched cluster degrades alone rather
-    than discarding the whole live argument map."""
+    """Decompose ONE cluster (phase 2 of the D-30 split). Curated ids get
+    their curated decomposition; a live cluster id outside the curated pack
+    gets an honest, generic templated decomposition instead of failing
+    outright — a single unmatched cluster degrades alone."""
     m = re.search(r"argument cluster (A\d+)", prompt)
     cid = m.group(1) if m else None
     curated = {c["id"]: c for c in K.ARGUMENT_CLUSTERS}
     cur = curated.get(cid)
     if cur:
         return json.dumps(dict(
-            interest=cur["interest"]["en"], value=cur["value"]["en"],
-            fear=cur["fear"]["en"], affected=list(cur["affected"]["en"]),
-            assumption=cur["assumption"]["en"],
-            empirical_uncertainty=cur["empirical_uncertainty"]["en"],
+            interest=_pair(cur["interest"]), value=_pair(cur["value"]),
+            fear=_pair(cur["fear"]), affected=_pair_list(cur["affected"]),
+            assumption=_pair(cur["assumption"]),
+            empirical_uncertainty=_pair(cur["empirical_uncertainty"]),
             decision_relevance=cur["decision_relevance"],
             attention=dict(cur["attention"]),
         ), ensure_ascii=False, indent=2)
     names = re.findall(r"^- (\S+) \(", prompt, re.M) or ["unspecified stakeholders"]
     return json.dumps(dict(
-        interest=f"the concern(s) raised by {', '.join(names)}",
-        value="a trade-off between the scenario's stated goal and the "
-              "concern raised",
-        fear="the benefit claimed will not materialise as described",
-        affected=names,
-        assumption="the claim's premise holds under implementation as "
-                   "designed",
-        empirical_uncertainty="not independently graded here — see the "
-                              "evidence layer",
+        interest=_hu_pair(f"the concern(s) raised by {', '.join(names)}"),
+        value=_hu_pair("a trade-off between the scenario's stated goal and "
+                       "the concern raised"),
+        fear=_hu_pair("the benefit claimed will not materialise as described"),
+        affected=[_hu_pair(nm) for nm in names],
+        assumption=_hu_pair("the claim's premise holds under implementation "
+                            "as designed"),
+        empirical_uncertainty=_hu_pair("not independently graded here — see "
+                                       "the evidence layer"),
         decision_relevance="medium",
         attention=dict(high_attention=len(names) >= 3, new_information=False,
                        changes_evaluation=True, already_answered=False,
@@ -442,104 +429,35 @@ def argument_decompose(prompt):
 def grade_arguments(prompt):
     """Grade the clusters ACTUALLY in the prompt (a live argument map's ids
     differ from the curated pack's): known curated ids get their curated
-    grade, everything else is honestly marked not-registry-backed."""
+    grade, everything else is honestly marked not_registry_backed."""
     curated = {c["id"]: c for c in K.ARGUMENT_CLUSTERS}
     m = re.search(r"=== INPUTS ===\n(.*)", prompt, re.S)
     try:
         clusters = json.loads(m.group(1)) if m else K.ARGUMENT_CLUSTERS
     except (json.JSONDecodeError, AttributeError):
         clusters = K.ARGUMENT_CLUSTERS
-    lines = []
+    grades = []
     for c in clusters:
         if c.get("kind") not in ("fact", "mixed"):
             continue
         cur = curated.get(c.get("id"))
         if cur and cur.get("grade"):
             f = K.FACTS[cur["grade_source"]]
-            lines.append(f"{c['id']}: [evidence: {cur['grade']} — "
-                         f"{f['source']}] registry fact {cur['grade_source']}")
+            grades.append(dict(cluster_id=c["id"], status=cur["grade"],
+                               source=f["source"],
+                               note=f"registry fact {cur['grade_source']}"))
         else:
-            lines.append(f"{c['id']}: [not registry-backed — treat as model "
-                         "knowledge] no curated source supports this claim")
-    return "\n".join(lines) + "\n"
-
-
-def _response_json(name, lang):
-    r = K.DISCOURSE_VOICES[name]["response"]
-    return dict(voice=name, responses=[dict(
-        cluster=r["cluster"], response=r[lang], outcome=r["outcome"],
-        new_condition="")])
+            grades.append(dict(cluster_id=c["id"],
+                               status="not_registry_backed", source="",
+                               note="no curated source supports this claim"))
+    return json.dumps({"grades": grades}, ensure_ascii=False, indent=2)
 
 
 def discourse_reciprocity(name):
-    return json.dumps(_response_json(name, "en"), ensure_ascii=False, indent=2)
-
-
-def _mock_inputs(prompt):
-    """Parse the free-form (no END marker) '=== INPUTS ===' block."""
-    m = re.search(r"=== INPUTS ===\n(.*)", prompt, re.S)
-    try:
-        return json.loads(m.group(1)) if m else {}
-    except (json.JSONDecodeError, AttributeError):
-        return {}
-
-
-def translate_voice(prompt):
-    """D-30: per-voice HU translation (replaces the old one-shot ledger
-    translation). Curated voice names get their curated HU twin; a live
-    voice name always matches (voice names are fixed), so this path exists
-    mainly for the initial mock-sprint smoke test."""
-    v = _mock_inputs(prompt)
-    name = v.get("voice")
-    if name in K.DISCOURSE_VOICES:
-        return json.dumps(_voice_json(name, "hu"), ensure_ascii=False, indent=2)
-    reactions = [dict(r, argument="(HU fordítás nem elérhető) "
-                                  + str(r.get("argument", "")))
-                for r in v.get("reactions", [])]
-    return json.dumps(dict(voice=name, reactions=reactions),
-                      ensure_ascii=False, indent=2)
-
-
-def translate_cluster(prompt):
-    """D-30: per-cluster HU translation. Curated ids get their curated HU
-    twin; an id outside the curated pack (a live phase-1 clustering
-    produced more clusters than the curated 10) gets an honestly-labelled
-    untranslated fallback instead of failing outright."""
-    m = re.search(r"argument cluster (A\d+)", prompt)
-    cid = m.group(1) if m else None
-    curated = {c["id"]: c for c in _clusters("hu")}
-    cur = curated.get(cid)
-    if cur:
-        return json.dumps({k: cur[k] for k in (
-            "claim", "interest", "value", "fear", "affected", "assumption",
-            "empirical_uncertainty")}, ensure_ascii=False, indent=2)
-    src = _mock_inputs(prompt)
-    prefix = "(HU fordítás nem elérhető) "
-    return json.dumps(dict(
-        claim=prefix + str(src.get("claim", "")),
-        interest=prefix + str(src.get("interest", "")),
-        value=prefix + str(src.get("value", "")),
-        fear=prefix + str(src.get("fear", "")),
-        affected=src.get("affected") or ["érintett felek"],
-        assumption=prefix + str(src.get("assumption", "")),
-        empirical_uncertainty=prefix + str(src.get("empirical_uncertainty", "")),
-    ), ensure_ascii=False, indent=2)
-
-
-def translate_reciprocity(prompt):
-    """D-30: per-voice HU translation of the reciprocity response."""
-    r = _mock_inputs(prompt)
-    name = r.get("voice")
-    if name in K.DISCOURSE_VOICES:
-        return json.dumps(_response_json(name, "hu"), ensure_ascii=False, indent=2)
-    responses = [dict(cluster=it.get("cluster"),
-                      response="(HU fordítás nem elérhető) "
-                              + str(it.get("response", "")),
-                      outcome=it.get("outcome"),
-                      new_condition=it.get("new_condition", ""))
-                for it in r.get("responses", [])]
-    return json.dumps(dict(voice=name, responses=responses),
-                      ensure_ascii=False, indent=2)
+    r = K.DISCOURSE_VOICES[name]["response"]
+    return json.dumps(dict(voice=name, responses=[dict(
+        cluster=r["cluster"], response=_pair(r), outcome=r["outcome"],
+        new_condition={"en": "", "hu": ""})]), ensure_ascii=False, indent=2)
 
 
 # -- meta critique -----------------------------------------------------------

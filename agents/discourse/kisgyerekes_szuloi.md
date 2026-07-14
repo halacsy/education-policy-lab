@@ -49,7 +49,7 @@ no_position is the honest answer when the represented interest implies nothing a
 
 ## Output template
 ```
-(JSON — the exact schema is given in the task instructions: one reaction per scenario with stance / label / source-or-basis / interest / public_good_frame / argument / condition_to_change)
+(JSON — the exact schema is enforced by the API; BILINGUAL: interest, public_good_frame, argument and condition_to_change are {en, hu} pairs authored natively in both languages. One reaction per scenario with stance / label / source-or-basis / interest / public_good_frame / argument / condition_to_change)
 ```
 
 ## Directives

@@ -64,44 +64,15 @@ CLAIM_TAGS = ("fact", "estimate", "assumption", "value")
 STANCES = ("support", "oppose", "conditional", "no_position")
 POSITION_LABELS = ("documented", "value_modeled", "no_position")
 
-VOICE_SCHEMA_HINT = json.dumps({
-    "voice": "<your agent name>",
-    "reactions": [{
-        "scenario": "S1", "stance": "support|oppose|conditional|no_position",
-        "label": "documented|value_modeled|no_position",
-        "source": "<document/URL — REQUIRED when label=documented, else empty>",
-        "basis": "<the documented values it derives from — REQUIRED when "
-                 "label=value_modeled, else empty>",
-        "interest": "<whose interest you defend>",
-        "public_good_frame": "<your public-good framing>",
-        "argument": "<justification; a bare stance is invalid. For "
-                    "no_position: one line on why the interest implies "
-                    "nothing here>",
-        "condition_to_change": "<what would change your stance; empty only "
-                               "for no_position>",
-    }]
-}, indent=2)
-
 RELEVANCE_LEVELS = ("high", "medium", "low")
 ATTENTION_KEYS = ("high_attention", "new_information", "changes_evaluation",
                   "already_answered", "primarily_rhetorical")
 
-# Argument-map generation is split into two phases (issue: the D-30 8-field
-# per-cluster decomposition made one giant one-shot call too failure-prone —
-# a single dropped field anywhere in 8-16 clusters failed the whole map, and
-# the mock fallback then discarded ALL the live clustering work). Phase 1
-# clusters cheaply (small schema, same shape as pre-D-30); phase 2 decomposes
-# EACH cluster in its own small, parallel, independently-retryable/resumable
-# call — a bad cluster degrades alone, live clustering is never thrown away.
-CLUSTER_BASIC_SCHEMA_HINT = json.dumps({
-    "clusters": [{
-        "id": "A1", "scenario": "S1", "kind": "fact|value|mixed",
-        "side": "pro|con|conditional",
-        "claim": "<one-sentence canonical form of the argument>",
-        "raised_by": ["<voice name>"],
-    }]
-}, indent=2)
-
+# Argument-map generation stays split into two phases (D-30 lesson: the
+# 8-field per-cluster decomposition made one giant one-shot call too
+# failure-prone — a bad cluster must degrade alone, live clustering must
+# never be thrown away). Phase 1 clusters cheaply; phase 2 decomposes EACH
+# cluster in its own small, parallel, independently-resumable call.
 CLUSTER_DECOMPOSE_FIELD_GUIDE = (
     "Field meanings: interest = whose interest is behind this argument; "
     "value = which value is in tension (e.g. equity vs. excellence); "
@@ -119,42 +90,6 @@ CLUSTER_DECOMPOSE_FIELD_GUIDE = (
     "substantively answered elsewhere in the record already; "
     "attention.primarily_rhetorical = is its main role rhetorical/"
     "identity-signalling rather than substantive.")
-
-# Literal example values, not "true|false — <explanation>" placeholders: a
-# placeholder that mixes an enum/boolean with an inline explanation reliably
-# gets echoed back literally (e.g. "true — teacher shortages are a salient
-# public topic" as the STRING value of a boolean field) instead of producing
-# a bare boolean/enum — every field's semantics live in
-# CLUSTER_DECOMPOSE_FIELD_GUIDE (prose) instead, and the schema stays a
-# clean structural example.
-CLUSTER_DECOMPOSE_SCHEMA_HINT = json.dumps({
-    "interest": "<one sentence>", "value": "<one sentence>",
-    "fear": "<one sentence>", "affected": ["<actor group>", "..."],
-    "assumption": "<one sentence>", "empirical_uncertainty": "<one sentence>",
-    "decision_relevance": "high",
-    "attention": {
-        "high_attention": True, "new_information": False,
-        "changes_evaluation": False, "already_answered": False,
-        "primarily_rhetorical": False,
-    },
-}, indent=2)
-
-# The ledger's HU version used to come from ONE call translating the fully
-# rendered document — at 17 clusters that's 200KB+ of source text, which
-# needs more output than the Anthropic SDK allows without switching to
-# streaming (a >10-minute non-streamed call is rejected outright). Instead
-# translate the underlying DATA in small per-voice/per-cluster pieces (same
-# principle as the argument-map split), then call ledger.render_ledger()
-# again — the EXACT same deterministic renderer already used for EN — to
-# produce the HU document. Scales to any cluster count; no separate
-# "translate the whole document" step needed at all.
-TRANSLATE_CLUSTER_SCHEMA_HINT = json.dumps({
-    "claim": "<translated>", "interest": "<translated>",
-    "value": "<translated>", "fear": "<translated>",
-    "affected": ["<translated>", "..."], "assumption": "<translated>",
-    "empirical_uncertainty": "<translated>",
-}, indent=2)
-
 
 def pair_ok(v):
     """A bilingual {en, hu} leaf with both sides non-empty."""
@@ -185,19 +120,6 @@ def valid_expert(o):
                for u in uncertainties)
 
 
-def valid_cluster_translation(d):
-    if not isinstance(d, dict):
-        return False
-    for field in ("claim", "interest", "value", "fear", "assumption",
-                  "empirical_uncertainty"):
-        if not str(d.get(field, "")).strip():
-            return False
-    affected = d.get("affected")
-    if not affected or not all(str(a).strip() for a in affected):
-        return False
-    return True
-
-
 def valid_voice(obj):
     try:
         rs = obj["reactions"]
@@ -213,14 +135,18 @@ def valid_voice(obj):
             return False
         if (r["stance"] == "no_position") != (r["label"] == "no_position"):
             return False
-        if len(str(r.get("argument", "")).strip()) < 10:
+        arg = r.get("argument")
+        if not pair_ok(arg) or len(arg["en"].strip()) < 10:
+            return False
+        if not pair_ok(r.get("interest")) or \
+                not pair_ok(r.get("public_good_frame")):
             return False
         if r["label"] == "documented" and not str(r.get("source", "")).strip():
             return False
         if r["label"] == "value_modeled" and not str(r.get("basis", "")).strip():
             return False
         if r["stance"] != "no_position" and \
-                not str(r.get("condition_to_change", "")).strip():
+                not pair_ok(r.get("condition_to_change")):
             return False
     return True
 
@@ -248,7 +174,7 @@ def valid_argmap_basic(obj, voice_names):
         rb = c.get("raised_by")
         if not rb or not set(rb) <= set(voice_names):
             return False
-        if not str(c.get("claim", "")).strip():
+        if not pair_ok(c.get("claim")):
             return False
     return True
 
@@ -259,10 +185,10 @@ def valid_cluster_decomposition(d):
         return False
     for field in ("interest", "value", "fear", "assumption",
                   "empirical_uncertainty"):
-        if not str(d.get(field, "")).strip():
+        if not pair_ok(d.get(field)):
             return False
     affected = d.get("affected")
-    if not affected or not all(str(a).strip() for a in affected):
+    if not affected or not all(pair_ok(a) for a in affected):
         return False
     if d.get("decision_relevance") not in RELEVANCE_LEVELS:
         return False
@@ -281,8 +207,23 @@ def valid_reciprocity(obj, cluster_ids):
     if not isinstance(rs, list) or not rs:
         return False
     return all(r.get("cluster") in cluster_ids
-               and len(str(r.get("response", "")).strip()) >= 10
+               and pair_ok(r.get("response"))
+               and len(r["response"]["en"].strip()) >= 10
                and r.get("outcome") in ("maintain", "revise") for r in rs)
+
+
+def valid_grades(o, factual_ids):
+    """Evidence-layer grading: 90% coverage of the fact/mixed clusters
+    (a judge that skips one cluster of thirty must not fail the step)."""
+    try:
+        gs = o["grades"]
+    except (TypeError, KeyError):
+        return False
+    if not isinstance(gs, list):
+        return False
+    ids = {g.get("cluster_id") for g in gs}
+    covered = sum(1 for cid in factual_ids if cid in ids)
+    return covered >= max(1, int(0.9 * len(factual_ids)))
 
 
 def responds_to_clusters(text, lang, cluster_ids):
@@ -585,13 +526,18 @@ class Step:
 
 
 def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
-    """Societal-discourse layer (D-29): voices react to the scenarios, the
-    mediator builds the argument map, the evidence layer grades factual
-    claims, an optional reciprocity pass makes the voices answer their
-    strongest counter-argument, and the argument ledger is rendered
-    deterministically (EN) + translated (HU)."""
+    """Societal-discourse layer (D-29, structured+bilingual since D-34):
+    voices react to the scenarios, the mediator builds the argument map,
+    the evidence layer grades factual claims, an optional reciprocity pass
+    makes the voices answer their strongest counter-argument. Every
+    artifact is bilingual JSON; BOTH ledgers are rendered deterministically
+    from the same data (render.project) — no translation steps at all."""
     voice_names = list(D.DISCOURSE)
     ddir = rd / "discourse"
+    bilingual_note = (
+        "Write every {en, hu} pair as the SAME statement authored natively "
+        "in both languages (use the glossary terms strictly; never "
+        "machine-translation flavour).\n\nGLOSSARY:\n" + glossary)
 
     def run_voice(name):
         obj, _ = step.run(
@@ -605,17 +551,15 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                      "actually think. React to each scenario below AS THE "
                      "INTEREST/VALUE VOICE your spec defines — you "
                      "represent, you do not give expert judgment. Return "
-                     f"ONLY a JSON object with this exact schema:\n"
-                     f"{VOICE_SCHEMA_HINT}\n"
-                     "Rules: one reaction per scenario (S1..S4); a stance "
-                     "without justification is invalid; no_position is the "
-                     "honest choice when your interest implies nothing; "
-                     "NEVER attribute an unsourced position to a real "
-                     "organisation — use value_modeled with its basis."),
+                     "the required JSON object. Rules: one reaction per "
+                     "scenario (S1..S4); a stance without justification is "
+                     "invalid; no_position is the honest choice when your "
+                     "interest implies nothing; NEVER attribute an "
+                     "unsourced position to a real organisation — use "
+                     "value_modeled with its basis. " + bilingual_note),
                  inputs=scen_en_md),
             validate=valid_voice, out_path=ddir / "voices" / f"{name}.json",
-            postprocess=parse_json_block, loader=read_json,
-            writer=lambda p, o: write_json(p, o), max_tokens=6000)
+            schema=S.VOICE, max_tokens=12000)
         return name, obj
 
     voices = {}
@@ -624,34 +568,32 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
             voices[name] = obj
 
     voices_digest = json.dumps(
-        {k: v["reactions"] for k, v in voices.items()}, ensure_ascii=False)
+        {k: render.project(v["reactions"], "en") for k, v in voices.items()},
+        ensure_ascii=False)
 
     # Phase 1: cluster only (small schema — the same shape as pre-D-30).
     arg_map_basic, _ = step.run(
         "argument_map",
         dict(task="argument_map", agent="discourse_mediator", round_n=n,
              instructions=(
-                 "Cluster the voices' arguments into an argument map. "
-                 "Return ONLY a JSON object with this exact schema:\n"
-                 + CLUSTER_BASIC_SCHEMA_HINT +
-                 "\nRules: stable sequential ids A1..An; aim for 8-16 "
-                 "clusters — MERGE near-duplicate arguments across voices "
-                 "and scenarios into one canonical claim instead of "
-                 "enumerating variants; every claim in canonical "
-                 "one-sentence form; classify fact vs value vs mixed; "
-                 "raised_by lists ONLY voice names that actually raise it; "
-                 "NEVER drop a minority argument; do not count heads."),
+                 "Cluster the voices' arguments into an argument map as the "
+                 "required JSON object. Rules: stable sequential ids "
+                 "A1..An; aim for 8-16 clusters — MERGE near-duplicate "
+                 "arguments across voices and scenarios into one canonical "
+                 "claim instead of enumerating variants; every claim in "
+                 "canonical one-sentence form; classify fact vs value vs "
+                 "mixed; raised_by lists ONLY voice names that actually "
+                 "raise it; NEVER drop a minority argument; do not count "
+                 "heads. " + bilingual_note),
              inputs=voices_digest),
         validate=lambda o: valid_argmap_basic(o, voice_names),
-        out_path=ddir / "argument_map_basic.json", postprocess=parse_json_block,
-        loader=read_json, writer=lambda p, o: write_json(p, o),
-        max_tokens=6000)
+        out_path=ddir / "argument_map_basic.json",
+        schema=S.CLUSTER_BASIC, max_tokens=10000)
     clusters_basic = arg_map_basic["clusters"]
 
     # Phase 2: decompose EACH cluster in its own small, parallel,
-    # independently-resumable call (issue: one dropped field anywhere in
-    # 8-16 clusters used to fail the WHOLE map and discard all the live
-    # clustering work — see the comment above CLUSTER_BASIC_SCHEMA_HINT).
+    # independently-resumable call (a bad cluster degrades alone; the live
+    # clustering is never thrown away).
     def decompose_cluster(c):
         cid = c["id"]
         context_lines = []
@@ -662,8 +604,8 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
             if r:
                 context_lines.append(
                     f"- {name} ({r['stance']}, {r['label']}): "
-                    f"{r['argument']} Condition: "
-                    f"{r.get('condition_to_change', '')}")
+                    f"{r['argument']['en']} Condition: "
+                    f"{r['condition_to_change']['en']}")
         obj, _ = step.run(
             f"decompose:{cid}",
             dict(task="argument_decompose", agent="discourse_mediator",
@@ -671,28 +613,19 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                  instructions=(
                      f"For argument cluster {cid} (scenario "
                      f"{c['scenario']}, {c['kind']}/{c['side']}): "
-                     f"\"{c['claim']}\"\ndecompose it for the stakeholder "
-                     "stress test digest, and screen it for 'gumicsont' "
-                     "status (a debate that draws a lot of attention but "
-                     "would not change the decision if resolved: high "
-                     "attention + low decision_relevance is exactly what "
-                     "real participants need flagged, not hidden).\n"
-                     + CLUSTER_DECOMPOSE_FIELD_GUIDE +
-                     "\nReturn ONLY a JSON object with this exact "
-                     "schema:\n" + CLUSTER_DECOMPOSE_SCHEMA_HINT +
-                     "\nRules: decision_relevance MUST be the bare word "
-                     "high, medium, or low — no explanation in that field. "
-                     "Every attention.* value MUST be a literal JSON "
-                     "boolean (true or false) — no explanation in that "
-                     "field either; put any reasoning in the prose fields "
-                     "(interest/value/fear/assumption/"
-                     "empirical_uncertainty) instead."),
+                     f"\"{c['claim']['en']}\"\ndecompose it for the "
+                     "stakeholder stress test digest, and screen it for "
+                     "'gumicsont' status (a debate that draws a lot of "
+                     "attention but would not change the decision if "
+                     "resolved: high attention + low decision_relevance is "
+                     "exactly what real participants need flagged, not "
+                     "hidden).\n" + CLUSTER_DECOMPOSE_FIELD_GUIDE +
+                     "\nReturn the required JSON object. " + bilingual_note),
                  inputs=("ORIGINAL VOICE ARGUMENTS RAISING THIS CLUSTER:\n"
                         + "\n".join(context_lines))),
             validate=valid_cluster_decomposition,
             out_path=ddir / "clusters" / f"{cid}.json",
-            postprocess=parse_json_block, loader=read_json,
-            writer=lambda p, o: write_json(p, o), max_tokens=1500)
+            schema=S.CLUSTER_DECOMPOSE, max_tokens=4000)
         return cid, obj
 
     decompositions = {}
@@ -712,33 +645,29 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
     registry_digest = "\n".join(
         f"- {fid} [{f['evidence']}]: {f['en'][:120]} (source: {f['source']})"
         for fid, f in K.FACTS.items())
-    grades_text, _ = step.run(
+    grades_obj, _ = step.run(
         "grade_arguments",
         dict(task="grade_arguments", agent="evidence_checker", round_n=n,
              instructions=(
                  "Grade the FACTUAL claim of every fact/mixed argument "
-                 "cluster below against the curated registry. Output one "
-                 "line per cluster, nothing else:\n"
-                 "A<i>: [evidence: strong|moderate|weak|contested — "
-                 "<registry source>] <one-line note>\n"
-                 "or, when no registry fact supports it:\n"
-                 "A<i>: [not registry-backed — treat as model knowledge] "
-                 "<one-line note>\n"
-                 "Value claims are NOT graded.\n\nREGISTRY:\n"
+                 "cluster below against the curated registry, as the "
+                 "required JSON object (one entry per fact/mixed cluster). "
+                 "status = the registry-backed evidence grade with its "
+                 "registry source, or not_registry_backed (treat as model "
+                 "knowledge) when no registry fact supports it. Value "
+                 "claims are NOT graded — omit them.\n\nREGISTRY:\n"
                  + registry_digest),
-             inputs=json.dumps(clusters, ensure_ascii=False)),
-        # lenient prefixes ('- ', '**') and 90% coverage: a judge that skips
-        # one cluster of thirty must not force a full mock fallback
-        validate=lambda t: sum(
-            1 for cid in factual if re.search(
-                rf"^[\s\-\*]*{cid}\**\s*:.*(\[evidence:|not registry-backed)",
-                t, re.M)) >= max(1, int(0.9 * len(factual))),
-        out_path=ddir / "argument_grades.md", role="judge", max_tokens=6000)
-    grades = LG.grade_lines(grades_text)
+             inputs=json.dumps(render.project(clusters, "en"),
+                               ensure_ascii=False)),
+        validate=lambda o: valid_grades(o, factual),
+        out_path=ddir / "argument_grades.json",
+        schema=S.GRADES, role="judge", max_tokens=8000)
+    grades = render.grades_dict(grades_obj)
 
     responses = {name: None for name in voice_names}
     if disc_cfg.get("reciprocity", True):
-        clusters_digest = json.dumps(clusters, ensure_ascii=False)
+        clusters_digest = json.dumps(render.project(clusters, "en"),
+                                     ensure_ascii=False)
 
         def run_response(name):
             obj, _ = step.run(
@@ -747,124 +676,43 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg):
                      instructions=(
                          "Reciprocity pass (DQI): from the argument map "
                          "below, pick the strongest argument AGAINST your "
-                         "stated positions and answer it. Return ONLY JSON: "
-                         '{"voice": "<name>", "responses": [{"cluster": '
-                         '"A<i>", "response": "<engage the argument on its '
-                         'merits>", "outcome": "maintain|revise", '
-                         '"new_condition": "<if revised>"}]} — answering '
-                         "means engaging, not repeating yourself."),
+                         "stated positions and answer it as the required "
+                         "JSON object — answering means engaging the "
+                         "argument on its merits, not repeating yourself. "
+                         + bilingual_note),
                      inputs=("YOUR REACTIONS:\n"
-                             + json.dumps(voices[name]["reactions"],
-                                          ensure_ascii=False)
+                             + json.dumps(render.project(
+                                   voices[name]["reactions"], "en"),
+                                   ensure_ascii=False)
                              + "\n\nARGUMENT MAP:\n" + clusters_digest)),
                 validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
                 out_path=ddir / "responses" / f"{name}.json",
-                postprocess=parse_json_block, loader=read_json,
-                writer=lambda p, o: write_json(p, o), max_tokens=3000)
+                schema=S.RECIPROCITY, max_tokens=6000)
             return name, obj
 
         with ThreadPoolExecutor(max_workers=4) as ex:
             for name, obj in ex.map(run_response, voice_names):
                 responses[name] = obj
 
-    ledger_en = LG.render_ledger(n, voices, clusters, grades, responses, "en")
+    # BOTH ledgers render deterministically from the same bilingual data —
+    # the D-34 replacement for the deleted translate_voice /
+    # translate_cluster / translate_reciprocity steps (17 fallbacks in
+    # round 7 were ALL translation steps).
+    ledger_en = LG.render_ledger(
+        n, render.project(voices, "en"), render.project(clusters, "en"),
+        grades, render.project(responses, "en"), "en")
     write(rd / "argument_ledger.en.md", ledger_en)
-
-    # HU: translate the data in small parallel pieces, then render with the
-    # same deterministic renderer used for EN (see the comment above
-    # TRANSLATE_CLUSTER_SCHEMA_HINT).
-    def translate_voice(name):
-        v = voices[name]
-        obj, _ = step.run(
-            f"translate_voice:{name}",
-            dict(task="translate_voice", agent="translator", lang="hu",
-                 round_n=n,
-                 instructions=(
-                     "Translate this discourse voice's reactions into "
-                     "Hungarian. Keep the exact same JSON schema and every "
-                     "scenario id, stance, and label value unchanged — "
-                     "translate only the prose fields (interest, "
-                     "public_good_frame, argument, condition_to_change, "
-                     "basis). Return ONLY the JSON object.\n\nGLOSSARY:\n"
-                     + glossary),
-                 inputs=json.dumps(v, ensure_ascii=False)),
-            validate=valid_voice, out_path=ddir / "voices_hu" / f"{name}.json",
-            postprocess=parse_json_block, loader=read_json,
-            writer=lambda p, o: write_json(p, o), max_tokens=6000)
-        return name, obj
-
-    voices_hu = {}
-    with ThreadPoolExecutor(max_workers=4) as ex:
-        for name, obj in ex.map(translate_voice, voice_names):
-            voices_hu[name] = obj
-
-    def translate_cluster(c):
-        cid = c["id"]
-        obj, _ = step.run(
-            f"translate_cluster:{cid}",
-            dict(task="translate_cluster", agent="translator", lang="hu",
-                 round_n=n,
-                 instructions=(
-                     f"Translate argument cluster {cid}'s text fields into "
-                     "Hungarian. Return ONLY a JSON object with this exact "
-                     "schema:\n" + TRANSLATE_CLUSTER_SCHEMA_HINT
-                     + "\n\nGLOSSARY:\n" + glossary),
-                 inputs=json.dumps(
-                     {k: c[k] for k in ("claim", "interest", "value", "fear",
-                                        "affected", "assumption",
-                                        "empirical_uncertainty")},
-                     ensure_ascii=False)),
-            validate=valid_cluster_translation,
-            out_path=ddir / "clusters_hu" / f"{cid}.json",
-            postprocess=parse_json_block, loader=read_json,
-            writer=lambda p, o: write_json(p, o), max_tokens=1500)
-        merged = dict(c)
-        merged.update(obj)
-        return cid, merged
-
-    clusters_hu_by_id = {}
-    with ThreadPoolExecutor(max_workers=4) as ex:
-        for cid, merged in ex.map(translate_cluster, clusters):
-            clusters_hu_by_id[cid] = merged
-    clusters_hu = [clusters_hu_by_id[c["id"]] for c in clusters]
-
-    responses_hu = {name: None for name in voice_names}
-    if any(responses.values()):
-        def translate_response(name):
-            r = responses[name]
-            if not r:
-                return name, None
-            obj, _ = step.run(
-                f"translate_reciprocity:{name}",
-                dict(task="translate_reciprocity", agent="translator",
-                     lang="hu", round_n=n,
-                     instructions=(
-                         "Translate this reciprocity response into "
-                         "Hungarian. Keep the cluster id and outcome "
-                         "unchanged — translate only the response prose "
-                         "(and new_condition, if present). Return ONLY the "
-                         "JSON object.\n\nGLOSSARY:\n" + glossary),
-                     inputs=json.dumps(r, ensure_ascii=False)),
-                validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
-                out_path=ddir / "responses_hu" / f"{name}.json",
-                postprocess=parse_json_block, loader=read_json,
-                writer=lambda p, o: write_json(p, o), max_tokens=2000)
-            return name, obj
-
-        with ThreadPoolExecutor(max_workers=4) as ex:
-            for name, obj in ex.map(translate_response, voice_names):
-                responses_hu[name] = obj
-
-    ledger_hu = LG.render_ledger(n, voices_hu, clusters_hu, grades,
-                                 responses_hu, "hu")
+    ledger_hu = LG.render_ledger(
+        n, render.project(voices, "hu"), render.project(clusters, "hu"),
+        grades, render.project(responses, "hu"), "hu")
     write(rd / "argument_ledger.hu.md", ledger_hu)
 
     stances = [r["stance"] for v in voices.values() for r in v["reactions"]]
     labels = [r["label"] for v in voices.values() for r in v["reactions"]]
-    conditions = [f"{name} ({r['scenario']}): {r['condition_to_change']}"
+    conditions = [f"{name} ({r['scenario']}): {r['condition_to_change']['en']}"
                   for name, v in voices.items() for r in v["reactions"]
                   if r["stance"] != "no_position"
-                  and str(r.get("condition_to_change", "")).strip()]
+                  and pair_ok(r.get("condition_to_change"))]
     metrics = {
         "voices": len(voices),
         "stance_counts": {s: stances.count(s) for s in STANCES},
