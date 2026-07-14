@@ -180,6 +180,155 @@ def parse_brief_responses(brief_hu_text):
     return out
 
 
+# -- structured discourse artifacts (D-34: JSON is the source of truth) -------
+
+VERDICT_HU = {
+    "evidence_answerable": "evidenciával megválaszolható",
+    "policy_design_fixable": "tervezéssel kezelhető",
+    "communication_fixable": "kommunikációval kezelhető",
+    "value_conflict": "értékkonfliktus",
+    "irreducible_tradeoff": "feloldhatatlan trade-off",
+    "needs_more_info": "több információ kell",
+    "not_decision_relevant": "nem döntésreleváns",
+}
+# 7 verdict types -> 3 semantic groups: fixable (evidence green),
+# human decision needed (rust), open/parked (muted)
+VERDICT_GROUP = {
+    "evidence_answerable": "fix", "policy_design_fixable": "fix",
+    "communication_fixable": "fix",
+    "value_conflict": "human", "irreducible_tradeoff": "human",
+    "needs_more_info": "open", "not_decision_relevant": "open",
+}
+KIND_HU = {"fact": "tény", "value": "érték", "mixed": "vegyes"}
+SIDE_HU = {"pro": "mellette", "con": "ellene", "conditional": "feltételes"}
+REL_HU = {"high": "magas", "medium": "közepes", "low": "alacsony"}
+DECOMP_FIELDS = [("interest", "Kinek az érdeke"), ("value", "Milyen érték ütközik"),
+                 ("fear", "Milyen félelem hajtja"), ("assumption", "Milyen feltevésre épül"),
+                 ("empirical_uncertainty", "Empirikus bizonytalanság")]
+
+
+def load_structured_discourse(rd):
+    """Cluster data straight from the D-34 JSON artifacts (no md parsing).
+    Returns None for pre-D-34 rounds."""
+    amap = rd / "discourse" / "argument_map.json"
+    brief = rd / "brief.json"
+    if not (amap.exists() and brief.exists()):
+        return None
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from lab.render import grades_dict, project
+    clusters = project(json.loads(amap.read_text(encoding="utf-8"))["clusters"], "hu")
+    grades_p = rd / "discourse" / "argument_grades.json"
+    grades = grades_dict(json.loads(grades_p.read_text(encoding="utf-8"))) \
+        if grades_p.exists() else {}
+    recipro = {}
+    for rp in sorted((rd / "discourse" / "responses").glob("*.json")):
+        obj = project(json.loads(rp.read_text(encoding="utf-8")), "hu")
+        for r in obj.get("responses", []):
+            recipro.setdefault(r["cluster"], []).append(
+                dict(voice=obj.get("voice", rp.stem), response=r["response"],
+                     outcome=r["outcome"]))
+    b = project(json.loads(brief.read_text(encoding="utf-8")), "hu")
+    verdicts = {r["cluster_id"]: r for r in b.get("stakeholder_responses", [])}
+    return dict(clusters=clusters, grades=grades, recipro=recipro,
+                verdicts=verdicts)
+
+
+def clusters_section_html(sd):
+    """Grouped, scannable cluster section: per-scenario groups with a
+    verdict spine, one disclosure row per argument."""
+    e = html.escape
+    by_scen = {}
+    for c in sd["clusters"]:
+        by_scen.setdefault(c["scenario"], []).append(c)
+
+    def verdict_of(c):
+        v = sd["verdicts"].get(c["id"])
+        return v["response_type"] if v else None
+
+    def is_gumicsont(c):
+        attn = c.get("attention", {})
+        return bool(attn.get("high_attention")) and \
+            c.get("decision_relevance") == "low"
+
+    counts = {"fix": 0, "human": 0, "open": 0}
+    for c in sd["clusters"]:
+        vt = verdict_of(c)
+        if vt:
+            counts[VERDICT_GROUP[vt]] += 1
+    legend = f"""
+    <div class="v-legend">
+      <span><i class="v-dot v-fix"></i>kezelhető (evidenciával / tervezéssel / kommunikációval): <b>{counts['fix']}</b></span>
+      <span><i class="v-dot v-human"></i>emberi döntést kér (értékkonfliktus / trade-off): <b>{counts['human']}</b></span>
+      <span><i class="v-dot v-open"></i>nyitott / nem döntésreleváns: <b>{counts['open']}</b></span>
+    </div>"""
+
+    groups = []
+    for sid in sorted(by_scen):
+        cs = by_scen[sid]
+        spine = "".join(
+            f'<i class="v-seg v-{VERDICT_GROUP.get(verdict_of(c), "open")}" '
+            f'title="{e(c["id"])}: {e(VERDICT_HU.get(verdict_of(c), "nincs válasz"))}"></i>'
+            for c in cs)
+        rows = []
+        for c in cs:
+            v = sd["verdicts"].get(c["id"])
+            vt = v["response_type"] if v else None
+            badge = (f'<span class="v-badge v-{VERDICT_GROUP[vt]}">'
+                     f'{e(VERDICT_HU[vt])}</span>' if vt else "")
+            gumi = ('<span class="gumi" title="Sok figyelmet kap, de nem '
+                    'változtatna a döntésen">gumicsont</span>'
+                    if is_gumicsont(c) else "")
+            decomp = "".join(
+                f'<div><dt>{label}</dt><dd>{e(c.get(f, ""))}</dd></div>'
+                for f, label in DECOMP_FIELDS if str(c.get(f, "")).strip())
+            affected = ", ".join(c.get("affected", []))
+            if affected:
+                decomp += f'<div><dt>Kiket érint</dt><dd>{e(affected)}</dd></div>'
+            decomp += (f'<div><dt>Döntésrelevancia</dt>'
+                       f'<dd>{e(REL_HU.get(c.get("decision_relevance"), ""))}</dd></div>')
+            grade = sd["grades"].get(c["id"])
+            grade_html = (f'<p class="cl-grade">Evidencia-réteg: {e(grade)}</p>'
+                          if grade else "")
+            rec_html = "".join(
+                f'<p class="recipro"><b>{e(r["voice"])}</b> '
+                f'({"fenntartja" if r["outcome"] == "maintain" else "módosítja"}): '
+                f'{e(r["response"])}</p>' for r in sd["recipro"].get(c["id"], []))
+            answer = ""
+            if v:
+                answer = (f'<p class="brief-resp"><b>A záróanyag válasza '
+                          f'({e(VERDICT_HU[vt])}):</b> {e(v["reason"])}</p>')
+            raised = "".join(f'<span class="expert-chip">{e(n)}</span> '
+                             for n in c.get("raised_by", []))
+            rows.append(f"""
+      <details class="cluster-row">
+        <summary><span class="cl-id">{e(c['id'])}</span>
+          <span class="cl-claim">{e(c['claim'])}</span>
+          {badge}{gumi}</summary>
+        <div class="cl-body">
+          <p class="note">Felvetette: {raised}· {e(KIND_HU.get(c['kind'], c['kind']))} állítás, {e(SIDE_HU.get(c['side'], c['side']))}</p>
+          <dl class="cl-decomp">{decomp}</dl>
+          {grade_html}{rec_html}{answer}
+        </div>
+      </details>""")
+        groups.append(f"""
+    <div class="cl-group">
+      <div class="cl-group-head"><span class="id">{e(sid)}</span>
+        <span class="cl-group-n">{len(cs)} érv</span>
+        <span class="v-spine">{spine}</span></div>
+      {''.join(rows)}
+    </div>""")
+
+    return (
+        '<h3 style="margin-top:1.4rem">Érvklaszterek — és mi lett velük</h3>'
+        '<p class="note">Fejszámlálás helyett érv-könyvelés: minden érvre a '
+        'záróanyag köteles tételesen válaszolni. A válasz típusa mondja meg, '
+        'mi viszi tovább az érvet: van, amit evidencia vagy tervezés kezel — '
+        'és van, ami valódi értékválasztás, amit csak ember dönthet el. '
+        'Kattints egy érvre a bontáshoz: kinek az érdeke, milyen félelem '
+        'hajtja, mire épül, és ki hogyan válaszolt rá.</p>'
+        + legend + "".join(groups))
+
+
 def render_field(v):
     if isinstance(v, list):
         return "<ul>" + "".join(f"<li>{html.escape(x)}</li>" for x in v) + "</ul>"
@@ -388,6 +537,10 @@ def main():
         <span class="count">{len(rows)} hang</span></summary>
       <div class="voice-grid">{''.join(stance_chip(r) for r in rows)}</div>
     </details>""")
+        sd = load_structured_discourse(rd)
+        if sd:
+            return "".join(parts) + clusters_section_html(sd)
+        # pre-D-34 fallback: clusters parsed from the rendered HU ledger
         cl_parts = []
         for c in ledger["clusters"]:
             resp = brief_resp.get(c["id"])
@@ -516,6 +669,41 @@ def main():
   .cond-note { font-size:.84rem; color:var(--muted); }
   .cluster { background:#fff; border:1px solid var(--line); border-radius:6px; padding:.8rem 1rem; margin-bottom:.7rem; }
   .cluster p { margin:.3rem 0; }
+  .v-legend { display:flex; gap:1.2rem; flex-wrap:wrap; font-size:.82rem; color:var(--muted);
+              background:var(--panel); border-radius:6px; padding:.6rem .9rem; margin:.8rem 0 1.1rem; }
+  .v-dot { display:inline-block; width:.6rem; height:.6rem; border-radius:2px; margin-right:.35rem; vertical-align:baseline; }
+  .v-fix { background:var(--evidence); } .v-human { background:var(--dissent); } .v-open { background:#9AA5A0; }
+  .v-badge { font-family:-apple-system,Arial,sans-serif; font-size:.7rem; font-weight:700;
+             padding:.12rem .5rem; border-radius:999px; white-space:nowrap; }
+  .v-badge.v-fix { background:var(--evidence-bg); color:var(--evidence); }
+  .v-badge.v-human { background:var(--dissent-bg); color:var(--dissent); }
+  .v-badge.v-open { background:#ECECEC; color:var(--muted); }
+  .gumi { font-family:ui-monospace,Menlo,monospace; font-size:.66rem; text-transform:uppercase;
+          letter-spacing:.05em; color:var(--dissent); border:1px dashed var(--dissent);
+          border-radius:3px; padding:.06rem .35rem; white-space:nowrap; }
+  .cl-group { margin-bottom:1.4rem; }
+  .cl-group-head { display:flex; align-items:center; gap:.7rem; margin-bottom:.5rem; }
+  .cl-group-head .id { font-family:ui-monospace,Menlo,monospace; font-weight:700; color:var(--evidence); }
+  .cl-group-n { font-family:ui-monospace,Menlo,monospace; font-size:.74rem; color:var(--muted); }
+  .v-spine { display:flex; gap:2px; align-items:center; }
+  .v-seg { width:.55rem; height:.85rem; border-radius:2px; display:inline-block; }
+  .v-seg.v-fix { background:var(--evidence); } .v-seg.v-human { background:var(--dissent); }
+  .v-seg.v-open { background:#C6CDC9; }
+  details.cluster-row { background:#fff; border:1px solid var(--line); border-radius:6px; margin-bottom:.45rem; }
+  details.cluster-row summary { list-style:none; cursor:pointer; display:flex; gap:.6rem;
+                                align-items:baseline; padding:.55rem .8rem; }
+  details.cluster-row summary::-webkit-details-marker { display:none; }
+  details.cluster-row summary::before { content:"▸"; color:var(--evidence); flex:none; }
+  details.cluster-row[open] summary::before { content:"▾"; }
+  .cl-id { font-family:ui-monospace,Menlo,monospace; font-weight:700; font-size:.8rem; color:var(--muted); flex:none; }
+  .cl-claim { flex:1; font-size:.92rem; }
+  .cl-body { border-top:1px solid var(--line); padding:.8rem 1rem; }
+  dl.cl-decomp { display:grid; gap:.5rem .9rem; margin:.7rem 0; }
+  @media (min-width:700px) { dl.cl-decomp { grid-template-columns:1fr 1fr; } }
+  dl.cl-decomp dt { font-family:-apple-system,Arial,sans-serif; font-size:.72rem; font-weight:700;
+                    text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 .1rem; }
+  dl.cl-decomp dd { margin:0; font-size:.88rem; }
+  .cl-grade { font-size:.84rem; color:var(--evidence); margin:.4rem 0; }
   .brief-resp { font-size:.88rem; background:var(--evidence-bg); border-radius:4px; padding:.4rem .6rem; }
   .recipro { font-size:.86rem; color:var(--muted); border-left:3px solid var(--line); padding-left:.6rem; }
   .note { font-size:.85rem; color:var(--muted); }
