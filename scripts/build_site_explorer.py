@@ -40,8 +40,13 @@ OBJ_HEAD_RE = re.compile(r"^## (S\d+)\.([a-z_]+)")
 FIELD_RE = re.compile(r"^(Objection|Severity|Suggested revision):\s*(.*)$", re.M)
 
 DIS_TOPIC_RE = re.compile(r"^### (.+)$", re.M)
+# The "(minority)"/"(conditional minority)"/"(procedural minority)" marker is
+# written INSIDE the bold holder span by the editor agent (e.g.
+# "**hungarian_education_system (minority)**: ..."), not after it — group 1
+# must capture it so HOLDER_PAREN_RE below can split it back out.
 DIS_SIDE_RE = re.compile(
-    r"^- \*\*(.+?)\*\*(\s*\(minority\))?:\s*(.+?)\s+Why:\s*(.+)$", re.M)
+    r"^- \*\*(.+?)\*\*:\s*(.+?)\s+Why:\s*(.+)$", re.M)
+HOLDER_PAREN_RE = re.compile(r"\s*\([^)]*\)\s*$")
 
 POSITION_RE = re.compile(r"## Position\s*\n(.+?)(?:\n##|\Z)", re.S)
 
@@ -66,6 +71,18 @@ def parse_critic(text, critic_name):
     return out
 
 
+def _parse_side(sm):
+    """holders_raw may carry its minority marker INSIDE the bold span, e.g.
+    '**hungarian_education_system (minority)**: ...' or
+    '**finnish_reform (conditional minority)**: ...' — not after it."""
+    holders_raw = sm.group(1)
+    minority = bool(re.search(r"\bminority\b", holders_raw, re.I))
+    holders_clean = HOLDER_PAREN_RE.sub("", holders_raw)
+    holders = [h.strip() for h in holders_clean.split(",") if h.strip()]
+    return dict(holders=holders, minority=minority,
+                position=sm.group(2).strip(), rationale=sm.group(3).strip())
+
+
 def parse_disagreement_map(synthesis_text):
     m = re.search(r"## Disagreement map\s*\n(.*?)(?:\n## (?!#)|\Z)",
                   synthesis_text, re.S)
@@ -76,24 +93,14 @@ def parse_disagreement_map(synthesis_text):
         tm = DIS_TOPIC_RE.match(chunk.strip())
         if not tm:
             continue
-        sides = []
-        for sm in DIS_SIDE_RE.finditer(chunk):
-            holders = [h.strip() for h in sm.group(1).split(",")]
-            sides.append(dict(holders=holders, minority=bool(sm.group(2)),
-                              position=sm.group(3).strip(),
-                              rationale=sm.group(4).strip()))
+        sides = [_parse_side(sm) for sm in DIS_SIDE_RE.finditer(chunk)]
         if sides:
             topics.append(dict(topic=tm.group(1).strip(), sides=sides))
     if not topics:
         # current format has no "### " sub-topics: each "- **holders**:
         # position Why: rationale" bullet is its own position on the single
         # underlying question — group them all under one card.
-        sides = []
-        for sm in DIS_SIDE_RE.finditer(body):
-            holders = [h.strip() for h in sm.group(1).split(",")]
-            sides.append(dict(holders=holders, minority=bool(sm.group(2)),
-                              position=sm.group(3).strip(),
-                              rationale=sm.group(4).strip()))
+        sides = [_parse_side(sm) for sm in DIS_SIDE_RE.finditer(body)]
         if sides:
             topics.append(dict(topic="Fő nézeteltérés", sides=sides))
     return topics
