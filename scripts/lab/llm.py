@@ -277,13 +277,20 @@ def _call_real(provider, model, prompt, max_tokens, schema=None):
         if schema is not None:
             kwargs["output_config"] = {
                 "format": {"type": "json_schema", "schema": schema}}
-        resp = _client(provider).messages.create(
+        req = dict(
             model=model,
             max_tokens=max_tokens,
             thinking={"type": "disabled"},
             messages=[{"role": "user", "content": prompt}],
             **kwargs,
         )
+        if max_tokens > 8192:
+            # large outputs (bilingual scenarios/brief) must stream — the
+            # SDK refuses long non-streaming requests to avoid HTTP timeouts
+            with _client(provider).messages.stream(**req) as st:
+                resp = st.get_final_message()
+        else:
+            resp = _client(provider).messages.create(**req)
         if schema is not None and resp.stop_reason == "max_tokens":
             # truncated JSON can never validate — retrying at the same
             # budget reproduces it, so fail loudly instead

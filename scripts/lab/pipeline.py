@@ -441,7 +441,14 @@ class Step:
 
     def run(self, name, prompt_kwargs, validate, out_path=None,
             role="generator", max_tokens=8000, postprocess=lambda t: t,
-            loader=None, writer=None):
+            loader=None, writer=None, schema=None):
+        """With schema= (D-34): the call goes through llm.call_structured,
+        the result is the parsed (schema-valid) dict, and JSON IO is the
+        default. Everything else — validation, corrective retry with D-26
+        escalation, resume, journal — is identical to the text path."""
+        if schema is not None:
+            loader = loader or read_json
+            writer = writer or write_json
         loader = loader or read
         writer = writer or write
         validate = directive_validator(validate, prompt_kwargs)
@@ -473,14 +480,20 @@ class Step:
             # a validation-failure retry escalates one rung on the model
             # ladder (D-26): cheap model produced unusable output
             try:
-                text = llm.call_model(prompt, role, max_tokens=max_tokens,
-                                      escalation=attempt)
+                if schema is not None:
+                    result = llm.call_structured(prompt, schema, role,
+                                                 max_tokens=max_tokens,
+                                                 escalation=attempt)
+                else:
+                    text = llm.call_model(prompt, role, max_tokens=max_tokens,
+                                          escalation=attempt)
             except llm.StepFailed:
                 self._note(name, "FAILED")
                 raise
             backend = llm.CALL_LOG[-1]["backend"]
             try:
-                result = postprocess(text)
+                if schema is None:
+                    result = postprocess(text)
                 if validate(result):
                     if out_path is not None:
                         writer(out_path, result)
@@ -488,9 +501,15 @@ class Step:
                     return result, backend
             except Exception:
                 pass
-            corrective = ("PREVIOUS ATTEMPT FAILED FORMAT VALIDATION. Follow "
-                          "the output format EXACTLY as specified, with no "
-                          "surrounding commentary.")
+            corrective = (
+                "PREVIOUS ATTEMPT FAILED CONTENT VALIDATION. Fill EVERY "
+                "field of the required schema with substantive content (no "
+                "empty or placeholder values), cover every required item, "
+                "and follow the task rules exactly."
+                if schema is not None else
+                "PREVIOUS ATTEMPT FAILED FORMAT VALIDATION. Follow "
+                "the output format EXACTLY as specified, with no "
+                "surrounding commentary.")
         # No mock fallback (D-34): journal the failure and stop the round;
         # a relaunch resumes from this step via the state-hash gate.
         self._note(name, "FAILED")
