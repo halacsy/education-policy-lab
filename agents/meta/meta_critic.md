@@ -42,12 +42,7 @@ Attribution of score deltas is uncertain with one change per round at n=1; say s
 
 ## Output template
 ```
-# Meta-critique — round <n>
-## Agent performance
-## Workflow
-## Critique quality
-## Gaming judgment (explicit)
-## Translation consistency
+(JSON — the exact schema is enforced by the API: {agent_performance[], workflow[], critique_quality[], gaming_judgment{verdict: GENUINE|RUBRIC-GAMING|NO_BASELINE, reasons[]}, translation_consistency[], removal_candidates[]})
 ```
 
 ## Directives

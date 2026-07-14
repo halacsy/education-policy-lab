@@ -29,7 +29,7 @@ ALL_CRITICS = list(D.CRITICS)
 CATALOG = [
     dict(id="uncertainty_quantify", dimension="uncertainty_explicitness",
          kind="directive",
-         targets=["scenario_builder", "translator"] + ALL_EXPERTS,
+         targets=["scenario_builder"] + ALL_EXPERTS,
          text=("For every uncertainty item, state a confidence level "
                "(confidence: low|medium|high) and name what evidence would "
                "reduce it ('would be reduced by: ...'). In Hungarian output "
@@ -42,7 +42,7 @@ CATALOG = [
                  "build_scenarios": ['"confidence":']},
          expected_delta=0.8),
     dict(id="minority_report", dimension="disagreement_preservation",
-         kind="directive", targets=["editor", "final_brief_writer", "translator"],
+         kind="directive", targets=["editor", "final_brief_writer"],
          text=("Include a '## Minority positions' section (HU: "
                "'## Különvélemények') carrying every minority/dissenting "
                "position with its holders and rationale, proportionally, "
@@ -60,7 +60,7 @@ CATALOG = [
          checks={"critic": ['"severity":', '"suggested_revision":']},
          expected_delta=0.6),
     dict(id="evidence_tag_all", dimension="evidence_discipline",
-         kind="directive", targets=["scenario_builder", "translator"],
+         kind="directive", targets=["scenario_builder"],
          text=("Attach an inline evidence tag ([evidence: "
                "strong|moderate|weak|contested]; HU: [bizonyíték: ...]) to "
                "EVERY mechanism claim and EVERY expected benefit, not only "
@@ -68,14 +68,14 @@ CATALOG = [
          checks={"build_scenarios": ['"evidence":']},
          expected_delta=0.4),
     dict(id="implementation_detail", dimension="scenario_completeness",
-         kind="directive", targets=["scenario_builder", "translator"],
+         kind="directive", targets=["scenario_builder"],
          text=("Give every implementation step an explicit timeline in "
                "parentheses, e.g. '(timeline: year 1-2)'; HU: "
                "'(ütemezés: 1-2. év)'."),
          checks={"build_scenarios": ['"timeline":']},
          expected_delta=0.5),
     dict(id="layer_tighten", dimension="layer_separation",
-         kind="directive", targets=["final_brief_writer", "translator"],
+         kind="directive", targets=["final_brief_writer"],
          text=("Every substantive claim across the brief's 10 sections "
                "carries a claim-kind tag ([fact]/[estimate]/[assumption]/"
                "[value], unchanged in every language); a substantive claim "
@@ -89,14 +89,8 @@ CATALOG = [
                "dimension and any removal candidate."),
          checks={"meta_critique": ["removal candidate"]},
          expected_delta=0.3),
-    dict(id="glossary_selfcheck", dimension="translation_fidelity",
-         kind="directive", targets=["translator"],
-         text=("Before returning, verify every glossary term mapping you "
-               "used against docs/glossary.md and correct deviations."),
-         # self-check leaves no output marker; enforced by translation.check
-         expected_delta=0.2),
     dict(id="scenario_crossref", dimension="layer_separation",
-         kind="directive", targets=["final_brief_writer", "translator"],
+         kind="directive", targets=["final_brief_writer"],
          text=("The brief must be self-contained: right after the "
                "introduction, add a scenario key section ('## Scenario key' / "
                "HU: '## Forgatókönyv-kulcs') listing each scenario id with "

@@ -40,7 +40,7 @@ def compose(prompt, role):
         "synthesis": lambda: synthesis(d),
         "rejected_framings": lambda: rejected_framings(),
         "brief": lambda: brief(d, prompt),
-        "exec_summary": lambda: K.EXEC_SUMMARY[h.get("lang", "en")],
+        "exec_summary": lambda: json.dumps(dict(en=K.EXEC_SUMMARY["en"], hu=K.EXEC_SUMMARY["hu"]), ensure_ascii=False),
         "critic": lambda: critic(h["agent"], d),
         "meta_critique": lambda: meta_critique(_payload(prompt), d),
         "judge_score": lambda: judge_score(prompt, h, _payload(prompt)),
@@ -406,64 +406,68 @@ def meta_critique(payload, d):
     total = payload.get("total")
     weakest = payload.get("weakest", "?")
     applied = payload.get("applied_change")
-    lines = [f"# Meta-critique — round {rnd}", "",
-             "## Scope",
-             "This evaluates the agent SYSTEM (agents, workflow, critique "
-             "quality), not the policy content.", "",
-             "## Agent performance"]
+
+    agent_performance = []
     if applied:
-        lines.append(f"- The change applied this round ({applied['id']}, "
-                     f"targeting {applied['dimension']}) modified: "
-                     f"{', '.join(applied['targets'])}.")
-    lines += [
-        "- Weakest rubric dimension this round: "
-        f"**{weakest}** — the agents most responsible for it should be the "
-        "target of the next change.",
-        "- The `international_comparison` and `hungarian_education_system` "
-        "experts partially overlap in findings; if neither uniquely raises a "
-        "dimension across two rounds, one becomes a removal candidate "
+        agent_performance.append(
+            f"The change applied this round ({applied['id']}, targeting "
+            f"{applied['dimension']}) modified: {', '.join(applied['targets'])}.")
+    agent_performance += [
+        f"Weakest rubric dimension this round: {weakest} — the agents most "
+        "responsible for it should be the target of the next change.",
+        "The international_comparison and hungarian_education_system "
+        "experts partially overlap in findings; if neither uniquely raises "
+        "a dimension across two rounds, one becomes a removal candidate "
         "(insufficient evidence yet — tracking).",
     ]
-    lines += ["", "## Workflow"]
-    lines.append("- No workflow step failed this round; all artifacts were "
-                 "produced." if not payload.get("fallbacks") else
-                 f"- Steps degraded to mock fallback: {payload['fallbacks']} — "
-                 "these are the weakest workflow links.")
-    lines += ["", "## Critique quality"]
-    lines.append("- All critic objections name a scenario id and field. "
-                 + ("Severity and suggested revisions are present, making "
-                    "them actionable." if "critic_fix_severity" in d else
-                    "They lack severity ranking and suggested revisions — a "
-                    "candidate improvement for critic_concreteness."))
-    lines += ["", "## Gaming judgment (explicit)"]
+
+    workflow = ["No workflow step failed this round; all artifacts were "
+                "produced." if not payload.get("fallbacks") else
+                f"Steps that failed and needed a relaunch: "
+                f"{payload['fallbacks']} — these are the weakest workflow links."]
+
+    critique_quality = [
+        "All critic objections name a scenario id and field; severity and "
+        "suggested revisions are present, making them actionable."]
+
     if prev is None:
-        lines.append("- First scored round; there is no gain to certify as "
-                     "GENUINE or RUBRIC-GAMING yet. Baseline scores come from "
-                     "deterministic, verbosity-capped checks on real "
-                     "artifacts, so the baseline itself is not gameable by "
-                     "length.")
+        verdict = "NO_BASELINE"
+        reasons = ["First scored round; baseline scores come from "
+                   "deterministic, verbosity-capped checks on real "
+                   "artifacts, so the baseline itself is not gameable by "
+                   "length."]
     else:
         delta = round(total - prev, 3) if total is not None else None
-        lines.append(
-            f"- Total moved {prev} → {total} (delta {delta}). I judge this "
-            "gain GENUINE, not rubric-gaming: the underlying artifacts changed "
-            "structurally (diffable in system_state/ and the round outputs), "
-            "the scoring components are density-based and capped so added "
-            "verbosity alone cannot raise them, and no critic, evidence rule "
-            "or disagreement section was removed (verified by check 14).")
-    lines += ["", "## Translation consistency"]
+        verdict = "GENUINE"
+        reasons = [f"Total moved {prev} -> {total} (delta {delta}); the "
+                   "underlying artifacts changed structurally (diffable in "
+                   "system_state/ and the round outputs), the scoring "
+                   "components are density-based and capped so added "
+                   "verbosity alone cannot raise them, and no critic, "
+                   "evidence rule or disagreement section was removed "
+                   "(verified by check 14)."]
+
     tc = payload.get("translation", {})
-    lines.append(f"- Deterministic parity: id_sets_equal={tc.get('id_sets_equal')}, "
-                 f"structure_equal={tc.get('structure_equal')}, "
-                 f"glossary_violations={tc.get('glossary_violations')}. "
-                 "Residual nuance (register, connotation) remains flagged for "
-                 "a human in human_questions.md.")
+    translation_consistency = [
+        f"Deterministic parity: id_sets_equal={tc.get('id_sets_equal')}, "
+        f"structure_equal={tc.get('structure_equal')}, "
+        f"glossary_violations={tc.get('glossary_violations')}. Residual "
+        "nuance (register, connotation) remains flagged for a human in "
+        "human_questions.md."]
     if payload.get("judge_divergence"):
-        lines += ["", "## Judge divergence",
-                  f"- Dimensions flagged for divergence: "
-                  f"{payload['judge_divergence']} — not averaged; sent to "
-                  "human review."]
-    return "\n".join(lines) + "\n"
+        translation_consistency.append(
+            f"Dimensions flagged for judge divergence: "
+            f"{payload['judge_divergence']} — not averaged; sent to human "
+            "review.")
+
+    return json.dumps(dict(
+        agent_performance=agent_performance,
+        workflow=workflow,
+        critique_quality=critique_quality,
+        gaming_judgment=dict(verdict=verdict, reasons=reasons),
+        translation_consistency=translation_consistency,
+        removal_candidates=[],
+    ), ensure_ascii=False, indent=2)
 
 
 # -- judge -------------------------------------------------------------------

@@ -290,6 +290,23 @@ def parse_json_block(text):
     return json.loads(text[start:end + 1])
 
 
+def valid_meta(o):
+    try:
+        g = o["gaming_judgment"]
+    except (TypeError, KeyError):
+        return False
+    if g.get("verdict") not in ("GENUINE", "RUBRIC-GAMING", "NO_BASELINE"):
+        return False
+    if not g.get("reasons") or not all(str(x).strip() for x in g["reasons"]):
+        return False
+    for key in ("agent_performance", "workflow", "critique_quality",
+                "translation_consistency"):
+        items = o.get(key)
+        if not items or not all(str(x).strip() for x in items):
+            return False
+    return True  # removal_candidates may legitimately be empty
+
+
 def valid_brief(o, cluster_ids=None):
     """Bilingual 10-section brief (D-30/D-34). With a live argument map the
     response obligation is checked on the JSON fields directly (same
@@ -1093,26 +1110,26 @@ def run_round(n):
 def run_meta_critic(n, artifacts, payload):
     """Step 7: meta-critique (judge side), fed with the scores-so-far."""
     step = artifacts["_step"]
-    text, _ = step.run(
+    obj, _ = step.run(
         "meta_critic",
         dict(task="meta_critique", agent="meta_critic", round_n=n,
              payload_json=json.dumps(payload, ensure_ascii=False, indent=2),
              instructions=(
-                 "Write the round's meta-critique of the agent SYSTEM. "
-                 "Required sections: '## Agent performance', '## Workflow', "
-                 "'## Critique quality', '## Gaming judgment (explicit)' "
-                 "(state GENUINE or RUBRIC-GAMING with reasons grounded in "
-                 "the input scores), '## Translation consistency'. Name at "
-                 "least one concrete agent or workflow weakness and, if any "
-                 "agent raised no dimension for two rounds, flag it as a "
-                 "removal candidate."),
+                 "Write the round's meta-critique of the agent SYSTEM as "
+                 "the required JSON object. gaming_judgment.verdict: "
+                 "GENUINE or RUBRIC-GAMING with reasons grounded in the "
+                 "input scores (NO_BASELINE only when there is no previous "
+                 "total to compare against). Name at least one concrete "
+                 "agent or workflow weakness; if any agent raised no "
+                 "dimension for two rounds, list it in removal_candidates."),
              inputs=("Critic outputs digest:\n"
                      + "\n".join(f"- {k}: {len(CRITIC_HEADING_RE.findall(v))} targeted objections"
                                  for k, v in artifacts["critics"].items()))),
-        validate=lambda t: "Gaming judgment" in t
-                           and ("GENUINE" in t or "RUBRIC-GAMING" in t),
-        out_path=artifacts["round_dir"] / "meta_critique.md",
-        role="judge", max_tokens=2500)
+        validate=valid_meta,
+        out_path=artifacts["round_dir"] / "meta_critique.json",
+        schema=S.META_CRITIQUE, role="judge", max_tokens=4000)
+    text = render.meta_md(obj, n)
+    write(artifacts["round_dir"] / "meta_critique.md", text)
     artifacts["fallbacks"][:] = step.fallbacks
     artifacts["meta"] = text
     return text
