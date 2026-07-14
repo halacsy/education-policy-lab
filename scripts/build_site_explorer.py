@@ -806,8 +806,13 @@ def main():
 </html>
 """
     page = body
-    out = ROOT / "site" / "explorer.html"
+    # per-topic output (D-35): the default topic ALSO keeps the legacy
+    # site/explorer.html URL; every topic gets site/topics/<slug>/explorer.html
+    out = ROOT / "site" / "topics" / SLUG / "explorer.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page, encoding="utf-8")
+    if SLUG == _CFG["default_topic"]:
+        (ROOT / "site" / "explorer.html").write_text(page, encoding="utf-8")
     print(f"wrote {out} (round {n}: {len(scen_en['scenarios'])} scenarios, "
           f"{len(all_objections)} objections, {len(disagreement)} disagreement "
           f"topics, {len(experts)} experts)")

@@ -3,7 +3,7 @@ name: Deploy website to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ["site/**", "knowledge/**", "topics/**", "outputs/**", "scripts/build_site_kb.py", "scripts/build_site_explorer.py", ".github/workflows/pages.yml"]
+    paths: ["site/**", "knowledge/**", "topics/**", "outputs/**", "scripts/build_site_kb.py", "scripts/build_site_explorer.py", "scripts/build_site_topics.py", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,15 @@ jobs:
       - uses: actions/checkout@v4
       - run: python3 scripts/build_registry.py --check
       - run: python3 scripts/build_site_kb.py
-      - run: python3 scripts/build_site_explorer.py
+      - run: |
+          # per-topic explorer pages: every topic that already has final outputs
+          for f in topics/*/topic.json; do
+            slug=$(basename "$(dirname "$f")")
+            if [ -f "outputs/topics/$slug/final/final_brief.hu.md" ]; then
+              python3 scripts/build_site_explorer.py --topic "$slug"
+            fi
+          done
+      - run: python3 scripts/build_site_topics.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
