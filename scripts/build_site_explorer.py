@@ -39,16 +39,63 @@ OBJ_SPLIT_RE = re.compile(r"\n(?=## S\d+\.)")
 OBJ_HEAD_RE = re.compile(r"^## (S\d+)\.([a-z_]+)")
 FIELD_RE = re.compile(r"^(Objection|Severity|Suggested revision):\s*(.*)$", re.M)
 
-DIS_TOPIC_RE = re.compile(r"^### (.+)$", re.M)
-# The "(minority)"/"(conditional minority)"/"(procedural minority)" marker is
-# written INSIDE the bold holder span by the editor agent (e.g.
-# "**hungarian_education_system (minority)**: ..."), not after it — group 1
-# must capture it so HOLDER_PAREN_RE below can split it back out.
-DIS_SIDE_RE = re.compile(
-    r"^- \*\*(.+?)\*\*:\s*(.+?)\s+Why:\s*(.+)$", re.M)
-HOLDER_PAREN_RE = re.compile(r"\s*\([^)]*\)\s*$")
+# Each axis in the brief's "## Where experts disagree" is one bullet:
+# "- **<axis title>**: <prose naming who holds what, and why>". The title
+# itself usually already states the opposition ("Abolish/restrict vs.
+# retain"); no majority/minority framing exists here (the system does not
+# decide by vote — see docs/mission.md) — every axis is just a fork.
+BRIEF_DISAGREE_RE = re.compile(r"^- \*\*(.+?)\*\*:\s*(.+)$", re.M)
+CAMP_SPLIT_PATTERNS = [
+    re.compile(r"\.\s+Against this,\s*"),
+    re.compile(r",\s+while\s+"),
+    re.compile(r";\s+"),
+]
 
 POSITION_RE = re.compile(r"## Position\s*\n(.+?)(?:\n##|\Z)", re.S)
+
+
+def _split_camps(body):
+    """Best-effort split of one axis's prose into two opposing camps; the
+    connector phrase varies (the writer isn't given a fixed template), so
+    try a few in priority order and fall back to one unsplit block."""
+    for pat in CAMP_SPLIT_PATTERNS:
+        parts = pat.split(body, maxsplit=1)
+        if len(parts) == 2 and len(parts[0].strip()) > 25 and len(parts[1].strip()) > 25:
+            return parts[0].strip(), parts[1].strip()
+    return None
+
+
+def parse_brief_disagreement(brief_text):
+    m = re.search(r"## Where experts disagree\s*\n+(.*?)(?:\n+## |\Z)",
+                  brief_text, re.S)
+    body = m.group(1) if m else ""
+    axes = []
+    for tm in BRIEF_DISAGREE_RE.finditer(body):
+        title, prose = tm.group(1).strip(), tm.group(2).strip()
+        title_parts = re.split(r"\s+vs\.?\s+", title, maxsplit=1)
+        camps = _split_camps(prose)
+        axes.append(dict(
+            title=title,
+            title_left=title_parts[0] if len(title_parts) == 2 else None,
+            title_right=title_parts[1] if len(title_parts) == 2 else None,
+            camp_a=camps[0] if camps else prose,
+            camp_b=camps[1] if camps else None,
+        ))
+    return axes
+
+
+def _highlight_experts(text, expert_names, e):
+    """Turn bare expert-agent names inside prose into clickable chips (the
+    same #expert-<name> anchors expert_card() below defines) — this is how
+    a reader sees WHICH camp an expert is actually in, inline."""
+    escaped = e(text)
+    if not expert_names:
+        return escaped
+    names = sorted(expert_names, key=len, reverse=True)
+    pat = re.compile(r"\b(" + "|".join(re.escape(n) for n in names) + r")\b")
+    return pat.sub(
+        lambda m: f'<a class="expert-chip" href="#expert-{m.group(1)}">{m.group(1)}</a>',
+        escaped)
 
 
 def last_round():
@@ -70,40 +117,6 @@ def parse_critic(text, critic_name):
                         fix=fields.get("Suggested revision", "").strip()))
     return out
 
-
-def _parse_side(sm):
-    """holders_raw may carry its minority marker INSIDE the bold span, e.g.
-    '**hungarian_education_system (minority)**: ...' or
-    '**finnish_reform (conditional minority)**: ...' — not after it."""
-    holders_raw = sm.group(1)
-    minority = bool(re.search(r"\bminority\b", holders_raw, re.I))
-    holders_clean = HOLDER_PAREN_RE.sub("", holders_raw)
-    holders = [h.strip() for h in holders_clean.split(",") if h.strip()]
-    return dict(holders=holders, minority=minority,
-                position=sm.group(2).strip(), rationale=sm.group(3).strip())
-
-
-def parse_disagreement_map(synthesis_text):
-    m = re.search(r"## Disagreement map\s*\n(.*?)(?:\n## (?!#)|\Z)",
-                  synthesis_text, re.S)
-    body = m.group(1) if m else ""
-    topics = []
-    chunks = re.split(r"(?=^### )", body, flags=re.M)
-    for chunk in chunks:
-        tm = DIS_TOPIC_RE.match(chunk.strip())
-        if not tm:
-            continue
-        sides = [_parse_side(sm) for sm in DIS_SIDE_RE.finditer(chunk)]
-        if sides:
-            topics.append(dict(topic=tm.group(1).strip(), sides=sides))
-    if not topics:
-        # current format has no "### " sub-topics: each "- **holders**:
-        # position Why: rationale" bullet is its own position on the single
-        # underlying question — group them all under one card.
-        sides = [_parse_side(sm) for sm in DIS_SIDE_RE.finditer(body)]
-        if sides:
-            topics.append(dict(topic="Fő nézeteltérés", sides=sides))
-    return topics
 
 
 def parse_expert(text):
@@ -227,13 +240,13 @@ def main():
     for o in all_objections:
         by_scenario_field.setdefault((o["scenario"], o["field"]), []).append(o)
 
-    synthesis = (rd / "synthesis.md").read_text(encoding="utf-8")
-    disagreement = parse_disagreement_map(synthesis)
-
     experts = {}
     for p in sorted((rd / "expert_outputs").glob("*.md")):
         text = p.read_text(encoding="utf-8")
         experts[p.stem] = dict(position=parse_expert(text), full=text)
+
+    brief_en = (rd / "brief.en.md").read_text(encoding="utf-8")
+    disagreement = parse_brief_disagreement(brief_en)
 
     def sev_badge(sev):
         if not sev:
@@ -296,25 +309,28 @@ def main():
 
     scenario_cards = "".join(scenario_card(s) for s in scen_en["scenarios"])
 
+    expert_names = list(experts)
+
     def disagreement_card(d):
-        sides_html = []
-        for side in d["sides"]:
-            cls = "minority" if side["minority"] else "majority"
-            label = "kisebbségi álláspont" if side["minority"] else "többségi álláspont"
-            holders_html = "".join(
-                f'<a class="expert-chip" href="#expert-{e(h)}">{e(h)}</a>'
-                for h in side["holders"])
-            sides_html.append(f"""
-      <div class="side {cls}">
-        <span class="side-label">{label}</span>
-        <div class="holders">{holders_html}</div>
-        <p class="position">{e(side['position'])}</p>
-        <p class="rationale"><b>Miért:</b> {e(side['rationale'])}</p>
-      </div>""")
+        camp_a_html = _highlight_experts(d["camp_a"], expert_names, e)
+        if d["title_left"] and d["title_right"]:
+            header_html = (f'<span class="axis-side">{e(d["title_left"])}</span>'
+                          '<span class="axis-vs">vs.</span>'
+                          f'<span class="axis-side">{e(d["title_right"])}</span>')
+        else:
+            header_html = f'<span class="axis-side">{e(d["title"])}</span>'
+        if d["camp_b"]:
+            camp_b_html = _highlight_experts(d["camp_b"], expert_names, e)
+            body_html = (f'<div class="sides"><div class="side camp-a">'
+                        f'<p class="position">{camp_a_html}</p></div>'
+                        f'<div class="side camp-b"><p class="position">'
+                        f'{camp_b_html}</p></div></div>')
+        else:
+            body_html = f'<p class="position axis-single">{camp_a_html}</p>'
         return f"""
     <div class="disagreement">
-      <h3>{e(d['topic'])}</h3>
-      <div class="sides">{''.join(sides_html)}</div>
+      <h3 class="axis-title">{header_html}</h3>
+      {body_html}
     </div>"""
 
     disagreement_html = "".join(disagreement_card(d) for d in disagreement)
@@ -451,19 +467,20 @@ def main():
   .fix { font-size:.84rem; color:var(--muted); margin:.3rem 0 0; }
 
   .disagreement { margin-bottom:1.4rem; }
+  .axis-title { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; font-size:1rem; margin:0 0 .5rem; }
+  .axis-side { font-weight:700; }
+  .axis-vs { font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted);
+             background:var(--panel); padding:.1rem .5rem; border-radius:3px; }
   .sides { display:grid; gap:.8rem; }
   @media (min-width:700px) { .sides { grid-template-columns:1fr 1fr; } }
   .side { border-radius:6px; padding:.85rem 1rem; border:1px solid var(--line); background:#fff; }
-  .side.majority { border-left:3px solid var(--evidence); }
-  .side.minority { border-left:3px solid var(--dissent); }
-  .side-label { font-family:ui-monospace,Menlo,monospace; font-size:.68rem; text-transform:uppercase;
-                letter-spacing:.06em; color:var(--muted); }
-  .holders { margin:.3rem 0 .5rem; display:flex; gap:.35rem; flex-wrap:wrap; }
+  .side.camp-a { border-left:3px solid var(--evidence); }
+  .side.camp-b { border-left:3px solid var(--dissent); }
   .expert-chip { font-family:ui-monospace,Menlo,monospace; font-size:.7rem; background:var(--panel);
                  padding:.1rem .45rem; border-radius:3px; text-decoration:none; color:var(--ink); }
   .expert-chip:hover { background:var(--evidence-bg); color:var(--evidence); }
-  .position { font-size:.94rem; margin-bottom:.4rem; }
-  .rationale { font-size:.84rem; color:var(--muted); margin:0; }
+  .position { font-size:.94rem; margin:0; }
+  .axis-single { background:#fff; border:1px solid var(--line); border-radius:6px; padding:.85rem 1rem; }
 
   details.expert { background:#fff; border:1px solid var(--line); border-radius:6px; margin-bottom:.6rem; }
   details.expert summary { list-style:none; cursor:pointer; padding:.75rem 1rem; display:flex; gap:.8rem; align-items:baseline; }

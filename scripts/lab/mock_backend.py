@@ -261,16 +261,21 @@ def brief(lang, d, prompt=""):
                   "hatás; oksági hozzáadott értékük szerény. [estimate, "
                   "mérsékelt bizonyítékra építve]"]
 
-    # 3. Where experts disagree — the disagreement map's substance, with reasons
+    # 3. Where experts disagree — one axis per bullet, prose naming both
+    # camps and why (matches the live final_brief_writer's actual format:
+    # "- **<axis>**: <camp A>... Against this, <camp B>...", no majority/
+    # minority framing and no "### " sub-headers — see build_site_explorer.py).
     lines += ["", H["disagree"]]
+    against = "Against this," if L == "en" else "Ezzel szemben"
+    because = "because" if L == "en" else "mivel"
+    argue = "argue that" if L == "en" else "álláspontja szerint"
     for dis in K.DISAGREEMENTS:
-        lines.append(f"### {dis['topic']}")
-        for i, side in enumerate(dis["sides"]):
-            who = ", ".join(side["holders"])
-            mark = " (minority)" if i == dis["minority_index"] else ""
-            why = "Why" if L == "en" else "Miért"
-            lines.append(f"- **{who}**{mark}: {side['position'][L]} [value] "
-                         f"{why}: {side['rationale'][L]}")
+        a, b = dis["sides"][0], dis["sides"][1]
+        who_a, who_b = ", ".join(a["holders"]), ", ".join(b["holders"])
+        lines.append(
+            f"- **{dis['topic']}**: {who_a} {argue} {a['position'][L]} [value] "
+            f"{because} {a['rationale'][L]}. {against} {who_b} {argue} "
+            f"{b['position'][L]} [value] {because} {b['rationale'][L]}")
     if "minority_report" in d:
         lines += ["", H["minority"]]
         for dis in K.DISAGREEMENTS:
