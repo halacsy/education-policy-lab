@@ -882,7 +882,24 @@ def propose_frames(step, rd, n, T, question, expert_digest, glossary):
     solution frames) from THIS round's expert record as a human-gated
     proposal (D-24 pattern). The proposal is a round artifact (resumable)
     AND a file pair under topics/<slug>/proposals/ for the human to review,
-    edit and approve."""
+    edit and approve.
+
+    Gate feedback (new_topic.py reframe): if the owner rejected an earlier
+    proposal with feedback, the entries are appended to the instructions
+    and the derivation re-runs on the SAME expert record — frames stay
+    emergent, never hand-written."""
+    feedback_path = T.proposals_dir / "frames-feedback.md"
+    feedback = ""
+    if feedback_path.exists():
+        feedback = (
+            "\n\nHUMAN GATE FEEDBACK — the topic owner reviewed an earlier "
+            "frames proposal and sent it back. Each entry below points at "
+            "where the derived option space fell short. Address the "
+            "feedback, but every frame must still be grounded in the "
+            "expert record given as input — if the record does not support "
+            "a requested frame, record it under rejected framings with "
+            "that reason instead of inventing it:\n\n"
+            + read(feedback_path))
     obj, _ = step.run(
         "frame_scenarios",
         dict(task="frame_scenarios", agent="scenario_builder", round_n=n,
@@ -901,7 +918,7 @@ def propose_frames(step, rd, n, T, question, expert_digest, glossary):
                  "rejected framing with its reason (this is the audit "
                  "trail of the option-space choice). Write every {en, hu} "
                  "pair as the SAME statement authored natively in both "
-                 "languages.\n\nGLOSSARY:\n" + glossary),
+                 "languages.\n\nGLOSSARY:\n" + glossary + feedback),
              inputs=expert_digest),
         validate=valid_frames, out_path=rd / "frames_proposal.json",
         schema=S.FRAMES, max_tokens=8000)

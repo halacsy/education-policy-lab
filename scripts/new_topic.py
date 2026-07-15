@@ -13,6 +13,9 @@ approves the emergent scenario frames round 1 derives (issue #21).
     scripts/new_topic.py approve --topic <slug>
     # 3. run round 1; it stops at the frames gate, then
     scripts/new_topic.py approve-frames --topic <slug>
+    # (or send the proposal back with feedback instead of approving:
+    scripts/new_topic.py reframe --topic <slug> --feedback "..."
+    # then relaunch the run command — the frames re-derive at the gate)
 """
 import argparse
 import datetime
@@ -178,6 +181,50 @@ def cmd_approve(args):
           f"--topic {args.topic} --max-rounds 1")
 
 
+def cmd_reframe(args):
+    """Send a PENDING frames proposal back with owner feedback (the
+    sanctioned alternative to hand-editing a frame into the proposal:
+    frames must stay emergent — derived from the expert record). The
+    feedback is appended to proposals/frames-feedback.md (audit trail) and
+    the round's frames_proposal.json artifact is removed, so relaunching
+    the same run command re-derives the frames with the feedback appended
+    to the framing instructions and stops at the gate again."""
+    T = topic.Topic(args.topic)
+    prop_path = T.proposals_dir / "frames.json"
+    if not prop_path.exists():
+        raise SystemExit("no frames proposal to send back — run round 1 "
+                         "to the frames gate first")
+    prop = read_json(prop_path)
+    if prop.get("status") != "proposed":
+        raise SystemExit("reframe only applies to a PENDING proposal "
+                         f"(status={prop.get('status')!r}); approved "
+                         "frames change only via a new approve-frames "
+                         "cycle (D-36)")
+    text = (args.feedback or
+            open(args.file, encoding="utf-8").read()).strip()
+    fb_path = T.proposals_dir / "frames-feedback.md"
+    today = datetime.date.today().isoformat()
+    entry = f"\n## {today} — {git_user()}\n\n{text}\n"
+    if fb_path.exists():
+        write(fb_path, fb_path.read_text(encoding="utf-8") + entry)
+    else:
+        write(fb_path,
+              "# Frames-gate feedback (audit trail)\n\n"
+              "Owner feedback recorded at the frames gate; the framing "
+              "step re-derives\nthe option space from the SAME expert "
+              "record with these entries appended\nto its instructions "
+              "(emergent framing preserved — D-36).\n" + entry)
+    n = prop.get("derived_from_round")
+    art = T.iter_dir / f"round_{n:02d}" / "frames_proposal.json"
+    if art.exists():
+        art.unlink()
+    print(f"feedback recorded in {fb_path}\n"
+          f"round-{n} frames_proposal.json removed — relaunch the SAME "
+          "run command: the expert outputs are reused, the framing step "
+          "re-runs with the feedback, and the run stops at the gate "
+          "again.")
+
+
 def cmd_approve_frames(args):
     T = topic.Topic(args.topic)
     prop_path = T.proposals_dir / "frames.json"
@@ -249,9 +296,18 @@ def main():
                        help="approve round 1's emergent scenario frames")
     f.add_argument("--topic", required=True)
     f.set_defaults(fn=cmd_approve_frames)
+    r = sub.add_parser("reframe",
+                       help="send a pending frames proposal back with "
+                            "owner feedback (re-derives at the gate)")
+    r.add_argument("--topic", required=True)
+    r.add_argument("--feedback", help="the feedback text")
+    r.add_argument("--file", help="file containing the feedback")
+    r.set_defaults(fn=cmd_reframe)
     args = ap.parse_args()
     if args.cmd == "draft" and not (args.text or args.file):
         ap.error("draft needs --text or --file")
+    if args.cmd == "reframe" and not (args.feedback or args.file):
+        ap.error("reframe needs --feedback or --file")
     args.fn(args)
 
 
