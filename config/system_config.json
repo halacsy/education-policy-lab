@@ -27,8 +27,9 @@
     "reciprocity": true
   },
   "research": {
-    "_policy": "P4 (D-34, issue #6 first half): experts run a live web-search phase before the structured call; findings are cited sources in the expert output only and NEVER enter the curated registry (knowledge admission stays human-gated, D-24). Anthropic-API generator only.",
-    "web_search": true
+    "_policy": "P4 (D-34, issue #6 first half): experts run a live web-search phase before the structured call; findings are cited sources in the expert output only and NEVER enter the curated registry (knowledge admission stays human-gated, D-24). Anthropic-API generator only. require_search (owner rule 2026-07-16, issue #23): an expert may not work without at least one successful live search — a search-less research call fails the step (resumable) instead of silently degrading to background knowledge.",
+    "web_search": true,
+    "require_search": true
   },
   "evaluation": {
     "llm_judge_trials": 3,

@@ -38,7 +38,7 @@ _MIN_INTERVAL = {"google": 6.5, "anthropic": 0.3, "openai": 0.5}
 _throttle_lock = {p: threading.Lock() for p in _MIN_INTERVAL}
 _last_call = {p: 0.0 for p in _MIN_INTERVAL}
 _RATE_RE = re.compile(r"(429|RESOURCE_EXHAUSTED|rate.?limit|quota|overloaded|"
-                      r"503|UNAVAILABLE|high demand)", re.I)
+                      r"503|UNAVAILABLE|high demand|too_many_requests)", re.I)
 
 
 def _throttled(provider, fn):
@@ -268,12 +268,24 @@ def _call_search(provider, model, prompt, max_tokens, max_uses):
     """Free-text call with the server-side web-search tool. The server-side
     tool loop can pause (stop_reason == "pause_turn"); resume it. Adaptive
     thinking stays ON for this call — with thinking disabled the model is
-    much less likely to actually search."""
+    much less likely to actually search.
+
+    A research call MUST actually search (owner rule, 2026-07-16, after the
+    kisiskolák round ran entirely on background knowledge — issue #23): the
+    tool's failures arrive as web_search_tool_result_error blocks INSIDE a
+    successful response, so without this check the step "succeeds" with an
+    uncited narration. Zero successful searches raises RuntimeError — the
+    call_model retry loop records it (round_log errors, #17) and backs off
+    (rate-limited codes match _RATE_RE); past the retry budget it becomes
+    StepFailed, so the round stops resumably instead of degrading silently.
+    Config research.require_search=false disables the gate (explicit,
+    logged decision — never the default)."""
     tools = [{"type": "web_search_20260209", "name": "web_search",
               "max_uses": max_uses}]
     messages = [{"role": "user", "content": prompt}]
     parts = []
     usage = {"input_tokens": 0, "output_tokens": 0}
+    searches, tool_errors = 0, []
     for _ in range(6):
         resp = _client(provider).messages.create(
             model=model, max_tokens=max_tokens, tools=tools,
@@ -281,11 +293,24 @@ def _call_search(provider, model, prompt, max_tokens, max_uses):
         usage["input_tokens"] += resp.usage.input_tokens
         usage["output_tokens"] += resp.usage.output_tokens
         parts += [b.text for b in resp.content if b.type == "text"]
+        for b in resp.content:
+            if b.type == "web_search_tool_result":
+                # success payload is a list of result blocks; the error
+                # payload is a single object carrying error_code
+                err = getattr(b.content, "error_code", None)
+                if err:
+                    tool_errors.append(err)
+                else:
+                    searches += 1
         if resp.stop_reason == "pause_turn":
             messages = [{"role": "user", "content": prompt},
                         {"role": "assistant", "content": resp.content}]
             continue
         break
+    require = load_config().get("research", {}).get("require_search", True)
+    if searches == 0 and require:
+        codes = ", ".join(sorted(set(tool_errors))) or "model never searched"
+        raise RuntimeError(f"web search required but none succeeded: {codes}")
     return "\n".join(parts), usage
 
 
