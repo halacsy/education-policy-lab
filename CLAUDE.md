@@ -121,9 +121,14 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   consoles.
   (b) pricing.usd_per_mtok in config lacks gpt-5-mini, so openai judge
   tokens show in totals but are silently unpriced in the per-model table.
-  (c) the equity_and_social_mobility expert ran WITHOUT web search this
-  round (its sources say "web_search tool unavailability") — the other 11
-  searched live; worth a look at why one seat lost the tool.
+  (c) WEB SEARCH WAS DOWN FOR THE WHOLE ROUND (correction of an earlier
+  in-session claim that 11/12 searched live): "server tool-use limit
+  exceeded" in 8/12 research files, 0 URLs in ALL 12 — the round ran on
+  domain knowledge. The system was honest about it (agents flagged it,
+  the brief carries it as a strong-evidence fact, affected claims tagged
+  weak) — but don't cite this round's numbers as freshly sourced. #23
+  has the full picture; a later sourced round is the fix, not rewriting
+  the baseline.
   (d) `openai` pip package was missing from THIS machine's .venv (the
   round-8 machine had it) — installed 2026-07-15; add to a requirements
   note. Also: verify check 13 reads config defaults (generator=google,
