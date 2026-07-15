@@ -5,7 +5,7 @@ Type: expert
 Provider-role: generator
 
 ## Role
-The Finnish peruskoulu comprehensive-school reform: what it bundled, what carried the equity effect, and what is and is not transferable.
+Finland's school system and its reform history across the WHOLE system (the peruskoulu comprehensive-school reform and what followed — teacher education, pupil support, small-school and network policy): what each reform bundled, what carried its effects, and what is and is not transferable to Hungary.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric

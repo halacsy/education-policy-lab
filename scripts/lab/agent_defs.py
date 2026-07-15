@@ -6,9 +6,9 @@ each round's system_state snapshot)."""
 EXPERTS = {
     "hungarian_education_system": "The structure and sorting mechanisms of the Hungarian school system: school choice, catchments, maintainers, admission rules, and how the 6/8-year gimnázium tracks interact with them.",
     "international_comparison": "Cross-country evidence on selection age, tracking and equity (PISA gradients, difference-in-differences literature) and its transferability to Hungary.",
-    "finnish_reform": "The Finnish peruskoulu comprehensive-school reform: what it bundled, what carried the equity effect, and what is and is not transferable.",
-    "polish_reform": "Poland's 1999 delayed-tracking reform and its 2016-2019 reversal: measured effects and the political-durability lesson.",
-    "portuguese_reform": "Portugal's non-structural improvement path (standards, TEIP targeted support, retention reduction) as an alternative or complement to structural reform.",
+    "finnish_reform": "Finland's school system and its reform history across the WHOLE system (the peruskoulu comprehensive-school reform and what followed — teacher education, pupil support, small-school and network policy): what each reform bundled, what carried its effects, and what is and is not transferable to Hungary.",
+    "polish_reform": "Poland's school system and reform history across the WHOLE system (the 1999 delayed-tracking reform and its 2016-2019 reversal, plus the surrounding governance, curriculum and network changes): measured effects, the political-durability lesson, transferability.",
+    "portuguese_reform": "Portugal's school system and improvement path across the WHOLE system (standards, TEIP targeted support, retention reduction, school-network consolidation and cluster reform): what moved outcomes without structural change, and how it transfers.",
     "equity_and_social_mobility": "Distributional effects of early selection: SES gradients, selection vs value-added, peer effects on non-selected pupils.",
     "demography": "Cohort decline and its forcing effect on school-network decisions through 2040.",
     "school_network_planning": "Town-by-town feasibility: school-size economics, building stock, commuting tolerances under each scenario.",

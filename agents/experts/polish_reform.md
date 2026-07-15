@@ -5,7 +5,7 @@ Type: expert
 Provider-role: generator
 
 ## Role
-Poland's 1999 delayed-tracking reform and its 2016-2019 reversal: measured effects and the political-durability lesson.
+Poland's school system and reform history across the WHOLE system (the 1999 delayed-tracking reform and its 2016-2019 reversal, plus the surrounding governance, curriculum and network changes): measured effects, the political-durability lesson, transferability.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric

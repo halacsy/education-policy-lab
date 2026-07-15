@@ -193,10 +193,15 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   SCENARIO_ANCHORS deleted (D-36, closes the #21 mechanism); per-topic
   time/token/USD metering (lab/metering.py, cost_report in final + site);
   topic-browser site (build_site_topics.py). Mock e2e green for a 3-frame
-  test topic; verify green on korai-szelekcio. REMAINING from the sprint
-  prompt: the kisiskolák topic LIVE end-to-end (intake → frames gate →
-  round → published page) — awaiting owner cost-budget approval; then
-  comment/close #21 and update #18.
+  test topic; verify green on korai-szelekcio; #21/#18 commented.
+  REMAINING from the sprint prompt: the kisiskolák topic LIVE end-to-end
+  (intake → frames gate → round → published page). OWNER DECISION
+  (2026-07-15): do NOT run live yet — rotate the exposed API keys first;
+  estimated cost when it runs: ~$10-25, ceiling ~$40 (intake + 1 full
+  round, anthropic generator + gpt-5-mini judge). Owner also clarified the
+  country experts (finnish/polish/portuguese_reform) are WHOLE-SYSTEM
+  reform experts, not gimnázium-specific — hub specs generalized
+  accordingly; use the FULL 12-expert roster for kisiskolák.
 - **OWNER DIRECTION (2026-07-14): multi-topic a cél** — sok policy-kérdés
   ugyanazzal a rendszerrel és expert-csoporttal, SEMMI kérdés-specifikus
   hardkód; az opcióteret (mit lehet csinálni) is a szakértői válaszokból

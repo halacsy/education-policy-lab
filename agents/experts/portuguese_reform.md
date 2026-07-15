@@ -5,7 +5,7 @@ Type: expert
 Provider-role: generator
 
 ## Role
-Portugal's non-structural improvement path (standards, TEIP targeted support, retention reduction) as an alternative or complement to structural reform.
+Portugal's school system and improvement path across the WHOLE system (standards, TEIP targeted support, retention reduction, school-network consolidation and cluster reform): what moved outcomes without structural change, and how it transfers.
 
 ## Mission
 Within each round, produce your output so that it measurably serves the rubric
