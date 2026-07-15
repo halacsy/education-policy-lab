@@ -94,7 +94,10 @@ def expert_research(agent):
              "web results:"]
     for fid in b["findings"]:
         f = K.FACTS[fid]
-        lines.append(f"- {f['en']} (source: {f['source']}; "
+        # the mock URL keeps the research contract (notes must carry at
+        # least one URL — pipeline validator) satisfied in dry runs
+        lines.append(f"- {f['en']} (source: {f['source']}, "
+                     f"https://example.org/mock/{fid}; "
                      f"evidence: {f['evidence']})")
     return "\n".join(lines) + "\n"
 

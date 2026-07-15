@@ -573,6 +573,21 @@ class Step:
                     e = json.loads(line)
                     self._prior[e["step"]] = e["backend"]
 
+    def _reject(self, name, attempt, backend, output, reason):
+        """rejections.jsonl: the full rejected output + why (audit trail;
+        input for agent improvement — see issue on rejection-driven
+        directives). Kept out of steps.jsonl so the step journal stays a
+        cheap resume index."""
+        entry = {
+            "step": name, "attempt": attempt, "backend": backend,
+            "reason": reason,
+            "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "output": output if isinstance(output, str)
+            else json.dumps(output, ensure_ascii=False),
+        }
+        with open(self.rd / "rejections.jsonl", "a", encoding="utf-8") as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+
     def _note(self, name, backend):
         with open(self.journal_path, "a", encoding="utf-8") as f:
             f.write(json.dumps({"step": name, "backend": backend}) + "\n")
@@ -637,6 +652,9 @@ class Step:
                 self._note(name, "FAILED")
                 raise
             backend = llm.CALL_LOG[-1]["backend"]
+            if schema is None:
+                result = text
+            reason = None
             try:
                 if schema is None:
                     result = postprocess(text)
@@ -645,8 +663,13 @@ class Step:
                         writer(out_path, result)
                     self._note(name, backend)
                     return result, backend
-            except Exception:
-                pass
+                reason = "validator returned False"
+            except Exception as e:  # noqa: BLE001 — the reason IS the log
+                reason = f"{type(e).__name__}: {e}"
+            # Audit trail (owner direction 2026-07-16): every rejected
+            # output is persisted WITH its reason — agent improvement needs
+            # to see what was refused and why, not just that a retry ran.
+            self._reject(name, attempt, backend, result, reason)
             corrective = (
                 "PREVIOUS ATTEMPT FAILED CONTENT VALIDATION. Fill EVERY "
                 "field of the required schema with substantive content (no "
@@ -936,10 +959,30 @@ def run_round(n):
     cfg = load_config()
     T = topic.current()
     rd = round_dir(n, create=True)
-    resume = _snapshot_state_hash(rd) == _current_state_hash()
+    state_hash = _current_state_hash()
+    resume = _snapshot_state_hash(rd) == state_hash
     if not resume and (rd / "steps.jsonl").exists():
         (rd / "steps.jsonl").unlink()  # stale partial attempt
     snapshot_system_state(rd)
+    # round_meta.json (owner direction 2026-07-16: log when and under what
+    # conditions every round leg started, per topic). Each (re)launch
+    # APPENDS a start record, so interrupted/resumed rounds keep their full
+    # launch history. The WHY of the round (the applied improvement plan)
+    # is recorded by the loop in the round commit and prev round's
+    # plan.json; providers recorded here are what verify check 13 should
+    # eventually validate against (issue #24).
+    meta_path = rd / "round_meta.json"
+    meta = read_json(meta_path) if meta_path.exists() else {
+        "topic": T.slug, "round": n, "starts": []}
+    meta["starts"].append({
+        "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "resume": resume,
+        "generator_provider": llm.provider_for_role("generator"),
+        "judge_provider": llm.provider_for_role("judge"),
+        "fresh_experts": bool(os.environ.get("LAB_FRESH_EXPERTS")),
+        "state_hash": state_hash,
+    })
+    write_json(meta_path, meta)
     step = Step(rd, resume, round_n=n)
     print(f"[round {n:02d}] starting... (topic: {T.slug})", flush=True)
     question = T.question_block()
