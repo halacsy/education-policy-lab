@@ -772,7 +772,7 @@ def main():
     forgatókönyv épült. Az adat nem szerkesztett kivonat: közvetlenül a
     {n}. kör kimeneteiből generálódik.</p>
     <nav class="jump">
-      <a href="#S1">S1</a><a href="#S2">S2</a><a href="#S3">S3</a><a href="#S4">S4</a>
+      {''.join(f'<a href="#{e(s["id"])}">{e(s["id"])}</a>' for s in scen_en["scenarios"])}
       <a href="#nezetelteres">Nézeteltérés-térkép</a>
       <a href="#diskurzus">Társadalmi diskurzus</a>
       <a href="#szakertok">Szakértői elemzések</a>
