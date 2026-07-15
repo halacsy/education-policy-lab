@@ -10,7 +10,14 @@ For every topic in topics/*/topic.json:
   works" content; the card list is regenerated on every deploy).
 
 Run by the Pages workflow on every deploy — generated from repo data,
-never hand-maintained. Standard library only."""
+never hand-maintained. Standard library only (lab/ is local and stdlib).
+
+Since the linkability pass the topic page also carries a "what the system
+surfaced" section: the dilemmas, attention sinks and disagreement axes of
+the topic's last round, each deep-linking into the explorer's anchors
+(#cluster-<id>, #axis-<n>, #expert-<name>) via the shared lab/site_data
+loaders — no hand-picked highlights, everything derived from the round
+artifacts."""
 import html
 import json
 import re
@@ -18,6 +25,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from lab.site_data import (VERDICT_HU, VERDICT_GROUP, is_gumicsont,
+                           last_round, list_experts,
+                           load_structured_discourse,
+                           load_structured_disagreements)
+
 TOPICS_DIR = ROOT / "topics"
 OUT_ROOT = ROOT / "outputs" / "topics"
 
@@ -53,6 +66,19 @@ CSS = """
   tr:last-child td { border-bottom:none; }
   .tablebox { overflow-x:auto; border:1px solid var(--line); border-radius:6px; }
   footer { padding:2rem 0 3rem; font-size:.85rem; color:var(--muted); }
+  ul.findings { list-style:none; margin:0 0 1rem; padding:0; }
+  ul.findings li { background:#fff; border:1px solid var(--line); border-radius:6px;
+                   padding:.6rem .85rem; margin-bottom:.5rem; font-size:.92rem; }
+  ul.findings a { text-decoration:none; }
+  ul.findings a:hover { text-decoration:underline; }
+  .chip { display:inline-block; font-family:ui-monospace,'SF Mono',Menlo,monospace;
+          font-size:.74rem; background:var(--panel); border:1px solid var(--line);
+          padding:.12rem .5rem; border-radius:3px; text-decoration:none;
+          color:var(--ink); margin:0 .25rem .35rem 0; }
+  .chip:hover { background:#fff; color:var(--evidence); }
+  .tally { display:flex; gap:1.2rem; flex-wrap:wrap; font-size:.85rem; color:var(--muted);
+           background:var(--panel); border-radius:6px; padding:.6rem .9rem; margin:0 0 1rem; }
+  .tally b { color:var(--ink); }
 """
 
 
@@ -110,6 +136,122 @@ def cost_line(state):
 STATUS_HU = {"active": "aktív", "draft": "előkészítés alatt",
              "final": "lezárva"}
 
+DILEMMA_CAP = 6
+REL_ORDER = {"high": 0, "medium": 1, "low": 2}
+
+
+def load_findings(slug):
+    """The last round's structured discourse record for the "what the
+    system surfaced" section; None when the topic has no D-34 round yet."""
+    it = OUT_ROOT / slug / "iterations"
+    if not it.exists():
+        return None
+    n = last_round(it)
+    if n is None:
+        return None
+    rd = it / f"round_{n:02d}"
+    sd = load_structured_discourse(rd)
+    if not sd:
+        return None
+    return dict(round=n, sd=sd,
+                axes=load_structured_disagreements(rd) or [],
+                experts=list_experts(rd))
+
+
+def findings_block(f):
+    """Deep-linking highlights section, fully derived from round data:
+    verdict tally, human-decision dilemmas, attention sinks (gumicsont),
+    disagreement axes, expert record — every item an anchor into
+    explorer.html (the anchors are minted by build_site_explorer from the
+    same lab/site_data loaders)."""
+    if not f:
+        return ""
+    sd = f["sd"]
+    counts = {"fix": 0, "human": 0, "open": 0}
+    for c in sd["clusters"]:
+        v = sd["verdicts"].get(c["id"])
+        if v:
+            counts[VERDICT_GROUP[v["response_type"]]] += 1
+    tally = f"""    <div class="tally">
+      <span>felvetett érv: <b>{len(sd['clusters'])}</b></span>
+      <span>evidenciával/tervezéssel kezelhető: <b>{counts['fix']}</b></span>
+      <span>emberi (érték)döntést kér: <b>{counts['human']}</b></span>
+      <span>nyitott / nem döntésreleváns: <b>{counts['open']}</b></span>
+    </div>"""
+
+    dil = [(c, sd["verdicts"][c["id"]]) for c in sd["clusters"]
+           if sd["verdicts"].get(c["id"])
+           and VERDICT_GROUP[sd["verdicts"][c["id"]]["response_type"]] == "human"]
+    dil.sort(key=lambda cv: (
+        0 if cv[1]["response_type"] == "irreducible_tradeoff" else 1,
+        REL_ORDER.get(cv[0].get("decision_relevance"), 3), cv[0]["id"]))
+    dil_items = "\n".join(
+        f'      <li><a href="explorer.html#cluster-{esc(c["id"])}">'
+        f'<strong>{esc(c["id"])}</strong> · {esc(c["claim"])}</a><br>'
+        f'<span class="note">{esc(VERDICT_HU[v["response_type"]])} — '
+        f'a záróanyag indoklással válaszol rá (kattints)</span></li>'
+        for c, v in dil[:DILEMMA_CAP])
+    dil_more = (f'<p class="note">…és további {len(dil) - DILEMMA_CAP} '
+                f'hasonló dilemma a feltáróban.</p>'
+                if len(dil) > DILEMMA_CAP else "")
+
+    gumik = [c for c in sd["clusters"] if is_gumicsont(c)]
+    gumi_html = ""
+    if gumik:
+        gumi_items = "\n".join(
+            f'      <li><a href="explorer.html#cluster-{esc(c["id"])}">'
+            f'<strong>{esc(c["id"])}</strong> · {esc(c["claim"])}</a><br>'
+            f'<span class="note">{esc(sd["sinks"].get(c["id"], ""))}</span></li>'
+            for c in gumik)
+        gumi_html = f"""    <h3>Gumicsont-érvek — sok figyelem, kevés döntési tét</h3>
+    <p class="note">A vitában nagy figyelmet kapó érvek, amelyek megoldása
+    a rendszer elemzése szerint nem változtatna azon, melyik irányt érdemes
+    választani.</p>
+    <ul class="findings">
+{gumi_items}
+    </ul>"""
+
+    axes_html = ""
+    if f["axes"]:
+        axis_items = "\n".join(
+            f'      <li><a href="explorer.html#axis-{i + 1}">{esc(ax["topic"])}</a></li>'
+            for i, ax in enumerate(f["axes"]))
+        axes_html = f"""    <h3>Ahol a szakértői panel nem ért egyet</h3>
+    <p class="note">A rendszer nem szavaztat és nem simítja el a vitát:
+    ezek a kérdések nyitva maradnak, mindkét oldal indoklásával.</p>
+    <ul class="findings">
+{axis_items}
+    </ul>"""
+
+    expert_chips = "".join(
+        f'<a class="chip" href="explorer.html#expert-{esc(n)}">{esc(n)}</a>'
+        for n in f["experts"])
+
+    return f"""<section>
+  <div class="wrap">
+    <p class="eyebrow">Amit a rendszer feltárt — {f['round']}. kör</p>
+    <h2>Dilemmák és érdekességek, közvetlenül linkelhetően</h2>
+    <p class="note">Minden alábbi elem a futás nyers kimeneteiből generálódik
+    (nem kézzel válogatott), és a linkje közvetlenül a feltáró megfelelő
+    kártyájára visz — vitához, idézéshez, megosztáshoz.</p>
+{tally}
+    <h3>A valódi dilemmák — ezeket nem dönti el se evidencia, se AI</h3>
+    <p class="note">A társadalmi vita érveiből a rendszer kiszűri, mi
+    kezelhető evidenciával vagy jobb szakpolitikai tervezéssel — ami marad,
+    az tényleges értékválasztás, ami emberi döntést igényel.</p>
+    <ul class="findings">
+{dil_items}
+    </ul>
+    {dil_more}
+{gumi_html}
+{axes_html}
+    <h3>A szakértői rekord</h3>
+    <p class="note">A {len(f['experts'])} szakértő-ágens teljes elemzése
+    megnyitható — a név egyben a hivatkozható link.</p>
+    <p>{expert_chips}</p>
+  </div>
+</section>"""
+
 
 def topic_card(cfg, state):
     slug = cfg["slug"]
@@ -140,6 +282,7 @@ def topic_card(cfg, state):
 def topic_page(cfg, state):
     slug = cfg["slug"]
     b = cfg["problem_brief"]
+    findings_html = findings_block(load_findings(slug)) if state["has_final"] else ""
     goals = "\n".join(f"      <li>{esc(g['hu'])}</li>"
                       for g in b["learning_goals"])
     frames = cfg.get("frames", {}).get("scenarios", [])
@@ -245,6 +388,8 @@ def topic_page(cfg, state):
 </section>
 
 {frames_block}
+
+{findings_html}
 
 <section>
   <div class="wrap">

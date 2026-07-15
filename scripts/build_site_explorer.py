@@ -15,6 +15,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from lab.site_data import (VERDICT_HU, VERDICT_GROUP, KIND_HU, SIDE_HU,
+                           REL_HU, DECOMP_FIELDS, is_gumicsont,
+                           load_structured_discourse,
+                           load_structured_disagreements)
 # Per-topic outputs (D-35). Default: the config default_topic; a --topic
 # argument selects another one (the topic browser builds every topic).
 import argparse as _argparse
@@ -192,56 +197,9 @@ def parse_brief_responses(brief_hu_text):
 
 
 # -- structured discourse artifacts (D-34: JSON is the source of truth) -------
-
-VERDICT_HU = {
-    "evidence_answerable": "evidenciával megválaszolható",
-    "policy_design_fixable": "tervezéssel kezelhető",
-    "communication_fixable": "kommunikációval kezelhető",
-    "value_conflict": "értékkonfliktus",
-    "irreducible_tradeoff": "feloldhatatlan trade-off",
-    "needs_more_info": "több információ kell",
-    "not_decision_relevant": "nem döntésreleváns",
-}
-# 7 verdict types -> 3 semantic groups: fixable (evidence green),
-# human decision needed (rust), open/parked (muted)
-VERDICT_GROUP = {
-    "evidence_answerable": "fix", "policy_design_fixable": "fix",
-    "communication_fixable": "fix",
-    "value_conflict": "human", "irreducible_tradeoff": "human",
-    "needs_more_info": "open", "not_decision_relevant": "open",
-}
-KIND_HU = {"fact": "tény", "value": "érték", "mixed": "vegyes"}
-SIDE_HU = {"pro": "mellette", "con": "ellene", "conditional": "feltételes"}
-REL_HU = {"high": "magas", "medium": "közepes", "low": "alacsony"}
-DECOMP_FIELDS = [("interest", "Kinek az érdeke"), ("value", "Milyen érték ütközik"),
-                 ("fear", "Milyen félelem hajtja"), ("assumption", "Milyen feltevésre épül"),
-                 ("empirical_uncertainty", "Empirikus bizonytalanság")]
-
-
-def load_structured_discourse(rd):
-    """Cluster data straight from the D-34 JSON artifacts (no md parsing).
-    Returns None for pre-D-34 rounds."""
-    amap = rd / "discourse" / "argument_map.json"
-    brief = rd / "brief.json"
-    if not (amap.exists() and brief.exists()):
-        return None
-    sys.path.insert(0, str(ROOT / "scripts"))
-    from lab.render import grades_dict, project
-    clusters = project(json.loads(amap.read_text(encoding="utf-8"))["clusters"], "hu")
-    grades_p = rd / "discourse" / "argument_grades.json"
-    grades = grades_dict(json.loads(grades_p.read_text(encoding="utf-8"))) \
-        if grades_p.exists() else {}
-    recipro = {}
-    for rp in sorted((rd / "discourse" / "responses").glob("*.json")):
-        obj = project(json.loads(rp.read_text(encoding="utf-8")), "hu")
-        for r in obj.get("responses", []):
-            recipro.setdefault(r["cluster"], []).append(
-                dict(voice=obj.get("voice", rp.stem), response=r["response"],
-                     outcome=r["outcome"]))
-    b = project(json.loads(brief.read_text(encoding="utf-8")), "hu")
-    verdicts = {r["cluster_id"]: r for r in b.get("stakeholder_responses", [])}
-    return dict(clusters=clusters, grades=grades, recipro=recipro,
-                verdicts=verdicts)
+# Constants and loaders live in lab/site_data.py, shared with
+# build_site_topics.py so topic-page deep links and explorer anchors can
+# never diverge.
 
 
 def clusters_section_html(sd):
@@ -255,11 +213,6 @@ def clusters_section_html(sd):
     def verdict_of(c):
         v = sd["verdicts"].get(c["id"])
         return v["response_type"] if v else None
-
-    def is_gumicsont(c):
-        attn = c.get("attention", {})
-        return bool(attn.get("high_attention")) and \
-            c.get("decision_relevance") == "low"
 
     counts = {"fix": 0, "human": 0, "open": 0}
     for c in sd["clusters"]:
@@ -311,10 +264,11 @@ def clusters_section_html(sd):
             raised = "".join(f'<span class="expert-chip">{e(n)}</span> '
                              for n in c.get("raised_by", []))
             rows.append(f"""
-      <details class="cluster-row">
+      <details class="cluster-row" id="cluster-{e(c['id'])}">
         <summary><span class="cl-id">{e(c['id'])}</span>
           <span class="cl-claim">{e(c['claim'])}</span>
-          {badge}{gumi}</summary>
+          {badge}{gumi}<a class="permalink" href="#cluster-{e(c['id'])}"
+            title="Közvetlen link erre az érvre">§</a></summary>
         <div class="cl-body">
           <p class="note">Felvetette: {raised}· {e(KIND_HU.get(c['kind'], c['kind']))} állítás, {e(SIDE_HU.get(c['side'], c['side']))}</p>
           <dl class="cl-decomp">{decomp}</dl>
@@ -459,6 +413,7 @@ def main():
         <span class="id">{e(sid)}</span>
         <span class="title">{e(s_hu['title'])}</span>
         <span class="count">{n_obj} kritikai észrevétel</span>
+        <a class="permalink" href="#{e(sid)}" title="Közvetlen link erre a forgatókönyvre">§</a>
       </summary>
       <div class="scenario-body">
         <div class="fields">{''.join(fields_html)}</div>
@@ -497,7 +452,38 @@ def main():
       {body_html}
     </div>"""
 
-    disagreement_html = "".join(disagreement_card(d) for d in disagreement)
+    # D-34 rounds carry the disagreement axes structured (and in Hungarian)
+    # in brief.json; the md regex parse stays as the pre-D-34 fallback only
+    # (on the new format it mis-reads the holder lists as axis titles).
+    sd_axes = load_structured_disagreements(rd)
+
+    def axis_card(i, ax):
+        pos_html = []
+        for p in ax.get("positions", []):
+            chips = " ".join(
+                f'<a class="expert-chip" href="#expert-{e(h)}">{e(h)}</a>'
+                for h in p.get("holders", []))
+            minority = ('<p class="pos-label" style="margin:0 0 .3rem">'
+                        'kisebbségi álláspont</p>' if p.get("minority") else "")
+            why = (f'<p class="fix"><b>Miért:</b> {e(p["why"])}</p>'
+                   if p.get("why") else "")
+            cls = "camp-b" if p.get("minority") else "camp-a"
+            pos_html.append(
+                f'<div class="side {cls}">{minority}<p class="position">'
+                f'{e(p["position"])}</p>{why}<p class="note" '
+                f'style="margin:.4rem 0 0">{chips}</p></div>')
+        return f"""
+    <div class="disagreement" id="axis-{i}">
+      <h3 class="axis-title"><span class="axis-side">{e(ax['topic'])}</span>
+        <a class="permalink" href="#axis-{i}" title="Közvetlen link erre a kérdésre">§</a></h3>
+      <div class="sides">{''.join(pos_html)}</div>
+    </div>"""
+
+    if sd_axes:
+        disagreement_html = "".join(axis_card(i + 1, ax)
+                                    for i, ax in enumerate(sd_axes))
+    else:
+        disagreement_html = "".join(disagreement_card(d) for d in disagreement)
 
     def expert_card(name, data):
         body_html = md_html(data["full"])
@@ -506,6 +492,7 @@ def main():
       <summary>
         <span class="expert-name">{e(name)}</span>
         <span class="expert-position">{e(data['position'][:140])}</span>
+        <a class="permalink" href="#expert-{e(name)}" title="Közvetlen link erre a szakértőre">§</a>
       </summary>
       <div class="expert-full">{body_html}</div>
     </details>"""
@@ -720,7 +707,35 @@ def main():
   .note { font-size:.85rem; color:var(--muted); }
   nav.jump { display:flex; gap:1rem; font-family:ui-monospace,Menlo,monospace; font-size:.8rem; flex-wrap:wrap; }
   footer { padding:2rem 0 3rem; font-size:.85rem; color:var(--muted); }
+  .permalink { font-family:ui-monospace,Menlo,monospace; font-size:.78rem; color:var(--muted);
+               text-decoration:none; opacity:0; flex:none; margin-left:auto; }
+  summary:hover .permalink, .axis-title:hover .permalink, details[open] > summary .permalink { opacity:1; }
+  .permalink:hover { color:var(--evidence); }
+  :target { scroll-margin-top:1rem; }
+  details:target, .disagreement:target { outline:2px solid var(--evidence); outline-offset:2px;
+                                          border-radius:8px; }
 """
+
+    # Deep links must open the disclosure they point into: a bare
+    # <details id=…> stays closed on anchor navigation, so a shared link
+    # would land on a collapsed row. Runs on load and on hashchange.
+    anchor_js = """
+<script>
+(function () {
+  function openTarget() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    for (var p = el; p; p = p.parentElement) {
+      if (p.tagName === 'DETAILS') p.open = true;
+    }
+    el.scrollIntoView({block: 'start'});
+  }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+})();
+</script>"""
 
     body = f"""<!DOCTYPE html>
 <html lang="hu">
@@ -802,6 +817,7 @@ def main():
     publikáláskor. <a href="https://github.com/halacsy/education-policy-lab/tree/main/outputs/topics/{SLUG}/iterations/round_{n:02d}">Nyers adat a GitHubon</a>.</p>
   </div>
 </footer>
+{anchor_js}
 </body>
 </html>
 """
