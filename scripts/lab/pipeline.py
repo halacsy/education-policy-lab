@@ -1036,10 +1036,19 @@ def run_round(n):
                          "the claim, the number/year, and the exact source "
                          "(title + URL). 5-10 findings as prose notes — a "
                          "later call turns them into your structured "
-                         "analysis. Web findings are cited sources only; "
-                         "they never enter the curated registry (knowledge "
-                         "admission is human-gated).")),
-                validate=lambda t: len(t.strip()) > 200,
+                         "analysis. Return the FULL notes as the text of "
+                         "your reply: you have NO persistent filesystem, "
+                         "and anything written to files by result-filtering "
+                         "code is DISCARDED — a finding (and its URL) that "
+                         "is not in your reply text is lost. Never reply "
+                         "with a summary of notes kept elsewhere. Web "
+                         "findings are cited sources only; they never "
+                         "enter the curated registry (knowledge admission "
+                         "is human-gated).")),
+                # notes must carry their sources: a reply that merely
+                # narrates notes "saved" in the (discarded) sandbox has no
+                # URLs and fails here, triggering the corrective retry
+                validate=lambda t: len(t.strip()) > 200 and "http" in t,
                 out_path=rd / "research" / f"{name}.md",
                 max_tokens=4000, web_search=True)
             research_notes = (
