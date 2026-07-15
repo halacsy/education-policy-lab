@@ -11,6 +11,7 @@ backend provenance is recovered from steps.jsonl (quota conservation; the
 snapshot gate guarantees they were produced by the identical system)."""
 import hashlib
 import json
+import os
 import re
 import shutil
 import time
@@ -998,7 +999,15 @@ def run_round(n):
         validate = directive_validator(
             valid_expert, dict(task="expert_analysis", agent=name))
         obj = None
-        if not (step.resume and out_path.exists()):
+        # LAB_FRESH_EXPERTS=1 disables the cross-round expert cache so every
+        # seat re-runs its research (live web search) + analysis. Use it when
+        # the cached outputs are valid by spec but stale by sourcing — e.g.
+        # the previous round's search phase was down (issue #23) and the
+        # point of the new round is fresh evidence. Intra-round resume
+        # (step.resume) is unaffected: an interrupted round still reuses its
+        # own artifacts.
+        fresh = bool(os.environ.get("LAB_FRESH_EXPERTS"))
+        if not (step.resume and out_path.exists()) and not fresh:
             cached = reusable_expert(name)
             try:
                 cached_ok = cached is not None and validate(cached)
