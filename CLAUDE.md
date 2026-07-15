@@ -84,9 +84,47 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   the cheapest generator path; a discourse-enabled round ≈ 40 generator +
   15-25 judge calls (reciprocity off: −10).
 
-## Current state (2026-07-14, end of session)
+## Current state (2026-07-15, end of session)
 
-- **Branch `refactor/structured-agents`** (D-34 draft, this session, off
+- **MULTI-TOPIC SPRINT DONE on main (D-35 + D-36, 2026-07-15, pushed;
+  commits 2558dc8..7acbc59).** Per-topic config/state/outputs + scoped
+  round commits; problem-brief intake + emergent framing (SCENARIO_ANCHORS
+  deleted, human gates via scripts/new_topic.py); per-topic time/token/USD
+  metering (lab/metering.py, final/cost_report); topic-browser site
+  (build_site_topics.py). Mock e2e green on a 3-frame test topic; verify
+  green on korai-szelekcio; #21/#18 commented (close #21 after the live
+  acceptance). API keys ROTATED (owner-confirmed 2026-07-15) — live runs
+  unblocked.
+  **NEXT ACTION — kisiskolák LIVE acceptance** (est. ~$10-25, ceiling ~$40;
+  owner-approved budget conversation happened 2026-07-15). Exact sequence
+  (generator must be anthropic for web search; judge openai like round 8):
+  1. `.venv/bin/python scripts/new_topic.py draft --text "A kistelepülések
+     elnéptelenedése mellett mit kezdjünk a kisiskolákkal?"`
+  2. owner reviews/edits topics/<slug>/proposals/problem-brief.md, then
+     `scripts/new_topic.py approve --topic <slug>`. Use the FULL 12-expert
+     roster (leave `experts: null`): owner clarified 2026-07-15 that the
+     finnish/polish/portuguese seats are WHOLE-SYSTEM country experts, not
+     gimnázium-specific ("nem csak a gimnáziumban, hanem a teljes
+     iskolarendszerben") — hub specs were generalized accordingly (7acbc59);
+     never scope them out on topical grounds.
+  3. `GENERATOR_PROVIDER=anthropic JUDGE_PROVIDER=openai
+     .venv/bin/python scripts/run_iteration_loop.py --topic <slug>
+     --max-rounds 1` → stops at the frames gate (~$5-10 spent);
+  4. owner reviews topics/<slug>/proposals/frames.md, then
+     `scripts/new_topic.py approve-frames --topic <slug>`; relaunch the SAME
+     loop command (experts are reused, scenario steps run);
+  5. `scripts/verify.py --topic <slug>` AND `scripts/verify.py` (both green
+     = regressziómentesség); cost report lands in
+     outputs/topics/<slug>/final/cost_report.md; push → Pages publishes the
+     topic page. Report: wall-clock/token/USD + whether the frames really
+     came from the expert record.
+  Extra API quirks beyond the round-8 lessons below (learned live, easy to
+  re-hit): a "Grammar compilation timed out" 400 is TRANSIENT (retry works),
+  unlike "compiled grammar too large"; models over-fill unbounded arrays —
+  cap list sizes in instruction prose, not just token budgets; gpt-5-mini
+  judge occasionally returns an empty response (the retry loop handles it).
+- **Branch `refactor/structured-agents`** (D-34, MERGED to main 3187c5b;
+  detail below kept for archaeology) (was: this session, off
   refactor/deliberation-mission): structured/bilingual/tool-using agent
   refactor. Owner-approved plan + evidence in
   `docs/proposals/2026-07-14-structured-bilingual-agents.md` (owner answers
@@ -131,10 +169,10 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   compiles — but llm._gemini_schema does NOT resolve refs, keep BRIEF off
   Gemini); the era boundary must disable delta/regression-revert (a bogus
   cross-era -0.28 triggered a full revert-and-rerun before the fix).
-  NOTE: API keys were exposed in the 2026-07-14 session transcript — ROTATE
-  before serious use (Phase 0; not yet confirmed done). OPENAI_API_KEY was
-  added to .env by the owner (billing-enabled).
-- **Branch `refactor/deliberation-mission`** (D-30, 2026-07-11): mission
+  NOTE: the keys exposed in the 2026-07-14 transcript were ROTATED
+  (owner-confirmed 2026-07-15). OPENAI_API_KEY is in .env (billing-enabled).
+- **Branch `refactor/deliberation-mission`** (D-30, 2026-07-11; MERGED to
+  main via the structured-agents chain, 3187c5b): mission
   reframed from "produce a policy" to "accelerate deliberation"; discourse
   layer relabelled as a stakeholder stress test (explicit disclaimer in
   every discourse-facing instruction + the ledger itself); argument clusters
@@ -178,8 +216,9 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   splitting the translation or letting it degrade to the (logged) mock
   fallback and re-translating later. MERGE PENDING OWNER REVIEW of results.
 - **Branch `site/split-tech`**: landing page split — "what it does" stays on
-  index, implementation moved to site/tech.html. Merge with/after the run
-  branch (index.html conflicts trivially with a699f03: split-tech supersedes).
+  index, implementation moved to site/tech.html. NOTE (2026-07-15):
+  index.html has since been restructured into the topic browser (D-35) —
+  if this branch is still wanted, it needs a rebase/rework, not a merge.
 - **PR #10 open (owner decision)**: admit `conservative_education` expert to
   the canonical panel (branch exp/conservative-expert, sensitivity experiment
   + report attached). With the discourse layer built, an alternative is to
