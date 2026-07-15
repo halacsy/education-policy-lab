@@ -36,6 +36,15 @@ DECOMP_FIELDS = [("interest", "Kinek az érdeke"), ("value", "Milyen érték üt
                  ("empirical_uncertainty", "Empirikus bizonytalanság")]
 
 
+def topic_order(topics_dir):
+    """Every topic config in the deterministic public order (creation date,
+    then slug) — this order IS the public topic numbering ("1. téma"), so
+    both site generators must use it."""
+    cfgs = [json.loads(p.read_text(encoding="utf-8"))
+            for p in sorted(topics_dir.glob("*/topic.json"))]
+    return sorted(cfgs, key=lambda c: (c.get("created", ""), c["slug"]))
+
+
 def last_round(iter_dir):
     """Highest round number under outputs/topics/<slug>/iterations, or None."""
     rounds = sorted(int(p.name.split("_")[1]) for p in iter_dir.glob("round_*"))

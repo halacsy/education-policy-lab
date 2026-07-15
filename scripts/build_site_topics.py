@@ -29,7 +29,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from lab.site_data import (VERDICT_HU, VERDICT_GROUP, is_gumicsont,
                            last_round, list_experts,
                            load_structured_discourse,
-                           load_structured_disagreements)
+                           load_structured_disagreements, topic_order)
 
 TOPICS_DIR = ROOT / "topics"
 OUT_ROOT = ROOT / "outputs" / "topics"
@@ -66,6 +66,17 @@ CSS = """
   tr:last-child td { border-bottom:none; }
   .tablebox { overflow-x:auto; border:1px solid var(--line); border-radius:6px; }
   footer { padding:2rem 0 3rem; font-size:.85rem; color:var(--muted); }
+  nav.topicnav { border-bottom:1px solid var(--line); background:var(--panel);
+                 font-family: ui-monospace,'SF Mono',Menlo,monospace; font-size:.78rem; }
+  nav.topicnav .wrap { display:flex; justify-content:space-between; align-items:baseline;
+                       gap:1rem; padding-top:.5rem; padding-bottom:.5rem; }
+  nav.topicnav a { text-decoration:none; }
+  nav.topicnav a:hover { text-decoration:underline; }
+  .cta { display:inline-block; background:var(--evidence); color:#fff;
+         font-family:-apple-system,'Helvetica Neue',Arial,sans-serif; font-weight:700;
+         font-size:.95rem; padding:.55rem 1.15rem; border-radius:4px;
+         text-decoration:none; margin:.2rem 0 .4rem; }
+  .cta:hover { opacity:.92; }
   ul.findings { list-style:none; margin:0 0 1rem; padding:0; }
   ul.findings li { background:#fff; border:1px solid var(--line); border-radius:6px;
                    padding:.6rem .85rem; margin-bottom:.5rem; font-size:.92rem; }
@@ -84,13 +95,6 @@ CSS = """
 
 def esc(x):
     return html.escape(str(x), quote=True)
-
-
-def load_topics():
-    topics = []
-    for p in sorted(TOPICS_DIR.glob("*/topic.json")):
-        topics.append(json.loads(p.read_text(encoding="utf-8")))
-    return topics
 
 
 def topic_state(slug):
@@ -253,7 +257,7 @@ def findings_block(f):
 </section>"""
 
 
-def topic_card(cfg, state):
+def topic_card(cfg, state, num):
     slug = cfg["slug"]
     b = cfg["problem_brief"]
     status = STATUS_HU.get(cfg.get("status", "active"), cfg.get("status"))
@@ -271,7 +275,7 @@ def topic_card(cfg, state):
                                     f"{esc(f['title']['hu'])}"
                                     for f in frames) + "</p>")
     return f"""    <div class="card">
-      <h3><a href="topics/{esc(slug)}/">{esc(b['title']['hu'])}</a></h3>
+      <h3><a href="topics/{esc(slug)}/">{num}. {esc(b['title']['hu'])}</a></h3>
       <p>{esc(b['problem_statement']['hu'])}</p>
       {frames_html}
       <p class="note">{esc(' · '.join(meta))}</p>
@@ -279,10 +283,26 @@ def topic_card(cfg, state):
     </div>"""
 
 
-def topic_page(cfg, state):
+def _nav_title(cfg, limit=44):
+    t = cfg["problem_brief"]["title"]["hu"]
+    return t if len(t) <= limit else t[:limit - 1].rstrip() + "…"
+
+
+def topic_page(cfg, state, num, total, prev_cfg, next_cfg):
     slug = cfg["slug"]
     b = cfg["problem_brief"]
     findings_html = findings_block(load_findings(slug)) if state["has_final"] else ""
+    prev_link = (f'<a href="../{esc(prev_cfg["slug"])}/">← {num - 1}. '
+                 f'{esc(_nav_title(prev_cfg))}</a>' if prev_cfg else "<span></span>")
+    next_link = (f'<a href="../{esc(next_cfg["slug"])}/">{num + 1}. '
+                 f'{esc(_nav_title(next_cfg))} →</a>' if next_cfg else "<span></span>")
+    topicnav = f"""<nav class="topicnav" aria-label="Témák közötti navigáció">
+  <div class="wrap">
+    {prev_link}
+    <a href="../../index.html#temak">összes téma</a>
+    {next_link}
+  </div>
+</nav>"""
     goals = "\n".join(f"      <li>{esc(g['hu'])}</li>"
                       for g in b["learning_goals"])
     frames = cfg.get("frames", {}).get("scenarios", [])
@@ -315,8 +335,8 @@ def topic_page(cfg, state):
 
     links = []
     if state["has_final"]:
-        links.append('<a href="explorer.html"><strong>Forgatókönyv-feltáró '
-                     'megnyitása →</strong></a>')
+        links.append('<a class="cta" href="explorer.html">Forgatókönyv-feltáró '
+                     'megnyitása →</a>')
         links.append(f'<a href="https://github.com/halacsy/education-policy-lab/'
                      f'blob/main/outputs/topics/{esc(slug)}/final/final_brief.hu.md">'
                      'Záró összefoglaló (HU, nyers) →</a>')
@@ -367,9 +387,11 @@ def topic_page(cfg, state):
 <header class="site">
   <div class="wrap">
     <span><a href="../../index.html">← Education Policy Lab</a></span>
-    <span>téma: <code>{esc(slug)}</code> · állapot: {esc(status)}</span>
+    <span>{num}/{total}. téma · <code>{esc(slug)}</code> · állapot: {esc(status)}</span>
   </div>
 </header>
+
+{topicnav}
 
 <section>
   <div class="wrap">
@@ -427,15 +449,19 @@ def inject_index_cards(cards_html):
 
 
 def main():
-    topics = load_topics()
+    topics = topic_order(TOPICS_DIR)
+    total = len(topics)
     cards = []
-    for cfg in topics:
+    for i, cfg in enumerate(topics):
         slug = cfg["slug"]
         state = topic_state(slug)
         out = ROOT / "site" / "topics" / slug / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(topic_page(cfg, state), encoding="utf-8")
-        cards.append(topic_card(cfg, state))
+        out.write_text(topic_page(cfg, state, i + 1, total,
+                                  topics[i - 1] if i else None,
+                                  topics[i + 1] if i + 1 < total else None),
+                       encoding="utf-8")
+        cards.append(topic_card(cfg, state, i + 1))
         print(f"wrote {out}")
     inject_index_cards("\n".join(cards))
     print(f"injected {len(cards)} topic card(s) into site/index.html")

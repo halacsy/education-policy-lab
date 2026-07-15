@@ -19,7 +19,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from lab.site_data import (VERDICT_HU, VERDICT_GROUP, KIND_HU, SIDE_HU,
                            REL_HU, DECOMP_FIELDS, is_gumicsont,
                            load_structured_discourse,
-                           load_structured_disagreements)
+                           load_structured_disagreements, topic_order)
 # Per-topic outputs (D-35). Default: the config default_topic; a --topic
 # argument selects another one (the topic browser builds every topic).
 import argparse as _argparse
@@ -337,6 +337,14 @@ def main():
     n = last_round()
     rd = ITER / f"round_{n:02d}"
     e = html.escape
+
+    # Topic context for the header: which topic this explorer belongs to,
+    # in the public numbering (shared with build_site_topics).
+    topics = topic_order(ROOT / "topics")
+    t_num = next((i + 1 for i, c in enumerate(topics) if c["slug"] == SLUG), 0)
+    t_title = next((c["problem_brief"]["title"]["hu"] for c in topics
+                    if c["slug"] == SLUG), SLUG)
+    t_short = t_title if len(t_title) <= 44 else t_title[:43].rstrip() + "…"
 
     # D-34: scenarios.json is bilingual; project the legacy EN/HU views the
     # same way the pipeline renders them (no hand-authored content).
@@ -749,8 +757,8 @@ def main():
 <body>
 <header class="top">
   <div class="wrap">
-    <span><strong>EDUCATION POLICY LAB</strong> · forgatókönyv-feltáró</span>
-    <span><a href="./">← főoldal</a> · <a href="knowledge.html">tudásbázis →</a></span>
+    <span><strong>EDUCATION POLICY LAB</strong> · forgatókönyv-feltáró · {t_num}/{len(topics)}. téma</span>
+    <span><a href="./">← téma-oldal: {e(t_short)}</a> · <a href="../../index.html#temak">összes téma</a> · <a href="../../knowledge.html">tudásbázis</a></span>
   </div>
 </header>
 
@@ -822,13 +830,29 @@ def main():
 </html>
 """
     page = body
-    # per-topic output (D-35): the default topic ALSO keeps the legacy
-    # site/explorer.html URL; every topic gets site/topics/<slug>/explorer.html
     out = ROOT / "site" / "topics" / SLUG / "explorer.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page, encoding="utf-8")
     if SLUG == _CFG["default_topic"]:
-        (ROOT / "site" / "explorer.html").write_text(page, encoding="utf-8")
+        # The legacy site/explorer.html URL survives as a hash-preserving
+        # redirect (old shared deep links keep working); a full copy would
+        # break the header's ../../ links and fork the anchors' canonical URL.
+        target = f"topics/{SLUG}/explorer.html"
+        (ROOT / "site" / "explorer.html").write_text(f"""<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<title>Forgatókönyv-feltáró — Education Policy Lab</title>
+<meta name="robots" content="noindex">
+<script>location.replace('{target}' + location.hash);</script>
+<meta http-equiv="refresh" content="0; url={target}">
+</head>
+<body>
+<p>A feltáró témánkénti oldalra költözött:
+<a href="{target}">tovább a forgatókönyv-feltáróhoz →</a></p>
+</body>
+</html>
+""", encoding="utf-8")
     print(f"wrote {out} (round {n}: {len(scen_en['scenarios'])} scenarios, "
           f"{len(all_objections)} objections, {len(disagreement)} disagreement "
           f"topics, {len(experts)} experts)")
