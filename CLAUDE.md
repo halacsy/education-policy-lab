@@ -109,7 +109,9 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   grade-structure frame (alsó tagozat a faluban, felső/ISCED 2 a
   városban); it was derivable (polish_reform's 1999 structural-reform
   record) and came back emergently as S2.
-  Acceptance findings to fix (system-level, not yet done):
+  Acceptance findings to fix (system-level, not yet done — FILED as
+  issues #22 metering, #23 web-search dropout, #24 verify check 13,
+  #25 env bootstrap, 2026-07-15; #4/#16/#17/#18/#21 CLOSED as solved):
   (a) METERING UNDERCOUNT on resumed rounds — metering.update_round_log
   OVERWRITES round_log tokens per leg, so a gate-stopped/resumed round
   only reports the LAST leg (cost_report says $1.02/493K tokens/40m for
@@ -256,8 +258,10 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   hordoz (unknowns/research-agenda/decision-readiness + saját round 6-8
   outputok a RÉGI sémával) — merge-nél a KÓD érdekes, az outputjai a main
   round 8-cal ütköznek; owner döntsön.
-- #4 fully live run on billing-enabled keys
 - #5 question submission before launch (LAUNCH BLOCKER)
+- #22 metering multi-leg undercount + gpt-5-mini pricing; #23 expert
+  web-search dropout; #24 verify check 13 env-override; #25 requirements/
+  env bootstrap (all filed from the 2026-07-15 live acceptance)
 - #6 retrieval over knowledge/library + corpus ingestion
 - #7 distributed contributor runs (SETI@home-style, subscription quota)
 - #20 Phase 3 (D-34): evaluation/verify a JSON-mezőkön, bilingual_parity, strukturált judge
