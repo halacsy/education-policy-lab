@@ -311,6 +311,12 @@ def _call_search(provider, model, prompt, max_tokens, max_uses):
     if searches == 0 and require:
         codes = ", ".join(sorted(set(tool_errors))) or "model never searched"
         raise RuntimeError(f"web search required but none succeeded: {codes}")
+    # surface per-call search stats to call_model's entry (round_log #17):
+    # a call can "succeed" with some searches while others errored — that
+    # partial degradation must be visible, not just the all-failed case
+    usage["web_searches"] = searches
+    if tool_errors:
+        usage["web_search_errors"] = sorted(set(tool_errors))
     return "\n".join(parts), usage
 
 
@@ -486,6 +492,12 @@ def call_model(prompt, role, max_tokens=8000, retries=4, escalation=0,
             if usage:
                 entry["input_tokens"] = usage.get("input_tokens")
                 entry["output_tokens"] = usage.get("output_tokens")
+                if "web_searches" in usage:
+                    entry["web_searches"] = usage["web_searches"]
+                if usage.get("web_search_errors"):
+                    entry.setdefault("errors", []).append(
+                        "web_search errors: "
+                        + ", ".join(usage["web_search_errors"]))
             CALL_LOG.append(entry)
             return text
         except StepFailed:
