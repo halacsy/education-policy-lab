@@ -91,33 +91,42 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   round commits; problem-brief intake + emergent framing (SCENARIO_ANCHORS
   deleted, human gates via scripts/new_topic.py); per-topic time/token/USD
   metering (lab/metering.py, final/cost_report); topic-browser site
-  (build_site_topics.py). Mock e2e green on a 3-frame test topic; verify
-  green on korai-szelekcio; #21/#18 commented (close #21 after the live
-  acceptance). API keys ROTATED (owner-confirmed 2026-07-15) — live runs
-  unblocked.
-  **NEXT ACTION — kisiskolák LIVE acceptance** (est. ~$10-25, ceiling ~$40;
-  owner-approved budget conversation happened 2026-07-15). Exact sequence
-  (generator must be anthropic for web search; judge openai like round 8):
-  1. `.venv/bin/python scripts/new_topic.py draft --text "A kistelepülések
-     elnéptelenedése mellett mit kezdjünk a kisiskolákkal?"`
-  2. owner reviews/edits topics/<slug>/proposals/problem-brief.md, then
-     `scripts/new_topic.py approve --topic <slug>`. Use the FULL 12-expert
-     roster (leave `experts: null`): owner clarified 2026-07-15 that the
-     finnish/polish/portuguese seats are WHOLE-SYSTEM country experts, not
-     gimnázium-specific ("nem csak a gimnáziumban, hanem a teljes
-     iskolarendszerben") — hub specs were generalized accordingly (7acbc59);
-     never scope them out on topical grounds.
-  3. `GENERATOR_PROVIDER=anthropic JUDGE_PROVIDER=openai
-     .venv/bin/python scripts/run_iteration_loop.py --topic <slug>
-     --max-rounds 1` → stops at the frames gate (~$5-10 spent);
-  4. owner reviews topics/<slug>/proposals/frames.md, then
-     `scripts/new_topic.py approve-frames --topic <slug>`; relaunch the SAME
-     loop command (experts are reused, scenario steps run);
-  5. `scripts/verify.py --topic <slug>` AND `scripts/verify.py` (both green
-     = regressziómentesség); cost report lands in
-     outputs/topics/<slug>/final/cost_report.md; push → Pages publishes the
-     topic page. Report: wall-clock/token/USD + whether the frames really
-     came from the expert record.
+  (build_site_topics.py). API keys ROTATED (owner-confirmed 2026-07-15).
+- **kisiskolák LIVE ACCEPTANCE PASSED (2026-07-15, this session, on
+  main; #21 CLOSED).** Topic `rural-school-closures` ran the full D-36
+  path live: intake draft → owner approved the problem brief → round 1
+  stopped at the frames gate → owner sent the proposal BACK (missing
+  frame) → re-derivation → owner approved 5 frames → round completed,
+  total 9.482 (new-era baseline, delta=None), zero mock/failed steps in
+  the final journal; verify green on BOTH topics (regressziómentesség);
+  topic page published. Generator anthropic (sonnet + haiku for
+  reciprocity), judge openai gpt-5-mini.
+  **New mechanism born from the gate (db5c947): `new_topic.py reframe
+  --topic S --feedback "..."`** — the sanctioned alternative to
+  hand-editing frames: feedback lands in proposals/frames-feedback.md
+  (dated audit trail), frames_proposal.json is removed, the relaunched
+  run re-derives at the gate. First use: the owner asked for a
+  grade-structure frame (alsó tagozat a faluban, felső/ISCED 2 a
+  városban); it was derivable (polish_reform's 1999 structural-reform
+  record) and came back emergently as S2.
+  Acceptance findings to fix (system-level, not yet done):
+  (a) METERING UNDERCOUNT on resumed rounds — metering.update_round_log
+  OVERWRITES round_log tokens per leg, so a gate-stopped/resumed round
+  only reports the LAST leg (cost_report says $1.02/493K tokens/40m for
+  what was really 3 live legs, ~95 min round compute; leg-1 expert
+  web-search tokens, the priciest part, are unreported). True total
+  estimated ~$8-12 (well under the $40 ceiling), verifiable on provider
+  consoles.
+  (b) pricing.usd_per_mtok in config lacks gpt-5-mini, so openai judge
+  tokens show in totals but are silently unpriced in the per-model table.
+  (c) the equity_and_social_mobility expert ran WITHOUT web search this
+  round (its sources say "web_search tool unavailability") — the other 11
+  searched live; worth a look at why one seat lost the tool.
+  (d) `openai` pip package was missing from THIS machine's .venv (the
+  round-8 machine had it) — installed 2026-07-15; add to a requirements
+  note. Also: verify check 13 reads config defaults (generator=google,
+  judge=anthropic), not the env vars the round actually ran with — it
+  passed, but it validates the wrong thing for env-overridden runs.
   Extra API quirks beyond the round-8 lessons below (learned live, easy to
   re-hit): a "Grammar compilation timed out" 400 is TRANSIENT (retry works),
   unlike "compiled grammar too large"; models over-fill unbounded arrays —
@@ -233,11 +242,9 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   time/token/USD metering (lab/metering.py, cost_report in final + site);
   topic-browser site (build_site_topics.py). Mock e2e green for a 3-frame
   test topic; verify green on korai-szelekcio; #21/#18 commented.
-  REMAINING from the sprint prompt: the kisiskolák topic LIVE end-to-end
-  (intake → frames gate → round → published page). OWNER DECISION
-  (2026-07-15): do NOT run live yet — rotate the exposed API keys first;
-  estimated cost when it runs: ~$10-25, ceiling ~$40 (intake + 1 full
-  round, anthropic generator + gpt-5-mini judge). Owner also clarified the
+  The kisiskolák LIVE end-to-end acceptance PASSED 2026-07-15
+  (rural-school-closures; details + follow-up findings in Current state) —
+  #21 closed, #18 updated. Owner also clarified the
   country experts (finnish/polish/portuguese_reform) are WHOLE-SYSTEM
   reform experts, not gimnázium-specific — hub specs generalized
   accordingly; use the FULL 12-expert roster for kisiskolák.
