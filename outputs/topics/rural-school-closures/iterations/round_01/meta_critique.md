@@ -1,0 +1,35 @@
+# Meta-critique — round 1
+
+## Scope
+This evaluates the agent SYSTEM (agents, workflow, critique quality), not the policy content.
+
+## Agent performance
+- evidence_checker appears weaker than peers: produced 3 targeted objections vs. 4 from most other critics, and the round's lowest dimension is evidence_discipline (7.693), linking this agent to the weakness.
+- assumption_checker produced only 3 targeted objections (below the mode of 4), suggesting either narrower scope or missed angles.
+- devil_advocate, equity_checker, feasibility_checker, cost_checker, political_risk_checker, and coherence_checker each produced 4 targeted objections — consistent high coverage from those agents.
+- No agent is eligible for removal_candidates this round (first round; no two-round absence detected).
+- removal candidates: none
+
+## Workflow
+- Layer separation is imperfect: layer_separation scored 8.165 (not full marks), indicating the workflow did not fully maintain strict separation of reasoning layers.
+- No applied_change this round (applied_change: null), so improvements were not exercised; this limits causal attribution of score changes.
+- Translation step appears correctly executed (id_sets_equal and structure_equal are true), so translation errors did not degrade performance.
+- I attempted to consult the topic archive before proposing changes, but the archive or attempts_log was not provided in the inputs for this round, so I could not verify prior failed interventions.
+
+## Critique quality
+- Overall critic concreteness is high (critic_concreteness = 10.0). Critics produced many targeted objections (counts: devil_advocate 4, evidence_checker 3, assumption_checker 3, equity_checker 4, feasibility_checker 4, cost_checker 4, political_risk_checker 4, coherence_checker 4).
+- Despite high concreteness, evidence_discipline is the weakest dimension (7.693), indicating some critiques lacked sufficient evidence linking claims to sources or explicit citations.
+- Disagreement_preservation scored 10.0 and discourse shows 10 voices and 16 clusters, demonstrating good preservation of diverse, opposing views.
+- Uncertainty_explicitness is strong (10.0) — agents marked uncertainty well, reducing risk of overstated certainties in critiques.
+
+## Gaming judgment (explicit)
+- First scored round; there is no gain to certify as GENUINE or RUBRIC-GAMING yet.
+- No previous total score available for comparison (prev_total is null), so a before/after attribution of score gains vs. rubric-gaming is not possible this round.
+- Observable signals that would bear on genuineness in future rounds: the low evidence_discipline (7.693) despite perfect scores on many other content dimensions suggests an area where superficial conformity to rubric wording (e.g., producing many objections) could mask weaker evidence standards — a potential rubric-gaming risk to monitor.
+- Mitigating signs of genuine performance: high critic_concreteness (10.0), strong disagreement_preservation (10.0), and detailed targeted objections from most critics (mode = 4) indicate substantive engagement rather than mere form-following.
+- Given n=1 for this round and no baseline, attribution is uncertain; future rounds with a baseline are required to decide between GENUINE and RUBRIC-GAMING with confidence.
+
+## Translation consistency
+- ID sets equal between source and translation (translation.id_sets_equal = true).
+- Structure equality confirmed (translation.structure_equal = true).
+- No glossary violations reported (translation.glossary_violations is empty). Translation step is consistent and not a source of error this round.

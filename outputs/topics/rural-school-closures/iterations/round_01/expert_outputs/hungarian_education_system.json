@@ -1,0 +1,129 @@
+{
+  "findings": [
+    {
+      "claim": {
+        "en": "Hungary's primary school system is organized by catchment zones (körzetesítés) and school maintainers (fenntartók), with municipal schools predominating in rural areas; no evidence suggests that catchment structure alone determines rural closure risk.",
+        "hu": "Magyarország általános iskolai rendszere körzetesítés és fenntartók (önkormányzati, egyházi, magán) alapján szerveződik; vidéki területeken az önkormányzati iskolák dominálnak, és a körzetesítés szerkezete önmagában nem meghatározó a vidéki iskolabezárások kockázatára."
+      },
+      "evidence": "strong",
+      "source": "Hungarian education code (2011. évi CXC. törvény, Nkt.) and structural surveys of school maintainers"
+    },
+    {
+      "claim": {
+        "en": "Rural primary schools in Hungary typically serve multiple grades in single or combined classrooms; published data on threshold enrollment sizes for closure decisions are not publicly standardized by the ministry.",
+        "hu": "A vidéki iskolák többnyire kombinált osztályokat működtetnek; az iskolabezárás köszöbértékei (pl. minimális létszám) nem központilag szabályozottak, hanem fenntartói döntések függvénye."
+      },
+      "evidence": "moderate",
+      "source": "School operation reports and municipal education planning documents; no centralized closure threshold registry identified"
+    },
+    {
+      "claim": {
+        "en": "Depopulation in rural Hungary correlates with school enrollment decline, but the causal chain from closure to further rural decline is asserted in policy debate rather than empirically measured in published longitudinal studies.",
+        "hu": "A vidéki népességcsökkenés korrelál az iskolai létszámcsökkentéssel, azonban a bezárás → továbbra romlás nyílánc empirikus mérése hiányzik a magyar szakirodalmában."
+      },
+      "evidence": "weak",
+      "source": "Anecdotal policy discussion; longitudinal impact studies not found in round 1 search"
+    },
+    {
+      "claim": {
+        "en": "The 6-year and 8-year gimnázium early-selection tracks (6 és 8 éves gimnázium) operate independently of rural primary catchment zones and do not directly determine which rural schools close; however, student flow to these tracks may indirectly affect village school viability.",
+        "hu": "A 6 és 8 éves gimnáziumi sávok nem közvetlenül befolyásolják a vidéki iskolabezárásokat, de a kimaradó tanulók áramlása a lezárást nehezítheti."
+      },
+      "evidence": "moderate",
+      "source": "Structural analysis of secondary selection system; no direct evidence of causal impact on primary closure decisions found"
+    },
+    {
+      "claim": {
+        "en": "Travel distance to consolidated schools and transport burden are recognized by parents and local advocates as significant impacts, but quantitative data on commute time and child well-being effects in Hungarian rural contexts are limited.",
+        "hu": "Az utazási távolság és közlekedési terhelés ismert aggályok, de a magyar vidékre vonatkozó mennyiségi adatok hiányoznak."
+      },
+      "evidence": "moderate",
+      "source": "Local government and parent testimony; no published Hungarian impact assessment on child welfare outcomes"
+    },
+    {
+      "claim": {
+        "en": "Community infrastructure loss (loss of school as gathering space) is cited as a concern in rural advocacy, but systematic measurement of post-closure social cohesion effects in Hungarian villages is not available.",
+        "hu": "A közösségi infrastruktúra-veszteség kockázata (az iskola mint közösségi tér) említésre kerül, de a bezárás utáni szociális összetartást nem mérik szisztematikusan."
+      },
+      "evidence": "weak",
+      "source": "Stakeholder interviews and advocacy reports; no rigorous post-closure social audit found"
+    },
+    {
+      "claim": {
+        "en": "Alternative models (multigrade teaching, shared services, digital support) exist in other European countries and are discussed in Hungarian education policy, but their adaptation and success rates in Hungarian rural contexts remain untested.",
+        "hu": "Alternatív modellek (több évfolyamú osztályok, közös szolgáltatások, digitális támogatás) léteznek, de magyarországi vidékre való bevezetésük és hatékonysága nem tesztelve."
+      },
+      "evidence": "weak",
+      "source": "Comparative education literature and policy white papers; no Hungarian pilot data"
+    },
+    {
+      "claim": {
+        "en": "Local government (önkormányzatok) hold decision-making authority over municipal school operation and closure, but financial and demographic pressures often override local preference for retention.",
+        "hu": "Az önkormányzatok felelősek az iskolafenntartásról, de anyagi és demográfiai nyomás gyakran felülírja a helyi retenciópreferenciákat."
+      },
+      "evidence": "strong",
+      "source": "Hungarian local government act (2011. évi CLXii. törvény); municipal council minutes and budget records"
+    }
+  ],
+  "interpretation": {
+    "en": "Rural school closure in depopulating Hungary results from a system in which municipally maintained schools depend on enrollment thresholds set locally, not centrally. The 6/8-year gimnázium selection system operates separately and does not directly trigger closures, but student outflow to city schools and selective tracks can tip a marginal school toward nonviability. The problem is not primarily one of catchment or maintainer structure, but of the absence of a national framework for small-school sustainability—no binding minimum-school-size rule, no centralized transition support, and no proven alternative models deployed in practice. Parents and communities recognize real costs (travel, social cohesion) that are not captured in budget efficiency metrics; lack of rigorous impact data limits evidence-based debate. The tension between resource rationalization and community retention will persist without explicit policy intervention and evidence of what works.",
+    "hu": "A vidéki iskolabezárás depopuláló Magyarországon abból fakad, hogy az önkormányzati iskolák létszám-küszöbei helyi szintűek, nem központilag szabályozottak. A gimnáziumi sávok rendszere függetlenek, és nem közvetlenül okozzák a bezárásokat, de a kimaradó tanulólét elvándorlása tönkretehet egy peremhelyzeti iskolát. A probléma nem elsősorban a körzetesítés vagy fenntartás szerkezete, hanem a kis iskolák fenntarthatóságára vonatkozó nemzeti keretrendszer hiánya: nincsenek központi küszöbértékek, nincsenek megbízható átmeneti támogatások, és nincsenek gyakorlatban bevizsgált alternatív modellek. A szülők és közösségek valós költségeket (utazás, kohézió) érzékelnek, amelyeket a hatékonysági mutatók nem rögzítenek; az empirikus adatok hiánya akadályozza az értelmes vitát. A racionalizáció és a helyiretenció közötti feszültség megmarad, amíg a szakpolitika nem avatkozik be és nem igazol, hogy mi működik."
+  },
+  "assumptions": [
+    {
+      "en": "It is desirable to preserve rural primary schools in some form, or at least to minimize adverse effects of their absence on remaining children and communities.",
+      "hu": "Kívánatos a vidéki általános iskolák valamely formájának megőrzése, vagy legalább a hiányuk negatív hatásainak minimalizálása."
+    },
+    {
+      "en": "Enrollment decline is a reliable proxy for school viability; no confounding factors (e.g., policy-induced migration, selective school competition) significantly distort the relationship.",
+      "hu": "A létszámcsökkenés megbízható fenntarthatósági mutató; nincsenek zavaró tényezők (pl. politikai migrációs nyomás, szelektív intézményi verseny)."
+    },
+    {
+      "en": "Local decision-makers have access to comparable financial and demographic data to assess closure options fairly and transparently.",
+      "hu": "Az önkormányzati döntéshozók egyenlő esélyeket kapnak az objektív költség- és demográfiai adatokhoz."
+    },
+    {
+      "en": "The perspectives of parents, teachers, students, and local government can be meaningfully integrated into policy decisions without systematic bias toward administrative cost reduction.",
+      "hu": "A szülők, pedagógusok, tanulók és önkormányzatok nézetei értelmes döntésekbe integrálhatók, anélkül hogy az adminisztratív költségcsökkentés szisztematikusan dominálna."
+    }
+  ],
+  "position": {
+    "en": "The closure of rural primary schools in Hungary is driven not by the structure of catchment zones or school maintainers, but by the absence of a national framework for small-school sustainability; evidence-based alternatives (multigrade teaching, resource sharing, targeted transport subsidy, pilot digital support) should be tested and implemented before closure becomes the default response to enrollment decline.",
+    "hu": "A vidéki általános iskolák bezárása nem a körzetesítés vagy fenntartási szerkezet, hanem a kis iskolák fenntartására vonatkozó nemzeti keretrendszer hiánya miatt történik; szakpolitikailag indokolt alternatívák (többevfolyamú oktatás, erőforrásegosztás, célzott közlekedési támogatás, kísérleti digitális eszközök) tesztelésére és bevezetésére kerülhet sor, mielőtt a bezárás alapértelmezett válasszá válna a létszámcsökkentésre."
+  },
+  "uncertainties": [
+    {
+      "text": {
+        "en": "What minimum viable enrollment thresholds do Hungarian municipalities currently use, and how do they vary across regions and school types?",
+        "hu": "Milyen minimális létszámküszöbeket használnak a magyar önkormányzatok, és térségenként / típusonként mennyire térnek el?"
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "A systematic registry or survey of municipal school operation criteria, collected and published by the Ministry of Education (Oktatási Hivatal).",
+        "hu": "Az Oktatási Hivatal által gyűjtött és közzétett szisztematikus felmérés az önkormányzati iskolaműködtetési kritériumokról."
+      }
+    },
+    {
+      "text": {
+        "en": "To what extent does closure of a rural school correlate with measurable changes in child well-being, educational outcomes, and longer-term community outcomes (e.g., workforce retention, health, social capital)?",
+        "hu": "Mennyire korrelál a vidéki iskola bezárása a tanulók jólétének, tanulmányi eredményeinek, illetve hosszabb távú közösségi kimeneteleinek (munkaerő-megtartás, egészség, szociális tőke) mérhetően változó mutatóival?"
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Longitudinal or quasi-experimental studies of rural school closure in Hungary, comparing cohorts before and after closure, controlling for selection effects.",
+        "hu": "Hazai longitudinális vagy quasi-kísérleti tanulmányok a vidéki iskolabezárás hatásairól, összehasonlító kohortákkal és szelekcióhatások kontrollálásával."
+      }
+    },
+    {
+      "text": {
+        "en": "Which alternative models (multigrade classrooms, consolidated district teaching, hybrid digital + in-person) are technically and financially feasible in Hungarian rural contexts, and what does successful implementation require?",
+        "hu": "Mely alternatív modellek (kombinált osztályok, körzetesített oktatás, hibrid digitális-közvetlenül oktatás) technikailag és finanszírozásilag életképesek Magyarország vidékén, és mit kíván meg a sikeres bevezetés?"
+      },
+      "confidence": "medium",
+      "reduced_by": {
+        "en": "Pilot programmes testing one or more of these models in 3–5 representative rural districts, with cost accounting, teacher training protocols, and student outcome tracking published after 2–3 years.",
+        "hu": "3–5 reprezentatív vidéki körzetben zajló kísérleti programok, költségvetés-nyilvántartással, pedagógusi képzéssel, és közzétett tanulói eredményadatokkal 2–3 év után."
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "rural-school-closures",
+  "version": 1,
+  "created": "2026-07-15",
+  "status": "active",
+  "approved_by": "Peter Halacsy",
+  "problem_brief": {
+    "title": {
+      "en": "The Future of Rural Primary Schools",
+      "hu": "A Kisiskolák Jövője Vidéken"
+    },
+    "problem_statement": {
+      "en": "Many small villages in Hungary are facing depopulation, leading to declining student numbers in their local primary schools. This demographic trend raises significant questions about the viability and purpose of these schools. While closing schools might seem like a rational response to low enrollment and resource constraints, it can also sever a vital community hub, increase travel burdens for children, and exacerbate the decline of rural areas. The tension lies between the need for efficient resource allocation and educational provision, and the desire to maintain community infrastructure and local identity in depopulating regions.",
+      "hu": "Számos magyar kistelepülés népességfogyatkozással küzd, ami a helyi általános iskolák tanulólétszámának csökkenéséhez vezet. Ez a demográfiai trend jelentős kérdéseket vet fel ezen iskolák életképességével és céljával kapcsolatban. Bár az iskolák bezárása ésszerű válasznak tűnhet az alacsony beiskolázás és az erőforrás-korlátok miatt, ez elvághatja a közösség létfontosságú csomópontját, növelheti a gyermekek utazási terheit, és súlyosbíthatja a vidéki területek hanyatlását. A feszültség az erőforrások hatékony elosztásának és az oktatási ellátásnak a szükségessége, valamint a közösségi infrastruktúra és a helyi identitás fenntartásának vágya között feszül a népességfogyatkozó régiókban."
+    },
+    "learning_goals": [
+      {
+        "en": "Identify the key social, economic, and educational impacts of closing rural primary schools on depopulating communities.",
+        "hu": "A vidéki általános iskolák bezárásának kulcsfontosságú társadalmi, gazdasági és oktatási hatásainak azonosítása a népességfogyatkozó közösségekre."
+      },
+      {
+        "en": "Explore alternative models for maintaining educational access and community cohesion in areas with declining school enrollment.",
+        "hu": "Az oktatáshoz való hozzáférés és a közösségi kohézió fenntartásának alternatív modelljeinek feltárása csökkenő iskolalátogatottságú területeken."
+      },
+      {
+        "en": "Understand the perspectives of various stakeholders (parents, teachers, local government, students) regarding the future of rural schools.",
+        "hu": "A különböző érdekelt felek (szülők, tanárok, önkormányzatok, diákok) nézőpontjainak megértése a vidéki iskolák jövőjével kapcsolatban."
+      },
+      {
+        "en": "Evaluate the long-term sustainability of different approaches to managing rural primary schools in the context of demographic change.",
+        "hu": "A demográfiai változásokkal összefüggésben a vidéki általános iskolák kezelésének különböző megközelítéseinek hosszú távú fenntarthatóságának értékelése."
+      }
+    ],
+    "scope": {
+      "en": "In scope are primary schools (grades 1-4/1-6 depending on the system) in villages with a population under 2,000. The focus is on the educational and community implications of school operation or closure. Out of scope are detailed financial analyses of individual school budgets, national education policy reforms beyond their impact on rural schools, and the provision of services for secondary or higher education.",
+      "hu": "A 2000 fő alatti lakosú falvakban működő általános iskolák (1-4. vagy 1-6. évfolyam) tartoznak a hatókörbe. A hangsúly az iskola működésének vagy bezárásának oktatási és közösségi következményein van. Nem tartozik a hatókörbe az egyes iskolai költségvetések részletes pénzügyi elemzése, a nemzeti oktatáspolitikai reformok, kivéve azok vidéki iskolákra gyakorolt hatását, valamint a közép- és felsőfokú oktatási szolgáltatások biztosítása."
+    },
+    "seed_sources": []
+  },
+  "experts": null,
+  "voices": null,
+  "_roster_note": "null = the full shared hub (agent_defs.py); replace with a name list to scope the roster to this topic.",
+  "registry_facts": [],
+  "expert_facts": {},
+  "human_questions": [],
+  "evaluation": {
+    "era_start_round": 1
+  },
+  "frames": {
+    "status": "approved",
+    "approved_by": "Peter Halacsy",
+    "approved_on": "2026-07-15",
+    "derived_from": "round 1 expert record (emergent framing, issue #21/D-36); rejected framings recorded in proposals/frames.json",
+    "scenarios": [
+      {
+        "id": "S1",
+        "title": {
+          "en": "Status quo plus incremental adaptation",
+          "hu": "Status quo és fokozatos alkalmazkodás"
+        },
+        "scope": {
+          "en": "Keep the existing municipal/state-maintained village school open as long as feasible, relying on multigrade classrooms, felmenő rendszer phase-out and ad hoc local negotiation without a national framework.",
+          "hu": "A meglévő önkormányzati/állami fenntartású falusi iskola nyitva tartása amíg lehetséges, összevont osztályokra, felmenő rendszerre és eseti helyi alkura támaszkodva, nemzeti keretrendszer nélkül."
+        }
+      },
+      {
+        "id": "S2",
+        "title": {
+          "en": "Structural grade reorganization (lower grades stay, upper grades centralize)",
+          "hu": "Szerkezeti évfolyam-átalakítás (alsó tagozat marad, felső tagozat központosul)"
+        },
+        "scope": {
+          "en": "Restructure the school system so only lower grades (1-4/1-6) remain in the village while upper grades or a new ISCED2-type school are consolidated in a larger town, following the Polish 1999 structural-reform pattern of shortened primary plus centrally sited later-stage schooling.",
+          "hu": "Az iskolarendszer átalakítása úgy, hogy csak az alsó tagozat (1-4./1-6. évfolyam) marad a faluban, míg a felső tagozat vagy egy új ISCED2-típusú iskola nagyobb településen összpontosul, a lengyel 1999-es szerkezeti reform mintáját követve (rövidített alsó tagozat plusz központilag telepített későbbi szakasz)."
+        }
+      },
+      {
+        "id": "S3",
+        "title": {
+          "en": "Networked retention: clustering, association-run and multi-service hub models",
+          "hu": "Hálózatos megtartás: klaszterezés, egyesületi fenntartás és multifunkciós közösségi centrum modellek"
+        },
+        "scope": {
+          "en": "Retain village primary schools through inter-municipal pedagogical networks (French RPI-style clustering), community/association-run publicly-subsidized schools (Polish model), or multi-service hubs combining school with other civic functions.",
+          "hu": "A falusi általános iskolák megtartása település-közi pedagógiai hálózatokon (francia RPI-típusú klaszterezés), közösségi/egyesületi fenntartású, közpénzből támogatott iskolákon (lengyel modell), illetve az iskolát más közösségi funkciókkal összekapcsoló multifunkciós centrumokon keresztül."
+        }
+      },
+      {
+        "id": "S4",
+        "title": {
+          "en": "Consolidation with mitigation (closure as default, compensatory measures)",
+          "hu": "Összevonás enyhítő intézkedésekkel (megszüntetés alapesetben, kompenzációs eszközökkel)"
+        },
+        "scope": {
+          "en": "Close low-enrollment village schools and reassign pupils to a consolidated center school, paired with statutory transport guarantees, targeted support (TEIP-style), and transparent cost/consultation rules to offset travel and equity harms.",
+          "hu": "Az alacsony létszámú falusi iskolák megszüntetése és a tanulók átirányítása egy összevont központi iskolába, kötelező szállítási garanciákkal, célzott támogatással (TEIP-típusú) és átlátható költség-/konzultációs szabályokkal az utazási és esélyegyenlőségi hátrányok mérséklésére."
+        }
+      },
+      {
+        "id": "S5",
+        "title": {
+          "en": "National systemic framework: transparency, thresholds and evidence infrastructure",
+          "hu": "Nemzeti szisztémás keretrendszer: átláthatóság, küszöbértékek és bizonyítéki infrastruktúra"
+        },
+        "scope": {
+          "en": "Establish a national framework of transparent minimum-viability thresholds, cost-visibility rules, teacher-training standardization, and a closure/outcome registry to inform (not dictate) local decisions across any of the above models.",
+          "hu": "Nemzeti keretrendszer létrehozása átlátható minimális életképességi küszöbértékekkel, költség-átláthatósági szabályokkal, tanárképzési egységesítéssel és megszüntetési/kimeneti nyilvántartással, amely a fenti modellek bármelyikén belül megalapozza (de nem dönti el) a helyi döntéseket."
+        }
+      }
+    ]
+  }
+}

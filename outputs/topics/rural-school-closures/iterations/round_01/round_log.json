@@ -1,0 +1,149 @@
+{
+  "round": 1,
+  "fallbacks": [],
+  "reused": [],
+  "resumed": [
+    "research:finnish_reform",
+    "research:hungarian_education_system",
+    "research:international_comparison",
+    "research:polish_reform",
+    "expert:finnish_reform",
+    "expert:polish_reform",
+    "expert:hungarian_education_system",
+    "expert:international_comparison",
+    "research:portuguese_reform",
+    "research:equity_and_social_mobility",
+    "research:demography",
+    "expert:portuguese_reform",
+    "research:school_network_planning",
+    "expert:demography",
+    "expert:equity_and_social_mobility",
+    "expert:school_network_planning",
+    "research:education_finance",
+    "expert:education_finance",
+    "research:legal_and_governance",
+    "research:political_feasibility",
+    "research:implementation_planning",
+    "expert:legal_and_governance",
+    "expert:political_feasibility",
+    "expert:implementation_planning",
+    "scenario_builder",
+    "editor",
+    "rejected_framings",
+    "voice:pedagogus_erdekvedo",
+    "voice:eselyegyenlosegi_civil",
+    "voice:kisgyerekes_szuloi",
+    "voice:konzervativ_ertekvedo",
+    "voice:digitalisgazdasagi",
+    "voice:egyhazi_fenntartoi",
+    "voice:oktataspolitikai_reformmozgalom",
+    "voice:pedagogus_szakszervezeti_hang",
+    "voice:kormanyzati_reformrealizmus",
+    "voice:fuggetlen_szakpolitikai_kutatomuhely",
+    "argument_map",
+    "decompose:A1",
+    "decompose:A4",
+    "decompose:A3",
+    "decompose:A2",
+    "decompose:A5",
+    "decompose:A6",
+    "decompose:A8",
+    "decompose:A7",
+    "decompose:A9",
+    "decompose:A10",
+    "decompose:A12",
+    "decompose:A11",
+    "decompose:A13",
+    "decompose:A15",
+    "decompose:A14",
+    "decompose:A16"
+  ],
+  "discourse": {
+    "voices": 10,
+    "stance_counts": {
+      "support": 22,
+      "oppose": 14,
+      "conditional": 27,
+      "no_position": 0
+    },
+    "label_counts": {
+      "documented": 0,
+      "value_modeled": 63,
+      "no_position": 0
+    },
+    "clusters": 16,
+    "factual_clusters_graded": 11,
+    "reciprocity": {
+      "ran": true,
+      "revised": 8
+    }
+  },
+  "backends": {
+    "brief [anthropic:claude-sonnet-5]": 1,
+    "critic [openai:]": 8,
+    "discourse_reciprocity [anthropic:claude-haiku-4-5]": 10,
+    "grade_arguments [openai:]": 1
+  },
+  "tokens": {
+    "by_task_backend": {
+      "brief [anthropic:claude-sonnet-5]": {
+        "input_tokens": 90211,
+        "output_tokens": 27243
+      },
+      "critic [openai:]": {
+        "input_tokens": 61454,
+        "output_tokens": 18111
+      },
+      "discourse_reciprocity [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 150721,
+        "output_tokens": 31637
+      },
+      "grade_arguments [openai:]": {
+        "input_tokens": 9742,
+        "output_tokens": 1086
+      },
+      "judge_score [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 29262,
+        "output_tokens": 565
+      },
+      "judge_score [openai:]": {
+        "input_tokens": 65403,
+        "output_tokens": 4228
+      },
+      "meta_critique [openai:]": {
+        "input_tokens": 1216,
+        "output_tokens": 2165
+      }
+    },
+    "total_input_tokens": 408009,
+    "total_output_tokens": 85035,
+    "total_tokens": 493044,
+    "metered_calls": 36,
+    "unmetered_calls": 0
+  },
+  "errors": {
+    "discourse_reciprocity [anthropic:claude-haiku-4-5]": [
+      "ReadTimeout: The read operation timed out",
+      "ReadTimeout: The read operation timed out",
+      "ReadTimeout: The read operation timed out",
+      "ReadTimeout: The read operation timed out"
+    ]
+  },
+  "wall_clock_s": 2423.8,
+  "usd_estimate": {
+    "total_usd": 1.02,
+    "by_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 90211,
+        "output_tokens": 27243,
+        "usd": 0.6793
+      },
+      "claude-haiku-4-5": {
+        "input_tokens": 179983,
+        "output_tokens": 32202,
+        "usd": 0.341
+      }
+    },
+    "unpriced_models": []
+  }
+}

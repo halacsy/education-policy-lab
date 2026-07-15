@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "assumptions",
+      "objection": "The scenario's survival hinge is that \"Teacher supply for multigrade classrooms is adequate without systemic training reform.\" This is a concrete, testable assumption but the scenario provides no evidence that existing teachers possess multigrade pedagogy skills or that local labour markets can supply appropriately trained staff. The scenario itself elsewhere lists in-service upskilling as a cost and flags multigrade outcomes as weakly evidenced — so the claim of adequacy is unsupported. If correct teacher capability or supply is absent, multigrade operation will degrade learning quality and the whole retention strategy collapses into preserving buildings but not educational outcomes.",
+      "severity": "high",
+      "suggested_revision": "Replace the unsupported adequacy assumption with an implementation precondition: (a) mandate and budget a certified multigrade-pedagogy in-service + recruitment incentive package before villages rely on multigrade retention; (b) require pilot sites with published learning-outcome monitoring (linked to the proposed national registry in S5) and go/no-go criteria based on measured pupil progress and staff retention before scaling; (c) model staffing gaps and include contingency plans (shared specialist rosters, remote support) where local supply is insufficient."
+    },
+    {
+      "scenario": "S2",
+      "field": "assumptions",
+      "objection": "The scenario assumes Hungary is sufficiently similar to Poland for the 1999 pattern (shortening local grades, centralizing upper grades) to transfer benefits. That transfers the causal inference that delayed tracking produced PISA gains. But the evidence tag already marks attribution as contested: Poland's PISA improvement was concurrent with many reforms and political/contextual differences (settlement geography, transport networks, municipal governance, and timing) make external validity doubtful. If the Polish experience does not generalize, centralizing upper grades could increase commute burdens and selection harms without the promised achievement gains, invalidating the scenario's main rationale.",
+      "severity": "high",
+      "suggested_revision": "Replace the blanket transfer assumption with a staged evidence requirement: (a) commission a feasibility/audit study of candidate central towns' capacity and travel-time contours for representative village clusters; (b) run a controlled pilot (matched villages) implementing lower-grade retention + upper-grade consolidation while measuring learning, attendance, and equity outcomes; (c) conduct quasi-experimental analysis to isolate the delayed-tracking effect from concurrent reforms before national rollout; condition scale-up on meeting pre-specified equity and capacity benchmarks."
+    },
+    {
+      "scenario": "S4",
+      "field": "assumptions",
+      "objection": "The scenario relies on the assumption that \"current commuting infrastructure and subsidized public transport can sustain daily trips of 20+ km for primary-age children without unacceptable welfare cost.\" This collapses the argument: transport-cost estimates cited (800–1,500 EUR/pupil/yr) address budgetary magnitude but do not demonstrate child-welfare acceptability (safety, fatigue, parental burden) or that long commutes won't worsen attendance, attainment, or out-migration. If long commutes are harmful or infeasible in many settlements, consolidation plus statutory transport is not an adequate mitigation and the scenario's primary trade-off fails.",
+      "severity": "high",
+      "suggested_revision": "Strengthen the scenario by making transport and child-welfare constraints explicit and binding: (a) set a maximum one-way commute-time standard for primary pupils (e.g., 30–45 minutes) that must be met before any closure; (b) require full-costed transport modelling (including escorts, wait-time, weather contingency, and seasonal reliability) in closure decisions and ring-fenced multi-year funding guarantees for these costs; (c) pilot closures only where the commute-time standard is met and commission short-term studies of attendance, wellbeing, and household labour effects to validate mitigation measures (after-school care, local daycare, escorted transport)."
+    },
+    {
+      "scenario": "S5",
+      "field": "assumptions",
+      "objection": "The scenario assumes that \"sufficient political will exists to fund and maintain a long-term evidence infrastructure (registry, thresholds) across changing government administrations.\" This is presented as a factual implementation precondition but is inherently political and speculative. Without legal or budgetary safeguards, a registry or training rollout risks being underfunded, deprioritized, or repurposed — in which case S5 produces little durable change and leaves other scenarios' empirical gaps unfilled.",
+      "severity": "medium",
+      "suggested_revision": "Turn the speculative political precondition into a formal design requirement: (a) anchor the registry and minimal-threshold framework in cross-party legislation or a statutory independent agency mandate to reduce vulnerability to short electoral cycles; (b) specify multi-year, ring-fenced funding lines for the registry and teacher-training rollout in advance of launch; (c) build phased deliverables (pilot registry, public dashboards, mandated publication timelines) and an independent evaluation clause tied to continued funding to ensure institutional durability rather than reliance on ephemeral political will."
+    }
+  ]
+}

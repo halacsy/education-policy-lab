@@ -1,0 +1,22 @@
+I'll research Poland's experience with rural school networks during the 1999 reform and its 2016-2019 reversal, since these involved significant school consolidation/closure dynamics relevant to Hungary's rural school question.
+## Research Phase Notes — polish_reform (Round 1)
+
+**Method note:** The web_search tool returned "Server tool use limit exceeded" on every one of 8 separate attempts this round (varied phrasings, single queries, spaced out), so I was unable to retrieve any fresh URLs this round. The notes below are drawn from established domain knowledge of the Polish reform literature rather than newly-verified sources, and I flag this explicitly per the "never invent statistics or citations" rule — where I'm not confident of an exact figure, I say so rather than guessing.
+
+1. **1999 structural reform and rural network effect.** The 1999 reform replaced 8-year primary + secondary with 6-year primary + 3-year *gimnazjum* + upper-secondary, explicitly to delay tracking by a year. A well-documented side effect: *gimnazja* were often sited centrally (nearest town), lengthening commutes for 13–15 year-olds even where the local 6-year primary itself stayed open — a structural analogy to Hungary's problem (protecting the youngest grades while centralizing older ones). Evidence status: moderate; no retrievable URL this round.
+
+2. **PISA gains attributed to delayed tracking.** Poland's PISA scores, especially for lower-performing students, improved in the rounds following 1999 — the most-cited empirical result in the international delayed-tracking literature (associated with researchers like Jakubowski). Evidence status: strong as a replicated finding, but I cannot cite exact point estimates without a working search.
+
+3. **"Small rural school run by an association" model.** A mid-2000s amendment to Poland's Education System Act let gminas hand a very-low-enrollment village school to a parents'/community association to run as a publicly-subsidized non-public school instead of closing it, promoted nationally by organizations like Federacja Inicjatyw Oświatowych. This is the most directly transferable finding for the Hungary brief. Evidence status: moderate — mechanism is well established; exact current school counts are only approximate in my recall and shouldn't be asserted precisely.
+
+4. **2016–2019 reversal ("Dobra Szkoła") and network disruption.** Abolishing *gimnazja* and returning to 8-year primary + 4/5-year secondary, pushed through rapidly under Minister Anna Zalewska, forced gminas to reorganize networks within ~1–2 school years, producing reported teacher layoffs and merger strain — a cautionary case that fast top-down network restructuring (either direction) disrupts communities regardless of pedagogical merit. Evidence status: moderate.
+
+5. **Political durability lesson.** The 1999 reform lasted 17 years but was reversed largely on ideological grounds rather than clear evidence of failure — PISA trends were, if anything, favorable. This suggests structurally successful reforms remain vulnerable without cross-party consensus. Evidence status: contested (interpretive reading of a political process, not a measured outcome).
+
+6. **Demographic decline as an independent driver.** Rural school-age population has declined for two decades in Poland, the same driver named in the Hungary brief. Intermediate tools short of full closure include downgrading a school to a "filia" (branch, grades 1–3 only, older children bussed centrally), inter-gmina consolidation, and the association-run model above. Evidence status: moderate; current national counts unknown to me.
+
+7. **Funding-formula incentive tension.** Poland's per-pupil subsidy (*subwencja oświatowa*) has historically been criticized for not covering fixed costs of very small rural schools, creating a financial push toward closure even against community preference — structurally identical to the Hungarian brief's efficiency-vs-community tension. Evidence status: moderate/contested; adequacy of the current formula is disputed and I cannot quantify it.
+
+**Uncertainties for this research phase:** No live web search succeeded this round, so nothing above has a verifiable URL yet; I lack a confident current (2023–2025) count of association-run rural schools in Poland and current PISA 2022 breakdowns by school type.
+
+Notes saved to `expert_outputs/polish_reform.md`.

@@ -1,0 +1,2 @@
+I'll research current demographic data relevant to Hungary's rural depopulation and its effects on primary school viability through 2040.
+Web search access failed repeatedly in this round (server tool-use limit exceeded on every attempt, including after a retry delay). I'll proceed using well-established demographic knowledge, explicitly flagging in the Uncertainties section that fresh 2024–2025 statistics could not be retrieved this round, and avoid inventing any specific figures or URLs I cannot verify.

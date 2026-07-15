@@ -1,0 +1,110 @@
+{
+  "findings": [
+    {
+      "claim": {
+        "en": "Hungary ranks among the most socioeconomically segregated school systems in the OECD, with SES-based selection mechanisms embedded in school choice and enrollment structures.",
+        "hu": "Magyarország az OECD-ben az egyik leginkább szocioökonómiai alapon szegregált iskolai rendszer, ahol az SES-alapú szelekció az iskolaválasztás és beiratkozási szerkezetben beágyazott."
+      },
+      "evidence": "moderate",
+      "source": "OECD PISA trend data and Hungarian education sociology literature; unverified against fresh sources this round due to web_search tool unavailability"
+    },
+    {
+      "claim": {
+        "en": "Rural depopulation in small villages reduces the local pupil base, creating a methodological challenge: distinguishing between true value-added of small schools and compositional effects of who remains in declining communities.",
+        "hu": "A kistelepüléseken a vidéki népességvesztés csökkenti a helyi tanulólétszámot, ami módszertani kihívást teremt: nehéz megkülönböztetni a kis iskolák valódi hozzáadott értékét a csökkenő közösségekben maradók összetételi hatásaitól."
+      },
+      "evidence": "moderate",
+      "source": "rural sociology and education methodology; unverified specific Hungarian context this round"
+    },
+    {
+      "claim": {
+        "en": "School closure in a depopulating village can trigger a feedback loop: reduced local provision accelerates outmigration, which further concentrates low-SES families, reducing peer quality and property values.",
+        "hu": "Az iskola bezárása csökkenő lélekszámú községben visszacsatolási hurkot indíthat: a helyi ellátás csökkenése gyorsítja a kiköltözést, ami tovább koncentrálja az alacsony SES-ű családokat, rontva a társas környezet minőségét és az ingatlanértékeket."
+      },
+      "evidence": "moderate",
+      "source": "rural sociology general mechanism; unverified empirical data for Hungarian villages this round"
+    },
+    {
+      "claim": {
+        "en": "Lower-SES families face disproportionate travel burden when rural schools close, as they have less access to private transport and bear higher opportunity costs of longer commutes.",
+        "hu": "Az alacsony SES-ű családok aránytalanul nagyobb utazási terhet viselnek, amikor vidéki iskolák bezárnak, mivel kevésbé férhetnek hozzá személyes közlekedéshez és nagyobb az opportunitásköltsége a hosszabb utazásnak."
+      },
+      "evidence": "moderate",
+      "source": "general education equity mechanism; no Hungarian quantitative data retrieved this round"
+    },
+    {
+      "claim": {
+        "en": "Non-selected pupils remaining in depopulating villages after school closure face peer-composition changes (loss of higher-performing classmates), which can reduce learning outcomes through reduced peer effects.",
+        "hu": "A nem kiválasztott tanulók, akik az iskola bezárása után a csökkenő községekben maradnak, a csoport-összetétel megváltozásával (a jobb teljesítményt nyújtó osztálytársak elvesztésével) szembesülnek, ami a társas hatásokon keresztül ronthatja a tanulási eredményeket."
+      },
+      "evidence": "weak",
+      "source": "peer-effects theory; no empirical measurement of this effect in Hungarian rural school closure context"
+    },
+    {
+      "claim": {
+        "en": "Church and foundation takeover of former state village schools since approximately 2011 has been associated with changes in school selectivity and pupil composition, raising equity questions about access and inclusion.",
+        "hu": "Az egyházi és alapítványi szektor által a 2011 körül felügyelet alá vett vidéki iskolák összetételében és szelekcióban bekövetkezett változások egyenlőtlenségi kérdéseket vetnek fel az hozzáférés és inkluzió tekintetében."
+      },
+      "evidence": "weak",
+      "source": "Hungarian education policy observation; trend noted, compositional effect sizes unverified and unquantified this round"
+    },
+    {
+      "claim": {
+        "en": "Tanoda (remedial education) programs and NGO-supported compensatory services exist as complementary models to support disadvantaged pupils in areas with school consolidation, though their scale and effectiveness remain undocumented in available sources.",
+        "hu": "A tanoda és az NGO által támogatott kompenzációs programok léteznek kiegészítő modellként az iskolakonsolidáció területein hátrányos helyzetű tanulók támogatására, de méretük és hatékonyságuk az elérhető forrásokban dokumentálatlan."
+      },
+      "evidence": "weak",
+      "source": "Hungarian education policy knowledge; scale and effectiveness data absent this round"
+    }
+  ],
+  "interpretation": {
+    "en": "Rural school closure in Hungary does not operate in isolation from the country's existing SES-stratification and segregation patterns. Villages losing population tend to experience compositional shifts toward lower-SES families and reduced peer diversity, which compounds selection effects already present in the Hungarian system. Closing schools may appear efficient in the short term but risks deepening rural depopulation and exacerbating inequity for families unable to absorb travel costs or access alternative provision. The feedback loop between school provision, settlement decline, and household out-migration suggests that efficiency metrics alone cannot capture the true social cost of closure. Alternative models (small multi-grade schools, tanoda supplements, community-anchored provision) exist in Hungarian policy discourse but lack rigorous evidence on implementation and outcomes.",
+    "hu": "A vidéki iskolazárások Magyarországon nem függetlenül működnek az ország már meglévő SES-alapú rétegződésétől és szegregációs mintáitól. Lélekszámot vesztő községek általában az alacsonyabb SES-ű családok felé tolódó összetételváltást és a társas sokféleség csökkenését tapasztalják, amely erősíti a magyar rendszerben már meglévő szelekcióhatásokat. Az iskolazárás rövid távon hatékonynak tűnhet, de kockázatos a vidéki depopuláció mélyítésére és az utazási költségeket felvenni nem tudó vagy alternatív ellátást nem elérő családok számára az egyenlőtlenség súlyosbítására. Az iskola-ellátás, településcsökkenés és háztartás-kiköltözés közötti visszacsatolási hurok azt sugallja, hogy az efficiencia-mérőszámok egyedül nem tudják feltárni a bezárás valódi társadalmi költségét. Az alternatív modellek (kis, többosztályos iskolák, tanoda-kiegészítés, közösség-horgonyzott ellátás) léteznek a magyar szakpolitikai diskurzusban, de hiányzik a megvalósítás és eredmények alapos bizonyítéka."
+  },
+  "assumptions": [
+    {
+      "en": "Composition and peer effects are sufficiently large to meaningfully affect outcomes for non-selected pupils remaining in depopulating areas.",
+      "hu": "Az összetétel- és társas hatások elég nagyok ahhoz, hogy érdemben befolyásolják a csökkenő községekben maradó nem kiválasztott tanulók eredményeit."
+    },
+    {
+      "en": "School closure decisions are primarily driven by enrollment and efficiency criteria, not by prior SES-based assignment of pupils to schools.",
+      "hu": "Az iskolazárási döntéseket elsősorban a beiratkozási és efficiencia kritériumok vezérlik, nem az iskola előtti SES-alapú tanulóallokalás."
+    },
+    {
+      "en": "Pupils and families cannot fully compensate for longer travel and reduced in-school peer diversity through alternative support (home tutoring, transport subsidies, digital learning).",
+      "hu": "A tanulók és családok nem tudják teljesen kompenzálni a hosszabb utazást és csökkent iskolai társas sokféleséget alternatív támogatással (otthoni oktatás, közlekedési támogatások, digitális tanulás)."
+    },
+    {
+      "en": "The mechanisms linking school closure to further settlement decline operate with sufficient strength to create a measurable feedback loop over 5–10 years.",
+      "hu": "Az iskola bezárásával a településcsökkenéshez kapcsolódó mechanizmusok elég erősen működnek ahhoz, hogy 5–10 év alatt mérhető visszacsatolási hurkot hozzanak létre."
+    }
+  ],
+  "position": {
+    "en": "Closing rural primary schools in depopulating Hungarian villages is likely to increase educational inequity for lower-SES families through both direct travel burden and indirect peer-composition effects, without reducing overall depopulation pressure.",
+    "hu": "A csökkenő lélekszámú magyar községekben a vidéki általános iskolák bezárása feltehetően az alacsonyabb SES-ű családok számára az egyenlőtlenséget fokozza a közvetlenül utazási teher és a közvetett társas összetétel-hatásokon keresztül, miközben nem csökkenti az általános depopuláció-nyomást."
+  },
+  "uncertainties": [
+    {
+      "text": {
+        "en": "The magnitude and direction of peer-composition effects on learning outcomes for non-selected pupils in Hungarian rural school consolidation contexts remains unknown; no experimental or quasi-experimental evidence is available.",
+        "hu": "Az összetétel-hatások mértéke és iránya a magyar vidéki iskolakonsolidáció kontextusában a nem kiválasztott tanulók tanulási eredményeire nézve ismeretlen; nincs kísérleti vagy kvázi-kísérleti bizonyíték."
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Matched cohort study comparing learning trajectories of pupils in closed vs. open village schools, controlling for baseline SES, prior achievement, and family migration patterns.",
+        "hu": "Párosított kohortstudy az olyan községi iskolákban maradó és vidéki iskolázást végző tanulók tanulási pályáinak összehasonlítása, kontrollálva az alap-SES, korábbi teljesítmény és családi migráció mintákat."
+      }
+    },
+    {
+      "text": {
+        "en": "The extent to which school closure accelerates depopulation (vs. operates as a passive consequence of prior migration) is empirically unclear for Hungary; reverse causality is difficult to rule out.",
+        "hu": "Az a mérték, amely szerint az iskola bezárása felgyorsítja a depopulációt (versus korábbi migráció passzív következménye), Magyarország számára empirikusan nem egyértelmű; az ún. fordított oksági kapcsolat nehéz kizárni."
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Longitudinal matched-region study tracking settlement population, school enrollment, and school-closure dates across 10+ years to estimate the timing and direction of causal effects.",
+        "hu": "Hosszú távú párosított régió-tanulmány, amely 10+ évnyi időszakban követi a település népességét, iskolai beiratkozást és iskola-bezárási dátumokat az oksági hatások időzítésének és irányának becslésére."
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "findings": [
+    {
+      "claim": {
+        "en": "The Hungarian Nkt. (Nemzeti Köznevelési Törvény, National Public Education Act) establishes a statutory duty for local governments to provide primary education within accessible distance, but does not mandate individual school operation in every settlement.",
+        "hu": "A Nemzeti Köznevelési Törvény (Nkt.) törvényi kötelezettséget ír elő az önkormányzatoknak az elsőfokú oktatás biztosítására elérhető távolságon belül, de nem írja elő az iskola működtetését minden településen."
+      },
+      "evidence": "moderate",
+      "source": "Nkt. (2011. évi CXC. törvény) statutory framework — known from domain knowledge but not freshly verified"
+    },
+    {
+      "claim": {
+        "en": "Maintainer plurality in Hungary allows schools to be operated by local governments, churches, private foundations, or state institutions, creating pathways for non-municipal continuity in rural areas.",
+        "hu": "A fenntartó-pluralitás Magyarországon lehetővé teszi, hogy az iskola önkormányzati, egyházi, alapítványi vagy állami fenntartású legyen, így biztosít lehetőséget vidéki intézmények non-kommunális folytatásához."
+      },
+      "evidence": "moderate",
+      "source": "Nkt. institutional framework provisions — domain knowledge, unverified with current data"
+    },
+    {
+      "claim": {
+        "en": "The felmenő rendszer (ascending system) permits gradual phase-out of class cohorts rather than immediate closure, reducing abrupt disruption to communities and allowing planned transitions.",
+        "hu": "A felmenő rendszer lehetővé teszi az osztályok fokozatos kivezetését ahelyett, hogy azonnal bezárná az intézményt, csökkentve az éles szakadást és lehetővé téve a tervezett átmenetet."
+      },
+      "evidence": "moderate",
+      "source": "Nkt. organizational flexibility provisions — domain knowledge, not independently verified this round"
+    },
+    {
+      "claim": {
+        "en": "No current, publicly available national registry of rural primary school closure decisions and their documented community outcomes exists to enable evidence-based comparison of long-term impacts.",
+        "hu": "Nem létezik elérhető nemzeti nyilvántartás a vidéki alapiskolák bezárási döntéseiről és azok dokumentált közösségi következményeiről, amely lehetővé tenné a hatások alapú összehasonlítását."
+      },
+      "evidence": "weak",
+      "source": "absence of evidence — research session limit exhausted without locating such registry"
+    },
+    {
+      "claim": {
+        "en": "Villages under 2,000 population in Hungary have experienced demographic decline since 2001, reducing the school-age cohort size, but comprehensive current enrollment data for schools in this population band is not available in this research round.",
+        "hu": "A 2000 fő alatti magyar községek 2001 óta demográfiai csökkenésen mentek keresztül, csökkentve az iskolás korú generációk nagyságát, de az aktuális beiratkozási adatok nem állnak rendelkezésre ebben a kutatási körben."
+      },
+      "evidence": "weak",
+      "source": "KSH (Központi Statisztikai Hivatal) general demographic trends — not freshly verified this round"
+    },
+    {
+      "claim": {
+        "en": "Governance frameworks (municipal budgeting, educational oversight, social support) do not consistently measure or track the secondary effects of school closure on community infrastructure, health access, or social cohesion.",
+        "hu": "Az irányítási keretek (önkormányzati költségvetés, oktatási felügyelet, szociális támogatás) nem követnek végig konzisztensen az iskolabezárás közösségi infrastruktúrára, egészségügyi ellátásra vagy társadalmi kohézióra gyakorolt másodlagos hatásait."
+      },
+      "evidence": "weak",
+      "source": "domain knowledge of governance practice — not verified against policy documentation this round"
+    },
+    {
+      "claim": {
+        "en": "Statutory consultation with parents and affected communities is required under Nkt. before school reorganization, but the depth, transparency, and binding power of such consultation varies by municipal practice.",
+        "hu": "Az Nkt. előírja a szülőkkel és érintett közösségekkel való konzultációt az iskolaszervezési intézkedések előtt, de a konzultáció mélysége, átláthatósága és kötelező ereje az önkormányzati gyakorlatonként változik."
+      },
+      "evidence": "moderate",
+      "source": "Nkt. procedural requirements — domain knowledge, specific municipal variation not audited this round"
+    }
+  ],
+  "interpretation": {
+    "en": "Hungary's legal framework creates both constraints and flexibility: the Nkt. mandates educational access but permits operational models (phase-out, maintainer change) that allow closure without violation of law. The absence of unified outcome data means that closure decisions are made locally without measurable feedback loops on community impact. Maintainer plurality offers theoretical alternatives to municipal closure, but activation of these alternatives (e.g., church or foundation takeover) is contingent on voluntary engagement. The felmenő rendszer provides a softer transition mechanism, yet its use is discretionary. This creates a governance gap: communities lose schools through legally-compliant but locally-opaque processes, and long-term social costs remain unmeasured and unaccountable at national policy level.",
+    "hu": "Magyarország jogi kerete egyszerre hozza létre a korlátozásokat és a rugalmasságot: az Nkt. előírja az oktatási hozzáférést, de megenged operatív modelleket (fokozatos kivezetés, fenntartóváltás), amelyek lehetővé teszik a bezárást a törvényi megsértés nélkül. Az egységes kimeneteli adatok hiánya azt jelenti, hogy a bezárási döntéseket helyi szinten hozzák meg, anélkül hogy mérhető visszacsatolási hurkok lennének a közösségi hatásra. A fenntartó-pluralitás elméletileg alternatívákat kínál az önkormányzati bezáráshoz, de ezek aktiválása (pl. egyházi vagy alapítványi átvétel) az önkéntes közreműködés függvénye. A felmenő rendszer puha átmeneti mechanizmust nyújt, ám annak használata választható. Ez egy irányítási hiátust hoz létre: közösségek jogszerű, de helyi szinten opak folyamatokon keresztül veszítik el iskoláikat, és a hosszú távú társadalmi költségek továbbra is mérhetetlen és nem számolt el maradnak a nemzeti politikai szinten."
+  },
+  "assumptions": [
+    {
+      "en": "Parents and school staff will continue to inhabit rural villages even if local schools close, and will accept longer travel distances or consolidation into larger regional schools.",
+      "hu": "A szülők és az iskola dolgozottai továbbra is a vidéki községekben fognak lakni akkor is, ha az iskolák bezárnak, és elfogadják a hosszabb utazási távolságokat vagy a nagyobb regionális iskolákba való konszolidációt."
+    },
+    {
+      "en": "Municipal governments have adequate fiscal, planning, and coordination capacity to implement alternative maintainer transitions (e.g., church or foundation takeover) within statutory timeframes.",
+      "hu": "Az önkormányzati kormányok megfelelő fiskális, tervezési és koordinációs kapacitással rendelkeznek az alternatív fenntartó-átmenetek (pl. egyházi vagy alapítványi átvétel) megvalósítására az előírt időkereteken belül."
+    },
+    {
+      "en": "School enrollment decline is the primary driver of closure decisions, rather than political expediency, budget opportunism, or administrative convenience.",
+      "hu": "Az iskolai beiratkozási csökkenés az iskolabezárási döntések elsődleges meghajtó ereje, nem pedig a politikai kényelmi szempontok, költségvetési opportunizmus vagy adminisztratív kényelmi megfontolások."
+    }
+  ],
+  "position": {
+    "en": "The legal frameworks governing rural primary school continuity in Hungary exist and are flexible enough to permit sustainability without closure, but their governance implementation lacks transparency, outcome accountability, and coordination mechanisms that would enable alternatives to flourish systematically rather than depend on local ad-hoc effort.",
+    "hu": "A vidéki alapiskolák fenntarthatóságát irányító jogi keretek Magyarországon léteznek és elég rugalmasak ahhoz, hogy engedélyezzék a fenntarthatóságot bezárás nélkül, de azok irányítási megvalósítása hiányosságot mutat az átláthatóságban, a kimeneteli elszámoltathatóságban és a koordinációs mechanizmusokban, amelyek lehetővé tennék az alternatívák szisztematikus virágzását ahelyett, hogy helyi ad-hoc erőfeszítésektől függnének."
+  },
+  "uncertainties": [
+    {
+      "text": {
+        "en": "How many rural primary schools (population <2,000) have closed in Hungary in the past 10 years, and what documented evidence exists about measurable community outcomes (child dropout, health access, social cohesion) after closure?",
+        "hu": "Hány vidéki alapiskola (< 2000 fős település) zárt be Magyarországon az elmúlt 10 évben, és milyen dokumentált bizonyíték létezik a mérhető közösségi kimenetelekről (iskolai lemorzsolódás, egészségügyi ellátás, társadalmi kohézió) a bezárás után?"
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "A national registry of school closures with linked community outcome metrics (child attendance, parental employment, village population trends, service availability) compiled by the Ministry of Education and the Central Statistical Office (KSH).",
+        "hu": "Az Oktatási Minisztérium és a Központi Statisztikai Hivatal (KSH) által összeállított olyan nemzeti nyilvántartás, amely az iskolabezárásokat a kapcsolódó közösségi kimenetel mutatóikkal (gyermekek részvétele, szülői foglalkoztatottság, községi népesség trendjei, szolgáltatás elérhetősége) összeköti."
+      }
+    },
+    {
+      "text": {
+        "en": "What proportion of Hungarian municipalities possess the administrative, fiscal, and relational capacity to broker alternative maintainer transitions (e.g., church, foundation, or state institution takeover) rather than closure?",
+        "hu": "A magyar önkormányzatok hanyad része rendelkezik az adminisztratív, fiskális és kapcsolati kapacitással az alternatív fenntartó-átmenetek (pl. egyházi, alapítványi vagy állami intézmény átvétele) közvetítésére a bezárás helyett?"
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Structured audit of a representative sample of municipalities under 2,000 inhabitants, measuring readiness (staff capacity, budget flexibility, stakeholder networks) to activate maintainer alternatives within statutory timelines.",
+        "hu": "Az olyan településekre irányuló reprezentatív minta strukturált auditja, amely méri az alternatív fenntartók aktiválásához szükséges készenlét (személyzet kapacitása, költségvetési rugalmasság, érintett szereplőknek a hálózata) az előírt időkereteken belül."
+      }
+    },
+    {
+      "text": {
+        "en": "What is the current utilization rate of the felmenő rendszer (phase-out system) by municipalities as an alternative to abrupt closure, and what legal, financial, or cultural barriers prevent wider adoption?",
+        "hu": "Milyen arányban használják az önkormányzatok a felmenő rendszert (fokozatos kivezetési rendszer) az éles bezárás alternatívájaként, és milyen jogi, pénzügyi vagy kulturális akadályok gátolják a szélesebb körű alkalmazást?"
+      },
+      "confidence": "medium",
+      "reduced_by": {
+        "en": "A retrospective analysis of school reorganization decisions filed with regional education authorities over the past 5–10 years, categorizing the use of phase-out versus immediate closure and documenting stated reasons for pathway selection.",
+        "hu": "A regionális oktatási hatóságokhoz beadott iskolaszervezési döntések visszatekintő elemzése az elmúlt 5–10 évről, amely kategorizálja a fokozatos kivezetés és az azonnali bezárás közötti választásokat, valamint dokumentálja az útvonal-kiválasztás indokait."
+      }
+    }
+  ]
+}

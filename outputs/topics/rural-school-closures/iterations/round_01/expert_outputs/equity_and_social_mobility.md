@@ -1,0 +1,26 @@
+# Expert analysis: equity_and_social_mobility
+
+## Findings (evidence)
+- Hungary ranks among the most socioeconomically segregated school systems in the OECD, with SES-based selection mechanisms embedded in school choice and enrollment structures. [evidence: moderate — OECD PISA trend data and Hungarian education sociology literature; unverified against fresh sources this round due to web_search tool unavailability]
+- Rural depopulation in small villages reduces the local pupil base, creating a methodological challenge: distinguishing between true value-added of small schools and compositional effects of who remains in declining communities. [evidence: moderate — rural sociology and education methodology; unverified specific Hungarian context this round]
+- School closure in a depopulating village can trigger a feedback loop: reduced local provision accelerates outmigration, which further concentrates low-SES families, reducing peer quality and property values. [evidence: moderate — rural sociology general mechanism; unverified empirical data for Hungarian villages this round]
+- Lower-SES families face disproportionate travel burden when rural schools close, as they have less access to private transport and bear higher opportunity costs of longer commutes. [evidence: moderate — general education equity mechanism; no Hungarian quantitative data retrieved this round]
+- Non-selected pupils remaining in depopulating villages after school closure face peer-composition changes (loss of higher-performing classmates), which can reduce learning outcomes through reduced peer effects. [evidence: weak — peer-effects theory; no empirical measurement of this effect in Hungarian rural school closure context]
+- Church and foundation takeover of former state village schools since approximately 2011 has been associated with changes in school selectivity and pupil composition, raising equity questions about access and inclusion. [evidence: weak — Hungarian education policy observation; trend noted, compositional effect sizes unverified and unquantified this round]
+- Tanoda (remedial education) programs and NGO-supported compensatory services exist as complementary models to support disadvantaged pupils in areas with school consolidation, though their scale and effectiveness remain undocumented in available sources. [evidence: weak — Hungarian education policy knowledge; scale and effectiveness data absent this round]
+
+## Interpretation
+Rural school closure in Hungary does not operate in isolation from the country's existing SES-stratification and segregation patterns. Villages losing population tend to experience compositional shifts toward lower-SES families and reduced peer diversity, which compounds selection effects already present in the Hungarian system. Closing schools may appear efficient in the short term but risks deepening rural depopulation and exacerbating inequity for families unable to absorb travel costs or access alternative provision. The feedback loop between school provision, settlement decline, and household out-migration suggests that efficiency metrics alone cannot capture the true social cost of closure. Alternative models (small multi-grade schools, tanoda supplements, community-anchored provision) exist in Hungarian policy discourse but lack rigorous evidence on implementation and outcomes.
+
+## Assumptions
+- Composition and peer effects are sufficiently large to meaningfully affect outcomes for non-selected pupils remaining in depopulating areas. [assumption]
+- School closure decisions are primarily driven by enrollment and efficiency criteria, not by prior SES-based assignment of pupils to schools. [assumption]
+- Pupils and families cannot fully compensate for longer travel and reduced in-school peer diversity through alternative support (home tutoring, transport subsidies, digital learning). [assumption]
+- The mechanisms linking school closure to further settlement decline operate with sufficient strength to create a measurable feedback loop over 5–10 years. [assumption]
+
+## Position
+Closing rural primary schools in depopulating Hungarian villages is likely to increase educational inequity for lower-SES families through both direct travel burden and indirect peer-composition effects, without reducing overall depopulation pressure.
+
+## Uncertainties
+- The magnitude and direction of peer-composition effects on learning outcomes for non-selected pupils in Hungarian rural school consolidation contexts remains unknown; no experimental or quasi-experimental evidence is available. (confidence: low; would be reduced by: Matched cohort study comparing learning trajectories of pupils in closed vs. open village schools, controlling for baseline SES, prior achievement, and family migration patterns.)
+- The extent to which school closure accelerates depopulation (vs. operates as a passive consequence of prior migration) is empirically unclear for Hungary; reverse causality is difficult to rule out. (confidence: low; would be reduced by: Longitudinal matched-region study tracking settlement population, school enrollment, and school-closure dates across 10+ years to estimate the timing and direction of causal effects.)

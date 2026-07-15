@@ -1,0 +1,1 @@
+I'll research current evidence on Hungarian rural primary schools, focusing on catchment/maintainer structures and how the system sorts students, including interactions with early-selection gimnázium tracks.

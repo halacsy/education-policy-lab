@@ -1,0 +1,140 @@
+{
+  "findings": [
+    {
+      "claim": {
+        "en": "Hungary operates parallel primary education tracks with selective 4- and 6-year gymnasia drawing higher-performing and higher-socioeconomic-status students at ages 10–12, earlier than typical OECD lower-secondary tracking age.",
+        "hu": "Magyarország párhuzamos általános iskolai pályákat üzemeltet: szelektív 4 és 6 éves gimnazisták 10–12 évesen vonzanak magasabb teljesítményű és magasabb szocioökonómiai státuszú tanulókat, az OECD-tipikus alsó-szekunder szintű szegregációnál korábban."
+      },
+      "evidence": "moderate",
+      "source": "OECD/Eurydice country profiles (system feature; 2024 verification pending)"
+    },
+    {
+      "claim": {
+        "en": "Hungary exhibits one of the OECD's steepest socioeconomic gradients in PISA performance across multiple cycles (2012–2018), meaning student achievement is highly stratified by family socioeconomic status.",
+        "hu": "Magyarország az OECD egyik legmeredekebb szocioökonómiai gradiensét mutatja a PISA teljesítményben több cikluson át (2012–2018), vagyis a tanulói eredmények erősen rétegzöttek a család szocioökonómiai státusza szerint."
+      },
+      "evidence": "strong",
+      "source": "OECD PISA reports (2012, 2015, 2018 cycles; 2022–2024 update required)"
+    },
+    {
+      "claim": {
+        "en": "Rural Hungarian 8-year primary schools retain a residual, negatively selected student population after higher-socioeconomic-status families opt into early-entry gymnasia, compounding enrollment decline with compositional disadvantage.",
+        "hu": "A falusi magyar 8 éves általános iskolák egy maradék, kedvezőtlenül szelektált tanulói populációt tartanak meg, miután a magasabb szocioökonómiai státuszú családok korai gimnáziumi bejutást választanak, ami az iskolalétszám csökkenést összetételi hátrányokkal erősíti."
+      },
+      "evidence": "weak",
+      "source": "logical inference from system structure (not empirically verified for rural cohorts this round)"
+    },
+    {
+      "claim": {
+        "en": "School consolidation economics literature (US-focused) generally finds modest cost savings from merging small schools and diminishing or negative returns below certain enrollment thresholds once transportation and administration are included.",
+        "hu": "Az iskolaösszevonási közgazdaságtani irodalom (főként USA-s) általában szerény megtakarításokat talál kis iskolák összevonásából és csökkenő vagy negatív hozamot bizonyos létszámküszöb alatt, ha szállítást és adminisztrációt is figyelembe veszik."
+      },
+      "evidence": "moderate",
+      "source": "school consolidation economics literature (Duncombe & Yinger stream; specific DiD study verification needed)"
+    },
+    {
+      "claim": {
+        "en": "Scotland's Schools (Consolidation and Parental Involvement) Act 2010 establishes a statutory presumption against rural school closure, requiring local authorities to conduct rigorous consultation and demonstrate no viable alternative before closure.",
+        "hu": "Skócia Schools (Consolidation and Parental Involvement) Act 2010-e jogszabályi feltételezést állapít meg a falusi iskolai bezárások ellen, kötelezve az önkormányzatokat szigorú konzultációra és az alternatív megoldások lehetetlenségének igazolására a bezárás előtt."
+      },
+      "evidence": "moderate",
+      "source": "Scottish legislative text (2010; implementation record 2010–2025 not verified this round)"
+    },
+    {
+      "claim": {
+        "en": "France's regroupement pédagogique intercommunal (RPI) model clusters several small rural municipalities' schools into a shared pedagogical network rather than closing them, with grade-splitting across sites or inter-village transport.",
+        "hu": "Franciaország regroupement pédagogique intercommunal (RPI) modellje több kis falusi önkormányzat iskoláit közös pedagógiai hálózatba szervezi a bezárás helyett, osztályszint-megosztással a helyszínek között vagy közöttük közlekedéssel."
+      },
+      "evidence": "moderate",
+      "source": "French education policy (established practice; quantitative uptake and outcomes not verified this round)"
+    },
+    {
+      "claim": {
+        "en": "Norway maintains many small rural schools as explicit regional/settlement policy, treating school retention as an instrument of rural viability rather than purely as an education efficiency decision.",
+        "hu": "Norvégia számos kis falusi iskolát működtet kifejezett területi/letelepedési politikájának részeként, az iskolamegőrzést a vidék életképességének eszközeként kezeli, nem pusztán oktatási hatékonysági döntésként."
+      },
+      "evidence": "weak",
+      "source": "Norwegian regional policy (general knowledge; specific statute and outcome data not verified this round)"
+    },
+    {
+      "claim": {
+        "en": "Web search access was unavailable this round (server tool-use limit exceeded on all attempts including delayed retries), preventing fresh citation and verification of all research notes.",
+        "hu": "Internetes keresési hozzáférés nem állt rendelkezésre ebben a körben (szerver eszköz-használati korlát túllépése minden próbálkozáson, késedelmi újrapróbálkozásokkal együtt), ami friss idézetek és összes kutatási jegyzet ellenőrzését megakadályozta."
+      },
+      "evidence": "strong",
+      "source": "round 1 system log"
+    }
+  ],
+  "interpretation": {
+    "en": "Hungary's early tracking system (age 10–12 gymnasium entry) and steep PISA socioeconomic gradient mean that rural primary schools face a double enrollment squeeze: structural outflow of higher-SES students to urban/selective tracks, plus absolute demographic decline in villages. International comparison reveals two broad policy responses: (1) consolidation-as-default (US pattern, parts of Finland) with modest cost savings but transport/administrative risks, and (2) retention-with-alternative-structure (Scotland's statutory safeguard, France's RPI clustering, Norway's regional policy). Evidence on achievement effects of consolidation vs. smaller-school alternatives in similar (Central European, early-tracking) contexts is not yet located this round. Transferability to Hungary depends on whether rural school closure targets efficiency or serves as a symptom of abandoned rural settlement policy.",
+    "hu": "Magyarország korai szegmentációs rendszere (10–12 éves gimnazisták) és meredek PISA szocioökonómiai gradiense azt jelenti, hogy a falusi általános iskolák kétszeres létszám-szorításnak néznek szembe: magasabb szocioökonómiai státuszú tanulók szerkezeti kiáramlása városi/szelektív pályákra, valamint abszolút demográfiai csökkenés a községekben. A nemzetközi összehasonlítás két széles szakpolitikai választ mutat: (1) konszolidáció-mint-alapértelmezett (USA-minta, Finnország részei) szerény megtakarításokkal de szállítási/adminisztratív kockázatokkal, valamint (2) megőrzés-alternatív-szerkezettel (Skócia jogszabályi védelme, Franciaország RPI-csoportosítása, Norvégia területi politikája). Az iskolaösszevonás vs. kisebb iskolai alternatívák teljesítmény-hatásainak bizonyítéka hasonló (közép-európai, korai-szegmentációs) környezetben ezt a kört nem lokalizálható. A Magyarországra való átvitelezhetőség attól függ, hogy a falusi iskolabezárások hatékonyságot szolgálnak-e vagy elhagyott vidéki településpolitika tünetét jelentik-e."
+  },
+  "assumptions": [
+    {
+      "en": "Hungarian rural primary schools serve settlements with chronic out-migration, making enrollment decline irreversible under status quo (no counterfactual policy intervention).",
+      "hu": "A magyar falusi általános iskolák krónikus elvándorlással küzdő településeket szolgálnak, ami a létszám csökkenést visszafordíthatlanná teszi jelenlegi helyzetben (nincs ellenpolitikai beavatkozás)."
+    },
+    {
+      "en": "School closure decisions in Hungary reflect primarily resource efficiency logic rather than explicit rural development strategy.",
+      "hu": "Magyarország iskolabezárási döntései elsősorban az erőforrás-hatékonysági logikát tükrözik, nem pedig kifejezett vidékfejlesztési stratégiát."
+    },
+    {
+      "en": "Transferability of international models (Scotland, France, Norway) to rural Hungarian contexts requires compatible municipal governance structures and funding regimes.",
+      "hu": "A nemzetközi modellek (Skócia, Franciaország, Norvégia) magyar falusi kontextusokra való átvitelezhetősége kompatibilis önkormányzati irányítási struktúrákat és finanszírozási rendszereket igényel."
+    },
+    {
+      "en": "PISA gradient and early-tracking patterns persist in current Hungarian education policy such that rural schools continue to experience negative selection.",
+      "hu": "A PISA-gradiens és korai-szegmentációs minták a jelenlegi magyar oktatáspolitikában fennmaradnak, így a falusi iskolák továbbra is negatív szelekcióval szembesülnek."
+    }
+  ],
+  "position": {
+    "en": "Rural Hungarian primary school closures should be preceded by an explicit rural development assessment and comparison of achievement/equity outcomes under consolidation versus retention-with-structural-alternatives (RPI-type clustering, multi-school governance, or scaled pedagogy), not decided on cost grounds alone.",
+    "hu": "A falusi magyar általános iskolák bezárásait kifejezett vidékfejlesztési értékelésnek és az iskolaösszevonás versus megőrzés-alternatív-szerkezettel (RPI-típusú csoportosítás, többiskolai irányítás, skálázott pedagógia) alatti teljesítmény/egyenlőség-kimenetelek összehasonlításának kellene megelőzniük, és nem költség alapú döntéseket."
+  },
+  "uncertainties": [
+    {
+      "text": {
+        "en": "Current (2023–2025) enrollment and closure statistics for Hungarian rural primary schools: exact number of villages with <100 students, closure rate since 2015, post-closure student redistribution outcomes.",
+        "hu": "Jelenlegi (2023–2025) magyar falusi általános iskolák létszám- és bezárási statisztikái: <100 tanulóval rendelkező községek pontos száma, bezárási ráta 2015 óta, bezárás utáni tanulói újraelosztás kimenetelei."
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Hungarian Central Statistical Office (KSH) or Ministry of Education village-level school register with annual closure and enrollment time-series.",
+        "hu": "Magyar Központi Statisztikai Hivatal (KSH) vagy Oktatási Minisztérium községszintű iskolai nyilvántartása éves bezárási és létszám-idősorokkal."
+      }
+    },
+    {
+      "text": {
+        "en": "Causal estimates of consolidation effects on student achievement and equity in Central European (Hungarian, Slovak, Czech) or dual-tracking early-exit contexts: do students in consolidated or retained small schools differ in attainment?",
+        "hu": "Közép-európai (magyar, szlovák, cseh) vagy duális-szegmentációs korai-kilépési kontextusban az iskolaösszevonás tanulói teljesítményre és egyenlőségre gyakorolt okozati hatásainak becslése: eltérnek-e az összevont vagy megőrzött kis iskolák tanulói a teljesítményben?"
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Difference-in-differences or regression-discontinuity study of school consolidation in a Central European country with matched pre/post enrollment and test-score data, ideally with subgroup analysis (rural vs. urban, SES quintiles).",
+        "hu": "Különbség-a-különbségekben vagy regresszió-megszakítási tanulmány iskolaösszevonásról egy közép-európai országban, párosított pre/post létszám- és tesztpontadatokkal, ideális esetben alcsoportos elemzéssel (falusi vs. városi, szocioökonómiai kvintilisek)."
+      }
+    },
+    {
+      "text": {
+        "en": "Implementation and outcome evidence for Scotland's rural school closure presumption act (2010–2025): how many proposed closures were blocked, what happened in affected communities, and whether student outcomes improved or deteriorated under the statutory framework.",
+        "hu": "Skócia falusi iskolai bezárási feltételezés aktusának (2010–2025) megvalósítási és kimeneteli bizonyítéka: hány javasolt bezárást akadályoztak meg, mi történt az érintett közösségekben, és javultak-e vagy romlottak-e a tanulói eredmények a jogszabályi keret alatt."
+      },
+      "confidence": "medium",
+      "reduced_by": {
+        "en": "Scottish Government education impact reports, local authority closure decision logs, and PISA/national assessment data for schools in retained vs. consolidated rural areas.",
+        "hu": "Skót Kormányzati oktatási hatás-jelentések, önkormányzati bezárási döntési naplók, valamint PISA/nemzeti értékelési adatok megőrzött vs. konszolidált falusi iskolák számára."
+      }
+    },
+    {
+      "text": {
+        "en": "Long-term community and settlement outcomes in villages where primary schools were closed: population migration, economic activity, housing values, and perceived social cohesion relative to villages retaining schools.",
+        "hu": "Hosszú távú közösségi és településfejlesztési kimenetelek olyan községekben, ahol az általános iskolákat bezárták: népességmozgás, gazdasági aktivitás, ingatlanértékek és észlelt társadalmi kohézió a megőrzött iskolájú községekhez képest."
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Longitudinal community-level dataset (10–20 years post-closure) linking school closure decisions to demographic, economic, and social indicators in Hungarian and/or Central European rural areas.",
+        "hu": "Hosszú távú községszintű adatkészlet (10–20 év a bezárás után) összekötve iskolabezárási döntéseket demográfiai, gazdasági és társadalmi mutatókkal magyar és/vagy közép-európai falusi területeken."
+      }
+    }
+  ]
+}
