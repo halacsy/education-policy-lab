@@ -192,7 +192,11 @@ def llm_component(dim, a, round_n):
                 "presented in randomized order. Respond with exactly two "
                 "lines:\nSCORE: <number>\nREASON: <one sentence>"),
             inputs="=== ARTIFACT ===\n" + "\n".join(shuffled))
-        out = llm.call_model(prompt, role, max_tokens=800, dimension=dim)
+        # 4000, not 800: gpt-5-mini is a reasoning model and its hidden
+        # reasoning tokens draw from max_completion_tokens — with 800 the
+        # visible answer often came back EMPTY on long round-2 artifacts
+        # (the "empty response" retries that killed two evaluation legs)
+        out = llm.call_model(prompt, role, max_tokens=4000, dimension=dim)
         m = re.search(r"SCORE:\s*([0-9]+(?:\.[0-9]+)?)", out)
         score = float(m.group(1)) if m else None
         if score is None:
