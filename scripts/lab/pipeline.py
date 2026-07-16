@@ -726,7 +726,8 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                  inputs=scen_en_md),
             validate=lambda o: valid_voice(o, id_set),
             out_path=ddir / "voices" / f"{name}.json",
-            schema=S.VOICE(ids), max_tokens=24000)
+            # sourced scenarios lengthen voice reactions (round-2 truncation)
+            schema=S.VOICE(ids), max_tokens=32000)
         return name, obj
 
     voices = {}
@@ -858,7 +859,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                              + "\n\nARGUMENT MAP:\n" + clusters_digest)),
                 validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
                 out_path=ddir / "responses" / f"{name}.json",
-                schema=S.RECIPROCITY, max_tokens=16000)
+                schema=S.RECIPROCITY, max_tokens=24000)
             return name, obj
 
         with ThreadPoolExecutor(max_workers=4) as ex:
