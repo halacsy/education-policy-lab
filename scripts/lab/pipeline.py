@@ -531,6 +531,38 @@ def _snapshot_state_hash(rd):
     return h.hexdigest()
 
 
+def _print_state_diff(snap, T):
+    """List files that differ between the stored snapshot and the live
+    state-hash inputs (#27 diagnosability)."""
+    pairs = [(snap / "agents", AGENTS_DIR, ("memory", "directives")),
+             (snap / "agents" / "memory", T.memory_dir, ()),
+             (snap / "agents" / "directives", T.directives_dir, ())]
+    diffs = []
+    for a, b, skip in pairs:
+        names = set()
+        for base in (a, b):
+            if base.exists():
+                names |= {p.relative_to(base) for p in base.rglob("*.md")
+                          if not skip or p.relative_to(base).parts[0] not in skip}
+        for rel in sorted(names):
+            fa, fb = a / rel, b / rel
+            if not fa.exists():
+                diffs.append(f"NEW: {fb}")
+            elif not fb.exists():
+                diffs.append(f"REMOVED: {fb}")
+            elif fa.read_bytes() != fb.read_bytes():
+                diffs.append(f"CHANGED: {fb}")
+    for label, fa, fb in (("config", snap / "system_config.json", CONFIG_PATH),
+                          ("rubric", snap / "evaluation_rubric.md",
+                           TEMPLATES_DIR / "evaluation_rubric.md"),
+                          ("topic.json", snap / "topic.json", T.path)):
+        if fa.exists() and fb.exists() and fa.read_bytes() != fb.read_bytes():
+            diffs.append(f"CHANGED: {label}")
+    print("[resume invalidated] diverging state inputs:", flush=True)
+    for d in diffs or ["(no md/config diff found — check topic fingerprint)"]:
+        print(f"  {d}", flush=True)
+
+
 def snapshot_system_state(rd):
     """Snapshot everything the round's behaviour depends on. Layout matches
     the pre-D-35 one (memory under system_state/agents/memory — verify
@@ -539,7 +571,14 @@ def snapshot_system_state(rd):
     T = topic.current()
     dest = rd / "system_state"
     if dest.exists():
-        shutil.rmtree(dest)
+        # Preserve the superseded snapshot (issue #27): when a relaunch
+        # does NOT resume, the previous snapshot is the only evidence of
+        # WHAT changed — overwriting it made every invalidation
+        # undiagnosable after the fact.
+        prev = rd / "system_state_prev"
+        if prev.exists():
+            shutil.rmtree(prev)
+        dest.rename(prev)
     dest.mkdir(parents=True)
     shutil.copytree(AGENTS_DIR, dest / "agents")
     if T.memory_dir.exists():
@@ -756,7 +795,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
              inputs=voices_digest),
         validate=lambda o: valid_argmap_basic(o, voice_names, id_set),
         out_path=ddir / "argument_map_basic.json",
-        schema=S.CLUSTER_BASIC(ids), max_tokens=16000)
+        schema=S.CLUSTER_BASIC(ids), max_tokens=24000)
     clusters_basic = arg_map_basic["clusters"]
 
     # Phase 2: decompose EACH cluster in its own small, parallel,
@@ -962,6 +1001,11 @@ def run_round(n):
     rd = round_dir(n, create=True)
     state_hash = _current_state_hash()
     resume = _snapshot_state_hash(rd) == state_hash
+    if not resume and (rd / "system_state").exists():
+        # name the diverging files BEFORE the snapshot is replaced (#27) —
+        # an invalidated resume re-runs the whole round, so the cause must
+        # be visible, not inferred
+        _print_state_diff(rd / "system_state", topic.current())
     if not resume and (rd / "steps.jsonl").exists():
         (rd / "steps.jsonl").unlink()  # stale partial attempt
     snapshot_system_state(rd)
@@ -1132,7 +1176,7 @@ def run_round(n):
                 # live research notes add material — 8000 truncated in the
                 # round-8 acceptance run (structured truncation is terminal)
                 validate=valid_expert, out_path=out_path,
-                schema=S.EXPERT_ANALYSIS, max_tokens=16000)
+                schema=S.EXPERT_ANALYSIS, max_tokens=24000)
         md = render.expert_md(name, obj, "en")
         write(rd / "expert_outputs" / f"{name}.md", md)
         return name, md
@@ -1212,7 +1256,7 @@ def run_round(n):
                  "an honest evidence grade.\n\nGLOSSARY:\n" + glossary),
              inputs=expert_digest),
         validate=valid_synthesis, out_path=rd / "synthesis.json",
-        schema=S.SYNTHESIS, max_tokens=20000)
+        schema=S.SYNTHESIS, max_tokens=32000)
     synthesis_text = render.synthesis_md(synthesis_obj, "en")
     write(rd / "synthesis.md", synthesis_text)
     write(rd / "synthesis.hu.md", render.synthesis_md(synthesis_obj, "hu"))
@@ -1334,7 +1378,7 @@ def run_round(n):
                  inputs=scen_en_md + "\n\n" + synthesis_text),
             validate=valid_critic,
             out_path=rd / "critic_outputs" / f"{name}.json",
-            schema=S.CRITIC(ids), role="judge", max_tokens=4000)
+            schema=S.CRITIC(ids), role="judge", max_tokens=8000)
         md = render.critic_md(name, obj)
         write(rd / "critic_outputs" / f"{name}.md", md)
         return name, md
@@ -1391,7 +1435,7 @@ def run_meta_critic(n, artifacts, payload):
                                  for k, v in artifacts["critics"].items()))),
         validate=valid_meta,
         out_path=artifacts["round_dir"] / "meta_critique.json",
-        schema=S.META_CRITIQUE, role="judge", max_tokens=4000)
+        schema=S.META_CRITIQUE, role="judge", max_tokens=8000)
     text = render.meta_md(obj, n)
     write(artifacts["round_dir"] / "meta_critique.md", text)
     artifacts["fallbacks"][:] = step.fallbacks
