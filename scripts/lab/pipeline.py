@@ -892,7 +892,10 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                          "them as the required JSON object. Answering means "
                          "engaging the argument on its merits, not "
                          "repeating yourself; depth on the strongest "
-                         "counter-argument beats coverage. "
+                         "counter-argument beats coverage. Keep "
+                         "every free-text field to at most 3 "
+                         "sentences per language — density beats "
+                         "volume. "
                          + bilingual_note),
                      inputs=("YOUR REACTIONS:\n"
                              + json.dumps(render.project(
@@ -901,7 +904,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                              + "\n\nARGUMENT MAP:\n" + clusters_digest)),
                 validate=lambda o: valid_reciprocity(o, set(cluster_ids)),
                 out_path=ddir / "responses" / f"{name}.json",
-                schema=S.RECIPROCITY, max_tokens=24000)
+                schema=S.RECIPROCITY, max_tokens=32000)
             return name, obj
 
         with ThreadPoolExecutor(max_workers=4) as ex:
