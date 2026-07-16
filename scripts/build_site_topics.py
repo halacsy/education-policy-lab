@@ -340,6 +340,8 @@ def topic_page(cfg, state, num, total, prev_cfg, next_cfg):
         links.append(f'<a href="https://github.com/halacsy/education-policy-lab/'
                      f'blob/main/outputs/topics/{esc(slug)}/final/final_brief.hu.md">'
                      'Záró összefoglaló (HU, nyers) →</a>')
+    links.append('<a href="audit.html">Műhely-napló: minden lépés kimenete '
+                 '(keresések, szakértői válaszok, elutasítások) →</a>')
     links.append(f'<a href="https://github.com/halacsy/education-policy-lab/'
                  f'tree/main/outputs/topics/{esc(slug)}">A teljes auditálható '
                  'rekord a GitHubon →</a>')

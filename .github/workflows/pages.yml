@@ -3,7 +3,7 @@ name: Deploy website to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ["site/**", "knowledge/**", "topics/**", "outputs/**", "scripts/build_site_kb.py", "scripts/build_site_explorer.py", "scripts/build_site_topics.py", "scripts/lab/site_data.py", ".github/workflows/pages.yml"]
+    paths: ["site/**", "knowledge/**", "topics/**", "outputs/**", "scripts/build_site_kb.py", "scripts/build_site_explorer.py", "scripts/build_site_topics.py", "scripts/build_site_audit.py", "scripts/lab/site_data.py", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -34,6 +34,7 @@ jobs:
             fi
           done
       - run: python3 scripts/build_site_topics.py
+      - run: python3 scripts/build_site_audit.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
