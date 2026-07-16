@@ -1093,7 +1093,10 @@ def run_round(n):
                 # URLs and fails here, triggering the corrective retry
                 validate=lambda t: len(t.strip()) > 200 and "http" in t,
                 out_path=rd / "research" / f"{name}.md",
-                max_tokens=4000, web_search=True)
+                # thinking + search orchestration count toward the cap: at
+                # 4000 the search-heavy seats hit max_tokens BEFORE writing
+                # the sourced notes (live probe: stop=max_tokens, 0 URLs)
+                max_tokens=8000, web_search=True)
             research_notes = (
                 "\n\nLIVE RESEARCH NOTES (from web search this round; cite "
                 "them with their URL as the source and an honest evidence "
