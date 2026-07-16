@@ -761,12 +761,15 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                      "choice when your interest implies nothing; NEVER "
                      "attribute an unsourced position to a real "
                      "organisation — use value_modeled with its basis. "
+                     "Keep every free-text field to at most 2 "
+                     "sentences per language — density beats volume, "
+                     "length is not rewarded. "
                      + bilingual_note),
                  inputs=scen_en_md),
             validate=lambda o: valid_voice(o, id_set),
             out_path=ddir / "voices" / f"{name}.json",
             # sourced scenarios lengthen voice reactions (round-2 truncation)
-            schema=S.VOICE(ids), max_tokens=32000)
+            schema=S.VOICE(ids), max_tokens=40000)
         return name, obj
 
     voices = {}
