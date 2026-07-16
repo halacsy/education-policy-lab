@@ -1,0 +1,41 @@
+# Research Notes: Legal & Governance Dimensions — Rural Primary Schools in Hungary
+
+## Finding 1: Maintainer plurality is legally structured but heavily state-centralized since 2013
+The Nkt. (2011. évi CXC. törvény) states the education system is a state task, but the state can fulfil it not only through state-maintained institutions but also via church or private school maintainers, with additional requirements attached in that case. A pivotal statutory shift occurred when Parliament passed the law transferring maintainer status of municipal schools to the state, effective January 1, 2013, transferring teacher employment, wage financing and equipment supply to the state — affecting roughly 1.2 million students, 120,000 teachers and 30,000 staff across nearly 3,000 institutions via the newly created KLIK (Klebelsberg Intézményfenntartó Központ).
+Source: TASZ, "Mit kell tudni szülőként az iskolák fenntartóváltásáról?" https://tasz.hu/tudastar/iskolak-fenntartovaltasa/ ; Átlátszó, "Út a közoktatás teljes centralizációja felé" https://atlatszo.hu/oktatas/2021/03/31/ut-a-kozoktatas-teljes-centralizacioja-fele-a-klik-rovid-tortenete-2010-tol-napjainkig/
+
+## Finding 2: KLIK reform and the current tankerületi központ (school district) structure
+Due to widespread dysfunction and "közutálat" (public loathing) of the centralized KLIK model, from January 1, 2017 KLIK was replaced by autonomous-budget "tankerületi központok" (school district centers), with individual schools continuing as organizational units carrying their own OM-identifier — while the Klebelsberg Központ remained as a mid-level supervisory body. This means today's maintainer for the vast majority of public schools (including rural ones) is a state district office, not the local municipality.
+Source: Átlátszó, cited above; iskolaszolga.hu, "Az állami intézményfenntartás reformja" https://iskolaszolga.hu/index.php?id=67&menu=cikk
+
+## Finding 3: "Felmenő rendszer" is a defined statutory concept, not exclusive to closures
+The Nkt. defines "felmenő rendszer" formally in its definitions section (§4, point 8) as the staged, grade-by-grade introduction of curricular/exam requirement changes, meaning "a change can only be introduced starting from the lowest affected school grade." This is the general legal mechanism ensuring pedagogical/curricular changes phase in without disrupting students mid-cycle — directly relevant to how any restructuring of rural school offerings (grade consolidation, curriculum changes) would have to be legally sequenced.
+Source: Nemzeti Jogszabálytár, 2011. évi CXC. törvény https://njt.jog.gov.hu/jogszabaly/2011-190-00-00 ; net.jogtar.hu https://net.jogtar.hu/jogszabaly?docid=a1100190.tv
+
+## Finding 4: Procedural safeguards for school closure decisions (expert opinion requirement)
+Since a September 1, 2003 amendment to the then-Közoktatási törvény, municipalities (as maintainers) have been legally required to obtain an independent expert opinion from the national register of experts before decisions on school reorganization/closure take legal effect; the expert must assess whether the proposed solution ensures continued adequate-standard service delivery. The oktatásjogi biztos (education rights ombudsman) held that reorganization/closure itself is not unlawful per se if the maintainer observes these "garanciális szabályok" (guarantee rules), and that municipalities retain broad discretion reviewable only on legality, not expediency, grounds.
+Source: Oktatási Jogok Biztosának Hivatala, 2003 report https://www.oktbiztos.hu/ugyek/jelentes2003/fenntart_ir.html
+
+## Finding 5: Legal mechanism and parental-consent threshold for maintainer transfer (e.g., state→church)
+Current Hungarian law requires that when a public school is to be transferred to a religiously/ideologically committed maintainer (church, foundation, etc.), this is only permitted "if more than half of the parents of enrolled minors (or students, if of age) support it" — a binding decision-making right, not merely a consultative opinion. Where a compulsory-admission school is transferred to church maintenance, the district government office (kormányhivatal) must redraw catchment-area (körzethatár) boundaries and designate/expand another state school's obligatory-admission zone, after consulting the affected municipality and the tankerület.
+Source: TASZ, https://tasz.hu/tudastar/iskolak-fenntartovaltasa/
+
+## Finding 6: Government commitment to preserve small rural schools "as long as demand exists," but consolidation is openly anticipated
+Government spokesperson Balatoni Katalin (miniszterelnöki biztos) stated the goal is "not closure, but protecting small settlements and small schools for as long as there is demand for them," while explicitly acknowledging the government would use "mergers and local solutions" — implying institutional consolidation short of formal closure remains an active policy tool. Meanwhile, Klebelsberg Központ confirmed that decisions to discontinue a school are technically within the tankerület's (district office's) competency, not centrally mandated.
+Source: Válasz Online, Oct 17, 2025, https://www.valaszonline.hu/2025/10/17/ovodak-iskolak-bezarasa-demografia-oktatas/
+
+## Finding 7: Scale of the coming legal/administrative challenge — thresholds already below viability under current practice
+Trade union research (PSZ, presented Oct 2025) found roughly 270 schools nationally have fewer than 80 students, averaging class sizes of about 10; in the school year discussed, 80 primary schools did not launch a first-grade class at all, and 200 small schools started first grade with only around 10 pupils. The union argues rural small schools need roughly 150–180 students to function "normally," and it favors consolidation with a maximum class-size ceiling of 22–23 rather than closure per se.
+Source: Válasz Online, https://www.valaszonline.hu/2025/10/17/ovodak-iskolak-bezarasa-demografia-oktatas/ ; Economx.hu, Oct 7, 2025, https://www.economx.hu/magyar-gazdasag/kozoktatas-demografiai-valsag-pedagogusok-szakszervezete-iskola.817275.html
+
+## Finding 8: 2022 EU-linked commitment on small-school thresholds (contested)
+According to PSZ deputy chair Gosztonyi Gábor, the government committed to the EU in summer 2022 that municipal schools with class sizes under 10 and total enrollment under 100–120 would be reorganized and integrated into a central institution — a claim the government (via Rétvári Bence) has denied as "fake news," making the existence and legal status of any such commitment contested.
+Source: Eduline, Feb 6, 2024, https://eduline.hu/kozoktatas/20240206_kisiskola-iskolabezaras-tanarhiany
+
+## Finding 9: Post-2026 government signals openness to decentralization but flags legal/administrative complexity
+Current Education Minister Lannert Judit (post-2026 change of government) is described as committed to decentralizing the tankerület system but has stated repeatedly this "cannot be solved with one-size-fits-all solutions from one moment to the next" since some municipalities want maintainer responsibility back and are capable, while others are not; a Pécs University public-administration professor (Pálné Kovács Ilona) is cited noting Hungary's settlement structure and demographic polarization make decentralized organization of local public services especially difficult to redesign quickly.
+Source: HVG, July 10 2026, https://hvg.hu/elet/20260710_kie-az-iskola-forum-egyhazi-es-maganiskolak-onkormanyzatok-centralizacio
+
+## Finding 10: New demographic pressure numbers reinforce urgency for legal/administrative planning
+Hungary's total fertility rate fell below 1.3 by 2025 (from 1.55 in 2023), and the under-1 age cohort is about 17,000 smaller than the 4-year-old cohort — equivalent to roughly 600–800 fewer kindergarten/school classes nationally, i.e., "at least a hundred small-school's worth of children" fewer, which will reach primary-school intake within a few years.
+Source: Válasz Online, https://www.valaszonline.hu/2025/10/17/ovodak-iskolak-bezarasa-demografia-oktatas/ ; Economx.hu, https://www.economx.hu/magyar-gazdasag/kozoktatas-demografiai-valsag-pedagogusok-szakszervezete-iskola.817275.html

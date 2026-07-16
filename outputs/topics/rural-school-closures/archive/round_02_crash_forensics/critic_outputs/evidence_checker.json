@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "mechanism",
+      "objection": "The scenario tags multiple claims about multigrade teaching (cost-saving and negligible achievement differences) as [evidence: moderate] despite no Hungary-specific, registry-backed citations in the curated source registry. The write-up itself elsewhere admits Hungary-specific causal evidence is absent. International literature on multigrade is heterogeneous (some studies find higher per‑pupil costs and substantial implementation demands for teacher training), so the current 'moderate' grade overstates what the available, non-Hungary-specific evidence warrants. Presenting these claims as 'moderate' risks making policy decisions that assume feasibility and cost-effectiveness that are unproven for Hungary.",
+      "severity": "high",
+      "suggested_revision": "Downgrade the multigrade-evidence tags to 'weak/contested' pending Hungary-specific evaluation; explicitly note that international findings are mixed (costs often higher; outcomes conditional on intensive training). Commission and cite a Hungary-specific pilot (costing + learning outcomes, quasi-experimental or RCT where feasible) and a 3-5 year cost-benefit sensitivity analysis before treating multigrade as a default retention mechanism."
+    },
+    {
+      "scenario": "S4",
+      "field": "mechanism",
+      "objection": "The scenario reports a numeric Central-European transport cost range (≈€800–€1,500 per pupil/year) labelled [evidence: weak] but presents it as an indicative baseline for cost accounting. No provenance or methodology for this range is provided, and applicability to Hungarian route distances, vehicle occupancy, and procurement/operation practices is unverified. That single range can materially alter consolidation cost-benefit conclusions, so its unsubstantiated presentation is misleading.",
+      "severity": "medium",
+      "suggested_revision": "Remove the definitive numeric range or flag it clearly as an unverified illustrative figure with documented source and assumptions. Replace with a required step: undertake a Hungary-specific micro-costing of school-transport (cost/km, average route length, utilization, disability-access premium) and publish sensitivity bands (low/median/high) to be used in all consolidation financial comparisons."
+    },
+    {
+      "scenario": "S4",
+      "field": "mechanism",
+      "objection": "The scenario characterizes US evidence that 'school closures ... cause statistically significant drops in math/reading and disproportionately raise absenteeism and disciplinary incidents' with a [evidence: strong] tag. This overstates the literature: high-quality US studies show heterogeneous, context-dependent effects (some negative, some null, and benefits when receiving schools are substantially higher-performing). Labeling the claim 'strong' ignores this heterogeneity and misleads readers to treat closure harms as universally large and causal across settings.",
+      "severity": "high",
+      "suggested_revision": "Reclassify the US-closure evidence as 'contested/moderate' and document representative causal studies with their conditions and effect sizes. Amend S4 to require an explicit pre-transfer receiving-school quality verification (and modelling of heterogeneous pupil impacts) rather than assuming universal negative effects; if maintaining the 'strong' claim, supply exact citations and explain external validity limits for Hungary."
+    },
+    {
+      "scenario": "S3",
+      "field": "mechanism",
+      "objection": "The scenario asserts association-run (Polish-style) schools demonstrate resilience 'until roughly 70-pupil viability thresholds' and tags this [evidence: moderate]. That specific enrollment threshold appears taken from Polish context and is presented without registry-backed empirical support or demonstration of transferability to Hungary. Given legal, fiscal and demographic differences, a firm threshold claim risks misleading policy design about where association-run models are viable.",
+      "severity": "medium",
+      "suggested_revision": "Downgrade the threshold claim to 'weak' or label it explicitly as Poland-specific anecdotal evidence. Require a supporting empirical annex: (a) systematic review of Polish association-school closure/viability data showing the enrollment distribution at failure, (b) a legal/fiscal mapping of Hungarian maintainer rules and subsidy-parity implications, and (c) a sensitivity analysis showing how the threshold shifts under Hungarian cost and funding assumptions."
+    }
+  ]
+}

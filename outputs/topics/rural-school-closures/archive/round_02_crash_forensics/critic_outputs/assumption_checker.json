@@ -1,0 +1,25 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "assumptions",
+      "objection": "The scenario assumes teacher supply for multigrade classrooms is ‘adequate without systemic training reform’, yet its own text and cited national data contradict this: it schedules multi-year recurring in‑service training while noting 7,700 unfilled teaching posts and a halved graduate pipeline. This is a concrete internal contradiction that yields an unverified operational claim (that multigrade can scale on current staffing) and overstates feasibility without modelling teacher recruitment, retention, or realistic training throughput.",
+      "severity": "high",
+      "suggested_revision": "Replace the implicit adequacy assumption with an explicit teacher‑workforce model and contingency plan: (a) quantify required multigrade‑trained FTEs by year under the scenario’s enrollment projections; (b) model achievable training throughput given current teacher‑training institute capacity and realistic attrition (use conservative assumptions, e.g. 30% of planned throughput); (c) include concrete recruitment/retention measures (salary top-ups, rural hardship allowances, fast‑track pedagogical certification, linking NOKS wage‑dispute resolution to rollout); and (d) make implementation conditional on pilot results (3‑year pilot measuring retention and vacancies) or on meeting a defined minimum trained‑teacher supply threshold."
+    },
+    {
+      "scenario": "S2",
+      "field": "assumptions",
+      "objection": "The scenario assumes Poland’s 1999 structural reform (shorten local primary cycle, centralize upper grades) is transferable to Hungary, but this ignores key falsifying evidence: Poland reversed the reform in 2016–17, comparative literature marks the achievement‑gap effect as contested, and institutional/transport/municipal governance differences are not assessed. The assumption treats a contested, context‑dependent policy as a portable template without specifying which Polish mechanisms survive institutional translation or how Hungary’s different commuting, legal and political realities would alter outcomes.",
+      "severity": "high",
+      "suggested_revision": "Explicitly treat Polish evidence as conditional, not directly transferable. Revise the assumption to: require (a) a Hungary‑specific pilot of grade reorganization with matched control districts and pre‑registered outcome measures (achievement, attendance, transport burden, gender/SES disaggregation); (b) a legal feasibility study mapping Poland’s funding multipliers and maintainer statutes onto Hungary’s Nkt. framework and identifying required statutory amendments; and (c) a transport‑capacity assessment (route-level cost/occupancy modelling and max‑commute thresholds). Make rollout contingent on pilot demonstrating net benefits for disadvantaged pupils and on enactment of statutory protections against reversal (e.g. minimum multi‑year budget commitments)."
+    },
+    {
+      "scenario": "S5",
+      "field": "evidence_status",
+      "objection": "S5’s core justification rests on the claim that no Hungarian closure/outcome registry exists, but the scenario admits this is based on an empty curated source registry rather than a systematic audit. Presenting the absence‑of‑evidence as a foundational justification without an exhaustive search risks overstating the novelty of the proposal and may overlook existing administrative datasets (KIR‑STAT, KSH, ministry records, NGO archives) that could be leveraged.",
+      "severity": "medium",
+      "suggested_revision": "Replace the weak ‘absence’ claim with a committed data‑audit step: (a) commission and publish a rapid systematic audit of national and NGO data sources (KIR‑STAT, KSH, Ministry registries, academic repositories, TASZ/PSZ/Emberi Lánc datasets) within 3–6 months to confirm gaps; (b) if gaps are confirmed, specify minimum dataset fields and legal/GDPR requirements for the proposed registry; (c) include an interim use‑of‑existing‑data plan (how to combine and standardize available datasets) so the framework can begin evidence‑informed work before a full registry build."
+    }
+  ]
+}

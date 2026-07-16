@@ -94,7 +94,7 @@ CATALOG = [
          text=("Quantify: cite per-dimension scores versus the previous "
                "round and name the agent(s) most responsible for the weakest "
                "dimension and any removal candidate."),
-         checks={"meta_critique": ["removal candidate"]},
+         checks={"meta_critique": ["removal_candidate"]},
          expected_delta=0.3),
     dict(id="scenario_crossref", dimension="layer_separation",
          kind="directive", targets=["final_brief_writer"],

@@ -1,0 +1,112 @@
+{
+  "round": 2,
+  "fallbacks": [],
+  "reused": [],
+  "resumed": [],
+  "discourse": {
+    "voices": 10,
+    "stance_counts": {
+      "support": 23,
+      "oppose": 18,
+      "conditional": 26,
+      "no_position": 1
+    },
+    "label_counts": {
+      "documented": 0,
+      "value_modeled": 67,
+      "no_position": 1
+    },
+    "clusters": 16,
+    "factual_clusters_graded": 12,
+    "reciprocity": {
+      "ran": true,
+      "revised": 11
+    }
+  },
+  "backends": {
+    "argument_decompose [anthropic:claude-sonnet-5]": 16,
+    "argument_map [anthropic:claude-sonnet-5]": 1,
+    "brief [anthropic:claude-sonnet-5]": 1,
+    "build_scenarios [anthropic:claude-sonnet-5]": 1,
+    "critic [openai:]": 8,
+    "discourse_reciprocity [anthropic:claude-haiku-4-5]": 10,
+    "discourse_voice [anthropic:claude-haiku-4-5]": 10,
+    "discourse_voice [anthropic:claude-sonnet-5]": 4,
+    "expert_analysis [anthropic:claude-haiku-4-5]": 12,
+    "expert_research [anthropic:claude-sonnet-5]": 12,
+    "grade_arguments [openai:]": 1,
+    "rejected_framings [anthropic:claude-haiku-4-5]": 1,
+    "synthesis [anthropic:claude-sonnet-5]": 1
+  },
+  "tokens": {
+    "by_task_backend": {
+      "argument_decompose [anthropic:claude-sonnet-5]": {
+        "input_tokens": 125871,
+        "output_tokens": 28423
+      },
+      "argument_map [anthropic:claude-sonnet-5]": {
+        "input_tokens": 71211,
+        "output_tokens": 6104
+      },
+      "brief [anthropic:claude-sonnet-5]": {
+        "input_tokens": 104154,
+        "output_tokens": 30074
+      },
+      "build_scenarios [anthropic:claude-sonnet-5]": {
+        "input_tokens": 46003,
+        "output_tokens": 31925
+      },
+      "critic [openai:]": {
+        "input_tokens": 79686,
+        "output_tokens": 20968
+      },
+      "discourse_reciprocity [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 159321,
+        "output_tokens": 24896
+      },
+      "discourse_voice [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 100486,
+        "output_tokens": 121918
+      },
+      "discourse_voice [anthropic:claude-sonnet-5]": {
+        "input_tokens": 60396,
+        "output_tokens": 26658
+      },
+      "expert_analysis [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 63902,
+        "output_tokens": 63461
+      },
+      "expert_research [anthropic:claude-sonnet-5]": {
+        "input_tokens": 1374745,
+        "output_tokens": 58716
+      },
+      "grade_arguments [openai:]": {
+        "input_tokens": 9590,
+        "output_tokens": 1728
+      },
+      "rejected_framings [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 10740,
+        "output_tokens": 1434
+      },
+      "synthesis [anthropic:claude-sonnet-5]": {
+        "input_tokens": 40071,
+        "output_tokens": 8135
+      }
+    },
+    "total_input_tokens": 2246176,
+    "total_output_tokens": 424440,
+    "total_tokens": 2670616,
+    "metered_calls": 78,
+    "unmetered_calls": 0
+  },
+  "errors": {
+    "expert_research [anthropic:claude-sonnet-5]": [
+      "web_search errors: unavailable",
+      "web_search errors: unavailable"
+    ],
+    "discourse_voice [anthropic:claude-haiku-4-5]": [
+      "APIStatusError: {'type': 'error', 'error': {'details': None, 'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011Cd5pKT2b91AavdtLazubF'}",
+      "APIStatusError: {'type': 'error', 'error': {'details': None, 'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011Cd5pQrbZjPqqeH8AoGR4a'}"
+    ]
+  }
+}
