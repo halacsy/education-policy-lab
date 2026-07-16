@@ -281,7 +281,19 @@ def _call_search(provider, model, prompt, max_tokens, max_uses):
     Config research.require_search=false disables the gate (explicit,
     logged decision — never the default)."""
     tools = [{"type": "web_search_20260209", "name": "web_search",
-              "max_uses": max_uses}]
+              "max_uses": max_uses,
+              # DIRECT search, no dynamic filtering: the filter code runs
+              # searches successfully, then its own execution hits a
+              # per-request "Server tool use limit exceeded" — the model
+              # never sees the fetched results and honestly reports search
+              # as down (block-level diagnosis 2026-07-16, see
+              # docs/experiments). Direct puts results straight into
+              # context: more input tokens, but the sources actually reach
+              # the notes. research.dynamic_filtering=true restores the
+              # filtered path if the upstream limit gets fixed.
+              "allowed_callers": ["direct"]}]
+    if load_config().get("research", {}).get("dynamic_filtering"):
+        tools[0].pop("allowed_callers")
     messages = [{"role": "user", "content": prompt}]
     parts = []
     usage = {"input_tokens": 0, "output_tokens": 0}
