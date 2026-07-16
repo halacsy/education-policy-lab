@@ -1185,7 +1185,9 @@ def run_round(n):
              inputs=expert_digest),
         validate=lambda o: valid_scenarios_bi(o, id_set),
         out_path=rd / "scenarios.json",
-        schema=S.SCENARIOS(ids), max_tokens=30000)
+        # 30000 truncated with direct-search experts: richer sourced inputs
+        # produce longer scenario sets (5 frames, bilingual, 10 fields each)
+        schema=S.SCENARIOS(ids), max_tokens=48000)
     scen_en = render.scenario_view(scen_bi, "en")
     scen_hu = render.scenario_view(scen_bi, "hu")
     scen_en_md = render.scenarios_md(scen_en, "en")
