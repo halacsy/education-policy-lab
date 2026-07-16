@@ -155,8 +155,10 @@ def valid_voice(obj, id_set):
     except (TypeError, KeyError):
         return False
     if not isinstance(rs, list) or \
-            {r.get("scenario") for r in rs} != id_set:
-        return False
+            {r.get("scenario") for r in rs} != id_set or \
+            len(rs) != len(id_set):
+        return False  # exactly ONE reaction per scenario (duplicates corrupt
+        # the ledger's per-scenario rendering)
     for r in rs:
         if r.get("stance") not in STANCES:
             return False
@@ -167,8 +169,11 @@ def valid_voice(obj, id_set):
         arg = r.get("argument")
         if not pair_ok(arg) or len(arg["en"].strip()) < 10:
             return False
-        if not pair_ok(r.get("interest")) or \
-                not pair_ok(r.get("public_good_frame")):
+        # a voice with no position has no framing to sell: interest and
+        # public_good_frame are only meaningful with a stated stance
+        if r["stance"] != "no_position" and (
+                not pair_ok(r.get("interest"))
+                or not pair_ok(r.get("public_good_frame"))):
             return False
         if r["label"] == "documented" and not str(r.get("source", "")).strip():
             return False
