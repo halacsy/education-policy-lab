@@ -295,6 +295,11 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   doesn't flip majorities but minority voice attrits between synthesis and
   brief; cheap models silently dropped minority_report in BOTH arms → led to
   D-28 validated contracts + issue #9/#12 design
+- docs/experiments/2026-07-16-research-token-budget-and-search-outage.md
+  — research token-keret nem számít (4K csonkol, 8K+ egyenérték, 128K
+  lassabb-ugyanaz); a "keresés nem megy" valódi oka: a dynamic-filtering
+  szűrőkód bukik a kérésen belüli server-tool-limiten MIUTÁN a keresések
+  lefutottak → direct search a fix (llm._call_search)
 
 ## Gotchas
 
