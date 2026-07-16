@@ -1095,8 +1095,10 @@ def run_round(n):
                 out_path=rd / "research" / f"{name}.md",
                 # thinking + search orchestration count toward the cap: at
                 # 4000 the search-heavy seats hit max_tokens BEFORE writing
-                # the sourced notes (live probe: stop=max_tokens, 0 URLs)
-                max_tokens=8000, web_search=True)
+                # the sourced notes (live probe: stop=max_tokens, 0 URLs).
+                # 16000 matches the expert-analysis budget — these seats
+                # think a lot before they cite (owner call, 2026-07-16)
+                max_tokens=16000, web_search=True)
             research_notes = (
                 "\n\nLIVE RESEARCH NOTES (from web search this round; cite "
                 "them with their URL as the source and an honest evidence "
