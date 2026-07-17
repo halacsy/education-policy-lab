@@ -18,6 +18,7 @@ approves the emergent scenario frames round 1 derives (issue #21).
     # then relaunch the run command — the frames re-derive at the gate)
 """
 import argparse
+import pathlib
 import datetime
 
 import re
@@ -181,6 +182,46 @@ def cmd_approve(args):
           f"--topic {args.topic} --max-rounds 1")
 
 
+def cmd_propose_frames(args):
+    """Re-derive the scenario-frame proposal from an EXISTING round's
+    expert record (owner direction 2026-07-17). korai-szelekcio's frames
+    were legacy anchors, never expert-derived; once a sourced expert record
+    exists, the option space can be re-proposed from it. Writes
+    proposals/frames.json + .md (status: proposed) and prints the human
+    gate; approval (approve-frames) freezes the new frames and purges the
+    round's scenario-dependent artifacts, so the relaunch rebuilds the
+    scenarios on the new option space while reusing the expert outputs."""
+    from lab import pipeline, render, topic as topic_mod
+    T = topic_mod.Topic(args.topic)
+    topic_mod._current = T  # pipeline helpers resolve topic.current()
+    rd = (pathlib.Path("outputs") / "topics" / args.topic / "iterations"
+          / f"round_{args.round:02d}")
+    outs = sorted((rd / "expert_outputs").glob("*.json"))
+    roster = T.experts
+    if roster and len(outs) < len(roster):
+        raise SystemExit(f"only {len(outs)}/{len(roster)} expert outputs in "
+                         f"{rd} — finish the expert phase first")
+    experts = {}
+    for o in outs:
+        obj = read_json(o)
+        experts[o.stem] = render.expert_md(o.stem, obj, "en")
+    digest = "\n\n".join(f"----- {n} -----\n{md}"
+                          for n, md in experts.items())
+    # fresh derivation: never reuse a stale proposal artifact
+    prop_art = rd / "frames_proposal.json"
+    if prop_art.exists():
+        prop_art.unlink()
+    step = pipeline.Step(rd, resume=False, round_n=args.round)
+    pipeline.propose_frames(step, rd, args.round, T, T.question_block(),
+                            digest, T.glossary())
+    print(f"frame proposal derived from round {args.round}'s "
+          f"{len(outs)}-expert record:\n"
+          f"  {T.proposals_dir / 'frames.md'}\n"
+          "HUMAN GATE — review/edit, then:\n"
+          f"  .venv/bin/python scripts/new_topic.py approve-frames "
+          f"--topic {args.topic}")
+
+
 def cmd_reframe(args):
     """Send a PENDING frames proposal back with owner feedback (the
     sanctioned alternative to hand-editing a frame into the proposal:
@@ -303,6 +344,12 @@ def main():
     r.add_argument("--feedback", help="the feedback text")
     r.add_argument("--file", help="file containing the feedback")
     r.set_defaults(fn=cmd_reframe)
+    pf = sub.add_parser("propose-frames",
+                        help="re-derive the frame proposal from an existing "
+                             "round's expert record (human gate follows)")
+    pf.add_argument("--topic", required=True)
+    pf.add_argument("--round", type=int, required=True)
+    pf.set_defaults(fn=cmd_propose_frames)
     args = ap.parse_args()
     if args.cmd == "draft" and not (args.text or args.file):
         ap.error("draft needs --text or --file")
