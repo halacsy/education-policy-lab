@@ -1,0 +1,31 @@
+# Meta-critique — round 2
+
+## Scope
+This evaluates the agent SYSTEM (agents, workflow, critique quality), not the policy content.
+
+## Agent performance
+- scenario_builder: targeted by applied_change (evidence_tag_all) because evidence_discipline is the weakest dimension (7.794); this indicates scenario_builder likely missed or under-tagged evidence in round outputs.
+- evidence_checker: produced 3 targeted objections — concrete signal that evidence gaps remained after the applied change.
+- devil_advocate, assumption_checker, equity_checker, cost_checker, political_risk_checker, coherence_checker, feasibility_checker: each produced multiple (3–4) targeted objections, showing critics actively raised concrete, diverse failure modes rather than producing empty or generic critiques.
+- removal candidates: none
+
+## Workflow
+- Applied change 'evidence_tag_all' targeted only scenario_builder; given persistent evidence_checker objections (3) this single-agent change may be insufficient — suggests a workflow weak point in coordinating evidence tagging across generation and critique steps.
+- Layer separation is adequate but not perfect (layer_separation = 8.02); some mixing of responsibilities likely remains between scenario building and evidence-checking stages.
+- Disagreement preservation is strong (10.0) and the workflow maintained multiple voices and stances (voices=10; support=13, oppose=17, conditional=20), so the pipeline preserves diverse perspectives even as evidence discipline lags.
+
+## Critique quality
+- Critics produced concrete, targeted objections (counts: devil_advocate 4, evidence_checker 3, assumption_checker 4, equity_checker 4, feasibility_checker 3, cost_checker 4, political_risk_checker 4, coherence_checker 4) — supports the high critic_concreteness score (9.7).
+- Despite concreteness, evidence_checker’s 3 objections align with the lower evidence_discipline score (7.794), indicating critiques are finding substantive, actionable gaps rather than being noise.
+- High disagreement_preservation (10.0) plus 23 clusters and 18 factual clusters graded indicate the critics covered many distinct points, reducing risk of groupthink.
+
+## Gaming judgment (explicit)
+- First scored round; there is no gain to certify as GENUINE or RUBRIC-GAMING yet.
+- This is the first scored round (prev_total is null), so there is no prior total to compare against; I cannot reliably judge whether score gains are genuine or rubric-gaming.
+- Evidence: total=9.202 (provisional); dimension scores show high performance in scenario_completeness (10.0) and disagreement_preservation (10.0) but a noticeably weaker evidence_discipline (7.794).
+- Applied change targeted scenario_builder (evidence_tag_all) to address evidence_discipline, yet evidence_checker still reported 3 targeted objections — this suggests remaining weaknesses but cannot be attributed to gaming without a baseline.
+- Attribution uncertainty: with only one scored round (n=1) any claimed causal link between the applied change and the scores is highly uncertain; I explicitly flag this uncertainty per the uncertainty discipline.
+
+## Translation consistency
+- Translation metadata shows id_sets_equal=true and structure_equal=true; the translation step preserved IDs and structure as required.
+- No glossary violations were reported, consistent with the high translation_fidelity score (9.9).

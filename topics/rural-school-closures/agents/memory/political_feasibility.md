@@ -11,3 +11,13 @@ Deterministic distillation from previous rounds (lab/memory.py); fed back into t
 - condition from discourse: pedagogus_erdekvedo (S5): Full support becomes conditional only if the implementation of S5 (particularly its teacher-training and cost-visibility components) is demonstrably delayed, under-resourced, or subordinated to 
 - condition from discourse: kisgyerekes_szuloi (S1): We would oppose this scenario if multigrade teaching quality is not backed by real in-service training, leaving our children in classrooms without adequately prepared teachers; we would more stro
 - condition from discourse: kisgyerekes_szuloi (S2): We would oppose this scenario if the upper-grade transport arrangements are not statutorily guaranteed and funded before restructuring begins; we would support it more fully if maximum commute-ti
+
+## round 02
+- condition from discourse: pedagogus_erdekvedo (S1): A documented multi-year multigrade-pedagogy training pipeline with dedicated in-service hours (not added onto existing workload) and a district-level capacity audit would move me toward support.
+- condition from discourse: pedagogus_erdekvedo (S2): Binding, negotiated redeployment terms guaranteeing consultation, retraining support, and no unilateral forced transfer would move me toward a conditional stance.
+- condition from discourse: pedagogus_erdekvedo (S3): Explicit legal safeguards guaranteeing full-time employment continuity and Status Law protections across maintainer transitions would move me toward support.
+- condition from discourse: pedagogus_erdekvedo (S4): A binding, ring-fenced redeployment and retraining guarantee for affected teachers, negotiated with union representation before any closure decision, would move me toward a conditional stance.
+- condition from discourse: pedagogus_erdekvedo (S5): If the training rollout were unfunded or added to existing workload without compensated hours, I would move to opposition; sustained funding and dedicated non-teaching preparation time keep me a
+- condition from discourse: kisgyerekes_szuloi (S1): Our support would firm up if tankerület-municipality retention negotiations were required to publish enrollment and cost data directly to parents on a fixed annual schedule.
+- condition from discourse: kisgyerekes_szuloi (S2): We would reconsider if a binding, audited transport-safety and unaccompanied-minor supervision plan were guaranteed and funded before any pupil transfer, not merely proposed afterward.
+- condition from discourse: kisgyerekes_szuloi (S3): Our support would weaken if the transition to association-run status caused teacher turnover or scheduling instability that directly disrupted our children's daily routine.

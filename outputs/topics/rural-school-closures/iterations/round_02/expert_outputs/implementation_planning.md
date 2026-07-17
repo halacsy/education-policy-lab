@@ -1,0 +1,25 @@
+# Expert analysis: implementation_planning
+
+## Findings (evidence)
+- Teacher shortages in Hungary are structurally concentrated in rural and disadvantaged schools, with 2–3 times higher rates of unqualified teachers than in non-disadvantaged schools, and half of all teachers nationally are now 50 or older. [evidence: strong — EU Education and Training Monitor 2025, Hungary country report]
+- Small rural schools are not the cause of the national teacher shortage; researchers note the shortage has grown fastest in Budapest and large cities, and small schools represent barely 1% of the whole system. [evidence: moderate — eduline.hu (2024), citing economist Júlia Varga]
+- The government committed to the EU in summer 2022 to reorganize small-settlement schools with class sizes under 10 and total enrollment under 100–120 into a central institution, but implementation has stalled and been publicly denied by spokespeople. [evidence: contested — hvg360/eduline/Forbes.hu (2024); government spokesperson denial]
+- A demographic cliff is projected to hit kindergartens around 2027 and become visible in lower-primary grades by 2030, driven by a 22.5% ten-year decline in annual births (110,800 in 2015 to 77,600 in 2025). [evidence: moderate — PSZ president Totyik Tamás, reported by economx.hu, May 2026]
+- Hungarian law already provides an administratively ready alternative to closure: multigrade (összevont) classrooms combining up to three (exceptionally four) consecutive grades, used in an estimated 200–300 schools nationally. [evidence: strong — 2011. évi CXC. törvény §4(24) és 3. melléklet; OFI research (Laki Tamásné)]
+- Orderly small-school mergers are logistically feasible when sequenced with advance parent notification and guaranteed transport, as demonstrated in the Andocs case where a branch school was suspended only after enrollment fell below the legal minimum for three consecutive years. [evidence: moderate — sonline.hu, September 2023]
+- Teacher vacancy postings rose approximately 25% year-on-year by June 2026, concentrated in mathematics, science, and English, indicating the supply constraint is worsening even as salary reforms are implemented. [evidence: moderate — eduline.hu, June 2026]
+
+## Interpretation
+The evidence reveals a sequencing mismatch: policymakers debate school closures as a teacher-shortage remedy, but research shows the shortage's epicenter is in urban and disadvantaged-school staffing, not the small rural school population. The real forcing event is a predictable demographic cliff (kindergartens ~2027, lower-primary ~2030), which provides a 3–4 year administrative lead window to design differentiated, non-abrupt transitions (multigrade classrooms, guaranteed transport, phased branch-school suspension) rather than blanket closures announced after an election cycle. The pattern of leaked consolidation plans followed by government denial signals low institutional readiness and administrative bandwidth to execute a transparent, evidence-based closure or merger policy at present. Implementation planning must therefore prioritize sequencing aligned to demographic data and leveraging existing legal tools before pursuing network rationalization.
+
+## Assumptions
+- It is assumed that the 2022 EU commitment on class-size thresholds (below 10 per class, under 100–120 total) remains the operative policy benchmark, though no confirmed recent government document was found restating it. [assumption]
+- It is assumed that teacher-supply improvements from the 2024–2026 salary reform will take at least 1–1.5 years to translate into classroom placements and that rural recruitment will lag behind urban demand. [assumption]
+
+## Position
+Any rural school consolidation policy should be sequenced around the 2027–2030 demographic decline window using per-settlement differentiated criteria and mandatory transport lead times, rather than pursued as a blanket teacher-shortage rationalization, since evidence shows small schools are not the shortage's primary driver.
+
+## Uncertainties
+- It is unknown whether the government's current (2026) education administration has revived, abandoned, or redesigned the 2024 leaked consolidation plan; no recent official confirmation was found. (confidence: low; would be reduced by: Direct ministry statement or decree on current school-network consolidation timelines and criteria)
+- The precise current count of villages under 2,000 population with an operating primary school, and how many meet the EU's <10 per class or <100–120 total threshold, is not established (only a dated 2008 estimate of ~109–300 small schools exists). (confidence: low; would be reduced by: Current KSH or Klebelsberg Center institutional-level enrollment dataset disaggregated by settlement size)
+- It is unclear how much administrative bandwidth district centers (tankerületek) realistically have to manage a large-scale, well-sequenced consolidation process relative to isolated cases like Andocs. (confidence: low; would be reduced by: Capacity audits or interviews of district-center staffing and budget allocations for school network restructuring)

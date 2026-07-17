@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "cost_categories",
+      "objection": "Fails to distinguish one-off transition costs from steady-state recurring costs and omits major, quantifiable cost drivers. The scenario lists ‘recurring multigrade teacher-training’ and ‘capital-maintenance/backlog’ but provides no unit-cost ranges, no estimate of how many teachers/schools would need retraining or backlog remediation, and no fiscal-sensitivity analysis to falling enrolment. This omission masks the near-term budget pressure (training, urgent repairs) versus long-run operating premium of keeping under-enrolled sites open, and therefore prevents realistic budgeting or comparison with consolidation scenarios.",
+      "severity": "high",
+      "suggested_revision": "Split costs into (A) one-off transition costs and (B) steady-state recurring costs. For each line, include plausible unit ranges and drivers and a source-calibration plan. Example items to add: (1) One-off school-building backlog remediation per under-enrolled site (propose initial range €50k–€300k depending on condition; justify with sample desk audit of 20 representative villages). (2) One-off multigrade upskilling per teacher (initial intensive course + mentoring): €3k–€8k per teacher; estimate number of affected teachers via district audit. (3) Recruitment/retention incentives for rural-post teachers (sign-on or housing subsidy): €5k–€20k per hire. (4) Model three fiscal scenarios (low/medium/high enrolment decline) and run sensitivity of total annual cost under each. Add a requirement that cost lines be populated from a district-level capacity/audit dataset before any feasibility recommendation is finalized."
+    },
+    {
+      "scenario": "S2",
+      "field": "cost_categories",
+      "objection": "Key transition and financing costs are absent or under-specified: the scenario names capital investment, statutory transport and severance costs but gives no plausible ranges, omits financing/interest costs for capital projects, omits temporary capacity costs (modular classrooms, surge staffing) during construction, and fails to tie transport-cost assumptions to the contested evidence base. Without these, the scenario cannot demonstrate net fiscal savings vs status quo.",
+      "severity": "high",
+      "suggested_revision": "Revise cost_categories to list detailed, quantified line items with ranges and specify assumptions underpinning them. Required additions: (1) Capital cost range for creating/expanding ISCED2 sites (example range €2M–€10M per site depending on scale; require local procurement benchmarks). (2) Financing costs — interest and debt-service over 20–30 years (showing annualized cost under 1.5%, 3%, 5% real rates). (3) Temporary transition costs — modular classrooms, rental, or surge staffing (example €50k–€300k per affected central site for year(s) of transition). (4) Transport recurring cost per pupil (use contested 800–1,500 EUR/pupil/year as calibration but require route-level audit to validate; flag the published evidence as weak and not transferable without Hungarian route data). (5) Redeployment/severance and pension-related liabilities per displaced teacher (estimate a range, e.g., €10k–€50k per teacher, to be refined via payroll data). Require a sensitivity analysis (transport cost, capital cost, enrollment) and a cash-flow timeline (years 0–10) showing transition peak-year budget impacts separately from steady-state."
+    },
+    {
+      "scenario": "S4",
+      "field": "cost_categories",
+      "objection": "Although the scenario mentions transport and capital costs, it fails to monetize or operationalize major indirect community-level fiscal effects (property-value decline, municipal tax-base shrinkage, local service contraction) and does not require validation of the cited transport cost range against Hungarian route/occupancy data. This omission risks underestimating the true net fiscal impact of consolidation on municipal budgets and long-run public-finance tails.",
+      "severity": "high",
+      "suggested_revision": "Augment cost_categories with (1) quantified indirect community fiscal impacts: include an estimate methodology (e.g., % decline in local property values translated into municipal tax-base loss over 5–10 years; illustrative range 0.5%–5% of local tax revenue) and require local fiscal-impact modelling for each candidate consolidation cluster. (2) A required validation step: route-level transport-cost modelling using Hungarian bus operating costs, distances, occupancy rates and supervision needs to replace the weakly-sourced €800–€1,500/pupil/year figure. (3) Explicit inclusion of municipal contingency/compensation funds for economic-development mitigation (e.g., repurposing closed sites, incentives for local employers) with unit ranges. Add a mandatory ‘net fiscal impact’ worksheet that aggregates operating savings, new transport/mitigation costs, and municipal revenue impacts over a 10-year horizon."
+    },
+    {
+      "scenario": "S5",
+      "field": "cost_categories",
+      "objection": "The scenario lists high-level categories for building a registry and training rollout but omits concrete budget estimates, recurring operating costs, data-protection/legal-compliance costs, and allocation of fiscal responsibility across levels of government. Without ranges and a funding mechanism (ring-fence vs ad hoc), the framework is vulnerable to underfunding and political discontinuity the scenario itself flags as a risk.",
+      "severity": "medium",
+      "suggested_revision": "Make cost_categories operational by adding: (1) One-off IT build cost range for a national registry (example €0.5M–€2M) and estimated annual operating costs (€200k–€800k) including hosting, backups, and maintenance. (2) Staffing and analytics costs: specify FTEs (suggest 2–6 analysts + 1–2 data-engineer/legal roles) and annual salary bands. (3) Data-protection/legal review and certification one-off cost (€50k–€150k) and recurring compliance audit costs. (4) A clear funding-allocation proposal (which ministry bears build vs operations; propose a multi-year ring-fenced appropriation line or EU/co-financing). (5) Pilot budget and timeline (pilot in 2–3 tankerület districts for 18 months with line-item budgets). Require that cost estimates be presented alongside a sustainability plan and sensitivity to staff-turnover and tech-obsolescence risks."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "equity_impact",
+      "objection": "The equity_impact claims S1 'likely reduces short-term travel-burden inequity for lower-SES and Roma families' but relies on a weak evidence tag and ignores concrete contrary signals in the scenario itself: the Assumptions note rising rural teacher vacancies and Finnish evidence that initial teacher-education does not prepare multigrade teachers (both flagged as moderate-to-low confidence). Concretely, the scenario fails to account for (a) the risk that under-resourced villages will lose qualified teachers and therefore devolve into understaffed multigrade classrooms (making schooling nominal but low-quality for the poorest pupils), and (b) selective exit ('white flight') by non-Roma better-resourced families that would leave remaining schools more segregated. The current text is therefore unsupported and over-optimistic about who is reached.",
+      "severity": "high",
+      "suggested_revision": "Recast equity_impact to (1) base claims on an explicit linkage to verifiable conditions: require a district-level audit of multigrade-qualified teacher supply and vacancy trajectories as a precondition for claiming travel-burden reduction; (2) add binding mitigations: dedicated rural multigrade teacher recruitment/training funds, retention bonuses for posts in lowest-income/Roma-majority settlements, and a contingency closure/augmentation protocol if staffing falls below a documented minimal quality threshold; and (3) require disaggregated monitoring of enrollment, attainment, and segregation by ethnicity and income at 6- and 12-month intervals to detect and respond to 'white flight' outcomes."
+    },
+    {
+      "scenario": "S2",
+      "field": "equity_impact",
+      "objection": "S2 correctly notes that centralizing upper grades shifts travel burden onto upper-primary pupils and disproportionately affects lower-income and Roma families, but the equity_impact is incomplete and non-actionable: it states no compensatory transport-cost or targeted-support mechanism is built in, yet it does not quantify which cohorts/settlements will be excluded, nor reference available evidence on transport-safety gaps (the synthesis and S2 assumptions cite informal parent-escort coping and contested commuting infrastructure capacity). This leaves the scenario unable to say who would actually be reached by centralized ISCED2 sites versus who would be effectively excluded (dropout, absenteeism, or pushed into segregated alternatives).",
+      "severity": "high",
+      "suggested_revision": "Revise equity_impact to identify which settlements (by distance bands, public-transport frequency, and socioeconomic index) will face disproportionate harm, and make centralization conditional on: (a) statutory maximum one-way travel times by grade (e.g., evidence-based minute thresholds) enforced in pilot regions; (b) mandatory, budgeted school-transport subsidies covering real route costs and supervision policies addressing unaccompanied-minor refusals; (c) an explicit safety-and-attendance monitoring plan disaggregated by ethnicity/income, with automatic remedial measures (home-based tutoring, local satellite classes, or paid escort schemes) triggered when attendance or attainment falls by pre-specified margins."
+    },
+    {
+      "scenario": "S3",
+      "field": "equity_impact",
+      "objection": "S3's equity_impact hedges that networked/association-run models 'plausibly protect the poorest' but then warns administrative-capacity burdens may exclude the very villages most in need. This is a concrete internal contradiction grounded in weak transferability evidence (scenario labels evidence status as weak and cites a single Sáta case as weak evidence). The flaw: the equity_impact neither specifies the administrative thresholds or capacity metrics that determine inclusion nor provides the compensatory design (funding, legal templates, oversight) needed to avoid selection bias toward better-organized, wealthier settlements.",
+      "severity": "medium",
+      "suggested_revision": "Strengthen equity_impact by (1) replacing 'plausibly' with conditional language tied to guaranteed mitigations: mandate state-provided capacity-building grants targeted to low-administration-capacity municipalities, standardized association-contract templates (legal/accounting/HR), and a time-limited operations grant to cover administrative overhead for the first 5 years; (2) define objective eligibility/selection criteria for association-run or hub models that prioritize settlements below defined socioeconomic and administrative-capacity cutoffs; and (3) require an independent oversight body to audit association-run schools annually on equity metrics (enrollment by income/ethnicity, teacher qualification, and financial stability) with statutory triggers to convert failing association schools back to state operation with remedial supports."
+    },
+    {
+      "scenario": "S5",
+      "field": "equity_impact",
+      "objection": "S5 frames a national transparency-and-threshold framework as an equity enabler but the equity_impact section understates the risk that an advisory, aggregate registry will be co-opted to legitimize inequitable decisions. The scenario's own Evidence status is 'weak' and the Assumptions acknowledge lack of cross-party commitment; yet the equity_impact does not propose binding governance or enforcement mechanisms to prevent selective instrumentalization or ensure disaggregated data are both collected and used to constrain harmful decisions. As written, S5 risks becoming a 'veneer' that reaches data-users but not the marginalized groups affected by closure decisions.",
+      "severity": "high",
+      "suggested_revision": "Make the equity promise operational: require that the registry publish disaggregated indicators (settlement, ethnicity, income, travel-time) publicly and that any closure decision exceeding defined thresholds (e.g., increases one-way travel above X minutes for >Y% of low-income or Roma pupils) trigger mandatory mitigation funding and independent review. Add statutory obligations: (a) binding use-rules for thresholds in maintainer decision-making or judicial review, (b) an independent audit office with enforcement powers over registry misuse, and (c) ring-fenced multi-year funding for the registry and for targeted mitigation in high-risk settlements to prevent the framework becoming purely advisory."
+    }
+  ]
+}

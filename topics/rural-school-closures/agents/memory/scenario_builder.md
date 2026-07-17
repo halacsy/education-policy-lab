@@ -3,34 +3,66 @@
 Deterministic distillation from previous rounds (lab/memory.py); fed back into this agent's prompt. Unresolved items persist until the criticized field changes; resolved items drop.
 
 
-## round 01 — received
-- received [devil_advocate on S1.assumptions]: The scenario's survival hinge is that "Teacher supply for multigrade classrooms is adequate without systemic training reform." This is a concrete, testable assumption but the scenario provides no evidence that existing t
-- received [devil_advocate on S2.assumptions]: The scenario assumes Hungary is sufficiently similar to Poland for the 1999 pattern (shortening local grades, centralizing upper grades) to transfer benefits. That transfers the causal inference that delayed tracking pro
-- received [devil_advocate on S4.assumptions]: The scenario relies on the assumption that "current commuting infrastructure and subsidized public transport can sustain daily trips of 20+ km for primary-age children without unacceptable welfare cost." This collapses t
-- received [devil_advocate on S5.assumptions]: The scenario assumes that "sufficient political will exists to fund and maintain a long-term evidence infrastructure (registry, thresholds) across changing government administrations." This is presented as a factual impl
-- received [evidence_checker on S2.mechanism]: The scenario labels the claim 'Delayed secondary tracking is associated ... with reduced achievement gaps' as [evidence: strong]. That overstates the literature: most comparative studies report an association between lat
-- received [evidence_checker on S5.evidence_status]: The scenario asserts 'No current national registry ... exists in Hungary' with [evidence: strong]. Given the CURATED SOURCE REGISTRY is empty for this topic and the synthesis elsewhere describes data gaps, labeling this 
-- received [evidence_checker on S4.mechanism]: The scenario reports a numeric range for 'Post-closure transportation costs typically range 800-1,500 EUR per pupil per year in rural Central Europe' and tags it [evidence: moderate]. This precise range is presented with
-- received [assumption_checker on S1.assumptions]: Assumes local decision‑makers ‘have comparable financial and demographic data to negotiate fair, transparent retention arrangements.’ This conflicts with the synthesis finding that no national closure/outcome registry or
-- received [assumption_checker on S3.assumptions]: Assert that Polish association‑run publicly‑subsidized rural schools ‘have achieved genuine operational sustainability’ — but both the scenario and the synthesis note that Polish counts, funding flows, and sustainability
-- received [assumption_checker on S2.assumptions]: Takes for granted that Hungary’s institutional and municipal governance context is ‘sufficiently similar to Poland’s’ to transfer Poland’s 1999-style structural reform and that PISA gains are causally attributable to del
-- received [equity_checker on S4.equity_impact]: The equity_impact correctly warns of disproportionate travel burden, but it fails to specify the concrete groups, thresholds, and enforcement mechanisms needed to prevent harm. It asserts that compensatory measures are r
-- received [equity_checker on S5.equity_impact]: S5 treats the national framework as an enabling, procedural measure and correctly notes that equity effects depend on downstream use, but it omits any requirement that the registry and thresholds capture and publish disa
-- received [equity_checker on S3.equity_impact]: The equity_impact correctly identifies a risk that administrative-capacity requirements for association-run or networked models will disadvantage the poorest, least-organized villages, but it leaves this as an unmitigate
-- received [equity_checker on S1.equity_impact]: S1's equity_impact claims it 'likely reduces short-term travel-burden inequity for lower-SES families' but relies on weak evidence and untested assumptions about who chooses to remain or exit and about multigrade teachin
-- received [feasibility_checker on S1.implementation_steps]: The implementation timeline (school leaders & teaching staff: in-service multigrade-pedagogy training year 1-3, recurring) understates the lead time and delivery capacity needed to upskill sufficient teachers. The scenar
-- received [feasibility_checker on S2.implementation_steps]: The timeline and sequencing for designating centrally-sited ISCED2 schools and establishing statutory transport (year 1 to year 2-3) is unrealistically compressed given real-world administrative, capital, and procurement
-- received [feasibility_checker on S3.implementation_steps]: The plan to 'establish or clarify a legal mechanism analogous to Poland's association-run school amendment' on a year 1-2 timeline ignores two concrete barriers: (a) changing maintainer law or regulatory practice to perm
-- received [feasibility_checker on S5.implementation_steps]: The proposed timeline for a national closure/outcome registry and standardized teacher-training rollout (design/publish thresholds year 1-2; registry year 1-3; training year 2-4) underestimates the technical, legal (data
-- received [cost_checker on S1.cost_categories]: Cost list omits (a) the capital-maintenance/backlog costs of under-enrolled buildings (roof, heating, accessibility upgrades) which are often a binding driver of closure decisions; (b) the opportunity cost of keeping spa
-- received [cost_checker on S2.cost_categories]: The cost list omits major transition and labour-relations costs: severance/compensation or redeployment costs for redundant teachers and support staff; temporary scale-up costs at central ISCED2 sites (modular classrooms
-- received [cost_checker on S4.cost_categories]: The scenario quotes a central transport cost range (800–1,500 EUR/pupil/year) but fails to: (1) substantiate whether that Central-European range applies to Hungarian route lengths and occupancy rates; (2) include indirec
-- received [cost_checker on S5.cost_categories]: Cost entries conflate setup and ongoing costs without quantifying scale or funding responsibilities: registry, training-module rollout, and data-analytic staffing are listed but not split into one-off (design, IT build, 
-- received [political_risk_checker on S2.political_risks]: The scenario acknowledges Poland's 1999 reform was politically reversible (reversed after 17 years) yet its political_risks section does not propose any concrete entrenchment or cross-party buy-in strategies to reduce re
-- received [political_risk_checker on S4.political_risks]: The scenario correctly flags that compensatory measures (transport guarantees, TEIP-style support) require sustained multi-year funding, but its political_risks entry fails to specify how those funding commitments would 
-- received [political_risk_checker on S5.political_risks]: S5 proposes a national, non-binding transparency/registry framework but treats its advisory status and political neutrality as given; it does not confront the credible risk that the registry or thresholds will be politic
-- received [political_risk_checker on S3.political_risks]: The scenario notes possible perception of association-run models as privatization and union resistance, but its political_risks section understates organized opposition and does not propose political or legal safeguards 
-- received [coherence_checker on S1.assumptions]: The scenario assumes "Teacher supply for multigrade classrooms is adequate without systemic training reform," yet the Implementation steps explicitly schedule multi-year, recurring in-service multigrade-pedagogy training
-- received [coherence_checker on S2.mechanism]: The mechanism text asserts that "delayed secondary tracking is associated in the international literature with reduced achievement gaps" and tags that claim [evidence: strong], while the scenario's Evidence status explic
-- received [coherence_checker on S3.assumptions]: The scenario assumes that Poland's association-run, publicly-subsidized rural schools "have achieved genuine operational sustainability," but the Evidence status already concedes no Hungarian pilot data and explicitly st
-- received [coherence_checker on S4.uncertainties]: The Mechanism claims post-closure transport costs "typically range 800-1,500 EUR per pupil per year" and often offset consolidation savings ([evidence: moderate]), yet the Uncertainties state that the "true net financial
+## round 02 — received
+- received [devil_advocate on S1.assumptions]: The scenario's survival hinges on the unstated claim that teacher supply and readiness for multigrade pedagogy are adequate without systemic reform. This directly contradicts the scenario's own cited evidence: half of Hu
+- received [devil_advocate on S2.assumptions]: The scenario assumes existing commuting infrastructure and informal transport arrangements can be scaled to safely carry upper-primary pupils daily to central ISCED2 sites. This ignores concrete operational evidence in t
+- received [devil_advocate on S3.assumptions]: S3 assumes Polish-style association-run and inter-municipal network models are legally and operationally transferable to Hungary despite the dossier's own note that post-2013 centralization removed municipal maintainer a
+- received [devil_advocate on S5.assumptions]: The scenario's core depends on sustained political will and cross-administration funding to build and maintain a national registry, thresholds, and training standardization. The concrete flaw: the dossier itself document
+- received [evidence_checker on S1.mechanism]: The text asserts a precise national count ('estimated 200-300 schools') for multigrade (összevont) classrooms and labels that claim [evidence: strong]. No curated-registry source is provided, and the document gives no pr
+- received [evidence_checker on S3.mechanism]: The scenario states Poland 'introduced a legal framework ... allowing small schools ... to remain open under non-governmental management while retaining public funding' and tags that as [evidence: strong]. No Polish lega
+- received [evidence_checker on S4.mechanism]: The scenario claims Portugal's TEIP programme 'reduced dropout and failure rates' yet 'failed over 15 years to close the performance gap' and labels this finding [evidence: strong]. No specific evaluations or citations a
+- received [assumption_checker on S1.assumptions]: The scenario assumes teacher supply for multigrade classrooms is adequate without systemic training reform, yet the scenario's own text cites contradictory evidence: half of Hungarian teachers are 50+ and rural vacancy p
+- received [assumption_checker on S2.mechanism]: The scenario leans on an asserted learning benefit from 'delayed secondary tracking' (shortened primary + centralized ISCED2) despite flagging the international literature as contested. It does not specify which comparat
+- received [assumption_checker on S3.assumptions]: S3 assumes Polish-style association-run or inter‑municipal network models are transferable to Hungary, but ignores the concrete governance barrier the scenario itself raises: Hungary's post‑2013 centralization (tankerüle
+- received [assumption_checker on S4.assumptions]: The scenario assumes TEIP‑style targeted support and statutory transport guarantees will meaningfully offset closure equity harms, but the scenario's own evidence notes that Portugal's TEIP reduced dropout/failure yet 'f
+- received [equity_checker on S1.equity_impact]: The equity_impact claims S1 'likely reduces short-term travel-burden inequity for lower-SES and Roma families' but relies on a weak evidence tag and ignores concrete contrary signals in the scenario itself: the Assumptio
+- received [equity_checker on S2.equity_impact]: S2 correctly notes that centralizing upper grades shifts travel burden onto upper-primary pupils and disproportionately affects lower-income and Roma families, but the equity_impact is incomplete and non-actionable: it s
+- received [equity_checker on S3.equity_impact]: S3's equity_impact hedges that networked/association-run models 'plausibly protect the poorest' but then warns administrative-capacity burdens may exclude the very villages most in need. This is a concrete internal contr
+- received [equity_checker on S5.equity_impact]: S5 frames a national transparency-and-threshold framework as an equity enabler but the equity_impact section understates the risk that an advisory, aggregate registry will be co-opted to legitimize inequitable decisions.
+- received [feasibility_checker on S1.implementation_steps]: The implementation steps assume tankerület/municipal capacity and an available teacher pipeline sufficient to deliver multi-year in‑service multigrade upskilling (timeline: year 1–4) and transparent retention negotiation
+- received [feasibility_checker on S2.implementation_steps]: The specified timelines and sequencing materially understate legal, procurement, transport‑safety and labour‑relations lead times. Designating and constructing/expanding ISCED2 sites with 'realistic multi‑year procuremen
+- received [feasibility_checker on S5.implementation_steps]: The registry and training implementation steps (registry timeline year 1–4; training rollout year 2–5) understate the legal and administrative lead time needed to collect and publish disaggregated closure/outcome data in
+- received [cost_checker on S1.cost_categories]: Fails to distinguish one-off transition costs from steady-state recurring costs and omits major, quantifiable cost drivers. The scenario lists ‘recurring multigrade teacher-training’ and ‘capital-maintenance/backlog’ but
+- received [cost_checker on S2.cost_categories]: Key transition and financing costs are absent or under-specified: the scenario names capital investment, statutory transport and severance costs but gives no plausible ranges, omits financing/interest costs for capital p
+- received [cost_checker on S4.cost_categories]: Although the scenario mentions transport and capital costs, it fails to monetize or operationalize major indirect community-level fiscal effects (property-value decline, municipal tax-base shrinkage, local service contra
+- received [cost_checker on S5.cost_categories]: The scenario lists high-level categories for building a registry and training rollout but omits concrete budget estimates, recurring operating costs, data-protection/legal-compliance costs, and allocation of fiscal respo
+- received [political_risk_checker on S2.political_risks]: The scenario acknowledges Poland's 1999 reform was politically reversible but proposes no concrete entrenchment mechanisms; it therefore relies on an unstated, politically fragile assumption that Hungary can avoid the sa
+- received [political_risk_checker on S3.political_risks]: The scenario flags union and political perception risks around association-run models but fails to confront the state's coercive reversal capacity evidenced by the MET case: it contains no binding legal protections for a
+- received [political_risk_checker on S5.political_risks]: S5 assumes a non-binding, advisory registry and thresholds will be used neutrally, but offers no institutional design to prevent selective instrumentalization (using thresholds to justify pre-determined closures) or poli
+- received [political_risk_checker on S1.assumptions]: S1 assumes teacher supply for multigrade classrooms is adequate without systemic training reform, yet its own assumptions and cited Finnish and domestic evidence indicate teacher-education gaps and rising rural vacancies
+- received [coherence_checker on S1.assumptions]: The scenario assumes teacher supply for multigrade classrooms is adequate without systemic training reform, yet elsewhere (Mechanism / Evidence) it relies on multigrade readiness and OFI outcome-parity. This directly con
+- received [coherence_checker on S2.mechanism]: The mechanism treats Poland's 1999 structural reform as a transferable template and implies achievement-gap benefits from delayed secondary tracking, yet the scenario's Evidence Status explicitly marks the Polish case as
+- received [coherence_checker on S4.expected_benefits]: The scenario claims that statutory transport guarantees and TEIP-style targeted support will offset travel and equity harms, but the Mechanism/Evidence summary itself cites that Portugal's TEIP reduced dropout/failure ye
+- received [coherence_checker on S5.assumptions]: S5 assumes sufficient political will to fund and maintain a neutral, advisory national framework and that a non-binding registry/thresholds will be respected. This contradicts the scenario's own Political Risks and the S
+
+## round 02 — resolved from previous round
+- RESOLVED [assumption_checker on S1.assumptions] (field changed)
+- RESOLVED [assumption_checker on S3.assumptions] (field changed)
+- RESOLVED [assumption_checker on S2.assumptions] (field changed)
+- RESOLVED [coherence_checker on S1.assumptions] (field changed)
+- RESOLVED [coherence_checker on S2.mechanism] (field changed)
+- RESOLVED [coherence_checker on S3.assumptions] (field changed)
+- RESOLVED [coherence_checker on S4.uncertainties] (field changed)
+- RESOLVED [cost_checker on S1.cost_categories] (field changed)
+- RESOLVED [cost_checker on S2.cost_categories] (field changed)
+- RESOLVED [cost_checker on S4.cost_categories] (field changed)
+- RESOLVED [cost_checker on S5.cost_categories] (field changed)
+- RESOLVED [devil_advocate on S1.assumptions] (field changed)
+- RESOLVED [devil_advocate on S2.assumptions] (field changed)
+- RESOLVED [devil_advocate on S4.assumptions] (field changed)
+- RESOLVED [devil_advocate on S5.assumptions] (field changed)
+- RESOLVED [equity_checker on S4.equity_impact] (field changed)
+- RESOLVED [equity_checker on S5.equity_impact] (field changed)
+- RESOLVED [equity_checker on S3.equity_impact] (field changed)
+- RESOLVED [equity_checker on S1.equity_impact] (field changed)
+- RESOLVED [evidence_checker on S2.mechanism] (field changed)
+- RESOLVED [evidence_checker on S5.evidence_status] (field changed)
+- RESOLVED [evidence_checker on S4.mechanism] (field changed)
+- RESOLVED [feasibility_checker on S1.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S2.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S3.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S5.implementation_steps] (field changed)
+- RESOLVED [political_risk_checker on S2.political_risks] (field changed)
+- RESOLVED [political_risk_checker on S4.political_risks] (field changed)
+- RESOLVED [political_risk_checker on S5.political_risks] (field changed)
+- RESOLVED [political_risk_checker on S3.political_risks] (field changed)

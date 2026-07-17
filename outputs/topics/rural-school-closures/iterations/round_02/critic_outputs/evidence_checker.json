@@ -1,0 +1,25 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "mechanism",
+      "objection": "The text asserts a precise national count ('estimated 200-300 schools') for multigrade (összevont) classrooms and labels that claim [evidence: strong]. No curated-registry source is provided, and the document gives no provenance or method for the estimate. Given the absence of a cited administrative dataset, the 'strong' tag overstates confidence — at best this looks like an expert estimate or anecdote and should be labeled weaker and sourced. Without a named national dataset (EMMI/KSH/OFI) or published survey, the scenario presents a numerical fact as if registry-verified when it is not.",
+      "severity": "high",
+      "suggested_revision": "Either (a) attach a verifiable source (e.g., EMMI, KSH, or OFI dataset or published survey) showing the exact count and change the tag only if that source supports 'strong'; or (b) if no such source exists, relabel the claim to 'weak' or 'model estimate', remove the precise 200–300 figure or present it explicitly as an expert estimate with the method and confidence interval, and adjust the evidence tag to 'weak' or 'moderate' accordingly."
+    },
+    {
+      "scenario": "S3",
+      "field": "mechanism",
+      "objection": "The scenario states Poland 'introduced a legal framework ... allowing small schools ... to remain open under non-governmental management while retaining public funding' and tags that as [evidence: strong]. No Polish legal citations or registry-backed analysis are provided here. The claim compresses complex national-law details (eligibility, funding conditions, maintainer obligations, and local-government competences) into a single 'strong' statement and therefore overstates transferability and legal certainty. In the absence of referenced Polish statutes, implementation evaluations, or comparative legal analysis, the 'strong' grade is not supported.",
+      "severity": "high",
+      "suggested_revision": "Provide the specific Polish legal references (law articles/amendments), link to an evaluation or Ministry dataset demonstrating how the mechanism operates in practice (funding continuity, oversight, outcomes), and then retain a 'strong' tag only if those sources substantiate it. If such primary sources are not available, downgrade the tag to 'moderate' and add a paragraph detailing conditionalities (e.g., funding terms, maintainer accountability) that affect transferability to Hungary."
+    },
+    {
+      "scenario": "S4",
+      "field": "mechanism",
+      "objection": "The scenario claims Portugal's TEIP programme 'reduced dropout and failure rates' yet 'failed over 15 years to close the performance gap' and labels this finding [evidence: strong]. No specific evaluations or citations are provided here to show which outcomes changed, sample definitions, or the metrics used, so the 'strong' label is unsupported in this document. The statement compresses complex, mixed-evidence program evaluations into a definitive claim without documenting which studies or indicators underpin each part of the assertion.",
+      "severity": "medium",
+      "suggested_revision": "Cite the specific Portuguese evaluation(s) (ministry/OECD/peer-reviewed studies) that report on TEIP impact on dropout, failure, and national-exam performance. If evaluations show heterogeneous effects (e.g., dropout reduced but test-score gaps persisted), present that nuance and downgrade the single 'strong' tag to 'moderate' unless multiple high-quality evaluations consistently support a strong conclusion."
+    }
+  ]
+}

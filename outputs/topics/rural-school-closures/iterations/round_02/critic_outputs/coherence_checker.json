@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "assumptions",
+      "objection": "The scenario assumes teacher supply for multigrade classrooms is adequate without systemic training reform, yet elsewhere (Mechanism / Evidence) it relies on multigrade readiness and OFI outcome-parity. This directly contradicts the scenario's own citations that Finnish initial teacher education historically did not prepare teachers for multigrade pedagogy and that Hungarian rural teacher vacancies are rising (~25% year‑on‑year) and half the workforce is 50+. The net effect: S1 simultaneously treats multigrade as an administratively ready, quality-preserving alternative and as something that requires lengthy multi-year upskilling, without reconciling how staffing shortfalls will be met during the transition.",
+      "severity": "high",
+      "suggested_revision": "Replace the blanket adequacy assumption with an explicit, required precondition: a district-level multigrade-teacher capacity audit and funded 3–5 year training & recruitment plan. Specify trigger metrics (e.g., % of multigrade classrooms staffed by certified multigrade-trained teachers) that must be met before entrenching S1 locally, and add contingency staffing measures (temporary blended remote specialist instruction, cross-tankerület secondments, or maintainer-change options) if metrics are not met within the audit timeline."
+    },
+    {
+      "scenario": "S2",
+      "field": "mechanism",
+      "objection": "The mechanism treats Poland's 1999 structural reform as a transferable template and implies achievement-gap benefits from delayed secondary tracking, yet the scenario's Evidence Status explicitly marks the Polish case as 'contested' and notes Poland's reform was politically reversible and later reversed. The scenario therefore uses a single foreign example as causal justification while acknowledging its contested transferability and political instability—an unresolved contradiction that leaves the core causal claim (that centralizing upper grades yields education equity gains in Hungary) unsupported by Hungary-specific evidence.",
+      "severity": "high",
+      "suggested_revision": "Recast the mechanism to reflect uncertainty: remove implicit transferability claims and require a two-stage policy: (1) pilot structural reorganization in a limited set of regions with randomized or matched comparison and pre-specified evaluation metrics for achievement gaps, commuting welfare, and segregation; (2) only scale if pilot shows net benefits. Add entrenchment safeguards (legal or budgetary) to address political reversal risk, and mandate a transport-safety & welfare audit (including unaccompanied-minor policies) as a precondition to any pupil reassignment."
+    },
+    {
+      "scenario": "S4",
+      "field": "expected_benefits",
+      "objection": "The scenario claims that statutory transport guarantees and TEIP-style targeted support will offset travel and equity harms, but the Mechanism/Evidence summary itself cites that Portugal's TEIP reduced dropout/failure yet failed to close long-run exam performance gaps, and the cited per-pupil transport cost range (800–1,500 EUR/yr) is explicitly flagged as weak and unvalidated for Hungary. Thus S4 promises mitigation benefits it does not have evidence for in the Hungarian context and lacks binding funding arrangements, producing a contradiction between stated benefits and the scenario's own uncertainty/evidence notes.",
+      "severity": "high",
+      "suggested_revision": "Redefine expected benefits to be conditional and evidence-seeking: require a Hungary-specific cost-benefit and welfare analysis of statutory transport (route-by-route costing and capacity), and adopt a binding, multi-year, ring-fenced funding mechanism for transport + TEIP-equivalent supports before closures proceed. Insert monitoring stop-rules: if disaggregated outcome metrics (by ethnicity/income/settlement) do not improve within 3–5 years, mandate remedial measures or closure-rollbacks in affected catchments."
+    },
+    {
+      "scenario": "S5",
+      "field": "assumptions",
+      "objection": "S5 assumes sufficient political will to fund and maintain a neutral, advisory national framework and that a non-binding registry/thresholds will be respected. This contradicts the scenario's own Political Risks and the Synthesis finding that Hungary lacks cross-party consensus and has frequent instrumentalization of advisory mechanisms; without built-in protections, the registry and thresholds are at high risk of selective use or defunding, undermining the scenario's core purpose.",
+      "severity": "high",
+      "suggested_revision": "Replace the assumption of voluntary political compliance with institutional safeguards: specify creating the registry and thresholds via a statutory mandate with legal protections (data-protection & public-access rules), an independent oversight board (academic + civil-society majority), and a secured multi-year funding stream (statutory ring-fence or co-funded EU instrument). Require that the registry publish disaggregated equity indicators by settlement/ethnicity/income and that thresholds include transparent rules on when they are advisory versus binding, with judicially reviewable criteria."
+    }
+  ]
+}

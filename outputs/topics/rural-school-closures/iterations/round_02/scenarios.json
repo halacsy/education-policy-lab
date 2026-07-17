@@ -1,0 +1,936 @@
+{
+  "scenarios": [
+    {
+      "id": "S1",
+      "title": {
+        "en": "Status quo plus incremental adaptation",
+        "hu": "Status quo és fokozatos alkalmazkodás"
+      },
+      "goal": {
+        "en": "Keep the existing municipal/state-maintained village school open as long as feasible, relying on multigrade classrooms, felmenő rendszer phase-out and ad hoc local negotiation without a national framework.",
+        "hu": "A meglévő önkormányzati/állami fenntartású falusi iskola nyitva tartása amíg lehetséges, összevont osztályokra, fokozatos kivezetésre (felmenő rendszer) és eseti helyi tárgyalásokra támaszkodva, nemzeti keretrendszer nélkül."
+      },
+      "mechanism": [
+        {
+          "text": {
+            "en": "Hungarian law already provides an administratively ready alternative to closure: multigrade (összevont) classrooms combining up to three (exceptionally four) consecutive grades, used in an estimated 200-300 schools nationally.",
+            "hu": "A magyar jog már ad egy közigazgatásilag kész alternatívát a bezárás helyett: az összevont osztályok legfeljebb három (kivételesen négy) egymást követő évfolyamot vonnak össze, becslések szerint 200-300 iskolában alkalmazva."
+          },
+          "evidence": "strong"
+        },
+        {
+          "text": {
+            "en": "OFI research concludes that rural small-school pupil outcomes are broadly comparable to larger village schools and only moderately below urban schools once family socioeconomic background is controlled for, undermining pure efficiency arguments for closure.",
+            "hu": "Az OFI kutatása szerint a vidéki kisiskolák tanulói eredményei nagyjából megfelelnek a nagyobb falusi iskolákénak, és csak mérsékelten maradnak el a városi iskolákétól, ha a családi szocioökonómiai háttért kontrollként kezelik, ami aláássa a bezárás tisztán hatékonysági érveit."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "The felmenő rendszer (grade-by-grade phase-in mechanism) is applied in practice to school reorganization to protect currently-enrolled student cohorts from mid-course disruption, with documented 2025 cases implementing closure-related splits across multiple school years.",
+            "hu": "A felmenő rendszert a gyakorlatban az iskolaátalakításokra is alkalmazzák, hogy a jelenleg beiratkozott tanulói kohorszokat megvédjék a féléven belüli megszakítástól; 2025-ös dokumentált esetek több tanéven át megosztott bezárás-jellegű átalakításokat mutatnak."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Small schools (under 150 pupils) comprise nearly one-third of municipal primary schools yet enroll fewer than 10% of all students, and researchers argue the cost differential alone does not constitute a serious system-wide efficiency problem.",
+            "hu": "A kisiskolák (150 tanuló alatt) az önkormányzati általános iskolák csaknem egyharmadát alkotják, de a tanulók kevesebb mint 10%-át oktatják, és a kutatók szerint a költségkülönbség önmagában nem jelent komoly rendszerszintű hatékonysági problémát."
+          },
+          "evidence": "moderate"
+        }
+      ],
+      "evidence_status": {
+        "label": "moderate",
+        "note": {
+          "en": "Multigrade pedagogy and outcome-parity findings are moderately well documented, but no Hungarian data track long-term viability of ad hoc local negotiation without systemic support.",
+          "hu": "Az összevont oktatás és az eredmény-egyenértékűségre vonatkozó megállapítások mérsékelten jól dokumentáltak, de nincs magyar adat az eseti, rendszerszintű támogatás nélküli helyi alkufolyamatok hosszú távú fenntarthatóságáról."
+        }
+      },
+      "assumptions": [
+        {
+          "en": "Teacher supply for multigrade classrooms is adequate without systemic training reform, despite Finnish evidence that teacher-education programmes historically have not prepared educators for small-school pedagogy and Hungary's own implementation-planning findings that rural teacher vacancies are rising.",
+          "hu": "Elegendő a tanárkínálat az összevont osztályokhoz szisztémás képzési reform nélkül, jóllehet a finn tapasztalatok szerint a tanárképzés történelmileg nem készítette fel a pedagógusokat a kisiskolai oktatásra, és a magyar megvalósítási elemzés szerint is nő a vidéki tanárhiány."
+        },
+        {
+          "en": "Local decision-makers have comparable financial and demographic data to negotiate fair, transparent retention arrangements, though no national closure/outcome registry currently exists to support this.",
+          "hu": "A helyi döntéshozók összehasonlítható pénzügyi és demográfiai adatokkal rendelkeznek a méltányos, átlátható megtartási megállapodások kialakításához, jóllehet jelenleg nem létezik nemzeti bezárási/eredmény-nyilvántartás ennek alátámasztására."
+        },
+        {
+          "en": "Ad hoc, case-by-case maintainer discretion (absent a bright-line statutory threshold) will continue to permit village schools to remain open rather than be forced to close by administrative pressure from tankerület budgets.",
+          "hu": "Az eseti, ügyről ügyre gyakorolt fenntartói mérlegelés (egyértelmű törvényi küszöb hiányában) továbbra is lehetővé teszi a falusi iskolák nyitva tartását, és nem a tankerületi költségvetési nyomás kényszeríti ki a bezárást."
+        }
+      ],
+      "expected_benefits": [
+        {
+          "text": {
+            "en": "Preserves the school's documented community-hub and place-identity function without requiring new legal or institutional structures.",
+            "hu": "Megőrzi az iskola dokumentált közösségi-csomóponti és helyi identitást megalapozó funkcióját anélkül, hogy új jogi vagy intézményi struktúrákra lenne szükség."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Avoids abrupt travel-burden increases for families, since children continue attending the local school rather than being reassigned under mandatory catchment rules.",
+            "hu": "Elkerüli a hirtelen megnövekedő utazási terhet a családok számára, mivel a gyerekek továbbra is a helyi iskolába járnak, nem kerülnek átirányításra a kötelező körzethatár-szabályok alapján."
+          },
+          "evidence": "weak"
+        },
+        {
+          "text": {
+            "en": "Requires minimal upfront legal or administrative change, since multigrade classrooms and felmenő rendszer mechanisms are already codified and operational.",
+            "hu": "Minimális előzetes jogi vagy igazgatási változást igényel, mivel az összevont osztályok és a felmenő rendszer mechanizmusai már kodifikáltak és működnek."
+          },
+          "evidence": "strong"
+        }
+      ],
+      "equity_impact": {
+        "en": "Likely reduces short-term travel-burden inequity for lower-SES and Roma families who currently benefit from local schooling, but this rests on weak evidence and untested assumptions about which families remain versus exit under 'white flight' dynamics documented elsewhere in the Hungarian system; without transparent enrollment thresholds or transport-cost data, the scenario cannot guarantee that the poorest villages retain viable multigrade staffing rather than drifting into de facto under-resourced status.",
+        "hu": "Feltehetően rövid távon csökkenti az alacsonyabb SES-helyzetű és roma családok utazási teher-egyenlőtlenségét, akik jelenleg a helyi oktatásból profitálnak, de ez gyenge bizonyítékon és nem tesztelt feltételezéseken alapul arról, mely családok maradnak, illetve lépnek ki a magyar rendszerben másutt dokumentált 'fehér elvándorlás' dinamikája mentén; átlátható beiskolázási küszöbök vagy szállítási költségadatok nélkül a forgatókönyv nem garantálja, hogy a legszegényebb falvak életképes összevont oktatói ellátást tartanak meg, ne pedig de facto alulforrásozott státuszba csússzanak."
+      },
+      "cost_categories": [
+        {
+          "en": "Recurring multigrade teacher-training and in-service pedagogy support costs",
+          "hu": "Ismétlődő összevont-osztálytanítási képzési és folyamatos pedagógiai támogatási költségek"
+        },
+        {
+          "en": "Capital-maintenance and backlog costs of under-enrolled buildings (roof, heating, accessibility upgrades) often a binding driver of closure decisions if left unaddressed",
+          "hu": "Alultelt épületek tőkefenntartási és elmaradt karbantartási költségei (tetőjavítás, fűtés, akadálymentesítés), amelyek kezelés hiányában gyakran a bezárási döntések meghatározó tényezői"
+        },
+        {
+          "en": "Opportunity cost of maintaining spare capacity relative to potential consolidated-site investment",
+          "hu": "A szabad kapacitás fenntartásának alternatívaköltsége a lehetséges összevont telephelyi beruházással szemben"
+        },
+        {
+          "en": "Local negotiation and administrative transaction costs (per-settlement, case-by-case maintainer discussions)",
+          "hu": "Helyi alkufolyamatok és igazgatási tranzakciós költségek (településenkénti, eseti fenntartói tárgyalások)"
+        }
+      ],
+      "implementation_steps": [
+        {
+          "actor": {
+            "en": "School leaders and teaching staff",
+            "hu": "Iskolavezetők és tanári kar"
+          },
+          "action": {
+            "en": "Undertake extended in-service multigrade-pedagogy training with realistic multi-year lead time, recognizing that upskilling sufficient teachers for quality multigrade instruction requires longer preparation than a single cycle.",
+            "hu": "Kiterjesztett, folyamatban lévő összevont-osztálytanítási képzésen vesznek részt, realisztikus, több évre szóló átfutási idővel, elismerve, hogy a minőségi összevont oktatáshoz elegendő tanár felkészítése hosszabb előkészítést igényel egy ciklusnál."
+          },
+          "timeline": {
+            "en": "year 1-4, recurring",
+            "hu": "1-4. év, ismétlődő"
+          }
+        },
+        {
+          "actor": {
+            "en": "Tankerület (district center) and municipality",
+            "hu": "Tankerületi központ és önkormányzat"
+          },
+          "action": {
+            "en": "Negotiate transparent, documented retention arrangements including enrollment and cost data disclosure to parents and local council.",
+            "hu": "Átlátható, dokumentált megtartási megállapodásokat tárgyalnak, beleértve a beiskolázási és költségadatok nyilvánosságra hozását a szülők és a helyi tanács felé."
+          },
+          "timeline": {
+            "en": "year 1-2, ongoing",
+            "hu": "1-2. év, folyamatos"
+          }
+        },
+        {
+          "actor": {
+            "en": "Ministry/EMMI",
+            "hu": "Minisztérium/EMMI"
+          },
+          "action": {
+            "en": "Clarify whether pre-2010 independent expert assessment requirements before closure remain in force, to standardize procedural protections.",
+            "hu": "Tisztázza, hogy a bezárás előtti, 2010 előtti független szakértői vizsgálati követelmények érvényben maradnak-e, az eljárási védelmek egységesítése céljából."
+          },
+          "timeline": {
+            "en": "year 1",
+            "hu": "1. év"
+          }
+        }
+      ],
+      "political_risks": [
+        {
+          "en": "Chronic under-budgeting of the district (tankerület) system creates persistent fiscal pressure to consolidate regardless of stated 'protect as long as there is demand' policy, risking quiet erosion rather than open confrontation.",
+          "hu": "A tankerületi rendszer krónikus alulfinanszírozása tartós fiskális nyomást hoz létre a összevonásra, függetlenül a hivatalos 'megtartás, amíg van igény rá' politikától, ami csendes leépülés kockázatát hordozza nyílt konfliktus helyett."
+        },
+        {
+          "en": "Absence of a bright-line statutory threshold leaves retention decisions to discretionary tankerület judgment, which is politically reversible year to year and vulnerable to administration change.",
+          "hu": "Az egyértelmű törvényi küszöb hiánya a megtartási döntéseket a tankerület mérlegelésére hagyja, amely évről évre politikailag megfordítható és kormányzati változás esetén sérülékeny."
+        }
+      ],
+      "uncertainties": [
+        {
+          "text": {
+            "en": "Whether teacher supply for multigrade classrooms can scale fast enough given that half of Hungarian teachers are 50+ and rural vacancy postings are rising ~25% year-on-year.",
+            "hu": "Kérdéses, hogy az összevont osztályokhoz szükséges tanárkínálat elég gyorsan bővülhet-e, mivel a magyar tanárok fele 50 éves vagy idősebb, és a vidéki állásajánlatok éves szinten kb. 25%-kal nőnek."
+          },
+          "confidence": "low",
+          "reduced_by": {
+            "en": "A district-level capacity audit of multigrade-qualified teacher supply and pipeline projections through 2030.",
+            "hu": "A tankerületi szintű, összevont oktatásra képzett tanári kínálat és utánpótlási előrejelzések auditja 2030-ig."
+          }
+        },
+        {
+          "text": {
+            "en": "Whether ad hoc local negotiation without a national framework produces systematically fair outcomes across settlements, or advantages better-organized/wealthier villages.",
+            "hu": "Kérdéses, hogy az eseti, nemzeti keret nélküli helyi alkufolyamat szisztematikusan méltányos eredményeket hoz-e a településeken, vagy a jobban organizált/gazdagabb falvakat előnyben részesíti."
+          },
+          "confidence": "low",
+          "reduced_by": {
+            "en": "A comparative study of retention-negotiation outcomes across settlements of varying administrative capacity and wealth.",
+            "hu": "A megtartási alkufolyamatok eredményeinek összehasonlító vizsgálata különböző igazgatási kapacitású és vagyoni helyzetű településeken."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "title": {
+        "en": "Structural grade reorganization (lower grades stay, upper grades centralize)",
+        "hu": "Strukturális évfolyam-átalakítás (alsó tagozat marad, felső tagozat centralizálódik)"
+      },
+      "goal": {
+        "en": "Restructure the school system so only lower grades (1-4/1-6) remain in the village while upper grades or a new ISCED2-type school are consolidated in a larger town, following the Polish 1999 structural-reform pattern of shortened primary plus centrally sited later-stage schooling.",
+        "hu": "Az iskolarendszer átalakítása úgy, hogy csak az alsó tagozat (1-4/1-6. évfolyam) marad a faluban, míg a felső tagozatot vagy egy új ISCED2-típusú iskolát egy nagyobb városban centralizálják, követve a lengyel 1999-es strukturális reform mintáját (rövidített alsó tagozat plusz központilag elhelyezett későbbi oktatás)."
+      },
+      "mechanism": [
+        {
+          "text": {
+            "en": "Poland's 1999 educational reform (reducing primary school from 8 to 6 years and creating larger-catchment lower-secondary schools) was explicitly designed to improve rural education quality but inadvertently reduced primary school size and triggered rural school closures as a structural side effect.",
+            "hu": "Lengyelország 1999-es oktatási reformja (az általános iskola 8-ról 6 évre rövidítése és nagyobb körzetű alsó-középiskolák létrehozása) kifejezetten a vidéki oktatás minőségének javítására irányult, de mellékhatásként csökkentette az alsó tagozatos iskolák méretét és vidéki iskolabezárásokat idézett elő."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Delayed secondary tracking is associated in some international comparative literature with reduced achievement gaps, though the strength and causal attribution of this association (versus other confounding system features) is disputed among comparative-education researchers.",
+            "hu": "A késleltetett szelekció (tracking) egyes nemzetközi összehasonlító szakirodalom szerint csökkentett teljesítménybeli szakadékokkal jár együtt, bár ennek erőssége és okozati hozzárendelése (más zavaró rendszerjellemzőkkel szemben) vitatott az összehasonlító oktatáskutatók körében."
+          },
+          "evidence": "contested"
+        },
+        {
+          "text": {
+            "en": "Very small rural schools cannot provide full-time employment to subject specialists, forcing teachers to commute between multiple schools; centralizing upper grades in a larger ISCED2-type site would allow full-time specialist staffing not achievable in scattered village schools.",
+            "hu": "A nagyon kicsi vidéki iskolák nem tudnak teljes munkaidős állást biztosítani szaktanárok számára, ami arra kényszeríti a tanárokat, hogy több iskola között ingázzanak; a felső tagozat egy nagyobb ISCED2-típusú telephelyen történő centralizálása lehetővé tenné a szétszórt falusi iskolákban nem elérhető teljes munkaidős szaktanári ellátást."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Poland's gmina-level referendum mechanism and constitutional protection of local self-determination proved effective in preventing centrally imposed closures, offering a potential model for community consent in the centralization process.",
+            "hu": "Lengyelország gmina-szintű népszavazási mechanizmusa és a helyi önrendelkezés alkotmányos védelme hatékonyan megakadályozta a központilag kikényszerített bezárásokat, ami potenciális modellt kínál a közösségi hozzájáráshoz a centralizációs folyamatban."
+          },
+          "evidence": "weak"
+        }
+      ],
+      "evidence_status": {
+        "label": "contested",
+        "note": {
+          "en": "The Polish 1999 case shows a structural reform pattern and closure side-effect, but the achievement-gap benefit is contested in the literature, and no Hungarian pilot data exist to confirm transferability.",
+          "hu": "A lengyel 1999-es eset strukturális reformmintát és bezárási mellékhatást mutat, de a teljesítménybeli szakadékra vonatkozó előny vitatott a szakirodalomban, és nincs magyar kísérleti adat az átvihetőség megerősítésére."
+        }
+      },
+      "assumptions": [
+        {
+          "en": "Hungary's institutional and municipal governance context is sufficiently similar to Poland's 1999 conditions for the structural reform and its purported achievement-gap benefits to transfer, despite differences in centralization (Hungary's post-2013 tankerület system vs. Poland's gmina-level autonomy).",
+          "hu": "Magyarország intézményi és önkormányzati irányítási kontextusa elég hasonló a lengyel 1999-es viszonyokhoz ahhoz, hogy a strukturális reform és annak vélt teljesítménybeli-szakadék-előnyei átvihetők legyenek, a centralizáció eltérései ellenére (Magyarország 2013 utáni tankerületi rendszere vs. Lengyelország gmina-szintű autonómiája)."
+        },
+        {
+          "en": "Current commuting infrastructure and subsidized public transport can sustain daily trips for upper-primary-age children to centrally sited ISCED2 schools without unacceptable welfare cost, though documented informal parent-organized escort shifts suggest existing transport safeguards are already strained.",
+          "hu": "A jelenlegi ingázási infrastruktúra és a támogatott közösségi közlekedés fenntarthatja a felső tagozatos gyermekek napi útjait a központilag elhelyezett ISCED2-iskolákba elfogadhatatlan jóléti költség nélkül, jóllehet a dokumentált informális szülői kísérő-beosztások arra utalnak, hogy a jelenlegi közlekedési biztosítékok már most is túlterheltek."
+        },
+        {
+          "en": "Sufficient political will and cross-party consensus exist to entrench this structural reform against reversal, despite Poland's own 1999 reform later being reversed after 17 years and Hungary having no documented cross-party consensus mechanism for rural school reform.",
+          "hu": "Elegendő politikai akarat és párton átívelő konszenzus áll fenn ennek a strukturális reformnak a megfordítás elleni megerősítésére, jóllehet Lengyelország saját 1999-es reformját később, 17 év után visszavonták, és Magyarországon nem létezik dokumentált párton átívelő konszenzusmechanizmus a vidéki iskolareformra."
+        }
+      ],
+      "expected_benefits": [
+        {
+          "text": {
+            "en": "Enables full-time specialist subject teaching at the centralized upper-grade site, addressing the documented Polish problem of rural teachers commuting between multiple part-time postings.",
+            "hu": "Lehetővé teszi a teljes munkaidős szaktanári oktatást a centralizált felső tagozati telephelyen, kezelve a lengyel esetben dokumentált problémát, amikor a vidéki tanárok több részmunkaidős állás között ingáznak."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Preserves a local school presence for the youngest, most travel-vulnerable children (grades 1-4/1-6), partially mitigating the documented burden of early-morning long-distance travel for young pupils.",
+            "hu": "Megőrzi a helyi iskolai jelenlétet a legkisebb, utazásra legérzékenyebb gyermekek számára (1-4/1-6. évfolyam), részben mérsékelve a fiatal tanulók korai reggeli, hosszú távú utazásának dokumentált terhét."
+          },
+          "evidence": "weak"
+        },
+        {
+          "text": {
+            "en": "May reduce achievement gaps associated with delayed tracking, per some international comparative literature, though this benefit's magnitude and causal attribution remain disputed.",
+            "hu": "Egyes nemzetközi összehasonlító szakirodalom szerint csökkentheti a késleltetett szelekcióval összefüggő teljesítménybeli szakadékokat, bár e előny nagysága és okozati hozzárendelése vitatott marad."
+          },
+          "evidence": "contested"
+        }
+      ],
+      "equity_impact": {
+        "en": "Shifts travel burden onto upper-primary-age children and their families, who must commute daily to the centralized site; this burden falls disproportionately on lower-income and Roma families already documented to face 2-3 times higher rates of unqualified-teacher exposure and geographic concentration in disadvantaged rural settlements, and risks triggering 'white flight' exit to alternative schools by better-resourced families, leaving the centralized site more segregated; no compensatory transport-cost or targeted-support mechanism is built into this scenario's core design.",
+        "hu": "Az utazási terhet a felső tagozatos korú gyermekekre és családjaikra helyezi át, akiknek naponta kell a centralizált telephelyre ingázniuk; ez a teher aránytalanul nagy mértékben érinti az alacsonyabb jövedelmű és roma családokat, akik dokumentáltan 2-3-szor nagyobb arányban vannak kitéve nem képesített tanároknak és földrajzilag koncentrálódnak a hátrányos helyzetű vidéki településeken, és fennáll a veszélye, hogy a jobb módú családok 'fehér elvándorlás' útján más iskolákba lépnek ki, ami a centralizált telephelyet szegregáltabbá teszi; e forgatókönyv alapkoncepciójába nincs beépítve kompenzáló szállításiköltség- vagy célzott támogatási mechanizmus."
+      },
+      "cost_categories": [
+        {
+          "en": "Capital investment for new or expanded ISCED2-type centralized school facilities",
+          "hu": "Tőkeberuházás új vagy kibővített ISCED2-típusú centralizált iskolai létesítményekhez"
+        },
+        {
+          "en": "Statutory transport infrastructure and subsidized daily commuting costs for upper-grade pupils",
+          "hu": "Törvényileg előírt közlekedési infrastruktúra és támogatott napi ingázási költségek a felső tagozatos tanulók számára"
+        },
+        {
+          "en": "Severance, compensation, or redeployment costs for redundant teachers and support staff at village sites losing upper grades",
+          "hu": "Végkielégítési, kompenzációs vagy áthelyezési költségek a felső tagozatot elvesztő falusi telephelyeken feleslegessé váló tanárok és kisegítő személyzet számára"
+        },
+        {
+          "en": "Temporary scale-up costs at central sites (modular classrooms, staffing surge) during transition period",
+          "hu": "Ideiglenes bővítési költségek a központi telephelyeken (modulos tantermek, létszámbővítés) az átmeneti időszakban"
+        }
+      ],
+      "implementation_steps": [
+        {
+          "actor": {
+            "en": "Ministry/EMMI and tankerület centers",
+            "hu": "Minisztérium/EMMI és tankerületi központok"
+          },
+          "action": {
+            "en": "Designate centrally-sited ISCED2-type schools and conduct capital-investment planning with realistic multi-year procurement and construction timelines, not compressed into a single year.",
+            "hu": "Kijelölik a központilag elhelyezett ISCED2-típusú iskolákat, és realisztikus, több évre szóló beszerzési és építési ütemtervvel végzik a tőkeberuházási tervezést, nem egy évbe sűrítve."
+          },
+          "timeline": {
+            "en": "year 1-5",
+            "hu": "1-5. év"
+          }
+        },
+        {
+          "actor": {
+            "en": "Municipality and transport authority",
+            "hu": "Önkormányzat és közlekedési hatóság"
+          },
+          "action": {
+            "en": "Establish statutory transport routes and subsidized service with capacity and safety audits before pupil transfer begins.",
+            "hu": "Törvényileg előírt közlekedési útvonalakat és támogatott szolgáltatást hoznak létre kapacitás- és biztonsági auditokkal a tanulóáthelyezés megkezdése előtt."
+          },
+          "timeline": {
+            "en": "year 2-4",
+            "hu": "2-4. év"
+          }
+        },
+        {
+          "actor": {
+            "en": "District center (tankerület) and teacher unions",
+            "hu": "Tankerületi központ és pedagógus szakszervezetek"
+          },
+          "action": {
+            "en": "Negotiate redeployment, severance, or retraining terms for teachers affected by grade-level restructuring.",
+            "hu": "Tárgyalásokat folytatnak az évfolyam-átalakítás által érintett tanárok áthelyezéséről, végkielégítéséről vagy átképzéséről."
+          },
+          "timeline": {
+            "en": "year 2-3",
+            "hu": "2-3. év"
+          }
+        }
+      ],
+      "political_risks": [
+        {
+          "en": "Poland's 1999 reform was politically reversible and was in fact reversed after 17 years; without concrete cross-party entrenchment mechanisms or constitutional-level protection, Hungary's version faces similar reversal risk, especially given the documented absence of any cross-party consensus mechanism for rural school reform.",
+          "hu": "Lengyelország 1999-es reformja politikailag megfordítható volt, és 17 év után valóban visszavonták; konkrét, párton átívelő megerősítési mechanizmusok vagy alkotmányos szintű védelem nélkül a magyar változat hasonló visszafordítási kockázattal néz szembe, különösen a párton átívelő konszenzusmechanizmus dokumentált hiánya miatt."
+        },
+        {
+          "en": "Teacher redeployment under Act LII of 2023 (Status Law), which grants district centers authority to reassign teachers, may trigger the kind of mobilization seen in the Tanítanék movement if perceived as involuntary displacement without adequate consultation.",
+          "hu": "A 2023. évi LII. törvény (státusztörvény) szerinti tanár-áthelyezés, amely felhatalmazza a tankerületi központokat a tanárok átrendelésére, kiválthatja a Tanítanék mozgalomhoz hasonló mobilizációt, ha önkéntes megkérdezés nélküli, kényszerű áthelyezésként érzékelik."
+        }
+      ],
+      "uncertainties": [
+        {
+          "text": {
+            "en": "Whether the achievement-gap benefit attributed to delayed tracking actually materializes in the Hungarian context, given contested causal attribution in the international literature and no Hungarian pilot data.",
+            "hu": "Kérdéses, hogy a késleltetett szelekciónak tulajdonított teljesítménybeli-szakadék-előny valóban megjelenik-e a magyar kontextusban, tekintve a nemzetközi szakirodalom vitatott okozati hozzárendelését és a magyar kísérleti adatok hiányát."
+          },
+          "confidence": "low",
+          "reduced_by": {
+            "en": "A Hungarian pilot study comparing achievement gaps in villages that adopt centralized ISCED2 structuring versus those that retain full 1-8 local schools, controlling for socioeconomic background.",
+            "hu": "Magyar kísérleti vizsgálat, amely összehasonlítja a teljesítménybeli szakadékokat a centralizált ISCED2-struktúrát alkalmazó és a teljes 1-8. évfolyamos helyi iskolát megtartó falvak között, a szocioökonómiai háttér kontrollálásával."
+          }
+        },
+        {
+          "text": {
+            "en": "Whether current commuting infrastructure can sustain daily upper-grade pupil transport without unacceptable welfare cost, given documented informal parent-organized escort shifts arising from regional buses refusing unaccompanied minors.",
+            "hu": "Kérdéses, hogy a jelenlegi ingázási infrastruktúra elviselhető jóléti költség mellett fenntarthatja-e a felső tagozatos tanulók napi szállítását, tekintve a dokumentált informális szülői kísérő-beosztásokat, amelyek a kísérő nélküli kiskorúakat visszautasító regionális buszok miatt jöttek létre."
+          },
+          "confidence": "medium",
+          "reduced_by": {
+            "en": "A transport-safety and welfare audit of existing school-bus routes and capacity in candidate centralization regions, including unaccompanied-minor policy compliance.",
+            "hu": "Meglévő iskolabusz-útvonalak és kapacitás közlekedésbiztonsági és jóléti auditja a centralizációra jelölt régiókban, beleértve a kísérő nélküli kiskorúakra vonatkozó szabályok betartását."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "title": {
+        "en": "Networked retention: clustering, association-run and multi-service hub models",
+        "hu": "Hálózatos megtartás: klaszterezés, társulás-fenntartású és többfunkciós közösségi modellek"
+      },
+      "goal": {
+        "en": "Retain village primary schools through inter-municipal pedagogical networks (French RPI-style clustering), community/association-run publicly-subsidized schools (Polish model), or multi-service hubs combining school with other civic functions.",
+        "hu": "A falusi általános iskolák megtartása önkormányzatközi pedagógiai hálózatok (francia RPI-típusú klaszterezés), közösségi/társulás-fenntartású, állami támogatású iskolák (lengyel modell), vagy iskolát más civil funkciókkal kombináló többfunkciós közösségi csomópontok révén."
+      },
+      "mechanism": [
+        {
+          "text": {
+            "en": "Poland introduced a legal framework (gmina agreements with associations, foundations, or natural persons) allowing small schools (up to 70 students) to remain open under non-governmental management while retaining public funding and curriculum.",
+            "hu": "Lengyelország jogi keretet vezetett be (gmina-megállapodások társulásokkal, alapítványokkal vagy magánszemélyekkel), amely lehetővé teszi, hogy kis iskolák (legfeljebb 70 tanulóval) nem-kormányzati irányítás alatt maradjanak nyitva, miközben megtartják az állami finanszírozást és a tantervet."
+          },
+          "evidence": "strong"
+        },
+        {
+          "text": {
+            "en": "Structural social capital decline in villages where primary schools closed (2000-2016) was significantly larger than in villages where schools remained open, as measured by a multiple-case study of four Polish villages.",
+            "hu": "A strukturális társadalmi tőke csökkenése azokban a falvakban, ahol az általános iskolák bezártak (2000-2016), jelentősen nagyobb volt, mint azokban, ahol az iskolák nyitva maradtak, egy négy lengyel falura kiterjedő többes esettanulmány szerint."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Poland's 2024-2025 draft education law formalizes multi-service community hub functions for shrinking primary schools, including childcare, pre-school provision, and senior services, as an alternative to closure.",
+            "hu": "Lengyelország 2024-2025-ös oktatási törvénytervezete formalizálja a zsugorodó általános iskolák többfunkciós közösségi csomópont-funkcióit, beleértve a gyermekgondozást, óvodai ellátást és időskorúak számára nyújtott szolgáltatásokat, a bezárás alternatívájaként."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Grassroots and civic maintainer models exist as alternatives to closure in Hungary; in Sáta (Borsod), a local community organization took over school maintainership rather than allow the village to lose its school.",
+            "hu": "Magyarországon léteznek alulról építkező, civil fenntartói modellek a bezárás alternatívájaként; Sátán (Borsod) egy helyi közösségi szervezet vette át az iskola fenntartását, nehogy a falu elveszítse iskoláját."
+          },
+          "evidence": "weak"
+        },
+        {
+          "text": {
+            "en": "Very small rural schools in Poland cannot provide full-time employment to subject specialists, forcing teachers to commute between multiple schools and take secondary employment; approximately one in five rural teachers holds a part-time job, indicating networked models do not automatically resolve staffing precarity.",
+            "hu": "A nagyon kicsi lengyel vidéki iskolák nem tudnak teljes munkaidős állást biztosítani szaktanárok számára, ami arra kényszeríti a tanárokat, hogy több iskola között ingázzanak és másodlagos foglalkoztatást vállaljanak; a vidéki tanárok mintegy egyötöde részmunkaidőben dolgozik, ami arra utal, hogy a hálózatos modellek nem oldják meg automatikusan a foglalkoztatási bizonytalanságot."
+          },
+          "evidence": "moderate"
+        }
+      ],
+      "evidence_status": {
+        "label": "weak",
+        "note": {
+          "en": "Polish legal-framework and social-capital evidence is moderate-to-strong, but no Hungarian pilot data exist and the Sáta case is a single weak-evidence example, so overall Hungarian transferability remains weak.",
+          "hu": "A lengyel jogi keretre és társadalmi tőkére vonatkozó bizonyítékok mérsékeltek-erősek, de nincs magyar kísérleti adat, és a sátai eset egyetlen, gyenge bizonyítéki erejű példa, így az általános magyar átvihetőség gyenge marad."
+        }
+      },
+      "assumptions": [
+        {
+          "en": "Polish association-run, publicly-subsidized rural schools have achieved genuine operational sustainability, though neither the Polish nor Hungarian evidence base confirms this over the 10+ year horizon needed to validate the model, and teacher precarity (one in five part-time) persists as an unresolved separate problem.",
+          "hu": "A lengyel társulás-fenntartású, állami támogatású vidéki iskolák valódi működési fenntarthatóságot értek el, jóllehet sem a lengyel, sem a magyar bizonyítékbázis nem erősíti meg ezt a modell validálásához szükséges 10+ éves horizonton, és a tanári bizonytalanság (egyötödük részmunkaidős) megoldatlan, önálló problémaként fennmarad."
+        },
+        {
+          "en": "Hungary's constitutional and local self-government framework is sufficiently comparable to Poland's gmina structure to permit legal transfer of association-run school models, despite Hungary's post-2013 centralization of school maintenance under tankerület/KLIK removing local government authority that Polish gminas retain.",
+          "hu": "Magyarország alkotmányos és önkormányzati kerete elég hasonló a lengyel gmina-struktúrához ahhoz, hogy lehetővé tegye a társulás-fenntartású iskolamodellek jogi átvételét, jóllehet Magyarország 2013 utáni tankerületi/KLIK-alapú centralizációja megszüntette azt az önkormányzati hatáskört, amelyet a lengyel gminák megtartottak."
+        },
+        {
+          "en": "Municipalities and civic organizations have or can rapidly build the administrative capacity to run multi-service hubs (childcare, senior services) alongside core educational functions, without this capacity requirement systematically disadvantaging the poorest, least-organized villages.",
+          "hu": "Az önkormányzatok és civil szervezetek rendelkeznek, vagy gyorsan kiépíthetik azt az igazgatási kapacitást, amely a többfunkciós közösségi csomópontok (gyermekgondozás, időskorúak ellátása) működtetéséhez szükséges az alapvető oktatási funkciók mellett, anélkül, hogy ez a kapacitásigény szisztematikusan hátrányba hozná a legszegényebb, legkevésbé organizált falvakat."
+        }
+      ],
+      "expected_benefits": [
+        {
+          "text": {
+            "en": "Preserves structural social capital that Polish multi-case evidence shows declines significantly more in villages that lose their school than in villages that retain it.",
+            "hu": "Megőrzi azt a strukturális társadalmi tőkét, amely a lengyel többes esettanulmányok szerint jelentősen jobban csökken azokban a falvakban, amelyek elvesztik iskolájukat, mint azokban, amelyek megtartják."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Retains public funding and curriculum standards under non-governmental management, avoiding a binary choice between full state operation and closure.",
+            "hu": "Megtartja az állami finanszírozást és a tantervi előírásokat nem-kormányzati irányítás alatt, elkerülve a bináris választást a teljes állami működtetés és a bezárás között."
+          },
+          "evidence": "strong"
+        },
+        {
+          "text": {
+            "en": "Diversifies the school building's function into multi-service community hub roles, potentially increasing fiscal and civic utilization of underused rural infrastructure.",
+            "hu": "Diverzifikálja az iskolaépület funkcióját többfunkciós közösségi csomóponti szerepekre, potenciálisan növelve az alulhasznált vidéki infrastruktúra fiskális és civil kihasználtságát."
+          },
+          "evidence": "weak"
+        }
+      ],
+      "equity_impact": {
+        "en": "Retaining schools via networked or association-run models plausibly protects the poorest, most isolated villages from losing their only public institution, but the administrative-capacity burden of running association contracts, multi-service hubs, or inter-municipal networks risks systematically excluding exactly those poorest, least-organized villages that most need protection, unless the state provides dedicated capacity-building grants, model-contract templates, and legal/accounting support targeted at low-capacity municipalities; without such targeted support, this scenario could paradoxically widen the gap between well-organized and poorly-organized rural communities.",
+        "hu": "Az iskolák hálózatos vagy társulás-fenntartású modelleken keresztüli megtartása feltehetően megvédi a legszegényebb, legelszigeteltebb falvakat egyetlen közintézményük elvesztésétől, de a társulási szerződések, többfunkciós csomópontok vagy önkormányzatközi hálózatok működtetésének igazgatási kapacitásterhe azzal a kockázattal jár, hogy szisztematikusan kizárja pontosan azokat a legszegényebb, legkevésbé organizált falvakat, amelyeknek a legnagyobb szükségük van a védelemre, hacsak az állam nem biztosít célzott kapacitásépítő támogatásokat, mintaszerződés-sablonokat és jogi/számviteli segítséget az alacsony kapacitású önkormányzatok számára; ilyen célzott támogatás nélkül ez a forgatókönyv paradox módon szélesítheti a jól organizált és a gyengén organizált vidéki közösségek közötti szakadékot."
+      },
+      "cost_categories": [
+        {
+          "en": "Legal drafting and negotiation costs for establishing association-run or network-clustering agreements",
+          "hu": "Jogi szövegezési és tárgyalási költségek a társulás-fenntartású vagy klaszterhálózati megállapodások létrehozásához"
+        },
+        {
+          "en": "Ongoing administrative and accounting capacity for association-run schools and multi-service hubs",
+          "hu": "Folyamatos igazgatási és számviteli kapacitás a társulás-fenntartású iskolák és többfunkciós csomópontok számára"
+        },
+        {
+          "en": "Capacity-building grants and technical assistance targeted at low-administrative-capacity municipalities to prevent exclusion of the poorest villages",
+          "hu": "Kapacitásépítő támogatások és technikai segítségnyújtás az alacsony igazgatási kapacitású önkormányzatok számára, a legszegényebb falvak kizárásának megelőzésére"
+        },
+        {
+          "en": "Teacher salary and secondary-employment support to address commuting/part-time precarity documented in the Polish networked model",
+          "hu": "Tanári bér- és másodlagos foglalkoztatási támogatás a lengyel hálózatos modellben dokumentált ingázási/részmunkaidős bizonytalanság kezelésére"
+        }
+      ],
+      "implementation_steps": [
+        {
+          "actor": {
+            "en": "Ministry/EMMI and legal drafters",
+            "hu": "Minisztérium/EMMI és jogalkotók"
+          },
+          "action": {
+            "en": "Establish or clarify a legal mechanism analogous to Poland's association-run school amendment, addressing barriers such as changing maintainer law and defining ministerial approval procedures, with realistic allowance for legislative negotiation and stakeholder consultation delays.",
+            "hu": "Létrehozzák vagy tisztázzák a lengyel társulás-fenntartású iskolai módosításhoz hasonló jogi mechanizmust, kezelve olyan akadályokat, mint a fenntartói jog megváltoztatása, és meghatározva a miniszteri jóváhagyási eljárásokat, realisztikus időt hagyva a jogalkotási tárgyalásokra és az érintett szereplőkkel való konzultációs késésekre."
+          },
+          "timeline": {
+            "en": "year 1-3",
+            "hu": "1-3. év"
+          }
+        },
+        {
+          "actor": {
+            "en": "Municipalities and civic/association organizations",
+            "hu": "Önkormányzatok és civil/társulási szervezetek"
+          },
+          "action": {
+            "en": "Form inter-municipal pedagogical networks or association-run maintainer bodies, with dedicated technical assistance for low-capacity settlements.",
+            "hu": "Önkormányzatközi pedagógiai hálózatokat vagy társulás-fenntartói testületeket alakítanak, célzott technikai segítségnyújtással az alacsony kapacitású településeken."
+          },
+          "timeline": {
+            "en": "year 2-4",
+            "hu": "2-4. év"
+          }
+        },
+        {
+          "actor": {
+            "en": "Ministry of Agriculture (Magyar Falu Program) and Ministry/EMMI",
+            "hu": "Agrárminisztérium (Magyar Falu Program) és Minisztérium/EMMI"
+          },
+          "action": {
+            "en": "Coordinate parallel infrastructure funding channels to support multi-service hub conversion of school buildings.",
+            "hu": "Összehangolják a párhuzamos infrastrukturális finanszírozási csatornákat az iskolaépületek többfunkciós csomóponttá alakításának támogatására."
+          },
+          "timeline": {
+            "en": "year 2-5",
+            "hu": "2-5. év"
+          }
+        }
+      ],
+      "political_risks": [
+        {
+          "en": "Association-run and civic-maintainer models risk being perceived as privatization by teacher unions and some political actors, and the state has previously demonstrated willingness to forcibly reverse maintainer status (as in the MET case) when operators fall out of political favor, raising the risk that the same coercive-reversal capacity could be applied to civic/association maintainers.",
+          "hu": "A társulás-fenntartású és civil-fenntartói modelleket a pedagógus szakszervezetek és néhány politikai szereplő privatizációként érzékelheti, és az állam korábban már bizonyította hajlandóságát a fenntartói státusz erőszakos visszavonására (mint a MET-eset), ami felveti a kockázatot, hogy ugyanez a kényszerítő visszavonási képesség alkalmazható lenne a civil/társulási fenntartókra is."
+        },
+        {
+          "en": "Organized union resistance may intensify if networked models are seen as a mechanism to reduce state employment guarantees or bypass Act LII (Status Law) protections, requiring explicit political or legal safeguards for teacher employment continuity across network/association transitions.",
+          "hu": "A szervezett szakszervezeti ellenállás fokozódhat, ha a hálózatos modelleket az állami foglalkoztatási garanciák csökkentésének vagy a státusztörvény védelmeinek megkerülésének eszközeként érzékelik, ami kifejezett politikai vagy jogi biztosítékokat igényel a tanári foglalkoztatás folytonosságára a hálózati/társulási átmenetek során."
+        }
+      ],
+      "uncertainties": [
+        {
+          "text": {
+            "en": "Whether Hungary's post-2013 centralized tankerület/KLIK governance structure permits genuine legal transfer of Polish-style association-run school autonomy, given that Polish gminas retain local school-ownership authority that Hungarian municipalities lost.",
+            "hu": "Kérdéses, hogy Magyarország 2013 utáni centralizált tankerületi/KLIK irányítási struktúrája lehetővé teszi-e a lengyel típusú társulás-fenntartású iskolai autonómia valódi jogi átvételét, tekintve, hogy a lengyel gminák megtartják a helyi iskolatulajdonlási jogkört, amelyet a magyar önkormányzatok elvesztettek."
+          },
+          "confidence": "low",
+          "reduced_by": {
+            "en": "A formal legal-comparative analysis by Hungarian and Polish education-law experts assessing transferability of the association-run maintainer mechanism under current Nkt. provisions.",
+            "hu": "Magyar és lengyel oktatásjogi szakértők formális jogösszehasonlító elemzése, amely felméri a társulás-fenntartói mechanizmus átvihetőségét a jelenlegi Nkt. rendelkezések alapján."
+          }
+        },
+        {
+          "text": {
+            "en": "Whether association-run and multi-service hub models can achieve genuine long-term operational sustainability and educational quality, or whether they merely delay closure while quality erodes, given that no rigorous quasi-experimental study exists comparing association schools to traditional public schools on outcomes over 10+ years.",
+            "hu": "Kérdéses, hogy a társulás-fenntartású és többfunkciós csomópont-modellek valódi hosszú távú működési fenntarthatóságot és oktatási minőséget érnek-e el, vagy csak elodázzák a bezárást, míg a minőség romlik, tekintve, hogy nem létezik szigorú kvázi-kísérleti vizsgálat, amely 10+ éven át összehasonlítaná a társulási iskolákat a hagyományos állami iskolákkal az eredmények tekintetében."
+          },
+          "confidence": "low",
+          "reduced_by": {
+            "en": "A longitudinal quasi-experimental study (diff-in-diff or matched-pair) comparing association schools vs. traditional public or closed schools on student outcomes, teacher retention, and institutional vitality over 10+ years.",
+            "hu": "Hosszmetszeti kvázi-kísérleti vizsgálat (diff-in-diff vagy párosított minta), amely összehasonlítja a társulási iskolákat a hagyományos állami vagy bezárt iskolákkal a tanulói eredmények, tanármegtartás és intézményi életképesség tekintetében 10+ éven át."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "title": {
+        "en": "Consolidation with mitigation (closure as default, compensatory measures)",
+        "hu": "Összevonás mérséklő intézkedésekkel (bezárás mint alapértelmezett megoldás, kompenzációs intézkedésekkel)"
+      },
+      "goal": {
+        "en": "Close low-enrollment village schools and reassign pupils to a consolidated center school, paired with statutory transport guarantees, targeted support (TEIP-style), and transparent cost/consultation rules to offset travel and equity harms.",
+        "hu": "Az alacsony beiskolázású falusi iskolák bezárása és a tanulók átirányítása egy összevont központi iskolába, törvényileg garantált szállítással, célzott támogatással (TEIP-típusú), és átlátható költség-/konzultációs szabályokkal az utazási és méltányossági károk kompenzálására."
+      },
+      "mechanism": [
+        {
+          "text": {
+            "en": "Portugal's 2005/2006 school network reorganization paired the closure of 1,418 schools with construction of 800 larger, better-equipped 'centros escolares,' demonstrating that closure can be paired with matched receiving-site investment.",
+            "hu": "Portugália 2005/2006-os iskolahálózati átalakítása 1418 iskola bezárását 800 nagyobb, jobban felszerelt 'centros escolares' építésével párosította, bizonyítva, hogy a bezárás párosítható a fogadó telephelyre irányuló megfelelő beruházással."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Post-closure transportation costs have been cited in Central European contexts in a range of roughly 800-1,500 EUR per pupil per year, though this precise figure has not been validated against Hungarian route lengths, occupancy rates, or regional terrain, and often offsets part of the projected consolidation savings.",
+            "hu": "A bezárás utáni szállítási költségeket közép-európai kontextusban nagyjából 800-1500 EUR/tanuló/év tartományban idézik, bár ezt a pontos számot még nem validálták a magyar útvonalhosszakhoz, kihasználtsághoz vagy regionális terephez, és gyakran ellensúlyozza a tervezett összevonási megtakarítások egy részét."
+          },
+          "evidence": "weak"
+        },
+        {
+          "text": {
+            "en": "Portugal's TEIP compensatory programme reduced dropout and failure rates in disadvantaged school clusters but failed over 15 years to close the performance gap between TEIP and non-TEIP schools on national exams, indicating access/retention support alone does not guarantee learning-outcome equity.",
+            "hu": "Portugália TEIP kompenzációs programja csökkentette a lemorzsolódási és bukási arányokat a hátrányos helyzetű iskolai klaszterekben, de 15 év alatt nem zárta be a teljesítménybeli szakadékot a TEIP és nem-TEIP iskolák között az országos vizsgákon, jelezve, hogy a hozzáférési/megtartási támogatás önmagában nem garantál tanulási eredményekben megnyilvánuló méltányosságot."
+          },
+          "evidence": "strong"
+        },
+        {
+          "text": {
+            "en": "An Italian study exploiting a school-network contraction reform found that municipalities affected by school closures experienced significant population and income declines beyond pre-existing demographic trends, indicating a causal feedback loop that mitigation measures would need to specifically counteract.",
+            "hu": "Egy olasz tanulmány, amely egy iskolahálózat-szűkítő reformot vizsgált, azt találta, hogy a bezárás által érintett önkormányzatok jelentős népesség- és jövedelemcsökkenést szenvedtek el a korábbi demográfiai trendeken túl, jelezve egy okozati visszacsatolási hurkot, amelyet a mérséklő intézkedéseknek kifejezetten ellensúlyozniuk kellene."
+          },
+          "evidence": "moderate"
+        }
+      ],
+      "evidence_status": {
+        "label": "contested",
+        "note": {
+          "en": "Portuguese and Italian evidence on closure-mitigation pairing is documented, but the precise Hungarian cost data are absent, and TEIP evidence shows compensatory measures do not resolve equity gaps, so overall net effect is contested.",
+          "hu": "A bezárás-mérséklés párosítására vonatkozó portugál és olasz bizonyítékok dokumentáltak, de a pontos magyar költségadatok hiányoznak, és a TEIP bizonyítékok szerint a kompenzációs intézkedések nem oldják meg a méltányossági szakadékokat, így az általános nettó hatás vitatott."
+        }
+      },
+      "assumptions": [
+        {
+          "en": "Current commuting infrastructure and subsidized public transport can sustain daily trips of 20+ km for primary-age children without unacceptable welfare cost, despite documented informal parent-organized escort shifts arising because regional buses often refuse unaccompanied minors.",
+          "hu": "A jelenlegi ingázási infrastruktúra és támogatott közösségi közlekedés fenntarthatja a 20+ km-es napi utakat elemi iskolás korú gyermekek számára elfogadhatatlan jóléti költség nélkül, jóllehet dokumentáltak az informális szülői kísérő-beosztások, amelyek azért jöttek létre, mert a regionális buszok gyakran visszautasítják a kísérő nélküli kiskorúakat."
+        },
+        {
+          "en": "TEIP-style targeted support, once implemented in a consolidated center school, will meaningfully offset the equity harms of closure for displaced rural pupils, despite Portugal's own 15-year TEIP evidence showing persistent performance gaps.",
+          "hu": "A TEIP-típusú célzott támogatás, amint bevezetik egy összevont központi iskolában, érdemben ellensúlyozza a bezárás méltányossági károsságát az áthelyezett vidéki tanulók számára, jóllehet Portugália saját 15 éves TEIP-bizonyítéka tartós teljesítménybeli szakadékokat mutat."
+        },
+        {
+          "en": "Transparent cost/consultation rules will be genuinely observed and enforced by tankerület authorities, rather than serving as a procedural formality, given that current judicial review of maintainer decisions is limited to legality of procedure and cannot override closure decisions on policy-merit grounds.",
+          "hu": "Az átlátható költség-/konzultációs szabályokat a tankerületi hatóságok érdemben betartják és érvényesítik, nem csupán eljárási formaságként kezelik, tekintve, hogy a fenntartói döntések bírósági felülvizsgálata jelenleg az eljárás jogszerűségére korlátozódik, és nem bírálhatja felül a bezárási döntéseket szakpolitikai megfontolások alapján."
+        }
+      ],
+      "expected_benefits": [
+        {
+          "text": {
+            "en": "Enables investment concentration in fewer, better-equipped consolidated sites, following the Portuguese centros escolares pattern of matched receiving-site investment.",
+            "hu": "Lehetővé teszi a beruházás koncentrálását kevesebb, jobban felszerelt összevont telephelyre, a portugál centros escolares mintáját követve, amely párosítja a bezárást a fogadó telephely megfelelő beruházásával."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Statutory transport guarantees and targeted support provide a formal, legally enforceable floor of protection for displaced pupils, an improvement over ad hoc arrangements.",
+            "hu": "A törvényileg garantált szállítás és célzott támogatás formális, jogilag érvényesíthető védelmi minimumot biztosít az áthelyezett tanulók számára, ami javulást jelent az eseti megoldásokhoz képest."
+          },
+          "evidence": "weak"
+        },
+        {
+          "text": {
+            "en": "May reduce per-pupil operating costs at the system level by concentrating specialist staff and facilities, though empirical audits of actual realized savings (net of transport and mitigation costs) are scarce.",
+            "hu": "Rendszerszinten csökkentheti a tanulónkénti működési költségeket a szaktanári létszám és a létesítmények koncentrálásával, bár a valós megtakarítások (a szállítási és mérséklő költségek levonása után) empirikus auditja ritka."
+          },
+          "evidence": "weak"
+        }
+      ],
+      "equity_impact": {
+        "en": "Disproportionately burdens lower-SES and Roma families concentrated in peripheral rural settlements, who face longer travel distances, higher risk of dropout (Roma dropout already 58.7% vs. 9.3% non-Roma), and the documented risk that non-Roma/wealthier families exit consolidated hub schools via free school choice ('white flight'), reproducing segregation at the hub-school scale; without specific, enforceable thresholds (e.g., maximum travel time such as Portugal's Fundão 25-minute rule), disaggregated equity-outcome monitoring by ethnicity and income at the consolidated site, and binding (not merely advisory) transport-safety standards, the compensatory measures in this scenario risk remaining declarative rather than protective.",
+        "hu": "Aránytalanul nagy terhet ró az alacsonyabb SES-helyzetű és roma családokra, akik a peremhelyzetű vidéki településeken koncentrálódnak, hosszabb utazási távokkal és magasabb lemorzsolódási kockázattal szembesülnek (a roma lemorzsolódás már most 58,7% szemben a nem roma 9,3%-kal), és fennáll a dokumentált kockázata, hogy a nem roma/jobb módú családok a szabad iskolaválasztás révén kilépnek az összevont csomóponti iskolákból ('fehér elvándorlás'), reprodukálva a szegregációt a csomóponti iskola szintjén; konkrét, érvényesíthető küszöbök (pl. maximális utazási idő, mint a portugál Fundão 25 perces szabálya), etnikai és jövedelmi bontású méltányossági eredménymonitoring a összevont telephelyen, és kötelező (nem csak tanácsadó jellegű) közlekedésbiztonsági szabványok nélkül a forgatókönyv kompenzációs intézkedései deklaratívak maradhatnak, nem védelmi jellegűek."
+      },
+      "cost_categories": [
+        {
+          "en": "Statutory transport service capital and recurring operating costs (vehicles, drivers, fuel, supervision), not yet validated against Hungarian route-specific data",
+          "hu": "Törvényileg előírt szállítási szolgáltatás tőke- és ismétlődő működési költségei (járművek, sofőrök, üzemanyag, felügyelet), amelyeket még nem validáltak magyar útvonal-specifikus adatokkal"
+        },
+        {
+          "en": "Capital investment for expanded consolidated 'centros escolares'-style receiving-site capacity",
+          "hu": "Tőkeberuházás a kibővített, összevont 'centros escolares'-típusú fogadó telephelyi kapacitáshoz"
+        },
+        {
+          "en": "TEIP-style targeted support staffing and programme costs at consolidated sites, recurring annually",
+          "hu": "TEIP-típusú célzott támogatási személyzeti és programköltségek az összevont telephelyeken, éves szinten ismétlődve"
+        },
+        {
+          "en": "Indirect community-level costs (property-value decline, reduced local employer base) documented in comparative literature but not typically included in official budget accounting",
+          "hu": "Közvetett közösségi szintű költségek (ingatlanérték-csökkenés, csökkent helyi munkaadói bázis), amelyeket az összehasonlító szakirodalom dokumentál, de a hivatalos költségvetési elszámolásba jellemzően nem foglalnak bele"
+        }
+      ],
+      "implementation_steps": [
+        {
+          "actor": {
+            "en": "Tankerület (district center)",
+            "hu": "Tankerületi központ"
+          },
+          "action": {
+            "en": "Conduct and publish transparent cost/consultation disclosure prior to closure decision, including independent expert assessment where legally required, respecting the statutory May-deadline procedural window.",
+            "hu": "Átlátható költség-/konzultációs feltárást végez és tesz közzé a bezárási döntés előtt, beleértve a törvényileg előírt esetekben a független szakértői vizsgálatot, tiszteletben tartva a törvényes májusi határidős eljárási ablakot."
+          },
+          "timeline": {
+            "en": "year 1, ahead of each May decision deadline",
+            "hu": "1. év, minden éves májusi döntési határidő előtt"
+          }
+        },
+        {
+          "actor": {
+            "en": "Municipality and transport authority",
+            "hu": "Önkormányzat és közlekedési hatóság"
+          },
+          "action": {
+            "en": "Establish statutory transport guarantees with route-specific safety and capacity audits before pupil reassignment, addressing the unaccompanied-minor gap documented in current informal coping mechanisms.",
+            "hu": "Törvényileg garantált szállítást hoz létre útvonal-specifikus biztonsági és kapacitásauditokkal a tanulóáthelyezés előtt, kezelve a jelenlegi informális megoldásokban dokumentált, kísérő nélküli kiskorúakra vonatkozó hiányosságot."
+          },
+          "timeline": {
+            "en": "year 1-2, before reassignment takes effect",
+            "hu": "1-2. év, az áthelyezés hatálybalépése előtt"
+          }
+        },
+        {
+          "actor": {
+            "en": "Ministry/EMMI and receiving-school leadership",
+            "hu": "Minisztérium/EMMI és a fogadó iskola vezetése"
+          },
+          "action": {
+            "en": "Deploy TEIP-style targeted support staffing with disaggregated outcome monitoring by ethnicity and income at the consolidated site.",
+            "hu": "TEIP-típusú célzott támogatási személyzetet telepít, etnikai és jövedelmi bontású eredménymonitoringgal az összevont telephelyen."
+          },
+          "timeline": {
+            "en": "year 2-5, recurring",
+            "hu": "2-5. év, ismétlődő"
+          }
+        }
+      ],
+      "political_risks": [
+        {
+          "en": "Compensatory measures (transport guarantees, TEIP-style support) require sustained multi-year funding; without a specified binding funding-commitment mechanism (e.g., ring-fenced budget line, multi-year statutory allocation), these measures risk being cut in future budget cycles once the initial closure has already occurred and political attention has moved on.",
+          "hu": "A kompenzációs intézkedések (szállítási garanciák, TEIP-típusú támogatás) tartós, több évre szóló finanszírozást igényelnek; meghatározott, kötelező érvényű finanszírozási elkötelezettségi mechanizmus (pl. elkülönített költségvetési sor, több évre szóló törvényi allokáció) nélkül fennáll a kockázata, hogy ezeket az intézkedéseket a jövőbeli költségvetési ciklusokban megszüntetik, miután a bezárás már megtörtént és a politikai figyelem máshova irányult."
+        },
+        {
+          "en": "Closure decisions, even with consultation, may trigger community mobilization (as in the 2007 Erdőkürt 'Human Chain for Rural Schools' precedent), and limited judicial review (legality-only, not policy-merit) means affected communities have few formal channels to contest closure substance.",
+          "hu": "A bezárási döntések, még konzultáció mellett is, közösségi mobilizációt válthatnak ki (mint a 2007-es erdőkürti 'Élő lánc a vidéki iskolákért' precedens), és a korlátozott bírósági felülvizsgálat (csak jogszerűségi, nem szakpolitikai alapú) azt jelenti, hogy az érintett közösségeknek kevés formális csatornájuk van a bezárás tartalmának megtámadására."
+        }
+      ],
+      "uncertainties": [
+        {
+          "text": {
+            "en": "Whether post-closure transportation costs in the Hungarian context actually fall within the cited 800-1,500 EUR/pupil/year range, and whether the true net financial effect of consolidation (savings minus transport, mitigation, and indirect community costs) is positive or negative.",
+            "hu": "Kérdéses, hogy a bezárás utáni szállítási költségek a magyar kontextusban valóban a hivatkozott 800-1500 EUR/tanuló/év tartományba esnek-e, és hogy az összevonás valódi nettó pénzügyi hatása (megtakarítás minusz szállítási, mérséklő és közvetett közösségi költségek) pozitív vagy negatív."
+          },
+          "confidence": "low",
+          "reduced_by": {
+            "en": "A Hungary-specific cost-benefit analysis of small-village school operation versus closure under 2-3 realistic consolidation scenarios, including transport, mitigation, and indirect community costs.",
+            "hu": "Magyarországra specifikus költség-haszon elemzés a kisfalusi iskolaműködtetés és a bezárás összehasonlítására 2-3 realisztikus összevonási forgatókönyv alapján, beleértve a szállítási, mérséklő és közvetett közösségi költségeket."
+          }
+        },
+        {
+          "text": {
+            "en": "Whether TEIP-style targeted support, once implemented at Hungarian consolidated sites, would close or merely narrow the performance gap for displaced rural and Roma pupils, given Portugal's own 15-year TEIP evidence of persistent gaps despite dropout reduction.",
+            "hu": "Kérdéses, hogy a TEIP-típusú célzott támogatás, amint bevezetik magyar összevont telephelyeken, bezárja vagy csak szűkíti az áthelyezett vidéki és roma tanulók teljesítménybeli szakadékát, tekintve Portugália saját 15 éves TEIP-bizonyítékát a tartós szakadékokról a lemorzsolódás csökkenése ellenére."
+          },
+          "confidence": "medium",
+          "reduced_by": {
+            "en": "A Hungarian pilot evaluation comparing learning outcomes of displaced rural/Roma pupils at consolidated sites with and without TEIP-style targeted support, tracked over 5-10 years.",
+            "hu": "Magyar kísérleti értékelés, amely összehasonlítja az áthelyezett vidéki/roma tanulók tanulási eredményeit TEIP-típusú célzott támogatással és anélkül összevont telephelyeken, 5-10 éven át követve."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "title": {
+        "en": "National systemic framework: transparency, thresholds and evidence infrastructure",
+        "hu": "Nemzeti rendszerszintű keret: átláthatóság, küszöbértékek és bizonyítéki infrastruktúra"
+      },
+      "goal": {
+        "en": "Establish a national framework of transparent minimum-viability thresholds, cost-visibility rules, teacher-training standardization, and a closure/outcome registry to inform (not dictate) local decisions across any of the above models.",
+        "hu": "Nemzeti keret létrehozása átlátható minimális életképességi küszöbértékekkel, költség-átláthatósági szabályokkal, tanárképzési szabványosítással és bezárási/eredmény-nyilvántartással, amely tájékoztatja (nem diktálja) a helyi döntéseket a fenti modellek bármelyike esetén."
+      },
+      "mechanism": [
+        {
+          "text": {
+            "en": "No bright-line statutory minimum enrollment threshold currently exists in Hungarian education law, unlike comparative models such as Ukraine's 45-student rule; closure decisions operate on a discretionary, case-by-case basis, creating unpredictability that a transparent national threshold framework would address.",
+            "hu": "Jelenleg nem létezik egyértelmű törvényi minimális beiskolázási küszöb a magyar oktatási jogban, ellentétben olyan összehasonlítható modellekkel, mint az ukrán 45 fős szabály; a bezárási döntések eseti, mérlegelési alapon működnek, ami kiszámíthatatlanságot eredményez, amelyet egy átlátható nemzeti küszöbrendszer kezelne."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Given that the curated source registry available for this topic contains no equivalent Hungarian closure/outcome dataset and multiple experts independently note the absence of systematic tracking, the claim that 'no current national registry of closure decisions and outcomes exists in Hungary' is a reasonable inference from an absence of evidence rather than a directly documented negative finding.",
+            "hu": "Mivel az e témához rendelkezésre álló forrásgyűjtemény nem tartalmaz egyenértékű magyar bezárási/eredmény-adatbázist, és több szakértő is önállóan megjegyzi a szisztematikus nyomon követés hiányát, az az állítás, hogy 'Magyarországon jelenleg nem létezik nemzeti bezárási döntési és eredmény-nyilvántartás', a bizonyíték hiányából levont észszerű következtetés, nem közvetlenül dokumentált negatív megállapítás."
+          },
+          "evidence": "weak"
+        },
+        {
+          "text": {
+            "en": "Finnish rural village-school teachers report being unprepared for multigrade teaching during initial teacher education, despite multigrade instruction being their routine working environment, illustrating a training-standardization gap that a national framework's teacher-training standards component would target.",
+            "hu": "A finn vidéki falusi iskolák tanárai arról számolnak be, hogy nem voltak felkészítve az összevont osztályokban való tanításra az alapképzés során, jóllehet az összevont oktatás a mindennapi munkakörnyezetük, ami egy olyan képzés-szabványosítási hiányosságot illusztrál, amelyre a nemzeti keret tanárképzési szabvány-komponense irányulna."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "Historical Hungarian small-school subsidies were deemed 'economically fully justified' by a 2007 analysis, yet base normatívák often fell short of actual per-pupil costs, indicating that cost-visibility rules could correct a documented historical mismatch between subsidy design and real costs.",
+            "hu": "A történelmi magyar kisiskolai támogatásokat egy 2007-es elemzés 'gazdaságilag teljes mértékben indokoltnak' ítélte, ám az alapnormatívák gyakran elmaradtak a valós tanulónkénti költségektől, jelezve, hogy a költség-átláthatósági szabályok korrigálhatnák a támogatás-tervezés és a valós költségek közötti dokumentált történelmi eltérést."
+          },
+          "evidence": "moderate"
+        }
+      ],
+      "evidence_status": {
+        "label": "weak",
+        "note": {
+          "en": "The rationale for a national framework rests on documented gaps (no threshold, no registry, training mismatches, subsidy-cost mismatch) rather than direct evidence that such a framework would work in Hungary, since no comparable Hungarian pilot exists.",
+          "hu": "A nemzeti keret indoklása dokumentált hiányosságokra épül (nincs küszöb, nincs nyilvántartás, képzési eltérések, támogatás-költség eltérés), nem pedig közvetlen bizonyítékra arról, hogy egy ilyen keret működne Magyarországon, mivel nem létezik hasonló magyar kísérleti program."
+        }
+      },
+      "assumptions": [
+        {
+          "en": "Sufficient political will exists to fund and maintain a long-term evidence infrastructure (registry, thresholds) across changing government administrations, despite the documented absence of any cross-party consensus mechanism for rural school reform and the demonstrated political sensitivity that has stalled even existing leaked consolidation plans.",
+          "hu": "Elegendő politikai akarat áll fenn ahhoz, hogy hosszú távú bizonyítéki infrastruktúrát (nyilvántartás, küszöbértékek) finanszírozzanak és tartsanak fenn a változó kormányzati ciklusokon át, jóllehet dokumentáltan nem létezik párton átívelő konszenzusmechanizmus a vidéki iskolareformra, és a bizonyítottan politikailag érzékeny jelleg már a kiszivárgott összevonási terveket is megakasztotta."
+        },
+        {
+          "en": "A non-binding, advisory national framework (transparency and thresholds informing rather than dictating local decisions) will be respected as genuinely advisory by tankerület and ministry actors, rather than being used selectively to justify predetermined closure decisions.",
+          "hu": "Egy nem kötelező, tanácsadó jellegű nemzeti keretet (átláthatóság és küszöbértékek, amelyek tájékoztatják, nem diktálják a helyi döntéseket) a tankerületi és minisztériumi szereplők valóban tanácsadóként fognak tiszteletben tartani, nem pedig szelektíven használják előre eldöntött bezárási döntések igazolására."
+        },
+        {
+          "en": "The registry and thresholds, once established, will capture and publish disaggregated equity data (by settlement size, ethnicity, income) sufficient to detect and prevent inequitable downstream application across any of S1-S4's models, rather than remaining an aggregate, equity-blind dataset.",
+          "hu": "A nyilvántartás és a küszöbértékek, egyszer létrehozva, olyan bontott méltányossági adatokat (település mérete, etnikum, jövedelem szerint) rögzítenek és tesznek közzé, amelyek elegendőek az S1-S4 modellek bármelyikének méltánytalan downstream alkalmazásának felismerésére és megakadályozására, nem pedig aggregált, méltányosság szempontjából vak adatkészletként maradnak fenn."
+        }
+      ],
+      "expected_benefits": [
+        {
+          "text": {
+            "en": "Provides a transparent, evidence-based reference point for local decisions currently made on a discretionary, case-by-case basis, addressing a documented gap in Hungarian education law.",
+            "hu": "Átlátható, bizonyítékalapú referenciapontot biztosít a jelenleg eseti, mérlegelési alapon hozott helyi döntésekhez, kezelve a magyar oktatási jogban dokumentált hiányosságot."
+          },
+          "evidence": "weak"
+        },
+        {
+          "text": {
+            "en": "Standardized teacher training for multigrade and small-school pedagogy could address the documented preparation gap seen in both Finnish and inferred Hungarian contexts.",
+            "hu": "A szabványosított, összevont osztályokra és kisiskolai pedagógiára irányuló tanárképzés kezelhetné a finn és a következtetett magyar kontextusban is dokumentált felkészítési hiányosságot."
+          },
+          "evidence": "moderate"
+        },
+        {
+          "text": {
+            "en": "A closure/outcome registry would, over time, enable retrospective evaluation of which models (S1-S4) perform best under which conditions, informing future policy—though this benefit accrues only after multi-year data accumulation and is not immediate.",
+            "hu": "Egy bezárási/eredmény-nyilvántartás idővel lehetővé tenné annak visszamenő értékelését, mely modellek (S1-S4) teljesítenek legjobban milyen körülmények között, tájékoztatva a jövőbeli szakpolitikát — bár ez az előny csak több éves adatgyűjtés után jelentkezik, és nem azonnali."
+          },
+          "evidence": "weak"
+        }
+      ],
+      "equity_impact": {
+        "en": "As a procedural, enabling framework rather than a direct service-delivery model, S5's equity impact depends entirely on downstream use: if thresholds and the registry are designed from inception to require disaggregated reporting by settlement size, ethnicity, and income, and if cost-visibility rules explicitly surface transport and mitigation costs, the framework could materially improve equity oversight across S1-S4; but if it is implemented as an aggregate, ethnicity-blind system, it risks providing a veneer of evidence-based legitimacy to decisions that remain as inequitable as under the status quo, since transparency alone does not compel any particular equity-protective action.",
+        "hu": "Mivel eljárási, lehetővé tevő keret, nem közvetlen szolgáltatás-nyújtási modell, az S5 méltányossági hatása teljes mértékben a downstream felhasználástól függ: ha a küszöbértékeket és a nyilvántartást már a kezdetektől úgy alakítják ki, hogy megkövetelje a település mérete, etnikum és jövedelem szerinti bontott jelentést, és ha a költség-átláthatósági szabályok kifejezetten feltárják a szállítási és mérséklő költségeket, a keret érdemben javíthatja a méltányossági felügyeletet az S1-S4 modellek mentén; de ha aggregált, etnikum szempontjából vak rendszerként vezetik be, azt a kockázatot hordozza, hogy bizonyítékalapú legitimitás látszatát adja olyan döntéseknek, amelyek ugyanolyan méltánytalanok maradnak, mint a jelenlegi helyzetben, mivel az átláthatóság önmagában nem kényszerít ki semmilyen konkrét méltányosságvédő intézkedést."
+      },
+      "cost_categories": [
+        {
+          "en": "One-off design and legal-drafting costs for minimum-viability thresholds and cost-visibility rules",
+          "hu": "Egyszeri tervezési és jogi szövegezési költségek a minimális életképességi küszöbértékekhez és a költség-átláthatósági szabályokhoz"
+        },
+        {
+          "en": "One-off IT build and ongoing data-management costs for the closure/outcome registry, including data-protection compliance",
+          "hu": "Egyszeri informatikai fejlesztési és folyamatos adatkezelési költségek a bezárási/eredmény-nyilvántartáshoz, beleértve az adatvédelmi megfelelést"
+        },
+        {
+          "en": "Recurring costs for standardized teacher-training module rollout and staffing of analytic/monitoring functions",
+          "hu": "Ismétlődő költségek a szabványosított tanárképzési modul bevezetéséhez és az elemző/monitoring funkciók személyzeti ellátásához"
+        },
+        {
+          "en": "Ongoing funding-responsibility allocation across ministry, tankerület, and municipal levels, currently unspecified and requiring explicit division",
+          "hu": "Folyamatos finanszírozási felelősség-megosztás a minisztérium, a tankerület és az önkormányzati szintek között, amely jelenleg nincs meghatározva és kifejezett felosztást igényel"
+        }
+      ],
+      "implementation_steps": [
+        {
+          "actor": {
+            "en": "Ministry/EMMI and independent education-research institutes",
+            "hu": "Minisztérium/EMMI és független oktatáskutató intézetek"
+          },
+          "action": {
+            "en": "Design and publish transparent minimum-viability thresholds and cost-visibility rules, with realistic allowance for legal, data-protection, and stakeholder-consultation review before publication.",
+            "hu": "Átlátható minimális életképességi küszöbértékeket és költség-átláthatósági szabályokat dolgoznak ki és tesznek közzé, realisztikus időt hagyva a jogi, adatvédelmi és érintett szereplőkkel való konzultációs felülvizsgálatra a közzététel előtt."
+          },
+          "timeline": {
+            "en": "year 1-3",
+            "hu": "1-3. év"
+          }
+        },
+        {
+          "actor": {
+            "en": "Ministry/EMMI and KSH (Central Statistical Office)",
+            "hu": "Minisztérium/EMMI és KSH (Központi Statisztikai Hivatal)"
+          },
+          "action": {
+            "en": "Build and populate a closure/outcome registry disaggregated by settlement size, ethnicity, and income, with data-protection and legal-basis clearance secured before data collection begins.",
+            "hu": "Település mérete, etnikum és jövedelem szerint bontott bezárási/eredmény-nyilvántartást építenek és töltenek fel, az adatgyűjtés megkezdése előtt biztosítva az adatvédelmi és jogalapi jóváhagyást."
+          },
+          "timeline": {
+            "en": "year 1-4",
+            "hu": "1-4. év"
+          }
+        },
+        {
+          "actor": {
+            "en": "Teacher-training institutions and Ministry/EMMI",
+            "hu": "Tanárképző intézmények és Minisztérium/EMMI"
+          },
+          "action": {
+            "en": "Roll out standardized multigrade and small-school pedagogy training modules into initial and in-service teacher education, sequenced with realistic curriculum-development and accreditation lead time.",
+            "hu": "Szabványosított, összevont osztályokra és kisiskolai pedagógiára irányuló képzési modulokat vezetnek be az alap- és továbbképzésbe, realisztikus tantervfejlesztési és akkreditációs átfutási idővel ütemezve."
+          },
+          "timeline": {
+            "en": "year 2-5",
+            "hu": "2-5. év"
+          }
+        }
+      ],
+      "political_risks": [
+        {
+          "en": "A non-binding, advisory registry and threshold framework may be politically instrumentalized: government or tankerület actors could selectively cite thresholds to justify predetermined closure decisions while ignoring them when politically inconvenient, absent explicit rules on how thresholds may or may not be used in decisions.",
+          "hu": "Egy nem kötelező, tanácsadó jellegű nyilvántartási és küszöbrendszer politikailag instrumentalizálható: a kormányzati vagy tankerületi szereplők szelektíven hivatkozhatnak küszöbértékekre előre eldöntött bezárási döntések igazolására, míg politikailag kényelmetlen esetekben ignorálják azokat, kifejezett szabályok hiányában arról, hogy a küszöbértékek hogyan használhatók vagy nem használhatók a döntésekben."
+        },
+        {
+          "en": "Sustained multi-year funding for the registry, training rollout, and analytic staffing is vulnerable to budget-cycle discontinuity and administration change, given the documented absence of cross-party consensus mechanisms and the chronic under-budgeting pattern already observed in the tankerület/KLIK system.",
+          "hu": "A nyilvántartás, a képzési bevezetés és az elemző személyzet fenntartható, több éves finanszírozása sérülékeny a költségvetési ciklusok megszakadásával és a kormányzati váltásokkal szemben, tekintve a dokumentáltan hiányzó párton átívelő konszenzusmechanizmusokat és a tankerületi/KLIK rendszerben már megfigyelt krónikus alulfinanszírozási mintát."
+        }
+      ],
+      "uncertainties": [
+        {
+          "text": {
+            "en": "Whether a genuinely non-binding, advisory framework can remain politically neutral in practice, or whether it will inevitably be used selectively to legitimize predetermined closure or retention decisions.",
+            "hu": "Kérdéses, hogy egy valóban nem kötelező, tanácsadó jellegű keret a gyakorlatban politikailag neutrális maradhat-e, vagy elkerülhetetlenül szelektíven fogják használni előre eldöntött bezárási vagy megtartási döntések legitimálására."
+          },
+          "confidence": "low",
+          "reduced_by": {
+            "en": "A process-tracing case study of how similar advisory frameworks (e.g., EU pay-conditionality benchmarks, prior Hungarian education indicators) have actually been used in real decisions over a multi-year period.",
+            "hu": "Folyamat-nyomkövetési esettanulmány arról, hogy hasonló tanácsadó jellegű keretek (pl. EU bér-feltételességi mércék, korábbi magyar oktatási indikátorok) hogyan lettek valójában felhasználva a valós döntésekben egy több éves periódus alatt."
+          }
+        },
+        {
+          "text": {
+            "en": "Whether the registry and thresholds, once operational, will in fact be designed to capture and publish disaggregated equity data (settlement size, ethnicity, income), or whether they will default to aggregate reporting that obscures unequal downstream impacts.",
+            "hu": "Kérdéses, hogy a nyilvántartás és a küszöbértékek, egyszer működővé válva, valóban úgy lesznek kialakítva, hogy bontott méltányossági adatokat (település mérete, etnikum, jövedelem) rögzítsenek és tegyenek közzé, vagy alapértelmezetten aggregált jelentésre szorulnak, amely elfedi az egyenlőtlen downstream hatásokat."
+          },
+          "confidence": "medium",
+          "reduced_by": {
+            "en": "An explicit technical-specification review, published for public comment, of the registry's planned data schema and disaggregation fields before system-build begins.",
+            "hu": "A nyilvántartás tervezett adatstruktúrájának és bontási mezőinek nyilvános véleményezésre bocsátott, kifejezett technikai specifikáció-felülvizsgálata a rendszerépítés megkezdése előtt."
+          }
+        }
+      ]
+    }
+  ]
+}
