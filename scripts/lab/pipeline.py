@@ -530,7 +530,10 @@ def _snapshot_state_hash(rd):
     h.update((base / "system_config.json").read_bytes())
     h.update((base / "evaluation_rubric.md").read_bytes())
     snap_cfg = json.loads((base / "topic.json").read_text(encoding="utf-8"))
-    snap_cfg = {k: v for k, v in snap_cfg.items() if k != "frames"}
+    # MUST mirror Topic.state_fingerprint's exclusions (frames, evaluation)
+    # — this inline copy diverging from it caused a full re-run (2026-07-17)
+    snap_cfg = {k: v for k, v in snap_cfg.items()
+                if k not in ("frames", "evaluation")}
     h.update(json.dumps(snap_cfg, ensure_ascii=False,
                         sort_keys=True).encode("utf-8"))
     return h.hexdigest()
