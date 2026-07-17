@@ -35,52 +35,63 @@
   },
   "frames": {
     "status": "approved",
-    "approved_by": "owner",
-    "approved_on": "2026-07-15",
-    "derived_from": "Retrofit: the four scenario anchors the archive era (rounds 1-8) ran on, previously hardcoded as pipeline.SCENARIO_ANCHORS; from round 9 on, frames for new topics are derived from round 1's expert record (issue #21) and frozen here after human approval.",
+    "approved_by": "Peter Halacsy",
+    "approved_on": "2026-07-17",
+    "derived_from": "round 9 expert record (emergent framing, issue #21/D-36); rejected framings recorded in proposals/frames.json",
     "scenarios": [
       {
         "id": "S1",
         "title": {
-          "en": "Admission reform within the current structure",
-          "hu": "Felvételi reform a jelenlegi szerkezeten belül"
+          "en": "Admissions and intake-equity regulation (keep structure, fix the gate)",
+          "hu": "Felvételi és bejutási méltányossági szabályozás (a szerkezet marad, a kapu változik)"
         },
         "scope": {
-          "en": "Reduce the SES bias of entry into the 6/8-year tracks without changing the structure, by reforming the admission examination and admission rules.",
-          "hu": "A hat-/nyolcosztályos képzésbe való bekerülés társadalmi-gazdasági torzításának csökkentése a szerkezet változtatása nélkül, a felvételi vizsga és a felvételi szabályok reformjával."
+          "en": "Interventions that keep the 6/8-year gimnázium structure intact but regulate the admission mechanism itself — SES-aware quotas or proxies, uniform score-threshold rules, coaching-resistant exam design — to reduce family-capital-driven sorting at the point of entry.",
+          "hu": "Azok a beavatkozások, amelyek a hatosztályos/nyolcosztályos gimnáziumi szerkezetet megtartják, de magát a felvételi mechanizmust szabályozzák — SES-alapú kvótákkal vagy proxykkal, egységes ponthatár-szabályokkal, kevésbé felkészíthető vizsgaformátummal — a családi tőke által vezérelt bejutási szelekció csökkentésére."
         }
       },
       {
         "id": "S2",
         "title": {
-          "en": "Gradual phase-down of 6/8-year entry places",
-          "hu": "A hat-/nyolcosztályos belépőhelyek fokozatos szűkítése"
+          "en": "Supply-side contraction of the selective track (shrink the gate, not the rules)",
+          "hu": "A szelektív képzési kínálat visszaszorítása (a kapu szűkül, nem a szabályok)"
         },
         "scope": {
-          "en": "Shrink early-selective intake gradually via capacity caps, with acquired pupil status protected (felmenő rendszer).",
-          "hu": "A korai szelekciós férőhelyek fokozatos szűkítése kapacitáskorlátokkal, a megkezdett képzések védelmével (felmenő rendszer)."
+          "en": "Interventions that reduce the state-sector share of 6/8-year places (via score thresholds, capacity caps, or demographically-driven consolidation) to shrink the selective track's footprint, while leaving admission criteria within remaining places largely unchanged.",
+          "hu": "Azok a beavatkozások, amelyek a hatosztályos/nyolcosztályos helyek állami szektorbeli arányát csökkentik (ponthatárokkal, kapacitáskorlátokkal vagy demográfiailag vezérelt összevonással) a szelektív képzési kínálat lábnyomának szűkítésére, míg a megmaradó helyeken a felvételi kritériumok nagyrészt változatlanok maradnak."
         }
       },
       {
         "id": "S3",
         "title": {
-          "en": "Comprehensive school to age 14 (structural reform)",
-          "hu": "Egységes alapiskola 14 éves korig (szerkezeti reform)"
+          "en": "Structural delay of the selection age (Finnish/Polish model)",
+          "hu": "A szelekciós életkor strukturális kitolása (finn/lengyel modell)"
         },
         "scope": {
-          "en": "End between-school academic selection before age 14 by phasing out 6/8-year entry, with differentiated teaching inside a common school.",
-          "hu": "Az iskolák közötti tanulmányi szelekció megszüntetése 14 éves kor előtt a hat-/nyolcosztályos belépés kivezetésével, differenciált oktatással a közös iskolán belül."
+          "en": "Reforms that raise the statutory age of first academic tracking (e.g., to 14+ or later), phasing out or converting 6- and 8-year entry points into a unified comprehensive lower-secondary phase, paired with explicit anti-sorting rules for school choice and catchment.",
+          "hu": "Olyan reformok, amelyek megemelik az első iskolatípus-szerinti szétválogatás törvényes életkorát (pl. 14 évre vagy később), a hatosztályos és nyolcosztályos belépési pontokat egységes, összevont alsó középfokú szakasszá alakítva át, az iskolaválasztásra és a körzethatárokra vonatkozó explicit szelekció-ellenes szabályokkal párosítva."
         }
       },
       {
         "id": "S4",
         "title": {
-          "en": "Keep the structure, compensate general schools (Portuguese-style package)",
-          "hu": "A szerkezet megtartása, az általános iskolák kompenzálása (portugál típusú csomag)"
+          "en": "Non-structural compensatory reform (leave selection age unchanged)",
+          "hu": "Nem strukturális, kompenzáló reform (a szelekciós életkor változatlan marad)"
         },
         "scope": {
-          "en": "Accept early selection as fixed and offset its equity costs with targeted funding, teacher incentives and support programmes for general schools.",
-          "hu": "A korai szelekció adottságként kezelése, méltányossági költségeinek ellensúlyozása célzott finanszírozással, pedagógus-ösztönzőkkel és az általános iskolákat támogató programokkal."
+          "en": "Portugal-style interventions that leave the 10-12 selection age and track structure untouched but pursue equity and achievement gains through curriculum clarity, targeted (TEIP-style) funding for disadvantaged schools, retention reduction, and school-quality levelling.",
+          "hu": "Portugál mintájú beavatkozások, amelyek a 10-12 éves szelekciós életkort és a képzési szerkezetet érintetlenül hagyják, de a méltányossági és teljesítménybeli javulást a tantervi egyértelműségen, a hátrányos helyzetű iskolák célzott (TEIP-típusú) finanszírozásán, az évfolyamismétlés csökkentésén és az iskolai minőségkiegyenlítésen keresztül igyekeznek elérni."
+        }
+      },
+      {
+        "id": "S5",
+        "title": {
+          "en": "Demographically-driven passive contraction (status-quo baseline)",
+          "hu": "Demográfiailag vezérelt passzív zsugorodás (status quo alapforgatókönyv)"
+        },
+        "scope": {
+          "en": "The no-new-policy baseline in which shrinking birth cohorts force network consolidation and a natural decline in the selective track's absolute size and share regardless of any active equity or structural intervention, serving as the counterfactual against which S1–S4 are measured.",
+          "hu": "Az a beavatkozás-mentes alapforgatókönyv, amelyben a zsugorodó születési évfolyamok kikényszerítik az iskolahálózat összevonását és a szelektív képzési kínálat abszolút méretének és arányának természetes csökkenését bármely aktív méltányossági vagy strukturális beavatkozás nélkül, mérceként szolgálva az S1–S4 forgatókönyvek értékeléséhez."
         }
       }
     ]
@@ -113,18 +124,51 @@
   ],
   "registry_facts": null,
   "expert_facts": {
-    "hungarian_education_system": ["gimn_share", "school_choice", "governance"],
-    "international_comparison": ["tracking_inequality", "pisa_escs"],
-    "finnish_reform": ["finland_comprehensive"],
-    "polish_reform": ["poland_reform"],
-    "portuguese_reform": ["portugal_improvement"],
-    "equity_and_social_mobility": ["pisa_escs", "gimn_share", "value_added"],
-    "demography": ["demography"],
-    "school_network_planning": ["demography", "governance"],
-    "education_finance": ["fiscal"],
-    "legal_and_governance": ["legal", "governance"],
-    "political_feasibility": ["parent_attachment", "poland_reform"],
-    "implementation_planning": ["teacher_shortage", "fiscal"]
+    "hungarian_education_system": [
+      "gimn_share",
+      "school_choice",
+      "governance"
+    ],
+    "international_comparison": [
+      "tracking_inequality",
+      "pisa_escs"
+    ],
+    "finnish_reform": [
+      "finland_comprehensive"
+    ],
+    "polish_reform": [
+      "poland_reform"
+    ],
+    "portuguese_reform": [
+      "portugal_improvement"
+    ],
+    "equity_and_social_mobility": [
+      "pisa_escs",
+      "gimn_share",
+      "value_added"
+    ],
+    "demography": [
+      "demography"
+    ],
+    "school_network_planning": [
+      "demography",
+      "governance"
+    ],
+    "education_finance": [
+      "fiscal"
+    ],
+    "legal_and_governance": [
+      "legal",
+      "governance"
+    ],
+    "political_feasibility": [
+      "parent_attachment",
+      "poland_reform"
+    ],
+    "implementation_planning": [
+      "teacher_shortage",
+      "fiscal"
+    ]
   },
   "human_questions": [
     {
@@ -153,7 +197,8 @@
     }
   ],
   "evaluation": {
-    "era_start_round": 8,
-    "_era_policy": "Rounds 1-7 are this topic's closed pre-D-34 archive era (old schema); round 8+ is the structured-bilingual era. The first round of a new era is a baseline: no delta against the previous era, no regression revert."
+    "era_start_round": 9,
+    "_era_policy": "Rounds 1-7 are this topic's closed pre-D-34 archive era (old schema); round 8+ is the structured-bilingual era. The first round of a new era is a baseline: no delta against the previous era, no regression revert.",
+    "_era_note": "2026-07-17: the frames were re-derived from round 9's sourced expert record (owner-approved; propose-frames) — a 5-frame option space is not comparable to the 4-frame rounds, so round 9 is the new baseline."
   }
 }

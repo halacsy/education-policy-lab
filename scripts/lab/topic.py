@@ -174,7 +174,12 @@ class Topic:
         scenario-dependent steps, whose validators re-check the id set; the
         sanctioned frame-change path, new_topic.py approve-frames, purges
         scenario-dependent artifacts explicitly)."""
-        cfg = {k: v for k, v in self.config.items() if k != "frames"}
+        # "evaluation" (era_start_round) is likewise excluded: the era
+        # label is consumed only by the loop's delta/revert logic, never by
+        # a generation step — moving an era boundary must not invalidate
+        # the artifacts it merely re-labels (same rationale as frames).
+        cfg = {k: v for k, v in self.config.items()
+               if k not in ("frames", "evaluation")}
         return json.dumps(cfg, ensure_ascii=False, sort_keys=True).encode("utf-8")
 
 
