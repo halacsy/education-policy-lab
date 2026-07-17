@@ -1,241 +1,227 @@
 # Szakpolitikai forgatókönyvek
 
-## S1 — Status quo fokozatos alkalmazkodással
+## S1 — Status quo és fokozatos alkalmazkodás
 **Cél**
-A meglévő önkormányzati/állami fenntartású falusi iskola nyitva tartása amíg lehetséges, összevont osztályok, felmenő rendszerű fokozatos kivezetés és ad hoc helyi tárgyalás útján, nemzeti keretrendszer nélkül.
+A meglévő önkormányzati/állami fenntartású falusi iskola nyitva tartása amíg lehetséges, összevont osztályokra, fokozatos kivezetésre (felmenő rendszer) és eseti helyi tárgyalásokra támaszkodva, nemzeti keretrendszer nélkül.
 
 **Mechanizmus**
-- Az összevont osztályok lehetővé teszik, hogy az iskola olyan tanulószám mellett is nyitva maradjon, amely nem lenne elegendő önálló évfolyamos osztályokhoz. [bizonyíték: mérsékelt]
-- A felmenő rendszer lehetővé teszi az évfolyamok fokozatos kivezetését az azonnali bezárás helyett, csökkentve a közösségre gyakorolt hirtelen sokkot. [bizonyíték: mérsékelt]
-- 2013 óta az állami szintű működési finanszírozás megszünteti a pénzügyileg szűkös önkormányzatok azonnali bezárási ösztönzőjét, de nem oldja meg a tanulószám-csökkenésből eredő alapvető költségnyomást. [bizonyíték: mérsékelt]
+- A magyar jog már ad egy közigazgatásilag kész alternatívát a bezárás helyett: az összevont osztályok legfeljebb három (kivételesen négy) egymást követő évfolyamot vonnak össze, becslések szerint 200-300 iskolában alkalmazva. [bizonyíték: erős]
+- Az OFI kutatása szerint a vidéki kisiskolák tanulói eredményei nagyjából megfelelnek a nagyobb falusi iskolákénak, és csak mérsékelten maradnak el a városi iskolákétól, ha a családi szocioökonómiai háttért kontrollként kezelik, ami aláássa a bezárás tisztán hatékonysági érveit. [bizonyíték: mérsékelt]
+- A felmenő rendszert a gyakorlatban az iskolaátalakításokra is alkalmazzák, hogy a jelenleg beiratkozott tanulói kohorszokat megvédjék a féléven belüli megszakítástól; 2025-ös dokumentált esetek több tanéven át megosztott bezárás-jellegű átalakításokat mutatnak. [bizonyíték: mérsékelt]
+- A kisiskolák (150 tanuló alatt) az önkormányzati általános iskolák csaknem egyharmadát alkotják, de a tanulók kevesebb mint 10%-át oktatják, és a kutatók szerint a költségkülönbség önmagában nem jelent komoly rendszerszintű hatékonysági problémát. [bizonyíték: mérsékelt]
 
 **Bizonyítékstátusz**
-gyenge — Nincs publikált magyar kísérleti adat vagy eredmény-nyilvántartás arról, hogy az ad hoc, nem szabványosított helyi alkalmazkodás valóban hosszú távon fenntartja-e az iskolákat.
+mérsékelt — Az összevont oktatás és az eredmény-egyenértékűségre vonatkozó megállapítások mérsékelten jól dokumentáltak, de nincs magyar adat az eseti, rendszerszintű támogatás nélküli helyi alkufolyamatok hosszú távú fenntarthatóságáról.
 
 **Feltevések**
-- A helyi döntéshozók összehasonlítható finanszírozási és demográfiai adatokkal rendelkeznek a méltányos, átlátható fenntartási megállapodások megtárgyalásához.
-- A tanulószám-csökkenés megbízható közelítése az iskola fenntarthatóságának, jelentős zavaró tényezők nélkül.
-- Az összevont osztályokhoz elegendő pedagógus áll rendelkezésre a rendszerszintű képzési reform nélkül is.
+- Elegendő a tanárkínálat az összevont osztályokhoz szisztémás képzési reform nélkül, jóllehet a finn tapasztalatok szerint a tanárképzés történelmileg nem készítette fel a pedagógusokat a kisiskolai oktatásra, és a magyar megvalósítási elemzés szerint is nő a vidéki tanárhiány.
+- A helyi döntéshozók összehasonlítható pénzügyi és demográfiai adatokkal rendelkeznek a méltányos, átlátható megtartási megállapodások kialakításához, jóllehet jelenleg nem létezik nemzeti bezárási/eredmény-nyilvántartás ennek alátámasztására.
+- Az eseti, ügyről ügyre gyakorolt fenntartói mérlegelés (egyértelmű törvényi küszöb hiányában) továbbra is lehetővé teszi a falusi iskolák nyitva tartását, és nem a tankerületi költségvetési nyomás kényszeríti ki a bezárást.
 
 **Várható előnyök**
-- A lehető leghosszabb ideig megőrzi az iskolát mint közösségi horgony-infrastruktúrát (találkozóhely, helyi foglalkoztatás). [bizonyíték: gyenge]
-- Elkerüli a kisgyermekek utazási terhének hirtelen növekedését a központi iskolába való átirányítás elhalasztásával. [bizonyíték: gyenge]
-- Alacsony kezdeti igazgatási és jogi költség, mivel a meglévő törvényi rugalmasságra (Nkt.) támaszkodik új struktúrák helyett. [bizonyíték: mérsékelt]
+- Megőrzi az iskola dokumentált közösségi-csomóponti és helyi identitást megalapozó funkcióját anélkül, hogy új jogi vagy intézményi struktúrákra lenne szükség. [bizonyíték: mérsékelt]
+- Elkerüli a hirtelen megnövekedő utazási terhet a családok számára, mivel a gyerekek továbbra is a helyi iskolába járnak, nem kerülnek átirányításra a kötelező körzethatár-szabályok alapján. [bizonyíték: gyenge]
+- Minimális előzetes jogi vagy igazgatási változást igényel, mivel az összevont osztályok és a felmenő rendszer mechanizmusai már kodifikáltak és működnek. [bizonyíték: erős]
 
 **Méltányossági hatás**
-Rövid távon valószínűleg csökkenti azon alacsonyabb státuszú családok utazási-teher okozta egyenlőtlenségét, amelyek nem tudják vállalni az ingázás költségeit, de idővel súlyosbíthatja a hátrányt, ha az összevont oktatás minősége és a pedagógus-ellátás nem biztosított, és nem kínál szisztematikus mérséklést a kompozíciós/peer-hatásokra, ha a magasabb státuszú családok kimaradnak.
+Feltehetően rövid távon csökkenti az alacsonyabb SES-helyzetű és roma családok utazási teher-egyenlőtlenségét, akik jelenleg a helyi oktatásból profitálnak, de ez gyenge bizonyítékon és nem tesztelt feltételezéseken alapul arról, mely családok maradnak, illetve lépnek ki a magyar rendszerben másutt dokumentált 'fehér elvándorlás' dinamikája mentén; átlátható beiskolázási küszöbök vagy szállítási költségadatok nélkül a forgatókönyv nem garantálja, hogy a legszegényebb falvak életképes összevont oktatói ellátást tartanak meg, ne pedig de facto alulforrásozott státuszba csússzanak.
 
 **Költségkategóriák**
-- Folyamatos állami finanszírozású működési költségek (bérek, közüzemi díjak, karbantartás) küszöb alatti tanulószám esetén
-- Összevont oktatási pedagógiai továbbképzési költségek a pedagógusok számára
-- Helyi igazgatási idő a tankerületi/megyei hatóságokkal folytatott ad hoc tárgyalásokhoz
+- Ismétlődő összevont-osztálytanítási képzési és folyamatos pedagógiai támogatási költségek
+- Alultelt épületek tőkefenntartási és elmaradt karbantartási költségei (tetőjavítás, fűtés, akadálymentesítés), amelyek kezelés hiányában gyakran a bezárási döntések meghatározó tényezői
+- A szabad kapacitás fenntartásának alternatívaköltsége a lehetséges összevont telephelyi beruházással szemben
+- Helyi alkufolyamatok és igazgatási tranzakciós költségek (településenkénti, eseti fenntartói tárgyalások)
 
 **Megvalósítási lépések**
-- Falusi önkormányzat — Konzultációt indít a tankerületi központtal az összevont oktatás megtartásáról, és dokumentálja a tanulószám-előrejelzéseket. (ütemezés: 1. év)
-- Tankerületi Központ — Jóváhagyja vagy megtárgyalja a veszélyeztetett évfolyamok felmenő rendszerű kivezetési ütemtervét, az iskolai naptárhoz igazítva. (ütemezés: 1-2. év)
-- Iskolavezetés és tantestület — Összevont oktatási pedagógiai továbbképzésen vesznek részt, hogy pótolják az alapképzésből hiányzó ismereteket. (ütemezés: 1-3. év, folyamatosan)
-- Oktatási Minisztérium / Oktatási Hivatal — Évente nyomon követi a tanulószám-trendet, hogy jelezze, mikor közelít a fokozatos alkalmazkodás a nem fenntarthatósághoz. (ütemezés: folyamatos, 1. évtől)
+- Iskolavezetők és tanári kar — Kiterjesztett, folyamatban lévő összevont-osztálytanítási képzésen vesznek részt, realisztikus, több évre szóló átfutási idővel, elismerve, hogy a minőségi összevont oktatáshoz elegendő tanár felkészítése hosszabb előkészítést igényel egy ciklusnál. (ütemezés: 1-4. év, ismétlődő)
+- Tankerületi központ és önkormányzat — Átlátható, dokumentált megtartási megállapodásokat tárgyalnak, beleértve a beiskolázási és költségadatok nyilvánosságra hozását a szülők és a helyi tanács felé. (ütemezés: 1-2. év, folyamatos)
+- Minisztérium/EMMI — Tisztázza, hogy a bezárás előtti, 2010 előtti független szakértői vizsgálati követelmények érvényben maradnak-e, az eljárási védelmek egységesítése céljából. (ütemezés: 1. év)
 
 **Politikai kockázatok**
-- A csendes, koordinálatlan elszivárgás rövid távon politikailag kényelmes lehet, de hirtelen fenntarthatósági válságok kockázatával jár átmeneti terv nélkül.
-- A nemzeti keretrendszer hiánya miatt az eredmények az egyes polgármesterek tárgyalási képességétől függenek, ami egyenlőtlen bánásmód kockázatával jár a falvak között.
-- A vidéki választói bázis érzékenysége blokkolhatja a szükséges jövőbeli összevonást is, meghosszabbítva a nem fenntartható működést.
+- A tankerületi rendszer krónikus alulfinanszírozása tartós fiskális nyomást hoz létre a összevonásra, függetlenül a hivatalos 'megtartás, amíg van igény rá' politikától, ami csendes leépülés kockázatát hordozza nyílt konfliktus helyett.
+- Az egyértelmű törvényi küszöb hiánya a megtartási döntéseket a tankerület mérlegelésére hagyja, amely évről évre politikailag megfordítható és kormányzati változás esetén sérülékeny.
 
 **Bizonytalanságok**
-- Nem ismert, hogy az önkormányzatok jelenleg milyen minimális fenntarthatósági tanulószám-küszöböket alkalmaznak, és mennyire következetesen. (megbízhatóság: alacsony; csökkentené: Az önkormányzati iskolaműködtetési kritériumok szisztematikus nyilvántartása vagy felmérése, amelyet az Oktatási Hivatal tesz közzé.)
-- A felmenő rendszer jelenlegi alkalmazási aránya és a szélesebb körű elterjedést gátló tényezők nincsenek dokumentálva. (megbízhatóság: közepes; csökkentené: A regionális oktatási hatóságoknál benyújtott iskola-átszervezési döntések retrospektív elemzése az elmúlt 5-10 évre.)
-- Nincs tesztelve, hogy az ad hoc, nem szabványosított alkalmazkodás rosszabb vagy jobb hosszú távú eredményeket hoz-e egy koordinált keretrendszerhez képest. (megbízhatóság: alacsony; csökkentené: Kísérleti programok, amelyek összehasonlítják a koordinált és az ad hoc alkalmazkodási modelleket illeszkedő falvak között, publikált eredmény-nyomkövetéssel.)
+- Kérdéses, hogy az összevont osztályokhoz szükséges tanárkínálat elég gyorsan bővülhet-e, mivel a magyar tanárok fele 50 éves vagy idősebb, és a vidéki állásajánlatok éves szinten kb. 25%-kal nőnek. (megbízhatóság: alacsony; csökkentené: A tankerületi szintű, összevont oktatásra képzett tanári kínálat és utánpótlási előrejelzések auditja 2030-ig.)
+- Kérdéses, hogy az eseti, nemzeti keret nélküli helyi alkufolyamat szisztematikusan méltányos eredményeket hoz-e a településeken, vagy a jobban organizált/gazdagabb falvakat előnyben részesíti. (megbízhatóság: alacsony; csökkentené: A megtartási alkufolyamatok eredményeinek összehasonlító vizsgálata különböző igazgatási kapacitású és vagyoni helyzetű településeken.)
 
-## S2 — Strukturális évfolyam-átszervezés (alsó évfolyamok maradnak, felsők központosulnak)
+## S2 — Strukturális évfolyam-átalakítás (alsó tagozat marad, felső tagozat centralizálódik)
 **Cél**
-Az iskolarendszer átszervezése úgy, hogy csak az alsó évfolyamok (1-4/1-6) maradjanak a faluban, míg a felső évfolyamok vagy egy új ISCED2-típusú iskola egy nagyobb városban összevonásra kerülnek, a lengyel 1999-es strukturális reform mintáját követve (rövidített általános iskola plusz központilag elhelyezett későbbi szakaszú oktatás).
+Az iskolarendszer átalakítása úgy, hogy csak az alsó tagozat (1-4/1-6. évfolyam) marad a faluban, míg a felső tagozatot vagy egy új ISCED2-típusú iskolát egy nagyobb városban centralizálják, követve a lengyel 1999-es strukturális reform mintáját (rövidített alsó tagozat plusz központilag elhelyezett későbbi oktatás).
 
 **Mechanizmus**
-- A csak alsó évfolyamok helyben tartása és a szelekció/centralizáció elhalasztása csökkenti azt az életkort, amikor a gyerekeknek ingázniuk kell, míg a felső évfolyamos erőforrásokat központilag összevonja. [bizonyíték: mérsékelt]
-- A felső évfolyamos/ISCED2 iskolák központi elhelyezése meghosszabbítja a 10-15 éves korosztály ingázását akkor is, ha a helyi alsó tagozat nyitva marad, ami a lengyel 1999-es reform dokumentált mellékhatása. [bizonyíték: mérsékelt]
-- A késleltetett szelekció a nemzetközi szakirodalom szerint a teljesítménybeli szakadékok csökkenésével jár, különösen az alacsonyabb teljesítményű tanulók javára. [bizonyíték: erős]
+- Lengyelország 1999-es oktatási reformja (az általános iskola 8-ról 6 évre rövidítése és nagyobb körzetű alsó-középiskolák létrehozása) kifejezetten a vidéki oktatás minőségének javítására irányult, de mellékhatásként csökkentette az alsó tagozatos iskolák méretét és vidéki iskolabezárásokat idézett elő. [bizonyíték: mérsékelt]
+- A késleltetett szelekció (tracking) egyes nemzetközi összehasonlító szakirodalom szerint csökkentett teljesítménybeli szakadékokkal jár együtt, bár ennek erőssége és okozati hozzárendelése (más zavaró rendszerjellemzőkkel szemben) vitatott az összehasonlító oktatáskutatók körében. [bizonyíték: vitatott]
+- A nagyon kicsi vidéki iskolák nem tudnak teljes munkaidős állást biztosítani szaktanárok számára, ami arra kényszeríti a tanárokat, hogy több iskola között ingázzanak; a felső tagozat egy nagyobb ISCED2-típusú telephelyen történő centralizálása lehetővé tenné a szétszórt falusi iskolákban nem elérhető teljes munkaidős szaktanári ellátást. [bizonyíték: mérsékelt]
+- Lengyelország gmina-szintű népszavazási mechanizmusa és a helyi önrendelkezés alkotmányos védelme hatékonyan megakadályozta a központilag kikényszerített bezárásokat, ami potenciális modellt kínál a közösségi hozzájáráshoz a centralizációs folyamatban. [bizonyíték: gyenge]
 
 **Bizonyítékstátusz**
-vitatott — A lengyel 1999-es reform utáni PISA-eredmény javulás erősen dokumentált, de ennek a strukturális elhalasztásnak, nem pedig az egyidejű reformoknak való betudása feltételezés, és a reform politikai tartóssága annyira vitatott volt, hogy 17 év után visszavonták.
+vitatott — A lengyel 1999-es eset strukturális reformmintát és bezárási mellékhatást mutat, de a teljesítménybeli szakadékra vonatkozó előny vitatott a szakirodalomban, és nincs magyar kísérleti adat az átvihetőség megerősítésére.
 
 **Feltevések**
-- Magyarország intézményi és önkormányzati irányítási kontextusa kellően hasonló Lengyelországéhoz, hogy az 1999-es strukturális minta érdemben átvihető legyen.
-- Létezik alkalmas, központilag elhelyezett város, amely be tudja fogadni az összevont felső tagozatos/ISCED2 oktatást, a legtöbb érintett falutól elfogadható utazási távolságban.
-- A késleltetett szelekciónak betudott PISA-eredmény javulás nem elsősorban egyidejű, nem kapcsolódó reformok vagy méréstechnikai változások mellékhatása.
+- Magyarország intézményi és önkormányzati irányítási kontextusa elég hasonló a lengyel 1999-es viszonyokhoz ahhoz, hogy a strukturális reform és annak vélt teljesítménybeli-szakadék-előnyei átvihetők legyenek, a centralizáció eltérései ellenére (Magyarország 2013 utáni tankerületi rendszere vs. Lengyelország gmina-szintű autonómiája).
+- A jelenlegi ingázási infrastruktúra és a támogatott közösségi közlekedés fenntarthatja a felső tagozatos gyermekek napi útjait a központilag elhelyezett ISCED2-iskolákba elfogadhatatlan jóléti költség nélkül, jóllehet a dokumentált informális szülői kísérő-beosztások arra utalnak, hogy a jelenlegi közlekedési biztosítékok már most is túlterheltek.
+- Elegendő politikai akarat és párton átívelő konszenzus áll fenn ennek a strukturális reformnak a megfordítás elleni megerősítésére, jóllehet Lengyelország saját 1999-es reformját később, 17 év után visszavonták, és Magyarországon nem létezik dokumentált párton átívelő konszenzusmechanizmus a vidéki iskolareformra.
 
 **Várható előnyök**
-- Megőrzi a helyi jelenlétet a legfiatalabb, utazásra legérzékenyebb gyerekek számára (6-10/12 évesek), míg a szakosított erőforrásokat az idősebb tanulók számára összevonja. [bizonyíték: mérsékelt]
-- Csökkentheti a teljesítménybeli szakadékokat a szelektív besorolás elhalasztásával, a késleltetett szelekcióról szóló nemzetközi szakirodalom szerint. [bizonyíték: erős]
-- Összevonja a szakos pedagógus erőforrásokat, amelyeket a kis vidéki telephelyeken a legnehezebb toborzni, kezelve a pedagógus-ellátási korlátokat. [bizonyíték: gyenge]
+- Lehetővé teszi a teljes munkaidős szaktanári oktatást a centralizált felső tagozati telephelyen, kezelve a lengyel esetben dokumentált problémát, amikor a vidéki tanárok több részmunkaidős állás között ingáznak. [bizonyíték: mérsékelt]
+- Megőrzi a helyi iskolai jelenlétet a legkisebb, utazásra legérzékenyebb gyermekek számára (1-4/1-6. évfolyam), részben mérsékelve a fiatal tanulók korai reggeli, hosszú távú utazásának dokumentált terhét. [bizonyíték: gyenge]
+- Egyes nemzetközi összehasonlító szakirodalom szerint csökkentheti a késleltetett szelekcióval összefüggő teljesítménybeli szakadékokat, bár e előny nagysága és okozati hozzárendelése vitatott marad. [bizonyíték: vitatott]
 
 **Méltányossági hatás**
-Kettős hatású: megóvja a legfiatalabb és utazásra legérzékenyebb gyerekeket a hosszú ingázástól, ami valószínűleg aránytalanul kedvez az alacsonyabb státuszú, helyi közlekedéstől függő családoknak, de a 10-15 éves korosztályra helyezi az utazási és szelekciós terhet, amely csoport szintén érzékeny Magyarország meglévő korai szelekciós státuszgrádiensére; a nettó egyenlőségi hatás azon múlik, hogy a felső tagozatos összevonást szállítási garanciákkal párosítják-e.
+Az utazási terhet a felső tagozatos korú gyermekekre és családjaikra helyezi át, akiknek naponta kell a centralizált telephelyre ingázniuk; ez a teher aránytalanul nagy mértékben érinti az alacsonyabb jövedelmű és roma családokat, akik dokumentáltan 2-3-szor nagyobb arányban vannak kitéve nem képesített tanároknak és földrajzilag koncentrálódnak a hátrányos helyzetű vidéki településeken, és fennáll a veszélye, hogy a jobb módú családok 'fehér elvándorlás' útján más iskolákba lépnek ki, ami a centralizált telephelyet szegregáltabbá teszi; e forgatókönyv alapkoncepciójába nincs beépítve kompenzáló szállításiköltség- vagy célzott támogatási mechanizmus.
 
 **Költségkategóriák**
-- Beruházás egy új vagy kibővített, ISCED2-típusú központi iskolába
-- Szállítási infrastruktúra és támogatás a központi iskolába ingázó 10-15 éves korosztály számára
-- A megtartott alsó tagozatos épület fenntartási és összevont oktatási személyzeti költségei a falvakban
-- Az iskolarendszer és a fenntartói megállapodások átszervezésének igazgatási és jogi költsége
+- Tőkeberuházás új vagy kibővített ISCED2-típusú centralizált iskolai létesítményekhez
+- Törvényileg előírt közlekedési infrastruktúra és támogatott napi ingázási költségek a felső tagozatos tanulók számára
+- Végkielégítési, kompenzációs vagy áthelyezési költségek a felső tagozatot elvesztő falusi telephelyeken feleslegessé váló tanárok és kisegítő személyzet számára
+- Ideiglenes bővítési költségek a központi telephelyeken (modulos tantermek, létszámbővítés) az átmeneti időszakban
 
 **Megvalósítási lépések**
-- Oktatási Minisztérium / Klebelsberg Központ (Tankerületi Központ) — Kijelöli a jelölt várost/városokat a központilag elhelyezett ISCED2-típusú iskolák számára, és felméri a kapacitást és az ingázási távolság megvalósíthatóságát a környező falvak számára. (ütemezés: 1. év)
-- Regionális/megyei hatóságok — Konzultál az érintett falusi önkormányzatokkal és szülői közösségekkel az átszervezési tervről, a törvényi konzultációs előírásoknak megfelelően. (ütemezés: 1-2. év)
-- Falusi önkormányzatok — Megtartja és átalakítja az alsó tagozatos iskolaépületeket, koordinálva a tankerülettel az összevont oktatási személyzet kérdésében. (ütemezés: 2-3. év)
-- Oktatási Minisztérium / megyei közlekedési hatóság — Kialakítja és finanszírozza a felső tagozatos tanulók központi iskolába ingázásának törvényi szállítási feltételeit. (ütemezés: 2-3. év)
+- Minisztérium/EMMI és tankerületi központok — Kijelölik a központilag elhelyezett ISCED2-típusú iskolákat, és realisztikus, több évre szóló beszerzési és építési ütemtervvel végzik a tőkeberuházási tervezést, nem egy évbe sűrítve. (ütemezés: 1-5. év)
+- Önkormányzat és közlekedési hatóság — Törvényileg előírt közlekedési útvonalakat és támogatott szolgáltatást hoznak létre kapacitás- és biztonsági auditokkal a tanulóáthelyezés megkezdése előtt. (ütemezés: 2-4. év)
+- Tankerületi központ és pedagógus szakszervezetek — Tárgyalásokat folytatnak az évfolyam-átalakítás által érintett tanárok áthelyezéséről, végkielégítéséről vagy átképzéséről. (ütemezés: 2-3. év)
 
 **Politikai kockázatok**
-- A gyors, felülről vezérelt hálózat-átszervezés (mint a lengyel 2016-2019-es visszavonás esetében) pedagógus-elbocsátásokhoz és összevonási feszültségekhez vezethet, ami rontja a bizalmat a pedagógiai indokoltságtól függetlenül.
-- A pártok közötti konszenzus nélküli strukturális reformok érzékenyek az ideológiai indíttatású visszavonásra, mint a lengyel 1999-es reform esetében, amelyet 17 év után vontak vissza a dokumentált eredmények ellenére is.
-- A felső tagozatos tanulók szülei ellenállhatnak gyermekeik hosszabb ingázásának, ami az alsó tagozat megtartásától eltérő, lokalizált politikai ellenállást kelt.
+- Lengyelország 1999-es reformja politikailag megfordítható volt, és 17 év után valóban visszavonták; konkrét, párton átívelő megerősítési mechanizmusok vagy alkotmányos szintű védelem nélkül a magyar változat hasonló visszafordítási kockázattal néz szembe, különösen a párton átívelő konszenzusmechanizmus dokumentált hiánya miatt.
+- A 2023. évi LII. törvény (státusztörvény) szerinti tanár-áthelyezés, amely felhatalmazza a tankerületi központokat a tanárok átrendelésére, kiválthatja a Tanítanék mozgalomhoz hasonló mobilizációt, ha önkéntes megkérdezés nélküli, kényszerű áthelyezésként érzékelik.
 
 **Bizonytalanságok**
-- Nincs igazolva, hogy Magyarország intézményi és önkormányzati kapacitása képes-e támogatni a lengyel reform által megkövetelt központi elhelyezési logisztikát. (megbízhatóság: alacsony; csökkentené: A jelölt központi városok kapacitásának és közlekedési hálózatának megvalósíthatósági vizsgálata a falu-klaszterek reprezentatív mintájára.)
-- Nyitott empirikus kérdés, hogy a lengyel 1999-es reform utáni PISA-eredmény javulás okilag a késleltetett szelekciónak, vagy egyidejű reformoknak tudható-e be. (megbízhatóság: alacsony; csökkentené: Egy differencia-in-differencia vagy regressziós-diszkontinuitási vizsgálat, amely elkülöníti a szelekció-elhalasztás hatását a lengyel egyidejű reformoktól.)
-- A lengyel mintájú reform politikai tartóssága Magyarországon pártok közötti konszenzus nélkül nem ismert, és hasonló visszavonási kockázattal járhat, mint a lengyel 2016-2019-es tapasztalat. (megbízhatóság: alacsony; csökkentené: A hasonló strukturális reformok pártok közötti konzultációs jegyzőkönyvei és tartóssági nyomon követése 10+ éves időhorizonton.)
+- Kérdéses, hogy a késleltetett szelekciónak tulajdonított teljesítménybeli-szakadék-előny valóban megjelenik-e a magyar kontextusban, tekintve a nemzetközi szakirodalom vitatott okozati hozzárendelését és a magyar kísérleti adatok hiányát. (megbízhatóság: alacsony; csökkentené: Magyar kísérleti vizsgálat, amely összehasonlítja a teljesítménybeli szakadékokat a centralizált ISCED2-struktúrát alkalmazó és a teljes 1-8. évfolyamos helyi iskolát megtartó falvak között, a szocioökonómiai háttér kontrollálásával.)
+- Kérdéses, hogy a jelenlegi ingázási infrastruktúra elviselhető jóléti költség mellett fenntarthatja-e a felső tagozatos tanulók napi szállítását, tekintve a dokumentált informális szülői kísérő-beosztásokat, amelyek a kísérő nélküli kiskorúakat visszautasító regionális buszok miatt jöttek létre. (megbízhatóság: közepes; csökkentené: Meglévő iskolabusz-útvonalak és kapacitás közlekedésbiztonsági és jóléti auditja a centralizációra jelölt régiókban, beleértve a kísérő nélküli kiskorúakra vonatkozó szabályok betartását.)
 
-## S3 — Hálózatos megtartás: klaszteresítés, egyesületi fenntartású és többfunkciós központ modellek
+## S3 — Hálózatos megtartás: klaszterezés, társulás-fenntartású és többfunkciós közösségi modellek
 **Cél**
-A falusi általános iskolák megtartása önkormányzatközi pedagógiai hálózatokon (francia RPI-típusú klaszteresítés), közösségi/egyesületi fenntartású, közfinanszírozott iskolákon (lengyel modell), vagy iskolát más civil funkciókkal összekapcsoló többfunkciós központokon keresztül.
+A falusi általános iskolák megtartása önkormányzatközi pedagógiai hálózatok (francia RPI-típusú klaszterezés), közösségi/társulás-fenntartású, állami támogatású iskolák (lengyel modell), vagy iskolát más civil funkciókkal kombináló többfunkciós közösségi csomópontok révén.
 
 **Mechanizmus**
-- A francia RPI modell több kis vidéki önkormányzat iskoláját közös pedagógiai hálózatba klaszterezi bezárás helyett, évfolyam-megosztással a telephelyek között vagy falvak közötti szállítással. [bizonyíték: mérsékelt]
-- A lengyel 2000-es évek közepi módosítás lehetővé teszi az önkormányzatok számára, hogy a nagyon alacsony tanulószámú falusi iskolákat szülői/közösségi egyesületeknek adják át, amelyek közfinanszírozott, nem állami iskolaként működtetik azokat bezárás helyett. [bizonyíték: mérsékelt]
-- A többfunkciós központ modellek (iskola plusz egészségügyi/civil funkciók) az európai szakpolitikában javasoltak, de hiányzik a megbízható költség-haszon adat és a tartós elterjedés bizonyítéka hasonló vidéki környezetben. [bizonyíték: gyenge]
-- Magyarország fenntartói pluralitása (önkormányzati, egyházi, magánalapítványi, állami) meglévő jogi lehetőségeket teremt a nem önkormányzati folytatáshoz, amelyeket a hálózatos modellek aktiválhatnának. [bizonyíték: mérsékelt]
+- Lengyelország jogi keretet vezetett be (gmina-megállapodások társulásokkal, alapítványokkal vagy magánszemélyekkel), amely lehetővé teszi, hogy kis iskolák (legfeljebb 70 tanulóval) nem-kormányzati irányítás alatt maradjanak nyitva, miközben megtartják az állami finanszírozást és a tantervet. [bizonyíték: erős]
+- A strukturális társadalmi tőke csökkenése azokban a falvakban, ahol az általános iskolák bezártak (2000-2016), jelentősen nagyobb volt, mint azokban, ahol az iskolák nyitva maradtak, egy négy lengyel falura kiterjedő többes esettanulmány szerint. [bizonyíték: mérsékelt]
+- Lengyelország 2024-2025-ös oktatási törvénytervezete formalizálja a zsugorodó általános iskolák többfunkciós közösségi csomópont-funkcióit, beleértve a gyermekgondozást, óvodai ellátást és időskorúak számára nyújtott szolgáltatásokat, a bezárás alternatívájaként. [bizonyíték: mérsékelt]
+- Magyarországon léteznek alulról építkező, civil fenntartói modellek a bezárás alternatívájaként; Sátán (Borsod) egy helyi közösségi szervezet vette át az iskola fenntartását, nehogy a falu elveszítse iskoláját. [bizonyíték: gyenge]
+- A nagyon kicsi lengyel vidéki iskolák nem tudnak teljes munkaidős állást biztosítani szaktanárok számára, ami arra kényszeríti a tanárokat, hogy több iskola között ingázzanak és másodlagos foglalkoztatást vállaljanak; a vidéki tanárok mintegy egyötöde részmunkaidőben dolgozik, ami arra utal, hogy a hálózatos modellek nem oldják meg automatikusan a foglalkoztatási bizonytalanságot. [bizonyíték: mérsékelt]
 
 **Bizonyítékstátusz**
-gyenge — Az egyes komponens-mechanizmusok (RPI, egyesületi fenntartású iskolák) külföldön mérsékelten dokumentáltak, de nincs magyar kísérleti adat az adaptáció sikerességéről, és magának az egyesületi fenntartású iskolák lengyelországi fenntarthatósága is igazolatlan feltételezés, nem megerősített eredmény.
+gyenge — A lengyel jogi keretre és társadalmi tőkére vonatkozó bizonyítékok mérsékeltek-erősek, de nincs magyar kísérleti adat, és a sátai eset egyetlen, gyenge bizonyítéki erejű példa, így az általános magyar átvihetőség gyenge marad.
 
 **Feltevések**
-- A lengyel egyesületi fenntartású, közfinanszírozott vidéki iskolák valódi működési fenntarthatóságot értek el, nem csupán elhalasztották a végleges bezárást.
-- A 2000 fő alatti magyar települések rendelkeznek vagy fejleszthetnek elegendő igazgatási kapacitást egy egyesületi fenntartású iskola vagy központ modell megszervezéséhez és fenntartásához.
-- Az önkormányzatközi együttműködés (RPI-típusú) politikailag és igazgatásilag megvalósítható a magyar falusi önkormányzatok között túlzott koordinációs terhelés nélkül.
-- A többfunkciós központ modellek elérhetik a kihasználtságot és költséghatékonyságot a magyar falvakban a helyi demonstrációs adatok hiánya ellenére is.
+- A lengyel társulás-fenntartású, állami támogatású vidéki iskolák valódi működési fenntarthatóságot értek el, jóllehet sem a lengyel, sem a magyar bizonyítékbázis nem erősíti meg ezt a modell validálásához szükséges 10+ éves horizonton, és a tanári bizonytalanság (egyötödük részmunkaidős) megoldatlan, önálló problémaként fennmarad.
+- Magyarország alkotmányos és önkormányzati kerete elég hasonló a lengyel gmina-struktúrához ahhoz, hogy lehetővé tegye a társulás-fenntartású iskolamodellek jogi átvételét, jóllehet Magyarország 2013 utáni tankerületi/KLIK-alapú centralizációja megszüntette azt az önkormányzati hatáskört, amelyet a lengyel gminák megtartottak.
+- Az önkormányzatok és civil szervezetek rendelkeznek, vagy gyorsan kiépíthetik azt az igazgatási kapacitást, amely a többfunkciós közösségi csomópontok (gyermekgondozás, időskorúak ellátása) működtetéséhez szükséges az alapvető oktatási funkciók mellett, anélkül, hogy ez a kapacitásigény szisztematikusan hátrányba hozná a legszegényebb, legkevésbé organizált falvakat.
 
 **Várható előnyök**
-- Megőrzi a helyi iskolai jelenlétet és a közösségi horgony funkciót anélkül, hogy teljes önkormányzati méretű tanulószámot igényelne. [bizonyíték: gyenge]
-- Politikailag tartósabb középutat kínál a bináris nyitás/bezárás döntésekkel szemben, csökkentve a hirtelen bezárásból eredő visszaállítási költség kockázatát. [bizonyíték: mérsékelt]
-- A többfunkciós központok kiegyenlíthetik a rögzített, tanulónkénti költségeket az üzemeltetési terhek más civil funkciókkal való megosztásával, bár ez magyar környezetben nem igazolt. [bizonyíték: gyenge]
+- Megőrzi azt a strukturális társadalmi tőkét, amely a lengyel többes esettanulmányok szerint jelentősen jobban csökken azokban a falvakban, amelyek elvesztik iskolájukat, mint azokban, amelyek megtartják. [bizonyíték: mérsékelt]
+- Megtartja az állami finanszírozást és a tantervi előírásokat nem-kormányzati irányítás alatt, elkerülve a bináris választást a teljes állami működtetés és a bezárás között. [bizonyíték: erős]
+- Diverzifikálja az iskolaépület funkcióját többfunkciós közösségi csomóponti szerepekre, potenciálisan növelve az alulhasznált vidéki infrastruktúra fiskális és civil kihasználtságát. [bizonyíték: gyenge]
 
 **Méltányossági hatás**
-Potenciálisan pozitív hatású az egyenlőségre, mivel elkerüli a teljes összevonás utazási terhét és a nem kezelt csökkenés kompozíciós/peer-hatás kockázatait, de az igazgatási kapacitásigény hátrányba hozhatja a legszegényebb, legkevésbé megorganizált falvakat, új egyenlőtlenségi formát létrehozva a hálózatos vagy egyesületi modellt megorganizálni képes és képtelen közösségek között.
+Az iskolák hálózatos vagy társulás-fenntartású modelleken keresztüli megtartása feltehetően megvédi a legszegényebb, legelszigeteltebb falvakat egyetlen közintézményük elvesztésétől, de a társulási szerződések, többfunkciós csomópontok vagy önkormányzatközi hálózatok működtetésének igazgatási kapacitásterhe azzal a kockázattal jár, hogy szisztematikusan kizárja pontosan azokat a legszegényebb, legkevésbé organizált falvakat, amelyeknek a legnagyobb szükségük van a védelemre, hacsak az állam nem biztosít célzott kapacitásépítő támogatásokat, mintaszerződés-sablonokat és jogi/számviteli segítséget az alacsony kapacitású önkormányzatok számára; ilyen célzott támogatás nélkül ez a forgatókönyv paradox módon szélesítheti a jól organizált és a gyengén organizált vidéki közösségek közötti szakadékot.
 
 **Költségkategóriák**
-- Önkormányzatközi koordinációs és igazgatási terhelés a pedagógiai hálózat kezeléséhez
-- Átmeneti jogi és finanszírozási költségek az egyesületi fenntartású iskola bejegyzéséhez és a közfinanszírozáshoz való hozzáféréshez
-- Beruházási és üzemeltetési költségek a többfunkciós központ létesítmény átalakításához és megosztott személyzethez
-- A hálózatba kapcsolt telephelyek közötti utazó szakos pedagógusok utazási és koordinációs költségei
+- Jogi szövegezési és tárgyalási költségek a társulás-fenntartású vagy klaszterhálózati megállapodások létrehozásához
+- Folyamatos igazgatási és számviteli kapacitás a társulás-fenntartású iskolák és többfunkciós csomópontok számára
+- Kapacitásépítő támogatások és technikai segítségnyújtás az alacsony igazgatási kapacitású önkormányzatok számára, a legszegényebb falvak kizárásának megelőzésére
+- Tanári bér- és másodlagos foglalkoztatási támogatás a lengyel hálózatos modellben dokumentált ingázási/részmunkaidős bizonytalanság kezelésére
 
 **Megvalósítási lépések**
-- Szomszédos falusi önkormányzatok klasztere — Önkormányzatközi pedagógiai hálózati megállapodást (RPI-típusú) köt, meghatározva a megosztott személyzeti és évfolyam-megosztási elrendezéseket. (ütemezés: 1. év)
-- Oktatási Minisztérium / Országgyűlés — Létrehozza vagy pontosítja a lengyel egyesületi fenntartású iskolai módosításhoz hasonló jogi mechanizmust, amely lehetővé teszi a szülői/közösségi egyesületek számára közfinanszírozott vidéki iskolák működtetését. (ütemezés: 1-2. év)
-- Szülői/közösségi egyesületek — Kérelmezi a fenntartói átadást és biztosítja a közfinanszírozást az új jogi mechanizmus szerint, ahol az önkormányzati működtetés nem fenntartható. (ütemezés: 2-3. év)
-- Falusi önkormányzatok és regionális fejlesztési ügynökségek — Kísérleti többfunkciós központ átalakítást indít 3-5 reprezentatív faluban, az iskolát egészségügyi/civil funkciókkal kombinálva, nyomon követve a költség- és kihasználtsági eredményeket. (ütemezés: 2-4. év)
+- Minisztérium/EMMI és jogalkotók — Létrehozzák vagy tisztázzák a lengyel társulás-fenntartású iskolai módosításhoz hasonló jogi mechanizmust, kezelve olyan akadályokat, mint a fenntartói jog megváltoztatása, és meghatározva a miniszteri jóváhagyási eljárásokat, realisztikus időt hagyva a jogalkotási tárgyalásokra és az érintett szereplőkkel való konzultációs késésekre. (ütemezés: 1-3. év)
+- Önkormányzatok és civil/társulási szervezetek — Önkormányzatközi pedagógiai hálózatokat vagy társulás-fenntartói testületeket alakítanak, célzott technikai segítségnyújtással az alacsony kapacitású településeken. (ütemezés: 2-4. év)
+- Agrárminisztérium (Magyar Falu Program) és Minisztérium/EMMI — Összehangolják a párhuzamos infrastrukturális finanszírozási csatornákat az iskolaépületek többfunkciós csomóponttá alakításának támogatására. (ütemezés: 2-5. év)
 
 **Politikai kockázatok**
-- Az egyesületi fenntartású modelleket a privatizáció felé tett lépésnek vagy az állami felelősség csökkentésének tekinthetik, ami ellenállást kelt a pedagógus-szakszervezetek és önkormányzati szövetségek részéről.
-- Az önkormányzatközi együttműködés több falusi önkormányzat tartós politikai akaratát igényli, amely idővel megtörhet a helyi rivalizálás vagy az aszimmetrikus költségek/hasznok miatt.
-- A többfunkciós központ modelleknek nincs bizonyított magyar előzményük, ami közbizalmi szkepticizmus vagy alulfinanszírozás kockázatával jár, ha megfelelő értékelési infrastruktúra nélkül indítják el.
+- A társulás-fenntartású és civil-fenntartói modelleket a pedagógus szakszervezetek és néhány politikai szereplő privatizációként érzékelheti, és az állam korábban már bizonyította hajlandóságát a fenntartói státusz erőszakos visszavonására (mint a MET-eset), ami felveti a kockázatot, hogy ugyanez a kényszerítő visszavonási képesség alkalmazható lenne a civil/társulási fenntartókra is.
+- A szervezett szakszervezeti ellenállás fokozódhat, ha a hálózatos modelleket az állami foglalkoztatási garanciák csökkentésének vagy a státusztörvény védelmeinek megkerülésének eszközeként érzékelik, ami kifejezett politikai vagy jogi biztosítékokat igényel a tanári foglalkoztatás folytonosságára a hálózati/társulási átmenetek során.
 
 **Bizonytalanságok**
-- A lengyel egyesületi fenntartású iskolák jelenlegi száma, átlagos tanulószáma és költségvetési fenntarthatósága nincs igazolva, így a modell átvihetősége bizonytalan. (megbízhatóság: alacsony; csökkentené: A lengyel gminák egyesületi fenntartású iskoláinak számát, finanszírozási forrásait és működési eredményeit dokumentáló nyilvántartás vagy statisztikai felmérés.)
-- Nem ismert, hogy a magyar falusi önkormányzatok és közösségek rendelkeznek-e elegendő igazgatási kapacitással az önkormányzatközi hálózatok vagy egyesületi fenntartású iskolák külső támogatás nélküli fenntartásához. (megbízhatóság: alacsony; csökkentené: A 2000 fő alatti települések reprezentatív mintájának strukturált auditja, amely méri a fenntartói alternatívák aktiválására való felkészültséget.)
-- A többfunkciós központ modellek költség-haszon eredményei és tartós elterjedése hasonló magyar falvakban teljesen dokumentálatlan. (megbízhatóság: alacsony; csökkentené: A magyarországi aktív központ-programok leltárba vétele és értékelése, beleértve az alapköltségeket, a személyzetet, a kihasználtsági rátákat és a szülői/közösségi elégedettségi felméréseket.)
+- Kérdéses, hogy Magyarország 2013 utáni centralizált tankerületi/KLIK irányítási struktúrája lehetővé teszi-e a lengyel típusú társulás-fenntartású iskolai autonómia valódi jogi átvételét, tekintve, hogy a lengyel gminák megtartják a helyi iskolatulajdonlási jogkört, amelyet a magyar önkormányzatok elvesztettek. (megbízhatóság: alacsony; csökkentené: Magyar és lengyel oktatásjogi szakértők formális jogösszehasonlító elemzése, amely felméri a társulás-fenntartói mechanizmus átvihetőségét a jelenlegi Nkt. rendelkezések alapján.)
+- Kérdéses, hogy a társulás-fenntartású és többfunkciós csomópont-modellek valódi hosszú távú működési fenntarthatóságot és oktatási minőséget érnek-e el, vagy csak elodázzák a bezárást, míg a minőség romlik, tekintve, hogy nem létezik szigorú kvázi-kísérleti vizsgálat, amely 10+ éven át összehasonlítaná a társulási iskolákat a hagyományos állami iskolákkal az eredmények tekintetében. (megbízhatóság: alacsony; csökkentené: Hosszmetszeti kvázi-kísérleti vizsgálat (diff-in-diff vagy párosított minta), amely összehasonlítja a társulási iskolákat a hagyományos állami vagy bezárt iskolákkal a tanulói eredmények, tanármegtartás és intézményi életképesség tekintetében 10+ éven át.)
 
-## S4 — Összevonás mérséklő intézkedésekkel (bezárás alapértelmezettként, kompenzációs intézkedések)
+## S4 — Összevonás mérséklő intézkedésekkel (bezárás mint alapértelmezett megoldás, kompenzációs intézkedésekkel)
 **Cél**
-Az alacsony tanulószámú falusi iskolák bezárása és a tanulók átirányítása egy összevont központi iskolába, törvényi szállítási garanciákkal, célzott támogatással (TEIP-típusú) és átlátható költség-/konzultációs szabályokkal párosítva, az utazási és egyenlőségi károk mérséklésére.
+Az alacsony beiskolázású falusi iskolák bezárása és a tanulók átirányítása egy összevont központi iskolába, törvényileg garantált szállítással, célzott támogatással (TEIP-típusú), és átlátható költség-/konzultációs szabályokkal az utazási és méltányossági károk kompenzálására.
 
 **Mechanizmus**
-- Portugália minimális tanulószám-küszöböt (~21 fő) alkalmazott, amely 2005-2013 között összevonta az izolált 1. ciklusú iskolákat nagyobb centros escolares intézményekbe. [bizonyíték: mérsékelt]
-- A TEIP-típusú célzott támogatás (extra erőforrások, pedagógiai autonómia, szociális munka szolgáltatások) a lemorzsolódás és évfolyamismétlés csökkenésével jár hátrányos helyzetű és vidéki iskolákban. [bizonyíték: mérsékelt]
-- A törvényi szállítási garanciák a bezárási döntést explicit, tervezett költségáthelyezéssé alakítják, láthatóvá és összehasonlíthatóvá tesz a rejtett kompromisszumokat. [bizonyíték: mérsékelt]
-- A bezárás utáni szállítási költségek jellemzően 800-1500 EUR/tanuló/év között mozognak a vidéki Közép-Európában, gyakran kiegyenlítve vagy meghaladva a látszólagos összevonási megtakarítást. [bizonyíték: mérsékelt]
+- Portugália 2005/2006-os iskolahálózati átalakítása 1418 iskola bezárását 800 nagyobb, jobban felszerelt 'centros escolares' építésével párosította, bizonyítva, hogy a bezárás párosítható a fogadó telephelyre irányuló megfelelő beruházással. [bizonyíték: mérsékelt]
+- A bezárás utáni szállítási költségeket közép-európai kontextusban nagyjából 800-1500 EUR/tanuló/év tartományban idézik, bár ezt a pontos számot még nem validálták a magyar útvonalhosszakhoz, kihasználtsághoz vagy regionális terephez, és gyakran ellensúlyozza a tervezett összevonási megtakarítások egy részét. [bizonyíték: gyenge]
+- Portugália TEIP kompenzációs programja csökkentette a lemorzsolódási és bukási arányokat a hátrányos helyzetű iskolai klaszterekben, de 15 év alatt nem zárta be a teljesítménybeli szakadékot a TEIP és nem-TEIP iskolák között az országos vizsgákon, jelezve, hogy a hozzáférési/megtartási támogatás önmagában nem garantál tanulási eredményekben megnyilvánuló méltányosságot. [bizonyíték: erős]
+- Egy olasz tanulmány, amely egy iskolahálózat-szűkítő reformot vizsgált, azt találta, hogy a bezárás által érintett önkormányzatok jelentős népesség- és jövedelemcsökkenést szenvedtek el a korábbi demográfiai trendeken túl, jelezve egy okozati visszacsatolási hurkot, amelyet a mérséklő intézkedéseknek kifejezetten ellensúlyozniuk kellene. [bizonyíték: mérsékelt]
 
 **Bizonyítékstátusz**
-vitatott — Portugália PISA-eredmény javulása dokumentált, de az összevonásnak vagy az egyidejű TEIP-/tantervi reformnak való betudás nem tisztázott, és az összevonás okozati kapcsolata a felgyorsult vidéki elnéptelenedéssel vitatott a szakirodalomban.
+vitatott — A bezárás-mérséklés párosítására vonatkozó portugál és olasz bizonyítékok dokumentáltak, de a pontos magyar költségadatok hiányoznak, és a TEIP bizonyítékok szerint a kompenzációs intézkedések nem oldják meg a méltányossági szakadékokat, így az általános nettó hatás vitatott.
 
 **Feltevések**
-- A centros escolares-típusú összevont, tanulónkénti költség- és szolgáltatásminőségi adatok megbízhatóan tükrözik a valós oktatási és társadalmi hasznot.
-- A TEIP megfigyelt korrelációja a csökkent lemorzsolódással valódi pedagógiai javulást tükröz, nem pedig a programba való szelekciós/kiválasztási hatásokat.
-- A jelenlegi közlekedési infrastruktúra és a támogatott közösségi közlekedés fenntarthatja a napi 20+ km-es utakat kisiskolás gyermekek számára elfogadhatatlan jóléti költség nélkül.
-- A legtöbb, de nem minden bezárásra jelölt település esetén létezik elfogadható ingázási távolságon belüli, szabad kapacitású központi iskola.
+- A jelenlegi ingázási infrastruktúra és támogatott közösségi közlekedés fenntarthatja a 20+ km-es napi utakat elemi iskolás korú gyermekek számára elfogadhatatlan jóléti költség nélkül, jóllehet dokumentáltak az informális szülői kísérő-beosztások, amelyek azért jöttek létre, mert a regionális buszok gyakran visszautasítják a kísérő nélküli kiskorúakat.
+- A TEIP-típusú célzott támogatás, amint bevezetik egy összevont központi iskolában, érdemben ellensúlyozza a bezárás méltányossági károsságát az áthelyezett vidéki tanulók számára, jóllehet Portugália saját 15 éves TEIP-bizonyítéka tartós teljesítménybeli szakadékokat mutat.
+- Az átlátható költség-/konzultációs szabályokat a tankerületi hatóságok érdemben betartják és érvényesítik, nem csupán eljárási formaságként kezelik, tekintve, hogy a fenntartói döntések bírósági felülvizsgálata jelenleg az eljárás jogszerűségére korlátozódik, és nem bírálhatja felül a bezárási döntéseket szakpolitikai megfontolások alapján.
 
 **Várható előnyök**
-- Koncentrálja a pedagógiai és szakos erőforrásokat, potenciálisan javítva az oktatás minőségét és a szakos tanárokhoz való hozzáférést. [bizonyíték: mérsékelt]
-- A TEIP-típusú célzott támogatás mérhetően csökkenti a lemorzsolódást és évfolyamismétlést hasonló hátrányos helyzetű/vidéki környezetben. [bizonyíték: mérsékelt]
-- Az átlátható költség-/konzultációs szabályok láthatóvá teszik a kompromisszumokat az érintettek számára, potenciálisan javítva az elszámoltathatóságot az ad hoc bezárással szemben. [bizonyíték: gyenge]
+- Lehetővé teszi a beruházás koncentrálását kevesebb, jobban felszerelt összevont telephelyre, a portugál centros escolares mintáját követve, amely párosítja a bezárást a fogadó telephely megfelelő beruházásával. [bizonyíték: mérsékelt]
+- A törvényileg garantált szállítás és célzott támogatás formális, jogilag érvényesíthető védelmi minimumot biztosít az áthelyezett tanulók számára, ami javulást jelent az eseti megoldásokhoz képest. [bizonyíték: gyenge]
+- Rendszerszinten csökkentheti a tanulónkénti működési költségeket a szaktanári létszám és a létesítmények koncentrálásával, bár a valós megtakarítások (a szállítási és mérséklő költségek levonása után) empirikus auditja ritka. [bizonyíték: gyenge]
 
 **Méltányossági hatás**
-A nettó pénzügyi megtakarítás gyakran túlbecsült, ha a szállítási és közvetett költségeket is figyelembe vesszük (a bruttó csökkenés 5-15%-ára esik vissza), és az alacsonyabb státuszú családok aránytalanul nagy utazási terhet és alkalmazási költséget viselnek; megfelelően finanszírozott, robusztus kompenzációs intézkedések nélkül ez a forgatókönyv ronthatja az egyenlőséget azon családok számára, akik legkevésbé képesek viselni az ingázási költségeket, még ha átlagosan javíthatja is az erőforrás-koncentrációt az ott maradók számára.
+Aránytalanul nagy terhet ró az alacsonyabb SES-helyzetű és roma családokra, akik a peremhelyzetű vidéki településeken koncentrálódnak, hosszabb utazási távokkal és magasabb lemorzsolódási kockázattal szembesülnek (a roma lemorzsolódás már most 58,7% szemben a nem roma 9,3%-kal), és fennáll a dokumentált kockázata, hogy a nem roma/jobb módú családok a szabad iskolaválasztás révén kilépnek az összevont csomóponti iskolákból ('fehér elvándorlás'), reprodukálva a szegregációt a csomóponti iskola szintjén; konkrét, érvényesíthető küszöbök (pl. maximális utazási idő, mint a portugál Fundão 25 perces szabálya), etnikai és jövedelmi bontású méltányossági eredménymonitoring a összevont telephelyen, és kötelező (nem csak tanácsadó jellegű) közlekedésbiztonsági szabványok nélkül a forgatókönyv kompenzációs intézkedései deklaratívak maradhatnak, nem védelmi jellegűek.
 
 **Költségkategóriák**
-- Törvényi szállítási ellátás és támogatás (busz, üzemanyag, sofőrbérek, infrastruktúra)
-- TEIP-típusú célzott támogatási finanszírozás (extra személyzet, szociális munka szolgáltatások, pedagógiai autonómia erőforrások)
-- Konzultációs és átláthatósági infrastruktúra (közzétett költségadatok, konzultációs folyamat igazgatása)
-- Beruházási költség az összevont központi iskola kapacitásának bővítéséhez
+- Törvényileg előírt szállítási szolgáltatás tőke- és ismétlődő működési költségei (járművek, sofőrök, üzemanyag, felügyelet), amelyeket még nem validáltak magyar útvonal-specifikus adatokkal
+- Tőkeberuházás a kibővített, összevont 'centros escolares'-típusú fogadó telephelyi kapacitáshoz
+- TEIP-típusú célzott támogatási személyzeti és programköltségek az összevont telephelyeken, éves szinten ismétlődve
+- Közvetett közösségi szintű költségek (ingatlanérték-csökkenés, csökkent helyi munkaadói bázis), amelyeket az összehasonlító szakirodalom dokumentál, de a hivatalos költségvetési elszámolásba jellemzően nem foglalnak bele
 
 **Megvalósítási lépések**
-- Tankerületi Központ / Oktatási Minisztérium — Átlátható, településenkénti költség- és tanulószám-adatokat tesz közzé a bezárási jelöltség megalapozásához és a törvényi konzultáció lehetővé tételéhez. (ütemezés: 1. év)
-- Regionális/megyei hatóságok és érintett falusi közösségek — Törvényi konzultációt folytat a tervezett bezárásról, dokumentálva a közösségi véleményeket és a mérlegelt alternatívákat. (ütemezés: 1-2. év)
-- Nemzeti/regionális közlekedési hatóság — Kialakítja és jogilag garantálja az áthelyezett tanulók ingyenes/támogatott szállítását, meghatározott maximális ingázási időkorlátokkal. (ütemezés: 2. év)
-- Az összevont központi iskola és az Oktatási Minisztérium — TEIP-típusú célzott támogatást (extra személyzet, szociális munka szolgáltatások) telepít az áthelyezett tanulók, különösen a hátrányos helyzetű és roma családok számára. (ütemezés: 2-3. év)
+- Tankerületi központ — Átlátható költség-/konzultációs feltárást végez és tesz közzé a bezárási döntés előtt, beleértve a törvényileg előírt esetekben a független szakértői vizsgálatot, tiszteletben tartva a törvényes májusi határidős eljárási ablakot. (ütemezés: 1. év, minden éves májusi döntési határidő előtt)
+- Önkormányzat és közlekedési hatóság — Törvényileg garantált szállítást hoz létre útvonal-specifikus biztonsági és kapacitásauditokkal a tanulóáthelyezés előtt, kezelve a jelenlegi informális megoldásokban dokumentált, kísérő nélküli kiskorúakra vonatkozó hiányosságot. (ütemezés: 1-2. év, az áthelyezés hatálybalépése előtt)
+- Minisztérium/EMMI és a fogadó iskola vezetése — TEIP-típusú célzott támogatási személyzetet telepít, etnikai és jövedelmi bontású eredménymonitoringgal az összevont telephelyen. (ütemezés: 2-5. év, ismétlődő)
 
 **Politikai kockázatok**
-- A bezárás politikailag kockázatos, ha a közösség akaratával szemben kikényszerített központi állami hatékonyságnak tüntetik fel, különösen a vidéki térségek választói jelentősége miatt.
-- A visszaállítás rendkívül költséges, ha a pedagógusok szétszélednek és az épületeket más célra hasznosítják, ami ezt a forgatókönyvet nagyrészt visszafordíthatatlanná teszi, ha a demográfiai vagy szakpolitikai feltételezések megváltoznak.
-- A kompenzációs intézkedések (szállítás, TEIP-típusú támogatás) tartós, több éves finanszírozási kötelezettségvállalást igényelnek, amelyeket a jövőbeli költségvetési ciklusokban megvonhatnak, aláásva a mérséklési ígéretet.
+- A kompenzációs intézkedések (szállítási garanciák, TEIP-típusú támogatás) tartós, több évre szóló finanszírozást igényelnek; meghatározott, kötelező érvényű finanszírozási elkötelezettségi mechanizmus (pl. elkülönített költségvetési sor, több évre szóló törvényi allokáció) nélkül fennáll a kockázata, hogy ezeket az intézkedéseket a jövőbeli költségvetési ciklusokban megszüntetik, miután a bezárás már megtörtént és a politikai figyelem máshova irányult.
+- A bezárási döntések, még konzultáció mellett is, közösségi mobilizációt válthatnak ki (mint a 2007-es erdőkürti 'Élő lánc a vidéki iskolákért' precedens), és a korlátozott bírósági felülvizsgálat (csak jogszerűségi, nem szakpolitikai alapú) azt jelenti, hogy az érintett közösségeknek kevés formális csatornájuk van a bezárás tartalmának megtámadására.
 
 **Bizonytalanságok**
-- Empirikusan tisztázatlan, hogy az iskolabezárás okilag gyorsítja-e a falu elnéptelenedését, vagy csupán megerősíti a korábbi demográfiai csökkenés által már meghozott döntéseket. (megbízhatóság: közepes; csökkentené: Longitudinális, falu-szintű adatok, amelyek az iskolabezárás időzítését a háztartások migrációs áramlásaihoz kapcsolják, kontrollálva a korábbi népességi trendeket.)
-- Az összevonás valódi nettó pénzügyi megtakarítása, amikor minden szállítási és közvetett költséget figyelembe vesznek, kifejezetten a magyar falvakra nincs számszerűsítve. (megbízhatóság: magas; csökkentené: Összehasonlító költségvetési adatok magyar falvak illeszkedő pár- vagy csoportmintájából, iskola-összevonással és nélkül.)
-- Az összevonás után a maradó/áthelyezett tanulók eredményeire gyakorolt kompozíciós/peer-hatások nagysága nem ismert a magyar kontextusra. (megbízhatóság: alacsony; csökkentené: Illesztett kohorsz-vizsgálat, amely összehasonlítja a bezárt és nyitva tartott falusi iskolák tanulóinak tanulási pályáit, kontrollálva a kiinduló státuszt és korábbi teljesítményt.)
+- Kérdéses, hogy a bezárás utáni szállítási költségek a magyar kontextusban valóban a hivatkozott 800-1500 EUR/tanuló/év tartományba esnek-e, és hogy az összevonás valódi nettó pénzügyi hatása (megtakarítás minusz szállítási, mérséklő és közvetett közösségi költségek) pozitív vagy negatív. (megbízhatóság: alacsony; csökkentené: Magyarországra specifikus költség-haszon elemzés a kisfalusi iskolaműködtetés és a bezárás összehasonlítására 2-3 realisztikus összevonási forgatókönyv alapján, beleértve a szállítási, mérséklő és közvetett közösségi költségeket.)
+- Kérdéses, hogy a TEIP-típusú célzott támogatás, amint bevezetik magyar összevont telephelyeken, bezárja vagy csak szűkíti az áthelyezett vidéki és roma tanulók teljesítménybeli szakadékát, tekintve Portugália saját 15 éves TEIP-bizonyítékát a tartós szakadékokról a lemorzsolódás csökkenése ellenére. (megbízhatóság: közepes; csökkentené: Magyar kísérleti értékelés, amely összehasonlítja az áthelyezett vidéki/roma tanulók tanulási eredményeit TEIP-típusú célzott támogatással és anélkül összevont telephelyeken, 5-10 éven át követve.)
 
-## S5 — Nemzeti rendszerszintű keretrendszer: átláthatóság, küszöbértékek és bizonyíték-infrastruktúra
+## S5 — Nemzeti rendszerszintű keret: átláthatóság, küszöbértékek és bizonyítéki infrastruktúra
 **Cél**
-Nemzeti keretrendszer létrehozása átlátható minimális fenntarthatósági küszöbökkel, költség-átláthatósági szabályokkal, pedagógusképzési szabványosítással és bezárási/eredmény-nyilvántartással, amely a fenti modellek bármelyikén belüli helyi döntéseket megalapozza (nem pedig előírja).
+Nemzeti keret létrehozása átlátható minimális életképességi küszöbértékekkel, költség-átláthatósági szabályokkal, tanárképzési szabványosítással és bezárási/eredmény-nyilvántartással, amely tájékoztatja (nem diktálja) a helyi döntéseket a fenti modellek bármelyike esetén.
 
 **Mechanizmus**
-- Finnország 1972 utáni reformja együttesen alkalmazta a strukturális egységesítést, az egységes pedagógusképzést, az átlátható önkormányzati költségmegosztást és a törvényi szállítási/támogatási garanciákat, önálló szakpolitikai eszközök helyett. [bizonyíték: mérsékelt]
-- Finnország egyetemi alapú pedagógusképzési reformja (1979) egységesen magas képzettségű pedagógusi munkaerőt hozott létre vidéken és városban egyaránt, amely alacsony iskolák közötti eredmény-szórással jár. [bizonyíték: mérsékelt]
-- A törvényi szállítási garanciák a bezárási döntéseket explicit, összehasonlítható költség-kompromisszumokká alakítják a rejtett vagy lokálisan átláthatatlan kalkulációk helyett. [bizonyíték: mérsékelt]
-- Magyarországon jelenleg nem létezik nemzeti nyilvántartás a vidéki iskolabezárási döntésekről és közösségi eredményekről, ami akadályozza a hosszú távú hatások bizonyítékalapú összehasonlítását a modellek között. [bizonyíték: erős]
+- Jelenleg nem létezik egyértelmű törvényi minimális beiskolázási küszöb a magyar oktatási jogban, ellentétben olyan összehasonlítható modellekkel, mint az ukrán 45 fős szabály; a bezárási döntések eseti, mérlegelési alapon működnek, ami kiszámíthatatlanságot eredményez, amelyet egy átlátható nemzeti küszöbrendszer kezelne. [bizonyíték: mérsékelt]
+- Mivel az e témához rendelkezésre álló forrásgyűjtemény nem tartalmaz egyenértékű magyar bezárási/eredmény-adatbázist, és több szakértő is önállóan megjegyzi a szisztematikus nyomon követés hiányát, az az állítás, hogy 'Magyarországon jelenleg nem létezik nemzeti bezárási döntési és eredmény-nyilvántartás', a bizonyíték hiányából levont észszerű következtetés, nem közvetlenül dokumentált negatív megállapítás. [bizonyíték: gyenge]
+- A finn vidéki falusi iskolák tanárai arról számolnak be, hogy nem voltak felkészítve az összevont osztályokban való tanításra az alapképzés során, jóllehet az összevont oktatás a mindennapi munkakörnyezetük, ami egy olyan képzés-szabványosítási hiányosságot illusztrál, amelyre a nemzeti keret tanárképzési szabvány-komponense irányulna. [bizonyíték: mérsékelt]
+- A történelmi magyar kisiskolai támogatásokat egy 2007-es elemzés 'gazdaságilag teljes mértékben indokoltnak' ítélte, ám az alapnormatívák gyakran elmaradtak a valós tanulónkénti költségektől, jelezve, hogy a költség-átláthatósági szabályok korrigálhatnák a támogatás-tervezés és a valós költségek közötti dokumentált történelmi eltérést. [bizonyíték: mérsékelt]
 
 **Bizonyítékstátusz**
-mérsékelt — Finnország kombinált reformjának eredményei nemzetközileg mérsékelten dokumentáltak, de a kombinálás okozati szükségessége (bármely önálló eszközzel szemben) explicit feltételezés, és Magyarország intézményi kapacitása a finn típusú reform megismétlésére igazolatlan.
+gyenge — A nemzeti keret indoklása dokumentált hiányosságokra épül (nincs küszöb, nincs nyilvántartás, képzési eltérések, támogatás-költség eltérés), nem pedig közvetlen bizonyítékra arról, hogy egy ilyen keret működne Magyarországon, mivel nem létezik hasonló magyar kísérleti program.
 
 **Feltevések**
-- Az átláthatóság és a költség-láthatóság jobb érintetti döntéshozatalt tesz lehetővé, bár a logikai következtetésen túl közvetlen okozati mechanizmus nem állítható.
-- Magyarország intézményi kontextusa lehetővé teszi a Finnországéhoz hasonló, rendszerszintű pedagógusképzési reform és önkormányzati költségmegosztási mechanizmusok bevezetését, a modellezetlen konkrét intézményi korlátok ellenére.
-- A nemzeti küszöb-/nyilvántartási keretrendszer megalapozza, nem pedig felülírja a helyi döntéshozási hatáskört, elkerülve a merev, központosított előírásokhoz való visszatérést.
-- Elegendő politikai akarat áll fenn a hosszú távú bizonyíték-infrastruktúra (nyilvántartás, küszöbök) finanszírozásához és fenntartásához a változó kormányzati ciklusokon át.
+- Elegendő politikai akarat áll fenn ahhoz, hogy hosszú távú bizonyítéki infrastruktúrát (nyilvántartás, küszöbértékek) finanszírozzanak és tartsanak fenn a változó kormányzati ciklusokon át, jóllehet dokumentáltan nem létezik párton átívelő konszenzusmechanizmus a vidéki iskolareformra, és a bizonyítottan politikailag érzékeny jelleg már a kiszivárgott összevonási terveket is megakasztotta.
+- Egy nem kötelező, tanácsadó jellegű nemzeti keretet (átláthatóság és küszöbértékek, amelyek tájékoztatják, nem diktálják a helyi döntéseket) a tankerületi és minisztériumi szereplők valóban tanácsadóként fognak tiszteletben tartani, nem pedig szelektíven használják előre eldöntött bezárási döntések igazolására.
+- A nyilvántartás és a küszöbértékek, egyszer létrehozva, olyan bontott méltányossági adatokat (település mérete, etnikum, jövedelem szerint) rögzítenek és tesznek közzé, amelyek elegendőek az S1-S4 modellek bármelyikének méltánytalan downstream alkalmazásának felismerésére és megakadályozására, nem pedig aggregált, méltányosság szempontjából vak adatkészletként maradnak fenn.
 
 **Várható előnyök**
-- Biztosítja a hiányzó bizonyítékalapot (tanulószám-küszöbök, bezárási eredmények, költség-összehasonlítások), amelynek hiányát minden más forgatókönyv szakértői elemzése azonosította. [bizonyíték: erős]
-- A szabványosított pedagógusképzés (összevont oktatási modulok) kezelhetné a dokumentált ellátás-minőségi hiányosságot, amely elkülönül a létszámhiánytól. [bizonyíték: gyenge]
-- A költség-átláthatósági szabályok explicitté és megvitathatóvá teszik a jelenleg rejtett ösztönző-eltérést (az állam realizálja a hatékonysági megtakarítást, a közösségek viselik a közösségi veszteség költségeit). [bizonyíték: gyenge]
+- Átlátható, bizonyítékalapú referenciapontot biztosít a jelenleg eseti, mérlegelési alapon hozott helyi döntésekhez, kezelve a magyar oktatási jogban dokumentált hiányosságot. [bizonyíték: gyenge]
+- A szabványosított, összevont osztályokra és kisiskolai pedagógiára irányuló tanárképzés kezelhetné a finn és a következtetett magyar kontextusban is dokumentált felkészítési hiányosságot. [bizonyíték: mérsékelt]
+- Egy bezárási/eredmény-nyilvántartás idővel lehetővé tenné annak visszamenő értékelését, mely modellek (S1-S4) teljesítenek legjobban milyen körülmények között, tájékoztatva a jövőbeli szakpolitikát — bár ez az előny csak több éves adatgyűjtés után jelentkezik, és nem azonnali. [bizonyíték: gyenge]
 
 **Méltányossági hatás**
-Elsősorban lehetővé tevő/eljárási forgatókönyv, nem közvetlen szolgáltatásnyújtási modell, így az egyenlőségi hatás teljes mértékben attól függ, hogy a küszöböket és nyilvántartásokat később hogyan használják; az S1-S4 bármelyikével párosítva javíthatja az egyenlőséget azáltal, hogy láthatóvá és szakpolitikai korrekció alá vonhatóvá teszi az alacsonyabb státuszú családokra eső aránytalan utazási/kompozíciós terheket, de önmagában semmilyen falu számára nem változtat közvetlen kimeneten.
+Mivel eljárási, lehetővé tevő keret, nem közvetlen szolgáltatás-nyújtási modell, az S5 méltányossági hatása teljes mértékben a downstream felhasználástól függ: ha a küszöbértékeket és a nyilvántartást már a kezdetektől úgy alakítják ki, hogy megkövetelje a település mérete, etnikum és jövedelem szerinti bontott jelentést, és ha a költség-átláthatósági szabályok kifejezetten feltárják a szállítási és mérséklő költségeket, a keret érdemben javíthatja a méltányossági felügyeletet az S1-S4 modellek mentén; de ha aggregált, etnikum szempontjából vak rendszerként vezetik be, azt a kockázatot hordozza, hogy bizonyítékalapú legitimitás látszatát adja olyan döntéseknek, amelyek ugyanolyan méltánytalanok maradnak, mint a jelenlegi helyzetben, mivel az átláthatóság önmagában nem kényszerít ki semmilyen konkrét méltányosságvédő intézkedést.
 
 **Költségkategóriák**
-- Nemzeti bezárási/eredmény-nyilvántartás kialakítása és fenntartása (Oktatási Minisztérium / KSH adatinfrastruktúra)
-- Az összevont oktatási pedagógiai modulok szabványosítása és bevezetése a pedagógusképző intézményekben
-- Költség-átláthatósági szabályok kidolgozása és közzétételi infrastruktúra az önkormányzati/állami iskolaműködtetési költségvetésekhez
-- Folyamatos adatgyűjtési és elemzési kapacitás (KSH/Oktatási Hivatal személyzet)
+- Egyszeri tervezési és jogi szövegezési költségek a minimális életképességi küszöbértékekhez és a költség-átláthatósági szabályokhoz
+- Egyszeri informatikai fejlesztési és folyamatos adatkezelési költségek a bezárási/eredmény-nyilvántartáshoz, beleértve az adatvédelmi megfelelést
+- Ismétlődő költségek a szabványosított tanárképzési modul bevezetéséhez és az elemző/monitoring funkciók személyzeti ellátásához
+- Folyamatos finanszírozási felelősség-megosztás a minisztérium, a tankerület és az önkormányzati szintek között, amely jelenleg nincs meghatározva és kifejezett felosztást igényel
 
 **Megvalósítási lépések**
-- Oktatási Minisztérium / Oktatási Hivatal — Átlátható, bizonyítékalapú (nem kötelező) minimális fenntarthatósági küszöbértékű irányelveket dolgoz ki és tesz közzé az iskolaműködtetéshez, települési szintű költség- és demográfiai adatok alapján. (ütemezés: 1-2. év)
-- KSH (Központi Statisztikai Hivatal) és Oktatási Minisztérium — Nemzeti bezárási/eredmény-nyilvántartást hoz létre, amely nyomon követi a településszintű tanulószámot, bezárási döntéseket és bezárás utáni közösségi eredményeket. (ütemezés: 1-3. év)
-- Pedagógusképző intézmények és Oktatási Minisztérium — Kidolgozza és szabványosítja a kötelező összevont oktatási pedagógiai moduljait az alap- és továbbképzésben egyaránt. (ütemezés: 2-4. év)
-- Tankerületi Központok és önkormányzatok — Közzéteszi a szabványosított, összehasonlítható, településenkénti működési és szállítási költségadatokat a költség-átláthatósági szabályok bevezetése részeként. (ütemezés: 2-3. év)
+- Minisztérium/EMMI és független oktatáskutató intézetek — Átlátható minimális életképességi küszöbértékeket és költség-átláthatósági szabályokat dolgoznak ki és tesznek közzé, realisztikus időt hagyva a jogi, adatvédelmi és érintett szereplőkkel való konzultációs felülvizsgálatra a közzététel előtt. (ütemezés: 1-3. év)
+- Minisztérium/EMMI és KSH (Központi Statisztikai Hivatal) — Település mérete, etnikum és jövedelem szerint bontott bezárási/eredmény-nyilvántartást építenek és töltenek fel, az adatgyűjtés megkezdése előtt biztosítva az adatvédelmi és jogalapi jóváhagyást. (ütemezés: 1-4. év)
+- Tanárképző intézmények és Minisztérium/EMMI — Szabványosított, összevont osztályokra és kisiskolai pedagógiára irányuló képzési modulokat vezetnek be az alap- és továbbképzésbe, realisztikus tantervfejlesztési és akkreditációs átfutási idővel ütemezve. (ütemezés: 2-5. év)
 
 **Politikai kockázatok**
-- A nemzeti keretrendszert újbóli centralizációként vagy a kötelező bezárások előjeleként lehet érzékelni, ami ellenállást kelt a vidéki választói körökben, a hangsúlyozott nem kötelező, informatív célja ellenére.
-- A nyilvántartási és képzési infrastruktúrába történő tartós, több éves beruházás sérülékeny a költségvetési megszorításokkal vagy a politikai átütemezéssel szemben a választási ciklusok során.
-- Ha nincs konszenzus arról, mi számít 'minimális fenntarthatósági küszöbnek', az elakadhat a keretrendszer elhúzódó technikai/politikai tárgyalásokban, mielőtt a nyilvántartás bármilyen felhasználható adatot produkálna.
+- Egy nem kötelező, tanácsadó jellegű nyilvántartási és küszöbrendszer politikailag instrumentalizálható: a kormányzati vagy tankerületi szereplők szelektíven hivatkozhatnak küszöbértékekre előre eldöntött bezárási döntések igazolására, míg politikailag kényelmetlen esetekben ignorálják azokat, kifejezett szabályok hiányában arról, hogy a küszöbértékek hogyan használhatók vagy nem használhatók a döntésekben.
+- A nyilvántartás, a képzési bevezetés és az elemző személyzet fenntartható, több éves finanszírozása sérülékeny a költségvetési ciklusok megszakadásával és a kormányzati váltásokkal szemben, tekintve a dokumentáltan hiányzó párton átívelő konszenzusmechanizmusokat és a tankerületi/KLIK rendszerben már megfigyelt krónikus alulfinanszírozási mintát.
 
 **Bizonytalanságok**
-- Nem ismert, hogy a magyar önkormányzatok jelenleg milyen minimális fenntarthatósági tanulószám-küszöböket alkalmaznak, és ez régiónként hogyan változik, e nyilvántartás hiányában. (megbízhatóság: alacsony; csökkentené: Az önkormányzati iskolaműködtetési kritériumok szisztematikus nyilvántartása vagy felmérése, amelyet az Oktatási Hivatal gyűjt és tesz közzé.)
-- Nincs közvetlen vizsgálattal igazolva, hogy a finn kombinált reform okozati logikája (strukturális + tantervi + finanszírozási + szállítási garanciák együtt) okozatilag szükséges, vagy bármely önálló komponens is elegendő lenne. (megbízhatóság: közepes; csökkentené: Longitudinális vizsgálat, amely összehasonlítja az iskolai minőségi eredményeket az 1979-es pedagógusképzési reform előtt és után, kontrollálva az egyidejű finn szakpolitikai változásokat.)
-- Politikailag és intézményileg bizonytalan, hogy egy magyar nemzeti küszöb-/nyilvántartási keretrendszer a gyakorlatban tanácsadó jellegű maradna-e, vagy idővel kötelező előírás felé sodródna. (megbízhatóság: alacsony; csökkentené: Hasonló tanácsadó keretrendszerek összehasonlító esettanulmányai más országokban, nyomon követve azok kötelező státusz felé vagy attól elmozduló fejlődését 10+ éves időhorizonton.)
+- Kérdéses, hogy egy valóban nem kötelező, tanácsadó jellegű keret a gyakorlatban politikailag neutrális maradhat-e, vagy elkerülhetetlenül szelektíven fogják használni előre eldöntött bezárási vagy megtartási döntések legitimálására. (megbízhatóság: alacsony; csökkentené: Folyamat-nyomkövetési esettanulmány arról, hogy hasonló tanácsadó jellegű keretek (pl. EU bér-feltételességi mércék, korábbi magyar oktatási indikátorok) hogyan lettek valójában felhasználva a valós döntésekben egy több éves periódus alatt.)
+- Kérdéses, hogy a nyilvántartás és a küszöbértékek, egyszer működővé válva, valóban úgy lesznek kialakítva, hogy bontott méltányossági adatokat (település mérete, etnikum, jövedelem) rögzítsenek és tegyenek közzé, vagy alapértelmezetten aggregált jelentésre szorulnak, amely elfedi az egyenlőtlen downstream hatásokat. (megbízhatóság: közepes; csökkentené: A nyilvántartás tervezett adatstruktúrájának és bontási mezőinek nyilvános véleményezésre bocsátott, kifejezett technikai specifikáció-felülvizsgálata a rendszerépítés megkezdése előtt.)
