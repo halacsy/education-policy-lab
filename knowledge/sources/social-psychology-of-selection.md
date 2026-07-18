@@ -1,4 +1,4 @@
-# Source: Rosenthal & Jacobson 1968 (Pygmalion) and successors; Steele & Aronson 1995 with later replications (e.g. Flore & Wicherts 2015); Marsh 1987+ (big-fish-little-pond); Dweck/Elliot goal-orientation literature
+# Source: Rosenthal & Jacobson 1968 (Pygmalion) and successors; Steele & Aronson 1995 with later replications (Flore & Wicherts 2015 on the gender x mathematics interaction specifically; Shewach, Sackett & Quigley 2019 on stereotype threat in cognitive-ability testing generally); Marsh 1987+ (big-fish-little-pond); Dweck/Elliot goal-orientation literature
 
 slug: social-psychology-of-selection
 type: citation
@@ -16,8 +16,8 @@ admitted_by: owner (2026-07-18, issue #19 admission PR)
 ### stereotype_threat
 - evidence: contested
 - used_by: educational_psychology
-- en: Stereotype threat (Steele & Aronson 1995) — performance drops when a negative group stereotype is salient — has substantial but contested evidence: preregistered replications and meta-analyses (e.g. Flore & Wicherts 2015) find smaller and less reliable effects than the early literature, so it should be invoked as a possible mechanism, not a settled fact.
-- hu: A sztereotípiafenyegetés (Steele & Aronson 1995) — a teljesítmény romlik, ha egy negatív csoportsztereotípia előhívódik — jelentős, de vitatott evidenciájú: a preregisztrált replikációk és metaanalízisek (pl. Flore & Wicherts 2015) a korai irodalomnál kisebb és kevésbé megbízható hatásokat találnak, ezért lehetséges mechanizmusként hivatkozandó, nem eldöntött tényként.
+- en: Stereotype threat (Steele & Aronson 1995) — performance drops when a negative group stereotype is salient — has substantial but contested evidence, from two distinct replication lines: Flore & Wicherts (2015) meta-analysed the gender x mathematics-performance interaction specifically and found effects smaller and less robust than the early literature, likely inflated by publication bias; Shewach, Sackett & Quigley (2019) meta-analysed stereotype threat in cognitive-ability testing more broadly and similarly found small, publication-bias-affected effects, especially in high-stakes settings. Neither result should be generalised beyond its own tested population/domain — invoke stereotype threat as a possible mechanism, not a settled fact, and cite the matching study for the matching context.
+- hu: A sztereotípiafenyegetés (Steele & Aronson 1995) — a teljesítmény romlik, ha egy negatív csoportsztereotípia előhívódik — jelentős, de vitatott evidenciájú, két különálló replikációs vonalból: Flore & Wicherts (2015) kifejezetten a nem x matematikai teljesítmény interakciót metaanalizálta, és a korai irodalomnál kisebb, kevésbé robusztus, valószínűleg publikációs torzítás által felfújt hatásokat talált; Shewach, Sackett & Quigley (2019) a sztereotípiafenyegetést általánosabban, kognitívképesség-tesztelési kontextusban metaanalizálta, és hasonlóan kicsi, publikációs torzítással terhelt hatásokat talált, különösen magas tétű helyzetekben. Egyik eredmény sem általánosítható a saját vizsgált populációján/területén túl — a sztereotípiafenyegetést lehetséges mechanizmusként kell hivatkozni, nem eldöntött tényként, és a kontextusnak megfelelő tanulmányt kell idézni.
 
 ### big_fish_little_pond
 - evidence: strong

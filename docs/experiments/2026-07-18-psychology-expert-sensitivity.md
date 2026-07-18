@@ -31,9 +31,13 @@ architecture (D-34/D-35), one sample per arm plus a replicate:
   to A1 · **arm B (treatment):** 12 + educational_psychology.
 - All 11 calls live on the Anthropic API (sonnet-5; `expert_analysis` on
   haiku-4.5 — ladder tier 0, same as canonical rounds). Zero mock, zero
-  failed, zero retries; ~581K input / ~289K output tokens (≈$6). Validators
-  imported from `lab.pipeline` — every arm passed the same definition of
-  done as a live round.
+  failed, zero retries; per `outputs/experiments/psychology_panel_sensitivity/backend_usage.json`
+  (`token_stats`): 560,317 input / 256,007 output tokens (816,324 total,
+  11 metered calls) — priced against `config/system_config.json`'s
+  `usd_per_mtok` table: **$5.43** (brief steps $2.11, scenario-building
+  $2.15, synthesis $0.76, the new expert's research+analysis $0.41).
+  Validators imported from `lab.pipeline` — every arm passed the same
+  definition of done as a live round.
 
 ## Findings
 
@@ -116,3 +120,15 @@ ledger was held fixed by design — voice-layer sensitivity to the new expert
 is untested); judge/evaluation scores were not computed (this experiment
 compares artifacts, not rubric scores). The HU halves of the bilingual
 artifacts were spot-checked, not systematically compared.
+
+**Post-hoc correction (PR review, 2026-07-18):** the committed expert
+analysis cited Flore & Wicherts (2015) as general evidence against
+stereotype threat; that meta-analysis in fact scopes narrowly to the
+gender x mathematics-performance interaction. `knowledge/sources/
+social-psychology-of-selection.md`'s `stereotype_threat` fact now names
+that scope explicitly and adds Shewach, Sackett & Quigley (2019) for the
+broader cognitive-ability-testing evidence. The already-committed
+experiment artifacts in this report are NOT regenerated for this fix (a
+citation-precision correction to the registry, not a finding this
+experiment measured) — the pending full 13-expert acceptance rounds on
+both topics will use the corrected fact going forward.

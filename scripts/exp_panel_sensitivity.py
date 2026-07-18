@@ -33,6 +33,7 @@ the replicate; residual noise is reported, not hidden.
 
 Run:  GENERATOR_PROVIDER=anthropic .venv/bin/python scripts/exp_panel_sensitivity.py
 """
+import hashlib
 import json
 import os
 import sys
@@ -61,6 +62,49 @@ PSYCH_FACTS = ["big_fish_little_pond", "labeling_effects", "stereotype_threat",
 
 CORRECTIVE = ("PREVIOUS ATTEMPT FAILED FORMAT VALIDATION. Follow the output "
               "format EXACTLY as specified, with no surrounding commentary.")
+
+
+def state_hash(*parts):
+    """Hash the exact inputs a cached unit (the new expert; one arm's
+    scenario/synthesis/brief triplet) was built from. Reuse is only valid
+    if this matches the CURRENT inputs — otherwise a stale artifact from a
+    prior interrupted run could silently be treated as current (the same
+    class of bug pipeline.py's state-hash gate exists to prevent, #27)."""
+    h = hashlib.sha256()
+    for p in parts:
+        h.update(p.encode("utf-8"))
+        h.update(b"\0")
+    return h.hexdigest()
+
+
+def cached(unit, files, *hash_parts):
+    """True if `unit`'s saved artifacts (exact file list — never a glob, to
+    avoid e.g. 'control' matching 'control2') exist AND the recorded input
+    hash matches the current inputs; otherwise delete the stale files so
+    they regenerate cleanly rather than silently mixing old and new."""
+    hash_path = OUT / f"{unit}.hash"
+    current = state_hash(*hash_parts)
+    if (hash_path.exists() and hash_path.read_text().strip() == current
+            and all(f.exists() for f in files)):
+        return True
+    for f in files:
+        f.unlink(missing_ok=True)
+    hash_path.unlink(missing_ok=True)
+    return False
+
+
+def mark_cached(unit, *hash_parts):
+    write(OUT / f"{unit}.hash", state_hash(*hash_parts))
+
+
+def expert_files():
+    return [OUT / f"{NEW}.json", OUT / f"{NEW}.md", OUT / "research.md"]
+
+
+def arm_files(arm):
+    return [OUT / f"scenarios.{arm}.json", OUT / f"scenarios.{arm}.en.md",
+            OUT / f"synthesis.{arm}.json", OUT / f"synthesis.{arm}.en.md",
+            OUT / f"brief.{arm}.json", OUT / f"brief.{arm}.en.md"]
 
 
 def live(step, prompt_kwargs, validate, max_tokens, schema=None,
@@ -105,7 +149,7 @@ def curated_sources(facts):
             "model knowledge):\n" + "\n".join(rows))
 
 
-def new_expert_live(T, question, glossary, facts):
+def new_expert_live(T, question, glossary, curated):
     """The pipeline's two-phase expert call (pipeline.run_expert), verbatim
     prompts: a free web-search research call, then the structured bilingual
     analysis."""
@@ -158,7 +202,7 @@ def new_expert_live(T, question, glossary, facts):
                  "position = exactly one falsifiable sentence; "
                  "uncertainties = known unknowns with confidence "
                  "and what evidence would reduce them."
-                 + curated_sources(facts) + research_notes
+                 + curated + research_notes
                  + "\n\nGLOSSARY:\n" + glossary)),
         validate=valid_expert, max_tokens=24000, schema=S.EXPERT_ANALYSIS)
     write_json(OUT / f"{NEW}.json", obj)
@@ -280,7 +324,7 @@ def main():
                          "the BRIEF schema ($ref) and web search require "
                          "the Anthropic API path")
 
-    T = topic.Topic(TOPIC)
+    T = topic.set_current(TOPIC)
     if not T.frames_approved:
         raise SystemExit(f"[abort] topic {TOPIC} has no approved frames")
     question = T.question_block()
@@ -311,36 +355,54 @@ def main():
           f"{len(cluster_ids)} ledger clusters, frames: {', '.join(ids)}",
           flush=True)
 
-    # the new expert, live, once (resumable: reuse a valid saved output)
-    if (OUT / f"{NEW}.json").exists():
+    curated = curated_sources(facts)
+    # the new expert, live, once — reuse gated on an input-hash match
+    # (question/glossary/curated facts), not mere file existence (#29 review)
+    expert_hash_parts = (TOPIC, question, glossary, curated)
+    if cached(NEW, expert_files(), *expert_hash_parts):
         new_obj = read_json(OUT / f"{NEW}.json")
-        if not valid_expert(new_obj):
-            raise SystemExit(f"[abort] saved {NEW}.json is invalid — delete "
-                             f"{OUT} to regenerate")
-        print(f"[exp] reusing saved {NEW} analysis", flush=True)
+        print(f"[exp] reusing saved {NEW} analysis (input hash matches)",
+              flush=True)
     else:
-        new_obj = new_expert_live(T, question, glossary, facts)
+        new_obj = new_expert_live(T, question, glossary, curated)
+        mark_cached(NEW, *expert_hash_parts)
     digest_treatment = (digest_control + f"\n\n----- {NEW} -----\n"
                         + render.expert_md(NEW, new_obj, "en"))
 
+    frame_anchors = T.frame_anchors()
     for arm, digest in (("control", digest_control),
                         ("control2", digest_control),
                         ("treatment", digest_treatment)):
-        if (OUT / f"brief.{arm}.json").exists():
-            print(f"[exp] arm {arm}: already complete, skipping", flush=True)
+        arm_hash_parts = (TOPIC, arm, digest, ids_line, frame_anchors,
+                          glossary, ledger_en, json.dumps(cluster_ids))
+        if cached(arm, arm_files(arm), *arm_hash_parts):
+            print(f"[exp] arm {arm}: cached (input hash matches), skipping",
+                  flush=True)
             continue
         print(f"[exp] arm {arm}: scenario_builder -> editor -> brief",
               flush=True)
         run_arm(arm, digest, T, question, glossary, ids, id_set, ids_line,
                 ledger_en, cluster_ids)
+        mark_cached(arm, *arm_hash_parts)
 
-    write_json(OUT / "backend_usage.json", {
-        "backend_stats": llm.backend_stats(),
-        "token_stats": llm.token_stats(),
-        "errors": llm.error_stats(),
-        "calls": [{k: v for k, v in e.items() if k != "prompt"}
-                  for e in llm.CALL_LOG],
-    })
+    # merge with any PRIOR invocation's calls (llm.CALL_LOG only holds THIS
+    # process's calls — without merging, a resumed run would silently
+    # overwrite the committed backend_usage.json with a partial history,
+    # #29 review) before recomputing aggregates over the full call list.
+    usage_path = OUT / "backend_usage.json"
+    prior_calls = read_json(usage_path)["calls"] if usage_path.exists() else []
+    all_calls = prior_calls + [
+        {k: v for k, v in e.items() if k != "prompt"} for e in llm.CALL_LOG]
+    saved_log, llm.CALL_LOG = llm.CALL_LOG, all_calls
+    try:
+        write_json(usage_path, {
+            "backend_stats": llm.backend_stats(),
+            "token_stats": llm.token_stats(),
+            "errors": llm.error_stats(),
+            "calls": all_calls,
+        })
+    finally:
+        llm.CALL_LOG = saved_log
     print(f"[exp] done — artifacts in {OUT}", flush=True)
 
 
