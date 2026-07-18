@@ -23,13 +23,14 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from lab.site_data import (DECOMP_FIELDS, KIND_HU, REL_HU, SIDE_HU,
-                           VERDICT_HU, VERDICT_GROUP, debate_filename,
-                           dilemma_filename, is_gumicsont, last_round,
-                           list_experts,
+                           VERDICT_HU, VERDICT_GROUP, canonical_expert_name,
+                           debate_filename, dilemma_filename, expert_filename,
+                           expert_label, is_gumicsont, last_round, list_experts,
                            load_structured_discourse,
                            load_structured_disagreements, topic_order)
 
@@ -230,7 +231,8 @@ def findings_block(f):
     </ul>"""
 
     expert_chips = "".join(
-        f'<a class="chip" href="explorer.html#expert-{esc(n)}">{esc(n)}</a>'
+        f'<a class="chip" href="szakerto/{esc(expert_filename(n))}">'
+        f'{_both({"hu": expert_label(n, "hu"), "en": expert_label(n, "en")})}</a>'
         for n in f["experts"])
 
     return f"""<section>
@@ -532,7 +534,8 @@ def atlas_findings_block(slug):
         </div>'''
 
     expert_links = "".join(
-        f'<a href="explorer.html#expert-{esc(name)}">{esc(name.replace("_", " "))}</a>'
+        f'<a href="szakerto/{esc(expert_filename(name))}">'
+        f'{_both({"hu": expert_label(name, "hu"), "en": expert_label(name, "en")})}</a>'
         for name in f["experts"])
 
     return f'''<section class="atlas-section" id="vitak">
@@ -548,7 +551,7 @@ def atlas_findings_block(slug):
           <ul class="finding-list">{dilemma_items}</ul>
         </div>
         {axes_html}{gumi_html}
-        <div class="finding-group"><div class="finding-group__head"><h3>A szakértői rekord</h3><p class="atlas-note">A teljes elemzések közvetlenül megnyithatók.</p></div><div class="expert-links">{expert_links}</div></div>
+        <div class="finding-group" id="szakertok"><div class="finding-group__head"><h3>A szakértői rekord</h3><p class="atlas-note">A teljes elemzések közvetlenül megnyithatók.</p></div><div class="expert-links">{expert_links}</div></div>
       </div>
     </section>'''
 
@@ -621,9 +624,16 @@ def debate_page(cfg, ax_hu, ax_en, index, round_n, previous_record=None,
     for pos_index, pos_hu in enumerate(ax_hu.get("positions", [])):
         pos_en = en_positions[pos_index] if pos_index < len(en_positions) else pos_hu
         minority = bool(pos_hu.get("minority"))
-        holders = "".join(
-            f'<a href="../explorer.html#expert-{esc(holder)}">{esc(holder.replace("_", " "))}</a>'
-            for holder in pos_hu.get("holders", []))
+        holder_links = []
+        for holder in pos_hu.get("holders", []):
+            canonical = canonical_expert_name(holder)
+            if canonical:
+                holder_links.append(
+                    f'<a href="../szakerto/{esc(expert_filename(canonical))}">'
+                    f'{_both({"hu": expert_label(canonical, "hu"), "en": expert_label(canonical, "en")})}</a>')
+            else:
+                holder_links.append(f'<span>{esc(holder)}</span>')
+        holders = "".join(holder_links)
         label_hu = "Kisebbségi álláspont" if minority else "Álláspont"
         label_en = "Minority position" if minority else "Position"
         cards.append(f'''<article class="position-card{' position-card--minority' if minority else ''}">
@@ -661,7 +671,7 @@ def dilemma_page(cfg, c_hu, c_en, v_hu, v_en, round_n,
     side = c_hu.get("side", "")
     relevance = c_hu.get("decision_relevance", "")
     raised = "".join(
-        f'<a href="../explorer.html#expert-{esc(name)}">{esc(name.replace("_", " "))}</a>'
+        f'<span>{esc(name.replace("_", " "))}</span>'
         for name in c_hu.get("raised_by", []))
     reason = {"hu": v_hu.get("reason", ""), "en": v_en.get("reason", "")}
     body = f'''<section class="atlas-section atlas-section--paper"><div class="atlas-shell record-grid"><div><p class="atlas-kicker atlas-kicker--dissent"><span data-lang="hu">Miért emberi döntés?</span><span data-lang="en">Why does this need human judgement?</span></p><div class="record-verdict"><strong data-lang="hu">{esc(VERDICT_HU[verdict])}</strong><strong data-lang="en">{esc(verdict.replace("_", " "))}</strong>{_both(reason, "p")}</div><div class="record-facts"><span>{esc(KIND_HU.get(kind, kind))} / {esc(kind)}</span><span>{esc(SIDE_HU.get(side, side))} / {esc(side)}</span><span>{esc(REL_HU.get(relevance, relevance))} döntésrelevancia / {esc(relevance)} relevance</span></div><div class="position-card__holders"><span data-lang="hu">Felvetette</span><span data-lang="en">Raised by</span><div>{raised}</div></div></div><dl class="record-decomp">{''.join(decomp)}</dl></div></section>'''
@@ -731,6 +741,196 @@ def write_finding_pages(cfg):
                         encoding="utf-8")
         print(f"wrote {dest}")
     return len(findings_hu["axes"]), len(human_hu)
+
+
+def _markdown_section(text, heading):
+    match = re.search(
+        rf"^## {re.escape(heading)}\s*\n(.*?)(?=^## |\Z)", text,
+        re.M | re.S)
+    return re.sub(r"\s+", " ", match.group(1)).strip() if match else ""
+
+
+def _research_urls(text):
+    urls = []
+    seen = set()
+    for match in re.findall(r"https?://[^\s<>\"']+", text):
+        url = match.rstrip(".,;]")
+        if url not in seen:
+            seen.add(url)
+            urls.append(url)
+    return urls
+
+
+def _expert_debates(name, axes_hu, axes_en):
+    records = []
+    for axis_index, axis_hu in enumerate(axes_hu, 1):
+        axis_en = axes_en[axis_index - 1] if axis_index <= len(axes_en) else axis_hu
+        en_positions = axis_en.get("positions", [])
+        for pos_index, pos_hu in enumerate(axis_hu.get("positions", [])):
+            if name not in [canonical_expert_name(holder)
+                            for holder in pos_hu.get("holders", [])]:
+                continue
+            pos_en = en_positions[pos_index] if pos_index < len(en_positions) else pos_hu
+            records.append({
+                "id": f"V{axis_index:02d}",
+                "title": {"hu": axis_hu["topic"], "en": axis_en["topic"]},
+                "position": {
+                    "hu": pos_hu.get("position", ""),
+                    "en": pos_en.get("position", ""),
+                },
+                "why": {
+                    "hu": pos_hu.get("why", ""),
+                    "en": pos_en.get("why", ""),
+                },
+                "minority": bool(pos_hu.get("minority")),
+                "filename": debate_filename(axis_index, axis_hu["topic"]),
+            })
+    return records
+
+
+def expert_page(cfg, profile, previous_record, next_record, round_n):
+    slug = cfg["slug"]
+    name = profile["name"]
+    data = profile["data"]
+    labels = {"hu": expert_label(name, "hu"), "en": expert_label(name, "en")}
+    question = cfg["problem_brief"].get(
+        "public_question", cfg["problem_brief"]["title"])
+    findings = data.get("findings", [])
+    assumptions = data.get("assumptions", [])
+    uncertainties = data.get("uncertainties", [])
+    debates = profile["debates"]
+    urls = profile["urls"]
+    curated = profile["curated"]
+    strong_count = sum(1 for item in findings if item.get("evidence") == "strong")
+
+    findings_html = "".join(f'''<li><div class="expert-finding">
+      <div class="expert-finding__meta">{evidence_tag(item.get("evidence"))}<span>{esc(item.get("source", ""))}</span></div>
+      {_both(item.get("claim", {}), "p")}
+    </div></li>''' for item in findings)
+
+    assumptions_html = "".join(
+        f"<li>{_both(item)}</li>" for item in assumptions)
+    confidence_hu = {"low": "alacsony", "medium": "közepes", "high": "magas"}
+    uncertainties_html = "".join(f'''<article class="expert-unknown">
+      <p class="expert-unknown__confidence"><span data-lang="hu">{esc(confidence_hu.get(item.get("confidence"), item.get("confidence", "")))} bizonytalanság</span><span data-lang="en">{esc(item.get("confidence", ""))} uncertainty</span></p>
+      {_both(item.get("text", {}), "p")}
+      <div><strong><span data-lang="hu">Ezt csökkentené</span><span data-lang="en">What would reduce it</span></strong>{_both(item.get("reduced_by", {}), "p")}</div>
+    </article>''' for item in uncertainties)
+
+    debate_html = "".join(f'''<a class="expert-debate" href="../vita/{esc(item["filename"])}">
+      <div><span>{esc(item["id"])}</span><small><span data-lang="hu">{'kisebbségi álláspont' if item["minority"] else 'álláspont'}</span><span data-lang="en">{'minority position' if item["minority"] else 'position'}</span></small></div>
+      {_both(item["title"], "h3")}
+      {_both(item["position"], "p")}
+      <span class="text-link"><span data-lang="hu">A teljes vita →</span><span data-lang="en">Open the full debate →</span></span>
+    </a>''' for item in debates)
+    if not debate_html:
+        debate_html = '''<p class="expert-empty"><span data-lang="hu">A végső brief ebben a körben egyetlen nézeteltérési tengelyen sem nevezte meg külön ezt a szakértőt. Ez nem azt jelenti, hogy a munkája nem került be a szintézisbe.</span><span data-lang="en">The final brief did not name this expert on a disagreement axis in this round. This does not mean the synthesis ignored the analysis.</span></p>'''
+
+    curated_html = "".join(f'''<article class="expert-source-card">
+      <div><code>{esc(fid)}</code>{evidence_tag(fact.get("evidence"))}</div>
+      {_both(fact, "p")}
+      <small>{esc(fact.get("source", ""))}</small>
+    </article>''' for fid, fact in curated)
+    if not curated_html:
+        curated_html = '''<p class="expert-empty"><span data-lang="hu">Ehhez a szakértőhöz ennél a kérdésnél nem volt előre hozzárendelt, ember által jóváhagyott registry-tétel. A megállapítások az élő kutatási jegyzetekből és a modell háttértudásából készültek; utóbbi nem számít registry-alátámasztásnak.</span><span data-lang="en">No human-approved registry fact was assigned to this expert for this question. Findings came from live research notes and model background knowledge; the latter does not count as registry backing.</span></p>'''
+
+    url_html = "".join(f'''<li><a href="{esc(url)}" target="_blank" rel="noreferrer"><strong>{i:02d} · {esc(urlparse(url).netloc.removeprefix("www."))}</strong><span>{esc(url)}</span></a></li>'''
+                       for i, url in enumerate(urls, 1))
+    if not url_html:
+        url_html = '''<li class="expert-empty"><span data-lang="hu">Ehhez a körhöz nem maradt URL-t tartalmazó élő kutatási jegyzet.</span><span data-lang="en">No URL-bearing live research note was preserved for this round.</span></li>'''
+
+    previous_link = _record_pager_link(
+        previous_record, "prev", "szakértő", "expert")
+    next_link = _record_pager_link(next_record, "next", "szakértő", "expert")
+    pagination = f'''<nav class="record-pagination" aria-label="Szakértők közötti navigáció"><div class="atlas-shell record-pagination__grid">
+      {previous_link}{next_link}
+      <a class="record-pagination__all" href="../#szakertok"><span data-lang="hu">Összes szakértő</span><span data-lang="en">All experts</span></a>
+    </div></nav>'''
+
+    github_root = ("https://github.com/halacsy/education-policy-lab/blob/main/"
+                   f"outputs/topics/{slug}/iterations/round_{round_n:02d}")
+    research_link = (f'<a href="{github_root}/research/{esc(name)}.md">'
+                     '<span data-lang="hu">Élő kutatási jegyzet</span>'
+                     '<span data-lang="en">Live research note</span></a>'
+                     if profile["has_research"] else "")
+    role = profile["role"] or "No role section was preserved in the round snapshot."
+    provider = profile["provider"] or "n/a"
+
+    return f'''<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(labels["hu"])} — szakértői profil — Oktatáspolitikai Atlasz</title>
+<meta name="description" content="{esc(_pair(data.get("position", {}), "hu")[:155])}"><link rel="stylesheet" href="../../../assets/atlas.css"></head>
+<body class="atlas expert-page"><header class="site-header"><div class="atlas-shell site-header__inner"><a class="site-brand" href="../../../index.html"><span class="site-brand__mark" aria-hidden="true"></span><span class="site-brand__name">Oktatáspolitikai<br>Atlasz</span></a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menü</button><nav class="site-nav" id="site-nav" data-site-nav><a href="../">← Kérdésoldal</a><a href="../#szakertok">Szakértők</a><div class="lang-switch"><button type="button" data-set-lang="hu" aria-pressed="true">HU</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div></nav></div></header>
+<main><section class="record-context"><div class="atlas-shell record-context__inner"><nav class="record-breadcrumb" aria-label="Morzsamenü"><a href="../../../index.html#temak"><span data-lang="hu">Kérdések</span><span data-lang="en">Questions</span></a><span aria-hidden="true">/</span><a href="../">{_both(question)}</a><span aria-hidden="true">/</span><a href="../#szakertok"><span data-lang="hu">Szakértők</span><span data-lang="en">Experts</span></a><span aria-hidden="true">/</span><strong aria-current="page">{esc(name)}</strong></nav><p class="record-context__round"><span data-lang="hu">{round_n}. feldolgozási kör</span><span data-lang="en">Processing round {round_n}</span></p></div></section>
+<section class="expert-hero"><div class="atlas-shell expert-hero__grid"><div><p class="atlas-kicker">Szakértő-ágens / expert agent</p>{_both(labels, "h1")}<code class="expert-agent-id">{esc(name)}</code><p class="expert-role-label"><span data-lang="hu">A futáskor használt szerepleírás · angol eredeti</span><span data-lang="en">Role used during the run</span></p><p class="expert-role">{esc(role)}</p></div><aside class="expert-disclosure"><strong><span data-lang="hu">Ez nem személy vagy intézmény.</span><span data-lang="en">This is not a person or institution.</span></strong><p><span data-lang="hu">Egy körülhatárolt nézőpontú modell-ágens. A profil csak a mentett inputokat, állításokat és explicit attribúciókat mutatja; nem rekonstruál rejtett gondolatmenetet.</span><span data-lang="en">It is a model agent with a bounded analytical remit. This profile shows saved inputs, claims and explicit attribution only; it does not reconstruct hidden reasoning.</span></p><dl class="expert-stats"><div><dt>{len(findings)}</dt><dd><span data-lang="hu">megállapítás</span><span data-lang="en">findings</span></dd></div><div><dt>{strong_count}</dt><dd><span data-lang="hu">erős evidencia</span><span data-lang="en">strong evidence</span></dd></div><div><dt>{len(urls)}</dt><dd><span data-lang="hu">kutatási URL</span><span data-lang="en">research URLs</span></dd></div><div><dt>{len(debates)}</dt><dd><span data-lang="hu">név szerinti vita</span><span data-lang="en">named debates</span></dd></div></dl></aside></div></section>
+<section class="expert-lineage-section"><div class="atlas-shell"><p class="atlas-kicker"><span data-lang="hu">Működési lánc</span><span data-lang="en">Operating chain</span></p><div class="expert-lineage"><div><b>01</b><strong><span data-lang="hu">Szerepspecifikáció</span><span data-lang="en">Role specification</span></strong><span><span data-lang="hu">Körülhatárolja a vizsgált területet és a hibamódokat.</span><span data-lang="en">Bounds the domain and failure modes.</span></span></div><div><b>02</b><strong><span data-lang="hu">Kurált tételek</span><span data-lang="en">Curated facts</span></strong><span>{len(curated)} <span data-lang="hu">emberileg jóváhagyott bemenet</span><span data-lang="en">human-approved inputs</span></span></div><div><b>03</b><strong><span data-lang="hu">Élő webkutatás</span><span data-lang="en">Live web research</span></strong><span>{len(urls)} <span data-lang="hu">megőrzött URL</span><span data-lang="en">preserved URLs</span></span></div><div><b>04</b><strong><span data-lang="hu">Strukturált elemzés</span><span data-lang="en">Structured analysis</span></strong><span><span data-lang="hu">Kétnyelvű állítások, források és bizonytalanságok.</span><span data-lang="en">Bilingual claims, sources and uncertainties.</span></span></div><div><b>05</b><strong><span data-lang="hu">Szintézis és vita</span><span data-lang="en">Synthesis and debate</span></strong><span><span data-lang="hu">A szerkesztő megőrzi a nézeteltéréseket.</span><span data-lang="en">The editor preserves disagreements.</span></span></div></div><p class="expert-run-note"><span data-lang="hu">Generátor-szolgáltató ebben a körben:</span><span data-lang="en">Generator provider in this round:</span> <code>{esc(provider)}</code></p></div></section>
+<section class="atlas-section atlas-section--paper"><div class="atlas-shell expert-position-grid"><div><p class="atlas-kicker"><span data-lang="hu">A szakértő álláspontja</span><span data-lang="en">Expert position</span></p><blockquote class="expert-position-quote">{_both(data.get("position", {}), "p")}</blockquote></div><div><p class="atlas-kicker"><span data-lang="hu">Összértelmezés</span><span data-lang="en">Interpretation</span></p>{_both(data.get("interpretation", {}), "p", "expert-interpretation")}</div></div></section>
+<section class="atlas-section" id="vitak"><div class="atlas-shell"><div class="catalog-head"><div><p class="atlas-kicker atlas-kicker--dissent"><span data-lang="hu">Hol volt fontos szerepe?</span><span data-lang="en">Where did this expert matter?</span></p><h2><span data-lang="hu">Név szerint megőrzött vitapozíciók.</span><span data-lang="en">Debate positions preserved by name.</span></h2></div><p class="atlas-note"><span data-lang="hu">Csak az explicit holder-attribúciókat mutatjuk. A forgatókönyv-építő minden szakértői outputot megkapott, de a jelenlegi séma nem őriz állításszintű provenance-et minden forgatókönyvhöz.</span><span data-lang="en">Only explicit holder attribution is shown. The scenario builder received every expert output, but the current schema does not preserve claim-level provenance for every scenario.</span></p></div><div class="expert-debate-grid">{debate_html}</div></div></section>
+<section class="atlas-section atlas-section--paper" id="forrasok"><div class="atlas-shell"><div class="catalog-head"><div><p class="atlas-kicker"><span data-lang="hu">Tudásbázis</span><span data-lang="en">Knowledge base</span></p><h2><span data-lang="hu">Mire támaszkodott ebben a kérdésben?</span><span data-lang="en">What supported this analysis?</span></h2></div><p class="atlas-note"><span data-lang="hu">A kurált registry és az élő kutatás külön marad: a webes találat nem kerül automatikusan az emberileg jóváhagyott tudásbázisba.</span><span data-lang="en">The curated registry and live research remain separate: web results are never automatically admitted to the human-approved knowledge base.</span></p></div><div class="expert-source-grid"><div><h3><span data-lang="hu">Kurált evidencia</span><span data-lang="en">Curated evidence</span></h3><div class="expert-source-stack">{curated_html}</div><a class="text-link" href="../../../knowledge.html"><span data-lang="hu">A teljes kurált tudásbázis →</span><span data-lang="en">Open the curated knowledge base →</span></a></div><div><h3><span data-lang="hu">Élő kutatás URL-jei</span><span data-lang="en">Live research URLs</span></h3><ol class="expert-url-list">{url_html}</ol></div></div></div></section>
+<section class="atlas-section" id="allitasok"><div class="atlas-shell"><div class="catalog-head"><div><p class="atlas-kicker"><span data-lang="hu">Mit mondott?</span><span data-lang="en">What did the expert say?</span></p><h2><span data-lang="hu">Minden strukturált megállapítás.</span><span data-lang="en">Every structured finding.</span></h2></div><p class="atlas-note"><span data-lang="hu">Az evidenciafokozat állításonként értendő; a forrás megnevezése nem jelent automatikus registry-jóváhagyást.</span><span data-lang="en">Evidence grades apply per claim; naming a source does not imply registry approval.</span></p></div><ol class="expert-findings">{findings_html}</ol></div></section>
+<section class="atlas-section atlas-section--paper"><div class="atlas-shell expert-limits-grid"><div><p class="atlas-kicker atlas-kicker--dissent"><span data-lang="hu">Feltevések</span><span data-lang="en">Assumptions</span></p><h2><span data-lang="hu">Minek kell igaznak lennie?</span><span data-lang="en">What must be true?</span></h2><ul class="detail-list">{assumptions_html}</ul></div><div><p class="atlas-kicker atlas-kicker--dissent"><span data-lang="hu">Bizonytalanságok</span><span data-lang="en">Uncertainties</span></p><h2><span data-lang="hu">Mit nem tudott?</span><span data-lang="en">What did the expert not know?</span></h2><div class="expert-unknowns">{uncertainties_html}</div></div></div></section>
+<section class="expert-raw"><div class="atlas-shell"><p><span data-lang="hu">Ellenőrizhető nyers rekordok:</span><span data-lang="en">Inspectable raw records:</span></p><nav><a href="{github_root}/expert_outputs/{esc(name)}.json">JSON output</a>{research_link}<a href="{github_root}/system_state/agents/experts/{esc(name)}.md"><span data-lang="hu">Futáskori szerepspecifikáció</span><span data-lang="en">Round-time role specification</span></a><a href="../explorer.html#expert-{esc(name)}"><span data-lang="hu">Teljes érvfeltáró</span><span data-lang="en">Full argument explorer</span></a></nav></div></section>{pagination}</main>
+<footer class="site-footer"><div class="atlas-shell"><div class="site-footer__grid">{_both(question, "h2")}<nav><a href="../#szakertok">Összes szakértő</a><a href="../#vitak">Viták és dilemmák</a></nav><nav><a href="../../../about.html">Az Atlaszról</a><a href="../../../tech.html">Módszertan</a></nav></div><p class="site-footer__meta">{esc(slug)} · {esc(name)} · {round_n}. KÖR · GENERÁLT SZAKÉRTŐI PROFIL</p></div></footer><script src="../../../assets/atlas.js"></script></body></html>'''
+
+
+def write_expert_pages(cfg):
+    slug = cfg["slug"]
+    iterations = OUT_ROOT / slug / "iterations"
+    round_n = last_round(iterations) if iterations.exists() else None
+    if round_n is None:
+        return 0
+    rd = iterations / f"round_{round_n:02d}"
+    names = list_experts(rd)
+    if not names:
+        return 0
+    axes_hu = load_structured_disagreements(rd, "hu") or []
+    axes_en = load_structured_disagreements(rd, "en") or []
+    registry_path = ROOT / "knowledge" / "registry.json"
+    registry = (json.loads(registry_path.read_text(encoding="utf-8"))
+                .get("facts", {})) if registry_path.exists() else {}
+    meta_path = rd / "round_meta.json"
+    meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
+    starts = meta.get("starts", [])
+    provider = starts[-1].get("generator_provider", "") if starts else ""
+    records = [{
+        "id": name,
+        "title": {"hu": expert_label(name, "hu"),
+                  "en": expert_label(name, "en")},
+        "filename": expert_filename(name),
+    } for name in names]
+    out_dir = ROOT / "site" / "topics" / slug / "szakerto"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for stale in out_dir.glob("*.html"):
+        stale.unlink()
+    for index, record in enumerate(records):
+        name = record["id"]
+        data_path = rd / "expert_outputs" / f"{name}.json"
+        if not data_path.exists():
+            continue
+        spec_path = rd / "system_state" / "agents" / "experts" / f"{name}.md"
+        research_path = rd / "research" / f"{name}.md"
+        spec = spec_path.read_text(encoding="utf-8") if spec_path.exists() else ""
+        research = (research_path.read_text(encoding="utf-8")
+                    if research_path.exists() else "")
+        curated = [(fid, registry[fid])
+                   for fid in cfg.get("expert_facts", {}).get(name, [])
+                   if fid in registry]
+        profile = {
+            "name": name,
+            "data": json.loads(data_path.read_text(encoding="utf-8")),
+            "role": _markdown_section(spec, "Role"),
+            "urls": _research_urls(research),
+            "curated": curated,
+            "debates": _expert_debates(name, axes_hu, axes_en),
+            "provider": provider,
+            "has_research": research_path.exists(),
+        }
+        previous_record = records[index - 1] if index else None
+        next_record = records[index + 1] if index + 1 < len(records) else None
+        dest = out_dir / record["filename"]
+        dest.write_text(expert_page(cfg, profile, previous_record, next_record,
+                                    round_n), encoding="utf-8")
+        print(f"wrote {dest}")
+    return len(records)
 
 
 def _scenario_cards(cfg, scenarios):
@@ -943,7 +1143,7 @@ def atlas_inventory(topics):
         ("experts", "szakértői kutatási dosszié", "expert research dossiers",
          "Teljes elemzések, keresések és források — nem csak a végső összefoglaló.",
          "Full analyses, searches and sources—not merely the final synthesis.",
-         f"{first_topic}explorer.html#szakertok"),
+         f"{first_topic}#szakertok"),
         ("unknowns", "kimondott bizonytalanság", "explicit unknowns",
          "Mindegyik mellett ott van, milyen adat vagy kutatás csökkenthetné.",
          "Each states what data or research could reduce it.",
@@ -1006,6 +1206,7 @@ def main():
                        encoding="utf-8")
         write_scenario_pages(cfg)
         write_finding_pages(cfg)
+        write_expert_pages(cfg)
         cards.append(topic_card(cfg, state, i + 1))
         print(f"wrote {out}")
     inject_index_cards("\n".join(cards))

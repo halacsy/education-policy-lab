@@ -86,6 +86,14 @@ jelmagyarázat), de ne váljon szó szerinti térképgrafikává.
      típusa az oldal címe; a gyakran mondathosszúságú klaszterállítás
      olvasási méretű bekezdés, nem display címsor. A rövid vitakérdés
      továbbra is valódi címsor.
+   - **Szakértői profil = témán belüli provenance-dosszié.** Minden, az adott
+     kérdésen dolgozó szakértő-ágens saját stabil oldalt kap. A profil
+     egyértelműen jelzi, hogy nem ember vagy intézmény, bemutatja a futáskor
+     használt szerepspecifikációt, a hozzárendelt emberileg kurált tételeket,
+     az élő kutatás URL-jeit, minden strukturált megállapítást és
+     bizonytalanságot, valamint azokat a vitákat, amelyekben a brief név
+     szerint pozíciót rendelt hozzá. Csak explicit attribúció jelenhet meg;
+     a profil nem találhat ki utólag állításszintű provenance-et.
 3. **Aloldalak:**
    - **Módszertan** — ide költözik minden, ami eddig a főoldal gerince volt:
      hogyan készül az Atlasz, a 6 lépéses kör diagramja, scorecard és

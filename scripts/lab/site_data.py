@@ -37,6 +37,42 @@ DECOMP_FIELDS = [("interest", "Kinek az érdeke"), ("value", "Milyen érték üt
                  ("fear", "Milyen félelem hajtja"), ("assumption", "Milyen feltevésre épül"),
                  ("empirical_uncertainty", "Empirikus bizonytalanság")]
 
+EXPERT_LABELS = {
+    "demography": {"hu": "Demográfia", "en": "Demography"},
+    "education_finance": {"hu": "Oktatásfinanszírozás", "en": "Education finance"},
+    "equity_and_social_mobility": {
+        "hu": "Méltányosság és társadalmi mobilitás",
+        "en": "Equity and social mobility",
+    },
+    "finnish_reform": {"hu": "Finn rendszerreform", "en": "Finnish system reform"},
+    "hungarian_education_system": {
+        "hu": "Magyar oktatási rendszer",
+        "en": "Hungarian education system",
+    },
+    "implementation_planning": {
+        "hu": "Megvalósítástervezés",
+        "en": "Implementation planning",
+    },
+    "international_comparison": {
+        "hu": "Nemzetközi összehasonlítás",
+        "en": "International comparison",
+    },
+    "legal_and_governance": {"hu": "Jog és kormányzás", "en": "Law and governance"},
+    "polish_reform": {"hu": "Lengyel rendszerreform", "en": "Polish system reform"},
+    "political_feasibility": {
+        "hu": "Politikai megvalósíthatóság",
+        "en": "Political feasibility",
+    },
+    "portuguese_reform": {
+        "hu": "Portugál rendszerreform",
+        "en": "Portuguese system reform",
+    },
+    "school_network_planning": {
+        "hu": "Iskolahálózat-tervezés",
+        "en": "School-network planning",
+    },
+}
+
 
 def topic_order(topics_dir):
     """Every topic config in the deterministic public order (creation date,
@@ -79,6 +115,34 @@ def debate_filename(index, title):
 
 def dilemma_filename(cluster_id, claim):
     return f"{str(cluster_id).lower()}-{public_slug(claim, 'dilemma')}.html"
+
+
+def expert_filename(name):
+    """Stable canonical filename for a shared expert-agent seat."""
+    return f"{public_slug(name, 'szakerto')}.html"
+
+
+def expert_label(name, lang="hu"):
+    """Reader-facing seat label; fall back to the stable agent id."""
+    labels = EXPERT_LABELS.get(name, {})
+    return labels.get(lang) or labels.get("hu") or name.replace("_", " ")
+
+
+def canonical_expert_name(holder, expert_names=None):
+    """Resolve decorated holder labels back to a real expert-agent seat.
+
+    Structured briefs occasionally append a parenthetical person/source to
+    the stable agent id (for example ``school_network_planning (Name)``).
+    That annotation is not a new seat and must not mint a broken profile URL.
+    """
+    value = str(holder).strip()
+    names = expert_names or EXPERT_LABELS.keys()
+    if value in names:
+        return value
+    for name in sorted(names, key=len, reverse=True):
+        if value.startswith(f"{name} ") or value.startswith(f"{name}("):
+            return name
+    return None
 
 
 def load_structured_discourse(rd, lang="hu"):

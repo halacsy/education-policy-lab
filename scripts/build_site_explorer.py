@@ -17,8 +17,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from lab.site_data import (VERDICT_HU, VERDICT_GROUP, KIND_HU, SIDE_HU,
-                           REL_HU, DECOMP_FIELDS, debate_filename,
-                           dilemma_filename, is_gumicsont,
+                           REL_HU, DECOMP_FIELDS, canonical_expert_name,
+                           debate_filename, dilemma_filename, expert_filename,
+                           expert_label, is_gumicsont,
                            load_structured_discourse,
                            load_structured_disagreements, topic_order)
 # Per-topic outputs (D-35). Default: the config default_topic; a --topic
@@ -103,7 +104,7 @@ def parse_brief_disagreement(brief_text):
 
 def _highlight_experts(text, expert_names, e):
     """Turn bare expert-agent names inside prose into clickable chips (the
-    same #expert-<name> anchors expert_card() below defines) — this is how
+    canonical profile pages show what each seat contributed) — this is how
     a reader sees WHICH camp an expert is actually in, inline."""
     escaped = e(text)
     if not expert_names:
@@ -111,7 +112,9 @@ def _highlight_experts(text, expert_names, e):
     names = sorted(expert_names, key=len, reverse=True)
     pat = re.compile(r"\b(" + "|".join(re.escape(n) for n in names) + r")\b")
     return pat.sub(
-        lambda m: f'<a class="expert-chip" href="#expert-{m.group(1)}">{m.group(1)}</a>',
+        lambda m: (f'<a class="expert-chip" href="szakerto/'
+                   f'{e(expert_filename(m.group(1)))}">'
+                   f'{e(expert_label(m.group(1), "hu"))}</a>'),
         escaped)
 
 
@@ -474,9 +477,18 @@ def main():
     def axis_card(i, ax):
         pos_html = []
         for p in ax.get("positions", []):
-            chips = " ".join(
-                f'<a class="expert-chip" href="#expert-{e(h)}">{e(h)}</a>'
-                for h in p.get("holders", []))
+            chip_items = []
+            for holder in p.get("holders", []):
+                canonical = canonical_expert_name(holder, expert_names)
+                if canonical:
+                    chip_items.append(
+                        f'<a class="expert-chip" href="szakerto/'
+                        f'{e(expert_filename(canonical))}">'
+                        f'{e(expert_label(canonical, "hu"))}</a>')
+                else:
+                    chip_items.append(
+                        f'<span class="expert-chip">{e(holder)}</span>')
+            chips = " ".join(chip_items)
             minority = ('<p class="pos-label" style="margin:0 0 .3rem">'
                         'kisebbségi álláspont</p>' if p.get("minority") else "")
             why = (f'<p class="fix"><b>Miért:</b> {e(p["why"])}</p>'
@@ -505,8 +517,9 @@ def main():
         return f"""
     <details class="expert" id="expert-{e(name)}">
       <summary>
-        <span class="expert-name">{e(name)}</span>
+        <span class="expert-name">{e(expert_label(name, "hu"))}</span>
         <span class="expert-position">{e(data['position'][:140])}</span>
+        <a class="record-link" href="szakerto/{e(expert_filename(name))}">külön szakértői profil ↗</a>
         <a class="permalink" href="#expert-{e(name)}" title="Közvetlen link erre a szakértőre">§</a>
       </summary>
       <div class="expert-full">{body_html}</div>
@@ -805,7 +818,8 @@ def main():
     <h2>Hol nem ért egyet a szakértői testület — és ki melyik oldalon áll</h2>
     <p class="lede">A rendszer nem old fel vitát: minden témánál látszik a
     többségi és a kisebbségi álláspont is, indoklással. A szakértő nevére
-    kattintva a teljes elemzése megnyílik lent.</p>
+    kattintva megnyílik a forrásokkal és minden megállapítással együtt
+    generált szakértői profil.</p>
     {disagreement_html}
   </div>
 </section>
