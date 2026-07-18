@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "expected_benefits",
+      "objection": "The claim that the proposal “Preserves the approximately 10% competency‑gain advantage associated with 6/8‑year tracks for admitted students” is presented as if backed by moderate evidence, but the curated registry's value_added [moderate] entry shows Hungarian value‑added estimates indicate most of the apparent advantage is selection (composition) rather than a causal school effect. The scenario therefore overstates the confidence that preserving the track alone will preserve a 10% causal gain for newly admitted cohorts under changed admission rules.",
+      "severity": "high",
+      "suggested_revision": "Replace the categorical 10% preservation claim with an explicitly conditional statement: say that existing value‑added studies indicate a modest raw advantage that appears largely compositional, and that the causal gain for cohorts admitted under new quota/proxy rules is uncertain. Commit to empirical safeguards: pilot the admission rules with a pre‑registered value‑added evaluation (difference‑in‑differences or regression‑discontinuity on score thresholds) and only claim preserved causal gains if the pilot shows them."
+    },
+    {
+      "scenario": "S2",
+      "field": "mechanism",
+      "objection": "S2 repeatedly uses a baseline that the gimnázium track accounts for ~40% of cohort intake (to be reducible toward 30%), but the curated registry's gimn_share [strong] reports roughly 8–12% of a cohort enters 6‑ or 8‑year gimnázium tracks. The 40% figure is therefore incorrect or at minimum unspecified (and so any modeled effect of score‑thresholds on a 40% baseline is misleading).",
+      "severity": "high",
+      "suggested_revision": "Correct the baseline statistic: explicitly state the registry‑supported 8–12% cohort share for 6/8‑year gimnáziums (or clearly define what the 40% refers to—e.g., share of some subpopulation or of state‑sector secondary intake—and provide a source). Recompute the scenario's projected contraction effects using the correct baseline and add sensitivity ranges (e.g., effects under 8%, 12%, and any alternative definitional baseline) so the mechanism's impact estimates are transparent and evidence‑aligned."
+    },
+    {
+      "scenario": "S3",
+      "field": "evidence_status",
+      "objection": "S3 labels Poland's 1999 delayed‑tracking evidence as [evidence: strong] and quotes precise PISA SD gains as if firmly established, but the curated registry tags poland_reform [moderate]. The scenario therefore overstates the certainty and generalisability of the Poland effect and does not acknowledge the underlying studies' limits or heterogeneity that the registry indicates.",
+      "severity": "high",
+      "suggested_revision": "Downgrade the Poland evidence label to 'moderate' and annotate the claim: cite the primary analyses (Jakubowski et al., OECD discussions) and note limitations (context dependence, later policy reversal, heterogeneity of effects across subgroups). Reframe expected gains as plausibly achievable but conditional on concurrent anti‑sorting policies and contextual differences; propose a regional pilot with pre‑registered outcome metrics to test external validity before national phase‑in."
+    },
+    {
+      "scenario": "S5",
+      "field": "mechanism",
+      "objection": "S5 asserts very specific recent birth counts (77,500 in 2024 and ~72,000 2025 estimate) and frames them as supporting a dramatic near‑term cohort cliff, but the curated registry's demography [strong] statement reports births declined from ~125k to ~85–95k and does not supply those lower 77.5k/72k figures. Presenting more extreme recent numbers without citing a registry source risks relying on out‑of‑registry updates or model estimates not documented in the evidence registry.",
+      "severity": "medium",
+      "suggested_revision": "Either cite the exact KSH (or equivalent) release that reports the 2024/2025 birth counts (and mark them as post‑registry model updates), or revert to the registry‑supported range (~85–95k) and add a sensitivity paragraph: show how conclusions differ if 2024/25 births are at 85–95k versus the lower reported estimates, and request a settlement‑level viability projection from KSH/Oktatási Hivatal to ground the implied school‑closure counts."
+    }
+  ]
+}

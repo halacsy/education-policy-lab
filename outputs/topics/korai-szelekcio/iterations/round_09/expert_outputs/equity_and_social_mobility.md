@@ -1,0 +1,26 @@
+# Expert analysis: equity_and_social_mobility
+
+## Findings (evidence)
+- Hungary's SES-achievement gradient is among the largest in the OECD, and between-school variance in math performance is high, with schools selecting students based on records. [evidence: strong — OECD Education Policy Outlook: Hungary]
+- Hungary has the highest socioeconomic school segregation in the EU, and the parent-education achievement gap (53 PISA points) is far above the EU average (33 points). [evidence: strong — EU Education and Training Monitor 2025 – Hungary country report]
+- 62% of Roma children aged 6–15 attend schools where all or most pupils are Roma, indicating extreme ethnic-social segregation intertwined with the tracked system. [evidence: strong — FRA 2025, cited in EU Education and Training Monitor 2025]
+- Cross-national comparative research finds that earlier academic tracking ages are associated with larger socioeconomic compositional (peer-sorting) effects between schools. [evidence: moderate — Sciffer et al., summarized in EERA-ECER blog on socioeconomic school segregation]
+- Value-added estimates for 8-grade gimnázium are positive versus comparison tracks, but for 6-grade gimnázium the added value at grade 8 is actually negative, turning positive only by grade 10 — selection and value-added effects diverge by track type. [evidence: moderate — HÉTFA Working Paper 2015/11 (Országos Kompetenciamérés panel, 2008–2014)]
+- Admission to elite 6/8-grade gimnáziums is almost entirely closed to multiply-disadvantaged pupils, according to sociological fieldwork describing near-zero intake shares. [evidence: moderate — Berényi, interviewed in Qubit (2022)]
+- For 2025/2026 admissions, some school maintainers imposed de facto minimum score cutoffs (e.g., 70/100) for 6/8-grade tracks beyond the government's non-binding recommendation, and admission lists were revised mid-process, indicating selectivity is administratively tightening rather than loosening. [evidence: moderate — Eduline reporting on 2025/2026 admissions cycle]
+- Large-scale linked administrative data (Admin3, covering ~50% of the Hungarian population, education data from 2008) is now available and being used to separate selection from causal high-poverty-school effects on achievement and attainment. [evidence: strong — Hermann & Kisfalusi, International Journal of Comparative Sociology (2026)]
+
+## Interpretation
+The evidence converges on two distinct claims often conflated: (1) Hungary's schools are extremely segregated by SES and ethnicity, and early tracking at 10–12 is a documented contributor via cross-national compositional-effect research; (2) within the tracked system, the value-added picture is heterogeneous—8-grade gimnazium shows more consistent positive effects than 6-grade, suggesting selection and pedagogical value are distinct. Near-total exclusion of disadvantaged pupils from elite kisgimnáziums plus tightening informal score thresholds indicate the sorting mechanism is actively reproduced and recently intensified by decentralized maintainer practice, independent of formal law change.
+
+## Assumptions
+- It is assumed that PISA/national-competence-test SES-gap measures adequately proxy 'equity effects' even though they cannot fully separate selection (who enters) from treatment (what happens once inside). [assumption]
+- It is assumed that findings from 2008–2015 competence-test panels on value-added remain broadly informative for the current (2020s) system, absent newer published replications. [assumption]
+
+## Position
+Early selection at 10–12 into 6/8-grade gimnaziums is a documented, non-trivial contributor to Hungary's exceptionally high SES/ethnic school segregation, but its pedagogical value-added is heterogeneous by track (stronger for 8-grade than 6-grade), so the equity case against early selection is stronger than the achievement case for it.
+
+## Uncertainties
+- We do not have recent (2020s) Hungary-specific causal estimates isolating the pure selection effect of the 6/8-grade gate from confounding factors (family investment, self-selection, prior ability) using post-2020 data. (confidence: low; would be reduced by: Publication of updated Admin3-based causal estimates (e.g., follow-up to Hermann & Kisfalusi 2026) specifically comparing 6/8-grade gimnazium entrants to matched non-entrants.)
+- It is unclear how much of the observed peer-effect/compositional damage to non-selected pupils is caused specifically by the 6/8-grade gate versus by free primary-school choice and church/private school growth operating independently of age-10/12 tracking. (confidence: medium; would be reduced by: A decomposition study separating the marginal contribution of the 6/8-grade gate from general school-choice segregation, using variation across regions with different kisgimnázium densities.)
+- We do not know the current (2025/2026) national-level share of pupils in 6/8-grade tracks or its trend, nor whether the newly tightened informal maintainer thresholds are a nationwide pattern or a few high-profile Budapest cases. (confidence: low; would be reduced by: Official KIFIR/Oktatási Hivatal admissions statistics disaggregated by track type and maintainer, published for the 2025/2026 and 2026/2027 cycles.)

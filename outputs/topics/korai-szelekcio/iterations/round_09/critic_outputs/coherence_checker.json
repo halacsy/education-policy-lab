@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "assumptions",
+      "objection": "The assumptions state that “Admission-equity rules can be designed and enforced consistently across state, church, and foundation maintainers,” but elsewhere in the scenario (political_risks, uncertainties, and evidence_status) the text documents maintainer partial-autonomy, coalition protections for church/foundation operators, and low confidence that uniform rules can be enforced. This is a direct internal contradiction: the assumption treats legal and political enforceability as given while other fields record it as doubtful and contested.",
+      "severity": "high",
+      "suggested_revision": "Replace the unconditional enforceability assumption with a conditional one and specify the required enabling steps. Concretely: (a) change wording to say enforceability is contingent on a completed legal mapping of maintainer autonomy and explicit entrenchment choices (cardinal law, funding-conditionality, or negotiated MOUs); (b) add a mandated pre-implementation task: a legal/political feasibility study (6 months) mapping which enforcement levers (statute vs funding attachment vs contractual MOUs) are feasible for each maintainer type; (c) include fallback design: if legal mapping shows church/foundation noncompliance risk, limit initial rollout to state-maintained schools + a parallel incentive package (time-limited funding bonuses) for non-state maintainers who opt in, with clear escalation rules (sanctions/withholding) only after parliamentary review."
+    },
+    {
+      "scenario": "S3",
+      "field": "assumptions",
+      "objection": "The scenario’s assumptions assert that “Sorting does not simply migrate … to the point of neutralizing the equity gain” provided anti-sorting rules are implemented. But elsewhere (mechanism, equity_impact, uncertainties, political_risks) the scenario acknowledges anti-sorting rules are unproven, politically contested, and likely insufficient to prevent migration. The assumption therefore presents the anti-sorting requirement as a solved precondition when the scenario itself documents it is the central unresolved risk.",
+      "severity": "high",
+      "suggested_revision": "Make the assumption conditional and operationalize the anti-sorting requirement. Specifically: (a) reword to state that equity gains depend on legally enforceable anti-sorting measures being designed and successfully piloted; (b) add concrete design requirements for those measures (e.g., statutory catchment boundaries, binding limits on non-state selective expansions, unified admissions data-sharing with enforcement triggers, and penalties tied to normative funding); (c) require a 2-stage pilot (regional) that tests anti-sorting enforcement with predefined metrics (segregation index, maintainer-compliance rate) and a go/no-go decision clause before national phase-in; (d) specify political durability measures (cross-party pact or cardinal-law entrenchment) as prerequisites for national rollout."
+    },
+    {
+      "scenario": "S2",
+      "field": "mechanism",
+      "objection": "The mechanism claims that reduced state-sector selective capacity “may incrementally improve peer composition in urban general-school upper grades,” yet the equity_impact field later states residual selective places are likely to become more SES-skewed and that displaced demand will concentrate in church/foundation/private options. This is a contradictory causal expectation about whether contraction improves or worsens within-system equity without specifying the conditions that flip the sign of the effect.",
+      "severity": "medium",
+      "suggested_revision": "Resolve the conditionality by specifying which intermediate conditions produce improvement versus harm, and add countermeasures. Concretely: (a) state that contraction improves peer composition only if accompanied by simultaneous compensatory investment in general schools (per-pupil top-ups) and enforceable constraints on non-state expansion; (b) add required analytic modelling (within 6 months) to simulate likely displacement flows by maintainer type under different contraction schedules; (c) include implementation rules: tie capacity-reduction triggers to demonstrated absorptive investment in local general schools and to active measures (funding conditionality, licensing freezes) to prevent offsetting church/foundation expansion."
+    },
+    {
+      "scenario": "S5",
+      "field": "political_risks",
+      "objection": "S5 frames passive demographic contraction as the ‘path of least resistance’ politically, yet the assumptions and mechanism fields acknowledge government is already using score thresholds as an active supply-side lever (S2) and that consolidation decisions are not purely policy-neutral. This contradicts the claim that the baseline is politically neutral and free of reform-driven risk: in practice, demographic contraction interacts with active administrative choices, so the scenario understates political entanglement.",
+      "severity": "medium",
+      "suggested_revision": "Recast S5 explicitly as an analytical counterfactual and specify how to isolate demographic from policy-driven effects. Concretely: (a) add a caveat that S5 is an analytical baseline only if no additional administrative levers (score thresholds, maintainer licensing) are enacted; (b) require a monitoring protocol (linked admissions and maintainer-level data) to decompose observed contraction into demographic vs policy components within two admission cycles; (c) if active levers are detected, mandate modelling scenarios that incorporate policy-layer interactions rather than treating contraction as purely passive."
+    }
+  ]
+}

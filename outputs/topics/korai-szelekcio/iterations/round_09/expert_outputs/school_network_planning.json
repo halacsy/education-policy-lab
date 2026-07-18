@@ -1,0 +1,129 @@
+{
+  "findings": [
+    {
+      "claim": {
+        "en": "Hungary's secondary network of 880 schools is deliberately dense, with a policy aim that every student reach a gimnázium by public transport within about an hour.",
+        "hu": "Magyarország 880 iskolából álló középfokú hálózata tudatosan sűrű, azzal a szakpolitikai céllal, hogy minden diák tömegközlekedéssel kb. egy órán belül elérjen egy gimnáziumot."
+      },
+      "evidence": "moderate",
+      "source": "Eurydice/KSH 2024/25"
+    },
+    {
+      "claim": {
+        "en": "Dormitory capacity nationally exceeds demand and demand is declining, currently easing rather than solving the commuting-tolerance constraint for thin rural markets.",
+        "hu": "A kollégiumi férőhelyek száma országosan meghaladja a keresletet, és a kereslet csökken, ami jelenleg enyhíti de nem oldja meg a vékony vidéki piacok ingázási korlátját."
+      },
+      "evidence": "moderate",
+      "source": "Eurydice 2024/25"
+    },
+    {
+      "claim": {
+        "en": "More than 1,200 of Hungary's 3,155 settlements had no public educational institution at all by 2024, concentrated in peripheral and rural regions.",
+        "hu": "Magyarország 3155 települése közül 2024-re több mint 1200-ban egyáltalán nem volt állami köznevelési intézmény, perifériás és vidéki térségekben koncentrálva."
+      },
+      "evidence": "strong",
+      "source": "ResearchGate spatial-clustering study 2025 (KIR 2021-2024)"
+    },
+    {
+      "claim": {
+        "en": "Birth numbers are falling faster than previously expected—5,979 in October 2025, fertility rate 1.31—meaning the school-age intake base for any selection scenario continues to shrink.",
+        "hu": "A születésszám a várt tempónál gyorsabban csökken—2025 októberében 5979 gyermek született, a termékenységi arányszám 1,31—vagyis bármely szelekciós forgatókönyv beiskolázási bázisa folyamatosan zsugorodik."
+      },
+      "evidence": "strong",
+      "source": "KSH via IntelliNews November 2025"
+    },
+    {
+      "claim": {
+        "en": "Long-run population projections place Hungary at approximately 8.5 million inhabitants by 2040-2050, requiring school-network planning to account for sustained demographic decline, not a temporary fluctuation.",
+        "hu": "A hosszú távú népesség-előrejelzések Magyarország lélekszámát 2040-2050-re körülbelül 8,5 millióra teszik, ami az iskolahálózat tervezésének évtizedeken átívelő demográfiai csökkenésével kell számolnia, nem átmeneti ingadozással."
+      },
+      "evidence": "moderate",
+      "source": "IntelliNews/OSW Centre for Eastern Studies projections"
+    },
+    {
+      "claim": {
+        "en": "Selection is not geographically uniform: approximately 40% of general schools nationally (60% in villages) send zero pupils to 6- or 8-year gimnázium tracks, while urban and county-seat schools lose 20-30% of each cohort.",
+        "hu": "A szelekció nem egyenletes településenként: az általános iskolák kb. 40%-ából (falun 60%-ából) senki nem jelentkezik hat- vagy nyolcosztályos gimnáziumba, míg megyeszékhelyi és nagyváros-iskolákból az évfolyam 20-30%-a elmegy."
+      },
+      "evidence": "moderate",
+      "source": "PrivátBankár and Index reporting on Oktatási Hivatal and national competence-measurement data"
+    },
+    {
+      "claim": {
+        "en": "When top-performing pupils depart after grade 4 or 6, the sending general school experiences mildly negative average effects on remaining peers and unplannable class-size volatility that complicates staffing.",
+        "hu": "Amikor a legjobb tanulók negyedik vagy hatodik osztály után elmennek, a küldő általános iskolában enyhén negatív átlagos hatás jelentkezik a maradó tanulókon és tervezhetetlen osztálylétszám-ingadozás, amely nehezíti a személyzeti tervezést."
+      },
+      "evidence": "moderate",
+      "source": "Horn et al. 2018 cited via qubit.hu"
+    },
+    {
+      "claim": {
+        "en": "Church-maintained school enrollment grew fastest (2.5× to 5×) in small towns and villages 2010-2022; simultaneously, pupils in settlements with no remaining state-run primary school rose from 1% to 4%—a maintainer shift layered atop selection pressures.",
+        "hu": "Az egyházi fenntartású iskolák tanulólétszáma 2010-2022 között a kisvárosokban és falvakban nőtt a leggyorsabban (2,5-5-szörösére); ugyanebben az időben az állami általános iskola nélkül maradt településeken élő tanulók aránya 1%-ról 4%-ra emelkedett—ez a szelekciós nyomásra rárakódó fenntartó-eltolódás."
+      },
+      "evidence": "strong",
+      "source": "A közoktatás indikátorrendszere 2023 via qubit.hu"
+    },
+    {
+      "claim": {
+        "en": "Gimnázium enrollment reached 192,000 students (44.8% of all secondary enrollment) in 2024/25, with general-school enrollment continuing to decline while secondary and tertiary enrollment grew—consistent with shrinking cohorts at the 10-12 selection point.",
+        "hu": "A gimnáziumi tanulólétszám 2024/25-ben 192 000 fő (a teljes középfokú tanulólétszám 44,8%-a) volt, az általános iskolai tanulólétszám továbbra is csökkent, míg a középfokú és felsőfokú tanulólétszám nőtt—a 10-12 évesek szelekciós pontján való zsugorodásnak megfelelően."
+      },
+      "evidence": "moderate",
+      "source": "KSH preliminary 2024/25 data"
+    }
+  ],
+  "interpretation": {
+    "en": "Physical school-network capacity—buildings, dormitories, and transport infrastructure—is not currently the binding constraint on delivering early selection almost anywhere. The dense 880-school grid plus underused dormitory capacity mean most towns can physically access a 6- or 8-year gimnázium. The real town-by-town feasibility problem is compositional and demographic: shrinking birth cohorts mean fewer children to sustain both a full eight-grade general school and a competing gymnázium track locally. Selection is already concentrated in a minority of settlements (mostly urban or church-maintained), while ~40% send no one to tracked programs. Each cohort self-selecting out weakens the remaining general-school class, accelerating consolidation pressure. Maintainer transfers (state to church) are currently absorbing this burden rather than solving it.",
+    "hu": "A fizikai iskolahálózati kapacitás—épületek, kollégiumok és közlekedési infrastruktúra—jelenleg nem a korai szelekció szinte mindenhol való megvalósításának szűk keresztmetszete. A sűrű, 880 iskolás hálózat és a kihasználatlan kollégiumi kapacitás azt jelenti, hogy a legtöbb település fizikailag elérheti a hat- vagy nyolcosztályos gimnáziumot. A valódi településenkénti megvalósíthatósági probléma összetételi és demográfiai: a csökkenő születésszám azt jelenti, hogy kevesebb gyerek marad a teljes nyolc évfolyamos általános iskola és egy helyileg versengő gimnáziumi sáv fenntartásához. A szelekció már most az összes település kisebbségében (főleg városokban vagy egyházi fenntartásban) koncentrálódik, míg ~40% senkit nem küld iskolatípus szerinti szétválogatásba. Minden önszelektáló évfolyam gyengíti a maradó általános iskolai osztályt, felgyorsítva a konszolidációs nyomást. A fenntartó-eltolódások (állami-egyházi) jelenleg ezt a terhet inkább elnyelik, semmint megoldják."
+  },
+  "assumptions": [
+    {
+      "en": "Current KSH demographic projections (to 2040-2050) will not be substantially reversed by family-policy interventions in the medium term.",
+      "hu": "A jelenlegi KSH demográfiai előrejelzések (2040-2050-ig) középtávon nem fordulnak meg jelentősen a családpolitikai beavatkozások hatására."
+    },
+    {
+      "en": "Dormitory slack capacity reported at the national level is sufficiently distributed geographically to matter for actual feasibility, rather than concentrated only in a few large urban centers.",
+      "hu": "A nemzeti szinten jelentett kollégiumi szabad kapacitás földrajzilag eléggé oszlik el ahhoz, hogy a tényleges megvalósíthatóságra számottevő hatással legyen, nem csak néhány nagy urbánus központban koncentrálódik."
+    }
+  ],
+  "position": {
+    "en": "Physical school-network capacity is currently sufficient to sustain early selection almost anywhere; the genuine town-by-town feasibility bottleneck is the shrinking and unevenly distributed child population, combined with a maintainer and admissions design that concentrates selection into a minority of settlements.",
+    "hu": "A fizikai iskolahálózati kapacitás jelenleg szinte mindenhol elegendő a korai szelekció fenntartásához; a valódi településenkénti megvalósíthatósági szűk keresztmetszet a zsugorodó és egyenlőtlenül eloszló gyermeklétszám, valamint a fenntartói és felvételi rendszer, amely a szelekciót a települések kisebbségében koncentrálja."
+  },
+  "uncertainties": [
+    {
+      "text": {
+        "en": "We lack settlement or county-level data on current dormitory vacancy versus demand trends in specific declining regions; only national aggregate trends are known.",
+        "hu": "Hiányoznak a konkrét hanyatló régiókban a kollégiumi szabad férőhelyek és a kereslet tendenciái vonatkozó települési vagy megyei szintű adatok; csak a nemzeti szintű aggregált trendek ismertek."
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "Settlement- or county-disaggregated KIR/KIFIR dormitory occupancy records by region and time period.",
+        "hu": "Régiónként és időszakonként bontott, település- vagy megyei szintű KIR/KIFIR kollégiumi kihasználtsági adatok."
+      }
+    },
+    {
+      "text": {
+        "en": "We do not have a recent, precise projection of how many settlements would lose their last local secondary program if consolidation continues at current demographic pace.",
+        "hu": "Nincs friss, pontos előrejelzésünk arról, hogy hány település veszítené el utolsó helyi középfokú képzési szintjét, ha a konszolidáció a jelenlegi demográfiai ütemben folytatódna."
+      },
+      "confidence": "low",
+      "reduced_by": {
+        "en": "A dedicated KSH or Oktatási Hivatal settlement-level school viability projection under current birth-rate scenarios.",
+        "hu": "Egy dedikált KSH vagy Oktatási Hivatal település-szintű iskolai életképességi előrejelzés a jelenlegi születésszám-forgatókönyvek mellett."
+      }
+    },
+    {
+      "text": {
+        "en": "The causal magnitude of the Horn et al. (2018) 'peer drain' effect on sending general schools rests on a single study cited second-hand; its magnitude and generalizability across settlement types remain uncertain.",
+        "hu": "A Horn és mtsai (2018) 'diák-elszívó hatás' oka egy másodkézből idézett tanulmányon alapul; a hatás mértéke és általánosíthatósága településtípusonként bizonytalan marad."
+      },
+      "confidence": "medium",
+      "reduced_by": {
+        "en": "Direct access to the original peer-reviewed paper and replication of the analysis across more recent cohorts and settlement-type subgroups.",
+        "hu": "Az eredeti, lektorált publikációhoz való közvetlen hozzáférés és az elemzés megismétlése újabb évfolyamokon és települési típusok szerinti alcsoportokon."
+      }
+    }
+  ]
+}

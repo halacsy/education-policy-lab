@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "political_risks",
+      "objection": "The scenario flags decree-vs-cardinal-law reversal risk but fails to specify any legally actionable entrenchment path. It neither models the parliamentary majorities, nor proposes concrete statutory instruments (cardinal-law amendment, supermajority threshold, budget earmark, or binding funding conditionality) that would plausibly prevent reversal by a subsequent government — despite citing Poland's reversal precedent and Fidesz's culture-war framing. The evidence tag 'weak' attached to lower political disruption is thus misleading: the expert record actually supports high reversal risk absent statutory entrenchment. (Speculative element: treating ministerial decree implementation as politically durable.)",
+      "severity": "high",
+      "suggested_revision": "Replace the generic note on reversal risk with a concrete entrenchment plan: (a) identify whether a cardinal-law amendment is required and the parliamentary coalition arithmetic to pass it; (b) propose alternative legal anchors (multi-year budget earmark for admissions enforcement, statutory funding-conditionality tied to maintainer compliance, or an independent admissions regulator established by statute); (c) build a staged legislative strategy (pilot → statutory regulator → cardinal-law elevation) and model likely timelines and veto points, including anticipated litigation from church/foundation maintainers and Alkotmánybíróság risks."
+    },
+    {
+      "scenario": "S2",
+      "field": "assumptions",
+      "objection": "The scenario assumes church and foundation maintainers 'can be regulated or incentivized not to expand selective places' but provides no evidence-based pathway for doing so. This contradicts the synthesis evidence showing church gimnázium share rose from ~10.4% to ~27% despite past reforms, and the Tisza coalition commitment to preserve church operating conditions — concrete political constraints that make regulatory restraint non-trivial. The assumption therefore understates probable non-compliance and offsetting expansion by non-state actors rather than documenting when and how they would be prevented. (Unsupported claim: practicable control over non-state maintainer expansion.)",
+      "severity": "high",
+      "suggested_revision": "Revise assumptions to reflect maintainer political autonomy: commission a legal and political-mapping exercise up-front that (a) identifies which funding-conditionality and licensing levers are legally available against church/foundation maintainers and documents precedent use; (b) models likely maintainer responses under Tisza coalition protections; and (c) produce a menu of implementable instruments (e.g., funding tapering for new selective class approvals, conditional capital grants tied to enrollment-mix covenants, voluntary buyouts/asset-purchase offers) accompanied by contingency plans if maintainers refuse — and score each option for legal risk and coalition acceptability."
+    },
+    {
+      "scenario": "S3",
+      "field": "political_risks",
+      "objection": "The scenario recognizes that anti-sorting rules are a 'load-bearing' requirement but nonetheless treats their simultaneous enactment with structural delay as feasible without specifying enforceable mechanisms. It omits concrete enforcement design (admissions/funding sanctions, maintainers' admission-contract clauses, independent monitoring with remedial triggers) and ignores empirical evidence cited elsewhere that Finland and Poland saw sorting migrate despite such rules. Thus the political and implementation risk of sorting migration and legal pushback from maintainers is understated and unmitigated.",
+      "severity": "high",
+      "suggested_revision": "Replace the high-level anti-sorting requirement with an operational enforcement package: (a) define specific statutory prohibitions (e.g., bans on selective intakes under a certain cohort size) and attach financial penalties or loss of normative funding for breach; (b) create an independent, legally empowered segregation-monitoring body with automatic remedial powers (reallocating state places, suspending approvals); (c) pilot the anti-sorting rules in a legally insulated region with pre-arranged maintenance agreements from local church/foundation actors, accompanied by rapid legal-readiness resources; and (d) specify entrenchment options (supermajority, constitutional amendment, or EU funding-conditional commitments) to reduce reversal risk."
+    },
+    {
+      "scenario": "S4",
+      "field": "assumptions",
+      "objection": "The scenario assumes a statutory (cardinal-law) funding floor for TEIP-style targeted programmes is politically achievable, yet elsewhere it documents that targeted funding lines are likely first-line cuts under projected fiscal consolidation (6.2% deficit projection). The assumption therefore conflicts with the scenario's own political_risks evidence and overstates the feasibility of durable dedicated funding without identifying credible funding sources or fiscal trade-offs. (Unsupported optimism about budgetary durability.)",
+      "severity": "medium",
+      "suggested_revision": "Replace the blanket assumption with a fiscal-feasibility annex: (a) conduct a three-scenario fiscal modelling exercise (optimistic: statutory floor funded by reallocation; medium: partial EU top-up plus retention-savings; pessimistic: annual-budget contingent) to show how TEIP funding could be secured; (b) propose concrete budget instruments (multi-year budget commitments, ringfenced EU Recovery/ESF+ allocation, retention-reduction savings formally hypothecated to TEIP) and pilot-size costings so legislators can evaluate trade-offs; and (c) include political strategies to defend the line (cross-party pact for anti-poverty education funding, conditional co-financing with municipal commitments)."
+    }
+  ]
+}
