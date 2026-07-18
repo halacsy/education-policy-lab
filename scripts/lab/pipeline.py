@@ -871,6 +871,9 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                  "Grade the FACTUAL claim of every fact/mixed argument "
                  "cluster below against the curated registry, as the "
                  "required JSON object (one entry per fact/mixed cluster). "
+                 f"You MUST return one grade for EACH of these cluster ids "
+                 f"— ALL of them, no sampling: {', '.join(factual)}. "
+                 f"That is {len(factual)} entries. "
                  "status = the registry-backed evidence grade with its "
                  "registry source, or not_registry_backed (treat as model "
                  "knowledge) when no registry fact supports it. Value "
@@ -880,7 +883,7 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                                ensure_ascii=False)),
         validate=lambda o: valid_grades(o, factual),
         out_path=ddir / "argument_grades.json",
-        schema=S.GRADES, role="judge", max_tokens=8000)
+        schema=S.GRADES, role="judge", max_tokens=16000)
     grades = render.grades_dict(grades_obj)
 
     responses = {name: None for name in voice_names}
