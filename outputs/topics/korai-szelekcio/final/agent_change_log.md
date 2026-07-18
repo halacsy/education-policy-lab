@@ -1,6 +1,6 @@
 # Agent change log
 
-Every attempted system change, with expected and actual effect (from outputs/archive/attempts_log.jsonl; pre/post spec versions in outputs/archive/agent_versions/).
+Every attempted system change, with expected and actual effect (from the topic archive (outputs/topics/<slug>/archive/attempts_log.jsonl); pre/post spec versions in the topic archive (outputs/topics/<slug>/archive/agent_versions/)).
 
 - round 02: `uncertainty_quantify` → uncertainty_explicitness (targets: 14 agents; expected +0.8, actual 0.731, kept) — For every uncertainty item, state a confidence level (confidence: low|medium|high) and name what evidence would reduce it ('would be reduced by: ...'). In Hunga
 - round 03: `critic_fix_severity` → critic_concreteness (targets: 8 agents; expected +0.6, actual 0.745, kept) — For every objection add a line 'Severity: high|medium|low' and a line 'Suggested revision: <concrete fix>'.
@@ -8,3 +8,4 @@ Every attempted system change, with expected and actual effect (from outputs/arc
 - round 05: `evidence_tag_all` → evidence_discipline (targets: 2 agents; expected +0.4, actual 0.227, kept) — Attach an inline evidence tag ([evidence: strong|moderate|weak|contested]; HU: [bizonyíték: ...]) to EVERY mechanism claim and EVERY expected benefit, not only 
 - round 06: `implementation_detail` → scenario_completeness (targets: 2 agents; expected +0.5, actual 0.213, kept) — Give every implementation step an explicit timeline in parentheses, e.g. '(timeline: year 1-2)'; HU: '(ütemezés: 1-2. év)'.
 - round 08: `layer_tighten` → layer_separation (targets: 0 agents; expected +0.3, actual None, kept) — Every substantive claim across the brief's 10 sections carries a claim-kind tag ([fact]/[estimate]/[assumption]/[value], unchanged in every language); a substan
+- round 09: `scenario_crossref` → layer_separation (targets: 1 agents; expected +0.2, actual None, kept) — The brief must be self-contained: right after the introduction, add a scenario key section ('## Scenario key' / HU: '## Forgatókönyv-kulcs') listing each scenar
