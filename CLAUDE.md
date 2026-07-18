@@ -92,6 +92,41 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   deleted, human gates via scripts/new_topic.py); per-topic time/token/USD
   metering (lab/metering.py, final/cost_report); topic-browser site
   (build_site_topics.py). API keys ROTATED (owner-confirmed 2026-07-15).
+- **SOURCED-ERA SESSION (2026-07-16/17, this machine): search outage
+  solved, both topics re-run on live sources, expert-derived frames for
+  korai.** Results: rural-school-closures round 2 total 9.252 (era
+  baseline at round 2 — round 1 ran during the outage, not comparable);
+  korai-szelekcio round 9 total 9.45 (era baseline at round 9 — frames
+  changed). korai's frames are now EXPERT-DERIVED (owner-approved via the
+  new `new_topic.py propose-frames --topic S --round N`): 5 frames incl.
+  S5 "demographic passive contraction" as explicit counterfactual (the
+  D-31 no-intervention variant). Both topics verify green, published.
+  KEY FIXES (all committed, experiment record in
+  docs/experiments/2026-07-16-research-token-budget-and-search-outage.md):
+  (1) research web search is DIRECT (`allowed_callers: ["direct"]` in
+  llm._call_search) — dynamic filtering's filter code hit a per-request
+  "Server tool use limit exceeded" AFTER its searches ran, so the model
+  never saw its own results; config research.dynamic_filtering=true
+  restores the old path. (2) Token budgets re-tuned for the sourced era
+  (research 16K, expert 24K, scenarios 48K, voice 40K+brevity cap,
+  reciprocity 32K+cap, cluster 24K, synthesis 32K, critic/meta 8K, judge
+  4K — reasoning models' hidden thinking eats max_completion_tokens; 800
+  gave EMPTY judge replies). (3) Audit layer: rejections.jsonl (full
+  rejected output + reason), round_meta.json (per-leg launches),
+  per-call web-search stats; site "Műhely-napló" audit pages
+  (build_site_audit.py). (4) valid_voice: no_position exempt from
+  framing fields, duplicate reactions forbidden; grade_arguments prompt
+  enumerates mandatory cluster ids (reasoning judges SAMPLE otherwise);
+  meta_quant marker matches the schema key. (5) LAB_FRESH_EXPERTS=1
+  disables the cross-round expert cache. (6) Topic fingerprint AND its
+  inline copy in _snapshot_state_hash exclude frames+evaluation; failed
+  resumes print the diverging files and keep system_state_prev/ (#27).
+  GOTCHAS learned: run long rounds under `caffeinate -i` (an overnight
+  Mac sleep stranded a socket and hung the leg); the regression-revert ×
+  crash-relaunch interaction stacked 5 directives and broke
+  one-change-per-round (root cause in #27, forensics preserved under
+  outputs/topics/rural-school-closures/archive/round_02_crash_forensics);
+  rural round-2 attempts quarantined there too.
 - **kisiskolák LIVE ACCEPTANCE PASSED (2026-07-15, this session, on
   main; #21 CLOSED).** Topic `rural-school-closures` ran the full D-36
   path live: intake draft → owner approved the problem brief → round 1
