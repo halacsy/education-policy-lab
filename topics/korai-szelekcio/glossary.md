@@ -12,7 +12,7 @@ must appear in a round's `revised_workflow.md`.
 | grammar school | gimnázium | academic-track secondary school; keep "gimnázium" in EN text on first use |
 | 6-year grammar school | hatosztályos gimnázium | entry at age 12 |
 | 8-year grammar school | nyolcosztályos gimnázium | entry at age 10 |
-| comprehensive school | egységes alapiskola | single common school for the full age cohort |
+| comprehensive school | egységes alapiskola | single common school for the full age cohort; EN alternatives since the round-9 frames: comprehensive-school, comprehensive lower-secondary |
 | general school (primary) | általános iskola | Hungarian 8-grade basic school |
 | secondary school | középiskola | umbrella term |
 | vocational school | szakképző iskola | post-2019 nomenclature |
@@ -106,7 +106,7 @@ a Hungarian token.
      list and are left to the human-review flag. -->
 
 - early selection = korai szelekció
-- comprehensive school = egységes alapiskola
+- comprehensive school / comprehensive-school / comprehensive lower-secondary = egységes alapiskola
 - equity = méltányosság
 - social mobility = társadalmi mobilitás
 - school choice / choice and catchment = iskolaválasztás
