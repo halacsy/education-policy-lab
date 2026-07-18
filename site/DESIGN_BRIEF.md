@@ -1,75 +1,120 @@
-# Design brief — Education Policy Lab nyilvános weboldal
+# Design brief — Oktatáspolitikai Atlasz (nyilvános weboldal)
 
-A mellékelt `index.html` **tartalom-kész vázlat**: a szöveg, a szerkezet és az
-információs hierarchia végleges szándékú, a vizuális identitás a tiéd. Azt a
-minimál stílust, ami most rajta van, nyugodtan dobd el.
+*Felülvizsgálva 2026-07-18-án a `docs/positioning.md` alapján — a pozicionálási
+dokumentum az elsődleges forrás, ez a brief annak design-következményeit
+rögzíti. A korábbi brief (rendszer-központú bemutatás, git-napló mint
+hero-bizonyíték) érvénytelen.*
 
-## Mi ez a projekt (egy bekezdésben)
+**Fontos státusz-változás:** a jelenlegi `index.html` NEM tartalom-kész — a
+régi, projekt-központú szerkezetet hordozza, átépítés előtt áll. A designnak
+az itt leírt új információs hierarchiára kell készülnie.
 
-Önjavító, kétnyelvű (HU/EN), többágenses AI-műhely oktatáspolitikai kérdések
-kidolgozására. Az AI szakértő- és kritikus-ágensei információt dolgoznak fel;
-az ember dönt. Minden állításon bizonyítékcímke van, a szakértői nézeteltérés
-nem tűnik el, és minden önjavító lépés git-commitban auditálható.
+## Mi ez a termék (egy bekezdésben)
+
+Az **Oktatáspolitikai Atlasz** (munkacím) Magyarország nagy oktatáspolitikai
+kérdéseit térképezi fel: kérdésenként megmutatja a lehetséges válaszokat,
+mindegyik válasz előnyeit és hátrányait, az érvek mögötti bizonyítékok
+erősségét — és azt is, miben nem értenek egyet a szakértők. A vezérmetafora:
+**a termék a térkép, nem a térképrajzoló gép.** Az atlasz nem mondja meg,
+hová menj — megmutatja, milyen utak vannak.
+
+Az AI-asszisztált előállítási folyamat a módszertan-aloldalon jelenik meg,
+teljes átláthatósággal — de a főoldalon és a témaoldalakon a tartalom a
+főszereplő, nem a rendszer. Kifelé kerülendő szókincs: „önjavító",
+„többágenses", „AI-rendszer" mint vezető üzenet.
 
 ## Célcsoportok (fontossági sorrendben)
 
-1. **Magyar oktatáspolitikai szereplők** — döntéshozók, intézményvezetők,
-   szakértők. Bizalmat és komolyságot kell látniuk, nem tech-demót.
-2. **EU-s / nemzetközi szakpolitikai kollégák** — az angol kivonat nekik szól.
-3. **Kutatók, AI-módszertan iránt érdeklődők** — őket a transzparencia-szakasz
-   és a repo érdekli.
+1. **A friss döntéshozó** — most pozícióba került politikus, képviselő,
+   önkormányzati vezető, stábtag. Fél óra alatt akarja átlátni az opcióteret
+   és a valódi vitákat. Bizalmat és komolyságot kell látnia, nem tech-demót.
+2. **Intézményvezetők, oktatási szakértők** — mélyebb rétegek: források,
+   bizonyíték-fokozatok, nyitott kérdések.
+3. **EU-s / nemzetközi szakpolitikai kollégák** — a teljes EN tükör nekik szól.
+4. **Kutatók, AI-módszertan iránt érdeklődők** — őket a módszertan-aloldal és
+   a nyílt repo szolgálja ki.
+
+**A honlap az olvasóé, nem a projekté.** A projekt története, a módszertan és
+a közreműködő-toborzás aloldal; a főoldal a kérdésekkel nyit.
 
 ## Hangvétel
 
 Intézményi megbízhatóság + kutatási transzparencia. Inkább „közpolitikai
-folyóirat és laborjegyzőkönyv", mint startup-landing. Kerülendő: AI-hype
-esztétika, gradiens-hero, sci-fi motívumok, robotos illusztrációk.
+folyóirat és atlasz", mint startup-landing vagy laborjegyzőkönyv. Kerülendő:
+AI-hype esztétika, gradiens-hero, sci-fi motívumok, robotos illusztrációk.
+Az atlasz/térkép metafora vizuálisan is használható (tájékozódás, útvonalak,
+jelmagyarázat), de ne váljon szó szerinti térképgrafikává.
+
+## Információs architektúra (többoldalas)
+
+1. **Főoldal = témakatalógus.** Hero: maguk a nagy kérdések, kérdés
+   formájában megfogalmazva („Maradjon-e a 6/8 osztályos gimnázium?" —
+   „Mi legyen az elnéptelenedő falvak kisiskoláival?"), belépési pontként.
+   Rövid „mi ez az oldal" sáv (az atlasz-bekezdés), lábjegyzet-szintű
+   módszertan-link.
+2. **Témaoldal = a mélyülés íve:** kérdés (problem brief) → lehetséges
+   válaszok (forgatókönyvek, köztük a „nem csinálunk semmit" ellenpont) →
+   érvek és ellenérvek (érv-főkönyv, bizonyítékcímkékkel) → miben vitáznak a
+   szakértők (nézeteltérés-térkép) → nyitott kérdések. Kattintásos mélyülés,
+   nincs chat.
+3. **Aloldalak:**
+   - **Módszertan** — ide költözik minden, ami eddig a főoldal gerince volt:
+     hogyan készül az Atlasz, a 6 lépéses kör diagramja, scorecard és
+     pontszám-görbe, git-napló, emberi kapuk (kérdés-keretezés jóváhagyása,
+     tudás-admisszió). Itt teljes őszinteség az AI szerepéről.
+   - **Az Atlaszról** — mi ez, kinek szól, mit nem csinál (nem ír
+     szakpolitikát, nem ajánl győztest, nem szimulálja a társadalmat).
+   - **Közreműködőknek** — „Dolgozz velünk az Atlaszon": szakértők (források,
+     ellenérvek a proposal-kapun át), fejlesztők, később témagazdák. A
+     közreműködés egysége a javaslat, nem a szerkesztés.
+   - **Kérdés beküldése** — űrlap + a folyamat elmesélése (kérdés → feldolgozás
+     → kétnyelvű témaoldal + nyitott emberi kérdések vissza).
 
 ## A tartalomból adódó megkülönböztető vizuális anyagok
 
-Ezek a rendszer *valódi* munkadarabjai — ezekből lehet karakteres design:
+Olvasó felé (fő- és témaoldalak):
 
 - **Bizonyítékcímkék**: `[bizonyíték: erős / mérsékelt / gyenge / vitatott]` —
-  chip/badge komponensként végigvihetők az oldalon.
+  chip/badge komponensként végigvihetők.
 - **Kétszínű jelentésrendszer** (javaslat, felülbírálható): egy szín a
-  bizonyítéknak/rendszernek, egy kontrasztos a különvéleménynek / nyitott
-  emberi kérdésnek. A projekt lényege a kettő feszültsége.
+  bizonyítéknak, egy kontrasztos a különvéleménynek / nyitott kérdésnek.
+  A tartalom lényege a kettő feszültsége.
 - **Nézeteltérés-térkép**: többségi/kisebbségi álláspont-párok — kétoszlopos
   vizuális motívum.
-- **Git-napló és pontszám-görbe**: a javulás ténylegesen mérhető
-  (7.072 → 9.230 öt körben) — ez lehet az oldal „hero-bizonyítéka".
-- **Kör-diagram**: a 6 lépéses iterációs kör (szakértők → forgatókönyvek →
-  szintézis+fordítás → kritika → meta-kritika → értékelés → önjavítás).
+- **A vita-típus jelölése**: bizonyítékkal eldönthető / értékválasztás /
+  feloldhatatlan trade-off — ez az Atlasz egyik legritkább műfaji értéke,
+  érdemes saját vizuális nyelvet adni neki.
 
-## Oldaltérkép (jelenlegi egyoldalas vázlat szakaszai)
+Módszertan-oldalra (NEM a főoldalra):
 
-1. Mi ez? — 4 elv-kártya
-2. Hogyan működik? — 6 lépés + scorecard + git-napló
-3. Az első kérdés — S1–S4 forgatókönyv-kártyák + többségi/kisebbségi álláspont
-4. Kérdés beküldése — űrlap (mechanika még nyitott, ld. lent)
-5. Átláthatóság
-6. English abstract
-7. Lábléc — jogi/etikai disclaimer
-
-Later: külön eredmény-aloldal kérdésenként (scenariók, brief, disagreement map
-böngészhetően).
+- **Kör-diagram**: a 6 lépéses iterációs kör.
+- **Git-napló és pontszám-görbe**: a mérhető javulás.
 
 ## Funkcionális követelmények
 
-- **Kétnyelvűség**: most HU-elsődleges + EN kivonat; tervezz teljes HU/EN
-  váltóra (a rendszer minden anyagot mindkét nyelven előállít).
-- **Kérdésbeküldés**: az űrlap most mock. Nyitott döntés: űrlap → e-mail,
-  vagy GitHub issue, vagy saját backend. A designtól azt kérjük, hogy a
-  beküldés *folyamatát* is mesélje el (kérdés → futás → kétnyelvű csomag +
-  emberi kérdések vissza).
-- Statikus oldal, önállóan hosztolható; akadálymentesség (WCAG AA, fókusz-
-  állapotok, `prefers-reduced-motion`).
+- **Kétnyelvűség**: HU-elsődleges, teljes EN tükörre tervezz (a rendszer
+  minden anyagot mindkét nyelven előállít).
+- **„Vidd magaddal promptként" gomb** (ötlet-fázis, tervezz rá helyet):
+  minden témaoldalon másolható/letölthető szövegcsomag, amit az olvasó a
+  saját AI-asszisztensébe illesztve tovább beszélgethet a témáról.
+- **Mondatszintű olvasói jelzés** (későbbi fázis, ne blokkolja a designt):
+  „ez itt nem stimmel" visszajelzés, ami javaslatként fut be, nem
+  szerkesztésként.
+- **Kérdésbeküldés**: az űrlap most mock; a mechanika nyitott döntés
+  (e-mail / GitHub issue / backend).
+- Statikus oldal, önállóan hosztolható; akadálymentesség (WCAG AA,
+  fókusz-állapotok, `prefers-reduced-motion`).
 - A táblázatok/kódblokkok saját konténerben görgethetők, az oldal maga soha
   nem görget vízszintesen.
+- A témaoldalak generáltak (`build_site_topics.py`) — a design komponensei
+  ezekben a sablonokban élnek majd, tervezz ismétlődő, adatvezérelt
+  komponensekben.
 
 ## Nyitott kérdések a designernek
 
-- Egyoldalas marad vagy többoldalas IA?
-- A pontszám-görbe/scorecard mennyire hangsúlyos elem (hero vs. támogató)?
+- A főoldali témakatalógus formája: kártyák, lista, vagy „térkép-szerű"
+  belépés?
+- A bizonyítékcímke- és vitatípus-rendszer együtt mennyire terhelhető
+  vizuálisan (két párhuzamos jelölésnyelv)?
 - Illusztrációs nyelv: tisztán tipografikus + diagram, vagy van illusztráció?
 - A HU/EN váltó interakciója.
