@@ -61,7 +61,7 @@ jelmagyarázat), de ne váljon szó szerinti térképgrafikává.
    - A kérdésbeküldés és a frissülés külön főoldali útvonalat kap: tegye
      láthatóvá, hogy az Atlasz növekvő gyűjtemény, és hogy új kérdésből vagy
      új evidenciából ugyanazzal az auditálható folyamattal gyorsan új vagy
-     frissített atlaszlap készülhet.
+     frissített döntési dosszié készülhet.
 2. **Témaoldal = a mélyülés íve:** kérdés (problem brief) → lehetséges
    válaszok (forgatókönyvek, köztük a „nem csinálunk semmit" ellenpont) →
    érvek és ellenérvek (érv-főkönyv, bizonyítékcímkékkel) → miben vitáznak a
@@ -75,6 +75,17 @@ jelmagyarázat), de ne váljon szó szerinti térképgrafikává.
      feltételezések, politikai kockázatok és a bizonytalanságot csökkentő
      kutatási igény. Innen nyílik a forgatókönyvhöz tartozó teljes kritikai
      és érvrekord.
+   - **Vita- és dilemmaoldal = kanonikus, megosztható rekord.** Minden
+     megőrzött szakértői nézeteltérés és minden emberi döntést kérő dilemma
+     saját szemantikus URL-t kap a szülő kérdés alatt
+     (`/vita/<id>-<slug>.html`, `/dilemma/<id>-<slug>.html`). A feltáró
+     fragmentumai megmaradnak teljes auditnézetnek; egy későbbi popup csak
+     előnézet lehet, a külön oldalt nem helyettesíti. A rekordoldal mindig
+     mutassa a teljes hierarchiát morzsamenüben, és adjon előző/következő
+     navigációt az azonos típusú rekordok között. A dilemma azonosítója és
+     típusa az oldal címe; a gyakran mondathosszúságú klaszterállítás
+     olvasási méretű bekezdés, nem display címsor. A rövid vitakérdés
+     továbbra is valódi címsor.
 3. **Aloldalak:**
    - **Módszertan** — ide költözik minden, ami eddig a főoldal gerince volt:
      hogyan készül az Atlasz, a 6 lépéses kör diagramja, scorecard és

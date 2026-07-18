@@ -8,6 +8,8 @@ explorer.html#cluster-A16) always lands on the same item on the other.
 Standard library only — the Pages workflow runs these on bare python3.
 """
 import json
+import re
+import unicodedata
 
 from .render import grades_dict, project
 
@@ -58,25 +60,46 @@ def is_gumicsont(cluster):
         cluster.get("decision_relevance") == "low"
 
 
-def load_structured_discourse(rd):
+def public_slug(text, fallback="rekord"):
+    """Stable, URL-safe public slug for generated record pages.
+
+    Hungarian accents are folded to ASCII; the record id stays outside this
+    helper so a changed title never makes two records collide.
+    """
+    folded = unicodedata.normalize("NFKD", str(text))
+    ascii_text = folded.encode("ascii", "ignore").decode("ascii").lower()
+    slug = re.sub(r"[^a-z0-9]+", "-", ascii_text).strip("-")
+    slug = slug[:96].rstrip("-")
+    return slug or fallback
+
+
+def debate_filename(index, title):
+    return f"v{index:02d}-{public_slug(title, 'vita')}.html"
+
+
+def dilemma_filename(cluster_id, claim):
+    return f"{str(cluster_id).lower()}-{public_slug(claim, 'dilemma')}.html"
+
+
+def load_structured_discourse(rd, lang="hu"):
     """Cluster data straight from the D-34 JSON artifacts (no md parsing).
     Returns None for pre-D-34 rounds."""
     amap = rd / "discourse" / "argument_map.json"
     brief = rd / "brief.json"
     if not (amap.exists() and brief.exists()):
         return None
-    clusters = project(json.loads(amap.read_text(encoding="utf-8"))["clusters"], "hu")
+    clusters = project(json.loads(amap.read_text(encoding="utf-8"))["clusters"], lang)
     grades_p = rd / "discourse" / "argument_grades.json"
     grades = grades_dict(json.loads(grades_p.read_text(encoding="utf-8"))) \
         if grades_p.exists() else {}
     recipro = {}
     for rp in sorted((rd / "discourse" / "responses").glob("*.json")):
-        obj = project(json.loads(rp.read_text(encoding="utf-8")), "hu")
+        obj = project(json.loads(rp.read_text(encoding="utf-8")), lang)
         for r in obj.get("responses", []):
             recipro.setdefault(r["cluster"], []).append(
                 dict(voice=obj.get("voice", rp.stem), response=r["response"],
                      outcome=r["outcome"]))
-    b = project(json.loads(brief.read_text(encoding="utf-8")), "hu")
+    b = project(json.loads(brief.read_text(encoding="utf-8")), lang)
     verdicts = {r["cluster_id"]: r for r in b.get("stakeholder_responses", [])}
     sinks = {s["cluster_id"]: s["text"] for s in b.get("attention_sinks", [])}
     return dict(clusters=clusters, grades=grades, recipro=recipro,

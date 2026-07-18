@@ -17,7 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from lab.site_data import (VERDICT_HU, VERDICT_GROUP, KIND_HU, SIDE_HU,
-                           REL_HU, DECOMP_FIELDS, is_gumicsont,
+                           REL_HU, DECOMP_FIELDS, debate_filename,
+                           dilemma_filename, is_gumicsont,
                            load_structured_discourse,
                            load_structured_disagreements, topic_order)
 # Per-topic outputs (D-35). Default: the config default_topic; a --topic
@@ -242,6 +243,11 @@ def clusters_section_html(sd):
             gumi = ('<span class="gumi" title="Sok figyelmet kap, de nem '
                     'változtatna a döntésen">gumicsont</span>'
                     if is_gumicsont(c) else "")
+            record_link = (
+                f'<a class="record-link" href="dilemma/'
+                f'{e(dilemma_filename(c["id"], c["claim"]))}">'
+                'külön dilemmaoldal ↗</a>'
+                if vt and VERDICT_GROUP[vt] == "human" else "")
             decomp = "".join(
                 f'<div><dt>{label}</dt><dd>{e(c.get(f, ""))}</dd></div>'
                 for f, label in DECOMP_FIELDS if str(c.get(f, "")).strip())
@@ -267,7 +273,7 @@ def clusters_section_html(sd):
       <details class="cluster-row" id="cluster-{e(c['id'])}">
         <summary><span class="cl-id">{e(c['id'])}</span>
           <span class="cl-claim">{e(c['claim'])}</span>
-          {badge}{gumi}<a class="permalink" href="#cluster-{e(c['id'])}"
+          {badge}{gumi}{record_link}<a class="permalink" href="#cluster-{e(c['id'])}"
             title="Közvetlen link erre az érvre">§</a></summary>
         <div class="cl-body">
           <p class="note">Felvetette: {raised}· {e(KIND_HU.get(c['kind'], c['kind']))} állítás, {e(SIDE_HU.get(c['side'], c['side']))}</p>
@@ -483,6 +489,7 @@ def main():
         return f"""
     <div class="disagreement" id="axis-{i}">
       <h3 class="axis-title"><span class="axis-side">{e(ax['topic'])}</span>
+        <a class="record-link" href="vita/{e(debate_filename(i, ax['topic']))}">külön vitaoldal ↗</a>
         <a class="permalink" href="#axis-{i}" title="Közvetlen link erre a kérdésre">§</a></h3>
       <div class="sides">{''.join(pos_html)}</div>
     </div>"""
@@ -715,6 +722,9 @@ def main():
   .note { font-size:.85rem; color:var(--muted); }
   nav.jump { display:flex; gap:1rem; font-family:ui-monospace,Menlo,monospace; font-size:.8rem; flex-wrap:wrap; }
   footer { padding:2rem 0 3rem; font-size:.85rem; color:var(--muted); }
+  .record-link { flex:none; color:var(--dissent); font-family:ui-monospace,Menlo,monospace;
+                 font-size:.68rem; font-weight:700; text-decoration:none; white-space:nowrap; }
+  .record-link:hover { text-decoration:underline; }
   .permalink { font-family:ui-monospace,Menlo,monospace; font-size:.78rem; color:var(--muted);
                text-decoration:none; opacity:0; flex:none; margin-left:auto; }
   summary:hover .permalink, .axis-title:hover .permalink, details[open] > summary .permalink { opacity:1; }
