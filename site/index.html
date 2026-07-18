@@ -1,360 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Education Policy Lab — a szakpolitikai gondolkodás és vita felgyorsítása</title>
-<meta name="description" content="Önjavító, kétnyelvű, többágenses rendszer, amely nem szakpolitikát gyárt, hanem a döntés előtti gondolkodást és nyilvános vitát gyorsítja fel. Az AI rendszerez; a döntés emberé marad.">
-<body>
-<style>
-  /* ------------------------------------------------------------------
-     TARTALMI VÁZLAT — a végleges vizuális identitás a designer feladata.
-     Jelen stílus csak olvashatóságot és hierarchiát ad (ld. DESIGN_BRIEF.md).
-     Színrendszer-javaslat: két jelentéshordozó szín —
-       fenyőzöld  = bizonyíték / megbízhatóság,
-       rozsda     = különvélemény / nyitott kérdés.
-     ------------------------------------------------------------------ */
-  :root {
-    --paper: #F7F8F6;
-    --ink: #1A2321;
-    --muted: #5A6662;
-    --line: #D8DDD9;
-    --evidence: #1F6E5C;   /* fenyőzöld — bizonyíték, rendszer */
-    --dissent: #A34A26;    /* rozsda — különvélemény, emberi kérdés */
-    --panel: #EEF1EE;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: Charter, Georgia, 'Times New Roman', serif;
-    font-size: 1.0625rem; line-height: 1.65;
-  }
-  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
-  .wide { max-width: 62rem; }
-  h1, h2, h3 {
-    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.15; text-wrap: balance; letter-spacing: -0.015em;
-  }
-  h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 750; margin: 0 0 1rem; }
-  h2 { font-size: 1.45rem; font-weight: 700; margin: 0 0 1rem; }
-  h3 { font-size: 1.05rem; font-weight: 700; margin: 0 0 .5rem; }
-  p { margin: 0 0 1rem; }
-  a { color: var(--evidence); text-underline-offset: 2px; }
-  a:focus-visible { outline: 2px solid var(--evidence); outline-offset: 2px; }
-  .eyebrow {
-    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-    font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--evidence); margin: 0 0 .75rem;
-  }
-  .eyebrow.dissent { color: var(--dissent); }
-  header.site {
-    border-bottom: 1px solid var(--line); padding: 1rem 0;
-    font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: .8rem;
-  }
-  header.site .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-  header.site .lang { color: var(--muted); }
-  section { padding: 3.25rem 0; border-bottom: 1px solid var(--line); }
-  .lede { font-size: 1.2rem; color: var(--ink); max-width: 40rem; }
-  .tag {
-    display: inline-block; font-family: ui-monospace, Menlo, monospace;
-    font-size: .74rem; padding: .1rem .45rem; border: 1px solid var(--line);
-    border-radius: 3px; background: #fff; white-space: nowrap;
-  }
-  .tag.strong  { color: var(--evidence); border-color: var(--evidence); }
-  .tag.contest { color: var(--dissent);  border-color: var(--dissent); }
-  .grid { display: grid; gap: 1.25rem; }
-  @media (min-width: 720px) { .grid.cols2 { grid-template-columns: 1fr 1fr; } }
-  .card {
-    background: #fff; border: 1px solid var(--line); border-radius: 6px;
-    padding: 1.25rem 1.4rem;
-  }
-  .card .id {
-    font-family: ui-monospace, Menlo, monospace; font-weight: 700;
-    color: var(--evidence); margin-right: .5rem;
-  }
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
-  .steps li {
-    display: grid; grid-template-columns: 2.2rem 1fr; gap: .75rem;
-    padding: .55rem .75rem; background: var(--panel); border-radius: 4px;
-    align-items: baseline;
-  }
-  .steps .n {
-    font-family: ui-monospace, Menlo, monospace; font-size: .8rem;
-    color: var(--evidence); font-variant-numeric: tabular-nums;
-  }
-  table { border-collapse: collapse; width: 100%; font-size: .92rem; background: #fff; }
-  .tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
-  th, td { padding: .55rem .8rem; border-bottom: 1px solid var(--line); text-align: left; }
-  td.num, th.num { text-align: right; font-family: ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; }
-  tr:last-child td { border-bottom: none; }
-  thead th { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: .8rem; letter-spacing: .04em; }
-  .commitlog {
-    font-family: ui-monospace, Menlo, monospace; font-size: .8rem; line-height: 1.7;
-    background: var(--ink); color: #E7EEE9; border-radius: 6px;
-    padding: 1rem 1.2rem; overflow-x: auto; white-space: pre;
-  }
-  .commitlog b { color: #8FD4BC; font-weight: 600; }
-  .split { display: grid; gap: 1rem; }
-  @media (min-width: 720px) { .split { grid-template-columns: 1fr 1fr; } }
-  .pos { border-left: 3px solid var(--evidence); padding: .2rem 0 .2rem 1rem; }
-  .pos.min { border-left-color: var(--dissent); }
-  .pos .who { font-family: ui-monospace, Menlo, monospace; font-size: .74rem; color: var(--muted); display: block; margin-bottom: .25rem; }
-  form.mock { display: grid; gap: .9rem; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem; }
-  form.mock label { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: .85rem; font-weight: 600; display: grid; gap: .35rem; }
-  form.mock input, form.mock textarea, form.mock select {
-    font: inherit; padding: .55rem .7rem; border: 1px solid var(--line);
-    border-radius: 4px; background: var(--paper); width: 100%;
-  }
-  form.mock input:focus-visible, form.mock textarea:focus-visible, form.mock select:focus-visible { outline: 2px solid var(--evidence); }
-  form.mock button {
-    font: inherit; font-weight: 700; padding: .65rem 1.3rem; border: none;
-    border-radius: 4px; background: var(--evidence); color: #fff; cursor: pointer;
-    justify-self: start;
-  }
-  .note { font-size: .85rem; color: var(--muted); }
-  footer { padding: 2.5rem 0 3.5rem; font-size: .85rem; color: var(--muted); }
-  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-</style>
-
-<header class="site">
-  <div class="wrap wide">
-    <span><strong>EDUCATION POLICY LAB</strong> · kísérleti műhely</span>
-    <span class="lang"><a href="#temak">Témák</a> · <a href="knowledge.html">Tudásbázis</a> · <a href="tech.html">Technika</a> · HU · <a href="#english">EN ↓</a></span>
-  </div>
-</header>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Mi ez a projekt?</p>
-    <h1>Nem szakpolitikát gyárt — a gondolkodást és a vitát gyorsítja fel.</h1>
-    <p class="lede">Az Education Policy Lab önjavító, kétnyelvű, többágenses
-    rendszer. Nem az a célja, hogy elkészítsen egy kész szakpolitikai
-    javaslatot, hanem hogy összegyűjtse és rendszerezze, amit már tudunk,
-    megmutassa a tudás határait, feltárja a valódi alternatívákat és a köztük
-    lévő konfliktusokat, és előkészítse azokat a kérdéseket, amelyeket
-    kutatással, szakpolitikai tervezéssel vagy valódi emberi vitával kell
-    továbbvinni. Az AI rendszerez; az alku, az értékválasztás és a döntés
-    emberé marad.</p>
-    <p>Négy elv, amiből nem engedünk:</p>
-    <div class="grid cols2">
-      <div class="card"><h3>Az AI soha nem dönt</h3><p>A rendszer minden kimenete
-      döntés<em>támogatás</em>. Ahol emberi mérlegelés kell, azt a rendszer nem
-      megválaszolja, hanem <strong>kérdésként visszaadja</strong> — és nem
-      állítja, hogy minden kérdésre létezik egyetlen szakmailag helyes válasz.</p></div>
-      <div class="card"><h3>Minden állítás típusa jelölve</h3><p>Minden fontos
-      állítás címkézett: <span class="tag strong">[tény]</span>
-      <span class="tag">[becslés]</span> <span class="tag contest">[feltevés / értékítélet]</span>
-      — a bizonyíték, a becslés, a feltevés és az értékválasztás soha nem keveredik.</p></div>
-      <div class="card"><h3>A nézeteltérés érték</h3><p>A rendszer nem gyárt
-      kényszerkonszenzust: a szakértői vitákat <strong>nézeteltérés-térképen</strong>
-      őrzi meg, a kisebbségi álláspontok indoklással együtt jutnak el a döntéshozóig.</p></div>
-      <div class="card"><h3>Nem szimulálja a társadalmat</h3><p>A modellezett
-      ellenérvek, félelmek és érdekütközések egy <strong>stakeholder stresszteszt</strong>
-      eredményei — sosem állítás arról, mit fognak valódi emberek vagy
-      szervezetek gondolni. Valódi érintettekkel kell ellenőrizni őket.</p></div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oktatáspolitikai Atlasz — utak a nagy oktatási kérdésekben</title>
+  <meta name="description" content="Magyarország nagy oktatáspolitikai kérdései, a lehetséges válaszutak, az érvek bizonyítékai és a szakértői nézeteltérések egy helyen.">
+  <link rel="stylesheet" href="assets/atlas.css">
+</head>
+<body class="atlas">
+  <header class="site-header">
+    <div class="atlas-shell site-header__inner">
+      <a class="site-brand" href="./" aria-label="Oktatáspolitikai Atlasz — főoldal">
+        <span class="site-brand__mark" aria-hidden="true"></span>
+        <span class="site-brand__name">Oktatáspolitikai<br>Atlasz</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menü</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Fő navigáció">
+        <a href="#temak" aria-current="page"><span data-lang="hu">Kérdések</span><span data-lang="en">Questions</span></a>
+        <a href="about.html"><span data-lang="hu">Az Atlaszról</span><span data-lang="en">About</span></a>
+        <a href="tech.html"><span data-lang="hu">Módszertan</span><span data-lang="en">Method</span></a>
+        <a href="contribute.html"><span data-lang="hu">Közreműködőknek</span><span data-lang="en">Contribute</span></a>
+        <div class="lang-switch" aria-label="Nyelvválasztó">
+          <button type="button" data-set-lang="hu" aria-pressed="true">HU</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Hogyan működik?</p>
-    <h2>Egy kör: szakértők → forgatókönyvek → kritika → értékelés → önjavítás</h2>
-    <p>Egy beküldött szakpolitikai kérdésre a rendszer körökben dolgozik.
-    Minden körben:</p>
-    <ol class="steps">
-      <li><span class="n">01</span><span><strong>12 szakértő-ágens</strong> elemzi a kérdést a saját területéről (nemzetközi összehasonlítás, demográfia, jog, finanszírozás, politikai megvalósíthatóság…). Mindegyik <strong>élő webes kutatással</strong> indít: friss statisztikákat, tanulmányokat, szakpolitikai fejleményeket keres, és minden állítást megnevezett forrással és őszinte bizonyítékfokozattal ad le. A webes találat mindig csak idézett forrás — a kurált tényregiszterbe csak emberi jóváhagyással kerülhet be bármi.</span></li>
-      <li><span class="n">02</span><span>A <strong>forgatókönyv-építő</strong> 3–4 alternatívát épít, mindegyikben tíz kötelező mezővel: cél, mechanizmus, bizonyítékstátusz, feltevések, várható előnyök, méltányossági hatás, költségek, megvalósítási lépések, politikai kockázatok, bizonytalanságok.</span></li>
-      <li><span class="n">03</span><span>A <strong>szerkesztő</strong> szintézist ír — konszenzus helyett nézeteltérés-térképpel, a kisebbségi oldal külön jelölve. Külön fordító nincs: <strong>minden ágens egyszerre, natívan írja magyarul és angolul</strong> a maga anyagát, gépileg kikényszerített szerkezeti egyezéssel és ellenőrzött szószedettel.</span></li>
-      <li><span class="n">04</span><span><strong>10 diskurzus-hang</strong> — a modellezett társadalmi vita — reagál a forgatókönyvekre: érdekeket és értékeket képviselnek, minden álláspontjuk episztemikus címkével. Az érveiket egy mediátor érv-főkönyvbe rendezi, és a záróanyag mindegyikre köteles válaszolni. <em>(Részletek lent.)</em></span></li>
-      <li><span class="n">05</span><span><strong>9 kritikus-ágens</strong> támadja az anyagot (ördög ügyvédje, bizonyíték-ellenőr, méltányosság-, költség-, megvalósíthatóság-ellenőr…). Minden kifogás konkrét: forgatókönyvet és mezőt nevez meg, súlyossággal és javítási javaslattal.</span></li>
-      <li><span class="n">06</span><span>A <strong>meta-kritikus</strong> magát a rendszert bírálja: melyik ágens gyenge, valódi-e a javulás, vagy csak a mérőszámot játssza ki.</span></li>
-      <li><span class="n">07</span><span>Egy nyolcdimenziós <strong>rubrika</strong> pontoz (determinisztikus ellenőrzések + két különböző modellcsalád keresztbírálata), a rendszer megnevezi a leggyengébb dimenziót, és a következő kör <em>egyetlen, dokumentált változtatással</em> javít önmagán. Minden kör külön git-commit; semmi sem írható felül utólag.</span></li>
-    </ol>
-    <p>A generáló és a bíráló modell szándékosan <strong>különböző gyártótól</strong>
-    származik, hogy egyik modell se osztályozhassa a saját munkáját — a gépi
-    kapu ezt minden futásnál ellenőrzi. A szereposztás cserélhető, és a
-    robusztusságát dokumentált szerepcsere-kísérlet igazolta.</p>
-    <p>Minden ágens kimenete <strong>gépileg kikényszerített, kétnyelvű
-    szerkezetben</strong> születik: az azonosítók, a címkék és az elemszámok a
-    két nyelvben szerkezetileg nem térhetnek el, a kötelező mezők nem
-    maradhatnak ki. Ami a validáción nem megy át, az futási hiba — a rendszer
-    nem tud csöndben gyengébb anyagot leadni.</p>
-  </div>
-</section>
+  <main>
+    <section class="hero">
+      <div class="atlas-shell hero__grid">
+        <div>
+          <p class="atlas-kicker" data-lang="hu">Tájékozódás a döntés előtt</p>
+          <p class="atlas-kicker" data-lang="en">Orientation before a decision</p>
+          <h1 data-lang="hu">Nagy kérdések. Több <em>járható út.</em></h1>
+          <h1 data-lang="en">Big questions. More than <em>one viable route.</em></h1>
+        </div>
+        <div class="hero__aside">
+          <p class="atlas-lede" data-lang="hu">Az Atlasz megmutatja, milyen válaszok adhatók a magyar oktatás nagy kérdéseire, mi szól mellettük és ellenük, és hol marad valódi vita.</p>
+          <p class="atlas-lede" data-lang="en">The Atlas maps the available responses to Hungary’s major education-policy questions, the case for and against each one, and the disagreements that remain.</p>
+          <p class="atlas-note" data-lang="hu">Nem ajánl győztest. A döntéshez szükséges terepet teszi láthatóvá.</p>
+          <p class="atlas-note" data-lang="en">It does not pick a winner. It makes the terrain of the decision visible.</p>
+          <a class="hero__jump" href="#temak"><span data-lang="hu">Belépés a kérdésekhez</span><span data-lang="en">Explore the questions</span></a>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Stakeholder stresszteszt — érv-főkönyv</p>
-    <h2>Nem szimulálja a társadalmat — stresszteszteli a javaslatokat</h2>
-    <p><strong>Fontos, amit ez a réteg NEM állít:</strong> nem azt mondja, hogy
-    „ezt fogják gondolni az emberek”, és nem szólal fel egyetlen valós
-    szervezet nevében sem. A szakértői réteg mellett <strong>tíz civil
-    szakértő archetípus</strong> tárja fel a legerősebb várható ellenérveket,
-    félelmeket és érdekütközéseket: pedagógus-érdekvédő, kisgyerekes szülői,
-    esélyegyenlőségi civil, konzervatív értékvédő, digitálisgazdasági,
-    egyházi-fenntartói, oktatáspolitikai reformmozgalmi, pedagógus
-    szakszervezeti, kormányzati reformrealista és független szakpolitikai
-    kutatóműhelyi hang. Négyüket nyilvánosan dokumentált anyagok
-    (reformjavaslat, szakszervezeti program, kormányprogram, kutatóintézeti
-    jelentés) <em>tájékoztatják forrásként</em> — de egyik hangot sem nevezzük
-    el a mögötte álló szervezetről, és egyik sem állítja magáról, hogy egy
-    valós szervezet nevében beszél ("szék a pozíciónak, forrás a
-    dokumentumnak"). Ők nem szakértők, és nem jóslat a valós reakciókról:
-    olyan szempontokat készítenek elő, amelyeket a valódi deliberációban
-    valódi érintetteknek kell megerősíteniük, cáfolniuk vagy kiegészíteniük.</p>
-    <p>Minden felvetett érvet a rendszer szét is bont: kinek az érdeke áll
-    mögötte, milyen érték ütközik, milyen félelem vagy veszteség hajtja,
-    kiket érint, milyen feltevésre épül — és jelöli azt is, mely viták
-    <strong>gumicsontok</strong>: sok figyelmet kapnak, de nem változtatnának
-    a döntésen.</p>
-    <p>A kiértékelés szabályait négy nemzetközi gyakorlatból gyúrtuk össze:</p>
-  </div>
-  <div class="wrap wide" style="margin-top:1.5rem">
-    <div class="grid cols2">
-      <div class="card"><p><strong>Válaszkötelezettség</strong> <span class="note">— francia CNDP (débat public)</span></p>
-        <p class="note">Egyetlen felvetett érv sem tűnhet el csöndben: a záróanyag minden érvklaszterre tételesen válaszol — hét lehetséges típussal (evidenciával megválaszolható, policy designnal kezelhető, kommunikációval kezelhető, valódi értékkonfliktus, feloldhatatlan trade-off, további infó szükséges, nem döntésreleváns). Ezt nem jóindulat, hanem gépi validáció kényszeríti ki.</p></div>
-      <div class="card"><p><strong>Reprezentativitás + átláthatóság</strong> <span class="note">— OECD deliberatív sztenderdek</span></p>
-        <p class="note">Minden álláspont episztemikus címkét visel: <em>dokumentált</em> (forrással), <em>értékekből modellezett</em> (a levezetés alapjával) — vagy <em>nincs álláspont</em>, mert az őszinte „erről ez a szereplő nem mondana semmit” is érvényes válasz. Valós szervezetnek címkézetlen álláspontot tulajdonítani gépi hiba.</p></div>
-      <div class="card"><p><strong>Vitaminőség</strong> <span class="note">— Discourse Quality Index (habermasi iskola)</span></p>
-        <p class="note">Indoklás nélküli álláspont érvénytelen. Minden hang kimondja, kinek az érdekét védi és mi a közjó-kerete — és megkapja a legerősebb ellenérvet, amire érdemben válaszolnia kell (reciprocitás-kör).</p></div>
-      <div class="card"><p><strong>Érv-könyvelés, nem fejszámlálás</strong> <span class="note">— Habermas Machine (DeepMind, 2024)</span></p>
-        <p class="note">A mediátor érvklasztereket épít, nem szavazatokat számol — így új hangok felvétele gazdagítja a képet, de nem billenti. Az érvek ténybeli állításait a szakértői réteg bizonyítékfokozattal látja el; az értékállítás értékkérdésként jelölődik.</p></div>
-    </div>
-    <p style="margin-top:1.5rem" class="note">Az egészet ki is próbálhatod: az
-    <a href="explorer.html#diskurzus">érv-főkönyv a feltáróban</a> —
-    forgatókönyvenként ki mit mond, milyen címkével, mi lett az érvével, és
-    melyik érv gumicsont.</p>
-  </div>
-</section>
-
-<section id="temak">
-  <div class="wrap">
-    <p class="eyebrow">Témák</p>
-    <h2>Feldolgozott problémák — böngészhető téma-oldalakkal</h2>
-    <p>Ugyanaz a rendszer és ugyanaz a szakértő-csoport több szakpolitikai
-    problémát dolgoz fel. Minden téma saját oldalt kap: probléma-lap,
-    forgatókönyv-feltáró, nézeteltérés-térkép — és átláthatósági adatok
-    arról, mennyi időbe és mennyibe került a feldolgozás.</p>
-  </div>
-  <div class="wrap wide" style="margin-top:1.5rem">
-    <!-- TOPICS:START — generálja: scripts/build_site_topics.py; kézzel ne szerkeszd -->
-    <div class="card">
-      <h3><a href="topics/korai-szelekcio/">1. Korai szelekció és a hat-/nyolcosztályos gimnázium</a></h3>
-      <p>Magyarország iskolarendszerének egyik legvitatottabb szerkezeti eleme a 10-12 éves kori szelekció. Arra szeretnénk választ találni, hogy milyen problémákat old meg, milyen új problémákat hoz létre, és milyen alternatívák képzelhetők el.</p>
-      <p class="note">Keretek: <strong>S1</strong> Felvételi és bejutási méltányossági szabályozás (a szerkezet marad, a kapu változik) · <strong>S2</strong> A szelektív képzési kínálat visszaszorítása (a kapu szűkül, nem a szabályok) · <strong>S3</strong> A szelekciós életkor strukturális kitolása (finn/lengyel modell) · <strong>S4</strong> Nem strukturális, kompenzáló reform (a szelekciós életkor változatlan marad) · <strong>S5</strong> Demográfiailag vezérelt passzív zsugorodás (status quo alapforgatókönyv)</p>
-      <p class="note">állapot: aktív · 1 kör az aktuális érában · utolsó összpontszám: 9.45 · feldolgozás: 12 p 54 mp · 516 941 token · ~$1.00 USD (becslés)</p>
-      <p style="margin-bottom:0"><a href="topics/korai-szelekcio/"><strong>Téma-oldal megnyitása →</strong></a></p>
-    </div>
-    <div class="card">
-      <h3><a href="topics/rural-school-closures/">2. A Kisiskolák Jövője Vidéken</a></h3>
-      <p>Számos magyar kistelepülés népességfogyatkozással küzd, ami a helyi általános iskolák tanulólétszámának csökkenéséhez vezet. Ez a demográfiai trend jelentős kérdéseket vet fel ezen iskolák életképességével és céljával kapcsolatban. Bár az iskolák bezárása ésszerű válasznak tűnhet az alacsony beiskolázás és az erőforrás-korlátok miatt, ez elvághatja a közösség létfontosságú csomópontját, növelheti a gyermekek utazási terheit, és súlyosbíthatja a vidéki területek hanyatlását. A feszültség az erőforrások hatékony elosztásának és az oktatási ellátásnak a szükségessége, valamint a közösségi infrastruktúra és a helyi identitás fenntartásának vágya között feszül a népességfogyatkozó régiókban.</p>
-      <p class="note">Keretek: <strong>S1</strong> Status quo és fokozatos alkalmazkodás · <strong>S2</strong> Szerkezeti évfolyam-átalakítás (alsó tagozat marad, felső tagozat központosul) · <strong>S3</strong> Hálózatos megtartás: klaszterezés, egyesületi fenntartás és multifunkciós közösségi centrum modellek · <strong>S4</strong> Összevonás enyhítő intézkedésekkel (megszüntetés alapesetben, kompenzációs eszközökkel) · <strong>S5</strong> Nemzeti szisztémás keretrendszer: átláthatóság, küszöbértékek és bizonyítéki infrastruktúra</p>
-      <p class="note">állapot: aktív · 1 kör az aktuális érában · utolsó összpontszám: 9.252 · feldolgozás: 46 p 45 mp · 2 720 123 token · ~$10.14 USD (becslés)</p>
-      <p style="margin-bottom:0"><a href="topics/rural-school-closures/"><strong>Téma-oldal megnyitása →</strong></a></p>
-    </div>
+    <section class="atlas-section atlas-section--paper" id="temak">
+      <div class="atlas-shell">
+        <div class="catalog-head">
+          <div>
+            <p class="atlas-kicker" data-lang="hu">Feldolgozott kérdések</p>
+            <p class="atlas-kicker" data-lang="en">Mapped questions</p>
+            <h2 data-lang="hu">Melyik terepen szeretnél eligazodni?</h2>
+            <h2 data-lang="en">Which terrain do you need to understand?</h2>
+          </div>
+          <p class="atlas-note" data-lang="hu">A katalógus még rövid, de egy atlaszlap nem egy cikk: önálló döntési adatbázis válaszutakkal, érvekkel, forrásokkal, vitákkal és kimondott nem-tudásokkal. <a href="#allomany">Nézd meg a teljes állományt ↓</a></p>
+          <p class="atlas-note" data-lang="en">The catalogue is still short, but an atlas entry is not an article: it is a decision database of routes, arguments, sources, disagreements and explicit unknowns. <a href="#allomany">See the full inventory ↓</a></p>
+        </div>
+        <div class="topic-list">
+          <!-- TOPICS:START — generálja: scripts/build_site_topics.py; kézzel ne szerkeszd -->
+    <a class="topic-entry" href="topics/korai-szelekcio/">
+      <div class="topic-entry__index"><span>Atlaszlap</span><strong>01</strong></div>
+      <div class="topic-entry__body">
+        <div>
+          <h3 data-lang="hu">Maradjon-e a hat- és nyolcosztályos gimnázium?</h3>
+          <h3 data-lang="en">Should Hungary keep its 6- and 8-year gimnázium tracks?</h3>
+          <p data-lang="hu">Magyarország iskolarendszerének egyik legvitatottabb szerkezeti eleme a 10-12 éves kori szelekció.</p>
+          <p data-lang="en">One of the most contested structural features of Hungary&#x27;s school system is academic selection at age 10-12.</p>
+        </div>
+        <div class="topic-entry__meta">
+          <span>5 válaszút / routes</span>
+          <span>Részletes elemzés elérhető</span>
+          <span>Megnyitás →</span>
+        </div>
+      </div>
+      <div class="topic-entry__route" aria-hidden="true">
+        <span class="route-map"><span class="route-map__start"></span><span class="route-map__branch"></span><span class="route-map__branch"></span><span class="route-map__branch"></span><span class="route-map__branch"></span><span class="route-map__branch"></span></span>
+        <span class="route-map__label">5 lehetséges<br>válaszút</span>
+      </div>
+    </a>
+    <a class="topic-entry" href="topics/rural-school-closures/">
+      <div class="topic-entry__index"><span>Atlaszlap</span><strong>02</strong></div>
+      <div class="topic-entry__body">
+        <div>
+          <h3 data-lang="hu">Mi legyen az elnéptelenedő falvak kisiskoláival?</h3>
+          <h3 data-lang="en">What should happen to primary schools in depopulating villages?</h3>
+          <p data-lang="hu">Számos magyar kistelepülés népességfogyatkozással küzd, ami a helyi általános iskolák tanulólétszámának csökkenéséhez vezet.</p>
+          <p data-lang="en">Many small villages in Hungary are facing depopulation, leading to declining student numbers in their local primary schools.</p>
+        </div>
+        <div class="topic-entry__meta">
+          <span>5 válaszút / routes</span>
+          <span>Részletes elemzés elérhető</span>
+          <span>Megnyitás →</span>
+        </div>
+      </div>
+      <div class="topic-entry__route" aria-hidden="true">
+        <span class="route-map"><span class="route-map__start"></span><span class="route-map__branch"></span><span class="route-map__branch"></span><span class="route-map__branch"></span><span class="route-map__branch"></span><span class="route-map__branch"></span></span>
+        <span class="route-map__label">5 lehetséges<br>válaszút</span>
+      </div>
+    </a>
     <!-- TOPICS:END -->
-  </div>
-</section>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow dissent">Kérdés beküldése</p>
-    <h2>Hozd a saját szakpolitikai kérdésed</h2>
-    <p>A műhely bármilyen oktatáspolitikai kérdésre lefuttatható. Egy beküldött
-    kérdésből a következő készül: kétnyelvű forgatókönyv-készlet, szakpolitikai
-    összefoglaló, nézeteltérés-térkép — és egy lista azokról a kérdésekről,
-    amelyeket <strong>csak ember dönthet el</strong>.</p>
-    <form class="mock" aria-label="Kérdésbeküldő űrlap — vázlat">
-      <label>Név vagy szervezet
-        <input type="text" name="name" placeholder="pl. önkormányzat, iskola, kutató, szülő" autocomplete="name"></label>
-      <label>E-mail (válaszhoz)
-        <input type="email" name="email" autocomplete="email"></label>
-      <label>A szakpolitikai kérdés
-        <textarea name="question" rows="4" placeholder="pl. Hogyan csökkenthető a pedagógushiány a hátrányos helyzetű térségekben?"></textarea></label>
-      <label>Érintettséged
-        <select name="role"><option>döntéshozó</option><option>intézményvezető / pedagógus</option><option>kutató</option><option>szülő / diák</option><option>egyéb</option></select></label>
-      <button type="button">Kérdés beküldése</button>
-      <p class="note">Vázlat — a beküldés mechanikáját (űrlap → futás → publikus
-      eredményoldal) a tervezés következő köre dönti el. Addig: kérdés e-mailben
-      vagy GitHub-issue-ként is beadható.</p>
-    </form>
-  </div>
-</section>
+    <section class="atlas-section" id="allomany">
+      <div class="atlas-shell">
+        <!-- ATLAS-INVENTORY:START — generálja: scripts/build_site_topics.py; kézzel ne szerkeszd -->
+<div class="inventory-head">
+      <div>
+        <p class="atlas-kicker" data-lang="hu">Az Atlasz jelenlegi állománya</p>
+        <p class="atlas-kicker" data-lang="en">What the Atlas contains today</p>
+        <h2 data-lang="hu">2 kérdés — de nem 2 cikk.</h2>
+        <h2 data-lang="en">2 questions—but not 2 articles.</h2>
+      </div>
+      <div class="inventory-head__note">
+        <p class="atlas-lede" data-lang="hu">Minden kérdés mögött egy bejárható, forrásokkal hivatkozott döntési adatbázis áll.</p>
+        <p class="atlas-lede" data-lang="en">Behind every question sits a navigable decision database with traceable sources.</p>
+      </div>
+    </div>
+    <div class="inventory-ledger"><a class="inventory-row" href="#temak">
+      <span class="inventory-row__count">2</span>
+      <span class="inventory-row__name"><span data-lang="hu">döntési kérdés</span><span data-lang="en">decision questions</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">Mindegyik önálló probléma-leírással, scope-pal és ember által jóváhagyott opciótérrel.</span><span data-lang="en">Each has its own problem brief, scope and human-approved option space.</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a>
+<a class="inventory-row" href="topics/korai-szelekcio/#valaszutak">
+      <span class="inventory-row__count">10</span>
+      <span class="inventory-row__name"><span data-lang="hu">részletes válaszút</span><span data-lang="en">detailed response routes</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">Cél, mechanizmus, előny, méltányosság, költség, végrehajtás, kockázat és bizonytalanság.</span><span data-lang="en">Goal, mechanism, benefits, equity, cost, implementation, risk and uncertainty.</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a>
+<a class="inventory-row" href="topics/korai-szelekcio/explorer.html#diskurzus">
+      <span class="inventory-row__count">39</span>
+      <span class="inventory-row__name"><span data-lang="hu">összevont érvklaszter</span><span data-lang="en">consolidated argument clusters</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">Érdek, érték, félelem, érintett csoport, feltevés és döntési relevancia szerint felbontva.</span><span data-lang="en">Decomposed by interest, value, fear, affected group, assumption and decision relevance.</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a>
+<a class="inventory-row" href="topics/korai-szelekcio/#vitak">
+      <span class="inventory-row__count">10</span>
+      <span class="inventory-row__name"><span data-lang="hu">emberi döntést kérő dilemma</span><span data-lang="en">dilemmas requiring human judgement</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">Amit több evidencia vagy jobb technikai tervezés sem dönthet el helyettünk.</span><span data-lang="en">Questions that neither more evidence nor better technical design can decide for us.</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a>
+<a class="inventory-row" href="topics/korai-szelekcio/explorer.html#nezetelteres">
+      <span class="inventory-row__count">11</span>
+      <span class="inventory-row__name"><span data-lang="hu">megőrzött nézeteltérési tengely</span><span data-lang="en">preserved disagreement axes</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">A szakértői többség és kisebbség indoklása egymás mellett, kényszerkonszenzus nélkül.</span><span data-lang="en">Expert majority and minority reasoning side by side, without forced consensus.</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a>
+<a class="inventory-row" href="topics/korai-szelekcio/explorer.html#szakertok">
+      <span class="inventory-row__count">24</span>
+      <span class="inventory-row__name"><span data-lang="hu">szakértői kutatási dosszié</span><span data-lang="en">expert research dossiers</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">Teljes elemzések, keresések és források — nem csak a végső összefoglaló.</span><span data-lang="en">Full analyses, searches and sources—not merely the final synthesis.</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a>
+<a class="inventory-row" href="topics/korai-szelekcio/scenarios/s1.html#nyitott">
+      <span class="inventory-row__count">25</span>
+      <span class="inventory-row__name"><span data-lang="hu">kimondott bizonytalanság</span><span data-lang="en">explicit unknowns</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">Mindegyik mellett ott van, milyen adat vagy kutatás csökkenthetné.</span><span data-lang="en">Each states what data or research could reduce it.</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a>
+<a class="inventory-row" href="knowledge.html">
+      <span class="inventory-row__count">14</span>
+      <span class="inventory-row__name"><span data-lang="hu">emberileg kurált evidencia-tétel</span><span data-lang="en">human-curated evidence records</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">Forrással, bizonyítékfokozattal és kétnyelvű állítással; bővítés csak emberi kapun át.</span><span data-lang="en">With source, evidence grade and bilingual claim; admission remains human-gated.</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a></div>
+    <div class="inventory-foot"><span>Élő állományjegyzék · a publikált rekordokból generálva</span><span>Nem kézzel vezetett számlálók</span></div>
+        <!-- ATLAS-INVENTORY:END -->
+      </div>
+    </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Átláthatóság</p>
-    <h2>Minden nyilvános: a módszertan, a kód és a hibák is</h2>
-    <p>A teljes rendszer — az ágensek specifikációja, az értékelési rubrika, a
-    körök összes kimenete és minden önjavító változtatás — verziókövetett és
-    nyilvánosan auditálható a
-    <a href="https://github.com/halacsy/education-policy-lab">GitHub-repóban</a>. Minden publikált tartalom élő nyelvi modelltől
-    származik: tartalék-generálás nincs — ha egy lépés nem megy át a
-    validáción, a futás megáll és naplózottan folytatható, gyengébb anyag
-    csöndben nem születhet. A rendszer a saját korlátait is dokumentálja: a
-    fordítási árnyalatoktól a bírálómodellek nézetkülönbségéig minden emberi
-    felülvizsgálatra váró pont a <em>human_questions</em> listára kerül.</p>
-    <p><a href="knowledge.html"><strong>Tudásbázis böngészése →</strong></a> — a kurált
-    tényregiszter bizonyítékstátusszal és forrással, tényenként magyarul és angolul.</p>
-    <p><a href="tech.html"><strong>Hogyan van megépítve? →</strong></a> — a technikai
-    implementáció külön oldalon: modell-létra és költségfegyelem, validált
-    szerződések, keresztcsaládos bírálat, folytatható futások.</p>
-  </div>
-</section>
+    <section class="atlas-section">
+      <div class="atlas-shell atlas-explainer">
+        <div class="atlas-explainer__thesis">
+          <p class="atlas-kicker" data-lang="hu">Mit ad az Atlasz?</p>
+          <p class="atlas-kicker" data-lang="en">What does the Atlas provide?</p>
+          <h2 data-lang="hu">Térképet, nem úticélt.</h2>
+          <h2 data-lang="en">A map, not a destination.</h2>
+          <p class="atlas-lede" data-lang="hu">Fél óra alatt áttekinthető, mi dönthető el tudással, mi javítható jobb tervezéssel, és mi marad értékválasztás.</p>
+          <p class="atlas-lede" data-lang="en">In half an hour, see what evidence can resolve, what better design can fix, and what remains a value choice.</p>
+        </div>
+        <div class="atlas-explainer__list">
+          <article class="atlas-principle">
+            <span class="atlas-principle__mark" aria-hidden="true">↗</span>
+            <div>
+              <h3 data-lang="hu">A lehetséges válaszutak</h3><h3 data-lang="en">The available routes</h3>
+              <p data-lang="hu">Minden kérdésnél egymás mellett láthatók a valódi alternatívák — köztük a be nem avatkozás ellenpontja is.</p>
+              <p data-lang="en">Each question shows real alternatives side by side, including the counterfactual of no intervention.</p>
+            </div>
+          </article>
+          <article class="atlas-principle">
+            <span class="atlas-principle__mark" aria-hidden="true">◎</span>
+            <div>
+              <h3 data-lang="hu">Az érvek súlya</h3><h3 data-lang="en">The weight of the case</h3>
+              <p data-lang="hu">Az előnyök, hátrányok és feltételezések mellett mindig ott van a bizonyíték erőssége és forrása.</p>
+              <p data-lang="en">Benefits, drawbacks and assumptions carry an explicit evidence grade and source.</p>
+            </div>
+          </article>
+          <article class="atlas-principle">
+            <span class="atlas-principle__mark" aria-hidden="true">≠</span>
+            <div>
+              <h3 data-lang="hu">A megmaradó nézeteltérés</h3><h3 data-lang="en">The disagreement that remains</h3>
+              <p data-lang="hu">A szakértői vita nem simul el a szintézisben. A többségi és kisebbségi álláspont indoklással együtt marad látható.</p>
+              <p data-lang="en">Synthesis does not erase expert disagreement. Majority and minority views remain visible with their reasoning.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow dissent">Az alapígéret</p>
-    <h2>Nem dönt az emberek helyett</h2>
-    <p>Az Education Policy Lab nem dönt az emberek helyett. Összegyűjti és
-    rendszerezi, amit már tudunk, megmutatja a tudás határait, feltárja a
-    valódi alternatívákat és konfliktusokat, és előkészíti azokat a
-    kérdéseket, amelyeket kutatással, szakpolitikai tervezéssel vagy valódi
-    emberi vitával kell továbbvinni. A valódi érintetti részvételt, az alkut
-    és a legitim politikai döntést semmilyen szimuláció nem helyettesíti.</p>
-  </div>
-</section>
+    <section class="atlas-section atlas-section--paper">
+      <div class="atlas-shell">
+        <div class="catalog-head">
+          <div>
+            <p class="atlas-kicker" data-lang="hu">Jelmagyarázat</p>
+            <p class="atlas-kicker" data-lang="en">Map legend</p>
+            <h2 data-lang="hu">Két jelrendszer segít olvasni.</h2>
+            <h2 data-lang="en">Two systems of signs guide your reading.</h2>
+          </div>
+          <p class="atlas-note" data-lang="hu">A bizonyítékcímke azt mutatja, mennyire biztos egy állítás. A vitatípus azt, hogy milyen úton lehet — vagy nem lehet — feloldani.</p>
+          <p class="atlas-note" data-lang="en">Evidence labels show how certain a claim is. Debate types show how it can—or cannot—be resolved.</p>
+        </div>
+        <div class="legend-grid">
+          <div class="legend-panel">
+            <h3 data-lang="hu">Bizonyíték</h3><h3 data-lang="en">Evidence</h3>
+            <div class="legend-stack">
+              <span class="evidence-tag">erős / strong</span>
+              <span class="evidence-tag evidence-tag--moderate">mérsékelt / moderate</span>
+              <span class="evidence-tag evidence-tag--weak">gyenge / weak</span>
+              <span class="evidence-tag evidence-tag--contested">vitatott / contested</span>
+            </div>
+            <p data-lang="hu">A gyenge bizonyíték nem tűnik el: gyengének jelölve marad.</p>
+            <p data-lang="en">Weak evidence is not hidden; it remains explicitly marked as weak.</p>
+          </div>
+          <div class="legend-panel">
+            <h3 data-lang="hu">A vita természete</h3><h3 data-lang="en">Nature of the debate</h3>
+            <div class="legend-stack">
+              <span class="debate-tag debate-tag--evidence">bizonyítékkal eldönthető</span>
+              <span class="debate-tag debate-tag--value">értékválasztás</span>
+              <span class="debate-tag debate-tag--tradeoff">feloldhatatlan trade-off</span>
+            </div>
+            <p data-lang="hu">Ez választja szét a kutatási kérdést, a tervezési feladatot és a legitim politikai döntést.</p>
+            <p data-lang="en">This separates research questions, design tasks and legitimate political choices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="english">
-  <div class="wrap">
-    <p class="eyebrow">English abstract</p>
-    <h2>A self-improving, bilingual, multi-agent deliberation-acceleration lab</h2>
-    <p>The Education Policy Lab does not produce a policy recommendation — it
-    accelerates the thinking and public debate that must precede a policy
-    decision. Twelve expert agents analyse a policy question with mandatory
-    evidence status on every claim; a scenario builder drafts multiple real
-    alternatives; a ten-voice discourse layer runs a <strong>stakeholder
-    stress test</strong> — never a simulation of real reactions — surfacing
-    the objections, fears and interest-conflicts a real deliberation will
-    have to answer, each decomposed by interest/value/fear/assumption and
-    screened for "gumicsontok" (high-attention, low-decision-relevance
-    debates); nine critics attack the result; and a meta-critic reviews the
-    system itself. The final brief has ten sections — what we know, what we
-    consider likely, where experts disagree, what we don't know, what could
-    be done, what each option costs, what research could resolve, what
-    people must decide, what to verify with real stakeholders, and where the
-    red herrings are — with every claim tagged fact/estimate/assumption/
-    value. AI never makes the policy decision: value trade-offs and political
-    choices are returned to accountable humans as explicit open questions.
-    Experts open each round with live web research (findings are cited
-    sources only — nothing enters the curated fact registry without human
-    approval), and every agent authors its output natively in BOTH Hungarian
-    and English inside one schema-constrained structure, so the two language
-    versions cannot structurally diverge. The first demonstration question —
-    early academic selection and Hungary's 6/8-year gimnázium tracks —
-    produced four scenarios and a preserved disagreement map rather than a
-    forced consensus.</p>
-  </div>
-</section>
+    <section class="atlas-section growth-section" id="uj-kerdes">
+      <div class="atlas-shell growth-grid">
+        <div class="growth-copy">
+          <p class="atlas-kicker" data-lang="hu">Nyitott, növekvő atlasz</p>
+          <p class="atlas-kicker" data-lang="en">An open, growing atlas</p>
+          <h2 data-lang="hu">Melyik kérdés hiányzik még?</h2>
+          <h2 data-lang="en">Which question is still missing?</h2>
+          <p class="atlas-lede" data-lang="hu">Az Atlasz nem lezárt kiadvány. Küldj be egy oktatáspolitikai problémát: a már működő kutatási és ellenőrzési rendszerből új, kétnyelvű atlaszlap épülhet hozzá.</p>
+          <p class="atlas-lede" data-lang="en">The Atlas is not a finished publication. Submit an education-policy problem and the existing research and verification system can turn it into a new bilingual atlas entry.</p>
+          <a class="button-link" href="submit.html"><span data-lang="hu">Kérdés beküldése →</span><span data-lang="en">Submit a question →</span></a>
+          <p class="growth-pulse" data-lang="hu">Az új kérdések és az új bizonyítékok ugyanabban az auditálható szerkezetben jelenhetnek meg — a teljes érvtérkép újrarendezésével, nem kézi foltozással.</p>
+          <p class="growth-pulse" data-lang="en">New questions and new evidence can enter through the same auditable structure—by rebuilding the argument map, not patching it by hand.</p>
+        </div>
+        <ol class="growth-route">
+          <li><h3 data-lang="hu">Leírod a problémát</h3><h3 data-lang="en">Describe the problem</h3><p data-lang="hu">Mi történik, miért vitatott, és mit kellene megérteni a döntés előtt?</p><p data-lang="en">What is happening, why is it contested, and what must be understood before deciding?</p></li>
+          <li><h3 data-lang="hu">Ember jóváhagyja a keretet</h3><h3 data-lang="en">A human approves the frame</h3><p data-lang="hu">A kérdés és a szakértőkből származó opciótér nem kerül ki emberi tartalmi kapu nélkül.</p><p data-lang="en">Neither the question nor its expert-derived option space is published without a human content gate.</p></li>
+          <li><h3 data-lang="hu">Felépül a döntési adatbázis</h3><h3 data-lang="en">The decision database is built</h3><p data-lang="hu">Válaszutak, érvek, evidenciák, viták, költségek, kockázatok és nem-tudások egy szerkezetben.</p><p data-lang="en">Routes, arguments, evidence, disagreements, costs, risks and unknowns in one structure.</p></li>
+          <li><h3 data-lang="hu">Frissíthető atlaszlap születik</h3><h3 data-lang="en">A refreshable atlas entry appears</h3><p data-lang="hu">Új forrás vagy új helyzet esetén a lap újrafuttatható, a változás és minden hiba nyilvános marad.</p><p data-lang="en">When evidence or circumstances change, the entry can be rerun while every change and failure remains public.</p></li>
+        </ol>
+      </div>
+    </section>
 
-<footer>
-  <div class="wrap">
-    <p><strong>Education Policy Lab</strong> — kísérleti, kutatási célú rendszer.
-    Kimenetei döntéstámogató anyagok, nem döntések; minden ajánlás emberi
-    mérlegelést igényel. · Kapcsolat: <em>[e-mail placeholder]</em> ·
-    <a href="https://github.com/halacsy/education-policy-lab">GitHub repo — teljes módszertan, kód és auditálható körök</a></p>
-  </div>
-</footer>
+    <section class="atlas-section">
+      <div class="atlas-reading">
+        <p class="atlas-kicker" data-lang="hu">Hogyan készül?</p>
+        <p class="atlas-kicker" data-lang="en">How is it made?</p>
+        <h2 data-lang="hu">AI gyorsítja a gyűjtést. Ember őrzi a kapukat.</h2>
+        <h2 data-lang="en">AI accelerates the research. Humans guard the gates.</h2>
+        <p class="atlas-lede" data-lang="hu">Az Atlaszt AI-asszisztált kutatási folyamat állítja elő. Minden forrás, lépés és hiba nyilvános; a kérdés keretezését és a tudásbázis bővítését ember hagyja jóvá.</p>
+        <p class="atlas-lede" data-lang="en">The Atlas is produced through an AI-assisted research process. Every source, step and failure is public; humans approve how questions are framed and what enters the knowledge base.</p>
+        <a class="text-link" href="tech.html"><span data-lang="hu">A teljes módszertan és audit</span><span data-lang="en">Full methodology and audit trail</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="atlas-shell">
+      <div class="site-footer__grid">
+        <h2 data-lang="hu">Az Atlasz nem mondja meg, hová menj. Segít, hogy ne tévedj el.</h2>
+        <h2 data-lang="en">The Atlas does not tell you where to go. It helps you avoid getting lost.</h2>
+        <nav aria-label="Tartalmi oldalak">
+          <a href="#temak">Kérdések / Questions</a>
+          <a href="about.html">Az Atlaszról / About</a>
+          <a href="tech.html">Módszertan / Method</a>
+          <a href="knowledge.html">Tudásbázis / Evidence base</a>
+        </nav>
+        <nav aria-label="Közreműködés és forráskód">
+          <a href="contribute.html">Dolgozz velünk / Contribute</a>
+          <a href="submit.html">Kérdés beküldése / Submit a question</a>
+          <a href="https://github.com/halacsy/education-policy-lab">GitHub — nyílt forráskód</a>
+        </nav>
+      </div>
+      <p class="site-footer__meta">OKTATÁSPOLITIKAI ATLASZ · KÍSÉRLETI, NYÍLT KUTATÁSI PROJEKT · A TARTALOM DÖNTÉSTÁMOGATÁS, NEM SZAKPOLITIKAI AJÁNLÁS.</p>
+    </div>
+  </footer>
+  <script src="assets/atlas.js"></script>
 </body>
 </html>

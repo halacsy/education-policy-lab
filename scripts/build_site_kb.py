@@ -111,14 +111,15 @@ def main():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tudásbázis — Education Policy Lab</title>
+<title>Tudásbázis — Oktatáspolitikai Atlasz</title>
 <meta name="description" content="A műhely kurált forrásjegyzéke: minden tény bizonyítékstátusszal és forrással, magyarul és angolul.">
 <style>{CSS}</style>
+<link rel="stylesheet" href="assets/atlas.css">
 </head>
-<body>
+<body class="atlas">
 <header class="site">
   <div class="wrap">
-    <span><strong>EDUCATION POLICY LAB</strong> · tudásbázis</span>
+    <span><strong>OKTATÁSPOLITIKAI ATLASZ</strong> · tudásbázis</span>
     <span><a href="./">← vissza a főoldalra</a></span>
   </div>
 </header>
@@ -167,6 +168,7 @@ def main():
     (knowledge/registry.json + topics/&lt;slug&gt;/glossary.md) minden publikáláskor.</p>
   </div>
 </footer>
+<script src="assets/atlas.js"></script>
 </body>
 </html>
 """

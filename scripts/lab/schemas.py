@@ -357,6 +357,9 @@ FRAMES = obj({
 PROBLEM_BRIEF = obj({
     "slug": s("short ascii-kebab-case slug (directory, URL, git reference)"),
     "title": B("short title for the website"),
+    "public_question": B("one concise, neutral question used as the public "
+                         "catalogue headline; it must expose the decision "
+                         "without implying a preferred answer"),
     "problem_statement": B("1-3 paragraphs: the situation and its tension — "
                            "a described problem or opportunity, NOT a bare "
                            "question"),

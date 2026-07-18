@@ -52,11 +52,29 @@ jelmagyarázat), de ne váljon szó szerinti térképgrafikává.
    „Mi legyen az elnéptelenedő falvak kisiskoláival?"), belépési pontként.
    Rövid „mi ez az oldal" sáv (az atlasz-bekezdés), lábjegyzet-szintű
    módszertan-link.
+   - Amíg a témakatalógus még rövid, a főoldal külön, adatvezérelt
+     **állományjegyzékben** mutatja meg az Atlasz tényleges mélységét:
+     kérdések, válaszutak, érvklaszterek, emberi döntést kérő dilemmák,
+     nézeteltérések, szakértői kutatási dossziék, kimondott bizonytalanságok
+     és kurált evidencia-tételek. A számlálók a publikált rekordokból
+     generálódnak, nem marketingmetrikák.
+   - A kérdésbeküldés és a frissülés külön főoldali útvonalat kap: tegye
+     láthatóvá, hogy az Atlasz növekvő gyűjtemény, és hogy új kérdésből vagy
+     új evidenciából ugyanazzal az auditálható folyamattal gyorsan új vagy
+     frissített atlaszlap készülhet.
 2. **Témaoldal = a mélyülés íve:** kérdés (problem brief) → lehetséges
    válaszok (forgatókönyvek, köztük a „nem csinálunk semmit" ellenpont) →
    érvek és ellenérvek (érv-főkönyv, bizonyítékcímkékkel) → miben vitáznak a
    szakértők (nézeteltérés-térkép) → nyitott kérdések. Kattintásos mélyülés,
    nincs chat.
+   - **Forgatókönyv-oldal = egy válaszút teljes dossziéja.** A témaoldal
+     minden válaszútja külön, stabilan linkelhető oldalra vezet. Az oldal a
+     legfrissebb strukturált rekord minden mezőjét megmutatja: cél,
+     mechanizmus és elemenkénti bizonyítékfokozat, előnyök,
+     méltányossági hatás, költségkategóriák, megvalósítási lépések,
+     feltételezések, politikai kockázatok és a bizonytalanságot csökkentő
+     kutatási igény. Innen nyílik a forgatókönyvhöz tartozó teljes kritikai
+     és érvrekord.
 3. **Aloldalak:**
    - **Módszertan** — ide költözik minden, ami eddig a főoldal gerince volt:
      hogyan készül az Atlasz, a 6 lépéses kör diagramja, scorecard és

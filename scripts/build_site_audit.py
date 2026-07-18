@@ -271,10 +271,10 @@ def build_topic(slug, title):
     page = f"""<!doctype html><html lang="hu"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Műhely-napló — {e(title)}</title>
-<style>{CSS}</style></head><body>
+<style>{CSS}</style><link rel="stylesheet" href="../../assets/atlas.css"></head><body class="atlas">
 <header class="site"><div class="wrap">
 <span><a href="index.html">← {e(title)}</a></span>
-<span><a href="../../index.html">Education Policy Lab</a></span>
+<span><a href="../../index.html">Oktatáspolitikai Atlasz</a></span>
 </div></header>
 <div class="wrap">
 <section><h1>Műhely-napló</h1>
@@ -284,7 +284,7 @@ forrásokkal), mit adott vissza pontosan, és mit utasított vissza a rendszer
 — okkal együtt. Semmi sincs kézzel válogatva: ez a nyers, auditálható
 munkanapló.</p></section>
 {''.join(sections)}
-</div></body></html>"""
+</div><script src="../../assets/atlas.js"></script></body></html>"""
     dest = SITE_TOPICS / slug / "audit.html"
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(page, encoding="utf-8")
@@ -295,8 +295,8 @@ def main():
     for tj in sorted(TOPICS_DIR.glob("*/topic.json")):
         slug = tj.parent.name
         cfg = read_json(tj) or {}
-        title = (cfg.get("title") or {}).get("hu") if isinstance(
-            cfg.get("title"), dict) else cfg.get("title") or slug
+        title_pair = cfg.get("problem_brief", {}).get("title", {})
+        title = title_pair.get("hu") if isinstance(title_pair, dict) else title_pair
         build_topic(slug, title or slug)
 
 

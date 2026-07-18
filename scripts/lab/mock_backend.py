@@ -446,6 +446,9 @@ def problem_brief(prompt=""):
         slug="mock-topic",
         title=dict(en=first[:60] or "Untitled problem",
                    hu="(HU) " + (first[:55] or "Cím nélküli probléma")),
+        public_question=dict(
+            en=f"What should decision-makers do about {first[:42]}?",
+            hu=f"Mi legyen a döntés a következő ügyben: {first[:38]}?"),
         problem_statement=dict(
             en=f"MOCK DRAFT — restate of the submitted text: {first}",
             hu=f"MOCK VÁZLAT — a beküldött szöveg átfogalmazása: {first}"),

@@ -6,8 +6,8 @@ For every topic in topics/*/topic.json:
   frames, run state, transparency (time/token/cost from the final
   cost_report.json), links to the explorer page and the raw record;
 - the topic-card list injected between the TOPICS:START/END markers in
-  site/index.html (the committed landing page keeps the general "how it
-  works" content; the card list is regenerated on every deploy).
+  site/index.html, plus the data-driven Atlas inventory between the
+  ATLAS-INVENTORY markers. Both are regenerated on every deploy.
 
 Run by the Pages workflow on every deploy — generated from repo data,
 never hand-maintained. Standard library only (lab/ is local and stdlib).
@@ -260,27 +260,38 @@ def findings_block(f):
 def topic_card(cfg, state, num):
     slug = cfg["slug"]
     b = cfg["problem_brief"]
-    status = STATUS_HU.get(cfg.get("status", "active"), cfg.get("status"))
-    meta = [f"állapot: {esc(status)}"]
-    if state["rounds"]:
-        meta.append(f"{state['rounds']} kör az aktuális érában")
-    if state["last_total"] is not None:
-        meta.append(f"utolsó összpontszám: {state['last_total']}")
-    meta.append(cost_line(state))
     frames = cfg.get("frames", {}).get("scenarios", [])
-    frames_html = ""
-    if frames:
-        frames_html = ("<p class=\"note\">Keretek: "
-                       + " · ".join(f"<strong>{esc(f['id'])}</strong> "
-                                    f"{esc(f['title']['hu'])}"
-                                    for f in frames) + "</p>")
-    return f"""    <div class="card">
-      <h3><a href="topics/{esc(slug)}/">{num}. {esc(b['title']['hu'])}</a></h3>
-      <p>{esc(b['problem_statement']['hu'])}</p>
-      {frames_html}
-      <p class="note">{esc(' · '.join(meta))}</p>
-      <p style="margin-bottom:0"><a href="topics/{esc(slug)}/"><strong>Téma-oldal megnyitása →</strong></a></p>
-    </div>"""
+    question = b.get("public_question", b["title"])
+    def summary(text, limit=250):
+        first = text.split(". ", 1)[0].strip()
+        if first and not first.endswith("."):
+            first += "."
+        if len(first) <= limit:
+            return first
+        return first[:limit - 1].rsplit(" ", 1)[0] + "…"
+    n = len(frames)
+    branches = "".join('<span class="route-map__branch"></span>'
+                       for _ in range(min(n, 5)))
+    return f"""    <a class="topic-entry" href="topics/{esc(slug)}/">
+      <div class="topic-entry__index"><span>Atlaszlap</span><strong>{num:02d}</strong></div>
+      <div class="topic-entry__body">
+        <div>
+          <h3 data-lang="hu">{esc(question['hu'])}</h3>
+          <h3 data-lang="en">{esc(question['en'])}</h3>
+          <p data-lang="hu">{esc(summary(b['problem_statement']['hu']))}</p>
+          <p data-lang="en">{esc(summary(b['problem_statement']['en']))}</p>
+        </div>
+        <div class="topic-entry__meta">
+          <span>{n} válaszút / routes</span>
+          <span>{"Részletes elemzés elérhető" if state['has_final'] else "Feldolgozás alatt"}</span>
+          <span>Megnyitás →</span>
+        </div>
+      </div>
+      <div class="topic-entry__route" aria-hidden="true">
+        <span class="route-map"><span class="route-map__start"></span>{branches}</span>
+        <span class="route-map__label">{n} lehetséges<br>válaszút</span>
+      </div>
+    </a>"""
 
 
 def _nav_title(cfg, limit=44):
@@ -435,6 +446,242 @@ def topic_page(cfg, state, num, total, prev_cfg, next_cfg):
 """
 
 
+EVIDENCE_HU = {"strong": "erős", "moderate": "mérsékelt",
+               "weak": "gyenge", "contested": "vitatott"}
+
+
+def _pair(value, lang):
+    if isinstance(value, dict):
+        return value.get(lang) or value.get("hu") or value.get("en") or ""
+    return value or ""
+
+
+def _both(value, tag="span", cls=""):
+    class_attr = f' class="{cls}"' if cls else ""
+    return (f'<{tag}{class_attr} data-lang="hu">{esc(_pair(value, "hu"))}</{tag}>'
+            f'<{tag}{class_attr} data-lang="en">{esc(_pair(value, "en"))}</{tag}>')
+
+
+def latest_scenarios(slug):
+    it = OUT_ROOT / slug / "iterations"
+    n = last_round(it) if it.exists() else None
+    if n is None:
+        return None, []
+    path = it / f"round_{n:02d}" / "scenarios.json"
+    if not path.exists():
+        return n, []
+    try:
+        return n, json.loads(path.read_text(encoding="utf-8")).get("scenarios", [])
+    except (json.JSONDecodeError, OSError):
+        return n, []
+
+
+def evidence_tag(label):
+    label = label or "weak"
+    suffix = "" if label == "strong" else f" evidence-tag--{esc(label)}"
+    return (f'<span class="evidence-tag{suffix}">'
+            f'{esc(EVIDENCE_HU.get(label, label))} / {esc(label)}</span>')
+
+
+def atlas_findings_block(slug):
+    f = load_findings(slug)
+    if not f:
+        return ""
+    sd = f["sd"]
+    counts = {"fix": 0, "human": 0, "open": 0}
+    for cluster in sd["clusters"]:
+        verdict = sd["verdicts"].get(cluster["id"])
+        if verdict:
+            counts[VERDICT_GROUP[verdict["response_type"]]] += 1
+
+    dilemmas = [(c, sd["verdicts"][c["id"]]) for c in sd["clusters"]
+                if sd["verdicts"].get(c["id"])
+                and VERDICT_GROUP[sd["verdicts"][c["id"]]["response_type"]] == "human"]
+    dilemmas.sort(key=lambda cv: (
+        0 if cv[1]["response_type"] == "irreducible_tradeoff" else 1,
+        REL_ORDER.get(cv[0].get("decision_relevance"), 3), cv[0]["id"]))
+    dilemma_items = "\n".join(
+        f'''<li><a href="explorer.html#cluster-{esc(c["id"])}">
+          <span class="finding-list__id">{esc(c["id"])}</span>
+          <span>{esc(c["claim"])}<small>{esc(VERDICT_HU[v["response_type"]])} · teljes érv és válasz →</small></span>
+        </a></li>''' for c, v in dilemmas[:DILEMMA_CAP])
+
+    gumik = [c for c in sd["clusters"] if is_gumicsont(c)]
+    gumi_html = ""
+    if gumik:
+        items = "\n".join(
+            f'''<li><a href="explorer.html#cluster-{esc(c["id"])}">
+              <span class="finding-list__id">{esc(c["id"])}</span>
+              <span>{esc(c["claim"])}<small>Miért nem változtatja meg a döntést? →</small></span>
+            </a></li>''' for c in gumik)
+        gumi_html = f'''<div class="finding-group">
+          <div class="finding-group__head"><h3>Gumicsontok</h3><p class="atlas-note">Sok figyelmet kapnak, de az elemzés szerint kevéssé változtatják meg a döntést.</p></div>
+          <ul class="finding-list">{items}</ul>
+        </div>'''
+
+    axes_html = ""
+    if f["axes"]:
+        items = "\n".join(
+            f'''<li><a href="explorer.html#axis-{i + 1}"><span class="finding-list__id">V{i + 1:02d}</span><span>{esc(ax["topic"])}<small>Mindkét álláspont indoklása →</small></span></a></li>'''
+            for i, ax in enumerate(f["axes"]))
+        axes_html = f'''<div class="finding-group">
+          <div class="finding-group__head"><h3>Ahol a szakértők nem értenek egyet</h3><p class="atlas-note">A különvélemény nem tűnik el a szintézisben.</p></div>
+          <ul class="finding-list">{items}</ul>
+        </div>'''
+
+    expert_links = "".join(
+        f'<a href="explorer.html#expert-{esc(name)}">{esc(name.replace("_", " "))}</a>'
+        for name in f["experts"])
+
+    return f'''<section class="atlas-section" id="vitak">
+      <div class="atlas-shell">
+        <div class="catalog-head"><div><p class="atlas-kicker atlas-kicker--dissent">Viták és döntési dilemmák</p><h2>Ahol a térkép nem jelöl egyetlen helyes irányt.</h2></div><p class="atlas-note">A {f["round"]}. kör nyilvános érvanyagából, automatikusan generálva.</p></div>
+        <div class="finding-summary">
+          <div class="finding-stat"><b>{counts["fix"]}</b><span>evidenciával vagy tervezéssel kezelhető</span></div>
+          <div class="finding-stat"><b>{counts["human"]}</b><span>emberi értékdöntést kér</span></div>
+          <div class="finding-stat"><b>{counts["open"]}</b><span>nyitott vagy nem döntésreleváns</span></div>
+        </div>
+        <div class="finding-group">
+          <div class="finding-group__head"><h3>Valódi dilemmák</h3><p class="atlas-note">Ezeket nem oldja fel több adat vagy jobb technikai tervezés.</p></div>
+          <ul class="finding-list">{dilemma_items}</ul>
+        </div>
+        {axes_html}{gumi_html}
+        <div class="finding-group"><div class="finding-group__head"><h3>A szakértői rekord</h3><p class="atlas-note">A teljes elemzések közvetlenül megnyithatók.</p></div><div class="expert-links">{expert_links}</div></div>
+      </div>
+    </section>'''
+
+
+def _scenario_cards(cfg, scenarios):
+    if scenarios:
+        cards = []
+        for scenario in scenarios:
+            label = scenario.get("evidence_status", {}).get("label", "weak")
+            cards.append(f'''<a class="option-card" href="scenarios/{esc(scenario["id"].lower())}.html">
+              <span class="option-card__id">{esc(scenario["id"])}</span>
+              <div>{_both(scenario["title"], "h3")}{_both(scenario["goal"], "p")}{evidence_tag(label)}</div>
+            </a>''')
+        return "".join(cards)
+    frames = cfg.get("frames", {}).get("scenarios", [])
+    return "".join(f'''<div class="option-card"><span class="option-card__id">{esc(frame["id"])}</span><div>{_both(frame["title"], "h3")}{_both(frame["scope"], "p")}</div></div>''' for frame in frames)
+
+
+def topic_page(cfg, state, num, total, prev_cfg, next_cfg):
+    slug = cfg["slug"]
+    brief = cfg["problem_brief"]
+    question = brief.get("public_question", brief["title"])
+    round_n, scenarios = latest_scenarios(slug)
+    goals = "".join(f'<li>{_both(goal)}</li>' for goal in brief["learning_goals"])
+    scenario_cards = _scenario_cards(cfg, scenarios)
+    findings_html = atlas_findings_block(slug) if state["has_final"] else ""
+    status = STATUS_HU.get(cfg.get("status", "active"), cfg.get("status"))
+    run_state = (f'{state["rounds"]} kör · utolsó összpontszám {state["last_total"]}'
+                 if state["rounds"] and state["last_total"] is not None
+                 else "feldolgozás alatt")
+    cost = state["cost"]
+    if cost and cost.get("has_data"):
+        cost_text = (f'{fmt_dur(cost["wall_clock_s"])} · '
+                     f'{cost["total_tokens"]:,} token · ~${cost["total_usd"]:.2f} USD').replace(",", " ")
+    else:
+        cost_text = "ehhez az érához nincs teljes mért költségadat"
+    prev_link = (f'<a href="../{esc(prev_cfg["slug"])}/">← előző atlaszlap</a>'
+                 if prev_cfg else "")
+    next_link = (f'<a href="../{esc(next_cfg["slug"])}/">következő atlaszlap →</a>'
+                 if next_cfg else "")
+
+    return f'''<!doctype html>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(_pair(question, "hu"))} — Oktatáspolitikai Atlasz</title>
+<meta name="description" content="{esc(brief["problem_statement"]["hu"][:150])}">
+<link rel="stylesheet" href="../../assets/atlas.css"></head>
+<body class="atlas">
+<header class="site-header"><div class="atlas-shell site-header__inner">
+  <a class="site-brand" href="../../index.html"><span class="site-brand__mark" aria-hidden="true"></span><span class="site-brand__name">Oktatáspolitikai<br>Atlasz</span></a>
+  <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menü</button>
+  <nav class="site-nav" id="site-nav" data-site-nav><a href="../../index.html#temak">Kérdések</a><a href="../../about.html">Az Atlaszról</a><a href="../../tech.html">Módszertan</a><div class="lang-switch"><button type="button" data-set-lang="hu" aria-pressed="true">HU</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div></nav>
+</div></header>
+<main>
+  <section class="topic-hero"><div class="atlas-shell topic-hero__grid">
+    <div><p class="atlas-kicker">Atlaszlap {num:02d} / {total:02d}</p>{_both(question, "h1")}</div>
+    <div class="topic-hero__summary">{_both(brief["problem_statement"], "p", "atlas-lede")}<div class="topic-meta"><span>{len(scenarios) or len(cfg.get("frames", {}).get("scenarios", []))} válaszút</span><span>{esc(status)}</span><span>{esc(run_state)}</span></div></div>
+  </div></section>
+  <nav class="topic-local-nav" aria-label="Az atlaszlap fejezetei"><div class="atlas-shell topic-local-nav__inner"><a href="#kerdes">A kérdés</a><a href="#valaszutak">Válaszutak</a><a href="#vitak">Viták</a><a href="#rekord">Forrás és audit</a></div></nav>
+  <section class="atlas-section atlas-section--paper" id="kerdes"><div class="atlas-shell problem-grid">
+    <div><p class="atlas-kicker">A vizsgálat fókusza</p><h2>{esc(brief["title"]["hu"])}</h2><div class="scope-box"><h3>Hatókör / Scope</h3>{_both(brief["scope"], "p")}</div></div>
+    <div><h3>Mit kell megérteni a döntés előtt?</h3><ol class="learning-list">{goals}</ol></div>
+  </div></section>
+  <section class="atlas-section atlas-section--paper" id="valaszutak"><div class="atlas-shell">
+    <div class="catalog-head"><div><p class="atlas-kicker">Opciótér</p><h2>Lehetséges válaszutak.</h2></div><p class="atlas-note">A kereteket a szakértői elemzésből származtatjuk, majd emberi jóváhagyással rögzítjük. Minden út saját oldalon, teljes részletességgel olvasható.</p></div>
+    <div class="option-route">{scenario_cards}</div>
+  </div></section>
+  {findings_html}
+  <section class="atlas-section atlas-section--paper" id="rekord"><div class="atlas-reading"><p class="atlas-kicker">Forrás, módszer, költség</p><h2>A teljes munkafolyamat nyilvános.</h2><p>A közzétett anyag a(z) {round_n or "—"}. kör adatából készült. Mért feldolgozás: {esc(cost_text)}.</p><div class="disclosure-links"><a class="text-link" href="explorer.html">Teljes érv- és bizonyítékfeltáró</a><a class="text-link" href="audit.html">Műhely-napló: minden kutatás és elutasítás</a><a class="text-link" href="https://github.com/halacsy/education-policy-lab/tree/main/outputs/topics/{esc(slug)}">Nyers rekord a GitHubon</a></div></div></section>
+</main>
+<footer class="site-footer"><div class="atlas-shell"><div class="site-footer__grid"><h2>{esc(_pair(question, "hu"))}</h2><nav>{prev_link}{next_link}<a href="../../index.html#temak">Összes kérdés</a></nav><nav><a href="../../about.html">Az Atlaszról</a><a href="../../tech.html">Módszertan</a></nav></div><p class="site-footer__meta">GENERÁLT ATLASZLAP · FORRÁS: topics/{esc(slug)}/topic.json + outputs/topics/{esc(slug)}/</p></div></footer>
+<script src="../../assets/atlas.js"></script></body></html>'''
+
+
+def _bullet_items(items, kind="pair"):
+    out = []
+    for item in items or []:
+        if kind == "evidenced":
+            out.append(f'<li><div>{_both(item.get("text", ""), "p")}{evidence_tag(item.get("evidence"))}</div></li>')
+        else:
+            out.append(f'<li>{_both(item, "span")}</li>')
+    return "".join(out)
+
+
+def scenario_page(cfg, scenario, scenarios, round_n):
+    slug = cfg["slug"]
+    question = cfg["problem_brief"].get("public_question", cfg["problem_brief"]["title"])
+    problem = cfg["problem_brief"]["problem_statement"]
+    def problem_excerpt(text, limit=280):
+        first = text.split(". ", 1)[0].strip()
+        if first and not first.endswith("."):
+            first += "."
+        if len(first) <= limit:
+            return first
+        return first[:limit - 1].rsplit(" ", 1)[0] + "…"
+    problem_short = {lang: problem_excerpt(problem[lang])
+                     for lang in ("hu", "en")}
+    idx = scenarios.index(scenario)
+    label = scenario.get("evidence_status", {}).get("label", "weak")
+    evidence_note = scenario.get("evidence_status", {}).get("note", "")
+    implementation = "".join(f'''<li><span class="implementation__time">{esc(_pair(step.get("timeline"), "hu"))}</span><div><strong>{esc(_pair(step.get("actor"), "hu"))}</strong>{_both(step.get("action"), "p")}</div></li>''' for step in scenario.get("implementation_steps", []))
+    uncertainties = "".join(f'''<article class="uncertainty-card"><span class="question-card__context">bizonyosság: {esc(u.get("confidence", "—"))}</span>{_both(u.get("text"), "p")}<p class="atlas-note"><strong>Mi csökkentené?</strong> {esc(_pair(u.get("reduced_by"), "hu"))}</p></article>''' for u in scenario.get("uncertainties", []))
+    prev_link = (f'<a href="{esc(scenarios[idx - 1]["id"].lower())}.html">← {esc(scenarios[idx - 1]["id"])}</a>' if idx else "")
+    next_link = (f'<a href="{esc(scenarios[idx + 1]["id"].lower())}.html">{esc(scenarios[idx + 1]["id"])} →</a>' if idx + 1 < len(scenarios) else "")
+    return f'''<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(scenario["id"])} — {esc(_pair(scenario["title"], "hu"))} — Oktatáspolitikai Atlasz</title><meta name="description" content="{esc(_pair(scenario["goal"], "hu")[:155])}"><link rel="stylesheet" href="../../../assets/atlas.css"></head>
+<body class="atlas scenario-page"><header class="site-header"><div class="atlas-shell site-header__inner"><a class="site-brand" href="../../../index.html"><span class="site-brand__mark" aria-hidden="true"></span><span class="site-brand__name">Oktatáspolitikai<br>Atlasz</span></a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menü</button><nav class="site-nav" id="site-nav" data-site-nav><a href="../">← Atlaszlap</a><a href="../explorer.html#{esc(scenario["id"])}">Érvek és kritikák</a><div class="lang-switch"><button type="button" data-set-lang="hu" aria-pressed="true">HU</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div></nav></div></header>
+<main>
+  <section class="scenario-origin" aria-labelledby="scenario-origin-title"><div class="atlas-shell scenario-origin__grid">
+    <p class="scenario-origin__label" id="scenario-origin-title"><span data-lang="hu">Kiinduló probléma</span><span data-lang="en">The problem</span></p>
+    <a class="scenario-origin__question" href="../">{_both(question)}</a>
+    <div class="scenario-origin__summary">{_both(problem_short, "p")}<a href="../#kerdes"><span data-lang="hu">A teljes probléma és az összes válaszút →</span><span data-lang="en">Full problem and all available routes →</span></a></div>
+  </div></section>
+  <section class="topic-hero"><div class="atlas-shell topic-hero__grid"><div><p class="atlas-kicker">{esc(scenario["id"])} · {idx + 1}/{len(scenarios)}. válaszút</p>{_both(scenario["title"], "h1")}</div><div class="topic-hero__summary">{_both(scenario["goal"], "p", "atlas-lede")}<div class="topic-meta">{evidence_tag(label)}<span>{round_n}. kör</span></div></div></div></section>
+  <nav class="topic-local-nav"><div class="atlas-shell topic-local-nav__inner"><a href="#mukodes">Működés</a><a href="#merleg">Előnyök és méltányosság</a><a href="#vegigvitel">Megvalósítás</a><a href="#kockazatok">Kockázatok</a><a href="#nyitott">Bizonytalanságok</a></div></nav>
+  <section class="atlas-section atlas-section--paper" id="mukodes"><div class="atlas-shell detail-grid"><div><p class="atlas-kicker">Mechanizmus</p><h2>Hogyan működne?</h2><p class="atlas-note">Az egyes elemek saját bizonyítékfokozatot viselnek.</p></div><ol class="detail-list detail-list--evidenced">{_bullet_items(scenario.get("mechanism"), "evidenced")}</ol></div></section>
+  <section class="atlas-section" id="merleg"><div class="atlas-shell"><div class="catalog-head"><div><p class="atlas-kicker">Mérleg</p><h2>Mit nyerhetünk — és kinek?</h2></div><div>{evidence_tag(label)}{_both(evidence_note, "p", "atlas-note")}</div></div><div class="detail-columns"><div><h3>Várható előnyök</h3><ol class="detail-list detail-list--evidenced">{_bullet_items(scenario.get("expected_benefits"), "evidenced")}</ol></div><div><h3>Méltányossági hatás</h3><div class="callout-box">{_both(scenario.get("equity_impact"), "p")}</div><h3>Költségkategóriák</h3><ul class="detail-list">{_bullet_items(scenario.get("cost_categories"))}</ul></div></div></div></section>
+  <section class="atlas-section atlas-section--paper" id="vegigvitel"><div class="atlas-shell detail-grid"><div><p class="atlas-kicker">Megvalósítás</p><h2>Ki, mit, mikor?</h2></div><ol class="implementation">{implementation}</ol></div></section>
+  <section class="atlas-section" id="kockazatok"><div class="atlas-shell detail-columns"><div><p class="atlas-kicker atlas-kicker--dissent">Feltételezések</p><h2>Minek kell igaznak lennie?</h2><ul class="detail-list">{_bullet_items(scenario.get("assumptions"))}</ul></div><div><p class="atlas-kicker atlas-kicker--dissent">Politikai kockázatok</p><h2>Hol akadhat el?</h2><ul class="detail-list detail-list--risk">{_bullet_items(scenario.get("political_risks"))}</ul></div></div></section>
+  <section class="atlas-section atlas-section--paper" id="nyitott"><div class="atlas-shell"><div class="catalog-head"><div><p class="atlas-kicker atlas-kicker--dissent">Nyitott kérdések</p><h2>Amit még nem tudunk.</h2></div><p class="atlas-note">Minden bizonytalanság mellett ott van az a kutatás vagy adat, amely csökkenthetné.</p></div><div class="uncertainty-grid">{uncertainties}</div><div class="disclosure-links"><a class="button-link" href="../explorer.html#{esc(scenario["id"])}">Az út kritikái és teljes bizonyítékai →</a><a class="text-link" href="https://github.com/halacsy/education-policy-lab/blob/main/outputs/topics/{esc(slug)}/iterations/round_{round_n:02d}/scenarios.json">Nyers forgatókönyv-rekord</a></div></div></section>
+</main><footer class="site-footer"><div class="atlas-shell"><div class="site-footer__grid"><h2>{esc(_pair(question, "hu"))}</h2><nav>{prev_link}{next_link}<a href="../">Összes válaszút</a></nav><nav><a href="../explorer.html#{esc(scenario["id"])}">Érvek és kritikák</a><a href="../audit.html">Műhely-napló</a></nav></div><p class="site-footer__meta">{esc(slug)} · {esc(scenario["id"])} · {round_n}. KÖR · GENERÁLT OLDAL</p></div></footer><script src="../../../assets/atlas.js"></script></body></html>'''
+
+
+def write_scenario_pages(cfg):
+    round_n, scenarios = latest_scenarios(cfg["slug"])
+    if not scenarios:
+        return 0
+    out_dir = ROOT / "site" / "topics" / cfg["slug"] / "scenarios"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for scenario in scenarios:
+        dest = out_dir / f'{scenario["id"].lower()}.html'
+        dest.write_text(scenario_page(cfg, scenario, scenarios, round_n), encoding="utf-8")
+        print(f"wrote {dest}")
+    return len(scenarios)
+
+
 def inject_index_cards(cards_html):
     idx = ROOT / "site" / "index.html"
     text = idx.read_text(encoding="utf-8")
@@ -445,6 +692,118 @@ def inject_index_cards(cards_html):
               "card list not injected", file=sys.stderr)
         return False
     new = pattern.sub(lambda m: m.group(1) + "\n" + cards_html + "\n    "
+                      + m.group(2), text)
+    idx.write_text(new, encoding="utf-8")
+    return True
+
+
+def atlas_inventory(topics):
+    """Render the public collection-level contents from committed records.
+
+    These are not promotional counters: every number is derived from the
+    same per-topic artifacts that feed the topic, scenario and explorer
+    pages. The inventory therefore grows automatically with the Atlas.
+    """
+    totals = {"topics": len(topics), "scenarios": 0, "arguments": 0,
+              "dilemmas": 0, "axes": 0, "experts": 0,
+              "unknowns": 0, "facts": 0}
+    first_slug = topics[0]["slug"] if topics else ""
+    first_scenario = "s1"
+    for cfg in topics:
+        slug = cfg["slug"]
+        _, scenarios = latest_scenarios(slug)
+        totals["scenarios"] += len(scenarios)
+        totals["unknowns"] += sum(len(s.get("uncertainties", []))
+                                  for s in scenarios)
+        if scenarios and not first_scenario:
+            first_scenario = scenarios[0]["id"].lower()
+        findings = load_findings(slug)
+        if not findings:
+            continue
+        sd = findings["sd"]
+        totals["arguments"] += len(sd["clusters"])
+        totals["axes"] += len(findings["axes"])
+        totals["experts"] += len(findings["experts"])
+        for cluster in sd["clusters"]:
+            verdict = sd["verdicts"].get(cluster["id"])
+            if verdict and VERDICT_GROUP[verdict["response_type"]] == "human":
+                totals["dilemmas"] += 1
+    registry = ROOT / "knowledge" / "registry.json"
+    if registry.exists():
+        try:
+            totals["facts"] = len(json.loads(
+                registry.read_text(encoding="utf-8")).get("facts", {}))
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    first_topic = f"topics/{esc(first_slug)}/" if first_slug else "#temak"
+    rows = [
+        ("topics", "döntési kérdés", "decision questions",
+         "Mindegyik önálló probléma-leírással, scope-pal és ember által jóváhagyott opciótérrel.",
+         "Each has its own problem brief, scope and human-approved option space.",
+         "#temak"),
+        ("scenarios", "részletes válaszút", "detailed response routes",
+         "Cél, mechanizmus, előny, méltányosság, költség, végrehajtás, kockázat és bizonytalanság.",
+         "Goal, mechanism, benefits, equity, cost, implementation, risk and uncertainty.",
+         f"{first_topic}#valaszutak"),
+        ("arguments", "összevont érvklaszter", "consolidated argument clusters",
+         "Érdek, érték, félelem, érintett csoport, feltevés és döntési relevancia szerint felbontva.",
+         "Decomposed by interest, value, fear, affected group, assumption and decision relevance.",
+         f"{first_topic}explorer.html#diskurzus"),
+        ("dilemmas", "emberi döntést kérő dilemma", "dilemmas requiring human judgement",
+         "Amit több evidencia vagy jobb technikai tervezés sem dönthet el helyettünk.",
+         "Questions that neither more evidence nor better technical design can decide for us.",
+         f"{first_topic}#vitak"),
+        ("axes", "megőrzött nézeteltérési tengely", "preserved disagreement axes",
+         "A szakértői többség és kisebbség indoklása egymás mellett, kényszerkonszenzus nélkül.",
+         "Expert majority and minority reasoning side by side, without forced consensus.",
+         f"{first_topic}explorer.html#nezetelteres"),
+        ("experts", "szakértői kutatási dosszié", "expert research dossiers",
+         "Teljes elemzések, keresések és források — nem csak a végső összefoglaló.",
+         "Full analyses, searches and sources—not merely the final synthesis.",
+         f"{first_topic}explorer.html#szakertok"),
+        ("unknowns", "kimondott bizonytalanság", "explicit unknowns",
+         "Mindegyik mellett ott van, milyen adat vagy kutatás csökkenthetné.",
+         "Each states what data or research could reduce it.",
+         f"{first_topic}scenarios/{first_scenario}.html#nyitott"),
+        ("facts", "emberileg kurált evidencia-tétel", "human-curated evidence records",
+         "Forrással, bizonyítékfokozattal és kétnyelvű állítással; bővítés csak emberi kapun át.",
+         "With source, evidence grade and bilingual claim; admission remains human-gated.",
+         "knowledge.html"),
+    ]
+    row_html = "\n".join(f'''<a class="inventory-row" href="{href}">
+      <span class="inventory-row__count">{totals[key]}</span>
+      <span class="inventory-row__name"><span data-lang="hu">{hu}</span><span data-lang="en">{en}</span></span>
+      <span class="inventory-row__description"><span data-lang="hu">{hu_desc}</span><span data-lang="en">{en_desc}</span></span>
+      <span class="inventory-row__arrow" aria-hidden="true">→</span>
+    </a>''' for key, hu, en, hu_desc, en_desc, href in rows)
+    return f'''<div class="inventory-head">
+      <div>
+        <p class="atlas-kicker" data-lang="hu">Az Atlasz jelenlegi állománya</p>
+        <p class="atlas-kicker" data-lang="en">What the Atlas contains today</p>
+        <h2 data-lang="hu">{totals["topics"]} kérdés — de nem {totals["topics"]} cikk.</h2>
+        <h2 data-lang="en">{totals["topics"]} questions—but not {totals["topics"]} articles.</h2>
+      </div>
+      <div class="inventory-head__note">
+        <p class="atlas-lede" data-lang="hu">Minden kérdés mögött egy bejárható, forrásokkal hivatkozott döntési adatbázis áll.</p>
+        <p class="atlas-lede" data-lang="en">Behind every question sits a navigable decision database with traceable sources.</p>
+      </div>
+    </div>
+    <div class="inventory-ledger">{row_html}</div>
+    <div class="inventory-foot"><span>Élő állományjegyzék · a publikált rekordokból generálva</span><span>Nem kézzel vezetett számlálók</span></div>'''
+
+
+def inject_index_inventory(inventory_html):
+    idx = ROOT / "site" / "index.html"
+    text = idx.read_text(encoding="utf-8")
+    pattern = re.compile(
+        r"(<!-- ATLAS-INVENTORY:START[^>]*-->).*?"
+        r"(<!-- ATLAS-INVENTORY:END -->)", re.S)
+    if not pattern.search(text):
+        print("WARNING: ATLAS-INVENTORY markers missing from site/index.html",
+              file=sys.stderr)
+        return False
+    new = pattern.sub(lambda m: m.group(1) + "\n" + inventory_html + "\n        "
                       + m.group(2), text)
     idx.write_text(new, encoding="utf-8")
     return True
@@ -463,9 +822,11 @@ def main():
                                   topics[i - 1] if i else None,
                                   topics[i + 1] if i + 1 < total else None),
                        encoding="utf-8")
+        write_scenario_pages(cfg)
         cards.append(topic_card(cfg, state, i + 1))
         print(f"wrote {out}")
     inject_index_cards("\n".join(cards))
+    inject_index_inventory(atlas_inventory(topics))
     print(f"injected {len(cards)} topic card(s) into site/index.html")
     return 0
 

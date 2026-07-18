@@ -750,14 +750,15 @@ def main():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Forgatókönyv-feltáró — Education Policy Lab</title>
+<title>Forgatókönyv-feltáró — Oktatáspolitikai Atlasz</title>
 <meta name="description" content="Kattintva végigjárható: a szakpolitikai forgatókönyvektől a kritikákon és a nézeteltérés-térképen át a szakértői elemzésekig.">
 <style>{css}</style>
+<link rel="stylesheet" href="../../assets/atlas.css">
 </head>
-<body>
+<body class="atlas">
 <header class="top">
   <div class="wrap">
-    <span><strong>EDUCATION POLICY LAB</strong> · forgatókönyv-feltáró · {t_num}/{len(topics)}. téma</span>
+    <span><strong>OKTATÁSPOLITIKAI ATLASZ</strong> · érv- és bizonyítékfeltáró · {t_num}/{len(topics)}. téma</span>
     <span><a href="./">← téma-oldal: {e(t_short)}</a> · <a href="../../index.html#temak">összes téma</a> · <a href="../../knowledge.html">tudásbázis</a></span>
   </div>
 </header>
@@ -826,6 +827,7 @@ def main():
   </div>
 </footer>
 {anchor_js}
+<script src="../../assets/atlas.js"></script>
 </body>
 </html>
 """
@@ -842,7 +844,7 @@ def main():
 <html lang="hu">
 <head>
 <meta charset="utf-8">
-<title>Forgatókönyv-feltáró — Education Policy Lab</title>
+<title>Forgatókönyv-feltáró — Oktatáspolitikai Atlasz</title>
 <meta name="robots" content="noindex">
 <script>location.replace('{target}' + location.hash);</script>
 <meta http-equiv="refresh" content="0; url={target}">

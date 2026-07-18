@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hogyan van megépítve? — Education Policy Lab</title>
+<title>Módszertan — Oktatáspolitikai Atlasz</title>
 <meta name="description" content="Technikai implementáció: strukturált kétnyelvű kimenetek, élő webes kutatás, modell-létra, validált szerződések, keresztcsaládos bírálat, folytatható futások.">
-<body>
+<link rel="stylesheet" href="assets/atlas.css">
+<body class="atlas">
 <style>
   :root {
     --paper: #F7F8F6; --ink: #1A2321; --muted: #5A6662; --line: #D8DDD9;
@@ -45,21 +46,22 @@
   footer { padding: 2.5rem 0 3.5rem; font-size: .85rem; color: var(--muted); }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 </style>
+<link rel="stylesheet" href="assets/atlas.css">
 
 <header class="site">
   <div class="wrap">
-    <span><strong>EDUCATION POLICY LAB</strong> · technikai jegyzetek</span>
-    <span><a href="./">← főoldal</a> · <a href="explorer.html">feltáró</a> · <a href="knowledge.html">tudásbázis</a></span>
+    <span><strong>OKTATÁSPOLITIKAI ATLASZ</strong> · módszertan</span>
+    <span><a href="./">← kérdések</a> · <a href="knowledge.html">tudásbázis</a> · <a href="about.html">az Atlaszról</a></span>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <p class="eyebrow">Hogyan van megépítve?</p>
-    <h1>Nem a modellek jóindulatában bízunk, hanem validált szerződésekben</h1>
-    <p class="lede">A <a href="./">főoldal</a> arról szól, mit csinál a rendszer.
-    Ez az oldal arról, hogyan éri el, hogy olcsó legyen, ellenőrizhető,
-    és ne tudjon csöndben hazudni. A teljes forráskód és a döntésnapló
+    <p class="eyebrow">Módszertan és audit</p>
+    <h1>Az AI rendszerez. Az ember őrzi a tartalmi kapukat.</h1>
+    <p class="lede">A <a href="./">főoldal</a> a szakpolitikai kérdéseket mutatja.
+    Ez az oldal azt, hogyan állítja elő az Atlasz az opcióteret úgy, hogy a
+    források, a bizonytalanságok és a hibák ellenőrizhetők maradjanak. A teljes forráskód és a döntésnapló
     nyilvános a <a href="https://github.com/halacsy/education-policy-lab">GitHub-repóban</a>.</p>
   </div>
 </section>
@@ -167,9 +169,10 @@ napi keret elfogyott  → az adott fok lezárva, a létra mászik</div>
 
 <footer>
   <div class="wrap">
-    <p>Education Policy Lab — kísérleti műhely. A tartalom gépi úton generált,
+    <p>Oktatáspolitikai Atlasz — kísérleti, nyílt kutatási projekt. A tartalom AI-asszisztált folyamatban készül,
     emberi döntést nem helyettesít.</p>
   </div>
 </footer>
+<script src="assets/atlas.js"></script>
 </body>
 </html>

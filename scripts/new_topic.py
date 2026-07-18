@@ -77,6 +77,7 @@ def _valid_problem_brief(o):
     if not isinstance(o, dict):
         return False
     if not pipeline.pair_ok(o.get("title")) \
+            or not pipeline.pair_ok(o.get("public_question")) \
             or not pipeline.pair_ok(o.get("problem_statement")) \
             or not pipeline.pair_ok(o.get("scope")):
         return False
@@ -91,6 +92,8 @@ def draft_md(o, slug):
              f"Slug: `{slug}`. EMBERI JÓVÁHAGYÁSRA VÁR: szerkeszd a "
              "problem-brief.json-t, ha kell, majd futtasd: "
              f"`scripts/new_topic.py approve --topic {slug}`.", "",
+             "## Nyilvános kérdés", o["public_question"]["hu"], "",
+             f"*EN: {o['public_question']['en']}*", "",
              "## Probléma-leírás", o["problem_statement"]["hu"], "",
              f"*EN: {o['problem_statement']['en']}*", "",
              "## Tanulási célok"]
@@ -111,7 +114,8 @@ def cmd_draft(args):
             "question: restate what is going on, why it is contested or "
             "urgent, and what a deliberation should find out. 2-4 learning "
             "goals; an explicit in/out scope; a short ascii-kebab-case "
-            "slug. Write every {en, hu} pair as the SAME statement "
+            "slug; and one short, neutral public_question for the website "
+            "catalogue. Write every {en, hu} pair as the SAME statement "
             "authored natively in both languages. Do NOT propose "
             "solutions — the option space is derived later from expert "
             "analysis (emergent framing)."),
@@ -129,7 +133,7 @@ def cmd_draft(args):
                {"slug": slug, "status": "proposed",
                 "submitted_text": raw.strip(),
                 "problem_brief": {k: obj[k] for k in
-                                  ("title", "problem_statement",
+                                  ("title", "public_question", "problem_statement",
                                    "learning_goals", "scope")}})
     write(tdir / "proposals" / "problem-brief.md",
           draft_md(obj, slug))
