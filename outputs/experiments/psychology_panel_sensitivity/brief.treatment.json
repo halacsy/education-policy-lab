@@ -1,0 +1,836 @@
+{
+  "intro": {
+    "en": "This brief synthesizes the expert and stakeholder record on early selection (korai szelekció) into Hungary's 6- and 8-year gimnázium tracks at ages 10-12. It sets out what is known, contested, and unresolved, presents five policy alternatives (S1-S5), and maps every argument cluster raised by stakeholder voices in the discourse layer to an honest response. No option is endorsed as 'the' answer; the brief exists to make the trade-offs and value choices explicit so decision-makers and the public can weigh them.",
+    "hu": "Ez az anyag összefoglalja a szakértői és érintett szereplői rekordot a korai szelekcióról, amely Magyarországon a 10-12 éves kori belépésű hatosztályos és nyolcosztályos gimnáziumi képzési formákat érinti. Bemutatja, mit tudunk biztosan, mi vitatott, és mi marad megválaszolatlan, öt szakpolitikai alternatívát (S1-S5) vázol fel, és minden, a diskurzus-réteg hangjai által felvetett érvklasztert becsületesen megválaszol. Az anyag nem emel ki egyetlen opciót sem 'a' válaszként; célja, hogy a trade-off-okat és értékválasztásokat explicitté tegye, hogy a döntéshozók és a nyilvánosság mérlegelhessék azokat."
+  },
+  "scenario_key": [
+    {
+      "id": "S1",
+      "title": {
+        "en": "S1 — Admissions and intake-equity regulation: keep the 6/8-year gimnázium structure, but regulate the admission gate (SES-aware quotas, uniform thresholds, coaching-resistant exams). Full detail in scenarios.en.md / scenarios.hu.md.",
+        "hu": "S1 — Felvételi és bejutási méltányossági szabályozás: a hatosztályos/nyolcosztályos gimnáziumi szerkezet marad, de a felvételi kapu szabályozott (SES-alapú kvóták, egységes küszöbök, korrepetálásnak ellenálló vizsgák). Részletek: scenarios.en.md / scenarios.hu.md."
+      }
+    },
+    {
+      "id": "S2",
+      "title": {
+        "en": "S2 — Supply-side contraction: shrink the state-sector selective track's capacity via score thresholds, without changing admission rules within remaining places. Full detail in scenarios.en.md / scenarios.hu.md.",
+        "hu": "S2 — Kínálati oldali szűkítés: az állami szektorban a szelektív képzési kapacitás csökkentése pontszámküszöbökkel, a megmaradó helyeken a felvételi szabályok változatlanok. Részletek: scenarios.en.md / scenarios.hu.md."
+      }
+    },
+    {
+      "id": "S3",
+      "title": {
+        "en": "S3 — Structural delay of the selection age to 14+ (Finnish/Polish model), paired with mandatory anti-sorting rules for school choice and catchment. Full detail in scenarios.en.md / scenarios.hu.md.",
+        "hu": "S3 — A szelekciós életkor strukturális kitolása 14+ évre (finn/lengyel modell), kötelező, a szabad iskolaválasztást és körzethatárokat érintő szegregációellenes szabályokkal párosítva. Részletek: scenarios.en.md / scenarios.hu.md."
+      }
+    },
+    {
+      "id": "S4",
+      "title": {
+        "en": "S4 — Non-structural compensatory reform (Portugal-style): curriculum clarity, targeted (TEIP-style) funding, retention reduction, leaving the selection age untouched. Full detail in scenarios.en.md / scenarios.hu.md.",
+        "hu": "S4 — Nem strukturális, kompenzáló reform (portugál mintára): tantervi egyértelműség, célzott (TEIP-típusú) finanszírozás, évfolyamismétlés csökkentése, a szelekciós életkor érintetlenül hagyása mellett. Részletek: scenarios.en.md / scenarios.hu.md."
+      }
+    },
+    {
+      "id": "S5",
+      "title": {
+        "en": "S5 — Demographically-driven passive contraction: the no-new-policy baseline, in which shrinking birth cohorts force network consolidation regardless of active policy choice. Full detail in scenarios.en.md / scenarios.hu.md.",
+        "hu": "S5 — Demográfiailag vezérelt passzív zsugorodás: az 'új szakpolitika nélküli' alapforgatókönyv, amelyben a csökkenő születésszámú évfolyamok kikényszerítik az iskolahálózat konszolidációját, függetlenül az aktív szakpolitikai döntésektől. Részletek: scenarios.en.md / scenarios.hu.md."
+      }
+    }
+  ],
+  "what_we_know": [
+    {
+      "text": {
+        "en": "Hungary has the EU's/OECD's highest socio-economic segregation between schools, with a parent-education achievement gap far above the EU average.",
+        "hu": "Magyarországon a legmagasabb az iskolák közötti társadalmi-gazdasági szegregáció az EU-ban/OECD-ben, a szülői iskolázottság szerinti teljesítményszakadék messze az EU-átlag felett van."
+      },
+      "kind": "fact",
+      "evidence": "strong"
+    },
+    {
+      "text": {
+        "en": "The raw achievement gap between selective and non-selective tracks shrinks substantially (from roughly 116 to roughly 24 points) once family background is statistically controlled for, indicating that composition/selection effects dominate the raw gap.",
+        "hu": "A szelektív és nem szelektív képzési formák közötti nyers teljesítménykülönbség jelentősen csökken (kb. 116 pontról kb. 24 pontra), ha statisztikailag kontrollálják a családi hátteret — ez azt jelzi, hogy a nyers különbséget elsősorban a szelekciós (összetételbeli) hatás okozza, nem az iskola minősége."
+      },
+      "kind": "fact",
+      "evidence": "strong"
+    },
+    {
+      "text": {
+        "en": "Demographic decline (falling births, shrinking school-age cohorts through at least 2040-2060) will force school-network consolidation independent of any selection-policy choice.",
+        "hu": "A demográfiai csökkenés (csökkenő születésszám, zsugorodó iskoláskorú évfolyamok legalább 2040-2060-ig) az iskolahálózat konszolidációját fogja kikényszeríteni, függetlenül bármilyen szelekciós szakpolitikai döntéstől."
+      },
+      "kind": "fact",
+      "evidence": "strong"
+    },
+    {
+      "text": {
+        "en": "Cross-national difference-in-differences evidence (75 countries/regions, 20 years) associates earlier tracking ages with greater between-school inequality and compositional sorting, generally without a clear mean-achievement benefit.",
+        "hu": "Nemzetközi difference-in-differences bizonyítékok (75 ország/régió, 20 év) szerint a korábbi szelekciós életkor nagyobb iskolák közötti egyenlőtlenséghez és összetételbeli szétválogatáshoz kapcsolódik, jellemzően átlagos teljesítménybeli előny nélkül."
+      },
+      "kind": "fact",
+      "evidence": "strong"
+    },
+    {
+      "text": {
+        "en": "Church-maintained schools' share of all gimnázium students rose from 10.4% (2010) to approximately 27% (2020/2021), growing fastest (2.5-5x) in small towns and villages 2010-2022.",
+        "hu": "Az egyházi fenntartású iskolák részesedése az összes gimnáziumi tanulóból 10,4%-ról (2010) mintegy 27%-ra (2020/2021) nőtt, és a legerősebb növekedés (2,5-5-szörös) a kistelepüléseken és falvakban történt 2010-2022 között."
+      },
+      "kind": "fact",
+      "evidence": "strong"
+    },
+    {
+      "text": {
+        "en": "Poland's 1999 delayed-tracking reform produced PISA gains of roughly 0.25 SD (math), 0.28 SD (reading), 0.16 SD (science) within 3-7 years; the reform was later politically reversed (2016-2019), with associated PISA decline.",
+        "hu": "Lengyelország 1999-es, a szelekciót kitoló reformja körülbelül 0,25 szórásnyi (matematika), 0,28 szórásnyi (szövegértés) és 0,16 szórásnyi (természettudomány) PISA-javulást hozott 3-7 éven belül; a reformot később politikailag visszavonták (2016-2019), amit PISA-eredmény-visszaesés kísért."
+      },
+      "kind": "fact",
+      "evidence": "moderate"
+    },
+    {
+      "text": {
+        "en": "Portugal improved PISA results by approximately 31 points (0.3 SD) between 2000 and 2015-2018 without introducing early tracking, through curriculum standards clarification, increased school autonomy, and regular student assessment; grade-retention reduction alone saved an estimated EUR 112 million over two years alongside a 26% reduction in retained students across 663 schools.",
+        "hu": "Portugália mintegy 31 pontos (0,3 szórásnyi) PISA-javulást ért el 2000 és 2015-2018 között korai szelekció bevezetése nélkül, tantervi standardok tisztázásával, iskolai autonómia növelésével és rendszeres tanulói értékeléssel; az évfolyamismétlés csökkentése önmagában becslés szerint 112 millió eurót takarított meg két év alatt, a bukási arány 26%-os csökkenése mellett 663 iskolában."
+      },
+      "kind": "fact",
+      "evidence": "strong"
+    },
+    {
+      "text": {
+        "en": "Historical rejection-rate gaps show approximately 46% rejection in low-poverty-share classes versus approximately 22% in high-poverty-share classes, evidencing a documented two-tier discretionary admissions gap between institutions.",
+        "hu": "A történelmi elutasítási arányok szerint az alacsony szegénységi arányú osztályokban kb. 46%, a magas szegénységi arányú osztályokban kb. 22% az elutasítási ráta — ez az intézmények közötti kétszintű, diszkrecionális felvételi szakadékot dokumentálja."
+      },
+      "kind": "fact",
+      "evidence": "moderate"
+    },
+    {
+      "text": {
+        "en": "Hungary's teaching workforce is aging and contracting: approximately 50% of teachers are age 50+, roughly 7.2% are under 30, over 21,000 fewer teachers exist than in 2003/2004, and shortages are 2-3 times more severe in rural areas and STEM subjects.",
+        "hu": "Magyarország pedagógustársasága öregszik és zsugorodik: a tanárok mintegy 50%-a 50 éves vagy idősebb, kb. 7,2%-uk 30 évesnél fiatalabb, több mint 21 000 fővel kevesebb tanár van, mint 2003/2004-ben, és a hiány 2-3-szor súlyosabb vidéken és a természettudományos-műszaki (STEM) tantárgyaknál."
+      },
+      "kind": "fact",
+      "evidence": "strong"
+    },
+    {
+      "text": {
+        "en": "Any reform touching enrolled cohorts must proceed via felmenő-rendszer (grade-by-grade phase-in) with a practical minimum lead time of roughly one year, per legal and constitutional-doctrine precedent.",
+        "hu": "Bármely, már beiskolázott évfolyamokat érintő reform csak felmenő rendszerben, évfolyamonkénti bevezetéssel valósítható meg, gyakorlatilag legalább egy éves felkészülési idővel, a jogi és alkotmányjogi precedens szerint."
+      },
+      "kind": "fact",
+      "evidence": "moderate"
+    },
+    {
+      "text": {
+        "en": "Finland's post-2000 experience shows that equity gains from de-tracking eroded within a generation: 94% of outcome variation is now within-school, and SES gaps widened again via school choice and residential sorting despite no reintroduction of formal tracking.",
+        "hu": "Finnország 2000 utáni tapasztalata azt mutatja, hogy a szelekció megszüntetéséből fakadó méltányossági javulás egy generáción belül elenyészett: a teljesítménykülönbség 94%-a immár iskolán belüli, és a társadalmi-gazdasági státusz szerinti szakadék a szabad iskolaválasztás és a lakóhelyi szegregáció révén ismét kiszélesedett, jóllehet a formális szelekciót nem vezették vissza."
+      },
+      "kind": "fact",
+      "evidence": "strong"
+    }
+  ],
+  "what_we_consider_likely": [
+    {
+      "text": {
+        "en": "Uniform admission rules would reduce the currently documented two-tier discretionary gap between maintainers, but the scale of the SES-skew reduction within remaining selective places is untested in Hungary.",
+        "hu": "Az egységes felvételi szabályok valószínűleg csökkentenék a fenntartók közötti, jelenleg dokumentált kétszintű diszkrecionális szakadékot, de a fennmaradó szelektív helyeken elért SES-torzulás-csökkenés mértéke Magyarországon nem tesztelt."
+      },
+      "kind": "estimate"
+    },
+    {
+      "text": {
+        "en": "State-sector selective-capacity contraction (S2) is likely to be substantially offset by expansion in church, foundation, or private selective provision, given the documented decade-long growth trend in non-state gimnázium share.",
+        "hu": "Az állami szektor szelektív kapacitásának szűkítését (S2) valószínűleg jelentős mértékben ellensúlyozza majd az egyházi, alapítványi vagy magán szelektív kínálat bővülése, a nem állami gimnáziumi részesedés dokumentált, egy évtizedes növekedési trendje alapján."
+      },
+      "kind": "estimate"
+    },
+    {
+      "text": {
+        "en": "International difference-in-differences evidence suggests delaying selection from age 10-12 to 14 would likely reduce Hungary's socioeconomic achievement gap by approximately 0.15-0.25 SD, based on Polish comparable gains, though this transfer estimate carries meaningful uncertainty given differing baseline segregation levels.",
+        "hu": "A nemzetközi difference-in-differences bizonyítékok alapján a szelekció 10-12 éves korról 14 éves korra kitolása valószínűleg körülbelül 0,15-0,25 szórásnyival csökkentené Magyarország társadalmi-gazdasági teljesítményszakadékát, a lengyel összehasonlítható eredmények alapján, de ez az átvitt becslés jelentős bizonytalanságot hordoz az eltérő kiindulási szegregációs szint miatt."
+      },
+      "kind": "estimate"
+    },
+    {
+      "text": {
+        "en": "Delaying tracking without simultaneous, enforceable anti-sorting rules for school choice and catchment would likely see equity gains substantially eroded by within-system sorting, mirroring Finland's post-2000 trajectory.",
+        "hu": "A szelekció kitolása egyidejű, kikényszeríthető, a szabad iskolaválasztást és körzethatárokat érintő szegregációellenes szabályok nélkül valószínűleg jelentősen elenyészteti a méltányossági javulást a rendszeren belüli szétválogatás miatt, a finn 2000 utáni tapasztalathoz hasonlóan."
+      },
+      "kind": "estimate"
+    },
+    {
+      "text": {
+        "en": "Non-structural compensatory reform (S4) is likely to be equity-neutral to equity-negative relative to structural alternatives, because it leaves the admission gatekeeping mechanism fully intact while curriculum and funding gains accrue mainly to the already non-selective majority.",
+        "hu": "A nem strukturális, kompenzáló reform (S4) valószínűleg méltányossági szempontból semleges vagy inkább negatív hatású a strukturális alternatívákhoz képest, mert a felvételi kapumechanizmust érintetlenül hagyja, míg a tantervi és finanszírozási előnyök főként a már eleve nem szelektált többségnél jelentkeznek."
+      },
+      "kind": "estimate"
+    },
+    {
+      "text": {
+        "en": "A decree-based or statutory admission-equity or supply-contraction rule would likely be vulnerable to reversal on a change of government, given the demonstrated pattern of rapid reversal of predecessor education reforms in Hungary and Poland's 18-year reversal precedent.",
+        "hu": "Egy rendeleti vagy törvényi felvételi-méltányossági, illetve kínálatszűkítő szabály valószínűleg sérülékeny lenne egy kormányváltás esetén, tekintve az elődreformok gyors visszavonásának magyarországi mintáját és a lengyel 18 éves visszavonási precedenst."
+      },
+      "kind": "estimate"
+    },
+    {
+      "text": {
+        "en": "Targeted (TEIP-style) compensatory funding is likely to be a first-line budget cut under Hungary's projected fiscal consolidation (approximately 6.2% deficit) unless entrenched in statute or cardinal law.",
+        "hu": "A célzott (TEIP-típusú) kompenzáló finanszírozás valószínűleg a Magyarországon várható fiskális konszolidáció (kb. 6,2%-os hiány) esetén az első költségvetési megszorítási tétel lesz, hacsaknem törvényben vagy sarkalatos törvényben rögzítik."
+      },
+      "kind": "estimate"
+    }
+  ],
+  "where_experts_disagree": [
+    {
+      "topic": {
+        "en": "Whether the roughly 10% within-track pedagogical value-added for admitted students justifies preserving early selection",
+        "hu": "Vajon a beiskolázott tanulóknál mért kb. 10%-os oktatási hozzáadott érték indokolja-e a korai szelekció megtartását"
+      },
+      "positions": [
+        {
+          "holders": [
+            "education_finance",
+            "hungarian_education_system"
+          ],
+          "position": {
+            "en": "The measured ~10% larger competency gain in 6/8-year tracks is a real, policy-relevant finding that must be weighed alongside equity costs, not dismissed.",
+            "hu": "A hatosztályos/nyolcosztályos képzési formákban mért kb. 10%-kal nagyobb kompetenciafejlődés valós, szakpolitikailag releváns eredmény, amelyet a méltányossági költségekkel együtt kell mérlegelni, nem pedig félresöpörni."
+          },
+          "why": {
+            "en": "Recent statistical-model research controlling for family background found a consistent gain; treating it as irrelevant would upgrade an equity narrative beyond what the evidence supports.",
+            "hu": "A családi hátteret kontrolláló legfrissebb statisztikai modellezésű kutatás konzisztens előnyt talált; ha ezt irrelevánsnak tekintenénk, az a méltányossági narratívát a bizonyítékok által alátámasztott szint fölé emelné."
+          },
+          "minority": false
+        },
+        {
+          "holders": [
+            "equity_and_social_mobility",
+            "hungarian_education_system",
+            "portuguese_reform",
+            "educational_psychology"
+          ],
+          "position": {
+            "en": "The equity case against early selection is stronger than the achievement case for it: the value-added is heterogeneous (negative for the 6-year track at grade 8, only turning positive by grade 10), near-total exclusion of disadvantaged pupils from elite tracks is documented, and Portugal's non-selective system achieved comparable PISA gains without tracking.",
+            "hu": "A korai szelekció ellen szóló méltányossági érvek erősebbek, mint a mellette szóló teljesítményérvek: a hozzáadott érték heterogén (a hatosztályos formánál a 8. évfolyamon negatív, csak a 10. évfolyamtól válik pozitívvá), a hátrányos helyzetű tanulók elit képzési formákból való majdnem teljes kizárása dokumentált, és Portugália nem szelektív rendszere hasonló PISA-javulást ért el szelekció nélkül."
+          },
+          "why": {
+            "en": "Multiple independent evidence lines (panel research, fieldwork, cross-national comparison) show the value-added is not robust across tracks or grades, while segregation effects are large and consistent.",
+            "hu": "Több független bizonyítékvonal (panelkutatás, terepmunka, nemzetközi összehasonlítás) mutatja, hogy a hozzáadott érték nem egyenletesen érvényesül a képzési formák és évfolyamok között, míg a szegregációs hatások nagyok és konzisztensek."
+          },
+          "minority": false
+        }
+      ]
+    },
+    {
+      "topic": {
+        "en": "Whether non-state (church/foundation) maintainers can be effectively restricted from absorbing phased-out selective capacity",
+        "hu": "Vajon a nem állami (egyházi/alapítványi) fenntartók hatékonyan korlátozhatók-e a leépített szelektív kapacitás átvételében"
+      },
+      "positions": [
+        {
+          "holders": [
+            "implementation_planning",
+            "political_feasibility"
+          ],
+          "position": {
+            "en": "A phase-out scenario for state-sector selective tracks implicitly or explicitly assumes church/foundation maintainers can be regulated, incentivized, or negotiated into compliance with a contraction of selective capacity.",
+            "hu": "Az állami szektor szelektív képzési formáinak kivezetésére vonatkozó forgatókönyv implicit vagy explicit módon feltételezi, hogy az egyházi/alapítványi fenntartók szabályozhatók, ösztönözhetők vagy tárgyalás útján rábírhatók a szelektív kapacitás szűkítésének betartására."
+          },
+          "why": {
+            "en": "Legal and governance analysis treats maintainer coordination as a negotiable implementation step, and political-feasibility framing describes 'review' commitments that presuppose a controllable maintainer landscape.",
+            "hu": "A jogi és irányítási elemzés a fenntartói koordinációt tárgyalható megvalósítási lépésként kezeli, és a politikai megvalósíthatósági keretezés olyan 'felülvizsgálati' vállalásokat ír le, amelyek irányítható fenntartói terepet feltételeznek."
+          },
+          "minority": true
+        },
+        {
+          "holders": [
+            "hungarian_education_system",
+            "school_network_planning",
+            "political_feasibility"
+          ],
+          "position": {
+            "en": "This restriction assumption is directly contradicted by the record: church-maintained schools' share of all gimnázium students rose from 10.4% (2010) to ~27% (2020/21) and grew fastest (2.5x-5x) in small towns/villages 2010-2022, and the Tisza coalition's own 12-point programme explicitly commits that church maintainers will keep their 'previous operating conditions' — meaning any state-sector contraction is likely to be absorbed, not blocked, by non-state expansion.",
+            "hu": "Ezt a korlátozási feltevést a rekord közvetlenül cáfolja: az egyházi fenntartású iskolák részesedése az összes gimnáziumi tanulóból 10,4%-ról (2010) mintegy 27%-ra (2020/21) nőtt, a legerősebb növekedéssel (2,5-5-szörös) a kistelepüléseken/falvakban 2010-2022 között, és a Tisza koalíció saját 12 pontos programja explicit módon vállalja, hogy az egyházi fenntartók megtartják 'korábbi működési feltételeiket' — ami azt jelenti, hogy az állami szektor szűkítését valószínűleg a nem állami bővülés fogja abszorbálni, nem pedig megakadályozni."
+          },
+          "why": {
+            "en": "Empirical maintainer-share trends and the explicit coalition commitment are stronger evidence than the implementation-planning assumption, and this contradiction has been flagged as unresolved across multiple prior rounds.",
+            "hu": "A fenntartói részesedés empirikus trendjei és az explicit koalíciós vállalás erősebb bizonyítéknak számítanak, mint a megvalósítás-tervezési feltevés, és ez az ellentmondás több korábbi kör során is megoldatlanként lett megjelölve."
+          },
+          "minority": false
+        }
+      ]
+    },
+    {
+      "topic": {
+        "en": "Whether Poland's and Finland's delayed-tracking gains are transferable to Hungary's specific context",
+        "hu": "Vajon a lengyel és finn, szelekció-kitolással elért eredmények átvihetők-e Magyarország sajátos kontextusára"
+      },
+      "positions": [
+        {
+          "holders": [
+            "polish_reform",
+            "finnish_reform",
+            "international_comparison"
+          ],
+          "position": {
+            "en": "Delaying tracking to age 14-16 produced substantial, well-documented achievement and equity gains (Poland: 0.25-0.28 SD; Finland: 23% reduction in intergenerational income elasticity) that provide a credible evidence baseline for Hungary.",
+            "hu": "A szelekció 14-16 éves korra kitolása jelentős, jól dokumentált teljesítmény- és méltányossági javulást hozott (Lengyelország: 0,25-0,28 szórás; Finnország: 23%-os csökkenés a generációk közötti jövedelmi rugalmasságban), ami hihető bizonyítéki alapot ad Magyarország számára."
+          },
+          "why": {
+            "en": "Strong, multiply-replicated quasi-experimental and difference-in-differences findings across independent studies.",
+            "hu": "Erős, több független kutatásban megismételt kvázi-kísérleti és difference-in-differences eredmények."
+          },
+          "minority": false
+        },
+        {
+          "holders": [
+            "implementation_planning",
+            "hungarian_education_system",
+            "educational_psychology"
+          ],
+          "position": {
+            "en": "Transferability is a labelled assumption, not a settled fact: Hungary's higher baseline segregation, denser rural school network, acute teacher shortages, and the bundled nature of the Polish/Finnish reforms mean effect sizes may not replicate, and no Hungary-specific costed or quasi-experimental estimate exists.",
+            "hu": "Az átvihetőség jelölt feltevés, nem eldöntött tény: Magyarország magasabb kiindulási szegregációja, sűrűbb vidéki iskolahálózata, súlyos pedagógushiánya, és a lengyel/finn reformok más intézkedésekkel összefonódó jellege miatt az effektusnagyságok esetleg nem ismétlődnek meg, és nem létezik Magyarországra vonatkozó, konkrét költséggel alátámasztott vagy kvázi-kísérleti becslés."
+          },
+          "why": {
+            "en": "Multiple experts explicitly flag transferability as an unverified assumption requiring Hungary-specific quasi-experimental or costing studies before being treated as a policy baseline.",
+            "hu": "Több szakértő is explicit módon jelölt, nem ellenőrzött feltevésnek tekinti az átvihetőséget, amelyet Magyarországra szabott kvázi-kísérleti vagy költségbecslő tanulmányokkal kellene előbb alátámasztani, mielőtt szakpolitikai alapfeltevésnek tekintenénk."
+          },
+          "minority": true
+        }
+      ]
+    },
+    {
+      "topic": {
+        "en": "Sequencing: should selection reform wait for teacher-workforce stabilization or proceed in parallel",
+        "hu": "Ütemezés: várnia kell-e a szelekciós reformnak a pedagógusállomány stabilizálására, vagy párhuzamosan haladhat"
+      },
+      "positions": [
+        {
+          "holders": [
+            "implementation_planning"
+          ],
+          "position": {
+            "en": "Hungary cannot feasibly implement structural selection reform before 2030 without prior teacher-workforce stabilization (especially rural/STEM), sequencing away from concurrent NAT/AI-integration reforms, and multi-party consensus.",
+            "hu": "Magyarország nem tudja megvalósíthatóan végrehajtani a strukturális szelekciós reformot 2030 előtt a pedagógusállomány (különösen vidéki/STEM) előzetes stabilizálása, a párhuzamosan futó NAT/AI-integrációs reformoktól való időbeli elválasztás, és a többpárti konszenzus nélkül."
+          },
+          "why": {
+            "en": "Acute rural/STEM teacher shortages (2-3x higher unqualified-teacher rates) and fully committed CPD bandwidth make simultaneous implementation operationally implausible.",
+            "hu": "A súlyos vidéki/STEM pedagógushiány (2-3-szoros nem szakképzett tanár arány) és a teljesen lefoglalt szakmai továbbképzési kapacitás miatt az egyidejű megvalósítás operatívan valószerűtlen."
+          },
+          "minority": false
+        },
+        {
+          "holders": [
+            "political_feasibility"
+          ],
+          "position": {
+            "en": "Selection reform is now live government policy with a narrow but real political window (post-April 2026 Tisza mandate); waiting for full workforce stabilization risks losing this window entirely to reversal or indefinite deferral.",
+            "hu": "A szelekciós reform ma élő kormányzati politika, egy szűk, de valós politikai ablakkal (a 2026. áprilisi Tisza-mandátum után); a teljes munkaerő-stabilizációra várva a teljes ablak elveszhet visszavonás vagy határidő nélküli elhalasztás miatt."
+          },
+          "why": {
+            "en": "Political windows are empirically short-lived (immediate Fidesz culture-war framing within 48 hours of the minister's statement) and historically reversed on government turnover (Poland).",
+            "hu": "A politikai ablakok empirikusan rövid életűek (a miniszteri kijelentés utáni 48 órán belüli azonnali Fidesz kultúrharc-keretezés), és történelmileg kormányváltáskor visszavonhatók (lengyel példa)."
+          },
+          "minority": true
+        }
+      ]
+    }
+  ],
+  "what_we_dont_know": [
+    {
+      "text": {
+        "en": "Whether admission-equity rules (S1) can be legally and operationally enforced consistently across state, church, and foundation maintainers given documented maintainer plurality and partial admissions autonomy.",
+        "hu": "Vajon a felvételi méltányossági szabályok (S1) jogilag és operatívan következetesen kikényszeríthetők-e az állami, egyházi és alapítványi fenntartók körében, a dokumentált fenntartói pluralitás és a részleges felvételi autonómia mellett."
+      },
+      "kind": "assumption"
+    },
+    {
+      "text": {
+        "en": "Whether SES-aware quotas or proxies would measurably reduce the family-background gradient in admission once pre-exam self-selection and coaching-driven preparation gaps are accounted for.",
+        "hu": "Vajon a SES-alapú kvóták vagy proxyk mérhetően csökkentenék-e a felvételben a családi háttér szerinti gradiens hatását, ha figyelembe vesszük a vizsga előtti önszelekciót és a korrepetálásból fakadó felkészültségi különbségeket."
+      },
+      "kind": "assumption"
+    },
+    {
+      "text": {
+        "en": "Whether the current 40%-toward-30% cohort-share framing used in some reporting is measuring the same population as the 8-12% 6/8-year-entry figure used elsewhere, and which is the correct policy-relevant baseline.",
+        "hu": "Vajon a bizonyos jelentésekben használt, kb. 40%-ról 30%-ra tartó évfolyam-részesedési keretezés ugyanazt a populációt méri-e, mint a máshol használt 8-12%-os hatosztályos/nyolcosztályos belépési arány, és melyik a helyes, szakpolitikailag releváns alapadat."
+      },
+      "kind": "fact"
+    },
+    {
+      "text": {
+        "en": "Whether anti-sorting rules for school choice and catchment (S3's load-bearing component) can be enforced with sufficient rigor and simultaneity to prevent sorting from migrating to those channels, given Hungary's embedded, separately codified school-choice legal architecture.",
+        "hu": "Vajon a szabad iskolaválasztást és körzethatárokat érintő szegregációellenes szabályok (az S3 teherviselő eleme) elegendő szigorral és egyidejűséggel kikényszeríthetők-e a szétválogatás e csatornákba történő átterelésének megakadályozására, tekintve Magyarország beépült, külön kódolt iskolaválasztási jogi architektúráját."
+      },
+      "kind": "assumption"
+    },
+    {
+      "text": {
+        "en": "Whether the teacher-retraining and reallocation timeline for a structural transition (S3) is feasible given Hungary's aging, contracting teacher workforce and already fully committed CPD bandwidth for concurrent NAT and AI-integration reforms.",
+        "hu": "Vajon a strukturális átmenethez (S3) szükséges pedagógus-átképzési és átcsoportosítási ütemterv megvalósítható-e Magyarország öregedő, zsugorodó pedagógusállománya és a párhuzamosan futó NAT- és AI-integrációs reformok által már teljesen lefoglalt szakmai továbbképzési kapacitása mellett."
+      },
+      "kind": "assumption"
+    },
+    {
+      "text": {
+        "en": "Whether a statutory funding floor for TEIP-style targeted funding (S4) is achievable given projected fiscal consolidation pressure, or whether compensatory funding will remain contingent on annual budget cycles and vulnerable to cuts.",
+        "hu": "Vajon elérhető-e a TEIP-típusú célzott finanszírozás (S4) számára egy törvényi finanszírozási minimum a várható fiskális konszolidációs nyomás mellett, vagy a kompenzáló finanszírozás továbbra is éves költségvetési ciklusoktól függő és megszorításoknak kitett marad."
+      },
+      "kind": "assumption"
+    },
+    {
+      "text": {
+        "en": "Whether the interaction between passive demographic contraction (S5) and the government's active score-threshold lever (S2) is accelerating selective-track contraction beyond what demographic decline alone would produce, and whether this compound effect is being measured or monitored at all.",
+        "hu": "Vajon a passzív demográfiai zsugorodás (S5) és az aktív kormányzati pontszámküszöb-eszköz (S2) közötti interakció felgyorsítja-e a szelektív képzési forma szűkülését azon túl, amit önmagában a demográfiai csökkenés eredményezne, és hogy ezt az összetett hatást egyáltalán mérik vagy monitorozzák-e."
+      },
+      "kind": "fact"
+    }
+  ],
+  "what_could_be_done": [
+    {
+      "scenario_id": "S1",
+      "title": {
+        "en": "Regulate the admission gate, keep the track structure",
+        "hu": "A felvételi kapu szabályozása, a képzési szerkezet megtartása"
+      },
+      "summary": {
+        "en": "Keep the 6/8-year gimnázium structure intact but regulate admission itself through SES-aware quotas or proxies, uniform score thresholds across maintainers, and coaching-resistant exam design, aiming to reduce family-capital-driven sorting at the point of entry without touching the selection age.",
+        "hu": "A hatosztályos/nyolcosztályos gimnáziumi szerkezet érintetlenül marad, de a felvételi eljárást magát szabályozzák SES-alapú kvótákkal vagy proxykkal, a fenntartók közötti egységes pontszámküszöbökkel, és korrepetálásnak ellenálló vizsgafelépítéssel, csökkentve a családi tőke szerinti szétválogatást a bejutási ponton, a szelekciós életkor érintése nélkül."
+      }
+    },
+    {
+      "scenario_id": "S2",
+      "title": {
+        "en": "Shrink the gate rather than fix the rules",
+        "hu": "A kapu szűkítése a szabályok megváltoztatása helyett"
+      },
+      "summary": {
+        "en": "Reduce the state-sector share of 6/8-year places via score thresholds, capacity caps, or demographically-driven consolidation, shrinking the selective track's footprint while leaving admission criteria within remaining places largely unchanged.",
+        "hu": "Az állami szektor hatosztályos/nyolcosztályos helyeinek részarányát pontszámküszöbökkel, kapacitáskorlátokkal vagy demográfiai vezérlésű konszolidációval csökkentik, szűkítve a szelektív képzési forma lábnyomát, míg a megmaradó helyeken a felvételi kritériumok nagyrészt változatlanok maradnak."
+      }
+    },
+    {
+      "scenario_id": "S3",
+      "title": {
+        "en": "Delay the selection age structurally (Finnish/Polish model)",
+        "hu": "A szelekciós életkor strukturális kitolása (finn/lengyel modell)"
+      },
+      "summary": {
+        "en": "Raise the statutory age of first academic tracking to 14+ or later, phasing out or converting 6- and 8-year entry points into a unified comprehensive lower-secondary phase, paired with explicit, simultaneously enforced anti-sorting rules for school choice and catchment.",
+        "hu": "Az első tanulmányi szelekció statútori életkorát 14+ évre vagy tovább kitolják, a hatosztályos és nyolcosztályos belépési pontokat egységes, komprehenzív alsó középfokú képzési szakasszá vezetik ki vagy alakítják át, egyidejűleg érvényesített, a szabad iskolaválasztást és körzethatárokat érintő szegregációellenes szabályokkal párosítva."
+      }
+    },
+    {
+      "scenario_id": "S4",
+      "title": {
+        "en": "Compensate within the current structure (Portugal-style)",
+        "hu": "Kompenzálás a jelenlegi szerkezeten belül (portugál mintára)"
+      },
+      "summary": {
+        "en": "Pursue Portugal-style equity and achievement gains through curriculum clarity, targeted (TEIP-style) funding for disadvantaged schools, retention reduction, and school-quality levelling, leaving the 10-12 selection age and track structure fully untouched.",
+        "hu": "Portugál mintára méltányossági és teljesítménybeli javulást célzó lépéseket tesznek: tantervi egyértelműség, célzott (TEIP-típusú) finanszírozás a hátrányos helyzetű iskoláknak, évfolyamismétlés csökkentése és iskolai minőségi kiegyenlítés, a 10-12 éves kori szelekciós életkort és a képzési szerkezetet teljesen érintetlenül hagyva."
+      }
+    },
+    {
+      "scenario_id": "S5",
+      "title": {
+        "en": "Let demographics do the work (status-quo baseline)",
+        "hu": "Hagyni, hogy a demográfia végezze a munkát (alapforgatókönyv)"
+      },
+      "summary": {
+        "en": "Serve as the no-new-policy baseline in which shrinking birth cohorts force network consolidation and a natural decline in the selective track's absolute size and share regardless of any active equity or structural intervention, against which S1-S4 are measured.",
+        "hu": "Az az 'új szakpolitika nélküli' alapforgatókönyv, amelyben a csökkenő születésszámú évfolyamok kikényszerítik az iskolahálózat konszolidációját, és a szelektív képzési forma abszolút méretének és részesedésének természetes csökkenését, függetlenül bármilyen aktív méltányossági vagy strukturális beavatkozástól, ehhez mérve az S1-S4 forgatókönyveket."
+      }
+    }
+  ],
+  "what_each_option_costs": [
+    {
+      "scenario_id": "S1",
+      "text": {
+        "en": "SES-proxy infrastructure and data systems, coaching-resistant exam development and administration, and legal/administrative negotiation with state, church, and foundation maintainers all carry unquantified but plausibly multi-year, specialist-staffed costs; no Hungary-specific costing exists for any of these.",
+        "hu": "A SES-proxy infrastruktúra és adatrendszerek, a korrepetálásnak ellenálló vizsga kifejlesztése és lebonyolítása, valamint az állami, egyházi és alapítványi fenntartókkal folytatott jogi/igazgatási tárgyalások mind számszerűsítetlen, de valószínűleg többéves, szakértői stábot igénylő költséggel járnak; ezekre semelyikre nincs Magyarországra vonatkozó konkrét költségbecslés."
+      },
+      "kind": "estimate"
+    },
+    {
+      "scenario_id": "S1",
+      "text": {
+        "en": "Winners: children whose ability but not family SES currently determines admission, and the equity narrative more broadly. Losers/risks: church and foundation maintainers may see enforcement as an erosion of constitutionally protected autonomy; disadvantaged pupils outside the SES-proxy definition risk displacement into worse slots if safeguards are absent; teachers risk an unfunded compliance burden.",
+        "hu": "Nyertesek: azok a gyermekek, akiknél a képesség, nem a családi SES dönt a felvételről, és tágabban a méltányossági szempont. Vesztesek/kockázatok: az egyházi és alapítványi fenntartók a kikényszerítést az alkotmányosan védett autonómiájuk csorbításának tekinthetik; a SES-proxy definícióján kívül eső hátrányos helyzetű tanulók rosszabb helyekre szorulhatnak vissza, ha nincs biztosíték; a tanárokra nem finanszírozott megfelelési teher eshet."
+      },
+      "kind": "assumption"
+    },
+    {
+      "scenario_id": "S2",
+      "text": {
+        "en": "Compensatory funding or capacity controls for church/foundation maintainers to prevent offsetting expansion is flagged as medium-to-high, multi-year, currently unbudgeted; administrative monitoring of cross-maintainer displacement and transitional costs for affected state-sector schools/teachers are also unquantified.",
+        "hu": "Az egyházi/alapítványi fenntartók kompenzáló finanszírozása vagy kapacitáskorlátozása, amely az ellensúlyozó bővülést megakadályozná, közepes-magas, többéves és jelenleg költségvetésileg nem tervezett; a fenntartók közötti elmozdulás igazgatási monitorozása és az érintett állami iskolák/tanárok átmeneti költségei is számszerűsítetlenek."
+      },
+      "kind": "estimate"
+    },
+    {
+      "scenario_id": "S2",
+      "text": {
+        "en": "Winners: church and foundation maintainers, who are positioned to absorb displaced demand and grow their share. Losers/risks: rural and middle-SES state-sector families facing unpredictable, discretionary capacity cuts; disadvantaged applicants facing intensified competition for shrinking places; teachers in surviving urban schools facing workload intensification; the equity goal itself, if offsetting non-state expansion is not restrained.",
+        "hu": "Nyertesek: az egyházi és alapítványi fenntartók, akik jó pozícióban vannak az elmozduló kereslet felszívására és részesedésük növelésére. Vesztesek/kockázatok: a vidéki és közepes SES-ű állami szektorbeli családok, akik kiszámíthatatlan, diszkrecionális kapacitáscsökkentéssel szembesülnek; a hátrányos helyzetű pályázók, akik fokozott versenyben állnak a szűkülő helyekért; a megmaradt városi iskolák tanárai, akik munkaterhelés-növekedéssel szembesülnek; és a méltányossági cél maga, ha a nem állami bővülés ellensúlyozása nem korlátozott."
+      },
+      "kind": "assumption"
+    },
+    {
+      "scenario_id": "S3",
+      "text": {
+        "en": "Early diagnostic/remedial support, teacher retraining and reallocation (against an aging, contracting workforce), facility conversion of 6/8-year buildings, and anti-sorting enforcement infrastructure all carry unquantified costs; the teacher-retraining window has been extended to years 3-9, indicating this is the most resource-intensive of the five scenarios.",
+        "hu": "A korai diagnosztikai/felzárkóztató támogatás, a pedagógus-átképzés és átcsoportosítás (egy öregedő, zsugorodó állomány mellett), a hatosztályos/nyolcosztályos épületek átalakítása, és a szegregációellenes szabályok kikényszerítési infrastruktúrája mind számszerűsítetlen költséggel jár; a pedagógus-átképzési időszakot a 3-9. évre nyújtották, jelezve, hogy ez az öt forgatókönyv közül a legerőforrás-igényesebb."
+      },
+      "kind": "estimate"
+    },
+    {
+      "scenario_id": "S3",
+      "text": {
+        "en": "Winners: pupils across the SES spectrum who would have been sorted out early, especially those near the current selection margin; the system-wide equity picture in the long run, if anti-sorting rules hold. Losers/risks: church and foundation maintainers lose the 6/8-year entry point that anchors part of their identity and growth; the teacher workforce faces an intensive, possibly infeasible retraining burden; families with children already on the 6/8-year track face transition disruption; the reform itself carries high political-reversal risk within a generation (Poland precedent).",
+        "hu": "Nyertesek: a SES-spektrum minden szintjén azok a tanulók, akiket korán kiszelektáltak volna, különösen a jelenlegi szelekciós határ közelében állók; hosszú távon az egész rendszer méltányossági képe, ha a szegregációellenes szabályok tartanak. Vesztesek/kockázatok: az egyházi és alapítványi fenntartók elveszítik a hatosztályos/nyolcosztályos belépési pontot, amely identitásuk és növekedésük egy részét megalapozza; a pedagógusállományra intenzív, esetleg megvalósíthatatlan átképzési teher hárul; a már hatosztályos/nyolcosztályos formában tanuló gyermekek családjai átmeneti zavarral szembesülnek; a reform maga magas politikai visszavonási kockázatot hordoz egy generáción belül (lengyel precedens)."
+      },
+      "kind": "assumption"
+    },
+    {
+      "scenario_id": "S4",
+      "text": {
+        "en": "TEIP-style targeted funding, curriculum-clarity/assessment reform, and school-quality-levelling investment (facilities, staffing parity) are all unquantified for Hungary; Portugal's EUR 112 million two-year retention-reduction saving offers a partial precedent but no direct translation exists.",
+        "hu": "A TEIP-típusú célzott finanszírozás, a tantervi egyértelműségi/értékelési reform, és az iskolai minőségi kiegyenlítő beruházás (létesítmények, létszámparitás) mind számszerűsítetlen Magyarországra vonatkozóan; Portugália kétéves, 112 millió eurós évfolyamismétlés-csökkentési megtakarítása részleges precedenst ad, de nincs közvetlen átszámítás."
+      },
+      "kind": "estimate"
+    },
+    {
+      "scenario_id": "S4",
+      "text": {
+        "en": "Winners: the non-selective majority of pupils and their teachers, who gain curriculum clarity, retention reduction, and targeted support with the lowest legislative complexity and reversal risk of the five options. Losers/risks: disadvantaged pupils who remain excluded from selective tracks gain nothing from this scenario regarding the gatekeeping mechanism itself; equity advocates risk the mechanism being used rhetorically as if it addressed segregation, when it structurally cannot; the central funding mechanism (TEIP-style) is itself politically fragile under fiscal consolidation.",
+        "hu": "Nyertesek: a nem szelektált tanulói többség és tanáraik, akik tantervi egyértelműséget, évfolyamismétlés-csökkentést és célzott támogatást kapnak, az öt lehetőség közül a legalacsonyabb jogalkotási bonyolultsággal és visszavonási kockázattal. Vesztesek/kockázatok: azok a hátrányos helyzetű tanulók, akik továbbra is ki vannak zárva a szelektív képzési formákból, e forgatókönyvtől semmit nem kapnak a kapumechanizmust illetően; a méltányossági szószólók kockázata, hogy a mechanizmust retorikailag úgy használják, mintha kezelné a szegregációt, miközben strukturálisan nem tudja; a központi finanszírozási mechanizmus (TEIP-típusú) maga is politikailag sérülékeny a fiskális konszolidáció alatt."
+      },
+      "kind": "assumption"
+    },
+    {
+      "scenario_id": "S5",
+      "text": {
+        "en": "Small-school and dispersed-track closure costs, administrative network-consolidation costs across maintainers, and the implicit, unfunded cost of any equity harm from intensified competition for shrinking places are all unquantified; no new compensatory or equity-targeted spending is budgeted under this baseline by definition.",
+        "hu": "A kisiskolák és szórt képzési formák bezárásának költségei, a fenntartók közötti igazgatási hálózati konszolidáció költségei, és a szűkülő helyekért folytatott fokozott verseny okozta méltányossági kár implicit, nem finanszírozott költsége mind számszerűsítetlen; ezen alapforgatókönyv definíció szerint nem tervez új kompenzáló vagy méltányossági célú kiadást."
+      },
+      "kind": "estimate"
+    },
+    {
+      "scenario_id": "S5",
+      "text": {
+        "en": "Winners: no political actor bears legislative or reversal risk; the government avoids culture-war exposure. Losers/risks: disadvantaged pupils face intensified competition for a shrinking number of selective places without any admission-equity intervention; rural and dispersed communities face uncoordinated, potentially unsafe school closures; the government risks EU-conditionality exposure for inaction on documented worst-in-EU segregation.",
+        "hu": "Nyertesek: senki nem visel jogalkotási vagy visszavonási kockázatot; a kormány elkerüli a kultúrharc-kitettséget. Vesztesek/kockázatok: a hátrányos helyzetű tanulók fokozott versenynek vannak kitéve a szűkülő szelektív helyekért bármilyen felvételi-méltányossági beavatkozás nélkül; a vidéki és szórt közösségek nem koordinált, potenciálisan bizonytalan iskolabezárásokkal szembesülnek; a kormány kockáztatja az uniós kondicionalitási kitettséget a dokumentáltan legrosszabb EU-s szegregáció kezelésének elmulasztása miatt."
+      },
+      "kind": "assumption"
+    }
+  ],
+  "what_research_could_resolve": [
+    {
+      "en": "A regression-discontinuity or matched-pairs evaluation comparing admission outcomes before and after a piloted SES-aware quota, controlling for prior achievement and coaching investment, would clarify whether S1's admission-equity mechanism actually reduces the family-background gradient.",
+      "hu": "Egy regressziós törésponti vagy párosított mintás vizsgálat, amely egy pilot SES-alapú kvóta bevezetése előtti és utáni felvételi eredményeket hasonlítja össze, a korábbi teljesítmény és a korrepetálási ráfordítás kontrollálásával, tisztázná, hogy az S1 felvételi-méltányossági mechanizmusa valóban csökkenti-e a családi háttér szerinti gradiens hatását."
+    },
+    {
+      "en": "Real-time, disaggregated enrollment monitoring by maintainer type across at least 3-5 years following any threshold implementation, with a published displacement-rate estimate, would clarify whether S2's contraction is offset by non-state expansion.",
+      "hu": "Valós idejű, fenntartói típus szerint bontott beiskolázási monitorozás legalább 3-5 éven keresztül a küszöbérték bevezetése után, egy publikált elmozdulási-arány becsléssel, tisztázná, hogy az S2 szűkítését ellensúlyozza-e a nem állami bővülés."
+    },
+    {
+      "en": "A dedicated Hungarian pilot or quasi-experimental regional rollout with propensity-matched controls, tracking achievement and segregation measures over 5-7 years, would isolate the effect of delaying selection (S3) from Hungary's specific curriculum, teacher-qualification, and demographic context.",
+      "hu": "Egy célzott magyar pilotprogram vagy kvázi-kísérleti regionális bevezetés propenzitás-illesztett kontrollcsoportokkal, 5-7 éven át követve a teljesítmény- és szegregációs mutatókat, elkülönítené a szelekció kitolásának (S3) hatását Magyarország sajátos tantervi, tanárminősítési és demográfiai kontextusától."
+    },
+    {
+      "en": "A decomposition study separating the marginal contribution of the 6/8-year gate from general school-choice segregation, using variation across regions with different kisgimnázium densities, would test whether anti-sorting rules alone (without the structural delay) could achieve comparable equity gains.",
+      "hu": "Egy dekompozíciós tanulmány, amely elválasztja a hatosztályos/nyolcosztályos kapu marginális hozzájárulását az általános iskolaválasztási szegregációtól, a kisgimnáziumi sűrűség szerint eltérő régiók variációját felhasználva, tesztelné, hogy a szegregációellenes szabályok önmagukban (strukturális kitolás nélkül) elérhetnek-e hasonló méltányossági javulást."
+    },
+    {
+      "en": "A 5-8 year longitudinal matched-cohort study comparing TEIP-enrolled and non-enrolled students, controlling for baseline SES and prior achievement, tracking assessed competency gain (not just exam pass rates), would clarify whether S4's compensatory approach can close, not merely reduce, achievement gaps.",
+      "hu": "Egy 5-8 éves longitudinális, párosított kohorszos vizsgálat, amely TEIP-be beiskolázott és be nem iskolázott tanulókat hasonlít össze a kiindulási SES és korábbi teljesítmény kontrollálásával, a felmért kompetenciafejlődést (nem csak a vizsgateljesítést) követve, tisztázná, hogy az S4 kompenzáló megközelítése be tudja-e zárni, nem csak csökkenteni, a teljesítménykülönbséget."
+    },
+    {
+      "en": "A joint KSH/Klebelsberg Center analysis decomposing selective-track enrollment change into a demographic-decline component and an administrative-threshold component over 2024-2030 would clarify how much of the observed contraction under S5 is genuinely policy-neutral.",
+      "hu": "Egy közös KSH/Klebelsberg Központ elemzés, amely a szelektív képzési forma beiskolázási változását demográfiai csökkenési és igazgatási küszöbérték-komponensre bontja a 2024-2030 időszakban, tisztázná, hogy az S5 alatt megfigyelt szűkülés mennyiben valóban szakpolitikailag semleges."
+    },
+    {
+      "en": "A Ministry of Education costing and capacity study modelling teacher-retraining timelines against current CPD commitments and workforce-attrition projections through 2035 would clarify the true feasibility window for any structural reform (S3) or major compensatory investment (S4).",
+      "hu": "Egy Oktatási Minisztériumi költség- és kapacitástervezési tanulmány, amely a pedagógus-átképzési ütemterveket modellezi a jelenlegi továbbképzési kötelezettségekkel és a 2035-ig szóló munkaerő-fogyási előrejelzésekkel szemben, tisztázná bármely strukturális reform (S3) vagy jelentős kompenzáló beruházás (S4) valódi megvalósíthatósági ablakát."
+    }
+  ],
+  "what_people_must_decide": [
+    {
+      "en": "Whether Hungary's education system should prioritize protecting institutional and maintainer pluralism (church, foundation, state autonomy) or pursue uniform national equity standards, given that these two values are shown by the record to be in direct, largely unresolved tension.",
+      "hu": "Vajon Magyarország oktatási rendszerének elsőbbséget kell adnia az intézményi és fenntartói pluralizmus (egyházi, alapítványi, állami autonómia) védelmének, vagy egységes nemzeti méltányossági standardokat kell követnie, tekintve, hogy a rekord szerint e két érték közvetlen, nagyrészt megoldatlan feszültségben áll."
+    },
+    {
+      "en": "Whether the roughly 10% within-track pedagogical value-added for admitted students is judged worth the documented segregation cost it carries — this is fundamentally a value trade-off between talent-development and equality-of-opportunity, not a question research alone can settle.",
+      "hu": "Vajon a beiskolázott tanulóknál mért kb. 10%-os oktatási hozzáadott érték megéri-e a hozzá kapcsolódó, dokumentált szegregációs költséget — ez alapvetően a tehetségfejlesztés és az esélyegyenlőség közötti értékbeli trade-off, amelyet önmagában a kutatás nem tud eldönteni."
+    },
+    {
+      "en": "Whether to accept a politically fragile, potentially reversible reform now (structural delay, S3) while a narrow post-2026 political window exists, or to wait for teacher-workforce stabilization first, risking the window closing entirely.",
+      "hu": "Vajon elfogadjunk-e egy politikailag sérülékeny, potenciálisan visszavonható reformot most (strukturális kitolás, S3), amíg fennáll a szűk, 2026 utáni politikai ablak, vagy inkább várjunk a pedagógusállomány stabilizálására, kockáztatva az ablak teljes bezáródását."
+    },
+    {
+      "en": "Whether compensatory (TEIP-style) funding for disadvantaged schools deserves cardinal-law entrenchment even at the cost of reduced fiscal flexibility during consolidation — a political-institutional choice about how much future governments should be bound by today's equity commitments.",
+      "hu": "Vajon a hátrányos helyzetű iskolák számára szánt kompenzáló (TEIP-típusú) finanszírozás megér-e sarkalatos törvényi rögzítést a fiskális konszolidáció alatti csökkent mozgástér árán is — politikai-intézményi választás arról, mennyire kössék a jövőbeli kormányokat a mai méltányossági vállalások."
+    },
+    {
+      "en": "Whether society accepts that any single reform (S1-S4) will leave some sorting channel unaddressed (free school choice, catchment, private tutoring) and must therefore be judged as a partial, not complete, answer to segregation — or whether only a combined, multi-front package is an honest response.",
+      "hu": "Vajon a társadalom elfogadja-e, hogy bármely egyetlen reform (S1-S4) valamely szétválogatási csatornát (szabad iskolaválasztás, körzethatár, magánkorrepetálás) kezeletlenül hagy, és ezért csak részleges, nem teljes válaszként ítélhető meg a szegregációra — vagy csak egy kombinált, több fronton ható intézkedéscsomag számít becsületes válasznak."
+    }
+  ],
+  "stakeholder_responses": [
+    {
+      "cluster_id": "A1",
+      "restatement": {
+        "en": "SES-aware admission quotas and coaching-resistant exam redesign can reduce entry-gate gatekeeping, but only if exam validity, uniform cross-maintainer enforcement, and non-displacement safeguards for disadvantaged pupils are guaranteed.",
+        "hu": "A SES-alapú felvételi kvóták és a korrepetálásnak ellenálló vizsga-átalakítás csökkenthetik a bejutási kapumechanizmus torzítását, de csak akkor, ha a vizsga érvényessége, a fenntartók közötti egységes kikényszerítés, és a hátrányos helyzetű tanulók kiszorulás elleni biztosítékai garantáltak."
+      },
+      "response_type": "needs_more_info",
+      "reason": {
+        "en": "No registry entry documents that a specific SES-proxy quota or coaching-resistant exam design reliably reduces gatekeeping or avoids displacement; the independent research voice itself flags the evidence status as weak. A pre-registered pilot with published displacement and validity metrics is a precondition, not an afterthought, before this mechanism can be assessed.",
+        "hu": "Sehol nincs dokumentálva, hogy egy konkrét SES-proxy kvóta vagy korrepetálásnak ellenálló vizsgafelépítés megbízhatóan csökkenti a kapumechanizmus torzítását vagy elkerüli a kiszorulást; a független kutatói hang maga is gyengének jelöli a bizonyítéki státuszt. Egy előre regisztrált pilot, publikált kiszorulási és érvényességi mutatókkal, előfeltétel, nem utólagos kiegészítés, mielőtt e mechanizmus megítélhető lenne."
+      }
+    },
+    {
+      "cluster_id": "A2",
+      "restatement": {
+        "en": "Implementing SES-proxy criteria and monitoring creates new administrative and workload burdens on schools and teachers that are not currently funded, and may fall disproportionately on smaller or less-resourced maintainers.",
+        "hu": "A SES-proxy kritériumok és a monitorozás bevezetése új, jelenleg nem finanszírozott igazgatási és munkaterhelési terheket ró az iskolákra és tanárokra, és aránytalanul érinthet kisebb, kevésbé erőforrás-ellátott fenntartókat."
+      },
+      "response_type": "policy_design_fixable",
+      "reason": {
+        "en": "This is a design gap, not an inherent flaw: dedicated, funded, timetabled administrative hours and a transparent cross-maintainer capacity budget, specified in the implementing decree text itself rather than left to schools to absorb, would directly address the concern.",
+        "hu": "Ez tervezési hiányosság, nem eleve fennálló hiba: dedikált, finanszírozott, ütemezett igazgatási órák és egy átlátható, fenntartók közötti kapacitásköltségvetés, magába a végrehajtási rendelet szövegébe foglalva, ne az iskolákra hárítva, közvetlenül kezelné az aggályt."
+      }
+    },
+    {
+      "cluster_id": "A3",
+      "restatement": {
+        "en": "Uniform admission quotas and thresholds risk overriding church and foundation maintainer autonomy over admissions, protected by subsidiarity principles and constitutional/coalition commitments.",
+        "hu": "Az egységes felvételi kvóták és küszöbök kockázatot jelentenek az egyházi és alapítványi fenntartók felvételi autonómiájára, amelyet a szubszidiaritás elve és alkotmányos/koalíciós vállalások védenek."
+      },
+      "response_type": "value_conflict",
+      "reason": {
+        "en": "This pits equity (uniform, enforceable standards) directly against constitutionally protected institutional autonomy (Article 70/H, concordat-style agreements, coalition commitments). No technical redesign resolves whether the state may bind autonomous maintainers to uniform rules; this is a legitimate values collision requiring political and possibly constitutional resolution, not a design fix.",
+        "hu": "Ez a méltányosságot (egységes, kikényszeríthető szabványok) közvetlenül szembeállítja az alkotmányosan védett intézményi autonómiával (70/H. cikk, konkordátumszerű megállapodások, koalíciós vállalások). Semmilyen technikai átalakítás nem oldja meg, hogy az állam kötelezheti-e az autonóm fenntartókat egységes szabályokra; ez legitim értékkonfliktus, amely politikai, esetleg alkotmányos megoldást igényel, nem tervezési javítást."
+      }
+    },
+    {
+      "cluster_id": "A4",
+      "restatement": {
+        "en": "Shrinking state-sector gimnázium capacity via score thresholds without funding commitments or anti-sorting rules simply accelerates consolidation, worsens rural school viability, intensifies competition for remaining places, and does not address — may worsen — SES-based exclusion.",
+        "hu": "Az állami szektor gimnáziumi kapacitásának pontszámküszöbökkel történő szűkítése finanszírozási vállalások vagy szegregációellenes szabályok nélkül egyszerűen felgyorsítja a konszolidációt, rontja a vidéki iskolák életképességét, fokozza a versenyt a megmaradt helyekért, és nem kezeli — sőt rontja — a SES-alapú kizárást."
+      },
+      "response_type": "policy_design_fixable",
+      "reason": {
+        "en": "Multiple stakeholders (teacher representatives, government reform-realists) converged in the reciprocity round on the same conclusion: the harms are real if safeguards are absent, but a statutory funding floor, class-size protection, teacher-redeployment guarantees, and enforced anti-sorting rules attached to the decree text itself would contain the risk. The design gap is fixable; whether the political will exists to fund it is a separate, open question.",
+        "hu": "Több érintett szereplő (pedagógusképviselők, kormányzati reformrealisták) a reciprocitási körben ugyanarra a következtetésre jutott: a károk valósak, ha a biztosítékok hiányoznak, de egy törvényi finanszírozási minimum, osztálylétszám-védelem, tanár-átcsoportosítási garanciák, és a rendelet szövegébe foglalt, kikényszerített szegregációellenes szabályok korlátoznák a kockázatot. A tervezési hiányosság javítható; hogy megvan-e a politikai szándék finanszírozni, az egy különálló, nyitott kérdés."
+      }
+    },
+    {
+      "cluster_id": "A5",
+      "restatement": {
+        "en": "State-sector selective-capacity contraction can be absorbed by growing church and foundation maintainer capacity, preserving overall selective-track access and institutional pluralism without a legislative fight.",
+        "hu": "Az állami szektor szelektív kapacitásának szűkítését felszívhatja a növekvő egyházi és alapítványi fenntartói kapacitás, megőrizve az általános szelektív hozzáférést és az intézményi pluralizmust jogalkotási harc nélkül."
+      },
+      "response_type": "needs_more_info",
+      "reason": {
+        "en": "There is no published evidence on the elasticity or geographic patterning of church/foundation expansion in response to state contraction; the independent research voice explicitly flags this as contested and unknown. A three-year, disaggregated enrollment-monitoring commitment would resolve whether this absorption claim holds, but it is currently speculative in either direction.",
+        "hu": "Nincs publikált bizonyíték az egyházi/alapítványi bővülés rugalmasságáról vagy földrajzi mintázatáról az állami szűkítésre válaszul; a független kutatói hang ezt explicit módon vitatottnak és ismeretlennek jelöli. Egy hároméves, bontott beiskolázási monitorozási vállalás tisztázná, hogy ez a felszívási állítás megáll-e, de jelenleg mindkét irányban spekulatív."
+      }
+    },
+    {
+      "cluster_id": "A6",
+      "restatement": {
+        "en": "Arbitrary, discretionary capacity cuts disrupt families who already committed to a selective-track path and provide no predictable, published rationale or schedule for planning.",
+        "hu": "A tetszőleges, diszkrecionális kapacitáscsökkentés megzavarja azokat a családokat, akik már elköteleződtek egy szelektív képzési út mellett, és nem ad kiszámítható, publikált indoklást vagy ütemtervet a tervezéshez."
+      },
+      "response_type": "communication_fixable",
+      "reason": {
+        "en": "The underlying concern is about predictability and transparency of process, not the existence of contraction itself. A published, multi-year capacity schedule with explicit cohort protections and guaranteed local-alternative placement — already named as the condition that would shift this stakeholder's opposition to conditional support — directly resolves the legibility problem without requiring a change to the contraction policy's substance.",
+        "hu": "Az alapvető aggály a folyamat kiszámíthatósága és átláthatósága, nem a szűkítés léte maga. Egy publikált, többéves kapacitási ütemterv, explicit évfolyam-védelmekkel és garantált helyi alternatív elhelyezéssel — amelyet ez az érintett szereplő már meg is jelölt az ellenzés feltételes támogatássá váltásának feltételeként — közvetlenül megoldja a érthetőségi problémát a szűkítési politika tartalmának megváltoztatása nélkül."
+      }
+    },
+    {
+      "cluster_id": "A7",
+      "restatement": {
+        "en": "Delaying academic tracking to age 14+ addresses the root sorting mechanism and is supported by cross-national evidence, but its equity gain depends entirely on simultaneously enacted and enforced anti-sorting rules for school choice and catchment.",
+        "hu": "A tanulmányi szelekció 14+ évre való kitolása a szétválogatás alapmechanizmusát kezeli, és nemzetközi bizonyítékok támasztják alá, de méltányossági haszna teljesen az egyidejűleg elfogadott és kikényszerített, iskolaválasztást és körzethatárokat érintő szegregációellenes szabályokon múlik."
+      },
+      "response_type": "irreducible_tradeoff",
+      "reason": {
+        "en": "Even with best-effort anti-sorting enforcement, Finland's post-2000 experience shows sorting can migrate to choice/catchment/tutoring channels within a generation regardless of enforcement quality; achieving the full equity gain trades directly against the political and administrative cost of simultaneous, enforceable legislation that is legislatively and politically harder than sequential reform. This is a genuine trade-off between ambition and deliverability, not merely a design flaw.",
+        "hu": "Még a legjobb szándékú szegregációellenes kikényszerítés mellett is, Finnország 2000 utáni tapasztalata mutatja, hogy a szétválogatás egy generáción belül átterelődhet a választási/körzethatár/korrepetálási csatornákba a kikényszerítés minőségétől függetlenül; a teljes méltányossági haszon elérése közvetlenül trade-off-ban áll az egyidejű, kikényszeríthető jogalkotás politikai és igazgatási költségével, amely jogalkotásilag és politikailag nehezebb, mint a szekvenciális reform. Ez valódi trade-off az ambíció és a megvalósíthatóság között, nem csupán tervezési hiba."
+      }
+    },
+    {
+      "cluster_id": "A8",
+      "restatement": {
+        "en": "Hungary's acute and aging teacher shortage is the binding constraint on any comprehensive-school transition: without front-loaded, statutory teacher retraining and recruitment guarantees, structural delay cannot deliver its promised gains and risks a multi-year instructional-quality dip.",
+        "hu": "Magyarország súlyos és öregedő pedagógushiánya a köttő korlátja bármely komprehenzív iskolai átmenetnek: előretervezett, törvényi pedagógus-átképzési és felvételi garanciák nélkül a strukturális kitolás nem hozhatja meg a megígért javulást, és többéves oktatási minőségromlás kockázatával jár."
+      },
+      "response_type": "needs_more_info",
+      "reason": {
+        "en": "The scale of the shortage is well-documented (strong evidence), but whether a front-loaded statutory retraining programme could close the gap within a realistic transition window given competing CPD demands is explicitly contested and unresolved in the record; a Ministry of Education costing and capacity study modelling retraining timelines against workforce-attrition projections would answer this before the trade-off between waiting and proceeding can be responsibly decided.",
+        "hu": "A hiány mértéke jól dokumentált (erős bizonyíték), de hogy egy előretervezett, törvényi átképzési program képes-e valósidejű átmeneti ablakon belül lezárni a hiányt a versengő szakmai továbbképzési igények mellett, explicit módon vitatott és megoldatlan a rekordban; egy Oktatási Minisztériumi költség- és kapacitástervezési tanulmány, amely az átképzési ütemterveket a munkaerő-fogyási előrejelzésekkel szembesíti, megválaszolná ezt, mielőtt a várakozás és a haladás közötti trade-off felelősségteljesen eldönthető lenne."
+      }
+    },
+    {
+      "cluster_id": "A9",
+      "restatement": {
+        "en": "Abolishing the 6/8-year gimnázium entry points via top-down structural reform erases institutional pluralism, church/foundation maintainer autonomy, and parental choice, and carries high political-reversal risk as shown by Poland's 18-year reform being later reversed.",
+        "hu": "A hatosztályos/nyolcosztályos gimnáziumi belépési pontok felülről vezérelt strukturális eltörlése kioltja az intézményi pluralizmust, az egyházi/alapítványi fenntartói autonómiát és a szülői választást, és magas politikai visszavonási kockázatot hordoz, amint azt a lengyel 18 éves reform későbbi visszavonása is mutatja."
+      },
+      "response_type": "value_conflict",
+      "reason": {
+        "en": "This is a direct clash between equity-through-structural-uniformity and institutional pluralism/parental choice as competing legitimate goods, compounded by an empirical (but partly unresolvable) question about durability. No technical fix reconciles preserving maintainer pedagogical autonomy with a genuinely unified comprehensive phase; this requires an explicit political and constitutional choice about which value takes precedence.",
+        "hu": "Ez közvetlen ütközés a strukturális egységesítésen keresztüli méltányosság és az intézményi pluralizmus/szülői választás mint versengő legitim javak között, egy empirikus (de részben megoldhatatlan) tartóssági kérdéssel megnehezítve. Semmilyen technikai megoldás nem egyezteti össze a fenntartói pedagógiai autonómia megőrzését egy valóban egységes komprehenzív szakasszal; ez explicit politikai és alkotmányos döntést igényel arról, melyik érték kapjon elsőbbséget."
+      }
+    },
+    {
+      "cluster_id": "A10",
+      "restatement": {
+        "en": "Families with children already in or entering the 6/8-year track need ironclad felmenő-rendszer protection and no lengthened commutes or unfamiliar catchment reassignment during any phase-out transition.",
+        "hu": "A már hatosztályos/nyolcosztályos formában tanuló vagy azt megkezdő gyermekek családjai szigorú felmenő rendszerbeli védelmet igényelnek, és nem hosszabb bejárási időt vagy ismeretlen körzeti átsorolást a kivezetési átmenet alatt."
+      },
+      "response_type": "policy_design_fixable",
+      "reason": {
+        "en": "Legal precedent already establishes felmenő-rendszer (grade-by-grade phase-in) as the standard mechanism for exactly this kind of protection, with roughly a one-year minimum lead time. Explicit statutory cohort-protection clauses specifying zero commute-lengthening and catchment stability for enrolled pupils would directly satisfy this concern; it is a specification detail for the implementing legislation, not an open design question.",
+        "hu": "A jogi precedens már megalapozza a felmenő rendszert (évfolyamonkénti bevezetés) mint az e típusú védelem standard mechanizmusát, kb. egy éves minimális felkészülési idővel. Explicit törvényi évfolyam-védelmi klauzulák, amelyek nulla bejárás-hosszabbítást és körzeti stabilitást írnak elő a beiskolázott tanulók számára, közvetlenül kielégítenék ezt az aggályt; ez a végrehajtó jogszabály specifikációs részlete, nem nyitott tervezési kérdés."
+      }
+    },
+    {
+      "cluster_id": "A11",
+      "restatement": {
+        "en": "Non-structural reform (curriculum clarity, grade-retention reduction, TEIP-style targeted funding) can deliver real, evidence-backed achievement and fiscal gains with lower workload, disruption, and political-reversal risk than structural reform, without touching selection age.",
+        "hu": "A nem strukturális reform (tantervi egyértelműség, évfolyamismétlés csökkentése, TEIP-típusú célzott finanszírozás) valódi, bizonyítékokkal alátámasztott teljesítménybeli és fiskális javulást hozhat alacsonyabb munkaterheléssel, zavarással és politikai visszavonási kockázattal, mint a strukturális reform, a szelekciós életkor érintése nélkül."
+      },
+      "response_type": "irreducible_tradeoff",
+      "reason": {
+        "en": "This scenario genuinely trades lower disruption and reversal risk for a structurally bounded equity ceiling: because it leaves admission gatekeeping fully intact, its gains accrue mainly to the non-selective majority while the segregation mechanism itself is untouched. Both properties are real and cannot be engineered away simultaneously — choosing low-disruption non-structural reform means accepting that the core segregation problem this brief addresses remains, by design, unresolved.",
+        "hu": "Ez a forgatókönyv valóban kisebb zavarásra és visszavonási kockázatra cseréli le a strukturálisan korlátozott méltányossági plafont: mivel a felvételi kapumechanizmust teljesen érintetlenül hagyja, a javulás főként a nem szelektált többségnél jelentkezik, míg a szegregációs mechanizmus maga érintetlen marad. Mindkét tulajdonság valós, és nem lehet egyszerre eltervezni el őket — az alacsony zavarású, nem strukturális reform választása azt jelenti, hogy elfogadjuk, hogy az e dokumentum által kezelt fő szegregációs probléma tervezetten megoldatlan marad."
+      }
+    },
+    {
+      "cluster_id": "A12",
+      "restatement": {
+        "en": "Non-structural compensation leaves the early-selection mechanism that produces near-zero disadvantaged-pupil admission to selective tracks untouched, structurally bounding its equity effect and risking legitimizing segregation while claiming to address it.",
+        "hu": "A nem strukturális kompenzáció érintetlenül hagyja a korai szelekciós mechanizmust, amely a hátrányos helyzetű tanulók majdnem nulla felvételi arányát okozza a szelektív képzési formákba, strukturálisan korlátozva méltányossági hatását, és kockáztatva a szegregáció legitimálását, miközben azt állítja, hogy kezeli azt."
+      },
+      "response_type": "value_conflict",
+      "reason": {
+        "en": "Whether it is acceptable to pursue incremental, deliverable equity gains within an unchanged selective structure — versus insisting that only structural reform of the selection mechanism counts as a genuine equity response — is a legitimate values disagreement about what equity requires, not a factual dispute resolvable by more evidence. The registry strongly supports the factual premise (early tracking raises inequality); the disagreement is about what follows normatively from that fact.",
+        "hu": "Hogy elfogadható-e fokozatos, megvalósítható méltányossági javulást elérni egy változatlan szelektív szerkezeten belül — szemben azzal, hogy csak a szelekciós mechanizmus strukturális reformja számít valódi méltányossági válasznak — legitim értékbeli nézeteltérés arról, mit követel a méltányosság, nem több bizonyítékkal megoldható tényvita. A rekord erősen alátámasztja a ténybeli premisszát (a korai szelekció fokozza az egyenlőtlenséget); a nézeteltérés arról szól, mi következik ebből normatívan."
+      }
+    },
+    {
+      "cluster_id": "A13",
+      "restatement": {
+        "en": "Targeted (TEIP-style) funding for disadvantaged schools is politically fragile unless given statutory cardinal-law funding-floor status, since the scenario's own risk assessment names it as a likely first-line cut during fiscal consolidation.",
+        "hu": "A hátrányos helyzetű iskolák számára szánt célzott (TEIP-típusú) finanszírozás politikailag sérülékeny, hacsak nem kap sarkalatos törvényi finanszírozási minimum státuszt, mivel a forgatókönyv saját kockázatértékelése az első vonalbeli megszorítási tételnek jelöli a fiskális konszolidáció alatt."
+      },
+      "response_type": "policy_design_fixable",
+      "reason": {
+        "en": "A concrete institutional design change — statutory or cardinal-law entrenchment, or the middle-path alternative of an ordinary-law multi-year commitment with published escape-clause conditions and parliamentary oversight — directly addresses the identified fragility. This is a design and political-negotiation question with concrete alternatives on the table, not an irreducible conflict.",
+        "hu": "Egy konkrét intézményi tervezési változás — törvényi vagy sarkalatos törvényi rögzítés, vagy a köztes út alternatívája, egy rendes törvényi, publikált kilépési feltételekkel és parlamenti felügyelettel ellátott többéves vállalás — közvetlenül kezeli az azonosított sérülékenységet. Ez tervezési és politikai tárgyalási kérdés konkrét alternatívákkal az asztalon, nem feloldhatatlan konfliktus."
+      }
+    },
+    {
+      "cluster_id": "A14",
+      "restatement": {
+        "en": "Passive demographic contraction without an active equity or network-planning lever is a policy abdication that entrenches existing SES-based gatekeeping, risks uncoordinated and unsafe school closures, and wastes scarce future talent in a shrinking labour-market cohort.",
+        "hu": "Az aktív méltányossági vagy hálózattervezési eszköz nélküli passzív demográfiai zsugorodás olyan szakpolitikai lemondás, amely rögzíti a meglévő SES-alapú kapumechanizmust, nem koordinált és bizonytalan iskolabezárásokat kockáztat, és elveszíti a szűkülő munkaerőpiaci kohorsz szűkös jövőbeli tehetségét."
+      },
+      "response_type": "policy_design_fixable",
+      "reason": {
+        "en": "The demographic decline itself cannot be reversed by policy, but the harms named (uncoordinated closures, worsening gatekeeping, lost talent) are consequences of leaving the response to it undesigned, not of the decline itself. A coordinated national consolidation plan with equity and teacher-workforce-protection safeguards — the exact condition named by multiple stakeholders — converts drift into managed transition without requiring any of S1-S4's structural or admission changes.",
+        "hu": "A demográfiai csökkenés maga nem fordítható vissza szakpolitikával, de a megnevezett károk (nem koordinált bezárások, romló kapumechanizmus, elveszett tehetség) a rá adott válasz megtervezetlenségéből fakadnak, nem a csökkenésből magából. Egy koordinált nemzeti konszolidációs terv méltányossági és pedagógusállomány-védelmi biztosítékokkal — pontosan az a feltétel, amelyet több érintett szereplő is megnevezett — a sodródást irányított átmenetté alakítja az S1-S4 strukturális vagy felvételi változásai nélkül."
+      }
+    },
+    {
+      "cluster_id": "A15",
+      "restatement": {
+        "en": "A purely passive demographic baseline may not actually exist, since active administrative levers (such as S2's score thresholds) are already operating alongside demographic decline, making 'inaction' framing potentially a disguise for unnamed active policy choices.",
+        "hu": "A tisztán passzív demográfiai alapforgatókönyv talán nem is létezik, mivel aktív igazgatási eszközök (mint az S2 pontszámküszöbei) már most is működnek a demográfiai csökkenés mellett, így a 'tétlenség' keretezés potenciálisan meg nem nevezett aktív szakpolitikai döntéseket rejt."
+      },
+      "response_type": "evidence_answerable",
+      "reason": {
+        "en": "This is a decomposable empirical question: a joint KSH/Klebelsberg Center analysis separating the demographic-decline component from the administrative-threshold component would settle, or at least substantially clarify, how much of S5's observed contraction is genuinely policy-neutral. Until that decomposition is published, the framing concern stands, but the underlying question is answerable with data, not merely a matter of interpretation.",
+        "hu": "Ez egy dekomponálható empirikus kérdés: egy közös KSH/Klebelsberg Központ elemzés, amely elválasztja a demográfiai csökkenési komponenst az igazgatási küszöbérték-komponenstől, eldöntené, vagy legalább jelentősen tisztázná, mennyire szakpolitikailag semleges valójában az S5 megfigyelt szűkülése. Amíg ez a dekompozíció nem publikus, a keretezési aggály fennáll, de az alapkérdés adatokkal megválaszolható, nem csak interpretáció kérdése."
+      }
+    },
+    {
+      "cluster_id": "A16",
+      "restatement": {
+        "en": "Demographically-driven contraction is politically convenient (lowest reversal risk, no legislative cost) but leaves EU-level equity criticism of Hungary's highly selective school system unanswered unless paired with transparent reporting distinguishing demographic effects from active policy levers.",
+        "hu": "A demográfiailag vezérelt zsugorodás politikailag kényelmes (legalacsonyabb visszavonási kockázat, jogalkotási költség nélkül), de megválaszolatlanul hagyja Magyarország erősen szelektív iskolarendszerének uniós szintű méltányossági kritikáját, hacsak nem társítják átlátható jelentéstétellel, amely elkülöníti a demográfiai hatásokat az aktív szakpolitikai eszközöktől."
+      },
+      "response_type": "communication_fixable",
+      "reason": {
+        "en": "The core deficit here is transparency, not substance: publishing a methodology that decomposes demographic from policy-driven contraction, on a regular schedule, would directly address the legibility gap this cluster identifies, even though it would not by itself resolve the underlying equity criticism, which remains a separate, substantive question addressed by S1-S4.",
+        "hu": "Az itt jelzett fő hiány az átláthatóság, nem a tartalom: egy rendszeres ütemterv szerint publikált módszertan, amely elkülöníti a demográfiai és a szakpolitikailag vezérelt szűkítést, közvetlenül kezelné az e klaszter által azonosított érthetőségi hiányt, még ha önmagában nem oldaná meg az alapul fekvő méltányossági kritikát, amely külön, tartalmi kérdés marad, amelyet az S1-S4 kezel."
+      }
+    }
+  ],
+  "attention_sinks": [],
+  "minority_positions": [
+    {
+      "holders": [
+        "implementation_planning",
+        "political_feasibility"
+      ],
+      "position": {
+        "en": "A phase-out scenario for state-sector selective tracks implicitly or explicitly assumes church/foundation maintainers can be regulated, incentivized, or negotiated into compliance with a contraction of selective capacity.",
+        "hu": "Az állami szektor szelektív képzési formáinak kivezetésére vonatkozó forgatókönyv implicit vagy explicit módon feltételezi, hogy az egyházi/alapítványi fenntartók szabályozhatók, ösztönözhetők vagy tárgyalás útján rábírhatók a szelektív kapacitás szűkítésének betartására."
+      },
+      "rationale": {
+        "en": "Legal and governance analysis treats maintainer coordination as a negotiable implementation step, and political-feasibility framing describes 'review' commitments that presuppose a controllable maintainer landscape — a position directly contradicted by the record's own findings on non-state sector growth, but preserved here as the position actually held by the implementation-planning and political-feasibility expert lines.",
+        "hu": "A jogi és irányítási elemzés a fenntartói koordinációt tárgyalható megvalósítási lépésként kezeli, és a politikai megvalósíthatósági keretezés olyan 'felülvizsgálati' vállalásokat ír le, amelyek irányítható fenntartói terepet feltételeznek — egy álláspont, amelyet a rekord saját, a nem állami szektor növekedéséről szóló megállapításai közvetlenül cáfolnak, de itt megőrzésre kerül mint a megvalósítás-tervezési és politikai megvalósíthatósági szakértői vonalak által valóban képviselt pozíció."
+      }
+    },
+    {
+      "holders": [
+        "implementation_planning",
+        "hungarian_education_system",
+        "educational_psychology"
+      ],
+      "position": {
+        "en": "Transferability of Poland's and Finland's delayed-tracking effect sizes to Hungary is a labelled assumption, not a settled fact, given Hungary's higher baseline segregation, denser rural school network, acute teacher shortages, and the bundled nature of the source reforms.",
+        "hu": "A lengyel és finn szelekció-kitolási effektusnagyságok Magyarországra való átvihetősége jelölt feltevés, nem eldöntött tény, tekintve Magyarország magasabb kiindulási szegregációját, sűrűbb vidéki iskolahálózatát, súlyos pedagógushiányát, és a forrásreformok más intézkedésekkel összefonódó jellegét."
+      },
+      "rationale": {
+        "en": "Multiple experts explicitly flag transferability as an unverified assumption requiring Hungary-specific quasi-experimental or costing studies before being treated as a policy baseline — a minority caution against the majority view that international evidence provides a credible baseline for Hungary.",
+        "hu": "Több szakértő is explicit módon jelölt, nem ellenőrzött feltevésnek tekinti az átvihetőséget, amelyet Magyarországra szabott kvázi-kísérleti vagy költségbecslő tanulmányokkal kellene előbb alátámasztani, mielőtt szakpolitikai alapfeltevésnek tekintenénk — kisebbségi óvatosság a többségi nézettel szemben, amely szerint a nemzetközi bizonyíték hihető alapot ad Magyarország számára."
+      }
+    },
+    {
+      "holders": [
+        "political_feasibility"
+      ],
+      "position": {
+        "en": "Selection reform is now live government policy with a narrow but real political window (post-April 2026 Tisza mandate); waiting for full teacher-workforce stabilization before proceeding risks losing this window entirely to reversal or indefinite deferral.",
+        "hu": "A szelekciós reform ma élő kormányzati politika egy szűk, de valós politikai ablakkal (a 2026. áprilisi Tisza-mandátum után); ha a teljes pedagógusállomány-stabilizációra várunk a haladás előtt, kockáztatjuk, hogy ez az ablak teljesen elveszik visszavonás vagy határidő nélküli elhalasztás miatt."
+      },
+      "rationale": {
+        "en": "Political windows are empirically short-lived (immediate Fidesz culture-war framing within 48 hours of the minister's statement) and historically reversed on government turnover (Poland) — this minority position weighs political timing more heavily than the majority implementation-planning view that workforce stabilization must precede structural reform.",
+        "hu": "A politikai ablakok empirikusan rövid életűek (a miniszteri kijelentés utáni 48 órán belüli azonnali Fidesz kultúrharc-keretezés), és történelmileg kormányváltáskor visszavonhatók (lengyel példa) — ez a kisebbségi álláspont a politikai időzítést jobban súlyozza, mint a többségi megvalósítás-tervezési nézet, amely szerint a munkaerő-stabilizációnak meg kell előznie a strukturális reformot."
+      }
+    },
+    {
+      "holders": [
+        "education_finance",
+        "hungarian_education_system"
+      ],
+      "position": {
+        "en": "The measured ~10% within-track pedagogical value-added for admitted students is a real, policy-relevant finding that must be weighed alongside equity costs, not dismissed as irrelevant to the reform debate.",
+        "hu": "A beiskolázott tanulóknál mért kb. 10%-os képzési formán belüli oktatási hozzáadott érték valós, szakpolitikailag releváns eredmény, amelyet a méltányossági költségekkel együtt kell mérlegelni, nem pedig a reformvitából irrelevánsként kizárni."
+      },
+      "rationale": {
+        "en": "Recent statistical-model research controlling for family background found a consistent gain; this minority position resists what it sees as an equity narrative that would upgrade beyond what the evidence supports by treating the value-added finding as settled-negligible.",
+        "hu": "A családi hátteret kontrolláló legfrissebb statisztikai modellezésű kutatás konzisztens előnyt talált; ez a kisebbségi álláspont ellenáll annak, amit egy olyan méltányossági narratívának lát, amely a bizonyítékok által alátámasztott szint fölé emelkedne azáltal, hogy a hozzáadott érték eredményét eldöntött-elhanyagolhatóként kezeli."
+      }
+    }
+  ]
+}
