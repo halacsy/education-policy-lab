@@ -8,25 +8,31 @@
       "wall_clock_s": 2805.8,
       "total_tokens": 2720123,
       "usd": 10.14
+    },
+    {
+      "round": 3,
+      "wall_clock_s": 1108.8,
+      "total_tokens": 703945,
+      "usd": 2.09
     }
   ],
-  "total_input_tokens": 2338627,
-  "total_output_tokens": 381496,
-  "total_tokens": 2720123,
-  "metered_calls": 107,
+  "total_input_tokens": 2910582,
+  "total_output_tokens": 513486,
+  "total_tokens": 3424068,
+  "metered_calls": 168,
   "unmetered_calls": 0,
-  "wall_clock_s": 2805.8,
+  "wall_clock_s": 3914.6,
   "wall_clock_known_for_all_rounds": true,
   "by_model": {
     "claude-sonnet-5": {
-      "input_tokens": 1693991,
-      "output_tokens": 213983,
-      "usd": 8.2917
+      "input_tokens": 1889324,
+      "output_tokens": 294070,
+      "usd": 10.079
     },
     "claude-haiku-4-5": {
-      "input_tokens": 340119,
-      "output_tokens": 135541,
-      "usd": 1.0178
+      "input_tokens": 524065,
+      "output_tokens": 159149,
+      "usd": 1.3198
     },
     "claude-opus-4-8": {
       "input_tokens": 138908,
@@ -35,5 +41,5 @@
     }
   },
   "unpriced_models": [],
-  "total_usd": 10.14
+  "total_usd": 12.23
 }
