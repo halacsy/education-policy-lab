@@ -1,0 +1,25 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "equity_impact",
+      "objection": "The equity_impact asserts that keeping village schools open without active school-choice regulation will 'entrench' between-school segregation via higher-SES/ non‑Roma exit to church or urban schools, but the scenario provides no empirical quantification of such exit flows or of how frequently they occur under current policy. It cites multigrade pedagogy evidence as only 'moderate' while simultaneously treating rural teacher shortages and unqualified-teacher rates (evidence: strong) as decisive — a logically plausible but unsupported causal chain. Concretely: the scenario claims closure-avoidance will concentrate disadvantage but does not present historical enrollment-migration data (e.g., post-closure or post-maintainer-change pupil flows by SES/Roma status) to show that keeping a building open actually produces larger Roma/non‑Roma segregation than alternatives. Without that, the claim that S1 is equity-negative is unsubstantiated rather than evidenced.",
+      "severity": "high",
+      "suggested_revision": "Add empirical analysis of past pupil flows under comparable Hungarian events (maintainer change, partial closures, creation of church schools): (1) use OFI/KSH administrative data to quantify net outflows by parental-education and Roma status from villages after openings/closures/maintainer changes over the last 10–15 years; (2) model counterfactual scenarios (keep-open with multigrade + no-choice regulation; keep-open with active school-choice regulation; consolidation) to estimate net segregation impacts; and (3) explicitly condition the equity claim on realistic ranges of teacher-qualification improvement (given the ~4-year pipeline lag) rather than assuming training will or won't occur."
+    },
+    {
+      "scenario": "S3",
+      "field": "equity_impact",
+      "objection": "The equity_impact correctly flags that networked/association-run models risk excluding the poorest, lowest-capacity municipalities because of administrative burdens, but it stops short of specifying concrete, evidence-linked inclusion safeguards. It treats capacity-building as an assumed corrective without specifying scale, targeting criteria, or conditionality; given the dossier's own Małopolska evidence that 25% of NGO-run rural schools still fell below viability, the scenario leaves a critical equity gap unaddressed: how will the model prevent selective uptake by better-resourced villages and systematic exclusion of the worst-off?",
+      "severity": "high",
+      "suggested_revision": "Revise the equity_impact to (a) require a binding, targeted capacity-building package as a precondition for any association-run/network rollout: specify per-municipality administrative-grant amounts, minimum local-staffing formulas (e.g., funded school-manager and grant-writer FTE for X years), and a simplified compliance pathway for low-capacity municipalities; (b) include an explicit equity-access rule prioritizing pilot and scale-up slots for municipalities in the bottom fiscal-capacity tertile and high-Roma-composition settlements; and (c) mandate pilot evaluation metrics disaggregated by municipal-capacity tier (uptake rate, survival rate, pupil outcomes) before national expansion."
+    },
+    {
+      "scenario": "S5",
+      "field": "equity_impact",
+      "objection": "S5's equity_impact warns that an advisory, non-binding registry risks being co‑opted to legitimize closures in the absence of enforcement and disaggregation, but the scenario's implementation steps inconsistently include both 'legislate a binding statutory minimum-viability threshold' and the alternative of an advisory registry. The equity critique is therefore left speculative: it claims co-option is likely without (a) documenting past selective-use cases of advisory instruments in Hungary, or (b) reconciling whether the proposal will be binding or advisory. This internal ambiguity undermines the equity diagnosis and leaves implementers without clear accountability requirements (e.g., Roma-disaggregation, legal appeal rights).",
+      "severity": "medium",
+      "suggested_revision": "Clarify and harden the proposal: state explicitly whether the registry and thresholds are binding or advisory. If advisory is retained, add mandatory anti‑co-option safeguards: require settlement-level disaggregation by Roma/non‑Roma and poverty tier, an independent audit function with published annual findings, and a statutory pre-closure 'equity impact assessment' that must be transparently published and is subject to parental/municipal appeal. If the intent is binding thresholds, remove advisory language and specify legal enforcement mechanisms (appealable closure-review process, named budget line for registry funding, and independent oversight office). Include examples of how advisory instruments were misused in Hungary or similar contexts to justify the co-option claim (or remove the co-option claim if no such evidence exists). (speculative)"
+    }
+  ]
+}

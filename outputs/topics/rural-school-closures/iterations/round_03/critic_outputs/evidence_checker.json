@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "mechanism",
+      "objection": "Multiple claims in S1 are tagged as 'strong' legal/evidence assertions about statutory multigrade-class (összevont osztály) provisions and the legality/operational scope of felmenő rendszer phase‑out, but the dossier supplies no primary legal citations or registry-backed sources to justify a 'strong' grade. The curated-source registry for this topic is empty, so these statements are unsupported at the claimed strength. Without naming the exact statute, paragraph, or ministry regulation that authorizes and constrains multigrade formation and formal phase‑out procedures, the 'strong' tag overstates the evidentiary basis.",
+      "severity": "high",
+      "suggested_revision": "Either (a) add precise legal citations (statute/article/paragraph numbers or official Ministry guidance documents and their publication dates) that directly authorize multigrade formation and felmenő phase‑out and then retain a 'strong' tag, or (b) downgrade the evidence tags from 'strong' to 'unsupported/uncertain' (e.g., 'weak' or 'model knowledge') and explicitly mark these as legal-hypothesis claims until primary legal texts are attached."
+    },
+    {
+      "scenario": "S1",
+      "field": "mechanism",
+      "objection": "S1 reports specific teacher‑workforce statistics (e.g., 'half of Hungarian primary teachers are 50+, only 7.2% under 30,' and 'unqualified‑teacher rates are 2–3x higher in disadvantaged rural schools') and tags them 'strong,' but no data source (KSH, Ministry HR, OFI, or survey) is cited. Given the empty curated registry, these numeric claims lack verifiable backing and the 'strong' evidence grade is unjustified.",
+      "severity": "high",
+      "suggested_revision": "Provide exact data-source citations (e.g., KSH personnel statistics by year, Ministry of Education HR dataset, or OFI report with tables) for each numeric claim and indicate the year(s) covered; if such authoritative data cannot be supplied, change the tags to 'weak' or 'moderate' and state explicitly that these figures are provisional/model-estimated until verified."
+    },
+    {
+      "scenario": "S4",
+      "field": "mechanism",
+      "objection": "S4 asserts — with a 'strong' evidence tag — that Portugal's 2005–2007 21‑student threshold closures (1,615 schools closed) 'showed no correlation between concentrating students in larger 'school centers' and improved educational success' based on a 2005–2021 longitudinal study. No bibliographic citation or evaluative-authority is provided. Labeling this longitudinal finding 'strong' is unwarranted without the study's methodological details (authors, journal/report, identification strategy); the claim may overstate what the cited evaluation actually supports.",
+      "severity": "medium",
+      "suggested_revision": "Attach the full citation (author(s), report title or journal, year, and preferably a DOI or URL) of the longitudinal study and a 1–2 sentence summary of its identification strategy (e.g., difference‑in‑differences, controls used). If no such longitudinal, causal study exists, downgrade the tag to 'contested' or 'moderate' and rephrase the claim to reflect uncertainty (e.g., 'evaluations found little consistent evidence of improved outcomes on average')."
+    },
+    {
+      "scenario": "S5",
+      "field": "mechanism",
+      "objection": "S5 states (tagged 'weak') that 'No authoritative statutory minimum enrollment threshold currently exists in Hungarian law (the widely‑cited ~14‑pupil figure is unconfirmed community knowledge, not legal text).' This is a concrete legal-fact claim about the absence of a statutory rule, yet no legal-source check or citation is provided. Absence claims require careful sourcing (e.g., pointer to the relevant law and statement that it contains no minimum), so the current 'weak' tag understates the evidentiary gap and is not verifiable from the dossier alone.",
+      "severity": "medium",
+      "suggested_revision": "Either (a) provide a short legal evidence trail: cite the relevant education statute(s) and ministry regulations checked and a dated statement from the Ministry or KLIK/Klebelsberg Központ confirming no statutory minimum exists; or (b) reword the text to say explicitly that this is an unverified community-reported figure and tag it 'unsupported' until a legal review has been completed."
+    }
+  ]
+}

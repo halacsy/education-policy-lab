@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "goal",
+      "objection": "The stated Goal — to keep municipal/state-maintained village schools open 'without a national framework' — directly contradicts the Mechanism and Implementation_steps which themselves list national-level actions as necessary prerequisites: the Mechanism notes multigrade success 'when paired with adequate teacher training and institutional support' ([evidence: moderate]) and warns viability is 'undermined by rural teacher shortages' ([evidence: strong]); Implementation_steps assign the Ministry of Education and teacher-training institutions multi-year roles (timelines year 1-4) and require KSH/Klebelsberg Központ publishing annual data. The Goal therefore asserts a non-centralized approach while the scenario’s own evidence and steps make national coordination, funding, and statutory clarification essential to achieve the stated outcome.",
+      "severity": "high",
+      "suggested_revision": "Either (A) revise the Goal to make national-level reforms explicit (e.g., 'Preserve village schools where feasible by pairing local adaptation with a targeted national multigrade training, funding, and data-transparency programme'), and keep the Implementation_steps as written; or (B) constrain the Goal to a realistic local-only ambition (e.g., 'Preserve village schools only where existing local capacity suffices without new national measures') and then remove or reword Implementation_steps that presuppose ministry-led actions and nationally published data."
+    },
+    {
+      "scenario": "S2",
+      "field": "expected_benefits",
+      "objection": "Expected_benefits claim that centralizing upper grades 'reduces per-pupil fixed-cost diseconomy' cites only 'moderate' evidence, yet the scenario's Cost_categories list multiple large, unquantified offsets (major one-off capital investment for ISCED2 sites, recurring rural transport costs ~40% higher than urban, teacher severance/redeployment, financing costs). The scenario therefore asserts net fiscal and efficiency gains without reconciling or modeling the very cost items it elsewhere lists — the moderate evidence tag is insufficient given these unquantified, likely-offsetting costs.",
+      "severity": "high",
+      "suggested_revision": "Add a conditional fiscal model or decision rule: require a district-level cost–benefit assessment before consolidation that quantifies capital expansion, statutory transport, severance, and long-run community-decline externalities against salary/facility savings. Change the narrative to 'may reduce per-pupil fixed costs conditional on verified transport funding and net-positive capital-cost amortization' and attach a template checklist (or minimum fiscal-savings threshold) that must be met before centralization proceeds."
+    },
+    {
+      "scenario": "S3",
+      "field": "mechanism",
+      "objection": "The Mechanism statement 'Hungarian law already recognizes plural maintainers... providing an existing legal pathway' (tagged [evidence: strong]) is misleadingly framed in isolation: elsewhere (Evidence status, Assumptions, Political risks) the dossier documents that post-2013 tankerületi centralization removed municipal maintainer authority, creating a practical governance barrier to transferring maintainer responsibility. Presenting formal legal recognition as sufficient ignores the strong, documented operational constraint — the scenario therefore conflates formal permissibility with operational feasibility.",
+      "severity": "medium",
+      "suggested_revision": "Clarify the Mechanism to distinguish (i) formal legal categories that allow plural maintainers and (ii) current operational constraints due to post-2013 centralization. Downgrade the unconditional 'evidence: strong' claim to 'evidence: contested/qualified' and add an explicit precondition: legal/regulatory amendments (or an explicit ministerial pilot authorization) are required to enable association-run or inter-municipal models under current tankerületi governance; include the specific legal articles or administrative processes that must change."
+    },
+    {
+      "scenario": "S5",
+      "field": "implementation_steps",
+      "objection": "Implementation_steps call to 'Legislate a binding (not merely advisory) statutory minimum-viability threshold' (timeline: year 1-2) but the Mechanism and Evidence_status repeatedly warn that an advisory, non-binding registry risks selective use and that political will and cross-administration funding are fragile (Evidence status: weak/contested). The scenario therefore commits to rapid binding legislation without reconciling the earlier identification of political and administrative fragility, data-protection lead times, and the dossier's own uncertainty about cross-term funding continuity.",
+      "severity": "medium",
+      "suggested_revision": "Either (A) keep the binding-legislation objective but add a required prior feasibility package (legal feasibility opinion, GDPR/data-protection clearance, secured budget line for registry operation, and a cross-party binding memorandum to protect the threshold across electoral cycles) with realistic multi-year timeline; or (B) reframe implementation as a staged approach: start with an independent, fully funded pilot registry with statutory reporting duties (years 1-3) and only legislate binding thresholds after pilot evaluation and legal/GDPR clearance (years 3-5). Include an explicit contingency plan if cross-administration funding lapses (e.g., escrowed multi-year ring-fenced financing)."
+    }
+  ]
+}

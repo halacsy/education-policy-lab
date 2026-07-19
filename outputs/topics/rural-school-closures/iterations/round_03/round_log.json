@@ -1,0 +1,146 @@
+{
+  "round": 3,
+  "fallbacks": [],
+  "reused": [],
+  "resumed": [
+    "research:finnish_reform",
+    "research:hungarian_education_system",
+    "research:international_comparison",
+    "research:polish_reform",
+    "expert:finnish_reform",
+    "expert:hungarian_education_system",
+    "expert:international_comparison",
+    "expert:polish_reform",
+    "research:portuguese_reform",
+    "research:equity_and_social_mobility",
+    "research:educational_psychology",
+    "research:demography",
+    "expert:equity_and_social_mobility",
+    "expert:portuguese_reform",
+    "expert:educational_psychology",
+    "expert:demography",
+    "research:education_finance",
+    "research:school_network_planning",
+    "research:legal_and_governance",
+    "research:political_feasibility",
+    "expert:education_finance",
+    "expert:legal_and_governance",
+    "expert:school_network_planning",
+    "expert:political_feasibility",
+    "research:implementation_planning",
+    "expert:implementation_planning",
+    "scenario_builder",
+    "editor",
+    "rejected_framings",
+    "voice:pedagogus_erdekvedo",
+    "voice:kisgyerekes_szuloi",
+    "voice:konzervativ_ertekvedo",
+    "voice:eselyegyenlosegi_civil",
+    "voice:egyhazi_fenntartoi",
+    "voice:oktataspolitikai_reformmozgalom",
+    "voice:pedagogus_szakszervezeti_hang",
+    "voice:kormanyzati_reformrealizmus",
+    "voice:fuggetlen_szakpolitikai_kutatomuhely"
+  ],
+  "discourse": {
+    "voices": 10,
+    "stance_counts": {
+      "support": 13,
+      "oppose": 18,
+      "conditional": 19,
+      "no_position": 0
+    },
+    "label_counts": {
+      "documented": 0,
+      "value_modeled": 50,
+      "no_position": 0
+    },
+    "clusters": 22,
+    "factual_clusters_graded": 17,
+    "reciprocity": {
+      "ran": true,
+      "revised": 7
+    }
+  },
+  "backends": {
+    "argument_decompose [anthropic:claude-sonnet-5]": 22,
+    "argument_map [anthropic:claude-sonnet-5]": 1,
+    "brief [anthropic:claude-sonnet-5]": 1,
+    "critic [openai:]": 8,
+    "discourse_reciprocity [anthropic:claude-haiku-4-5]": 10,
+    "discourse_voice [anthropic:claude-haiku-4-5]": 1,
+    "discourse_voice [anthropic:claude-sonnet-5]": 1,
+    "grade_arguments [openai:]": 1
+  },
+  "tokens": {
+    "by_task_backend": {
+      "argument_decompose [anthropic:claude-sonnet-5]": {
+        "input_tokens": 93343,
+        "output_tokens": 31289
+      },
+      "argument_map [anthropic:claude-sonnet-5]": {
+        "input_tokens": 22735,
+        "output_tokens": 7711
+      },
+      "brief [anthropic:claude-sonnet-5]": {
+        "input_tokens": 62651,
+        "output_tokens": 35988
+      },
+      "critic [openai:]": {
+        "input_tokens": 88470,
+        "output_tokens": 19416
+      },
+      "discourse_reciprocity [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 140299,
+        "output_tokens": 14735
+      },
+      "discourse_voice [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 11028,
+        "output_tokens": 8213
+      },
+      "discourse_voice [anthropic:claude-sonnet-5]": {
+        "input_tokens": 16604,
+        "output_tokens": 5099
+      },
+      "grade_arguments [openai:]": {
+        "input_tokens": 10767,
+        "output_tokens": 949
+      },
+      "judge_score [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 32619,
+        "output_tokens": 660
+      },
+      "judge_score [openai:]": {
+        "input_tokens": 92082,
+        "output_tokens": 5879
+      },
+      "meta_critique [openai:]": {
+        "input_tokens": 1357,
+        "output_tokens": 2051
+      }
+    },
+    "total_input_tokens": 571955,
+    "total_output_tokens": 131990,
+    "total_tokens": 703945,
+    "metered_calls": 61,
+    "unmetered_calls": 0
+  },
+  "errors": {},
+  "wall_clock_s": 1108.8,
+  "usd_estimate": {
+    "total_usd": 2.09,
+    "by_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 195333,
+        "output_tokens": 80087,
+        "usd": 1.7873
+      },
+      "claude-haiku-4-5": {
+        "input_tokens": 183946,
+        "output_tokens": 23608,
+        "usd": 0.302
+      }
+    },
+    "unpriced_models": []
+  }
+}
