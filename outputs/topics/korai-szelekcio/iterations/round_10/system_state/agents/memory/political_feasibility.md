@@ -2,6 +2,16 @@
 
 Deterministic distillation from previous rounds (lab/memory.py); fed back into this agent's prompt. Unresolved items persist until the criticized field changes; resolved items drop.
 
+## round 07
+- condition from discourse: pedagogus_erdekvedo (S1): We would support S1 if: (1) Oktatási Hivatal validates the new assessment with pilot groups of real students and teachers, publishes full reliability/validity evidence, and delivers ready-to-use
+- condition from discourse: pedagogus_erdekvedo (S2): We would conditionally support S2 if: (1) phase-down is accelerated to a maximum of 3-4 years (not 8-10), so that deployment uncertainty is brief and retraining/redeployment can be front-loaded;
+- condition from discourse: pedagogus_erdekvedo (S3): We would support S3 only if: (1) retraining in differentiated instruction begins one full year before the first comprehensive cohort enters, is mandatory, salaried, and includes at least 100 hou
+- condition from discourse: pedagogus_erdekvedo (S4): We would support S4 if: (1) targeted funding for disadvantaged schools is legislated as a constitutional or special-budget commitment (not subject to discretionary fiscal consolidation), with a 
+- condition from discourse: kisgyerekes_szuloi (S1): Show us a working SES proxy that has been piloted and verified to be both accurate and gaming-resistant; demonstrate via a pilot phase that informal selection mechanisms do not proliferate when f
+- condition from discourse: kisgyerekes_szuloi (S2): Couple the phase-down **only** with S1-type admission reforms that actually level entry competition; **demonstrate via enforceable regulation that church and foundation maintainers will not absor
+- condition from discourse: kisgyerekes_szuloi (S3): **Secure a multi-party political pact with measurable, binding commitments to teacher retraining and early support systems**, demonstrated in year 1–2 via dedicated funding and workforce planning
+- condition from discourse: kisgyerekes_szuloi (S4): This scenario would lose our opposition only if (a) **targeted funding were locked in via constitutional budget-floor guarantees that survive fiscal consolidation** (not negotiable; temporary com
+
 ## round 08
 - condition from discourse: pedagogus_erdekvedo (S1): My stance would move toward support if the pilot design phase formally included practising teachers and admissions staff, and if a funded training and workload allowance were budgeted before any
 - condition from discourse: pedagogus_erdekvedo (S2): I would move toward support if compensatory funding and staffing increases for general schools were legislated and disbursed ahead of, not after, each admission-cap reduction, and if a named ret
@@ -21,13 +31,3 @@ Deterministic distillation from previous rounds (lab/memory.py); fed back into t
 - condition from discourse: kisgyerekes_szuloi (S2): A transparent, multi-year-published capacity schedule with guaranteed local-alternative-school placement for displaced children would move us toward conditional support.
 - condition from discourse: kisgyerekes_szuloi (S3): A credible, cross-party-backed phase-out plan with guaranteed local school access and no commute lengthening for affected cohorts would move us to support; a rushed single-government rollout woul
 - condition from discourse: kisgyerekes_szuloi (S4): If the targeted funding proves to be the first thing cut in a budget squeeze, leaving promises unfulfilled, our support would weaken toward conditional.
-
-## round 10
-- condition from discourse: pedagogus_erdekvedo (S1): Dedicated funded time and training for teachers involved in exam-item development and admissions compliance, separate from teaching-load hours, would move this toward support.
-- condition from discourse: pedagogus_erdekvedo (S2): A published redeployment guarantee — no forced job loss, retraining support, and seniority protection — for teachers affected by capacity caps would move this toward conditional support.
-- condition from discourse: pedagogus_erdekvedo (S3): A published, sequenced retraining plan that explicitly starts only after the salary reform stabilizes, with paid retraining time and no expectation of unpaid overtime absorption, would move this
-- condition from discourse: pedagogus_erdekvedo (S4): If the targeted-funding floor is not given durable statutory protection and is cut in the first fiscal-consolidation round, leaving disadvantaged-school staff with promised-but-unfunded resource
-- condition from discourse: pedagogus_erdekvedo (S5): A coordinated national staffing-transition framework with redeployment and retraining guarantees, layered onto the demographic baseline, would move this toward conditional support.
-- condition from discourse: kisgyerekes_szuloi (S1): Our support would firm up if the rules applied consistently across all maintainer types in our region, or turn to opposition if only state schools face new constraints while church/foundation sch
-- condition from discourse: kisgyerekes_szuloi (S2): We would reconsider if capacity reduction were paired with guaranteed, equally accessible local alternatives and a credible mechanism preventing displacement toward more expensive or distant scho
-- condition from discourse: kisgyerekes_szuloi (S3): Firm support requires a clear, published cohort-by-cohort transition calendar naming exactly which age groups keep old rules and which get new ones; opposition would follow if implementation time

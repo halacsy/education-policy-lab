@@ -1,0 +1,25 @@
+{
+  "objections": [
+    {
+      "scenario": "S3",
+      "field": "expected_benefits",
+      "objection": "The scenario labels the claim that ‘delaying tracking is associated with reduced socio‑economic achievement gaps without lowering mean performance’ as [evidence: strong]. This overstates the curated-registry support. The registry tags Poland's 1999 reform as moderate evidence (poland_reform [moderate]) and explicitly notes that much of Poland's gain was due to increased resources and peer-composition shifts rather than the tracking-age change alone. The registry does include a strong cross-country finding that earlier between‑school tracking increases inequality (tracking_inequality [strong]), but that is an association about timing of tracking, not an unconditional, strong causal guarantee that a Hungarian delay would replicate Poland/Finland-style gains. S3 therefore treats correlative and context‑dependent evidence as stronger and more directly transferable than the registry supports.",
+      "severity": "high",
+      "suggested_revision": "Downgrade the evidence tag from ‘strong’ to ‘moderate’ (or split the claim: use ‘strong’ for the general cross‑country association that earlier tracking is linked to greater inequality, and ‘moderate’ for the claim that a delayed‑tracking reform will produce Poland/Finland‑scale gains in Hungary). Add the explicit caveat that Poland’s effects were partly resource/peer‑composition driven and that no Hungary natural experiment exists. Commit to a concrete evaluation plan as a precondition for scaling: a staggered regional pilot or phased roll‑out with matched administrative controls (difference‑in‑differences / synthetic control and pupil‑level linked data) to estimate local causal effects and isolate mechanism (peer vs resource vs pedagogical change)."
+    },
+    {
+      "scenario": "S1",
+      "field": "mechanism",
+      "objection": "The scenario asserts a ‘coaching‑resistant exam design and SES‑aware admission proxies could reduce the correlation between private tutoring investment and admission success’ and tags this as [evidence: moderate]. The curated registry contains no moderated, registry‑backed evidence that coaching‑resistant exam redesign reliably reduces tutoring‑driven advantage at scale in Hungary; the parent_attachment and school_choice entries document demand and sorting but do not validate the effectiveness of coaching‑resistant item design as a generally effective countermeasure. Treating this design option as ‘moderately evidenced’ therefore overclaims: the claim is largely untested in the Hungarian context and is at best speculative without piloted causal evidence.",
+      "severity": "high",
+      "suggested_revision": "Reclassify the evidence strength to ‘weak’ (or label it explicitly as speculative/model knowledge). Replace the assertion with a concrete empirical pathway: pilot coaching‑resistant item formats in a randomized or phased sample, pair with pre/post measurement of out‑of‑school preparation expenditure and admitted cohorts’ SES composition, and commit to psychometric validation and external replication before scaling. Add a monitoring indicator (change in the SES‑admission correlation and measured private tutoring spending) and require an independent evaluation (RCT/quasi‑experiment) as a gating condition for national roll‑out."
+    },
+    {
+      "scenario": "S1",
+      "field": "mechanism",
+      "objection": "The scenario claims uniform score‑threshold rules would reduce discretion that currently ‘varies across roughly 2,000+ institutions’ and tags this as [evidence: weak]. The ‘2,000+ institutions’ figure is a concrete numeric claim not supported by the curated registry or cited source in the record; selective gimnázium provision is described elsewhere as numerically small (~200 schools, ~22–26k pupils). Using an unsupported large institution count misstates the scale and could mislead readers about enforcement complexity.",
+      "severity": "medium",
+      "suggested_revision": "Remove or source the ‘~2,000+ institutions’ number. If the intention is to refer to all middle/secondary institutions that publish admission criteria, replace the unverified figure with a sourced count (or state ‘hundreds-to-low‑thousands’ with a citation). Clarify enforcement scope (e.g., ‘~200 selective gimnázium vs broader secondary schools’) and adjust the cost/administration estimates and timelines accordingly."
+    }
+  ]
+}

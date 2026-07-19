@@ -1,0 +1,32 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "equity_impact",
+      "objection": "The equity_impact claims a “likely modest reduction” in family-capital-driven sorting but fails to substantively engage the strong evidence that non-state (church/foundation) maintainers — now ~25–30% of gimnázium enrolment — will absorb displaced advantaged demand. Concretely: the text treats maintainer autonomy as a caveat but does not model or quantify the absorption pathway, nor specify enforcement or incentive levers to prevent displacement. Given the scenario’s own evidence tags (state reach limited; non-state share documented as growing), the unqualified expectation of a modest net equity gain is unsupported and risks producing a net-zero or equity-negative outcome as advantaged families relocate. (Speculative element: the scale of absorption is not estimated.)",
+      "severity": "high",
+      "suggested_revision": "Replace the blanket “likely modest reduction” claim with an explicit, evidence-based displacement analysis: (1) model at least two scenarios (low, medium, high) estimating percent of displaced state-sector demand absorbed by non-state maintainers using recent KSH enrolment trends; (2) identify concrete enforcement/incentive instruments (e.g. conditional normative funding, statutory admission-conditional grants, or transfer-clawback for new selective places) and legal constraints for applying them to church/foundation schools; (3) add pilot requirements (regionally staggered) that track applicant/admitted SES composition and private-prep spending to empirically measure displacement before national roll-out."
+    },
+    {
+      "scenario": "S2",
+      "field": "equity_impact",
+      "objection": "The equity_impact correctly warns that state-sector contraction may relocate rather than reduce net selectivity, but it omits the critical distributional detail of who is left out and where harms concentrate. Specifically, there is no region-by-region or cohort-level analysis showing whether low-SES high-performing pupils lose access to selective places or are crowded out into lower-quality general schools, nor any modelling of the timing mismatch between state contraction and potential non-state expansion. Without this, the scenario understates probable equity-negative outcomes (e.g., intensified SES-skew within remaining state selective sites and reduced access for disadvantaged high-performers).",
+      "severity": "high",
+      "suggested_revision": "Augment the equity_impact with a disaggregated impact assessment: (1) produce regional simulations showing how capacity caps would change admission cutoffs and the SES composition of admitted cohorts under plausible maintainer responses; (2) estimate effects on low-SES high-performers (access probability losses) under each simulation; (3) add policy mitigations (e.g. guaranteed slots for disadvantaged high-achievers, transitional place-reservation, or targeted transport/subsidy schemes) and a legal analysis of how to pair capacity caps with fiscal incentives to deter non-state expansion."
+    },
+    {
+      "scenario": "S3",
+      "field": "equity_impact",
+      "objection": "The equity_impact correctly conditions gains on concurrent anti-sorting rules, but it leaves unspecified which students are actually reached versus excluded under realistic Hungarian constraints. In particular, it understates how church/foundation autonomy and limited teacher capacity (aging workforce, slow professionalization) could leave low-SES high-performing pupils excluded from newly comprehensive pathways or from converted school networks, while advantaged families re-route sorting via choice or private tutoring. The scenario therefore presents the conditional equity gain as achievable without a concrete legal design to bind non-state maintainers or guaranteed access protections for disadvantaged high-performers.",
+      "severity": "high",
+      "suggested_revision": "Make the conditionality operational: (1) specify exact anti-sorting legal instruments (e.g. statutory limits on selective admissions across all maintainers, conditional funding tied to non-discrimination clauses, or mandatory centralized placement algorithms) and obtain a targeted legal opinion on enforceability vis-à-vis church autonomy; (2) include an explicit inclusion mechanism for low-SES high-performers (e.g. reserved quota or weighted lottery using verified SES proxies) to prevent exclusion during conversion; (3) add a realistic teacher-capacity timeline and a phased pilot (with measurable equity metrics) before nationwide statutory change."
+    },
+    {
+      "scenario": "S5",
+      "field": "equity_impact",
+      "objection": "S5’s equity_impact both acknowledges that consolidation can worsen segregation and yet frames demographic contraction as a neutral baseline; this is inconsistent and leaves out which populations will be harmed. Concretely: the scenario does not map how extreme regional cohort declines (some districts to 55–67 births) will differentially displace disadvantaged versus advantaged pupils, nor does it prescribe mandatory equity safeguards for tankerület-led consolidation—thereby risking ad hoc closures that concentrate selective capacity in advantaged localities and deepen regional inequities.",
+      "severity": "medium",
+      "suggested_revision": "Convert the passive baseline into a clarified counterfactual with explicit equity safeguards: (1) require that any tankerület consolidation plan include a mandatory Equity Impact Assessment (school-by-school segregation index, projected SES composition changes) before approval; (2) add nationally mandated redistribution or integration rules for closures (e.g. minimum mixed-SES intake targets, transport subsidies for affected low-SES pupils, or targeted place-reservations) and a monitoring dashboard to track segregation indices regionally; (3) model several regional consolidation scenarios to show where passive consolidation would likely worsen versus improve equity, and publish these as the empirical null against which S1–S4 are compared."
+    }
+  ]
+}
