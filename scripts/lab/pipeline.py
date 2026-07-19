@@ -776,8 +776,11 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                  inputs=scen_en_md),
             validate=lambda o: valid_voice(o, id_set),
             out_path=ddir / "voices" / f"{name}.json",
-            # sourced scenarios lengthen voice reactions (round-2 truncation)
-            schema=S.VOICE(ids), max_tokens=40000)
+            # sourced scenarios lengthen voice reactions (round-2 truncation,
+            # #29: rural-school-closures round_03 digitalisgazdasagi hit the
+            # 40000 cap under the 5-frame scenario set — raised, infra fix,
+            # not part of the panel-expansion experiment's documented change)
+            schema=S.VOICE(ids), max_tokens=56000)
         return name, obj
 
     voices = {}
