@@ -725,3 +725,13 @@ proposal in the 500–900 word summary. The judge receives the same visible
 appendix and counts a citation as auditable only when it resolves to a claim
 and source URI. The kisiskolák run was stopped before acceptance so it cannot
 establish a baseline under the weaker visibility contract.
+
+**D-49 — Provider-compatible schemas need nested semantic cardinality gates
+(2026-07-20).** Anthropic's structured-output grammar accepts array
+`minItems` only as 0 or 1, while canonical artifacts can require two or more
+items. The first kisiskolák dilemma attempt therefore passed the provider
+contract with one compound value pole and failed only at artifact admission.
+The counted structured-call validator now supports nested collection-field
+constraints and retries complete outputs before persistence. It enforces two
+value poles per dilemma and the proposal minima for mechanisms, implementation
+steps, and evidence references. Upstream accepted artifacts remain reusable.

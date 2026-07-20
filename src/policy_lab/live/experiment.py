@@ -502,6 +502,11 @@ Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a 
             run_dir=run_dir, suffix="generate", constraints={
                 "proposals": (4, 6), "coverage": (len(frames), len(frames))
             },
+            item_constraints={
+                ("proposals", "mechanisms"): (2, 5),
+                ("proposals", "implementation_steps"): (2, 6),
+                ("proposals", "finding_refs"): (2, 20),
+            },
         )
         proposals = sorted(result["proposals"], key=lambda item: int(item["key"][1:]))
         keys = [item["key"] for item in proposals]
@@ -653,6 +658,7 @@ Return 3-8 non-duplicative dilemmas. Cite proposal ids and finding ids. The evid
             prompt, contracts.dilemma_output([ref.id for ref in proposals], [ref.id for ref in finding_refs]),
             role="generator", max_tokens=16000, arm=arm, node=node,
             run_dir=run_dir, suffix="map", constraints={"dilemmas": (3, 8)},
+            item_constraints={("dilemmas", "value_poles"): (2, 3)},
         )
         return [self._record(f"D-live-{arm}-{index:02d}", "dilemma", provenance, {
             **item, "origin": "live_generation",
@@ -1003,6 +1009,7 @@ Score only what is visible. Treat an inline finding id as auditable only when th
         self, prompt: str, schema: dict[str, Any], *, role: str,
         max_tokens: int, arm: str, node: str, run_dir: Path, suffix: str,
         constraints: dict[str, tuple[int, int]], retries: int = 2,
+        item_constraints: dict[tuple[str, str], tuple[int, int]] | None = None,
     ) -> dict[str, Any]:
         current_prompt = prompt
         for attempt in range(retries + 1):
@@ -1018,6 +1025,14 @@ Score only what is visible. Treat an inline finding id as auditable only when th
                     violations.append(
                         f"{field} requires {minimum}-{maximum} items, got {count}"
                     )
+            for (collection, field), (minimum, maximum) in (item_constraints or {}).items():
+                for index, item in enumerate(result.get(collection, []), 1):
+                    count = len(item.get(field, []))
+                    if not minimum <= count <= maximum:
+                        violations.append(
+                            f"{collection}[{index}].{field} requires "
+                            f"{minimum}-{maximum} items, got {count}"
+                        )
             if not violations:
                 return result
             rejection = {
