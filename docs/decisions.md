@@ -691,3 +691,12 @@ PR #29 A/B report. `run_v2_production.py` runs isolated, resumable topic stores
 and writes a cross-topic catalog. Production uses only the admitted 12-lens
 registry. The experimental psychology lens is not silently seated by running
 the two production topics.
+
+**D-45 — Production research has an evidence-breadth floor (2026-07-20).**
+The first live v2 sample hit the former seven-finding ceiling in every one of
+12 domains (84 findings), while the comparable sourced v1 record contained 124.
+Because this made narrower evidence capture likely, production research now
+requires 7–10 distinct, non-padded findings per lens and receives larger search
+and analysis budgets. This is a breadth safeguard, not a claim that item count
+measures evidence quality; source linkage, limitations, evidence strength, and
+the downstream judge remain mandatory.

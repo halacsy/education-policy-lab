@@ -28,7 +28,7 @@ RESEARCH_OUTPUT = {
                 "limitations": array(TEXT, 1, 3),
             },
             "required": ["claim", "evidence_strength", "source_title", "source_url", "limitations"],
-        }, 4, 7),
+        }, 7, 10),
         "assumptions": array(TEXT, 1, 4),
         "uncertainties": array({
             "type": "object", "additionalProperties": False,

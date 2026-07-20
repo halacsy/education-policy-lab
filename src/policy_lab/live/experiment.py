@@ -125,7 +125,7 @@ class ArtifactDagRunner:
                 ),
                 inputs={}, relevant_config={**common_config, "lens": lens_id},
                 provider=self.provider_generator, model="anthropic-task-ladder",
-                generation_parameters={"search_max_tokens": 8000, "analysis_max_tokens": 12000},
+                generation_parameters={"search_max_tokens": 10000, "analysis_max_tokens": 16000},
                 prompt_hash=self._contract_hash("research_v1"),
                 builder=lambda pv, lens=lens, node=name, run_dir=run_dir: self._research_records(
                     lens, pv, node=node, run_dir=run_dir, arm=arm
@@ -366,7 +366,7 @@ PROBLEM: {problem['problem_statement']['en']}
 QUESTIONS:
 {self._bullets(lens['questions'])}
 
-Use live web search. Return concise English research notes with direct source URLs, dates or scopes where material, contested evidence clearly marked, and no policy recommendation. Separate facts from inference. Four to seven decision-relevant findings are enough.
+Use live web search. Return concise English research notes with direct source URLs, dates or scopes where material, contested evidence clearly marked, and no policy recommendation. Separate facts from inference. Cover seven to ten distinct decision-relevant findings; do not split one claim merely to hit the range.
 """
         notes = self._recover_or_call_search(
             search_prompt, arm=arm, node=node, run_dir=run_dir
@@ -382,12 +382,12 @@ KNOWN LENS LIMITS: {'; '.join(lens['limitations'])}
 RESEARCH NOTES:
 {notes}
 
-Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 4-7 findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.
 """
         result = self._call_structured_counted(
-            analysis_prompt, contracts.RESEARCH_OUTPUT, role="generator", max_tokens=12000,
+            analysis_prompt, contracts.RESEARCH_OUTPUT, role="generator", max_tokens=16000,
             arm=arm, node=node, run_dir=run_dir, suffix="analysis",
-            constraints={"findings": (4, 7), "assumptions": (1, 4), "uncertainties": (2, 4)},
+            constraints={"findings": (7, 10), "assumptions": (1, 4), "uncertainties": (2, 4)},
         )
         records: list[dict[str, Any]] = []
         assumption_ids = []
@@ -936,7 +936,7 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
                 raw.write_text(notes, encoding="utf-8")
                 return notes
         return self._call_free(
-            prompt, role="generator", max_tokens=8000, web_search=True,
+            prompt, role="generator", max_tokens=10000, web_search=True,
             arm=arm, node=node, run_dir=run_dir, suffix="search"
         )
 
