@@ -707,3 +707,10 @@ with a semicolon. The strict `uri` schema remains unchanged. The source
 normalizer now extracts the first explicit HTTP(S) URI and otherwise emits an
 auditable URN pointer; it never stores a multi-URL prose field as one URI. A
 regression test covers both joined citations and the no-direct-URL fallback.
+
+**D-47 — Live source URIs are percent-encoded at admission (2026-07-20).** A
+resumed production node exposed a second strict-URI edge case: an otherwise
+valid Scholar link contained a non-ASCII author character. The normalizer now
+percent-encodes unsafe URL characters before schema validation. The canonical
+link remains reversible and standards-compliant; raw provider text stays in
+the run audit.

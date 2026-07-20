@@ -293,6 +293,12 @@ class NodeSpecTests(unittest.TestCase):
             ArtifactDagRunner._safe_uri("No direct URL in the notes", "SRC Test"),
             "urn:epl:live-source:src-test",
         )
+        self.assertEqual(
+            ArtifactDagRunner._safe_uri(
+                "https://scholar.google.com/scholar?q=Böheim-Galehr", "SRC-test"
+            ),
+            "https://scholar.google.com/scholar?q=B%C3%B6heim-Galehr",
+        )
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
-from urllib.parse import urlsplit
+from urllib.parse import quote, urlsplit
 
 from policy_lab.dag import NodeExecutor, NodeSpec
 from policy_lab.jsonio import content_hash, write_json
@@ -1174,6 +1174,7 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
         match = re.search(r"https?://[^\s;]+", value)
         if match:
             candidate = match.group(0).rstrip(".,)")
+            candidate = quote(candidate, safe=":/?#[]@!$&'()*+,;=%")
             if urlsplit(candidate).scheme in {"http", "https"}:
                 return candidate
         return f"urn:epl:live-source:{_slug(fallback_id)}"
