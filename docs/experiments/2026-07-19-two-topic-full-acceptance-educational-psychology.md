@@ -1,6 +1,24 @@
 # Two-topic full live acceptance: educational_psychology (issue #19, PR #29)
 
-**Date:** 2026-07-18/19/20 · **Branch:** `exp/educational-psychology-expert` · **Tracker:** #19, #9, #30, #31
+**Date:** 2026-07-18/19/20 · **Branch:** `exp/educational-psychology-expert` · **Tracker:** #19, #9, #30, #31, #32, #33
+
+> **2026-07-20 update — superseded numbers below, fix now applied and
+> verified on both official rounds.** This report's §2-3 describe the
+> **pre-fix** state, used to root-cause the carriage problem. The #9 fix
+> (schema + validator + editor spec, commit eee3564) was then applied and
+> both official rounds were regenerated (affected steps only — 13 experts/
+> scenarios/discourse reused unchanged; editor→brief→critics→meta_critic→
+> evaluation regenerated live; commits 0275ee2, 1f62667; issue #33 documents
+> why a cheap `run_iteration_loop.py` relaunch couldn't do this instead).
+> **Final, fixed numbers:** korai-szelekcio round_10 total **9.411** (Δ
+> -0.039, verify.py still hits the same documented era-scorecard exception
+> as before — smaller now); rural-school-closures round_03 total **9.363**
+> (Δ +0.111, **verify.py PASSES**). Both rounds now carry
+> `educational_psychology`'s own mechanism (BFLPE/self-concept/labeling/
+> stereotype threat, and rural-specific multigrade-classroom content) as
+> its own disagreement side(s) and brief minority position — not just a
+> holder name. See the PR #29 and issue #9 comment threads (2026-07-20) for
+> the full before/after evidence.
 
 ## What this is
 
