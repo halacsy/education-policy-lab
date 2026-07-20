@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["locale", "bundle_version", "source_package_hash", "translations", "generated_at"],
+  "properties": {
+    "locale": {"const": "hu"},
+    "bundle_version": {"const": "1.0.0"},
+    "source_package_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "translations": {
+      "type": "object", "minProperties": 1,
+      "propertyNames": {"pattern": "^[A-Za-z0-9._-]+$"},
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "generated_at": {"type": "string", "format": "date-time"}
+  }
+}

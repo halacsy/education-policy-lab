@@ -735,3 +735,12 @@ The counted structured-call validator now supports nested collection-field
 constraints and retries complete outputs before persistence. It enforces two
 value poles per dilemma and the proposal minima for mechanisms, implementation
 steps, and evidence references. Upstream accepted artifacts remain reusable.
+
+**D-50 — Public semantic localization is a hash-bound downstream bundle
+(2026-07-21).** Canonical v2 artifacts remain English-only, but a fully
+Hungarian public page cannot be produced from UI labels alone. The production
+localizer now extracts only public-facing fields, translates them in audited
+keyed chunks, requires exact key coverage, and writes a schema-validated
+`hu.json` presentation bundle bound to the decision-package content hash.
+Localization never feeds an analytical node and can be regenerated without
+changing evidence, proposals, evaluation, or readiness.
