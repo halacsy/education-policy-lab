@@ -226,6 +226,7 @@ class NodeSpecTests(unittest.TestCase):
             "provider": "anthropic",
             "model": "test-model",
             "generation_parameters": {"temperature": 0},
+            "prompt_hash": "e" * 64,
         }
         key_a = compute_cache_key(**common)
         common["input_artifact_hashes"] = {
@@ -237,6 +238,10 @@ class NodeSpecTests(unittest.TestCase):
         self.assertEqual(key_a, key_b)
 
         common["relevant_config"] = {"clustering.max_families": 6}
+        self.assertNotEqual(key_a, compute_cache_key(**common))
+
+        common["relevant_config"] = {"clustering.max_families": 5}
+        common["prompt_hash"] = "f" * 64
         self.assertNotEqual(key_a, compute_cache_key(**common))
 
 

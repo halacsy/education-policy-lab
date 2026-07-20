@@ -65,6 +65,7 @@ class NodeExecutor:
             provider=provider,
             model=model,
             generation_parameters=generation_parameters or {},
+            prompt_hash=prompt_hash,
         )
         cache_path = self.repository.root / "cache" / spec.name / f"{cache_key}.json"
         if cache_path.exists():

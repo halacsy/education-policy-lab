@@ -1003,6 +1003,7 @@ sha256(
   + provider
   + model
   + generation_parameters
+  + prompt_hash
 )
 ```
 

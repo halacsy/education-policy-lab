@@ -44,6 +44,7 @@ def compute_cache_key(
     provider: str | None,
     model: str | None,
     generation_parameters: Mapping[str, Any],
+    prompt_hash: str | None = None,
 ) -> str:
     """Hash only the dependencies explicitly declared by the node."""
 
@@ -56,6 +57,7 @@ def compute_cache_key(
         "model": model,
         "node": asdict(spec),
         "provider": provider,
+        "prompt_hash": prompt_hash,
         "relevant_config": dict(relevant_config),
         "schema_hashes": dict(schema_hashes),
         "spec_hashes": dict(spec_hashes),

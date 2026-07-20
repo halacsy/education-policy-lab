@@ -645,3 +645,11 @@ with English interface labels and raw English enum values. Decisions:
    options, page title, metadata, and accessibility labels switch together and
    retain the reader's preference. Missing translations fail the build rather
    than silently falling back to English.
+
+**D-40 — The accepted prompt is part of every generative cache key
+(2026-07-20).** The v2 executor already stored the prompt hash in provenance,
+but omitted it from the cache-key payload. A prompt-only change could therefore
+reuse a semantically stale artifact even though the audit record described a
+different prompt. `prompt_hash` is now an explicit cache dependency and has a
+regression test. This is the first cutover hardening change; node-specific
+implementation dependencies remain a separate change.
