@@ -24,135 +24,57 @@
     }
   },
   "backends": {
-    "argument_decompose [anthropic:claude-sonnet-5]": 41,
-    "argument_map [anthropic:claude-sonnet-5]": 2,
-    "brief [anthropic:claude-sonnet-5]": 2,
-    "build_scenarios [anthropic:claude-sonnet-5]": 1,
-    "critic [openai:]": 16,
-    "discourse_reciprocity [anthropic:claude-haiku-4-5]": 20,
-    "discourse_voice [anthropic:claude-haiku-4-5]": 20,
-    "discourse_voice [anthropic:claude-sonnet-5]": 19,
-    "expert_analysis [anthropic:claude-haiku-4-5]": 13,
-    "expert_research [anthropic:claude-opus-4-8]": 1,
-    "expert_research [anthropic:claude-sonnet-5]": 13,
-    "grade_arguments [openai:]": 2,
-    "judge_score [anthropic:claude-haiku-4-5]": 6,
-    "judge_score [openai:]": 9,
-    "meta_critique [openai:]": 1,
-    "rejected_framings [anthropic:claude-haiku-4-5]": 2,
-    "rejected_framings [anthropic:claude-sonnet-5]": 1,
-    "synthesis [anthropic:claude-opus-4-8]": 1,
-    "synthesis [anthropic:claude-sonnet-5]": 2
+    "brief [anthropic:claude-sonnet-5]": 1,
+    "critic [openai:]": 8,
+    "synthesis [anthropic:claude-sonnet-5]": 1
   },
   "tokens": {
     "by_task_backend": {
-      "argument_decompose [anthropic:claude-sonnet-5]": {
-        "input_tokens": 117211,
-        "output_tokens": 27780
-      },
-      "argument_map [anthropic:claude-sonnet-5]": {
-        "input_tokens": 23541,
-        "output_tokens": 5988
-      },
       "brief [anthropic:claude-sonnet-5]": {
-        "input_tokens": 58864,
-        "output_tokens": 32454
-      },
-      "build_scenarios [anthropic:claude-sonnet-5]": {
-        "input_tokens": 56188,
-        "output_tokens": 33847
+        "input_tokens": 59971,
+        "output_tokens": 33018
       },
       "critic [openai:]": {
-        "input_tokens": 84758,
-        "output_tokens": 19213
-      },
-      "discourse_reciprocity [anthropic:claude-haiku-4-5]": {
-        "input_tokens": 140418,
-        "output_tokens": 12841
-      },
-      "discourse_voice [anthropic:claude-haiku-4-5]": {
-        "input_tokens": 121436,
-        "output_tokens": 33475
-      },
-      "discourse_voice [anthropic:claude-sonnet-5]": {
-        "input_tokens": 178171,
-        "output_tokens": 43851
-      },
-      "expert_analysis [anthropic:claude-haiku-4-5]": {
-        "input_tokens": 94300,
-        "output_tokens": 77165
-      },
-      "expert_research [anthropic:claude-opus-4-8]": {
-        "input_tokens": 127847,
-        "output_tokens": 4344
-      },
-      "expert_research [anthropic:claude-sonnet-5]": {
-        "input_tokens": 1350989,
-        "output_tokens": 70663
-      },
-      "grade_arguments [openai:]": {
-        "input_tokens": 11970,
-        "output_tokens": 4413
+        "input_tokens": 89670,
+        "output_tokens": 19074
       },
       "judge_score [anthropic:claude-haiku-4-5]": {
-        "input_tokens": 33336,
-        "output_tokens": 535
+        "input_tokens": 32736,
+        "output_tokens": 581
       },
       "judge_score [openai:]": {
-        "input_tokens": 84144,
-        "output_tokens": 5075
+        "input_tokens": 87030,
+        "output_tokens": 4722
       },
       "meta_critique [openai:]": {
         "input_tokens": 1322,
-        "output_tokens": 2420
-      },
-      "rejected_framings [anthropic:claude-haiku-4-5]": {
-        "input_tokens": 12090,
-        "output_tokens": 392
-      },
-      "rejected_framings [anthropic:claude-sonnet-5]": {
-        "input_tokens": 18360,
-        "output_tokens": 2079
-      },
-      "synthesis [anthropic:claude-opus-4-8]": {
-        "input_tokens": 49965,
-        "output_tokens": 8258
+        "output_tokens": 2230
       },
       "synthesis [anthropic:claude-sonnet-5]": {
-        "input_tokens": 49888,
-        "output_tokens": 8806
+        "input_tokens": 50379,
+        "output_tokens": 8779
       }
     },
-    "total_input_tokens": 2614798,
-    "total_output_tokens": 393599,
-    "total_tokens": 3008397,
-    "metered_calls": 108,
+    "total_input_tokens": 321108,
+    "total_output_tokens": 68404,
+    "total_tokens": 389512,
+    "metered_calls": 26,
     "unmetered_calls": 0
   },
-  "errors": {
-    "discourse_voice [anthropic:claude-haiku-4-5]": [
-      "APIStatusError: {'type': 'error', 'error': {'details': None, 'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CdB474bXyGRr2EhprbvjS'}",
-      "APIStatusError: {'type': 'error', 'error': {'details': None, 'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CdB4ECJ5eXW3oVtzJCkfW'}"
-    ]
-  },
-  "wall_clock_s": 2548.1,
+  "errors": {},
+  "wall_clock_s": 752.3,
   "usd_estimate": {
-    "total_usd": 11.17,
+    "total_usd": 0.99,
     "by_model": {
       "claude-sonnet-5": {
-        "input_tokens": 1853212,
-        "output_tokens": 225468,
-        "usd": 8.9417
+        "input_tokens": 110350,
+        "output_tokens": 41797,
+        "usd": 0.958
       },
       "claude-haiku-4-5": {
-        "input_tokens": 401580,
-        "output_tokens": 124408,
-        "usd": 1.0236
-      },
-      "claude-opus-4-8": {
-        "input_tokens": 177812,
-        "output_tokens": 12602,
-        "usd": 1.2041
+        "input_tokens": 32736,
+        "output_tokens": 581,
+        "usd": 0.0356
       }
     },
     "unpriced_models": []
