@@ -1,0 +1,26 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/uncertainty.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^U-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "uncertainty"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "question": {"type": "string", "minLength": 1},
+          "uncertainty_type": {"enum": ["measurement", "causal", "transferability", "implementation", "forecast", "unknown"]},
+          "current_confidence": {"enum": ["high", "medium", "low", "unknown"]},
+          "reduction_path": {"type": "string", "minLength": 1}
+        },
+        "required": ["question", "uncertainty_type", "current_confidence", "reduction_path"]
+      }
+    }}
+  ],
+  "x-artifact-references": [{"path": "/provenance_ref", "record_type": "provenance"}],
+  "x-record-type": "uncertainty",
+  "x-schema-version": "2.0.0"
+}

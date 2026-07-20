@@ -1,0 +1,37 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/lens_assessment.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^AS-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "lens_assessment"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "proposal_ref": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"},
+          "lens_ref": {"type": "string", "pattern": "^L-[A-Za-z0-9._-]+$"},
+          "assessment": {"type": "string", "minLength": 1},
+          "strengths": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "weaknesses": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "opportunities": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "threats": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "verdict": {"enum": ["supports", "supports_with_conditions", "neutral", "cautions", "insufficient_evidence"]},
+          "confidence": {"enum": ["high", "medium", "low"]},
+          "finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}}
+        },
+        "required": ["proposal_ref", "lens_ref", "assessment", "strengths", "weaknesses", "opportunities", "threats", "verdict", "confidence", "finding_refs"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/proposal_ref", "record_type": "transformation_proposal"},
+    {"path": "/content/lens_ref", "record_type": "lens_definition"},
+    {"path": "/content/finding_refs/*", "record_type": "finding"}
+  ],
+  "x-record-type": "lens_assessment",
+  "x-schema-version": "2.0.0"
+}

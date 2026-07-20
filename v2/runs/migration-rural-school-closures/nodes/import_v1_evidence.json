@@ -1,0 +1,2051 @@
+{
+  "cache_key": "2f55f8781f7eed99e10d7d9d1302be64de6d2746a33ebbd76765d3c8227ce7bc",
+  "completed_at": "2026-07-20T15:13:35.489544Z",
+  "disposition": "cache_hit",
+  "input_artifacts": {},
+  "node_id": "import_v1_evidence",
+  "node_version": "1.0.0",
+  "output_artifacts": [
+    {
+      "content_hash": "eb3a1a83f3a9f97168b4fb3610d0a3bdbc923efb422f3248296239ea93aa418e",
+      "id": "A-rural-school-closures-demography-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "28dc05250c262fefb02d7c079f3b503d909c704d4d0fb74c8385be2c84df3a14",
+      "id": "A-rural-school-closures-demography-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "7edfbd42dd32db262af49a2f02ef2b459baac5a71e44c16fd1566241ad9ab5f8",
+      "id": "A-rural-school-closures-demography-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "1a3e07a93a35156c34a56bd102801b46b1b50cdf222723ca54458680cb99a7b0",
+      "id": "A-rural-school-closures-demography-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "e77047b529acb1b9c9fb0994560b06d4cebd1696a7300299d87cadf8bd7993ec",
+      "id": "A-rural-school-closures-demography-05",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "b9459d304b59273d7cb46b5e4139d1ab1f2ef1e7f83e07c9cf0f96a860a3bf06",
+      "id": "A-rural-school-closures-demography-06",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "00e0a3e2d6e43e325f3d5d253403927ba7bbba84dbe973d0518651236bee52d4",
+      "id": "A-rural-school-closures-demography-07",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "7529272e3107cc443333ecae982612a7c2b50141b1780821c09ead34e0503dd1",
+      "id": "A-rural-school-closures-demography-08",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "91911fe49b1e783e4abb26f8fc3e608042e0da5d9de1213cb21406e4e71e6197",
+      "id": "A-rural-school-closures-demography-09",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "240b5cee241cdd5a221c44780466598abd937c05c3438a158244c6ebfc863a3c",
+      "id": "A-rural-school-closures-demography-10",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ed8ea7a67daa7213e42a514dbee5134f9fae0b79c02ba14e6739c62ea3868fa8",
+      "id": "U-rural-school-closures-demography-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "eb99be8c204dfa119d3cab2423647ef805900388e68deaec39ecabe790b078e3",
+      "id": "U-rural-school-closures-demography-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "60ff7c02f015b3dfb08b359d68659d7f43d27853f3dafb4d42e474aed23c21c0",
+      "id": "SRC-rural-school-closures-ebc48c27af246c",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "0755d2ad26969ada8b060e63601d7ba8b4fad10c3e0e110189e6b8ff6a57bc66",
+      "id": "F-rural-school-closures-demography-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f52a2f5c63360b62b1436d231e382e9a5568abb38d5edb291ac47bf9c39dcef1",
+      "id": "SRC-rural-school-closures-20d75fda1c3f16",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "d5e3353c2ab5c931605b5e2d0a0eb866bbdc312c305744448386feca9cc2576d",
+      "id": "F-rural-school-closures-demography-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "5215ec204f893d99476867d6ba2f54400144abb14527678f90d393a196e6a1cb",
+      "id": "SRC-rural-school-closures-cff7ed865730d2",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "e79a358a11b7803a847a160b62700d931aeab410e2445e521283ddd066541fc9",
+      "id": "F-rural-school-closures-demography-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "c189fdea745a896ea2ec958d990040fc5721e0597cf1f22d6118712818610817",
+      "id": "F-rural-school-closures-demography-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "3639415476d2bbffb87fe17f7147a7ec5e5401c481c3c54138632b21f2b855a4",
+      "id": "F-rural-school-closures-demography-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "3d6543402f16a63d828f5183825c7acb0dee7a3946a30ef3e226bf40ac5cd329",
+      "id": "SRC-rural-school-closures-0876d1fa13e43c",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "c8b066718d38ce188b9bc2671d3edffbf91de50e8ae361961787248fa51f3bb3",
+      "id": "F-rural-school-closures-demography-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "8a6fdbaa7e5da6c91c9901623683f1d382c5415362891de4a19050c2b150a84e",
+      "id": "SRC-rural-school-closures-b97aa1c0bdc17b",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "eca0b6a68b55de94096f15aedd45afdb2e54d63f39935c40aa11271419a7419d",
+      "id": "F-rural-school-closures-demography-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "821adef3da229bca2824268919c58b1c7277e1d3f550a66cf06d7f4de88cf94e",
+      "id": "SRC-rural-school-closures-0a8747d24c0993",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "e8b3fea0e6415a85c8d9f81dc3b80d5bcb8f3e3c3c79df603d0c4094ba3e1b2d",
+      "id": "F-rural-school-closures-demography-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "07ad93a2591c743b58de0577ef402907f753627114b7ae7b3061b517f7eb0061",
+      "id": "SRC-rural-school-closures-d58f08dc643b14",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "e8ea601365b024157d6187786bb743a877f438ab2c54bfaf48702d56c3cf8416",
+      "id": "F-rural-school-closures-demography-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "e497518b0cfb6275df702d20cd0a2b409c71934dc5a331191f844ae877b88d9b",
+      "id": "SRC-rural-school-closures-0c08060017be38",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "5d3d2e4991dfdf6188d184522e1d620e34147130b36f087a14c782f847170bee",
+      "id": "F-rural-school-closures-demography-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f0c8e7e69acf8b811a02a2e6d5001ccf23e6c72be32a575264036764de35cdd0",
+      "id": "SRC-rural-school-closures-85fe66b9996fb5",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "a7b205a9b6701bb241dcaea8d8ff7a2bf0f57794cb17658dd1debe3da9adb676",
+      "id": "F-rural-school-closures-demography-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "3debd2e6913137ebf9d16d90716dded1d965219af532a269178f3e26de4ff926",
+      "id": "SRC-rural-school-closures-4d3edb076f1495",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "76f0ce7a1ef8091da8349fc91c0bebbd2ce18da944fc8bbbc297d42554d973c2",
+      "id": "F-rural-school-closures-demography-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "9121948643a9bc85bbb9afd3112a181719055d53b5a3ee9211435c791f4ca57b",
+      "id": "SRC-rural-school-closures-d91fc021a97ac9",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "0d7a70392723dc02daa40ac0bbbb6c458c6cfa1b6a8a411bf0c3fd110466d94e",
+      "id": "F-rural-school-closures-demography-13",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "4598bddc3eb024c615d4392c7e089031e357dcb62515c3dfda3b14eaf01e1df4",
+      "id": "F-rural-school-closures-demography-14",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "fc9924a38574c03d798f2e6586b1d15d7154e39d4bc5258935290275a3ec6d71",
+      "id": "A-rural-school-closures-education_finance-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "13a146d749e095f21b8fee58d47607d4b02177b747f4bd0e60f2f83c44f103b3",
+      "id": "A-rural-school-closures-education_finance-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ca1fcfbbea953d864431d2da02929b3ed43f25c6b35279c67a96df889e7c8930",
+      "id": "A-rural-school-closures-education_finance-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "2c413737397fd8d40d21b15ac0b16766af7337c3d6670180a1c91c90fdbbd176",
+      "id": "A-rural-school-closures-education_finance-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "80c4ce4c87fe32879c615be955b91c024557e9b5fc1a7ad5cee32a38a00e2018",
+      "id": "A-rural-school-closures-education_finance-05",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ab49b1778681ec6c07be3b642b01307f1f33190240f9bf4979d354850b64c168",
+      "id": "A-rural-school-closures-education_finance-06",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "d127db5a61c11fd08778cc3327039372f0cac16f2ec8a459a58d56d4c36a79bc",
+      "id": "U-rural-school-closures-education_finance-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "909a5391a5a1fb26afe7c287a46633e78f4beb132916124ea73cbe495e21576e",
+      "id": "U-rural-school-closures-education_finance-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "3a80e57bdf3143cbd9ba5771e747fac53ab2d9e13ecbaa0568c78a31205fea25",
+      "id": "U-rural-school-closures-education_finance-03",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "a01aeb9f326f6ef64d266867f32f9a4f070951db256ea6f7fc64fcedd2598b4a",
+      "id": "U-rural-school-closures-education_finance-04",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "33982fb54f36f42e88fc71955d5186f25fe4166ea6e1fa21d50ff39e16c9490d",
+      "id": "U-rural-school-closures-education_finance-05",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "c73a1a57458b02c7dd8128f1e951c460524efc6cc03c3bae87e2286f1efd5717",
+      "id": "U-rural-school-closures-education_finance-06",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "d0da99d4bd01eefac4b3fbefa46ffcea951a34b91ac90af707dc7dfbf6827ef7",
+      "id": "SRC-rural-school-closures-757de1779e63a0",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "4395357c922251c109bf2bcfc6d84cddedc42df27fe2bcaa6c13db81cc28d104",
+      "id": "F-rural-school-closures-education_finance-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "73e80e3c339a54e3403c10398e97ef9903149faa68f807165b0fd528ba3b6555",
+      "id": "SRC-rural-school-closures-1359d865fabada",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "58dc0f49b70d61957271aa39e3821bc6a43af345542d2c5e05ef3f17498030ff",
+      "id": "F-rural-school-closures-education_finance-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "eee1afdcc455c6a47a37b52b09407e1133a02edb263be0ea68599a271a44751d",
+      "id": "SRC-rural-school-closures-073c0486ae5188",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "121f5e0bf086ceb26991e83220e06008af223211bfa6963c9c531bc57beced34",
+      "id": "F-rural-school-closures-education_finance-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "7248eb1be91e22598a0f513242713a2cf17646c6729f5496da33bd1d25a081eb",
+      "id": "SRC-rural-school-closures-24a3784b1e5a60",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "69cd797a40804e2f08531c00478b1a430bfb427d118466e8e78a371e10f6fe28",
+      "id": "F-rural-school-closures-education_finance-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "52b6145afccb85a8e504f89e4e06f51370e1ee53ce6ce0dc989c0891f7ed611d",
+      "id": "SRC-rural-school-closures-cd6a23cf7adae7",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "6e1e8e49e9a99557759520dabea0a3d519743b3dd2c0629f7432c5b7995e1cb0",
+      "id": "F-rural-school-closures-education_finance-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "246e980d464a35ed43a7fde76763bb713e1ba94f4800c3e77290cde1669666fe",
+      "id": "SRC-rural-school-closures-1781d7a44d401c",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "eb95519789dfd46890c68cbb03888cf714eb552bd99f385bb4bec4e5c50ddcee",
+      "id": "F-rural-school-closures-education_finance-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "4aad6ebd79358993f1f579250fac414b47b659e3936a9ac11749cc6fb592fbe7",
+      "id": "SRC-rural-school-closures-c5148e87e92a89",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "5a347dce25571b820935f70a5400c9ac09f0e56fc63adbe7d1044e9548813a5e",
+      "id": "F-rural-school-closures-education_finance-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "6c335cd1914b04c96b7cee9e2ce331192a9d91842c8ccb7b9c736c49fdb4b7fe",
+      "id": "SRC-rural-school-closures-4d797f4051b001",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "849c9e24ddd554a6768e9d9bd9b391b564d9cfa7e75a5b703e26ac14fbbe4bd8",
+      "id": "F-rural-school-closures-education_finance-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ec34d7c0750c67dc3c7c5e2ee84f86f678190ed367ccb2811b9f21b39400aefc",
+      "id": "SRC-rural-school-closures-4d5d78095fb86e",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "05e15045eced5467a45264dea9ed60c116b976e41877479fbe3f99c1523ed162",
+      "id": "F-rural-school-closures-education_finance-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "1fed58852c062b7127a5c9be7c8e4f36208aa943270081cda23ad69cbeb36f1e",
+      "id": "SRC-rural-school-closures-5d2bf65cff49ca",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "92ee20dd367a28bc70312637ff9e9d8333558b2a42fdd1c0a5f2ebe26aceb8b3",
+      "id": "F-rural-school-closures-education_finance-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "8ee1e4213eb90807b02681c5d6851d2f14436d3ec60e6a5e8ae92193161d4a9f",
+      "id": "SRC-rural-school-closures-d1ca253e865c0a",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "00420ba1052cf5548aae35a138296b86b870e2e331c27c1da7ef7ef8d1fd610b",
+      "id": "F-rural-school-closures-education_finance-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "a142a704a771d84279b429aa27bea45840fa7010d95c9e9854acec5683c30e43",
+      "id": "SRC-rural-school-closures-9811469b0606af",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "8565f4d924820089a10fdaf800caba1823e6418f6a81f8ed78b3b8cf65fcf1b1",
+      "id": "F-rural-school-closures-education_finance-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "3af2990d1744e12e5d4eb4af3040d4ba561ea9390e532fa22aa6fb7c38c62939",
+      "id": "A-rural-school-closures-equity_and_social_mobility-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "9ba6f7ca4149bbb2ed68fc8009706a9adfbe40bd6b0d3ef389f0935f5a7c5f6f",
+      "id": "A-rural-school-closures-equity_and_social_mobility-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "e7811563b212ffd4500380265df02bd6b566fa8e400874e5a960bf554e38b509",
+      "id": "A-rural-school-closures-equity_and_social_mobility-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "e0039dc43df5fd5e042fabcadfa0e2fc1d93dd41ee298e6e2322a97c8dfbc408",
+      "id": "A-rural-school-closures-equity_and_social_mobility-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ec3197c6e5b7e9e1803356c3288a9e22a5ed15c611a45f3ca736f6ec72593bbe",
+      "id": "U-rural-school-closures-equity_and_social_mobility-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "56809bccd87ac90d7dd1470b7e72e73972d8e5d12d7b984aacfefa686d50710b",
+      "id": "U-rural-school-closures-equity_and_social_mobility-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "05427fc1c35fc2510cb54e828c72541857ee2f11046b9d2cd3ba77f43289c6fb",
+      "id": "SRC-rural-school-closures-49072a2777c367",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "ec4be03378aa11d8a0b9f957b0209a26770f168037f77e40f71ce9f1adaf12f0",
+      "id": "F-rural-school-closures-equity_and_social_mobility-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "9b7fdf0555406dbd5de655bfe5fdfaa4ce8fe92b6878aae393a26cae05d2b13f",
+      "id": "SRC-rural-school-closures-6b356efb5b1c34",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "57b671910115befc922d71a0cb301aa11c8e78642a28a89e125c76dd47fae4fb",
+      "id": "F-rural-school-closures-equity_and_social_mobility-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "726ba738190f3fe81b48c87ee0976ee3992e9c9dde6b28620765c9e262f1001b",
+      "id": "SRC-rural-school-closures-7cc6a1112ba517",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "cd9dc1d7d0130b78f285a30cc08f945d0db14fc1263d9e5b889418be4642c012",
+      "id": "F-rural-school-closures-equity_and_social_mobility-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ba6320bc049df7a9ec9f9846f5def68dc3ed3afe223e75493e00b177c4853e5a",
+      "id": "SRC-rural-school-closures-82022cc75f2b33",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "fa3b49884bd484fcc7197bed4f33a00add38a48e8414d85e7f5b3324a96a6c7a",
+      "id": "F-rural-school-closures-equity_and_social_mobility-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "27a976e5b7b18bb284d785c0de6929e0fbf0551812e4b4eebdb732747cd89b14",
+      "id": "SRC-rural-school-closures-f09f276bc3e3ca",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "808ba848f03d38c5be4096935e4a36f9af0fbf061fd279fefe74a7c45e1ca275",
+      "id": "F-rural-school-closures-equity_and_social_mobility-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "72ffb943e1e688ededc96be7056d623f614de08180d6074144cabc3336a36f90",
+      "id": "SRC-rural-school-closures-218354e66435a4",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "c46ea06eb167e978572dc842d719c6afad7794d64af36c93fc19e7141cfc34af",
+      "id": "F-rural-school-closures-equity_and_social_mobility-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "7d3a155270bf83f810c4fe2f9bfb03af2e56d1c2d6144ad8d739b51e787250bb",
+      "id": "SRC-rural-school-closures-ce430f5c1e7a0c",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "26c34b5eadffeef17e923b0f7fa37ca5cd759b2455c2f52ba1c6e064f265a63e",
+      "id": "F-rural-school-closures-equity_and_social_mobility-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "bb8d7ecae8e0462fd29f81a4520761d5eb9bb4350c62271fb5a25cb8d3f6c359",
+      "id": "SRC-rural-school-closures-98357aad9e3ee8",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "45e3c292dd8ebb116e6b4c1c0a91d63c9033ad849b729aea66e7ebdfaed4b891",
+      "id": "F-rural-school-closures-equity_and_social_mobility-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ce959d927eb34e8751bba8796b8b4c2b660eacc13995567401e3115329297220",
+      "id": "SRC-rural-school-closures-5a217f47a49d8f",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "b06d01b7f171e3eb5a4e1e4fb787c16fcca1e989ccd4a294d76ffca8abd89851",
+      "id": "F-rural-school-closures-equity_and_social_mobility-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "919b9b30824f841f16c7da8747a6fdfcdb64a44e066ac98693b51732bf811492",
+      "id": "A-rural-school-closures-finnish_reform-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "e0d7caa4b8fe95578e6f53f23615f476bc2df4acfb564597adbe7567207c08e4",
+      "id": "A-rural-school-closures-finnish_reform-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "059fb5f7310d26f9cc3bb446f6e65c9ad7cc138537897a7a97de2270ece78af1",
+      "id": "A-rural-school-closures-finnish_reform-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "0eff7a4ec2072ec584f1062547caf2575c4b6a01965b645a710919ed6bba591b",
+      "id": "A-rural-school-closures-finnish_reform-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "787ae3615e4f155d7a16af2f6bf2b37a190c35400b1ce272a32708b8ab45993e",
+      "id": "U-rural-school-closures-finnish_reform-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "288346eea3aa9931eadb040af452ef5f5588a5e59466c8f8c77663a1a0352987",
+      "id": "U-rural-school-closures-finnish_reform-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "0a721ff9af084a3320bbf226822600eb18acc9ce30f3cf275f08b4d005065aba",
+      "id": "U-rural-school-closures-finnish_reform-03",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "8e9ca17262297e6b1a7212caf9877311964ef0e8fb1b193088b936ca618d61ba",
+      "id": "U-rural-school-closures-finnish_reform-04",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "96ed84aef99b63f16c46cd957d769fa3c746ee25d0d911d5893ada9d66b387c6",
+      "id": "SRC-rural-school-closures-3399ab8ea8d100",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "c45f790147ca4bfb57f70b9a51635cf2d89f4c29521297eb1a75085d9439f49c",
+      "id": "F-rural-school-closures-finnish_reform-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "7f38254f5d0e686214c6d61d03daab81acb9ebce3b074b1e36568bea29e9d5ea",
+      "id": "SRC-rural-school-closures-fd70e2fc17493f",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "156d624376f853c22b02297295a27f814dcf3694aebafb31b8b25051621fc47d",
+      "id": "F-rural-school-closures-finnish_reform-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "bb9ca814b03fb419c4bcbe882e32c836c17cc7a45751f04d3e0863f656c92496",
+      "id": "SRC-rural-school-closures-b579af67ab1188",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "b623935ff0e41081db5c6ab262ab526ed6c90c1235f1a601fbb8700cf9fef337",
+      "id": "F-rural-school-closures-finnish_reform-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "0263feaba284aa4a48749797450beaece2c156fadcaf2be28ac586e959dd2ce3",
+      "id": "SRC-rural-school-closures-2db688c2bf87e6",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "95849f4a419094c63060caa28b0c8f916b39e1b9a5a28f9821929931cc58849f",
+      "id": "F-rural-school-closures-finnish_reform-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "70e7c8e666bd8212d020b096a5865b7f7fce303205fa9ed358adcb1d9361cf91",
+      "id": "SRC-rural-school-closures-f04e8396a4a82f",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "931bf49e321294ee1ac505d2f35f8ece296717bd8aa31f5ccf61918d716d99e4",
+      "id": "F-rural-school-closures-finnish_reform-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "fb32821d729e6650e9f1bea7aba12726d03e53d271adf21662ce4c6373aba7bd",
+      "id": "SRC-rural-school-closures-2d9740894c24b5",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "dfc13aea7d85f55c8447ea8b419efc48b4198d329be3efb561e6f4639e215189",
+      "id": "F-rural-school-closures-finnish_reform-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "8b006ac0035c2cbbf85f28107518a6ed4340877b2174353e06759f0ae61b63aa",
+      "id": "SRC-rural-school-closures-fe35a75f1dbb6c",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "37fbc452faeae465023d3a6333fc44bc5e2228d5ca52cb235daad6fc32f5eb07",
+      "id": "F-rural-school-closures-finnish_reform-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "68acf70ed38546a47ffd3f3051a31c94465d8f9d2c4c3ab89d99a0d3bf7fcb84",
+      "id": "SRC-rural-school-closures-27402d1f404403",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "a4a5945bdbc77272f9cd75624da83fc104f47443e758cfa0bdcd91f8abea7d73",
+      "id": "F-rural-school-closures-finnish_reform-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "b68f24db276fee68e27bab897857c41380b9477033a86618d8ad7d48dd19b9bb",
+      "id": "SRC-rural-school-closures-01e908c9ae656f",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "1dbf5aaa040d24ea21c8cf1d5ad9bea5eb4e7e33197916d0c5cecaabbde2b5fc",
+      "id": "F-rural-school-closures-finnish_reform-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "bd141cace414ed75dcf625f8fc397f4723634e6f34691f99974269834a18a402",
+      "id": "SRC-rural-school-closures-06e89580a07022",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "4d2fc79c96b95b2b84b6d17e2a101c94a75b18d53c610f9b1263a201edb3f045",
+      "id": "F-rural-school-closures-finnish_reform-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "6191550f0dacd2f4ae7792839136473daf36a7224914385d1ef5887b6e277958",
+      "id": "SRC-rural-school-closures-80dac3789b480a",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "24e632572f80b5959120131afa8aa08d1881d6517c9a4d1ba8590f25cd8b8bd4",
+      "id": "F-rural-school-closures-finnish_reform-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "a7744550c6586dcfd7986c1c76662191744feda581bf1edb44d2c6c9f88acd00",
+      "id": "SRC-rural-school-closures-5fae813a449742",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "17d79087025939fa1aafe6b1616946f110c62365527d4a25b268fde9a4c61dba",
+      "id": "F-rural-school-closures-finnish_reform-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "c759be7d3578f12e1baf9a601d5253a2cdf5710b15bc785ca827dfd8ca32f39f",
+      "id": "SRC-rural-school-closures-033ea0d78fd6a4",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "a3436e43adad69fbd97321ea28f4c255f0f87a4dd27ff306adee340b51629dac",
+      "id": "F-rural-school-closures-finnish_reform-13",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "92f2e60f26b57b8f17562d9886f85eb3c454d83a1654c6d1e8565c9645ab0836",
+      "id": "SRC-rural-school-closures-1a5026d5bf4137",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "648a5a98389cfb41c2a78236689137d1a9f6fae00546fa0a9346680e0340da2c",
+      "id": "F-rural-school-closures-finnish_reform-14",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "597db780138621713cbaaa6f4a9d3ba978dfb6eeec52d91458b3661e79bef77a",
+      "id": "SRC-rural-school-closures-b7528e6f58f8b3",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "cfbbfe5a0605a47e66f41dd0e0e0be1897ce157b440f723e67f0ec2d8e47f410",
+      "id": "F-rural-school-closures-finnish_reform-15",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "e2ab0b907f038acbca8a475b04c59e11427ea51976929702b8740d5352826080",
+      "id": "SRC-rural-school-closures-7ec83cedb9e347",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f083605d5e00b176c442767c740d448c21b3189609ca7a18dfd1169f344b6677",
+      "id": "F-rural-school-closures-finnish_reform-16",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ffa8f0cc99f0dba48cdd4e98b2887f59b61242f45dee73b141d77b60d3b5b5d2",
+      "id": "A-rural-school-closures-hungarian_education_system-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "090ca779d0bccb7b17ec0be47ea2c1ad92d3fea72365dbe7bd18fd3173c1899e",
+      "id": "A-rural-school-closures-hungarian_education_system-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "e26f32e8c77fa186e3c67298f4077dd143529f435ffade1de2a15ecce2288a69",
+      "id": "A-rural-school-closures-hungarian_education_system-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ed581b09a003a74b661cdae365ffb8745804054b42274dfffcd27c558ac3714f",
+      "id": "A-rural-school-closures-hungarian_education_system-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "295d87dd3add164c7b52cccaa9e0d0d67d394c3777995a6f32589878a54f473e",
+      "id": "A-rural-school-closures-hungarian_education_system-05",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "2cbd94887d92d858e499a0b716f6d920fbbebbef25cb903a6ebb0f9a447a8cf5",
+      "id": "U-rural-school-closures-hungarian_education_system-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "f939b6a41be9fc3209897a1b9ef2084dd8a6240ce7a704c4d3a74c65a21154b2",
+      "id": "U-rural-school-closures-hungarian_education_system-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "bb169c9f151b118347b3c07f594d6f1578fb294e21d2fcca2ca64fc3148e9841",
+      "id": "U-rural-school-closures-hungarian_education_system-03",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "2d8d6636e0617d64cd20ebc341945c20e400e8ec2dc8d6c4ed462e437d73b892",
+      "id": "U-rural-school-closures-hungarian_education_system-04",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "bd2e426ae8d782784107913872c81a0c2be6539140f849da2acf94b007ba0f63",
+      "id": "SRC-rural-school-closures-c42a2dff66aed7",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "077148f1cee8750cf389a6b757bca386bac4d0f551c6a67917c443d73d8f88f2",
+      "id": "F-rural-school-closures-hungarian_education_system-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "d2dc230744d4ae6009f4a89667e9abf3826d75bea2a41cc00c6c37b9ecf29a3f",
+      "id": "SRC-rural-school-closures-470999145d0407",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f6a40eb2f03fbe3edde18f7883ac2fb0ebcc9887ecc788afde99d47341658e8b",
+      "id": "F-rural-school-closures-hungarian_education_system-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "6db7470be1d7ee0fe4f2513dacc4f810674679b404a0b5e4111f9fbcd3042129",
+      "id": "SRC-rural-school-closures-452464145a45b6",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "0a64ec42a7edf56046336bc516c46573549a0ef6d2dc4c58a570ff80c55f3a60",
+      "id": "F-rural-school-closures-hungarian_education_system-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ca6afc93138305a3910e1ade06e05bf9119015055ef47bbeae7037f2843af3dd",
+      "id": "SRC-rural-school-closures-d810c7e1c6d3cf",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "34b33534c96b32e62187042417833d3c360cf0aa215c00fc274b8ad9981e311a",
+      "id": "F-rural-school-closures-hungarian_education_system-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "31d5c3e0442aba9110acb3acb1d80fa95adfcaf650747900235a01436d90d4b3",
+      "id": "SRC-rural-school-closures-992d4b0a80b190",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "44f064d433fd6a4df5ee52cce7838161b779bfc506b0cdb0e46fccdb2fc0486c",
+      "id": "F-rural-school-closures-hungarian_education_system-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "3d055892b65ac5906ae01bafe9eb0c83d846de9edb981e82e0af80b224f55506",
+      "id": "SRC-rural-school-closures-a77ac7240044fe",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "cc9435aaa647b8fe6aa867593bda65a4bc22b8568e6dd84a8bf9c70870569b5f",
+      "id": "F-rural-school-closures-hungarian_education_system-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "c045aa6465996d90eb77cb3ff3c266569339cb8a98b6f27a9c19e9d284a766fc",
+      "id": "SRC-rural-school-closures-465223587727f3",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "7b07d6dc068cc5700b3c4b1ac08024b1e2ebc7e8bd12e73dccc089f866d9875a",
+      "id": "F-rural-school-closures-hungarian_education_system-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f6799cb8592f1065f3e70811d1c2813d1902ff3ee3c8775405842a21d06418bc",
+      "id": "SRC-rural-school-closures-0617162aa357be",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "6ad826e759fab56a7d30cba7352e3e0794552f1e068b5f6e7df50faf009ec55f",
+      "id": "F-rural-school-closures-hungarian_education_system-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "01440664d642860e9f9cac9b90bfcd651ebdaee5edd9a0a771ac1fd3ecf4ea3d",
+      "id": "SRC-rural-school-closures-12ca59e31b4052",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "3b49e8020c54bda8881e772f3be9db7212e0d1bd8cedd4d164378453fa26eb22",
+      "id": "F-rural-school-closures-hungarian_education_system-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "76c2bd94ec623fbdcc0846fb83febddc9052f5016b6957ed6ea595d45135e2d9",
+      "id": "SRC-rural-school-closures-c61f105bed66ba",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "a42223fff29ecf0d9b1583201cc3aa94eef3c921c0272b874a19c4ed34e50a4f",
+      "id": "F-rural-school-closures-hungarian_education_system-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "c54afc019b8fd3c838febea6b31218d9602db655eb4fd9a771a9508e8c8a7568",
+      "id": "SRC-rural-school-closures-cb585053cad79c",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "23670dbd4e6a665e151b14fbcd48e48220cd937fe5bf0ba9797fede457401571",
+      "id": "F-rural-school-closures-hungarian_education_system-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "bfe54078d34ff30b3d19d709f45dcf79f3a5b5e2e865fdccacb73aab8abc785a",
+      "id": "SRC-rural-school-closures-d35eaf4963790f",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "7534f4991b07dbb4b2f1204d2bd50251d048298a749cc8c82dc7958828120348",
+      "id": "F-rural-school-closures-hungarian_education_system-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "c2030dd910032002d7f283c68d064abfe685f1d7226eddf8600f9067dee3dd47",
+      "id": "SRC-rural-school-closures-d25b0a41336c31",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "640a5acf477de11e46a71a78a99eb77bfbc8b41ac7c61b98e10e8291a22febaa",
+      "id": "F-rural-school-closures-hungarian_education_system-13",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "c7060a600a7477e509b77109910e809b6ee2530e7c3aff2111d2fbd9fc9731bc",
+      "id": "F-rural-school-closures-hungarian_education_system-14",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "da299a2e87515969c45368adc1576647ec97672a2cc01ef03ac33a78bb7c21b0",
+      "id": "SRC-rural-school-closures-92476a6cef0cfa",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "26a083fab2205c541552fe6bf637d403ad3e78e14fa849f48fe0c448232d7463",
+      "id": "F-rural-school-closures-hungarian_education_system-15",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "d77341ca3c01a1c86f964d61a91a14c15ef89c19b06d9541623cbc799c2ef303",
+      "id": "A-rural-school-closures-implementation_planning-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "59f72ba2bad8e93c273fc93e7466264770bacf97024ac6ac17fef08ef59a4b52",
+      "id": "A-rural-school-closures-implementation_planning-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ce793e2cfe37bbe617a9739e85b8bacfbd075b99742cc098a0de97a0b120b611",
+      "id": "U-rural-school-closures-implementation_planning-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "783a5d2368c1e8487150f3a2209d91ec3bd8d3c3f593c6c317752aa5511cbedd",
+      "id": "U-rural-school-closures-implementation_planning-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "fc33e9983f92662d27b81bae8966dfd9c57c05896df65331863b8d60e5b1cc13",
+      "id": "U-rural-school-closures-implementation_planning-03",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "c75d2ad8e34d3aabc680f665bfb3d72c2abbbef239bd88795c492c6132c4ba25",
+      "id": "SRC-rural-school-closures-b1ea5d43c91f8e",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "2f907aaa814dbf07d4d3a389a94580946165237693ab4cb43fdc03b3a64d20b7",
+      "id": "F-rural-school-closures-implementation_planning-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "d7c4ccf276112a1aa94c18b8f4a57f8efa9f22fcf83b2a4dacb605ee3533b122",
+      "id": "SRC-rural-school-closures-a65ca065a89e26",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "06137b82d47e265b55a21d5376f604eeb3943a4a7b091e229d3840fe90abd4e4",
+      "id": "F-rural-school-closures-implementation_planning-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "8d0985344575b471b30c8ba8c5afbb4d2338d7e345a47bd46978eb7d213c0437",
+      "id": "SRC-rural-school-closures-0cd895fbd7e083",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "36728dc8cff29a998bd397d001a35d2f6b8e33dede9cec0ae0d7557e38698941",
+      "id": "F-rural-school-closures-implementation_planning-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "9d5ecc49cf1616bb0619b3f6a008a748c14aea663aa2d19fb1f65925ae0c786e",
+      "id": "SRC-rural-school-closures-3c48d690948471",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "c24451fbf4e57bd1411f17e8af8546f0b71e894b5ebfaf91d6f52195d494443c",
+      "id": "F-rural-school-closures-implementation_planning-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "b3f71dddde13fabb3765e10d26356fdedfdf9ab28163fcb13bfe7309f4253c2d",
+      "id": "SRC-rural-school-closures-c8349ebd086a59",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "fe9a34fc1ffb3cb4a74b455c4a5173c2bf980bbc2c97042f1c8532537e852b4b",
+      "id": "F-rural-school-closures-implementation_planning-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "e69f8b2f41413b15591827939ee472c1430797c3313f8e453611132b6fd7acf2",
+      "id": "SRC-rural-school-closures-0c3c00ada2211c",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "62944a36318505cd9d132b95b003954b79e15703aa4da1e4e569013c09451134",
+      "id": "F-rural-school-closures-implementation_planning-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "c1a554faf917b544bfecae793a965efa056ba7ec153c1082c43db389757ae08d",
+      "id": "SRC-rural-school-closures-f3366562250a21",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "58d1c86272d589487d1bf3767bec7a4165a1f341f5851e7e172e0a13f2b93c60",
+      "id": "F-rural-school-closures-implementation_planning-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "3791cc87543cefdf1da57c099d208b280849a91f2bde8a3d7c116828faa9d892",
+      "id": "A-rural-school-closures-international_comparison-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "03ae2b0dc87c4083e7ec491b63bfcad6f61e077b67b0de2f53f3ef7a75508a31",
+      "id": "A-rural-school-closures-international_comparison-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "6a10a2248ed6723dfb53b0944a2415f37c94c3d85669dcab6815a33de202a814",
+      "id": "A-rural-school-closures-international_comparison-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ffca14d98af1732ef8091794429811231bf5b369ba4b1c7b27d2d999b1f62052",
+      "id": "A-rural-school-closures-international_comparison-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "7182eaa606face72bf14c6ad99aab812aa248c6abe68b4f379ae52beb7ac8f3a",
+      "id": "U-rural-school-closures-international_comparison-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "3c6ae8d7e7e8cf8e50a6ef0325d0a03f8ba87b72360b2a2d96dabb401868d991",
+      "id": "SRC-rural-school-closures-26af6bded2f941",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "be505b54be56f845a43da10cfb1eb63582d6e704982cec37f2871a30be5952a3",
+      "id": "F-rural-school-closures-international_comparison-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "d439330fc7b5c8d6d62cfa1bd75e54badaeaedb91a3967f5bba18e9c6c401a45",
+      "id": "SRC-rural-school-closures-865d3b02383c47",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "5a25520b5173da9163fc0745556d16bc0749d5c3928527182eb9c6464cd791dd",
+      "id": "F-rural-school-closures-international_comparison-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "36d7e7d1ca0d42588e19a23b3e6fb99cc7b822e5470500141a6d5c2a60acabe2",
+      "id": "SRC-rural-school-closures-7ce878f6410281",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "64c4951d3c06534c5c5c5347f6b2ed8d23eae3e75a965b349602346694e84d2e",
+      "id": "F-rural-school-closures-international_comparison-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "d358ec9eed7bd54b951e72a215fd2a8e451ee4238d833238c4f91d18487766b5",
+      "id": "SRC-rural-school-closures-5c4b598a3320e1",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "0b82d31d5c9c9186634a31f8b6f5e6dd9ec7cc3c31cb321ced73fe7b1fa8a90d",
+      "id": "F-rural-school-closures-international_comparison-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "e717ee9a1c6383948a50508fd50eeb1d26666b711caa915527d7b48f501def17",
+      "id": "SRC-rural-school-closures-9755ece4fd8226",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f600699c14ccbd119185d29bfb30a544f8cd9230e24a6274f93d2eaf397dba78",
+      "id": "F-rural-school-closures-international_comparison-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "43a151d7dd612217e148879ade8d3bbde818f954ab30f53bf660a61c6c93822f",
+      "id": "SRC-rural-school-closures-d920d7b1681277",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "ace158b73a0dccb536f9301fb944ac6105bca9a5f7616b15a1bfda61b77e0264",
+      "id": "F-rural-school-closures-international_comparison-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "2da3f4548cb615cf96b48ecfa74d7af471f9206648545ef3dbcc63c96e9c9d79",
+      "id": "SRC-rural-school-closures-745b58bf1be6c8",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f7b6dd002d1a5c8c89f2d021f844ecc8aa214b22bba956d32abe6c95f59c5936",
+      "id": "F-rural-school-closures-international_comparison-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f9b12769ca0e1fe06e879d8377e08f79c2df09fe9934963b2217c709f6eefef0",
+      "id": "SRC-rural-school-closures-9d1cd3b5c8bfec",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "3c01d92465959be8b4942c264e55621f7c90dec37fd2121e78be19fc032fae9d",
+      "id": "F-rural-school-closures-international_comparison-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "4411bcf1e0e81ab6a5602328a4e4591d2e2015ddb7366b066e1efc4afd858c57",
+      "id": "SRC-rural-school-closures-f2fd92fc00edcb",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "7a5547d127320dbcd875ae37565551d5f63edd6d64aa790ec35b7d907efcd309",
+      "id": "F-rural-school-closures-international_comparison-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "1f3f5a36c0cda1a9b55fd881c0efa6d8ba25fa0ed485737e19df7dbabd45529c",
+      "id": "A-rural-school-closures-legal_and_governance-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "0f56e5001cbf227617cbb95ab524f2c52f1298b41825c61fdc7111f80edbc531",
+      "id": "A-rural-school-closures-legal_and_governance-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "823b904ca64f3ce80cbddc3d24ba01f8d9d66b4068c309e6d25b2ac0650e90cf",
+      "id": "A-rural-school-closures-legal_and_governance-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "f9ca59d6939bd9c27bedb211d0ccfe5ef898d6bc102b07406e81c38e5b703800",
+      "id": "A-rural-school-closures-legal_and_governance-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "c09cc0ae9c14170a4fb01f4bfa819413dd4529135414cc104fd729b8cac68620",
+      "id": "A-rural-school-closures-legal_and_governance-05",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "95012aa63c8b1e6deeb0103049d40be9bc8a6b3c8aa8fe5958c5ee35a5c0c9e7",
+      "id": "A-rural-school-closures-legal_and_governance-06",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "407a5087e2cc55c469df0a2674c54c61235a90bc497655b307766c442d0e0077",
+      "id": "U-rural-school-closures-legal_and_governance-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "3cc0009b4c92134d85f118e51a651d66652e5f006fe2833b4607a34967311c9e",
+      "id": "U-rural-school-closures-legal_and_governance-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "f5fe5e9dc23b893ede58d6cfd4705727bdc4ce2a3ed8cfe3f4342341bf0d14f6",
+      "id": "SRC-rural-school-closures-725ecfa8021d15",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "3ccfc4db8de52b1538873c9fbfd3c364fd4a162b2177edea64dcbd87811833fa",
+      "id": "F-rural-school-closures-legal_and_governance-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "6fa2fabf1e0586d0f368c7c4d566d8f853d1d192edbd6c6fc035037a1f1c4cc9",
+      "id": "SRC-rural-school-closures-fe16c7b600b600",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "d5f4ff05c98180a6f95fb165c3352a324856339bc2b5468a263b44b69a080a3a",
+      "id": "F-rural-school-closures-legal_and_governance-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "6420bec1aa0b57be0bcf50ebcb55665b64ae4504c09be7b70d0406d608a94702",
+      "id": "SRC-rural-school-closures-8f99d673ae287e",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "d3622736e55fe8d555872f49268d7cf97956905f9e2219a43aeda7a34a670cc0",
+      "id": "F-rural-school-closures-legal_and_governance-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "8d606c0115e8ed02092c10631f241091970b8371d0e784ba748cf89f690d5b85",
+      "id": "SRC-rural-school-closures-842d5e9c21f789",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "371a4548bfaef04e69b2e0fdce0c80b62168cc591f244d983d216b1113dc240c",
+      "id": "F-rural-school-closures-legal_and_governance-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "2d8f72a957a8ee82441401693811d6f6e4a33a5dd231ad0243628c5fc889470a",
+      "id": "F-rural-school-closures-legal_and_governance-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "def6a3fe6c86836aa8e32992ed19d92afa830b60d324036433cd4bfe9c911a76",
+      "id": "SRC-rural-school-closures-9da0860d0dfda8",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "3db9839a304e63d88a9c9db00eb1174da698edbcdf66bf094eb8c28b44b4671e",
+      "id": "F-rural-school-closures-legal_and_governance-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "13646819584ca875d3279a5ec1726b03ffa096519e6c8bbe7083949a2de79d7a",
+      "id": "SRC-rural-school-closures-e9ed855c2017cc",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "ccea17ae85ec7322a4ddaa78be2d9a1c8cbb403e8fb0c59e103018f19e180954",
+      "id": "F-rural-school-closures-legal_and_governance-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "3ed9b9d932afaabd8ca3a523a9475912e6956def699b29c95090ee03e766df0d",
+      "id": "SRC-rural-school-closures-96d13c89fbf4c3",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f68923561861c06cfea4dacbb2db8f54be750a3c4ee42babc61cdea623d13532",
+      "id": "F-rural-school-closures-legal_and_governance-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "43d92f1fee6ad90bdc07be869393cc91350dc47c9b547e447ee63a0bde8f1239",
+      "id": "SRC-rural-school-closures-0a8fb36a1c07af",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "db837f11178c6b76575710d8b283012220749e67fcb013e466f3c25b5a6867e4",
+      "id": "F-rural-school-closures-legal_and_governance-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "b70994ad6d8d99370962b46240af872316c391c168ffec469e4e555f65d812bc",
+      "id": "SRC-rural-school-closures-5a67350bad86e9",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "8351e7472533643e6cfad048786b5a7a628ffc96f083fa0b8e8c091f955db244",
+      "id": "F-rural-school-closures-legal_and_governance-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "5cd8f9001637a2179a25497cf00469d43747c9ecfdeb94711c1c669cfc6219c6",
+      "id": "SRC-rural-school-closures-d03cd4745857bb",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "6d2f670db2e4344d4b8f5d280d2bb9df295bc41165cd2d1503c6e8b1662b0657",
+      "id": "F-rural-school-closures-legal_and_governance-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "cc3989aa34a3b78504518430e6b081a33dbaefc47e2972f1235b1408e7fd583d",
+      "id": "SRC-rural-school-closures-ca3825e91811f5",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "13abfbdf7cafc6cd20fca626cff81cc5d4f1126bdf20302ece3a3fc560b42539",
+      "id": "F-rural-school-closures-legal_and_governance-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "08bde84e01ccb7aa853c6ab717ed134e89127a83b17660f44f96b5146b19ca94",
+      "id": "A-rural-school-closures-polish_reform-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "317c056b5cea24c7da5199c8ec1a722916d1e9436cd2f682f1a1e19db4d6c318",
+      "id": "A-rural-school-closures-polish_reform-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "6b5dc1a9bb12c0f85484a635481a43bbb5b69b00a778cf2a3f30f27de926cf6f",
+      "id": "A-rural-school-closures-polish_reform-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "a4cad884edf1fa7bb6e38148ae6066568b44016aafbbfd55e074840b69421827",
+      "id": "A-rural-school-closures-polish_reform-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "da2820d111cef5c13e5d7d9e3ca3796373ad38f865035d6096e84543fe292c7a",
+      "id": "A-rural-school-closures-polish_reform-05",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "be10a67e5e2e0acc2470061bbad2945d04ffaaacb3ce68ad8d19313419f5cc44",
+      "id": "A-rural-school-closures-polish_reform-06",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "23df42bfc9010850a63ebfd129a0402fc73b550015095dfebe13bfc29bc2b74e",
+      "id": "A-rural-school-closures-polish_reform-07",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "9539f6e71ec992a00b7330068c53a4724a0355b9c030099bb42cfc0600081be2",
+      "id": "A-rural-school-closures-polish_reform-08",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "c8c86b9600fb6ea779a0403251f17b17b26bdb13ba1f86a62517c282fd253996",
+      "id": "A-rural-school-closures-polish_reform-09",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "5743b676ac2deaf0a44e9ee0d64819c31c2c5e6e64ada805b0b34356017218e0",
+      "id": "U-rural-school-closures-polish_reform-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "bf343457c66bde173a07a39f1ea3758e5b2c8c1082df9b2351e6e69c86dfdbdb",
+      "id": "U-rural-school-closures-polish_reform-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "9565dbd8dcbf65f269d38d52835c8b05176f4044de7e90133842fc1a6df87f7c",
+      "id": "SRC-rural-school-closures-a9e556a720367b",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "fdbe037c3007ed8fc02dd80e97ee4c7e985023ae22a7d1eb765a40833658a17e",
+      "id": "F-rural-school-closures-polish_reform-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "311b5d37f4ca1ca017cfbafd32b3cab753d512b5acb2b2844ae38c6f50083e2f",
+      "id": "SRC-rural-school-closures-5f671e4072eb1d",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "e013f9aa93f6ff8fcd042864d8b7d8e3990a70da0c290648674edbe9f5ab5c9f",
+      "id": "F-rural-school-closures-polish_reform-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "32eec4895a856cfdc4e32e6916114cc8074f8e2bdae862700fc9342defda666c",
+      "id": "SRC-rural-school-closures-a4ac698cdcfed7",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f76deb7a483eed5268464bbcdf7f895c754bd0c5f1d52210b8792668475ed6d3",
+      "id": "F-rural-school-closures-polish_reform-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "64078a817b15b79d5aeb0c1dfd573610feae0691ec85d67aa8cca3213618a429",
+      "id": "SRC-rural-school-closures-57269a55f4d588",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "dffee0fc20d0adc0039b95e58ee6669858e852e61034fbcfb26ebf370a10f3af",
+      "id": "F-rural-school-closures-polish_reform-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "4c9c3b3e8d6f47f34e11a8bfaf0353d1a384d0d1906186454e9f07747175794c",
+      "id": "SRC-rural-school-closures-35287404c99185",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "3eb7ebdcbac3f50ba1bcb5295e28cde8ab83814cd481e2cd605bf83b094f2a96",
+      "id": "F-rural-school-closures-polish_reform-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "e12753e697efc10ee6cde089b87dac5ec5135b08f38baa62278da41df0d600ce",
+      "id": "SRC-rural-school-closures-dddbb71c45ebf2",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "497df9745540958927dc8d7ad18a6dbf0f0d7b113ed66c828da46ec46df61c4b",
+      "id": "F-rural-school-closures-polish_reform-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "0fbe6f8f162d2ffb9f51d87d4446fadf00494530d0bb4cf26fc2bf8b7d3f9fb9",
+      "id": "SRC-rural-school-closures-e36c937e801749",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "a0221ad7cc5d2c4d5f7987ae2c826b7b0b9798718a389da729e6fba6d382a070",
+      "id": "F-rural-school-closures-polish_reform-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "c398f9b9443cb8c315ba48c337853f7033ba7ab18ba502ccdf8ab15033bffbc1",
+      "id": "SRC-rural-school-closures-9d1b8a7fe141cb",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "3d3d3403cfb8b82cc998c9f4521c350c028eeee418acc771103b8d05a853e1e1",
+      "id": "F-rural-school-closures-polish_reform-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "589b5b1c941f57c3e3deb35ad2d8f82022fd7b4936307d8eea33775883d4888f",
+      "id": "SRC-rural-school-closures-9cabae9d459ccf",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "0ceb156dbabf663388d842c9715e74e928f03638ed303655653aee6ebd2f098e",
+      "id": "F-rural-school-closures-polish_reform-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "5993a398f85cae61af50777454a5bcdd2c512e0cb16e4e98e5ecbb2084c9ca96",
+      "id": "SRC-rural-school-closures-932837b39ec43a",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f8b8a1b8e4288d4bfa4974a5a75c456587c434e7678fe1022af84f497f4fffc9",
+      "id": "F-rural-school-closures-polish_reform-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "5262efe1397f1a9da8f48fb411580902e41c612376e4e55002045a0eff611e66",
+      "id": "SRC-rural-school-closures-7a75729d1ea886",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "85aaee7ac317c749c32bbcb5bb2fa23612dcfc8d2ddd84602cd39406cb9640df",
+      "id": "F-rural-school-closures-polish_reform-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "dceadf957818d4c3384eb246f8c9669c7fed9c3e785a303106e1b23cbea07509",
+      "id": "SRC-rural-school-closures-3cb9a991fd87c3",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "8940a44e503a8ba87b7aa8bee6b33ab72a7002a62b0bd954067ef286c3d5b3bd",
+      "id": "F-rural-school-closures-polish_reform-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f94624fa29ba44a6cf16e547344c4093330c0d124cd13039ea239150341336fa",
+      "id": "SRC-rural-school-closures-8179d2237216f1",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "01eded816d1bbbd773fb772631f85e5a7099e665a4976560ced3b9681ca71bbc",
+      "id": "F-rural-school-closures-polish_reform-13",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f61d952d6d0b4b74b360adbb23ce545e1f7dc81ca04557f621639db8a3ac6778",
+      "id": "SRC-rural-school-closures-b26246fd8704ec",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "57d1ddb21d9e69b61ec4006a126740efd7df05eafa2817cfb40908f4f1d3225b",
+      "id": "F-rural-school-closures-polish_reform-14",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "b6a0f8924cfdca1f11502704b78c98470d69c3d70a5f7bed5caaeebe78717c98",
+      "id": "SRC-rural-school-closures-4999df0895eac9",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "df3eff55c50246fbf2f431d0e805f10011a77fb516ae508bd5013db33f96f8ef",
+      "id": "F-rural-school-closures-polish_reform-15",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "52555b94c816967c1a2f9afda27cde4fdfd8ff1782047dd68fe1296b2a07468c",
+      "id": "SRC-rural-school-closures-63cd36c654d9e8",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "46f2fa115fa9d35c605e75b69d55309053529dceb3a1acaab2a3549aafebab8d",
+      "id": "F-rural-school-closures-polish_reform-16",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "0858559b01fc216c0b08f347d0a83be06963b643817ac59dd6c94077ae261502",
+      "id": "SRC-rural-school-closures-ef29f3f44cfebf",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "56f1c449201d1309f81752482dc9d69816b88806e1eb60b65e0274351c9b696b",
+      "id": "F-rural-school-closures-polish_reform-17",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "5f89e078233609484c74218a8c93acceb6678786439e6d6d20f1cf18f1089c12",
+      "id": "SRC-rural-school-closures-a326a5f83c3f84",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "2141537c08d88b00b4961a0d63a0d3e65e636feec50afa70c6d0a354682ecfaa",
+      "id": "F-rural-school-closures-polish_reform-18",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "a654bff7bbef8255818f3e5194dd40756deb38a2129bc15f0a06e9333a24ccac",
+      "id": "SRC-rural-school-closures-1a49edfee1084f",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "dfa1714463121e120723855fe64cb6dcd70053b634b46a3ff352b835fcfb462a",
+      "id": "F-rural-school-closures-polish_reform-19",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "a3a9ee5eb2aba0a81c9cd3d9b692ae52798f7a633cd0bbfa93b5acb26f6d8766",
+      "id": "SRC-rural-school-closures-f9cfef22c9cbab",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "52384aa0c6fc7cb7b35323f2b0989916adb56d98b1b2b19b26523db278f5eb5d",
+      "id": "F-rural-school-closures-polish_reform-20",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "0d70928fb11febb139f9270caa09ccea704641476f33dfd5ed5961e9b55ef29d",
+      "id": "A-rural-school-closures-political_feasibility-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "898bc6e3f9f00a9309cf070da8930baf20c15c530d79d5d94f1afeff63e3805e",
+      "id": "A-rural-school-closures-political_feasibility-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "f261e4f99d6fba995200a8ee7ec24f131201d4a954df66f342a3d75e4f247025",
+      "id": "A-rural-school-closures-political_feasibility-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "0d72bce83a4b5c3df1bbb9dde2300246bd74f11b9abdb92eba00469eec22816c",
+      "id": "A-rural-school-closures-political_feasibility-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "00264918a75a83607e16cf962aa4fbf5b5f26a202e4234600bb66db74c6dbedb",
+      "id": "U-rural-school-closures-political_feasibility-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "b067ddbeb4af069c32ee0d03672fb8fc1e98c1b596119619aa21f37647d0aab8",
+      "id": "U-rural-school-closures-political_feasibility-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "99f6d74d392cfa802b78c23350f5a910e588f38de8bda25e269e51b4cdf80d9c",
+      "id": "SRC-rural-school-closures-8302b79c645d15",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "7f9e406fe6dc5cd79a91f8d35e27d2335a8fc834b0838521e09ccddc513ac281",
+      "id": "F-rural-school-closures-political_feasibility-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "969047809aae15bd9ea793a7b97f7fa26277402c07c56ce70b35380f716d6f9a",
+      "id": "SRC-rural-school-closures-77198d988e56a3",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "2dbbad11498c0afa5d4966a01266205f463439783700d25badd7a808d11f224f",
+      "id": "F-rural-school-closures-political_feasibility-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "d8d6018cb3a15da2f3fa69fe4bcb4279399fe4541f3708598f1273186646254f",
+      "id": "SRC-rural-school-closures-ad53033b7d5f31",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "8f8c1772f621a0bab261a8b62e5157dc8ad13403dbed9a898d0e6d83011b2ee8",
+      "id": "F-rural-school-closures-political_feasibility-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "955ea83492ac0612d389d4a6e9a34b79154277ff79b4bd68fa65e83a40e969e7",
+      "id": "SRC-rural-school-closures-64d25933d91a7d",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "212a73ecef9d137ef7137934d067cf48aef09f8c667f86395120dcf629f76c9d",
+      "id": "F-rural-school-closures-political_feasibility-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "6e3182325551da12fef49d7447f31106e227bea62d163abdebf87da674e9c653",
+      "id": "SRC-rural-school-closures-68d86c204c5949",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "edbf86c0244b77b664d0acbd04911f8c84c152e03b1367393dd5e3dac446c071",
+      "id": "F-rural-school-closures-political_feasibility-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "4bf0ebbe092c9595befc58682ac8f95f097fa89b5c364bcb52c5a605562202d9",
+      "id": "SRC-rural-school-closures-4b88b92139ad9f",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "602ab8aa94eb83c61d27437e5b2000559c39e9d2e72f7be6a63ab592aefcb12f",
+      "id": "F-rural-school-closures-political_feasibility-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "dd65d11a265eefb762f745d183686abd239b74d6362414b6aaf1eaa56ebb49d9",
+      "id": "SRC-rural-school-closures-e64e3749023c47",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "5c5f584c22990b785b710b19e9773bf0ddb2f916dc380c7f97e9af055c835466",
+      "id": "F-rural-school-closures-political_feasibility-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "6f1becde39f526abe8e1a6171230c4405a94af1ce5a0e69fb5823caaed6a9b04",
+      "id": "SRC-rural-school-closures-d365609fd55aed",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "84eff27bf08c2ddf7b95912a65b70097749b3753155ff4a3e3b2ff939c4711df",
+      "id": "F-rural-school-closures-political_feasibility-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "bce4cb23351eeaa8df720ea2e30279918f52bbaddaaf86532e2b8e55d6ef03dd",
+      "id": "SRC-rural-school-closures-9b233250bb2008",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "d585cd5e7ac80f9bb52d411af43a7d19a10946c37bf2fdc31ccc0841e2b9a41b",
+      "id": "F-rural-school-closures-political_feasibility-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "1ab8d78225d3adc23e6d39de04e2b7626ffd56e6b9d3729348a4b169060f9e1d",
+      "id": "SRC-rural-school-closures-3570df65fc58db",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "846488788409ef4157bab6da69677c0ff9537b429104ff6db4f6373cbe46106d",
+      "id": "F-rural-school-closures-political_feasibility-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "5d379138c98920e16c126451c55271edd5d847ef50da9e46c2933a348f921969",
+      "id": "SRC-rural-school-closures-c34145e0e29af0",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "d89174436cc44c8bbef19339ece3ceed530224fe3e0389ba39247e226b3400f3",
+      "id": "F-rural-school-closures-political_feasibility-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "de71de18e1e111ddbc58835811f3542d0c7a15ad7ac0a93e00b14bedc2d6b8fd",
+      "id": "SRC-rural-school-closures-3f336f34233a5e",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "e50905c955b33834034464c522b063ecc7d67e3a11a70e7819a6180b31238a9b",
+      "id": "F-rural-school-closures-political_feasibility-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "58f22cb3e9250cbd93e079372323bd4d8aa622c9cc888f523ca6484fb4a5de10",
+      "id": "SRC-rural-school-closures-010e5891bcf318",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "ad83abde92bed59beac8292aaac6febb7460674a2fd91fbdbd41fb54a28a4d83",
+      "id": "F-rural-school-closures-political_feasibility-13",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "9b7149a73420fdd45036b091963d3e3822762a6b8e4d575369297fb33db015d4",
+      "id": "A-rural-school-closures-portuguese_reform-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "34cb4f0cf4dbdb438eed3255ee3e2471afff789c49ced9ddf0cb1d159efca7b0",
+      "id": "A-rural-school-closures-portuguese_reform-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "133babf85e9de8e245240837a508b8fc935a8d85ed980cd3f54ea255601561bd",
+      "id": "A-rural-school-closures-portuguese_reform-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "a76386009828f49ffca0f2d18313f9b1e131ba325ca60a38b63701da360f9cf7",
+      "id": "A-rural-school-closures-portuguese_reform-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "e4122b0625be34dd79d6e6d079d4d0723f8c547c17d8829e4c39a6cf9ab56658",
+      "id": "A-rural-school-closures-portuguese_reform-05",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "268926dd5aebd85c998a7f5bcb225fa52871e4afe1b96f8eca49afc9f0c30add",
+      "id": "A-rural-school-closures-portuguese_reform-06",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "106584927f0543fa820e1eaf1dd88a8e67c9d9e23980c0527ea77e56fb3f9c72",
+      "id": "A-rural-school-closures-portuguese_reform-07",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "b7ec5fbc414f72948e20f77d6abb57cb8b4905334f442662382fcd8051e9138e",
+      "id": "A-rural-school-closures-portuguese_reform-08",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "1fbaf67f0915a48ac4969dc73bdfd3ff00e90e8a2d8bfa79545b0614d460db1e",
+      "id": "U-rural-school-closures-portuguese_reform-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "4ac60e50570519d53f3839986be813c5c38e511783d8318ff29340ddf67805a0",
+      "id": "U-rural-school-closures-portuguese_reform-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "ceb00149e16c4bae153a2f3181798f1b3be395bf2fff1ae66803299975fb02ab",
+      "id": "SRC-rural-school-closures-16eb1256155316",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "42adc745c61e1838b2e738117547e292a83bfe16e578d0931b4a6c85b2d009e5",
+      "id": "F-rural-school-closures-portuguese_reform-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ebcaa244b27fb07df8cc798f4ddcf50f43c884f3b8d978b0632c3c0143f67cbf",
+      "id": "SRC-rural-school-closures-93ee2a5142eb29",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f5d9ef0040f85cfc8cc472fe99bf5d74f23b413dff5901982d549a20c8acdc41",
+      "id": "F-rural-school-closures-portuguese_reform-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "3e96abbff9e37167eb66a13bd65d6e504e662c6e1ca981dd249064544fa6d582",
+      "id": "SRC-rural-school-closures-1fc0df3252499b",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "24da2ba010211ed6fa688a1e52ae01b957da56b48d352ee2c332ec6ef7de70bc",
+      "id": "F-rural-school-closures-portuguese_reform-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "2e83f32c8d659a20cbf37b3d6ebd1d6089de088426ba6cba1a1a616a12f207dd",
+      "id": "F-rural-school-closures-portuguese_reform-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "8b4d2e48687e8ca7f6eeee9b0691b4022d06c68961691209db703532d607b5e9",
+      "id": "SRC-rural-school-closures-723d74b6d78ac6",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "a32cb6c5c030133e22e3b9a0cd61fd5528762be369f6ae0bdbc8252cb1655cbf",
+      "id": "F-rural-school-closures-portuguese_reform-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "1e16601a5a3aa1a37c61f7e1500d6a59bfa8745723426251980e1da59aafa05c",
+      "id": "SRC-rural-school-closures-0274a323904909",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f33b1af26fdc14652fbb38c83044732648d4df8d54b855b09d3d0de57f0a3c01",
+      "id": "F-rural-school-closures-portuguese_reform-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "1c1383539535ab8a8073594de23be126ba05c60836a55e6f6571e5543210bb82",
+      "id": "SRC-rural-school-closures-1210b8bfc98e1a",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "c22a5d7f30cca4ac7b02039b69fc13201eb6747391094caaf79a106835ab3c3b",
+      "id": "F-rural-school-closures-portuguese_reform-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ac1269e3197f115a9ebf4354e0171c03ce7b632053bf3792e1a0f0031bc16a24",
+      "id": "SRC-rural-school-closures-ccd6ee056f391c",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "b4b1a4193f1c4a68dd748ee4da48e82e82fd6ed85c1f13b84a07b15646c331f1",
+      "id": "F-rural-school-closures-portuguese_reform-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "4c94fbaa6e277b8937bc74fcd057f19263b0367b2ac756e4f7f4bf3e0b440c0a",
+      "id": "SRC-rural-school-closures-f55b3710d518d6",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "bdd74c8d055c6f01d98c769005950035e05bd20f3cb72f9d9b3e7eb434212448",
+      "id": "F-rural-school-closures-portuguese_reform-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f8f729f428f11ee48de01205cf01d35b09f7e775e652ca62a126b572f2b1e578",
+      "id": "SRC-rural-school-closures-52e0b4eff932b9",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "aaa0d97e08c1289ca9a5443d012d8446a8d7872a07ea5f910a15780ddf9cf9d4",
+      "id": "F-rural-school-closures-portuguese_reform-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f38da608325d1ae94129424b1b683dcab2743a7b1d0402e261614000bfc4cf19",
+      "id": "SRC-rural-school-closures-04d5e4dd9e3282",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "f6899a5c8496cd7bf603a0be179c7262d567c54b0cf91b880fbf8814240d4789",
+      "id": "F-rural-school-closures-portuguese_reform-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "0097b658d3307a51daccfc0d856143880da7d21382208e5e8c7d78190541197d",
+      "id": "SRC-rural-school-closures-fb2c2b89c70ccc",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "ee0fd894ba4c63f929ce24f9209ca60785ee1a3aa09e3ae4cfe7a75ae1b6af55",
+      "id": "F-rural-school-closures-portuguese_reform-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "7b08a2460c42669ba401668aac142fdf8fe7b7a672fa8455ecdd0b3fe393f6bf",
+      "id": "SRC-rural-school-closures-3907266e40b1bf",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "8693f52b3bd00b117cdabce27d4b08bfa08e47b68dfaf54498a008ad6156342b",
+      "id": "F-rural-school-closures-portuguese_reform-13",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ae5644737b0cade1b3d25194b9a496d96acec874392e5a0a51328f937c3addc9",
+      "id": "F-rural-school-closures-portuguese_reform-14",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "9cec99278487bfd24217a129f9c4d64c3a148fd5fb86a2dd38518082ec373e37",
+      "id": "SRC-rural-school-closures-b4486f4dc75f6b",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "d89f09665ab64fb5e039851847de2571c1688567a28f4c7a360da37349b822bb",
+      "id": "F-rural-school-closures-portuguese_reform-15",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "4ec4ba15be17f33c86ca048d32d890a09beafb46a9e12b1cab33db21731f2c4e",
+      "id": "F-rural-school-closures-portuguese_reform-16",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "fdafc8f91c6159403e0ae9a37b3a1b22016e286e53ce55a8419bbeaec781fbe5",
+      "id": "A-rural-school-closures-school_network_planning-01",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "30c18a1dee78880e80926b7433743c2c17c8f642f84084145d3264a83600751d",
+      "id": "A-rural-school-closures-school_network_planning-02",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ea261fe1c17c64c3909efe037ad72cd2d5c63ae510f74ff8df1714c84f366d3a",
+      "id": "A-rural-school-closures-school_network_planning-03",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "0eca49a1c34d9e2be5584e1461d24c723c81251e2500e3fd7fe9270f48c2b88a",
+      "id": "A-rural-school-closures-school_network_planning-04",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "ddd2386b808b4f0e18418c72f12f29c4af31d10d63fd6e8b2c76ae94fd769c99",
+      "id": "A-rural-school-closures-school_network_planning-05",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "5d941477cfaf6b699b05658e5947fdcbb39520ca117151c29d1dc2039bba448d",
+      "id": "A-rural-school-closures-school_network_planning-06",
+      "record_type": "assumption"
+    },
+    {
+      "content_hash": "f8ae492d9ffefaa5f17b2720263ef6213cebc652c652e551717230ecda8debe7",
+      "id": "U-rural-school-closures-school_network_planning-01",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "07f8ca49bbc592c42ea506b7bd48568dcb79648e04d371ded11708ddc417f979",
+      "id": "U-rural-school-closures-school_network_planning-02",
+      "record_type": "uncertainty"
+    },
+    {
+      "content_hash": "d8841fffdc2f9375a0d01b863a239c0de670cca614031427ebaf7f16072904b5",
+      "id": "SRC-rural-school-closures-998dbc366e0b61",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "ed4ba4155f5e07607646e179c897c3f31462ab0334283186b04324a4ae4a39b7",
+      "id": "F-rural-school-closures-school_network_planning-01",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "1aa11acadd41d1785d3243b15edeb0babc3d2e799225820b8fa2c22db834d956",
+      "id": "SRC-rural-school-closures-d92b3da5b14e6d",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "e1e3497bd1e4703f06306b238ee9d81a5b3e8435abcd87af5676422f52c0c73f",
+      "id": "F-rural-school-closures-school_network_planning-02",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "e05054d042df197efcc0925670a6dc57067534b79f72af1c1902d5b9ad662036",
+      "id": "SRC-rural-school-closures-c43c801d3ae9db",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "bd8f690174500bd28e31034d4b4dce3132c679459d89c284c158467619991d08",
+      "id": "F-rural-school-closures-school_network_planning-03",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "1ab7af772f6a6d3d3de44ebcbc2a0e8711ae32683281feff62f350459f0c0d2b",
+      "id": "SRC-rural-school-closures-2801ed13ab36a3",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "bd75bec4730c28202c5ee2d5c9e66e5c3c22ccd45a7737adb182f7852d96caf0",
+      "id": "F-rural-school-closures-school_network_planning-04",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "14a7fea653cc3cbeabffaf2c5330a8c81718f2c255ea115748d6dfb0eea61ea5",
+      "id": "SRC-rural-school-closures-d357bf1c926796",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "19ff1d2efddf75b6fe27b2ed0bcb95da1c59ed00eef9203bc5b7755f03e6cc63",
+      "id": "F-rural-school-closures-school_network_planning-05",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "ca95a5ed1ec76193218ecf7741facba5de0e183002dc1593803a790b2f0b60c6",
+      "id": "SRC-rural-school-closures-7f99616926ca66",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "73593ebbac2a857ed08bae199010d9cd5b49590992b27886cdac79742fb749fa",
+      "id": "F-rural-school-closures-school_network_planning-06",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "b7ad1be6bb036e85830f5ff78b0bf56f35f4b3f0ad6bd7ff512e757b553ac8f0",
+      "id": "SRC-rural-school-closures-b140f5627ec8c8",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "49b4b1a5ddf672a7b9d0573d8b28d9993733be9c4ca3292c4aeb504c6318bed6",
+      "id": "F-rural-school-closures-school_network_planning-07",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "30e80b9f812e1537abc96a2486dc9f19af7a6d84cc259616042872b3726303b3",
+      "id": "SRC-rural-school-closures-775595ff125272",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "604f30af88a18583b363b2609910f417a7b52e233952c3e5463b669b2ef8af9d",
+      "id": "F-rural-school-closures-school_network_planning-08",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "f8f61492a73d491cea748fe2d81b569803a02e82f98c519426854f9b071fc4c5",
+      "id": "SRC-rural-school-closures-d7dab623392ae1",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "c6a97541d33f3a6acc6045d69a04620a16a326a71af1c97cd4246cd50c6d6726",
+      "id": "F-rural-school-closures-school_network_planning-09",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "430a08551227cab54193bcd10dd27eeb28573d25ed9466fbcb0de91528ac7f33",
+      "id": "SRC-rural-school-closures-1934ccec76ef2b",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "61a35fe64de0875ddd12d3d45c53d94fd555e1a0bd58c7756bd9243800d4251c",
+      "id": "F-rural-school-closures-school_network_planning-10",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "27d9f00376751f24053058f915c18f2bb14cf5264c1d1df850559f46401f3596",
+      "id": "SRC-rural-school-closures-a2ea2f1fcee66a",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "ac9ed06b2daeb6dd39db73dabf97bfec9befc62215615fcf1f4800c711fa0823",
+      "id": "F-rural-school-closures-school_network_planning-11",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "451ed14f2c3f792be28ab452abcb29f5caed6b53d8ac72c08a33f4ce9a9dadf8",
+      "id": "SRC-rural-school-closures-665d2b9ed4d83d",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "330675d900364ff44f1f715027f3a741374ce418cf72f7a2be23105e8603fb21",
+      "id": "F-rural-school-closures-school_network_planning-12",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "fd3d609c6c136f69b5b8a07995f59d41d1a4b7f2108b43d16b40373043605d88",
+      "id": "SRC-rural-school-closures-25ba2b08424c85",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "5df9e00f9a1e180906ee01c9a0bb9c1b3a74036a1e6896ef432a147177fda3ce",
+      "id": "F-rural-school-closures-school_network_planning-13",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "796d3ede4ffa3a97faf4e0817d71f01994fc122b6b1457f72441ba8e6772db96",
+      "id": "SRC-rural-school-closures-bfff0e7b295c36",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "6999659414832a8238d0ff890eda0d7b01425c7503e3c2fb2a7b99cf218d4d38",
+      "id": "F-rural-school-closures-school_network_planning-14",
+      "record_type": "finding"
+    },
+    {
+      "content_hash": "695596b52be577f6a6707574a2aef51c4eb5086cf2ebbf0527dfb8ff7614f560",
+      "id": "SRC-rural-school-closures-4d70e757c732c8",
+      "record_type": "source"
+    },
+    {
+      "content_hash": "9947ce635504f6cc21126b81196bfa90b31fb4bd637d58c83fac59499e5dbc84",
+      "id": "F-rural-school-closures-school_network_planning-15",
+      "record_type": "finding"
+    }
+  ],
+  "run_id": "migration-rural-school-closures"
+}

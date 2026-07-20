@@ -1,0 +1,26 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/assumption.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^A-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "assumption"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "statement": {"type": "string", "minLength": 1},
+          "domain_tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"}},
+          "testability": {"enum": ["testable", "partly_testable", "value_premise", "structural_premise"]},
+          "source_context": {"type": "string", "minLength": 1}
+        },
+        "required": ["statement", "domain_tags", "testability", "source_context"]
+      }
+    }}
+  ],
+  "x-artifact-references": [{"path": "/provenance_ref", "record_type": "provenance"}],
+  "x-record-type": "assumption",
+  "x-schema-version": "2.0.0"
+}

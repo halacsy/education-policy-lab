@@ -1,0 +1,33 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/research_question.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^RQ-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "research_question"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "question": {"type": "string", "minLength": 1},
+          "why_it_matters": {"type": "string", "minLength": 1},
+          "method": {"type": "string", "minLength": 1},
+          "decision_impact": {"enum": ["high", "medium", "low"]},
+          "answerability": {"enum": ["answerable_now", "requires_new_data", "requires_pilot", "not_empirically_resolvable"]},
+          "proposal_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"}},
+          "uncertainty_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^U-[A-Za-z0-9._-]+$"}}
+        },
+        "required": ["question", "why_it_matters", "method", "decision_impact", "answerability", "proposal_refs", "uncertainty_refs"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/proposal_refs/*", "record_type": "transformation_proposal"},
+    {"path": "/content/uncertainty_refs/*", "record_type": "uncertainty"}
+  ],
+  "x-record-type": "research_question",
+  "x-schema-version": "2.0.0"
+}

@@ -71,6 +71,17 @@ class ArtifactRepository:
             raise GraphIntegrityError(f"Artifact content does not match path: {path}")
         return record
 
+    def ref_by_hash(self, digest: str) -> ArtifactRef:
+        """Return a typed reference after validating the stored artifact."""
+
+        record = self.get_by_hash(digest)
+        return ArtifactRef(
+            id=record["id"],
+            record_type=record["record_type"],
+            content_hash=digest,
+            path=self._path_for_hash(digest),
+        )
+
     def get_current(self, record_id: str) -> dict[str, Any]:
         stored = [item for item in self._iter_stored() if item.ref.id == record_id]
         if not stored:
@@ -166,14 +177,16 @@ class ArtifactRepository:
         return tuple(lineage)
 
     def validate_graph(self, root_ids: tuple[str, ...] | None = None) -> None:
-        current = self._current_artifacts()
+        stored = list(self._iter_stored())
+        current = self._current_from(stored)
+        by_hash = {item.ref.content_hash: item for item in stored}
         if root_ids is not None:
             missing_roots = sorted(set(root_ids) - set(current))
             if missing_roots:
                 raise GraphIntegrityError(f"Missing graph roots: {missing_roots}")
 
         for item in current.values():
-            self.lineage(item.ref.id)
+            self._validate_lineage(item, by_hash)
             for ref in self.schemas.references(item.record):
                 target = current.get(ref.target_id)
                 if target is None:
@@ -188,8 +201,14 @@ class ArtifactRepository:
                     )
 
     def _current_artifacts(self) -> dict[str, _StoredArtifact]:
+        return self._current_from(self._iter_stored())
+
+    @staticmethod
+    def _current_from(
+        stored: Iterator[_StoredArtifact] | list[_StoredArtifact],
+    ) -> dict[str, _StoredArtifact]:
         by_id: dict[str, list[_StoredArtifact]] = {}
-        for item in self._iter_stored():
+        for item in stored:
             by_id.setdefault(item.ref.id, []).append(item)
         current = {}
         for record_id, versions in by_id.items():
@@ -207,6 +226,29 @@ class ArtifactRepository:
                 )
             current[record_id] = candidates[0]
         return current
+
+    @staticmethod
+    def _validate_lineage(
+        current: _StoredArtifact, by_hash: dict[str, _StoredArtifact]
+    ) -> None:
+        record_id = current.ref.id
+        digest: str | None = current.ref.content_hash
+        seen = set()
+        while digest:
+            if digest in seen:
+                raise GraphIntegrityError(f"Cycle in supersedes chain for {record_id}")
+            seen.add(digest)
+            try:
+                item = by_hash[digest]
+            except KeyError as exc:
+                raise GraphIntegrityError(
+                    f"Missing superseded artifact hash {digest} for {record_id}"
+                ) from exc
+            if item.ref.id != record_id:
+                raise GraphIntegrityError(
+                    f"Supersedes chain crosses semantic ids at {digest}"
+                )
+            digest = item.record.get("supersedes")
 
     def _iter_stored(self) -> Iterator[_StoredArtifact]:
         if not self.artifact_dir.exists():

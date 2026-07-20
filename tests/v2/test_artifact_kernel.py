@@ -94,9 +94,18 @@ class SchemaRegistryTests(unittest.TestCase):
         self.assertEqual(
             self.schemas.available(),
             (
+                ("assumption", "2.0.0"),
+                ("decision_package", "2.0.0"),
+                ("dilemma", "2.0.0"),
                 ("finding", "2.0.0"),
+                ("lens_assessment", "2.0.0"),
+                ("lens_definition", "2.0.0"),
                 ("provenance", "2.0.0"),
+                ("research_question", "2.0.0"),
                 ("source", "2.0.0"),
+                ("transformation_family", "2.0.0"),
+                ("transformation_proposal", "2.0.0"),
+                ("uncertainty", "2.0.0"),
             ),
         )
 

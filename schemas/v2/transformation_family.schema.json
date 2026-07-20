@@ -1,0 +1,30 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/transformation_family.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^TF-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "transformation_family"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "system_problem": {"type": "string", "minLength": 1},
+          "change_lever": {"type": "string", "minLength": 1},
+          "boundary": {"type": "string", "minLength": 1},
+          "proposal_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"}}
+        },
+        "required": ["name", "system_problem", "change_lever", "boundary", "proposal_refs"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/proposal_refs/*", "record_type": "transformation_proposal"}
+  ],
+  "x-record-type": "transformation_family",
+  "x-schema-version": "2.0.0"
+}

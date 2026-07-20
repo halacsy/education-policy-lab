@@ -541,3 +541,46 @@ learning goals, scope) frozen into topics/<slug>/topic.json. Decisions:
    (stricter than the old fixed ">=3 of S1..S4"). The retrofit topic
    korai-szelekcio carries the archive era's four anchors as its approved
    frames.
+
+**D-37 — Artifact-first transformation graph; speaker identity becomes
+provenance, not the product model (2026-07-20; issues #30/#32/#33 and all
+architecture-labelled follow-ups; full specification:
+docs/proposals/2026-07-20-artifact-first-transformation-dag-v2.md).** The
+owner concluded that the accumulated round/expert/discourse architecture
+was optimizing a model of experts and social debate, while the actual product
+need is a durable library of evidence, assumptions, dilemmas, and directions
+for education-system change. Decisions:
+
+1. *The canonical unit is a typed semantic artifact.* Findings, assumptions,
+   uncertainties, transformation families/proposals, scientific lens
+   assessments, dilemmas, research questions, and decision packages have
+   immutable, content-addressed JSON records. `who said it` remains available
+   through provenance and the event log, but is not copied into the semantic
+   claim or used as its authority.
+2. *The workflow is an explicit artifact DAG.* Nodes declare their input and
+   output types, relevant config, schema/spec dependencies, provider/model,
+   and role. Cache keys cover only those dependencies. Runs write append-only
+   events and per-node manifests; resumption is artifact-level, not a global
+   round replay. Generator and judge remain cross-family.
+3. *Transformations are the product destination.* The public reading path is
+   problem → finding → transformation family → proposal → disciplinary lens
+   assessment → dilemma/research question → decision package. An evidence
+   conflict and a value conflict are different record types: more research can
+   address the former; the latter must remain visible for human judgment.
+4. *Disciplines are reusable evaluative lenses, not simulated people.* A
+   psychology, legal, finance, implementation, demographic, or other lens can
+   evaluate any proposal while retaining its method, criteria, limitations,
+   evidence references, and confidence. This preserves the owner's requirement
+   for statements such as “from a psychological perspective” without making a
+   synthetic psychologist the object of the final product.
+5. *Canonical JSON is English-only.* Keys, enums, metadata, and semantic prose
+   are English. Hungarian and other languages are deterministic downstream
+   Markdown/HTML views and may never feed an upstream analytical node. JSON
+   files plus strict versioned schemas are the initial database; SQLite is
+   deferred until concurrency or query load demonstrates the need.
+6. *Rewrite, but preserve the evidence trail.* The branch
+   `codex/artifact-dag-v2` implements a deterministic vertical slice over both
+   committed topics. It recompiles v1 content without a paid model call, so it
+   validates schemas, graph integrity, cache/resume, auditability, and the new
+   public information architecture—not fresh research quality. A later live
+   acceptance run is required before v2 replaces v1 production generation.
