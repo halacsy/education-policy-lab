@@ -227,7 +227,8 @@ class PsychologyLensExperiment:
         )
         package_ref = downstream["package"][0]
         evaluation_ref = downstream["evaluation"][0]
-        self.repository.validate_graph((package_ref.id, evaluation_ref.id))
+        readiness_ref = downstream["readiness"][0]
+        self.repository.validate_graph((package_ref.id, evaluation_ref.id, readiness_ref.id))
         summary = self._summarize_arm(arm, run_dir, package_ref, evaluation_ref, proposals, assessment_refs, downstream)
         write_json(self._arm_summary(arm), summary)
         print(f"ARM {arm}: total={summary['evaluation']['total']:.3f}, cache_hits={summary['execution']['cache_hits']}, executed={summary['execution']['executed']}", flush=True)
@@ -310,7 +311,28 @@ class PsychologyLensExperiment:
             ),
         )
         self._report_node(run_dir, "evaluate_decision_package")
-        return {"dilemmas": dilemmas, "agenda": agenda, "package": package, "evaluation": evaluation}
+        readiness = executor.run(
+            self._spec(
+                "assess_decision_readiness",
+                ("decision_package", "evaluation", "transformation_proposal", "dilemma", "research_question"),
+                ("decision_readiness",), ("decision_readiness.schema.json",),
+            ),
+            inputs={
+                "package": package, "evaluation": evaluation,
+                "proposals": proposals, "dilemmas": dilemmas, "agenda": agenda,
+            },
+            relevant_config=arm_config,
+            provider="local", model="deterministic-1.0.0",
+            prompt_hash=self._contract_hash("decision_readiness_v1"),
+            builder=lambda pv: self._readiness_records(
+                arm, package[0], evaluation[0], proposals, dilemmas, agenda, pv
+            ),
+        )
+        self._report_node(run_dir, "assess_decision_readiness")
+        return {
+            "dilemmas": dilemmas, "agenda": agenda, "package": package,
+            "evaluation": evaluation, "readiness": readiness,
+        }
 
     def _research_records(
         self, lens: dict[str, Any], provenance: str, *, node: str,
@@ -754,6 +776,41 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
             "verdict": result["verdict"],
         })]
 
+    def _readiness_records(
+        self, arm: str, package_ref: ArtifactRef, evaluation_ref: ArtifactRef,
+        proposals: tuple[ArtifactRef, ...], dilemmas: tuple[ArtifactRef, ...],
+        agenda: tuple[ArtifactRef, ...], provenance: str,
+    ) -> list[dict[str, Any]]:
+        evaluation = self.repository.get_by_hash(evaluation_ref.content_hash)["content"]
+        verdict = {
+            "accept": "ready_for_human_review",
+            "accept_with_caveats": "ready_with_conditions",
+            "revise": "needs_revision",
+            "reject": "needs_revision",
+        }[evaluation["verdict"]]
+        priority_questions = []
+        for ref in agenda:
+            record = self.repository.get_by_hash(ref.content_hash)
+            if record["content"]["decision_impact"] == "high":
+                priority_questions.append(ref.id)
+        rationale = (
+            "The cross-family evaluation accepted the package for human review; "
+            "the external-use gate remains a human decision."
+            if verdict != "needs_revision"
+            else "The cross-family evaluation requires revision before human external-use review."
+        )
+        return [self._record(f"DR-live-{arm}", "decision_readiness", provenance, {
+            "package_ref": package_ref.id,
+            "evaluation_ref": evaluation_ref.id,
+            "verdict": verdict,
+            "conditions": evaluation["concerns"],
+            "candidate_first_move_refs": [ref.id for ref in proposals],
+            "unresolved_dilemma_refs": [ref.id for ref in dilemmas],
+            "priority_research_question_refs": priority_questions,
+            "human_external_use_gate": "pending",
+            "rationale": rationale,
+        })]
+
     def compare_arms(self) -> dict[str, Any]:
         baseline = self._load(self._arm_summary("baseline"))
         psychology = self._load(self._arm_summary("psychology"))
@@ -795,10 +852,13 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
         dispositions = [item["disposition"] for item in manifests]
         counts = self._manifest_counts(run_dir)
         evaluation = self.repository.get_by_hash(evaluation_ref.content_hash)["content"]
+        readiness = self.repository.get_by_hash(downstream["readiness"][0].content_hash)["content"]
         return {
             "arm": arm, "run_id": f"live-{self.topic}-{arm}",
             "package_ref": package_ref.id, "evaluation_ref": evaluation_ref.id,
             "evaluation": evaluation, "counts": counts,
+            "readiness_ref": downstream["readiness"][0].id,
+            "readiness": readiness,
             "transformation_hashes": sorted(ref.content_hash for ref in proposals),
             "execution": {
                 "nodes": len(manifests), "cache_hits": dispositions.count("cache_hit"),
@@ -820,6 +880,7 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
         tracked = (
             "finding", "transformation_family", "transformation_proposal",
             "lens_definition", "lens_assessment", "dilemma", "research_question",
+            "coverage_ledger", "decision_readiness",
         )
         return {record_type: len(ids_by_type.get(record_type, set())) for record_type in tracked}
 
@@ -1076,6 +1137,7 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
             "research_agenda_v1": (cls._agenda_records, contracts.agenda_output),
             "decision_package_v1": (cls._package_records, contracts.PACKAGE_OUTPUT),
             "evaluate_package_v1": (cls._evaluation_records, contracts.EVALUATION_OUTPUT),
+            "decision_readiness_v1": (cls._readiness_records, None),
         }
         try:
             implementation, contract = dependencies[name]

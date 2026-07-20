@@ -1,0 +1,38 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/decision_readiness.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^DR-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "decision_readiness"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "package_ref": {"type": "string", "pattern": "^DP-[A-Za-z0-9._-]+$"},
+          "evaluation_ref": {"type": "string", "pattern": "^EV-[A-Za-z0-9._-]+$"},
+          "verdict": {"enum": ["ready_for_human_review", "ready_with_conditions", "needs_revision"]},
+          "conditions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "candidate_first_move_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"}},
+          "unresolved_dilemma_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^D-[A-Za-z0-9._-]+$"}},
+          "priority_research_question_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^RQ-[A-Za-z0-9._-]+$"}},
+          "human_external_use_gate": {"const": "pending"},
+          "rationale": {"type": "string", "minLength": 1}
+        },
+        "required": ["package_ref", "evaluation_ref", "verdict", "conditions", "candidate_first_move_refs", "unresolved_dilemma_refs", "priority_research_question_refs", "human_external_use_gate", "rationale"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/package_ref", "record_type": "decision_package"},
+    {"path": "/content/evaluation_ref", "record_type": "evaluation"},
+    {"path": "/content/candidate_first_move_refs/*", "record_type": "transformation_proposal"},
+    {"path": "/content/unresolved_dilemma_refs/*", "record_type": "dilemma"},
+    {"path": "/content/priority_research_question_refs/*", "record_type": "research_question"}
+  ],
+  "x-record-type": "decision_readiness",
+  "x-schema-version": "2.0.0"
+}

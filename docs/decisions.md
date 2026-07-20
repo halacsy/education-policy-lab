@@ -674,3 +674,12 @@ proposal and emits a graph-linked `coverage_ledger`; missing, duplicate, or
 unknown mappings fail the node. Fresh decision packages carry that ledger.
 This preserves emergent synthesis inside an already approved option-space
 boundary while preventing silent critical attrition during the v1→v2 cutover.
+
+**D-43 — Decision readiness is an artifact and never an automatic policy
+approval (2026-07-20).** A completed package now produces a graph-linked
+`decision_readiness` record after cross-family evaluation. It states whether
+the material is ready for human review, ready with conditions, or needs
+revision; it also links candidate first moves, unresolved dilemmas, and
+high-impact research questions. The external-use gate is always `pending` in
+machine output. Publication or policy endorsement therefore cannot be inferred
+from a high model score and remains an explicit human act.

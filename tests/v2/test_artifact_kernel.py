@@ -98,6 +98,7 @@ class SchemaRegistryTests(unittest.TestCase):
                 ("assumption", "2.0.0"),
                 ("coverage_ledger", "2.0.0"),
                 ("decision_package", "2.0.0"),
+                ("decision_readiness", "2.0.0"),
                 ("dilemma", "2.0.0"),
                 ("evaluation", "2.0.0"),
                 ("finding", "2.0.0"),
