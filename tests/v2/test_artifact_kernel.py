@@ -282,6 +282,18 @@ class NodeSpecTests(unittest.TestCase):
     def test_experiment_runner_remains_a_production_runner_subtype(self) -> None:
         self.assertTrue(issubclass(PsychologyLensExperiment, ArtifactDagRunner))
 
+    def test_live_source_normalization_selects_one_valid_uri(self) -> None:
+        self.assertEqual(
+            ArtifactDagRunner._safe_uri(
+                "https://hudoc.echr.coe.int/; https://ec.europa.eu", "SRC-test"
+            ),
+            "https://hudoc.echr.coe.int/",
+        )
+        self.assertEqual(
+            ArtifactDagRunner._safe_uri("No direct URL in the notes", "SRC Test"),
+            "urn:epl:live-source:src-test",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

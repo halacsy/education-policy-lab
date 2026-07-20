@@ -700,3 +700,10 @@ requires 7–10 distinct, non-padded findings per lens and receives larger searc
 and analysis budgets. This is a breadth safeguard, not a claim that item count
 measures evidence quality; source linkage, limitations, evidence strength, and
 the downstream judge remain mandatory.
+
+**D-46 — One source artifact stores one normalized URI (2026-07-20).** The
+first two-topic production run stopped when a provider joined two source URLs
+with a semicolon. The strict `uri` schema remains unchanged. The source
+normalizer now extracts the first explicit HTTP(S) URI and otherwise emits an
+auditable URN pointer; it never stores a multi-URL prose field as one URI. A
+regression test covers both joined citations and the no-direct-URL fallback.

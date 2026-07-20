@@ -1168,9 +1168,14 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
 
     @staticmethod
     def _safe_uri(value: str, fallback_id: str) -> str:
-        value = value.strip().rstrip(".,)")
-        if urlsplit(value).scheme in {"http", "https"}:
-            return value
+        # Provider output occasionally joins several citations in one field.
+        # The canonical Source contract stores one URI, so select the first
+        # explicit HTTP(S) target instead of weakening URI validation.
+        match = re.search(r"https?://[^\s;]+", value)
+        if match:
+            candidate = match.group(0).rstrip(".,)")
+            if urlsplit(candidate).scheme in {"http", "https"}:
+                return candidate
         return f"urn:epl:live-source:{_slug(fallback_id)}"
 
     @staticmethod
