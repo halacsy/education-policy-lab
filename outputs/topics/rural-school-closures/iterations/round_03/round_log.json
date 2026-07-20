@@ -1,0 +1,82 @@
+{
+  "round": 3,
+  "fallbacks": [],
+  "reused": [],
+  "resumed": [],
+  "discourse": {
+    "voices": 10,
+    "stance_counts": {
+      "support": 13,
+      "oppose": 18,
+      "conditional": 19,
+      "no_position": 0
+    },
+    "label_counts": {
+      "documented": 0,
+      "value_modeled": 50,
+      "no_position": 0
+    },
+    "clusters": 22,
+    "factual_clusters_graded": 17,
+    "reciprocity": {
+      "ran": true,
+      "revised": 7
+    }
+  },
+  "backends": {
+    "brief [anthropic:claude-sonnet-5]": 1,
+    "critic [openai:]": 8,
+    "synthesis [anthropic:claude-sonnet-5]": 1
+  },
+  "tokens": {
+    "by_task_backend": {
+      "brief [anthropic:claude-sonnet-5]": {
+        "input_tokens": 62794,
+        "output_tokens": 32960
+      },
+      "critic [openai:]": {
+        "input_tokens": 89038,
+        "output_tokens": 18769
+      },
+      "judge_score [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 32382,
+        "output_tokens": 621
+      },
+      "judge_score [openai:]": {
+        "input_tokens": 89241,
+        "output_tokens": 6599
+      },
+      "meta_critique [openai:]": {
+        "input_tokens": 1323,
+        "output_tokens": 2374
+      },
+      "synthesis [anthropic:claude-sonnet-5]": {
+        "input_tokens": 41394,
+        "output_tokens": 9019
+      }
+    },
+    "total_input_tokens": 316172,
+    "total_output_tokens": 70342,
+    "total_tokens": 386514,
+    "metered_calls": 26,
+    "unmetered_calls": 0
+  },
+  "errors": {},
+  "wall_clock_s": 746.2,
+  "usd_estimate": {
+    "total_usd": 0.98,
+    "by_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 104188,
+        "output_tokens": 41979,
+        "usd": 0.9422
+      },
+      "claude-haiku-4-5": {
+        "input_tokens": 32382,
+        "output_tokens": 621,
+        "usd": 0.0355
+      }
+    },
+    "unpriced_models": []
+  }
+}

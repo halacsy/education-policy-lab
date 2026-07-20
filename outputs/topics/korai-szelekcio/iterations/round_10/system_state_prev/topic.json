@@ -1,0 +1,213 @@
+{
+  "slug": "korai-szelekcio",
+  "version": 1,
+  "created": "2026-07-15",
+  "status": "active",
+  "_policy": "Per-topic config (D-35, issues #18/#21). The problem brief is the system's INPUT (a described problem, not a bare question); the frames are the OUTPUT of round 1's emergent-framing step, frozen here after human approval. This topic is the retrofit of the original single-question system: the problem brief uses the owner's example text (2026-07-14), the frames are the four scenario anchors the archive era (rounds 1-8) ran on, marked approved retroactively.",
+  "problem_brief": {
+    "title": {
+      "en": "Early academic selection and the 6/8-year gimnázium",
+      "hu": "Korai szelekció és a hat-/nyolcosztályos gimnázium"
+    },
+    "problem_statement": {
+      "en": "One of the most contested structural features of Hungary's school system is academic selection at age 10-12. We want to find out which problems it solves, which new problems it creates, and which alternatives are conceivable.",
+      "hu": "Magyarország iskolarendszerének egyik legvitatottabb szerkezeti eleme a 10-12 éves kori szelekció. Arra szeretnénk választ találni, hogy milyen problémákat old meg, milyen új problémákat hoz létre, és milyen alternatívák képzelhetők el."
+    },
+    "learning_goals": [
+      {
+        "en": "What is known about the learning and equity effects of early selection, and how strong is that evidence?",
+        "hu": "Mit tudunk a korai szelekció tanulási és méltányossági hatásairól, és mennyire erős ez a bizonyíték?"
+      },
+      {
+        "en": "What structural and non-structural alternatives exist, and what does each cost — in money, in political risk, and in who wins or loses?",
+        "hu": "Milyen szerkezeti és nem szerkezeti alternatívák léteznek, és mi az egyes alternatívák ára — pénzben, politikai kockázatban, és abban, hogy ki nyer és ki veszít?"
+      },
+      {
+        "en": "Where do experts genuinely disagree, what could research still resolve, and what must remain a human value decision?",
+        "hu": "Miben nincs valódi szakértői egyetértés, mit dönthetne még el a kutatás, és minek kell emberi értékdöntésnek maradnia?"
+      }
+    ],
+    "scope": {
+      "en": "In scope: selection at age 10-12 into the 6- and 8-year gimnázium tracks and the sorting system around it (admissions, school choice, maintainers). Out of scope: higher-education admission, vocational-track content reform, and general teacher-pay policy except where a scenario depends on it.",
+      "hu": "A vizsgálat része: a 10-12 éves kori bekerülés a hat- és nyolcosztályos gimnáziumi képzésbe és az azt körülvevő válogatási rendszer (felvételi, iskolaválasztás, fenntartók). Kifejezetten kívül esik: a felsőoktatási felvételi, a szakképzés tartalmi reformja, és az általános pedagógusbér-politika, kivéve ahol egy forgatókönyv ezen múlik."
+    },
+    "seed_sources": []
+  },
+  "frames": {
+    "status": "approved",
+    "approved_by": "Peter Halacsy",
+    "approved_on": "2026-07-17",
+    "derived_from": "round 9 expert record (emergent framing, issue #21/D-36); rejected framings recorded in proposals/frames.json",
+    "scenarios": [
+      {
+        "id": "S1",
+        "title": {
+          "en": "Admissions and intake-equity regulation (keep structure, fix the gate)",
+          "hu": "Felvételi és bejutási méltányossági szabályozás (a szerkezet marad, a kapu változik)"
+        },
+        "scope": {
+          "en": "Interventions that keep the 6/8-year gimnázium structure intact but regulate the admission mechanism itself — SES-aware quotas or proxies, uniform score-threshold rules, coaching-resistant exam design — to reduce family-capital-driven sorting at the point of entry.",
+          "hu": "Azok a beavatkozások, amelyek a hatosztályos/nyolcosztályos gimnáziumi szerkezetet megtartják, de magát a felvételi mechanizmust szabályozzák — SES-alapú kvótákkal vagy proxykkal, egységes ponthatár-szabályokkal, kevésbé felkészíthető vizsgaformátummal — a családi tőke által vezérelt bejutási szelekció csökkentésére."
+        }
+      },
+      {
+        "id": "S2",
+        "title": {
+          "en": "Supply-side contraction of the selective track (shrink the gate, not the rules)",
+          "hu": "A szelektív képzési kínálat visszaszorítása (a kapu szűkül, nem a szabályok)"
+        },
+        "scope": {
+          "en": "Interventions that reduce the state-sector share of 6/8-year places (via score thresholds, capacity caps, or demographically-driven consolidation) to shrink the selective track's footprint, while leaving admission criteria within remaining places largely unchanged.",
+          "hu": "Azok a beavatkozások, amelyek a hatosztályos/nyolcosztályos helyek állami szektorbeli arányát csökkentik (ponthatárokkal, kapacitáskorlátokkal vagy demográfiailag vezérelt összevonással) a szelektív képzési kínálat lábnyomának szűkítésére, míg a megmaradó helyeken a felvételi kritériumok nagyrészt változatlanok maradnak."
+        }
+      },
+      {
+        "id": "S3",
+        "title": {
+          "en": "Structural delay of the selection age (Finnish/Polish model)",
+          "hu": "A szelekciós életkor strukturális kitolása (finn/lengyel modell)"
+        },
+        "scope": {
+          "en": "Reforms that raise the statutory age of first academic tracking (e.g., to 14+ or later), phasing out or converting 6- and 8-year entry points into a unified comprehensive lower-secondary phase, paired with explicit anti-sorting rules for school choice and catchment.",
+          "hu": "Olyan reformok, amelyek megemelik az első iskolatípus-szerinti szétválogatás törvényes életkorát (pl. 14 évre vagy később), a hatosztályos és nyolcosztályos belépési pontokat egységes, összevont alsó középfokú szakasszá alakítva át, az iskolaválasztásra és a körzethatárokra vonatkozó explicit szelekció-ellenes szabályokkal párosítva."
+        }
+      },
+      {
+        "id": "S4",
+        "title": {
+          "en": "Non-structural compensatory reform (leave selection age unchanged)",
+          "hu": "Nem strukturális, kompenzáló reform (a szelekciós életkor változatlan marad)"
+        },
+        "scope": {
+          "en": "Portugal-style interventions that leave the 10-12 selection age and track structure untouched but pursue equity and achievement gains through curriculum clarity, targeted (TEIP-style) funding for disadvantaged schools, retention reduction, and school-quality levelling.",
+          "hu": "Portugál mintájú beavatkozások, amelyek a 10-12 éves szelekciós életkort és a képzési szerkezetet érintetlenül hagyják, de a méltányossági és teljesítménybeli javulást a tantervi egyértelműségen, a hátrányos helyzetű iskolák célzott (TEIP-típusú) finanszírozásán, az évfolyamismétlés csökkentésén és az iskolai minőségkiegyenlítésen keresztül igyekeznek elérni."
+        }
+      },
+      {
+        "id": "S5",
+        "title": {
+          "en": "Demographically-driven passive contraction (status-quo baseline)",
+          "hu": "Demográfiailag vezérelt passzív zsugorodás (status quo alapforgatókönyv)"
+        },
+        "scope": {
+          "en": "The no-new-policy baseline in which shrinking birth cohorts force network consolidation and a natural decline in the selective track's absolute size and share regardless of any active equity or structural intervention, serving as the counterfactual against which S1–S4 are measured.",
+          "hu": "Az a beavatkozás-mentes alapforgatókönyv, amelyben a zsugorodó születési évfolyamok kikényszerítik az iskolahálózat összevonását és a szelektív képzési kínálat abszolút méretének és arányának természetes csökkenését bármely aktív méltányossági vagy strukturális beavatkozás nélkül, mérceként szolgálva az S1–S4 forgatókönyvek értékeléséhez."
+        }
+      }
+    ]
+  },
+  "experts": [
+    "hungarian_education_system",
+    "international_comparison",
+    "finnish_reform",
+    "polish_reform",
+    "portuguese_reform",
+    "equity_and_social_mobility",
+    "demography",
+    "school_network_planning",
+    "education_finance",
+    "legal_and_governance",
+    "political_feasibility",
+    "implementation_planning",
+    "educational_psychology"
+  ],
+  "voices": [
+    "pedagogus_erdekvedo",
+    "kisgyerekes_szuloi",
+    "eselyegyenlosegi_civil",
+    "konzervativ_ertekvedo",
+    "digitalisgazdasagi",
+    "egyhazi_fenntartoi",
+    "oktataspolitikai_reformmozgalom",
+    "pedagogus_szakszervezeti_hang",
+    "kormanyzati_reformrealizmus",
+    "fuggetlen_szakpolitikai_kutatomuhely"
+  ],
+  "registry_facts": null,
+  "expert_facts": {
+    "hungarian_education_system": [
+      "gimn_share",
+      "school_choice",
+      "governance"
+    ],
+    "international_comparison": [
+      "tracking_inequality",
+      "pisa_escs"
+    ],
+    "finnish_reform": [
+      "finland_comprehensive"
+    ],
+    "polish_reform": [
+      "poland_reform"
+    ],
+    "portuguese_reform": [
+      "portugal_improvement"
+    ],
+    "equity_and_social_mobility": [
+      "pisa_escs",
+      "gimn_share",
+      "value_added"
+    ],
+    "demography": [
+      "demography"
+    ],
+    "school_network_planning": [
+      "demography",
+      "governance"
+    ],
+    "education_finance": [
+      "fiscal"
+    ],
+    "legal_and_governance": [
+      "legal",
+      "governance"
+    ],
+    "political_feasibility": [
+      "parent_attachment",
+      "poland_reform"
+    ],
+    "implementation_planning": [
+      "teacher_shortage",
+      "fiscal"
+    ],
+    "educational_psychology": [
+      "big_fish_little_pond",
+      "labeling_effects",
+      "stereotype_threat",
+      "goal_orientation",
+      "self_determination",
+      "growth_mindset"
+    ]
+  },
+  "human_questions": [
+    {
+      "context": "Scenario choice",
+      "question": "How should equity gains be weighed against risks to high-achiever outcomes and against parental choice? This weighting determines the S3-vs-S4 ranking and is a values question the system must not answer.",
+      "needed": "A stated weighting or a deliberative process to produce one.",
+      "blocking": true
+    },
+    {
+      "context": "Political risk appetite",
+      "question": "Is a Polish-style reversal risk acceptable if the expected equity gain is large? Only an accountable decision-maker can accept this risk.",
+      "needed": "Explicit risk acceptance or rejection for structural scenarios.",
+      "blocking": false
+    },
+    {
+      "context": "S4 premise",
+      "question": "Is early selection genuinely politically immovable, or is that assumption itself a choice? The devil_advocate flagged this as a foreclosing premise.",
+      "needed": "Political judgment from stakeholders across parties.",
+      "blocking": false
+    },
+    {
+      "context": "Translation nuance",
+      "question": "Hungarian 'egységes alapiskola' carries historical connotations (1970s-80s reform debates) that 'comprehensive school' lacks; a native policy editor should confirm register in public-facing texts.",
+      "needed": "Native-speaker editorial review of HU deliverables.",
+      "blocking": false
+    }
+  ],
+  "evaluation": {
+    "era_start_round": 9,
+    "_era_policy": "Rounds 1-7 are this topic's closed pre-D-34 archive era (old schema); round 8+ is the structured-bilingual era. The first round of a new era is a baseline: no delta against the previous era, no regression revert.",
+    "_era_note": "2026-07-17: the frames were re-derived from round 9's sourced expert record (owner-approved; propose-frames) — a 5-frame option space is not comparable to the 4-frame rounds, so round 9 is the new baseline."
+  }
+}

@@ -1,0 +1,663 @@
+TASK: build_scenarios
+AGENT: scenario_builder
+
+=== AGENT SPEC (follow strictly, including ## Directives) ===
+# Agent: scenario_builder
+
+Version: 4
+Type: synthesis
+Provider-role: generator
+
+## Role
+Build the policy scenarios (S1..Sn) with every required field, from the expert record — candidate framings first, then select.
+
+## Mission
+Within each round, produce your output so that it measurably serves the rubric
+dimensions your type is responsible for; your spec (including ## Directives)
+is embedded verbatim in your prompt.
+
+## Inputs
+Expert outputs (editor/scenario_builder); EN deliverables + the topic glossary (topics/<slug>/glossary.md) (translator); scenarios + synthesis (brief/summary writers).
+
+## Outputs
+scenarios.json / scenarios.<lang>.md / synthesis.md / rejected_framings.md / brief.<lang>.md / executive_summary.<lang>.md (per agent)
+
+## Rules
+- Never force consensus: disagreement is signal, not noise to remove.
+- Preserve every evidence tag from the inputs; never upgrade an evidence status.
+- Keep scenario ids (S1..Sn) stable and identical across languages.
+- Follow every line in the ## Directives section strictly.
+
+## Evidence discipline
+Carry tags through verbatim; assumptions stay labelled [assumption]; recommendations never masquerade as evidence.
+
+## Uncertainty discipline
+Uncertainties survive synthesis; a synthesis with fewer uncertainties than its inputs is broken.
+
+## Failure modes
+- Consensus laundering (dropping minority views)
+- Upgrading evidence status while summarising
+- Structure drift between language versions
+
+## Self-critique questions
+- Did any dissent disappear?
+- Are the language versions structurally identical?
+- Did I add any claim not present in the inputs?
+
+## Output template
+```
+(JSON — the exact schema is enforced by the API; BILINGUAL: every {en, hu} pair carries the SAME statement written natively in both languages, using the topic glossary (topics/<slug>/glossary.md) terminology. scenarios[S1..Sn] each with: title, goal, mechanism[{text, evidence}], evidence_status{label, note}, assumptions[], expected_benefits[{text, evidence}], equity_impact, cost_categories[], implementation_steps[{actor, action, timeline}], political_risks[], uncertainties[{text, confidence, reduced_by}])
+```
+
+## Directives
+<!-- Appended by the improvement step; one line per directive. -->
+- [round-02] DIRECTIVE:uncertainty_quantify — For every uncertainty item, fill the confidence field (low|medium|high) and the reduced_by pair (what evidence would reduce it) in both languages.
+- [round-05] DIRECTIVE:evidence_tag_all — Grade EVERY mechanism claim and EVERY expected benefit via its evidence field (strong|moderate|weak|contested), not only the core ones.
+- [round-06] DIRECTIVE:implementation_detail — Give every implementation step an explicit timeline field, e.g. 'year 1-2' / '1-2. év'.
+
+
+=== EPISODIC MEMORY (yours, from previous rounds — respond to unresolved items, do not repeat resolved ones) ===
+# Episodic memory: scenario_builder
+
+Deterministic distillation from previous rounds (lab/memory.py); fed back into this agent's prompt. Unresolved items persist until the criticized field changes; resolved items drop.
+
+
+## round 10 — received
+- received [devil_advocate on S1.assumptions]: The scenario's pivotal assumption—that decree-level admission-equity rules (SES-aware quotas, uniform thresholds) can be designed and enforced “with reasonable consistency” across state, church, and foundation maintainer
+- received [devil_advocate on S2.assumptions]: S2 assumes state-sector capacity caps or minimum-score thresholds can materially shrink the selective footprint without being offset by church/foundation or private expansion, yet the scenario itself reports strong evide
+- received [devil_advocate on S3.assumptions]: The scenario hinges on the assumption that Hungary's existing teacher workforce can absorb a shift to a unified comprehensive lower-secondary phase without completing a Finland-scale, decade-long teacher-professionalizat
+- received [devil_advocate on S4.assumptions]: S4 assumes TEIP-style targeted funding commitments will be durable despite the scenario's own acknowledgement of a projected 6.2% deficit and historical patterns where targeted lines are first to be cut. The evidence cit
+- received [evidence_checker on S3.expected_benefits]: The scenario labels the claim that ‘delaying tracking is associated with reduced socio‑economic achievement gaps without lowering mean performance’ as [evidence: strong]. This overstates the curated-registry support. The
+- received [evidence_checker on S1.mechanism]: The scenario asserts a ‘coaching‑resistant exam design and SES‑aware admission proxies could reduce the correlation between private tutoring investment and admission success’ and tags this as [evidence: moderate]. The cu
+- received [evidence_checker on S1.mechanism]: The scenario claims uniform score‑threshold rules would reduce discretion that currently ‘varies across roughly 2,000+ institutions’ and tags this as [evidence: weak]. The ‘2,000+ institutions’ figure is a concrete numer
+- received [assumption_checker on S1.assumptions]: The scenario asserts that a ministerial decree (EMMI rendelet) is sufficient to implement SES-aware quotas and uniform thresholds across maintainers. This is concretely flawed: the record itself documents maintainer plur
+- received [assumption_checker on S2.assumptions]: The scenario assumes state-sector capacity caps or score thresholds can meaningfully shrink selective provision without being fully offset by church/foundation or private expansion. This directly contradicts the scenario
+- received [assumption_checker on S3.assumptions]: The scenario assumes Hungary's existing teacher workforce can absorb a shift to a unified comprehensive lower-secondary phase without a Finland-scale, decade-long professionalization investment. This contradicts document
+- received [assumption_checker on S4.assumptions]: The scenario assumes TEIP-style targeted funding can be made durable and protected from fiscal consolidation despite also acknowledging a projected 6.2% deficit and historical patterns of targeted lines being first in cu
+- received [equity_checker on S1.equity_impact]: The equity_impact claims a “likely modest reduction” in family-capital-driven sorting but fails to substantively engage the strong evidence that non-state (church/foundation) maintainers — now ~25–30% of gimnázium enrolm
+- received [equity_checker on S2.equity_impact]: The equity_impact correctly warns that state-sector contraction may relocate rather than reduce net selectivity, but it omits the critical distributional detail of who is left out and where harms concentrate. Specificall
+- received [equity_checker on S3.equity_impact]: The equity_impact correctly conditions gains on concurrent anti-sorting rules, but it leaves unspecified which students are actually reached versus excluded under realistic Hungarian constraints. In particular, it unders
+- received [equity_checker on S5.equity_impact]: S5’s equity_impact both acknowledges that consolidation can worsen segregation and yet frames demographic contraction as a neutral baseline; this is inconsistent and leaves out which populations will be harmed. Concretel
+- received [feasibility_checker on S3.implementation_steps]: The implementation timeline and sequencing (Parliament amend Nkt. year 1; Ministry legislate anti-sorting rules year 1-2; teacher professionalization year 2-10; conversion year 3-9) is infeasible given documented teacher
+- received [feasibility_checker on S1.implementation_steps]: The plan to use an EMMI decree (year 1) and Oktatási Hivatal pilots (year 1-2) to impose SES-aware proxies and uniform thresholds assumes decree-level authority will bind state, church and foundation maintainers. This is
+- received [feasibility_checker on S2.implementation_steps]: The Klebelsberg Centre-led fast roll-out of minimum-score thresholds/capacity caps (timeline: year 1-2) and the Ministry's design of regulatory/fiscal levers to discourage non-state expansion (year 2-4) understate admini
+- received [feasibility_checker on S4.implementation_steps]: The proposal to design and statutorily protect a TEIP-style targeted funding formula within year 1-2 underestimates Hungary's fiscal and administrative constraints. Specifically: (a) the fiscal context (projected 6.2% de
+- received [cost_checker on S1.cost_categories]: Cost section omits actionable fiscal ranges and conflates one-off vs ongoing costs: it lists 'SES-proxy data infrastructure', 'exam redesign', and 'enforcement' but provides no numeric ranges, no FTE or capital estimates
+- received [cost_checker on S2.cost_categories]: The cost section claims potential fiscal savings from shrinking selective capacity but fails to model transition (short-term redundancy/repurposing) versus steady-state savings, and it omits the likely high fiscal cost o
+- received [cost_checker on S3.cost_categories]: Cost items list needed categories (teacher retraining, facility conversion, anti-sorting enforcement) but provides no timeline-linked cost phasing or clear distinction between scale-up (startup) and steady-state budget i
+- received [political_risk_checker on S1.assumptions]: The scenario asserts (assumption) that ‘Legal reform via ministerial decree (EMMI rendelet) is sufficient to implement these changes’ without accounting for maintainer plurality: church and foundation maintainers are con
+- received [political_risk_checker on S3.political_risks]: The scenario acknowledges reversal risk (Poland 2017) but fails to propose any concrete entrenchment or durability design: it notes no cardinal-law or cross-party entrenchment mechanism is specified, yet proceeds as if s
+- received [political_risk_checker on S5.expected_benefits]: The scenario’s expected-benefits claim that ‘Requires no new legislation … making it the only scenario with zero implementation political risk’ is concretely false given the record: the text elsewhere documents that gove
+- received [political_risk_checker on S2.assumptions]: The scenario assumes (without evidence) that shrinking state-sector selective capacity ‘can shrink selective provision without being fully offset by church/foundation or private-sector expansion.’ This directly contradic
+- received [coherence_checker on S1.assumptions]: The assumption that ‘Legal reform via ministerial decree (EMMI rendelet) is sufficient to implement these changes’ is contradicted elsewhere in the scenario: the Political risks and Equity impact explicitly note that chu
+- received [coherence_checker on S2.assumptions]: The scenario assumes that state-sector score thresholds or capacity caps ‘can shrink selective provision without being fully offset by church/foundation or private-sector expansion.’ This directly contradicts evidence an
+- received [coherence_checker on S3.implementation_steps]: The implementation timeline (Parliament amend Nkt. year 1; Ministry legislate anti-sorting rules year 1-2; teacher-professionalization year 2-10; conversion year 3-9) is internally inconsistent with the scenario's own as
+- received [coherence_checker on S4.expected_benefits]: The scenario claims S4 'is the fastest-to-implement scenario within existing legal instruments' while the Implementation steps explicitly propose seeking statutory (cardinal-law) protection for targeted funding—a move th
+
+## round 10 — resolved from previous round
+- RESOLVED [assumption_checker on S1.assumptions] (field changed)
+- RESOLVED [assumption_checker on S3.assumptions] (field changed)
+- RESOLVED [assumption_checker on S2.assumptions] (field changed)
+- RESOLVED [assumption_checker on S4.assumptions] (field changed)
+- RESOLVED [coherence_checker on S1.assumptions] (field changed)
+- RESOLVED [coherence_checker on S3.assumptions] (field changed)
+- RESOLVED [coherence_checker on S2.mechanism] (field changed)
+- RESOLVED [coherence_checker on S5.political_risks] (field changed)
+- RESOLVED [cost_checker on S1.cost_categories] (field changed)
+- RESOLVED [cost_checker on S2.cost_categories] (field changed)
+- RESOLVED [cost_checker on S3.cost_categories] (field changed)
+- RESOLVED [cost_checker on S4.cost_categories] (field changed)
+- RESOLVED [devil_advocate on S1.assumptions] (field changed)
+- RESOLVED [devil_advocate on S2.assumptions] (field changed)
+- RESOLVED [devil_advocate on S3.equity_impact] (field changed)
+- RESOLVED [devil_advocate on S5.assumptions] (field changed)
+- RESOLVED [equity_checker on S1.equity_impact] (field changed)
+- RESOLVED [equity_checker on S2.equity_impact] (field changed)
+- RESOLVED [equity_checker on S3.equity_impact] (field changed)
+- RESOLVED [equity_checker on S4.equity_impact] (field changed)
+- RESOLVED [evidence_checker on S1.expected_benefits] (field changed)
+- RESOLVED [evidence_checker on S2.mechanism] (field changed)
+- RESOLVED [evidence_checker on S3.evidence_status] (field changed)
+- RESOLVED [evidence_checker on S5.mechanism] (field changed)
+- RESOLVED [feasibility_checker on S3.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S1.implementation_steps] (field changed)
+- RESOLVED [feasibility_checker on S2.implementation_steps] (field changed)
+- RESOLVED [political_risk_checker on S1.political_risks] (field changed)
+- RESOLVED [political_risk_checker on S2.assumptions] (field changed)
+- RESOLVED [political_risk_checker on S3.political_risks] (field changed)
+- RESOLVED [political_risk_checker on S4.assumptions] (field changed)
+
+
+=== TASK INSTRUCTIONS ===
+PROBLEM BRIEF: Early academic selection and the 6/8-year gimnázium
+Problem statement: One of the most contested structural features of Hungary's school system is academic selection at age 10-12. We want to find out which problems it solves, which new problems it creates, and which alternatives are conceivable.
+Learning goals:
+- What is known about the learning and equity effects of early selection, and how strong is that evidence?
+- What structural and non-structural alternatives exist, and what does each cost — in money, in political risk, and in who wins or loses?
+- Where do experts genuinely disagree, what could research still resolve, and what must remain a human value decision?
+Scope: In scope: selection at age 10-12 into the 6- and 8-year gimnázium tracks and the sorting system around it (admissions, school choice, maintainers). Out of scope: higher-education admission, vocational-track content reform, and general teacher-pay policy except where a scenario depends on it.
+Produce EXACTLY 5 scenarios with these stable, human-approved frames (keep each scenario inside its frame's scope):
+S1 Admissions and intake-equity regulation (keep structure, fix the gate): Interventions that keep the 6/8-year gimnázium structure intact but regulate the admission mechanism itself — SES-aware quotas or proxies, uniform score-threshold rules, coaching-resistant exam design — to reduce family-capital-driven sorting at the point of entry.
+S2 Supply-side contraction of the selective track (shrink the gate, not the rules): Interventions that reduce the state-sector share of 6/8-year places (via score thresholds, capacity caps, or demographically-driven consolidation) to shrink the selective track's footprint, while leaving admission criteria within remaining places largely unchanged.
+S3 Structural delay of the selection age (Finnish/Polish model): Reforms that raise the statutory age of first academic tracking (e.g., to 14+ or later), phasing out or converting 6- and 8-year entry points into a unified comprehensive lower-secondary phase, paired with explicit anti-sorting rules for school choice and catchment.
+S4 Non-structural compensatory reform (leave selection age unchanged): Portugal-style interventions that leave the 10-12 selection age and track structure untouched but pursue equity and achievement gains through curriculum clarity, targeted (TEIP-style) funding for disadvantaged schools, retention reduction, and school-quality levelling.
+S5 Demographically-driven passive contraction (status-quo baseline): The no-new-policy baseline in which shrinking birth cohorts force network consolidation and a natural decline in the selective track's absolute size and share regardless of any active equity or structural intervention, serving as the counterfactual against which S1–S4 are measured.
+SCENARIO IDS: S1, S2, S3, S4, S5
+Return the scenarios in the required JSON schema, in BOTH English and Hungarian: every {en, hu} pair carries the SAME statement written natively in each language (parallel authoring, never machine-translation flavour; use the glossary terms strictly). Grade every mechanism claim's and expected benefit's evidence honestly; give every implementation step an actor, action and timeline; give every uncertainty a confidence level and what evidence would reduce it.
+
+GLOSSARY:
+# Bilingual terminology glossary (HU ↔ EN)
+
+Controlled vocabulary for all policy deliverables. The `translator` MUST use
+these equivalents; the `translation_checker` enforces them. Additions require
+a new row with a note; changing an existing equivalent is a system change and
+must appear in a round's `revised_workflow.md`.
+
+| English | Hungarian | Note |
+|---------|-----------|------|
+| early selection | korai szelekció | age at which pupils are sorted into tracks |
+| early tracking | korai iskolatípus-szerinti szétválogatás | research-literature synonym of early selection |
+| grammar school | gimnázium | academic-track secondary school; keep "gimnázium" in EN text on first use |
+| 6-year grammar school | hatosztályos gimnázium | entry at age 12 |
+| 8-year grammar school | nyolcosztályos gimnázium | entry at age 10 |
+| comprehensive school | egységes alapiskola | single common school for the full age cohort; EN alternatives since the round-9 frames: comprehensive-school, comprehensive lower-secondary |
+| general school (primary) | általános iskola | Hungarian 8-grade basic school |
+| secondary school | középiskola | umbrella term |
+| vocational school | szakképző iskola | post-2019 nomenclature |
+| admission examination | felvételi vizsga | esp. the central written exam (központi írásbeli) |
+| school choice | szabad iskolaválasztás | free school choice, a distinctive Hungarian feature |
+| equity | méltányosság | in education-policy sense |
+| social mobility | társadalmi mobilitás | |
+| socio-economic status | társadalmi-gazdasági státusz | SES; ESCS in PISA context |
+| achievement gap | teljesítményszakadék | |
+| value added | pedagógiai hozzáadott érték | school effect net of intake |
+| selection effect | szelekciós hatás | composition, not school quality |
+| segregation | szegregáció | |
+| catchment area | iskolai körzet | |
+| school network | iskolahálózat | |
+| school maintainer | fenntartó | state / church / private maintainer |
+| state school district centre | tankerületi központ | Klebelsberg centre system |
+| National Core Curriculum | Nemzeti alaptanterv (NAT) | |
+| teacher shortage | pedagógushiány | |
+| phase-out | fokozatos kivezetés | gradual discontinuation |
+| pilot programme | kísérleti program | |
+| stakeholder | érintett szereplő | |
+| evidence status | bizonyítékstátusz | strong/moderate/weak/contested — erős/mérsékelt/gyenge/vitatott |
+| uncertainty | bizonytalanság | |
+| policy scenario | szakpolitikai forgatókönyv | |
+| implementation step | megvalósítási lépés | |
+| political feasibility | politikai megvalósíthatóság | |
+| dissenting position | különvélemény | |
+| disagreement map | nézeteltérés-térkép | |
+
+## Evidence-status labels
+
+| English | Hungarian |
+|---------|-----------|
+| strong | erős |
+| moderate | mérsékelt |
+| weak | gyenge |
+| contested | vitatott |
+| assumption | feltevés |
+| human judgment | emberi mérlegelés |
+
+## Societal-discourse layer (D-29)
+
+| English | Hungarian | Note |
+|---------|-----------|------|
+| societal-discourse layer | társadalmi diskurzus-réteg | second layer beside the expert layer |
+| discourse voice | diskurzus-hang | represents an interest/value, not expertise |
+| argument ledger | érv-főkönyv | the layer's deliverable |
+| argument cluster | érvklaszter | canonical one-sentence argument, id A1..An |
+| stance matrix | álláspont-mátrix | voice × scenario stances |
+| documented position | dokumentált álláspont | label; requires a source |
+| value-modeled position | értékekből modellezett álláspont | label; requires a stated value base |
+| no position | nincs álláspont | legitimate, honest label |
+| response obligation | válaszkötelezettség | the brief must answer every cluster (CNDP) |
+| reciprocity round | reciprocitás-kör | each voice answers its strongest counter-argument |
+| conditions register | feltétel-regiszter | "what would change my stance" inventory |
+| supports / opposes / conditionally supports | támogatja / ellenzi / feltételesen támogatja | stances |
+
+## Deliberation-acceleration reframe (D-30)
+
+Response-type tokens and cluster fields below stay in their literal
+English snake_case form in every language version (like the A&lt;i&gt; ids) —
+this table exists for human readability, not for the translator to render
+a Hungarian token.
+
+| English | Hungarian gloss | Note |
+|---------|-----------------|------|
+| stakeholder stress test | stakeholder stressteszt | the discourse layer's self-description; never "simulation" |
+| interest (cluster field) | érdek | whose interest is behind an argument cluster |
+| value (cluster field) | érték | which value is in tension |
+| fear (cluster field) | félelem | the anticipated loss/harm driving the argument |
+| affected (cluster field) | érintett szereplők | actor group(s) affected |
+| assumption (cluster field) | feltételezés | the unstated assumption the claim rests on |
+| empirical uncertainty (cluster field) | empirikus bizonytalanság | settled / contested / unknown, and why |
+| decision relevance | döntési relevancia | high / medium / low |
+| gumicsont / attention sink | gumicsont | high attention, low decision relevance |
+| `evidence_answerable` | evidenciával megválaszolható | evidence settles or meaningfully refines it |
+| `policy_design_fixable` | policy designnal kezelhető | a design change/guarantee/phase-in reduces it |
+| `communication_fixable` | kommunikációval kezelhető | already addressed but not visibly/legibly |
+| `value_conflict` | valódi értékkonfliktus | legitimate values collide, no technical fix |
+| `irreducible_tradeoff` | feloldhatatlan trade-off | improving one goal necessarily costs another |
+| `needs_more_info` | további információ szükséges | not yet decidable from the evidence |
+| `not_decision_relevant` | nem döntésreleváns | attention-worthy but would not change the decision |
+
+## Machine-checked key pairs
+
+<!-- Parsed by lab/translation.py (per-topic since D-35): each line
+     "- <en> = <hu>"; alternative EN phrasings separated by " / " (any one
+     counts as present); matching is lowercase substring, so a trailing
+     hyphen acts as a prefix ("phase-" covers phase-out/phase-down). Pairs
+     whose EN side is too generic for substring matching stay out of this
+     list and are left to the human-review flag. -->
+
+- early selection = korai szelekció
+- comprehensive school / comprehensive-school / comprehensive lower-secondary = egységes alapiskola
+- equity = méltányosság
+- social mobility = társadalmi mobilitás
+- school choice / choice and catchment = iskolaválasztás
+- phase- = fokozatos
+- teacher shortage = pedagógushiány
+
+
+=== INPUTS ===
+----- demography -----
+# Expert analysis: demography
+
+## Findings (evidence)
+- Annual births in Hungary fell from approximately 125,000 in the early 1990s to 77,500 in 2024, with a further 7.1% decline to ~72,000 in 2025, representing the lowest recorded level since 1949 and forcing school-network consolidation decisions in the 2020s–2030s regardless of selection policy. [evidence: strong — KSH demographic yearbooks; hvg.hu (31 Jan 2025); economx.hu (9 May 2026); nepszava.hu (30 Jan 2026)]
+- Primary general school (általános iskola) enrollment declined 17.3% over 20 years, from 859,000 pupils in 2005/2006 to 710,000 in 2024/2025, tracking the shrinking birth cohorts directly, with first-grade intake falling 1.9% year-on-year in 2024/2025 to 95,000. [evidence: strong — Népszava (2025), citing KSH data]
+- A demographic cliff is measurable one cohort ahead: Hungary currently has approximately 17,000 fewer one-year-olds than four-year-olds, equivalent to roughly 600–800 kindergarten/class-groups, meaning at least one hundred small-school's worth of children will vanish from the system within a few years. [evidence: moderate — Válasz Online (17 Oct 2025)]
+- Government policy is using selection-track admission mechanics (minimum-score thresholds set by the Klebelsberg Center maintainer) to shrink the gimnázium track's share of cohort intake from approximately 40% toward 30% or lower, independent of demand; gimnázium enrollment share was flat-to-slightly-rising before this intervention. [evidence: moderate — Szülői Hang (15 Jan 2025); Index (17 Jan 2025)]
+- Minimum-score admission policy for 6- and 8-year grammar schools remains a school-maintainer-level discretionary decision with no national legal basis, creating inconsistent two-tier admissions: some institutions (e.g., Toldy Ferenc Gimnázium, Budai Nagy Antal Gimnázium) enforced 70-point cutoffs in 2025; others initially treated them as non-binding recommendations then retroactively rejected borderline students. [evidence: moderate — 168.hu (9 Sep 2025); eduline.hu (5 Sep 2025); Educational Authority (Oktatási Hivatal) confirmation]
+- In 2024/2025 approximately 194,000 students attended gimnázium nationally (45.4% of upper-secondary students); 6- and 8-year tracks serve a numerically small but structurally significant slice of each cohort, geographically concentrated in urban areas, notably Budapest. [evidence: strong — KSH 2024/2025 preliminary data; nool.hu (21 May 2026)]
+- Standardized test-score evidence shows a composition gap at selection point: 6th-graders competing for 6-year gimnázium entry averaged 58.6 points (out of 200), 8th-graders competing for 9th-grade entry averaged 51.2 points, with 47.8% of 8th-graders scoring below 50 versus only 23.15% of 6th-graders scoring above 70, indicating two demographically and academically distinct competing populations. [evidence: moderate — Pénzcentrum (20 Jan 2025)]
+- Long-run population projections (KSH/HDRI SEEMIG medium-variant) show continuous population decline through at least 2060 under all fertility and migration scenarios, with the under-20 population declining from ~2 million (2012) to approximately 1.4 million by 2060, meaning the school-age cohort available for all secondary tracks shrinks structurally through 2040 and beyond. [evidence: strong — KSH/HDRI SEEMIG projection; demografia.hu (2018)]
+- Cross-border analogue (Beregszász, Ukraine's Hungarian-minority region): Ukraine's Ministry of Education mandated from September 2025 that state subsidy no longer covers grammar-school operation below 45 students, forcing local consolidation and busing of older students to larger hub schools, illustrating a hard enrollment floor's effect on small-town selective-track viability under demographic decline. [evidence: moderate — karpataljalap.net (25 June 2026)]
+- Total fertility rate in Hungary fell from 1.51 (2023) to 1.38 (2024) to 1.31 (2025); natural population decrease exceeded 52,000 in 2025; population fell to 9,489,000 by 1 January 2026, all representing accelerating decline, not stabilization. [evidence: strong — hvg.hu (31 Jan 2025); economx.hu (9 May 2026); nepszava.hu (30 Jan 2026)]
+
+## Interpretation
+Hungary's school-age population is shrinking at an accelerating pace driven by historic low fertility and natural decrease. The annual flow through primary school has fallen 17% over two decades and continues to decline. This forces school-network consolidation regardless of whether early selection (6/8-year grammar schools) exists or not. However, government policy is simultaneously using minimum-score admission thresholds as a supply-side lever to further compress the grammar-school track's share of the remaining cohort from ~40% toward 30%, even though demand for grammar education has remained stable or risen. The impact is twofold: (1) structural — the absolute pool of students shrinks, making small schools and dispersed selective tracks unsustainable; (2) policy-driven — the share available to grammar tracks is deliberately reduced independent of demand, creating a pincer effect. Selection at age 10–12 remains numerically small (6- and 8-year tracks serve fewer students than 9th-grade entry) but carries outsized symbolic and distributional weight, concentrating opportunities in urban and already-advantaged families. The evidence shows composition differences at selection point (higher-performing 6th-graders competing for early entry) but does not settle whether selection causes the gap or merely sorts pre-existing advantage. Cross-border and within-country evidence both confirm that demographic thresholds (45-student viability floors) force closure of small or dispersed schools; the same logic applies to selective tracks.
+
+## Assumptions
+- Cohort-size projections (declining under-20 population) are stable across the planning horizon (2025–2040) and do not assume major immigration reversing natural decrease. [assumption]
+- School-maintainer sustainability thresholds (minimum 45 students, reference floors for class viability) are a binding constraint; schools below such floors cannot operate financially or pedagogically. [assumption]
+- Minimum-score admission policies as applied by maintainers represent government intent to shift supply; they are not merely institutional quality signals. [assumption]
+- The 'completion' of demographic decline (population stabilization) will not occur within the planning horizon (2040); the trend is structurally downward. [assumption]
+- Test-score differences at selection point reflect both composition (family background, prep investment) and possibly school-level intake quality, but not causal school effect; the direction of selection bias is unknown. [assumption]
+
+## Position
+Demographic decline through 2040 will force school-network consolidation and closure of small selective tracks independent of policy choice, but government's simultaneous use of score-threshold levers is accelerating selective-track contraction beyond what demographic decline alone would cause, concentrating remaining grammar-school slots among already-advantaged urban populations.
+
+## Uncertainties
+- The net causal effect of early selection (6/8-year grammar-school entry at age 10–12) on individual student achievement and social mobility is not directly measured in Hungarian evidence; test-score gaps at selection reflect composition, not school value-added. (confidence: high; would be reduced by: Quasi-experimental studies (e.g., discontinuity design at score cutoffs, matched-pairs within-municipality comparison controlling for family background) comparing life outcomes of grammar-track vs. non-grammar track entrants with similar pre-entry test scores.)
+- The relationship between consolidation-induced school closure, teacher workforce redeployment, and pedagogical quality in surviving small schools is unknown; closing small grammar schools may displace experienced teachers or may improve efficiency. (confidence: high; would be reduced by: Longitudinal administrative data on teacher movements, school staffing and pupil-to-teacher ratios pre- and post-consolidation, and value-added models of school quality in rural vs. urban surviving schools.)
+
+
+----- education_finance -----
+# Expert analysis: education_finance
+
+## Findings (evidence)
+- Hungarian 6/8-year gimnázium students show roughly 10% larger competency gains than similar-ability, similar-background peers in 4-year gimnázium, per new statistical-model research controlling for family background. [evidence: moderate — Horn Dániel (Corvinus), G7 Dirik podcast, July 2026]
+- Only about 8% of a school-age cohort attends 6- or 8-year gimnázium tracks, making this a small but disproportionately contested segment of the system. [evidence: moderate — Telex/G7 podcast summary, July 2026]
+- Hungary has the highest socioeconomic segregation of students between schools in the EU, and a 53-point SES performance gap versus a 33-point EU average. [evidence: strong — EU Education and Training Monitor 2025, Hungary country report]
+- Historical intake data show much stronger rejection rates at admission (~46%) in low-poverty-share classes versus high-poverty-share classes (~22%), indicating admissions gatekeeping tracks SES more than ability alone. [evidence: moderate — OFI (Oktatáskutató és Fejlesztő Intézet) study]
+- Peer-reviewed and institute-level literature concludes early tracking at age 10-12 in Hungary exacerbates social inequality, with track access driven more by family background than test scores. [evidence: strong — Horn et al. 2016 chapter; Kertesi & Kézdi HLCS/NABC-based studies]
+- Cross-country evidence indicates early tracking has modest-to-negative effects on average achievement while delaying tracking improves social mobility without a clear achievement trade-off. [evidence: strong — IZA World of Labor review of tracking literature]
+- Some German states (Berlin, Brandenburg) delayed tracking to age 12 specifically to counter equity harms otherwise seen from age-10 tracking common elsewhere in Germany. [evidence: moderate — IZA Policy Paper on the PISA Shock (Hanushek & Woessmann 2006; Entorf & Lauk 2008)]
+- The claim that church-maintained schools receive about four times more per-student state funding than state schools is contested; the Ministry and Catholic Bishops' Conference dispute the calculation methodology. [evidence: contested — Index.hu (2019) vs. Ministry/Oktatási Hivatal rebuttal]
+
+## Interpretation
+The evidence converges on a real tension rather than a simple verdict: Hungarian data suggest 6/8-year tracks may add real pedagogical value for admitted students, but admissions are strongly class-selective, and Hungary already has the EU's highest school segregation — so any value-added is purchased partly by concentrating advantage. International evidence suggests delaying tracking is a low-average-achievement-cost way to reduce inequality, but Hungary's specific 8%-of-cohort elite-track structure, entrenched parental demand, and contested church-school funding architecture make a German-Berlin-style delay or Spanish-style comprehensive reform politically costly, not merely technically straightforward.
+
+## Assumptions
+- The ~10% learning-gain estimate is treated as a single recent study result, not yet independently replicated or formally peer-reviewed in sources cited. [assumption]
+- Funding comparisons across maintainer types assume normatíva and feladatfinanszírozás figures are being compared on a like-for-like per-student basis, which sources dispute. [assumption]
+
+## Position
+Given Hungary's already-highest-in-EU school segregation, any policy alternative to age 10-12 korai szelekció should be judged primarily by whether it reduces SES-based sorting at intake, not only by whether it preserves the apparent ~10% pedagogical value-added advantage for admitted students.
+
+## Uncertainties
+- Whether the ~10% value-added estimate reflects genuine school effect versus unmeasured peer-composition or teacher-sorting confounds remains unresolved. (confidence: low; would be reduced by: Independent replication with richer teacher-quality and peer-composition controls, ideally using admission-cutoff regression discontinuity design.)
+- The magnitude of church-school funding advantage (if any) relative to state schools remains contested and unresolved by available sources. (confidence: low; would be reduced by: A transparent, methodologically agreed per-student cost audit across all maintainer types published by an independent fiscal authority.)
+- No Hungary-specific costed estimate exists for what a Berlin-style or Spain-style delay of korai szelekció to age 12-14 would cost in transition (teacher retraining, curriculum redesign, building capacity). (confidence: low; would be reduced by: A dedicated costing study or pilot-programme budget analysis for a delayed-tracking scenario in the Hungarian context.)
+
+
+----- equity_and_social_mobility -----
+# Expert analysis: equity_and_social_mobility
+
+## Findings (evidence)
+- Hungary's SES-achievement gradient is among the largest in the OECD, and between-school variance in math performance is high, with schools selecting students based on records. [evidence: strong — OECD Education Policy Outlook: Hungary]
+- Hungary has the highest socioeconomic school segregation in the EU, and the parent-education achievement gap (53 PISA points) is far above the EU average (33 points). [evidence: strong — EU Education and Training Monitor 2025 – Hungary country report]
+- 62% of Roma children aged 6–15 attend schools where all or most pupils are Roma, indicating extreme ethnic-social segregation intertwined with the tracked system. [evidence: strong — FRA 2025, cited in EU Education and Training Monitor 2025]
+- Cross-national comparative research finds that earlier academic tracking ages are associated with larger socioeconomic compositional (peer-sorting) effects between schools. [evidence: moderate — Sciffer et al., summarized in EERA-ECER blog on socioeconomic school segregation]
+- Value-added estimates for 8-grade gimnázium are positive versus comparison tracks, but for 6-grade gimnázium the added value at grade 8 is actually negative, turning positive only by grade 10 — selection and value-added effects diverge by track type. [evidence: moderate — HÉTFA Working Paper 2015/11 (Országos Kompetenciamérés panel, 2008–2014)]
+- Admission to elite 6/8-grade gimnáziums is almost entirely closed to multiply-disadvantaged pupils, according to sociological fieldwork describing near-zero intake shares. [evidence: moderate — Berényi, interviewed in Qubit (2022)]
+- For 2025/2026 admissions, some school maintainers imposed de facto minimum score cutoffs (e.g., 70/100) for 6/8-grade tracks beyond the government's non-binding recommendation, and admission lists were revised mid-process, indicating selectivity is administratively tightening rather than loosening. [evidence: moderate — Eduline reporting on 2025/2026 admissions cycle]
+- Large-scale linked administrative data (Admin3, covering ~50% of the Hungarian population, education data from 2008) is now available and being used to separate selection from causal high-poverty-school effects on achievement and attainment. [evidence: strong — Hermann & Kisfalusi, International Journal of Comparative Sociology (2026)]
+
+## Interpretation
+The evidence converges on two distinct claims often conflated: (1) Hungary's schools are extremely segregated by SES and ethnicity, and early tracking at 10–12 is a documented contributor via cross-national compositional-effect research; (2) within the tracked system, the value-added picture is heterogeneous—8-grade gimnazium shows more consistent positive effects than 6-grade, suggesting selection and pedagogical value are distinct. Near-total exclusion of disadvantaged pupils from elite kisgimnáziums plus tightening informal score thresholds indicate the sorting mechanism is actively reproduced and recently intensified by decentralized maintainer practice, independent of formal law change.
+
+## Assumptions
+- It is assumed that PISA/national-competence-test SES-gap measures adequately proxy 'equity effects' even though they cannot fully separate selection (who enters) from treatment (what happens once inside). [assumption]
+- It is assumed that findings from 2008–2015 competence-test panels on value-added remain broadly informative for the current (2020s) system, absent newer published replications. [assumption]
+
+## Position
+Early selection at 10–12 into 6/8-grade gimnaziums is a documented, non-trivial contributor to Hungary's exceptionally high SES/ethnic school segregation, but its pedagogical value-added is heterogeneous by track (stronger for 8-grade than 6-grade), so the equity case against early selection is stronger than the achievement case for it.
+
+## Uncertainties
+- We do not have recent (2020s) Hungary-specific causal estimates isolating the pure selection effect of the 6/8-grade gate from confounding factors (family investment, self-selection, prior ability) using post-2020 data. (confidence: low; would be reduced by: Publication of updated Admin3-based causal estimates (e.g., follow-up to Hermann & Kisfalusi 2026) specifically comparing 6/8-grade gimnazium entrants to matched non-entrants.)
+- It is unclear how much of the observed peer-effect/compositional damage to non-selected pupils is caused specifically by the 6/8-grade gate versus by free primary-school choice and church/private school growth operating independently of age-10/12 tracking. (confidence: medium; would be reduced by: A decomposition study separating the marginal contribution of the 6/8-grade gate from general school-choice segregation, using variation across regions with different kisgimnázium densities.)
+- We do not know the current (2025/2026) national-level share of pupils in 6/8-grade tracks or its trend, nor whether the newly tightened informal maintainer thresholds are a nationwide pattern or a few high-profile Budapest cases. (confidence: low; would be reduced by: Official KIFIR/Oktatási Hivatal admissions statistics disaggregated by track type and maintainer, published for the 2025/2026 and 2026/2027 cycles.)
+
+
+----- finnish_reform -----
+# Expert analysis: finnish_reform
+
+## Findings (evidence)
+- Finland's 1972–1977 comprehensive school reform delayed tracking from age 11 to age 16, eliminating early selection into vocational and general tracks. [evidence: strong — https://www.sciencedirect.com/science/article/abs/pii/S0927537120301561]
+- Delaying tracking to age 16 reduced intergenerational income elasticity by 23%, from 0.30 to 0.23, indicating substantial gains in social mobility. [evidence: strong — Pekkarinen, Uusitalo & Kerr 2009, Journal of Public Economics]
+- The mobility gains from delaying tracking were driven primarily by cognitive-skill improvements among disadvantaged pupils, not by gains for all pupils equally. [evidence: strong — Pekkala Kerr et al. 2013; Pekkarinen et al. 2009]
+- Finland's reform increased women's probability of enrolling in academic secondary and tertiary education and decreased the gender wage gap, though men experienced early-career employment losses. [evidence: moderate — Pekkarinen 2008; https://www.sciencedirect.com/science/article/abs/pii/S0927537120301561]
+- Equity gains from de-tracking have eroded since approximately 2000 in Finland due to school choice and residential sorting, not because tracking was reintroduced, with socio-economic achievement gaps widening again. [evidence: strong — https://link.springer.com/chapter/10.1007/978-981-13-9863-6_9; https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/09/finland-s-right-to-learn-programme_58de2f6c/65eff23e-en.pdf]
+- In Finland, within-school variation accounts for 94% of total student-outcome variation, while between-school variation is relatively small, indicating that school choice creates within-school segregation rather than reducing it. [evidence: moderate — https://link.springer.com/chapter/10.1007/978-981-19-8241-5_11; https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/09/finland-s-right-to-learn-programme_58de2f6c/65eff23e-en.pdf]
+- Finland moved teacher education from teacher-training colleges to universities in 1974, and made a Master's degree a prerequisite for teaching in 1979, implemented in parallel with the comprehensive school reform. [evidence: strong — https://blogs.worldbank.org/en/education/finland-s-education-system-journey-success; https://dialnet.unirioja.es/descarga/articulo/8711495.pdf]
+- Streaming within comprehensive schools persisted after structural de-tracking and was abolished only in the mid-1980s; achievement gaps between low and high achievers began to decrease only after within-school streaming ended. [evidence: moderate — https://www.sole-jole.org/assets/docs/15569.pdf; https://library.apsce.net/index.php/ICCE/article/download/3849/3724/4812]
+- Hungary's current structure includes 8-year grammar schools (entry at age 10) and 6-year grammar schools (entry at age 12), with per-student spending of approximately USD 7,072 compared to OECD average of USD 11,914. [evidence: strong — https://eurydice.eacea.ec.europa.eu/eurypedia/hungary/organisation-general-secondary-education; https://www.expatfocus.com/hungary/guide/hungary-education-and-schools]
+- The Finnish reform was implemented gradually between 1972 and 1977 across six regions from north to south, with Helsinki (the densest region) implementing last due to strongest political opposition. [evidence: moderate — https://www.sole-jole.org/assets/docs/15569.pdf]
+- The Finnish reform coincided with broader welfare-state expansions including child and family health/dental care and special education services, so the tracking-age effect is not isolated from the full policy bundle. [evidence: moderate — https://edpolicy.stanford.edu/library/publications/543.html]
+
+## Interpretation
+Finland's abolition of early selection at age 11 and delay of tracking to age 16 produced measurable equity gains—primarily benefiting disadvantaged pupils' cognitive development and intergenerational mobility—alongside gendered and lifecycle trade-offs. However, these gains proved vulnerable to school choice and residential sorting mechanisms that create within-school inequality without formal tracking. The reform's effects were inseparable from parallel investment in university-based teacher education and a broader welfare-support system. Implementation was gradual, regionally sequenced, and faced political resistance in urban areas. For Hungary, the Finnish case demonstrates both that early selection can be reformed and that de-tracking alone is insufficient: structural change must be bundled with teacher-education upgrade and protected against substitution mechanisms (school choice, streaming, catchment-area sorting).
+
+## Assumptions
+- The Finnish reform's equity effects are substantially causal (not merely correlation due to confounding); the main confounders (welfare expansion, teacher education) are identified and explicitly separate from the tracking-age effect itself. [assumption]
+- Hungary's 8- and 6-year grammar school structure is functionally analogous to age-11 tracking, despite the exact age boundaries differing; therefore, delaying selection beyond age 12 and extending common schooling would produce similar effects. [assumption]
+- The within-school segregation observed in post-2000 Finland (94% within-school variance) would not automatically occur in Hungary if school choice were introduced alongside de-tracking, because Hungary's starting conditions (residential segregation, socio-economic inequality) differ. [assumption]
+
+## Position
+Delaying academic selection beyond age 12 in Hungary and extending common schooling to age 16, bundled with university-based teacher-education reform and protected against school-choice-driven substitution of formal tracking with within-school segregation, would be expected to reduce achievement gaps and raise intergenerational mobility, but only if the full policy package is implemented coherently.
+
+## Uncertainties
+- The causal contribution of tracking-age delay alone versus the full Finnish policy bundle (welfare expansion, teacher-education upgrade, curricular change) remains uncertain; isolating the tracking effect requires counterfactual scenarios not available from Finnish data. (confidence: medium; would be reduced by: Natural experiments or quasi-experimental designs in other countries that de-tracked without simultaneous welfare expansion or teacher-education reform, or conversely, countries that made those investments without de-tracking.)
+
+
+----- hungarian_education_system -----
+# Expert analysis: hungarian_education_system
+
+## Findings (evidence)
+- Approximately 8–12% of a Hungarian age cohort enters 6- or 8-year grammar school (gimnazium) tracks, selected at age 10 or 12 largely via central written examination; entrants are strongly skewed toward high-SES, urban families. [evidence: strong — KSH / Oktatási Hivatal admission statistics]
+- Since 2022, Hungary has become Europe's most socially selective school system according to PISA; Hungary's social selectivity index worsened by 5.3 points between 2018 and 2022, the largest deterioration in Europe alongside Poland's tracking re-introduction. [evidence: strong — OECD PISA 2022 analysis (Taní-tani Online, https://www.tani-tani.info/pisa2022)]
+- The raw mathematics achievement gap between grammar and vocational-track students is 116 points, but shrinks to 24 points once family background is controlled for, indicating that early selection (much of which occurs at age 10–12 via 6/8-year admission) accounts for the majority of the observed performance gap. [evidence: strong — OECD PISA 2022 analysis (Taní-tani Online, https://www.tani-tani.info/pisa2022)]
+- Hungary's 2000s comprehensivization reform (extending unified basic schooling to 9 years) reduced inequality by raising the performance of students who would otherwise have attended vocational tracks without lowering the performance of those remaining in grammar-school tracks. [evidence: strong — Oktatási Hivatal, 'PISA és a kompetenciamérés tanulságai' (https://www.oktatas.hu/kozneveles/meresek/aktualis_informaciok/pisa_okm_tanulsagai)]
+- Students in 6- and 8-year grammar schools show approximately 10% larger competency gains between grades 8 and 10 than students of similar ability and family background in 4-year grammar schools, attributed partly to peer effects and partly to possibly better pedagogy, though the researcher does not conclude this justifies the current selection system. [evidence: moderate — Horn Dániel (Corvinus University), cited in Telex/G7 podcast and Eduline (https://eduline.hu/kozoktatas/20260710_elitgimnazium-hat-es-nyolcosztalyos-szelekcio-iskolarendszer-kompetenciameres-transzparencia)]
+- Free school choice plus early selective tracks produce strong between-school sorting already at the primary stage in cities; abolition of tracks alone would not eliminate sorting through catchment and choice. [evidence: moderate — Kertesi & Kezdi 2013; Berenyi-Berkovits-Erőss school choice studies]
+- Since 2013, most Hungarian state schools are maintained by state school district centres (tankerulet); churches and foundations maintain a growing share of schools, complicating uniform structural mandates. [evidence: strong — Public Education Act amendments; maintainer statistics]
+- Church-maintained schools have massively expanded among grammar-school provision: their share of all gymnasium students rose from 10.4% (2010) to approximately 27% (2020/2021), with church-run institutions disproportionately represented among elite 6/8-year tracks. [evidence: strong — Index.hu (2024), Népszava, Magyar Narancs; maintainer statistics]
+- Hungary is one of very few OECD systems where 4-year, 6-year, and 8-year grammar-school admission tracks run in parallel; this configuration is otherwise found (partially) only in Czech Republic and Slovakia (for church schools). [evidence: moderate — Horn Dániel (TÁRKI); Válasz Online debate (2026), https://www.valaszonline.hu/2026/06/26/elit-gimnaziumi-igazgatok-szociologus-vita-szelekcio-oktatas/]
+- Children from disadvantaged-composition primary schools have almost no realistic chance of attempting the 6/8-year grammar-school entrance examination, indicating substantial self-selection out before the formal admission filter. [evidence: moderate — Index.hu (2019), https://index.hu/techtud/2019/12/05/hatosztalyos_nyolcosztalyos_gimnaziumi_felveteli_oktatas_szegregacio/]
+- Even the most talented child without paid coaching cannot realistically pass the central grammar-school entrance examination, indicating that test preparation barriers compound selection effects. [evidence: weak — Válasz Online debate (2026)]
+- Post-2020 legislation permitting churches to acquire school buildings for free from municipalities has tilted public funding advantage toward church-run elite provision. [evidence: weak — Magyar Narancs (https://magyarnarancs.hu/belpol/igy-nyernek-egyre-nagyobb-teret-az-egyhazak-a-kozoktatasban-258144); Pedagógiai Folyóiratok]
+- Poland's 2017 shift from 6+3+3 to 8+4 structure (re-introducing early tracking after a comprehensivization period) increased social selectivity by 9.6 points between 2018 and 2022—more than any other country including Hungary—providing a natural comparison case for Hungary's own system. [evidence: moderate — OECD PISA 2022 analysis (Taní-tani Online, https://www.tani-tani.info/pisa2022)]
+
+## Interpretation
+Hungary's early selection system at age 10–12 into 6- and 8-year grammar schools (affecting ~8–12% of each cohort) has become a major driver of Europe's sharpest increase in school-system social selectivity since 2018. The evidence shows that the *raw* achievement gap between grammar and vocational students (116 points) is largely an artefact of family-background selection rather than school quality: controlling for SES reduces the gap to 24 points. Paradoxically, students of equal initial ability in elite tracks *do* show larger gains (10%) than in mixed tracks—a peer-effect or pedagogy benefit—but this modest value-added does not justify the system's equity cost. Hungary's own 2000s comprehensivization reform proved that removing early selection *raises* the floor (vocational-track students gain) without lowering the ceiling (grammar-school students do not lose), contradicting the assumption that early selection is necessary for excellence. The parallel existence of 4-, 6-, and 8-year tracks, amplified by expanding church-school elite provision (now 27% of all grammar students, up from 10% in 2010), creates a three-tier system that compounds sorting through school choice and catchment. The central written exam is so difficult that even talented students cannot pass without paid coaching, meaning the sorting mechanism is partly a function of family resources for test preparation rather than merit alone. Structural reforms (phasing out 6- and 8-year admission; moving selection to age 14 or later, or abolishing it) could reduce selectivity, but school choice and catchment will continue to sort students unless tackled simultaneously. No Hungarian expert disagrees with these empirical observations; disagreement centers on their normative weight and the political cost of reform.
+
+## Assumptions
+- Early selection (at age 10–12) causally drives later achievement differences, not merely selection of pre-existing ability differences (assumption testable by matching and natural experiments). [assumption]
+- The modest within-school value-added (10% competency gain in elite tracks) is generalizable across all 6- and 8-year tracks, and does not depend heavily on individual-school quality variation or unobserved peer composition. [assumption]
+- Church-school expansion and parallel-track multiplication are policy-influenced (rather than purely demand-driven), and reversible through legislative and funding changes. [assumption]
+- The self-selection out of disadvantaged-background students from 6/8-year examination attempts reflects information constraints and financial barriers rather than genuine ability gaps at age 10–12. [assumption]
+- Abolishing early selection (without simultaneously reforming school choice and catchment) would leave between-school sorting substantially unchanged. [assumption]
+
+## Position
+Early selection at age 10–12 into parallel 6- and 8-year grammar schools is the primary structural cause of Hungary's current position as Europe's most socially selective education system and should be phased out by 2035 in favor of single-entry-age (14 or 15) and unified secondary-school admission to reduce inequality of opportunity without sacrificing demonstrable value-added in pedagogy.
+
+## Uncertainties
+- What is the true causal magnitude of peer effects vs. pedagogical quality in the observed 10% value-added in elite tracks? Current research separates them only weakly. (confidence: low; would be reduced by: Randomized assignment experiments (e.g., lottery-based track allocation) or detailed classroom-level pedagogy comparisons controlling for teacher quality.)
+- How much of the performance gap between grammar and vocational students would narrow if school choice and catchment sorting were held constant and only early selection were removed? (confidence: low; would be reduced by: Natural experiments in neighboring regions that remove early selection while keeping catchment/choice rules unchanged; or microsimulation of school-composition shifts.)
+- What would be the fiscal cost of phasing out 6- and 8-year tracks and consolidating them with 4-year grammar admission? Would teacher reallocation, facility closures, or salary changes be necessary? (confidence: medium; would be reduced by: Detailed costing study by the Ministry of Education or an independent research institute, examining teacher deployment models, facility utilization, and comparative per-pupil costs across existing track types.)
+- Would phasing out elite 6/8-year tracks reduce political feasibility of maintaining ambitious pedagogy standards in single-track grammar schools, or strengthen them by increasing enrollment diversity? (confidence: low; would be reduced by: Stakeholder interviews with school leadership, teacher unions, and parents in countries that have implemented similar reforms (Poland, Slovakia, Czech Republic); analysis of actual pedagogy changes post-reform.)
+- How much of the church-school expansion in elite grammar tracks is driven by parental demand for perceived school quality, and how much by policy favouritism in building access or funding supplements? (confidence: medium; would be reduced by: Matched-pair school-choice surveys comparing church and state schools with similar entry selectivity; financial audit of building-transfer policies post-2020; counterfactual scenario modeling.)
+
+
+----- implementation_planning -----
+# Expert analysis: implementation_planning
+
+## Findings (evidence)
+- Hungary's teaching workforce is structurally aging and contracting: approximately 50% of full-time primary teachers are age 50 or older, only 7.2% are under 30, and total teacher numbers have declined by over 21,000 since 2003/2004 (164,000 in 2023/2024 vs. 185,000+ in 2003/2004). [evidence: strong — KSH 2025; OECD Education at a Glance 2025; Statista]
+- Teacher shortages in mathematics and natural sciences are acute; fewer than 3,400 people applied for university pedagogical degrees in 2024, with history–English combinations dominating demand for other subjects. [evidence: moderate — RFE/RL; PDSZ estimates]
+- Teacher shortages are geographically uneven: rural and disadvantaged schools have 2–3 times higher proportions of unqualified teachers than non-disadvantaged schools, directly constraining region-by-region phase-out of early selection. [evidence: strong — EU Education and Training Monitor 2025]
+- A major teacher salary reform (2024–2031) backed by EUR 1.8 billion in EU funds aims to raise average teacher salaries to 80% of higher-education-graduate earnings by 2031, with mandatory institutional salary increases of 10% from January 2026; this is a load-bearing precondition for any staffing-dependent selection reform. [evidence: strong — European Social Fund Plus; Eurydice]
+- Secondary education is provided by 880 schools across Hungary, a dense network designed to ensure accessibility within one hour by public transport; this fragmentation limits administrative room to consolidate cohorts without major transport and logistics investment. [evidence: strong — Central Statistical Office (KSH) 2024/25; Eurydice]
+- Poland's 1999 structural education reform (delaying selection from age 15 to 16) showed measurable achievement gains (reading +0.28 SD, mathematics +0.25 SD, science +0.16 SD) within 3–7 years, providing an empirical baseline for expected effect size and timeline. [evidence: strong — Patrinos et al., World Bank/Taylor&Francis working paper]
+- Poland's delayed-selection reform was politically reversed after ~18 years (PiS government, 2017–2020 phaseout) despite documented achievement gains, demonstrating that structural reforms lacking durable multi-party consensus are vulnerable to reversal and undoing. [evidence: strong — Wikipedia synthesis; Grokipedia; Polish Ministry sources]
+- Teacher CPD bandwidth is already fully committed to other current reforms (National Core Curriculum updates, AI integration roadmap by 31 March 2026, 120-credit five-year continuous-learning requirement), limiting near-term capacity to absorb training needs of a selection-structure reform. [evidence: moderate — Eurydice]
+- Administrative precedent from Poland (1998 law announced, July legislative draft, January 1999 passage, September 1999 implementation) shows ~9 months between announcement and first-cohort entry is technically feasible but allows insufficient stakeholder consultation, raising implementation-integrity risk. [evidence: moderate — Springer chapter 'Reforming Education in Poland']
+- Segregation in Hungary is administratively embedded in both early selection and in free school-choice rules (codified 4 years before the regime change); any reform to selection structure must also touch admissions/catchment rules, making it a multi-lever, not single-lever, implementation problem. [evidence: strong — EU Education and Training Monitor 2025; Springer (Education of Roma and Educational Resilience in Hungary)]
+- Hungary has the highest level of segregation of students from less and more advantaged socio-economic groups into different schools and the highest segregation of most/least disadvantaged students in the EU (2022 PISA). [evidence: strong — EU Education and Training Monitor 2025; PISA 2022]
+
+## Interpretation
+Implementation of early-selection reform in Hungary faces three interlocking constraints: (1) acute teacher scarcity (particularly in rural areas and STEM) that must be solved before structural reform, but the salary-reform timeline (2024–2031) extends beyond any near-term selection-structure decision; (2) administrative and CPD bandwidth already committed to parallel reforms (NAT, AI integration), leaving little capacity for the extensive teacher retraining a multi-track consolidation would demand; (3) administrative precedent from Poland shows that rapid structural implementation (9 months) is feasible but erodes stakeholder consultation, while political durability is not guaranteed—Poland's gains were reversed after 18 years. These constraints suggest that any structural reform to delay or eliminate early selection would need to be sequenced after workforce stabilization, explicitly budget for parallel curriculum transitions, and build multi-party political consensus to withstand reversal. The geography of shortage (rural concentration) makes region-by-region phase-out particularly risky: removing selection in areas with severe teacher shortages before capacity is restored could amplify existing inequity.
+
+## Assumptions
+- That 'structural reform to early selection' is measurable and distinct from incremental strengthening of school-choice rules, catchment regulation, or selective admission rules within existing track structures. [assumption]
+- That delaying or eliminating early selection (either wholly or in a region) would require proportional increases in primary-school capacity and primary-teacher supply in that region, not merely reclassification of track names. [assumption]
+- That the empirical effect sizes observed in Poland (0.16–0.28 SD) would translate to similar magnitudes in Hungary, given differences in baseline segregation levels, prior tracking age, and demographic composition. [assumption]
+- That political consensus for reversal (like Poland's 2017) would require either sustained electoral dominance by a single bloc or explicit cross-party safeguard clauses in law, neither of which is assured in Hungary's current political environment. [assumption]
+
+## Position
+Hungary cannot feasibly implement a structural reform eliminating or significantly delaying early selection before 2030 without (a) substantial prior teacher-workforce stabilization in rural and STEM areas, (b) explicit sequencing away from concurrent National Core Curriculum and AI-integration reforms, and (c) multi-party legislative consensus to protect against political reversal—only the first precondition is currently in progress.
+
+## Uncertainties
+- The actual magnitude of net positive equity gain in Hungary from delayed selection (holding school-choice and catchment rules constant) remains unknown; Polish gains may not generalize given Hungary's significantly higher baseline segregation and denser network of small rural schools. (confidence: low; would be reduced by: A quasi-experimental pilot in one or more Hungarian regions (comparing delayed-selection cohorts to propensity-matched controls on standardized achievement measures, teacher supply, and between/within-school segregation) over 5–7 years.)
+- The cost (in transition staffing, retraining, and administrative disruption) of a full or partial phase-out of early selection in Hungary is unquantified; Polish and other OECD countries' transition budgets are not published in comparable form. (confidence: high; would be reduced by: A detailed costing study commissioned by the Ministry of Education, modelling (1) teacher retraining and CPD costs, (2) capital costs of track consolidation or creation, (3) transport/logistics costs, and (4) administrative overhead, across three phase-in scenarios (1-year, 3-year, 5-year).)
+- Whether regional variation in the willingness and capacity of school maintainers (state, church, municipal) to support a phase-out would make uniform national implementation infeasible, or whether local political coalitions could be engineered to enable region-by-region adoption. (confidence: medium; would be reduced by: Structured interviews with representatives of state school districts, church maintainers, and municipal governments in high- and low-segregation regions, identifying explicit conditions under which each would support, oppose, or conditionally support a phase-out.)
+- The durability of any structural reform depends on whether future governments will honor or reverse it; Hungary has not established mechanisms (sunset clauses, cross-party safeguards, or independent review triggers) that would constrain reversal as Poland did not. (confidence: high; would be reduced by: Explicit cross-party negotiation and constitutional or legal anchoring of any selection-structure reform in a way that requires supermajority or multi-party consensus to reverse; post-reform monitoring framework with published annual equity/achievement reports binding on future governments.)
+
+
+----- international_comparison -----
+# Expert analysis: international_comparison
+
+## Findings (evidence)
+- Difference-in-differences evidence from 75 countries/regions over 20 years shows early tracking increases test-score dispersion across PISA, PIRLS, and TIMSS cycles, though effect sizes vary substantially by study pair. [evidence: strong — Educational Assessment, Evaluation and Accountability (2021); https://link.springer.com/article/10.1007/s11092-020-09346-4]
+- Early-tracking countries show larger inequality increases between primary and secondary school than late-tracking countries; Germany (+0.71), Greece (+0.30) and Czech Republic (+0.25) contrast with Turkey (−0.63), New Zealand (−0.50), Canada (−0.32). [evidence: strong — Hanushek & Woessmann, NBER Working Paper 11124; https://www.nber.org/system/files/working_papers/w11124/w11124.pdf]
+- Poland's 1999 delayed-tracking reform (replacing early streaming with comprehensive lower-secondary) yielded PISA math gains of 0.25 SD, reading 0.28 SD, science 0.16 SD by 2006, with approximately one-third attributed to instructional time and the remainder to compositional/resource changes. [evidence: strong — Jakubowski, Patrinos, Porta & Wiśniewski, Education Economics 24(6) 2016; https://ideas.repec.org/a/taf/edecon/v24y2016i6p557-572.html]
+- Poland's labour-market follow-up (2022) found that vocational-track students who remained an extra year in comprehensive schooling benefited from better peers and teachers, with the reform reducing inequality; however, Poland reversed the reform in January 2017 after 18 years. [evidence: strong — Drucker, Horn & Jakubowski, Journal for Labour Market Research (2022); https://labourmarketresearch.springeropen.com/articles/10.1186/s12651-022-00317-4]
+- Hungary has the OECD's highest socioeconomic achievement gaps: 53-point gap between children of graduate and non-graduate parents, compared to 33-point EU average; 37% of Hungarian students were low achievers in 2022. [evidence: strong — European Commission, Education and Training Monitor 2025 — Hungary; https://op.europa.eu/webpub/eac/education-and-training-monitor/en/country-reports/hungary.html]
+- Hungary's selection architecture includes at least four formal selection points before higher education; in Central European systems (Czechia, Slovakia, Hungary) the formal primary/lower-secondary unity is a façade, because 6–8 grade secondary schools cream off high-performing, typically middle-class pupils as early as end of grade 5–7. [evidence: strong — CEU Center for Policy Studies (2020); https://cps.ceu.edu/sites/cps.ceu.edu/files/attachment/publication/3258/cps-working-paper-educ-social-selection-education-hungary-2020.pdf]
+- Hungarian educational selectiveness shows 2–3 years of measured difference in intellectual development between class means within primary-school cohorts, and Hungary has selection at age 7 as a first point. [evidence: moderate — Csapó, Molnár & Kinyő, IEA; https://www.iea.nl/sites/default/files/2019-04/IRC2008_Csapo_Molnar_etal.pdf]
+- 74% of 25–64 year-olds with at least one tertiary-educated parent also attained tertiary qualification in Hungary, indicating strong intergenerational transmission of educational advantage. [evidence: strong — OECD, Education at a Glance 2024 — Hungary; https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/09/education-and-a-glance-2024-country-notes_532eb29d/hungary_faab9f42/1b2a3510-en.pdf]
+- Registry-backed: In PISA 2012–2022, the share of reading/maths score variance explained by socioeconomic status in Hungary is 19–25%, versus 12–14% OECD average. [evidence: strong — OECD PISA 2012-2022 country notes]
+- Registry-backed: Cross-country difference-in-differences evidence shows earlier between-school tracking increases inequality of outcomes without raising mean performance. [evidence: strong — Hanushek & Woessmann 2006, Economic Journal]
+- As of 2024/25, Hungary has 880 secondary general-education (gimnázium) schools nationally, with eight-year programmes starting from grade 5 and six-year programmes from grade 7. [evidence: strong — Eurydice, Organisation of general secondary education — Hungary; KSH (2024/25)]
+- A 2025 systematic review of five OECD PISA equity reports (2009–2022) plus academic studies found persistent, not uniformly improving, socioeconomic equity trends across PISA cycles 2000–2018/2022, suggesting cross-national equity gains from single structural levers are contested and cycle-dependent. [evidence: moderate — ScienceDirect systematic review (2024–2025); https://www.sciencedirect.com/science/article/pii/S2666374024000414]
+
+## Interpretation
+Hungary combines early selection (age 7, then age 10–12 into 6/8-year gimnázium), exceptionally high socioeconomic achievement gaps (53 vs 33 EU average), and strong intergenerational educational transmission. International evidence shows that early tracking systems increase inequality without raising mean achievement; Poland's natural experiment of delayed tracking produced gains of 0.25–0.28 SD and reduced inequality, though Poland later reversed this reform. Hungary's inequality is not due to mean underperformance but to the amplification of family background through its multi-point selection system. The transferability of Poland's or other late-tracking systems to Hungary faces political, resource, and institutional constraints not yet quantified; equity gains are robust in DiD literature but cycle-dependent in PISA trends. Whether early selection *solves* problems (e.g., teacher efficiency in heterogeneous classrooms) remains an unresolved trade-off between efficiency and equity.
+
+## Assumptions
+- The PISA cycles 2000–2022 are comparable across countries and years in terms of equity measurement methodology. [assumption]
+- Selection effects (composition) and school value-added can be sufficiently disentangled in DiD and propensity-score-matching designs to attribute gains to delayed tracking rather than other concurrent reforms. [assumption]
+- Poland's institutional and demographic context in 1999 is sufficiently similar to Hungary's current context that the Polish effect sizes could be transferable. [assumption]
+- The 6/8-year gimnázium system is the primary driver of Hungarian socioeconomic inequality rather than other institutional factors (e.g., catchment-area segregation, resource allocation, teacher distribution). [assumption]
+- The international late-tracking evidence applies to the 10–12 age selection point; earlier selection (age 7) may have different effects that are less studied. [assumption]
+- Hungarian politicians and stakeholders would accept a phase-out of 6/8-year grammar schools if evidence of equity gains were sufficiently strong, though this is not certain. [assumption]
+- Current data availability permits accurate measurement of selection effects independent of broader resource constraints or pedagogical factors. [assumption]
+- The teacher shortage in Hungary does not fundamentally alter the expected benefits of delayed tracking, though it may slow implementation or reduce gains. [assumption]
+
+## Position
+International difference-in-differences evidence indicates that delaying selection from age 10–12 to age 14 would likely reduce Hungary's socioeconomic achievement gap by approximately 0.15–0.25 SD (based on Polish comparable gains), but this would require compensatory instructional resources and teacher supply that Hungary currently lacks in demonstrable quantity.
+
+## Uncertainties
+- Whether the Polish 1999 delayed-tracking reform's effect sizes (0.25–0.28 SD) would replicate in Hungary given different demographic composition (Roma representation, migration patterns) and school-system institutional differences. (confidence: medium; would be reduced by: Natural experiments or quasi-experiments within Hungary (e.g., regional pilot phase-outs of 8-year grammar schools with random assignment or propensity-score matching); administrative data on prior achievement, family SES, and post-selection outcomes for Poland and Hungary cohorts.)
+- The causal attribution of Hungary's 53-point socioeconomic achievement gap to early selection versus other structural factors (catchment segregation, resource allocation within schools, teacher quality distribution, out-of-school learning inequality). (confidence: medium; would be reduced by: Decomposition analyses isolating the contribution of selection (composition) from within-school and between-school resource differences using multi-level models and Hungarian census/administrative data linked to student outcomes.)
+- Whether teacher supply and instructional-resource capacity in Hungary would permit full-scale implementation of delayed tracking without reducing quality for higher-achieving or vocational-track students. (confidence: low; would be reduced by: Current teacher-shortage forecasts for Hungary (age-cohort, attrition, supply from initial teacher education, cross-border migration); cost estimates for expanding comprehensive-school capacity and teacher development programmes; simulations of class composition and teacher allocation under delayed tracking.)
+
+
+----- legal_and_governance -----
+# Expert analysis: legal_and_governance
+
+## Findings (evidence)
+- Hungarian law explicitly allows gymnasium (4, 6 or 8-grade forms) but treats the 6/8-year track as a distinct legal category requiring 'talent-nurturing' (tehetséggondozás) justification with separately regulated elevated standards, making selection age a codified exception rather than the structural default. [evidence: strong — Nkt. 2011. évi CXC. törvény § 11(2), net.jogtar.hu]
+- The Nkt. § 4 defines secondary education (középfokú nevelés-oktatás szakasza) as beginning at grade 9, with the 6- and 8-year gymnasium explicitly listed as the only statutory exception to this age boundary. [evidence: strong — Nkt. 2011. évi CXC. törvény § 4, njt.hu]
+- In the 2025/26 admission cycle, 8,071 students applied to 6-year gymnasium (11% increase year-on-year) and 5,272 to 8-year gymnasium (14% decrease), out of 89,541 total secondary applicants, indicating declining demand for the 8-year but rising for the 6-year track. [evidence: strong — eduline.hu, 2026.05.16]
+- The European Commission's 2025 Education and Training Monitor reports that Hungary exhibits the highest level of socio-economic segregation of students into different schools in the EU, based on PISA 2022 data. [evidence: strong — European Commission, Education and Training Monitor 2025 — Hungary]
+- OECD's PISA 2022 Volume I identifies Hungary (alongside Romania, Slovakia, Israel and Chinese Taipei) as having the widest performance gaps linked to socio-economic status, with disadvantaged students far more likely not to reach basic proficiency. [evidence: strong — OECD, PISA 2022 Results Volume I, oecd.org]
+- Hungary's ombudsman (Alapvető Jogok Biztosa) has formally stated that phase-in of legislative changes in education on a 'felmenő rendszer' (grade-by-grade, cohort-by-cohort basis) serves as a rule-of-law and legal-certainty guarantee under Constitutional Court doctrine requiring adequate preparation time before a norm takes effect. [evidence: moderate — AJB nyilatkozat, atlatszo.hu]
+- A Hungarian court used 'felmenő rendszerű megszüntetés' (grade-by-grade remedial phase-out) to compel elimination of unlawful segregated class organization, demonstrating that the mechanism functions as a desegregation-implementation tool, not solely as a protective transition safeguard. [evidence: moderate — Alapvető jogok biztosa jelentés a köznevelési törvény módosításáról, nemzetisegijogok.hu]
+- In 2026 Hungary demonstrated that an entire maintainer institutional model (foundation-run public institutions under the KEKVA system) can be legally dismantled within weeks following a constitutional amendment, yet the government explicitly granted a longer (one-year) transition for university-maintaining foundations, citing operational predictability for enrolled students. [evidence: strong — kormany.hu (2026.06.30); 2026. évi XVIII. törvény; telex.hu (2026.05.21)]
+- Past structural amendments to the Nkt.'s definition of the secondary phase (2019. évi CXII. törvény) received approximately one year of lead time before entering into force, indicating this as the practical minimum preparation window for non-emergency structural changes in the education act. [evidence: moderate — net.jogtar.hu, 2011. évi CXC. törvény egyeztetett szerkezet]
+
+## Interpretation
+The statutory architecture treats early selection as a bounded, separately-justified exception within a system whose default structural principle reserves selection for age 15 (grade 9). This narrow codification makes the 6/8-year track more legally tractable to reform than Hungary's broader institutional architecture — legislative change is possible without restructuring the entire secondary system. However, the 2026 KEKVA precedent and constitutional ombudsman doctrine establish that any change touching enrolled student cohorts must respect felmenő-rendszer protections: phase-in by grade, with roughly one-year minimum lead time. The high EU-reported socio-economic segregation linked to Hungary's selection system underscores the equity stakes, but legal feasibility and legitimacy both point toward cohort-by-cohort implementation, not abrupt abolition.
+
+## Assumptions
+- Assumes that raising or abolishing the selection age would fall under the Nkt. § 4 structural definition of secondary education, thus triggering the ~1-year lead-time and felmenő-rendszer expectations established in past legislative practice, absent an explicit emergency override. [assumption]
+- Assumes that church-maintained (egyházi) gymnasium admissions, which operate under concordats and retain partial autonomy, would not be exempt from a national legislative reform raising the selection age, but recognizes that separate agreements with religious maintainers would require coordinated negotiation. [assumption]
+
+## Position
+Because early selection is codified as a narrow, separately-justified legal exception rather than the structural default of secondary education, reform of the selection age is legally more tractable than reshaping Hungary's broader maintainer or curriculum architecture — but legitimacy and constitutional doctrine require any change to proceed on a felmenő-rendszer (grade-by-grade phase-in) basis with minimum ~1-year statutory lead time, protecting students already admitted under existing rules.
+
+## Uncertainties
+- Whether Hungary's Constitutional Court (Alkotmánybíróság) would treat abolition or significant raising of the 6/8-year selection age as a matter binding the felmenő-rendszer safeguard as mandatory constitutional doctrine, or whether it would classify it as a discretionary legislative choice subject only to rule-of-law process review. (confidence: low; would be reduced by: would be reduced by identifying a direct Alkotmánybíróság ruling on the constitutional status of felmenő-rendszer as a binding safeguard in education structural change (no such precedent was found in this search).)
+- Whether non-state maintainers (churches, foundations under remaining autonomy frameworks) would face differential legal constraints or political veto power in a national selection-age reform, and whether consensus-building with maintainer federations would constitute a hard prerequisite or a discretionary negotiation. (confidence: low; would be reduced by: would be reduced by mapping the precise legal autonomy clauses in Hungary's current agreements with church and foundation maintainers regarding admission criteria, and by interviews with maintainer federation counsel.)
+- Whether a phased (felmenő) implementation of selection-age reform could be efficiently coordinated across the multiple regulatory instruments required (Nkt. amendment, ministerial decree, annual admission regulation, maintainer agreements) without creating transitory legal ambiguities or administrative burden that could deter reform. (confidence: medium; would be reduced by: would be reduced by a detailed implementation roadmap showing the statutory sequence, timing dependencies, and coordination mechanisms (e.g., lead roles, decision gates) required to manage a multi-year phase-in across layered regulatory sources.)
+
+
+----- polish_reform -----
+# Expert analysis: polish_reform
+
+## Findings (evidence)
+- Poland's 1999 delayed-tracking reform, which extended comprehensive general education from 8 to 9 years (moving selection from age 12 to age 15), produced PISA score gains of 0.25 SD in mathematics, 0.28 SD in reading, and 0.16 SD in science between 2000 and 2006; students in likely-vocational tracks gained approximately one standard deviation (~100 PISA points). [evidence: strong — Jakubowski et al. (2016), Education Economics 24(6)]
+- Between-school equity improved markedly after the 1999 reform: Poland reduced performance disparities between schools from one of the largest in the OECD to one of the smallest. [evidence: strong — OECD synthesis; Jakubowski et al. 2016]
+- Individual-level socioeconomic equity did not improve after the 1999 reform: using PISA 2000–2012 data, there was no significant decrease in correlation between students' socioeconomic status and their test results. [evidence: moderate — Academia.edu; Openedition synthesis]
+- The 1999 reform's labor-market effects persisted: using EU-SILC data, a 2022 study found the reform decreased inequalities via improved peer and teacher composition for previously low-track students, with gains confirmed by multiple methods (Liwiński 2020; Strawinski & Broniatowska 2021). [evidence: strong — Drucker, Horn & Jakubowski (2022), Journal for Labour Market Research 56:13]
+- Poland's 2016–2019 reversal abolished the 3-year gimnazjum, returned to 8-year primary school followed by tracked secondary schools, raised school entry age back to 7, curtailed special-needs inclusion, revised curriculum toward more Polish history/language, ended project-based learning, and disbanded lower-secondary teacher teams. [evidence: strong — World Class Learning Systems (2024)]
+- Political opinion on the 1999 comprehensive-school reform became sharply partisan by 2015–2016: a 2016 IPSOS/OKO.press poll showed Law and Justice (PiS) supporters 73% positive / 10% negative and Civic Platform/Modern voters 25% positive / 68% negative, indicating school reform became an identity marker rather than an evidence-driven choice. [evidence: moderate — Medium (@thelambert); Springer chapter (2030-41882-3_7)]
+- The 2017 implementation shock from forced overlap of two secondary-school cohorts (final gimnazjum graduates and first primary-school-only graduates competing simultaneously) intensified admission competition; in Warsaw alone, 3,173 students did not gain entry to any school that year. [evidence: moderate — Medium (@thelambert)]
+- PISA 2022 results for Poland fell to levels last seen in 2003, erasing gains made since 1999; researchers attribute part of this decline to the full effect of the 2016–2019 reversal (which only fully affected the 2022 cohort, not the 2018 cohort) combined with 26+ weeks of school closures during COVID-19. [evidence: moderate — OECD PISA 2022 Country Notes (Poland); Springer chapter (2031-69284-0_9)]
+- Some elements of Poland's 1999 reform proved politically irreversible: increased school autonomy, external examinations, broader access to preschool, and higher-education access changes remained in place even after the broader 2016–2019 reversal, suggesting that decentralized and legally-entrenched reforms resist rollback better than central mandates alone. [evidence: moderate — Springer chapter (2030-59031-4_7)]
+- Teacher unions split during the reversal: the larger ZNP union (which had supported the 1999 comprehensive-school reform as international best practice) organized nationwide protests, and 80% of schools participated in a 2019 teacher strike over pay and conditions tied to reform-driven chaos, though the strike did not reverse the policy. [evidence: strong — Balkan Insight (2020); Springer chapter (2030-41882-3_7)]
+
+## Interpretation
+Poland's experience demonstrates a powerful learning effect from delayed tracking: eight years of comprehensive schooling followed by age-15 selection produced substantial gains in average achievement (especially for at-risk students) and between-school equity. However, it reveals two critical vulnerabilities: (1) individual-level socioeconomic inequity proved harder to shift—school convergence did not equalize advantage within schools; and (2) structural school reforms, once implemented successfully, can become partisan identity markers and be reversed for political rather than evidence-driven reasons, erasing gains within a single cohort cycle. The 2016–2019 reversal incurred both immediate costs (implementation shock, teacher strikes, student-placement chaos) and measurable long-term costs (PISA decline). Reforms that embed changes in decentralized and legally-entrenched systems rather than relying solely on central mandate appear more durable. For Hungary, this implies early selection cannot be evaluated in isolation: it must account for whether alternatives are politically resilient over a full education cohort's passage through the system.
+
+## Assumptions
+- The attribution of Poland's PISA gains primarily to the 1999 timing reform (rather than to confounding policy or demographic changes, or measurement variance) is robust enough for causal inference in a quasi-experimental setting, though alternative explanations (e.g., broader infrastructure investment, curriculum reform, teacher-training expansion) cannot be fully ruled out. [assumption]
+- The 2016 IPSOS/OKO.press polling result accurately reflects genuine opinion at that moment, not campaign artefacts; the sharp partisan split reflects genuine value disagreement rather than mere measurement error. [assumption]
+- Hungary's institutional and political context is sufficiently similar to Poland's that lessons about reform durability, partisan politicization, and implementation shock transfer meaningfully, even though Hungary's school system differs in governance and school-choice rules. [assumption]
+- The 2022 PISA decline can be partially attributed to the 2016–2019 reversal's effects, separable from COVID-19 learning loss, because the full reversal affected only the 2022 cohort; however, the counterfactual outcome under the 1999 reform structure without COVID is unobserved and must be estimated. [assumption]
+- The labor-market wage gains observed by Drucker, Horn & Jakubowski (2022) and other studies reflect genuine returns to improved secondary-school composition and teacher quality, not merely selection into higher-paying occupations among the same underlying ability distribution. [assumption]
+
+## Position
+Early selection at age 10–12 into the 6- and 8-year grammar school tracks is justifiable only if Hungary can sustain politically durable institutional design, ensure between-school equity gains translate into individual-level SES equalization, and maintain implementation continuity across electoral cycles—outcomes Poland achieved partially and lost entirely, demonstrating that the benefits of delayed selection (1 SD gain for at-risk students, improved labor-market outcomes, reduced school segregation) outweigh the benefits of early tracking only if political reversibility risk and individual-SES gains (not achieved in Poland) are weighted equally with test-score gains.
+
+## Uncertainties
+- The precise causal decomposition between the 1999 reform's structural effect (unified intake) versus its resource/composition effects (investment and teacher change) remains uncertain; even Jakubowski et al.'s two-thirds/one-third split is an estimate and could shift with different methodologies. (confidence: medium; would be reduced by: Controlled variation in implementation timing or intensity across regions, or new difference-in-differences analysis on cohort-level PISA data with explicit separators for resource spending and teacher composition.)
+- Whether individual-level SES gaps could have been closed by longer-duration exposure to the 1999 reform (the Polish cohort was measured at age 15, not adulthood) or whether structural timing reform alone is insufficient without targeted SES-based support programs remains untested. (confidence: low; would be reduced by: Longitudinal follow-up of Polish cohorts into adulthood (age 25–35), measuring lifetime earnings, intergenerational mobility, and SES-conditional achievement by school-sector composition; similar cohort studies in other countries with delayed-tracking reforms.)
+
+
+----- political_feasibility -----
+# Expert analysis: political_feasibility
+
+## Findings (evidence)
+- The Tisza Party's 12 April 2026 electoral victory (141 of 199 seats, ~53% party-list) created a constitutional two-thirds mandate; education received a separate ministry for the first time since 2010, signalling structural reform is now institutionally feasible. [evidence: strong — Tiszakormány.hu official timeline; Eduline 2026-04-13; HR Portal 2026-04-13]
+- Education Minister Lannert Judit (June 2026) publicly stated that 6/8-year gimnázium students do not develop faster than age-cohort peers; the system's only function is elite self-selection and socioeconomic status reproduction, not pedagogy. She framed the question as a societal-policy choice, not technical, and explicitly committed to review rather than abolition, with current gimnáziums to retain their position. [evidence: strong — Telex 2026-06-06; Eduline 2026-06-06; HVG 2026-06-06; WMN 2026-06-06]
+- Within 48 hours of the minister's statement, Fidesz parliamentary leader Gulyás Gergely accused the government of imposing abolition and a 'unified four-year model,' framing it as totalitarian ('no example since communism'), establishing early academic selection as a frontline culture-war issue and signalling high reversal risk on future government change. [evidence: strong — WMN 2026-06-08; Kontroll 2026-06-08]
+- The European Commission's 3 June 2026 country report states Hungary's education system amplifies social and economic inequalities, between-school segregation by social background is the EU's highest, and church/private-school growth in disadvantaged areas reinforces segregation by attracting more-advantaged students. This external pressure creates political tailwind for reform and raises the cost of reversal through EU funds conditionality. [evidence: strong — Népszava 2026-06-03; Eduline 2026-06-14; Economx 2026-06-05; EC 2026 Spring Package]
+- PSZ (largest teacher union) president Totyik Tamás framed selection reform as secondary to segregation and a teacher shortage of at least 16,000 in 2025/26; the union's framing positions workforce adequacy as the binding constraint and non-negotiable condition, consistent with pedagogus stakeholder conditions from rounds 6–8. [evidence: strong — Népszava 2026-06-03; Economx 2026-06-05]
+- Central admission statistics show 4th-grade (8-year track) applicants fell >14% year-on-year, while 6th-grade (6-year track) applications rose 11%; total gimnázium enrolment (grades 5–8) moved only ~300 students over four years (25,800 to 26,100), and 2026 general secondary admissions involved 89,541 students, supporting a demographic argument that the selection exam's original rationing function is eroding. [evidence: moderate — Népszava 2026-06-16; Oktatási Hivatal + KSH data cited]
+- Tisza's published 12-point education program explicitly commits that 'church maintainers will continue to have their previous operating conditions' (previous takeover rules not restored), creating an internal coalition constraint that limits how far intake-rebalancing can proceed without alienating a coalition partner protecting religious institutions. [evidence: strong — CKP 2026-04-25; Eduline 12-point program 2026-04-14]
+- The European Commission projects Hungary's fiscal deficit at 6.2% (2026) and 5.8% (2027) with debt rising to 76.8% of GDP by 2027, recommending consolidation; this directly threatens the statutory (vs annual-budget) funding-floor guarantees that pedagogus and szülői stakeholders set as non-negotiable, reducing credibility of compensatory-funding commitments in reform scenarios. [evidence: moderate — mfor.hu 2026-06-03; Infostart 2026-06-03; EC 2026 Spring Package]
+- The Tisza government suspended (and announced abolition of) the Fidesz-era teacher performance-evaluation system from the next school year, establishing a pattern of rapid, unilateral reversal of predecessor education reforms and raising the base-rate reversal risk for any selection-reform legislation this government enacts. [evidence: strong — Pénzcentrum 2026-06-08; Telex 2026-06-06]
+- Multiple outlets document that the Tisza government submits major bills as individual-MP motions to bypass mandatory social consultation ('társadalmi egyeztetés'), while claiming commitment to 'broad social dialogue' on selection reform, creating a credibility gap between process rhetoric and governing practice that reduces durability of any consultation-based reform consensus. [evidence: moderate — Kontroll 2026-06-08; mfor.hu 2026-06-03 (EU report on 'korlátozott társadalmi egyeztetés')]
+- Researcher Nahalka István argues that abolishing the admission examination without levelling within-system school-quality variance would produce an equally inequitable system (since high-demand schools would still have to select), while Szülői Hang leader Miklós György argues school-quality gaps, not the exam, are the root problem—establishing that structural selection reform cannot resolve underlying equity gaps without simultaneous, sustained quality-levelling, a multiyear implementation that itself carries political risk. [evidence: moderate — Népszava 2026-06-16]
+- The demographic reframing (admission exam no longer rations scarce places under declining cohort sizes) offers potential political leverage to lower middle-class parent opposition by decoupling reform from 'attacking elite schools' rhetoric, though this reframing has not yet been tested for public resonance. [evidence: weak — Népszava 2026-06-16; minister statements (Telex, HVG)]
+- No binding legislative timetable, Oktatási Hivatal review mandate, or formal government resolution on selection reform has been published as of late June 2026; the minister's commitment to 'review' remains consultative rather than statutory, and no cross-party negotiation platform has been announced. [evidence: strong — Public record search; no publication detected in Oktatási Hivatal, governo.hu, or major media as of 2026-06-30]
+- Statutory (constitutional or cardinal-law) funding floors—identified by pedagogus and szülői stakeholders as non-negotiable—remain uncertain under projected fiscal consolidation; whether such guarantees are achievable in the 2027 budget bill remains unknown. [evidence: weak — EC fiscal projections; no 2027 budget bill text published yet]
+- Cross-party durability of any selection reform appears low-probability in near term (2026–2028) given the immediate Fidesz 'communism/unified model' framing and the demonstrated pattern of instant reversal of education reforms upon government turnover; polling on public support for selection reform and any Fidesz willingness to negotiate have not been reported. [evidence: contested — Fidesz political statements (WMN, Kontroll); no public-opinion polling or Fidesz negotiation signals reported]
+
+## Interpretation
+The feasibility landscape has shifted decisively: selection reform moved from hypothetical to active government agenda following the April 2026 Tisza electoral victory and the June 2026 minister's public framing of the issue as a societal-policy choice, not pedagogy. External EU pressure on segregation provides political tailwind. However, four overlapping risks dramatically reduce durability: (1) immediate Fidesz framing of any reform as totalitarian, establishing it as a reversible culture-war issue; (2) the minister's own commitment to review-not-abolition and church-maintainer protection, narrowing the scope of feasible change; (3) declared intent to conduct social consultation, undermined by the government's decree-heavy, consultation-light legislative practice, creating a credibility gap that weakens consensus-building; (4) fiscal consolidation pressure threatening statutory funding guarantees that stakeholders identified as non-negotiable. The demographic argument (declining cohort sizes erode the exam's rationing justification) is a genuine political asset—it potentially reframes reform as pragmatic rather than ideological—but it has not been publicly tested. The binding constraints remain: pedagogus stakeholders will not accept reform without workforce planning solved first; szülői stakeholders demand statutory funding protection and transparent, advance-notice phase-ins. The pattern of rapid reversal of predecessor education reforms (teacher evaluation) raises the base-rate expectation that any selection reform will flip on the next government change. Durability is therefore contingent on achieving what the government has publicly ruled out: either cross-party consensus (low-probability given Fidesz's immediate framing) or constitutional/cardinal-law entrenching of the reform itself (institutionally costly and legislatively difficult).
+
+## Assumptions
+- The Tisza government intends to move forward with some form of selection-system reform during this legislative cycle (2026–2030), rather than allowing it to remain indefinitely consultative. [assumption]
+- Social consultation ('társadalmi egyeztetés'), if conducted, will produce substantive political movement toward consensus rather than serve as a legitimation ritual for a predetermined reform design. [assumption]
+- Stakeholder conditions identified in rounds 6–8 (pedagogus workforce guarantees, szülői funding floors and phase-in protections) remain the authentic non-negotiable positions, not negotiating stances that will soften under political pressure. [assumption]
+- The demographic argument (declining cohort sizes reducing the exam's rationing function) will gain public salience and reduce middle-class parent opposition if explicitly articulated by government and trusted media. [assumption]
+- Fiscal consolidation pressure will not fundamentally alter the government's education-reform ambitions, and statutory funding commitments are institutionally achievable despite budget constraints. [assumption]
+
+## Position
+Selection reform is now live government policy with EU tailwind but faces low-probability cross-party durability, high reversal risk on government turnover, and non-negotiable stakeholder preconditions (workforce guarantees, statutory funding) that the minister has not yet addressed, making it politically feasible in the medium term (2027–2028) only if the government narrows its scope to pilot-phase rebalancing coupled with explicit quality-levelling commitments, abandons abolition rhetoric, and negotiates binding funding guarantees—the opposite of which suggests either stalled-indefinite consultation or legislative reversal within one electoral cycle.
+
+## Uncertainties
+- Will the government publish a formal legislative timetable, Oktatási Hivatal review mandate, or government resolution on selection reform, moving it beyond consultative intent? (confidence: low; would be reduced by: Publication of a binding government decision (határozat) with explicit timeline and legislative mandate, or a formal Oktatási Hivatal review-report with policy-option analysis; absence of such documents after six months indicates indefinite deferral.)
+- Are statutory (vs annual-budget) funding-floor guarantees politically achievable under the projected fiscal consolidation pressures, or will compensatory funding remain contingent on annual budget cycles? (confidence: low; would be reduced by: The 2027 budget bill text showing either (a) a cardinal-law funding-floor commitment or (b) temporary, deficit-contingent compensation language; ministry communications on funding-guarantee strategy; EC fiscal guidance on permissible spending commitments.)
+- Will the Fidesz opposition signal any willingness to negotiate a cross-party consensus on selection reform, or will it maintain the 'totalitarian/communism' framing and signal intent to reverse the reform on return to government? (confidence: medium; would be reduced by: Public statements by Fidesz leadership (e.g., via opposition spokesperson or shadow minister) indicating willingness to negotiate or conditions for consensus; polling showing public support for selection reform high enough to make opposition costly; evidence of behind-the-scenes dialogue or negotiation frameworks.)
+
+
+----- portuguese_reform -----
+# Expert analysis: portuguese_reform
+
+## Findings (evidence)
+- Portugal maintained a comprehensive (non-selective) school structure through compulsory basic education and improved PISA results by approximately 31 points (0.3 standard deviations) between 2000 and 2015–2018 without introducing early tracking. [evidence: strong — OECD PISA trend reports; Marôco, Portugal: The PISA Effects on Education, Springer]
+- Portugal's documented gains in learning outcomes resulted from curriculum standards clarification, increased school autonomy, regular student assessment, and vocational pathway development—not from changes to selection age. [evidence: strong — Springer, Curriculum and Educational Reforms in Portugal; Crato 2020]
+- Hungary's early selection system (at ages 10 and 12 into 8-year and 6-year grammar schools) amplifies achievement variance and inequality of opportunity without raising average performance. [evidence: strong — Terrin & Triventi, The Effect of School Tracking on Student Achievement and Inequality: A Meta-Analysis, SAGE; Horn D. (2013), Diverging performances, Research in Social Stratification and Mobility]
+- TEIP (Portugal's targeted school support programme) reduced student dropout and grade retention but did not close competency gaps relative to non-TEIP schools, and no rigorous longitudinal evaluation of its long-term student outcomes exists. [evidence: moderate — MDPI, Has the Portuguese Compensatory Education Program Been Successful; ScienceDirect Procedia 2014; CIIE Porto]
+- Between 2016 and 2018, Portugal's grade-retention reduction initiative saved 112 million euros while reducing retained students by 26% across 663 schools. [evidence: strong — Público, Nov 12 2019; official Portuguese government reporting]
+- Portugal's school selectivity index (PISA 2022) stands at 1.29 on the OECD scale, ranking 75th of 80 countries—among the lowest in the OECD. [evidence: strong — OECD Education GPS – Portugal, 2022]
+- Cross-national evidence from multiple studies shows early tracking (age 10, as practiced in Austria, Germany, Hungary, and Slovakia) increases between-school achievement variance and social inequality without raising average achievement. [evidence: strong — Hanushek & Wößmann, foundational cross-national study; ScienceDirect 2026 synthesis]
+- Hungarian municipalities that adopted 8-year grammar schools show that socio-economic status is the strongest predictor of mathematical test performance among tracked countries. [evidence: moderate — Gurzo, K., The long term effects of early tracking in schools, CEU eTD 2015]
+
+## Interpretation
+Portugal demonstrates that significant learning-outcome improvement is achievable in a comprehensive, non-selective system through targeted non-structural reforms—curriculum alignment, assessment transparency, retention reduction, and equitable school support—without lowering average achievement or restricting access. By contrast, Hungary's early-selection structure (age 10–12) creates inequality and performance stratification without a corresponding efficiency or achievement premium. The evidence suggests that early tracking solves no efficiency problem and creates substantial social-stratification problems; its persistence reflects structural inertia and political interest rather than pedagogical necessity. TEIP-style targeted support shows promise in reducing dropout but requires stronger design and rigorous evaluation to demonstrate competency-gap closure. Retention reduction, Portugal's clearest non-structural success, is both a fiscal and equity win when implemented systematically.
+
+## Assumptions
+- Portugal's comprehensive system is demographically and institutionally comparable to Hungary's in relevant dimensions (school resources, teacher training, family educational background distribution) such that its outcomes are transferable. [assumption]
+- Curriculum clarity, school autonomy, and regular assessment drive outcomes independently of selection structure; their effects are not interactive with early tracking in ways that would reverse the ordering observed in Portugal. [assumption]
+- The PISA index is a valid proxy for school system 'selectivity' and its observed ranking reflects genuine institutional differences rather than measurement artifact. [assumption]
+- Reduction in grade retention can be achieved at scale through pedagogical and assessment reform without structural dismantling of the current school-type system. [assumption]
+
+## Position
+Hungary's early-selection system at ages 10–12 increases achievement inequality and socio-economic stratification without raising average performance, and similar learning gains to Portugal's are achievable through non-structural reforms (curriculum clarity, assessment transparency, retention reduction, targeted support) within a comprehensive framework.
+
+## Uncertainties
+- Whether targeted support (TEIP-type) can close achievement gaps rather than merely reducing dropout rates remains uncertain because no longitudinal study has tracked student competency trajectories beyond retention reduction. (confidence: high; would be reduced by: A 5–8 year longitudinal matched-cohort study comparing TEIP-enrolled and non-enrolled students, controlling for baseline socio-economic status and prior achievement, tracking assessed competency gain (not just exam pass rates).)
+- The fiscal and pedagogical cost of phase-out or structural reform of Hungary's 8-year grammar school track (replacing it with comprehensive entry and specialist bands at 14+) has not been modeled in published Hungarian research. (confidence: high; would be reduced by: A scenario analysis prepared by Hungarian education ministry or major research institute, modeling capital reallocation, teacher redeployment, and transition costs over 10–15 years under different phase-in schedules.)
+- Whether Hungary's school-choice system (szabad iskolaválasztás) amplifies or mitigates selection effects is empirically unknown; choice may create de facto academic sorting at comprehensive-system entry points. (confidence: medium; would be reduced by: A cross-municipal comparison of school-choice patterns and outcomes in comprehensive vs. tracked districts, with matching on initial school capacity and socio-economic intake, to isolate choice-driven stratification.)
+- The long-term labor-market and civic outcomes (earnings, employment stability, political participation) of students who remained in a comprehensive system versus those tracked into lower academic grades in Hungary remain unquantified. (confidence: medium; would be reduced by: A linked administrative register study (tax authority, labor force survey, electoral records) following cohorts 20+ years post-secondary-entry, comparing tracked vs. comprehensive-entry outcomes within Hungary or using a quasi-experimental discontinuity at a reform boundary.)
+- Whether a phased shift from 8-year to 6-year grammar school entry (age 12), preserving selection but delaying it, would reduce social stratification or merely postpone it is a structural question not addressed in the current evidence base. (confidence: low; would be reduced by: Comparative research on countries that have experimentally implemented age-postponement of tracking (e.g., comparing 10 vs. 12 entry regimes in the same institutional context), ideally with randomized school-network pilots in Hungary.)
+
+
+----- school_network_planning -----
+# Expert analysis: school_network_planning
+
+## Findings (evidence)
+- Hungary's secondary network of 880 schools is deliberately dense, with a policy aim that every student reach a gimnázium by public transport within about an hour. [evidence: moderate — Eurydice/KSH 2024/25]
+- Dormitory capacity nationally exceeds demand and demand is declining, currently easing rather than solving the commuting-tolerance constraint for thin rural markets. [evidence: moderate — Eurydice 2024/25]
+- More than 1,200 of Hungary's 3,155 settlements had no public educational institution at all by 2024, concentrated in peripheral and rural regions. [evidence: strong — ResearchGate spatial-clustering study 2025 (KIR 2021-2024)]
+- Birth numbers are falling faster than previously expected—5,979 in October 2025, fertility rate 1.31—meaning the school-age intake base for any selection scenario continues to shrink. [evidence: strong — KSH via IntelliNews November 2025]
+- Long-run population projections place Hungary at approximately 8.5 million inhabitants by 2040-2050, requiring school-network planning to account for sustained demographic decline, not a temporary fluctuation. [evidence: moderate — IntelliNews/OSW Centre for Eastern Studies projections]
+- Selection is not geographically uniform: approximately 40% of general schools nationally (60% in villages) send zero pupils to 6- or 8-year gimnázium tracks, while urban and county-seat schools lose 20-30% of each cohort. [evidence: moderate — PrivátBankár and Index reporting on Oktatási Hivatal and national competence-measurement data]
+- When top-performing pupils depart after grade 4 or 6, the sending general school experiences mildly negative average effects on remaining peers and unplannable class-size volatility that complicates staffing. [evidence: moderate — Horn et al. 2018 cited via qubit.hu]
+- Church-maintained school enrollment grew fastest (2.5× to 5×) in small towns and villages 2010-2022; simultaneously, pupils in settlements with no remaining state-run primary school rose from 1% to 4%—a maintainer shift layered atop selection pressures. [evidence: strong — A közoktatás indikátorrendszere 2023 via qubit.hu]
+- Gimnázium enrollment reached 192,000 students (44.8% of all secondary enrollment) in 2024/25, with general-school enrollment continuing to decline while secondary and tertiary enrollment grew—consistent with shrinking cohorts at the 10-12 selection point. [evidence: moderate — KSH preliminary 2024/25 data]
+
+## Interpretation
+Physical school-network capacity—buildings, dormitories, and transport infrastructure—is not currently the binding constraint on delivering early selection almost anywhere. The dense 880-school grid plus underused dormitory capacity mean most towns can physically access a 6- or 8-year gimnázium. The real town-by-town feasibility problem is compositional and demographic: shrinking birth cohorts mean fewer children to sustain both a full eight-grade general school and a competing gymnázium track locally. Selection is already concentrated in a minority of settlements (mostly urban or church-maintained), while ~40% send no one to tracked programs. Each cohort self-selecting out weakens the remaining general-school class, accelerating consolidation pressure. Maintainer transfers (state to church) are currently absorbing this burden rather than solving it.
+
+## Assumptions
+- Current KSH demographic projections (to 2040-2050) will not be substantially reversed by family-policy interventions in the medium term. [assumption]
+- Dormitory slack capacity reported at the national level is sufficiently distributed geographically to matter for actual feasibility, rather than concentrated only in a few large urban centers. [assumption]
+
+## Position
+Physical school-network capacity is currently sufficient to sustain early selection almost anywhere; the genuine town-by-town feasibility bottleneck is the shrinking and unevenly distributed child population, combined with a maintainer and admissions design that concentrates selection into a minority of settlements.
+
+## Uncertainties
+- We lack settlement or county-level data on current dormitory vacancy versus demand trends in specific declining regions; only national aggregate trends are known. (confidence: low; would be reduced by: Settlement- or county-disaggregated KIR/KIFIR dormitory occupancy records by region and time period.)
+- We do not have a recent, precise projection of how many settlements would lose their last local secondary program if consolidation continues at current demographic pace. (confidence: low; would be reduced by: A dedicated KSH or Oktatási Hivatal settlement-level school viability projection under current birth-rate scenarios.)
+- The causal magnitude of the Horn et al. (2018) 'peer drain' effect on sending general schools rests on a single study cited second-hand; its magnitude and generalizability across settlement types remain uncertain. (confidence: medium; would be reduced by: Direct access to the original peer-reviewed paper and replication of the analysis across more recent cohorts and settlement-type subgroups.)

@@ -160,7 +160,8 @@ def synthesis_md(o, lang="en"):
         lines.append("")
     lines += [H["agree"]]
     for a in o["agreements"]:
-        lines.append(f"- {a['text'][L]}{ev_tag(a['evidence'], L)}")
+        holders = f" ({', '.join(a['holders'])})" if a.get("holders") else ""
+        lines.append(f"- {a['text'][L]}{ev_tag(a['evidence'], L)}{holders}")
     minority = [side for dis in o["disagreements"] for side in dis["sides"]
                 if side["minority"]]
     if minority:

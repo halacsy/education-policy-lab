@@ -165,6 +165,7 @@ SYNTHESIS = obj({
     "agreements": arr(obj({
         "text": B("something the experts agree on"),
         "evidence": enum(EVIDENCE_LEVELS),
+        "holders": arr(s("expert name")),
     })),
 })
 

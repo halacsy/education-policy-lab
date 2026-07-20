@@ -397,7 +397,7 @@ def valid_brief(o, id_set, cluster_ids=None):
     return True
 
 
-def valid_synthesis(o):
+def valid_synthesis(o, expert_names=None):
     try:
         dis = o["disagreements"]
     except (TypeError, KeyError):
@@ -407,21 +407,39 @@ def valid_synthesis(o):
     if not isinstance(dis, list) or len(dis) < 2:
         return False
     minority_seen = False
+    covered = set()
     for d in dis:
         if not pair_ok(d.get("topic")):
             return False
         sides = d.get("sides")
-        if not sides or len(sides) < 2:
+        # a topic needs >=1 side — a single-holder side is legitimate: one
+        # expert raises a distinct mechanism/consideration that no other
+        # expert corroborates or disputes (issue #9's fix surfaces exactly
+        # this case; forcing a manufactured second side would be worse)
+        if not sides or len(sides) < 1:
             return False
         for side in sides:
             if not side.get("holders") or not pair_ok(side.get("position")) \
                     or not pair_ok(side.get("rationale")):
                 return False
             minority_seen = minority_seen or bool(side.get("minority"))
+            covered.update(side["holders"])
     agreements = o.get("agreements")
     if not agreements or not all(pair_ok(a.get("text")) for a in agreements):
         return False
-    return minority_seen  # a map with no minority side is consensus laundering
+    for a in agreements:
+        covered.update(a.get("holders") or [])
+    if not minority_seen:
+        return False  # a map with no minority side is consensus laundering
+    # position-carriage completeness (issue #9): an expert absent from every
+    # disagreement side AND every agreement was silently dropped, not
+    # synthesized — this is a defect regardless of how holders got merged
+    # into existing sides.
+    if expert_names is not None:
+        missing = set(expert_names) - covered
+        if missing:
+            return False
+    return True
 
 
 def valid_rejected(o, id_set):
@@ -776,8 +794,11 @@ def run_discourse(step, rd, n, scen_en_md, glossary, disc_cfg, T, facts):
                  inputs=scen_en_md),
             validate=lambda o: valid_voice(o, id_set),
             out_path=ddir / "voices" / f"{name}.json",
-            # sourced scenarios lengthen voice reactions (round-2 truncation)
-            schema=S.VOICE(ids), max_tokens=40000)
+            # sourced scenarios lengthen voice reactions (round-2 truncation,
+            # #29: rural-school-closures round_03 digitalisgazdasagi hit the
+            # 40000 cap under the 5-frame scenario set — raised, infra fix,
+            # not part of the panel-expansion experiment's documented change)
+            schema=S.VOICE(ids), max_tokens=56000)
         return name, obj
 
     voices = {}
@@ -1248,8 +1269,11 @@ def run_round(n):
         validate=lambda o: valid_scenarios_bi(o, id_set),
         out_path=rd / "scenarios.json",
         # 30000 truncated with direct-search experts: richer sourced inputs
-        # produce longer scenario sets (5 frames, bilingual, 10 fields each)
-        schema=S.SCENARIOS(ids), max_tokens=48000)
+        # produce longer scenario sets (5 frames, bilingual, 10 fields each).
+        # 48000 itself compresses under a 13-expert digest (PR #29 Cell C/D:
+        # uncertainties per scenario dropped 3->2.2 only when the digest grew,
+        # not from expert-content rerun noise) — raised for panel headroom.
+        schema=S.SCENARIOS(ids), max_tokens=64000)
     scen_en = render.scenario_view(scen_bi, "en")
     scen_hu = render.scenario_view(scen_bi, "hu")
     scen_en_md = render.scenarios_md(scen_en, "en")
@@ -1270,9 +1294,24 @@ def run_round(n):
                  "disagreement map (per side: holders, position, rationale, "
                  "minority flag — mark the minority side, never resolve it "
                  "away); agreements = what the experts agree on, each with "
-                 "an honest evidence grade.\n\nGLOSSARY:\n" + glossary),
+                 "an honest evidence grade and its holders.\n"
+                 "COVERAGE (issue #9): every expert in the record must "
+                 "appear as a holder in at least one disagreement side OR "
+                 "one agreement — an expert named nowhere was dropped, not "
+                 "synthesized, and that is a defect. When an expert's "
+                 "conclusion matches an existing side, check whether their "
+                 "EVIDENCE TYPE or CAUSAL MECHANISM is already reflected in "
+                 "that side's rationale, not just its position — if their "
+                 "mechanism is genuinely different (e.g. a psychological "
+                 "cost distinct from an economic or demographic argument), "
+                 "open a NEW disagreement topic for it even though the "
+                 "conclusion overlaps; do not silently fold a distinct "
+                 "mechanism into an existing side's holder list without "
+                 "expanding that side's rationale to name it.\n\n"
+                 "GLOSSARY:\n" + glossary),
              inputs=expert_digest),
-        validate=valid_synthesis, out_path=rd / "synthesis.json",
+        validate=lambda o: valid_synthesis(o, list(experts.keys())),
+        out_path=rd / "synthesis.json",
         schema=S.SYNTHESIS, max_tokens=32000)
     synthesis_text = render.synthesis_md(synthesis_obj, "en")
     write(rd / "synthesis.md", synthesis_text)

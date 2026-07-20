@@ -1,0 +1,25 @@
+{
+  "objections": [
+    {
+      "scenario": "S1",
+      "field": "evidence_status",
+      "objection": "The scenario's Mechanism section applies 'strong' evidence tags to both statutory multigrade and felmenő-rendszer legal mechanisms and to multigrade classroom effectiveness, but the Evidence status then states the overall case is 'contested' specifically on pedagogical adequacy and teacher-supply feasibility. This mixes distinct claims (legal permissibility vs. pedagogical effectiveness vs. staffing feasibility) under inconsistent evidence labels: the legal-authority claim appears well-supported while the pedagogical and workforce claims are disputed by the dossier itself (e.g., ageing teacher workforce, rural unqualified-teacher rates). The present evidence_status fails to disambiguate which elements are strong vs contested, leaving the reader unable to tell whether the 'strong' tags in Mechanism refer only to legal text or to educational outcomes and implementation feasibility as well.",
+      "severity": "high",
+      "suggested_revision": "Disaggregate the evidence_status into separate assertions (legal status; pedagogical effectiveness; staffing feasibility). Re-tag the Mechanism lines so legal-authority claims retain 'strong' while pedagogical-effectiveness and teacher-supply claims are downgraded to 'contested' or 'weak' as supported by the dossier. Add explicit citations or footnotes showing which sources justify each tag (e.g., statute text for legal permissibility; systematic-review limits and local teacher-age/unqualified rates for pedagogical and staffing uncertainty). If pedagogical effectiveness remains uncertain, require pilot multigrade implementations with pre-registered evaluation before scaling."
+    },
+    {
+      "scenario": "S2",
+      "field": "assumptions",
+      "objection": "S2 assumes that receiving ISCED2 sites will have 'sufficient capacity, qualified staff, and receiving-school quality' to prevent the common international pattern that 'most displaced rural students do not move to stronger schools.' This assumption contradicts the Mechanism and Uncertainties sections which explicitly note (a) Poland's reform was reversed, (b) international evidence is contested about net benefits, and (c) the scenario's own uncertainty that receiving schools may lack capacity and quality. No empirical evidence is offered to justify the optimistic assumption that recipient schools will be demonstrably stronger in the Hungarian context. That is a core causal bridge the scenario needs but does not support.",
+      "severity": "high",
+      "suggested_revision": "Replace the unsupported blanket assumption with conditional, operational requirements: (1) require a pre-transfer, binding destination-school capacity-and-quality audit (teacher qualifications, class sizes, facility capacity, historical achievement) as a closure precondition; (2) model and budget for incremental capacity upgrades where audits show shortfalls; and (3) include a plan for guaranteed transport and transition-support staffing. Cite or commission empirical checks (administrative-data review of candidate ISCED2 schools) before asserting this assumption in the scenario's logic chain."
+    },
+    {
+      "scenario": "S5",
+      "field": "implementation_steps",
+      "objection": "The scenario text and Mechanism repeatedly warn that a non-binding/advisory registry risks being co-opted to justify pre-decided closures, yet the Implementation steps call both for building an 'advisory, non-binding' registry in places and for legislating a 'binding (not merely advisory) statutory minimum-viability threshold' elsewhere. This is an internal inconsistency about whether the framework is advisory or legally binding. The political-risks and Evidence-status sections hinge on that choice, but the Implementation steps do not resolve it or analyze legal feasibility, funding assignment, or enforcement mechanisms — leaving a central implementation contradiction unaddressed.",
+      "severity": "high",
+      "suggested_revision": "Make the framework's legal force explicit and align all related fields. If the intent is binding thresholds: (a) change all references from 'advisory' to 'statutory', (b) add a legal-feasibility analysis (which body can amend Nkt., required parliamentary steps), (c) specify the exact budget-line and responsible tier for registry funding, and (d) include an independent-audit/enforcement mechanism. If the intent is advisory: (a) explicitly document safeguards against selective invocation (e.g., mandatory explanatory memos when registry and closure decisions diverge, public appeal window), (b) add monitoring/audit costs and governance rules, and (c) lower evidence-status to reflect the weaker enforcement—then rewrite Political risks and Uncertainties to match. Include a short legal feasibility study as an appendix before finalizing implementation timelines."
+    }
+  ]
+}

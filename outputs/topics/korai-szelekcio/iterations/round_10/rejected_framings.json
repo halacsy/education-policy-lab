@@ -1,0 +1,74 @@
+{
+  "scenarios": [
+    {
+      "id": "S1",
+      "chosen": "Admissions and intake-equity regulation — keep the 6/8-year gimnázium structure but regulate the admission mechanism itself (SES-aware proxies, uniform thresholds, coaching-resistant exam design) to reduce family-capital sorting at the point of entry.",
+      "rejected": [
+        {
+          "framing": "Full voluntary self-regulation by maintainers (no state-mandated thresholds, relying on schools to adopt SES-aware practices voluntarily)",
+          "reason": "Rejected because the expert record documents no incentive structure or evidence that voluntary adoption would occur at scale, and elite gimnázium directors have already shown coordinated resistance to perceived dilution of selectivity, making voluntary uptake implausible as a primary mechanism."
+        },
+        {
+          "framing": "National uniform entrance exam replacing all maintainer-specific admissions criteria",
+          "reason": "Rejected as exceeding what a decree-level reform can plausibly achieve given church/foundation maintainer autonomy guarantees that are constitutionally and contractually protected; a fully uniform national exam would require primary legislation and cross-maintainer consent not evidenced as feasible in the record."
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "chosen": "Supply-side contraction of the selective track — shrink the state-sector footprint of 6/8-year places via score thresholds, capacity caps, or demographically-driven consolidation, leaving admission criteria within remaining places largely unchanged.",
+      "rejected": [
+        {
+          "framing": "Symmetric contraction across state, church, and foundation maintainers via a single unified capacity cap",
+          "reason": "Rejected because no evidence-based legal or political pathway exists in the record for extending capacity caps to church/foundation maintainers, who are protected by constitutionally-backed autonomy and funding agreements; framing the policy as symmetric would misrepresent the state's actual regulatory reach."
+        },
+        {
+          "framing": "Contraction paired with an explicit legislated cap on church/foundation expansion",
+          "reason": "Rejected for this scenario slot because pairing supply-side state contraction with enforceable non-state caps would functionally merge S2 with elements of S1's regulatory approach and is not supported by any documented enforcement mechanism; kept as a named uncertainty rather than folded into the chosen mechanism."
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "chosen": "Structural delay of the selection age (Finnish/Polish model) — raise the statutory tracking age to 14+ and convert 6/8-year entry points into a unified comprehensive lower-secondary phase, paired with explicit anti-sorting rules for school choice and catchment as a co-requirement.",
+      "rejected": [
+        {
+          "framing": "Delay the selection age without simultaneous anti-sorting legislation, treating anti-sorting rules as a later, optional add-on",
+          "reason": "Rejected because the OECD's 2011 Poland re-evaluation and the record's own equity_impact analysis show sorting can migrate to school-choice and catchment channels if anti-sorting enforcement lags the structural delay; sequencing anti-sorting rules as optional would overstate the equity benefit's automaticity."
+        },
+        {
+          "framing": "Full Finland-style peruskoulu adoption including a decade-plus teacher-professionalization overhaul as a precondition before any structural delay begins",
+          "reason": "Rejected as a distinct scenario because it would require completing a Finland-scale, multi-year teacher-education transformation before enacting any tracking-age change, which the record's workforce evidence (aging teacher base, concurrent 2024-2031 salary reform) suggests is infeasible as a strict precondition rather than a parallel, phased process."
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "chosen": "Non-structural compensatory reform (Portugal-style) — pursue curriculum clarity, TEIP-style targeted funding, retention reduction, and school-quality levelling without changing the 10-12 selection age or track structure.",
+      "rejected": [
+        {
+          "framing": "Compensatory funding scaled purely to Portugal's per-pupil spending levels without Hungary-specific fiscal costing",
+          "reason": "Rejected because the record explicitly notes Hungary-specific per-school or per-pupil costs have not been estimated, and Portugal's EUR ~100 million annual TEIP figure cannot be mechanically transposed given differing fiscal contexts, including Hungary's projected 6.2% deficit and rising debt."
+        },
+        {
+          "framing": "Compensatory reform combined with quiet, non-legislated retention-rate targets as the primary lever",
+          "reason": "Rejected because Portugal's own experience shows grade retention (26.6-31.2% of 15-year-olds retained at least once) coexists with worsening equity, and the assumption record flags a risk that compensatory reform could inadvertently increase reliance on retention as a substitute sorting mechanism in Hungary, where retention is currently below OECD average; elevating retention targets to primary-lever status would risk reproducing this failure mode rather than avoiding it."
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "chosen": "Demographically-driven passive contraction — no-new-policy baseline in which shrinking birth cohorts force network consolidation and a natural decline in the selective track's absolute size and share, against which S1-S4 are measured.",
+      "rejected": [
+        {
+          "framing": "Purely passive baseline with no acknowledgment of interacting active administrative levers (score thresholds, tankerület consolidation decisions)",
+          "reason": "Rejected per devil_advocate and coherence_checker critique: the record documents government already using active levers (S2-style thresholds, tankerület-level consolidation) that shape how demographic pressure translates into equity outcomes, so framing S5 as fully policy-neutral would mischaracterize the baseline and obscure accountability for those active choices."
+        },
+        {
+          "framing": "Demographic contraction framed as an automatically equity-improving force requiring no safeguards",
+          "reason": "Rejected because the school-network-planning record explicitly flags that consolidation absent deliberate equity safeguards is likely to concentrate selective capacity into fewer, more advantaged-skewed sites, worsening rather than passively resolving SES sorting; treating contraction as automatically equity-positive would contradict this documented risk."
+        }
+      ]
+    }
+  ]
+}

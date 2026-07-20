@@ -1,0 +1,107 @@
+{
+  "round": 10,
+  "dimensions": {
+    "scenario_completeness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "evidence_discipline": {
+      "deterministic": 7.952,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          10.0,
+          9.0,
+          9.0
+        ],
+        "mean": 9.333,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 8.366,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "critic_concreteness": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          9.0,
+          9.0,
+          9.0
+        ],
+        "mean": 9.0,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 9.7,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "layer_separation": {
+      "deterministic": 8.323,
+      "score": 8.323,
+      "method": "deterministic"
+    },
+    "meta_system_eval": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "anthropic",
+        "trials": [
+          9.0,
+          9.0,
+          9.0
+        ],
+        "mean": 9.0,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 9.7,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "disagreement_preservation": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "mean": 10.0,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 10.0,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "uncertainty_explicitness": {
+      "deterministic": 9.2,
+      "score": 9.2,
+      "method": "deterministic"
+    },
+    "translation_fidelity": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "mean": 10.0,
+        "variance": 0.0,
+        "divergence_flagged": false
+      },
+      "score": 10.0,
+      "method": "mixed (0.7 det + 0.3 llm)"
+    }
+  },
+  "total": 9.411,
+  "prev_total": 9.45,
+  "delta": -0.039,
+  "generator_provider": "anthropic",
+  "judge_provider": "openai",
+  "divergence_flagged": [],
+  "step_fallbacks": []
+}

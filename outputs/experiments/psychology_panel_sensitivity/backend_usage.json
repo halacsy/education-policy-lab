@@ -1,0 +1,163 @@
+{
+  "backend_stats": {
+    "brief [anthropic:claude-sonnet-5]": 3,
+    "build_scenarios [anthropic:claude-sonnet-5]": 3,
+    "expert_analysis [anthropic:claude-haiku-4-5]": 1,
+    "expert_research [anthropic:claude-sonnet-5]": 1,
+    "synthesis [anthropic:claude-sonnet-5]": 3
+  },
+  "token_stats": {
+    "by_task_backend": {
+      "brief [anthropic:claude-sonnet-5]": {
+        "input_tokens": 203994,
+        "output_tokens": 99670
+      },
+      "build_scenarios [anthropic:claude-sonnet-5]": {
+        "input_tokens": 135937,
+        "output_tokens": 116155
+      },
+      "expert_analysis [anthropic:claude-haiku-4-5]": {
+        "input_tokens": 7925,
+        "output_tokens": 7630
+      },
+      "expert_research [anthropic:claude-sonnet-5]": {
+        "input_tokens": 95424,
+        "output_tokens": 5226
+      },
+      "synthesis [anthropic:claude-sonnet-5]": {
+        "input_tokens": 117037,
+        "output_tokens": 27326
+      }
+    },
+    "total_input_tokens": 560317,
+    "total_output_tokens": 256007,
+    "total_tokens": 816324,
+    "metered_calls": 11,
+    "unmetered_calls": 0
+  },
+  "errors": {},
+  "calls": [
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "expert_research",
+      "agent": "educational_psychology",
+      "model": "claude-sonnet-5",
+      "ms": 64409,
+      "input_tokens": 95424,
+      "output_tokens": 5226,
+      "web_searches": 5
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "expert_analysis",
+      "agent": "educational_psychology",
+      "model": "claude-haiku-4-5",
+      "ms": 106491,
+      "input_tokens": 7925,
+      "output_tokens": 7630
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "build_scenarios",
+      "agent": "scenario_builder",
+      "model": "claude-sonnet-5",
+      "ms": 541449,
+      "input_tokens": 43792,
+      "output_tokens": 38806
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "synthesis",
+      "agent": "editor",
+      "model": "claude-sonnet-5",
+      "ms": 162427,
+      "input_tokens": 37492,
+      "output_tokens": 11296
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "brief",
+      "agent": "final_brief_writer",
+      "model": "claude-sonnet-5",
+      "ms": 468912,
+      "input_tokens": 69142,
+      "output_tokens": 35338
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "build_scenarios",
+      "agent": "scenario_builder",
+      "model": "claude-sonnet-5",
+      "ms": 570617,
+      "input_tokens": 43792,
+      "output_tokens": 42205
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "synthesis",
+      "agent": "editor",
+      "model": "claude-sonnet-5",
+      "ms": 109260,
+      "input_tokens": 37492,
+      "output_tokens": 7566
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "brief",
+      "agent": "final_brief_writer",
+      "model": "claude-sonnet-5",
+      "ms": 429569,
+      "input_tokens": 68434,
+      "output_tokens": 32336
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "build_scenarios",
+      "agent": "scenario_builder",
+      "model": "claude-sonnet-5",
+      "ms": 476539,
+      "input_tokens": 48353,
+      "output_tokens": 35144
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "synthesis",
+      "agent": "editor",
+      "model": "claude-sonnet-5",
+      "ms": 122998,
+      "input_tokens": 42053,
+      "output_tokens": 8464
+    },
+    {
+      "role": "generator",
+      "provider": "anthropic",
+      "backend": "anthropic",
+      "task": "brief",
+      "agent": "final_brief_writer",
+      "model": "claude-sonnet-5",
+      "ms": 427110,
+      "input_tokens": 66418,
+      "output_tokens": 31996
+    }
+  ]
+}
