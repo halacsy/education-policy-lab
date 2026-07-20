@@ -1,0 +1,103 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/provenance.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"
+    },
+    {
+      "properties": {
+        "content": {
+          "additionalProperties": false,
+          "properties": {
+            "execution_id": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "input_artifact_hashes": {
+              "items": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "model": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "node_id": {
+              "pattern": "^[a-z][a-z0-9_]*$",
+              "type": "string"
+            },
+            "prompt_hash": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "provider": {
+              "pattern": "^[a-z][a-z0-9_-]*$",
+              "type": "string"
+            },
+            "role": {
+              "enum": [
+                "deterministic",
+                "generator",
+                "judge",
+                "localizer",
+                "research"
+              ]
+            },
+            "schema_hashes": {
+              "additionalProperties": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "propertyNames": {
+                "minLength": 1
+              },
+              "type": "object"
+            },
+            "spec_hashes": {
+              "additionalProperties": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "propertyNames": {
+                "minLength": 1
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "node_id",
+            "execution_id",
+            "input_artifact_hashes",
+            "spec_hashes",
+            "schema_hashes",
+            "prompt_hash",
+            "provider",
+            "model",
+            "role"
+          ],
+          "type": "object"
+        },
+        "id": {
+          "pattern": "^PV-[A-Za-z0-9._-]+$"
+        },
+        "provenance_ref": {
+          "type": "null"
+        },
+        "record_type": {
+          "const": "provenance"
+        },
+        "schema_version": {
+          "const": "2.0.0"
+        }
+      }
+    }
+  ],
+  "title": "Provenance artifact",
+  "x-artifact-references": [],
+  "x-record-type": "provenance",
+  "x-schema-version": "2.0.0"
+}

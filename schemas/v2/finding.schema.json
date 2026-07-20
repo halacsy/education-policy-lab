@@ -1,0 +1,147 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/finding.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"
+    },
+    {
+      "properties": {
+        "content": {
+          "additionalProperties": false,
+          "properties": {
+            "assumption_ids": {
+              "items": {
+                "pattern": "^A-[A-Za-z0-9._-]+$",
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "claim": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "context": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "domain_tags": {
+              "items": {
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "evidence_strength": {
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "contested"
+              ]
+            },
+            "kind": {
+              "enum": [
+                "estimate",
+                "fact"
+              ]
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "population": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_refs": {
+              "items": {
+                "pattern": "^SRC-[A-Za-z0-9._-]+$",
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "time_scope": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "transferability": {
+              "enum": [
+                "high",
+                "low",
+                "medium",
+                "not_applicable",
+                "uncertain"
+              ]
+            },
+            "uncertainty_ids": {
+              "items": {
+                "pattern": "^U-[A-Za-z0-9._-]+$",
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "claim",
+            "kind",
+            "domain_tags",
+            "evidence_strength",
+            "source_refs",
+            "population",
+            "context",
+            "time_scope",
+            "transferability",
+            "limitations",
+            "assumption_ids",
+            "uncertainty_ids"
+          ],
+          "type": "object"
+        },
+        "id": {
+          "pattern": "^F-[A-Za-z0-9._-]+$"
+        },
+        "provenance_ref": {
+          "pattern": "^PV-[A-Za-z0-9._-]+$",
+          "type": "string"
+        },
+        "record_type": {
+          "const": "finding"
+        },
+        "schema_version": {
+          "const": "2.0.0"
+        }
+      }
+    }
+  ],
+  "title": "Finding artifact",
+  "x-artifact-references": [
+    {
+      "path": "/provenance_ref",
+      "record_type": "provenance"
+    },
+    {
+      "path": "/content/source_refs/*",
+      "record_type": "source"
+    },
+    {
+      "path": "/content/assumption_ids/*",
+      "record_type": "assumption"
+    },
+    {
+      "path": "/content/uncertainty_ids/*",
+      "record_type": "uncertainty"
+    }
+  ],
+  "x-record-type": "finding",
+  "x-schema-version": "2.0.0"
+}
