@@ -1,39 +1,40 @@
 # Javasolt forgatókönyv-keretek — Korai szelekció és a hat-/nyolcosztályos gimnázium
 
-A(z) 9. kör szakértői elemzéséből derivált opciótér (5 keret). EMBERI JÓVÁHAGYÁSRA VÁR: szerkeszd a frames.json-t, ha kell, majd futtasd: `scripts/new_topic.py approve-frames --topic korai-szelekcio`.
+A(z) 10. kör szakértői elemzéséből derivált opciótér (5 keret). EMBERI JÓVÁHAGYÁSRA VÁR: szerkeszd a frames.json-t, ha kell, majd futtasd: `scripts/new_topic.py approve-frames --topic korai-szelekcio`.
 
-## S1 — Felvételi és bejutási méltányossági szabályozás (a szerkezet marad, a kapu változik)
-*Admissions and intake-equity regulation (keep structure, fix the gate)*
+## S1 — A felvételi rendszer reformja a jelenlegi szerkezet mellett (méltányosság tervezéssel)
+*Reform admissions within existing tracks (equity-by-design)*
 
-- Scope (HU): Azok a beavatkozások, amelyek a hatosztályos/nyolcosztályos gimnáziumi szerkezetet megtartják, de magát a felvételi mechanizmust szabályozzák — SES-alapú kvótákkal vagy proxykkal, egységes ponthatár-szabályokkal, kevésbé felkészíthető vizsgaformátummal — a családi tőke által vezérelt bejutási szelekció csökkentésére.
-- Scope (EN): Interventions that keep the 6/8-year gimnázium structure intact but regulate the admission mechanism itself — SES-aware quotas or proxies, uniform score-threshold rules, coaching-resistant exam design — to reduce family-capital-driven sorting at the point of entry.
+- Scope (HU): A hat- és nyolcosztályos gimnáziumi szerkezet megtartása mellett a felvételi vizsga, a kvóták és a ponthatárok újratervezése (SES-alapú korrekciók, felkészítés-rezisztens vizsgaforma, egységes szabályok a fenntartók között) a családi ráfordítás és a bekerülési siker közti összefüggés csökkentésére.
+- Scope (EN): Keep the 6/8-year gimnázium tracks but redesign admission examinations, quotas and thresholds (SES-aware proxies, coaching-resistant exam design, uniform rules across maintainers) to reduce the correlation between family investment and admission success.
 
-## S2 — A szelektív képzési kínálat visszaszorítása (a kapu szűkül, nem a szabályok)
-*Supply-side contraction of the selective track (shrink the gate, not the rules)*
+## S2 — A szelektív szegmens szűkítése (kapacitáskorlátok és ponthatárok)
+*Shrink the selective footprint (capacity limits and thresholds)*
 
-- Scope (HU): Azok a beavatkozások, amelyek a hatosztályos/nyolcosztályos helyek állami szektorbeli arányát csökkentik (ponthatárokkal, kapacitáskorlátokkal vagy demográfiailag vezérelt összevonással) a szelektív képzési kínálat lábnyomának szűkítésére, míg a megmaradó helyeken a felvételi kritériumok nagyrészt változatlanok maradnak.
-- Scope (EN): Interventions that reduce the state-sector share of 6/8-year places (via score thresholds, capacity caps, or demographically-driven consolidation) to shrink the selective track's footprint, while leaving admission criteria within remaining places largely unchanged.
+- Scope (HU): Az állami szektorban szelektív helyek számának vagy arányának csökkentése kapacitáskorláttal vagy minimumponthatárral, elfogadva, hogy a nem állami fenntartók a szűkítés egy részét ellensúlyozhatják.
+- Scope (EN): Reduce the size or share of state-sector selective places via capacity caps or minimum-score thresholds, accepting that non-state maintainers may offset part of the contraction.
 
-## S3 — A szelekciós életkor strukturális kitolása (finn/lengyel modell)
-*Structural delay of the selection age (Finnish/Polish model)*
+## S3 — A szelekció elhalasztása egységes alapiskolai (alsó középfokú) szakaszba
+*Delay selection into a unified comprehensive lower-secondary phase*
 
-- Scope (HU): Olyan reformok, amelyek megemelik az első iskolatípus-szerinti szétválogatás törvényes életkorát (pl. 14 évre vagy később), a hatosztályos és nyolcosztályos belépési pontokat egységes, összevont alsó középfokú szakasszá alakítva át, az iskolaválasztásra és a körzethatárokra vonatkozó explicit szelekció-ellenes szabályokkal párosítva.
-- Scope (EN): Reforms that raise the statutory age of first academic tracking (e.g., to 14+ or later), phasing out or converting 6- and 8-year entry points into a unified comprehensive lower-secondary phase, paired with explicit anti-sorting rules for school choice and catchment.
+- Scope (HU): A 10-12 éves kori szétválogatás felváltása egy közös, egységes szakasszal (finn/lengyel mintára), a tanulmányi szelekció későbbi életkorra helyezésével, párhuzamos pedagógus-professzionalizációval és szegregációellenes garanciákkal.
+- Scope (EN): Replace age 10-12 tracking with a common comprehensive phase (Finland/Poland-style), moving academic selection to a later age with concurrent teacher-professionalization and anti-sorting safeguards.
 
-## S4 — Nem strukturális, kompenzáló reform (a szelekciós életkor változatlan marad)
-*Non-structural compensatory reform (leave selection age unchanged)*
+## S4 — Célzott kompenzációs támogatás a jelenlegi rendszer fenntartása mellett
+*Targeted compensatory funding alongside the status quo*
 
-- Scope (HU): Portugál mintájú beavatkozások, amelyek a 10-12 éves szelekciós életkort és a képzési szerkezetet érintetlenül hagyják, de a méltányossági és teljesítménybeli javulást a tantervi egyértelműségen, a hátrányos helyzetű iskolák célzott (TEIP-típusú) finanszírozásán, az évfolyamismétlés csökkentésén és az iskolai minőségkiegyenlítésen keresztül igyekeznek elérni.
-- Scope (EN): Portugal-style interventions that leave the 10-12 selection age and track structure untouched but pursue equity and achievement gains through curriculum clarity, targeted (TEIP-style) funding for disadvantaged schools, retention reduction, and school-quality levelling.
+- Scope (HU): A jelenlegi szelektív szerkezet megtartása mellett TEIP/AJTP-jellegű célzott finanszírozás és támogatás irányítása a hátrányos helyzetű tanulók és iskolák felé, a szegregációs hatások szerkezeti változás nélküli ellensúlyozására.
+- Scope (EN): Retain the current selective structure but direct TEIP/AJTP-style targeted funding and support toward disadvantaged pupils and schools to offset segregation effects without structural change.
 
-## S5 — Demográfiailag vezérelt passzív zsugorodás (status quo alapforgatókönyv)
-*Demographically-driven passive contraction (status-quo baseline)*
+## S5 — Demográfiailag vezérelt hálózat-összevonás mint alapforgatókönyv
+*Demographically-driven consolidation as the default path*
 
-- Scope (HU): Az a beavatkozás-mentes alapforgatókönyv, amelyben a zsugorodó születési évfolyamok kikényszerítik az iskolahálózat összevonását és a szelektív képzési kínálat abszolút méretének és arányának természetes csökkenését bármely aktív méltányossági vagy strukturális beavatkozás nélkül, mérceként szolgálva az S1–S4 forgatókönyvek értékeléséhez.
-- Scope (EN): The no-new-policy baseline in which shrinking birth cohorts force network consolidation and a natural decline in the selective track's absolute size and share regardless of any active equity or structural intervention, serving as the counterfactual against which S1–S4 are measured.
+- Scope (HU): El kell fogadni, hogy a demográfiai visszaesés a szelekciós politikától függetlenül kikényszeríti az iskolahálózat összevonását, és a hálózat-átalakítást (fúziók, bezárások, körzethatár-módosítások) kell elsődleges eszköznek tekinteni, szándékos méltányossági garanciákkal vagy azok nélkül.
+- Scope (EN): Accept that cohort collapse will force network consolidation regardless of selection-policy choice, and treat network redesign (mergers, closures, catchment redraws) as the primary lever, with or without deliberate equity safeguards.
 
 ## Elvetett keretezések (audit)
 
-- Egyetlen 'a korai szelekció országos, rendeleti úton történő azonnali megszüntetése' keretezés, amely az S3-at és az S2-t egyetlen hirtelen megvalósítású forgatókönyvbe olvasztja. — **indok:** A legal_and_governance és implementation_planning szakértői anyagok egyaránt megállapítják, hogy a felmenő rendszerű, évfolyamonkénti bevezetés és a kb. 1 éves minimális felkészülési idő jogi/igazgatási követelmény, és hogy a rendeleti úton történő hirtelen megszüntetés (amelytől a Fidesz 'kommunizmus'-keretezése tart) sem jogilag nem tiszta, sem politikailag nem tartós; a fokozatos strukturális kitolás és a hirtelen megszüntetés egy forgatókönyvbe olvasztása eltörölné ezt a különbséget, helyette az S3 keretében valós választásként kellene megjelennie.
-- Fenntartó-specifikus keretezés, amely az egyházi iskolák szabályozását önálló, különálló forgatókönyvvé emeli. — **indok:** A hungarian_education_system, political_feasibility és equity_and_social_mobility szakértői anyagok szerint a fenntartói pluralizmus (állami/egyházi/alapítványi) strukturális bonyodalom, amely valamennyi forgatókönyvet (S1-S4) átszövi, nem pedig önálló megoldási család; a Tisza-kormány 12 pontos programja kifejezetten vállalja az egyházi fenntartók működési feltételeinek megőrzését, így egy önálló, csak az egyházi szektorra irányuló eszköz politikailag kizárt, és inkább keretek közötti feltevésként/kockázatként kezelendő, mint saját opcióként.
-- A '12 éves korra való kitolás' (csak a hatosztályos képzés) és a '14+ éves korra való kitolás' (teljes egységesítés) két különálló strukturális keretezésként kezelése. — **indok:** A finnish_reform, polish_reform és international_comparison szakértői anyagok ezeket a kitolt-szelekció folytonosságának egy-egy pontjaként kezelik, közös mechanizmusokkal (szelekció-ellenes szabályok, pedagógus-átképzés, fokozatos jogi bevezetés) és közös bizonytalanságokkal (a finn/lengyel hatás mértékének átvihetősége Magyarországra); a kettéválasztás megduplázná a mechanizmus- és kockázatmezőket anélkül, hogy valódi új opciócsaládot adna hozzá, így ezek az S3-on belüli tervezési variánsokként maradnak meg, nem különálló keretezésként.
+- A hat- és nyolcosztályos gimnáziumi szerkezet teljes, azonnali megszüntetése törvényalkotással egy választási cikluson belül — **indok:** A jogi elemzés szerint a felmenő rendszer elve törvényi módosítás után is 8 éves kifutást kényszerít ki, a politikai megvalósíthatósági elemzés pedig azt mutatja, hogy még egy elvben nyitott miniszter is napok alatt 'konzultációs' álláspontra húzódott vissza; ezt megvalósítható, rövid távú önálló forgatókönyvként keretezni félrevezetné a rekord saját korlátait.
+- Tiszta iskolaválasztási deregularizáció (minden körzet- és felvételi szabály megszüntetése, szabad piaci elosztás) — **indok:** A szakértői rekord semmilyen formában nem támogatja ezt élő opcióként; a bizonyítékok egységesen azt mutatják, hogy a jelenlegi szabad iskolaválasztás már most is szegregációt gerjeszt, így a fennmaradó korlátok megszüntetése előreláthatóan tovább rontaná a dokumentált méltányossági problémákat, ellensúlyozó haszon bizonyítéka nélkül.
+- Osztályismétlésen alapuló szelekció mint magyar alternatíva a korai szétválogatásra — **indok:** A portugál eset azt mutatja, hogy az osztályismétlésen alapuló szelekció egy káros mechanizmust egy másikkal helyettesít (nulla vagy negatív pedagógiai hatás, romló méltányossági trend 2015-2022), és Magyarország osztályismétlési aránya már most az OECD-átlag alatt van; a rekord ezt óvatosságra figyelmeztető összehasonlításként, nem javasolt keretezésként kezeli.
+- Önkéntes, ösztönző-alapú lemondás a szelekcióról (a középosztálybeli családok nem szelektív iskola felé ösztönzése a szerkezet megváltoztatása nélkül) — **indok:** A rekordban csak egyetlen kutató előzetes, nem lektorált felvetéseként szerepel; költségbecslés vagy hatásossági bizonyíték nélkül nem éri el az önálló forgatókönyvhöz szükséges szintet, de tervezési elemként megjelenik az S1/S4 forgatókönyvekben.
