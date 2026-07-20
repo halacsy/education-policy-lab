@@ -14,6 +14,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "src"), str(ROOT / "scripts")]
 os.environ["GENERATOR_PROVIDER"] = "anthropic"
+os.environ["LOCALIZER_PROVIDER"] = "openai"
+os.environ.setdefault("OPENAI_MODEL", "gpt-5-mini")
 
 from jsonschema import Draft202012Validator  # noqa: E402
 from lab import llm  # noqa: E402
@@ -97,7 +99,7 @@ STRINGS:
     path.parent.mkdir(parents=True, exist_ok=True)
     (path.parent / f"{path.stem}.prompt.md").write_text(prompt, encoding="utf-8")
     for attempt in range(3):
-        result = llm.call_structured(prompt, schema, "generator", max_tokens=10000)
+        result = llm.call_structured(prompt, schema, "localizer", max_tokens=10000)
         translated = {item["key"]: item["text"] for item in result["translations"]}
         if set(translated) == set(chunk):
             write_json(path, translated)

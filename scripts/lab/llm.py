@@ -125,6 +125,8 @@ def provider_for_role(role):
         return os.environ.get("GENERATOR_PROVIDER", cfg["generator_default"])
     if role == "judge":
         return os.environ.get("JUDGE_PROVIDER", cfg["judge_default"])
+    if role == "localizer":
+        return os.environ.get("LOCALIZER_PROVIDER", "openai")
     raise ValueError(f"unknown role {role!r}")
 
 

@@ -752,3 +752,11 @@ stopped before persistence. Chunks are now capped at 20 strings and 10K output
 tokens, with the same exact-key validator and per-chunk cache. This bounds
 grammar size and failure cost without changing the localization database
 contract.
+
+**D-52 — Localization has its own provider role (2026-07-21).** Reusing the
+generator role routed presentation translation through the slow, expensive
+analysis model. `lab.llm` now recognizes the already-declared DAG role
+`localizer`, routed independently through `LOCALIZER_PROVIDER` (OpenAI by
+default, pinned to gpt-5-mini in the production localizer). It does not judge
+or generate canonical artifacts and therefore does not alter the cross-family
+generator/judge constraint.
