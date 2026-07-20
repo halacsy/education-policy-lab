@@ -1,0 +1,41 @@
+{
+  "content": {
+    "execution_id": "310fdce7e655a19740c24a13ac3ae90e7777a3b946d4d237f6cdcacc5515de2a",
+    "input_artifact_hashes": [
+      "0088122c27b3bdb8a9ab1ff914aa5bf8c319865d043239106ad5672886b268de",
+      "21dcddf12676d4f170a7f776fb10bfce1e06f392d81c89a1fbe57df0cd8b2c6c",
+      "2a5c76c69fb2ebdfc35fcb814ba816802ae1bb78e52ae8aedd96bb053d4f496a",
+      "5fdb5db40d2036b0e59d67a538abb8a54f22cb4203a3341b7b76bdd143ba34a0",
+      "7aa2f2ab6bd219e20280dad10c2ef62a880ce2fc5f40d108fc0b1d74459a010a",
+      "8b1282529a1551deb0546e9f209653917aa2b312762e22253bccac427f154c20",
+      "add6870151bd1720c56687111d3b525b19e6bc714748e31c1f2c0819af29eb04",
+      "b3944e94c1c5aa7f823de511cc63b9172a43d0d2334f600028386fab4694cc4d",
+      "b703f82c62cf400df511d23450350a94c67920883bec0fb0cb94ba3802792ce7",
+      "b9e9b8fa961ac33d4f95539331dc7be1419ccad44f422674a59a20162b4197c0",
+      "c830882bcc7cda2bd87563ece19be11d44bc8d2426bd6019360f441a41990575",
+      "d33ce5f39a27fa8be9dfdeaa31d4214cfbab5e6cae0834f2dd20efc5ee2b3461",
+      "ef6ce1b4c4a3cb2020ec8fa69585f48b69ad235eb8d390ae009b8e5cf9d93c18",
+      "facb700667fafe08c5018d8cd84a84cc16a8c638e4a59d5f1d03a59b1214fb05"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_portuguese_reform",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/lenses.json": "d935a45bbffd745ffb33a366c25686456f425c3e7f25acd17698d2504ba2020d",
+      "src/policy_lab/live/experiment.py": "861f58a43ef378a29bb8352809bc66264ad7a22376ec9bc24f1d47f70e8270fe"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_portuguese_reform-310fdce7e655a197",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

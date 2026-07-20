@@ -1,0 +1,43 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": "Hungarian research (Horn, Corvinus/TARKI) finds students in 6- and 8-year gimnaziums achieve approximately 10% greater progress than similarly-able and similarly-situated peers in 4-year gimnaziums, but the mechanism is contested: improvement may derive from peer effects, teacher sorting, or genuine pedagogical advantage of the 6+6 structure rather than selection per se.",
+    "context": "Fresh live research through the Demography lens",
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      "Effect size (10%) is reported without confidence intervals or statistical significance thresholds",
+      "Panel data observed only from grade 8 onward, missing pre-admission trajectory variation across school types",
+      "Isolating causal school effect requires unobserved controls for selection/admission period effects",
+      "Self-reported principal motives (pedagogical vs. competitive) are not independently verified"
+    ],
+    "population": "Population described in the cited finding",
+    "source_refs": [
+      "SRC-live-demography-04"
+    ],
+    "time_scope": "As reported by the cited source",
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "F-live-demography-04",
+  "provenance_ref": "PV-research_demography-ae0320a2b1954fdc",
+  "record_type": "finding",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "c9ff0feaf6cab9793565ecd99b8261a9574d9dfd464d722ec55874c05555839f",
+  "topic": "korai-szelekcio"
+}

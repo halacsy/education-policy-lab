@@ -1,0 +1,111 @@
+{
+  "arm": "psychology",
+  "completed_at": "2026-07-20T18:28:58.600987Z",
+  "counts": {
+    "dilemma": 6,
+    "finding": 90,
+    "lens_assessment": 78,
+    "lens_definition": 13,
+    "research_question": 10,
+    "transformation_family": 6,
+    "transformation_proposal": 6
+  },
+  "dilemma_refs": [
+    "D-live-psychology-01",
+    "D-live-psychology-02",
+    "D-live-psychology-03",
+    "D-live-psychology-04",
+    "D-live-psychology-05",
+    "D-live-psychology-06"
+  ],
+  "evaluation": {
+    "concerns": [
+      "No bibliographic citations or inline references for the empirical claims (e.g., 85% school selection, Curia ruling, Poland/Finland comparisons), reducing traceability to source material.",
+      "Implementation detail is uneven: options name mechanisms and constraints but lack quantified effect-size estimates, timelines, budgetary or administrative steps needed for rollout.",
+      "The psychology arm is conceptually strong but light on concrete mitigations (e.g., what specific kindergarten-stage outreach or in-track supports would look like and how they'd be implemented/evaluated).",
+      "Stakeholder mapping is implicit rather than explicit: limited visibility into which political actors, maintainers, teacher unions, or parent groups would drive support or opposition and how to engage them.",
+      "Pilot design limitations are noted (non-representative volunteers) but the package stops short of proposing sampling or randomization strategies that would strengthen external validity."
+    ],
+    "dimensions": {
+      "artifact_integrity": 7,
+      "decision_usefulness": 8,
+      "dilemma_clarity": 8,
+      "evidence_discipline": 8,
+      "lens_traceability": 8,
+      "transformation_specificity": 7
+    },
+    "package_ref": "DP-live-psychology",
+    "strengths": [
+      "Clear, structured presentation of six distinct policy directions and the decision trade-offs between them.",
+      "Empirical core is well-articulated (selection at age 10, Hungary as an outlier, percentage comparisons) and the package identifies the central causal uncertainty (track effect vs independent channels).",
+      "Multiple relevant lenses integrated (political/legal, implementation, and educational-psychology) with concrete mechanisms (e.g., big-fish-little-pond, self-determination theory) that affect interpretation of options.",
+      "Feasibility and durability risks are explicitly discussed (political mobilization, legal confrontation, teacher workforce), linking technical proposals to real-world constraints.",
+      "Actionable research agenda and explicit statement of which evidence would change policy choice (isolation of track causal effects; long-run labor-market returns)."
+    ],
+    "total": 7.667,
+    "verdict": "accept_with_caveats"
+  },
+  "evaluation_ref": "EV-live-psychology",
+  "execution": {
+    "cache_hits": 27,
+    "dispositions": {
+      "assemble_decision_package": "executed",
+      "assess_demography": "cache_hit",
+      "assess_education_finance": "cache_hit",
+      "assess_educational_psychology": "executed",
+      "assess_equity_and_social_mobility": "cache_hit",
+      "assess_finnish_reform": "cache_hit",
+      "assess_hungarian_education_system": "cache_hit",
+      "assess_implementation_planning": "cache_hit",
+      "assess_international_comparison": "cache_hit",
+      "assess_legal_and_governance": "cache_hit",
+      "assess_polish_reform": "cache_hit",
+      "assess_political_feasibility": "cache_hit",
+      "assess_portuguese_reform": "cache_hit",
+      "assess_school_network_planning": "cache_hit",
+      "build_research_agenda": "executed",
+      "derive_transformations": "cache_hit",
+      "evaluate_decision_package": "executed",
+      "identify_decision_dilemmas": "executed",
+      "register_baseline_lenses": "cache_hit",
+      "register_educational_psychology_lens": "cache_hit",
+      "research_demography": "cache_hit",
+      "research_education_finance": "cache_hit",
+      "research_equity_and_social_mobility": "cache_hit",
+      "research_finnish_reform": "cache_hit",
+      "research_hungarian_education_system": "cache_hit",
+      "research_implementation_planning": "cache_hit",
+      "research_international_comparison": "cache_hit",
+      "research_legal_and_governance": "cache_hit",
+      "research_polish_reform": "cache_hit",
+      "research_political_feasibility": "cache_hit",
+      "research_portuguese_reform": "cache_hit",
+      "research_school_network_planning": "cache_hit"
+    },
+    "executed": 5,
+    "failed": 0,
+    "nodes": 32
+  },
+  "package_ref": "DP-live-psychology",
+  "research_question_refs": [
+    "RQ-live-psychology-01",
+    "RQ-live-psychology-02",
+    "RQ-live-psychology-03",
+    "RQ-live-psychology-04",
+    "RQ-live-psychology-05",
+    "RQ-live-psychology-06",
+    "RQ-live-psychology-07",
+    "RQ-live-psychology-08",
+    "RQ-live-psychology-09",
+    "RQ-live-psychology-10"
+  ],
+  "run_id": "live-korai-szelekcio-psychology",
+  "transformation_hashes": [
+    "798929841569c5b8494005c2cf4517167f7da99ce134f737d39818cf5cf18f4d",
+    "98eef0d9012577e077020bcce0a0fef04c9a31ca9f4ac87c7f0bca799eaf14e2",
+    "a9e9365af0b23c7fb17a78e221c9ae385737d6efa5b916fbb287a17b5827cfc6",
+    "d53be6b0a750867cae10c8958aaa66b6b4347affc8bcfe87176e47f15a915c45",
+    "df58d8ad8ecdca4b03f7b5addfe3ecc9e23237401a447a1a51fe4bf0878d3fc1",
+    "f4cb78bb36e39123a7f4905fa6dec0132058c026384ae4b09b1ec9d1908e05c3"
+  ]
+}

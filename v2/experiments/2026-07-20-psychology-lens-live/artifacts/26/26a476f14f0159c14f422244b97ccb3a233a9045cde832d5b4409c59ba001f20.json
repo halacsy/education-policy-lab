@@ -1,0 +1,42 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": "Approximately 270 schools nationally are currently endangered by low enrollment (under 80 students, averaging ~10 pupils per class), with consolidation/merger likely necessary; this closure wave is occurring in both rural areas and urban areas including Budapest, and policy focuses on protecting small-settlement demand rather than mandating closures.",
+    "context": "Fresh live research through the Demography lens",
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      "The 270-school figure is stated as a 'first-wave' estimate but methodology for calculation not detailed",
+      "Current demand status of at-risk schools not quantified; 'protection as long as there is demand' is a policy intention, not a binding constraint",
+      "No projection of how many of these 270 schools are primary (exposed to declining cohorts) vs. secondary (potentially affected only later)"
+    ],
+    "population": "Population described in the cited finding",
+    "source_refs": [
+      "SRC-live-demography-06"
+    ],
+    "time_scope": "As reported by the cited source",
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "F-live-demography-06",
+  "provenance_ref": "PV-research_demography-ae0320a2b1954fdc",
+  "record_type": "finding",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "4e194a5dcead3963fc85169d134d02dcbc05adb1f4085707331c833f25455115",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assessment": "From an implementation-planning lens, status quo requires no new actor capability or sequencing, making it trivially deliverable, but the lens's own criteria (monitoring feeding adaptation, failure containment) are demonstrably unmet: existing monitoring infrastructure has not historically produced correction. This is a case where 'can actors deliver the mechanism' is answered yes, but the mechanism itself contains no adaptive loop, so deliverability is not evidence of adequacy.",
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-04",
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-07"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Could be paired with an explicit trigger-based commitment (e.g., pre-specified segregation thresholds that mandate review) to convert passive monitoring into an adaptive loop",
+      "Existing data infrastructure could be repurposed as a baseline for eventually piloting alternatives (T6) without additional data-system investment"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "No new actor capacity, sequencing, or coordination is required since the mechanism is already operating (F-live-implementation_planning-04)",
+      "Assessment infrastructure (National ABC, PISA) is already institutionalized and does not require new monitoring systems to be built (F-live-implementation_planning-04)"
+    ],
+    "threats": [
+      "Ministerial acknowledgment of problems (F-live-implementation_planning-05) without mechanism change may accelerate legitimacy erosion, undermining future implementation capacity for any reform by increasing public distrust in state follow-through",
+      "Structural teacher shortage and thin workforce capacity mean that even if reform becomes necessary later, foundational capacity will not have been built during the monitoring period (F-live-implementation_planning-07)"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Monitoring exists but has no demonstrated adaptation pathway — PISA and ABC data have not historically translated into structural policy correction (F-live-implementation_planning-04)",
+      "Centralized governance structure (KLIK) has created bottlenecks rather than facilitating responsive policy adjustment, undermining any future ability to act on monitoring signals (F-live-implementation_planning-03)"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-40b25153995939c5",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "da3a9330f0c18c8a1774171b63355ddd8afb5397b831afbd6023412cd6ed4e76",
+  "topic": "korai-szelekcio"
+}

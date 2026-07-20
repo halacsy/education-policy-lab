@@ -27,12 +27,14 @@ class NodeExecutor:
         source_root: str | Path,
         run_id: str,
         artifact_created_at: str,
+        topic: str | None = None,
     ):
         self.repository = repository
         self.run_dir = Path(run_dir)
         self.source_root = Path(source_root)
         self.run_id = run_id
         self.artifact_created_at = artifact_created_at
+        self.topic = topic
         self.events = EventLog(self.run_dir / "events.jsonl")
 
     def run(
@@ -45,6 +47,7 @@ class NodeExecutor:
         provider: str | None = None,
         model: str | None = None,
         generation_parameters: Mapping[str, Any] | None = None,
+        prompt_hash: str | None = None,
     ) -> tuple[ArtifactRef, ...]:
         self._validate_inputs(spec, inputs)
         spec_hashes = self._hash_files(spec.spec_files)
@@ -96,7 +99,7 @@ class NodeExecutor:
                 ),
                 "spec_hashes": spec_hashes,
                 "schema_hashes": schema_hashes,
-                "prompt_hash": "0" * 64,
+                "prompt_hash": prompt_hash or "0" * 64,
                 "provider": provider or "local",
                 "model": model or f"deterministic-{spec.version}",
                 "role": spec.role,
@@ -106,8 +109,16 @@ class NodeExecutor:
             "supersedes": None,
         }
         self.repository.put(provenance)
-        records = list(builder(provenance_id))
-        refs = tuple(self.repository.put(record) for record in records)
+        try:
+            records = list(builder(provenance_id))
+        except Exception as exc:
+            self.events.append(
+                "node_failed", run_id=self.run_id, node_id=spec.name,
+                cache_key=cache_key, error_type=type(exc).__name__,
+                error=str(exc)[:500]
+            )
+            raise
+        refs = tuple(self.repository.put_successor(record) for record in records)
         actual_types = tuple(sorted({ref.record_type for ref in refs}))
         unexpected = sorted(set(actual_types) - set(spec.output_types))
         if unexpected:
@@ -133,6 +144,8 @@ class NodeExecutor:
         }
         if len(topics) == 1:
             return topics.pop()
+        if self.topic is not None:
+            return self.topic
         configured = self.run_id.removeprefix("migration-")
         if configured:
             return configured

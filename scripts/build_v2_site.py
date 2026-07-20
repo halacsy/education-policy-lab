@@ -34,6 +34,7 @@ LENS_HU = {
     "political_feasibility": "politikai megvalósíthatóság",
     "portuguese_reform": "portugál rendszerreform",
     "school_network_planning": "iskolahálózat-tervezés",
+    "educational_psychology": "neveléslélektan",
 }
 VERDICT_HU = {
     "supports": "támogatja", "supports_with_conditions": "feltételekkel támogatja",
@@ -86,6 +87,7 @@ def page(title: str, body: str, *, depth: int = 0) -> str:
     <nav aria-label="Primary navigation">
       <a href="{prefix}index.html">{bi('Portfolio','Tárház')}</a>
       <a href="{prefix}comparison.html">V1 ↔ V2</a>
+      <a href="{prefix}experiments/psychology-lens.html">{bi('Live lens test','Élő lencseteszt')}</a>
     </nav>
     <div class="language-switch" role="group" aria-label="Language">
       <button type="button" data-set-language="hu" aria-pressed="true">HU</button>
@@ -168,6 +170,7 @@ def render_index(records: list[dict[str, Any]], manifests: list[dict[str, Any]])
       <div class="section-heading"><div><p class="eyebrow">02 / PORTFOLIO</p><h2>{bi('Transformation fields','Transzformációs mezők')}</h2></div><a href="comparison.html">{bi('See measured v1 comparison','Mért v1-összevetés')} →</a></div>
       <div class="topic-grid">{''.join(topic_cards)}</div>
     </section>
+    <section class="live-launch"><div><p class="eyebrow">NEW · LIVE SENSITIVITY TEST</p><h2>{bi('Add one lens. Watch only its descendants move.','Adj hozzá egy lencsét. Figyeld, hogy csak a leszármazottai mozdulnak.')}</h2><p>{bi('A full fresh round plus the PR #29 educational-psychology lens: identical transformations, six new assessments, explicit position-carriage test.','Teljes friss round és a PR #29 neveléslélektani lencséje: azonos transzformációk, hat új assessment, explicit position-carriage teszt.')}</p></div><a class="arrow-link" href="experiments/psychology-lens.html">{bi('Open live A/B','Élő A/B megnyitása')} →</a></section>
     <aside class="honesty-band"><b>{bi('Migration boundary','Migrációs határ')}</b><p>{bi(
         'This visible slice recompiles committed v1 research into the v2 graph. It proves the architecture and information model; it does not claim fresh research.',
         'Ez a látható szelet a már commitolt v1-kutatást fordítja át a v2-gráfba. Az architektúrát és az információs modellt bizonyítja; nem állítja, hogy új kutatási futás történt.'
@@ -251,6 +254,102 @@ def render_comparison(records: list[dict[str, Any]], manifests: list[dict[str, A
     <section class="comparison-section"><p class="eyebrow">03 / HONEST LIMITS</p><h2>{bi('What this comparison cannot claim','Amit ez az összevetés nem állíthat')}</h2><div class="limit-grid"><article><b>01</b><p>{bi('No paid model call was made, so v2 generation quality is not being compared yet.','Nem történt fizetős modellhívás, ezért a v2 generálási minőségét még nem hasonlítjuk össze.')}</p></article><article><b>02</b><p>{bi('Lens assessments are deterministic projections of v1 expert records, not fresh disciplinary reviews.','A lens assessmentek a v1 szakértői anyagok determinisztikus vetületei, nem friss diszciplináris értékelések.')}</p></article><article><b>03</b><p>{bi('Source strings were preserved but not re-verified during migration.','A forrásmegjelöléseket megőriztük, de a migráció során nem ellenőriztük újra.')}</p></article></div></section>"""
 
 
+def render_live_experiment() -> str:
+    experiment_root = ROOT / "v2" / "experiments" / "2026-07-20-psychology-lens-live"
+    comparison = load_json(experiment_root / "comparison.json")
+    costs = load_json(experiment_root / "cost_report.json")["arms"]
+    baseline_summary = load_json(experiment_root / "runs" / "live-korai-szelekcio-baseline" / "arm_summary.json")
+    psychology_summary = load_json(experiment_root / "runs" / "live-korai-szelekcio-psychology" / "arm_summary.json")
+    repository = ArtifactRepository(experiment_root, SchemaRegistry(ROOT / "schemas" / "v2"))
+    proposals = {record["id"]: record for record in repository.list(record_type="transformation_proposal")}
+    psychology_assessments = sorted(
+        (
+            record for record in repository.list(record_type="lens_assessment")
+            if record["content"]["lens_ref"] == "L-live-educational_psychology"
+        ),
+        key=lambda record: record["content"]["proposal_ref"],
+    )
+    baseline_package = repository.get_current("DP-live-baseline")["content"]["summary"]
+    psychology_package = repository.get_current("DP-live-psychology")["content"]["summary"]
+    baseline_eval = comparison["baseline_evaluation"]
+    psychology_eval = comparison["psychology_evaluation"]
+    impact_hu = {
+        "TP-live-t1": "A monitoring nem változtat a korai rangsorolás, címkézés és referencia-csoport pszichológiai költségein.",
+        "TP-live-t2": "A későbbi szelekció kevesebb korai, nagy tétű rangsorolást jelent; a várható előny azonban megvalósításfüggő.",
+        "TP-live-t3": "Az admissions-reform inkább újraosztja, ki viseli a szelekció költségeit, mintsem megszünteti azokat.",
+        "TP-live-t4": "A körzeti és választási reform közvetetten módosítja az összetételt, de a szelekció pszichológiai mechanizmusa megmarad.",
+        "TP-live-t5": "A kvóta hozzáférést adhat, de BFLPE-kockázatot is: az elit referencia-csoport ronthatja az akadémiai énképet.",
+        "TP-live-t6": "A de-tracking pilot kezeli legközvetlenebbül a címkézést és teljesítményorientációt, de nem igazolt csodaszer.",
+    }
+    title_hu = {
+        "TP-live-t1": "Status quo monitoringgal",
+        "TP-live-t2": "Szelekció 14–16 éves korra tolva",
+        "TP-live-t3": "Trackek maradnak, felvételi reform",
+        "TP-live-t4": "Körzeti és iskolaválasztási deszegregáció",
+        "TP-live-t5": "Célzott kvóta és korai outreach",
+        "TP-live-t6": "Komprehenzív alsó-középfokú pilot",
+    }
+    cards = []
+    for assessment in psychology_assessments:
+        content = assessment["content"]
+        proposal_ref = content["proposal_ref"]
+        cards.append(f"""
+        <article class="impact-card">
+          <header><b>{esc(proposal_ref.removeprefix('TP-live-').upper())}</b><span class="verdict verdict-{esc(content['verdict'])}">{bi(content['verdict'].replace('_',' '), VERDICT_HU[content['verdict']])}</span></header>
+          <h3>{bi(proposals[proposal_ref]['content']['title'], title_hu[proposal_ref])}</h3>
+          <p class="impact-summary">{bi(content['assessment'], impact_hu[proposal_ref])}</p>
+          <details><summary>{bi('Open canonical English assessment','Kanonikus angol assessment megnyitása')}</summary><p lang="en">{esc(content['assessment'])}</p></details>
+          <small>{esc(content['confidence'])} confidence · {len(content['finding_refs'])} finding refs</small>
+        </article>""")
+    dimension_hu = {
+        "artifact_integrity": "artifact-integritás", "evidence_discipline": "evidenciafegyelem",
+        "transformation_specificity": "transzformáció konkrétsága", "lens_traceability": "lencse visszakövethetősége",
+        "dilemma_clarity": "dilemmák tisztasága", "decision_usefulness": "döntési hasznosság",
+    }
+    judge_rows = "".join(
+        f"<tr><th>{bi(name.replace('_',' '), dimension_hu[name])}</th><td>{baseline_eval['dimensions'][name]:.1f}</td><td>{psychology_eval['dimensions'][name]:.1f}</td><td>{psychology_eval['dimensions'][name]-baseline_eval['dimensions'][name]:+.1f}</td></tr>"
+        for name in baseline_eval["dimensions"]
+    )
+    total_cost = sum(arm["estimated_usd"] for arm in costs.values())
+    return f"""
+    <section class="experiment-hero blueprint-grid">
+      <div><p class="eyebrow">LIVE V2 SENSITIVITY TEST · PR #29</p><h1>{bi('What changes when psychology becomes a lens?','Mi változik, ha a pszichológia lencsévé válik?')}</h1><p class="hero-deck">{bi('Same evidence-derived transformations. One added disciplinary lens. Only its descendants may change.','Ugyanazok az evidenciából levezetett transzformációk. Egy új szakmai lencse. Csak a leszármazottai változhatnak.')}</p></div>
+      <aside class="score-ticket"><span>DESCRIPTIVE A/B · n=1 PAIR</span><div><b>{baseline_eval['total']:.3f}</b><small>12 lenses</small></div><i>→</i><div><b>{psychology_eval['total']:.3f}</b><small>+ psychology</small></div><strong>{comparison['evaluation_delta']:+.3f}</strong></aside>
+    </section>
+    <aside class="live-boundary"><b>LIVE · ANTHROPIC → OPENAI JUDGE</b><span>{bi('Fresh research and generation; the psychology evidence is a PR #29 sensitivity test, not admitted knowledge.','Friss kutatás és generálás; a pszichológiai evidencia a PR #29 érzékenységi tesztje, nem befogadott tudás.')}</span></aside>
+    <section class="experiment-section">
+      <p class="eyebrow">01 / DEPENDENCY-LOCALIZED TREATMENT</p><h2>{bi('The option space did not move. The interpretation did.','Az opciótér nem mozdult. Az értelmezés igen.')}</h2>
+      <div class="branch-rig" aria-label="Baseline and psychology treatment DAG">
+        <div class="branch-common"><b>12</b><span>{bi('fresh research nodes','friss kutatási node')}</span></div>
+        <div class="branch-common"><b>6</b><span>{bi('identical transformations','azonos transzformáció')}</span></div>
+        <div class="branch-split"><div><b>12</b><span>baseline lenses</span></div><div><b>+1</b><span>educational psychology</span></div></div>
+        <div class="branch-common"><b>5</b><span>{bi('descendant nodes rerun','leszármazott node újrafutott')}</span></div>
+      </div>
+      <div class="truth-stamps"><article><b>PASS</b><span>{bi('Transformation hashes identical','A transzformáció-hash-ek azonosak')}</span></article><article><b>PASS</b><span>{bi('6/6 psychology assessments','6/6 pszichológiai assessment')}</span></article><article><b>PASS</b><span>{bi('Named mechanism reached the package','A név szerinti mechanizmus eljutott a csomagba')}</span></article></div>
+    </section>
+    <section class="experiment-section impact-zone">
+      <div class="section-heading"><div><p class="eyebrow">02 / PROPOSAL × PSYCHOLOGY</p><h2>{bi('Six proposals, six distinct readings','Hat javaslat, hat külön olvasat')}</h2></div><p>{bi('The lens evaluates proposals; it does not impersonate an expert or vote for a winner.','A lencse javaslatokat értékel; nem játszik el szakértőt és nem szavaz győztesre.')}</p></div>
+      <div class="impact-grid">{''.join(cards)}</div>
+    </section>
+    <section class="experiment-section split-results">
+      <div><p class="eyebrow">03 / SUBSTANTIVE EFFECT</p><h2>{bi('The new information is a warning about access-only reform.','Az új információ az access-only reform korlátjára figyelmeztet.')}</h2><p class="result-lead">{bi('Quota and outreach can widen entry while leaving the psychological cost of the selective reference group intact. Delayed selection and de-tracking address that mechanism more directly.','A kvóta és outreach szélesítheti a belépést úgy, hogy közben érintetlenül hagyja a szelektív referencia-csoport pszichológiai költségét. A későbbi szelekció és a de-tracking közvetlenebbül kezeli ezt a mechanizmust.')}</p><blockquote>{bi('Equally able students placed in a highly selective peer group can develop lower academic self-concept—even as measured achievement rises.','Az azonos képességű tanulók akadémiai énképe romolhat egy erősen szelektív kortárscsoportban — akkor is, ha a mért teljesítményük nő.')}</blockquote></div>
+      <aside class="mechanism-index"><span>NAMED MECHANISMS CARRIED</span><b>big-fish–little-pond</b><b>academic self-concept</b><b>self-determination theory</b><b>early labeling</b><small>{comparison['psychology_assessment_count']} assessments · package carriage: {'PASS' if comparison['position_carriage_passed'] else 'FAIL'}</small></aside>
+    </section>
+    <section class="experiment-section">
+      <p class="eyebrow">04 / CROSS-FAMILY JUDGE</p><h2>{bi('Lower score, narrower reason','Alacsonyabb pont, szűkebb ok')}</h2><p>{bi('The −0.333 difference is descriptive, not a causal estimate. Psychology improved mechanism visibility, while evidence discipline and dilemma clarity each fell by one judge point in this sample.','A −0,333 különbség leíró, nem oksági becslés. A pszichológia javította a mechanizmus láthatóságát, miközben ebben a mintában az evidenciafegyelem és a dilemmák tisztasága egy-egy judge-ponttal csökkent.')}</p>
+      <div class="table-wrap"><table class="score-table"><thead><tr><th>Dimension</th><th>Baseline</th><th>+ psychology</th><th>Δ</th></tr></thead><tbody>{judge_rows}</tbody></table></div>
+    </section>
+    <section class="experiment-section package-pair">
+      <p class="eyebrow">05 / DECISION PACKAGE PAIR</p><h2>{bi('Inspect the actual outputs','A tényleges kimenetek')}</h2>
+      <div><details><summary>Baseline · {len(baseline_package.split())} words</summary><p lang="en">{esc(baseline_package)}</p></details><details><summary>+ psychology · {len(psychology_package.split())} words</summary><p lang="en">{esc(psychology_package)}</p></details></div>
+    </section>
+    <section class="experiment-section audit-summary">
+      <div><p class="eyebrow">06 / RUN AUDIT</p><h2>{bi('The failed carriage taught the contract','A sikertelen továbbvitelből contract lett')}</h2><p>{bi('The first treatment package stopped at 316 words and dropped every named psychology mechanism. It remains in immutable lineage. A system-level 500–900 word and named-mechanism validator was added; the accepted rerun contains 664 words and passes carriage.','Az első treatment-csomag 316 szónál megszakadt, és minden név szerinti pszichológiai mechanizmust elvesztett. Az immutable lineage-ban megmaradt. A rendszer 500–900 szavas és név szerinti mechanizmust követelő validátort kapott; az elfogadott újrafutás 664 szavas és átmegy a carriage-ellenőrzésen.')}</p></div>
+      <dl><div><dt>live calls</dt><dd>{sum(arm['calls'] for arm in costs.values())}</dd></div><div><dt>audit cost</dt><dd>${total_cost:.2f}</dd></div><div><dt>treatment cache</dt><dd>{psychology_summary['execution']['cache_hits']}/32</dd></div><div><dt>failed current nodes</dt><dd>{psychology_summary['execution']['failed']}</dd></div></dl>
+    </section>
+    <aside class="honesty-band"><b>{bi('Interpretation limit','Értelmezési határ')}</b><p>{bi('One stochastic pair cannot identify a stable score effect. It can validate dependency localization, artifact coverage, and whether a named disciplinary mechanism survives to the decision package.','Egyetlen sztochasztikus pár nem azonosít stabil ponthatást. A függőséglokalizációt, az artifact-lefedettséget és a név szerinti szakmai mechanizmus döntési csomagig való fennmaradását viszont ellenőrizni tudja.')}</p></aside>"""
+
+
 def main() -> int:
     schemas = SchemaRegistry(ROOT / "schemas" / "v2")
     repository = ArtifactRepository(ROOT / "v2", schemas)
@@ -259,13 +358,17 @@ def main() -> int:
     manifests = catalog["topics"]
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "topics").mkdir(exist_ok=True)
+    (OUT / "experiments").mkdir(exist_ok=True)
     (OUT / "index.html").write_text(page("Transformation portfolio", render_index(records, manifests)), encoding="utf-8")
     for manifest in manifests:
         topic = manifest["topic"]
         body = render_topic(topic, records, manifest)
         (OUT / "topics" / f"{topic}.html").write_text(page(topic, body, depth=1), encoding="utf-8")
     (OUT / "comparison.html").write_text(page("V1 ↔ V2", render_comparison(records, manifests)), encoding="utf-8")
-    print(f"Rendered {len(manifests) + 2} pages from {len(records)} artifacts into {OUT}")
+    (OUT / "experiments" / "psychology-lens.html").write_text(
+        page("Live psychology lens test", render_live_experiment(), depth=1), encoding="utf-8"
+    )
+    print(f"Rendered {len(manifests) + 3} pages from {len(records)} migrated artifacts plus the live experiment into {OUT}")
     return 0
 
 

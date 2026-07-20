@@ -1,0 +1,40 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": "Hungary's secondary school network comprises 880 schools designed to ensure access within one hour by public transport, but the 6- and 8-year gimnázium tracks are geographically concentrated in Budapest and a few regional centers rather than evenly distributed across settlements.",
+    "context": "Fresh live research through the School network planning lens",
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      "Travel-time verification ('under one hour') is a stated aim, not verified empirical data specific to 6-/8-year track users",
+      "Geographic concentration claim based on directory ranking data (top-10 schools), not complete network inventory",
+      "Rural gimnázium representation in top rankings does not quantify actual capacity or applicant pools by settlement type"
+    ],
+    "population": "Population described in the cited finding",
+    "source_refs": [
+      "SRC-live-school_network_planning-01"
+    ],
+    "time_scope": "As reported by the cited source",
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "F-live-school_network_planning-01",
+  "provenance_ref": "PV-research_school_network_planning-dd4bcddf4d918ac1",
+  "record_type": "finding",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "64e5566841fb3cfe45b9de30a9c523682dc128491bd18b40a099680922f60625",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,72 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t2-01",
+      "A-live-t2-02"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Large-scale infrastructure and staffing transition costs analogous to Poland's ~7,000 school closures and ~10,000 potential teacher job losses",
+      "Negotiation costs with autonomous church/private maintainers outside Klebelsberg Centre authority",
+      "Transition-cohort disruption risk (double cohorts, curriculum realignment)"
+    ],
+    "equity_impact": "Likely positive: delaying selection is the most directly evidenced lever against the inequality mechanism (F-live-international_comparison-02, F-live-polish_reform-04), though effect on mean performance is contested (F-live-international_comparison-07) and durability is uncertain given Poland's reversal.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduced inequality of opportunity consistent with cross-national tracking-delay evidence",
+      "Potential PISA and labour-market gains analogous to Poland's 1999-2016 experience",
+      "Reduced elite self-separation effect flagged by the Education Minister as not attributable to institutional value-added"
+    ],
+    "finding_refs": [
+      "F-live-international_comparison-01",
+      "F-live-international_comparison-02",
+      "F-live-international_comparison-06",
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-03"
+    ],
+    "goal": "Raise the age of first academic selection from 10 to at least 14-16, reducing the number of pre-adolescent sorting points and associated inequality of opportunity.",
+    "implementation_steps": [
+      {
+        "action": "Draft legislative amendment to Act CXC of 2011 phasing entry point from grade 5/7 to grade 9, with transition cohort protections",
+        "actor": "Ministry of Education, in negotiation with Klebelsberg Centre and non-state maintainers",
+        "timeline": "Years 1-2 (legislative drafting and negotiation with church maintainers per F-live-legal_and_governance-02)"
+      },
+      {
+        "action": "Enact phased statutory change with multi-year implementation runway to avoid Polish-style double-cohort shock",
+        "actor": "National Assembly",
+        "timeline": "Year 2-3"
+      },
+      {
+        "action": "Convert or merge existing 6-/8-year track infrastructure into extended comprehensive lower-secondary provision",
+        "actor": "Klebelsberg Centre and school maintainers",
+        "timeline": "Years 3-8, phased by cohort to avoid abrupt closures"
+      }
+    ],
+    "mechanisms": [
+      "Later selection reduces the number of school-type sorting points, and international comparative literature associates earlier selection age and more school-types with higher inequality of opportunity",
+      "Poland's 1999 reform delaying tracking to 16 produced improved PISA outcomes and labour-market gains (3pp employment, 4% earnings) via comprehensive middle-tier restructuring",
+      "Removing early selection reduces the 'brain drain' externality on ordinary schools' peer composition, though this specific effect remains unquantified"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Institutional durability risk: Poland's reform was substantially reversed after 2016 despite measured success, suggesting reform could be politically reversed",
+      "High symbolic salience already demonstrated in Hungary, where even non-abolition proposals were reframed as 'communist' unification, indicating strong opposition mobilization capacity",
+      "Teacher workforce (half aged 50+, only 7.2% under 30, low relative pay) may lack capacity for implementation fidelity"
+    ],
+    "title": "Delay selection age to 14-16 (Polish/Finnish-style comprehensive extension)",
+    "uncertainty_refs": [
+      "U-live-t2-01",
+      "U-live-t2-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t2",
+  "provenance_ref": "PV-derive_transformations-17daca41e196c1af",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "c830882bcc7cda2bd87563ece19be11d44bc8d2426bd6019360f441a41990575",
+  "topic": "korai-szelekcio"
+}

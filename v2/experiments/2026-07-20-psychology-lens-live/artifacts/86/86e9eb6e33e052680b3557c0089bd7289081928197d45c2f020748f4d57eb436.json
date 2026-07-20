@@ -1,0 +1,24 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "medium",
+    "method": "Survey-based decomposition of admission score variance into tutoring-expenditure and prior-achievement components; natural experiment using historical admissions criteria changes (e.g., past desegregation rule shifts) to observe adaptive market response over time.",
+    "proposal_refs": [
+      "TP-live-t3"
+    ],
+    "question": "How much of the socioeconomic sorting into elite tracks is attributable to unequal access to private test preparation/tutoring versus differences in prior achievement, and would tutoring markets adapt to a redesigned admissions exam (T3) to reproduce the same SES advantage through new channels?",
+    "uncertainty_refs": [
+      "U-live-education_finance-03",
+      "U-live-t3-01"
+    ],
+    "why_it_matters": "T3's core mechanism assumes admissions redesign can reduce SES-linked sorting; if tutoring markets simply adapt, the reform would fail on its own terms despite requiring substantial institutional effort."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-baseline-08",
+  "provenance_ref": "PV-build_research_agenda-767e6846a0df8a3c",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "1d665c303a737fff4b382ba4058990de00aad79f929088f6ca93dc5a18f56927",
+  "topic": "korai-szelekcio"
+}

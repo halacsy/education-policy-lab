@@ -61,6 +61,27 @@ class ArtifactRepository:
             path=path,
         )
 
+    def put_successor(self, record: dict[str, Any]) -> ArtifactRef:
+        """Store a node output, linking a changed semantic id to its current version."""
+
+        if record.get("supersedes") is not None:
+            return self.put(record)
+        try:
+            current = self.get_current(record["id"])
+        except KeyError:
+            return self.put(record)
+        if current["record_type"] != record["record_type"]:
+            raise GraphIntegrityError(
+                f"Semantic id {record['id']} changes type from "
+                f"{current['record_type']} to {record['record_type']}"
+            )
+        current_hash = content_hash(current)
+        if content_hash(record) == current_hash:
+            return self.ref_by_hash(current_hash)
+        successor = dict(record)
+        successor["supersedes"] = current_hash
+        return self.put(successor)
+
     def get_by_hash(self, digest: str) -> dict[str, Any]:
         path = self._path_for_hash(digest)
         if not path.exists():

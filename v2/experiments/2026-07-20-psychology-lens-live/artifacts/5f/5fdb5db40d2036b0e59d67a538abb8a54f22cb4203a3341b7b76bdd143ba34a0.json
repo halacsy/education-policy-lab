@@ -1,0 +1,73 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t5-01",
+      "A-live-t5-02"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Transition costs for the subset of schools currently offering 6-year programmes (fewer than full-system reform, but nontrivial)",
+      "Potential demand shift toward 8-year entry (age 12) as families seek the earliest remaining selection point, partially offsetting inequality-reduction goal",
+      "Negotiation costs with church/private maintainers of affected 6-year programmes [F-live-legal_and_governance-03]"
+    ],
+    "equity_impact": "Partial positive impact: removes the youngest and most extreme selection point, but since between-school stratification (not within-school homogeneity) is identified as the primary mechanism of early tracking's inequality effect regardless of specific age, and displaced demand may simply shift to the remaining age-12 entry, the overall segregation reduction is uncertain [F-live-international_comparison-06, F-live-finnish_reform-02].",
+    "evidence_status": "weak",
+    "expected_benefits": [
+      "Targets the single earliest and most extreme selection point while preserving political and institutional continuity for 8-year and 4-year tracks",
+      "Reduces scope of the selection funnel without full system restructuring, potentially lowering implementation disruption relative to full delay-to-14 reform",
+      "Responds to evidence that earliest tracking ages are most strongly linked to inequality [F-live-finnish_reform-04]"
+    ],
+    "finding_refs": [
+      "F-live-finnish_reform-04",
+      "F-live-portuguese_reform-01",
+      "F-live-demography-03",
+      "F-live-political_feasibility-04",
+      "F-live-legal_and_governance-03",
+      "F-live-international_comparison-06",
+      "F-live-finnish_reform-02",
+      "F-live-finnish_reform-03"
+    ],
+    "goal": "Eliminate the earliest and most controversial selection point (age 10, Grade 5 entry) while preserving the age-12 (Grade 7) and age-14 entry points, as an incremental structural compromise.",
+    "implementation_steps": [
+      {
+        "action": "Legislate sunset of new Grade-5 (age-10) gimnázium admissions cohorts, grandfathering enrolled students",
+        "actor": "Parliament / Ministry of Education",
+        "timeline": "Legislative passage within 1-2 years; phase-out over 6 years for existing cohorts"
+      },
+      {
+        "action": "Convert 6-year programme capacity into 8-year or 4-year programme capacity, prioritizing schools with strong Grade-7 entry demand",
+        "actor": "Klebelsberg Centre and affected school maintainers",
+        "timeline": "3-4 years transition"
+      },
+      {
+        "action": "Negotiate with church/private maintainers operating 6-year programmes on transition terms",
+        "actor": "Ministry of Education",
+        "timeline": "Parallel to legislative process"
+      }
+    ],
+    "mechanisms": [
+      "Removing the earliest entry point shortens the selection funnel from three stages to two, targeting the point most associated with inequality per cross-national evidence [F-live-finnish_reform-04, F-live-portuguese_reform-01]",
+      "6-year track entry occurs at the youngest age, where selection-independent SES effects are least likely to reflect stable ability signals, given panel data showing score-evolution effects only observable from grade 8 onward [F-live-demography-03]",
+      "Partial reform reduces political conflict scope relative to full abolition, potentially avoiding the sweeping-transformation framing seen in response to broader admissions review proposals [F-live-political_feasibility-04]"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Displaced demand may concentrate more intensely at the age-12 entry point, potentially increasing competition and stakes for that remaining early track without net segregation reduction",
+      "Opposition may still frame partial reform as precedent for further structural change, replicating the political conflict seen with narrower admissions-review proposals [F-live-political_feasibility-04]",
+      "Segregation mechanism (school-level correlation between disadvantage and Roma share) may persist largely unchanged if 8-year and 4-year tracks retain similar selection dynamics [F-live-finnish_reform-03]"
+    ],
+    "title": "Cap and phase down 6-year (age-10) entry only, retain 8-year and 4-year tracks",
+    "uncertainty_refs": [
+      "U-live-t5-01",
+      "U-live-t5-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t5",
+  "provenance_ref": "PV-derive_transformations-552eafe7276174b2",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

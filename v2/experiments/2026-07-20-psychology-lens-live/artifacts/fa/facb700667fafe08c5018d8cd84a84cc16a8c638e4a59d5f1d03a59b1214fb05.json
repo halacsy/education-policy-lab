@@ -1,0 +1,76 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t4-01",
+      "A-live-t4-02"
+    ],
+    "change_level": "network",
+    "costs": [
+      "Substantial and sustained public investment in teacher incentives and facilities, competing with other fiscal priorities",
+      "Long time horizon before demand-side effects on selective-track enrollment materialize, if at all",
+      "Does not directly address existing segregation among already-enrolled selective-track cohorts"
+    ],
+    "equity_impact": "Positive if effective: targets the schools serving the most disadvantaged students directly, potentially narrowing the 71%-of-variance between-school gap over time [F-live-hungarian_education_system-03]. However, effect on the selective tracks' segregation dynamics is indirect and unproven, and demographic headwinds may offset gains [F-live-demography-02, F-live-demography-07].",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Addresses a root-cause driver of selective-track demand rather than only its symptoms, per identified sequencing/precondition problem [F-live-implementation_planning-07]",
+      "Directly targets teacher shortage and quality gaps concentrated in rural/disadvantaged schools [F-live-school_network_planning-07]",
+      "Avoids immediate political conflict over track structure, sidestepping veto constituencies [F-live-political_feasibility-05]"
+    ],
+    "finding_refs": [
+      "F-live-implementation_planning-07",
+      "F-live-school_network_planning-07",
+      "F-live-equity_and_social_mobility-04",
+      "F-live-legal_and_governance-04",
+      "F-live-political_feasibility-05",
+      "F-live-demography-07",
+      "F-live-demography-02",
+      "F-live-demography-05",
+      "F-live-legal_and_governance-05",
+      "F-live-school_network_planning-06",
+      "F-live-hungarian_education_system-03"
+    ],
+    "goal": "Address the root driver of demand for selective tracks—distrust in local comprehensive school quality—by investing directly in comprehensive schools, as a precondition for any future structural change.",
+    "implementation_steps": [
+      {
+        "action": "Design targeted teacher-recruitment and retention incentive package for rural and disadvantaged comprehensive schools",
+        "actor": "Ministry of Education / Klebelsberg Centre",
+        "timeline": "1-2 years to design and fund"
+      },
+      {
+        "action": "Allocate capital investment for facility upgrades in comprehensive schools with under-80 pupils facing closure risk, where mergers are not the chosen path",
+        "actor": "National government",
+        "timeline": "3-5 years, phased by regional need"
+      },
+      {
+        "action": "Track parental school-choice patterns and satisfaction longitudinally to assess whether quality investment reduces demand for early selective-track exit",
+        "actor": "Ministry of Education",
+        "timeline": "Ongoing, 5+ year horizon"
+      }
+    ],
+    "mechanisms": [
+      "Teacher shortages and unqualified-teacher concentration in disadvantaged/rural schools are 2-3x higher than in non-disadvantaged schools, directly constraining comprehensive-school quality [F-live-school_network_planning-07]",
+      "Sequencing logic: selective-track demand stems from distrust in local school quality, implying quality investment could reduce demand-side pressure for early selection [F-live-implementation_planning-07]",
+      "Attendance at high-poverty schools is associated with lower reading scores and secondary completion, indicating direct returns to quality investment in these schools [F-live-equity_and_social_mobility-04, F-live-legal_and_governance-04]"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "270 schools already at risk of closure due to demographic decline; investment may be undermined by structural depopulation trends outpacing quality improvements [F-live-demography-07, F-live-demography-02]",
+      "No guarantee that improved comprehensive-school quality reduces selective-track demand, since track access also functions as status-signaling and family strategy, not solely a quality-driven choice [F-live-demography-05, F-live-legal_and_governance-05]",
+      "Central government's KLIK-driven capacity-planning constraints may limit effective targeted resource allocation [F-live-school_network_planning-06]"
+    ],
+    "title": "Preserve tracks, expand comprehensive-school quality investment (compensatory strategy)",
+    "uncertainty_refs": [
+      "U-live-t4-01",
+      "U-live-t4-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t4",
+  "provenance_ref": "PV-derive_transformations-552eafe7276174b2",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

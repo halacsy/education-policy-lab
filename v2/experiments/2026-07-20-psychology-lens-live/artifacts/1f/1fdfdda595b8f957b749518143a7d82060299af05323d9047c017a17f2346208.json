@@ -1,0 +1,41 @@
+{
+  "content": {
+    "execution_id": "7111d7fdd6f9f947c059cd073f6ff8218aebb778cf6b423c0ee8dec43dcae8dd",
+    "input_artifact_hashes": [
+      "13b07b5edb093d952b7b661e2dbb68d3721489dbebb8a092ba976551121297d2",
+      "1a532fc415c3f8b13220a94041a970f2c573b9dd8983559470d02d4ff522c98f",
+      "362efd79f538e30ca084c1e51f7b9dcc5051f0c086f79ebf444bd617549f55e0",
+      "5fdb5db40d2036b0e59d67a538abb8a54f22cb4203a3341b7b76bdd143ba34a0",
+      "64e5566841fb3cfe45b9de30a9c523682dc128491bd18b40a099680922f60625",
+      "70066afa91fa02bd74216eba6da635e88e5d08a646cd4330bbd2ea3c6092eef4",
+      "8b1282529a1551deb0546e9f209653917aa2b312762e22253bccac427f154c20",
+      "a322a1662bf7da0d9ff4b0a3648149fd497bc822e2e3749cbd6c59530f84b94e",
+      "c830882bcc7cda2bd87563ece19be11d44bc8d2426bd6019360f441a41990575",
+      "d33ce5f39a27fa8be9dfdeaa31d4214cfbab5e6cae0834f2dd20efc5ee2b3461",
+      "e83813e19a6eb8503ccd83ef5147195adf696baa4c05f68e6bef7023d17595cd",
+      "eaa3fafb18b38b6ac5cf8e25e25098ff93f1ca81d821f57581ec3bd3da43c4c7",
+      "ef6ce1b4c4a3cb2020ec8fa69585f48b69ad235eb8d390ae009b8e5cf9d93c18",
+      "facb700667fafe08c5018d8cd84a84cc16a8c638e4a59d5f1d03a59b1214fb05"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_school_network_planning",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/lenses.json": "d935a45bbffd745ffb33a366c25686456f425c3e7f25acd17698d2504ba2020d",
+      "src/policy_lab/live/experiment.py": "861f58a43ef378a29bb8352809bc66264ad7a22376ec9bc24f1d47f70e8270fe"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_school_network_planning-7111d7fdd6f9f947",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

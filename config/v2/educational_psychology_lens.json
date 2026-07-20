@@ -1,0 +1,73 @@
+{
+  "architecture_version": "2.0.0",
+  "origin": {
+    "pull_request": 29,
+    "head_commit": "9edd324063c104ad25448c932c0c7ee742cb1d35",
+    "human_gate_status": "test_only_not_admitted_on_this_branch"
+  },
+  "lens": {
+    "id": "educational_psychology",
+    "name": "Educational psychology",
+    "discipline": "learning science and the social psychology of educational sorting",
+    "questions": [
+      "How might the proposal affect learning, cognitive load, motivation, self-regulation, academic self-concept, identity, and aspiration?",
+      "Do selection, ranking, labeling, or reference-group mechanisms create psychological benefits or costs for selected and non-selected students?",
+      "Which claimed mechanisms are robust, context-dependent, or contested?"
+    ],
+    "criteria": [
+      "learning-mechanism plausibility",
+      "cognitive-load fit",
+      "motivation and self-regulation",
+      "academic self-concept and big-fish-little-pond effects",
+      "labeling and expectancy effects",
+      "goal orientation",
+      "developmental timing",
+      "evidence replication and scope"
+    ],
+    "limitations": [
+      "Big-fish-little-pond effects are robust at group level but do not determine any individual student's outcome.",
+      "Labeling and teacher-expectancy effects are contested in magnitude.",
+      "Stereotype-threat effects are contested, affected by publication bias, and must not be generalized beyond the tested population and domain.",
+      "Growth-mindset intervention effects are small and heterogeneous; the lens must not treat them as a universal remedy.",
+      "Psychological effects must not be used to override legal, fiscal, equity, or democratic value judgments."
+    ]
+  },
+  "evidence_notes": [
+    {
+      "id": "big_fish_little_pond",
+      "claim": "Equally able students tend to develop lower academic self-concept in higher-achieving selective environments, a robust cross-national reference-group effect with implications for aspiration.",
+      "evidence_strength": "strong",
+      "source": "Marsh and subsequent cross-national replications, including PISA samples"
+    },
+    {
+      "id": "labeling_effects",
+      "claim": "Teacher-expectancy and labeling effects exist but are contested in magnitude; average effects are smaller than early Pygmalion claims and may be larger for stigmatized or low-SES students.",
+      "evidence_strength": "contested",
+      "source": "Rosenthal and Jacobson (1968) and later replication literature"
+    },
+    {
+      "id": "stereotype_threat",
+      "claim": "Stereotype-threat effects in performance settings are generally smaller and less robust than early literature suggested and show evidence of publication bias.",
+      "evidence_strength": "contested",
+      "source": "Flore and Wicherts (2015); Shewach, Sackett and Quigley (2019)"
+    },
+    {
+      "id": "goal_orientation",
+      "claim": "Structures emphasizing ranking and selection can promote performance orientation and fear of failure, while mastery orientation is associated with persistence; developmental timing matters.",
+      "evidence_strength": "moderate",
+      "source": "Dweck and Elliot goal-orientation literature"
+    },
+    {
+      "id": "self_determination",
+      "claim": "Autonomy, competence, and relatedness support more self-determined motivation; controlling environments can undermine it.",
+      "evidence_strength": "strong",
+      "source": "Self-Determination Theory research program"
+    },
+    {
+      "id": "growth_mindset",
+      "claim": "Average effects of growth-mindset interventions on academic achievement are small and heterogeneous, so they should not be proposed as a structural substitute.",
+      "evidence_strength": "contested",
+      "source": "Sisk et al. (2018) meta-analysis and subsequent debate"
+    }
+  ]
+}

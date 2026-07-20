@@ -1,0 +1,101 @@
+{
+  "architecture_version": "2.0.0",
+  "lenses": [
+    {
+      "id": "hungarian_education_system",
+      "name": "Hungarian education system",
+      "discipline": "education system analysis",
+      "questions": ["How does the proposal interact with current Hungarian institutions?", "Which existing selection, access, or governance mechanisms remain unchanged?"],
+      "criteria": ["institutional fit", "system coverage", "unintended sorting", "administrative compatibility"],
+      "limitations": ["Institutional description does not establish causal impact."]
+    },
+    {
+      "id": "international_comparison",
+      "name": "International comparison",
+      "discipline": "comparative education policy",
+      "questions": ["Where has a comparable mechanism been attempted?", "Which contextual differences constrain transfer?"],
+      "criteria": ["comparability", "transferability", "implementation similarity", "outcome relevance"],
+      "limitations": ["Cross-country analogy cannot substitute for Hungarian causal evidence."]
+    },
+    {
+      "id": "finnish_reform",
+      "name": "Finnish system reform",
+      "discipline": "whole-system reform analysis",
+      "questions": ["What does the Finnish comprehensive-school experience imply?", "Which later erosion or school-choice effects matter?"],
+      "criteria": ["tracking age", "comprehensive provision", "political durability", "context fit"],
+      "limitations": ["Finland's institutional and demographic context differs from Hungary's."]
+    },
+    {
+      "id": "polish_reform",
+      "name": "Polish system reform",
+      "discipline": "whole-system reform analysis",
+      "questions": ["What does Poland's structural reorganization imply?", "What do reversal and implementation history reveal?"],
+      "criteria": ["structural mechanism", "distributional effects", "reversibility", "implementation sequence"],
+      "limitations": ["Polish outcome estimates and political history are not directly portable."]
+    },
+    {
+      "id": "portuguese_reform",
+      "name": "Portuguese system reform",
+      "discipline": "whole-system reform analysis",
+      "questions": ["Can non-structural quality and equity measures achieve the stated goal?", "Which coordinated reforms were necessary?"],
+      "criteria": ["policy bundle", "quality levelling", "equity", "causal attribution"],
+      "limitations": ["Portugal's gains cannot be attributed to one isolated intervention."]
+    },
+    {
+      "id": "equity_and_social_mobility",
+      "name": "Equity and social mobility",
+      "discipline": "education inequality research",
+      "questions": ["Who gains and who loses access, quality, and future options?", "Does the proposal reduce or relocate sorting?"],
+      "criteria": ["distributional impact", "access", "segregation", "mobility", "intersectional risk"],
+      "limitations": ["Equity effects depend on implementation details and baseline measurement."]
+    },
+    {
+      "id": "demography",
+      "name": "Demography",
+      "discipline": "population and cohort analysis",
+      "questions": ["How do cohort decline and geography change viability?", "Which effects would occur without the proposal?"],
+      "criteria": ["cohort trajectory", "spatial distribution", "counterfactual contraction", "planning horizon"],
+      "limitations": ["Population projections do not determine the normative response."]
+    },
+    {
+      "id": "school_network_planning",
+      "name": "School network planning",
+      "discipline": "education infrastructure planning",
+      "questions": ["Can the school network deliver the proposal geographically?", "What access, transport, and capacity constraints arise?"],
+      "criteria": ["geographic access", "capacity", "transport", "network resilience"],
+      "limitations": ["Network feasibility does not by itself establish educational quality."]
+    },
+    {
+      "id": "education_finance",
+      "name": "Education finance",
+      "discipline": "public finance and education economics",
+      "questions": ["What resources, opportunity costs, and incentives does the proposal create?", "Are benefits and costs distributed differently?"],
+      "criteria": ["fiscal magnitude", "cost incidence", "incentives", "affordability", "value for money"],
+      "limitations": ["The committed corpus lacks complete proposal-level cost estimates."]
+    },
+    {
+      "id": "legal_and_governance",
+      "name": "Legal and governance",
+      "discipline": "education law and public governance",
+      "questions": ["Which legal authority and governance changes are required?", "What rights, autonomy, and accountability conflicts arise?"],
+      "criteria": ["legal authority", "rights compatibility", "maintainer autonomy", "accountability", "enforceability"],
+      "limitations": ["This lens is policy analysis, not formal legal advice."]
+    },
+    {
+      "id": "political_feasibility",
+      "name": "Political feasibility",
+      "discipline": "political economy of reform",
+      "questions": ["Which coalitions can enact and sustain the proposal?", "How exposed is it to reversal or strategic resistance?"],
+      "criteria": ["coalition support", "opposition intensity", "reversal risk", "public legitimacy"],
+      "limitations": ["Political forecasts are time-sensitive and intrinsically uncertain."]
+    },
+    {
+      "id": "implementation_planning",
+      "name": "Implementation planning",
+      "discipline": "public-sector change and implementation science",
+      "questions": ["Can actors deliver the mechanism in the proposed sequence?", "Which capabilities, feedback loops, and safeguards are missing?"],
+      "criteria": ["actor capacity", "sequencing", "pilotability", "monitoring", "adaptation", "failure containment"],
+      "limitations": ["Implementation readiness cannot be inferred from policy intent alone."]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "content": {
+    "answerability": "answerable_now",
+    "decision_impact": "medium",
+    "method": "Cohort-projection modeling using existing birth-rate and enrollment administrative data, combined with capacity-utilization analysis of dormitory (kollégium) infrastructure across regions, disaggregated by settlement type.",
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t6"
+    ],
+    "question": "What is the current and projected enrollment trajectory for 6/8-year gimnazium places relative to a declining student cohort over the next 5-10 years, and how would this affect selectivity ratios, dormitory utilization, and the marginal cost/benefit of structural reform versus natural attrition?",
+    "uncertainty_refs": [
+      "U-live-demography-01",
+      "U-live-demography-04",
+      "U-live-t1-01",
+      "U-live-school_network_planning-03"
+    ],
+    "why_it_matters": "Demographic contraction may force de facto network changes independent of policy choice; understanding this trajectory clarifies whether T1 (status quo/monitoring) is a passive-but-consequential choice, and whether reform costs (school closures, teacher redeployment) invoked against T2/T6 are overstated given already-anticipated capacity shifts."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-psychology-06",
+  "provenance_ref": "PV-build_research_agenda-aed5f46581737fae",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "7be13957e00c103e5de669aa9538a73b6b3d831c84579fc406bcf4857876b3d3",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,41 @@
+{
+  "content": {
+    "execution_id": "0487581563c33528fdc19fc57506de8b183f047b7169efe57a4d6efd26958d62",
+    "input_artifact_hashes": [
+      "202adcb278730e8c435f6cb92b7acb2acb838fde2c9081652a3d1869260197e6",
+      "5fdb5db40d2036b0e59d67a538abb8a54f22cb4203a3341b7b76bdd143ba34a0",
+      "6957acf8504810753c18d155d4ebf4e79392463b6319f1ac0d2abe8da51a0314",
+      "897a855873e1a41445525ad1e71d7f2bdc88b194e94c30fff3d882b192647511",
+      "8b1282529a1551deb0546e9f209653917aa2b312762e22253bccac427f154c20",
+      "8b9d50568ed4e52340e73bba00b8ded98295dd8e36f305f876fe0517fc9191c5",
+      "964e739bd3c3205852dac9ee7515037ecc37996b1cec2d4c76e57e6e7b7d31e9",
+      "9d42a54040e73fce033863f2545a75530f92a2c4bdf1d48f1409e5d98ff7a01d",
+      "c1573d253bba92ce8031f296a78982916ba48bd30d1de6934206c5350e399138",
+      "c830882bcc7cda2bd87563ece19be11d44bc8d2426bd6019360f441a41990575",
+      "d33ce5f39a27fa8be9dfdeaa31d4214cfbab5e6cae0834f2dd20efc5ee2b3461",
+      "eb2844098367251470044eb03bad59d9b3d144aac16d724452b5f791d7682475",
+      "ef6ce1b4c4a3cb2020ec8fa69585f48b69ad235eb8d390ae009b8e5cf9d93c18",
+      "facb700667fafe08c5018d8cd84a84cc16a8c638e4a59d5f1d03a59b1214fb05"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_polish_reform",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/lenses.json": "d935a45bbffd745ffb33a366c25686456f425c3e7f25acd17698d2504ba2020d",
+      "src/policy_lab/live/experiment.py": "861f58a43ef378a29bb8352809bc66264ad7a22376ec9bc24f1d47f70e8270fe"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_polish_reform-0487581563c33528",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

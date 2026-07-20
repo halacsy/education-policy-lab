@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "A regional pilot is well-suited to network-planning evaluation since it can be scoped to specific geographic areas with known capacity and transport profiles, but representativeness of volunteer regions and the acknowledged need to pair de-tracking with zoning controls (as in T4) raise network-generalizability concerns, compounded by centralized constraints on local adaptation.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-01"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "Bounded pilot scale allows testing of transport and capacity feasibility questions directly relevant to this lens before committing network-wide resources"
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      "Piloting in bounded regions allows network-capacity and transport feasibility to be assessed empirically before national rollout",
+      "Explicit pairing with zoning/choice controls (linking to T4) acknowledges that de-tracking alone is insufficient against network-level segregation drivers"
+    ],
+    "threats": [
+      "Rural teacher shortages could differentially affect pilot regions depending on selection, skewing results away from network-representative conditions",
+      "Even a successful pilot may fail to translate into durable national network reform, as seen in comparable reversal precedents elsewhere"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Centralized KLIK control over maintenance and planning may limit a pilot region's ability to adapt zoning or staffing to local network conditions",
+      "Volunteering pilot regions may not represent the geographic diversity of settlement types, transport access levels, or teacher-capacity conditions found nationally"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t6-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-964feb181b665091",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "fb44008e0f6632d052167adf1a930316e3f84c9f3585862a7928c54d912b1e10",
+  "topic": "korai-szelekcio"
+}

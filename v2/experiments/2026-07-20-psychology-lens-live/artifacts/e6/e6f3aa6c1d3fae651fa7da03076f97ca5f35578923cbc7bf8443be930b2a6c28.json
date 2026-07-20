@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "Quotas and outreach are operationally simpler to sequence than structural reform (funding and administrative rule changes rather than legal or curricular overhaul), giving this proposal comparatively strong pilotability. However, the lens's core question — can the mechanism deliver its intended benefit — is undermined by contested evidence on whether track value-added exists independent of composition, meaning the feedback loop needed to validate the mechanism's success criterion is itself uncertain.",
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-implementation_planning-02",
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-06"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Could be monitored against a clear success/failure criterion (e.g., tracked longitudinal outcomes for quota-admitted disadvantaged students) to test contested value-added claims directly, functioning as a built-in evaluation design",
+      "Pairing with T3's admissions redesign could address both compositional and mechanism-level sorting simultaneously"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Mechanism is administratively containable (funding allocation, admissions quota rule) without requiring legal or structural change, aiding rapid implementation and pilotability",
+      "Outreach could plausibly be sequenced to begin pre-selection-age, aligning intervention timing with intervention logic"
+    ],
+    "threats": [
+      "If school-quality distrust is the actual driver of selective demand, quota-based access expansion could fail to reduce parental sorting behavior even if implemented perfectly (F-live-implementation_planning-06)",
+      "Absent resolution of underlying school-quality disparities, quota beneficiaries may be placed in a track whose measured benefit does not generalize to them, risking a hollow policy outcome despite successful delivery"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "The benefit quota-admitted students are meant to receive is contested: track outcome gains may be substantially compositional/family-background-driven rather than institutional value-added, undermining the theory of change (F-live-implementation_planning-02, F-live-implementation_planning-05)",
+      "Underlying parental demand for selective tracks may be driven by distrust in local school quality, a distinct problem quotas do not address, risking a mismatch between mechanism and root cause (F-live-implementation_planning-06)"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t5-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-40b25153995939c5",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "7750588c26b43d7d527a32f713de3c7058737c256e827bedadafd1f0af8e56d3",
+  "topic": "korai-szelekcio"
+}

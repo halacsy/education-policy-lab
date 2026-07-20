@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "Removing only the age-10 entry point shortens the selection funnel by one stage but explicitly preserves the age-12 and age-14 entry points and the overall selective-school share. This is a partial institutional adjustment: it changes when the earliest sorting occurs but leaves the governance and access mechanisms for the remaining two tracks, and the church/private exemption structure, entirely unchanged.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-06"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "Could serve as an institutionally testable increment to assess whether narrower reform reduces sorting pressure before considering further stages"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Removes the earliest and youngest selection point (age 10-11), aligning that portion of the system closer to OECD-typical later tracking"
+    ],
+    "threats": [
+      "Because two selection points remain, demand and sorting pressure may simply relocate to the age-12 entry point rather than being reduced system-wide, leaving overall segregation levels largely unaddressed"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "Retains both remaining entry points (age 12 and 14), so the bulk of the current selective-school architecture (85% share) and its associated segregation patterns remain structurally intact",
+      "Does not address church/private-school exemptions from standard admissions rules, an unchanged governance channel"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t5-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-ad1cb55cbb4e36ae",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

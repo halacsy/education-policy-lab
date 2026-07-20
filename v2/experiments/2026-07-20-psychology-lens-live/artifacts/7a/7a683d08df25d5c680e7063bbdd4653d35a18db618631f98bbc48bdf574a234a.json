@@ -1,0 +1,29 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Simulation/microsimulation using existing enrollment and residential data to model plausible displacement scenarios, supplemented by qualitative interviews with school maintainers and parents on likely substitution behavior; where possible, exploit natural variation from past administrative desegregation episodes in Hungary as a quasi-experiment.",
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t4",
+      "TP-live-t6"
+    ],
+    "question": "If the 6/8-year tracks were abolished or delayed without complementary reforms to school choice, maintainer exemptions, and teacher allocation, how much sorting behavior would displace into private/church schools, cross-municipal transfers, or tutoring-based selection rather than disappear?",
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-02",
+      "U-live-legal_and_governance-02",
+      "U-live-political_feasibility-02",
+      "U-live-portuguese_reform-04",
+      "U-live-finnish_reform-02"
+    ],
+    "why_it_matters": "This directly determines whether T2 or T6 alone can succeed, or whether they must be bundled with T4-style zoning/choice reform and T3-style admissions reform to avoid merely relocating segregation, as occurred in Finland and Sweden post-1990s."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-psychology-02",
+  "provenance_ref": "PV-build_research_agenda-aed5f46581737fae",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "14edff99e414ec68c273ce8877aa32e3a123e91d61c20525f5a0daff753d8f44",
+  "topic": "korai-szelekcio"
+}

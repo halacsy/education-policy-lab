@@ -1,0 +1,77 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t3-01",
+      "A-live-t3-02"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Cost of designing, piloting, and validating new admissions instruments",
+      "Subsidized preparation-access programs require sustained funding",
+      "Risk of only marginal effect since track structure and its underlying stratification incentives remain intact"
+    ],
+    "equity_impact": "Modest positive impact plausible: reduces one specific channel of SES-linked selection (private preparation advantage) but leaves the structural three-stage funnel and its known segregation effects largely intact [F-live-portuguese_reform-01, F-live-hungarian_education_system-03]. Unlikely to substantially close the 53-point socioeconomic achievement gap on its own [F-live-portuguese_reform-03].",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Directly targets the documented SES-selection-independent-of-ability mechanism without full structural upheaval [F-live-education_finance-03]",
+      "Politically more feasible than abolition given explicit ministerial disavowal of abolition and stated preference for admissions-focused reform [F-live-legal_and_governance-06, F-live-implementation_planning-06]",
+      "Avoids transition costs and disruption associated with structural reform (school closures, placement crises) seen in comparator reversals [F-live-polish_reform-05]"
+    ],
+    "finding_refs": [
+      "F-live-education_finance-03",
+      "F-live-education_finance-06",
+      "F-live-legal_and_governance-05",
+      "F-live-polish_reform-06",
+      "F-live-legal_and_governance-06",
+      "F-live-implementation_planning-06",
+      "F-live-political_feasibility-04",
+      "F-live-polish_reform-05",
+      "F-live-legal_and_governance-03",
+      "F-live-portuguese_reform-01",
+      "F-live-hungarian_education_system-03",
+      "F-live-portuguese_reform-03"
+    ],
+    "goal": "Reduce socioeconomic selection bias in gimnázium admissions by reforming the entrance-exam and application process, without abolishing the 6/8-year tracks themselves.",
+    "implementation_steps": [
+      {
+        "action": "Launch public consultation on admissions criteria, per Minister Lannert's call for societal dialogue",
+        "actor": "Ministry of Education",
+        "timeline": "6-12 months"
+      },
+      {
+        "action": "Pilot revised weighting (e.g., reduced reliance on private-prep-sensitive exam components, increased weight on in-school teacher assessment) in a subset of schools",
+        "actor": "Ministry of Education",
+        "timeline": "1-2 school years"
+      },
+      {
+        "action": "Fund or subsidize free public exam-preparation resources to offset private tutoring advantage",
+        "actor": "Ministry of Education / local governments",
+        "timeline": "Concurrent with pilot, ongoing"
+      }
+    ],
+    "mechanisms": [
+      "Selection bias operates via prior test-score-independent SES effects and private exam preparation access, both of which are admissions-process features rather than structural track features [F-live-education_finance-03, F-live-education_finance-06]",
+      "Self-exclusion by disadvantaged families is driven by decisions to enter/remain in preparation processes rather than the exams themselves, suggesting preparation-access interventions could shift behavior [F-live-legal_and_governance-05]",
+      "Minister's stated position frames admissions reform as the primary lever under consideration, distinct from structural abolition [F-live-polish_reform-06, F-live-legal_and_governance-06]"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Even narrowly framed admissions review has already triggered partisan conflict, with opposition framing it as disguised structural transformation [F-live-implementation_planning-06, F-live-political_feasibility-04]",
+      "Self-exclusion is reportedly driven by parental strategic decisions rather than exam design itself, suggesting admissions reform alone may have limited effect on actual segregation [F-live-legal_and_governance-05]",
+      "Church and private maintainers operate outside Klebelsberg Centre authority, limiting the reach of any centrally mandated admissions redesign [F-live-legal_and_governance-03]"
+    ],
+    "title": "Reform admissions process while preserving track structure",
+    "uncertainty_refs": [
+      "U-live-t3-01",
+      "U-live-t3-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t3",
+  "provenance_ref": "PV-derive_transformations-552eafe7276174b2",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

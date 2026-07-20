@@ -1,0 +1,31 @@
+{
+  "content": {
+    "answerability": "requires_pilot",
+    "decision_impact": "high",
+    "method": "Natural-experiment/difference-in-differences design exploiting Poland's 1999 reform and 2017 reversal as comparators; simulation modeling of family choice behavior under alternative track configurations using discrete-choice models calibrated to Hungarian admissions data; pilot in a subset of counties with staggered rollout and control comparison before national scaling.",
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t5"
+    ],
+    "question": "Would delaying selection to age 14 (eliminating the age-10 and age-12 entry points) actually reduce segregation and inequality, or would demand and sorting behavior displace to remaining entry points, private/church schools, or informal within-school selection mechanisms?",
+    "uncertainty_refs": [
+      "U-live-international_comparison-01",
+      "U-live-international_comparison-03",
+      "U-live-finnish_reform-01",
+      "U-live-polish_reform-02",
+      "U-live-portuguese_reform-02",
+      "U-live-t2-02",
+      "U-live-t5-01",
+      "U-live-political_feasibility-02"
+    ],
+    "why_it_matters": "This is the central mechanism-displacement risk for the flagship structural reform (T2) and the partial reform (T5). If displacement dominates, the reform achieves symbolic change without equity gains, while still incurring the transition costs documented in Poland's reversal experience."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-psychology-02",
+  "provenance_ref": "PV-build_research_agenda-8f7438d7636683ca",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

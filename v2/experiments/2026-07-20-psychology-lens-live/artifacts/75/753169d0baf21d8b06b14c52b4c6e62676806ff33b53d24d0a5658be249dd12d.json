@@ -1,0 +1,41 @@
+{
+  "content": {
+    "execution_id": "506092217270797aa30c48fdccd8e40418f028f9fab1d1e4b646c9b16367c094",
+    "input_artifact_hashes": [
+      "0fcde27d695e67b7a579950944cda409fc04650c39036d5bdc4df5579031aa8f",
+      "3866b91f6587a2c0efc2e42606da2667c6f6f73705f0da84c05707e4f0952783",
+      "41927f49840944ed4b2578e78a5a37ed1c1a8fa22e31f9466e47e82722d5c6a5",
+      "46c15d2d7f36686a5e1fe2d3efbf6b3fc53fdb09fd0a166b85f7473978f2f996",
+      "798929841569c5b8494005c2cf4517167f7da99ce134f737d39818cf5cf18f4d",
+      "98eef0d9012577e077020bcce0a0fef04c9a31ca9f4ac87c7f0bca799eaf14e2",
+      "9d2d083d55bb74fa4cd94545e2d68ca2adf6b27f2d706ce774f23b6e8a12648e",
+      "a0eb1c8e1c88cce40bb6af7bef70f91ff89c06feccaf4f618076b2927860793f",
+      "a11ffae6012912c5488687743144e9f5b4f61057f39d457c15cc362256664180",
+      "a9e9365af0b23c7fb17a78e221c9ae385737d6efa5b916fbb287a17b5827cfc6",
+      "b436875721df94107b6958f00102557ad7eb183fd3839a9270ac2b104fde15f5",
+      "d53be6b0a750867cae10c8958aaa66b6b4347affc8bcfe87176e47f15a915c45",
+      "df58d8ad8ecdca4b03f7b5addfe3ecc9e23237401a447a1a51fe4bf0878d3fc1",
+      "f4cb78bb36e39123a7f4905fa6dec0132058c026384ae4b09b1ec9d1908e05c3"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_education_finance",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/lenses.json": "d935a45bbffd745ffb33a366c25686456f425c3e7f25acd17698d2504ba2020d",
+      "src/policy_lab/live/experiment.py": "b8cb1db5390b653aedc4e754696683c3465fea21bfc03247695e371ef2c29cdd"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_education_finance-506092217270797a",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

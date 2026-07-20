@@ -1,0 +1,42 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/evaluation.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^EV-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "evaluation"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "package_ref": {"type": "string", "pattern": "^DP-[A-Za-z0-9._-]+$"},
+          "total": {"type": "number", "minimum": 0, "maximum": 10},
+          "dimensions": {
+            "type": "object", "additionalProperties": false,
+            "properties": {
+              "artifact_integrity": {"type": "number", "minimum": 0, "maximum": 10},
+              "evidence_discipline": {"type": "number", "minimum": 0, "maximum": 10},
+              "transformation_specificity": {"type": "number", "minimum": 0, "maximum": 10},
+              "lens_traceability": {"type": "number", "minimum": 0, "maximum": 10},
+              "dilemma_clarity": {"type": "number", "minimum": 0, "maximum": 10},
+              "decision_usefulness": {"type": "number", "minimum": 0, "maximum": 10}
+            },
+            "required": ["artifact_integrity", "evidence_discipline", "transformation_specificity", "lens_traceability", "dilemma_clarity", "decision_usefulness"]
+          },
+          "strengths": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "concerns": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "verdict": {"enum": ["accept", "accept_with_caveats", "revise", "reject"]}
+        },
+        "required": ["package_ref", "total", "dimensions", "strengths", "concerns", "verdict"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/package_ref", "record_type": "decision_package"}
+  ],
+  "x-record-type": "evaluation",
+  "x-schema-version": "2.0.0"
+}

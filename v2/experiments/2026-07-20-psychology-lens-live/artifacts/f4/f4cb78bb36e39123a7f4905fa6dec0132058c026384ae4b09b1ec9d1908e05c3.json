@@ -1,0 +1,71 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t3-01",
+      "A-live-t3-02"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Administrative redesign and validation costs for new admissions instruments",
+      "Ongoing negotiation costs with church/private maintainers who operate under admissions exemptions",
+      "Risk that redesign is only partially effective if socioeconomic advantage re-asserts itself through other channels (tutoring for new exam format)"
+    ],
+    "equity_impact": "Likely moderate positive: directly targets the mechanism (SES-independent sorting advantage, tutoring dependency) most proximate to admissions unfairness, but does not address the structural segregation drivers (geographic concentration, school choice, maintainer exemptions) identified as independent amplifiers.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduces SES-driven access advantage without triggering the closure/job-loss costs seen in Poland's structural reversal",
+      "Directly responsive to Minister's own diagnosis that performance gains reflect family background rather than institutional value-added",
+      "Politically lower-salience than track abolition, potentially avoiding the 'existential threat' framing seen in current debate"
+    ],
+    "finding_refs": [
+      "F-live-education_finance-03",
+      "F-live-education_finance-07",
+      "F-live-portuguese_reform-06",
+      "F-live-legal_and_governance-06",
+      "F-live-legal_and_governance-07",
+      "F-live-implementation_planning-05"
+    ],
+    "goal": "Keep the 6-/8-year track structure intact but replace performance/recommendation-based admissions with mechanisms less correlated with family background and private tutoring access.",
+    "implementation_steps": [
+      {
+        "action": "Launch the announced 'societal dialogue' on admissions-mechanism reform, including unions (PDSZ, PSZ) and Pedagogue Chamber",
+        "actor": "Ministry of Education (Lannert)",
+        "timeline": "Months 1-6"
+      },
+      {
+        "action": "Redesign entrance-exam content and weighting to reduce tutoring-advantage sensitivity and reduce reliance on teacher recommendations",
+        "actor": "Ministry of Education and testing bodies",
+        "timeline": "Year 1-2"
+      },
+      {
+        "action": "Pilot revised admissions criteria in a subset of gimnáziums before national rollout",
+        "actor": "Klebelsberg Centre and school maintainers (state schools) plus negotiated church/private maintainer agreements",
+        "timeline": "Year 2-3, pilot; Year 3-4 national rollout"
+      }
+    ],
+    "mechanisms": [
+      "Redesigning entrance exams to reduce tutoring-sensitive content could weaken the SES-independent sorting advantage documented in Hungary versus other OECD countries",
+      "Administrative desegregation rules in the 2000s produced temporary reductions in urban segregation, indicating admissions-level intervention can shift outcomes even without structural abolition",
+      "Institution-by-institution accountability review based on competence-test results, as advocated by the National Pedagogue Chamber, could complement admissions redesign"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Church-maintained and private schools sit outside Klebelsberg Centre authority and may resist or opt out of admissions changes, limiting national coverage",
+      "Prior administrative desegregation measures 'stagnated mid-decade,' suggesting reform fatigue or reversal risk over time",
+      "Divided union positions (PSZ favoring phase-out vs PDSZ favoring broader segregation focus) may prevent unified implementation support"
+    ],
+    "title": "Preserve tracks, reform admissions mechanism (Lannert-style procedural reform)",
+    "uncertainty_refs": [
+      "U-live-t3-01",
+      "U-live-t3-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t3",
+  "provenance_ref": "PV-derive_transformations-17daca41e196c1af",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "8b1282529a1551deb0546e9f209653917aa2b312762e22253bccac427f154c20",
+  "topic": "korai-szelekcio"
+}

@@ -59,6 +59,49 @@ def verify_links(site_root: Path) -> int:
     return checked
 
 
+def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
+    root = ROOT / "v2" / "experiments" / "2026-07-20-psychology-lens-live"
+    repository = ArtifactRepository(root, schemas)
+    live_roots = (
+        "DP-live-baseline", "EV-live-baseline",
+        "DP-live-psychology", "EV-live-psychology",
+    )
+    repository.validate_graph(live_roots)
+    comparison = json.loads((root / "comparison.json").read_text(encoding="utf-8"))
+    if not comparison["transformation_hashes_identical"]:
+        raise AssertionError("Psychology treatment changed the transformation portfolio")
+    if comparison["psychology_assessment_count"] != 6:
+        raise AssertionError("Psychology lens must assess all six proposals")
+    if not comparison["position_carriage_passed"]:
+        raise AssertionError("Named psychology mechanism did not reach the decision package")
+    if (comparison["baseline_lens_count"], comparison["psychology_lens_count"]) != (12, 13):
+        raise AssertionError("Live arm lens counts must be 12 and 13")
+    for arm, expected_nodes in (("baseline", 30), ("psychology", 32)):
+        run_dir = root / "runs" / f"live-korai-szelekcio-{arm}"
+        manifests = list((run_dir / "nodes").glob("*.json"))
+        if len(manifests) != expected_nodes:
+            raise AssertionError(f"{arm} requires {expected_nodes} current node manifests")
+        summary = json.loads((run_dir / "arm_summary.json").read_text(encoding="utf-8"))
+        if summary["execution"]["failed"]:
+            raise AssertionError(f"{arm} has failed current nodes")
+    if comparison["treatment_execution"]["cache_hits"] < 26:
+        raise AssertionError("Psychology treatment did not localize dependencies")
+    for arm in ("baseline", "psychology"):
+        words = len(repository.get_current(f"DP-live-{arm}")["content"]["summary"].split())
+        if not 500 <= words <= 900:
+            raise AssertionError(f"{arm} package has {words} words; expected 500-900")
+    calls = [
+        json.loads(line) for line in (root / "backend_calls.jsonl").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    active_backends = {item.get("provider") for item in calls if item.get("backend") != "failed"}
+    if not {"anthropic", "openai"}.issubset(active_backends):
+        raise AssertionError("Live experiment must use Anthropic generation and OpenAI judging")
+    if any(item.get("backend") == "mock" for item in calls):
+        raise AssertionError("Live experiment contains a mock backend call")
+    return len(repository.list()), len(calls)
+
+
 def main() -> int:
     schemas = SchemaRegistry(ROOT / "schemas" / "v2")
     repository = ArtifactRepository(ROOT / "v2", schemas)
@@ -79,11 +122,13 @@ def main() -> int:
         if len(list(node_dir.glob("*.json"))) != 6:
             raise AssertionError(f"Expected six node manifests for {topic['topic']}")
     checked_links = verify_links(ROOT / "site" / "v2")
+    live_artifacts, live_calls = verify_live_experiment(schemas)
     print(f"PASS schemas: {len(schemas.available())} versioned record types")
     print(f"PASS graph: {len(records)} current artifacts, {len(roots)} decision roots")
     print("PASS language boundary: no en/hu objects in canonical artifact content")
     print("PASS runs: 2 topics × 6 node manifests")
     print(f"PASS site: {checked_links} local links/assets resolved")
+    print(f"PASS live experiment: {live_artifacts} current artifacts, {live_calls} audited calls, position carriage green")
     return 0
 
 

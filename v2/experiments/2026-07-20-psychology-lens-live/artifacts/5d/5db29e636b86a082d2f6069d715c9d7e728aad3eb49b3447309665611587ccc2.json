@@ -1,0 +1,41 @@
+{
+  "content": {
+    "execution_id": "1db61026032836963b631097a15cbb437526e851613d3e3a6b07fd349a6acb7c",
+    "input_artifact_hashes": [
+      "260fe09160e7cae3671fa3b150a0478ed0cdf3ea33b84991be17d646b4269256",
+      "3bdd03d11566bba555339e835901be60888f91ce170677efece33aca46410d17",
+      "40375dde39009a21653d1f420c7d49cf74f0d88baf1c8159cd538a95377f84bc",
+      "4a53a2ef8af0da8c84b83f4bde32daa3315db3c51147b876db830e20130ffc2c",
+      "798929841569c5b8494005c2cf4517167f7da99ce134f737d39818cf5cf18f4d",
+      "98eef0d9012577e077020bcce0a0fef04c9a31ca9f4ac87c7f0bca799eaf14e2",
+      "a12b63ff5e86e7c0bfd5261fe17ed7cdb7869a616e6485316895dde40bf36247",
+      "a9e9365af0b23c7fb17a78e221c9ae385737d6efa5b916fbb287a17b5827cfc6",
+      "d1058aa327195241b30852f3c5f8a66dc89c1305c3a205d01f70c8db4855ae92",
+      "d53be6b0a750867cae10c8958aaa66b6b4347affc8bcfe87176e47f15a915c45",
+      "d692aed12e5a637cc010993d0d5eb1e18fec9b16e5eb5003164d2dc8744da2fc",
+      "df58d8ad8ecdca4b03f7b5addfe3ecc9e23237401a447a1a51fe4bf0878d3fc1",
+      "f4cb78bb36e39123a7f4905fa6dec0132058c026384ae4b09b1ec9d1908e05c3",
+      "fd56a3b49ba559edae17b9ffb71cfacaa0a4f6122d25dc85f429b3025d6605f4"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_finnish_reform",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/lenses.json": "d935a45bbffd745ffb33a366c25686456f425c3e7f25acd17698d2504ba2020d",
+      "src/policy_lab/live/experiment.py": "b8cb1db5390b653aedc4e754696683c3465fea21bfc03247695e371ef2c29cdd"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_finnish_reform-1db6102603283696",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

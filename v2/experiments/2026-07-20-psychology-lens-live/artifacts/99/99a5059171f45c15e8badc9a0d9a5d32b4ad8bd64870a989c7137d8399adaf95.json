@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "This proposal preserves the centralized admissions exam and track structure (F-live-hungarian_education_system-03) entirely, seeking only to change compositional outcomes through quotas and outreach. Institutional fit is high in the narrow sense of requiring no structural or governance change, but system coverage is constrained by the same exemption gap seen elsewhere: church-maintained and private schools (F-live-hungarian_education_system-05) are not bound by standard admissions rules and could remain outside any quota mandate. The severity of the underlying selection differential (F-live-hungarian_education_system-01) and segregation extremity (F-live-hungarian_education_system-02) suggests quotas would need to operate against a strong existing institutional current rather than reforming it, raising questions about whether compositional mandates alone reach sufficient scale given below-average disadvantaged proficiency outcomes (F-live-hungarian_education_system-07).",
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-07"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "Could be layered onto existing centralized admissions infrastructure without new governance mechanisms"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Requires minimal structural disruption to existing centralized admissions and track architecture",
+      "Directly targets compositional outcomes without needing consensus on track-age or admissions-design reform"
+    ],
+    "threats": [
+      "Given the scale of Hungary's segregation being the highest measured in the EU, quota mechanisms confined to non-exempt public schools may be insufficient to shift system-wide sorting patterns"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "Church-maintained and private schools' admissions exemptions likely place a meaningful share of the selective sector outside quota coverage",
+      "Operates against, rather than through reform of, the underlying selection mechanism producing Hungary's outlier selectivity rate"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t5-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-ec3bcd34c7dedfe2",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "b7ad77dc91b10cccf406bb132162f8b416763ff20a6d45689b92db8238e26ec6",
+  "topic": "korai-szelekcio"
+}

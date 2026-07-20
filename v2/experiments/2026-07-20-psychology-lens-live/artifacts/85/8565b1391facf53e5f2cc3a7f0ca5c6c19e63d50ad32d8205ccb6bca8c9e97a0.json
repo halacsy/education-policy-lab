@@ -1,0 +1,41 @@
+{
+  "content": {
+    "execution_id": "8e5fbeec3463c3e81da61070da6614b552195d15541483673728a062ef9cdd58",
+    "input_artifact_hashes": [
+      "11d90790c599191a6f838131293ad36730ca456d61d36f4c2d45c7bf5c268c7a",
+      "1abec800f8469aa51dd9a27f7e6ab167b8d5671d1953620665f692db1f7f1817",
+      "423d4910aeb54139a171ae282ecbc27df9032a5eb158ec3529735badd9e97075",
+      "798929841569c5b8494005c2cf4517167f7da99ce134f737d39818cf5cf18f4d",
+      "98eef0d9012577e077020bcce0a0fef04c9a31ca9f4ac87c7f0bca799eaf14e2",
+      "9e6a7b4f675ecdfea51e7c365d56eb3d3b96808f1fc9c7555f1f97820977c242",
+      "9edaeef933058949cd89ea0d0addbaa139a0728112b3453efa2b2a105b5b6db2",
+      "a9e9365af0b23c7fb17a78e221c9ae385737d6efa5b916fbb287a17b5827cfc6",
+      "c82ecbeaafaecf465ad69b63e8a2db40130989d9699c5ffb6a0eb2243860ecf6",
+      "d53be6b0a750867cae10c8958aaa66b6b4347affc8bcfe87176e47f15a915c45",
+      "df58d8ad8ecdca4b03f7b5addfe3ecc9e23237401a447a1a51fe4bf0878d3fc1",
+      "e48c676600e4bcbf83fec4fb44ba4904950bb9864fb998f4a5c2836351a6422d",
+      "f4cb78bb36e39123a7f4905fa6dec0132058c026384ae4b09b1ec9d1908e05c3",
+      "fbc4d9d05dc6ae7d0e94c5e97a56e0ad5c39c52a48795113455797f0e31ff3e1"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_legal_and_governance",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/lenses.json": "d935a45bbffd745ffb33a366c25686456f425c3e7f25acd17698d2504ba2020d",
+      "src/policy_lab/live/experiment.py": "b8cb1db5390b653aedc4e754696683c3465fea21bfc03247695e371ef2c29cdd"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_legal_and_governance-8e5fbeec3463c3e8",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

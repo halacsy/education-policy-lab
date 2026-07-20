@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assessment": "From a network-planning perspective, status quo maintenance is geographically feasible by definition since it requires no new infrastructure, but the underlying network is already deteriorating: over 1,200 of 3,155 settlements lack any public educational institution, primary feeder sites shrank from 3,609 to 3,521 (2021-2024), and rural teacher shortages/aging workforce constrain capacity. Monitoring alone does nothing to arrest network polarization by settlement type or the geographic concentration of elite early-selective tracks in Budapest and a few centers.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "Monitoring infrastructure could be used to map network gaps (the 1,200+ settlements without schools) ahead of future reform"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Requires no new capacity, transport, or facility investment since no structural change occurs",
+      "Monitoring could generate the geographic/capacity data currently missing to verify the 'under one hour' access claim for 6-/8-year tracks"
+    ],
+    "threats": [
+      "Continued settlement-level polarization and rural teacher shortages will likely widen geographic access gaps regardless of monitoring",
+      "Rising urban/suburban child-teacher ratios (up to 24:1) may worsen capacity strain absent intervention"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Does not address the documented shrinkage of the primary feeder network (3,609 to 3,521 sites) from which selection candidates are drawn",
+      "Fails to address rural teacher shortages and aging workforce that already constrain capacity outside major cities",
+      "Leaves unresolved the geographic concentration of top-tier 6-/8-year tracks in Budapest and a few regional centers"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-7111d7fdd6f9f947",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

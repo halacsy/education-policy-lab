@@ -97,6 +97,7 @@ class SchemaRegistryTests(unittest.TestCase):
                 ("assumption", "2.0.0"),
                 ("decision_package", "2.0.0"),
                 ("dilemma", "2.0.0"),
+                ("evaluation", "2.0.0"),
                 ("finding", "2.0.0"),
                 ("lens_assessment", "2.0.0"),
                 ("lens_definition", "2.0.0"),
@@ -165,6 +166,22 @@ class ArtifactRepositoryTests(unittest.TestCase):
 
         current = self.repo.get_current("PV-test")
         self.assertEqual(current["content"]["model"], "new-test-model")
+        self.assertEqual(
+            [ref.content_hash for ref in self.repo.lineage("PV-test")],
+            [second.content_hash, first.content_hash],
+        )
+
+    def test_put_successor_links_changed_node_output(self) -> None:
+        first = self.repo.put(provenance_record())
+        revised = provenance_record()
+        revised["content"]["model"] = "new-test-model"
+        revised["created_at"] = "2026-07-20T13:00:00Z"
+        second = self.repo.put_successor(revised)
+
+        self.assertEqual(
+            self.repo.get_by_hash(second.content_hash)["supersedes"],
+            first.content_hash,
+        )
         self.assertEqual(
             [ref.content_hash for ref in self.repo.lineage("PV-test")],
             [second.content_hash, first.content_hash],

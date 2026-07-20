@@ -584,3 +584,40 @@ for education-system change. Decisions:
    validates schemas, graph integrity, cache/resume, auditability, and the new
    public information architecture—not fresh research quality. A later live
    acceptance run is required before v2 replaces v1 production generation.
+
+**D-38 — Live v2 acceptance: disciplinary lenses are dependency-localized,
+but position carriage and spec granularity require gates (2026-07-20;
+experiment: docs/experiments/2026-07-20-live-v2-psychology-lens-results.md).**
+The first fresh live v2 round completed on `korai-szelekcio` with Anthropic
+generation and an OpenAI judge, then reused the same six transformation hashes
+for a test-only educational-psychology lens imported from PR #29. Decisions:
+
+1. *Accept the artifact/lens dependency model.* The accepted treatment has 13
+   lenses and 78 proposal×lens assessments versus 12/72 in baseline, while all
+   six transformation hashes remain identical. Only the psychology assessment
+   and its dilemma/agenda/package/evaluation descendants reran (27/32 cache
+   hits on the final rerun). The lens changes interpretation, not the option
+   space: its main new signal is the big-fish-little-pond/self-concept risk of
+   access-only quota reform.
+2. *Position carriage is a contract, not a prompt aspiration.* The first
+   treatment package stopped at 316 words and lost every named psychology
+   mechanism despite complete upstream assessments. It remains in immutable
+   lineage. Decision packages now require 500-900 words; treatment packages
+   must carry a named disciplinary mechanism. The accepted 664-word package
+   passes. The final 8.000→7.667 judge delta is descriptive only (`n=1` pair),
+   not evidence that the lens improves or worsens quality.
+3. *Changed semantic ids form an automatic lineage.* Node outputs with an
+   existing semantic id now use `put_successor()`; graph validation forbids
+   multiple current branches. Pre-fix forks are recoverably archived with an
+   audit report, never silently deleted.
+4. *Reports are run-manifest scoped.* Counts must come from an arm's manifests,
+   not the shared repository, or treatment artifacts leak into baseline
+   summaries. Reports can be rebuilt without model calls.
+5. *Live v2 is accepted as an architecture vertical slice, not production
+   replacement.* The run validated 516 current artifacts, cross-family
+   evaluation, no mock fallback, and dependency-localized lens addition. Two
+   blockers remain before replacing v1: split the monolithic live spec into
+   node-specific prompt/contract dependencies (a package-contract edit
+   needlessly invalidated upstream analyses), and project visible
+   claim-to-source citations into the decision-package view. PR #29 remains a
+   sensitivity test; D-24 human admission is unchanged.

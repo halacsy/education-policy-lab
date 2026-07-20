@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "From a public-finance lens, the status quo preserves current fiscal allocation patterns—identical per-pupil funding across selective and non-selective tracks despite documented divergence in outcomes and access (F-live-education_finance-06). Monitoring itself is low-cost but generates no reallocation of resources or change in incentive structures that currently reward private exam-preparation investment over school-level quality improvement. The opportunity cost is the continued fiscal subsidization of a system in which advantaged families capture returns disproportionately (F-live-education_finance-04), while affordability of the current arrangement is not itself in question—the fiscal magnitude of maintaining three parallel tracks remains modest in system-wide budget terms (F-live-education_finance-01) but its distributive incidence is regressive.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-01",
+      "F-live-education_finance-03",
+      "F-live-education_finance-04",
+      "F-live-education_finance-06"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "Monitoring could generate the cost data currently missing, enabling future proposals to be fiscally evaluated with better evidence"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "No new fiscal outlay required beyond monitoring infrastructure, making this the most fiscally conservative option",
+      "Preserves existing budget certainty for maintainers and families, avoiding transition costs"
+    ],
+    "threats": [
+      "Continued divergence in value-added performance across tracks (F-live-education_finance-03) implies growing implicit inequity in returns to public spending, even as nominal per-pupil costs remain flat",
+      "Demographic pressure on comprehensive schools could raise the fiscal cost of inaction if closures accelerate the concentration of low-cost-to-serve advantaged students in surviving tracks"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Perpetuates a funding model that provides identical per-pupil resources to tracks with divergent access and outcomes, without addressing the underlying incentive misalignment (F-live-education_finance-06)",
+      "Does nothing to alter the fiscal incentives that reward private-preparation investment over public quality investment"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-assess_education_finance-b024b3288659f2ae",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

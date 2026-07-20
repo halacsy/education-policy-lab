@@ -1,0 +1,82 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t2-01",
+      "A-live-t2-02"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Large-scale institutional reconfiguration of ~200 schools serving 22,000-25,000 students [F-live-education_finance-01]",
+      "Transition costs analogous to Poland's 2017 reversal: potential school closures, teacher reallocation, and student placement disruption [F-live-polish_reform-05]",
+      "Negotiation costs with church/private maintainers with independent governance [F-live-legal_and_governance-03]"
+    ],
+    "equity_impact": "Strongly positive if implemented well: removes two of three selection points that concentrate advantaged students, addressing the core mechanism identified as driving Hungary's highest-in-EU segregation [F-live-finnish_reform-02, F-live-finnish_reform-03]. However, transition risks (as in Poland's reversal) could create short-term equity harms for displaced cohorts [F-live-polish_reform-05].",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduced between-school segregation and socioeconomic stratification, consistent with Poland's post-reform PISA gains concentrated among previously lower-tracked students [F-live-polish_reform-04]",
+      "Improved employment and earnings outcomes observed in comparable delayed-tracking reform (Poland, +3pp employment, +4% earnings) [F-live-international_comparison-04]",
+      "Alignment with OECD-average tracking age reduces Hungary's outlier status [F-live-finnish_reform-01]"
+    ],
+    "finding_refs": [
+      "F-live-finnish_reform-01",
+      "F-live-finnish_reform-04",
+      "F-live-portuguese_reform-01",
+      "F-live-polish_reform-04",
+      "F-live-international_comparison-04",
+      "F-live-international_comparison-02",
+      "F-live-education_finance-01",
+      "F-live-polish_reform-05",
+      "F-live-legal_and_governance-03",
+      "F-live-political_feasibility-04",
+      "F-live-hungarian_education_system-06",
+      "F-live-implementation_planning-04",
+      "F-live-school_network_planning-07",
+      "F-live-finnish_reform-02",
+      "F-live-finnish_reform-03"
+    ],
+    "goal": "Eliminate selection at ages 10 and 12 by converting 6- and 8-year gimnázium entry points into a single entry point at age 14, aligning Hungary with the OECD-typical tracking age.",
+    "implementation_steps": [
+      {
+        "action": "Legislate phase-out of 5th- and 7th-grade admission cohorts, grandfathering currently enrolled students through completion",
+        "actor": "Parliament / Ministry of Education",
+        "timeline": "Legislative passage within 1 year; phase-out over 6-8 years to allow existing cohorts to graduate"
+      },
+      {
+        "action": "Convert 6/8-year program capacity into 4-year program capacity or expand comprehensive lower-secondary provision",
+        "actor": "Klebelsberg Centre and gimnázium maintainers",
+        "timeline": "3-5 years transition"
+      },
+      {
+        "action": "Negotiate separately with church and private maintainers who operate outside direct state governance authority",
+        "actor": "Ministry of Education",
+        "timeline": "Parallel to legislative process, ongoing"
+      }
+    ],
+    "mechanisms": [
+      "Removing early entry points closes the three-stage selection funnel at ages 10 and 12, leaving only the age-14 transition [F-live-portuguese_reform-01]",
+      "Delaying tracking is empirically associated with reduced between-school variance and inequality in comparable reforms (Poland 1999) [F-live-polish_reform-04, F-live-international_comparison-04]",
+      "Early tracking's inequality-increasing effect (d=0.44 achievement gap increase) is removed by eliminating the early entry mechanism [F-live-international_comparison-02]"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Political conflict: opposition has already reframed even narrower admissions review as 'unified four-year model' imposition reminiscent of communism [F-live-political_feasibility-04]",
+      "Implementation disruption comparable to Poland's double-cohort transition problems (thousands without placement) [F-live-polish_reform-05]",
+      "Church-maintained schools may resist or seek exemption, replicating prior non-compliance with anti-discrimination provisions [F-live-hungarian_education_system-06]",
+      "Teacher shortage and aging workforce may constrain smooth transition capacity [F-live-implementation_planning-04, F-live-school_network_planning-07]"
+    ],
+    "title": "Delay selection age to 14 (Polish-style single-structure reform)",
+    "uncertainty_refs": [
+      "U-live-t2-01",
+      "U-live-t2-02",
+      "U-live-t2-03"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t2",
+  "provenance_ref": "PV-derive_transformations-552eafe7276174b2",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

@@ -24,9 +24,10 @@
           "finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}},
           "assumption_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^A-[A-Za-z0-9._-]+$"}},
           "uncertainty_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^U-[A-Za-z0-9._-]+$"}},
-          "legacy_scenario_id": {"type": "string", "pattern": "^S[0-9]+$"}
+          "legacy_scenario_id": {"type": "string", "pattern": "^S[0-9]+$"},
+          "origin": {"enum": ["live_generation", "v1_migration"]}
         },
-        "required": ["title", "goal", "change_level", "mechanisms", "implementation_steps", "expected_benefits", "costs", "risks", "equity_impact", "evidence_status", "finding_refs", "assumption_refs", "uncertainty_refs", "legacy_scenario_id"]
+        "required": ["title", "goal", "change_level", "mechanisms", "implementation_steps", "expected_benefits", "costs", "risks", "equity_impact", "evidence_status", "finding_refs", "assumption_refs", "uncertainty_refs"]
       }
     }}
   ],

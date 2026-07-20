@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "Of all proposals, this one is most explicitly structured around the lens's core criteria: it proposes piloting before national rollout, includes a comparison-region design for monitoring, and its own mechanism description flags the need to pair with zoning controls (linking to T4) to avoid a known failure mode observed in Finland's later experience. This self-aware sequencing and failure-containment design is a distinguishing strength under this lens, though workforce capacity and pilot representativeness remain open gaps.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-07"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Pilot design allows isolation of Hungary-specific effects from confounds that limited interpretability of Finnish and Polish precedents",
+      "Built-in linkage to zoning/choice controls (T4) creates a natural sequencing pathway toward a more failure-contained combined reform"
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      "Explicit pilot-before-national-decision design directly satisfies the lens's pilotability and monitoring criteria",
+      "Mechanism description proactively identifies its own failure mode (choice-driven re-segregation absent zoning controls) and proposes linking to a complementary lever (T4), showing unusually strong ex-ante adaptation planning"
+    ],
+    "threats": [
+      "Even a successful, well-designed pilot faces low institutional durability precedent (Poland's reversal), meaning strong pilot evidence may not translate into sustained national policy adoption",
+      "Centralized governance bottlenecks (F-live-implementation_planning-03) could still constrain how pilot findings are processed and acted upon at national level, limiting the practical value of the pilot's feedback loop"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Same workforce capacity constraints identified for T2 apply to any comprehensive-schooling shift, even at pilot scale, since teacher deployment and training would need to shift within pilot regions (F-live-implementation_planning-07)",
+      "Volunteering pilot regions may not be representative, limiting the pilot's ability to generate generalizable implementation lessons for national sequencing decisions"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t6-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-40b25153995939c5",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "108a8e73388b24bf649a4e17852bf044e70a8b056856db3855608e2ef42b1711",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,74 @@
+TASK: expert_analysis
+AGENT: school_network_planning
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: education infrastructure planning
+PUBLIC QUESTION: Should Hungary keep its 6- and 8-year gimnázium tracks?
+CRITERIA: geographic access, capacity, transport, network resilience
+KNOWN LENS LIMITS: Network feasibility does not by itself establish educational quality.
+
+RESEARCH NOTES:
+# Research Notes: Hungary's 6- and 8-Year Gimnázium Tracks — Infrastructure Planning Perspective
+
+## 1. Network density is nominally sufficient, but structurally uneven
+Hungary's secondary school network is dense by design: 
+secondary education is provided at 880 schools across Hungary, a dense network intended to ensure every student can find a secondary general school close to home, accessible by public transport in under an hour
+. However, 
+while larger cities with at least 8,000–10,000 inhabitants almost certainly have a secondary school, smaller towns often do too, and although there is generally no separate school bus service, public transport makes daily commuting possible
+. **Fact vs. inference:** the "under one hour" standard is a stated Eurydice/ministry aim, not verified travel-time data for the 6-/8-year subset specifically, which is spatially rarer than 4-year gimnázium/vocational provision.
+
+## 2. The 6- and 8-year tracks are geographically concentrated, not evenly distributed
+Directory evidence shows a heavy Budapest concentration of elite early-selection schools spanning many districts (e.g., Toldy Ferenc, Eötvös József, ELTE Trefort Ágoston, Fazekas Mihály), 
+with only one rural gimnázium — Veszprém's Lovassy László Gimnázium — making the national top-10 ranking
+, a position 
+it has held consistently across multiple years
+. This indicates the highest-prestige early-selective capacity is spatially clustered in the capital and a few regional centers, not evenly distributed across the settlement hierarchy. **Inference:** this concentration implies that rural age 10-12 selection, where available, draws from a shallower institutional base and likely a smaller pool of specialist teachers than Budapest.
+
+## 3. Historical research documents a Budapest/vidék (rural) response-rate and uptake asymmetry
+A 1990s national study on the introduction of 6-year gimnázium tracks found differential institutional engagement by region: 
+Budapest schools responded to the survey at a higher-than-average rate (45.4%), while rural schools responded at a lower rate (29.5%)
+, and in the companion primary-school survey 
+Budapest response was 40.3% versus 50.6% in rural areas
+. **Contested/dated evidence:** this is 1990s-era sociological survey data (Liskó, 1996 as cited in the 1990s OFI study), useful for showing a long-standing urban/rural divergence in how the structural-change (szerkezetváltás) track was adopted, but not current capacity data.
+
+## 4. Demographic and infrastructural strain is diverging sharply by settlement type (2021–2024 data)
+Recent territorial analysis finds Hungary's school network is polarizing: 
+there is a deepening divide between dynamic urban/suburban zones and disadvantaged rural peripheries, with rapidly growing urban settlements facing rising child-teacher ratios (up to 24:1 in some areas), indicating capacity constraints, while disadvantaged children have become increasingly concentrated in rural areas (up to 94% in certain settlements)
+. Critically, 
+by 2024, more than 1,200 of 3,155 settlements had no public educational institutions at all, raising concerns about territorial equity
+. Separately, 
+the number of school sites nationally decreased from 9,046 in 2021 to 8,590 by 2024, with primary-education sites falling from 3,609 to 3,521
+. **Inference:** a shrinking, geographically thinning general-school (általános iskola) base is the feeder network from which any 5th/7th-grade selective gimnázium track must draw age 10-12 candidates — meaning early selection operates on top of an already-contracting rural school map.
+
+## 5. Boarding/dormitory (kollégium) capacity is not currently a binding constraint
+For students unable to commute, 
+those for whom daily commuting is not possible can apply for dormitory accommodation; dormitories can accommodate most applicants, as there are far more places than applicants, and demand is in decline
+. **Fact:** this suggests dormitory capacity is not currently a bottleneck nationally — though this figure is aggregate across all secondary school types, not disaggregated for 6-/8-year gimnázium applicants specifically, who are younger (age 10-12) than typical 4-year-track boarders (age 14+), raising an unresolved question about whether existing kollégium infrastructure and welfare/supervision models are calibrated for pre-adolescent boarders.
+
+## 6. Selection at age 10-12 is strongly linked to Hungary's exceptionally high measured school segregation
+Independent of the specific 6-/8-year mechanism, Hungary shows the most extreme sorting outcomes among EU/OECD countries: 
+Hungary has the highest level of segregation of students from less and more advantaged socio-economic groups into different schools, and Hungary's segregation of the most and least disadvantaged students was the highest in the EU in the 2022 PISA study
+. 
+Pupils in segregated schools are less likely to complete upper secondary education, pass the general secondary school leaving examination, and enter tertiary education
+. Academic literature on the introduction of these tracks explicitly frames them as a selection mechanism: 
+in most cases segregation in Hungary occurs due to the intentional separation of higher-status pupils, rather than active ethnic separation per se
+, and the schools' own self-description of purpose is telling: 
+the value system of the schools targets classic, high-standard elite education, in this respect not differing from the declared goals of the eight-year gimnáziums
+. **Contested:** causal attribution (does the 6-/8-year structure *cause* segregation, or merely channel a pre-existing sorting demand that would occur regardless of track structure?) is not resolved in the sources found; this is a genuinely disputed point in Hungarian education sociology.
+
+## 7. Centralization of school maintenance has reduced local capacity-planning autonomy
+Since 2013, 
+the central government assumed responsibility for public schools through the Public Education Act, transferring maintenance duties from local authorities to the state, with schools consolidated under the Klebelsberg Institution Maintenance Centre (KLIK), curtailing institutional autonomy over hiring and budgets
+. **Inference:** this centralization means decisions about opening/closing/resizing 6-/8-year gimnázium places are made at national level rather than by municipalities responding to local demographic or transport conditions, which affects the network's ability to adapt supply flexibly to local capacity constraints (e.g., rural teacher shortages, noted as 
+teacher shortages, linked to an ageing workforce, are a growing concern, with half of all teachers in 2024/2025 aged 50 or older and only 7.2% under 30
+, and 
+teacher shortages greatest in rural areas, with the proportion of unqualified teachers in disadvantaged schools 2 to 3 times higher than in non-disadvantaged schools
+).
+
+---
+**Summary of unresolved/contested points:** (a) whether the network can geographically "deliver" equitable 6-/8-year access is contested — dense overall coverage coexists with clear elite-track clustering in Budapest and a few regional cities; (b) the causal weight of early selection versus other drivers (school choice, residential sorting, teacher shortages) in producing Hungary's segregation outcomes remains disputed in the literature; (c) age-appropriateness of existing dormitory/transport infrastructure for 10-12-year-old boarders (versus the typical 14+ population) was not directly quantified in available sources.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 4-7 findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

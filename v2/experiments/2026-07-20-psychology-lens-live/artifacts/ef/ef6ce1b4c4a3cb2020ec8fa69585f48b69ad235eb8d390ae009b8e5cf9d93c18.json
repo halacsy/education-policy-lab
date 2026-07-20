@@ -1,0 +1,70 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t6-01",
+      "A-live-t6-02"
+    ],
+    "change_level": "organization",
+    "costs": [
+      "Design and administrative cost of a new conditional-funding formula and compliance-monitoring system",
+      "Risk that state-maintained schools respond by gaming diversity metrics rather than genuinely broadening access",
+      "Limited direct reach over church/private maintainers, who operate outside Klebelsberg Centre governance and may not respond to funding incentives sized within available voluntary grants [F-live-legal_and_governance-03]"
+    ],
+    "equity_impact": "Potentially positive by creating institutional incentives to reduce the SES-linked private-preparation advantage without altering the tracks' existence, but the mechanism is untested in the Hungarian context and depends heavily on maintainer responsiveness to fiscal incentives rather than status or reputational motives [F-live-demography-05, F-live-education_finance-06].",
+    "evidence_status": "weak",
+    "expected_benefits": [
+      "Creates institutional incentive for maintainers to broaden the socioeconomic base of admitted students without mandating specific admissions-process changes",
+      "Leverages existing assessment infrastructure (ABC testing) rather than requiring new data systems [F-live-implementation_planning-05]",
+      "Fiscal levers may be more legally tractable than direct admissions mandates given the free-choice/centralized-exam legal tension already present [F-live-legal_and_governance-02]"
+    ],
+    "finding_refs": [
+      "F-live-education_finance-06",
+      "F-live-implementation_planning-05",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-03",
+      "F-live-demography-05"
+    ],
+    "goal": "Use fiscal policy rather than structural or admissions redesign to reduce the advantage private exam preparation confers in gimnázium access, by tying per-pupil funding premiums to demonstrated equity outcomes.",
+    "implementation_steps": [
+      {
+        "action": "Design a funding-conditionality formula linking per-pupil premium funding to measured socioeconomic composition of admitted cohorts, using existing ABC data",
+        "actor": "Ministry of Finance / Ministry of Education",
+        "timeline": "1-2 years design and legal review"
+      },
+      {
+        "action": "Pilot conditional funding formula with a subset of state-maintained gimnáziums (excluding church/private schools initially, given governance limits)",
+        "actor": "Ministry of Education",
+        "timeline": "2-3 school years"
+      },
+      {
+        "action": "Negotiate voluntary adoption of similar conditionality with church and private maintainers, potentially via matching-grant incentives rather than mandates",
+        "actor": "Ministry of Education",
+        "timeline": "Parallel and ongoing, 3+ years"
+      }
+    ],
+    "mechanisms": [
+      "Current identical per-pupil funding regardless of the SES-skewing effect of private-preparation-dependent admission removes any fiscal incentive for maintainers to broaden access [F-live-education_finance-06]",
+      "Existing ABC testing at grades 6, 8, 10 with mandatory family-background analysis provides ready-made infrastructure to measure and condition funding on cohort diversity [F-live-implementation_planning-05]",
+      "Fiscal conditionality operates without requiring direct admissions-criteria mandates, potentially avoiding the centralized-versus-free-choice legal tension noted in current admissions law [F-live-legal_and_governance-02]"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Maintainers could respond to funding pressure by adjusting non-SES admission criteria in ways that inadvertently disadvantage other groups",
+      "Historical precedent (PISA data use for legitimization without structural follow-through) raises risk that fiscal conditionality becomes symbolic rather than binding [F-live-implementation_planning-05]",
+      "Effect size is unproven; no direct evidence exists in the record demonstrating fiscal conditionality's causal impact on segregation outcomes, distinct from admissions-process or structural reforms"
+    ],
+    "title": "Uncouple public funding parity from private-preparation-dependent admission (fiscal-lever reform)",
+    "uncertainty_refs": [
+      "U-live-t6-01",
+      "U-live-t6-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t6",
+  "provenance_ref": "PV-derive_transformations-552eafe7276174b2",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

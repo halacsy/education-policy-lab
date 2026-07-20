@@ -1,0 +1,69 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02"
+    ],
+    "change_level": "practice",
+    "costs": [
+      "Data collection and reporting infrastructure costs",
+      "Opportunity cost of delayed action on a system with the EU's highest segregation levels [F-live-hungarian_education_system-03]"
+    ],
+    "equity_impact": "Neutral in the short term but risks entrenching Hungary's highest-in-EU segregation levels and the 53-point socioeconomic achievement gap, since no structural change addresses the mechanisms of stratification [F-live-portuguese_reform-03, F-live-equity_and_social_mobility-03].",
+    "evidence_status": "strong",
+    "expected_benefits": [
+      "Avoids immediate political conflict with church maintainers and middle-class constituencies [F-live-political_feasibility-05]",
+      "Preserves existing infrastructure investment and stakeholder expectations",
+      "Generates evidence base for future, better-informed decisions"
+    ],
+    "finding_refs": [
+      "F-live-portuguese_reform-01",
+      "F-live-political_feasibility-05",
+      "F-live-political_feasibility-07",
+      "F-live-equity_and_social_mobility-07",
+      "F-live-hungarian_education_system-03",
+      "F-live-political_feasibility-03",
+      "F-live-demography-01",
+      "F-live-demography-07",
+      "F-live-portuguese_reform-03",
+      "F-live-equity_and_social_mobility-03"
+    ],
+    "goal": "Maintain current 6/8-year gimnázium structure while establishing systematic monitoring of segregation and equity outcomes to inform future decisions without immediate structural change.",
+    "implementation_steps": [
+      {
+        "action": "Mandate annual public reporting of school-level segregation indices, value-added by track, and socioeconomic composition using existing ABC testing infrastructure",
+        "actor": "Ministry of Education",
+        "timeline": "Within 12 months"
+      },
+      {
+        "action": "Establish longitudinal panel tracking students across track types from Grade 5 through tertiary entry",
+        "actor": "National statistical/research bodies",
+        "timeline": "2-3 years to establish baseline"
+      }
+    ],
+    "mechanisms": [
+      "Continued three-stage selection funnel at ages 10, 12, 14 preserves current stratification patterns [F-live-portuguese_reform-01]",
+      "Absence of legislative action reflects veto constituency dynamics (church-maintained schools, middle-class protection) [F-live-political_feasibility-05, F-live-political_feasibility-07]",
+      "No discrete reform proposal currently exists in tracking systems, consistent with continuation [F-live-equity_and_social_mobility-07]"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Segregation and inequality indicators continue worsening (170-point reading gap between advantaged/disadvantaged deciles) [F-live-political_feasibility-03]",
+      "Monitoring without action may be perceived as policy avoidance, reducing government credibility on stated equity concerns [F-live-legal_and_governance-06]",
+      "Demographic decline continues to concentrate advantaged students in tracks while comprehensive schools face closure pressure [F-live-demography-01, F-live-demography-07]"
+    ],
+    "title": "Status quo with monitoring (passive counterfactual)",
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-derive_transformations-552eafe7276174b2",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

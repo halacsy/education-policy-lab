@@ -1,0 +1,42 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": "Hungarian birth cohorts have contracted sharply: fertility rate fell from 1.6 in 2021 to 1.3 by 2026 (Q1 2026 at 1.29); birth count has fallen approximately 20% in four years, with 17,000 fewer one-year-olds than four-year-olds, translating to 600-800 fewer kindergarten cohorts nationally.",
+    "context": "Fresh live research through the Demography lens",
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      "Recent fertility data (Q1 2026 at 1.29) appears to be from preliminary reporting; official statistics not directly linked",
+      "Regional variance is noted as pronounced (20%+ declines in some counties) but no county-level projections provided",
+      "Projection from births to school closures (600-800 kindergarten groups to 'hundred small schools worth') uses rough equivalency without detailed capacity assumptions"
+    ],
+    "population": "Population described in the cited finding",
+    "source_refs": [
+      "SRC-live-demography-03"
+    ],
+    "time_scope": "As reported by the cited source",
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "F-live-demography-03",
+  "provenance_ref": "PV-research_demography-ae0320a2b1954fdc",
+  "record_type": "finding",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "d675bb22fb2dcdd92041a7ae6068ee8a1ba59b32478b00e28eefadb47d1493c1",
+  "topic": "korai-szelekcio"
+}

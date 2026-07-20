@@ -1,0 +1,33 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Quasi-experimental design exploiting variation in local availability of 6/8-year gimnazium places (e.g., regression discontinuity around admission thresholds, or difference-in-differences comparing regions/cohorts with differing track availability), controlling for residential sorting via geocoded address data and church/private enrollment shares.",
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5",
+      "TP-live-t6"
+    ],
+    "question": "What is the independent causal effect of the 6/8-year track structure itself (age-10/12 selection) on between-school segregation and SES stratification, net of free school choice, residential sorting, and church/private admissions exemptions?",
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-international_comparison-01",
+      "U-live-finnish_reform-01",
+      "U-live-polish_reform-01",
+      "U-live-implementation_planning-01",
+      "U-live-school_network_planning-01",
+      "U-live-education_finance-01"
+    ],
+    "why_it_matters": "This is the foundational causal question underlying all six proposals: without isolating the track structure's own contribution, it is impossible to know whether abolishing or delaying tracking (T2, T6) will meaningfully reduce segregation or whether sorting will simply relocate to other channels (T3, T4, T5), wasting political capital on the wrong lever."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-psychology-01",
+  "provenance_ref": "PV-build_research_agenda-aed5f46581737fae",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "52ceab9e26428e9702ee57848c98de31966878391d8e9b4aac74e59c0a2f408e",
+  "topic": "korai-szelekcio"
+}

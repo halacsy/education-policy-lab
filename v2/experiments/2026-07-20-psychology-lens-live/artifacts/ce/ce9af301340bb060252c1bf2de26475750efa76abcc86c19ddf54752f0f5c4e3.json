@@ -1,0 +1,40 @@
+{
+  "content": {
+    "execution_id": "31666aceeb583febf9e6abca4828de3a7a1a07b1883bed41b393c133aa11c8fa",
+    "input_artifact_hashes": [
+      "1e5bfde64aaf39cadf452045f91eebbea8dc0df3ace92362cd219bbda2344a25",
+      "5fdb5db40d2036b0e59d67a538abb8a54f22cb4203a3341b7b76bdd143ba34a0",
+      "8b1282529a1551deb0546e9f209653917aa2b312762e22253bccac427f154c20",
+      "93e78c0e5ef895203f4137e15c49633ed12247fee200995f71d1d1692cc06999",
+      "aa698fe2e9b1ff9d2d1b96bd3fd8b00478cd6b5e8b4cbfab68ecba6de8270544",
+      "b6a545bddc6e24030be23ac60ba8560af2ff3e7b536ebdc7ea62aee4e7ac55e0",
+      "c830882bcc7cda2bd87563ece19be11d44bc8d2426bd6019360f441a41990575",
+      "cfd69b7a1d51bb4c953be254d0716fe9e9bd9ca5c07e932e51769a7844af1f43",
+      "d33ce5f39a27fa8be9dfdeaa31d4214cfbab5e6cae0834f2dd20efc5ee2b3461",
+      "ec2f731dd2a9758784b7135dfb29a5509fa3e671ad0e2565a6b336dd3cda5ff9",
+      "ef6ce1b4c4a3cb2020ec8fa69585f48b69ad235eb8d390ae009b8e5cf9d93c18",
+      "f4470b97d5d24eeb0318ed2ab28d08447bbe9ad60e5eefe8b0d0b678f62bef19",
+      "facb700667fafe08c5018d8cd84a84cc16a8c638e4a59d5f1d03a59b1214fb05"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_educational_psychology",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/educational_psychology_lens.json": "884b996f9c178712315a06d858c8738bf7a354e89ede7e6448eb590cdfa7e578",
+      "src/policy_lab/live/experiment.py": "861f58a43ef378a29bb8352809bc66264ad7a22376ec9bc24f1d47f70e8270fe"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_educational_psychology-31666aceeb583feb",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

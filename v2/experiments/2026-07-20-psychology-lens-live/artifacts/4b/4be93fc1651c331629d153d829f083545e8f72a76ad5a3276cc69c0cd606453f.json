@@ -1,0 +1,40 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": "By 2024, more than 1,200 of 3,155 Hungarian settlements had no public educational institutions, and primary education sites fell from 3,609 to 3,521 between 2021 and 2024, indicating a contracting feeder network from which 5th/7th-grade selection cohorts must be drawn.",
+    "context": "Fresh live research through the School network planning lens",
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      "Data is aggregate across all primary schools, not disaggregated by school type or gimnázium feed-rate",
+      "Causal drivers of closure (demographic decline, consolidation policy, resource allocation) are not specified",
+      "Impact on 6-/8-year track recruitment specifically is inferred, not directly measured"
+    ],
+    "population": "Population described in the cited finding",
+    "source_refs": [
+      "SRC-live-school_network_planning-02"
+    ],
+    "time_scope": "As reported by the cited source",
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "F-live-school_network_planning-02",
+  "provenance_ref": "PV-research_school_network_planning-dd4bcddf4d918ac1",
+  "record_type": "finding",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "362efd79f538e30ca084c1e51f7b9dcc5051f0c086f79ebf444bd617549f55e0",
+  "topic": "korai-szelekcio"
+}

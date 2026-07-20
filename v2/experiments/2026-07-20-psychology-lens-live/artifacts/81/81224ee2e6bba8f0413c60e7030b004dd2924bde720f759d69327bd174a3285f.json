@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "This proposal most directly embodies the lens's core teaching: it explicitly treats causal attribution as a live problem requiring a pilot design, acknowledges that comprehensive-schooling gains elsewhere were confounded by simultaneous teacher-training, curriculum, and welfare reforms, and proposes pairing de-tracking with choice/zoning controls rather than isolating a single lever. This is the closest match to a 'coordinated reforms are necessary' design.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-01"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      "Could generate Hungary-specific causal evidence currently absent, directly responding to the lens's demand that gains not be attributed to one isolated intervention without testing",
+      "If successful, could inform a subsequently coordinated national bundle combining T2, T3, and T4 elements"
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      "Explicitly designed to test rather than assume causal attribution, directly addressing the lens's stated limitation about isolating single interventions",
+      "Proposes pairing de-tracking with zoning/choice controls (linking to T4), reflecting recognition that a policy bundle rather than a single lever is likely necessary",
+      "Addresses the structural funnel (F-live-portuguese_reform-01) at its root rather than mitigating downstream effects"
+    ],
+    "threats": [
+      "Institutional durability risk (cited in the proposal itself) means even a methodologically sound pilot demonstrating positive effects may not survive political reversal, echoing the lens's causal-attribution caveat: a successful pilot still would not guarantee that a national rollout replicates the same bundle of conditions"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "As a regional pilot, findings may not generalize; the proposal itself flags non-representativeness of volunteer regions as a limitation on external validity",
+      "Relies on non-Hungarian historical evidence (Finnish, Polish) for its comparative baseline rather than the supplied Hungary-specific findings, so its evidentiary anchoring to the lens findings is comparatively indirect apart from the tracking funnel finding"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t6-portuguese_reform",
+  "provenance_ref": "PV-assess_portuguese_reform-d0fb65e060967666",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "35c9e0412ccc977f9439b4c2986c9fd08b60337f2461e63d6302f0afd24df32b",
+  "topic": "korai-szelekcio"
+}

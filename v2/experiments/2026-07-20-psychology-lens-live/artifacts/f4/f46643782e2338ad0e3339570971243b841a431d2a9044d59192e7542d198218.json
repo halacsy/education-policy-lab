@@ -1,0 +1,41 @@
+{
+  "content": {
+    "execution_id": "0eede5e66b499bac65c3fc526ac201041f03a2164f25825aa8e3c78c60e5ad91",
+    "input_artifact_hashes": [
+      "00cea9d06a29abd6932e6b0155136e0543b1c037fbc1f202511d7b2b045f8323",
+      "05f28dd8ea6c6f4d57e513930d7405a80671b70ecb9429cf928f67d2cb92d98e",
+      "1716dbaf519ad6b23ed0db4c98c12a844f746affa02e3f58cf9bc22f25f39049",
+      "22a4cdceda4563372468f1c03bf7204e04fd8c2c9528db719d90023db659de9a",
+      "2c39f3a31a63a18a5cb4cf4c040250c509ec3addbf8fe588d703e93698bbef0a",
+      "38c81b8c04f35533ca2536f0db74bf81c1d74d92536fcba3d9acc75da595e217",
+      "5fdb5db40d2036b0e59d67a538abb8a54f22cb4203a3341b7b76bdd143ba34a0",
+      "746461878c9f119c2fa87437ca57e20d5ca96e5a55cc9db2b401059c817faabe",
+      "8b1282529a1551deb0546e9f209653917aa2b312762e22253bccac427f154c20",
+      "c830882bcc7cda2bd87563ece19be11d44bc8d2426bd6019360f441a41990575",
+      "d33ce5f39a27fa8be9dfdeaa31d4214cfbab5e6cae0834f2dd20efc5ee2b3461",
+      "deaa024ab38711b453aae1aa5c5cebd95d7da9eeecfcbd67c4bb0a84687aca81",
+      "ef6ce1b4c4a3cb2020ec8fa69585f48b69ad235eb8d390ae009b8e5cf9d93c18",
+      "facb700667fafe08c5018d8cd84a84cc16a8c638e4a59d5f1d03a59b1214fb05"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_implementation_planning",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/lenses.json": "d935a45bbffd745ffb33a366c25686456f425c3e7f25acd17698d2504ba2020d",
+      "src/policy_lab/live/experiment.py": "861f58a43ef378a29bb8352809bc66264ad7a22376ec9bc24f1d47f70e8270fe"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_implementation_planning-0eede5e66b499bac",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

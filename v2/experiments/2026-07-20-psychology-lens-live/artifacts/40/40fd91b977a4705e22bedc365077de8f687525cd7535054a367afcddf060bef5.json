@@ -1,0 +1,32 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Quasi-experimental design exploiting variation in local availability of 6/8-year tracks (distance/capacity discontinuities) combined with administrative panel data on school-level SES/Roma composition; complement with synthetic control comparison against Hungarian regions/cohorts without such tracks.",
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t6"
+    ],
+    "question": "What is the independent causal effect of the 6-/8-year gimnázium track structure itself (age of selection) on between-school socioeconomic and Roma segregation, net of free school choice, residential sorting, and church/private admissions exemptions?",
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-international_comparison-01",
+      "U-live-finnish_reform-01",
+      "U-live-polish_reform-01",
+      "U-live-school_network_planning-01",
+      "U-live-education_finance-01",
+      "U-live-implementation_planning-01"
+    ],
+    "why_it_matters": "Nearly every proposal's expected impact depends on how much of Hungary's segregation is attributable to the track structure versus other channels; without this, reforms may target the wrong lever entirely."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-baseline-01",
+  "provenance_ref": "PV-build_research_agenda-767e6846a0df8a3c",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "e92aa90d583129e2079c5aa95be24e483788ff8b81b2ce60cbb7c159f53d79bf",
+  "topic": "korai-szelekcio"
+}

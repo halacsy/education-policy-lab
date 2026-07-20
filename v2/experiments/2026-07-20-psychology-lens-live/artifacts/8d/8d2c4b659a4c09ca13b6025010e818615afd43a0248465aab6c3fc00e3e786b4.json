@@ -1,0 +1,41 @@
+{
+  "content": {
+    "execution_id": "f44099ef8563611bd1b2048d41aba472b33f65ab1e71e651bde0c2615d400c6f",
+    "input_artifact_hashes": [
+      "04c97385b4ebfe13d56922ca1849e7add291d1719520faaf2319538d4f8d127b",
+      "4e194a5dcead3963fc85169d134d02dcbc05adb1f4085707331c833f25455115",
+      "51059ae0c9fc22acfbeb0c2c180ff75ac776597eefa89b97a603e695aa3ebcec",
+      "54a9f60fafa33d9b9945022ebf82a7ee925a31f336007bddd6035ea725d8cbbc",
+      "5fdb5db40d2036b0e59d67a538abb8a54f22cb4203a3341b7b76bdd143ba34a0",
+      "6db0fad2dc51e0a4fde4af8b9c0cf3e151d1bd1ebc11dd01d0d802863cf6e824",
+      "7aa2bc03ac63d2a5eb1396157b7e2b6e994890cd08cd3ba40723108ccfb79a84",
+      "8b1282529a1551deb0546e9f209653917aa2b312762e22253bccac427f154c20",
+      "c830882bcc7cda2bd87563ece19be11d44bc8d2426bd6019360f441a41990575",
+      "c9ff0feaf6cab9793565ecd99b8261a9574d9dfd464d722ec55874c05555839f",
+      "d33ce5f39a27fa8be9dfdeaa31d4214cfbab5e6cae0834f2dd20efc5ee2b3461",
+      "d675bb22fb2dcdd92041a7ae6068ee8a1ba59b32478b00e28eefadb47d1493c1",
+      "ef6ce1b4c4a3cb2020ec8fa69585f48b69ad235eb8d390ae009b8e5cf9d93c18",
+      "facb700667fafe08c5018d8cd84a84cc16a8c638e4a59d5f1d03a59b1214fb05"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_demography",
+    "prompt_hash": "d029774a67d855ca1677b7e1448bc9a8099dc1751aa8c32d3efffa58ed723211",
+    "provider": "anthropic",
+    "role": "generator",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {
+      "config/v2/lenses.json": "d935a45bbffd745ffb33a366c25686456f425c3e7f25acd17698d2504ba2020d",
+      "src/policy_lab/live/experiment.py": "861f58a43ef378a29bb8352809bc66264ad7a22376ec9bc24f1d47f70e8270fe"
+    }
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "PV-assess_demography-f44099ef8563611b",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

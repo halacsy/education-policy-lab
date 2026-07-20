@@ -1,0 +1,70 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t6-01",
+      "A-live-t6-02"
+    ],
+    "change_level": "network",
+    "costs": [
+      "Cost of running parallel comprehensive and control-region infrastructures for multiple years",
+      "Research/evaluation costs for rigorous matched-comparison design",
+      "Risk of pilot fatigue or under-enrollment if no maintainers volunteer given demonstrated status-quo attachment among urban/advantaged stakeholders"
+    ],
+    "equity_impact": "Uncertain but designed to generate equity evidence: if pilot follows the Finnish/Polish pattern, it could show reduced between-school variance and inequality; however, without pairing with choice/zoning reform, gains may be undermined by parallel segregation channels as seen in Finland post-1990s.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Generates Hungary-specific causal evidence disentangling tracking effects from confounding factors, addressing the contested nature of mean-performance findings",
+      "Politically lower-risk than national mandate since participation is voluntary and reversible",
+      "Builds an evidence base that could inform T2-style national reform if pilot results are favorable"
+    ],
+    "finding_refs": [
+      "F-live-finnish_reform-04",
+      "F-live-finnish_reform-05",
+      "F-live-demography-07",
+      "F-live-international_comparison-07",
+      "F-live-finnish_reform-07"
+    ],
+    "goal": "Test a voluntary regional pilot removing academic selection at grades 5/7 in favor of comprehensive lower-secondary schooling with within-school enrichment, evaluated against comparison regions before any national decision.",
+    "implementation_steps": [
+      {
+        "action": "Select 3-5 comparable pilot and control regions matched on demographic and SES composition, design comprehensive grade 5-9 curriculum with enrichment tracks",
+        "actor": "Ministry of Education and volunteering county/municipal maintainers",
+        "timeline": "Year 1 (design and region selection)"
+      },
+      {
+        "action": "Implement comprehensive lower-secondary structure in pilot regions, retaining existing structure in matched control regions",
+        "actor": "Pilot maintainers and Klebelsberg Centre",
+        "timeline": "Years 2-6 (full cohort cycle through lower secondary)"
+      },
+      {
+        "action": "Conduct matched-comparison evaluation of achievement, segregation, and equity indicators across pilot vs control regions",
+        "actor": "Independent research bodies (CEU, TARKI, Corvinus) and National ABC infrastructure",
+        "timeline": "Years 2-7, with interim reports at Year 4"
+      }
+    ],
+    "mechanisms": [
+      "Finland's comprehensive-schooling shift (1972-1977) was associated with rising performance and historically low between-school variance, though confounded by simultaneous teacher-training, curriculum, and welfare reforms — a pilot can help isolate Hungary-specific effects from these confounds",
+      "No significant measured efficiency losses from de-tracking are found in cross-national meta-analytic evidence, and countries increasing school heterogeneity showed higher student competency progress, supporting a testable hypothesis for the pilot",
+      "Finland's post-1990s experience shows school-choice deregulation can re-introduce segregation even without formal tracking, so the pilot must pair de-tracking with choice/zoning controls (linking to T4) to be a valid test"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Finnish experience shows de-tracking alone is insufficient against choice-driven segregation absent institutional guardrails, so a pilot without accompanying zoning controls may understate or overstate feasible national effects",
+      "Low institutional durability precedent (Poland's reversal after measured success) suggests even a successful pilot may not translate into lasting national policy",
+      "Pilot regions volunteering may not be representative, limiting external validity of results"
+    ],
+    "title": "Comprehensive lower-secondary pilot with opt-in enrichment (Finnish-inspired de-tracking pilot)",
+    "uncertainty_refs": [
+      "U-live-t6-01",
+      "U-live-t6-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t6",
+  "provenance_ref": "PV-derive_transformations-17daca41e196c1af",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "ef6ce1b4c4a3cb2020ec8fa69585f48b69ad235eb8d390ae009b8e5cf9d93c18",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,128 @@
+{
+  "architecture_version": "2.0.0",
+  "baseline_evaluation": {
+    "concerns": [
+      "No formal citations or source references for empirical claims (e.g., the study finding no tertiary benefit, Poland’s measured gains and reversal), reducing traceability to underlying evidence.",
+      "Limited quantification: no effect-size estimates, budgetary implications, or modeled scenarios for displaced-demand reallocations and pilot scaling.",
+      "Implementation detail is thin on the ‘how’: responsible actors, timelines, legal pathways, enforcement mechanisms, and monitoring metrics are not specified.",
+      "Stakeholder mapping and political feasibility sequencing are underdeveloped (who are likely veto players, coalitions, or potential cross-coalition anchors?).",
+      "Some claims rely on assertions about past non-translation of monitoring into policy without showing the causal pathway or conditions under which monitoring did lead to change."
+    ],
+    "dimensions": {
+      "artifact_integrity": 7,
+      "decision_usefulness": 8,
+      "dilemma_clarity": 9,
+      "evidence_discipline": 9,
+      "lens_traceability": 8,
+      "transformation_specificity": 7
+    },
+    "package_ref": "DP-live-baseline",
+    "strengths": [
+      "Clearly maps an actionable option space with six distinct transformation paths and their leading constraints.",
+      "Explicitly separates empirical uncertainty from value choices and highlights the key research questions that would shift decisions.",
+      "Identifies concrete institutional mechanisms (exam administration, maintainer exemptions, zoning, quotas, pilots) and recalls relevant historical precedents (Poland reform, Curia ruling).",
+      "Calls out political and legal constraints (framing risks, maintainer autonomy, Curia protection) that are decisive for feasibility.",
+      "Provides decision-relevant trade-offs (durability vs ambition, centralization vs maintainer autonomy) that help prioritize choices."
+    ],
+    "total": 8.0,
+    "verdict": "accept_with_caveats"
+  },
+  "baseline_lens_count": 12,
+  "baseline_package_ref": "DP-live-baseline",
+  "comparison_notice": "One live sample per arm; score differences are descriptive, not causal estimates.",
+  "evaluation_delta": -0.333,
+  "position_carriage_passed": true,
+  "psychology_assessment_count": 6,
+  "psychology_evaluation": {
+    "concerns": [
+      "No bibliographic citations or inline references for the empirical claims (e.g., 85% school selection, Curia ruling, Poland/Finland comparisons), reducing traceability to source material.",
+      "Implementation detail is uneven: options name mechanisms and constraints but lack quantified effect-size estimates, timelines, budgetary or administrative steps needed for rollout.",
+      "The psychology arm is conceptually strong but light on concrete mitigations (e.g., what specific kindergarten-stage outreach or in-track supports would look like and how they'd be implemented/evaluated).",
+      "Stakeholder mapping is implicit rather than explicit: limited visibility into which political actors, maintainers, teacher unions, or parent groups would drive support or opposition and how to engage them.",
+      "Pilot design limitations are noted (non-representative volunteers) but the package stops short of proposing sampling or randomization strategies that would strengthen external validity."
+    ],
+    "dimensions": {
+      "artifact_integrity": 7,
+      "decision_usefulness": 8,
+      "dilemma_clarity": 8,
+      "evidence_discipline": 8,
+      "lens_traceability": 8,
+      "transformation_specificity": 7
+    },
+    "package_ref": "DP-live-psychology",
+    "strengths": [
+      "Clear, structured presentation of six distinct policy directions and the decision trade-offs between them.",
+      "Empirical core is well-articulated (selection at age 10, Hungary as an outlier, percentage comparisons) and the package identifies the central causal uncertainty (track effect vs independent channels).",
+      "Multiple relevant lenses integrated (political/legal, implementation, and educational-psychology) with concrete mechanisms (e.g., big-fish-little-pond, self-determination theory) that affect interpretation of options.",
+      "Feasibility and durability risks are explicitly discussed (political mobilization, legal confrontation, teacher workforce), linking technical proposals to real-world constraints.",
+      "Actionable research agenda and explicit statement of which evidence would change policy choice (isolation of track causal effects; long-run labor-market returns)."
+    ],
+    "total": 7.667,
+    "verdict": "accept_with_caveats"
+  },
+  "psychology_keyword_hits": {
+    "assessments": {
+      "big-fish": 2,
+      "goal orientation": 0,
+      "label": 3,
+      "little-pond": 2,
+      "motivation": 1,
+      "psycholog": 9,
+      "self-concept": 4,
+      "stereotype": 1
+    },
+    "decision_package": {
+      "big-fish": 1,
+      "goal orientation": 0,
+      "label": 1,
+      "little-pond": 1,
+      "motivation": 0,
+      "psycholog": 2,
+      "self-concept": 1,
+      "stereotype": 0
+    }
+  },
+  "psychology_lens_count": 13,
+  "psychology_package_ref": "DP-live-psychology",
+  "transformation_hashes_identical": true,
+  "treatment_execution": {
+    "cache_hits": 27,
+    "dispositions": {
+      "assemble_decision_package": "executed",
+      "assess_demography": "cache_hit",
+      "assess_education_finance": "cache_hit",
+      "assess_educational_psychology": "executed",
+      "assess_equity_and_social_mobility": "cache_hit",
+      "assess_finnish_reform": "cache_hit",
+      "assess_hungarian_education_system": "cache_hit",
+      "assess_implementation_planning": "cache_hit",
+      "assess_international_comparison": "cache_hit",
+      "assess_legal_and_governance": "cache_hit",
+      "assess_polish_reform": "cache_hit",
+      "assess_political_feasibility": "cache_hit",
+      "assess_portuguese_reform": "cache_hit",
+      "assess_school_network_planning": "cache_hit",
+      "build_research_agenda": "executed",
+      "derive_transformations": "cache_hit",
+      "evaluate_decision_package": "executed",
+      "identify_decision_dilemmas": "executed",
+      "register_baseline_lenses": "cache_hit",
+      "register_educational_psychology_lens": "cache_hit",
+      "research_demography": "cache_hit",
+      "research_education_finance": "cache_hit",
+      "research_equity_and_social_mobility": "cache_hit",
+      "research_finnish_reform": "cache_hit",
+      "research_hungarian_education_system": "cache_hit",
+      "research_implementation_planning": "cache_hit",
+      "research_international_comparison": "cache_hit",
+      "research_legal_and_governance": "cache_hit",
+      "research_polish_reform": "cache_hit",
+      "research_political_feasibility": "cache_hit",
+      "research_portuguese_reform": "cache_hit",
+      "research_school_network_planning": "cache_hit"
+    },
+    "executed": 5,
+    "failed": 0,
+    "nodes": 32
+  }
+}

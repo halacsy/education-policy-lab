@@ -1,0 +1,29 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Structured cost-modeling exercise using administrative data on teacher workforce by subject/region, school capacity and enrollment projections, combined with scenario analysis calibrated against the Polish 1999/2017 transition case studies and Finland's multi-decade phase-in timeline.",
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t5"
+    ],
+    "question": "What are the realistic transition costs (teacher displacement, school closures/mergers, cohort overlap, curriculum revision) of restructuring Hungary's tracking system, and how do these costs differ between full consolidation, partial phase-down of only the age-10 entry point, and status-quo-with-monitoring?",
+    "uncertainty_refs": [
+      "U-live-polish_reform-03",
+      "U-live-t2-03",
+      "U-live-implementation_planning-02",
+      "U-live-education_finance-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ],
+    "why_it_matters": "Poland's 2017 reversal required closing ~7,000 schools and displaced up to 10,000 teachers; Hungary already faces documented teacher shortages and an aging rural workforce. Without credible cost estimates disaggregated by reform scope, policymakers cannot compare the delivery feasibility of TP-live-t2 versus the lower-risk TP-live-t5, or judge whether current implementation capacity supports any structural change."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-baseline-03",
+  "provenance_ref": "PV-build_research_agenda-45fac6d687129b6c",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

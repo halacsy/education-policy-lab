@@ -1,0 +1,103 @@
+TASK: expert_analysis
+AGENT: demography
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: population and cohort analysis
+PUBLIC QUESTION: Should Hungary keep its 6- and 8-year gimnázium tracks?
+CRITERIA: cohort trajectory, spatial distribution, counterfactual contraction, planning horizon
+KNOWN LENS LIMITS: Population projections do not determine the normative response.
+
+RESEARCH NOTES:
+# Research Notes: Early Academic Selection (6/8-Year Gimnázium) in Hungary — A Cohort & Demographic Perspective
+
+## 1. Institutional baseline (facts)
+Hungary's secondary system allows entry into academically selective gimnázium tracks well before the OECD-typical tracking age: 
+tracking starts early in Hungary, partially at Grade 5 (age 10-11) or later at Grade 7 (age 12-13), when students can apply to an 8-year or 6-year general secondary school
+. This selection is unusually far-reaching: 
+around 85% of Hungarian students are in schools which can select students according to academic performance or recommendations from feeder schools, based mainly on their academic records, compared to the OECD average of 43%
+. In absolute cohort terms the selective sub-population is small — 
+only 2-3% of students attend the 8-year gimnázium
+ — meaning any given cohort's "creaming" effect is concentrated in a thin top slice rather than a mass phenomenon.
+
+## 2. Geography: the tracks are structurally urban, not a nationwide network
+Empirical mapping of schools currently offering 6/8-year programs shows a strong urban skew: 
+almost half (121) of schools offering 6/8-year training today are located in small towns, a quarter (63) in provincial large cities (county seats or cities with county rights), more than a fifth in the capital (59), and only 8 are in villages
+. Sociological fieldwork corroborates this: 
+the 6- and 8-year gimnázium is fundamentally an urban phenomenon, and this settlement type also has the highest over-application rate
+, whereas in smaller provincial towns it functions more like ordinary free school choice, favoring locally-informed middle-class families. **Inference:** this geographic concentration means cohort decline and rural depopulation do not threaten the tracks symmetrically — they are structurally insulated in cities/county seats while ordinary small-town/rural comprehensive schools bear the brunt of enrollment shrinkage.
+
+## 3. Cohort decline is severe, accelerating, and unevenly regional (facts)
+Hungary's demographic base is contracting sharply: 
+since 2022 Hungarian birth rates have again been falling, with the fertility rate dropping to 1.38 by 2024, and depopulation is now progressing at its fastest rate to date
+. More recent reporting places the rate lower still: 
+the total fertility rate stood at around 1.6 in 2021 but has fallen to 1.3 by 2026, with the first quarter of that year recording just 1.29 — significantly short of the 2.1 replacement rate
+. The incoming school-age cohorts reflect this: 
+the birth count has fallen by nearly 20% in the last four years, and there are now 17,000 fewer one-year-olds than four-year-olds in Hungary — equivalent to 600-800 fewer kindergarten groups and classes, i.e., at least a hundred small-school's worth of children
+. Regional variance is pronounced: 
+since 2021, several counties have registered a birth-count decline of 20% or more, and these "micro-cohorts" are already in kindergarten and will soon reach school age
+. A concrete institutional-risk estimate: 
+in a first wave, 270 schools — often no longer independent institutions but branch schools of a larger center — could be endangered because they currently don't even have 80 students, meaning they run classes averaging ten students
+, and 
+this is not confined to rural areas — a fair number of such small schools operate even in Budapest
+.
+
+## 4. Effectiveness evidence on the tracks is real but contested for mechanism
+Hungarian research (Horn, Corvinus University) finds a measurable value-added effect: 
+students in 6- and 8-year gimnáziums achieve on average roughly 10% greater progress than similarly able and similarly socioeconomically-situated peers in 4-year gimnáziums
+. However, the same researcher flags multiple rival, empirically hard-to-separate explanations — **contested evidence**: 
+the difference could partly stem from high-ability children pulling each other up in these schools, from the placement of better teachers alongside the best students (itself a selectivity-reinforcing mechanism), or possibly from a genuine pedagogical advantage of the 6+6 structure over 8+4
+. The underlying panel-data study (Horn/TARKI) that estimated this school-type effect explicitly notes methodological limits: 
+the data don't show how students' scores evolved before grade 8 in each school type — only that scores rose more among small-gimnázium (kisgimnázium) students over the two observed years — so isolating the school's causal effect requires accounting for the selection/admission period itself
+.
+
+## 5. Selection effects on composition and equity (facts, largely convergent)
+Multiple independent Hungarian studies converge on socioeconomic sorting into these tracks. The same TARKI paper: 
+a one-standard-deviation change in family background or test scores each raises the odds of entering an 8-year gimnázium by about 4-4.5%, with a combined effect over 5% — a substantial effect given only 2-3% of students attend such schools; and children in kisgimnáziums have higher social status than others, with test score mattering somewhat more than status in the cross-sectional estimate
+. At the EU level, Hungary now shows: 
+the highest level of segregation of students from less and more advantaged socio-economic groups into different schools in the EU, and the highest segregation of most/least disadvantaged students in the 2022 PISA study
+, alongside 
+Roma pupil segregation the second highest in the region, with 62% of Roma children aged 6-15 attending schools where all or most pupils are Roma
+. Between-school variance is extreme: 
+while OECD school differences account for 36% of reading-performance variation on average, in Hungary the figure is 71%
+. **Note on causality:** these are compositional/correlational findings; researchers do not claim the 6/8-year track alone produces national segregation (free primary-school choice is cited as an equally important channel — see §6), but they consistently identify early selective tracks as one structural amplifier alongside free school choice.
+
+## 6. Which problem does the track solve, and what would happen without it? (mixed fact/inference)
+- **Stated function (facts about stakeholder motives):** School principal surveys found 
+contrary to the popular belief that competition for pupils and (status-driven) parental pressure are the main drivers, principals themselves cite professional/pedagogical arguments as primary
+ for offering 6/8-year tracks — though this is principals' self-report, not independent verification.
+- **Political economy of persistence (fact, sociological interview):** A researcher of a multi-year study on access/inequality in these tracks describes a cross-ideological coalition sustaining them: 
+conservative, provincial, high-status families (often church-school-bound) and Budapest's liberal intelligentsia (state-elite or alternative gimnázium-bound) have found common interest in preserving the 6/8-year gimnázium system
+, and Hungary is described by the same researcher as 
+among the world's most selective education systems via 6- and 8-year secondary schools, which increases inequality and erodes overall system effectiveness
+.
+- **Without the tracks — proposed counterfactual mechanisms (inference/contested, drawn from one researcher's argument, not consensus):** Horn suggests 
+policy could try to discourage upper- and upper-middle-class families from sending children to elite gimnáziums — either via full structural conversion to a uniform 6+6 system, or via incentives
+, e.g. 
+directing more resources to ordinary (4-year) gimnáziums to reduce the incentive for high-ability children's parents to opt into 6-year schools
+. This is a single expert's proposal, not empirical evidence of outcomes, and is explicitly framed as speculative ("could be attempted").
+- **General cross-national evidence on tracking/segregation removal (fact, but from broader literature, not Hungary-specific causal test):** 
+academic results differ between segregated and non-segregated scenarios, with lesser inequalities in more inclusive systems; PISA data show countries that improved equity by making schools more heterogeneous also showed higher progress in student competencies
+, and 
+a meta-analysis of 2000-2021 studies found negative effects of tracking/segregation on inequality of academic performance, with no significant effects in efficiency terms
+ — i.e., equity costs are well documented, efficiency losses from de-tracking are not.
+
+## 7. How cohort decline changes viability — synthesis (inference)
+- **Capacity buffer, not scarcity, in the near term:** Because 6/8-year programs draw disproportionately from urban/county-seat catchments with continued in-migration (fact: 
+some cities like Sopron are still destinations of internal migration and have not yet seen sharp birth-count declines
+), and because dormitory infrastructure is currently under-used (
+dormitories can accommodate most applicants as there are far more places than applicants; demand is in decline
+), elite urban tracks are not the most exposed segment of the system to enrollment collapse.
+- **Rural comprehensive schools are the front line of the cohort shock**, not the selective tracks: the closures/consolidations wave documented for 2025-2026 concerns ordinary small primary schools and kindergartens (
+270 schools at risk, mostly with under-80 pupils and ~10-pupil classes
+), with government stating explicitly 
+the goal is not closure but protecting small settlements' small schools as long as there is demand for them, while acknowledging mergers and local solutions will be needed
+.
+- **Downstream risk to selection logic:** As the shrinking cohort progresses through primary school into the age-10/12 selection points, the pool eligible to compete for 6/8-year gimnázium places will itself shrink, but because supply-side capacity (school buildings, dormitories) is currently underused relative to demand, the selective tracks may face *falling selectivity ratios* (more places relative to applicants) before they face closure risk — an outcome that could, in principle, either reduce academic selectivity (more places available) or, if maintained at fixed capacity, could increase competitive pressure per place depending on how administrators respond. This is an **inference**, not something directly evidenced in the sources retrieved.
+
+## Gaps / what was not found
+No source in this search set documents a concrete, currently-tabled Hungarian government or opposition (e.g., Tisza Party) legislative proposal to abolish or restructure the 6/8-year gimnázium track specifically; discussion found is limited to academic/expert commentary (Horn, Berényi) rather than confirmed policy platforms. Similarly, no source provided a quantified national projection specifically of 6/8-year gimnázium enrollment under demographic decline scenarios (as distinct from general primary-school closures) — this appears to be an open research question rather than a settled projection.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 4-7 findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

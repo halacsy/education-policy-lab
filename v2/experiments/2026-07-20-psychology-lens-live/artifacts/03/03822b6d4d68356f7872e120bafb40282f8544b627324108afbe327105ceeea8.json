@@ -1,0 +1,26 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "medium",
+    "method": "Re-analysis of Polish PISA panel data using synthetic control or event-study methods that separately model the timing of curriculum, teacher-training, and structural reforms; comparison with Finnish 1970s reform decomposition using historical administrative records.",
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t6"
+    ],
+    "question": "What share of Poland's 1999 comprehensive-schooling gains is attributable to the structural delay of tracking itself versus concurrent curriculum reform, teacher professional development, and economic growth, and does this decomposition inform expected effect sizes for a Hungarian reform?",
+    "uncertainty_refs": [
+      "U-live-polish_reform-03",
+      "U-live-finnish_reform-03",
+      "U-live-international_comparison-02"
+    ],
+    "why_it_matters": "T2 and T6 both rely heavily on the Polish and Finnish precedents as evidence that delaying selection improves equity; if most of the historical gains were driven by complementary reforms rather than the structural change, Hungary's expected effect size from track-delay alone could be substantially smaller than proponents assume."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-psychology-04",
+  "provenance_ref": "PV-build_research_agenda-aed5f46581737fae",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "3157c68df90a862362100fceefa2271e6082347307586b5414b2393cb5810e66",
+  "topic": "korai-szelekcio"
+}

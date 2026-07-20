@@ -1,0 +1,33 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Quasi-experimental identification using discontinuities in admission cutoffs (regression discontinuity at entrance-exam thresholds), instrumental-variable analysis using distance-to-selective-school as instrument, and cross-municipality comparison of segregation indices in areas with versus without 6/8-year track availability, controlling for residential segregation and school-choice intensity.",
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t5"
+    ],
+    "question": "What is the independent causal contribution of the 6/8-year track structure itself (as distinct from free school choice, residential segregation, and church/private admissions autonomy) to Hungary's between-school segregation and SES achievement gaps?",
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-international_comparison-02",
+      "U-live-polish_reform-01",
+      "U-live-portuguese_reform-01",
+      "U-live-equity_and_social_mobility-03",
+      "U-live-school_network_planning-01",
+      "U-live-education_finance-02",
+      "U-live-implementation_planning-01"
+    ],
+    "why_it_matters": "Nearly every reform proposal assumes tracking is a primary causal driver of segregation, but multiple lenses flag that this may instead be a sorting channel for pre-existing demand and residential/choice-driven segregation. If the track structure is not the dominant causal mechanism, structural reforms (T2, T5) will underperform expectations while carrying high transition costs."
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "RQ-live-psychology-01",
+  "provenance_ref": "PV-build_research_agenda-8f7438d7636683ca",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

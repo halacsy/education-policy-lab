@@ -1,0 +1,109 @@
+{
+  "arm": "baseline",
+  "completed_at": "2026-07-20T18:25:21.914501Z",
+  "counts": {
+    "dilemma": 6,
+    "finding": 84,
+    "lens_assessment": 72,
+    "lens_definition": 12,
+    "research_question": 10,
+    "transformation_family": 6,
+    "transformation_proposal": 6
+  },
+  "dilemma_refs": [
+    "D-live-baseline-01",
+    "D-live-baseline-02",
+    "D-live-baseline-03",
+    "D-live-baseline-04",
+    "D-live-baseline-05",
+    "D-live-baseline-06"
+  ],
+  "evaluation": {
+    "concerns": [
+      "No formal citations or source references for empirical claims (e.g., the study finding no tertiary benefit, Poland’s measured gains and reversal), reducing traceability to underlying evidence.",
+      "Limited quantification: no effect-size estimates, budgetary implications, or modeled scenarios for displaced-demand reallocations and pilot scaling.",
+      "Implementation detail is thin on the ‘how’: responsible actors, timelines, legal pathways, enforcement mechanisms, and monitoring metrics are not specified.",
+      "Stakeholder mapping and political feasibility sequencing are underdeveloped (who are likely veto players, coalitions, or potential cross-coalition anchors?).",
+      "Some claims rely on assertions about past non-translation of monitoring into policy without showing the causal pathway or conditions under which monitoring did lead to change."
+    ],
+    "dimensions": {
+      "artifact_integrity": 7,
+      "decision_usefulness": 8,
+      "dilemma_clarity": 9,
+      "evidence_discipline": 9,
+      "lens_traceability": 8,
+      "transformation_specificity": 7
+    },
+    "package_ref": "DP-live-baseline",
+    "strengths": [
+      "Clearly maps an actionable option space with six distinct transformation paths and their leading constraints.",
+      "Explicitly separates empirical uncertainty from value choices and highlights the key research questions that would shift decisions.",
+      "Identifies concrete institutional mechanisms (exam administration, maintainer exemptions, zoning, quotas, pilots) and recalls relevant historical precedents (Poland reform, Curia ruling).",
+      "Calls out political and legal constraints (framing risks, maintainer autonomy, Curia protection) that are decisive for feasibility.",
+      "Provides decision-relevant trade-offs (durability vs ambition, centralization vs maintainer autonomy) that help prioritize choices."
+    ],
+    "total": 8.0,
+    "verdict": "accept_with_caveats"
+  },
+  "evaluation_ref": "EV-live-baseline",
+  "execution": {
+    "cache_hits": 0,
+    "dispositions": {
+      "assemble_decision_package": "executed",
+      "assess_demography": "executed",
+      "assess_education_finance": "executed",
+      "assess_equity_and_social_mobility": "executed",
+      "assess_finnish_reform": "executed",
+      "assess_hungarian_education_system": "executed",
+      "assess_implementation_planning": "executed",
+      "assess_international_comparison": "executed",
+      "assess_legal_and_governance": "executed",
+      "assess_polish_reform": "executed",
+      "assess_political_feasibility": "executed",
+      "assess_portuguese_reform": "executed",
+      "assess_school_network_planning": "executed",
+      "build_research_agenda": "executed",
+      "derive_transformations": "executed",
+      "evaluate_decision_package": "executed",
+      "identify_decision_dilemmas": "executed",
+      "register_baseline_lenses": "executed",
+      "research_demography": "executed",
+      "research_education_finance": "executed",
+      "research_equity_and_social_mobility": "executed",
+      "research_finnish_reform": "executed",
+      "research_hungarian_education_system": "executed",
+      "research_implementation_planning": "executed",
+      "research_international_comparison": "executed",
+      "research_legal_and_governance": "executed",
+      "research_polish_reform": "executed",
+      "research_political_feasibility": "executed",
+      "research_portuguese_reform": "executed",
+      "research_school_network_planning": "executed"
+    },
+    "executed": 30,
+    "failed": 0,
+    "nodes": 30
+  },
+  "package_ref": "DP-live-baseline",
+  "research_question_refs": [
+    "RQ-live-baseline-01",
+    "RQ-live-baseline-02",
+    "RQ-live-baseline-03",
+    "RQ-live-baseline-04",
+    "RQ-live-baseline-05",
+    "RQ-live-baseline-06",
+    "RQ-live-baseline-07",
+    "RQ-live-baseline-08",
+    "RQ-live-baseline-09",
+    "RQ-live-baseline-10"
+  ],
+  "run_id": "live-korai-szelekcio-baseline",
+  "transformation_hashes": [
+    "798929841569c5b8494005c2cf4517167f7da99ce134f737d39818cf5cf18f4d",
+    "98eef0d9012577e077020bcce0a0fef04c9a31ca9f4ac87c7f0bca799eaf14e2",
+    "a9e9365af0b23c7fb17a78e221c9ae385737d6efa5b916fbb287a17b5827cfc6",
+    "d53be6b0a750867cae10c8958aaa66b6b4347affc8bcfe87176e47f15a915c45",
+    "df58d8ad8ecdca4b03f7b5addfe3ecc9e23237401a447a1a51fe4bf0878d3fc1",
+    "f4cb78bb36e39123a7f4905fa6dec0132058c026384ae4b09b1ec9d1908e05c3"
+  ]
+}

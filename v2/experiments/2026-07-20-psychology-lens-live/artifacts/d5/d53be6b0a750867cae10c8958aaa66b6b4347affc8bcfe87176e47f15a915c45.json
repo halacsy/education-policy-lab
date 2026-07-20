@@ -1,0 +1,70 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t5-01",
+      "A-live-t5-02"
+    ],
+    "change_level": "organization",
+    "costs": [
+      "Recurring funding cost for outreach/preparation programs targeted at disadvantaged feeder schools",
+      "Potential resistance from advantaged-family constituencies perceiving quotas as reducing merit-based access",
+      "Church/private maintainers may decline voluntary quota adoption given their exemption from state admissions rules"
+    ],
+    "equity_impact": "Likely positive but narrow: improves compositional access for disadvantaged students to existing high-value-added tracks (moderating the 14%-vs-1% top-performer gap) but does not address system-wide segregation drivers or the contested long-run individual benefit of track attendance.",
+    "evidence_status": "weak",
+    "expected_benefits": [
+      "Directly increases disadvantaged representation in high-value-added tracks without triggering the structural-abolition political backlash",
+      "Uses existing assessment infrastructure for monitoring, minimizing new administrative build cost",
+      "Complements rather than substitutes for broader desegregation efforts (T4) or admissions redesign (T3)"
+    ],
+    "finding_refs": [
+      "F-live-education_finance-04",
+      "F-live-education_finance-07",
+      "F-live-portuguese_reform-05",
+      "F-live-equity_and_social_mobility-06",
+      "F-live-equity_and_social_mobility-02"
+    ],
+    "goal": "Preserve the 6-/8-year track structure and admissions exam but introduce mandated disadvantaged-student quotas, outreach, and exam-preparation support to change who is selected without changing the selection mechanism's timing or structural design.",
+    "implementation_steps": [
+      {
+        "action": "Mandate disadvantaged-student admission quotas or bonus-point systems for state-maintained gimnáziums, and negotiate voluntary adoption with church/private maintainers",
+        "actor": "Ministry of Education and Klebelsberg Centre",
+        "timeline": "Year 1 (design), Year 2 (pilot cohort)"
+      },
+      {
+        "action": "Fund targeted exam-preparation and outreach programs in disadvantaged feeder primary schools ahead of grade-5/7 selection points",
+        "actor": "Klebelsberg Centre / local school maintainers",
+        "timeline": "Year 1 onward, continuous"
+      },
+      {
+        "action": "Monitor compositional outcomes annually using existing National ABC/PISA infrastructure disaggregated by SES and Roma status",
+        "actor": "Ministry of Education",
+        "timeline": "Annual, ongoing from Year 2"
+      }
+    ],
+    "mechanisms": [
+      "Since per-pupil financing is currently identical across elite and disadvantaged schools yet access depends on private tutoring, targeted supplementary funding for exam preparation for disadvantaged applicants could offset the tutoring-access gap without altering exam content",
+      "Quota mechanisms directly address the compositional imbalance (14% advantaged vs 1% deprived among top readers) by mandating minimum disadvantaged representation, independent of the admissions-design reform in T3",
+      "School starting age evidence shows kindergarten-stage interventions produce stronger equity gains for low-status children than later interventions, suggesting outreach should begin well before the age-10 selection point to be effective"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Value-added gains attributed to selective tracks may be substantially explained by family background rather than institutional effect, meaning quota-admitted students might not experience the same benefit unless underlying school-quality issues are also addressed",
+      "Zero measured tertiary-education effect of track selection in at least one study raises the possibility that expanding access to a track with contested added value may not durably benefit admitted disadvantaged students",
+      "Quotas without broader distrust-of-local-schools resolution may not shift underlying parental sorting behavior driving demand for selective tracks"
+    ],
+    "title": "Targeted quota and outreach expansion for disadvantaged access to existing tracks",
+    "uncertainty_refs": [
+      "U-live-t5-01",
+      "U-live-t5-02"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "TP-live-t5",
+  "provenance_ref": "PV-derive_transformations-17daca41e196c1af",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "5fdb5db40d2036b0e59d67a538abb8a54f22cb4203a3341b7b76bdd143ba34a0",
+  "topic": "korai-szelekcio"
+}

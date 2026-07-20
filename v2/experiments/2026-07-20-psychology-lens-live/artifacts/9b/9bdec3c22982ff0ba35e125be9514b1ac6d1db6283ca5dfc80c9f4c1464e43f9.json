@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "A pilot approach interacts cautiously with existing institutions by not committing to national-scale change against the centralized admissions system (F-live-hungarian_education_system-03) or the 85% selective-school baseline (F-live-hungarian_education_system-01), instead testing an opt-in comprehensive model. This has strong institutional fit as an evaluation mechanism but limited system coverage by design, since it is explicitly a bounded regional test. It appropriately recognizes, in its own design, that geographic and choice-driven sorting (F-live-hungarian_education_system-06) could undermine a de-tracking pilot unless paired with zoning controls, which is institutionally sound reasoning but adds administrative complexity. The maintainer exemption structure (F-live-hungarian_education_system-05) is not addressed within the pilot's stated scope, meaning even a successful pilot would not test compatibility with the segregation channel tied to church/private school autonomy.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-06"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "Could generate Hungary-specific institutional evidence distinguishing selection-mechanism effects from confounding geographic and choice factors before any national administrative commitment"
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      "Institutionally cautious design avoids premature disruption of national admissions governance while generating comparative evidence",
+      "Explicitly anticipates that de-tracking without zoning/choice controls could fail against geographic sorting mechanisms already documented"
+    ],
+    "threats": [
+      "Non-representative volunteer pilot regions limit generalizability to the national administrative and demographic contexts documented in the evidence, particularly rural vocational-track funneling"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Bounded pilot scope means system coverage of national-level selection statistics (85% selective schools) is not addressed even if successful",
+      "Maintainer exemption-based segregation is outside the pilot's design scope entirely"
+    ]
+  },
+  "created_at": "2026-07-20T16:26:59.920668Z",
+  "id": "AS-live-t6-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-ec3bcd34c7dedfe2",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "2401f9a053e81d00936598d5a9083967598a6ed8c93ef8d4effd9c1512e3aceb",
+  "topic": "korai-szelekcio"
+}
