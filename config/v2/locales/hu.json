@@ -96,7 +96,8 @@
       "dilemma_type": {
         "value_conflict": "értékkonfliktus",
         "irreducible_tradeoff": "feloldhatatlan átváltás",
-        "mixed": "kevert érték- és érdekkonfliktus"
+        "mixed": "kevert érték- és érdekkonfliktus",
+        "empirical_open_question": "nyitott empirikus kérdés"
       }
     },
     "lens": {
@@ -209,6 +210,38 @@
         "repeat_build": {"name": "Ismételt összeállítás", "v1": "Nincs azonos értelmű rekord-gyorsítótár", "v2": "12/12 újrafelhasznált lépés"},
         "audit_root": {"name": "Az ellenőrzés gyökere", "v1": "Összefoglaló és naplók", "v2": "2 döntési csomag, futási jegyzékek és események"}
       }
+    },
+    "production": {
+      "eyebrow": "FRISS V2 PRODUKCIÓS FUTÁS",
+      "title": "Két kérdés, bizonyítékokból újraépítve",
+      "deck": "Friss kutatás, kifejezett változtatási lefedettség, szakmai nézőpontú értékelések, dilemmák és látható állítás–forrás kapcsolatok.",
+      "open": "Friss eredmény megnyitása",
+      "comparison": "Friss V1–V2 összevetés",
+      "score": "eltérő modellcsaládú értékelés",
+      "readiness": "döntési készültség",
+      "ready_with_conditions": "feltételekkel emberi felülvizsgálatra kész",
+      "external_gate": "külső felhasználási kapu függőben",
+      "summary": "Döntési csomag",
+      "proposals": "Változtatási irányok",
+      "coverage": "A jóváhagyott lehetőségtér lefedettsége",
+      "perspectives": "szakmai nézőpont",
+      "assessments": "javaslat × szakmai nézőpont értékelés",
+      "dilemmas": "Döntési dilemmák",
+      "research": "Kutatási agenda",
+      "evidence": "Bizonyítékjegyzék",
+      "conditions": "A cselekvés előtti feltételek",
+      "mechanisms": "Mechanizmusok",
+      "implementation": "Megvalósítási út",
+      "benefits": "Várható előnyök",
+      "costs": "Költségek",
+      "risks": "Kockázatok",
+      "equity": "Méltányossági hatás",
+      "sources": "Források",
+      "v1_score": "V1 pontszám (régi szempontrendszer)",
+      "v2_score": "V2 pontszám (új szempontrendszer)",
+      "not_comparable": "A pontszámok közvetlenül nem hasonlíthatók össze; a szempontrendszer és az architektúra megváltozott.",
+      "coverage_pass": "Minden jóváhagyott irány megmaradt",
+      "fresh_findings": "friss megállapítás"
     },
     "experiment": {
       "eyebrow": "ÉLŐ V2 ÉRZÉKENYSÉGI VIZSGÁLAT · PR #29",

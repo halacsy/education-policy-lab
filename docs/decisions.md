@@ -760,3 +760,12 @@ analysis model. `lab.llm` now recognizes the already-declared DAG role
 default, pinned to gpt-5-mini in the production localizer). It does not judge
 or generate canonical artifacts and therefore does not alter the cross-family
 generator/judge constraint.
+
+**D-53 — Fresh production results have a separate deterministic public view
+(2026-07-21).** The migrated topic browser remains an archive view. A new
+`site/v2/production/` renderer reads only the per-topic production artifact
+store and its hash-bound localization bundle, and publishes the decision
+summary, all proposals, approved-direction coverage, dilemmas, research
+agenda, readiness conditions, and claim-to-source appendix. Its comparison
+page shows both legacy and v2 scores but labels them non-comparable because
+the rubric and architecture changed.

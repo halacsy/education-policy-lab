@@ -79,7 +79,8 @@
       "dilemma_type": {
         "value_conflict": "value conflict",
         "irreducible_tradeoff": "irreducible trade-off",
-        "mixed": "mixed value and trade-off conflict"
+        "mixed": "mixed value and trade-off conflict",
+        "empirical_open_question": "empirical open question"
       }
     },
     "lens": {
@@ -192,6 +193,38 @@
         "repeat_build": {"name": "Repeat build", "v1": "No equivalent record cache", "v2": "12/12 reused steps"},
         "audit_root": {"name": "Audit root", "v1": "Brief + logs", "v2": "2 decision packages + manifests + events"}
       }
+    },
+    "production": {
+      "eyebrow": "FRESH V2 PRODUCTION RUN",
+      "title": "Two questions, rebuilt from evidence",
+      "deck": "Fresh research, explicit transformation coverage, scientific perspective assessments, dilemmas, and visible claim-to-source citations.",
+      "open": "Open fresh result",
+      "comparison": "Fresh V1–V2 comparison",
+      "score": "cross-family score",
+      "readiness": "decision readiness",
+      "ready_with_conditions": "ready for human review with conditions",
+      "external_gate": "external-use gate pending",
+      "summary": "Decision package",
+      "proposals": "Transformation directions",
+      "coverage": "Approved option-space coverage",
+      "perspectives": "scientific perspectives",
+      "assessments": "proposal × perspective assessments",
+      "dilemmas": "Decision dilemmas",
+      "research": "Research agenda",
+      "evidence": "Evidence appendix",
+      "conditions": "Conditions before action",
+      "mechanisms": "Mechanisms",
+      "implementation": "Implementation path",
+      "benefits": "Expected benefits",
+      "costs": "Costs",
+      "risks": "Risks",
+      "equity": "Equity impact",
+      "sources": "Sources",
+      "v1_score": "V1 score (legacy rubric)",
+      "v2_score": "V2 score (new rubric)",
+      "not_comparable": "Scores are not directly comparable; the rubric and architecture changed.",
+      "coverage_pass": "All approved directions retained",
+      "fresh_findings": "fresh findings"
     },
     "experiment": {
       "eyebrow": "LIVE V2 SENSITIVITY TEST · PR #29",
