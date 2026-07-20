@@ -744,3 +744,11 @@ keyed chunks, requires exact key coverage, and writes a schema-validated
 `hu.json` presentation bundle bound to the decision-package content hash.
 Localization never feeds an analytical node and can be regenerated without
 changing evidence, proposals, evaluation, or readiness.
+
+**D-51 — Public localization chunks are capped at 20 keyed strings
+(2026-07-21).** The first 45-string structured translation kept an active
+streaming connection for more than ten minutes without completing. It was
+stopped before persistence. Chunks are now capped at 20 strings and 10K output
+tokens, with the same exact-key validator and per-chunk cache. This bounds
+grammar size and failure cost without changing the localization database
+contract.

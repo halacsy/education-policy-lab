@@ -97,7 +97,7 @@ STRINGS:
     path.parent.mkdir(parents=True, exist_ok=True)
     (path.parent / f"{path.stem}.prompt.md").write_text(prompt, encoding="utf-8")
     for attempt in range(3):
-        result = llm.call_structured(prompt, schema, "generator", max_tokens=20000)
+        result = llm.call_structured(prompt, schema, "generator", max_tokens=10000)
         translated = {item["key"]: item["text"] for item in result["translations"]}
         if set(translated) == set(chunk):
             write_json(path, translated)
@@ -124,8 +124,8 @@ def main() -> int:
         strings = public_text(repository, package, evaluation, readiness)
         translations: dict[str, str] = {}
         pairs = list(strings.items())
-        for number, start in enumerate(range(0, len(pairs), 45), 1):
-            chunk = dict(pairs[start:start + 45])
+        for number, start in enumerate(range(0, len(pairs), 20), 1):
+            chunk = dict(pairs[start:start + 20])
             translations.update(translate_chunk(topic, chunk, root / "localization" / "hu" / f"chunk-{number:02d}.json"))
         bundle = {
             "locale": "hu", "bundle_version": "1.0.0",
