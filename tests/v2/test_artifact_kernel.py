@@ -7,7 +7,7 @@ from pathlib import Path
 
 from policy_lab.dag import NodeSpec, compute_cache_key
 from policy_lab.jsonio import content_hash
-from policy_lab.live.experiment import PsychologyLensExperiment
+from policy_lab.live.experiment import ArtifactDagRunner, PsychologyLensExperiment
 from policy_lab.schema_registry import SchemaRegistry, SchemaValidationError
 from policy_lab.store import ArtifactRepository, GraphIntegrityError
 
@@ -278,6 +278,9 @@ class NodeSpecTests(unittest.TestCase):
             runner._contract_hash("derive_transformations_v1"),
             runner._contract_hash("decision_package_v1"),
         )
+
+    def test_experiment_runner_remains_a_production_runner_subtype(self) -> None:
+        self.assertTrue(issubclass(PsychologyLensExperiment, ArtifactDagRunner))
 
 
 if __name__ == "__main__":

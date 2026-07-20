@@ -28,8 +28,8 @@ def _slug(value: str) -> str:
     return re.sub(r"[^a-zA-Z0-9._-]+", "-", value).strip("-").lower()
 
 
-class PsychologyLensExperiment:
-    """Run one full baseline and one dependency-localized lens treatment."""
+class ArtifactDagRunner:
+    """Run the live artifact DAG for production or a localized lens test."""
 
     def __init__(
         self,
@@ -66,6 +66,24 @@ class PsychologyLensExperiment:
             results["comparison"] = comparison
         self._write_cost_report()
         return results
+
+    def run_production(self) -> dict[str, Any]:
+        """Run one admitted-lens production replicate for this topic."""
+
+        summary = self.run_arm("production", include_psychology=False)
+        self._write_cost_report()
+        write_json(self.output_root / "production_manifest.json", {
+            "architecture_version": VERSION,
+            "topic": self.topic,
+            "run_id": summary["run_id"],
+            "root_refs": [
+                summary["package_ref"], summary["evaluation_ref"],
+                summary["readiness_ref"],
+            ],
+            "summary": summary,
+            "completed_at": _now(),
+        })
+        return summary
 
     def rebuild_reports(self) -> dict[str, Any]:
         """Recompute manifest-derived summaries and the A/B comparison without model calls."""
@@ -734,10 +752,7 @@ Write 500-900 words. Explain what can change, the leading mechanism and constrai
             "coverage_ledger_refs": ids("coverage_ledger"),
             "lens_assessment_refs": ids("lens_assessment"),
             "dilemma_refs": ids("dilemma"), "research_question_refs": ids("research_question"),
-            "generation_notice": (
-                f"Fresh live v2 {arm} arm. Generator=anthropic; judge=openai. "
-                "The psychology treatment is a PR #29 sensitivity test, not registry admission."
-            ),
+            "generation_notice": self._generation_notice(arm),
         })]
 
     def _evaluation_records(
@@ -1170,9 +1185,27 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
             for r in records
         )
 
+    @staticmethod
+    def _generation_notice(arm: str) -> str:
+        if arm == "psychology":
+            return (
+                "Fresh live v2 psychology sensitivity arm. Generator=anthropic; "
+                "judge=openai. The PR #29 lens is test-only, not registry admission."
+            )
+        if arm == "production":
+            return (
+                "Fresh live v2 production replicate using the admitted lens registry. "
+                "Generator=anthropic; judge=openai; human external-use gate remains pending."
+            )
+        return "Fresh live v2 baseline arm. Generator=anthropic; judge=openai."
+
     def _arm_summary(self, arm: str) -> Path:
         return self.output_root / "runs" / f"live-{self.topic}-{arm}" / "arm_summary.json"
 
     @staticmethod
     def _load(path: Path) -> dict[str, Any]:
         return json.loads(path.read_text(encoding="utf-8"))
+
+
+class PsychologyLensExperiment(ArtifactDagRunner):
+    """Backward-compatible name for the PR #29 A/B acceptance experiment."""

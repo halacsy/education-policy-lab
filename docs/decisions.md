@@ -683,3 +683,11 @@ revision; it also links candidate first moves, unresolved dilemmas, and
 high-impact research questions. The external-use gate is always `pending` in
 machine output. Publication or policy endorsement therefore cannot be inferred
 from a high model score and remains an explicit human act.
+
+**D-44 — Production runs are no longer disguised as a psychology experiment
+(2026-07-20).** The reusable engine is now `ArtifactDagRunner`; the old
+`PsychologyLensExperiment` name is a compatibility subtype used only by the
+PR #29 A/B report. `run_v2_production.py` runs isolated, resumable topic stores
+and writes a cross-topic catalog. Production uses only the admitted 12-lens
+registry. The experimental psychology lens is not silently seated by running
+the two production topics.
