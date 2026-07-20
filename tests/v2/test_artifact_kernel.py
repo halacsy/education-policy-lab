@@ -96,6 +96,7 @@ class SchemaRegistryTests(unittest.TestCase):
             self.schemas.available(),
             (
                 ("assumption", "2.0.0"),
+                ("coverage_ledger", "2.0.0"),
                 ("decision_package", "2.0.0"),
                 ("dilemma", "2.0.0"),
                 ("evaluation", "2.0.0"),
@@ -131,6 +132,25 @@ class SchemaRegistryTests(unittest.TestCase):
         record["content"]["url"] = "not a URI"
         with self.assertRaises(SchemaValidationError):
             self.schemas.validate(record)
+
+    def test_optional_reference_field_contributes_no_edges(self) -> None:
+        package = {
+            "id": "DP-test", "record_type": "decision_package",
+            "schema_version": "2.0.0", "topic": "early-selection",
+            "status": "candidate", "provenance_ref": "PV-test",
+            "created_at": "2026-07-20T12:00:00Z", "supersedes": None,
+            "content": {
+                "title": "Test", "public_question": "Test?", "summary": "Test.",
+                "transformation_family_refs": ["TF-test"],
+                "proposal_refs": ["TP-test"],
+                "lens_assessment_refs": ["AS-test"],
+                "dilemma_refs": [], "research_question_refs": [],
+                "migration_notice": "Legacy artifact without a coverage ledger."
+            },
+        }
+        self.schemas.validate(package)
+        fields = {reference.field for reference in self.schemas.references(package)}
+        self.assertNotIn("/content/coverage_ledger_refs/*", fields)
 
 
 class ArtifactRepositoryTests(unittest.TestCase):

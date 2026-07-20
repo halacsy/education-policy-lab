@@ -150,10 +150,16 @@ def _values_at_path(document: Any, path: str) -> Iterable[Any]:
                     )
                 next_values.extend(value)
             else:
-                if not isinstance(value, dict) or token not in value:
+                if not isinstance(value, dict):
                     raise SchemaValidationError(
                         f"Reference path does not exist: {path}"
                     )
+                # Reference-bearing fields may be optional in a schema during
+                # a backwards-compatible artifact transition. A missing key
+                # contributes no graph edge; schema validation separately
+                # rejects unknown or malformed content.
+                if token not in value:
+                    continue
                 next_values.append(value[token])
         values = next_values
     return values

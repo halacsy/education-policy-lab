@@ -663,3 +663,14 @@ files remain explicit dependencies only where read. A package-writer change
 therefore invalidates the package and descendants, not research and every lens
 assessment. A regression test protects both the narrow spec declaration and
 distinct implementation hashes.
+
+**D-42 — Approved option-space coverage is a typed cutover gate
+(2026-07-20).** Comparing the first live v2 portfolio with the last approved
+v1 frames exposed a failure that proposal counts could not detect: two
+material directions were no longer explicit. Existing human-approved frames
+now enter transformation derivation as coverage requirements, not as forced
+wording. The node must map every approved direction to at least one generated
+proposal and emits a graph-linked `coverage_ledger`; missing, duplicate, or
+unknown mappings fail the node. Fresh decision packages carry that ledger.
+This preserves emergent synthesis inside an already approved option-space
+boundary while preventing silent critical attrition during the v1→v2 cutover.

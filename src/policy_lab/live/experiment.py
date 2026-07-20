@@ -134,8 +134,8 @@ class PsychologyLensExperiment:
         transformation_refs = executor.run(
             self._spec(
                 "derive_transformations", ("finding", "assumption", "uncertainty"),
-                ("assumption", "uncertainty", "transformation_proposal", "transformation_family"),
-                ("assumption.schema.json", "uncertainty.schema.json", "transformation_proposal.schema.json", "transformation_family.schema.json"),
+                ("assumption", "uncertainty", "transformation_proposal", "transformation_family", "coverage_ledger"),
+                ("assumption.schema.json", "uncertainty.schema.json", "transformation_proposal.schema.json", "transformation_family.schema.json", "coverage_ledger.schema.json"),
                 role="generator",
             ),
             inputs={"evidence": self._types(evidence_refs, "finding", "assumption", "uncertainty")},
@@ -276,13 +276,13 @@ class PsychologyLensExperiment:
         )
         self._report_node(run_dir, "build_research_agenda")
         package_inputs = (
-            *self._types(transformation_refs, "transformation_family", "transformation_proposal"),
+            *self._types(transformation_refs, "transformation_family", "transformation_proposal", "coverage_ledger"),
             *lens_refs, *assessment_refs, *dilemmas, *agenda,
         )
         package = executor.run(
             self._spec(
                 "assemble_decision_package",
-                ("transformation_family", "transformation_proposal", "lens_definition", "lens_assessment", "dilemma", "research_question"),
+                ("transformation_family", "transformation_proposal", "coverage_ledger", "lens_definition", "lens_assessment", "dilemma", "research_question"),
                 ("decision_package",), ("decision_package.schema.json",), role="generator",
             ),
             inputs={"parts": package_inputs}, relevant_config=arm_config,
@@ -429,6 +429,11 @@ Rules: preserve contested labels; never invent a source or statistic; findings m
             for record in findings
         )
         problem = self.topic_data["problem_brief"]
+        frames = self.topic_data["frames"]["scenarios"]
+        frame_digest = "\n".join(
+            f"- {frame['id']} — {frame['title']['en']}: {frame['scope']['en']}"
+            for frame in frames
+        )
         prompt = self._header("build_scenarios", "transformation_architect") + f"""
 Derive an education-system transformation portfolio from the evidence record below. Work in English only. The final product is a library of change directions, not a debate among experts.
 
@@ -439,17 +444,35 @@ SCOPE: {problem['scope']['en']}
 EVIDENCE RECORD:
 {digest}
 
-Produce 4-6 materially distinct proposals T1..Tn. Include an explicit no-new-policy or passive-change counterfactual when decision-relevant. Every empirical mechanism must cite finding ids. Keep evidence, assumptions, uncertainties, value choices, and implementation steps separate. Do not attribute content to experts. Do not use knowledge outside the supplied findings. Each family may contain one proposal in this first live slice, but its system problem, lever, and boundary must be explicit.
+HUMAN-APPROVED COVERAGE DIRECTIONS:
+{frame_digest}
+
+Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a content-retention gate, not titles that must be copied: every S-id must map to at least one substantive proposal, while proposals may cover multiple directions or add a genuinely new direction. Include an explicit no-new-policy or passive-change counterfactual when decision-relevant. Every empirical mechanism must cite finding ids. Keep evidence, assumptions, uncertainties, value choices, and implementation steps separate. Do not attribute content to experts. Do not use knowledge outside the supplied findings. Each family may contain one proposal in this first live slice, but its system problem, lever, and boundary must be explicit. Return one coverage entry for every S-id and no others.
 """
         result = self._call_structured_counted(
-            prompt, contracts.transformation_output([ref.id for ref in finding_refs]),
+            prompt, contracts.transformation_output(
+                [ref.id for ref in finding_refs], [frame["id"] for frame in frames]
+            ),
             role="generator", max_tokens=30000, arm=arm, node=node,
-            run_dir=run_dir, suffix="generate", constraints={"proposals": (4, 6)},
+            run_dir=run_dir, suffix="generate", constraints={
+                "proposals": (4, 6), "coverage": (len(frames), len(frames))
+            },
         )
         proposals = sorted(result["proposals"], key=lambda item: int(item["key"][1:]))
         keys = [item["key"] for item in proposals]
         if len(keys) != len(set(keys)) or keys != [f"T{i}" for i in range(1, len(keys) + 1)]:
             raise ValueError(f"Transformation keys must be sequential and unique: {keys}")
+        coverage = {entry["direction_id"]: entry for entry in result["coverage"]}
+        expected_directions = {frame["id"] for frame in frames}
+        if set(coverage) != expected_directions:
+            raise ValueError(
+                f"Approved-direction coverage mismatch: expected {sorted(expected_directions)}, "
+                f"got {sorted(coverage)}"
+            )
+        for direction_id, entry in coverage.items():
+            unknown = set(entry["proposal_keys"]) - set(keys)
+            if unknown:
+                raise ValueError(f"Coverage {direction_id} references unknown proposals: {sorted(unknown)}")
         records: list[dict[str, Any]] = []
         for item in proposals:
             key = item["key"].lower()
@@ -484,6 +507,22 @@ Produce 4-6 materially distinct proposals T1..Tn. Include an explicit no-new-pol
                 "change_lever": item["change_lever"], "boundary": item["boundary"],
                 "proposal_refs": [proposal_id],
             }))
+        frame_by_id = {frame["id"]: frame for frame in frames}
+        records.append(self._record("CL-live-approved-frames", "coverage_ledger", provenance, {
+            "gate_basis": "approved_frames",
+            "entries": [
+                {
+                    "direction_id": direction_id,
+                    "direction_title": frame_by_id[direction_id]["title"]["en"],
+                    "status": "covered",
+                    "proposal_refs": [f"TP-live-{key.lower()}" for key in coverage[direction_id]["proposal_keys"]],
+                    "rationale": coverage[direction_id]["rationale"],
+                }
+                for direction_id in sorted(coverage, key=lambda value: int(value[1:]))
+            ],
+            "critical_attrition_count": 0,
+            "verdict": "complete",
+        }))
         return records
 
     def _assessment_records(
@@ -615,6 +654,11 @@ Return 4-10 prioritized questions with concrete methods. Cite proposal and uncer
         )
         dilemma_text = "\n".join(f"- {r['content']['title']}: {r['content']['tension']}" for r in by_type["dilemma"])
         agenda_text = "\n".join(f"- {r['content']['question']}" for r in by_type["research_question"])
+        coverage_text = "\n".join(
+            f"- {entry['direction_id']} -> {', '.join(entry['proposal_refs'])}: {entry['rationale']}"
+            for ledger in by_type.get("coverage_ledger", [])
+            for entry in ledger["content"]["entries"]
+        )
         treatment_rule = ""
         if arm == "psychology":
             treatment_rule = (
@@ -641,6 +685,9 @@ DILEMMAS:
 RESEARCH AGENDA:
 {agenda_text}
 
+APPROVED-DIRECTION COVERAGE:
+{coverage_text}
+
 {treatment_rule}
 
 Write 500-900 words. Explain what can change, the leading mechanism and constraint of each direction, what evidence supports or weakens it, what people must decide, and which research would most change the choice.
@@ -662,6 +709,7 @@ Write 500-900 words. Explain what can change, the leading mechanism and constrai
             "summary": result["summary"],
             "transformation_family_refs": ids("transformation_family"),
             "proposal_refs": ids("transformation_proposal"),
+            "coverage_ledger_refs": ids("coverage_ledger"),
             "lens_assessment_refs": ids("lens_assessment"),
             "dilemma_refs": ids("dilemma"), "research_question_refs": ids("research_question"),
             "generation_notice": (

@@ -40,7 +40,8 @@ RESEARCH_OUTPUT = {
 }
 
 
-def transformation_output(finding_ids: list[str]) -> dict[str, Any]:
+def transformation_output(finding_ids: list[str], direction_ids: list[str] | None = None) -> dict[str, Any]:
+    direction_ids = direction_ids or []
     return {
         "type": "object", "additionalProperties": False,
         "properties": {
@@ -66,8 +67,17 @@ def transformation_output(finding_ids: list[str]) -> dict[str, Any]:
                 },
                 "required": ["key", "title", "goal", "change_level", "system_problem", "change_lever", "boundary", "mechanisms", "implementation_steps", "expected_benefits", "costs", "risks", "equity_impact", "evidence_status", "finding_refs", "assumptions", "uncertainties"],
             }, 4, 6),
+            "coverage": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "direction_id": {"type": "string", "enum": direction_ids},
+                    "proposal_keys": array({"type": "string", "pattern": "^T[1-6]$"}, 1, 6),
+                    "rationale": TEXT,
+                },
+                "required": ["direction_id", "proposal_keys", "rationale"],
+            }, len(direction_ids), len(direction_ids)),
         },
-        "required": ["proposals"],
+        "required": ["proposals", "coverage"],
     }
 
 
