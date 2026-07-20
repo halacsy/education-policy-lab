@@ -7,43 +7,22 @@
       "method": "deterministic"
     },
     "evidence_discipline": {
-      "deterministic": 7.868,
+      "deterministic": 7.749,
       "llm": {
         "provider": "openai",
         "trials": [
           10.0,
-          10.0,
-          9.0
+          9.0,
+          10.0
         ],
         "mean": 9.667,
         "variance": 0.2222,
         "divergence_flagged": true
       },
-      "score": 7.868,
+      "score": 7.749,
       "method": "deterministic (LLM diverged; flagged for human)"
     },
     "critic_concreteness": {
-      "deterministic": 10.0,
-      "llm": {
-        "provider": "anthropic",
-        "trials": [
-          8.0,
-          9.0,
-          8.0
-        ],
-        "mean": 8.333,
-        "variance": 0.2222,
-        "divergence_flagged": true
-      },
-      "score": 10.0,
-      "method": "deterministic (LLM diverged; flagged for human)"
-    },
-    "layer_separation": {
-      "deterministic": 8.144,
-      "score": 8.144,
-      "method": "deterministic"
-    },
-    "meta_system_eval": {
       "deterministic": 10.0,
       "llm": {
         "provider": "anthropic",
@@ -59,28 +38,28 @@
       "score": 9.7,
       "method": "mixed (0.7 det + 0.3 llm)"
     },
-    "disagreement_preservation": {
+    "layer_separation": {
+      "deterministic": 7.955,
+      "score": 7.955,
+      "method": "deterministic"
+    },
+    "meta_system_eval": {
       "deterministic": 10.0,
       "llm": {
-        "provider": "openai",
+        "provider": "anthropic",
         "trials": [
+          8.0,
           9.0,
-          10.0,
-          10.0
+          9.0
         ],
-        "mean": 9.667,
+        "mean": 8.667,
         "variance": 0.2222,
         "divergence_flagged": false
       },
-      "score": 9.9,
+      "score": 9.6,
       "method": "mixed (0.7 det + 0.3 llm)"
     },
-    "uncertainty_explicitness": {
-      "deterministic": 10.0,
-      "score": 10.0,
-      "method": "deterministic"
-    },
-    "translation_fidelity": {
+    "disagreement_preservation": {
       "deterministic": 10.0,
       "llm": {
         "provider": "openai",
@@ -95,16 +74,36 @@
       },
       "score": 10.0,
       "method": "mixed (0.7 det + 0.3 llm)"
+    },
+    "uncertainty_explicitness": {
+      "deterministic": 10.0,
+      "score": 10.0,
+      "method": "deterministic"
+    },
+    "translation_fidelity": {
+      "deterministic": 10.0,
+      "llm": {
+        "provider": "openai",
+        "trials": [
+          10.0,
+          10.0,
+          9.0
+        ],
+        "mean": 9.667,
+        "variance": 0.2222,
+        "divergence_flagged": false
+      },
+      "score": 9.9,
+      "method": "mixed (0.7 det + 0.3 llm)"
     }
   },
-  "total": 9.451,
+  "total": 9.363,
   "prev_total": 9.252,
-  "delta": 0.199,
+  "delta": 0.111,
   "generator_provider": "anthropic",
   "judge_provider": "openai",
   "divergence_flagged": [
-    "evidence_discipline",
-    "critic_concreteness"
+    "evidence_discipline"
   ],
   "step_fallbacks": []
 }
