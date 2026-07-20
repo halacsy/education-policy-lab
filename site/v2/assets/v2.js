@@ -4,6 +4,14 @@
   const setLanguage = (language) => {
     root.dataset.language = language;
     root.lang = language;
+    document.title = root.dataset[`title${language === "hu" ? "Hu" : "En"}`] || document.title;
+    const description = document.querySelector('meta[name="description"]');
+    if (description) description.content = description.dataset[`description${language === "hu" ? "Hu" : "En"}`] || description.content;
+    document.querySelectorAll("[data-label-en][data-label-hu]").forEach((element) => {
+      const localized = element.dataset[`label${language === "hu" ? "Hu" : "En"}`];
+      if (element.tagName === "OPTION") element.textContent = localized;
+      else element.setAttribute("aria-label", localized);
+    });
     buttons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.setLanguage === language));
     });

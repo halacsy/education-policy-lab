@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://education-policy-lab.example/schemas/v2/localization-catalog.schema.json",
+  "title": "V2 website localization catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["locale", "catalog_version", "messages", "content_replacements"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "locale": {"type": "string", "pattern": "^[a-z]{2}$"},
+    "catalog_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "content_replacements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pattern", "replacement"],
+        "properties": {
+          "pattern": {"type": "string", "minLength": 1},
+          "replacement": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "messages": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "oneOf": [
+          {"type": "string", "minLength": 1},
+          {"$ref": "#/$defs/messageGroup"}
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "messageGroup": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "oneOf": [
+          {"type": "string", "minLength": 1},
+          {"$ref": "#/$defs/messageGroup"}
+        ]
+      }
+    }
+  }
+}

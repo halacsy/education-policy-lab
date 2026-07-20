@@ -44,6 +44,18 @@ without turning the site into a developer console.
 - Anchor navigation along the change spine
 - Full keyboard focus, reduced-motion support, and a single-column mobile rail
 
+## Localization contract
+
+- `config/v2/locales/en.json` and `hu.json` are the versioned source of truth
+  for navigation, interface copy, artifact names, enum values, and recurring
+  terminology.
+- Hungarian is the default public view. English source excerpts may appear in
+  it only behind an explicitly Hungarian disclosure label and `lang="en"`.
+- A missing key or a raw English interface term in the Hungarian view fails
+  verification; there is no silent language fallback.
+- Audited Hungarian `content_replacements` can repair legacy loanwords at
+  render time without changing canonical records or their hashes.
+
 ## Honesty boundary
 
 The first v2 vertical slice is a deterministic compilation of committed v1

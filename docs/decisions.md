@@ -621,3 +621,27 @@ for a test-only educational-psychology lens imported from PR #29. Decisions:
    needlessly invalidated upstream analyses), and project visible
    claim-to-source citations into the decision-package view. PR #29 remains a
    sensitivity test; D-24 human admission is unchanged.
+
+**D-39 — Localization is a validated presentation database, not ad hoc
+template copy (2026-07-20).** The first public v2 pages mixed Hungarian prose
+with English interface labels and raw English enum values. Decisions:
+
+1. *The website has versioned locale catalogs.* `config/v2/locales/en.json`
+   and `hu.json` are the single source of truth for navigation, artifact names,
+   recurring terminology, status values, confidence levels, and other UI
+   messages. Both conform to one schema, carry the same version, and must have
+   exactly the same flattened key set.
+2. *Hungarian means a complete Hungarian UI.* Hungarian is the default view;
+   raw terms such as `lens`, `verdict`, `evidence`, `finding`, `confidence`,
+   and English enum values fail verification. Proper names, record ids, and
+   deliberately opened English source excerpts remain allowed; excerpts must
+   be explicitly labelled and marked `lang="en"`.
+3. *Legacy language repair is downstream and auditable.* The Hungarian
+   catalog may declare ordered content replacements for inherited loanwords
+   such as `monitoring` or `status quo`. They modify rendered text only and
+   never alter canonical records, provenance, dependency hashes, or the D-37
+   English-only semantic database.
+4. *Language switching updates the whole document.* Visible copy, select
+   options, page title, metadata, and accessibility labels switch together and
+   retain the reader's preference. Missing translations fail the build rather
+   than silently falling back to English.

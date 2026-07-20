@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -17,30 +18,32 @@ from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
 
 OUT = ROOT / "site" / "v2"
+LOCALE_ROOT = ROOT / "config" / "v2" / "locales"
 TOPIC_ROUNDS = {
     "korai-szelekcio": "round_09",
     "rural-school-closures": "round_02",
 }
-LENS_HU = {
-    "demography": "demográfia",
-    "education_finance": "oktatásfinanszírozás",
-    "equity_and_social_mobility": "méltányosság és mobilitás",
-    "finnish_reform": "finn rendszerreform",
-    "hungarian_education_system": "magyar oktatási rendszer",
-    "implementation_planning": "megvalósítástervezés",
-    "international_comparison": "nemzetközi összehasonlítás",
-    "legal_and_governance": "jog és kormányzás",
-    "polish_reform": "lengyel rendszerreform",
-    "political_feasibility": "politikai megvalósíthatóság",
-    "portuguese_reform": "portugál rendszerreform",
-    "school_network_planning": "iskolahálózat-tervezés",
-    "educational_psychology": "neveléslélektan",
+
+
+def load_json(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+CATALOGS = {
+    locale: load_json(LOCALE_ROOT / f"{locale}.json")
+    for locale in ("en", "hu")
 }
-VERDICT_HU = {
-    "supports": "támogatja", "supports_with_conditions": "feltételekkel támogatja",
-    "neutral": "semleges", "cautions": "óvatosságra int",
-    "insufficient_evidence": "nincs elég evidencia",
-}
+
+
+def message(locale: str, key: str, **values: Any) -> str:
+    current: Any = CATALOGS[locale]["messages"]
+    for part in key.split("."):
+        if not isinstance(current, dict) or part not in current:
+            raise KeyError(f"Missing {locale} localization message: {key}")
+        current = current[part]
+    if not isinstance(current, str):
+        raise TypeError(f"Localization message is not a string: {locale}:{key}")
+    return current.format(**values)
 
 
 def esc(value: Any) -> str:
@@ -55,8 +58,12 @@ def en(value: Any) -> str:
 
 def hu(value: Any) -> str:
     if isinstance(value, dict):
-        return str(value.get("hu") or value.get("en", ""))
-    return str(value or "")
+        localized = str(value.get("hu") or value.get("en", ""))
+    else:
+        localized = str(value or "")
+    for replacement in CATALOGS["hu"]["content_replacements"]:
+        localized = re.sub(replacement["pattern"], replacement["replacement"], localized)
+    return localized
 
 
 def bi(english: Any, hungarian: Any | None = None, *, tag: str = "span") -> str:
@@ -67,41 +74,65 @@ def bi(english: Any, hungarian: Any | None = None, *, tag: str = "span") -> str:
     )
 
 
-def page(title: str, body: str, *, depth: int = 0) -> str:
+def ui(key: str, *, tag: str = "span", **values: Any) -> str:
+    return bi(message("en", key, **values), message("hu", key, **values), tag=tag)
+
+
+def label(record_type: str, count: int) -> str:
+    suffix = "one" if count == 1 else "many"
+    return ui(f"artifact.{record_type}_{suffix}")
+
+
+def enum_label(group: str, value: str) -> str:
+    return ui(f"enum.{group}.{value}")
+
+
+def lens_label(value: str) -> str:
+    return ui(f"lens.{value}")
+
+
+def localized_option(value: str, key: str) -> str:
+    english = message("en", key)
+    hungarian = message("hu", key)
+    return (
+        f'<option value="{esc(value)}" data-label-en="{esc(english)}" '
+        f'data-label-hu="{esc(hungarian)}">{esc(hungarian)}</option>'
+    )
+
+
+def page(title_en: str, title_hu: str, body: str, *, depth: int = 0) -> str:
     prefix = "../" * depth
+    description_en = message("en", "meta.description")
+    description_hu = message("hu", "meta.description")
     return f"""<!doctype html>
-<html lang="hu" data-language="hu">
+<html lang="hu" data-language="hu" data-title-en="{esc(title_en)} · Transformation Observatory" data-title-hu="{esc(title_hu)} · Transformation Observatory">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Education transformation proposals, scientific lenses, dilemmas and research questions.">
-  <title>{esc(title)} · Transformation Observatory</title>
+  <meta name="description" content="{esc(description_hu)}" data-description-en="{esc(description_en)}" data-description-hu="{esc(description_hu)}">
+  <title>{esc(title_hu)} · Transformation Observatory</title>
   <link rel="stylesheet" href="{prefix}assets/v2.css">
 </head>
 <body>
-  <a class="skip" href="#content">Ugrás a tartalomra / Skip to content</a>
+  <a class="skip" href="#content">{ui('nav.skip')}</a>
   <header class="masthead">
-    <a class="brand" href="{prefix}index.html" aria-label="Transformation Observatory home">
+    <a class="brand" href="{prefix}index.html" aria-label="{esc(message('hu','nav.home_label'))}" data-label-en="{esc(message('en','nav.home_label'))}" data-label-hu="{esc(message('hu','nav.home_label'))}">
       <span class="brand-mark" aria-hidden="true">↳</span>
       <span><b>TRANSFORMATION</b><em>OBSERVATORY · EPL v2</em></span>
     </a>
-    <nav aria-label="Primary navigation">
-      <a href="{prefix}index.html">{bi('Portfolio','Tárház')}</a>
+    <nav aria-label="{esc(message('hu','nav.primary_label'))}" data-label-en="{esc(message('en','nav.primary_label'))}" data-label-hu="{esc(message('hu','nav.primary_label'))}">
+      <a href="{prefix}index.html">{ui('nav.portfolio')}</a>
       <a href="{prefix}comparison.html">V1 ↔ V2</a>
-      <a href="{prefix}experiments/psychology-lens.html">{bi('Live lens test','Élő lencseteszt')}</a>
+      <a href="{prefix}experiments/psychology-lens.html">{ui('nav.live_test')}</a>
     </nav>
-    <div class="language-switch" role="group" aria-label="Language">
+    <div class="language-switch" role="group" aria-label="{esc(message('hu','nav.language_label'))}" data-label-en="{esc(message('en','nav.language_label'))}" data-label-hu="{esc(message('hu','nav.language_label'))}">
       <button type="button" data-set-language="hu" aria-pressed="true">HU</button>
       <button type="button" data-set-language="en" aria-pressed="false">EN</button>
     </div>
   </header>
   <main id="content">{body}</main>
-  <footer><span>Education Policy Lab · artifact-first architecture</span><span>v2.0.0 · 2026-07-20</span></footer>
+  <footer><span>{ui('footer.architecture')}</span><span>v2.0.0 · 2026-07-20</span></footer>
   <script src="{prefix}assets/v2.js"></script>
 </body></html>"""
-
-
-def load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def legacy(topic: str) -> dict[str, Any]:
@@ -129,52 +160,46 @@ def render_index(records: list[dict[str, Any]], manifests: list[dict[str, Any]])
         topic_cards.append(f"""
         <article class="topic-sheet">
           <div class="sheet-index">{len(topic_cards)+1:02d}</div>
-          <p class="eyebrow">{esc(topic)} · {counts['transformation_proposal']} TRANSFORMATIONS</p>
+          <p class="eyebrow">{esc(topic)} · {counts['transformation_proposal']} {label('transformation_proposal', counts['transformation_proposal'])}</p>
           <h2>{bi(en(problem['title']), hu(problem['title']))}</h2>
           <p class="lead">{bi(en(problem['public_question']), hu(problem['public_question']))}</p>
-          <div class="mini-metrics"><span>{counts['finding']}<small>findings</small></span><span>{counts['lens_assessment']}<small>lens tests</small></span><span>{counts['dilemma']}<small>dilemmas</small></span></div>
-          <a class="arrow-link" href="topics/{esc(topic)}.html">{bi('Open transformation map','Transzformációs térkép megnyitása')} <span>→</span></a>
+          <div class="mini-metrics"><span>{counts['finding']}<small>{label('finding', counts['finding'])}</small></span><span>{counts['lens_assessment']}<small>{label('lens_assessment', counts['lens_assessment'])}</small></span><span>{counts['dilemma']}<small>{label('dilemma', counts['dilemma'])}</small></span></div>
+          <a class="arrow-link" href="topics/{esc(topic)}.html">{ui('index.open_map')} <span>→</span></a>
         </article>""")
     return f"""
     <section class="hero blueprint-grid">
       <div class="hero-copy">
-        <p class="eyebrow">EDUCATION POLICY LAB · ARCHITECTURE V2</p>
-        <h1>{bi('From debate to a library of change.','A vitától a változtatások tárházáig.')}</h1>
-        <p class="hero-deck">{bi(
-            'Evidence does not vote. It supports findings, tests transformations through scientific lenses, and marks the choices that remain human.',
-            'Az evidencia nem szavaz. Findingokat támaszt alá, tudományos nézőpontokból teszteli a változtatásokat, és megjelöli az emberi döntésként megmaradó kérdéseket.'
-        )}</p>
-        <a class="primary-action" href="#portfolio">{bi('Explore the portfolio','A tárház felfedezése')} ↓</a>
+        <p class="eyebrow">{ui('index.architecture_eyebrow')}</p>
+        <h1>{ui('index.hero_title')}</h1>
+        <p class="hero-deck">{ui('index.hero_deck')}</p>
+        <a class="primary-action" href="#portfolio">{ui('index.explore')} ↓</a>
       </div>
-      <div class="hero-instrument" aria-label="v2 corpus summary">
-        <span class="registration">V2 / LIVE VERTICAL SLICE</span>
-        <strong>{total}</strong><small>{bi('typed, immutable artifacts','típusos, megváltoztathatatlan artifact')}</small>
+      <div class="hero-instrument" aria-label="v2-korpusz összegzése" data-label-en="v2 corpus summary" data-label-hu="v2-korpusz összegzése">
+        <span class="registration">{ui('index.live_slice')}</span>
+        <strong>{total}</strong><small>{ui('index.typed_records')}</small>
         <div class="instrument-line"></div>
-        <p>{bi('2 decision packages · 12/12 cache hits on repeat build','2 decision package · ismételt buildnél 12/12 cache hit')}</p>
+        <p>{ui('index.repeat_build')}</p>
       </div>
     </section>
     <section class="change-system" aria-labelledby="system-title">
       <div class="section-number">01</div><div>
-      <p class="eyebrow">THE CHANGE SPINE</p>
-      <h2 id="system-title">{bi('Every conclusion has an address.','Minden következtetésnek van címe.')}</h2>
+      <p class="eyebrow">{ui('index.change_spine')}</p>
+      <h2 id="system-title">{ui('index.conclusion_address')}</h2>
       <div class="dag-flow">
-        <div><b>01</b><span>Finding</span><small>{bi('What the record supports','Amit az anyag alátámaszt')}</small></div>
-        <div><b>02</b><span>Family</span><small>{bi('Where the system can move','Merre mozdulhat a rendszer')}</small></div>
-        <div><b>03</b><span>Proposal</span><small>{bi('Mechanism and sequence','Mechanizmus és lépéssor')}</small></div>
-        <div><b>04</b><span>Lens</span><small>{bi('Disciplinary scrutiny','Szakmai vizsgálat')}</small></div>
-        <div><b>05</b><span>Dilemma</span><small>{bi('Evidence boundary','Az evidencia határa')}</small></div>
-        <div><b>06</b><span>Package</span><small>{bi('A decision-ready map','Döntésre kész térkép')}</small></div>
+        <div><b>01</b><span>{label('finding', 1)}</span><small>{ui('index.finding_description')}</small></div>
+        <div><b>02</b><span>{label('transformation_family', 1)}</span><small>{ui('index.family_description')}</small></div>
+        <div><b>03</b><span>{label('transformation_proposal', 1)}</span><small>{ui('index.proposal_description')}</small></div>
+        <div><b>04</b><span>{label('lens_definition', 1)}</span><small>{ui('index.perspective_description')}</small></div>
+        <div><b>05</b><span>{label('dilemma', 1)}</span><small>{ui('index.dilemma_description')}</small></div>
+        <div><b>06</b><span>{label('decision_package', 1)}</span><small>{ui('index.package_description')}</small></div>
       </div></div>
     </section>
     <section id="portfolio" class="portfolio">
-      <div class="section-heading"><div><p class="eyebrow">02 / PORTFOLIO</p><h2>{bi('Transformation fields','Transzformációs mezők')}</h2></div><a href="comparison.html">{bi('See measured v1 comparison','Mért v1-összevetés')} →</a></div>
+      <div class="section-heading"><div><p class="eyebrow">{ui('index.portfolio_eyebrow')}</p><h2>{ui('index.fields')}</h2></div><a href="comparison.html">{ui('index.comparison_link')} →</a></div>
       <div class="topic-grid">{''.join(topic_cards)}</div>
     </section>
-    <section class="live-launch"><div><p class="eyebrow">NEW · LIVE SENSITIVITY TEST</p><h2>{bi('Add one lens. Watch only its descendants move.','Adj hozzá egy lencsét. Figyeld, hogy csak a leszármazottai mozdulnak.')}</h2><p>{bi('A full fresh round plus the PR #29 educational-psychology lens: identical transformations, six new assessments, explicit position-carriage test.','Teljes friss round és a PR #29 neveléslélektani lencséje: azonos transzformációk, hat új assessment, explicit position-carriage teszt.')}</p></div><a class="arrow-link" href="experiments/psychology-lens.html">{bi('Open live A/B','Élő A/B megnyitása')} →</a></section>
-    <aside class="honesty-band"><b>{bi('Migration boundary','Migrációs határ')}</b><p>{bi(
-        'This visible slice recompiles committed v1 research into the v2 graph. It proves the architecture and information model; it does not claim fresh research.',
-        'Ez a látható szelet a már commitolt v1-kutatást fordítja át a v2-gráfba. Az architektúrát és az információs modellt bizonyítja; nem állítja, hogy új kutatási futás történt.'
-    )}</p></aside>"""
+    <section class="live-launch"><div><p class="eyebrow">{ui('index.live_eyebrow')}</p><h2>{ui('index.live_title')}</h2><p>{ui('index.live_deck')}</p></div><a class="arrow-link" href="experiments/psychology-lens.html">{ui('index.live_open')} →</a></section>
+    <aside class="honesty-band"><b>{ui('index.migration_boundary')}</b><p>{ui('index.migration_copy')}</p></aside>"""
 
 
 def render_topic(topic: str, records: list[dict[str, Any]], manifest: dict[str, Any]) -> str:
@@ -206,52 +231,58 @@ def render_topic(topic: str, records: list[dict[str, Any]], manifest: dict[str, 
             for i, step in enumerate(content["implementation_steps"])
         )
         lens_rows = "".join(
-            f'<tr data-verdict="{esc(a["content"]["verdict"])}"><th>{bi(a["content"]["lens_ref"].split(f"L-{topic}-",1)[-1].replace("_"," ").title(), LENS_HU.get(a["content"]["lens_ref"].split(f"L-{topic}-",1)[-1],a["content"]["lens_ref"]))}</th><td><span class="verdict verdict-{esc(a["content"]["verdict"])}">{bi(a["content"]["verdict"].replace("_"," "), VERDICT_HU[a["content"]["verdict"]])}</span></td><td>{len(a["content"]["finding_refs"])} finding</td><td>{esc(a["content"]["confidence"])}</td></tr>'
+            f'<tr data-verdict="{esc(a["content"]["verdict"])}"><th>{lens_label(a["content"]["lens_ref"].split(f"L-{topic}-",1)[-1])}</th><td><span class="verdict verdict-{esc(a["content"]["verdict"])}">{enum_label("verdict", a["content"]["verdict"])}</span></td><td>{len(a["content"]["finding_refs"])} {label("finding", len(a["content"]["finding_refs"]))}</td><td>{enum_label("confidence", a["content"]["confidence"])}</td></tr>'
             for a in related_assessments
         )
         dilemma_cards = "".join(
-            f'<article class="dilemma"><span>{esc(d["content"]["legacy_cluster_id"])}</span><h4>{bi(d["content"]["dilemma_type"].replace("_"," "), "értékkonfliktus" if d["content"]["dilemma_type"]=="value_conflict" else "feloldhatatlan trade-off")}</h4><p>{bi(d["content"]["tension"], hu(next((c["claim"] for c in data["clusters"] if c["id"]==d["content"]["legacy_cluster_id"]), d["content"]["tension"])))}</p><small>{bi('Evidence can clarify consequences; it cannot rank these values.','Az evidencia tisztázhatja a következményeket, de nem rangsorolhatja ezeket az értékeket.')}</small></article>'
+            f'<article class="dilemma"><span>{esc(d["content"]["legacy_cluster_id"])}</span><h4>{enum_label("dilemma_type", d["content"]["dilemma_type"])}</h4><p>{bi(d["content"]["tension"], hu(next((c["claim"] for c in data["clusters"] if c["id"]==d["content"]["legacy_cluster_id"]), d["content"]["tension"])))}</p><small>{ui("topic.evidence_value_note")}</small></article>'
             for d in related_dilemmas
-        ) or f'<p class="empty">{bi("No value dilemma was extracted for this proposal.","Ehhez a javaslathoz nem került külön értékdilemma a v1-anyagból.")}</p>'
+        ) or f'<p class="empty">{ui("topic.no_dilemma")}</p>'
         research_items = "".join(f"<li>{bi(q['content']['question'], hu(data['brief']['what_research_could_resolve'][int(q['id'].rsplit('-',1)[-1])-1]))}</li>" for q in related_questions)
         sheets.append(f"""
         <article id="{sid.lower()}" class="proposal-sheet">
-          <header><div class="proposal-code">{sid}<small>{esc(content['change_level'])}</small></div><div><p class="eyebrow">TRANSFORMATION PROPOSAL</p><h2>{bi(content['title'],hu(source['title']))}</h2><p class="proposal-goal">{bi(content['goal'],hu(source['goal']))}</p></div><span class="evidence evidence-{esc(content['evidence_status'])}">{esc(content['evidence_status'])}</span></header>
-          <div class="proposal-grid"><section><h3>01 / {bi('Mechanism','Mechanizmus')}</h3><ol class="mechanisms">{mechanisms}</ol></section><section><h3>02 / {bi('Implementation path','Megvalósítási út')}</h3><ol class="timeline">{steps}</ol></section></div>
-          <section class="lens-section"><div class="subhead"><div><h3>03 / {bi('Scientific lens matrix','Tudományos nézőpontmátrix')}</h3><p>{bi('The proposal is the object. Disciplines are reusable evaluative lenses—not simulated people.','A vizsgálat tárgya a javaslat. A diszciplínák újrahasználható értékelési nézőpontok — nem szimulált emberek.')}</p></div><label>{bi('Filter','Szűrés')} <select data-lens-filter><option value="all">Minden értékelés / All verdicts</option><option value="supports_with_conditions">Feltételes támogatás / Conditional support</option><option value="insufficient_evidence">Nincs elég evidencia / Insufficient evidence</option><option value="cautions">Óvatosság / Cautions</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Lens</th><th>Verdict</th><th>Evidence</th><th>Confidence</th></tr></thead><tbody>{lens_rows}</tbody></table></div></section>
-          <div class="proposal-grid decisions"><section><h3>04 / {bi('Human dilemmas','Emberi dilemmák')}</h3>{dilemma_cards}</section><section><h3>05 / {bi('Research that could change the choice','Kutatás, amely módosíthatja a döntést')}</h3><ol class="research-list">{research_items}</ol></section></div>
-          <p class="audit-line">{esc(proposal['id'])} · {len(content['finding_refs'])} finding refs · {len(content['assumption_refs'])} assumptions · {len(content['uncertainty_refs'])} uncertainties</p>
+          <header><div class="proposal-code">{sid}<small>{enum_label('change_level', content['change_level'])}</small></div><div><p class="eyebrow">{ui('topic.proposal_eyebrow')}</p><h2>{bi(content['title'],hu(source['title']))}</h2><p class="proposal-goal">{bi(content['goal'],hu(source['goal']))}</p></div><span class="evidence evidence-{esc(content['evidence_status'])}">{enum_label('evidence', content['evidence_status'])}</span></header>
+          <div class="proposal-grid"><section><h3>01 / {ui('topic.mechanism')}</h3><ol class="mechanisms">{mechanisms}</ol></section><section><h3>02 / {ui('topic.implementation_path')}</h3><ol class="timeline">{steps}</ol></section></div>
+          <section class="lens-section"><div class="subhead"><div><h3>03 / {ui('topic.perspective_matrix')}</h3><p>{ui('topic.perspective_explainer')}</p></div><label>{ui('common.filter')} <select data-lens-filter>{localized_option('all','common.all_assessments')}{localized_option('supports_with_conditions','common.conditional_support')}{localized_option('insufficient_evidence','common.insufficient_evidence')}{localized_option('cautions','common.cautions')}</select></label></div><div class="table-wrap"><table><thead><tr><th>{ui('topic.perspective_column')}</th><th>{ui('topic.verdict_column')}</th><th>{ui('topic.evidence_column')}</th><th>{ui('topic.confidence_column')}</th></tr></thead><tbody>{lens_rows}</tbody></table></div></section>
+          <div class="proposal-grid decisions"><section><h3>04 / {ui('topic.human_dilemmas')}</h3>{dilemma_cards}</section><section><h3>05 / {ui('topic.research_change_choice')}</h3><ol class="research-list">{research_items}</ol></section></div>
+          <p class="audit-line">{esc(proposal['id'])} · {len(content['finding_refs'])} {ui('topic.finding_refs')} · {len(content['assumption_refs'])} {ui('topic.assumption_refs')} · {len(content['uncertainty_refs'])} {ui('topic.uncertainty_refs')}</p>
         </article>""")
     return f"""
-    <section class="topic-hero blueprint-grid"><div><p class="eyebrow">DECISION PACKAGE · {esc(topic)}</p><h1>{bi(en(problem['title']),hu(problem['title']))}</h1><p class="hero-deck">{bi(en(problem['public_question']),hu(problem['public_question']))}</p></div><div class="topic-stats"><span><b>{manifest['artifact_counts']['finding']}</b> findings</span><span><b>{manifest['artifact_counts']['lens_assessment']}</b> lens tests</span><span><b>{manifest['artifact_counts']['dilemma']}</b> dilemmas</span></div></section>
-    <aside class="migration-note"><b>V1 → V2</b>{bi('Deterministic corpus migration—not a fresh research run. Every proposal retains its legacy scenario id and audit path.','Determinisztikus korpuszmigráció — nem friss kutatási futás. Minden javaslat megőrzi a korábbi scenario-azonosítót és auditútvonalat.')}</aside>
-    <nav class="change-spine" aria-label="Transformation proposals">{spine}</nav>
+    <section class="topic-hero blueprint-grid"><div><p class="eyebrow">{ui('topic.decision_package')} · {esc(topic)}</p><h1>{bi(en(problem['title']),hu(problem['title']))}</h1><p class="hero-deck">{bi(en(problem['public_question']),hu(problem['public_question']))}</p></div><div class="topic-stats"><span><b>{manifest['artifact_counts']['finding']}</b> {label('finding', manifest['artifact_counts']['finding'])}</span><span><b>{manifest['artifact_counts']['lens_assessment']}</b> {label('lens_assessment', manifest['artifact_counts']['lens_assessment'])}</span><span><b>{manifest['artifact_counts']['dilemma']}</b> {label('dilemma', manifest['artifact_counts']['dilemma'])}</span></div></section>
+    <aside class="migration-note"><b>V1 → V2</b>{ui('topic.migration_note')}</aside>
+    <nav class="change-spine" aria-label="{esc(message('hu','topic.change_nav_label'))}" data-label-en="{esc(message('en','topic.change_nav_label'))}" data-label-hu="{esc(message('hu','topic.change_nav_label'))}">{spine}</nav>
     <div class="proposal-stack">{''.join(sheets)}</div>"""
 
 
 def render_comparison(records: list[dict[str, Any]], manifests: list[dict[str, Any]]) -> str:
     counts = Counter(r["record_type"] for r in records)
     total = sum(counts.values())
-    rows = [
-        ("Primary unit", "Expert/voice output", "Typed semantic artifact", "Szakértői/hang output", "Típusos szemantikai artifact"),
-        ("Canonical language", "Bilingual JSON", "English JSON; localization downstream", "Kétnyelvű JSON", "Angol JSON; lokalizáció downstream"),
-        ("Change object", "10 scenarios", f"{counts['transformation_proposal']} proposals in {counts['transformation_family']} families", "10 scenario", f"{counts['transformation_proposal']} javaslat {counts['transformation_family']} családban"),
-        ("Professional scrutiny", "Implicit in expert authorship", f"{counts['lens_assessment']} proposal × lens assessments", "Implicit a szakértő személyében", f"{counts['lens_assessment']} javaslat × nézőpont értékelés"),
-        ("Value conflict", "Mixed into argument clusters", f"{counts['dilemma']} explicit dilemmas", "Argument clusterekbe keverve", f"{counts['dilemma']} explicit dilemma"),
-        ("Invalidation", "Round/global state hash", "Node dependency hash", "Kör-/globális state hash", "Node-függőségi hash"),
-        ("Repeat build", "No equivalent artifact cache", "12/12 node cache hits", "Nincs azonos artifact-cache", "12/12 node cache hit"),
-        ("Audit root", "Brief + logs", "2 decision packages + manifests + events", "Brief + naplók", "2 decision package + manifestek + események"),
-    ]
-    table_rows = "".join(f"<tr><th>{bi(a,a)}</th><td>{bi(b,d)}</td><td>{bi(c,e)}</td></tr>" for a,b,c,d,e in rows)
+    row_keys = (
+        "primary_unit", "canonical_language", "change_object",
+        "professional_scrutiny", "value_conflict", "invalidation",
+        "repeat_build", "audit_root",
+    )
+    row_values = {
+        "proposals": counts["transformation_proposal"],
+        "families": counts["transformation_family"],
+        "assessments": counts["lens_assessment"],
+        "dilemmas": counts["dilemma"],
+    }
+    table_rows = "".join(
+        f"<tr><th>{ui(f'comparison.row.{key}.name', **row_values)}</th>"
+        f"<td>{ui(f'comparison.row.{key}.v1', **row_values)}</td>"
+        f"<td>{ui(f'comparison.row.{key}.v2', **row_values)}</td></tr>"
+        for key in row_keys
+    )
     artifact_bars = "".join(
-        f'<div><span>{esc(name.replace("_"," "))}</span><i style="--amount:{max(3,round(value/max(counts.values())*100))}%"></i><b>{value}</b></div>'
+        f'<div><span>{label(name, value)}</span><i style="--amount:{max(3,round(value/max(counts.values())*100))}%"></i><b>{value}</b></div>'
         for name,value in counts.most_common()
     )
     return f"""
-    <section class="comparison-hero blueprint-grid"><div><p class="eyebrow">MEASURED ARCHITECTURE COMPARISON</p><h1>V1 <span>↔</span> V2</h1><p class="hero-deck">{bi('Same committed evidence corpus. Different unit of thought.','Ugyanaz a commitolt evidenciakorpusz. Más gondolkodási alapegység.')}</p></div><div class="hero-instrument"><span class="registration">CURRENT VERTICAL SLICE</span><strong>{total}</strong><small>{bi('v2 artifacts across two topics','v2 artifact két témában')}</small></div></section>
-    <section class="comparison-section"><div class="section-heading"><div><p class="eyebrow">01 / INFORMATION MODEL</p><h2>{bi('What actually changed','Mi változott ténylegesen')}</h2></div></div><div class="table-wrap"><table class="comparison-table"><thead><tr><th>Dimension</th><th>V1</th><th>V2</th></tr></thead><tbody>{table_rows}</tbody></table></div></section>
-    <section class="comparison-section split"><div><p class="eyebrow">02 / V2 CORPUS</p><h2>{bi('The database is visible','Az adatbázis látható')}</h2><div class="artifact-bars">{artifact_bars}</div></div><aside class="verdict-panel"><span>ARCHITECTURE VERDICT</span><h3>{bi('Rewrite the semantic core; preserve the evidence trail.','A szemantikai magot írjuk újra; az evidenciaútvonalat őrizzük meg.')}</h3><p>{bi('The vertical slice validates the new graph, schemas, node cache, and public reading model. It does not yet validate new live-agent prompts or evidence quality beyond v1.','A függőleges szelet igazolja az új gráfot, sémákat, node-cache-t és nyilvános olvasási modellt. Az új élő agent-promptokat vagy a v1-en túli evidenciaminőséget még nem igazolja.')}</p></aside></section>
-    <section class="comparison-section"><p class="eyebrow">03 / HONEST LIMITS</p><h2>{bi('What this comparison cannot claim','Amit ez az összevetés nem állíthat')}</h2><div class="limit-grid"><article><b>01</b><p>{bi('No paid model call was made, so v2 generation quality is not being compared yet.','Nem történt fizetős modellhívás, ezért a v2 generálási minőségét még nem hasonlítjuk össze.')}</p></article><article><b>02</b><p>{bi('Lens assessments are deterministic projections of v1 expert records, not fresh disciplinary reviews.','A lens assessmentek a v1 szakértői anyagok determinisztikus vetületei, nem friss diszciplináris értékelések.')}</p></article><article><b>03</b><p>{bi('Source strings were preserved but not re-verified during migration.','A forrásmegjelöléseket megőriztük, de a migráció során nem ellenőriztük újra.')}</p></article></div></section>"""
+    <section class="comparison-hero blueprint-grid"><div><p class="eyebrow">{ui('comparison.measured')}</p><h1>V1 <span>↔</span> V2</h1><p class="hero-deck">{ui('comparison.hero_deck')}</p></div><div class="hero-instrument"><span class="registration">{ui('comparison.current_slice')}</span><strong>{total}</strong><small>{ui('comparison.records_two_topics')}</small></div></section>
+    <section class="comparison-section"><div class="section-heading"><div><p class="eyebrow">{ui('comparison.information_model')}</p><h2>{ui('comparison.actual_change')}</h2></div></div><div class="table-wrap"><table class="comparison-table"><thead><tr><th>{ui('comparison.dimension')}</th><th>V1</th><th>V2</th></tr></thead><tbody>{table_rows}</tbody></table></div></section>
+    <section class="comparison-section split"><div><p class="eyebrow">{ui('comparison.corpus')}</p><h2>{ui('comparison.database_visible')}</h2><div class="artifact-bars">{artifact_bars}</div></div><aside class="verdict-panel"><span>{ui('comparison.verdict')}</span><h3>{ui('comparison.verdict_title')}</h3><p>{ui('comparison.verdict_copy')}</p></aside></section>
+    <section class="comparison-section"><p class="eyebrow">{ui('comparison.limits')}</p><h2>{ui('comparison.limits_title')}</h2><div class="limit-grid"><article><b>01</b><p>{ui('comparison.limit_one')}</p></article><article><b>02</b><p>{ui('comparison.limit_two')}</p></article><article><b>03</b><p>{ui('comparison.limit_three')}</p></article></div></section>"""
 
 
 def render_live_experiment() -> str:
@@ -261,7 +292,6 @@ def render_live_experiment() -> str:
     baseline_summary = load_json(experiment_root / "runs" / "live-korai-szelekcio-baseline" / "arm_summary.json")
     psychology_summary = load_json(experiment_root / "runs" / "live-korai-szelekcio-psychology" / "arm_summary.json")
     repository = ArtifactRepository(experiment_root, SchemaRegistry(ROOT / "schemas" / "v2"))
-    proposals = {record["id"]: record for record in repository.list(record_type="transformation_proposal")}
     psychology_assessments = sorted(
         (
             record for record in repository.list(record_type="lens_assessment")
@@ -273,81 +303,61 @@ def render_live_experiment() -> str:
     psychology_package = repository.get_current("DP-live-psychology")["content"]["summary"]
     baseline_eval = comparison["baseline_evaluation"]
     psychology_eval = comparison["psychology_evaluation"]
-    impact_hu = {
-        "TP-live-t1": "A monitoring nem változtat a korai rangsorolás, címkézés és referencia-csoport pszichológiai költségein.",
-        "TP-live-t2": "A későbbi szelekció kevesebb korai, nagy tétű rangsorolást jelent; a várható előny azonban megvalósításfüggő.",
-        "TP-live-t3": "Az admissions-reform inkább újraosztja, ki viseli a szelekció költségeit, mintsem megszünteti azokat.",
-        "TP-live-t4": "A körzeti és választási reform közvetetten módosítja az összetételt, de a szelekció pszichológiai mechanizmusa megmarad.",
-        "TP-live-t5": "A kvóta hozzáférést adhat, de BFLPE-kockázatot is: az elit referencia-csoport ronthatja az akadémiai énképet.",
-        "TP-live-t6": "A de-tracking pilot kezeli legközvetlenebbül a címkézést és teljesítményorientációt, de nem igazolt csodaszer.",
-    }
-    title_hu = {
-        "TP-live-t1": "Status quo monitoringgal",
-        "TP-live-t2": "Szelekció 14–16 éves korra tolva",
-        "TP-live-t3": "Trackek maradnak, felvételi reform",
-        "TP-live-t4": "Körzeti és iskolaválasztási deszegregáció",
-        "TP-live-t5": "Célzott kvóta és korai outreach",
-        "TP-live-t6": "Komprehenzív alsó-középfokú pilot",
-    }
     cards = []
     for assessment in psychology_assessments:
         content = assessment["content"]
         proposal_ref = content["proposal_ref"]
+        proposal_key = proposal_ref.removeprefix("TP-live-")
         cards.append(f"""
         <article class="impact-card">
-          <header><b>{esc(proposal_ref.removeprefix('TP-live-').upper())}</b><span class="verdict verdict-{esc(content['verdict'])}">{bi(content['verdict'].replace('_',' '), VERDICT_HU[content['verdict']])}</span></header>
-          <h3>{bi(proposals[proposal_ref]['content']['title'], title_hu[proposal_ref])}</h3>
-          <p class="impact-summary">{bi(content['assessment'], impact_hu[proposal_ref])}</p>
-          <details><summary>{bi('Open canonical English assessment','Kanonikus angol assessment megnyitása')}</summary><p lang="en">{esc(content['assessment'])}</p></details>
-          <small>{esc(content['confidence'])} confidence · {len(content['finding_refs'])} finding refs</small>
+          <header><b>{esc(proposal_key.upper())}</b><span class="verdict verdict-{esc(content['verdict'])}">{enum_label('verdict', content['verdict'])}</span></header>
+          <h3>{ui(f'experiment.proposal.{proposal_key}.title')}</h3>
+          <p class="impact-summary">{ui(f'experiment.proposal.{proposal_key}.impact')}</p>
+          <details><summary>{ui('common.open_english_source')}</summary><p lang="en">{esc(content['assessment'])}</p></details>
+          <small>{enum_label('confidence', content['confidence'])} {ui('common.confidence')} · {len(content['finding_refs'])} {ui('topic.finding_refs')}</small>
         </article>""")
-    dimension_hu = {
-        "artifact_integrity": "artifact-integritás", "evidence_discipline": "evidenciafegyelem",
-        "transformation_specificity": "transzformáció konkrétsága", "lens_traceability": "lencse visszakövethetősége",
-        "dilemma_clarity": "dilemmák tisztasága", "decision_usefulness": "döntési hasznosság",
-    }
     judge_rows = "".join(
-        f"<tr><th>{bi(name.replace('_',' '), dimension_hu[name])}</th><td>{baseline_eval['dimensions'][name]:.1f}</td><td>{psychology_eval['dimensions'][name]:.1f}</td><td>{psychology_eval['dimensions'][name]-baseline_eval['dimensions'][name]:+.1f}</td></tr>"
+        f"<tr><th>{ui(f'experiment.judge_dimension.{name}')}</th><td>{baseline_eval['dimensions'][name]:.1f}</td><td>{psychology_eval['dimensions'][name]:.1f}</td><td>{psychology_eval['dimensions'][name]-baseline_eval['dimensions'][name]:+.1f}</td></tr>"
         for name in baseline_eval["dimensions"]
     )
     total_cost = sum(arm["estimated_usd"] for arm in costs.values())
     return f"""
     <section class="experiment-hero blueprint-grid">
-      <div><p class="eyebrow">LIVE V2 SENSITIVITY TEST · PR #29</p><h1>{bi('What changes when psychology becomes a lens?','Mi változik, ha a pszichológia lencsévé válik?')}</h1><p class="hero-deck">{bi('Same evidence-derived transformations. One added disciplinary lens. Only its descendants may change.','Ugyanazok az evidenciából levezetett transzformációk. Egy új szakmai lencse. Csak a leszármazottai változhatnak.')}</p></div>
-      <aside class="score-ticket"><span>DESCRIPTIVE A/B · n=1 PAIR</span><div><b>{baseline_eval['total']:.3f}</b><small>12 lenses</small></div><i>→</i><div><b>{psychology_eval['total']:.3f}</b><small>+ psychology</small></div><strong>{comparison['evaluation_delta']:+.3f}</strong></aside>
+      <div><p class="eyebrow">{ui('experiment.eyebrow')}</p><h1>{ui('experiment.hero_title')}</h1><p class="hero-deck">{ui('experiment.hero_deck')}</p></div>
+      <aside class="score-ticket"><span>{ui('experiment.descriptive_pair')}</span><div><b>{baseline_eval['total']:.3f}</b><small>{ui('experiment.baseline_perspectives')}</small></div><i>→</i><div><b>{psychology_eval['total']:.3f}</b><small>{ui('experiment.added_psychology')}</small></div><strong>{comparison['evaluation_delta']:+.3f}</strong></aside>
     </section>
-    <aside class="live-boundary"><b>LIVE · ANTHROPIC → OPENAI JUDGE</b><span>{bi('Fresh research and generation; the psychology evidence is a PR #29 sensitivity test, not admitted knowledge.','Friss kutatás és generálás; a pszichológiai evidencia a PR #29 érzékenységi tesztje, nem befogadott tudás.')}</span></aside>
+    <aside class="live-boundary"><b>{ui('experiment.live_boundary')}</b><span>{ui('experiment.boundary_copy')}</span></aside>
     <section class="experiment-section">
-      <p class="eyebrow">01 / DEPENDENCY-LOCALIZED TREATMENT</p><h2>{bi('The option space did not move. The interpretation did.','Az opciótér nem mozdult. Az értelmezés igen.')}</h2>
-      <div class="branch-rig" aria-label="Baseline and psychology treatment DAG">
-        <div class="branch-common"><b>12</b><span>{bi('fresh research nodes','friss kutatási node')}</span></div>
-        <div class="branch-common"><b>6</b><span>{bi('identical transformations','azonos transzformáció')}</span></div>
-        <div class="branch-split"><div><b>12</b><span>baseline lenses</span></div><div><b>+1</b><span>educational psychology</span></div></div>
-        <div class="branch-common"><b>5</b><span>{bi('descendant nodes rerun','leszármazott node újrafutott')}</span></div>
+      <p class="eyebrow">{ui('experiment.dependency_treatment')}</p><h2>{ui('experiment.option_title')}</h2>
+      <div class="branch-rig" aria-label="Az alapváltozat és a pszichológiai változat függőségi gráfja" data-label-en="Baseline and psychology treatment DAG" data-label-hu="Az alapváltozat és a pszichológiai változat függőségi gráfja">
+        <div class="branch-common"><b>12</b><span>{ui('experiment.research_steps')}</span></div>
+        <div class="branch-common"><b>6</b><span>{ui('experiment.identical_transformations')}</span></div>
+        <div class="branch-split"><div><b>12</b><span>{ui('experiment.baseline_lenses')}</span></div><div><b>+1</b><span>{ui('experiment.psychology_lens')}</span></div></div>
+        <div class="branch-common"><b>5</b><span>{ui('experiment.rerun_descendants')}</span></div>
       </div>
-      <div class="truth-stamps"><article><b>PASS</b><span>{bi('Transformation hashes identical','A transzformáció-hash-ek azonosak')}</span></article><article><b>PASS</b><span>{bi('6/6 psychology assessments','6/6 pszichológiai assessment')}</span></article><article><b>PASS</b><span>{bi('Named mechanism reached the package','A név szerinti mechanizmus eljutott a csomagba')}</span></article></div>
+      <div class="truth-stamps"><article><b>{ui('common.pass')}</b><span>{ui('experiment.hashes_identical')}</span></article><article><b>{ui('common.pass')}</b><span>{ui('experiment.six_assessments')}</span></article><article><b>{ui('common.pass')}</b><span>{ui('experiment.mechanism_reached')}</span></article></div>
     </section>
     <section class="experiment-section impact-zone">
-      <div class="section-heading"><div><p class="eyebrow">02 / PROPOSAL × PSYCHOLOGY</p><h2>{bi('Six proposals, six distinct readings','Hat javaslat, hat külön olvasat')}</h2></div><p>{bi('The lens evaluates proposals; it does not impersonate an expert or vote for a winner.','A lencse javaslatokat értékel; nem játszik el szakértőt és nem szavaz győztesre.')}</p></div>
+      <div class="section-heading"><div><p class="eyebrow">{ui('experiment.proposal_psychology')}</p><h2>{ui('experiment.readings_title')}</h2></div><p>{ui('experiment.perspective_rule')}</p></div>
       <div class="impact-grid">{''.join(cards)}</div>
     </section>
     <section class="experiment-section split-results">
-      <div><p class="eyebrow">03 / SUBSTANTIVE EFFECT</p><h2>{bi('The new information is a warning about access-only reform.','Az új információ az access-only reform korlátjára figyelmeztet.')}</h2><p class="result-lead">{bi('Quota and outreach can widen entry while leaving the psychological cost of the selective reference group intact. Delayed selection and de-tracking address that mechanism more directly.','A kvóta és outreach szélesítheti a belépést úgy, hogy közben érintetlenül hagyja a szelektív referencia-csoport pszichológiai költségét. A későbbi szelekció és a de-tracking közvetlenebbül kezeli ezt a mechanizmust.')}</p><blockquote>{bi('Equally able students placed in a highly selective peer group can develop lower academic self-concept—even as measured achievement rises.','Az azonos képességű tanulók akadémiai énképe romolhat egy erősen szelektív kortárscsoportban — akkor is, ha a mért teljesítményük nő.')}</blockquote></div>
-      <aside class="mechanism-index"><span>NAMED MECHANISMS CARRIED</span><b>big-fish–little-pond</b><b>academic self-concept</b><b>self-determination theory</b><b>early labeling</b><small>{comparison['psychology_assessment_count']} assessments · package carriage: {'PASS' if comparison['position_carriage_passed'] else 'FAIL'}</small></aside>
+      <div><p class="eyebrow">{ui('experiment.substantive_effect')}</p><h2>{ui('experiment.warning_title')}</h2><p class="result-lead">{ui('experiment.warning_copy')}</p><blockquote>{ui('experiment.warning_quote')}</blockquote></div>
+      <aside class="mechanism-index"><span>{ui('experiment.named_mechanisms')}</span><b>{ui('experiment.mechanism.bflpe')}</b><b>{ui('experiment.mechanism.self_concept')}</b><b>{ui('experiment.mechanism.self_determination')}</b><b>{ui('experiment.mechanism.labeling')}</b><small>{comparison['psychology_assessment_count']} {ui('experiment.assessment_count')} · {ui('experiment.package_carriage')}: {ui('common.pass') if comparison['position_carriage_passed'] else ui('experiment.fail')}</small></aside>
     </section>
     <section class="experiment-section">
-      <p class="eyebrow">04 / CROSS-FAMILY JUDGE</p><h2>{bi('Lower score, narrower reason','Alacsonyabb pont, szűkebb ok')}</h2><p>{bi('The −0.333 difference is descriptive, not a causal estimate. Psychology improved mechanism visibility, while evidence discipline and dilemma clarity each fell by one judge point in this sample.','A −0,333 különbség leíró, nem oksági becslés. A pszichológia javította a mechanizmus láthatóságát, miközben ebben a mintában az evidenciafegyelem és a dilemmák tisztasága egy-egy judge-ponttal csökkent.')}</p>
-      <div class="table-wrap"><table class="score-table"><thead><tr><th>Dimension</th><th>Baseline</th><th>+ psychology</th><th>Δ</th></tr></thead><tbody>{judge_rows}</tbody></table></div>
+      <p class="eyebrow">{ui('experiment.cross_family_judge')}</p><h2>{ui('experiment.lower_score')}</h2><p>{ui('experiment.judge_copy')}</p>
+      <div class="table-wrap"><table class="score-table"><thead><tr><th>{ui('common.dimension')}</th><th>{ui('common.baseline')}</th><th>{ui('common.psychology_variant')}</th><th>Δ</th></tr></thead><tbody>{judge_rows}</tbody></table></div>
     </section>
     <section class="experiment-section package-pair">
-      <p class="eyebrow">05 / DECISION PACKAGE PAIR</p><h2>{bi('Inspect the actual outputs','A tényleges kimenetek')}</h2>
-      <div><details><summary>Baseline · {len(baseline_package.split())} words</summary><p lang="en">{esc(baseline_package)}</p></details><details><summary>+ psychology · {len(psychology_package.split())} words</summary><p lang="en">{esc(psychology_package)}</p></details></div>
+      <p class="eyebrow">{ui('experiment.decision_package_pair')}</p><h2>{ui('experiment.outputs_title')}</h2>
+      <div><details><summary>{ui('experiment.baseline_package')} · {len(baseline_package.split())} {ui('common.words')}</summary><p lang="en">{esc(baseline_package)}</p></details><details><summary>{ui('experiment.psychology_package')} · {len(psychology_package.split())} {ui('common.words')}</summary><p lang="en">{esc(psychology_package)}</p></details></div>
     </section>
     <section class="experiment-section audit-summary">
-      <div><p class="eyebrow">06 / RUN AUDIT</p><h2>{bi('The failed carriage taught the contract','A sikertelen továbbvitelből contract lett')}</h2><p>{bi('The first treatment package stopped at 316 words and dropped every named psychology mechanism. It remains in immutable lineage. A system-level 500–900 word and named-mechanism validator was added; the accepted rerun contains 664 words and passes carriage.','Az első treatment-csomag 316 szónál megszakadt, és minden név szerinti pszichológiai mechanizmust elvesztett. Az immutable lineage-ban megmaradt. A rendszer 500–900 szavas és név szerinti mechanizmust követelő validátort kapott; az elfogadott újrafutás 664 szavas és átmegy a carriage-ellenőrzésen.')}</p></div>
-      <dl><div><dt>live calls</dt><dd>{sum(arm['calls'] for arm in costs.values())}</dd></div><div><dt>audit cost</dt><dd>${total_cost:.2f}</dd></div><div><dt>treatment cache</dt><dd>{psychology_summary['execution']['cache_hits']}/32</dd></div><div><dt>failed current nodes</dt><dd>{psychology_summary['execution']['failed']}</dd></div></dl>
+      <div><p class="eyebrow">{ui('experiment.run_audit')}</p><h2>{ui('experiment.audit_title')}</h2><p>{ui('experiment.audit_copy')}</p></div>
+      <dl><div><dt>{ui('common.live_calls')}</dt><dd>{sum(arm['calls'] for arm in costs.values())}</dd></div><div><dt>{ui('common.audit_cost')}</dt><dd>${total_cost:.2f}</dd></div><div><dt>{ui('common.treatment_cache')}</dt><dd>{psychology_summary['execution']['cache_hits']}/32</dd></div><div><dt>{ui('common.failed_current_nodes')}</dt><dd>{psychology_summary['execution']['failed']}</dd></div></dl>
     </section>
-    <aside class="honesty-band"><b>{bi('Interpretation limit','Értelmezési határ')}</b><p>{bi('One stochastic pair cannot identify a stable score effect. It can validate dependency localization, artifact coverage, and whether a named disciplinary mechanism survives to the decision package.','Egyetlen sztochasztikus pár nem azonosít stabil ponthatást. A függőséglokalizációt, az artifact-lefedettséget és a név szerinti szakmai mechanizmus döntési csomagig való fennmaradását viszont ellenőrizni tudja.')}</p></aside>"""
+    <aside class="honesty-band"><b>{ui('experiment.interpretation_limit')}</b><p>{ui('experiment.interpretation_copy')}</p></aside>"""
 
 
 def main() -> int:
@@ -359,14 +369,21 @@ def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "topics").mkdir(exist_ok=True)
     (OUT / "experiments").mkdir(exist_ok=True)
-    (OUT / "index.html").write_text(page("Transformation portfolio", render_index(records, manifests)), encoding="utf-8")
+    (OUT / "index.html").write_text(
+        page(message("en", "meta.portfolio_title"), message("hu", "meta.portfolio_title"), render_index(records, manifests)),
+        encoding="utf-8",
+    )
     for manifest in manifests:
         topic = manifest["topic"]
         body = render_topic(topic, records, manifest)
-        (OUT / "topics" / f"{topic}.html").write_text(page(topic, body, depth=1), encoding="utf-8")
-    (OUT / "comparison.html").write_text(page("V1 ↔ V2", render_comparison(records, manifests)), encoding="utf-8")
+        problem_title = legacy(topic)["topic"]["problem_brief"]["title"]
+        (OUT / "topics" / f"{topic}.html").write_text(
+            page(en(problem_title), hu(problem_title), body, depth=1), encoding="utf-8"
+        )
+    (OUT / "comparison.html").write_text(page("V1 ↔ V2", "V1 ↔ V2", render_comparison(records, manifests)), encoding="utf-8")
     (OUT / "experiments" / "psychology-lens.html").write_text(
-        page("Live psychology lens test", render_live_experiment(), depth=1), encoding="utf-8"
+        page(message("en", "meta.live_test_title"), message("hu", "meta.live_test_title"), render_live_experiment(), depth=1),
+        encoding="utf-8",
     )
     print(f"Rendered {len(manifests) + 3} pages from {len(records)} migrated artifacts plus the live experiment into {OUT}")
     return 0
