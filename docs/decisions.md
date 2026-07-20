@@ -714,3 +714,14 @@ valid Scholar link contained a non-ASCII author character. The normalizer now
 percent-encodes unsafe URL characters before schema validation. The canonical
 link remains reversible and standards-compliant; raw provider text stays in
 the run audit.
+
+**D-48 — Claim-to-source visibility is a decision-package contract
+(2026-07-20).** The first cutover production judge scored the korai-szelekció
+package 7.167 and correctly reported that its graph-valid evidence edges were
+not visible in the material being judged. Package assembly now declares
+findings and sources as explicit inputs, deterministically projects a typed
+`evidence_appendix`, and requires at least one inline finding citation per
+proposal in the 500–900 word summary. The judge receives the same visible
+appendix and counts a citation as auditable only when it resolves to a claim
+and source URI. The kisiskolák run was stopped before acceptance so it cannot
+establish a baseline under the weaker visibility contract.

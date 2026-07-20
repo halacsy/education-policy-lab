@@ -194,6 +194,7 @@ class ArtifactDagRunner:
             self._report_node(run_dir, name)
 
         all_finding_refs = list(finding_refs)
+        all_source_refs = list(self._types(evidence_refs, "source"))
         all_lens_refs = list(lens_refs)
         if include_psychology:
             psych_refs = executor.run(
@@ -233,6 +234,7 @@ class ArtifactDagRunner:
             self._report_node(run_dir, "assess_educational_psychology")
             assessment_refs.extend(psych_assessments)
             all_finding_refs.extend(psych_findings)
+            all_source_refs.extend(self._types(psych_refs, "source"))
             all_lens_refs.append(psych_lens_ref)
 
         downstream = self._run_downstream(
@@ -240,6 +242,7 @@ class ArtifactDagRunner:
             proposals=proposals, transformation_refs=transformation_refs,
             lens_refs=tuple(all_lens_refs), assessment_refs=tuple(assessment_refs),
             finding_refs=tuple(all_finding_refs),
+            source_refs=tuple(all_source_refs),
             uncertainty_refs=self._types((*evidence_refs, *transformation_refs), "uncertainty"),
             common_config=common_config,
         )
@@ -257,6 +260,7 @@ class ArtifactDagRunner:
         proposals: tuple[ArtifactRef, ...], transformation_refs: tuple[ArtifactRef, ...],
         lens_refs: tuple[ArtifactRef, ...], assessment_refs: tuple[ArtifactRef, ...],
         finding_refs: tuple[ArtifactRef, ...], uncertainty_refs: tuple[ArtifactRef, ...],
+        source_refs: tuple[ArtifactRef, ...],
         common_config: dict[str, Any],
     ) -> dict[str, tuple[ArtifactRef, ...]]:
         arm_config = {**common_config, "arm": arm, "lens_count": len(lens_refs)}
@@ -297,11 +301,12 @@ class ArtifactDagRunner:
         package_inputs = (
             *self._types(transformation_refs, "transformation_family", "transformation_proposal", "coverage_ledger"),
             *lens_refs, *assessment_refs, *dilemmas, *agenda,
+            *finding_refs, *source_refs,
         )
         package = executor.run(
             self._spec(
                 "assemble_decision_package",
-                ("transformation_family", "transformation_proposal", "coverage_ledger", "lens_definition", "lens_assessment", "dilemma", "research_question"),
+                ("transformation_family", "transformation_proposal", "coverage_ledger", "lens_definition", "lens_assessment", "dilemma", "research_question", "finding", "source"),
                 ("decision_package",), ("decision_package.schema.json",), role="generator",
             ),
             inputs={"parts": package_inputs}, relevant_config=arm_config,
@@ -699,6 +704,39 @@ Return 4-10 prioritized questions with concrete methods. Cite proposal and uncer
             for ledger in by_type.get("coverage_ledger", [])
             for entry in ledger["content"]["entries"]
         )
+        sources_by_id = {record["id"]: record for record in by_type.get("source", [])}
+        referenced_finding_ids = {
+            finding_id
+            for record_type in ("transformation_proposal", "lens_assessment", "dilemma")
+            for record in by_type.get(record_type, [])
+            for finding_id in record["content"].get("finding_refs", [])
+        }
+        finding_records = [
+            record for record in by_type.get("finding", [])
+            if record["id"] in referenced_finding_ids
+        ]
+        evidence_appendix = [
+            {
+                "finding_ref": finding["id"],
+                "claim": finding["content"]["claim"],
+                "sources": [
+                    {
+                        "source_ref": source_id,
+                        "title": sources_by_id[source_id]["content"]["title"],
+                        "url": sources_by_id[source_id]["content"]["url"],
+                    }
+                    for source_id in finding["content"]["source_refs"]
+                ],
+            }
+            for finding in sorted(finding_records, key=lambda item: item["id"])
+        ]
+        citation_index = "\n".join(
+            f"- [{entry['finding_ref']}] {entry['claim']} — "
+            + "; ".join(
+                f"{source['title']} ({source['url']})" for source in entry["sources"]
+            )
+            for entry in evidence_appendix
+        )
         treatment_rule = ""
         if arm == "psychology":
             treatment_rule = (
@@ -728,9 +766,12 @@ RESEARCH AGENDA:
 APPROVED-DIRECTION COVERAGE:
 {coverage_text}
 
+EVIDENCE CITATION INDEX:
+{citation_index}
+
 {treatment_rule}
 
-Write 500-900 words. Explain what can change, the leading mechanism and constraint of each direction, what evidence supports or weakens it, what people must decide, and which research would most change the choice.
+Write 500-900 words. Explain what can change, the leading mechanism and constraint of each direction, what evidence supports or weakens it, what people must decide, and which research would most change the choice. Cite every material empirical or comparative claim inline with its exact finding id in square brackets, for example [F-live-demography-01]. Use only ids from the citation index.
 """
         required_terms = (
             "big-fish", "little-pond", "self-concept", "labeling",
@@ -739,6 +780,7 @@ Write 500-900 words. Explain what can change, the leading mechanism and constrai
         result = self._call_structured_text_checked(
             prompt, contracts.PACKAGE_OUTPUT, field="summary",
             minimum_words=500, maximum_words=900, required_terms=required_terms,
+            minimum_citations=len(by_type["transformation_proposal"]),
             role="generator", max_tokens=20000, arm=arm, node=node,
             run_dir=run_dir, suffix="package",
         )
@@ -752,6 +794,7 @@ Write 500-900 words. Explain what can change, the leading mechanism and constrai
             "coverage_ledger_refs": ids("coverage_ledger"),
             "lens_assessment_refs": ids("lens_assessment"),
             "dilemma_refs": ids("dilemma"), "research_question_refs": ids("research_question"),
+            "evidence_appendix": evidence_appendix,
             "generation_notice": self._generation_notice(arm),
         })]
 
@@ -767,6 +810,9 @@ Evaluate this artifact-first decision package on six dimensions from 0 to 10. Yo
 PACKAGE SUMMARY:
 {package['content']['summary']}
 
+VISIBLE EVIDENCE APPENDIX:
+{chr(10).join(f"- [{entry['finding_ref']}] {entry['claim']} — " + '; '.join(source['url'] for source in entry['sources']) for entry in package['content'].get('evidence_appendix', []))}
+
 STRUCTURAL COUNTS: proposals={len(proposals)}, lens_assessments={len(assessments)}, dilemmas={len(dilemmas)}, research_questions={len(agenda)}.
 
 Rubric:
@@ -777,7 +823,7 @@ Rubric:
 - dilemma_clarity: evidence boundaries and human value choices are explicit;
 - decision_usefulness: the package accelerates a real decision without manufacturing consensus.
 
-Score only what is visible. Note missing evidence edges or generic prose as concerns. In the psychology arm, do not award points merely because an extra lens exists; score whether its substantive mechanism is carried and decision-relevant.
+Score only what is visible. Treat an inline finding id as auditable only when the visible appendix resolves it to a claim and source URI. Note missing evidence edges or generic prose as concerns. In the psychology arm, do not award points merely because an extra lens exists; score whether its substantive mechanism is carried and decision-relevant.
 """
         result = self._call_structured(
             prompt, contracts.EVALUATION_OUTPUT, role="judge", max_tokens=8000,
@@ -993,6 +1039,7 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
     def _call_structured_text_checked(
         self, prompt: str, schema: dict[str, Any], *, field: str,
         minimum_words: int, maximum_words: int, required_terms: tuple[str, ...],
+        minimum_citations: int,
         role: str, max_tokens: int, arm: str, node: str, run_dir: Path,
         suffix: str, retries: int = 2,
     ) -> dict[str, Any]:
@@ -1015,6 +1062,12 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
                 violations.append(
                     f"{field} must carry at least one named mechanism from: "
                     + ", ".join(required_terms)
+                )
+            citation_count = text.count("[F-")
+            if citation_count < minimum_citations:
+                violations.append(
+                    f"{field} requires at least {minimum_citations} inline finding citations, "
+                    f"got {citation_count}"
                 )
             if not violations:
                 return result

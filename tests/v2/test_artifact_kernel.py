@@ -153,6 +153,18 @@ class SchemaRegistryTests(unittest.TestCase):
         fields = {reference.field for reference in self.schemas.references(package)}
         self.assertNotIn("/content/coverage_ledger_refs/*", fields)
 
+        package["content"]["evidence_appendix"] = [{
+            "finding_ref": "F-test", "claim": "A test claim.",
+            "sources": [{
+                "source_ref": "SRC-test", "title": "Test source",
+                "url": "https://example.org/source",
+            }],
+        }]
+        self.schemas.validate(package)
+        references = self.schemas.references(package)
+        self.assertIn(("F-test", "finding"), {(ref.target_id, ref.target_type) for ref in references})
+        self.assertIn(("SRC-test", "source"), {(ref.target_id, ref.target_type) for ref in references})
+
 
 class ArtifactRepositoryTests(unittest.TestCase):
     def setUp(self) -> None:

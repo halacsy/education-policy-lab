@@ -20,6 +20,29 @@
           "lens_assessment_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^AS-[A-Za-z0-9._-]+$"}},
           "dilemma_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^D-[A-Za-z0-9._-]+$"}},
           "research_question_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^RQ-[A-Za-z0-9._-]+$"}},
+          "evidence_appendix": {
+            "type": "array", "minItems": 1,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "properties": {
+                "finding_ref": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"},
+                "claim": {"type": "string", "minLength": 1},
+                "sources": {
+                  "type": "array", "minItems": 1,
+                  "items": {
+                    "type": "object", "additionalProperties": false,
+                    "properties": {
+                      "source_ref": {"type": "string", "pattern": "^SRC-[A-Za-z0-9._-]+$"},
+                      "title": {"type": "string", "minLength": 1},
+                      "url": {"type": "string", "format": "uri"}
+                    },
+                    "required": ["source_ref", "title", "url"]
+                  }
+                }
+              },
+              "required": ["finding_ref", "claim", "sources"]
+            }
+          },
           "migration_notice": {"type": "string", "minLength": 1},
           "generation_notice": {"type": "string", "minLength": 1}
         },
@@ -39,6 +62,8 @@
     {"path": "/content/lens_assessment_refs/*", "record_type": "lens_assessment"},
     {"path": "/content/dilemma_refs/*", "record_type": "dilemma"},
     {"path": "/content/research_question_refs/*", "record_type": "research_question"}
+    ,{"path": "/content/evidence_appendix/*/finding_ref", "record_type": "finding"}
+    ,{"path": "/content/evidence_appendix/*/sources/*/source_ref", "record_type": "source"}
   ],
   "x-record-type": "decision_package",
   "x-schema-version": "2.0.0"
