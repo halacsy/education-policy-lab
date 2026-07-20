@@ -7,6 +7,7 @@ from pathlib import Path
 
 from policy_lab.dag import NodeSpec, compute_cache_key
 from policy_lab.jsonio import content_hash
+from policy_lab.live.experiment import PsychologyLensExperiment
 from policy_lab.schema_registry import SchemaRegistry, SchemaValidationError
 from policy_lab.store import ArtifactRepository, GraphIntegrityError
 
@@ -243,6 +244,19 @@ class NodeSpecTests(unittest.TestCase):
         common["relevant_config"] = {"clustering.max_families": 5}
         common["prompt_hash"] = "f" * 64
         self.assertNotEqual(key_a, compute_cache_key(**common))
+
+    def test_live_node_dependencies_are_implementation_scoped(self) -> None:
+        runner = object.__new__(PsychologyLensExperiment)
+        spec = runner._spec(
+            "derive_transformations", ("finding",),
+            ("transformation_proposal",),
+            ("transformation_proposal.schema.json",), role="generator",
+        )
+        self.assertEqual(spec.spec_files, ())
+        self.assertNotEqual(
+            runner._contract_hash("derive_transformations_v1"),
+            runner._contract_hash("decision_package_v1"),
+        )
 
 
 if __name__ == "__main__":

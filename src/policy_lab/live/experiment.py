@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import inspect
 import json
 import re
 from datetime import datetime, timezone
@@ -102,7 +103,7 @@ class PsychologyLensExperiment:
                     name, (), ("source", "assumption", "uncertainty", "finding"),
                     ("source.schema.json", "assumption.schema.json", "uncertainty.schema.json", "finding.schema.json"),
                     role="research",
-                    spec_files=("src/policy_lab/live/experiment.py", "config/v2/lenses.json"),
+                    spec_files=("config/v2/lenses.json",),
                 ),
                 inputs={}, relevant_config={**common_config, "lens": lens_id},
                 provider=self.provider_generator, model="anthropic-task-ladder",
@@ -160,7 +161,7 @@ class PsychologyLensExperiment:
                 self._spec(
                     name, ("lens_definition", "transformation_proposal", "finding"),
                     ("lens_assessment",), ("lens_assessment.schema.json",),
-                    role="generator", spec_files=("src/policy_lab/live/experiment.py", "config/v2/lenses.json"),
+                    role="generator", spec_files=("config/v2/lenses.json",),
                 ),
                 inputs={"lens": (lens_ref,), "proposals": proposals, "evidence": domain_findings},
                 relevant_config=common_config,
@@ -198,7 +199,7 @@ class PsychologyLensExperiment:
                     ("lens_definition", "transformation_proposal", "finding"),
                     ("lens_assessment",), ("lens_assessment.schema.json",),
                     role="generator",
-                    spec_files=("src/policy_lab/live/experiment.py", "config/v2/educational_psychology_lens.json"),
+                    spec_files=("config/v2/educational_psychology_lens.json",),
                 ),
                 inputs={"lens": (psych_lens_ref,), "proposals": proposals, "evidence": psych_findings},
                 relevant_config={**common_config, "treatment": "pr29_psychology_lens"},
@@ -964,7 +965,7 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
     def _spec(
         self, name: str, inputs: tuple[str, ...], outputs: tuple[str, ...],
         schemas: tuple[str, ...], *, role: str = "deterministic",
-        spec_files: tuple[str, ...] = ("src/policy_lab/live/experiment.py",),
+        spec_files: tuple[str, ...] = (),
     ) -> NodeSpec:
         return NodeSpec(
             name=name, version="1.0.0", input_types=inputs, output_types=outputs,
@@ -1004,9 +1005,41 @@ Score only what is visible. Note missing evidence edges or generic prose as conc
     def _bullets(items: Iterable[str]) -> str:
         return "\n".join(f"- {item}" for item in items)
 
-    @staticmethod
-    def _contract_hash(name: str) -> str:
-        return hashlib.sha256(name.encode("utf-8")).hexdigest()
+    @classmethod
+    def _contract_hash(cls, name: str) -> str:
+        """Hash the exact node implementation and provider contract.
+
+        The live runner used to hash only a hand-maintained label while every
+        generative node declared the complete experiment module as a spec
+        dependency. That combination was both too broad and too easy to leave
+        stale. This map makes the dependency executable and node-local.
+        """
+
+        dependencies = {
+            "research_v1": (cls._research_records, contracts.RESEARCH_OUTPUT),
+            "baseline_lens_registry_v1": (cls._baseline_lens_records, None),
+            "psychology_lens_pr29": (cls._psychology_lens_records, None),
+            "derive_transformations_v1": (
+                cls._transformation_records,
+                contracts.transformation_output,
+            ),
+            "apply_lens_v1": (cls._assessment_records, contracts.assessment_output),
+            "identify_dilemmas_v1": (cls._dilemma_records, contracts.dilemma_output),
+            "research_agenda_v1": (cls._agenda_records, contracts.agenda_output),
+            "decision_package_v1": (cls._package_records, contracts.PACKAGE_OUTPUT),
+            "evaluate_package_v1": (cls._evaluation_records, contracts.EVALUATION_OUTPUT),
+        }
+        try:
+            implementation, contract = dependencies[name]
+        except KeyError as exc:
+            raise ValueError(f"Unknown live node contract: {name}") from exc
+        contract_source = (
+            inspect.getsource(contract)
+            if callable(contract)
+            else json.dumps(contract, ensure_ascii=False, sort_keys=True)
+        )
+        payload = f"{name}\n{inspect.getsource(implementation)}\n{contract_source}"
+        return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
     @staticmethod
     def _safe_uri(value: str, fallback_id: str) -> str:

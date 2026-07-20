@@ -653,3 +653,13 @@ reuse a semantically stale artifact even though the audit record described a
 different prompt. `prompt_hash` is now an explicit cache dependency and has a
 regression test. This is the first cutover hardening change; node-specific
 implementation dependencies remain a separate change.
+
+**D-41 — Live node dependencies are implementation-scoped (2026-07-20).**
+The acceptance runner no longer declares the monolithic `experiment.py` as a
+dependency of every generative node and no longer hashes a manually versioned
+label as if it were the prompt. Each cache key now includes a hash of the exact
+node builder plus its provider-facing structured-output contract; lens catalog
+files remain explicit dependencies only where read. A package-writer change
+therefore invalidates the package and descendants, not research and every lens
+assessment. A regression test protects both the narrow spec declaration and
+distinct implementation hashes.
