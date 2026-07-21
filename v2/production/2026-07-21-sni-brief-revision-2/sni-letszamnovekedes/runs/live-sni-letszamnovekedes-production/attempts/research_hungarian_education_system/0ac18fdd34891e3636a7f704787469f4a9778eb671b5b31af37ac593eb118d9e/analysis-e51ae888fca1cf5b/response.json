@@ -1,0 +1,148 @@
+{
+  "assumptions": [
+    " That the statistical increases in SNI and BTMN identification reflect either a genuine change in prevalence, improved diagnostic capacity, diagnostic generosity, or combinations thereof, rather than being primarily artifacts of data-collection methodology changes or population definition shifts.",
+    "That the expert-committee gatekeeping model, as the sole national diagnostic authority, directly constrains observed identification rates independent of 'true' clinical need, such that capacity constraints would suppress identification if severe.",
+    "That regional and sex-based variation in identification rates indicate some degree of local diagnostic or referral-pathway heterogeneity, even if the specific mechanisms are not identified."
+  ],
+  "findings": [
+    {
+      "claim": "The number of children identified with special educational needs (SNI) in Hungary grew from 92,800 to 97,300 in 2021/2022, representing the largest single-year increase in at least twelve years, and continued to approximately 63,000 (8.8% of primary pupils) by 2023/2024; over a 20-year horizon, SNI identification has risen by approximately 40%.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Figures derive from journalistic aggregation rather than a single continuous official time series",
+        "Base-year definitions and diagnostic category boundaries may have shifted across the 20-year period",
+        "The notes do not provide the methodology for determining year-on-year comparisons"
+      ],
+      "source_title": "Central Statistical Office (KSH) data reported by eduline.hu, Világgazdaság, Népszava",
+      "source_url": "https://www.ksh.hu/"
+    },
+    {
+      "claim": "The largest proportional increase in the 2021/2022 cohort was among children with severe learning disorders (45,300 children, a 12% year-on-year increase); by 2023/2024, 66% of integrated SNI students had severe learning, attention, or behavioral-regulation disorders, and 12% had autism spectrum disorder.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Composition data are reported in aggregate form without breakdown by entry/exit flows or reclassification patterns",
+        "No information provided on whether the distribution shift reflects changed diagnostic practices or genuine changes in prevalence",
+        "Data endpoints (2021/2022 and 2023/2024) are not continuous"
+      ],
+      "source_title": "KSH/Oktatási Hivatal data via eduline.hu",
+      "source_url": "https://eduline.hu/"
+    },
+    {
+      "claim": "A substantial sex disparity exists in SNI identification: 11% of boys are classified as SNI versus 6.1% of girls, representing a stable, large gap whose source (biological, diagnostic bias, or referral-pathway differences) is not established in available sources.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The causal basis for the sex disparity (approximately 1.8:1 ratio) is not identified in the sources",
+        "No longitudinal tracking is provided to confirm whether this ratio is stable over time or changing",
+        "No international comparison is provided to contextualize the gap"
+      ],
+      "source_title": "KSH education statistics",
+      "source_url": "https://www.ksh.hu/"
+    },
+    {
+      "claim": "County-level variation in SNI identification is substantial, with Békés county reporting the highest share (14% of primary pupils) and Borsod-Abaúj-Zemplén and Hajdú-Bihar the lowest (5.4% and 5.7% respectively), a 2.6-fold range far larger than plausible true prevalence variation.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "The wide geographic range is inferred to indicate local diagnostic/administrative practice differences, but this inference is not independently verified",
+        "No audit of expert-committee decision-making practices by county is cited",
+        "Sociodemographic and population composition differences between counties are not controlled for"
+      ],
+      "source_title": "KSH regional education data",
+      "source_url": "https://www.ksh.hu/"
+    },
+    {
+      "claim": "BTMN (beilleszkedési, tanulási, magatartási nehézség — a Hungarian-specific category of milder difficulties distinct from SNI) was present in 2.1% of preschool-age children (2018/2019) but 9.5% of school-age children, a roughly 4.5-fold increase coinciding with school entry.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "These are the last publicly available statistics cited; no data more recent than 2018/2019 are provided in the search results",
+        "The jump could reflect either genuine emergence of learning/behavioral difficulties upon school entry or differences in screening/referral sensitivity between preschool and school contexts; the sources do not adjudicate between these",
+        "Definition of BTMN and its application consistency across preschool and school settings are not detailed"
+      ],
+      "source_title": "Hungarian public-education statistics (2018/2019), cited in Educatio journal and ResearchGate sources",
+      "source_url": "https://akjournals.com/"
+    },
+    {
+      "claim": "Expert committees (pedagógiai szakszolgálat) operate as the sole national gatekeeper for determining both SNI and BTMN status and for recommending integrated versus segregated educational placement; this institutional mechanism has not been structurally reformed despite rising identification caseloads.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The sources confirm the legal authority and gatekeeping role but do not provide quantitative data on expert-committee capacity, caseloads, or decision-making consistency",
+        "No audit of expert-committee process variation across regions or time is cited in the notes",
+        "The extent to which capacity constraints shape identification rates independent of clinical need is inferred but not empirically measured"
+      ],
+      "source_title": "Act CXC of 2011 on National Public Education (National Public Education Act); gyermekut.hu; fpsz.hu",
+      "source_url": "https://net.jogtar.hu/jogszabaly?docid=a1100190.tv"
+    },
+    {
+      "claim": "A shortage of special-education teachers (gyógypedagógus) persists with regional variation: Budapest has 45 vacant positions, while rural Transdanubian counties have 2–3 each; applications to state-subsidized special-education training rose 15% (3,270 to 3,768 first-choice applicants) for 2026 entry.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Vacancy data are snapshot counts, not longitudinal time series, and the pace of vacancy filling is not reported",
+        "Whether the 15% training-pipeline increase will match regional distribution of actual need (concentrated in Budapest, specific specializations) is not established",
+        "No data provided on retention, turnover, or the effectiveness of credential-expansion in reducing functional shortages"
+      ],
+      "source_title": "eduline.hu, workforce recruitment data (2024, 2026)",
+      "source_url": "https://eduline.hu/"
+    },
+    {
+      "claim": "Diagnostic assessment and therapy services experience capacity bottlenecks: waiting lists for assessment extend several months, and therapeutic-care capacity for ADHD, autism, developmental, and behavioral conditions is documented as absent or very limited, per a 2022 manifesto from pedagógiai szakszolgálat professionals reported by HVG.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Source is a professional/advocacy manifesto rather than an independent audit or official capacity assessment",
+        "No quantitative metrics for waiting times, service capacity, or geographic variation are provided",
+        "The manifesto describes conditions in 2022; current status is not confirmed in the research notes"
+      ],
+      "source_title": "HVG (2022), practitioner manifesto from pedagógiai szakszolgálat professionals",
+      "source_url": "https://hvg.hu/"
+    },
+    {
+      "claim": "The European Court of Human Rights has ruled in two separate cases (Horváth and Kiss v. Hungary, 2013; Szolcsán v. Hungary, application no. 24408/16) that segregation of Roma children in special schools constitutes discrimination; Hungary remains subject to an ongoing European Commission infringement procedure for systemic segregation in education as of March 2023.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Implementation data requested by the Committee of Ministers have not been provided by Hungary according to the notes",
+        "Allegations of culturally biased diagnostic protocols are derived from NGO advocacy submissions and are not independently verified",
+        "The extent to which recent diagnostic procedure reforms have affected Roma student outcomes is not documented in the available sources"
+      ],
+      "source_title": "ECtHR judgments (2013, ongoing); European Commission infringement procedure (2023)",
+      "source_url": "https://www.errc.org/"
+    },
+    {
+      "claim": "The December 2023 anti-segregation law, according to critic assessments, does not address free parental school choice under the National Public Education Act or the elite six- and eight-grade gimnázium tracks that operate alongside regular primary schools, leaving core selection mechanisms intact that enable segregation strategies.",
+      "evidence_strength": "contested",
+      "limitations": [
+        "This assessment represents a critical/opposition-aligned perspective rather than government self-assessment or independent policy evaluation",
+        "The factual scope of the 2023 law (what it addresses and does not address) appears accurately described, but its efficacy and whether the law intentionally excluded these mechanisms are contested framings",
+        "No quantitative analysis of school-choice behavior or elite-track enrollment impacts on SEN concentration is provided"
+      ],
+      "source_title": "Mérce (2023), citing Együttnevelés Szövetség and Tanítanék Mozgalom; National Public Education Act (Nkt.)",
+      "source_url": "https://merce.hu/"
+    },
+    {
+      "claim": "NGO estimates hold that approximately two-thirds of Roma children are taught separately in segregated schools, classes, or special institutions; advocacy sources further contend that 'massive and groundless' intellectual-disability declarations serve as a method of segregating Roma children in Hungary.",
+      "evidence_strength": "weak",
+      "limitations": [
+        "These are unaudited advocacy estimates rather than official statistics or independent audits",
+        "No data on methodology for generating the two-thirds figure are provided",
+        "No longitudinal trend data are available to establish whether this prevalence has changed in response to legal or policy shifts"
+      ],
+      "source_title": "Rosa Parks Foundation advocacy material; errc.org; romarchive.eu",
+      "source_url": "https://www.rosaparks.hu/"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "What proportion of the observed 20-year, 40% rise in SNI identification is attributable to: (a) improved or more sensitive diagnostic methods; (b) changes in definitional scope or category boundaries; (c) changes in the incentives or gatekeeping practices of expert committees; (d) genuine changes in population prevalence; and (e) regulatory changes in adjacent policy domains (such as the 2020 school-readiness rule change affecting school-entry practices)?",
+      "reduction_path": "Conduct a matched longitudinal audit of expert-committee diagnostic decisions across a 20-year period, controlling for population and entry-flow changes, and compare against internationally-validated epidemiological prevalence estimates for specific diagnostic categories (e.g., autism spectrum disorder, specific learning disorders). Cross-reference timing of diagnostic increases with policy changes and introduction of new diagnostic tools or protocols."
+    },
+    {
+      "question": "To what extent does the 4.5-fold jump in BTMN identification between preschool (2.1%) and school entry (9.5%) reflect genuine emergence of learning/behavioral difficulties upon school entry versus differences in screening intensity, referral incentives, or diagnostic thresholds applied at each stage?",
+      "reduction_path": "Conduct a prospective cohort study following children from late preschool through first-grade school entry, with independent diagnostic assessment at both timepoints using identical protocols, to measure true-prevalence emergence versus assessment-practice differences. Interview expert committees and preschool/school screening personnel regarding screening practices, referral criteria, and decision-making processes."
+    },
+    {
+      "question": "Do the observed county-level variations in SNI identification (2.6-fold range) represent genuine differences in population prevalence, differences in diagnostic/referral practices among local expert committees, differences in family help-seeking behavior, or combinations of these? Are these differences changing over time?",
+      "reduction_path": "Conduct a regional audit of expert-committee diagnostic decision-making processes, including review of assessment records, diagnostic criteria applied, and outcome tracking. Compare against sociodemographic controls and obtain independent prevalence estimates through school-based universal screening in a sample of counties with high and low identification rates."
+    },
+    {
+      "question": "What are the causal pathways linking the documented 1.8:1 sex ratio in SNI identification to (a) biological differences in disorder prevalence; (b) diagnostic bias or differential thresholds applied by assessors; (c) referral-pathway differences by sex; or (d) differences in help-seeking or school-responsiveness by family/teacher depending on child sex?",
+      "reduction_path": "Conduct a diagnostic-validity study comparing assessment outcomes, clinical characteristics, and long-term educational/functional outcomes between boys and girls identified with SNI, controlling for severity indicators at assessment. Interview teachers, parents, and expert-committee members regarding referral patterns and diagnostic decision-making by sex. Compare assessment protocols against international diagnostic criteria to identify potential sex-biased items."
+    }
+  ]
+}

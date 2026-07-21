@@ -1,0 +1,123 @@
+{
+  "assumptions": [
+    " Rising SEN identification rates in official statistics reflect a mix of true prevalence change, diagnostic-practice improvement, policy-induced assessment-access shifts, and potential over-identification artifacts—but the sources do not weight or isolate these factors, implying policy reasoning must treat the trend as multifactorial rather than single-cause-driven.",
+    "Geographic prevalence disparities between counties reflect material differences in service-system quality, diagnostic access, and workforce capacity rather than authentic epidemiological variation in SEN need—a key assumption for reframing prevalence data as a service-quality indicator rather than a demand map.",
+    "The formal transport entitlement framework will function effectively only if the upstream assessment bottleneck (diagnostic throughput and Expert Committee capacity) is resolved, meaning transport-access improvements alone cannot independently address geographic delivery gaps."
+  ],
+  "findings": [
+    {
+      "claim": "The number of children identified with special educational needs (SNI) in Hungary exceeded 69,000 in the 2025/2026 school year according to KSH (Central Statistical Office) data, with a broader count across all education levels reaching nearly 120,000.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Different sources use varying denominators (general-school-only vs. full system), making cross-source comparisons problematic",
+        "The 69,000 vs. 120,000 discrepancy reflects definitional scope rather than measurement error, requiring clarification of which population serves planning purposes"
+      ],
+      "source_title": "KSH (Central Statistical Office) Helyzetkép survey and public education statistics",
+      "source_url": "KSH_official_statistics_2025-2026"
+    },
+    {
+      "claim": "Over the past 20 years, the number of SNI students in Hungary has increased by 40%, with autism spectrum disorder (ASD) identification rising from 30 registered students in 2001 to 9,737 by 2023—a threefold increase over the past decade.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Sources indicate the surge reflects both true prevalence change and improved diagnostic methods, but do not quantify the relative contribution of each factor",
+        "Causal attribution between improved diagnosis and rising numbers is an inference rather than a settled finding"
+      ],
+      "source_title": "KSH historical education data",
+      "source_url": "KSH_longitudinal_SEN_statistics"
+    },
+    {
+      "claim": "Recorded SEN prevalence varies dramatically by county, ranging from 15.6% of students in Békés county to 6.2% in Borsod-Abaúj-Zemplén county.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Researchers explicitly caution that regional differences may reflect diagnostic and support-system quality/access rather than true underlying need variation",
+        "Low recorded prevalence does not definitively indicate fewer SNI children; it may indicate under-identification due to service gaps, making raw prevalence rates unsuitable as sole planning demand metrics"
+      ],
+      "source_title": "Regional education statistics cited in SEN research",
+      "source_url": "regional_SEN_prevalence_data"
+    },
+    {
+      "claim": "The January 2020 tightening of school-readiness assessment and deferral rules resulted in deferral applications falling sharply to 16,400 by 2021, and KSH time-series data show SNI numbers rising markedly faster from 2021/2022 onward.",
+      "evidence_strength": "contested",
+      "limitations": [
+        "KSH itself has not issued an official causal attribution linking the policy change to SNI increases; the link is attributed to advocacy-group interpretation and journalistic synthesis",
+        "Multiple explanatory factors (diagnostic improvement, genuine prevalence change, assessment-access changes) operate simultaneously, and sources do not weight their relative contributions"
+      ],
+      "source_title": "Szülői Hang advocacy analysis and KSH time-series synthesis",
+      "source_url": "szuloi_hang_deferral_analysis"
+    },
+    {
+      "claim": "Northeast Hungary had no special-education-teacher (gyógypedagógus) training program until 2017, and a 2009 early-intervention study documented substantial regional inequalities in diagnostic and service access, with particularly weak services and long waiting lists in Northern Hungary regions.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The 2009 study predates major policy and infrastructure changes; current status of the early-intervention system in these regions is not documented in retrieved sources",
+        "Absence of a training program until 2017 explains historical workforce gaps but does not directly measure current staffing adequacy in affected regions"
+      ],
+      "source_title": "Special-education workforce development records and 2009 early-intervention system study",
+      "source_url": "northeast_teacher_training_gap_study"
+    },
+    {
+      "claim": "Currently 4,900 special-education/conductor-role teachers work in general schools, plus 949 developmental teachers and 1,404 specialists in the traveling special-education-teacher and conductor network (approximately 7,253 total specialist positions nationally).",
+      "evidence_strength": "strong",
+      "limitations": [
+        "No source provides a systematic national specialist-to-pupil ratio analysis relative to the 69,000–120,000 identified SNI population, making workforce adequacy an open question",
+        "Practitioner accounts report strain and staff departures, but these are not quantified against the total workforce or caseload growth rate"
+      ],
+      "source_title": "Official staffing counts from educational administration",
+      "source_url": "hungarian_specialist_staffing_census"
+    },
+    {
+      "claim": "SNI-status children and up to two accompanying persons are entitled to free intercity travel to educational institutions, but travel-support entitlements are contingent on receiving a voucher issued by an Expert Committee following successful SEN assessment.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Transport access is gated by prior diagnostic assessment; if assessment capacity is constrained, transport entitlements alone cannot resolve geographic access barriers",
+        "The policy does not address within-district or local-area transport where intercity travel entitlements do not apply"
+      ],
+      "source_title": "Hungarian education policy on SNI student transport entitlements",
+      "source_url": "SNI_transport_entitlement_policy"
+    },
+    {
+      "claim": "Traveling specialist-education networks show wide variance in coverage scale and capacity, ranging from networks serving 30+ institutions with 200+ children to regional networks serving 50+ institutions with 350+ children, with some networks unable to provide category-specific specialist care (e.g., sensory disabilities) locally.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Coverage examples are illustrative rather than comprehensive; a systematic national audit of traveling-network capacity and coverage gaps is not presented in sources",
+        "Inability to serve specific disability types locally implies cross-institutional referral, but the geographic distance, wait times, and family-burden implications of such referrals are not quantified"
+      ],
+      "source_title": "Regional traveling-specialist network operational reports",
+      "source_url": "specialist_network_coverage_case_studies"
+    },
+    {
+      "claim": "Children from multiply disadvantaged families are significantly more likely to have developmental problems remain unidentified or, if identified, to not receive development services; additionally, official SEN figures cover only children with formal expert opinions, implying an unquantified population of children with unmet SEN who lack formal diagnosis or assessment.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The size of the 'hidden/unassessed' population is not measured; advocacy estimates of roughly 4,000 additional unassessed students are inference rather than census data",
+        "Regional and socioeconomic variation in unmet SEN is implied but not systematically mapped across the country"
+      ],
+      "source_title": "2023 disadvantage and SEN identification study; advocacy-sector assessment estimates",
+      "source_url": "disadvantage_identification_equity_study"
+    },
+    {
+      "claim": "Hungary exhibits extreme school segregation in small settlements, with disadvantaged-pupil concentration ranging from 20% to 80% within the same locality, shaped by covert admissions practices, church-school choice, and parental mobility responses to changing school composition.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Segregation research cited is not always SEN-specific; most sources focus on Roma/socioeconomic segregation rather than SEN-driven mobility",
+        "One claim about parents withdrawing children when SNI concentration reaches 20–40% is presented as an advocacy hypothesis rather than an empirically validated causal finding"
+      ],
+      "source_title": "School segregation research on Hungarian education systems",
+      "source_url": "hungarian_school_segregation_study"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "What proportion of the documented 40% increase in SNI identification over 20 years, and specifically the threefold autism rise in the past decade, is attributable to improved diagnostic methods versus true prevalence change versus policy-induced artifacts (e.g., the 2020 deferral-rule change)?",
+      "reduction_path": "Commission an independent epidemiological time-series analysis decomposing the trend by separating administrative data discontinuities (policy changes), diagnostic-tool adoption timelines, and age-specific identification rates; cross-validate with international diagnostic prevalence studies to benchmark whether Hungarian ASD and broader SEN rates align with expected clinical prevalence in comparable populations."
+    },
+    {
+      "question": "What is the actual specialist-teacher-to-SNI-pupil ratio by district and county, and does this ratio differ significantly between high-prevalence regions (e.g., Békés) and low-recorded-prevalence regions (e.g., Borsod-Abaúj-Zemplén), and is any disparity attributable to workforce supply or to assessment-access differences?",
+      "reduction_path": "Conduct a detailed capacity audit mapping specialist staffing, traveling-network coverage, Expert Committee throughput, and assessment wait times by county; cross-tabulate against recorded SEN prevalence and against socioeconomic/disadvantage indicators to distinguish service-supply constraints from diagnostic-access or identification-quality differences."
+    },
+    {
+      "question": "How large is the population of children with unmet or undiagnosed SEN (the 'hidden' population referenced by advocacy estimates), and is this population concentrated in specific regions, socioeconomic groups, or disability categories?",
+      "reduction_path": "Pilot targeted early-screening assessments (e.g., universal developmental screening at age 3–4) in sample localities representing high-, medium-, and low-recorded-prevalence regions and disadvantage levels; compare identified need against current formal SEN counts to estimate the magnitude and distribution of unassessed SEN."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "assumptions": [
+    "The primary policy concern is distinguishing genuine increases in SEN prevalence from increases driven by classification-incentive artifacts or discriminatory practices.",
+    "Hungary's legal framework for SNI identification is assumed to be applied with variable stringency across county committees, though no systematic audit data is cited.",
+    "Parental autonomy and child-welfare protection are both legitimate but potentially conflicting policy values, and the current administrative-override authority creates governance complexity rather than resolving this tension."
+  ],
+  "findings": [
+    {
+      "claim": "The recorded SNI population in Hungary has grown continuously since at least 2012/13, with documented acceleration from 2021/22 onward, from approximately 107,421 to 112,007 students across kindergarten and primary/secondary institutions in the latest reported school year.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Absolute totals differ across sources due to inconsistent scope/definition across reporting agencies",
+        "No agreed single figure exists; primary-school-only figures (63k) differ markedly from all-levels figures (105-112k)",
+        "Causal drivers of growth are contested"
+      ],
+      "source_title": "Hungarian Central Statistical Office (KSH) data compiled by Telex and preliminary KSH figures",
+      "source_url": "Hungarian Central Statistical Office (KSH)"
+    },
+    {
+      "claim": "Approximately 66% of SNI students are classified with severe learning, attention, or behavioral-regulation disorders, and 12% with autism spectrum disorder, with roughly one in ten boys nationally classified as SNI versus 6.1% of girls.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Reporting is aggregate and does not track longitudinal diagnostic practice changes",
+        "Regional disparity is large (Békés county 14% vs. Borsod-Abaúj-Zemplén 5.4%), suggesting local variation in classification practices that is not yet explained"
+      ],
+      "source_title": "Hungarian Central Statistical Office (KSH) data on SNI category composition",
+      "source_url": "Hungarian Central Statistical Office (KSH)"
+    },
+    {
+      "claim": "A 2017–2018 legal reform ('lex Taigetosz') restructured incentives between BTMN and SNI categories by ending the exemption from grading and narrative-assessment option exclusively for BTMN students, retaining exemptions only for SNI students.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The causal connection between the legal tightening and the subsequent statistical jump is asserted by journalists and commentators, not established by controlled study",
+        "Multiple plausible non-exclusive drivers (COVID, environmental factors, diagnostic-practice changes) are cited in sources without adjudication between them"
+      ],
+      "source_title": "2017 amendment to the Public Education Act; analysis by news reporting linking legal change to statistical trends",
+      "source_url": "Public Education Act 2017 amendment"
+    },
+    {
+      "claim": "SNI status is established exclusively by county-level (vármegyei/fővárosi) expert committees of pedagogical service institutions under EMMI decree 15/2013, separate from medical diagnosis; a medical diagnosis alone does not confer SNI entitlement.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The bifurcated accountability structure (healthcare professionals identify impairment; educational-administrative bodies confer legal status) is legally established but operationally vulnerable to misdiagnosis or bias",
+        "No source provides data on systematic variation in diagnostic stringency across county committees"
+      ],
+      "source_title": "EMMI decree 15/2013 (pedagógiai szakszolgálati intézmények)",
+      "source_url": "EMMI decree 15/2013"
+    },
+    {
+      "claim": "Parental consent is ordinarily required for SNI assessment, but institutional/hatósági (administrative-authority) override exists when welfare is at risk, with the school-district center authorized to conduct assessment without parental consent if the parent fails to participate through their own fault.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The autonomy-vs-child-welfare conflict zone is legally recognized but operationally creates scope for administrative discretion without clear transparency requirements",
+        "Sources do not provide frequency data on administrative-override usage or analysis of whether override procedures are applied consistently across regions"
+      ],
+      "source_title": "EMMI decree 15/2013; school-district-center protocols",
+      "source_url": "EMMI decree 15/2013"
+    },
+    {
+      "claim": "Parents can appeal SNI assessment outcomes within fifteen days via administrative procedure under EMMI decree 15/2013 §39(10), and expert committees conduct ex officio review during the first educational year following implementation.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The fifteen-day appeal window is short and reliance on administrative (not judicial) review channels raises due-process concerns not directly critiqued in available sources beyond general ECtHR segregation criticism",
+        "No data provided on appeal success rates or timeliness of reviews"
+      ],
+      "source_title": "EMMI decree 15/2013 §39(10)",
+      "source_url": "EMMI decree 15/2013"
+    },
+    {
+      "claim": "Funding architecture ties per-pupil financing to SNI classification, with SNI pupils counted as two or three pupils depending on classification when calculating staffing-subsidy eligibility, creating a structural mechanism by which SNI classification directly increases institutional budgets.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "No causal evidence is provided that this financial incentive (as opposed to genuine need, diagnostic-practice changes, or legal asymmetry) drives the aggregate rise in SNI identification",
+        "The mechanism is confirmed but its quantitative effect on classification rates remains unproven"
+      ],
+      "source_title": "Task-based financing (feladatfinanszírozás) reform; normative financing historical data (224,000 HUF/pupil/year in 2012/13)",
+      "source_url": "Hungarian education financing documentation"
+    },
+    {
+      "claim": "Special education teacher (gyógypedagógus) shortages are geographically uneven, with some northeastern districts employing no special education teachers despite rising SNI numbers, compounded by the lowest overall public-education teacher employment since the turn of the millennium (down 1,600 from 2022/23 to 2023/24).",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The capacity-demand gap is documented in aggregate but no source provides systematic mapping of which districts lack provision capacity",
+        "Informal reimbursement of private provision by maintaining authorities is noted as unlawful but frequency and impact are not quantified"
+      ],
+      "source_title": "Academic research on regional teacher distribution; Hungarian education employment statistics for 2023/2024",
+      "source_url": "Hungarian education workforce data"
+    },
+    {
+      "claim": "Hungary has an unresolved, decade-plus legal-accountability record on discriminatory misclassification of Roma children via the SNI assessment system, with the European Court of Human Rights finding in Horváth and Kiss v. Hungary (2013) that two Roma applicants suffered ethnic discrimination, and the Committee of Ministers unable to close the case as of the latest available monitoring due to failure to eliminate discriminatory practices.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Enforcement has stalled without public resolution; the Hungarian government has not demonstrated elimination of discriminatory practices",
+        "No systematic data provided on current rate of Roma over-diagnosis or misclassification relative to non-Roma peers"
+      ],
+      "source_title": "Horváth and Kiss v. Hungary (2013) ECtHR judgment; Committee of Ministers monitoring reports",
+      "source_url": "Horváth and Kiss v. Hungary (2013), European Court of Human Rights"
+    },
+    {
+      "claim": "A 2024 Rosa Parks Foundation study found that existing SNI diagnostic practices result in an unjustifiably high proportion of Roma children being diagnosed with mild intellectual disability, with the diagnostic process leaving wide scope for bias, subjective diagnosis, and misdiagnosis while excluding Romani parents from meaningful participation.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Study is recent advocacy research and does not provide quantified comparison data on diagnostic-stringency differences between Roma and non-Roma populations",
+        "Sources do not provide data on the extent to which Romani parents are systematically excluded from assessment processes or how exclusion varies across regions"
+      ],
+      "source_title": "Rosa Parks Foundation study (2024)",
+      "source_url": "Rosa Parks Foundation"
+    },
+    {
+      "claim": "A UN Special Rapporteur report (2023-24) documented that approximately 35% of Roma students attend majority-Roma schools, segregation complaints accounted for 69% of Ombudsman complaints in 2023, and systemic over- and misdiagnosis of Roma children with learning disabilities leads to special-education placement without proper justification, exacerbating educational disadvantage.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "The report notes Hungary does not currently collect ethnically-disaggregated data in education, limiting independent verification",
+        "Causality between SNI misclassification and segregation segregation as distinct mechanisms is asserted but not rigorously disentangled in the source material"
+      ],
+      "source_title": "UN Special Rapporteur report on racism in education (2023-24)",
+      "source_url": "UN Special Rapporteur on racism"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "To what extent is the documented rise in SNI classification driven by the 2017–18 BTMN/SNI legal reform versus other factors (COVID-era effects, diagnostic-practice shifts, genuine prevalence increase, or funding incentives)?",
+      "reduction_path": "Commission a quasi-experimental study comparing SNI classification trends in regions with early vs. delayed implementation of the 2017 reform, controlling for demographic and regional factors; simultaneously audit county-committee diagnostic criteria and inter-rater reliability."
+    },
+    {
+      "question": "Are current SNI assessment and appeal procedures operationally providing due process and non-discrimination safeguards, particularly for Roma children and families, or do administrative discretion and resource constraints undermine their intended effect?",
+      "reduction_path": "Conduct a systematic audit of administrative-override usage across school districts, appeal success rates by demographic group, and compliance with EMMI decree §39(10) timelines; pair with ethnically-disaggregated outcome analysis under a data-collection protocol recommended by the UN Rapporteur."
+    },
+    {
+      "question": "To what degree does the per-pupil financing mechanism tied to SNI classification function as a structural incentive toward over-identification, and how does this interact with workforce shortages that may prevent timely, appropriate provision?",
+      "reduction_path": "Model the budgetary impact of alternative financing structures (e.g., universal access-and-support models decoupled from individual classification); cross-reference with analysis of unmet provision requests and private-sector utilization patterns to quantify the gap between classification and delivery."
+    }
+  ]
+}

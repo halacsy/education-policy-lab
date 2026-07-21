@@ -1,0 +1,133 @@
+{
+  "assumptions": [
+    "`SNI' and `BTMN' categories are mutually exclusive and exhaustive within Hungarian special-education administrative classification, with no overlap or gray-zone misclassification in practice",
+    "Rising recorded identification of SNI/BTMN reflects a mix of true prevalence change, diagnostic-practice improvement, and category-definition shifts, and policymakers can distinguish among these drivers using epidemiological and administrative data",
+    "Fiscal sustainability of special-education provision depends primarily on identification rate control, workforce supply matching, and equitable funding distribution rather than on the underlying true prevalence of neurodevelopmental and learning differences in the child population"
+  ],
+  "findings": [
+    {
+      "claim": "SNI student enrollment in Hungary has increased by 40% over the past 20 years, with 112,007 children registered in the 2024/2025 school year, representing nearly 10% of primary school students and over 11% by 8th grade",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Source is secondary aggregator rather than primary KSH statistical release",
+        "No breakdown provided of whether increase reflects true prevalence change versus improved identification/diagnostic practice",
+        "Most recent data point is single school year (2024/25) without multi-year trend confidence intervals"
+      ],
+      "source_title": "KSH (Hungarian Central Statistical Office) data aggregated via Raabe.hu",
+      "source_url": "https://raabe.hu"
+    },
+    {
+      "claim": "Autism spectrum disorder registrations among Hungarian children nearly tripled to quadrupled between 2013 and 2023/24, with conflicting source figures reporting either 3,319→9,737 or 3,061→11,685 depending on reference population",
+      "evidence_strength": "contested",
+      "limitations": [
+        "Two KSH-sourced figures disagree on both base values and endpoints, indicating either calendar-year versus school-year definitional differences or data-vintage inconsistency",
+        "Exact multiplier (threefold vs. fourfold) and interpretation remain unresolved",
+        "No single authoritative KSH release URL identified in search"
+      ],
+      "source_title": "KSH data cited in multiple education outlets",
+      "source_url": "https://ksh.hu"
+    },
+    {
+      "claim": "Expert interpretation of rising autism registrations attributes increase primarily to diagnostic-practice change—improved detection methods, greater awareness, and earlier referral by parents and professionals—rather than true prevalence increase",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Expert claim is quoted opinion rather than epidemiological evidence",
+        "No population-representative screening study cited to adjudicate between true-prevalence and ascertainment-bias explanations",
+        "Attribution to 'autism knowledge' and diagnostic spread is plausible but not directly validated by cited sources"
+      ],
+      "source_title": "Education outlets citing expert commentary",
+      "source_url": "https://raabe.hu"
+    },
+    {
+      "claim": "BTMN (behavioral/pedagogical needs category) prevalence in Hungary shows sharp age discontinuity: 2.1% of preschool children versus 9.5% of school-age children as of 2018/19, a fivefold difference suggesting school-entry academic/behavioral demands contribute substantially to identification",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Data is six years old as of 2025; no more recent granular BTMN breakdown publicly available",
+        "Age discontinuity is consistent with but does not definitively prove demand-driven identification hypothesis",
+        "No within-school progression data provided to distinguish between intake-at-age-6 effect versus age-of-identification artifact"
+      ],
+      "source_title": "Hungarian National Education Statistics 2018/2019",
+      "source_url": "https://www.ksh.hu"
+    },
+    {
+      "claim": "The distinction between SNI and BTMN categories reflects severity and etiology: SNI learning disorders involve neurological/nervous-system deviation, while BTMN involves pedagogical and psychological factors without neurological deviation",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "International comparability is limited because BTMN is a Hungarian-specific category",
+        "The boundary between 'neurological deviation' and 'pedagogical/psychological factors' is not formally defined in sources",
+        "No diagnostic criterion algorithm provided to assess misclassification risk across categories"
+      ],
+      "source_title": "Hungarian education policy documentation",
+      "source_url": "https://raabe.hu"
+    },
+    {
+      "claim": "Specialist assessment activity in pedagógiai szakszolgálat (educational counseling services) is increasingly consumed by BTMN/SNI expert-committee evaluations, crowding out direct therapeutic and remedial care time",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Sources are journalistic/advocacy-based rather than administrative capacity statistics",
+        "No quantitative time-allocation data provided (e.g., percentage of FTE devoted to assessment versus therapy)",
+        "Causal attribution to rising identification volume is stated but not rigorously separated from other workforce pressures (wages, training, job conditions)"
+      ],
+      "source_title": "2022 investigative account and service-staff reporting",
+      "source_url": "https://raabe.hu"
+    },
+    {
+      "claim": "Special-education teacher training admission is high (2,944 first-choice applicants in 2024, ranking 8th nationally), but completion and workforce-entry rates are reported by union sources to be a small fraction (approximately one-fifth enter the profession, and fewer specialize in autism or state-sector roles)",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Union representative's claim about completion/placement rates (one-fifth) is stated without published administrative statistics",
+        "Pipeline lag between admission, program completion, and workforce entry (8 semesters) means 2024 admissions do not directly measure current workforce supply",
+        "No comparison provided with supply/demand ratios in other specialist professions"
+      ],
+      "source_title": "2024 Higher-Education Admissions data and teachers' union commentary",
+      "source_url": "https://raabe.hu"
+    },
+    {
+      "claim": "Hungarian school funding structure includes per-capita normative funding multipliers (2x to 3x) for SNI students, potentially creating fiscal incentive for enrollment-declining schools to classify students as SNI to offset revenue loss and avoid teacher dismissal or closure",
+      "evidence_strength": "weak",
+      "limitations": [
+        "Source is course material, not peer-reviewed or official policy document; institutional attribution and date of material creation are unclear",
+        "Hypothesis is not independently verified by reference to statute, budget data, or administrative records of classification patterns",
+        "No evidence of scale, frequency, or current prevalence of this incentive effect in practice"
+      ],
+      "source_title": "Pedagogical training document on education financing (studocu lecture notes, undated institutional source)",
+      "source_url": "https://www.studocu.com"
+    },
+    {
+      "claim": "Hungarian education has documented precedent for administrative/categorical mechanisms creating segregation pathways (e.g., 'Bridge classes' functioning as repositories for Roma pupils), establishing structural risk that SEN/BTMN labeling could similarly interact with school choice to produce segregation",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Direct evidence linking SEN/BTMN classification to parent-driven school/class mobility or segregation outcomes was not located in search results",
+        "Bridge classes example is structurally analogous but distinct from SEN/BTMN pathway; mechanism transfer assumption is untested",
+        "No quantification of segregation magnitude or distributional impact by socioeconomic or ethnic characteristics"
+      ],
+      "source_title": "Kertesi & Kézdi segregation analysis and 2020 CEU working paper on social selection",
+      "source_url": "https://ceu.edu"
+    },
+    {
+      "claim": "UN Special Rapporteur on the right to education (2025 country visit) identified special-needs student protection, curriculum assessment, segregation, and equitable funding as unresolved policy concerns in Hungary, warning of 'hollowing out' of public education and deepening inequalities",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Assessment is qualitative and advocacy-oriented rather than quantitative; full Rapporteur report scheduled for June 2026 Human Rights Council presentation, so detailed findings may not yet be publicly available in sources retrieved",
+        "UN assessment does not provide Hungary-specific magnitudes of resource gaps or segregation extent",
+        "Institutional concern does not quantify causal contribution of SEN/BTMN identification to these broader education-system issues"
+      ],
+      "source_title": "UN Office of the High Commissioner for Human Rights (OHCHR) press release and Special Rapporteur country visit report",
+      "source_url": "https://www.ohchr.org"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "What is the true population prevalence of autism spectrum disorder and other neurodevelopmental/learning differences among Hungarian children, independent of administrative identification and diagnostic-practice variation?",
+      "reduction_path": "Commission a population-representative epidemiological screening study (e.g., birth cohort or stratified random school sample) using standardized diagnostic instruments (e.g., ADOS-2, DSM-5 criteria) and compare screened prevalence to administrative registry data to quantify ascertainment bias and true-prevalence trends"
+    },
+    {
+      "question": "To what extent does the per-capita SNI funding multiplier (2x–3x) create a measurable fiscal incentive for schools to classify marginal/borderline students as SNI, and how much of the documented enrollment increase is attributable to this mechanism versus true prevalence or legitimate diagnostic improvement?",
+      "reduction_path": "Obtain school-level administrative data on SNI classification rates, funding flows, and enrollment trends, and use difference-in-differences or instrumental-variable methods to isolate the independent effect of funding multipliers on classification after controlling for school size, composition, and demographic trends"
+    },
+    {
+      "question": "What is the current magnitude and geographic distribution of segregation (by ethnicity, socioeconomic status, disability type) in Hungarian schools that is specifically attributable to SEN/BTMN administrative classification and parent-choice responses, versus other mechanisms?",
+      "reduction_path": "Conduct linked analysis of school-composition data, student-mobility records, and SEN/BTMN classification status to estimate the causal effect of SEN/BTMN labeling on school-switching and enrollment composition; disaggregate by region and school type"
+    }
+  ]
+}

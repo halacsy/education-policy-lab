@@ -1,0 +1,49 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "3a8e4e9df08d4fbf34fd6ba1cb380454521fea5cca65ad71769f8d46461e75b7",
+        "response_hash": "5b1200d1f6348ce2aeb02aaafad1aa0d998b6782640f5d5325da3e8fff242a40",
+        "stage": "search",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "d507b7bd3ceafe16fc6c3d45947ca9d67c03c5e1e110f912f9766f98e755d703",
+        "response_hash": "f0ee530aeea222ff0f3204bfb692386d7b254c423f7e0de34c4a346d9452ea0c",
+        "stage": "analysis",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "6ce556852d470001e31a467ad33f68d6b0f4e19020969726030fddcd9ee4e75e",
+    "generation_parameters": {
+      "analysis_max_tokens": 16000,
+      "search_max_tokens": 10000
+    },
+    "input_artifact_hashes": [
+      "20b6773d7df18e2689f13f4784a9aac729a99e6bd8deb841d74567a445e91293",
+      "42f0bdfcbd4c8c7d809696ceeffefdd261d710db3c5aa7f6e5e2bcd6d3fc9426"
+    ],
+    "model": "anthropic-task-ladder",
+    "node_id": "research_polish_reform",
+    "prompt_hash": "349e232c1c4ea501269825fb7f6cbeef209ffecf45757db331b31ad02142bb7b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "research",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/assumption.schema.json": "a2c90cb84524046f123b798eeafcbe30a872987b4f63a19ba25467b0a22fcec2",
+      "schemas/v2/finding.schema.json": "7f08de87a5b809e4ebbdeb42e6c2265b5686984c0b71a01af896fea5cb670729",
+      "schemas/v2/source.schema.json": "0beda71026c753e0dcff6875401aa70ffd52fdbb6e81e9d68d9b1035b9dd085f",
+      "schemas/v2/uncertainty.schema.json": "e1e32dd216fcaa6af59322ed1fb36aed2bee508d91c17d3879d3daec28c9edd4"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-research_polish_reform-6ce556852d470001",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "b27cb242f39971a95a24898dae98f553ce52d40e3ff678472b14f02474ed2bf1",
+  "topic": "sni-letszamnovekedes"
+}

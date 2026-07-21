@@ -1,0 +1,136 @@
+{
+  "assumptions": [
+    "SEN identification and recording practices have remained sufficiently consistent across the decade to support year-on-year trend comparisons, despite acknowledged changes in diagnostic tools and legal requirements.",
+    "The rise in recorded SEN prevalence reflects some combination of genuine increases in underlying need, changes in identification/referral practice, and policy-driven classification changes; the three mechanisms are analytically separable with appropriate administrative and longitudinal data.",
+    "Institutional capacity (specialist staffing, mainstream-school resourcing) influences placement outcomes independently of student characteristics and clinical assessment, such that resource constraints can change the distributional impact of the same diagnostic threshold."
+  ],
+  "findings": [
+    {
+      "claim": "Between 2020/21 and 2021/22 school years, recorded SEN students in Hungary rose from 92,800 to 97,300; by 2024/2025 the total reached 112,060, representing a 28,000-student increase over ten years, with varying baseline definitions across official reports (cross-level vs. primary-only totals).",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Cross-report comparability is imperfect due to varying definitional scopes (kindergarten–secondary vs. primary-only)",
+        "absolute trend magnitude depends on which statistical release is used as baseline",
+        "lack of standardized historical series limits rigorous trend decomposition"
+      ],
+      "source_title": "KSH Central Statistical Office data releases and Eduline reports, August 2022–May 2026",
+      "source_url": "https://www.ksh.hu/stadat"
+    },
+    {
+      "claim": "The fastest-growing SEN subcategory is 'severe learning, attention, or behaviour-regulation disorder' (BTMN-adjacent), which comprised 45,300 students in 2021/22 (12% year-on-year increase) and approximately 69% of integrated SEN students, representing roughly 50% growth over ten years—compared to slower growth in sensory/motor/intellectual disabilities.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "'Soft' diagnostic categories are more sensitive to changes in assessment practice and referral behavior, making attribution to true prevalence vs. practice change difficult",
+        "no formal decomposition of diagnostic-modernization vs. legal-change vs. real-prevalence drivers is available in cited sources"
+      ],
+      "source_title": "KSH data reported in Népszava (August 2022) and Eduline (2022–2026)",
+      "source_url": "https://www.ksh.hu/stadat"
+    },
+    {
+      "claim": "Official explanation attributes SEN growth 'partly' to modernization of diagnostic tools, but independent experts (clinical psychologist, teachers' union, 2025 reports) dispute that diagnostic modernization alone explains the magnitude; instead they attribute substantial causal weight to mandatory school enrollment from age six and stricter school-readiness assessments implemented in 2018, with acceleration post-2020.",
+      "evidence_strength": "contested",
+      "limitations": [
+        "Competing causal narratives (diagnostic improvement vs. policy-driven administrative change vs. real prevalence increase) have not been formally decomposed or modeled",
+        "claims about school-readiness rules and enrollment policy timing lack quantified impact estimates",
+        "COVID-era distance learning cited as compounding factor but not independently measured"
+      ],
+      "source_title": "KSH statement; Népszava interview (August 2022); teachers' union source; Eduline (July 2026)",
+      "source_url": "https://nepszava.hu/; https://eduline.hu/"
+    },
+    {
+      "claim": "SNI classification in Hungary functions primarily as a financing and service-eligibility category rather than strictly clinical diagnosis. Until 2013, institutions educating SNI students received higher per-capita normative state funding, creating potential institutional incentives to identify/register students; conversely, more recent reports suggest SNI status increasingly functions as an exclusionary rather than inclusive factor in admissions as institutional financing fails to support extra resources.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Current normatíva regulation texts were not consulted to verify whether historical funding incentives still apply",
+        "the claim about SNI shifting from advantage to exclusion is sourced to one pedagogical journal and not independently verified against institution-level admissions data",
+        "direction of incentive effects (inclusion vs. exclusion) may vary by region, institution type, and BTMN severity category"
+      ],
+      "source_title": "Hungarian Wikipedia SNI entry (financing history); specialized pedagogical journal source (2020s)",
+      "source_url": "https://hu.wikipedia.org/wiki/SNI"
+    },
+    {
+      "claim": "The specialist workforce shortage in Hungary is regionally concentrated (45 advertised gyógypedagógus positions in Budapest; 2–3 positions each in rural Transdanubian counties), yet enrollment in special-education degree programs rose 15% (to 3,768 first-choice state-scholarship applicants in 2026). However, many part-time correspondence-program students are parents of affected children unlikely to become practicing teachers, meaning rising enrollment does not directly map to future practicing workforce supply.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Geographic workforce distribution data refer to advertised positions, not actual deployment or capacity utilization",
+        "inference about part-time student conversion to practice is plausible but not quantified with cohort-tracking data",
+        "current staffing levels (4,900 special-education/conductor teachers in primary schools; 949 developmental teachers; 1,404 in traveling networks) are reported as a snapshot without trend information"
+      ],
+      "source_title": "Eduline (July 2026); special-education training program data",
+      "source_url": "https://eduline.hu/"
+    },
+    {
+      "claim": "73% of SEN students (approximately 51,000) are educated in integrated (mainstream) settings rather than segregated special schools, yet institutions and specialists face 'increasingly large challenges' in providing integrated education. Teacher surveys report 83.6% of respondents observed increases in students requiring developmental support, and research indicates placement decisions are shaped as much by institutional resource capacity and structure as by student characteristics.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "'Challenges' and strain are reported qualitatively; no quantified metric of resource adequacy per integrated SEN student exists in cited sources",
+        "teacher survey on developmental support needs does not distinguish between SEN-classified and unclassified students requiring support",
+        "causality between resource capacity and placement outcomes requires longitudinal institutional-level data not present in retrieved sources"
+      ],
+      "source_title": "Eurydice Hungary (July 2024); Education Sciences journal survey (2026)",
+      "source_url": "https://www.eurydice.org.hu/; https://www.mdpi.com/journal/education/"
+    },
+    {
+      "claim": "Established research from 2007–2020 documents that Roma students were overrepresented in SEN classification and segregated special-education classes in Hungary, with a threshold effect: in schools where Roma proportion is 50–75%, children are more likely to be tested and referred to segregated classes, whereas above 75% ethnic separation may occur outside the SEN classification system. Hungary's SEN integration policy has been comparatively more successful than the regional average, but this evidence is primarily historical and geographically local.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Evidence base is 15+ years old; current national-scale prevalence of ethnic sorting through SEN classification is not quantified in retrieved sources",
+        "threshold-effect findings are from local qualitative studies and may not generalize nationally",
+        "a 2023 Educatio journal study attempted to quantify 2016 vs. 2021 patterns but full findings were not retrievable in search results"
+      ],
+      "source_title": "Open Society Foundations monitoring (2007); ERRC research; qualitative studies cited in CEU working paper (2020)",
+      "source_url": "https://www.opensocietyfoundations.org/; https://www.errc.org/"
+    },
+    {
+      "claim": "Free school choice in Hungary (instituted to allow students to enroll outside residential districts subject to capacity limits) is an independently documented driver of compositional school sorting. Kertesi and Kézdi research found that school segregation is most strongly predicted by the proportion of Roma students in a town, and that school-switching behavior significantly alters school ethnic composition, diminishing the role of residential distribution.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "These findings document school-choice-driven sorting independent of SEN classification mechanisms",
+        "the interaction between school-choice sorting and SEN-classification sorting (whether SEN serves as a complementary or substitutive segregation channel) is not modeled in cited sources",
+        "parental perception and prejudice against Roma pupils are cited as mechanisms but not independently quantified"
+      ],
+      "source_title": "Kertesi and Kézdi study reported in CEU news (2013); CEU CPS working paper (2020)",
+      "source_url": "https://www.ceu.edu/; https://cps.ceu.edu/"
+    },
+    {
+      "claim": "Specialized Hungarian pedagogical scholarship identifies a 'domestic over-diagnosis' critique—that the number of children classified with learning disorders in Hungary is 'irrationally high'—and notes that international comparison with OECD countries is methodologically problematic because Hungary's diagnostic and service-provision system differs structurally in key respects and uses different definitional principles than OECD practice.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "'Over-diagnosis' critique is asserted within specialist literature but no quantitative benchmark or causal decomposition is provided",
+        "structural differences with OECD definitional systems are noted but not detailed; lacks concrete guidance for adjusted international comparison",
+        "source attribution to 'pedagogical journal' lacks complete citation detail in original notes"
+      ],
+      "source_title": "Hungarian pedagogical journal source (2020s); folyoiratok.oh.gov.hu (Oktatási Hivatal journals)",
+      "source_url": "https://folyoiratok.oh.gov.hu/"
+    },
+    {
+      "claim": "Rising SEN identification may change future educational trajectories and access (e.g., tracking into vocational streams, secondary-school access, higher-education pathways) through changes in SNI status from historical advantage to current frequent exclusion in admissions, but longitudinal quantification of these distributional outcomes is absent from retrieved sources and represents a priority evidence gap.",
+      "evidence_strength": "weak",
+      "limitations": [
+        "Claim that SNI status functions as exclusionary factor is sourced to pedagogical journal and lacks quantified admissions-outcome data",
+        "no longitudinal study follows SNI-classified cohorts to secondary/tertiary educational outcomes or labor-market trajectories",
+        "temporal sequence of when SNI status shifted from advantage to exclusion is not precisely dated across regions"
+      ],
+      "source_title": "Contextual references in specialized pedagogical sources; inference from earlier findings",
+      "source_url": "https://hu.wikipedia.org/wiki/SNI"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "What fraction of the observed increase in SEN/BTMN identification is attributable to diagnostic-tool modernization vs. policy-driven administrative change (mandatory school enrollment, school-readiness assessment tightening) vs. true underlying prevalence increases?",
+      "reduction_path": "Conduct a retrospective decomposition analysis using administrative data (referral rates by age cohort pre/post 2018 and 2020 policy changes, diagnostic tool adoption dates, clinical vs. administrative classification records) to estimate counterfactual identification rates under each mechanism."
+    },
+    {
+      "question": "Does SNI classification currently function as an inclusion incentive or an exclusion barrier in institutional admissions and resourcing decisions, and does this differ by region, institution type, and severity category (BTMN vs. intellectual disability)?",
+      "reduction_path": "Audit current institutional normative funding regulations and admissions policies; survey institution heads on resource constraints and placement preferences; analyze school-level admission rates for SEN-classified students vs. unclassified peers controlling for aptitude/behavior measures."
+    },
+    {
+      "question": "To what extent do reductions in formal SEN classification (through stricter diagnostic thresholds or destigmatization efforts) risk displacing sorting and segregation into alternative channels (school choice, informal class-level tracking, vocational tracking) rather than reducing segregation overall?",
+      "reduction_path": "Model the interaction between SEN classification policy, free school-choice rules, and informal tracking mechanisms using administrative data on school enrollments, classroom compositions, and secondary-track placements; simulate effects of counterfactual policy changes on both SEN classification rates and overall segregation indices."
+    },
+    {
+      "question": "What are the longitudinal educational and labor-market outcomes (secondary-school access, vocational vs. academic tracking, tertiary education, employment) for cohorts classified as SEN/BTMN in primary school, and do outcomes differ by ethnicity, gender, and baseline socioeconomic status after accounting for underlying academic performance?",
+      "reduction_path": "Link Oktatási Hivatal administrative records (SNI classification, school placements, grade progression) to secondary-school enrollment, vocational training, and labor-force registry data; conduct cohort analysis with propensity-score or instrumental-variable methods to estimate causal effects of SEN classification on mobility outcomes."
+    }
+  ]
+}

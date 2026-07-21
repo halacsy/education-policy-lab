@@ -1,0 +1,129 @@
+{
+  "assumptions": [
+    "Cohort decline and SEN identification trends will continue on current trajectories absent major policy intervention or fertility shock",
+    "Current local government governance structures and financing models will persist, maintaining the historical pattern of class-size reduction over school consolidation",
+    "Free school choice will continue to operate without new mandatory catchment-area enforcement, allowing continued mobility-driven concentration effects",
+    "The aging teaching workforce will not be substantially rejuvenated through recruitment without explicit workforce strategy"
+  ],
+  "findings": [
+    {
+      "claim": "Hungary's annual birth numbers have collapsed from a peak of 93,000 in 2021 to 72,000 in 2025 (22% decline), with total fertility rate falling to 1.31 children per woman, the lowest in 14 years. Any cohorts entering school from 2028 onward will be materially smaller than cohorts a decade earlier, independent of special educational needs policy.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Based on preliminary 2025 data; future fertility trends remain uncertain",
+        "Mechanical demographic fact does not determine policy response or enrollment outcomes"
+      ],
+      "source_title": "Hungarian vital statistics and fertility data (2021-2025)",
+      "source_url": "source:hungarian_cso_vital_statistics"
+    },
+    {
+      "claim": "The population of children aged 0-4 in Hungary is projected to decline by 5% between 2023 and 2033, representing a 'locked-in' demographic pipeline already born and distinct from future fertility uncertainty.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Projections assume no net migration; international mobility of families could alter actual cohorts",
+        "Does not specify regional distribution of the projected decline"
+      ],
+      "source_title": "EU population projections for Hungary (2023-2033)",
+      "source_url": "source:eu_population_projections_hungary"
+    },
+    {
+      "claim": "Between 2010 and 2020, students identified with special educational needs in Hungary rose from 6.7% to 7.7% in primary education and from 3.9% to 6.2% in secondary education. The drivers are contested: partly attributed to greater diagnostic awareness and improved diagnostics, and partly to social disparities and workforce shortages.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Source does not quantitatively decompose 'real prevalence change' from 'diagnostic practice change'",
+        "Cannot distinguish whether the 1-2 percentage point rise reflects increased underlying conditions, improved detection, or relabeling of existing students"
+      ],
+      "source_title": "Hungarian education statistics on SEN prevalence (2010-2020)",
+      "source_url": "source:hungarian_education_sen_data"
+    },
+    {
+      "claim": "A 2023 survey of 121 Hungarian primary teachers found that 83.6% reported an increase in students requiring developmental support, with teachers graduating in 2010 or later more likely to have encountered SEN students.",
+      "evidence_strength": "weak",
+      "limitations": [
+        "Based on perceived prevalence (subject to awareness and labeling bias), not population-based incidence measurement",
+        "Small sample size (121 teachers) not representative at national level",
+        "Cannot be treated as independent confirmation of a 'real' rise in SEN incidence"
+      ],
+      "source_title": "Hungarian primary teacher survey on SEN (2023)",
+      "source_url": "source:hungarian_teacher_survey_2023"
+    },
+    {
+      "claim": "Cross-national OECD evidence attributes the two- to fourfold increase in autism spectrum disorder diagnoses over 15 years largely to improved detection and diagnosis, not underlying prevalence increases. This suggests diagnostic practice change is a major driver across comparable healthcare systems.",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "Not Hungary-specific; Hungarian-specific incidence-versus-detection decomposition remains unavailable",
+        "Autism prevalence trends may not generalise to all special educational needs categories"
+      ],
+      "source_title": "OECD cross-national analysis of autism spectrum disorder trends",
+      "source_url": "source:oecd_autism_trends"
+    },
+    {
+      "claim": "Hungary's teaching workforce is aging and geographically concentrated: half of all teachers in 2024/2025 were aged 50 or older with only 7.2% under 30. Teacher shortages are greatest in rural areas, where the proportion of unqualified teachers in disadvantaged schools is 2-3 times higher than in non-disadvantaged schools.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Describes current capacity constraints but does not measure adequacy relative to projected SEN identification trends",
+        "Does not quantify specialist gaps (speech therapists, sign language interpreters, etc.) separately from general teacher shortages"
+      ],
+      "source_title": "Hungarian teacher workforce demographics and regional distribution (2024/2025)",
+      "source_url": "source:hungarian_teacher_workforce_data"
+    },
+    {
+      "claim": "A UN expert review linked Hungary's growing SEN cohorts to inadequate specialist support: 'the growing number of children with special education needs has not been matched by adequate teacher training or specialist support in Hungary; bigger classes in public schools pose significant challenges to accommodate SEN students and the shortage of specialists, such as doctors and sign language interpreters, further adds to the difficulties.'",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "UN review does not distinguish between capacity gap driven by rising SEN identification versus pre-existing underinvestment",
+        "Does not quantify specialist shortfall or provide counterfactual estimate of adequate specialist provision"
+      ],
+      "source_title": "UN expert review of Hungary education system",
+      "source_url": "source:un_expert_review_hungary"
+    },
+    {
+      "claim": "Unlike systems consolidating rural schools, Hungary historically responded to enrollment decline by reducing parallel class sections rather than closing schools, producing a large stock of small single-class-per-grade rural schools. This structural feature constrains how SEN/BTMN students can be operationally served, as single-class schools cannot separate pupils into parallel tracks.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Historical pattern does not guarantee future local government choices will follow same path",
+        "Does not measure how single-class-per-grade structure affects SEN identification or service delivery quality"
+      ],
+      "source_title": "Historical analysis of Hungarian rural school responses to pupil decline",
+      "source_url": "source:hungarian_rural_school_consolidation"
+    },
+    {
+      "claim": "Local government financing of Hungarian primary education deteriorated from central government covering 80-90% of costs in the 1990s to 50-70% (50% in small village schools) by the 2000s. This fiscal squeeze predates and is compounding current cohort decline, creating cumulative fiscal pressure independent of SEN identification trends.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Does not project forward to 2025+; more recent financing data needed to assess current local viability",
+        "Does not quantify how fiscal pressure translates into reduced specialist services or quality"
+      ],
+      "source_title": "Analysis of Hungarian local education financing trends (1990s-2000s)",
+      "source_url": "source:hungarian_education_financing"
+    },
+    {
+      "claim": "Regional child-population trends in Hungary are spatially uneven: rural settlements in Western Transdanubia, Southern Baranya, and Northern Hungary experienced child-population contractions of 10-30% over a recent four-year period, while Northeastern counties (Borsod-Abaúj-Zemplén, Szabolcs-Szatmár-Bereg, Heves) show high disadvantage concentrations (70-92% child disadvantage rates in some settlements). North-South and East-West regional divides are pronounced.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Regional analysis does not quantify whether child disadvantage concentration reflects demographic composition versus school-choice driven segregation",
+        "Data timeframe not specified; currency of regional statistics unclear"
+      ],
+      "source_title": "Regional analysis of Hungarian child-population trends and disadvantage concentration",
+      "source_url": "source:hungarian_regional_child_population_analysis"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "To what extent is the measured 1-2 percentage point rise in SEN identification (2010-2020) attributable to underlying prevalence change versus improved diagnostic practices and greater awareness?",
+      "reduction_path": "Conduct a retrospective decomposition study comparing: (a) incidence rates in a cohort followed from birth through school entry with documented contemporaneous diagnostic practice and funding policy changes; (b) comparative analysis of SEN identification rates and diagnostic protocols in similar Hungarian schools before/after introduction of new screening tools or awareness campaigns; (c) qualitative interviews with school psychologists and teachers on how diagnostic thresholds have shifted"
+    },
+    {
+      "question": "How much of the documented concentration of disadvantaged students in specific schools (particularly Northeastern villages and segregated 'ghetto schools') is driven by residential demographic sorting versus free school-choice induced mobility and white flight?",
+      "reduction_path": "Decompose segregation indices into residential-catchment component and inter-district mobility component using administrative data on pupil residence, school assignment, and actual enrollment; compare segregation levels in regions with stronger versus weaker school-choice enforcement; track cohorts of families across decades to measure switching patterns"
+    },
+    {
+      "question": "What is the quantitative relationship between specialist teacher/support staff capacity and the ability to serve identified SEN students at different school scales and rural/urban locations?",
+      "reduction_path": "Audit current specialist staffing levels (speech therapists, psychologists, sign language interpreters, etc.) by school type and region; establish minimum-adequacy thresholds from international comparisons; project forward under demographic scenarios to identify where capacity-demand gaps will emerge and when"
+    },
+    {
+      "question": "If cohort decline accelerates as projected (5% by 2033), at what pupil enrollment levels do rural single-class-per-grade schools become fiscally or operationally unviable, and what are the feasible consolidation or specialist-service-delivery alternatives?",
+      "reduction_path": "Model forward local education budgets under regional cohort-decline scenarios; identify break-even enrollment levels for small schools by cost structure; conduct scenario analysis of consolidation pathways (e.g., multi-site specialist centres, itinerant specialist deployment, distance learning support) with cost-effectiveness estimates for serving dispersed small-school populations including SEN-identified students"
+    }
+  ]
+}

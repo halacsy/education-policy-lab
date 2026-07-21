@@ -1,0 +1,95 @@
+TASK: expert_analysis
+AGENT: polish_reform
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: whole-system reform analysis
+PUBLIC QUESTION: More children are being identified as having special educational needs — what should Hungary do?
+CRITERIA: structural mechanism, distributional effects, reversibility, implementation sequence
+KNOWN LENS LIMITS: Polish outcome estimates and political history are not directly portable.
+
+RESEARCH NOTES:
+# Research Notes: Poland as Comparative Case for Hungary's SEN Identification Debate
+
+*Scope: Structural reorganization of Poland's school system (2016–2017) and its reversal history; Poland's SEN identification/finance mechanism, as a comparative reference point for analyzing drivers of rising SEN/autism/BTMN identification. All findings are Poland-specific; none constitute claims about Hungary unless stated. Facts are separated from inference; contested points are flagged.*
+
+---
+
+## A. What Poland's structural reorganization implies
+
+**1. The 2016–2017 reform was a reversal of an earlier reform, not a new design.** 
+The direction for the reform of the Polish education system that was set in 1999 was not continued by the government that in 2016 reversed the reform that extended comprehensive education, while promoting vocational education and limiting support for preschool education.
+ Concretely, 
+in January 2017 President Andrzej Duda signed laws changing the school structure: 8-year primary schools replaced 6-year elementary schools, 4-year secondary schools replaced 3-year lower secondary schools, and lower secondary schools (gymnasiums) were abolished.
+ *(Fact.)*
+
+**2. The reorganization explicitly included a rollback of SEN mainstreaming, not only grade structure.** 
+The election of a new government in 2015 saw the reversal of many earlier reforms, including abolition of lower secondary schools and a return to 8-year primary schools; other changes saw a reduction in the inclusion of students with special needs in mainstream classes.
+ *(Fact, but sourced from a single secondary synthesis (World Class Learning Systems); not independently cross-verified in this search round — flagged as needing corroboration.)*
+
+**3. Structural reorganization has a documented finance layer that is directly coupled to SEN certification ("orzeczenie"), not merely to enrollment counts.** Poland funds SEN support via a weighted per-pupil subvention: 
+weights range from 1.4 for mild intellectual disability/social maladjustment categories up to 9.5 for profound intellectual disability requiring rehabilitation-education classes
+, and 
+for children with autism and significant intellectual disability the weighted subsidy can rise to about 9,500 zł, versus 1,400 zł for mild intellectual disability.
+ Crucially, 
+the diagnostic statement is the basis for undertaking educational and therapeutic activities at school and simultaneously obliges the school director to act on it while unlocking additional public funds.
+ *(Fact — this is a structural, not incidental, incentive link between diagnosis and money.)*
+
+**4. The per-pupil disability weighting has itself been restructured recently, increasing the stakes of certification.** 
+From 1 January 2025 the old "subwencja oświatowa" was replaced by a "kwota potrzeb oświatowych," with a total pool of 102.7 billion zł divided by an algorithm using a base per-pupil amount ("standard A") multiplied by weights reflecting institution type and pupil needs; this base standard rose 5.4% (about 486 zł) in 2025 to 9,477 zł.
+ 
+The subvention for a disabled pupil in 2024 was about 7,866 zł, a 14% increase compared to 2023's 6,899 zł.
+ *(Fact — shows the funding-per-diagnosed-child amount is rising independently of and prior to any prevalence question, which is directly relevant to the "incentives embedded in finance" driver named in the brief.)*
+
+**5. Diagnostic authority is centralized in gatekeeping institutions separate from schools, structurally limiting (but not eliminating) supply-side inflation of diagnoses.** 
+Headmasters, educators, teachers or school counselors have no right to authorize special education status even without doubt about need; making a diagnosis and issuing an SEN statement is the responsibility of the psychological and pedagogical counseling centre (or, for some conditions like autism/Asperger's, the education superintendent).
+ 
+Counselling and Guidance Centres (CGCs) are educational institutions providing professional support for schools, serving children, youth, parents and teachers, and diagnosing children/young people while providing therapy and supporting teachers.
+ *(Fact — relevant to the brief's "changes in access to assessment" driver: identification growth is capacity/access-constrained by these centres' throughput, not by school-level discretion alone.)*
+
+---
+
+## B. What reversal and implementation history reveal
+
+**6. The reversal was politically driven and implemented against expert and stakeholder objection, with acknowledged rapidity.** 
+In the 2015 election campaign, the opposition party appealed to nostalgia for "the good old times" and promised to reverse the reform by eliminating lower secondary schools; once it won, it quickly reversed the earlier reforms, disregarding negative opinions of researchers and local authorities as well as protests of parents and teachers.
+ *(Fact.)*
+
+**7. Implementation produced an acute capacity/transition crunch (double cohort effect) rather than a smooth phase-out.** 
+When the government phased out the gymnasia, children who had been schooled in gymnasia found themselves competing with peers from re-established primary schools in high school entrance exams; while the number of high school classes was increased, there were not enough places to accommodate all the new demand, and many children who had hoped to attend high school ended up in technical schools.
+ 
+In 2017, sixth graders stayed in primary school for two more years; the same year, both those graduating from gymnasiums and those from primary schools applied to high schools, and competition was so high that in Warsaw alone 3,173 students did not get into any school — reviving debate about whether the reform was poorly implemented or unnecessary at all.
+ *(Fact — directly analogous to the brief's concern about capacity to "meet demand" during rapid reclassification/restructuring episodes.)*
+
+**8. Implementation friction generated sustained professional and legal contestation, not immediate settlement.** 
+Teachers' frustration over the chaos caused by the reform, poor working conditions and low salaries culminated in a 2019 strike in which almost 80% of schools participated; though not successful, it began informal civic-society activity such as citizens' debates on education.
+ Separately, 
+parents rallied to prepare a collective lawsuit, arguing the school-system overhaul beginning in 2017 breaches children's constitutional right to equal access to education.
+ *(Fact.)*
+
+**9. Outcome evidence on whether the reversal harmed system performance is contested/uncertain, with a plausible but unproven link to later PISA decline.** 
+Poland's exceptional PISA improvement from 2000 to 2018 followed major system reforms; whether the subsequent reversal of key reforms contributed to Poland's unusually large PISA 2022 decline is posed as an open question, not established.
+ *(Inference/contested — the source itself frames this causally as unresolved, and other sources note some earlier reform features, e.g. teacher autonomy and beliefs about tertiary attainment, persisted and were not reversed.)* 
+Not all changes stemming from 1999 and later reforms were reversed; some became a solid foundation, including attitudes — families and students believing tertiary attainment is achievable, and teachers retaining a sense of pedagogical autonomy focused on student outcomes.
+
+
+**10. Separately from the structural (grade-level) reform, Poland shows a large, recent, and regionally uneven rise in SEN identification tied specifically to autism — illustrating how identification trends can move independently of grade-structure reform.** 
+In the 2022/2023 school year, 82,199 children had special education needs due to ASD — a 30% increase from the previous year.
+ 
+The rise in diagnoses (from 18,924 to 131,440) may reflect both a real increase and better diagnostics and awareness,
+ and 
+the declining male-to-female diagnostic ratio (from 4.56 in 2012 to 2.99 in 2023) suggests improved recognition of ASD in females, while regional differences include over 1,000% increases in some provinces.
+ *(Fact as to the reported numbers; the causal attribution to "real increase" vs. "better diagnostics and awareness" vs. finance-incentive effects is explicitly presented by the source itself as unresolved/mixed — flagged as contested. The stated 2012 baseline (18,924) and 2022/23 figure differ in category scope from the 82,199 single-year ASD-SEN figure, so these two numbers should not be read as directly reconciling without checking the original dataset's category definitions.)*
+
+---
+
+## Cross-cutting observations (inference, not sourced to a single citation)
+
+- Poland's case demonstrates that **structural reorganization** (grade-span/tracking changes) and **identification-category growth** (SEN/autism statements) are analytically separable phenomena that can move on different timelines and for different reasons — the 2016–17 reform was about school architecture and curriculum, while the SEN/autism identification rise is a later, distinct, and still-debated trend.
+- Poland's experience suggests that **reversals of large structural reforms tend to be implemented faster than system capacity (school places, teacher supply, examination timing) can absorb**, producing transitional cohorts that bear disproportionate cost — a pattern relevant to any Hungarian consideration of altering SEN classification, placement, or support-delivery structures.
+- The tight coupling of Polish per-pupil disability weights to diagnosis status is a **structural feature that would mechanically produce rising recorded SEN numbers even absent any change in underlying prevalence**, simply through fuller take-up of an existing entitlement — this is a testable hypothesis type, not a conclusion, for the Hungarian context.
+- Reported Polish reversal outcomes (teacher strikes, litigation, contested PISA link) indicate that **reorganization and reversal both carry documented implementation costs and political contestation**, independent of whichever direction is "correct" on the merits — a pattern-recognition point rather than a normative judgment.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

@@ -1,0 +1,116 @@
+TASK: expert_analysis
+AGENT: implementation_planning
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: public-sector change and implementation science
+PUBLIC QUESTION: More children are being identified as having special educational needs — what should Hungary do?
+CRITERIA: actor capacity, sequencing, pilotability, monitoring, adaptation, failure containment
+KNOWN LENS LIMITS: Implementation readiness cannot be inferred from policy intent alone.
+
+RESEARCH NOTES:
+I'll research this systematically, covering data trends, institutional capacity, financial incentives, and known implementation gaps in the Hungarian SEN system.
+# Research Notes: SEN Identification Trends and Implementation Capacity in Hungary
+
+*Scope: public-sector implementation science lens — sequencing of identification→assessment→placement→service delivery, and the feedback loops/safeguards around it. Facts are drawn from primary statistical/legal sources where available; inference and contested claims are flagged explicitly.*
+
+---
+
+**1. The magnitude and continuity of the SNI rise is asserted but not consistently documented in public reporting — a data-infrastructure gap.**
+A parent-facing conference report states 
+the number of children with special educational needs in Hungary grew by more than 40% over the past 20 years, which is only partly explained by improvements in assessment tools
+. Yet total counts cited across sources for seemingly overlapping populations diverge sharply: 
+104,865 kindergarten, primary and secondary students were classified as SNI in the 2023/2024 school year
+; a separate 2026 report states 
+in the 2025/2026 school year the number of SNI students in Hungary exceeded 69,000
+ according to KSH; and another source cites 
+92,845 SNI children in public education in the 2020/2021 school year
+. *Inference:* these figures likely differ by education level covered (all levels vs. general schools only) and by year, but the lack of a single reconciled public series is itself a monitoring/feedback-loop gap for policymakers trying to track the trend's size and continuity. *Fact vs. inference:* the 40%-over-20-years figure and the "partly explained by better assessment tools" framing come from an industry-conference source (a private development-center CEO), not an independent statistical office analysis — this causal attribution should be treated as contested/unverified.
+
+**2. A documented 2017–2018 legal change altered incentives between the BTMN and SNI categories — a traceable mechanism, though its quantitative effect is disputed among experts.**
+Hungary's National Public Education Act was amended so that 
+from September 1, 2018 (in a phased rollout), BTMN students lost the exemption from grading/evaluation and the option of narrative assessment
+, with the law changed so that 
+only SNI-classified students retain that exemption, not BTMN students generally
+. A clinical psychologist interviewed on this change argued that 
+phasing out BTMN would be professionally defensible only if done differently — because when BTMN disappears, children are pushed back into the SNI category, i.e., the category many consider "labeled as disabled"
+, forcing parents to choose 
+between their child struggling academically or being classified as disabled
+. This is a clear "sequence" hypothesis (policy change → altered incentive → reclassification demand → SNI number increase), but it is **contested**: a follow-up report on practitioners found 
+experts interviewed disagreed sharply — one said the change would increase the number of SNI-classified children, others said it would instead damage students' further-education prospects through worse grades
+, and a separate legal-guidance source insists 
+critics often conflate the two diagnostic categories, mistakenly attributing changes affecting only BTMN students to SNI children's rights, when the SNI category itself was not changed by this reform
+.
+
+**3. The assessment/diagnosis stage (Pedagógiai szakszolgálat) reports capacity that cannot match current referral volume — a bottleneck early in the proposed sequence.**
+Practitioners' own 2022 petition states 
+psychiatric clinics and outpatient services, also short of specialists, are unable to keep pace with increased client numbers; diagnostic waiting lists run several months, and therapeutic capacity is available only very rarely or not at all
+, pushing referrals onto pedagogical support services where 
+capacity is not guaranteed in staffing (missing capacity, constant turnover), expertise/experience (largely staffed by early-career workers), or medical backup
+. A journalistic investigation into Budapest's system similarly reports 
+roughly 80,000 children fall under the Budapest service's remit
+, with 
+skilled staff leaving the service while waiting lists and remaining staff workload both grow
+, though the maintaining authority 
+responded that it does not maintain waiting lists
+ — an official denial that directly contradicts frontline practitioner testimony, a contested point.
+
+**4. Once assessed, delivery of the legally prescribed intervention is frequently not provided — a second-stage implementation failure distinct from diagnosis.**
+Practitioners state directly: 
+a great deal of time is devoted to expert assessments, but the children receive only a fraction of the development/therapy prescribed in the resulting expert opinion, because schools and kindergartens have few or no development teachers, speech therapists, or special-needs teachers
+, concluding 
+overall, fewer specialists must serve ever more children, so children are not receiving adequate care
+. This indicates that even where identification functions, the promised remedial mechanism (habilitation/rehabilitation hours, "fejlesztő foglalkoztatás") is not reliably delivered — a core "can actors deliver the mechanism" failure.
+
+**5. A 2013 centralization of counseling services reallocated professional time toward assessment/paperwork and away from therapy — an organizational-design driver of capacity misallocation.**
+Historical account: 
+in 2013, counseling services were centralized under the state institution-maintaining center (formerly KLIK), becoming "pedagógiai szakszolgálat," performing nine specified functions
+, and 
+alongside this reorganization, a process began in which expert-committee assessment work has taken an increasingly large share of time, at the expense of therapeutic provision
+. This is a structural/organizational cause (workload reallocation under centralized management), separate from raw staff shortages, and helps explain why assessment volume can rise even as therapeutic throughput falls.
+
+**6. Financing incentives around SNI classification are documented in the literature as weak and possibly perverse, though specific abuse claims are largely anecdotal.**
+General public-finance research on Hungarian per-pupil top-up funding concludes 
+per-capita supplementary grants paid to municipalities constitute only a weak incentive to reduce learning disadvantage in the absence of strict requirements tied to local educational programs
+. Separately, an advocacy/parent-guidance source states, in the context of foundation ("alapítványi") schools, that 
+such schools do not necessarily require proof of SNI status, though this can become a consideration because of the higher-level funding tied to it
+, and notes that in practice 
+for SNI enrollment at foundation schools, the official sequence is often reversed — the parent finds the school first and obtains an admission statement, rather than the assessment committee assigning the school
+. *Caveat:* this financing-incentive claim is corroborated only by a single practitioner-facing site and general public-finance theory, not by an audited case count of reclassification driven by funding; it should be treated as a plausible but unverified mechanism.
+
+**7. School-level (mainstream) leadership already self-limits SNI intake based on perceived capacity, suggesting informal supply-side rationing that is not centrally monitored.**
+A management-science dissertation on integrated SNI education in Hungarian mainstream primary schools concludes with the explicit recommendation that 
+mainstream school leaders should not enroll more SNI students than is professionally manageable for the institution, because doing so inevitably works against successful integration
+. This indicates that some school directors already ration or filter admissions informally in response to capacity constraints — a safeguard-like behavior that exists at the institutional level but is not a documented, uniform, or centrally-audited policy; its prevalence and equity implications (e.g., which schools end up absorbing more SNI pupils) are not established in available sources.
+
+**8. Compulsory-assessment provisions mean identification is not purely parent- or school-driven; the state can compel it, and non-compliance escalates to child-protection referral.**
+The relevant government decree specifies that if a parent disputes the need for assessment, 
+the district authority responsible for public education may require the parent to bring the child for an expert assessment and to enroll the child in the institution indicated by the resulting expert opinion
+, and if the parent still fails to comply after a district office request, 
+the district office notifies the child welfare service responsible for the child's place of residence
+. *Fact:* this shows the identification pipeline includes a compulsory backstop mechanism (state-triggered, not solely demand-driven), which is relevant to any policy design assuming voluntary parental initiation as the sole entry point.
+
+**9. Free school choice combined with residential/commuting mobility is an empirically established driver of between-school compositional sorting in Hungary generally — a pre-existing structural condition into which rising SNI identification is entering.**
+Established economic research (Kertesi–Kézdi) on Hungary's schooling system found that 
+under Hungary's free-school-choice regime, school segregation tends to increase
+, and that 
+where dense school supply combined with free choice allows access to institutions of differing quality within a short commuting distance, cross-boundary commuting increases social disparities between schools, because higher-status/more-informed families are more likely to use that mobility
+. *Fact, but not SNI-specific:* this literature establishes the general sorting mechanism the brief's "parent mobility deepens inequality" concern invokes, but the search did not surface a study directly quantifying SNI-classification-driven mobility specifically — this remains an evidentiary gap requiring further targeted study.
+
+**10. Teacher-level readiness for inclusion is empirically studied but effect sizes for Hungary are not established in available materials — a further monitoring/feedback gap.**
+A doctoral study on teacher attitudes toward SNI integration in Hungarian mainstream classrooms used as predictor variables 
+years in the profession, special-education-oriented in-service training, class size, number of SNI students integrated into the class, school location (village/town/county seat), subject specialization, and respondent gender
+. *Fact:* this confirms these factors are recognized in Hungarian research as plausible moderators of successful classroom-level implementation, but the search results did not include the study's actual findings (effect directions/magnitudes), so no conclusion can be drawn here about whether Hungarian teachers currently report adequate or inadequate support — this is a specific evidentiary gap for further research.
+
+---
+
+### Summary of implementation-science gaps identified (not recommendations)
+- **Sequencing bottlenecks**: capacity constraints appear at both the diagnostic stage (waiting lists, staff turnover) and the service-delivery stage (prescribed habilitation/therapy not provided), meaning the "identify → assess → serve" chain is reported as broken at multiple points, not just one.
+- **Feedback loops missing**: no single reconciled public data series tracking SNI/BTMN counts over time by consistent definition; the maintaining authority and frontline staff give contradictory public statements about waiting lists, suggesting no independent audit mechanism.
+- **Safeguards uncertain**: the 2017–18 BTMN reform created a theoretically clear reclassification incentive, but expert opinion is split on whether it materially altered SNI numbers — no dedicated study isolating this policy's causal effect was found.
+- **Financing incentives**: general public-finance theory and isolated practitioner reports suggest per-pupil top-ups could incentivize classification-seeking at some institutions (especially foundation schools), but robust quantitative evidence of this specific mechanism operating at scale was not found.
+- **Segregation linkage**: Hungary's free-choice/mobility-driven segregation dynamic is well established generally, but its specific interaction with rising SNI/BTMN identification (i.e., whether SNI status is now itself a sorting variable driving parental mobility) is not directly evidenced in the sources retrieved and would require dedicated study.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

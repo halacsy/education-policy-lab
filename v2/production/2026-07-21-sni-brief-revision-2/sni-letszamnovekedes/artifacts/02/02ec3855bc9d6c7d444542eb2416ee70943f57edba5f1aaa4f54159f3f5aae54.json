@@ -1,0 +1,49 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "477cd72f7b77a89b413302031736923995c4f248f4a6b1c37ecb0cb302adf46b",
+        "response_hash": "79a475ca96de94cdd05dcc5b6bc2988752ab7531d822418e235ca64fd5a86c7b",
+        "stage": "search",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "0b5cc2965472de0996aab1d2d7f61548b08d68f6f8982983710df3642c505cd6",
+        "response_hash": "f9267aed28708e44238e3ff0a41bf877e437ef7c02290787b7b4b6da6874b9d6",
+        "stage": "analysis",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "8c91d2bc83c20e0089c8d467c518d7920bd96a47ce6a3b91e5741de0e99a7b4f",
+    "generation_parameters": {
+      "analysis_max_tokens": 16000,
+      "search_max_tokens": 10000
+    },
+    "input_artifact_hashes": [
+      "20b6773d7df18e2689f13f4784a9aac729a99e6bd8deb841d74567a445e91293",
+      "fd862447f9eb3e8c1b6ed877c68e264da5a18433f863cf57a166dcb6a6803597"
+    ],
+    "model": "anthropic-task-ladder",
+    "node_id": "research_school_network_planning",
+    "prompt_hash": "349e232c1c4ea501269825fb7f6cbeef209ffecf45757db331b31ad02142bb7b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "research",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/assumption.schema.json": "a2c90cb84524046f123b798eeafcbe30a872987b4f63a19ba25467b0a22fcec2",
+      "schemas/v2/finding.schema.json": "7f08de87a5b809e4ebbdeb42e6c2265b5686984c0b71a01af896fea5cb670729",
+      "schemas/v2/source.schema.json": "0beda71026c753e0dcff6875401aa70ffd52fdbb6e81e9d68d9b1035b9dd085f",
+      "schemas/v2/uncertainty.schema.json": "e1e32dd216fcaa6af59322ed1fb36aed2bee508d91c17d3879d3daec28c9edd4"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-research_school_network_planning-8c91d2bc83c20e00",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "b78b8d26cd9833afa1bd435ff58c595a37c41e8ab8d7008e9e62c317b01b81f9",
+  "topic": "sni-letszamnovekedes"
+}

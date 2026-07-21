@@ -1,0 +1,39 @@
+{
+  "assumptions": [
+    "Hungary's education system operates under a centralized two-tier expert-committee structure for SNI/BTMN classification separate from medical diagnosis, governed by EMMI decree 15/2013",
+    "Parental consent is the default procedural requirement for initiating SEN assessment, with administrative override available only when child welfare is at risk",
+    "Per-pupil financing mechanisms tie school funding to SNI classification, creating structural incentives that may influence identification practices",
+    "The distinction between the SNI and BTMN categories carries significant legal consequences regarding assessment exemptions, placement, and resource allocation"
+  ],
+  "findings": [
+    {
+      "claim": "The recorded SNI population in Hungary has grown continuously since at least 2012/13, with documented acceleration from 2021/22 onwards, rising from 107,421 to 112,007 students across kindergarten and primary/secondary institutions in the most recent school year.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Absolute totals differ across sources (63k for primary-school-only vs. ~105–112k for all levels) due to scope and definition inconsistency across reporting systems",
+        "No single agreed national figure exists",
+        "Causal drivers of the growth remain contested across sources"
+      ],
+      "source_title": "Hungarian Central Statistical Office (KSH) data compiled by Telex and recent KSH preliminary figures",
+      "source_url": "https://telex.hu/"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "To what extent is the acceleration of SNI identification since 2021/22 attributable to the 2017–18 legal tightening of BTMN exemptions versus other factors such as diagnostic-practice changes, COVID-era effects, environmental factors, or genuine prevalence increases?",
+      "reduction_path": "Conduct a controlled comparative analysis of identification patterns before and after the September 2018 implementation, controlling for regional variation, teacher-training changes, and concurrent policy shifts; compare with epidemiological data on actual prevalence of learning/attention/behavioral disorders from independent sources"
+    },
+    {
+      "question": "Do the per-pupil financing incentives embedded in task-based funding (counting SNI pupils as two or three pupils for subsidy calculation) materially drive over-identification at the school level, and to what magnitude?",
+      "reduction_path": "Analyze school-level identification decisions against institutional budget pressures and staffing outcomes; conduct qualitative interviews with placement committee members and school administrators on decision-making factors; compare identification rates across schools with differing financial health and specialist workforce capacity"
+    },
+    {
+      "question": "What is the extent of ongoing discriminatory misclassification of Roma children in the SEN assessment system, and why has Hungary not closed the Horváth and Kiss enforcement case despite over a decade of Committee of Ministers monitoring?",
+      "reduction_path": "Obtain ethnically-disaggregated data on identification rates by Roma status, disability category, and placement outcomes; conduct independent audit of expert-committee decision-making protocols against non-discrimination safeguards; review government enforcement documentation and remedial measures submitted to the Committee of Ministers"
+    },
+    {
+      "question": "How do regional disparities in specialist workforce availability (e.g., zero special education teachers in some northeastern districts) interact with SNI identification patterns, and does this create a two-tier access problem?",
+      "reduction_path": "Map specialist teacher employment by district and correlate against identification rates and actual service delivery capacity; interview parents and educators in low-capacity regions on whether identification occurs without corresponding provision; analyze whether informal/private reimbursement patterns cluster in specific geographies"
+    }
+  ]
+}

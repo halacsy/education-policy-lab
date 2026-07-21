@@ -1,0 +1,147 @@
+{
+  "assumptions": [
+    "The reported increase in SEN identification rates reflects measurable cases that were formally documented and registered in education administrative systems, rather than entirely novel population-level phenomena",
+    "Hungary's historical precedent with definitional changes (2003, 2007, 2012-13) is relevant to understanding potential non-prevalence drivers of the current 2010-2020 identification rise",
+    "School-level SEN identification practices are influenced by institutional factors including funding mechanisms, teacher capacity, ethnic composition, and assessment access, not solely by true population prevalence",
+    "The UN rapporteur's 2025 assessment of capacity gaps reflects an accurate characterization of system constraints, though not necessarily a comprehensive quantified audit"
+  ],
+  "findings": [
+    {
+      "claim": "Between 2010 and 2020, the share of students with SEN in primary education increased from 6.7% to 7.7%, while in secondary education rose from 3.9% to 6.2%. Separately, the absolute number of Hungarian children with SEN increased 1.6-fold over 20 years according to the Hungarian Central Statistical Office.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Different metrics (share vs. absolute multiplier) from different reference periods are not directly reconciled",
+        "No single source provides a harmonized continuous time series across the full 20+ year period",
+        "Variation in reporting by source and methodology"
+      ],
+      "source_title": "Hungarian Central Statistical Office and Ministry of Education administrative data",
+      "source_url": "https://www.ksh.hu/"
+    },
+    {
+      "claim": "A 2003 amendment to Act LXXIX of 1993 expanded the national categories of disability to include autism and learning difficulties due to psychiatric developmental disorders, followed by a fivefold increase in reported cases of SEN due to psychological developmental disorders within five years, with significant geographic variation across counties.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The historical precedent demonstrates definitional change as a driver of measured caseload changes, but does not decompose how much of the current 2010-2020 rise is due to similar definitional factors versus true prevalence change",
+        "Geographic variation is noted but county-level data not detailed in available sources"
+      ],
+      "source_title": "Hungarian Public Education Act LXXIX (1993) and 2003 Amendment; Hungarian education ministry records",
+      "source_url": "https://net.jogtar.hu/"
+    },
+    {
+      "claim": "In 2007, following the diagnostic surge, the rules pertaining to SEN diagnosis were formally amended and the affected population was fully reviewed; from the 2012-13 academic year, the Act on Public Education again revised the definition of special educational needs.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Sources confirm the amendments occurred but do not quantify the impact on reported identification rates or provide detailed breakdowns of which categories were revised",
+        "No source evaluates whether 2012-13 revisions are partly responsible for post-2012 identification trends"
+      ],
+      "source_title": "Hungarian Public Education Act amendments (2007, 2012-13)",
+      "source_url": "https://net.jogtar.hu/"
+    },
+    {
+      "claim": "One qualitative study of 21 teachers in an underdeveloped eastern region attributes part of the current rise to greater media and public awareness of developmental disorders, leading parents and teachers to notice signs earlier, alongside improved diagnostics resulting in more timely and accurate diagnoses.",
+      "evidence_strength": "weak",
+      "limitations": [
+        "Based on 21 teacher interviews in a single underdeveloped region; findings cannot be generalized to Hungary nationally",
+        "This is an interpretive claim from qualitative research, not a population-level causal test",
+        "Does not distinguish between awareness effects, true prevalence change, diagnostic-practice improvements, and incentive-driven over-identification"
+      ],
+      "source_title": "Teacher interview study (21 respondents, eastern Hungary region)",
+      "source_url": "underdeveloped_region_qualitative_study"
+    },
+    {
+      "claim": "Following a 2025 country visit, UN Special Rapporteur Farida Shaheed stated that the growing number of children with SEN has not been matched by adequate teacher training or specialist support, citing large class sizes and shortages of specialists including doctors and sign language interpreters.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "This is an official rapporteur assessment rather than an independent quantified capacity audit",
+        "Does not provide specific metrics on waiting times, number of unfilled specialist positions, or ratio of students to available specialists",
+        "Does not separately assess capacity for general SEN support versus capacity for specific disability categories"
+      ],
+      "source_title": "UN Special Rapporteur on the right to education visit to Hungary (2025)",
+      "source_url": "https://www.ohchr.org/"
+    },
+    {
+      "claim": "A 2022 EU country report identifies teacher shortage in Hungary as driven by low pay—among the lowest in Europe—combined with the highest student-teacher ratio in the EU and insufficient support staff, requiring teachers to perform non-teaching duties. Hungary committed in its recovery plan to raise teacher salaries to 80% of average tertiary-educated worker salary by 2025, and by January 2025, a government decree raised average teacher salaries by 21.2%, fulfilling this commitment.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "Salary raises are system-wide and do not specifically target specialist SEN staff (psychologists, speech therapists, sign language interpreters)",
+        "No source quantifies whether the salary investment resolves the specialist shortage specifically cited by the UN rapporteur",
+        "The measure addresses generalist teacher capacity but may not address the specialist deficit"
+      ],
+      "source_title": "EU 2022 Country Report on Hungary; Hungarian government recovery and resilience plan; Government Decree January 2025",
+      "source_url": "https://ec.europa.eu/commission/presscorner/"
+    },
+    {
+      "claim": "Field research from 2024 found that in ethnically segregated schools where Romani students exceed 75%, there is no institutional interest in removing them, so Romani children are often not referred for SEN expert assessment, whereas in schools where Roma pupils comprise 50-75%, children are more likely to be tested, receive SEN diagnoses, and be referred to segregated special education classes. Additionally, socially deprived and uneducated parents were often unaware of their procedural rights during assessments with no support personnel available.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The geographic scope and sampling methodology of the study are not fully specified in available sources",
+        "This indicates SEN classification rates cannot be interpreted as a pure prevalence signal in ethnically mixed catchment areas, but does not quantify the proportion of national SEN identifications attributable to this mechanism",
+        "Findings are geographically scoped but their national representativeness is unclear"
+      ],
+      "source_title": "2024 Field Research on SEN Classification and Ethnic Segregation in Hungarian Schools",
+      "source_url": "ethnicity_segregation_fieldwork_2024"
+    },
+    {
+      "claim": "Historical ombudsman findings documented schools unlawfully applying for and receiving 'supplementary ethnic funding' intended to develop Romani students while operating segregated classes. Roma leaders have criticized the system of supplementary funding for 'catch-up classes,' noting that pupils in such classes fall so far behind that integration by sixth grade becomes impossible. Academic literature characterizes segregated education as 'subpar education' and notably 'incentivized by state funding.'",
+      "evidence_strength": "moderate",
+      "limitations": [
+        "These sources are largely pre-2015; whether identical finance mechanisms incentivizing segregation operate under current post-2020 funding rules is not established",
+        "The link between finance incentives and SEN classification rates specifically is inferred from case law rather than directly tested",
+        "No quantitative estimate of how much current SEN growth may be attributable to residual finance incentives"
+      ],
+      "source_title": "Hungarian ombudsman findings and academic literature on segregation; case law summaries",
+      "source_url": "ombudsman_historical_findings"
+    },
+    {
+      "claim": "Research documents that deterioration of the public school system has led to a 'moral panic' among affluent middle-class parents, who increasingly opt for private or denominational schools. Church-run educational institutions have doubled in number since 2010. A 2025 UN assessment warned that as more schools go private, public schools will be left with fewer resources and higher concentration of disadvantaged students, increasing segregation. Hungary ranks among countries with highest school social segregation (2017 data), comparable to UAE, Peru, Israel, Indonesia, Qatar, and Chile—much higher than Japan, Korea, Finland, Poland, and New Zealand.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "These sources document parental sorting and compositional segregation as parallel trends to SEN identification growth, but no retrieved source directly quantifies whether SEN reclassification is a cause or consequence of school sorting",
+        "The causal direction between private school expansion and public school SEN identification rates remains established",
+        "2017 segregation data may not reflect current (post-2020) distribution"
+      ],
+      "source_title": "Research on private school expansion; UN 2025 assessment; PISA/TIMSS comparative school segregation data (2017)",
+      "source_url": "https://www.ohchr.org/; OECD PISA database"
+    },
+    {
+      "claim": "Since the early 2000s, Hungary transformed former special institutions into unified special educational/conductive-pedagogical methodological resource centres (EGYMI), now providing both special educational and integrational services to support mainstream schools in including pupils with special needs and to support mainstream teachers with inclusive methodologies. This represents a documented historical shift from structural rules (pre-2005) to 'soft instruments' including development programs and financial incentives aimed at improving school capacity.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "The adequacy of the EGYMI infrastructure relative to the current caseload increase is asserted as insufficient by the UN rapporteur but not independently quantified in sources found",
+        "No source provides data on EGYMI capacity utilization, waiting lists, or geographic coverage",
+        "The historical shift from structural to soft-instrument approaches is documented, but no source evaluates whether this shift remains the optimal policy model given current demand levels"
+      ],
+      "source_title": "Hungarian Ministry of Education records on EGYMI establishment and integration policy evolution",
+      "source_url": "https://www.oh.gov.hu/"
+    },
+    {
+      "claim": "The Hungarian government's Public Education Strategy 2021-2030 (introduced 2020) names comprehensive interventions to improve education outcomes and increase participation of vulnerable groups—including socially disadvantaged students and children with SEN—as a priority target area.",
+      "evidence_strength": "strong",
+      "limitations": [
+        "No retrieved source provides an interim (2021-2026) evaluation of outcomes against this strategy's SEN integration targets",
+        "The effectiveness of the strategy in addressing the SEN identification rise remains an open empirical question",
+        "No data on implementation fidelity, resource allocation, or early outcome indicators"
+      ],
+      "source_title": "Hungarian Public Education Strategy 2021-2030",
+      "source_url": "https://www.oktatas.hu/"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "What proportion of the documented 2010-2020 increase in SEN identification rates is attributable to true prevalence change versus definitional/categorization changes, improved diagnostic practice, increased parental/teacher awareness, or finance/incentive-driven over-identification?",
+      "reduction_path": "Conduct a harmonized national time series analysis (2015-2025) of SEN identification rates by detailed diagnostic category, cross-referenced with policy changes (Act amendments, funding rule revisions) and regional variation patterns. Include decomposition analysis comparing regions with high versus low private school growth to isolate sorting effects."
+    },
+    {
+      "question": "Are current SEN assessment and specialist-support capacity shortages (psychologists, speech therapists, special educators, sign language interpreters) being addressed by the 2025 teacher salary reforms, or do specialist shortages require separate targeted investment?",
+      "reduction_path": "Commission a capacity audit (2025-2026) quantifying: (a) number of unfilled specialist positions by discipline, (b) assessment waiting times and geographic variation, (c) EGYMI resource centre utilization rates and geographic coverage gaps, and (d) salary competitiveness of specialist roles relative to generalist teaching and international comparators."
+    },
+    {
+      "question": "To what extent do current SEN identification and segregation dynamics remain incentivized by state funding mechanisms for segregated classes or supplementary ethnic education allocations, compared to pre-2015 historical patterns?",
+      "reduction_path": "Audit current (post-2020) school funding rules and allocations to identify any remaining financial incentives for segregated or special-class placement. Conduct a statistical analysis at school level linking SEN classification rates, school ethnic composition, funding allocations, and private school competition in the same catchment area, controlling for demographic risk factors."
+    },
+    {
+      "question": "What is the causal direction and magnitude of the relationship between parental exit to private/church schools and the composition and SEN identification rates of residual public schools?",
+      "reduction_path": "Use administrative panel data (school enrollment 2010-2025, SEN identification rates, ethnic composition, teacher staffing) to model whether private school growth precedes compositional change in public schools and whether compositional change predicts subsequent SEN identification rate changes, or vice versa. Conduct instrumental-variable analysis using private school distance or religious expansion policy timing as plausibly exogenous instruments."
+    }
+  ]
+}
