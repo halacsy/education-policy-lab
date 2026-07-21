@@ -1,0 +1,113 @@
+TASK: expert_analysis
+AGENT: equity_and_social_mobility
+LANG: en+hu
+
+Every semantic prose field must be authored natively in both languages as one exact {en, hu} object. The two texts must carry the same claim, scope, numbers, uncertainty, and references. Do not write Hungarian as a later translation step.
+
+
+Convert the live research notes below into a bilingual evidence artifact set for this policy problem.
+
+DISCIPLINE: education inequality research
+PUBLIC QUESTION: What should happen to primary schools in depopulating villages?
+CRITERIA: distributional impact, access, segregation, mobility, intersectional risk
+KNOWN LENS LIMITS: Equity effects depend on implementation details and baseline measurement.
+
+RESEARCH NOTES:
+# Research Notes: School Provision in Depopulating Hungarian Villages — Education Inequality Perspective
+
+## Framing note
+These notes synthesize comparative and Hungary-specific research on rural school closures/consolidation, viewed through the lens of who gains/loses access, quality, and future options, and whether policy responses reduce or merely relocate sorting (segregation). Facts are separated from inference; contested findings are flagged.
+
+---
+
+### 1. Hungary's small-school network is unusually fragmented, which is tied to disadvantage concentration
+Fact: 
+Teacher shortages are also linked to the fragmentation of the school system as half of all primary and lower secondary schools had fewer than 150 pupils in 2020/2021.
+ 
+Schools with a high proportion of disadvantaged pupils tend to suffer particularly from a lack of qualified teachers.
+ This establishes the baseline structural condition that any closure/consolidation policy would act upon (source: EU Education and Training Monitor commentary, 2022 reporting).
+
+### 2. Rural/disadvantaged areas face acute teacher shortages regardless of closure policy
+Fact: 
+Teacher shortages are greatest in rural areas, with the proportion of unqualified teachers in disadvantaged schools 2 to 3 times higher than in schools not disadvantaged (Varga, 2024).
+ In specific subjects, 
+in elementary schools with high numbers of disadvantaged students, 25 percent of foreign language teachers, 23 percent of math teachers, and 20 percent of science teachers do not have degrees in their fields of education.
+ Inference: this suggests that "keeping the school open" does not by itself guarantee quality parity with urban/wealthier schools — a small surviving village school may still deliver systematically weaker instruction (2025 Education and Training Monitor; 2022 reporting, both citing Varga/Hermann-Horváth research).
+
+### 3. Hungary's mechanism of small-school preservation historically reduced within-school sorting but is tied to between-school segregation nationally
+Fact, direct mechanism claim: 
+between-school segregation is much stronger in Hungary than within-school segregation... during previous decades the deterioration in efficiency caused by a decline in the number of pupils was typically mitigated by local self-governments by reducing the number of parallel classes, not by the closure or amalgamation of schools. This led to a large offer of small schools, but reduced the latitude for the within-school separation of pupils with different social and/or ethnic backgrounds... This situation especially applies to the many small schools in small rural settlements that operate only one class per grade.
+ Inference: because one-class-per-grade village schools cannot stream pupils internally, sorting in these settlements occurs primarily *between* settlements/schools (i.e., which village/school a child is in), not within a single building — meaning consolidation could, in principle, either reduce this between-school sorting (by merging catchments) or amplify it (by concentrating disadvantaged children in one remaining "feeder" building while advantaged families opt elsewhere). Source: CEU Center for Policy Studies working paper (2020).
+
+### 4. Free school choice + catchment-area rules are the dominant sorting mechanism nationally, and would likely re-emerge around any consolidation
+Fact: 
+general schools are required to enroll all students living in their catchment area. Parents, however, are allowed to choose a different school for their children outside the catchment area of their residence... about one-third of the cohorts included in our study commuted to a general school outside of the catchment area of their residence.
+ Fact: 
+As parents perceive the differences in school quality and the consequences of school choice to be large, commuting is quite common... Commuting has a strong association with socio-economic status: students from more affluent families are more likely to attend a different school than the designated one.
+ Separately, a 100-town study found 
+free school choice diminishes the role of residential distribution because many students commute to schools of their choice. Towns where such commuting is more pronounced are characterized by stronger inter-school inequalities.
+ Inference: if village schools close and children are bused to a larger town school, this newly creates a "commuting" pupil population subject to the same choice/selection dynamics already documented in towns — i.e., consolidation does not eliminate sorting but relocates it into the receiving town's school-choice market, where better-resourced families are more able to exit to preferred schools while disadvantaged (often Roma) children are more likely to remain in the designated, lower-status receiving school. Source: Kertesi & Kézdi, "School segregation, school choice and educational policies in 100 Hungarian towns" (CEU/IEHAS working paper).
+
+### 5. Commuting/choice benefits are not evenly distributed by status — low-status and Roma students who do commute often land in lower-quality schools
+Fact: 
+less than 25 percent of the lower-status students (mother's education is 8 grades or less) commuted to a school outside their own school catchment area. The same figure for higher-status students (mother's education is 12 grades or more) is 50 percent.
+ Fact, from a Pécs case study: 
+the commuting rate of low-status and Roma primary school pupils is also very high within the city. However, while most of the commuting pupils have managed to enrol in higher quality schools than the ones in the catchment area of their homes, the majority of low-status and Roma commuters appear to be attending lower quality schools than
+ their catchment school. Inference: this is directly relevant to forced-commuting scenarios from village closures — being made to travel does not automatically confer access to a "better" school for disadvantaged rural children; outcomes depend on admission practices at the receiving school. Contested/uncertain: whether this urban-commuting pattern (Pécs) generalizes to rural-to-town school consolidation is not directly tested in the cited sources.
+
+### 6. Comparative (non-Hungarian) evidence on population/community effects of closure is mixed and contested
+Fact (Finland, causal DID design): 
+This paper examines the impacts of school closures on the population development of local communities using DID regression modelling combined with matching methods, focusing on the years 2010–2018. The results indicate that in Finland after school closure, the population of the surrounding community decreased more than before school closure.
+ Contested: Saxony/Sweden research reaches the opposite conclusion — 
+Barakat (2014) demonstrated that while school location may play a certain role for some individuals looking for housing areas, in general there is no evidence of a localised depopulating effect of primary school closures.
+ Similarly, 
+Barakat (2015) in Saxony, and Amcoff (2012) in Sweden, find there is no significant connection between school closure and population decline.
+ A caveat is noted: 
+the analysis focused on municipal-level data which does not show local changes in depopulation trends.
+ Inference: the causal claim that "closing the school kills the village" is empirically contested across European contexts and appears sensitive to spatial scale of analysis (settlement vs. municipality) and country-specific institutional context; no Hungary-specific causal study of this kind was found in this search.
+
+### 7. Hungary-specific qualitative evidence: village schools function as more than instructional sites
+Fact: 
+Schools play important role in the sustainability of rural communities, since they provide basic education and economic opportunities in rural areas. Moreover, schools are often the social hubs of the villages and serve as cultural centres, too.
+ A Hungary-focused study using CSO territorial data found: 
+Village-level demographic, social and economic indicators were analysed and it was found that the better socioeconomic situation of villages with school was not clear... the authors established that the villages with schools had better demographic performance, partly better living and infrastructural conditions, but the employment and the welfare characteristics were worse, compared to those without school
+. Inference: presence of a school correlates with somewhat better demographic/infrastructural conditions but not better economic/welfare conditions in the surrounding village — a mixed and non-causal association, not proof that keeping a school "saves" a village economically. Source: academic study on village-school presence and socioeconomic indicators, Hungary, ~2015 CSO data.
+
+### 8. National governance shift toward centralization (2013, KLIK) changed who decides on closures/mergers — moving that power away from local communities
+Fact: 
+In 2013, the central government assumed responsibility for public schools through the Public Education Act... transferring maintenance duties from local authorities to the state to standardize operations and mitigate inequalities. Schools were consolidated under the Klebelsberg Institution Maintenance Centre (KLIK), a highly centralized body that curtailed institutional autonomy by centralizing financial control, teacher employment, and curriculum oversight, with principals losing authority over hiring and budgets.
+ Fact: 
+KLIK decides on the financial management competence of the school, on the reorganisation, on the termination of the public education institut[ion]
+[ion closure authority now sits with the central agency rather than the municipality]. Inference: this is decision-relevant because "what should happen to a depopulating village school" is, since 2013, primarily a central-state administrative decision rather than a local-community one — local voice (mayors, parents) has reduced formal leverage over closure/merger even though they bear the local consequences. Contested: critics argue the centralization has itself created dysfunction — 
+Instead of meeting its original goals – creating an effective and cheap way to run educational institutions and balancing out the differences between schools of poorer and richer areas, the KLIK became the head of an inoperable, over-centralized and opaque system... alongside with the central overseeing body came such high bureaucratic burden that even the smallest operational tasks are obstructed.
+
+
+### 9. Recent (2021–2024) territorial data shows widening rural–urban divergence in child demographics and disadvantage concentration
+Fact: 
+This study explores the spatial patterns of change in Hungarian public education between 2021 and 2024 using settlement-level data on child numbers, the proportion of disadvantaged children (HH/HHH), and child-teacher ratios. Using k-means clustering, five settlement types were identified: Overburdened Growth Areas, Declining but Stabilizing Areas, Disadvantaged Declining Areas, Moderately Declining Balanced Areas, and Balanced Growth Areas. The findings revealed a deepening divide between dynamic urban/suburban zones and disadvantaged rural peripheries.
+ Fact: 
+Rapidly growing urban settlements face rising child-teacher ratios (e.g., up to 24:1 in some areas), indicating capacity constraints, while disadvantaged children have become increasingly concentrated in rural areas (up to 94% in certain settlements
+). Inference: this indicates that "depopulating village schools" and "overcrowded urban/suburban schools" are two ends of the same national system dynamic — any policy that moves rural children into town/city schools interacts with existing capacity constraints there, meaning the receiving-school quality/access story cannot be assumed favorable by default. Source: 2025 settlement-level clustering study of Hungarian public education 2021–2024.
+
+### 10. Legal/rights dimension: courts have specifically ordered closure of segregated village/small-town schools where a school's near-monopoly on Roma pupils in a settlement was the segregation mechanism
+Fact: In the Piliscsaba case, the ECtHR found 
+the European Court of Human Rights has issued a judgment against Hungary for the racial segregation of Romani children in the Jókai Mór Primary School in Piliscsaba... the court also obliged the Government to put an end to segregated education in Jókai Mór Primary School... they have to develop public policy measures aimed at ending racial segregation in education beyond the school concerned, based on the proposals of international organisations.
+ The Court's factual record noted 
+there was no other State school in the village, only a Catholic school and a German-minority school
+, meaning a single dominant local school effectively determined placement. Separately, in Nyíregyháza, 
+Human rights activists successfully argued that the school segregated Roma children from the non-Roma majority. The school in the eastern city of Nyiregyhaza was closed down under desegregation plans in 2007 - but reopened in 2011
+, and courts later ruled 
+the current functioning of the school violates both Hungarian laws on equal opportunity, and Council of Europe recommendations.
+ Inference: this shows that "keep the school open" is not a neutral default from an equality-law standpoint — in some settlement configurations, courts have treated a small/local school's very existence (as the only practical option for Roma families) as constituting unlawful segregation, meaning closure/merger has been treated by courts as a *remedy*, not merely a cost-cutting measure. Contested: this is politically disputed — the government resisted comparable rulings (e.g., 
+Hungarian Prime Minister Victor Orban on Friday said a Supreme Court ruling awarding damages to schoolchildren from the Roma minority who were put in separate classes was unfair... The case concerns an elementary school in Gyongyospata... The Supreme Court ruled... that it had given substandard education to the Roma children after confining them to the ground floor
+), indicating that closure/merger remedies for segregation are legally mandated in some cases but politically contested nationally.
+
+---
+
+## Cross-cutting synthesis (inference, not sourced to a single citation)
+
+- **Who gains/loses is not a simple rural-vs-urban split.** Within depopulating villages, the population is not homogeneous: families with resources and mobility (car ownership, information about "good schools") can already exercise school choice or relocate; the population most likely to be immobile and dependent on the local school is precisely the low-SES/Roma population documented as concentrating in rural areas in recent territorial data (finding 9). Closure decisions therefore may fall disproportionately on those least able to substitute good alternatives.
+- **"Reduce vs. relocate sorting" is an open empirical question for Hungary specifically.** The clearest Hungary-specific mechanism evidence (findings 3–5, 10) shows that sorting in the current system operates through (a) between-settlement/school placement enabled by the surviving fragmented small-school network, and (b) free-choice commuting that is highly stratified by parental education/status once children must travel. Consolidation could shift disadvantaged children from a segregated small village school into a designated catchment school in town — but the same choice/commuting mechanism documented in the 100-town study (finding 4) suggests advantaged families in the receiving area would likely continue to exit to preferred schools, potentially re-concentrating disadvantage in the same designated receiving school rather than eliminating segregation.
+- **No Hungary-specific causal study was located (in this search) that directly measures the community-depopulation effect of school closure**, unlike Finland/Saxony/Sweden; the Hungarian evidence located (finding 7) is correlational and mixed, and the Finland-vs-Saxony/Sweden contradiction (finding 6) suggests this causal question is unsettled even in better-studied countries, cautioning against importing conclusions from either side into the Hungarian case without direct evidence.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

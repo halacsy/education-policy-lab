@@ -140,8 +140,12 @@ def topic_titles(topic: str) -> dict[str, str]:
 
 def discover_runs() -> list[RunSource]:
     runs: list[RunSource] = []
-    production_root = ROOT / "v2" / "production"
-    for manifest_path in sorted(production_root.glob("*/*/production_manifest.json")):
+    publication = load_json(ROOT / "config" / "v2" / "publication.json")
+    for item in publication["topics"]:
+        manifest_path = (
+            ROOT / "v2" / "production" / item["run_tag"] / item["topic"]
+            / "production_manifest.json"
+        )
         manifest = load_json(manifest_path)
         topic = manifest["topic"]
         topic_root = manifest_path.parent

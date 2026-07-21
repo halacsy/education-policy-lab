@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From an implementation-planning lens, this proposal requires no new delivery mechanism, so actor capacity and sequencing risks are minimal by construction. However, it does not address the delivery failure already documented: the ministry's current approach relies on case-by-case administrative veto rather than systemic monitoring or an adaptation loop, and this ad hoc pattern would simply continue. The lens's core question—can actors deliver the mechanism in the proposed sequence—is trivially satisfied because no new mechanism is proposed, but this also means no missing capability is remedied and no failure-containment structure is added to a system already showing signs of governance strain.",
+      "hu": "A megvalósítás-tervezési szemléletből nézve ez a javaslat nem igényel új végrehajtási mechanizmust, így a szereplői kapacitás és a szekvenálás kockázatai eleve minimálisak. Ugyanakkor nem kezeli a már dokumentált végrehajtási hiányosságot: a minisztérium jelenlegi megközelítése eseti közigazgatási vétóra támaszkodik, nem pedig szisztematikus monitoringra vagy visszacsatolási hurokra, és ez az ad hoc minta egyszerűen folytatódna. A szemlélet alapkérdése – hogy a szereplők képesek-e a mechanizmust a javasolt sorrendben megvalósítani – trivialitásból teljesül, mivel nincs új mechanizmus, de ez azt is jelenti, hogy semmilyen hiányzó képesség nem kerül orvoslásra, és nem épül be kudarc-elhárítási struktúra egy már most is kormányzási feszültséget mutató rendszerbe."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-09"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Could serve as an explicit, monitored counterfactual baseline against which the delivery performance of alternative proposals is measured, provided monitoring is added.",
+        "hu": "Explicit, monitorozott alapforgatókönyvként szolgálhatna, amelyhez az alternatív javaslatok végrehajtási teljesítménye mérhető, feltéve, hogy monitoring hozzáadásra kerül."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Requires no new institutional capability, sequencing, or coordination mechanism, so implementation risk in the narrow delivery sense is negligible.",
+        "hu": "Nincs szükség új intézményi képességre, szekvenálásra vagy koordinációs mechanizmusra, így a szűkebb értelemben vett végrehajtási kockázat elhanyagolható."
+      }
+    ],
+    "threats": [
+      {
+        "en": "The existing centralized school-governance bureaucracy already shows documented operational strain and opacity, meaning even passive continuation may not reliably track segregation indicators over time.",
+        "hu": "A meglévő centralizált iskolairányítási bürokrácia már most is dokumentált működési feszültséget és átláthatatlanságot mutat, ami azt jelenti, hogy még a passzív folytatás sem biztos, hogy megbízhatóan nyomon követi a szegregációs mutatókat az idő során."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Perpetuates a governance pattern of case-by-case administrative veto (e.g., Tiszavasvári denial) rather than systemic monitoring, leaving no feedback loop to detect or correct worsening segregation trends.",
+        "hu": "Fenntartja az eseti közigazgatási vétó kormányzási mintáját (pl. a tiszavasvári elutasítás), szisztematikus monitoring helyett, így nem marad visszacsatolási hurok a romló szegregációs tendenciák felismerésére vagy korrigálására."
+      },
+      {
+        "en": "No pilot or adaptation structure is embedded, so if geographic capacity mismatches worsen, there is no built-in mechanism to trigger course correction.",
+        "hu": "Nincs beépített kísérleti vagy adaptációs struktúra, így ha a területi kapacitás-eltérések romlanak, nincs beépített mechanizmus a korrekció kiváltására."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-db2943fd921696b7",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

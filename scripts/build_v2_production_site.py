@@ -17,7 +17,7 @@ from policy_lab.i18n import BILINGUAL_VERSION, is_localized_text  # noqa: E402
 from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
 
-ASSET_VERSION = "d58"
+ASSET_VERSION = "d59"
 OUT = ROOT / "site"
 QUESTION_OUT = OUT / "questions"
 
@@ -114,6 +114,10 @@ def dataset(topic: str, schemas: SchemaRegistry) -> dict[str, Any]:
     root = ROOT / "v2" / "production" / PUBLIC_TOPICS[topic] / topic
     repository = ArtifactRepository(root, schemas)
     manifest = load(root / "production_manifest.json")
+    plan_meta = manifest.get("run_plan")
+    if not str(manifest.get("architecture_version", "")).startswith("3.") or not plan_meta:
+        raise ValueError(f"Published result is not backed by an explicit v3 RunPlan: {topic}")
+    run_plan = load(root / plan_meta["path"])
     summary = manifest["summary"]
     package = repository.get_current(summary["package_ref"])
     if package["schema_version"] != BILINGUAL_VERSION:
@@ -143,7 +147,17 @@ def dataset(topic: str, schemas: SchemaRegistry) -> dict[str, Any]:
         "package": package,
         "evaluation": repository.get_current(summary["evaluation_ref"]),
         "readiness": repository.get_current(summary["readiness_ref"]),
+        "manifest": manifest,
+        "run_plan": run_plan,
+        "run_tag": PUBLIC_TOPICS[topic],
     }
+
+
+def v3_lineage(data: dict[str, Any], *, href: str) -> str:
+    plan = data["run_plan"]
+    manifest = data["manifest"]
+    plan_hash = manifest["run_plan"]["content_hash"]
+    return f'''<div class="v3-lineage"><div class="v3-seal"><b>V3</b><span>{ui('public_site.v3_badge')}</span></div><div class="v3-route"><strong>{ui('public_site.v3_route')}</strong><small>DagSpec {esc(plan['dag_version'])} · {len(plan['nodes'])} {ui('public_site.v3_nodes')} · {len(plan['edges'])} {ui('public_site.v3_edges')} · RunPlan {esc(plan_hash[:10])}…</small></div><a href="{esc(href)}">{ui('public_site.v3_open_dag')} ↗</a></div>'''
 
 
 def list_bi(record: dict[str, Any], field: str) -> str:
@@ -247,15 +261,19 @@ def render_topic(data: dict[str, Any]) -> str:
     )
     concerns = list_bi(data["evaluation"], "concerns")
     matrix = render_perspective_matrix(data, proposals)
+    audit_href = f"../audit.html?topic={data['manifest']['topic']}&run={data['manifest']['run_id']}&view=execution"
+    lineage = v3_lineage(data, href=audit_href)
 
-    return f'''<section class="topic-hero blueprint-grid"><div><p class="eyebrow">{ui('public_site.topic_eyebrow')}</p><h1>{semantic(problem['public_question'])}</h1><p class="hero-deck">{semantic(problem['problem_statement'])}</p></div><div class="topic-stats"><span><b>{len(proposals)}</b>{ui('public_site.proposal_count')}</span><span><b>{summary['counts']['finding']}</b>{ui('production.fresh_findings')}</span><span><b>{len(dilemmas)}</b>{ui('public_site.dilemma_count')}</span></div></section><aside class="migration-note"><b>{ui('production.readiness')}</b>{ui('production.ready_with_conditions')} · {ui('production.external_gate')}</aside>{change_spine()}<section class="comparison-section split" id="overview"><div><p class="eyebrow">01 / {ui('public_site.problem_title')}</p><h2>{ui('public_site.problem_title')}</h2><p class="result-lead">{semantic(problem['problem_statement'])}</p></div><div><h3>{ui('public_site.learning_title')}</h3><ul>{learning_goals}</ul></div><details class="full-summary"><summary>{ui('public_site.full_summary')}</summary><p>{semantic(package['content']['summary'])}</p></details></section><section class="proposal-stack" id="options"><div class="section-heading"><div><p class="eyebrow">02 / {ui('production.proposals')}</p><h2>{ui('production.proposals')}</h2></div></div>{''.join(cards)}</section>{matrix}<section class="comparison-section"><h2>{ui('production.coverage')}</h2><ul>{coverage_items}</ul></section><section class="comparison-section decisions" id="dilemmas"><p class="eyebrow">04 / {ui('production.dilemmas')}</p><h2>{ui('production.dilemmas')}</h2>{dilemma_cards}</section><section class="comparison-section" id="research"><p class="eyebrow">05 / {ui('production.research')}</p><h2>{ui('production.research')}</h2><ol class="research-list">{research_items}</ol></section><section class="comparison-section"><h2>{ui('production.conditions')}</h2><ul>{concerns}</ul></section><section class="comparison-section" id="evidence"><details><summary><h2>{ui('production.evidence')} · {len(package['content']['evidence_appendix'])}</h2></summary><p>{ui('public_site.sources_note')}</p><ol class="research-list">{appendix}</ol></details></section>'''
+    return f'''<section class="topic-hero blueprint-grid"><div><p class="eyebrow">{ui('public_site.topic_eyebrow')}</p><h1>{semantic(problem['public_question'])}</h1><p class="hero-deck">{semantic(problem['problem_statement'])}</p></div><div class="topic-stats"><span><b>{len(proposals)}</b>{ui('public_site.proposal_count')}</span><span><b>{summary['counts']['finding']}</b>{ui('production.fresh_findings')}</span><span><b>{len(dilemmas)}</b>{ui('public_site.dilemma_count')}</span></div></section><aside class="migration-note"><b>{ui('production.readiness')}</b>{ui('production.ready_with_conditions')} · {ui('production.external_gate')}</aside><div class="topic-lineage-wrap">{lineage}</div>{change_spine()}<section class="comparison-section split" id="overview"><div><p class="eyebrow">01 / {ui('public_site.problem_title')}</p><h2>{ui('public_site.problem_title')}</h2><p class="result-lead">{semantic(problem['problem_statement'])}</p></div><div><h3>{ui('public_site.learning_title')}</h3><ul>{learning_goals}</ul></div><details class="full-summary"><summary>{ui('public_site.full_summary')}</summary><p>{semantic(package['content']['summary'])}</p></details></section><section class="proposal-stack" id="options"><div class="section-heading"><div><p class="eyebrow">02 / {ui('production.proposals')}</p><h2>{ui('production.proposals')}</h2></div></div>{''.join(cards)}</section>{matrix}<section class="comparison-section"><h2>{ui('production.coverage')}</h2><ul>{coverage_items}</ul></section><section class="comparison-section decisions" id="dilemmas"><p class="eyebrow">04 / {ui('production.dilemmas')}</p><h2>{ui('production.dilemmas')}</h2>{dilemma_cards}</section><section class="comparison-section" id="research"><p class="eyebrow">05 / {ui('production.research')}</p><h2>{ui('production.research')}</h2><ol class="research-list">{research_items}</ol></section><section class="comparison-section"><h2>{ui('production.conditions')}</h2><ul>{concerns}</ul></section><section class="comparison-section" id="evidence"><details><summary><h2>{ui('production.evidence')} · {len(package['content']['evidence_appendix'])}</h2></summary><p>{ui('public_site.sources_note')}</p><ol class="research-list">{appendix}</ol></details></section>'''
 
 
 def render_home(data: dict[str, dict[str, Any]]) -> str:
     cards = []
     for index, (topic, item) in enumerate(data.items(), 1):
         problem = item["topic"]["problem_brief"]
-        cards.append(f'''<article class="topic-sheet"><span class="sheet-index">{index:02d}</span><p class="eyebrow">{bi('QUESTION','KÉRDÉS')} {index:02d}</p><h2>{bi(problem['public_question']['en'],problem['public_question']['hu'])}</h2><p class="lead">{bi(short_intro(problem['problem_statement']['en']),short_intro(problem['problem_statement']['hu']))}</p><div class="mini-metrics"><span>{item['summary']['counts']['transformation_proposal']}<small>{ui('public_site.proposal_count')}</small></span><span>{item['summary']['counts']['dilemma']}<small>{ui('public_site.dilemma_count')}</small></span></div><a class="arrow-link" href="questions/{topic}.html">{ui('production.open')} →</a></article>''')
+        audit_href = f"audit.html?topic={topic}&run={item['manifest']['run_id']}&view=execution"
+        lineage = v3_lineage(item, href=audit_href)
+        cards.append(f'''<article class="topic-sheet"><span class="sheet-index">{index:02d}</span><p class="eyebrow">{bi('QUESTION','KÉRDÉS')} {index:02d}</p><h2>{bi(problem['public_question']['en'],problem['public_question']['hu'])}</h2><p class="lead">{bi(short_intro(problem['problem_statement']['en']),short_intro(problem['problem_statement']['hu']))}</p>{lineage}<div class="mini-metrics"><span>{item['summary']['counts']['transformation_proposal']}<small>{ui('public_site.proposal_count')}</small></span><span>{item['summary']['counts']['dilemma']}<small>{ui('public_site.dilemma_count')}</small></span></div><a class="arrow-link" href="questions/{topic}.html">{ui('production.open')} →</a></article>''')
 
     totals = {
         "questions": len(data),

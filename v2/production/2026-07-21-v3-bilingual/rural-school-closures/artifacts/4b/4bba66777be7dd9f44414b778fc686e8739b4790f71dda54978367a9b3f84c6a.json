@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a public-finance perspective, the baseline is a counterfactual that documents the fiscal and distributional consequences of leaving closure decisions centralized and reactive. There is no explicit resource-allocation mechanism beyond current mandatory minimums, and no early-warning linkage between demographic microdata and network planning at tankerület level, meaning any savings or cost overruns from closures are incidental rather than planned. The KLIK centralization already produced systematic under-budgeting, with resource-constrained rural schools partially fixed at the expense of previously better-funded urban schools, and recurring solvency problems forcing spending down to mandatory minimums, a pattern the baseline does not correct. Because the baseline changes nothing, it inherits all documented incidence problems of the current system without offering any lever to address them.",
+      "hu": "Költségvetési-oktatásfinanszírozási szempontból az alapforgatókönyv egy ellenpélda, amely dokumentálja, milyen fiskális és elosztási következményekkel jár, ha a bezárási döntések centralizáltak és reaktívak maradnak. Nincs explicit erőforrás-allokációs mechanizmus a jelenlegi kötelező minimumokon túl, és nincs korai előrejelző kapcsolat a demográfiai mikroadatok és a tankerületi hálózattervezés között, így a bezárásokból fakadó megtakarítások vagy többletköltségek véletlenszerűek, nem tervezettek. A KLIK-centralizáció már eddig is szisztematikus alulfinanszírozáshoz vezetett: a kistelepülési iskolák erőforráshiányát részben orvosolták, ám a korábban jobb helyzetű városi iskolák finanszírozása romlott, és a KLIK visszatérő fizetésképtelenségi problémái miatt a kerületi vezetőknek a kötelező minimumra kellett csökkenteniük a kiadásokat – ezt a mintát az alapforgatókönyv nem korrigálja. Mivel a status quo semmit nem változtat, a jelenlegi rendszer minden dokumentált elosztási problémáját átveszi anélkül, hogy bármilyen eszközt adna kezelésükre."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-01",
+      "F-live-education_finance-04"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Could still be paired ex post with the 2026 diagnostic review to retroactively identify cost-saving opportunities, though this is not built into the baseline itself.",
+        "hu": "Utólag még összekapcsolható lenne a 2026-os diagnosztikai felülvizsgálattal a megtakarítási lehetőségek visszamenőleges feltárására, bár ez magába az alapforgatókönyvbe nincs beépítve."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Provides a clear, low-cost reference point for measuring the fiscal impact of alternative proposals.",
+        "hu": "Világos, alacsony költségű referenciapontot biztosít az alternatív javaslatok fiskális hatásának méréséhez."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued ad hoc closures risk repeating avoidable disruption costs (Garab-type cases) that a planned framework could anticipate and budget for.",
+        "hu": "A folytatódó eseti bezárások a tervezett kereten belül elkerülhető zavarok költségeit (Garab-típusú esetek) kockáztatják megismételni, amelyeket egy tervezett rendszer előre láthatna és beépíthetne a költségvetésbe."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No mechanism to correct the documented under-budgeting pattern from KLIK centralization, where urban-school funding was cut while rural-school resource gaps were only partially closed.",
+        "hu": "Nincs mechanizmus a KLIK-centralizáció dokumentált alulfinanszírozási mintájának korrigálására, amelynek során a városi iskolák finanszírozását csökkentették, míg a vidéki iskolák erőforráshiányát csak részben zárták le."
+      },
+      {
+        "en": "Absence of a systematic early-warning link between demographic microdata and tankerület-level planning means resource allocation remains reactive rather than optimized.",
+        "hu": "A demográfiai mikroadatok és a tankerületi tervezés közötti szisztematikus korai előrejelző kapcsolat hiánya miatt az erőforrás-allokáció reaktív marad, nem optimalizált."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-assess_education_finance-293471d7f6ea96e4",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,22 @@
+{
+  "content": {
+    "current_confidence": "low",
+    "question": {
+      "en": "Does the closure of a village primary school causally accelerate demographic depopulation in that community (as Finnish DID evidence suggests) or is closure primarily a symptom of pre-existing population decline (as Swedish and Greek evidence implies)? The causal direction determines whether preventing closures is a viable rural-development tool or primarily a social-stabilization measure.",
+      "hu": "Az egy községi általános iskola zárása oksági módon felgyorsítja-e az abban a közösségben lezajló demográfiai népesség-csökkenést (mint a finn DID-bizonyíték sugallja) vagy az iskolazárás elsősorban egy már meglévő népesség-csökkenés tünete (mint a svéd és görög bizonyíték sugallja)? Az oksági irány határozza meg, hogy az iskolazárások megelőzése életképes vidékfejlesztési eszköz-e vagy elsősorban egy szociális stabilizálási intézkedés."
+    },
+    "reduction_path": {
+      "en": "Apply Hungarian administrative panel data (2000–2024) on village population, school enrollments, business registrations, and service availability (broadband, healthcare). Use Granger causality and vector autoregression (VAR) models with instrumental variables (e.g., state policy changes in 2004, 2008, 2013) to test closure→depopulation vs. depopulation→closure lag structures. Quantify the Impulse Response Function (IRF) showing population change following a school closure shock, controlling for labor-market access and commuting distance.",
+      "hu": "Alkalmazza a magyar adminisztratív panel adatokat (2000–2024) községi népességről, iskolai beiskolázásról, üzleti regisztrációkról és szolgáltatás-elérhetőségről (szélessáv, egészségügyi ellátás). Granger okság és vektorautoregresszió (VAR) modelleket használjon instrumentális változókkal (pl. 2004, 2008, 2013 állami politikai változások) a zárás→népesség-csökkenés vs. népesség-csökkenés→zárás lag struktúra tesztelésére. Számszerűsítse az Impulse Response Function (IRF) értékeket, amely az iskolazárás sokk utáni népesség-változást mutatja, munkaerőpiaci hozzáférés és közlekedési távolság kontrolljával."
+    },
+    "uncertainty_type": "unknown"
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "U-live-portuguese_reform-02",
+  "provenance_ref": "PV-research_portuguese_reform-97acf63e4d56f5da",
+  "record_type": "uncertainty",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

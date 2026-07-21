@@ -1,0 +1,199 @@
+{
+  "content": {
+    "derivation_notice": {
+      "en": "Derived only from the exact fresh finding artifacts declared by the run plan; pending an explicit human gate.",
+      "hu": "Kizárólag a futási tervben deklarált, pontos friss megállapítás-artefaktokból levezetve; explicit emberi kapudöntésre vár."
+    },
+    "directions": [
+      {
+        "finding_refs": [
+          "F-live-hungarian_education_system-01",
+          "F-live-hungarian_education_system-06",
+          "F-live-legal_and_governance-09",
+          "F-live-implementation_planning-10",
+          "F-live-school_network_planning-02",
+          "F-live-political_feasibility-09"
+        ],
+        "id": "S1",
+        "scope": {
+          "en": "No new policy: the status quo where the Klebelsberg Center and its 60 tankerület districts decide closures/reorganizations case by case at ministerial level, while demographic decline continues. Bounded to state-run primary schools in villages under 2,000. This baseline captures the trajectory documented by institutional thinning (>1,200 of 3,155 settlements without public education by 2024) and the Garab-type ad hoc closure-then-repurposing pattern, absent any named early-warning safeguard.",
+          "hu": "Nincs új szakpolitika: a jelenlegi helyzet, ahol a Klebelsberg Központ és 60 tankerülete miniszteri szinten, eseti alapon dönt a bezárásokról/átszervezésekről, miközben a demográfiai hanyatlás folytatódik. A 2000 fő alatti falvak állami általános iskoláira korlátozva. Ez az alapforgatókönyv az intézményi elvékonyodás (2024-re a 3155 településből több mint 1200 közoktatási intézmény nélkül) és a Garab-típusú, eseti bezárás-utáni átfunkcionálás mintáját ragadja meg, bármilyen nevesített korai jelzőrendszer hiányában."
+        },
+        "title": {
+          "en": "Passive-change baseline: continued centralized case-by-case closure/reorganization",
+          "hu": "Passzív alapforgatókönyv: folytatódó központosított, eseti bezárás/átszervezés"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-legal_and_governance-05",
+          "F-live-hungarian_education_system-05",
+          "F-live-international_comparison-07",
+          "F-live-international_comparison-10",
+          "F-live-education_finance-06",
+          "F-live-portuguese_reform-08"
+        ],
+        "id": "S2",
+        "scope": {
+          "en": "Deliberate consolidation of the smallest village primary schools into larger consolidated units, relying on the individual-level right to education (access, not local-institution preservation) and legally-owed transport to mandatory-admission schools. Bounded to villages under 2,000. Draws on cross-national consolidation experience (Norway size targets, China consolidate cycle) and partial economies-of-scale evidence, while acknowledging the contested closure-depopulation link and transport-obligation lapses.",
+          "hu": "A legkisebb falusi általános iskolák szándékos összevonása nagyobb egységekbe, az egyéni szintű oktatáshoz való jogra (hozzáférés, nem a helyi intézmény megőrzése) és a kötelező felvételt biztosító iskolákba történő, jogszabályban előírt szállításra támaszkodva. A 2000 fő alatti falvakra korlátozva. Nemzetközi összevonási tapasztalatokra (norvég méretcélok, kínai összevonási ciklus) és a részleges méretgazdaságossági bizonyítékokra épít, elismerve a bezárás-elnéptelenedés vitatott kapcsolatát és a szállítási kötelezettség hiányosságait."
+        },
+        "title": {
+          "en": "Structural consolidation with guaranteed access (managed closure + transport)",
+          "hu": "Strukturális összevonás garantált hozzáféréssel (irányított bezárás + szállítás)"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-polish_reform-09",
+          "F-live-hungarian_education_system-09",
+          "F-live-demography-04",
+          "F-live-education_finance-07",
+          "F-live-education_finance-10",
+          "F-live-portuguese_reform-10"
+        ],
+        "id": "S3",
+        "scope": {
+          "en": "Retain the youngest grades (e.g., I–III/1–4) locally with guaranteed enrollment even at very low pupil numbers, using legally-sanctioned multi-grade (összevont) classes, while transporting older pupils to consolidated schools with specialized classrooms; unused building space repurposed for community use. Bounded to villages under 2,000. Modeled on the Polish draft split-model and Hungary's existing multi-grade tool and reduced-parallel-class tradition.",
+          "hu": "A legfiatalabb évfolyamok (pl. I–III/1–4) helyben tartása garantált beiratkozással még nagyon alacsony létszám mellett is, a jogszabályilag engedélyezett összevont osztályok révén, miközben az idősebb tanulókat szaktantermekkel rendelkező összevont iskolákba szállítják; a kihasználatlan épületrészek közösségi célra hasznosulnak. A 2000 fő alatti falvakra korlátozva. A lengyel osztott modell tervezetére, valamint a magyar meglévő összevont osztály eszközre és a párhuzamos osztályok csökkentésének hagyományára épül."
+        },
+        "title": {
+          "en": "Split-model retention: keep lower grades local, transport upper grades",
+          "hu": "Osztott modell: alsó tagozat helyben, felső tagozat szállítással"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-international_comparison-08",
+          "F-live-international_comparison-01",
+          "F-live-polish_reform-04",
+          "F-live-portuguese_reform-03",
+          "F-live-equity_and_social_mobility-07",
+          "F-live-political_feasibility-06"
+        ],
+        "id": "S4",
+        "scope": {
+          "en": "Introduce explicit closure safeguards (presumption against closure, 'strong positive case' tests, mandatory consideration of alternatives) and targeted small-rural-school funding/teacher supplements to keep village schools open. Bounded to villages under 2,000. Modeled on Scotland/Wales legal safeguards, Poland's rural teacher bonus, and Finland's pre-2004-style Hungarian targeted support, while noting fiscal strain and the contested vitality evidence.",
+          "hu": "Kifejezett bezárási biztosítékok bevezetése (bezárás elleni vélelem, 'erős pozitív érv' tesztek, alternatívák kötelező mérlegelése) és célzott kisfalusi iskolai finanszírozás/pedagógus-pótlék a falusi iskolák nyitva tartására. A 2000 fő alatti falvakra korlátozva. A skót/walesi jogi biztosítékokra, a lengyel vidéki pedagógusbónuszra és a 2004 előtti magyar célzott támogatásra épül, megjegyezve a költségvetési terhelést és a vitatott vitalitási bizonyítékokat."
+        },
+        "title": {
+          "en": "Active preservation with procedural safeguards and rural funding",
+          "hu": "Aktív megőrzés eljárási biztosítékokkal és vidéki finanszírozással"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-hungarian_education_system-03",
+          "F-live-hungarian_education_system-04",
+          "F-live-legal_and_governance-04",
+          "F-live-political_feasibility-03",
+          "F-live-polish_reform-10",
+          "F-live-implementation_planning-03"
+        ],
+        "id": "S5",
+        "scope": {
+          "en": "Route depopulation responses through transfer of small state schools to church or NGO maintainers (subject to the parental veto: transfer blocked if >half of parents oppose), retaining the building in local use. Bounded to villages under 2,000. Draws on documented church-school expansion in small settlements and NGO/Kolping absorptions, while flagging the risk that in single-school villages ownership change acts as de facto reduction of choice and segregation concerns.",
+          "hu": "Az elnéptelenedésre adott válaszok a kis állami iskolák egyházi vagy civil fenntartóhoz való átadásán keresztül (a szülői vétó fenntartásával: az átadás blokkolt, ha a szülők több mint fele ellenzi), az épület helyi használatának megtartásával. A 2000 fő alatti falvakra korlátozva. A kis településeken dokumentált egyházi iskolabővülésre és a civil/Kolping átvételekre épít, jelezve a kockázatot, hogy egyiskolás falvakban a tulajdonosváltás de facto a választás szűkítéseként hat, valamint a szegregációs aggályokat."
+        },
+        "title": {
+          "en": "Alternative-maintainer pathway: church/NGO takeover of small schools",
+          "hu": "Alternatív fenntartói út: kis iskolák egyházi/civil átvétele"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-school_network_planning-06",
+          "F-live-school_network_planning-07",
+          "F-live-finnish_reform-10",
+          "F-live-portuguese_reform-09",
+          "F-live-international_comparison-04",
+          "F-live-political_feasibility-06"
+        ],
+        "id": "S6",
+        "scope": {
+          "en": "Support locally-driven school-rescue through community mobilization, inter-community networks, cross-border bus networks, and repurposing schools as multi-service community hubs, without formal structural reform. Bounded to villages under 2,000. Draws on Hungarian case studies (Erdőkürt) and Rákóczi Szövetség bus networks, and Finnish Tiistenjoki-type civic mobilization, while noting this approach is localized, resource-intensive, and not scalable nationally.",
+          "hu": "A helyi vezetésű iskolamentés támogatása közösségi mozgósítással, közösségek közötti hálózatokkal, határon átnyúló buszhálózatokkal és az iskolák többfunkciós közösségi központtá alakításával, formális strukturális reform nélkül. A 2000 fő alatti falvakra korlátozva. Magyar esettanulmányokra (Erdőkürt) és a Rákóczi Szövetség buszhálózataira, valamint a finn Tiistenjoki-típusú civil mozgósításra épít, megjegyezve, hogy ez a megközelítés helyi jellegű, erőforrás-igényes és nem skálázható országosan."
+        },
+        "title": {
+          "en": "Community-anchored resilience: social capital and multi-service hubs",
+          "hu": "Közösségi horgony: társadalmi tőke és többfunkciós központok"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-equity_and_social_mobility-10",
+          "F-live-portuguese_reform-06",
+          "F-live-equity_and_social_mobility-04",
+          "F-live-equity_and_social_mobility-05",
+          "F-live-implementation_planning-06",
+          "F-live-school_network_planning-05"
+        ],
+        "id": "S7",
+        "scope": {
+          "en": "Make school-network decisions primarily on equity and staffing grounds: treat closure/merger as a possible desegregation remedy where a small local school is de facto Roma-only, while addressing the rural teacher shortage and ageing workforce that constrains any 'keep open' policy. Bounded to villages under 2,000. Draws on the ECtHR Piliscsaba/Nyíregyháza rulings, commuting-based sorting evidence, and the rural teacher-supply crisis.",
+          "hu": "Az iskolahálózati döntések elsősorban méltányossági és személyzeti alapon: a bezárás/összevonás lehetséges deszegregációs eszközként kezelése, ahol egy kis helyi iskola de facto csak romákat oktat, miközben kezelni kell a vidéki pedagógushiányt és az elöregedő munkaerőt, amely bármely 'nyitva tartás' politikát korlátoz. A 2000 fő alatti falvakra korlátozva. Az EJEB Piliscsaba/Nyíregyháza ítéleteire, az ingázás-alapú szelekciós bizonyítékokra és a vidéki pedagógus-utánpótlási válságra épít."
+        },
+        "title": {
+          "en": "Equity-first restructuring: desegregation and staffing as decision drivers",
+          "hu": "Méltányosság-központú átalakítás: deszegregáció és személyzet mint döntési tényezők"
+        }
+      }
+    ],
+    "rejected_framings": [
+      {
+        "finding_refs": [
+          "F-live-education_finance-10",
+          "F-live-polish_reform-09",
+          "F-live-hungarian_education_system-09"
+        ],
+        "framing": {
+          "en": "Frame the question as a pure binary choice between 'close the school' and 'keep the school open'.",
+          "hu": "A kérdés tiszta binárisként való keretezése: 'bezárni az iskolát' vagy 'nyitva tartani az iskolát'."
+        },
+        "reason": {
+          "en": "Rejected because the evidence shows the real policy menu is not binary: amalgamation-with-continued-local-operation (~30–35% of cases vs ~10% outright closure), split-model retention, multi-grade adaptation, and maintainer changes are all documented intermediate outcomes. A binary framing would prematurely collapse the option space.",
+          "hu": "Elutasítva, mert a bizonyítékok szerint a valódi szakpolitikai menü nem bináris: az összevonás helyi működés fenntartásával (az esetek ~30–35%-a a ~10% teljes bezárással szemben), az osztott modell, az összevont osztályos alkalmazkodás és a fenntartóváltás mind dokumentált köztes kimenetek. A bináris keretezés idő előtt összeomlasztaná az opcióteret."
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-portuguese_reform-08",
+          "F-live-equity_and_social_mobility-06",
+          "F-live-equity_and_social_mobility-07",
+          "F-live-implementation_planning-07"
+        ],
+        "framing": {
+          "en": "Frame keeping schools open as a guaranteed lever to reverse village depopulation.",
+          "hu": "Az iskolák nyitva tartásának keretezése a falusi elnéptelenedés visszafordításának garantált eszközeként."
+        },
+        "reason": {
+          "en": "Rejected because the closure–depopulation causal link is cross-nationally contested (Finnish DID found acceleration; Saxony and Sweden found no significant link), and Hungarian village data are ambiguous (schools correlate with better demography but worse employment/welfare). Treating retention as a guaranteed anti-depopulation lever would rest on an unconfirmed causal premise.",
+          "hu": "Elutasítva, mert a bezárás-elnéptelenedés oksági kapcsolat nemzetközileg vitatott (a finn DID gyorsulást talált; Szászország és Svédország nem talált szignifikáns kapcsolatot), a magyar falusi adatok pedig kétértelműek (az iskolák jobb demográfiával, de rosszabb foglalkoztatási/jóléti mutatókkal korrelálnak). A megőrzés garantált elnéptelenedés-ellenes eszközként való kezelése megerősítetlen oksági premisszán nyugodna."
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-legal_and_governance-02",
+          "F-live-political_feasibility-10",
+          "F-live-legal_and_governance-08"
+        ],
+        "framing": {
+          "en": "Frame the solution as re-municipalizing school closure decisions back to local councils.",
+          "hu": "A megoldás keretezése az iskolabezárási döntések önkormányzatokhoz való visszahelyezéseként."
+        },
+        "reason": {
+          "en": "Rejected as a primary framing because closure/reorganization authority is legally centralized at ministerial/tankerület level, the 2017 change was deconcentration not devolution, and no official re-municipalization timeline or legislative proposal is public. Building the option space around a governance shift that lacks any confirmed pathway would exceed the supplied evidence.",
+          "hu": "Elsődleges keretként elutasítva, mert a bezárási/átszervezési hatáskör jogilag miniszteri/tankerületi szinten központosított, a 2017-es változás dekoncentráció volt, nem decentralizáció, és nincs nyilvános hivatalos re-municipalizációs ütemterv vagy törvényjavaslat. Az opciótér egy megerősített út nélküli kormányzási elmozdulásra építése túllépné a rendelkezésre álló bizonyítékokat."
+        }
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "OS-live-rural-school-closures",
+  "provenance_ref": "PV-derive_option_space-5b5239e9290822cb",
+  "record_type": "option_space_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

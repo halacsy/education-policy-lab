@@ -1,0 +1,68 @@
+{
+  "content": {
+    "candidate_first_move_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5",
+      "TP-live-t6"
+    ],
+    "conditions": [
+      {
+        "en": "Implementation gaps remain: several TPs presuppose specific delivery mechanisms (e.g., funded transport guarantee, legally operational early‑warning linkage between microdata and tankerület planning, enforceable teacher‑supply measures) but the package does not specify financing sources, institutional responsibilities, or measurable triggers for these mechanisms.",
+        "hu": "Kivitelezési hézagok: több TP olyan végrehajtási mechanizmust feltételez (pl. finanszírozott szállítási garancia, jogilag működő korai riasztókapcsolat a demográfiai mikroadatok és a tankerületi tervezés között, kötelező pedagógus‑ellátási intézkedések), amelyre azonban a csomag nem ad konkrét finanszírozási forrást, intézményi felelősség‑leírást vagy mérhető kiváltó feltételeket."
+      },
+      {
+        "en": "Central causal uncertainty is not resolved: the contested empirical link between school closure and community depopulation is acknowledged but left as an open, cross‑case question; decision‑relevant modeling (local Hungarian DID or settlement‑level analysis) is not provided despite being flagged as crucial.",
+        "hu": "A központi oksági bizonytalanság megoldatlan: bár a bezárás és közösségi depopuláció közötti vitatott empirikus kapcsolat fel van ismerve, a kérdés nyitva marad; döntésre releváns modellezés (helyi, magyar DID vagy települési szintű elemzés) nem szerepel, pedig a csomag maga is kulcsfontosságúnak jelöli."
+      },
+      {
+        "en": "Teacher‑supply constraint is treated as binding but remediation is underspecified: projections and attrition rates are clear, yet concrete policy levers (recruitment pipelines, retention pay scales, timelineed interventions) that would make 'keep open' options feasible are not modeled.",
+        "hu": "A pedagógus‑ellátási korlát kötőerőként jelenik meg, de a megoldások hiányoznak: a prognózisok és lemorzsolódási arányok világosak, azonban azok a konkrét politikai beavatkozások (toborzó csatornák, megtartási bérskálák, időzített intézkedések), amelyek a „nyitva tartás” opcióit megvalósíthatóvá tennék, nincsenek modellezve."
+      },
+      {
+        "en": "Heterogeneous source quality and some grey references: while most items cite auditable sources, a subset uses URNs, researchgate, journalistic anecdotes or unspecified working‑paper citations—this weakens replicability for a few claims unless the underlying documents are linked or deposited.",
+        "hu": "Változó forrásminőség és néhány szürke hivatkozás: bár a legtöbb tétel ellenőrizhető forrást ad meg, egy rész URN‑eket, ResearchGate‑et, újságírói anekdotát vagy pontosan meg nem nevezett munkapapirokat használ — ez gyengíti néhány állítás reprodukálhatóságát, hacsak a háttérdokumentumok nincsenek egyértelműen csatolva."
+      },
+      {
+        "en": "Equity‑risk mechanics for church/NGO transfers and split models are noted but not quantified: the package flags likely choice‑narrowing and segregation pathways (T P‑t5, TP‑t3) and cites enrollment shifts, yet lacks modeled projections of long‑run market share, catchment reassignments, or sanctioning mechanisms to preserve plural access in single‑school villages.",
+        "hu": "A felekezeti/NGO‑átvételek és megosztott modellek egyenlőségkockázatai jelzettek, de nincsenek számszerűsítve: a csomag rámutat a választásszűkítés és szeparáció lehetséges mechanizmusaira (TP‑t5, TP‑t3) és idézi a beiskolázási eltolódásokat, de hiányoznak a hosszú távú piaci részesedésre, körzethatár‑átalakításokra vagy a sokszínű hozzáférést biztosító szankciókra vonatkozó modellezett előrejelzések."
+      }
+    ],
+    "evaluation_ref": "EV-live-production",
+    "human_external_use_gate": "pending",
+    "package_ref": "DP-live-production",
+    "priority_research_question_refs": [
+      "RQ-live-production-01",
+      "RQ-live-production-02",
+      "RQ-live-production-03",
+      "RQ-live-production-07",
+      "RQ-live-production-08",
+      "RQ-live-production-09",
+      "RQ-live-production-10"
+    ],
+    "rationale": {
+      "en": "The cross-family evaluation accepted the package for human review; the external-use gate remains a human decision.",
+      "hu": "Az eltérő modellcsalád értékelése emberi felülvizsgálatra elfogadta a csomagot; a külső felhasználás kapuja továbbra is emberi döntés."
+    },
+    "unresolved_dilemma_refs": [
+      "D-live-production-01",
+      "D-live-production-02",
+      "D-live-production-03",
+      "D-live-production-04",
+      "D-live-production-05",
+      "D-live-production-06",
+      "D-live-production-07"
+    ],
+    "verdict": "ready_with_conditions"
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "DR-live-production",
+  "provenance_ref": "PV-assess_decision_readiness-ea117c3083706816",
+  "record_type": "decision_readiness",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

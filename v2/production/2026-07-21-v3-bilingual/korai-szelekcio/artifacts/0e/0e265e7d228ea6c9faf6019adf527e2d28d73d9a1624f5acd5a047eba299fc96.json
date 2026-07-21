@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "165679831a13924a726f326d1fb7c9a0ea559aa36bb7a12680417400be153079",
+        "response_hash": "1e29e5d093b7a83befb254182e43469c740e2b32d1274f5951000720e5116000",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "af176a55c33c8f28b4e546c465e634c98f78d09cd1779aa3fb3500d74b2b9f5e",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "05f61cdc8c3f7cf07ebf6eb472ea5f6a19cdd3673f71f4ae69f3cf7a51ec71dc",
+      "0e5a86caab6b40aa3ee35d57728b04f612581782dcb89334f4d3b8b920281bda",
+      "11844c5a81cd15cabaca07c0d1e90c2dde676d00180241396e1c344df2104b6e",
+      "3bfb212928e69a092d89f4e1e4fb11b085c0acdcb45d922ba5771072134fb00f",
+      "479cda3eab29b52ab509a3311d37cf7ea9b755dd5468a8724045522195948ae4",
+      "5f51e5d00ca29f2d0244ebaf9ed51e5ddde546f0fddab63b8047e88866e00904",
+      "87f32a2f6cc6c1ae0813a61c2c071f2e40155843c84736000c36078f65d2019a",
+      "8d2d2f7a107ff355ca59d6d24f3b6dbabceefaf2e22760e3bea7ffecb0765fa1",
+      "a4d31e9edd30fe8c842b3e69a6a6f5af5f5a8e0e04c90af82b5820fd3e408c5f",
+      "b0d17a66a180be9c0431a1b4be7ad484df0c42a50f0c7e059d7544b648055d85",
+      "c645f5873c49fe7380c914a3cf355af432d71af0fd303353021a8a2d6b1c3dfc",
+      "c81140b12604f57b622aca1f808b25de97d1b1dcc33ca98e615734e9a35637aa",
+      "cdc3b52ec798322daec42d88d50e208184671cb018cb72d4ce225b18e2cb30d2",
+      "d9a4bab3580b885881beb894bc522c098711197f6ef6c1de8f2cabac225b7679",
+      "f5bebd7c5bdac0b4e2ef6e5567f8a8e57df7ee62c1c3eb7a43497bfcafca90b9"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_finnish_reform",
+    "prompt_hash": "344d75fa3c0564f403852df5659bd6416857738a3de94404149830770788fc89",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "generator",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-assess_finnish_reform-af176a55c33c8f28",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "8ad63c184255fa20605ea88e64cee9aa7eb1a2498a788d6d57e1525247c484e7",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal has strong administrative fit because it relies on multi-grade (összevont) classes, a mechanism already legally sanctioned within the Public Education Act's class-size framework requiring no additional authorization. It thus represents low-friction interaction with current institutions relative to structural consolidation. However, it does not change the underlying selection geography: upper-grade transportation to consolidated schools recreates a between-settlement sorting pattern analogous to Hungary's historical practice of reducing parallel classes rather than closing schools, which the evidence associates with reduced within-school but persistent between-school segregation. The tankerület and ministerial governance structures remain untouched; the proposal operates entirely within existing administrative categories.",
+      "hu": "Ennek a javaslatnak erős az igazgatási illeszkedése, mivel az összevont osztályokra támaszkodik, amely mechanizmus már jogilag szabályozott a köznevelési törvény osztálylétszám-keretrendszerében, és nem igényel további engedélyezést. Így a strukturális összevonáshoz képest alacsony súlypontú kapcsolatot jelent a jelenlegi intézményekkel. Azonban nem változtatja meg az alapvető szelekciós földrajzot: a felső tagozatosok konszolidált iskolákba szállítása a Magyarország történelmi gyakorlatához hasonló, települések közötti szűrési mintázatot hoz létre, amely a párhuzamos osztályok csökkentésén alapult a bezárás helyett, és amelyet a bizonyítékok az iskolán belüli szegregáció csökkenésével, de az iskolák közötti szegregáció fennmaradásával társítanak. A tankerületi és miniszteri irányítási struktúrák érintetlenek maradnak; a javaslat teljesen a meglévő igazgatási kategóriákon belül működik."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-09",
+      "F-live-hungarian_education_system-07"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Its administrative low-friction nature could allow faster and broader rollout than structural consolidation, since no new legal category or authorization process is needed.",
+        "hu": "Alacsony igazgatási súlypontú jellege gyorsabb és szélesebb körű bevezetést tehet lehetővé a strukturális összevonáshoz képest, mivel nincs szükség új jogi kategóriára vagy engedélyezési folyamatra."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Uses an already-legal administrative tool (multi-grade classes within existing class-size limits) requiring no new authorization, maximizing institutional and administrative compatibility.",
+        "hu": "Egy már jogilag létező igazgatási eszközt (összevont osztályok a meglévő létszámkorlátokon belül) használ, amely nem igényel új engedélyezést, maximalizálva az intézményi és igazgatási kompatibilitást."
+      },
+      {
+        "en": "Avoids a binary open/close decision structure, offering an intermediate governance option that does not require renegotiating ministerial closure authority.",
+        "hu": "Elkerüli a bináris nyitás/zárás döntési struktúrát, közbenső irányítási opciót kínálva, amely nem igényli a miniszteri bezárási hatáskör újratárgyalását."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If receiving schools for upper grades are not distributed to avoid concentrating disadvantaged pupils, the split model risks institutionalizing rather than mitigating existing regional/ethnic disparities documented in early-school-leaving data.",
+        "hu": "Ha a felső tagozatosokat fogadó iskolákat nem úgy osztják el, hogy elkerüljék a hátrányos helyzetű tanulók koncentrálódását, az osztott modell kockázata, hogy inkább intézményesíti, mint enyhíti a korai iskolaelhagyási adatokban dokumentált meglévő regionális/etnikai egyenlőtlenségeket."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Recreates a documented risk of between-settlement segregation, analogous to Hungary's historical parallel-class-reduction practice, if upper-grade consolidation routes are not explicitly designed against this outcome.",
+        "hu": "Megismétli a települések közötti szegregáció dokumentált kockázatát, hasonlóan Magyarország történelmi párhuzamos osztálycsökkentési gyakorlatához, ha a felső tagozatos összevonási útvonalakat nem kifejezetten ez ellen tervezik meg."
+      },
+      {
+        "en": "Has a documented lower viability bound: research modeling a 100-student threshold indicates more than five hundred village schools could be affected, many unable to survive even in split form, limiting system coverage in the smallest settlements.",
+        "hu": "Dokumentált alsó viabilitási korlátja van: a 100 fős küszöböt modellező kutatás szerint több mint ötszáz falusi iskolát érinthet, amelyek közül sok még osztott formában sem tudna fennmaradni, korlátozva a rendszer lefedettségét a legkisebb településeken."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t3-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-76283b5befd7fe2f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

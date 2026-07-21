@@ -1,0 +1,51 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A delayed-selection design intersects the demographic evidence in a mixed way. It retains the six-year track's geography-linked concentration problem — programmes remain clustered in Budapest and a handful of cities (F-live-demography-05) — so spatial access inequities persist even as the age of first selection shifts later. On cohort trajectory, delaying selection closer to age 14 shortens the multi-year window during which shrinking, geographically uneven cohorts must be tracked into scarce programme seats, which may somewhat reduce the compounding effect of early misallocation documented under proposal t9 (selection ratios diverging by geography). However, because the six-year track is preserved rather than eliminated, the underlying mechanism connecting family capital to early access (a demographic sorting channel operating independently of cohort size) is not removed, so contraction of the applicant pool does not by itself narrow the socioeconomic access gap.",
+      "hu": "A késleltetett szelekciós modell vegyes módon érintkezik a demográfiai bizonyítékokkal. Megtartja a hatosztályos képzés földrajzhoz kötött koncentrációs problémáját — a programok továbbra is Budapestre és néhány városra koncentrálódnak (F-live-demography-05) —, így a térbeli hozzáférési egyenlőtlenségek fennmaradnak, még ha az első szelekció életkora később is történik. A kohortpálya tekintetében a szelekció 14 év közelébe halasztása lerövidíti azt a többéves időablakot, amely alatt a zsugorodó, térben egyenetlen kohortoknak a szűkös programhelyekre kell rendeződniük, ami valamelyest mérsékelheti a korai félreallokáció felhalmozódó hatását, amit a térségenként divergáló felvételi arányok dokumentálnak. Mivel azonban a hatosztályos képzés megmarad és nem szűnik meg, a családi tőkét a korai hozzáféréshez kötő alapmechanizmus — amely a kohortlétszámtól függetlenül működő demográfiai szűrőcsatorna — nem szűnik meg, tehát a jelentkezői létszám csökkenése önmagában nem szűkíti a szocioökonómiai hozzáférési szakadékot."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-05"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "A later, single entry point could be aligned with network-planning consolidation to address the settlement-level access gap (over 1,200 settlements without institutions), if paired with complementary geographic measures not intrinsic to the delay mechanism itself (F-live-demography-04).",
+        "hu": "Egy később, egyetlen belépési pontra épülő rendszer összekapcsolható a hálózattervezési konszolidációval a településszintű hozzáférési szakadék kezelésére (több mint 1200 intézmény nélküli település), amennyiben olyan kiegészítő földrajzi intézkedésekkel párosítják, amelyek nem szerves részei a késleltetési mechanizmusnak (F-live-demography-04)."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Shortening the pre-selection window somewhat reduces the number of years during which shrinking and geographically uneven cohorts are exposed to the early-selection sorting mechanism, a partial mitigation of the demographic amplification effect (F-live-demography-01, F-live-demography-02).",
+        "hu": "A szelekció előtti időszak lerövidítése valamelyest csökkenti azon évek számát, amelyek során a zsugorodó és térben egyenetlen kohortok ki vannak téve a korai szelekciós szűrőmechanizmusnak, ami részleges mérséklése a demográfiai felerősítő hatásnak (F-live-demography-01, F-live-demography-02)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Because the underlying family-capital sorting mechanism persists in a retained (even if delayed) six-year track, cohort contraction and geographic polarization will continue to generate diverging selection pressures by area, replicating the t1 baseline dynamic in attenuated form (F-live-demography-01, F-live-demography-02, F-live-demography-03).",
+        "hu": "Mivel az alapul szolgáló családi tőke szerinti szűrőmechanizmus fennmarad a megtartott (bár késleltetett) hatosztályos képzésben, a kohortzsugorodás és a földrajzi polarizáció továbbra is térségenként divergáló felvételi nyomást generál, enyhébb formában megismételve a t1 alapforgatókönyv dinamikáját (F-live-demography-01, F-live-demography-02, F-live-demography-03)."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Retention of the six-year track leaves the geographic concentration of selective programmes in Budapest and a small number of cities intact, meaning the spatial-access dimension of the demographic problem is not resolved by delay alone (F-live-demography-05).",
+        "hu": "A hatosztályos képzés megtartása érintetlenül hagyja a szelektív programok budapesti és néhány városra koncentrálódó földrajzi koncentrációját, tehát a demográfiai probléma térbeli hozzáférési dimenzióját a késleltetés önmagában nem oldja meg (F-live-demography-05)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t3-demography",
+  "provenance_ref": "PV-assess_demography-5168d7556f8bc968",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

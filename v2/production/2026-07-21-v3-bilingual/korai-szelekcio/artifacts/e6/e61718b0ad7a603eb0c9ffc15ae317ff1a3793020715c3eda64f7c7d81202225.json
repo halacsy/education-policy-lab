@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "d9a9b7d234cf9a0c5977a330070630a797755d627b842a174a8d0cd23205f0d1",
+        "response_hash": "d01c88ca9304031981a82f3d401d760c4578a4b04cba783bc4c47f546e07f8f9",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "e267b0814bfc8a96c63efabec66683949ec54a98e98eb5516ee20caa081b09df",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "0e5a86caab6b40aa3ee35d57728b04f612581782dcb89334f4d3b8b920281bda",
+      "1c735f4026dc1080ba29e8798d8dbea0810a199ef144fb4a8d145ac1f3e01c01",
+      "3bfb212928e69a092d89f4e1e4fb11b085c0acdcb45d922ba5771072134fb00f",
+      "5c0f404c10e06f4be45895e9255df178600ec6fcb6c7c54ee52109d8873586f8",
+      "5f51e5d00ca29f2d0244ebaf9ed51e5ddde546f0fddab63b8047e88866e00904",
+      "88a722345b293edccc73e9e2f3269da6878f0db2359dca2a4dea532e495c52d5",
+      "a26095b8071e4687fe67cce12b9add04e421e346494183ee38f94378c624e781",
+      "a775a20a7e04e029a0ad9d9e8b125ab4aed16b33a42fe6a64a8808e448051c6c",
+      "b0d17a66a180be9c0431a1b4be7ad484df0c42a50f0c7e059d7544b648055d85",
+      "bb2f2fe7fd66e68f077aed582a8f8a1dafd91c9c4c560876c01cbb9ba013a943",
+      "c645f5873c49fe7380c914a3cf355af432d71af0fd303353021a8a2d6b1c3dfc",
+      "e6c891fa15aeed2325d1c2c1d99432683df73e7f971068ba30a58c2f40d52abc",
+      "e79d771de5b7a2aea6b50c7c82576ebccc5ddbbc6ab64be5ab0f598827b2df08",
+      "eafe4ca9350e534e8f7d61fb964abe7a15eebe397f151842331e37a00d157f9c",
+      "f12809bf0785f54b8f50c640d4d87e7b21acfa6ff6a872ec1bac1eab344e9f80"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_international_comparison",
+    "prompt_hash": "344d75fa3c0564f403852df5659bd6416857738a3de94404149830770788fc89",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "generator",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-assess_international_comparison-e267b0814bfc8a96",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "87a752fb7ac24049eb20aa4f07562261eabcc179f9ee186c1539edac1e288728",
+  "topic": "korai-szelekcio"
+}

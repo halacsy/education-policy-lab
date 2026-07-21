@@ -1,0 +1,51 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a demographic lens, the baseline proposal is best understood as a counterfactual-generating device rather than a policy: it holds admission capacity fixed while cohort size and spatial distribution shift under it. Given accelerating fertility decline (1.31 TFR in 2025, 72,000 births, 7.1% down year-on-year) and the reversal of the 2011-2021 fertility recovery, the age-10/12 cohorts feeding gimnázium admission will continue contracting structurally, not cyclically. Simultaneously, the geography of that contraction is uneven: growth nodes retain or increase demand pressure while rural/declining periphery settlements lose population share, and over 1,200 of 3,155 settlements already lack any educational institution. Holding capacity constant under this dual dynamic guarantees diverging selection ratios by geography, and the historical precedent of contentious 2000s rural school consolidation suggests unmanaged demographic drift towards under-enrolled rural seats and over-subscribed urban ones is not politically costless.",
+      "hu": "Demográfiai szempontból az alapforgatókönyv leginkább egy kontrafaktuális viszonyítási pontnak tekinthető, nem pedig szakpolitikának: a felvételi kapacitást rögzíti, míg alatta a kohortlétszám és a térbeli eloszlás elmozdul. A gyorsuló termékenységcsökkenés (1,31-es TFR 2025-ben, 72 000 születés, éves szinten 7,1%-os csökkenés) és a 2011–2021 közötti termékenységi javulás megfordulása miatt a gimnáziumi felvételt tápláló 10–12 éves kohorszok tartósan, nem pedig ciklikusan zsugorodnak tovább. Egyidejűleg a zsugorodás térben egyenetlen: a növekvő csomópontokban a kereslet fennmarad vagy nő, míg a vidéki/leszakadó perifériás településeken csökken a népességarány, és a 3155 településből több mint 1200-ban már most sincs semmilyen oktatási intézmény. A kapacitás rögzítése e kettős dinamika mellett garantáltan divergáló felvételi arányokat eredményez térségenként, és a 2000-es évek konfliktusos vidéki iskolakonszolidációs előzménye arra utal, hogy az irányítatlan demográfiai sodródás az alultöltött vidéki és a túljegyzett városi helyek felé politikailag nem költségmentes."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-10"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Serves a genuine analytic function as an explicit counterfactual baseline, allowing the demographic contraction effect to be isolated from the effect of any specific structural reform when evaluating alternatives (F-live-demography-01, F-live-demography-02).",
+        "hu": "Valódi analitikai funkciót tölt be mint explicit kontrafaktuális alapforgatókönyv, lehetővé téve, hogy a demográfiai zsugorodás hatását elkülönítsük bármely konkrét strukturális reform hatásától az alternatívák értékelésekor (F-live-demography-01, F-live-demography-02)."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Explicitly frames the demographic trajectory as the mechanism of change, correctly identifying that cohort shrinkage and urban-rural polarization operate simultaneously and independently of any policy choice (F-live-demography-01, F-live-demography-02, F-live-demography-03).",
+        "hu": "Explicit módon a demográfiai trendet jelöli meg a változás mechanizmusaként, helyesen azonosítva, hogy a kohortcsökkenés és a városi-vidéki polarizáció egyidejűleg és minden szakpolitikai döntéstől függetlenül hat (F-live-demography-01, F-live-demography-02, F-live-demography-03)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Unmanaged capacity mismatch between shrinking rural cohorts and growing urban demand risks replicating the political contention of the 2000s rural school consolidation episode, without any corrective policy to mediate the friction (F-live-demography-10).",
+        "hu": "A zsugorodó vidéki kohortok és a növekvő városi kereslet közötti irányítatlan kapacitás-eltérés azzal a kockázattal jár, hogy megismétli a 2000-es évek vidéki iskolakonszolidációjának politikai konfliktusát, korrekciós szakpolitika nélkül, amely mérsékelhetné a feszültséget (F-live-demography-10)."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Provides no mechanism to address the territorial equity gap documented by over 1,200 settlements lacking educational institutions, leaving structural geographic disadvantage to compound under continued contraction (F-live-demography-04).",
+        "hu": "Nem tartalmaz mechanizmust a több mint 1200 intézmény nélküli település dokumentált területi egyenlőtlenségének kezelésére, így a strukturális földrajzi hátrány a folyamatos zsugorodás mellett tovább halmozódhat (F-live-demography-04)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t1-demography",
+  "provenance_ref": "PV-assess_demography-5168d7556f8bc968",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

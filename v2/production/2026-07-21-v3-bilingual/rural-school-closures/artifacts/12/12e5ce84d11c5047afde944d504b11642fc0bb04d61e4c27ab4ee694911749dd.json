@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal directly addresses network-planning criteria by pairing consolidation with an enforceable, monitored transport guarantee, following a Norway-style size-and-distance framework. However, the cost evidence is asymmetric: US data show large operating-cost reductions from mergers concentrated in instruction and administration, with no documented economies for transportation itself, meaning the very mechanism meant to preserve access carries a separate, unabsorbed fiscal burden. Network resilience implications are contested: Finnish DID evidence links closure to accelerated subsequent depopulation, while Saxony and Swedish studies find no such effect, so the demographic feedback loop this proposal might trigger cannot be resolved from the lens alone.",
+      "hu": "Ez a javaslat közvetlenül kezeli a hálózattervezési kritériumokat azáltal, hogy az összevonást kikényszeríthető, monitorozott közlekedési garanciával párosítja, egy Norvégia-típusú méret-és-távolság keretrendszert követve. A költségbizonyítékok azonban aszimmetrikusak: az amerikai adatok az összevonásokból eredő nagy működésiköltség-csökkenéseket az oktatásra és igazgatásra koncentráltan mutatják, miközben nincs dokumentált megtakarítás magára a közlekedésre, ami azt jelenti, hogy éppen az elérhetőséget megőrző mechanizmus önálló, le nem fedett fiskális terhet hordoz. A hálózati reziliencia-hatások vitatottak: a finn DID-bizonyítékok a bezárást a felgyorsult utólagos elnéptelenedéssel hozzák összefüggésbe, míg a szászországi és svéd vizsgálatok nem találnak ilyen hatást, így az e javaslat által potenciálisan kiváltott demográfiai visszacsatolási hurok e szemlélet alapján önmagában nem dönthető el."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-04"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "A target-size-and-distance framework could be calibrated to Hungary's settlement geography to systematize decisions currently made case by case.",
+        "hu": "A méret-és-távolság célrendszer Magyarország településföldrajzához igazítható, így szisztematizálhatja a jelenleg eseti alapon meghozott döntéseket."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Makes the maintainer's existing legal transport obligation enforceable and monitored, directly targeting the documented lapse in practice rather than assuming compliance.",
+        "hu": "Kikényszeríthetővé és monitorozottá teszi a fenntartó meglévő jogi közlekedési kötelezettségét, közvetlenül célozva a gyakorlatban dokumentált mulasztást, nem pedig a megfelelést feltételezve."
+      },
+      {
+        "en": "Adopts a quantified, precedented size-and-distance planning framework (Norway) rather than ad hoc closure, offering a replicable network-design methodology.",
+        "hu": "Kvantifikált, precedenssel alátámasztott méret-és-távolság tervezési keretrendszert (Norvégia) alkalmaz eseti bezárás helyett, reprodukálható hálózattervezési módszertant kínálva."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If the depopulation-acceleration mechanism observed in Finland applies in Hungary's demographically declining regions (Baranya, Northern Hungary), consolidation could compound rather than stabilize network viability, though this causal link remains contested across national contexts.",
+        "hu": "Ha a Finnországban megfigyelt elnéptelenedés-gyorsító mechanizmus Magyarország demográfiailag zsugorodó régióiban (Baranya, Észak-Magyarország) is érvényes, az összevonás inkább felerősítheti, mint stabilizálhatja a hálózati fenntarthatóságot, bár ez az okozati összefüggés országonként vitatott marad."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "The transport guarantee's costs are not offset by the documented economies of scale, which apply to instruction and administration but not transportation, requiring separate and sustained funding commitment.",
+        "hu": "A közlekedési garancia költségeit nem fedezik a dokumentált méretgazdaságossági hatások, amelyek az oktatásra és igazgatásra vonatkoznak, a közlekedésre nem, így külön és tartós finanszírozási kötelezettségvállalást igényelnek."
+      },
+      {
+        "en": "Danish evidence of adverse short-run achievement effects, concentrated among students from the smallest closing schools, suggests capacity gains at consolidated sites may come with transitional access-quality costs not captured by network metrics alone.",
+        "hu": "A dán bizonyítékok a bezárt legkisebb iskolák tanulóira koncentrálódó rövid távú kedvezőtlen teljesítményhatásokra utalnak, jelezve, hogy az összevont intézmények kapacitásnyeresége olyan átmeneti hozzáférés-minőségi költségekkel járhat, amelyeket a hálózati mutatók önmagukban nem fognak meg."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t2-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-0ae4d558b4639ee0",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a legal and governance perspective, the baseline proposal requires no new legal authority, but it perpetuates a documented accountability gap: the central maintainer (Klebelsberg Center) has full legal capacity over admissions and operations since 2013 centralization, yet explicitly disclaimed any duty to monitor or address segregation in 2014 litigation. Retaining the status quo leaves this gap intact indefinitely, while Hungary's constitutional framework's tension between parental free-choice rights and principal-level gatekeeping remains unresolved. No enforceability mechanism is introduced or removed.",
+      "hu": "Jogi és irányítási szempontból az alapforgatókönyv nem igényel új jogi felhatalmazást, azonban fenntartja egy dokumentált elszámoltathatósági hiányosságot: a központi fenntartó (Klebelsberg Központ) a 2013-as centralizáció óta teljes jogi kapacitással bír a felvételi és működési kérdésekben, mégis 2014-es peres eljárásban kifejezetten elhárította a szegregáció figyelemmel kísérésére vagy kezelésére vonatkozó kötelezettséget. A status quo fenntartása ezt a hiányosságot korlátlan ideig érintetlenül hagyja, míg a szülői szabad iskolaválasztás jogának és az intézményi szelekciós hatalomnak az alkotmányos feszültsége is megoldatlan marad. Sem új érvényesíthetőségi mechanizmus nem kerül bevezetésre, sem meglévő nem szűnik meg."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-legal_and_governance-09",
+      "F-live-legal_and_governance-03",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-04"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "Could serve as an explicit legal-governance counterfactual baseline against which the accountability and rights implications of alternative proposals can be formally measured.",
+        "hu": "Szolgálhat kifejezett jogi-irányítási kontrafaktuális alapvonalként, amelyhez mérve formálisan értékelhetők az alternatív javaslatok elszámoltathatósági és jogi vonatkozásai."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Requires no legislative or administrative change, avoiding any new legal authority conflicts or governance restructuring costs.",
+        "hu": "Nem igényel törvényi vagy igazgatási változást, így nem keletkeznek új jogi felhatalmazási konfliktusok vagy irányítási átalakítási költségek."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued absence of a desegregation mandate on the maintainer with full operational authority may increasingly conflict with anti-discrimination provisions of the Fundamental Law as segregation metrics worsen.",
+        "hu": "A teljes működési hatalommal bíró fenntartóra vonatkozó deszegregációs kötelezettség további hiánya egyre inkább ütközhet az Alaptörvény megkülönböztetés-mentességi rendelkezéseivel, ha a szegregációs mutatók tovább romlanak."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Preserves the documented accountability gap in which the central maintainer holds legal capacity but no mandated desegregation obligation, despite explicit disclaimer of such duty in 2014 litigation.",
+        "hu": "Fenntartja a dokumentált elszámoltathatósági hiányosságot, amelyben a központi fenntartó jogi kapacitással bír, de nincs kötelező deszegregációs feladata, noha 2014-es peres eljárásban kifejezetten elhárította ezt a kötelezettséget."
+      },
+      {
+        "en": "Leaves unresolved the structural tension between the Fundamental Law's parental choice and non-discrimination provisions and the Public Education Act's principal-level selection gatekeeping.",
+        "hu": "Megoldatlanul hagyja az Alaptörvény szülői választási jogot és a megkülönböztetés-mentességet biztosító rendelkezései, valamint a köznevelési törvény intézményvezetői szintű szelekciós kapuőrzése közötti strukturális feszültséget."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t1-legal_and_governance",
+  "provenance_ref": "PV-assess_legal_and_governance-e15f033143493e1d",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

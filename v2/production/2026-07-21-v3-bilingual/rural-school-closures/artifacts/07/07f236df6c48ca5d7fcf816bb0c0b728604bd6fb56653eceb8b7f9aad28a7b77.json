@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The proposal's sequencing logic (size-and-distance framework, enforceable transport) is implementable in principle but depends on actor capacities and cost structures not yet demonstrated in the Hungarian context. The transport-enforcement mechanism directly targets a documented delivery gap, but the claim that consolidation yields savings is only partially supported: cost declines apply to instruction/administration, not transport, so the fiscal case for the transport guarantee itself remains unproven and must be separately resourced. The demographic side-effect risk (contested Finnish evidence vs. no-effect Saxon/Swedish evidence) means monitoring for population impacts is essential but the causal mechanism to monitor is itself uncertain.",
+      "hu": "A javaslat szekvenálási logikája (méret-távolság keretrendszer, kikényszeríthető közlekedés) elvben megvalósítható, de olyan szereplői kapacitásoktól és költségstruktúráktól függ, amelyek a magyar kontextusban még nem bizonyítottak. A közlekedés-kikényszerítési mechanizmus közvetlenül egy dokumentált megvalósítási hiányosságot céloz meg, de az az állítás, hogy a konszolidáció megtakarítást eredményez, csak részben megalapozott: a költségcsökkenés az oktatásra/igazgatásra vonatkozik, nem a közlekedésre, így magának a közlekedési garanciának a fiskális indoka bizonyítatlan és külön forrásigényes. A demográfiai mellékhatás kockázata (vitatott finn bizonyíték a szász/svéd nullhatás-eredménnyel szemben) azt jelenti, hogy a népességhatások monitorozása elengedhetetlen, de a monitorozandó okozati mechanizmus maga is bizonytalan."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-07"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "A phased, monitored rollout modeled on Norway's approach could serve as a pilot to test the contested depopulation hypothesis directly within Hungarian conditions before nationwide application.",
+        "hu": "A norvég megközelítésen alapuló, fokozatos, monitorozott bevezetés pilotként szolgálhatna a vitatott elnéptelenedési hipotézis közvetlen teszteléséhez magyar körülmények között, mielőtt országos alkalmazásra kerülne."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Directly addresses a documented implementation lapse (transport obligation dependent on parental complaint rather than systematic monitoring) by making enforcement structural rather than reactive.",
+        "hu": "Közvetlenül kezel egy dokumentált végrehajtási hiányosságot (a közlekedési kötelezettség szülői panasztól függése a szisztematikus monitorozás helyett) azáltal, hogy az érvényesítést strukturálissá teszi a reaktív helyett."
+      },
+      {
+        "en": "Draws on an internationally tested sequencing template (Norway) with quantified outcomes, giving a concrete benchmark for pilotability and phased rollout.",
+        "hu": "Egy nemzetközileg tesztelt, számszerűsített eredményekkel bíró szekvenálási mintát (Norvégia) alkalmaz, konkrét referenciapontot adva a pilot-lehetőséghez és a fokozatos bevezetéshez."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Danish evidence of adverse short-run achievement effects concentrated among students from the smallest schools suggests a need for transitional pedagogical safeguards that the mechanism description does not currently include.",
+        "hu": "A dán bizonyítékok a legkisebb iskolákból érkező diákok körében koncentrálódó rövid távú, kedvezőtlen teljesítményhatásokról olyan átmeneti pedagógiai biztosítékok szükségességére utalnak, amelyeket a mechanizmus leírása jelenleg nem tartalmaz."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Economies-of-scale evidence does not extend to transportation costs, undermining the assumption that consolidation savings can help fund the transport guarantee without additional dedicated financing.",
+        "hu": "A méretgazdaságossági bizonyítékok nem terjednek ki a közlekedési költségekre, ami aláássa azt a feltételezést, hogy a konszolidációs megtakarítások kiegészítő célzott finanszírozás nélkül is fedezhetnék a közlekedési garanciát."
+      },
+      {
+        "en": "No proposed failure-containment mechanism if consolidation triggers the population decline observed in the contested Finnish study, since the causal link is disputed rather than resolved.",
+        "hu": "Nincs javasolt hibakorlátozási mechanizmus arra az esetre, ha a konszolidáció kiváltja a vitatott finn tanulmányban megfigyelt népességcsökkenést, mivel az okozati kapcsolat vitatott, nem eldöntött."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t2-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-e1a507cf1927a894",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

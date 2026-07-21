@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-education_finance-01",
+      "A-live-education_finance-02",
+      "A-live-education_finance-03",
+      "A-live-education_finance-04"
+    ],
+    "claim": {
+      "en": "A Finnish difference-in-differences study (2010–2018) using DID regression and matching methods found that after school closure, the population of the surrounding community decreased more than before closure, concluding that school closures raise questions about the broader vitality and development of the municipality. This suggests a potential feedback loop: closure decisions justified by low enrollment may cause further enrollment and population decline.",
+      "hu": "A finn különbség-a-különbségek tanulmány (2010–2018) DID-regresszió és illesztési módszerek felhasználásával azt találta, hogy az iskolazárás után a környező közösség népessége jobban csökkent, mint a zárás előtt, arra a következtetésre jutva, hogy az iskolazárások kérdéseket vetnek fel a község tágabb vitálisságáról és fejlesztéséről. Ez egy lehetséges visszacsatolási hurkot sugall: az alacsony beiratkozás által indokolt zárási döntések további beiratkozás és népességcsökkenéshez vezethetnek."
+    },
+    "context": {
+      "en": "Fresh live research through the Education finance lens",
+      "hu": "Friss, élő kutatás a(z) oktatási finanszírozás nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "weak",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Study is Finland-specific; external validity to Hungary is limited by differences in institutional context, labor market, transport infrastructure, and cultural attachment to local schools.",
+        "hu": "A tanulmány Finnország-specifikus; a Magyarország-ra való külső validitás korlátozott az intézményi kontextus, munkaerőpiac, közlekedési infrastruktúra és a helyi iskolákhoz való kulturális ragaszkodás különbségei miatt."
+      },
+      {
+        "en": "No Hungary-specific causal evidence of closure-driven depopulation was located; the feedback-loop mechanism is suggestive by analogy, not directly measured in Hungarian settings.",
+        "hu": "Nem találtunk Magyar depopuláció által okozott iskolazárás közvetlen okozati bizonyítékát; a visszacsatolási hurok mechanizmusa analógiával sugalmazó, nem közvetlenül mérhető magyar beállításban."
+      },
+      {
+        "en": "Causal direction: the study shows correlation and temporal sequence (closure precedes further decline) but does not rule out unmeasured confounders (e.g., local economic shocks) that drive both closure and depopulation independently.",
+        "hu": "Okozati irány: a tanulmány korrelációt és időbeli sorrendet mutat (a zárás megelőzi a további csökkenést), de nem zárja ki a méretlen zavarókat (pl. helyi gazdasági sokkokat), amelyek függetlenül vezetnek az iskolazáráshoz és depopulációhoz."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-education_finance-08"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-02"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-education_finance-08",
+  "provenance_ref": "PV-research_education_finance-8952009a100f54f9",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

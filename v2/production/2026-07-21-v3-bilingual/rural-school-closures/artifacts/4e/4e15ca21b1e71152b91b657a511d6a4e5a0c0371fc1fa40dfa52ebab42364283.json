@@ -1,0 +1,35 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "medium",
+    "method": {
+      "en": "Structured household survey across a representative sample of single-school depopulating villages that have undergone or are candidates for church-transfer, capturing stated support/opposition and underlying reasons (religious preference, school quality, transportation, local attachment), stratified by whether an alternative provider is geographically accessible.",
+      "hu": "Strukturált háztartási felmérés az egyetlen iskolával rendelkező, elnéptelenedő falvak reprezentatív mintáján, amelyek egyházi átadáson mentek keresztül vagy annak jelöltjei, rögzítve a kimondott támogatást/ellenzést és az alapul szolgáló okokat (vallási preferencia, iskolai minőség, közlekedés, helyi kötődés), rétegezve aszerint, hogy elérhető-e földrajzilag alternatív fenntartó."
+    },
+    "proposal_refs": [
+      "TP-live-t5"
+    ],
+    "question": {
+      "en": "What proportion of parents in depopulating single-school villages support versus oppose church-school transfer of their local school, and to what extent does the parental veto function as substantive choice versus procedural consent given the absence of an alternative provider?",
+      "hu": "A elnéptelenedő, egyetlen iskolával rendelkező falvakban a szülők hány százaléka támogatja, illetve ellenzi a helyi iskola egyházi átadását, és a szülői vétó mennyiben működik tényleges választásként szemben az eljárási beleegyezéssel, tekintve, hogy nincs alternatív fenntartó?"
+    },
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-02",
+      "U-live-legal_and_governance-01",
+      "U-live-t5-01",
+      "U-live-t5-02"
+    ],
+    "why_it_matters": {
+      "en": "TP-live-t5 relies entirely on the parental veto as its equity safeguard, but the evidence shows rising church-enrollment share (60% 2001-2011, 47% 2011-2014) predating and outpacing this mechanism, raising the concern that consent is nominal; without survey data on actual parental preferences and reasoning, the proposal's core legitimacy claim cannot be tested.",
+      "hu": "A TP-live-t5 teljes mértékben a szülői vétóra támaszkodik mint esélyegyenlőségi biztosítékra, de a bizonyítékok az egyházi beiskolázási arány növekedését mutatják (60% 2001-2011, 47% 2011-2014), amely megelőzi és túlszárnyalja ezt a mechanizmust, felvetve, hogy a beleegyezés csak formális; a szülői preferenciákra és indokokra vonatkozó felmérési adatok nélkül a javaslat központi legitimációs állítása nem tesztelhető."
+    }
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "RQ-live-production-04",
+  "provenance_ref": "PV-build_research_agenda-a8c1800465d8c95c",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

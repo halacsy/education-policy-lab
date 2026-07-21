@@ -1,0 +1,135 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02"
+    ],
+    "change_level": "system",
+    "costs": [
+      {
+        "en": "No new fiscal cost beyond current operating budget, but foregoes any efficiency gains from capacity rebalancing.",
+        "hu": "Nincs új fiskális költség a jelenlegi működési költségvetésen felül, de lemond a kapacitás-átcsoportosításból eredő hatékonysági nyereségről."
+      }
+    ],
+    "equity_impact": {
+      "en": "Negative by omission: absent any corrective mechanism, documented socioeconomic and Roma segregation is expected to persist or worsen, since the drivers (family-capital sorting, geographic concentration of programs, unchanged admissions criteria) remain untouched.",
+      "hu": "Kihagyás miatt negatív: korrekciós mechanizmus hiányában a dokumentált társadalmi-gazdasági és roma szegregáció várhatóan fennmarad vagy romlik, mivel a mögötte álló tényezők (családi tőke alapú szelekció, a programok földrajzi koncentrációja, változatlan felvételi kritériumok) érintetlenek maradnak."
+    },
+    "evidence_status": "strong",
+    "expected_benefits": [
+      {
+        "en": "Preserves existing institutional stability and avoids transition disruption or political conflict associated with structural change.",
+        "hu": "Megőrzi a meglévő intézményi stabilitást, elkerülve a strukturális változáshoz kapcsolódó átállási zavarokat és politikai konfliktusokat."
+      },
+      {
+        "en": "Provides a documented reference trajectory against which the costs and benefits of active reform proposals can be measured.",
+        "hu": "Dokumentált referencia-trajektóriát biztosít, amelyhez az aktív reformjavaslatok költségei és hasznai mérhetők."
+      }
+    ],
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-09",
+      "F-live-demography-10",
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06",
+      "F-live-hungarian_education_system-05",
+      "F-live-portuguese_reform-02"
+    ],
+    "goal": {
+      "en": "Establish an explicit no-new-policy counterfactual against which structural alternatives can be judged, tracing what happens to selection ratios, segregation, and geographic access if capacity is held roughly constant while cohorts shrink.",
+      "hu": "Egy explicit, nulla-intézkedéses viszonyítási alap felállítása, amelyhez a strukturális alternatívák mérhetők; nyomon követi, mi történik a felvételi arányokkal, a szegregációval és a földrajzi hozzáféréssel, ha a kapacitás nagyjából állandó marad, míg a korosztályok zsugorodnak."
+    },
+    "implementation_steps": [
+      {
+        "action": {
+          "en": "Continue current admissions rules and threshold-score guidance without legislative or administrative change.",
+          "hu": "A jelenlegi felvételi szabályok és ponthatár-iránymutatások folytatása jogalkotási vagy igazgatási változás nélkül."
+        },
+        "actor": {
+          "en": "Ministry of Education and Child Affairs",
+          "hu": "Oktatási és Gyermekügyi Minisztérium"
+        },
+        "timeline": {
+          "en": "Ongoing, no defined end date.",
+          "hu": "Folyamatos, meghatározott végdátum nélkül."
+        }
+      },
+      {
+        "action": {
+          "en": "Maintain existing capacity allocations across urban and rural 6/8-year programs without rebalancing.",
+          "hu": "A jelenlegi kapacitásallokációk fenntartása a városi és vidéki 6/8 évfolyamos programok között, átcsoportosítás nélkül."
+        },
+        "actor": {
+          "en": "Klebelsberg Center and regional school-district centers",
+          "hu": "Klebelsberg Központ és a területi tankerületi központok"
+        },
+        "timeline": {
+          "en": "Ongoing, annually reviewed only for routine administration.",
+          "hu": "Folyamatos, évente csak rutinszerű igazgatási felülvizsgálattal."
+        }
+      },
+      {
+        "action": {
+          "en": "Track and publish annual data on applicant-to-seat ratios by settlement type and segregation indices to document baseline drift.",
+          "hu": "Éves adatok nyomon követése és közzététele a jelentkező/hely arányokról településtípus szerint, valamint szegregációs indexekről az alapforgatókönyv elmozdulásának dokumentálására."
+        },
+        "actor": {
+          "en": "National statistical and education research bodies",
+          "hu": "Nemzeti statisztikai és oktatáskutatási szervek"
+        },
+        "timeline": {
+          "en": "Annually, starting with the next admissions cycle.",
+          "hu": "Évente, a következő felvételi ciklustól kezdve."
+        }
+      }
+    ],
+    "mechanisms": [
+      {
+        "en": "Shrinking age-10 and age-12 cohorts feeding gimnázium admissions reduce absolute applicant numbers nationally even as urban demand concentration intensifies (F-live-demography-01, F-live-demography-02).",
+        "hu": "A gimnáziumi felvételt megalapozó 10 és 12 éves korosztályok zsugorodása országosan csökkenti a jelentkezők abszolút számát, miközben a városi kereslet koncentrációja tovább erősödik (F-live-demography-01, F-live-demography-02)."
+      },
+      {
+        "en": "Geographic polarization (growth urban nodes vs. disadvantaged declining rural peripheries) produces simultaneous extreme oversubscription (9.7x, 9.4x at flagship Budapest schools) and unfilled rural seats (Debrecen, Miskolc, Encs, Pécs) (F-live-demography-03, F-live-school_network_planning-04, F-live-school_network_planning-05).",
+        "hu": "A földrajzi polarizáció (növekvő városi csomópontok vs. hátrányos, csökkenő vidéki peremterületek) egyidejűleg okoz extrém túljelentkezést (9,7x, 9,4x a budapesti élcsapat-iskoláknál) és be nem töltött vidéki helyeket (Debrecen, Miskolc, Encs, Pécs) (F-live-demography-03, F-live-school_network_planning-04, F-live-school_network_planning-05)."
+      },
+      {
+        "en": "Stagnant capacity despite documented enormous demand suggests continued policy steering toward vocational education rather than supply expansion, holding segregation dynamics in place (F-live-school_network_planning-06).",
+        "hu": "A dokumentált óriási kereslet ellenére stagnáló kapacitás azt jelzi, hogy a szakpolitika továbbra is a szakképzés felé irányít, nem a kínálat bővítése felé, ami helyben tartja a szegregációs dinamikákat (F-live-school_network_planning-06)."
+      },
+      {
+        "en": "Family socioeconomic status continues to predict track entry beyond prior test scores, and segregation (highest in EU, 2022 PISA) persists without corrective mechanism (F-live-hungarian_education_system-05, F-live-portuguese_reform-02).",
+        "hu": "A családi társadalmi-gazdasági státusz továbbra is előre jelzi a szelektív képzésbe kerülést a korábbi teszteredményeken túlmenően is, és a szegregáció (az EU-ban a legmagasabb, 2022-es PISA) korrekciós mechanizmus nélkül fennmarad (F-live-hungarian_education_system-05, F-live-portuguese_reform-02)."
+      }
+    ],
+    "origin": "live_generation",
+    "risks": [
+      {
+        "en": "Continued and likely worsening segregation given Hungary's already highest-in-EU segregation ranking, with no corrective mechanism in place (F-live-portuguese_reform-02, F-live-equity_and_social_mobility-03).",
+        "hu": "Folytatódó és valószínűleg tovább romló szegregáció, tekintve, hogy Magyarország szegregációs rangsora már most az EU-ban a legmagasabb, korrekciós mechanizmus nélkül (F-live-portuguese_reform-02, F-live-equity_and_social_mobility-03)."
+      },
+      {
+        "en": "Growing mismatch between urban oversubscription and rural under-enrollment could produce inefficient use of public capacity and generate localized political friction reminiscent of prior rural school consolidation disputes (F-live-demography-10).",
+        "hu": "A városi túljelentkezés és a vidéki alultelítettség közötti egyre nagyobb eltérés a közkapacitás nem hatékony felhasználásához vezethet, és a korábbi vidéki iskola-összevonási viták jellegéhez hasonló lokális politikai feszültségeket generálhat (F-live-demography-10)."
+      }
+    ],
+    "title": {
+      "en": "Baseline: retain tracks unchanged, let demography and market forces play out",
+      "hu": "Alapforgatókönyv: a képzési szerkezet változatlan fenntartása, a demográfia és a piaci erők hatásainak szabad lefolyása"
+    },
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02"
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-derive_transformations-29a4ece022216463",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

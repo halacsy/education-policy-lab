@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Full structural abolition would remove the network-level driver of the current geographic mismatch by eliminating the age-10/12 selection point that produces both flagship-school oversubscription and peripheral under-enrollment, but the network-planning lens flags that converting roughly 25,962 students and over 190 differentiated institutions (100 eight-grade schools plus additional six-grade institutions) into a uniform comprehensive structure is a major capacity-reallocation exercise whose feasibility this lens cannot itself certify. The historical precedent of the 1995 amendment shows that policy signals alone, without full abolition, already triggered voluntary reversion by some municipalities, indicating both that the network is signal-sensitive and that abrupt structural change carries genuine transition risk at the institutional level, not just the political level emphasized in the proposal's own risk section.",
+      "hu": "A teljes strukturális megszüntetés hálózati szinten felszámolná a jelenlegi földrajzi egyenetlenség fő mozgatóját azáltal, hogy megszünteti a 10/12 éves kori szelekciós pontot, amely egyszerre okozza az élgimnáziumok túljelentkezését és a periférikus alulkihasználtságot; a hálózattervezési nézőpont azonban rámutat, hogy körülbelül 25 962 tanuló és több mint 190 differenciált intézmény (100 nyolcosztályos iskola plusz további hatosztályos intézmények) egységes, átfogó szerkezetté történő átalakítása jelentős kapacitás-átcsoportosítási feladat, amelynek megvalósíthatóságát maga ez a nézőpont nem tudja igazolni. Az 1995-ös törvénymódosítás történelmi előzménye azt mutatja, hogy már önmagában a szakpolitikai jelzések – teljes megszüntetés nélkül is – önkéntes visszatéréshez vezettek egyes településeken, jelezve, hogy a hálózat érzékeny a jelzésekre, és hogy a hirtelen strukturális változás valódi átállási kockázatot hordoz intézményi szinten is, nem csak a javaslat saját kockázati részében kiemelt politikai szinten."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-10"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Abolition could be sequenced to convert oversubscribed urban flagship capacity into expanded comprehensive-school capacity precisely where demand is documented as highest, potentially improving overall network utilization.",
+        "hu": "A megszüntetés úthálózatilag úgy is ütemezhető, hogy a túljelentkezett városi élintézmények kapacitását éppen ott alakítsák át kibővített komprehenzív iskolai kapacitássá, ahol a kereslet a legmagasabbnak dokumentált, ami javíthatja a hálózat általános kihasználtságát."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Directly targets the mechanism (early selection age) that the network evidence associates with both oversubscription concentration and socioeconomic skew, aligning structural intent with observed network patterns.",
+        "hu": "Közvetlenül a mechanizmust (korai szelekciós életkor) célozza meg, amelyet a hálózati bizonyítékok mind a túljelentkezés koncentrációjával, mind a szocioökonómiai eltéréssel összefüggésbe hoznak, így a strukturális szándék összhangban van a megfigyelt hálózati mintákkal."
+      },
+      {
+        "en": "Would, if implemented network-wide, eliminate the choice-based catchment logic identified as distinct from district-based enrollment and implicated in segregation via selective commuting.",
+        "hu": "Hálózati szinten megvalósítva megszüntetné a választás-alapú beiskolázási körzeti logikát, amelyet a bizonyítékok elkülönítenek a körzet-alapú beiskolázástól, és amelyet a szelektív ingázás révén a szegregációval hoznak összefüggésbe."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Given documented path-dependency (F-live-school_network_planning-10), a change of this scale risks a network in flux for years, during which capacity signals to municipalities may be inconsistent or reversed before stabilizing.",
+        "hu": "A dokumentált útfüggőségre (F-live-school_network_planning-10) tekintettel egy ilyen mértékű változás azzal a kockázattal jár, hogy a hálózat éveken át átalakulásban marad, miközben a településeknek küldött kapacitási jelzések inkonzisztensek lehetnek vagy megfordulhatnak, mielőtt stabilizálódnának."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Provides no explicit account of how 100+ eight-grade and additional six-grade institutions, plus their physical facilities and staff, would be converted or repurposed, leaving the geographic capacity-transition pathway unspecified.",
+        "hu": "Nem ad kifejezett magyarázatot arra, hogy a 100-nál több nyolcosztályos és a további hatosztályos intézmény, valamint azok fizikai infrastruktúrája és személyzete hogyan alakulna át vagy kerülne más célra, így a földrajzi kapacitás-átállási útvonal kidolgozatlan marad."
+      },
+      {
+        "en": "The 1995 precedent (F-live-school_network_planning-10) shows network supply is policy-signal-sensitive, meaning uncertainty during a multi-year abolition process could itself trigger disorderly local reversions or preemptive institutional changes not accounted for in the proposal's risk list.",
+        "hu": "Az 1995-ös előzmény (F-live-school_network_planning-10) azt mutatja, hogy a hálózati kínálat érzékeny a szakpolitikai jelzésekre, ami azt jelenti, hogy egy több évig tartó megszüntetési folyamat bizonytalansága önmagában rendezetlen helyi visszalépéseket vagy előzetes intézményi változásokat indíthat el, amelyeket a javaslat kockázati listája nem vesz figyelembe."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t2-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-b071742057a48070",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Viewed through the Hungarian institutional lens, this baseline preserves the existing governance architecture exactly as documented: ministerial-level centralization of closure decisions via the 60 tankerület centers, the bifurcated kindergarten/primary track, and the narrow parental veto limited to church-transfer cases. It does not introduce any new selection or sorting mechanism, but it also leaves unaddressed the institutional thinning already observed (over 1,200 of 3,155 settlements lacking public education institutions by 2024) and offers no administrative linkage between demographic data and network planning. The pending 2026 diagnostic review of the Klebelsberg Center adds structural uncertainty rather than resolution, since its policy bearing is undetermined.",
+      "hu": "A magyar intézményi lencsén keresztül nézve ez az alapforgatókönyv pontosan megőrzi a dokumentált irányítási architektúrát: a bezárási döntések miniszteri szintű centralizációját a 60 tankerületi központon keresztül, az óvodai/általános iskolai pálya kettéválását, és a szülői vétó szűk körét, amely csak az egyházi átadás eseteire korlátozódik. Nem vezet be új szelekciós vagy szűrési mechanizmust, de nem is kezeli a már megfigyelt intézményi ritkulást (2024-re a 3155 településből több mint 1200-ban nincs közoktatási intézmény), és nem biztosít semmilyen igazgatási kapcsolatot a demográfiai adatok és a hálózattervezés között. A Klebelsberg Központ folyamatban lévő, 2026-os diagnosztikai felülvizsgálata inkább strukturális bizonytalanságot ad, mint megoldást, mivel annak szakpolitikai kimenete még nem határozott."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-06",
+      "F-live-hungarian_education_system-10"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "The pending 2026 Klebelsberg Center diagnostic review could, if integrated with future policy, surface transparency or efficiency findings relevant to closure governance, though this is not guaranteed under the baseline itself.",
+        "hu": "A Klebelsberg Központ folyamatban lévő 2026-os felülvizsgálata, ha egy jövőbeli szakpolitikába integrálódik, feltárhat a bezárási irányítás szempontjából releváns átláthatósági vagy hatékonysági eredményeket, bár ez magában az alapforgatókönyvben nem garantált."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Requires no administrative change, so it is by definition fully compatible with existing governance structures and introduces no implementation friction.",
+        "hu": "Semmilyen igazgatási változást nem igényel, ezért definíció szerint teljesen kompatibilis a meglévő irányítási struktúrákkal, és nem okoz végrehajtási súlypontot."
+      },
+      {
+        "en": "Retains the one existing local safeguard (parental veto on church transfer) without modification, preserving whatever protective function it currently serves.",
+        "hu": "Változatlanul megtartja az egyetlen jelenlegi lokális védőmechanizmust (szülői vétó az egyházi átadásnál), megőrizve annak jelenlegi védelmi funkcióját."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued ad hoc, case-by-case closures risk recurring community disruption of the Garab type, with no systemic safeguard preventing avoidable harm.",
+        "hu": "A folytatódó eseti, ügyről ügyre történő bezárások a Garab-típusú közösségi zavarok megismétlődésének kockázatát hordozzák, anélkül hogy bármilyen rendszerszintű védőmechanizmus elkerülhetővé tenné az elkerülhető károkat."
+      },
+      {
+        "en": "If the 2026 diagnostic review yields recommendations not integrated with any coherent policy direction, uncoordinated institutional drift becomes more likely.",
+        "hu": "Ha a 2026-os diagnosztikai felülvizsgálat olyan javaslatokat eredményez, amelyeket nem integrálnak semmilyen koherens szakpolitikai irányba, nagyobb az esélye a koordinálatlan intézményi elsodródásnak."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Provides no mechanism connecting demographic microdata to proactive tankerület-level planning, leaving closure decisions reactive by institutional design.",
+        "hu": "Nem biztosít mechanizmust a demográfiai mikroadatok és a proaktív tankerületi tervezés összekapcsolására, így a bezárási döntések intézményi felépítésük miatt reaktívak maradnak."
+      },
+      {
+        "en": "The bifurcated kindergarten/primary governance track remains unaddressed, meaning coordination gaps between locally-run kindergartens and centrally-run primary schools persist unmitigated.",
+        "hu": "Az óvodai és általános iskolai irányítás kettéválása kezeletlen marad, azaz a lokálisan fenntartott óvodák és a központilag irányított iskolák közötti koordinációs hiányosságok tovább fennállnak."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t1-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-76283b5befd7fe2f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-finnish_reform-01",
+      "A-live-finnish_reform-02",
+      "A-live-finnish_reform-03",
+      "A-live-finnish_reform-04"
+    ],
+    "claim": {
+      "en": "Using difference-in-differences regression combined with matching methods over 2010–2018, one study found that in Finland, after school closure, the surrounding community population decreased more than before closure, with slightly more negative impacts in rural communities, suggesting a higher risk of self-reinforcing population decline.",
+      "hu": "Különbség-különbség regresszió és egyeztetési módszerek alkalmazásával 2010–2018 között egy tanulmány azt találta, hogy Finnország, az iskola bezárása után, a környező közösség népessége nagyobb mértékben csökkent, mint a bezárás előtt, és vidéki közösségekben enyhén negatívabb hatások voltak, amely az önmegerősítő népesség csökkenés magasabb kockázatát sugallja."
+    },
+    "context": {
+      "en": "Fresh live research through the Finnish system reform lens",
+      "hu": "Friss, élő kutatás a(z) Finn rendszerreform nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "finnish_reform"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The study uses observational data with matching and controls; reverse causality cannot be fully excluded—declining villages may lose both population and schools for shared underlying structural reasons (e.g., employment collapse, agricultural decline) that the matching and regression adjustment do not fully capture.",
+        "hu": "A tanulmány megfigyelési adatokat használ, egyeztetés és kontrollok mellett; a fordított oksizálás nem zárható ki teljesen – csökkenő falvak elveszíthetik a népességet és az iskolákat megosztott alapvető strukturális okok miatt (pl. munkahelyek összeomlása, mezőgazdaság csökkenés), amelyeket az egyeztetés és regressziós korrekció nem teljes mértékben rögzít."
+      },
+      {
+        "en": "A single quasi-experimental study, even with matching, cannot establish causality with the certainty of a randomized experiment or fully exogenous natural experiment; the result should be treated as suggestive rather than definitive.",
+        "hu": "Egyetlen kvázi-kísérleti tanulmány, még az egyeztetéssel is, nem tudja az oksizálást olyan biztossággal megállapítani, mint egy randomizált kísérlet vagy teljes mértékben exogén természetes kísérlet; az eredményt sugalmazóként kellene kezelni, nem pedig véglégesként."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-finnish_reform-05"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-finnish_reform-01",
+      "U-live-finnish_reform-02",
+      "U-live-finnish_reform-03",
+      "U-live-finnish_reform-04"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-finnish_reform-05",
+  "provenance_ref": "PV-research_finnish_reform-149cf03dc2c2bf2e",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

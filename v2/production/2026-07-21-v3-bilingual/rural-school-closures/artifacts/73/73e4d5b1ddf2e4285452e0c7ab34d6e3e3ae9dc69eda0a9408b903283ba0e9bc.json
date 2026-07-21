@@ -1,0 +1,51 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "ac3ede282729ec955671ec97c97c1624fe7e648d5c023e48ab6e63198dff2d11",
+        "response_hash": "2a6afafb385fcf6d810e13031608c1e5541498cbb390ca368eb3e12bb66acf3e",
+        "stage": "search",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "55804e5714889cbd3029b943d2d651d83e3a21af3750056c44b5d8636793f588",
+        "response_hash": "9dfa16287de631dea336f495869570245b2f74e650524191d98578f01c0449c1",
+        "stage": "analysis",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "149cf03dc2c2bf2e5520b23e71747d2ce5fbf06de7cc110fd1ef93b1b5ae9553",
+    "generation_parameters": {
+      "analysis_max_tokens": 16000,
+      "search_max_tokens": 10000
+    },
+    "input_artifact_hashes": [
+      "8bb6696563e13d9938433b1252f43ab97855c4bc687219d82f9ce6e72785e5d5",
+      "f263c5c501c08244f924e6f84f2ef804a8a93b3f4b240e1f02f04f39977165db"
+    ],
+    "model": "anthropic-task-ladder",
+    "node_id": "research_finnish_reform",
+    "prompt_hash": "4a3c2037df3353d1d5e0b5a43f6e06ed0a346b1b45d7c66fc9da6a3765670826",
+    "provider": "anthropic",
+    "relevant_config_hash": "77acb284453957afd4436ccc6e8a029591e6f7b57781b9f7dfaf6443a09957e5",
+    "role": "research",
+    "run_plan_hash": "d87ac5722d93cdbe99d8ee2900fdb0a26934e405e23a5f4862dc9d8e9590a60b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/assumption.schema.json": "a2c90cb84524046f123b798eeafcbe30a872987b4f63a19ba25467b0a22fcec2",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/finding.schema.json": "7f08de87a5b809e4ebbdeb42e6c2265b5686984c0b71a01af896fea5cb670729",
+      "schemas/v2/source.schema.json": "0beda71026c753e0dcff6875401aa70ffd52fdbb6e81e9d68d9b1035b9dd085f",
+      "schemas/v2/uncertainty.schema.json": "e1e32dd216fcaa6af59322ed1fb36aed2bee508d91c17d3879d3daec28c9edd4"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "PV-research_finnish_reform-149cf03dc2c2bf2e",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "855e7ce1d83b26e32fe1a776b755b95b5f77e45d30daadd74caf90a7b95708dc",
+  "topic": "rural-school-closures"
+}

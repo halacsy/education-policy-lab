@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The split model preserves early-grade local access—plausibly important for the youngest and most locally-anchored pupils—while consolidating upper grades. This is administratively feasible since multi-grade classes are already legally sanctioned. However, this design is functionally analogous to Hungary's historical practice of limiting within-school segregation by reducing parallel classes rather than closing schools, which the evidence links to strong between-settlement segregation. If upper-grade consolidation routing is not deliberately designed against sorting, the same population that historically lost out from between-settlement sorting could face it again, only shifted to the point of upper-grade transition rather than school entry.",
+      "hu": "A megosztott modell megőrzi az alsó tagozatos helyi hozzáférést – ami feltehetően fontos a legkisebb és leginkább helyben gyökerező tanulók számára –, míg az felső tagozatot összevonja. Ez adminisztratívan megvalósítható, mivel az összevont osztályok már jogilag szabályozottak. Ugyanakkor ez a kialakítás funkcionálisan hasonló Magyarország történelmi gyakorlatához, amely a párhuzamos osztályok csökkentésével, nem pedig iskolabezárással korlátozta az iskolán belüli szegregációt – ezt a bizonyítékok erős települések közötti szegregációval hozzák összefüggésbe. Ha a felső tagozatos összevonási útvonalak kialakítása nem szándékosan a szelekció ellen történik, ugyanaz a populáció, amely történelmileg vesztese volt a települések közötti szelekciónak, ismét azzá válhat, csak az áthelyezés az iskolakezdés helyett a felső tagozatba lépés pontjára tevődik át."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-03"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      {
+        "en": "Repurposing consolidated upper-grade routing design explicitly to avoid concentrating disadvantaged pupils in specific receiving schools could convert this proposal's structural risk into a deliberate desegregation lever.",
+        "hu": "A felső tagozatos összevonási útvonaltervezés kifejezett átalakítása annak elkerülésére, hogy a hátrányos helyzetű tanulók bizonyos fogadó iskolákban koncentrálódjanak, e javaslat strukturális kockázatát szándékos deszegregációs eszközzé alakíthatná át."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Low administrative friction, since multi-grade classes require no new legal authorization within the existing Public Education Act framework.",
+        "hu": "Alacsony adminisztratív ellenállás, mivel az összevont osztályok nem igényelnek új jogi felhatalmazást a hatályos köznevelési törvény keretein belül."
+      },
+      {
+        "en": "Preserves local access specifically for the youngest pupils, potentially reducing early-childhood transport burden and its associated risks for the most locally-dependent families.",
+        "hu": "Megőrzi a helyi hozzáférést kifejezetten a legkisebb tanulók számára, ami potenciálisan csökkenti a kora gyermekkori szállítási terhet és az ezzel járó kockázatokat a leginkább helyben kötött családok esetében."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Without explicit design safeguards, upper-grade consolidation could recreate or intensify the between-settlement segregation pattern that Hungary's small-school-preservation history already produced.",
+        "hu": "Kifejezett tervezési garanciák nélkül a felső tagozatos összevonás újrateremtheti vagy felerősítheti azt a települések közötti szegregációs mintát, amelyet Magyarország kisiskola-megőrzési múltja már eddig is előidézett."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Directly analogous to a historical Hungarian pattern (reducing parallel classes rather than closing schools) that reduced within-school segregation but is associated with strong between-settlement segregation; the split model risks reproducing this trade-off at the upper-grade transition point unless explicitly counter-designed.",
+        "hu": "Közvetlenül párhuzamos egy történelmi magyar mintával (párhuzamos osztályok csökkentése iskolabezárás helyett), amely csökkentette az iskolán belüli szegregációt, de erős települések közötti szegregációval jár együtt; a megosztott modell kockázatot hordoz e csereviszony reprodukálására a felső tagozatba lépés pontján, hacsak nem tervezik kifejezetten ez ellen."
+      },
+      {
+        "en": "Modeled Hungarian research using a 100-student threshold indicates the split model has a lower viability bound affecting over five hundred village schools, meaning it cannot serve as a universal alternative to closure for the smallest settlements.",
+        "hu": "A magyar kutatásban 100 fős küszöbbel modellezett eredmények azt jelzik, hogy a megosztott modellnek alsó fenntarthatósági korlátja van, amely több mint ötszáz falusi iskolát érint, azaz nem szolgálhat univerzális alternatívaként a bezárással szemben a legkisebb településeken."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t3-equity_and_social_mobility",
+  "provenance_ref": "PV-assess_equity_and_social_mobility-eb0deeb1a16ba435",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

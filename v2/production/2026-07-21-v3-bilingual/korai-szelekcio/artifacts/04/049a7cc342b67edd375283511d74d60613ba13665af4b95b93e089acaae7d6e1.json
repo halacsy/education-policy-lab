@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "0b6eff0d2e2abdd129b939f9358fe9b884b7f2dc5776da22f43bde191e32fe7c",
+        "response_hash": "ffe7549f8379ff007781e58e90d79304305e39ee97de9f525fb45e50a5222e9f",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "73db37a9107855c3a079e963c2272730ffa2fbe99931b6d4bb1c83cde1fb6a06",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "074d282aaf96c73228a5fdc6d80c2ff3007231ee8b848fdcb951b92793213cfa",
+      "0e5a86caab6b40aa3ee35d57728b04f612581782dcb89334f4d3b8b920281bda",
+      "3ad9850ba23297e928213adb64da6dd27c862dd3280122ddda0ecfdac2a537e0",
+      "3bfb212928e69a092d89f4e1e4fb11b085c0acdcb45d922ba5771072134fb00f",
+      "3f265f42ec0ea0628dfb19f7536f0b3afe6740edf3b4ce7efedb724ba994af45",
+      "4b38b7ae2aeb705ed2ee6daef779e2107005974da4ced77c1c18cf68ebda7328",
+      "5d9ffe3db8903155d7cf3199f7339a1422071c151ba789adc8f77e5b0531200e",
+      "5f51e5d00ca29f2d0244ebaf9ed51e5ddde546f0fddab63b8047e88866e00904",
+      "b0d17a66a180be9c0431a1b4be7ad484df0c42a50f0c7e059d7544b648055d85",
+      "b507716bd5a32c11ae54cde6aa180b4d07c9ff868e4151e047b406cd5c11661c",
+      "b83a582ffefbc7f9aee98430d7ebde1fa794b20b5f7c9bcf43efe422ebd27bcc",
+      "ba999891076e8fd05a4e556fda4821f4eb552cb6e3001731fe938e1e1f0f3aa2",
+      "c645f5873c49fe7380c914a3cf355af432d71af0fd303353021a8a2d6b1c3dfc",
+      "d590ffacba7c02da3c03a78407a8c8a6a32755d4fefd775ec01c6223d1d61574",
+      "dbad367cfa40430292cd494107a35c69688bc594d7cee8f48a188f74421e3f7d"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_education_finance",
+    "prompt_hash": "344d75fa3c0564f403852df5659bd6416857738a3de94404149830770788fc89",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "generator",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-assess_education_finance-73db37a9107855c3",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "66afaf60f681101bd31ca8bd771f6070d1fe70537efaae5bb9307f4d9d305f3a",
+  "topic": "korai-szelekcio"
+}

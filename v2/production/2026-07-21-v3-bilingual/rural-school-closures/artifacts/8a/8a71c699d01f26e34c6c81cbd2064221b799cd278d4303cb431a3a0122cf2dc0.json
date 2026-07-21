@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-implementation_planning-01",
+      "A-live-implementation_planning-02",
+      "A-live-implementation_planning-03",
+      "A-live-implementation_planning-04"
+    ],
+    "claim": {
+      "en": "International empirical evidence on whether school closure causes community depopulation is contested: Finnish difference-in-differences analysis (2010–2018) found that post-closure population decreased more than pre-closure trends, while Saxon and Swedish studies (Barakat 2015, Amcoff 2012, Barakat 2014) found no significant connection between school closure and population decline; Hungarian data revealed ambiguous socioeconomic correlates where villages with schools showed better demographic performance but worse employment and welfare characteristics compared to villages without schools, indicating the core causal mechanism (school retention → community survival) lacks robust confirmation and cannot be assumed as a safe design premise.",
+      "hu": "A nemzetközi empirikus bizonyítékok arról, hogy az iskolabezárás közösségi depopulációt okoz-e, vitatottak: A finn különbségekben-különbségek elemzés (2010–2018) azt találta, hogy a bezárás után a népesség több csökkent, mint az azt megelőző trendek, miközben a szász és svéd tanulmányok (Barakat 2015, Amcoff 2012, Barakat 2014) nem találtak szignifikáns kapcsolatot az iskolabezárás és a népességcsökkenés között; a magyar adatok homályos szocioökonómiai korrelációkat mutattak, ahol az iskolával rendelkező falvak jobb demográfiai teljesítményt mutattak, de rosszabb foglalkoztatási és szociális ellátási jellemzőket az iskola nélküli falvakhoz képest, jelezve, hogy az alapvető oksági mechanizmus (iskola megtartása → közösség túlélése) erős megerősítés hiányában maradt és nem vehető biztonságos tervezési előfeltételezésként."
+    },
+    "context": {
+      "en": "Fresh live research through the Implementation planning lens",
+      "hu": "Friss, élő kutatás a(z) végrehajtás megtervezése nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "contested",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "International studies span different national contexts (Finland, Saxony, Sweden) with potentially different settlement patterns, governance structures, and economic drivers of depopulation; direct generalizability to Hungarian villages is unclear.",
+        "hu": "A nemzetközi tanulmányok különböző nemzeti kontextusokat ölelnek fel (Finnország, Szászország, Svédország), potenciálisan eltérő településmintákkal, irányítási struktúrákkal, és a depopuláció gazdasági mozgatóival; a közvetlen általánosíthatóság a magyar falvakra tisztázatlan."
+      },
+      {
+        "en": "Hungarian data showing ambiguous correlates does not definitively rule out the school–depopulation link; it may indicate confounding variables or reverse causality (depopulation prompts closure rather than closure causing depopulation) that require longitudinal causal modeling.",
+        "hu": "A homályos korrelációkat mutató magyar adatok nem zárják ki végérvényesen az iskola–depopuláció linket; olyan zavaró változókat vagy fordított okságot jelezhetheto (depopuláció vezet bezáráshoz, nem pedig a bezárás depopulációhoz), amely longitudinális oksági modellezést igényel."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-implementation_planning-07"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-implementation_planning-01",
+      "U-live-implementation_planning-02",
+      "U-live-implementation_planning-03",
+      "U-live-implementation_planning-04"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-implementation_planning-07",
+  "provenance_ref": "PV-research_implementation_planning-d628d38343476e94",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

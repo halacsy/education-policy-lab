@@ -858,3 +858,25 @@ generator provenance. Human decision records remain bound to the exact
 bilingual candidate-successor hash. The public site and audit view project
 `en` or `hu` directly from the canonical record; old localization bundles may
 remain as historical evidence but are no longer a runtime dependency.
+
+**D-59 — The public Atlas contains three explicit-DAG v3 production results
+(2026-07-21, owner approval).** The pre-RunPlan production baselines for
+`korai-szelekcio` and `rural-school-closures` are replaced at the publication
+boundary by fresh architecture 3.1 runs. Both consume their previously
+admitted problem briefs as exact roots, execute all twelve research branches,
+stop at a newly derived option-space candidate, and continue only after the
+owner's approval is bound to that candidate hash. The SNI result remains its
+genuine architecture 3.0 run, including the separate raw-question → proposed
+brief → human-approved brief chain. All three publish canonical bilingual 2.1
+successors, an immutable RunPlan, exact node manifests, attempts, schemas, and
+database lineage. The public audit is built only from the three entries in
+`config/v2/publication.json`; older production directories remain committed
+history but are not presented as current public results.
+
+The live acceptance exposed three resumability failures and fixes them at the
+runner level: structured attempts are replayed by exact prompt hash rather than
+silently regenerated; semantic array surplus is deterministically truncated
+and logged while deficits are filled by a separate one-item contract; and a
+real structured-output truncation receives one bounded, separately recorded
+token escalation. None of these mechanisms hand-edits an artifact, weakens a
+schema, or permits a different answer to overwrite an immutable attempt.

@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a school-network-planning perspective, the baseline proposal is descriptively well-grounded in documented geographic mismatch but offers no mechanism to resolve it. The network already exhibits a stark spatial imbalance: nearly half of 6/8-year gimnázium places sit in small towns, roughly a quarter in provincial cities, over a fifth in Budapest, and almost none in villages, while flagship urban schools face oversubscription near 10x and several county-town schools carry unfilled seats. Holding capacity constant while cohorts shrink and urban demand concentrates will, on network-planning grounds alone, widen the gap between over-demanded and under-demanded nodes rather than close it, since nothing in the proposal redistributes places, adjusts catchments, or alters transport/access conditions.",
+      "hu": "Az iskolai hálózattervezés nézőpontjából a status quo (baseline) javaslat leíró szempontból jól alátámasztott a dokumentált földrajzi egyenetlenség tekintetében, de semmilyen mechanizmust nem tartalmaz ennek feloldására. A hálózat már most is éles térbeli egyenlőtlenséget mutat: a 6/8 évfolyamos gimnáziumi helyek közel fele kisvárosokban, körülbelül egynegyede vidéki nagyvárosokban, több mint egyötöde Budapesten található, míg falvakban alig van ilyen hely; ezzel párhuzamosan a fővárosi élgimnáziumok közel 10-szeres túljelentkezést mutatnak, míg több megyeszékhelyi iskolában betöltetlen helyek maradnak. Ha a kapacitást állandó szinten tartjuk, míg a korosztályok zsugorodnak és a városi kereslet koncentrálódik, ez a hálózattervezési logika szerint önmagában szélesíti, nem szűkíti a túl- és alulkeresett csomópontok közötti szakadékot, mivel a javaslat nem osztja újra a helyeket, nem módosítja a beiskolázási körzeteket, és nem érinti a közlekedési/hozzáférési feltételeket."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Serves as a clean analytic baseline against which any future network-rationalization measure (capacity reallocation, transport investment, catchment redesign) can be benchmarked.",
+        "hu": "Tiszta elemzési kiindulópontként szolgálhat, amelyhez bármely jövőbeli hálózat-racionalizálási intézkedés (kapacitás-átcsoportosítás, közlekedésfejlesztés, körzethatár-átalakítás) mérhető."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Accurately identifies the coexistence of extreme urban oversubscription and rural/peripheral under-enrollment as the core network-level phenomenon to be tracked.",
+        "hu": "Pontosan azonosítja a szélsőséges városi túljelentkezés és a vidéki/peremterületi alulkihasználtság együttes fennállását mint a nyomon követendő fő hálózati szintű jelenséget."
+      },
+      {
+        "en": "Uses demographic trend data to project how shrinking cohorts interact with fixed capacity, providing a clear counterfactual baseline for comparison with structural alternatives.",
+        "hu": "Demográfiai trendadatokat használ annak előrejelzésére, hogy a csökkenő korosztályok hogyan hatnak a rögzített kapacitásra, így tiszta kontrafaktuális kiindulópontot ad a strukturális alternatívákkal való összehasonlításhoz."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Persistent institutional origin differences (small-town tracks disproportionately converted from former vocational schools, F-live-school_network_planning-03) combined with unaddressed mismatch could produce localized political friction over underused rural capacity, echoing prior consolidation disputes.",
+        "hu": "A településtípusonként eltérő intézményi eredet (a kisvárosi programok aránytalanul gyakran korábbi szakiskolákból alakultak át, F-live-school_network_planning-03) a kezeletlen eltéréssel párosulva helyi politikai feszültségeket okozhat a kihasználatlan vidéki kapacitás miatt, a korábbi iskola-összevonási vitákhoz hasonlóan."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Offers no geographic reallocation, transport, or capacity-adjustment mechanism, meaning the documented mismatch (F-live-school_network_planning-04, F-live-school_network_planning-05) is left entirely unaddressed by design.",
+        "hu": "Nem tartalmaz földrajzi átcsoportosítási, közlekedési vagy kapacitás-kiigazítási mechanizmust, ami azt jelenti, hogy a dokumentált eltérés (F-live-school_network_planning-04, F-live-school_network_planning-05) a tervezet szerint teljes mértékben megoldatlan marad."
+      },
+      {
+        "en": "Treats stagnant capacity as a background condition rather than engaging with the fact that this stagnation may itself be a policy choice steering demand toward vocational education (F-live-school_network_planning-06), which is a network-relevant supply-side lever left unexamined.",
+        "hu": "A változatlan kapacitást háttérfeltételként kezeli, anélkül hogy foglalkozna azzal, hogy ez a stagnálás maga is szakpolitikai döntés lehet, amely a keresletet a szakképzés felé irányítja (F-live-school_network_planning-06) — ez egy hálózati szempontból releváns, kínálati oldali eszköz, amelyet a javaslat nem vizsgál."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-b071742057a48070",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

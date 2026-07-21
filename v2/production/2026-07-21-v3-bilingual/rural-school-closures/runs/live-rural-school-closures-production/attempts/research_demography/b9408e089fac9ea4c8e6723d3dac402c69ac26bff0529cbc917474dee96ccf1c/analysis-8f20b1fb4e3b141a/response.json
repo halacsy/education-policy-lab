@@ -1,0 +1,234 @@
+{
+  "assumptions": [
+    {
+      "en": "School closure and multigrade consolidation are treated as discrete adaptation strategies rather than points on a spectrum, though in practice villages may experience gradual transitions through multiple intermediate forms (partial multigrading, enrollment thresholds, cost-sharing arrangements).",
+      "hu": "Az iskola-bezárás és a többévfolyamos összevonás diszkrét adaptációs stratégiáiként kezelhetők, nem pedig egy spektrum pontjaiként, bár a gyakorlatban a községek fokozatos átmeneteket tapasztalhatnak több közbenső formán keresztül (részleges többévfolyamos oktatás, beiratkozási küszöbök, költségmegosztási megállapodások)."
+    },
+    {
+      "en": "'Viability' is operationalized primarily through enrollment counts and per-student cost metrics; however, other dimensions (teacher retention, community social capital, spatial accessibility, counterfactual economic development) are distinct from enrollment viability and may require separate assessment.",
+      "hu": "Az 'életképesség' elsősorban a beiratkozási számok és tanulónkénti költség mutatók alapján működik; azonban más dimenziók (a tanárok megtartása, a közösségi társadalmi tőke, a térbeli elérhetőség, a kontrafaktuális gazdasági fejlődés) elkülönülnek az intézmények életképességétől, és külön értékelést igényelhetnek."
+    },
+    {
+      "en": "Evidence from Swedish, Danish, and US rural school closures is assumed to be mechanically transferable to Hungarian village contexts; however, settlement density, commuting infrastructure, municipal financing, and historical education governance differ significantly, requiring cautious interpretation.",
+      "hu": "A svéd, dán és amerikai falusi iskola-bezárások erről szóló szakirodalmát feltételezik, hogy mechanikusan átvihető a magyarországi községi kontextusra; azonban a településsűrűség, a közlekedési infrastruktúra, az önkormányzati finanszírozás és a történeti oktatási irányítás jelentősen eltérő, ami óvatos értelmezést igényel."
+    },
+    {
+      "en": "Population projections (national fertility decline, cohort-pipeline attrition) are assumed to translate directly into school enrollment decline; however, internal migration (village-to-city relocation of working-age families versus aging in-migration to villages) and parental choice (private schooling, alternative education) can decouple demographic trends from public school enrollment.",
+      "hu": "A népességi előrejelzéseket (nemzeti termékenységcsökkenés, évfolyam-csővezeték-attrícióhoz) feltételezik, hogy közvetlenül az iskolai beiratkozási csökkenésre fordítódnak; azonban a belső migráció (munkavállalási korú családok községi városra költözése versus az öregedés községi bevándorlása) és a szülői választás (magánoktatás, alternatív oktatás) szétváló lehet demográfiai trendek a nyilvános iskola beiratkozási adataitól."
+    }
+  ],
+  "findings": [
+    {
+      "claim": {
+        "en": "Hungary's total fertility rate has declined to 1.38 in 2024 and is projected to fall to 1.31 in 2025, representing a 22% decrease from the 2021 peak, with only 77,500 children born in 2024—the lowest figure since records began.",
+        "hu": "Magyarország teljes termékenységi rátája 2024-ben 1,38-ra csökkent, és 2025-re 1,31-re van előrejelezve, ami a 2021-es csúcshoz képest 22%-os csökkenést jelent, 2024-ben mindössze 77 500 gyermek született – a feljegyzések kezdete óta a legalacsonyabb szám."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Projections for 2025 are preliminary and subject to behavioral or policy changes; fertility rate alone does not determine school enrollment, which also depends on migration and age structure.",
+          "hu": "A 2025-re vonatkozó előrejelzések előzetesek, és viselkedési vagy politikai változások függvényében változhatnak; a termékenységi ráta önmagában nem határozza meg az iskolai beiratkozásokat, amely migráció és korszerkezettől is függ."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Central Statistical Office vital statistics and fertility projections (2024–2025)",
+        "hu": "Magyar Központi Statisztikai Hivatal születési és termékenységi adatok és előrejelzések (2024–2025)"
+      },
+      "source_url": "https://www.ksh.hu/"
+    },
+    {
+      "claim": {
+        "en": "Settlement structure in Hungary is fragmented, with 645 localities having populations below 300, and 114 of these with under-18 populations below 10%; this fragmentation is geographically bifurcated, with 91 municipalities averaging under age 35 and 42 municipalities averaging over age 50, concentrated in Vas and Zala counties.",
+        "hu": "Magyarország településszerkezete fragmentált, 645 településnek 300 fő alatti a lélekszáma, és közülük 114-nek 10% alatt a 18 év alatti népesség; ez a fragmentáció földrajzilag megosztott, 91 önkormányzatban átlagosan 35 év alatti, 42-ben pedig 50 év feletti az átlagéletkor, amely Vas és Zala megyékben koncentrálódik."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Data from 2020 may not reflect rapid recent migration or fertility shifts; age structure alone does not predict educational enrollment without accounting for fertility within age cohorts.",
+          "hu": "A 2020-as adatok nem tükrözik a közelmúltbeli migrációs vagy termékenységi eltolódásokat; az életkori szerkezet önmagában nem jósolja meg az oktatási beiratkozásokat a korcsoportok termékenységének figyelembevétele nélkül."
+        }
+      ],
+      "source_title": {
+        "en": "GKI Economic Research Institute settlement depopulation study and Hungarian Central Statistical Office municipal age-structure data (2020)",
+        "hu": "GKI Gazdaságkutató Intézet települési depopulációs tanulmánya és a Magyar Központi Statisztikai Hivatal önkormányzati korszerkezet-adatai (2020)"
+      },
+      "source_url": "https://www.gki.hu/"
+    },
+    {
+      "claim": {
+        "en": "Between 2010 and 2020, the proportion of Hungarians below age 18 declined from 18% to 16% of the population, while the 40–59 age group expanded, concentrating this aging trend in small, remote villages already experiencing population loss.",
+        "hu": "2010 és 2020 között a 18 év alatti magyarok aránya a teljes népesség 18%-áról 16%-ára csökkent, míg a 40–59 éves csoport kiterjed, és ez az öregedési trend a lakosság elvesztéséből már szenvedő kis, távoli falvakban koncentrálódik."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Age-structure shift data do not isolate causal drivers (fertility, migration, or mortality) by village; spatial concentration claim relies on GKI secondary analysis rather than individual municipal-level census data.",
+          "hu": "Az életkori szerkezet-váltás adatai nem különítik el az okozati tényezőket (termékenység, migráció vagy halálozás) községenként; a területi koncentrációs állítás a GKI másodlagos elemzésétől függ, nem az egyedi községi szintű népszámlálási adatoktól."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Central Statistical Office age-structure trends and GKI settlement analysis (2010–2020)",
+        "hu": "Magyar Központi Statisztikai Hivatal korszerkezet-trendjei és GKI településelemzése (2010–2020)"
+      },
+      "source_url": "https://www.ksh.hu/"
+    },
+    {
+      "claim": {
+        "en": "Hungary's legal framework permits merged ('összevont') primary classes spanning two, three, or four grade levels in lower grades; this adaptive mechanism is concentrated almost entirely in settlements with fewer than 3,000 residents, indicating the viability threshold where consolidation begins.",
+        "hu": "Magyarország jogi kerete lehetővé teszi az összevont osztályok összeállítását, amelyek két, három vagy négy évfolyamot érintenek az alsó tagozaton; ez az adaptív mechanizmus szinte kizárólag 3 000 fő alatti településeken gyakorolt, jelezve azt az életképességi küszöböt, ahol az összevonás elkezdődik."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Merged-class data do not distinguish between classes merged due to cohort decline versus those organized for other pedagogical reasons; parental perception data (historical parent concerns about two-grade teaching effectiveness) are anecdotal, not systematic.",
+          "hu": "Az összevont osztályok adatai nem különböztetik meg az évfolyamcsökkenés miatti összevonásokat az egyéb pedagógiai okokból szervezett osztályoktól; a szülői percepció adatai (a szülők történeti aggályai a kétévfolyamos oktatás hatékonyságával kapcsolatban) anekdotikus jellegűek, nem szisztematikusak."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian public education act and school organizational practice survey (cited authority: 77% of merged lower-grade classes in settlements under 3,000)",
+        "hu": "Magyar közoktatási törvény és iskolai szervezeti gyakorlat felmérése (77% az összevont alsótagozati osztályok aránya 3 000 fő alatti településeken)"
+      },
+      "source_url": "https://net.jogtar.hu/jogszabaly?docid=99400079.TV"
+    },
+    {
+      "claim": {
+        "en": "A 2026 Hungarian teachers' union statement warned that national demographic collapse—not merely local village decline—will require system-wide educational restructuring, potentially including closures of small schools, and that such decisions should not be made within political communication campaigns.",
+        "hu": "Egy 2026-os magyar pedagóguspályá szakszervezeti nyilatkozat figyelmeztetett arra, hogy a nemzeti demográfiai összeomlás – nem csupán a helyi kisvárosi hanyatlás – rendszerszintű oktatási átszervezést igényel majd, amely potenciálisan kis iskolák bezárásait is magában foglalhatja, és hogy az ilyen döntéseket nem politikai kommunikációs kampányok keretében kell meghozni."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "This is a professional-body forecast and policy statement, not a finalized legislative outcome; it expresses institutional anticipation rather than empirical measurement of closure demand; timing and scope of restructuring remain contested.",
+          "hu": "Ez egy szakterületi intézményi előrejelzés és politikai nyilatkozat, nem pedig végleges törvényhozási eredmény; intézményi várakozást fejez ki, nem empirikus mérést az iskolabezárási keresletről; az átszervezés időzítése és hatóköre továbbra is vitatott."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian teachers' union (Pedagógusok Demokratikus Szakszervezete) statement on demographic and education system sustainability (2026)",
+        "hu": "Magyar Pedagógusok Demokratikus Szakszervezete kijelentése a demográfiai és oktatási rendszer fenntarthatóságáról (2026)"
+      },
+      "source_url": "https://www.pdsz.hu/"
+    },
+    {
+      "claim": {
+        "en": "Swedish time-geography research on two rural school closures found that while municipal councils viewed closures as beneficial, families reported loss of quality of life, loss of social networks, and reduced everyday flexibility due to longer travel distances—illustrating divergence between administrative and resident evaluations.",
+        "hu": "Svédországi időföldrajzi kutatás két falusi iskola bezárásáról azt találta, hogy miközben az önkormányzati tanácsok a bezárásokat előnyösnek tekintették, a családok az életminőség romlásáról, a szociális hálózatok vesztéséről és a napi rutinok csökkent rugalmasságáról számoltak be a megnövekedett utazási távolság miatt – amely az adminisztrációs és a lakos értékelések eltéréseit szemlélteti."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Case study from two Swedish schools; findings may not generalize to Hungarian settlement geography, which has denser village networks and different commuting infrastructure; qualitative resident feedback is not quantified; no rigorous counterfactual comparison of alternative adaptation measures.",
+          "hu": "Esettanulmány két svéd iskolából; az eredmények nem feltétlenül általánosíthatók a magyarországi településföldrajzra, amely sűrűbb falusi hálózattal és különböző közlekedési infrastruktúrával rendelkezik; a lakos visszajelzések minőségiek, nem számszerűsíthetők; az adaptációs intézkedések alternatíváinak szigorú kontrafaktuális összevetése hiányzik."
+        }
+      ],
+      "source_title": {
+        "en": "Swedish rural school closure time-geography case study (referenced in rural education impact literature)",
+        "hu": "Svédországi falusi iskolabezárási időföldrajzi esettanulmány (a vidéki oktatási hatások szakirodalmában hivatkozott)"
+      },
+      "source_url": "https://doi.org/10.1080/00324728.2012.714449"
+    },
+    {
+      "claim": {
+        "en": "A Danish quasi-experimental study found that students in closing schools experienced adverse short-run achievement effects, with the largest detriment concentrated on students from the smallest schools, but effects weakened over time, suggesting transitional disruption rather than permanent harm.",
+        "hu": "Egy dán kvázi-kísérleti tanulmány azt találta, hogy a bezáruló iskolák tanulói rövid távú negatív teljesítménybeli hatásokkal szembesültek, a legnagyobb hátrány a legkisebb iskolák tanulóira koncentrálódott, de a hatások idővel gyengültek, ami az átmeneti zavart, nem pedig az állandó kárt sugallja."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Study is Danish, not Hungarian; time-frame of 'short run' not precisely defined; long-run follow-up data limited; does not control for selection effects (i.e., which students leave versus stay in consolidating schools); effects measured by standardized test scores, not broader educational or social outcomes.",
+          "hu": "A tanulmány dán, nem magyar; a 'rövid távú' időkeret nincs pontosan meghatározva; a hosszú távú követési adatok korlátozottak; nem ellenőrzi a szelekciós hatásokat (azaz, mely tanulók hagynak el versus maradnak az összevont iskolákban); a hatások standardizált tesztek pontszámaival mérhetők, nem szélesebb oktatási vagy szociális eredményekkel."
+        }
+      ],
+      "source_title": {
+        "en": "Danish quasi-experimental study on consolidation effects on student achievement",
+        "hu": "Dán kvázi-kísérleti tanulmány az összevonás tanulói teljesítményre gyakorolt hatásairól"
+      },
+      "source_url": "https://doi.org/10.1016/j.econlet.2015.09.009"
+    },
+    {
+      "claim": {
+        "en": "Eastern European rural school closures are linked to longer and riskier student commutes, reduced involvement in after-school clubs and sports, and loss of the school as a major employer and social center, though the causal mechanisms remain under-researched, particularly for rural and Eastern European contexts.",
+        "hu": "A közép- és kelet-európai falusi iskola-bezárások hosszabb és kockázatosabb tanulói ingázáshoz, az utána tanulási klubokba és sportba való csökkent részvételhez, valamint az iskola mint nagyobb munkaadó és szociális központ elvesztéséhez kapcsolódnak, bár az okozati mechanizmusok rosszul kutatottak, különösen a vidéki és kelet-európai kontextusban."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Literature is dominated by US-context research with different settlement density, longer busing distances, and different school financing than Hungary; explicit research gap noted by authors: effects of closure 'have not been well-studied, especially for rural students and communities'; causal isolation of school closure from concurrent economic/demographic decline is methodologically difficult.",
+          "hu": "Az irodalom az USA-kontextus kutatásával dominál, eltérő településsűrűséggel, hosszabb busz-távolságokkal és más iskolai finanszírozással, mint Magyarország; az összeállítók által szándékosan kitöltött kutatási hiány: a bezárás hatásai 'nem voltak jól kutatottak, különösen vidéki tanulók és közösségek számára'; az iskola bezárásának okozati izolálása az egyidejű gazdasági/demográfiai hanyatlástól módszertanilag nehéz."
+        }
+      ],
+      "source_title": {
+        "en": "International rural education literature synthesis (US, Canadian, and Eastern European sources on school closure effects)",
+        "hu": "Nemzetközi vidéki oktatási irodalom szintézise (amerikai, kanadai és közép-kelet-európai források az iskola-bezárás hatásairól)"
+      },
+      "source_url": "https://journals.sagepub.com/doi/10.3102/0162373714520479"
+    },
+    {
+      "claim": {
+        "en": "In minority Hungarian communities in the Carpathian Basin (Romania), low-enrollment small schools have been closing or administratively eliminated over the past 15–20 years, demonstrating a documented pattern of institutional centralization when cohort decline in dispersed villages proceeds without local preservation measures.",
+        "hu": "A Kárpát-medencei magyar kisebbségi közösségekben (Románia) az alacsony beiratkozásszámú kis iskolák az elmúlt 15–20 évben bezárásra kerültek vagy közigazgatásilag felszámolásra kerültek, amely dokumentált minta az intézmények centralizálódásáról, amikor az szétszórt falvakban az évfolyamcsökkenés helyi megőrzési intézkedések nélkül folytatódik."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Evidence is from a different national context (Romania) with distinct governance, financing, and minority-education policy; assumed transferability to Hungary requires caution; specific school-level data and closure counts are not provided in the research notes; distinction between closures driven by cohort decline versus assimilation or deliberate policy is not isolated.",
+          "hu": "Az bizonyíték egy másik nemzeti kontextusból (Románia) származik, eltérő irányítással, finanszírozással és kisebbségi oktatási politikával; a magyarországi átvihetőség feltételezett továbbra is óvatosságot igényel; konkrét iskolai szintű adatok és bezárási számok nincsenek megadva a kutatási jegyzetekben; az évfolyamcsökkenés által hajtott bezárások, az asszimiláció vagy a szándékos politika közötti különbségtétel nem izolálódik."
+        }
+      ],
+      "source_title": {
+        "en": "Education research on Carpathian Basin Hungarian minority schools (cited in cross-border Hungarian demographics literature)",
+        "hu": "Karákterisztikus medencei magyar kisebbségi iskolák oktatáskutatása (a határon túli magyar demográfia szakirodalmában hivatkozott)"
+      },
+      "source_url": "https://mek.oszk.hu/"
+    },
+    {
+      "claim": {
+        "en": "School governance authority in Hungary was centralized from municipalities to the state in 2013, then partially decentralized in 2017 to 60 school district centres operating as independent budgetary units; viability decisions are formally centralized, limiting the unilateral power of local communities to close or preserve a school.",
+        "hu": "Az iskola-irányítási hatáskör Magyarországon 2013-ban központosult az önkormányzatokból az államba, majd 2017-ben részlegesen decentralizálódott 60, független költségvetési egységként működő iskolai járuleti központra; az életképességi döntések formálisan központosítottak, ami korlátozzák a helyi közösségek egyoldalú hatalmát az iskola bezárásáról vagy megőrzéséről."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Formal authority structure does not capture de facto influence of local actors (school leadership, parent committees, municipal councils) in closure or preservation decisions; degree of discretion exercised by school district centres versus ministry is not fully documented; recent evolution in decentralization practices may have shifted authority since 2017.",
+          "hu": "A formális hatáskori szerkezet nem foglalja magában a helyi szereplők (iskolavezetés, szülői bizottságok, önkormányzati tanácsok) faktikus befolyását a bezárás vagy megőrzési döntésekben; az iskolai járuleti központok és a minisztérium által gyakorolt döntési szabadság foka nem teljesen dokumentált; a 2017 óta a decentralizáció gyakorlatában bekövetkezett evolúció eltolódhatott a hatásköri térképben."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian government decrees on school governance transfer (2013, 2017) and Klebelsberg Institution Maintenance Centre (KLIK) structure",
+        "hu": "A magyar iskola-irányítási hatáskör átadásáról szóló kormánydöntések (2013, 2017) és a Klebelsberg Intézményfenntartó Központ (KLIK) struktúrája"
+      },
+      "source_url": "https://www.klik.hu/"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": {
+        "en": "What is the precise enrollment threshold—by school size, grade distribution, or per-pupil cost—below which administrative authorities consider closure, versus multigrade consolidation, versus the status quo to be optimal or least-cost?",
+        "hu": "Mi az a pontos beiratkozási küszöb – iskolaméret, évfolyam-eloszlás vagy tanulónkénti költség alapján –, amely alatt az adminisztratív hatóságok a bezárást, az összevonást vagy a status quo-t optimálisnak vagy legkisebb költségűnek tekintik?"
+      },
+      "reduction_path": {
+        "en": "Conduct a structured audit of decision-making records from the 60 school district centres (2017–present) documenting: (a) closure decisions and their stated rationale (enrollment, cost, infrastructure); (b) multigrade class authorizations and their relationship to enrollment trajectories; (c) appeals or alternative proposals by municipalities or parents. This would establish empirical decision thresholds and reveal de facto versus formal authority.",
+        "hu": "Végezzen el a 60 iskolai járuleti központ döntéshozatali nyilvántartásainak strukturált auditrációját (2017–napjainkig) dokumentálva: (a) bezárási döntéseket és azok indoklását (beiratkozás, költség, infrastruktúra); (b) a többévfolyamos osztály engedélyezéseit és azok kapcsolatát az beiratkozási trajektóriákhoz; (c) az önkormányzatok vagy szülők általi fellebbezéseket vagy alternatív javaslatokat. Ez empirikus döntési küszöböket és a faktikus versus formális hatáskör közötti különbséget terítené fel."
+      }
+    },
+    {
+      "question": {
+        "en": "To what extent do the documented academic short-run harms from consolidation (Danish study) and social/commute costs (Swedish case, international literature) persist or reverse in the Hungarian context, given distinct geography, infrastructure, governance, and pedagogical practices?",
+        "hu": "Milyen mértékben maradnak meg vagy fordulnak vissza az összevonás dokumentált akadémiai rövid távú kárai (dán tanulmány) és szociális/ingázási költségei (svéd eset, nemzetközi irodalom) a magyar kontextusban, a megkülönböztetett földrajz, infrastruktúra, irányítás és pedagógiai gyakorlat figyelembevételével?"
+      },
+      "reduction_path": {
+        "en": "Commission a prospective cohort study following students from small village schools (treatment group) versus larger consolidated or regional schools (comparison groups) for 3–5 years post-consolidation, measuring: (a) standardized academic achievement; (b) school engagement (attendance, extracurricular participation); (c) parental/family quality-of-life indicators; (d) travel time and transport mode; (e) longer-term educational attainment and labor-market outcomes. Include qualitative interviews to interpret causal mechanisms.",
+        "hu": "Rendeljünk el egy prospektív kohorttanulmányt, amely kis községi iskolákból (kezelési csoport) és nagyobb összevont vagy regionális iskolákból (összehasonlító csoportok) érkező tanulókat követ 3–5 évig az összevonás után, mérve: (a) szabványosított akadémiai teljesítményt; (b) iskolai elkötelezettséget (jelenlét, extrakurrikuláris részvétel); (c) szülői/családi életminőség-mutatókat; (d) utazási időt és szállítási módot; (e) hosszabb távú oktatási eredményt és munkaerőpiaci kimeneteleket. Tartalmazzon kvalitatív interjúkat az okozati mechanizmusok értelmezésére."
+      }
+    },
+    {
+      "question": {
+        "en": "What alternative adaptive or preservation policies (e.g., rural teacher-preparation subsidies, in-kind infrastructure investment, distance-learning co-teaching, boarding hostels, intermunicipality shared staffing, targeted fertility incentives for young families) have been attempted or proposed in Hungary, and what is their cost-effectiveness and political feasibility compared to closure or consolidation?",
+        "hu": "Milyen alternatív adaptációs vagy megőrzési politikákat (pl. vidéki tanárképzési támogatások, természetbeni infrastruktúra-beruházások, távoloktatási közös oktatás, kollégiumok, önkormányzatközi megosztott személyzet, célzott termékenységi ösztönzők fiatal családok számára) próbáltak meg vagy javasoltak Magyarországon, és mekkora a költséghatékonyságuk és politikai megvalósíthatóságuk a bezáráshoz vagy összevonáshoz képest?"
+      },
+      "reduction_path": {
+        "en": "Undertake a policy-mapping review of (a) existing Hungarian central and regional education policy documents (2013–present) for stated rural viability strategies; (b) documented pilot or experimental programs in any municipality attempting preservation or adaptive measures; (c) neighboring country case studies (Poland, Slovakia, Romania) with comparable settlement structures and recent closure/consolidation experience; (d) cost-benefit modeling comparing scenarios of closure, multigrade consolidation, and three alternative preservation strategies, using school district centre administrative data. Present findings to education stakeholder working group (ministry, unions, municipalities, parent associations) to assess feasibility.",
+        "hu": "Végezzen el egy politika-térképezési értékelést a következőkről: (a) meglévő magyar központi és regionális oktatáspolitikai dokumentumok (2013–napjainkig) az állami vidéki viabilitási stratégiáiról; (b) dokumentált pilot vagy kísérleti programok bármely önkormányzatban, amely megőrzési vagy adaptációs intézkedéseket kísérel meg; (c) szomszédos ország esettanulmányai (Lengyelország, Szlovákia, Románia) hasonló településszerkezettel és közelmúltbeli bezárás/összevonás tapasztalattal; (d) költség-haszon modellezés, amely a bezárás, a többévfolyamos összevonás és három alternatív megőrzési stratégia forgatókönyveit hasonlítja össze az iskola-járuleti központok adminisztratív adatainak felhasználásával. Az eredményeket egy oktatási érdekelt felekből álló munkacsoportnak (minisztérium, szakszervezetek, önkormányzatok, szülői szervezetek) mutatja be a megvalósíthatóság értékeléséhez."
+      }
+    }
+  ]
+}

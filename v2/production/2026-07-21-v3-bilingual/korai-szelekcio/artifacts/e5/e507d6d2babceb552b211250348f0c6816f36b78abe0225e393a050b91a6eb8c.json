@@ -1,0 +1,37 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Regression-discontinuity design around admission-score cutoffs linking administrative school records to tax/employment registry data for cohorts now in their 30s-40s, tracking earnings, employment stability, and tertiary attainment; complemented by mediation analysis testing whether any observed effect operates via peer effects, curriculum, or pure credentialing signal.",
+      "hu": "Regressziós törésponti (RDD) elemzés a felvételi ponthatárok körül, az igazgatási iskolai nyilvántartásokat az adó-/foglalkoztatási regiszter adataival összekapcsolva a jelenleg 30-40 éves kohorszok esetében, nyomon követve a kereseteket, a foglalkoztatási stabilitást és a felsőoktatási végzettséget; kiegészítve mediációs elemzéssel, amely teszteli, hogy a megfigyelt hatás a kortárshatásokon, a tantervi különbségeken vagy tisztán a kredencializálási jelzésen keresztül működik-e."
+    },
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t4"
+    ],
+    "question": {
+      "en": "Do the short-term test-score gains for students admitted to 6-year academic tracks persist into adult labor-market outcomes and earnings, particularly for borderline-qualified students near the admission margin, or does the null long-run finding (Gurzó & Horn 2015) indicate that initial gains are pure selection artifacts or are offset by segregation-induced costs to excluded peers?",
+      "hu": "A 6 évfolyamos gimnáziumi tagozatba felvett tanulók rövid távú tesztpontszám-nyeresége fennmarad-e a felnőttkori munkaerőpiaci eredményekben és keresetekben, különösen a felvételi ponthatár közelében lévő, határeseti tanulók esetében, vagy a hosszú távú nulla hatásra utaló eredmény (Gurzó & Horn, 2015) azt jelzi, hogy a kezdeti nyereség tisztán szelekciós műtermék, vagy a kizárt társaknak okozott szegregációs költségek ellensúlyozzák azt?"
+    },
+    "uncertainty_refs": [
+      "U-live-portuguese_reform-01",
+      "U-live-equity_and_social_mobility-01",
+      "U-live-implementation_planning-01",
+      "U-live-hungarian_education_system-01"
+    ],
+    "why_it_matters": {
+      "en": "This directly tests whether the tracks provide genuine pedagogical value-added (justifying retention/guardrails, t1/t4) or merely credential-signaling/social-position protection with zero net benefit (favoring abolition, t2), making it foundational to choosing between preservation and structural reform.",
+      "hu": "Ez közvetlenül teszteli, hogy a tagozatok valódi pedagógiai hozzáadott értéket biztosítanak-e (ami indokolja a megtartást/védőhálókat, t1/t4), vagy csak kredencializálást/társadalmi státuszvédelmet szolgálnak nulla nettó haszonnal (ami a megszüntetést támogatja, t2), így alapvető a megőrzés és a strukturális reform közötti választáshoz."
+    }
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "RQ-live-production-06",
+  "provenance_ref": "PV-build_research_agenda-2b2b85418ec71a9b",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

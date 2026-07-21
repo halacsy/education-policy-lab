@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal scores well on administrative feasibility since multigrade classes are already a legally sanctioned mechanism, lowering the implementation barrier relative to proposals requiring new legal instruments. However, the viability bound identified by threshold-modeling research (over 500 village schools affected at a 100-student threshold, many unable to survive even in split form) indicates that sequencing must account for a floor below which the split model itself becomes non-deliverable, and this floor is not addressed in the mechanism description.",
+      "hu": "Ez a javaslat jól teljesít az igazgatási megvalósíthatóság szempontjából, mivel az összevont osztályok már most is jogilag szankcionált mechanizmust jelentenek, alacsonyabb megvalósítási korlátot állítva az új jogi eszközöket igénylő javaslatokhoz képest. A küszöbérték-modellezési kutatás által azonosított életképességi határ (több mint 500 falusi iskola érintett egy 100 fős küszöbnél, sokuk még osztott formában sem életképes) azonban azt jelzi, hogy a szekvenálásnak figyelembe kell vennie egy olyan alsó határt, amely alatt a split modell maga is megvalósíthatatlanná válik, és ezt a határt a mechanizmus leírása nem kezeli."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-04"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Repurposing unused buildings as multipurpose community facilities (as in the Polish analog) could be piloted incrementally alongside the split model, providing a low-risk adaptation channel.",
+        "hu": "A nem használt épületek többfunkciós közösségi létesítményekké alakítása (a lengyel analógia szerint) fokozatosan pilotolható a split modellel párhuzamosan, alacsony kockázatú alkalmazkodási csatornát biztosítva."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Uses an already-authorized legal mechanism (multigrade classes), meaning no new legislative or administrative capacity is required to begin implementation, improving near-term pilotability.",
+        "hu": "Egy már felhatalmazott jogi mechanizmust (összevont osztályok) használ, ami azt jelenti, hogy a bevezetés megkezdéséhez nem szükséges új törvényi vagy igazgatási kapacitás, javítva a rövid távú pilot-lehetőséget."
+      },
+      {
+        "en": "Explicitly identifies a historical domestic analog (reducing parallel classes rather than closing schools) allowing planners to draw on documented local experience for sequencing decisions.",
+        "hu": "Kifejezetten hivatkozik egy hazai történeti analógiára (párhuzamos osztályok csökkentése iskolabezárás helyett), lehetővé téve a tervezők számára, hogy dokumentált hazai tapasztalatra támaszkodjanak a szekvenálási döntéseknél."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If national policy later raises minimum size thresholds, as modeled in domestic research, the split model's lower grades component could become non-viable for a large share of the more than 500 affected village schools, undermining the proposal's core premise.",
+        "hu": "Ha a nemzeti szakpolitika később megemeli a minimális méretküszöböket, ahogy azt a hazai kutatás modellezte, a split modell alsó tagozatos komponense a több mint 500 érintett falusi iskola jelentős részénél életképtelenné válhat, aláásva a javaslat alapfeltevését."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "The mechanism description does not specify a monitoring threshold for when a village's pupil population falls below the split model's viability floor, leaving failure containment undefined.",
+        "hu": "A mechanizmus leírása nem határoz meg monitorozási küszöböt arra az esetre, amikor egy település tanulói létszáma a split modell életképességi határa alá csökken, így a hibakorlátozás definiálatlan marad."
+      },
+      {
+        "en": "Between-settlement segregation risk from historical practice is acknowledged but no specific safeguard or monitoring indicator is attached to the upper-grade consolidation routing decision.",
+        "hu": "A történeti gyakorlatból eredő településközi szegregációs kockázatot elismeri, de a felső tagozatos konszolidációs útvonal kijelöléséhez nem kapcsol konkrét biztosítékot vagy monitorozási indikátort."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t3-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-e1a507cf1927a894",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

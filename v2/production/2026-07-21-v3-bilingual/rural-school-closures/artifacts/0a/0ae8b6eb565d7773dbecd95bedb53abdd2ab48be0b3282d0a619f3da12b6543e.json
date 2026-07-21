@@ -1,0 +1,51 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The split-model proposal is administratively low-friction for network planning since multi-grade classes are already legally sanctioned, requiring no new authorization to preserve local lower-grade access while consolidating upper grades. However, network-planning evidence identifies a firm lower viability bound: research modeling a 100-student minimum threshold indicates more than five hundred village schools would be directly affected, many unable to sustain even the reduced footprint a split model requires, meaning this mechanism has geographic limits that a pure administrative solution cannot overcome for the smallest settlements.",
+      "hu": "A megosztott-modell javaslat hálózattervezési szempontból alacsony ellenállású megvalósítási útnak tűnik, mivel az összevont osztályok már jogszabályilag engedélyezettek, így nem igényelnek új felhatalmazást a helyi alsó tagozati elérhetőség megőrzéséhez a felső tagozat összevonása mellett. A hálózattervezési bizonyítékok azonban egy határozott alsó viabilitási korlátot is azonosítanak: egy 100 fős minimum-küszöböt modellező kutatás szerint több mint ötszáz falusi iskolát érintene közvetlenül, közülük sok a megosztott modell csökkentett formáját sem tudná fenntartani, ami azt jelenti, hogy ennek a mechanizmusnak földrajzi korlátai vannak, amelyeket a legkisebb településeken tisztán igazgatási megoldással nem lehet leküzdeni."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-06"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Explicit routing design for upper-grade consolidation could actively counteract between-settlement segregation risk if planned with settlement-level equity criteria from the outset.",
+        "hu": "A felső tagozat összevonásához tartozó útvonaltervezés kifejezetten ellensúlyozhatja a települések közötti szegregáció kockázatát, ha kezdettől fogva településszintű méltányossági szempontokkal tervezik."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Multi-grade classes are already a legally sanctioned mechanism within the existing class-size framework, minimizing new administrative or legal barriers to implementation.",
+        "hu": "Az összevont osztályok már jogszabályilag engedélyezett mechanizmust jelentenek a meglévő osztálylétszám-keretrendszeren belül, minimalizálva a megvalósítás új igazgatási vagy jogi akadályait."
+      },
+      {
+        "en": "Directly transportable design precedent exists (Poland's draft split-model legislation) with an explicit building-repurposing component, aiding network resilience through multipurpose use of retained infrastructure.",
+        "hu": "Közvetlenül átvehető tervezési precedens létezik (Lengyelország megosztott-modell törvényjavaslata) egy kifejezett épület-átalakítási elemmel, ami az épületek többfunkciós hasznosításán keresztül támogatja a hálózati rezilienciát."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Between-settlement segregation could intensify if consolidation routes concentrate disadvantaged pupils in specific receiving schools, an outcome the historical parallel-class-reduction practice suggests is a persistent structural tendency.",
+        "hu": "A települések közötti szegregáció felerősödhet, ha az összevonási útvonalak hátrányos helyzetű tanulókat koncentrálnak bizonyos befogadó iskolákba, ami a történelmi párhuzamosztály-csökkentési gyakorlat alapján tartósan visszatérő strukturális tendenciának tűnik."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "A modeled 100-student minimum threshold would directly affect more than five hundred village schools, establishing that the split model has a lower geographic viability bound below which it cannot deliver access on its own.",
+        "hu": "Egy modellezett 100 fős minimum-küszöb több mint ötszáz falusi iskolát érintene közvetlenül, ami azt igazolja, hogy a megosztott modellnek van egy alsó földrajzi viabilitási korlátja, amely alatt önmagában nem képes elérhetőséget biztosítani."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t3-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-0ae4d558b4639ee0",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

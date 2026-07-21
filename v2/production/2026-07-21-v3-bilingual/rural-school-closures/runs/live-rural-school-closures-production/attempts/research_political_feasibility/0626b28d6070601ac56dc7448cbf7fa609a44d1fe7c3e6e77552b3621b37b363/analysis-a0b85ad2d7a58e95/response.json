@@ -1,0 +1,270 @@
+{
+  "assumptions": [
+    {
+      "en": "The analysis assumes that 'coalition support' for a policy reflects formal institutional and political-party alignment, measured through budgetary allocation, legislative sponsorship, and regulatory authority rather than public-opinion polling, which may not predict actual policy durability or reversal risk under pressure.",
+      "hu": "Az elemzés feltételezi, hogy a politika 'koalíciós támogatása' a formális intézményi és politikai párti összhangot tükrözi, amely költségvetési allokáción, jogalkotási szponzorálason és szabályozási tekintélyen keresztül mérődik, nem közleményes felméréseken, amely nem jósolható meg a tényleges politikai tartósságot vagy nyomás alatti visszafordulási kockázatot."
+    },
+    {
+      "en": "The analysis assumes that reversal risk is elevated when: (a) implementation depends on resource-constrained actors (teachers, small municipalities); (b) judicial or procedural constraints can be evaded through delay; and (c) policy relies on voluntary cooperation from actors with competing incentives (e.g., parents, mayors with patronage networks), but this model may underestimate forms of lock-in that prevent reversal (e.g., permanent infrastructure decommissioning, institutional path dependency).",
+      "hu": "Az elemzés feltételezi, hogy a visszafordulási kockázat megemelkedik, amikor: (a) a végrehajtás erőforrás-korlátozott szereplőkre (pedagógusok, kis önkormányzatok) függ; (b) a bírósági vagy eljárási korlátok késedelmezésen keresztül megkerülhetők; és (c) a politika az olyan szereplők önkéntes együttműködésétől függ, akiknek konkuráló ösztönzésik vannak (pl. szülők, polgármesterek patronáz hálózatokkal), de ez a modell alulbecsülheti a visszafordulást megelőző zárolási formákat (pl. végleges infrastruktúra-felszámolás, intézményi pályafüggőség)."
+    },
+    {
+      "en": "The analysis assumes that church maintenance transfer and state maintenance represent meaningfully distinct policy outcomes in terms of preservation vs. closure, but this may obscure the reality that both arrangements can lead to functional school closures if pupil enrollment falls below operational thresholds or teacher supply fails, regardless of maintainer type.",
+      "hu": "Az elemzés feltételezi, hogy az egyházi fenntartásra való átutalás és az állami fenntartás megkülönböztethetően eltérő politikai kimeneteleket képviselnek a megőrzés vs. bezárás tekintetében, de ez elhomályosíthatja azt a valóságot, hogy mindkét elrendezés működési iskolabezáráshoz vezethet, ha a tanulólétszám az operatív küszöbértékek alá csökken, vagy a pedagógushiányzás elmarad a fenntartótípustól függetlenül."
+    }
+  ],
+  "findings": [
+    {
+      "claim": {
+        "en": "Decision authority over school maintenance was centralized from municipalities to the state in 2013, with the Klebelsberg Institution Maintenance Center (KLIK) assuming responsibility for most schools except kindergarten, replacing task-based for normative financing.",
+        "hu": "A tanulóintézmények fenntartási döntéshozatala 2013-ban központosult az önkormányzatoktól az állam felé, a Klebelsberg Intézmény-fenntartó Központ (KLIK) átvette a legtöbb iskola felügyeletét az óvodák kivételével, helyettesítve a normatív finanszírozást a feladatfinanszírozással."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Source dates to the reform announcement; implementation fidelity and actual municipal operational capacity post-2013 may have diverged from formal transfer.",
+          "hu": "A forrás a reformbejelentés időpontjára vonatkozik; az implementáció hűsége és az önkormányzatok tényleges működési kapacitása 2013 után eltérhetett a formális átadástól."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Public Education System Restructuring (2013 institutional analysis)",
+        "hu": "A magyar közoktatási rendszer átalakítása (2013. évi intézményi elemzés)"
+      },
+      "source_url": "institutional_record_klik_2013"
+    },
+    {
+      "claim": {
+        "en": "One in five Hungarian localities faces demographic decline; 147 localities will eventually face complete depopulation; 645 localities have populations below 300, with 114 of these having under-18 populations below 10 percent, making sustained school operation in these areas structurally challenged absent significant development intervention.",
+        "hu": "Magyarország községeinek egytöde népmozgási visszaesésnek van kitéve; 147 település végül teljesen elnéptelenedik; 645 település lakossága 300 alatti, ezek közül 114-ben az 18 év alatti lakosság aránya 10 százalék alatt van, ami a jelentős fejlesztési beavatkozás nélkül az iskolák fenntartásában strukturális kihívást teremt."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Demographic projections assume no significant policy intervention or reverse migration; projections are sensitive to fertility, migration, and development policy assumptions.",
+          "hu": "A demográfiai előrejelzések nem számítanak jelentős politikai beavatkozásra vagy visszavándorlásra; az előrejelzések érzékenyek a termékenységi, migrációs és fejlesztéspolitikai feltételezésekre."
+        },
+        {
+          "en": "Data does not specify which 645 localities or provide longitudinal closure history, limiting causal attribution between depopulation rate and actual closure decisions.",
+          "hu": "Az adat nem specifikálja, mely 645 településről van szó, és nem tartalmaz hosszú idősorú bezárási előzményeket, ami korlátozza az oksági attribúciót a lassulás és a tényleges bezárási döntések között."
+        }
+      ],
+      "source_title": {
+        "en": "GKI Economic Analysis of Hungarian Rural Depopulation",
+        "hu": "GKI gazdasági elemzés a magyar vidéki elnéptelenedésről"
+      },
+      "source_url": "gki_depopulation_analysis"
+    },
+    {
+      "claim": {
+        "en": "Over 50 municipal schools transferred to church maintenance in a single academic year; approximately 83 schools nationally came under church authority, with the transfer wave concentrated geographically in Alföld and Northern Hungary counties rather than Transdanubia, correlating with more depopulated and economically disadvantaged regions.",
+        "hu": "Több mint 50 önkormányzati iskola adott át egyházi fenntartásra egy tanévben; körülbelül 83 iskola került országosan egyházi felügyelet alá, az átadási hullám földrajzilag az Alföld és Észak-Magyarország megyéire koncentrálódott, nem Transdanubiára, ami a depopuláltabb és gazdaságilag hátrányosabb régiókkal korrelál."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Source does not provide complete national inventory of transfers or distinguish between voluntary diocesan assumption and coercive transfers; the 83-school figure is stated by state secretariat without independent verification of methodology.",
+          "hu": "A forrás nem tartalmaz teljes körű nemzeti nyilvántartást az átadásokról, és nem különbözteti meg az önkéntes egyházi felvételt a kényszerű átadásoktól; a 83 iskolás szám az államtitkárság által közölt adat, módszertani független ellenőrzés nélkül."
+        },
+        {
+          "en": "Geographic concentration data relies on union-compiled regional analysis; sampling frame and response rate are not disclosed.",
+          "hu": "A földrajzi koncentrációs adatok szakszervezet által összeállított regionális elemzésre támaszkodnak; a mintavételi keret és a válaszadási arány nem ismert."
+        },
+        {
+          "en": "Transfer does not necessarily prevent closure; it redirects maintainer authority but does not resolve underlying pupil-base decline or resource constraints.",
+          "hu": "Az átadás nem feltétlenül akadályozza meg a bezárást; átirányítja a fenntartói tekintélyt, de nem oldja meg az alapvető tanulólétszám-csökkenést vagy az erőforrások korlátait."
+        }
+      ],
+      "source_title": {
+        "en": "Teachers' Union Regional Data on School Transfer Wave and Education State Secretariat Report",
+        "hu": "A Pedagógusok Demokratikus Szakszervezete regionális adatai az iskolai átadási hullámról és az Oktatási Államtitkárság jelentése"
+      },
+      "source_url": "teachers_union_transfer_data"
+    },
+    {
+      "claim": {
+        "en": "Between 2023 and 2030, an average of 6,200 teachers are projected to retire annually while student numbers will remain relatively stable, creating a structural teacher-supply crisis independent of maintainer status or closure decisions that could undermine any 'keep open' policy through attrition rather than formal decree.",
+        "hu": "2023 és 2030 között évente átlagosan 6200 pedagógus várható nyugdíjba vonulása mellett a tanulólétszám viszonylag stabilnak marad, ami fenntartótól és bezárási döntésektől függetlenül szerkezeti pedagógushiányt teremt, amely a formális rendelet helyett attrícióval aláaknázhat minden nyitva tartási politikát."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Projection is based on stated retirement intentions and historical entry rates; actual retirement timing and new-graduate supply are subject to policy changes (e.g., salary reform, working conditions), international migration, and labor-market alternatives.",
+          "hu": "Az előrejelzés nyilatkozat szerinti nyugdíjazási szándékon és történeti belépési rátákon alapul; a tényleges nyugdíjazás időzítése és az új diplomások kínálata politikai változásoknak (pl. bérreform, munkafeltételek), nemzetközi migrációnak és munkapiaci alternatíváknak van kitéve."
+        },
+        {
+          "en": "Data does not disaggregate rural vs. urban attrition rates or regional shortages, masking potential concentration of teacher scarcity in depopulating areas where rural schools are located.",
+          "hu": "Az adat nem különbözteteti meg a vidéki és városi attrícióarányokat vagy regionális hiányosságokat, fedve a vidéki iskolák helyén található elnéptelenedő területeken a pedagógushiány lehetséges koncentrációját."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Teacher Retirement and Labor-Market Exit Projections (2023–2030)",
+        "hu": "Magyar pedagóguspályaelhagyási és munkavállalás-távozási előrejelzések (2023–2030)"
+      },
+      "source_url": "teacher_retirement_projection_2023"
+    },
+    {
+      "claim": {
+        "en": "In July 2023, controversial legislation affecting teacher employment status passed without adequate trade-union consultation; from January 1, 2024, all teachers shifted from public-servant status to 'school education employee' status with new employment rules, weakening institutional union bargaining power relative to earlier mobilization periods (e.g., 2007).",
+        "hu": "2023 júliusában vitatott törvényhozása járt a pedagógusi foglalkoztatási státusz módosításáról, amely nélkül kielégítő szakszervezeti konzultáció; 2024. január 1-től minden pedagógus közszolgálati státuszból \"közoktatási intézmény alkalmazottja\" státuszba helyeződött új foglalkoztatási szabályokkal, gyengítve az intézményi szakszervezeti tárgyalóerőt az Earlier mobilizációs időszakokhoz (például 2007) képest."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "The claim about 'inadequate consultation' reflects union characterization; government record of consultation meetings or solicited input is not independently verified in source.",
+          "hu": "Az \"elégtelen konzultáció\" állítása szakszervezeti jellemzésnek felel meg; az oktatási tárgyalások vagy felkért vélemények kormányzati nyilvántartása nem függetlenül igazolható a forrásban."
+        },
+        {
+          "en": "The causal link between employment-status change and reduced bargaining power is inferred; comparative analysis of union leverage pre- and post-2024 is not quantified.",
+          "hu": "A foglalkoztatási státusz megváltozása és a csökkent tárgyalóerő közötti oksági kapcsolat következtetett; az unió előnyösségének 2024 előtti és utáni összehasonlító elemzése nem számszerűsített."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Education Law Amendment 2023 and Teacher Employment Status Transition",
+        "hu": "Magyar Oktatási Törvény módosítása 2023 és a pedagógusi foglalkoztatási státusz átalakítása"
+      },
+      "source_url": "education_law_2023_teacher_status"
+    },
+    {
+      "claim": {
+        "en": "Historical civil-society mobilization (e.g., 'Human Chain for Rural Schools' campaign following 2007 closure pressures) has demonstrably slowed specific site-level closures through intense local civic engagement, but remains localized and resource-intensive, not a scalable strategy for preserving rural schools nationwide.",
+        "hu": "A korábbi civil-társadalmi mobilizáció (például \"Emberi lánc a vidéki iskolákért\" kampány a 2007. évi bezárási nyomás után) kimutathatóan lassította az adott helyek bezárásait intenzív helyi civil szerepvállalás révén, de lokalizált és erőforrásigényes marad, nem skálázható stratégia az általános vidéki iskolafenntartáshoz."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Case study is anecdotal; Erdőkürt's success is attributed to 'remarkably strong community engagement' without quantifying which factors (leadership, prior social capital, local economic conditions, proximity to regional center) were decisive.",
+          "hu": "Az esettanulmány anekdotikus; az Erdőkürt sikere a \"rendkívül erős közösségi szerepvállalásra\" van tulajdonítva anélkül, hogy számszerűsítené, mely tényezők (vezetés, előzetes szociális tőke, helyi gazdasági viszonyok, regionális központhoz való közelség) voltak döntőek."
+        },
+        {
+          "en": "No comparative data on how many other similar sites did NOT successfully resist closure despite mobilization attempts, limiting inference about general effectiveness.",
+          "hu": "Nincsenek összehasonlító adatok arról, hogy hány más hasonló helyen NEM sikerült a bezárás ellenállása a mobilizációs kísérletek ellenére, ami korlátozza az általános hatékonyságra vonatkozó következtetéseket."
+        },
+        {
+          "en": "Campaign success is measured as school preservation, not long-term sustainability; current enrollment, financial viability, or teacher staffing of preserved schools is not assessed.",
+          "hu": "A kampány sikere az iskola megtartásként mérődik, nem hosszú távú fenntarthatóságként; a megtartott iskolák jelenlegi beiskolázása, pénzügyi viabilitása vagy pedagógusellátása nem vizsgálható."
+        }
+      ],
+      "source_title": {
+        "en": "NGO Campaign Case Study: Human Chain Against Rural School Closures (Erdőkürt Example)",
+        "hu": "Civil szervezeti kampánya esettanulmány: Emberi lánc a vidéki iskolai bezárások ellen (Erdőkürt példa)"
+      },
+      "source_url": "erdokurt_human_chain_case"
+    },
+    {
+      "claim": {
+        "en": "A 2016 court ruling mandated the phase-out closure of a segregated school branch on desegregation grounds, the first such concrete Hungarian desegregation order based on expert testimony; the municipal government actively obstructed implementation despite the final court ruling, demonstrating that judicially mandated closures face durable local political resistance and years-long implementation delays.",
+        "hu": "Egy 2016. évi bírósági ítélet elrendelte a szegregált iskolafiók fokozatos bezárását, az első konkrét magyar szegregációellenes rendelkezés szakterületi szakértői tanúsítvány alapján; a helyi kormányzat aktívan gátolta a végrehajtást a végső bírósági ítélet ellenére, demonstrálva, hogy a bírósági utasításokra rendelt bezárások tartós helyi politikai ellenállásnak és évek hosszúságú végrehajtási késedelmeknek vannak kitéve."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Case study spans 2010–post-2016; exact duration of non-compliance and current implementation status are not specified, limiting assessment of whether obstruction is permanent or merely protracted.",
+          "hu": "Az esettanulmány 2010–2016 után ível; a meg nem felelés pontos időtartama és a jelenlegi végrehajtási státusz nincs meghatározva, korlátozva az értékelést, hogy az obstrukció végleges vagy csupán kitolódott-e."
+        },
+        {
+          "en": "The case also involved active local Roma political representation supporting the segregated arrangement, introducing ethnic patronage dynamics that may not generalize to purely demographic closure contexts.",
+          "hu": "Az eset helyi roma politikai képviselet aktív támogatásával is járt a szegregált elrendezéshez, ami etnikai patronáz dinamikákat vezet be, amelyek nem általánosíthatók a tisztán demográfiai bezárási kontextusokra."
+        },
+        {
+          "en": "No quantitative data on how many other desegregation orders have faced similar obstruction or delay, limiting inference about systematic pattern vs. exceptional case.",
+          "hu": "Nincs számszerű adat arra vonatkozóan, hogy hány más szegregációellenes ítélettel szemben volt hasonló obstrukció vagy késedelem, korlátozva a szisztematikus mintázat vs. kivételes eset közötti következtetést."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Court Desegregation Order and Municipal Non-Compliance Case Study (Mayor Szita Károly)",
+        "hu": "Magyar bírósági szegregációellenes ítélet és önkormányzati meg nem felelési esettanulmány (Szita Károly polgármester)"
+      },
+      "source_url": "szita_karoly_desegregation_case"
+    },
+    {
+      "claim": {
+        "en": "International evidence on whether school closure accelerates community depopulation is contested: a Finnish DID regression study (2010–2018) found post-closure population decrease exceeded pre-closure decline, but Barakat (Saxony, 2015) and Amcoff (Sweden, 2012) found no significant closure–depopulation linkage, and a Czech study found only 17% of residents in municipalities without elementary schools considered the absence a major shortcoming, allowing either policy side to selectively cite supporting evidence.",
+        "hu": "Az iskolabezárás közösségi elnéptelenedést gyorsító hatásáról szóló nemzetközi bizonyítékok vitatottak: egy finn DID regressziós tanulmány (2010–2018) azt találta, hogy a bezárás utáni populációcsökkenés meghaladta a bezárás előtti csökkenést, de Barakat (Szászország, 2015) és Amcoff (Svédország, 2012) nem találtak jelentős bezárás-elnéptelenedés kapcsolatot, és egy cseh tanulmány azt találta, hogy az alapiskola nélküli községek lakosainak csak 17%-a tartotta a hiányt jelentős problémának, lehetővé téve a politikai felek számára, hogy válogatottan idézzenek támogató bizonyítékokat."
+      },
+      "evidence_strength": "contested",
+      "limitations": [
+        {
+          "en": "Studies employ different methodologies (DID, qualitative resident surveys), outcome definitions (population change vs. resident perception), and timeframes, limiting direct comparison and meta-analytic synthesis.",
+          "hu": "A tanulmányok különböző módszertanokat (DID, kvalitatív lakosok felmérése), kimeneti definíciókat (népességváltozás vs. lakosok érzékelése) és időkereteket használnak, korlátozva a közvetlen összehasonlítást és meta-analitikus szintézist."
+        },
+        {
+          "en": "No Hungarian-specific empirical study on closure–depopulation causality is cited; all evidence is from other European countries with potentially different institutional, economic, or social contexts.",
+          "hu": "A bezárás-elnéptelenedés oksággal kapcsolatos magyar-specifikus empirikus tanulmány nem kerül idézésre; minden bizonyíték más európai országokból származik, potenciálisan eltérő intézményi, gazdasági vagy szociális kontextusokkal."
+        },
+        {
+          "en": "Contested evidence creates rhetorical space for advocacy on either side; empirical resolution would require large-N Hungarian longitudinal analysis not currently available.",
+          "hu": "A vitatott bizonyítékok retorikai helyet teremtenek az egyik vagy másik oldal számára; az empirikus megoldáshoz nagyszámú magyar hosszúidejű elemzés szükséges, amely jelenleg nem érhető el."
+        }
+      ],
+      "source_title": {
+        "en": "Comparative International Evidence: School Closure and Population Decline (Finland, Saxony, Sweden, Czech Republic)",
+        "hu": "Összehasonlító nemzetközi bizonyítékok: iskolabezárás és népességcsökkenés (Finnország, Szászország, Svédország, Csehország)"
+      },
+      "source_url": "comparative_school_closure_depopulation"
+    },
+    {
+      "claim": {
+        "en": "Government rural-development spending (Magyar Falu Program) provides infrastructure and community-building funding to depopulating municipalities, but appears to follow or substitute for school closure rather than prevent it; documented cases show school buildings repurposed (e.g., mayor's office in Garab, 44 residents) while parallel community-development funding is deployed, suggesting the dominant policy-supported coalition response is adaptive infrastructure reuse rather than preservation prevention.",
+        "hu": "A kormányzati vidéki fejlesztési kiadások (Magyar Falu Program) infrastruktúra- és közösségépítési finanszírozást nyújtanak elnéptelenedő községeknek, de úgy tűnik, hogy a bezárást követi vagy helyettesíti, mintsem megelőzi; dokumentált esetek mutatják az iskolaépületek hasznosítva használatra szánt átalakítását (például polgármesteri hivatal Garabban, 44 lakos), miközben párhuzamos közösségfejlesztési finanszírozás kerül bevetésre, sugallva, hogy a kormányzat által támogatott koalíció domináns válasza az adaptív infrastruktúra-újrahasznosítás, mintsem a megőrzés megelőzése."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Garab (44 residents) is a single case; no systematic data on how many other villages have undergone similar school closure followed by infrastructure repurposing, limiting generalizability.",
+          "hu": "Garab (44 lakos) egyetlen eset; nincs szisztematikus adat arról, hogy hány más község esett át hasonló iskolabezárásokra, amelyeket infrastruktúra-átalakítás követett, korlátozva az általánosíthatóságot."
+        },
+        {
+          "en": "Magyar Falu Program funding (600 localities, 10 billion forints cited) is stated as total allocation, but cost-benefit analysis comparing closure-prevention spending vs. post-closure adaptive-reuse spending is not provided.",
+          "hu": "A Magyar Falu Program finanszírozása (600 község, 10 milliárd forint idézve) teljes allokációként van állítva, de a bezárás-megelőzési kiadások és a bezárás-utáni adaptív-újrahasznosítási kiadások összehasonlítása nem történik meg."
+        },
+        {
+          "en": "Sequencing claim (spending follows closure rather than prevents it) is inferred from limited evidence; official policy documentation on the intended relationship between village-funding and school-preservation goals is not cited.",
+          "hu": "A sorrendezés állítása (a kiadások bezárást követnek, nem előzik meg) korlátozott bizonyítékokból származik; a hivatalos politikai dokumentáció a községfinanszírozás és az iskolai megőrzési célok közötti szándékolt kapcsolatról nincs idézve."
+        }
+      ],
+      "source_title": {
+        "en": "Magyar Falu Program (Village Funding Scheme) Implementation Analysis and Garab Case Study",
+        "hu": "Magyar Falu Program (Vidéki Finanszírozási Rendszer) Implementációs Elemzése és Garab Esettanulmány"
+      },
+      "source_url": "magyar_falu_program_analysis"
+    },
+    {
+      "claim": {
+        "en": "A Hungarian pedagogical-policy source notes that Hungary's public education system is extremely centralized (similar to Romania's), but institutional signals suggest possible partial decentralization intent through creation of central district (tankerület) councils; whether this reform pathway moves toward re-municipalization remains an open, unconfirmed question with no official timeline or legislative proposal currently public.",
+        "hu": "Egy magyar pedagógiai-politikai forrás megjegyzi, hogy a magyar közoktatási rendszer rendkívül központosított (Romániához hasonló), de intézményi jelek lehetséges részleges decentralizációs szándékot sugallnak a regionális kerületi (tankerület) tanácsok létrehozásán keresztül; hogy ez a reformútvonal az újramunkálkodás irányába mozdul-e, nyitott, megerősítetlen kérdés, amelyre jelenleg nincs nyilvánosan támogatott jogalkotási javaslat vagy idősor."
+      },
+      "evidence_strength": "weak",
+      "limitations": [
+        {
+          "en": "Source explicitly labels decentralization intent as speculative ('whether this reform moves toward re-municipalization is an open question'); no official government white paper, legislative proposal, or timeline is cited.",
+          "hu": "A forrás kifejezetten a decentralizációs szándékot spekulatívnak jelöli ('hogy ez a reforma az újramunkálkodás irányába mozdul-e, nyitott kérdés'); nincs idézett hivatalos kormányzati fehér könyv, jogalkotási javaslat vagy idősor."
+        },
+        {
+          "en": "The 'framework' for re-municipalization is said to exist 'in principle,' but no formal authority-delegation mechanism or fiscal model is described.",
+          "hu": "Az újramunkálkodás 'kerete' állítólag 'elvben' létezik, de nincs leírva formális hatáskör-delegálási mechanizmus vagy fiskális modell."
+        },
+        {
+          "en": "Source is a policy journal, not government budget or legislative record; institutional opinion does not constitute policy commitment, and signals may be misinterpreted as intent when they reflect only exploratory discussion.",
+          "hu": "A forrás egy politikai folyóirat, nem kormányzati költségvetés vagy jogalkotási nyilvántartás; az intézményi vélemény nem jelent politikai elkötelezettséget, és a jeleket félreértelmezhetik szándéknak, amikor csak felderítő vita tükrözik."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Pedagogical Policy Journal: Centralization and Decentralization Intent Signals",
+        "hu": "Magyar Pedagógiai Politikai Folyóirat: Központosítás és Decentralizációs Szándék Jelek"
+      },
+      "source_url": "hungarian_ped_policy_journal"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": {
+        "en": "Will the projected teacher-supply crisis (6,200 annual retirements, 2023–2030) prove more potent in closing rural schools than formal policy decisions, and if so, will parents and local politicians attribute this to depopulation inevitability or to state-employment-policy failure?",
+        "hu": "A prognosztizált pedagógushiányzás (6200 éves nyugdíjazás, 2023–2030) potensebbnek bizonyul-e az iskolabezárásban, mint a formális politikai döntések, és ha igen, a szülők és helyi politikusok ezt elnéptelenedési elkerülhetetlenségnek vagy állami foglalkoztatáspolitikai kudarctnak fogják-e tulajdonítani?"
+      },
+      "reduction_path": {
+        "en": "This uncertainty can be reduced by: (1) longitudinal tracking of rural-school closures 2024–2030 with explicit attribution coding (policy decision vs. inability to staff), disaggregated by region; (2) qualitative interviews with municipal leaders and parent groups post-closure asking attribution and policy-responsibility framing; (3) comparison of closure rates in rural vs. urban districts to isolate supply-side vs. demand-side (enrollment) drivers; (4) monitoring of government wage/benefit policy for teachers and measuring correlation with rural-teacher recruitment/retention outcomes.",
+        "hu": "Ez az bizonytalanság csökkenthető: (1) vidéki iskolai bezárások hosszú ideje követése 2024–2030-ban explicit attribúciós kódolással (politikai döntés vs. munkaerő-ellátás hiánya), regionálisan szétbontva; (2) kvalitatív interjúk önkormányzati vezetőkkel és szülői csoportokkal bezárás utáni attribúcióra és politikai felelősség keretezésére; (3) vidéki vs. városi járások bezárási arányainak összehasonlítása az ellátási vs. keresleti (beiskolázási) tényezők elkülönítésére; (4) pedagógusok kormányzati bér- és jutalmipolitikájának monitorozása és az összefüggés mérése a vidéki pedagógus-toborzás/megtartási eredményekkel."
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal most directly engages the implementation-planning lens by explicitly naming coordination complexity and maintainer buy-in dependency as risks, reflecting awareness that Finland's successful detracking bundled structural and non-structural elements and that Poland's reversal shows evidence alone is insufficient. However, this breadth is itself the central implementation risk: coordinating legislative, network-planning, teacher-distribution, equity-program, and consultation workstreams simultaneously demands cross-agency capacity that the same centralized bureaucracy has not reliably demonstrated (documented deficit spending, delayed payments, and opacity from 2013-2016). The proposal names but does not resolve dependency on church/foundation maintainer cooperation, which affects a substantial share of the very institutions the reform targets, and no sequencing priority or minimum viable subset is specified for phased delivery if full coordination proves infeasible.",
+      "hu": "Ez a javaslat foglalkozik legközvetlenebbül a megvalósítás-tervezési szemlélettel, mivel kifejezetten megnevezi a koordinációs komplexitást és a fenntartói együttműködési függőséget kockázatként, tükrözve azt a felismerést, hogy Finnország sikeres szintosztás-megszüntetése strukturális és nem-strukturális elemeket egyaránt tartalmazott, és hogy a lengyel visszafordulás azt mutatja, a bizonyíték önmagában nem elegendő. Azonban ez a szélesség maga a központi végrehajtási kockázat: a törvényi, hálózat-tervezési, tanár-elosztási, esélyegyenlőségi program és konzultációs munkafolyamatok egyidejű koordinálása olyan intézményközi kapacitást igényel, amelyet ugyanaz a centralizált bürokrácia nem bizonyított megbízhatóan (dokumentált hiányos finanszírozás, késleltetett kifizetések és átláthatatlanság 2013–2016-ból). A javaslat megnevezi, de nem oldja meg a fenntartók (egyházi/alapítványi) együttműködésétől való függést, amely a reform által célzott intézmények jelentős részét érinti, és nincs meghatározva szekvenálási prioritás vagy minimálisan életképes alrészhalmaz a fokozatos megvalósításhoz, ha a teljes koordináció megvalósíthatatlannak bizonyul."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-implementation_planning-08",
+      "F-live-implementation_planning-09"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Package design allows for staged piloting of individual components (e.g., teacher-distribution correction or equity-program integration first) even if full structural change is deferred, offering a natural containment strategy not yet made explicit.",
+        "hu": "A csomag-kialakítás lehetővé teszi az egyes összetevők (pl. tanár-elosztási korrekció vagy esélyegyenlőségi program integrálása) fokozatos kísérleti bevezetését, akkor is, ha a teljes strukturális változás elhalasztott, ez egy még nem explicit módon kimondott természetes elhárítási stratégiát kínálva."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Explicitly names both coordination complexity and maintainer buy-in dependency as risks, demonstrating the most direct engagement with the lens's core question about missing capabilities and safeguards compared to the other proposals.",
+        "hu": "Kifejezetten megnevezi mind a koordinációs komplexitást, mind a fenntartói együttműködési függőséget mint kockázatokat, ami a leginkább közvetlen foglalkozást jelenti a szemlélet alapkérdésével a hiányzó képességekről és biztosítékokról a többi javaslathoz képest."
+      },
+      {
+        "en": "Incorporates lessons from both Finland (multi-measure success) and Poland (evidence-alone insufficiency) into design logic, reflecting some structured learning from comparator failure modes.",
+        "hu": "Beépíti mind a finn (több intézkedésen alapuló siker), mind a lengyel (önmagában elégtelen bizonyíték) tanulságokat a kialakítási logikába, tükrözve a komparátorok kudarcmintáiból való strukturált tanulást."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Simultaneous dependency on maintainer cooperation and centralized bureaucratic execution creates a compound failure risk: if either fails, the package's multi-measure rationale (avoiding Finland/Poland's failure modes) collapses into a partial, potentially incoherent implementation.",
+        "hu": "A fenntartói együttműködéstől és a centralizált bürokratikus végrehajtástól való egyidejű függés összetett kudarckockázatot hoz létre: ha bármelyik meghiúsul, a csomag több intézkedésen alapuló indoklása (a finn/lengyel kudarcminták elkerülése) részleges, potenciálisan inkoherens végrehajtássá omlik össze."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "No specified sequencing priority or minimum viable subset of workstreams; if full coordination across legislative, network, teacher, and equity-program tracks proves infeasible, no fallback pathway is described.",
+        "hu": "Nincs meghatározott szekvenálási prioritás vagy minimálisan életképes munkafolyamat-alrészhalmaz; ha a törvényi, hálózati, tanári és esélyegyenlőségi program munkafolyamatok teljes koordinációja megvalósíthatatlannak bizonyul, nincs leírt visszaeső útvonal."
+      },
+      {
+        "en": "The delivery agency for most workstreams is the same centralized bureaucracy already documented with high bureaucratic burden and deficit spending, casting direct doubt on multi-track execution capacity.",
+        "hu": "A legtöbb munkafolyamat végrehajtó ügynöksége ugyanaz a centralizált bürokrácia, amelyről már dokumentálták a magas bürokratikus terhelést és a hiányos finanszírozást, közvetlen kétséget vetve fel a több nyomvonalú végrehajtási kapacitásra vonatkozóan."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t5-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-db2943fd921696b7",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

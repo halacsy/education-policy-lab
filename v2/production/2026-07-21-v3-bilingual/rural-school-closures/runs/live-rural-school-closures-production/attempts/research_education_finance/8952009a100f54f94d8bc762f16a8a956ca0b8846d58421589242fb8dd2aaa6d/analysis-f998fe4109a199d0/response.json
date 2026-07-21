@@ -1,0 +1,298 @@
+{
+  "assumptions": [
+    {
+      "en": "The fiscal savings from consolidation and closure accrue primarily to the central budget or regional education authority, while the costs (travel time, family convenience, community services loss) are borne by affected families and residents; without evidence of fiscal transfer mechanisms or compensatory investments, the distribution is assumed asymmetric.",
+      "hu": "A konszolidálásból és zárásból eredő költségmegtakarítások elsősorban a központi költségvetéshez vagy a regionális oktatási hatósághoz tartoznak, míg a költségek (utazási idő, családi kényelem, közösségi szolgáltatások elvesztése) az érintett családok és lakók által viselendő; finanszírozási transzfer mechanizmusok vagy kompenzációs beruházások bizonyítéka nélkül az elosztás aszimmetrikusnak feltételezendő."
+    },
+    {
+      "en": "Enrollment decline and community depopulation are substantially driven by demographic factors (fertility decline, migration), not solely by education policy. However, policy decisions (closure, consolidation, funding levels) can amplify or mitigate those demographic trends; the net effect of a specific policy choice cannot be estimated without counterfactual comparison.",
+      "hu": "A beiratkozás csökkenése és a közösségi depopuláció lényegében demográfiai tényezők (termékenységcsökkentés, migráció) által vezérelt, nem kizárólag az oktatáspolitika által. Az oktatáspolitikai döntések (zárás, konszolidálás, finanszírozási szint) azonban erősíthetik vagy csökkenthetik ezeket a demográfiai trendeket; a specifikus politikai döntés nettó hatása nem becsülhető meg kontrafaktuális összehasonlítás nélkül."
+    },
+    {
+      "en": "Decision-makers (central education authority, district leaders) operate under fiscal constraints and have incentives to minimize per-unit operating costs and balance overall system budgets. They do not systematically prioritize preserving community social cohesion, local employment (via school payroll), or mitigating second-order depopulation effects unless explicitly mandated or funded to do so.",
+      "hu": "A döntéshozók (központi oktatási hatóság, járulékvezetők) pénzügyi korlátok alatt működnek, és ösztönzik az per-unit működési költségek minimalizálása és az általános rendszer költségvetés kiegyensúlyozása. Nem prioritizálják szisztematikusan a közösségi szociális kohézió megőrzését, a helyi foglalkoztatást (az iskola bérlistáján keresztül) vagy a másodrendű depopuláció-hatások enyhítését, hacsak nem kifejezetten erre van feladata vagy finanszírozása."
+    },
+    {
+      "en": "The sources reviewed are primarily English-language or translated summaries; direct evidence of Hungarian legislative intent, government position papers, or detailed cost-accounting for specific closure proposals is not available, limiting causal inference about actual decision-making processes and trade-offs.",
+      "hu": "Az áttekintett források elsősorban angol nyelvűek vagy lefordított összefoglalók; az magyarországi törvényhozási szándék, kormányzati állásfoglalások vagy adott zárás-javaslatok részletes költség-könyvelésének közvetlen bizonyítékai nem állnak rendelkezésre, amit az aktuális döntéshozatali folyamatok és kompromisszumok okozati következtetéseit korlátozzák."
+    }
+  ],
+  "findings": [
+    {
+      "claim": {
+        "en": "Hungary's total births fell 9.1% in 2024 versus 2023, with fertility rate dropping to 1.38 by 2024, and depopulation is progressing at its fastest rate to date. As of 2024, nearly 30% of Hungary's population lived in villages.",
+        "hu": "Magyarország születésszáma 2024-ben 9,1%-kal csökkent 2023-hoz képest, a termékenységi ráta 2024-re 1,38-ra esett, és a depopuláció a mai napig a leggyorsabban halad előre. 2024-ben Magyarország népességének közel 30%-a falvakban élt."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Data reflects preliminary 2024 figures and may be subject to revision; fertility rate and birth decline are lagging indicators of enrollment impact (cohorts born 2024 enter school 2030+).",
+          "hu": "Az adatok 2024-es előzetes számokat tükröznek és felülvizsgálatra kerülhetnek; a termékenységi ráta és születésszám-csökkenés az iskola-beiratkozás késedelmi mutatói (2024-ben született kohorszok 2030-ban lépnek iskolába)."
+        },
+        {
+          "en": "National aggregates mask significant regional variation in birth decline and fertility rates.",
+          "hu": "A nemzeti aggregátumok elrejtik a születésszám-csökkenés és termékenységi ráták szignifikáns regionális különbségeit."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Central Statistical Office and OSW Centre for Eastern Studies demographic monitoring",
+        "hu": "Központi Statisztikai Hivatal és az OSW Közép- és Kelet-Európai Tanulmányok Központja demográfiai monitorozása"
+      },
+      "source_url": "https://osw.waw.pl"
+    },
+    {
+      "claim": {
+        "en": "Rural depopulation in Hungary is geographically uneven. While national rural depopulation has slowed overall, individual settlements such as Lasztonya lost over 40% of population in five years. Academic mapping shows stagnation or decline concentrated in Baranya and low-density parts of Northern Hungary, where child population contracted 10–30%, often coinciding with school closure or downgrading.",
+        "hu": "A Magyarország vidéki depopulációja földrajzilag egyenletlen. Míg az országos vidéki depopuláció lassult, az olyan települések, mint Lasztonya 40%-nál nagyobb népességvesztést szenvedtek öt év alatt. Az akadémiai térképezés az Baranya és Észak-Magyarország kis sűrűségű területeire koncentrálódó stagnálást vagy csökkenést mutat, ahol a gyermekpopuláció 10–30%-kal csökkent, gyakran iskolazárással vagy visszaminősítéssel párhuzamosan."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Exact source and time-period boundaries for the 40% figure in Lasztonya not fully specified; regional mapping studies are from secondary sources and require primary verification.",
+          "hu": "A Lasztonya 40%-os adat pontos forrása és időperiódusa nem teljes mértékben meghatározott; a regionális térképezési tanulmányok másodlagos forrásokból származnak és elsődleges ellenőrzést igényelnek."
+        },
+        {
+          "en": "Correlation between child population decline and school closure does not establish causal direction (whether closure drives depopulation or depopulation causes closure).",
+          "hu": "A gyermekpopuláció csökkenése és az iskolazárás közötti korreláció nem állapítja meg az okság irányát (az iskolazárás okozza-e a depopulációt vagy a depopuláció az iskolazárást)."
+        }
+      ],
+      "source_title": {
+        "en": "Statista rural demographic data and academic settlement-level mapping studies",
+        "hu": "Statista vidéki demográfiai adatok és akadémiai településszintű térképezési tanulmányok"
+      },
+      "source_url": "https://www.statista.com"
+    },
+    {
+      "claim": {
+        "en": "Since the 2013 KLIK reform, all primary and secondary institutions previously run by municipalities were taken over by the state, which became employer of all pedagogical staff. In villages with population under 3,000, operational tasks of public educational institutions were also performed by the state.",
+        "hu": "A 2013-as KLIK-reform óta az összes, korábban önkormányzatok által működtetett általános és középiskolát az állam vette át, és az összes pedagógiai személyzet munkaadója lett. A 3000 fő alatti lélekszámú falvakban az közoktatási intézmények operatív feladatait is az állam végezte."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Formal centralization does not directly measure changes in de facto local influence or whether communities retain informal consultation rights in closure decisions.",
+          "hu": "A formális centralizáció nem méri közvetlenül a de facto helyi befolyás változásait vagy azt, hogy a közösségek megtartják-e az informális konzultációs jogokat a zárási döntésekben."
+        },
+        {
+          "en": "No quantitative data provided on the frequency or distribution of closure/retention decisions by central authority post-2013; attribution of closure decisions solely to centralization structure is incomplete without decision-process evidence.",
+          "hu": "Nem áll rendelkezésre mennyiségi adat a zárás/megtartás döntések gyakorisága vagy eloszlása tekintetében a központi hatóság által 2013 után; az iskolazárási döntések kizárólagos attribúciója a centralizációs struktúrához hiányos a döntéshozatali folyamat bizonyítékai nélkül."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian education law and KLIK institutional reforms (2013 onwards)",
+        "hu": "A magyar oktatási törvény és KLIK intézményi reformok (2013 és azt követő évek)"
+      },
+      "source_url": "https://www.eurydice.org.uk"
+    },
+    {
+      "claim": {
+        "en": "The KLIK centralization aimed to reduce quality differences and equalize disparities from municipalities' different income-generating capacities. However, the reform produced systematic under-budgeting: resource constraints of smaller municipal schools were addressed, but funding for previously better-off urban schools declined, and recurring KLIK solvency problems forced district leaders to cut spending to only mandatory minimums.",
+        "hu": "A KLIK-centralizáció célja a minőségbeli különbségek csökkentése és az önkormányzatok eltérő bevételszerzési képességéből adódó egyenlőtlenségek kiegyenlítése volt. A reform azonban szisztematikus alulfinanszírozást eredményezett: a kisebb községi iskolák erőforrás-szűke kezelésre került, de a korábban jómódú városi iskolák finanszírozása csökkent, és az ismétlődő KLIK fizetőképtelenségi problémák kényszerre kényszerítették a járulékvezetőket, hogy csak a kötelező minimumokra csökkentsék a kiadásokat."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "The net distributional effect between rural and urban schools is asserted but not quantified with precise funding flow data for before/after 2013; 'systematic under-budgeting' is inferred from solvency problems rather than audited budget documentation.",
+          "hu": "A vidéki és városi iskolák közötti nettó újraelosztási hatás állított, de nem számszerűsített pontos finanszírozási adatokkal 2013 előtt/után; a 'szisztematikus alulfinanszírozást' a fizetőképtelenségi problémákból következtetik a naplózott költségvetési dokumentáció helyett."
+        },
+        {
+          "en": "Causal attribution of funding declines in urban schools to KLIK specifically (versus austerity, population decline, or other reforms) requires controlled comparison not present in available sources.",
+          "hu": "A városi iskolák finanszírozáscsökkenésének okozati attribúciója a KLIK-nak (az austerity, népességcsökkenés vagy más reformok helyett) megköveteli a rendelkezésre álló forrásokban nem szereplő kontrollált összehasonlítást."
+        }
+      ],
+      "source_title": {
+        "en": "KLIK funding analysis and education finance studies on post-2013 redistribution effects",
+        "hu": "KLIK-finanszírozási elemzés és 2013 utáni újraelosztási hatásokra vonatkozó oktatási finanszírozási tanulmányok"
+      },
+      "source_url": "https://www.eurydice.org.uk"
+    },
+    {
+      "claim": {
+        "en": "Hungary historically avoided formal school closures by reducing the number of parallel classes rather than closing or amalgamating schools, resulting in a large offer of small schools. This mechanism reduced scope for within-school separation of pupils by social or ethnic background, especially in small rural settlements running only one class per grade, but may have substituted between-school for within-school ethnic segregation.",
+        "hu": "Magyarország történetileg elkerülte a formális iskolazárásokat azáltal, hogy a párhuzamos osztályok számát csökkentette az iskolák bezárása vagy összevonása helyett, ami nagyszámú kis iskolát eredményezett. Ez a mechanizmus csökkentette a tanulók szociális vagy etnikai alapon történő iskolan belüli elkülönítésének lehetőségét, különösen az egy osztályt osztályzatonként futtató kis vidéki településekben, de az iskola közötti szegregáció helyettesítésével járulhatott az iskola belsejében történő etnikai szegregációhoz."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "The causal link between parallel-class reduction and between-school segregation outcomes is inferred from structural logic rather than empirical segregation index comparisons between consolidated and non-consolidated districts.",
+          "hu": "A párhuzamos osztályok csökkenése és az iskola közötti szegregáció kimenetelei közötti okozati kapcsolat a szerkezeti logikából származik, nem pedig az összevont és nem konszolidált járulékok közötti szegregációs index empirikus összehasonlításaiból."
+        },
+        {
+          "en": "No quantitative evidence provided on the scale (percentage of small schools) or regional distribution of this adjustment practice across Hungary.",
+          "hu": "Nincs mennyiségi adat az igazítási gyakorlat skálájáról (kis iskolák százaléka) vagy regionális eloszlásáról Magyarország egészén."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian school structure studies and segregation mechanism analysis",
+        "hu": "Magyar iskolai szerkezeti tanulmányok és szegregációs mechanizmus elemzés"
+      },
+      "source_url": "https://cps.ceu.edu"
+    },
+    {
+      "claim": {
+        "en": "Cross-national evidence shows real but partial and contested economies of scale in school consolidation. U.S. studies document that annual operating spending per pupil declines by 61.7% when two 300-pupil districts merge and by 49.6% when two 1,500-pupil districts merge, with savings concentrated in instruction and administration. However, the same research finds no economies—or diseconomies—of size for student transportation. Other reviews report a U-shaped curve in the size-cost relationship, and older studies may underestimate large-school costs because administrative/support costs get shifted to the district level.",
+        "hu": "Az országok közötti bizonyítékok azt mutatják, hogy az iskolazárda valós, de részleges és vitatott mérethozamok vannak. Az Egyesült Államokban végzett tanulmányok azt dokumentálják, hogy az egy tanulóra eső éves működési költség 61,7%-kal csökken, amikor két 300 fős iskola egyesül, és 49,6%-kal csökken, amikor két 1500 fős iskola egyesül, a megtakarítások az oktatásban és adminisztrációban koncentrálódnak. Ugyanez a kutatás azonban azt találja, hogy nincs mérethozam – vagy mérettel kapcsolatos hátránya – a tanulói szállításnak. Más áttekintések a méret-költség kapcsolat U-alakú görbét mutatnak, és a régebbi tanulmányok alulbecsülhetik a nagyobb iskolák költségeit, mivel az igazgatási / támogató költségek az járulékszintre tolódnak át."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Cost-benefit estimates are derived primarily from U.S. data (different institutional/geographic context than Hungary); no direct Hungary-specific consolidation cost analysis located in search results.",
+          "hu": "A költség-haszon becslések elsősorban az USA adataiból származnak (eltérő intézményi/földrajzi kontextus Magyarországhoz képest); a közvetlen magyar konszolidációs költség-elemzés nem található a keresési eredmények között."
+        },
+        {
+          "en": "The 61.7% and 49.6% savings figures refer only to two specific merger scenarios; extrapolation to Hungarian school sizes and travel distances is not empirically grounded.",
+          "hu": "A 61,7% és 49,6%-os megtakarítás számok csak két specifikus szervezési forgatókönyvre vonatkoznak; a magyar iskolák méretére és utazási távolságaira való extrapolálás nem empirikusan megalapozott."
+        },
+        {
+          "en": "Transportation cost neutrality (finding 6) is a critical limitation on the 'cost savings' narrative, yet many closure justifications omit or downplay transport expenses.",
+          "hu": "A szállítási költség semlegessége (6. megállapítás) kritikus korlátja a 'költségmegtakarítás' narratívájának, de sok zárás-indoklás kihagyja vagy háttérbe szorítja a szállítási költségeket."
+        }
+      ],
+      "source_title": {
+        "en": "AASA (American Association of School Administrators) consolidation cost-benefit summary and comparative school finance literature",
+        "hu": "AASA (American Association of School Administrators) konszolidációs költség-haszon összefoglalója és összehasonlító iskolai finanszírozási irodalom"
+      },
+      "source_url": "https://www.aasa.org"
+    },
+    {
+      "claim": {
+        "en": "Multi-grade (combined) teaching is implemented internationally to prevent school closures and stabilizes learning-group sizes in rural areas with declining birth rates. This is a middle-path resource strategy that lowers the marginal enrollment threshold needed to keep a school open, trading some pedagogical uniformity for continued local access, and is functionally similar to the Hungarian practice of reducing parallel classes.",
+        "hu": "A többsoros (kombinált) oktatás nemzetközileg alkalmazott módszer az iskolazárások megelőzésére és stabilizálja a tanulási csoport méretét olyan vidéki területeken, ahol csökken a születési ráta. Ez egy középút erőforrás-allokációs stratégia, amely csökkenti az iskola nyitva tartásához szükséges marginális beiratkozási küszöböt, valamennyi pedagógiai egységességet felcserélve a helyi hozzáférés folytatásáért, és funkcionálisan hasonló a párhuzamos osztályok csökkentésének magyar gyakorlatához."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "No comparative effectiveness data provided on academic outcomes or cost-per-outcome in multi-grade versus single-grade settings; the 'trade-off' between pedagogical uniformity and access is asserted qualitatively rather than quantified.",
+          "hu": "Nincsenek összehasonlító hatékonysági adatok az akadémiai eredményekre vagy a költség-per-kimenetelre a többsoros versus egysoros szettingekben; az 'ajánlat' a pedagógiai egységesség és a hozzáférés között minőségileg van érvényesítve, nem mennyiségileg."
+        },
+        {
+          "en": "Prevalence and distribution of multi-grade teaching in Hungarian schools not documented in sources reviewed; unclear whether this is currently used or an alternative under-considered.",
+          "hu": "A többsoros tanítás prevalenciája és eloszlása a magyar iskolákban nincsenek dokumentálva az áttekintett forrásokban; nem világos, hogy ez jelenleg használatos-e vagy egy kevésbé fontolóra vett alternatíva."
+        }
+      ],
+      "source_title": {
+        "en": "Comparative rural education and multi-grade teaching studies",
+        "hu": "Összehasonlító vidéki oktatás és többsoros tanítási tanulmányok"
+      },
+      "source_url": "https://www.cedefop.europa.eu"
+    },
+    {
+      "claim": {
+        "en": "A Finnish difference-in-differences study (2010–2018) using DID regression and matching methods found that after school closure, the population of the surrounding community decreased more than before closure, concluding that school closures raise questions about the broader vitality and development of the municipality. This suggests a potential feedback loop: closure decisions justified by low enrollment may cause further enrollment and population decline.",
+        "hu": "A finn különbség-a-különbségek tanulmány (2010–2018) DID-regresszió és illesztési módszerek felhasználásával azt találta, hogy az iskolazárás után a környező közösség népessége jobban csökkent, mint a zárás előtt, arra a következtetésre jutva, hogy az iskolazárások kérdéseket vetnek fel a község tágabb vitálisságáról és fejlesztéséről. Ez egy lehetséges visszacsatolási hurkot sugall: az alacsony beiratkozás által indokolt zárási döntések további beiratkozás és népességcsökkenéshez vezethetnek."
+      },
+      "evidence_strength": "weak",
+      "limitations": [
+        {
+          "en": "Study is Finland-specific; external validity to Hungary is limited by differences in institutional context, labor market, transport infrastructure, and cultural attachment to local schools.",
+          "hu": "A tanulmány Finnország-specifikus; a Magyarország-ra való külső validitás korlátozott az intézményi kontextus, munkaerőpiac, közlekedési infrastruktúra és a helyi iskolákhoz való kulturális ragaszkodás különbségei miatt."
+        },
+        {
+          "en": "No Hungary-specific causal evidence of closure-driven depopulation was located; the feedback-loop mechanism is suggestive by analogy, not directly measured in Hungarian settings.",
+          "hu": "Nem találtunk Magyar depopuláció által okozott iskolazárás közvetlen okozati bizonyítékát; a visszacsatolási hurok mechanizmusa analógiával sugalmazó, nem közvetlenül mérhető magyar beállításban."
+        },
+        {
+          "en": "Causal direction: the study shows correlation and temporal sequence (closure precedes further decline) but does not rule out unmeasured confounders (e.g., local economic shocks) that drive both closure and depopulation independently.",
+          "hu": "Okozati irány: a tanulmány korrelációt és időbeli sorrendet mutat (a zárás megelőzi a további csökkenést), de nem zárja ki a méretlen zavarókat (pl. helyi gazdasági sokkokat), amelyek függetlenül vezetnek az iskolazáráshoz és depopulációhoz."
+        }
+      ],
+      "source_title": {
+        "en": "Finnish difference-in-differences study on school closures and community depopulation (2010–2018)",
+        "hu": "Finn különbség-a-különbségek tanulmány az iskolazárások és közösségi depopuláció (2010–2018)"
+      },
+      "source_url": "https://researchgate.net"
+    },
+    {
+      "claim": {
+        "en": "Analysis of approximately 3,300 Polish school closures (2000–2016) found that declining fertility plus migration combined to reduce primary-pupil numbers, yet economic reasons were cited as the direct cause of school closures in the countryside. This indicates that decision-makers often frame closures as budget-driven even when the root cause is demographic, allowing the stated incentive (cost savings) and the underlying driver (fewer children) to be politically decoupled.",
+        "hu": "Körülbelül 3300 lengyel iskolazárás elemzése (2000–2016) azt mutatta, hogy a csökkenő termékenység és migráció együttesen csökkentette az általános iskolás tanulók számát, azonban az iskolazárások közvetlen okként gazdasági okokra hivatkoztak vidéken. Ez azt jelzi, hogy a döntéshozók gyakran a zárásokat költségvetés-vezéreltnek tekintik, még ha az alapvető ok demográfiai, lehetővé téve az állított ösztönző (költségmegtakarítás) és az alapvető hajtóerő (kevesebb gyermek) politikai szétválasztását."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Polish data may not transfer directly to Hungarian institutional or cultural context; no equivalent granular analysis of Hungarian closure justifications against root-cause data found in sources.",
+          "hu": "A lengyel adatok nem vihetők át közvetlenül a magyar intézmények vagy kulturális kontextusára; nincs egyenértékű részletes magyar zárás-indoklást az alapok-oka adatokkal szemben az forrásokban."
+        },
+        {
+          "en": "The framing decoupling (budget vs. demographic) is an inference from divergence between stated and root causes; no direct evidence of intentional rhetorical manipulation or outcome bias provided.",
+          "hu": "A keretezés szétválasztása (költségvetés versus demográfiai) az állított és az alapvető okok közötti eltérésből vont következtetés; nincs közvetlen bizonyíték az szándékos retorikai manipulációra vagy az eredmény-torzításra."
+        }
+      ],
+      "source_title": {
+        "en": "Polish school closure analysis (2000–2016) and OSW Centre for Eastern Studies comparative research",
+        "hu": "Lengyel iskolazárási elemzés (2000–2016) és az OSW Közép- és Kelet-Európai Tanulmányok Központja összehasonlító kutatása"
+      },
+      "source_url": "https://osw.waw.pl"
+    },
+    {
+      "claim": {
+        "en": "In Hungary's rural school restructuring wave referenced in the Kovács (2012) case study, an estimated 10% of small schools were closed, while approximately 30–35% were amalgamated and continued under the administration of a central unit. This shows the policy menu is not simply 'close vs. keep open'—amalgamation-with-continued-local-operation is a common intermediate outcome.",
+        "hu": "Magyarország vidéki iskolai újrastrukturálási hullámában, amelyre a Kovács (2012) esettanulmánya hivatkozik, a kis iskolák becsült 10%-a zárva lett, míg körülbelül 30–35%-a volt összevonva és egy központi egység irányítása alatt folytatódott. Ez azt mutatja, hogy a politikai menü nem csupán 'zárás versus nyitva maradás' – az összevonás helyi működtetésével egy gyakori közbenső kimenetel."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "The 10% and 30–35% figures are described as 'estimated' and their empirical basis (census of closures/amalgamations, or survey extrapolation) is not specified in notes.",
+          "hu": "A 10% és 30–35%-os számok 'becsültnek' vannak leírva, és empirikus alapjuk (zárások/szervezések cenzusa vagy felmérési extrapolálása) nincs megadva a jegyzetekben."
+        },
+        {
+          "en": "No evaluation provided of cost-effectiveness, community outcomes, or fiscal sustainability of the amalgamated-but-continued-locally-operated model; its advantages and drawbacks relative to full closure or retention remain unquantified.",
+          "hu": "Nincsen értékelés az összevont, de helyileg működtetett modell költség-hatékonyságáról, közösségi kimeneteleiről vagy pénzügyi fenntarthatóságáról; az előnyei és hátrányai a teljes záráshoz vagy megtartáshoz képest számszerűsítve maradnak."
+        },
+        {
+          "en": "Temporal scope (Kovács 2012) is now over a decade old; unclear whether amalgamation patterns have persisted, expanded, or been reversed post-2013 under KLIK centralization.",
+          "hu": "Az időbeli hatókör (Kovács 2012) már több mint egy évtizede; nem világos, hogy az összevonási minták a 2013 utáni KLIK-centralizáció alatt megmaradtak-e, bővültek-e vagy fordítottak-e."
+        }
+      ],
+      "source_title": {
+        "en": "Kovács (2012) 'Journal of Rural Studies' and Hungarian school restructuring case studies",
+        "hu": "Kovács (2012) 'Journal of Rural Studies' és a magyar iskolai újrastrukturálási esettanulmányok"
+      },
+      "source_url": "https://www.sciencedirect.com/journal/journal-of-rural-studies"
+    },
+    {
+      "claim": {
+        "en": "Hungary has the highest level of segregation of students from less and more advantaged socio-economic groups and the highest segregation of most/least disadvantaged students among EU countries, according to the 2022 PISA study cited in the European Commission Education and Training Monitor 2025. School consolidation or closure decisions can shift which children end up in majority-Roma versus majority-non-Roma settings, making school-network restructuring distributionally non-neutral with respect to ethnicity, distinct from and additional to the pure enrollment and cost calculus.",
+        "hu": "Az Európai Bizottság Oktatási és Képzési Monitorozása 2025-ben hivatkozott 2022-es PISA-tanulmány szerint Magyarország a legmagasabb szinten szegregálja a kevésbé és több előnytelen szocioökonómiai helyzetből származó tanulókat, és az EU-országok között a legmagasabban szegregálódnak a leginkább / legkevésbé hátrányos helyzetű tanulók. Az iskolai konszolidálás vagy zárás döntések eltolódhatnak, mely gyermekek kerülnek roma többségű versus roma nem többségű beállításba, így az iskola-hálózat újrastrukturálása etnikailag nem semleges újraelosztású, az tiszta beiratkozás és költség számításoktól eltérő és azok mellett áll."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Segregation indices document patterns but do not directly causally attribute observed segregation to school-network structure, closure decisions, or alternative policies; causal pathways are inferred from structural logic.",
+          "hu": "A szegregáció indexei mintákat dokumentálnak, de nem járulnak közvetlenül okozati kapcsoaltot az megfigyelt szegregációhoz az iskola-hálózat szerkezete, zárás döntések vagy alternatív politikák terén; az okozati útvonalak szerkezeti logikából vannak levezetve."
+        },
+        {
+          "en": "No quantitative model of how specific school closures (versus consolidation or multi-grade transition) alter ethnic composition of resulting school populations is available; the link to restructuring decisions is suggestive rather than empirically measured in Hungary.",
+          "hu": "Nincs mennyiségi modell arról, hogy az adott iskolazárások (konszolidálás vagy többsoros átmenet helyett) hogyan módosítják az eredő iskolai populáció etnikai összetételét; az eljárások újrastrukturálási döntésekhez való kapcsolata Magyarországon sugalmazó, nem pedig empirikusan mért."
+        }
+      ],
+      "source_title": {
+        "en": "European Commission Education and Training Monitor 2025 and OECD PISA 2022 study on student segregation",
+        "hu": "Európai Bizottság Oktatási és Képzési Monitorozása 2025 és az OECD PISA 2022 tanulmánya a tanulók szegregációjáról"
+      },
+      "source_url": "https://ec.europa.eu/education"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": {
+        "en": "What is the actual cost per pupil (in Euros or forints) of operating a small rural school (50–150 pupils) in Hungary, including all direct and indirect/overhead costs, and how does this vary by region and school type (single-grade vs. multi-grade)?",
+        "hu": "Mennyi az egy magyar vidéki iskola működésének tényleges költsége tanulónként (euróban vagy forintban) (50–150 tanuló), beleértve az összes közvetlen és közvetett/általános költséget, és ez hogyan változik régiónként és iskolatípusonként (egysoros versus többsoros)?"
+      },
+      "reduction_path": {
+        "en": "Conduct or commission a detailed cost-accounting study of a stratified sample of rural schools by region, enrollment size, and functional configuration (single-grade, multi-grade, consolidated), with full attribution of central-authority overhead, transport subsidy, and facility maintenance. Compare results to the hypothetical cost of consolidating into a larger district school, including transport and transition costs.",
+        "hu": "Végezzen vagy megrendeljen egy részletes költség-könyvelési tanulmányt a vidéki iskolák régiónként, beiratkozási méret és funkcionális konfigurációnként (egysoros, többsoros, konszolidált) rétegzett mintájáról, a központi hatóság általános költségének, szállítási támogatásának és a létesítmény karbantartásának teljes attribúciójával. Az eredményeket össze lehessen hasonlítani egy nagyobb járulékos iskola konszolidálásának hipotetikus költségével, beleértve a szállítást és az átmeneti költségeket."
+      }
+    },
+    {
+      "question": {
+        "en": "Does closure (or consolidation without local continued operation) of small village schools materially accelerate out-migration of families and working-age adults in Hungary, and if so, what is the magnitude of the effect relative to underlying demographic and labor-market factors?",
+        "hu": "A magyar kis faluiskolák bezárása (vagy helyi folytatott működtetés nélküli konszolidálása) anyagilag felgyorsítja-e a családok és munkavégzésre képes felnőttek migrációját, és ha igen, mekkora a hatás az alapvető demográfiai és munkaerőpiaci tényezőkhöz képest?"
+      },
+      "reduction_path": {
+        "en": "Conduct a Hungarian difference-in-differences or synthetic-control study comparing population and household migration flows in paired villages that experienced school closure versus those that retained/consolidated schools, controlling for pre-trend demographic and economic indicators. Use fine-grained municipal administrative data (national tax records, migration registry) to estimate local labor supply and housing demand responses post-closure.",
+        "hu": "Végezzen magyar különbség-a-különbségek vagy szintetikus-kontroll tanulmányt az iskolazárást tapasztalt falvakat és azokat, amelyek megtartottak/konszolidáltak iskolákat, össze lehessen hasonlítani az előtrend demográfiai és gazdasági mutatókat kontrollálva. Használjon apróra tagolt önkormányzati adminisztratív adatokat (országos adóadatok, migrációs nyilvántartás) a helyilag kínált munkaerő és a lakáskereslet zárás utáni válaszainak becsléséhez."
+      }
+    }
+  ]
+}

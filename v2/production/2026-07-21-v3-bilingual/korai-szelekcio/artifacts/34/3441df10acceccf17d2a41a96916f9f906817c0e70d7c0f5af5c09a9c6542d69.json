@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal aligns best among the five with observed actor behavior: it does not require the ministry to abandon its current preference for retaining existing gimnáziums' status, and quota/threshold and desegregation-obligation mechanisms could in principle be implemented through existing licensing and regulatory channels already exercised (case-by-case denial precedent, existing guaranteed-progression rules). This gives it comparatively higher pilotability. However, the same centralized bureaucracy tasked with delivering guardrails has documented operational strain, opacity, and funding shortfalls from 2013-2016, raising a direct capacity question for uniform, nationwide enforcement of any new desegregation obligation—an unresolved feedback-loop and monitoring gap the mechanism section does not address.",
+      "hu": "Az öt közül ez a javaslat illeszkedik legjobban a megfigyelt szereplői viselkedéshez: nem igényli, hogy a minisztérium feladja a meglévő gimnáziumok státuszának megtartására vonatkozó jelenlegi preferenciáját, és a kvóta/küszöbérték és a szegregáció-ellenes kötelezettség mechanizmusai elvben megvalósíthatók lennének a már gyakorolt meglévő engedélyezési és szabályozási csatornákon keresztül (eseti elutasítási precedens, meglévő garantált továbbhaladási szabályok). Ez viszonylag magasabb kísérletezhetőséget biztosít számára. Azonban ugyanaz a centralizált bürokrácia, amelynek a védőintézkedéseket kellene végrehajtania, dokumentált működési feszültséget, átláthatatlanságot és finanszírozási hiányt mutatott a 2013–2016 közötti időszakban, ami közvetlen kapacitáskérdést vet fel bármely új szegregáció-ellenes kötelezettség egységes, országos szintű érvényesítésére – ez egy megoldatlan visszacsatolási hurok és monitoring hiányosság, amelyet a mechanizmus szekció nem kezel."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-09"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Existing case-by-case licensing veto precedent (Tiszavasvári) could be formalized into a rule-based, monitored desegregation-impact assessment process, converting ad hoc discretion into a repeatable, auditable mechanism.",
+        "hu": "A meglévő eseti engedélyezési vétó precedens (Tiszavasvári) formalizálható szabályalapú, monitorozott szegregációs hatásvizsgálati folyamattá, az ad hoc diszkréciót ismételhető, ellenőrizhető mechanizmussá alakítva."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Builds on existing institutional precedent (guaranteed progression rules, prior case-by-case licensing denials) rather than requiring an entirely new administrative apparatus, improving near-term deliverability.",
+        "hu": "Meglévő intézményi precedensre épül (garantált továbbhaladási szabályok, korábbi eseti engedélyezési elutasítások), nem igényel teljesen új közigazgatási apparátust, javítva a rövid távú megvalósíthatóságot."
+      },
+      {
+        "en": "Compatible with the ministry's stated current position of retaining existing gimnáziums' status, reducing near-term political friction relative to structural abolition options.",
+        "hu": "Összeegyeztethető a minisztérium jelenlegi kinyilatkoztatott álláspontjával a meglévő gimnáziumok státuszának megtartásáról, csökkentve a rövid távú politikai feszültséget a strukturális megszüntetési opciókhoz képest."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Legal challenge risk to quota mechanisms (parental choice tension) could stall implementation mid-rollout, and the proposal does not specify a contingency or fallback sequencing if guardrail provisions are struck down.",
+        "hu": "A kvóta-mechanizmusok jogi megtámadásának kockázata (szülői választási jog feszültsége) megállíthatja a végrehajtást a bevezetés közben, és a javaslat nem határoz meg vészhelyzeti vagy visszaeső szekvenálást, ha a védőintézkedési rendelkezéseket megsemmisítik."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "The maintainer executing any statutory desegregation obligation is the same centralized bureaucracy already shown to have operational opacity and deficit spending, casting doubt on uniform enforcement capacity across all licensing decisions nationwide.",
+        "hu": "A bármely törvényi szegregáció-ellenes kötelezettséget végrehajtó fenntartó ugyanaz a centralizált bürokrácia, amelyről már bebizonyult a működési átláthatatlanság és a hiányos finanszírozás, ami megkérdőjelezi az egységes érvényesítési kapacitást minden engedélyezési döntésben országosan."
+      },
+      {
+        "en": "No monitoring or adaptation mechanism is specified for tracking whether quota/threshold adjustments actually reduce segregation over time, leaving the guardrail approach without a feedback loop.",
+        "hu": "Nincs meghatározva monitoring vagy adaptációs mechanizmus annak nyomon követésére, hogy a kvóta/küszöbérték-módosítások valóban csökkentik-e a szegregációt idővel, így a védőintézkedési megközelítés visszacsatolási hurok nélkül marad."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t4-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-db2943fd921696b7",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,51 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The split-model retention approach has notably low implementation friction because multi-grade classes are already legally sanctioned within existing statute, requiring no new legislative coalition to enact — a meaningful political feasibility advantage over reforms requiring fresh legislation. However, its long-term political sustainability is undermined by a lower viability bound (research modeling a 100-student threshold implicates over five hundred village schools) and by the risk that upper-grade consolidation could intensify between-settlement segregation, a pattern with documented legal and political consequences in Hungary (judicial desegregation rulings meeting sustained municipal resistance), meaning the model could inadvertently generate the same coalition conflict it seeks to avoid.",
+      "hu": "A megosztott modell alapú megtartási megközelítés figyelemre méltóan alacsony végrehajtási súrlódással bír, mivel az összevont osztályok már jogszerűen engedélyezettek a meglévő jogszabályban, így nincs szükség új törvényalkotási koalícióra a bevezetéshez — ez jelentős politikai kivitelezhetőségi előny az új jogalkotást igénylő reformokkal szemben. Hosszú távú politikai fenntarthatóságát azonban aláássa egy alacsonyabb életképességi küszöb (a 100 fős küszöböt modellező kutatás szerint több mint ötszáz falusi iskolát érint), valamint az a kockázat, hogy a felső tagozatos összevonás fokozhatja a településközi szegregációt, ami Magyarországon dokumentált jogi és politikai következményekkel bíró minta (a bírósági deszegregációs döntések tartós önkormányzati ellenállásba ütköznek), így a modell akaratlanul is előidézheti azt a koalíciós konfliktust, amelyet elkerülni próbál."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-political_feasibility-07"
+    ],
+    "lens_ref": "L-live-political_feasibility",
+    "opportunities": [
+      {
+        "en": "Because implementation is administratively simple, this pathway could be adopted incrementally by individual tankerület districts without waiting for a national legislative overhaul, building coalition support through demonstrated local success.",
+        "hu": "Mivel a végrehajtás igazgatásilag egyszerű, ez az útvonal fokozatosan elfogadható egyes tankerületek által anélkül, hogy nemzeti szintű jogalkotási reformra kellene várni, helyi sikerek révén építve koalíciós támogatást."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Multi-grade classes require no new authorization under the Public Education Act, giving this proposal exceptionally low legislative and administrative friction relative to alternatives.",
+        "hu": "Az összevont osztályok nem igényelnek új felhatalmazást a köznevelési törvény alapján, ami e javaslatnak rendkívül alacsony jogalkotási és igazgatási súrlódást biztosít az alternatívákkal szemben."
+      },
+      {
+        "en": "Direct precedent in Poland's draft split-model legislation and Hungary's own historical practice of reducing parallel classes rather than closing schools provides both domestic and comparative legitimacy anchors.",
+        "hu": "A lengyel megosztott modell törvénytervezetének közvetlen precedense, valamint Magyarország saját korábbi gyakorlata a párhuzamos osztályok csökkentésére bezárás helyett, hazai és összehasonlító legitimációs alapot is biztosít."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If upper-grade consolidation routes concentrate disadvantaged pupils in specific receiving schools, this risks triggering the same judicial desegregation exposure and municipal obstruction pattern already documented in Hungary.",
+        "hu": "Ha a felső tagozatos összevonási útvonalak hátrányos helyzetű tanulókat koncentrálnak bizonyos fogadó iskolákba, ez kockázatot jelent, hogy kiváltja ugyanazt a bírósági deszegregációs kitettséget és önkormányzati obstrukciós mintát, amelyet Magyarországon már dokumentáltak."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "A lower viability bound (over five hundred village schools implicated at a 100-student threshold) means the model cannot serve as a universal political solution and will still require closure decisions for the smallest cases, reproducing part of the original political conflict.",
+        "hu": "Az alacsonyabb életképességi küszöb (100 fős küszöbnél több mint ötszáz falusi iskolát érint) azt jelenti, hogy a modell nem szolgálhat egyetemes politikai megoldásként, és a legkisebb esetekben továbbra is bezárási döntésekre lesz szükség, ami reprodukálja az eredeti politikai konfliktus egy részét."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t3-political_feasibility",
+  "provenance_ref": "PV-assess_political_feasibility-0f01dcfb27a040a2",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,318 @@
+{
+  "assumptions": [
+    {
+      "en": "The enrollment-linked subsidy mechanic (F3) remains the primary driver of rural school closures absent a documented policy shift in funding formulas. Alternative drivers (demographic migration, teacher supply, infrastructure decay) are present but not treated as primary unless explicitly decoupled from enrollment-based finance.",
+      "hu": "Az osztálylétszámhoz kötött támogatási mechanika (F3) a falusi iskolazárások elsődleges hajtóerőjének marad dokumentált finanszírozási képlet-váltás híján. Az alternatív hajtóerők (demográfiai migráció, tanári kínálat, infrastruktúra-hanyatlás) jelen vannak, de nem elsődlegesnek tekintjük, ha nem explicit módon elválasztódnak az osztálylétszám-alapú finanszírozástól."
+    },
+    {
+      "en": "Community mobilization/social-capital variables (F9) are treated as context-dependent success factors that may not scale universally; however, the absence of such mobilization does not guarantee closure is inevitable if structural incentives (funding, federation support, legal desegregation requirements) are reformed.",
+      "hu": "A közösségi mobilizáció/szociális-tőke változók (F9) kontextus-függő sikeritényezőknek tekintjük, amelyek nem skálázódnak univerzálisan; azonban az ilyen mobilizáció hiánya nem garantálja, hogy az iskolazárás elkerülhetetlen, ha a strukturális ösztönzők (finanszírozás, fúziós támogatás, jogi szegregációmentesítési kötelezettségek) reformálódnak."
+    },
+    {
+      "en": "ECHR desegregation mandate (F7) is treated as a hard legal constraint that must be satisfied regardless of rural-consolidation strategy; any closure or catchment-restructuring proposal must demonstrate compliance with Romani student spatial/proportional representation, not merely enrollment efficiency.",
+      "hu": "Az ECHR szegregációmentesítési mandátum (F7) kemény jogi korlátnak tekintjük, amelyet bármely vidéki összevonási stratégia mellett teljesíteni kell; az iskolazárási vagy ellátási körzet átszervezési javaslat a roma tanulók térségi/arányos reprezentációjának való megfelelésre kell, nem csupán beiskolázási hatékonyságra."
+    },
+    {
+      "en": "Non-structural interventions (multigrade pedagogy, teacher networks, community-school extended functions, active-travel pilots) are assumed to operate as complementary to, not substitutes for, structural funding and governance reform; the literature does not isolate scenarios where non-structural measures alone overcome enrollment-indexed subsidy disadvantage.",
+      "hu": "A nem-strukturális beavatkozások (multigrádus pedagógia, tanári hálózatok, közösségi iskolai kiterjesztett funkciók, aktív közlekedési pilotok) feltételezik, hogy a strukturális finanszírozási és irányítási reform kiegészítőiként működnek, nem helyettesítőként; az irodalom nem különíti el azt a forgatókönyvet, ahol a nem-strukturális intézkedések egyedül leküzdenék az osztálylétszám-indexált támogatás hátrányát."
+    }
+  ],
+  "findings": [
+    {
+      "claim": {
+        "en": "More than 1,200 of 3,155 Hungarian settlements (38%) lack public educational institutions as of 2024, with similar territorial gaps in early-years provision (31% of municipalities without kindergarten in 2022).",
+        "hu": "2024-ben Magyarország 3155 településéből több mint 1200-nak (38%) nincs közoktatási intézménye, hasonló területi hiányok tapasztalhatók az óvodai ellátásban is (2022-ben a települések 31%-ában nincs óvoda)."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Data reflects absolute absence rather than distance/accessibility; does not quantify functional coverage through catchment transport.",
+          "hu": "Az adat az abszolút hiányt tükrözi, nem a távolságot/hozzáférhetőséget; nem számszerűsíti a funkcionális ellátást az intézményi közlekedésen keresztül."
+        },
+        {
+          "en": "Kindergarten threshold of 8 children is administratively defined; regional variation in implementation is not documented.",
+          "hu": "Az óvodai 8-gyerekes küszöb adminisztratív meghatározás; a regionális végrehajtás-beli eltérések nincsenek dokumentálva."
+        }
+      ],
+      "source_title": {
+        "en": "EU Education and Training Monitor 2025 and territorial patterns research",
+        "hu": "EU Education and Training Monitor 2025 és területi mintázatokra vonatkozó kutatás"
+      },
+      "source_url": "https://ec.europa.eu/education"
+    },
+    {
+      "claim": {
+        "en": "Forced school amalgamations between 2004 and 2008 halved the number of independently operated school units in Hungary, following a period (until 2004) when closures were rare due to targeted state support for village schools.",
+        "hu": "2004 és 2008 között a kényszerű iskolai összevonások felezték a függetlenül működtetett iskolai egységek számát Magyarországon, amely egy 2004-ig tartó időszakot követett, amikor az összevonások ritkák voltak az aprófalvakban működő iskolák célzott állami támogatása miatt."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Source is archival/administrative rather than peer-reviewed; exact statistical halving rate not provided in sourced notes.",
+          "hu": "A forrás archív/adminisztratív, nem pedig lektorált; a pontos statisztikai felezés mértéke nincs megadva."
+        },
+        {
+          "en": "Does not isolate the causal role of state support withdrawal from demographic pressure; both may have operated simultaneously.",
+          "hu": "Nem különíti el az állami támogatás visszavonásának oksági szerepét a demográfiai nyomástól; mindkettő egyidejűleg működhetett."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian education administrative records and institutional history",
+        "hu": "Magyar közoktatási adminisztratív nyilvántartások és intézménytörténet"
+      },
+      "source_url": "regional_administrative_archives"
+    },
+    {
+      "claim": {
+        "en": "State subsidy formulas mechanically disadvantage small rural schools by directly indexing per-capita funding to enrollment numbers, creating a negative feedback loop where declining enrollment triggers proportional funding cuts regardless of fixed operational costs.",
+        "hu": "Az állami támogatási képletek mechanikai módon hátrányos helyzetbe hozzák a kis falusi iskolákat az egy fős finanszírozás közvetlenül az osztálylétszámhoz kötésével, amely visszacsatolási hurkot hoz létre: a csökkenő létszám arányos finanszírozás-csökkentést indít el, függetlenül a fix üzemeltetési költségektől."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Older reference material; current KRÉTA/centralized budget rules require verification against 2024 administrative documentation.",
+          "hu": "Régebbi referenciamaterial; jelenlegi KRÉTA/centralizált költségvetési szabályok igényelnek 2024-es adminisztratív dokumentáció elleni ellenőrzést."
+        },
+        {
+          "en": "Does not quantify the elasticity of closures to funding-formula changes or test counterfactuals (e.g., fixed-cost components or minimum allocations).",
+          "hu": "Nem számszerűsíti az iskolazárások rugalmasságát a finanszírozási képlet-változásokhoz vagy nem tesztel alternatívokat (pl. fix költségvetési összetevők vagy minimális allokációk)."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian education funding structure and enrollment-linked subsidy mechanics",
+        "hu": "Magyar közoktatás finanszírozási szerkezete és osztálylétszámhoz kötött támogatási mechanizmák"
+      },
+      "source_url": "KRÉTA_centralized_budget_documentation"
+    },
+    {
+      "claim": {
+        "en": "The 2013 KLIK centralization transferred school maintenance from local governments to a centralized authority (Klebelsberg Institution Maintenance Centre) to standardize operations and reduce inequalities, but critical assessments report it became 'an inoperable, over-centralized system' where teachers purchased basic supplies themselves rather than achieving equalization goals.",
+        "hu": "A 2013-as KLIK centralizáció az iskolai karbantartást a helyi önkormányzatokból egy központi szervezethez (Klebelsberg Intézmény-fenntartó Központ) telepítette az üzemeltetés standardizálása és az egyenlőtlenségek csökkentése érdekében, azonban kritikai értékelések azt jelzik, hogy egy 'nem működőképes, túlzottan centralizált rendszerré' vált, ahol a tanárok maguk vásárolták meg az alapanyagokat az egyenlítés céljai helyett."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Critical assessment originates from a policy commentary site (4liberty.eu), not an official government evaluation or independent audit; represents one perspective rather than a settled empirical finding.",
+          "hu": "A kritikai értékelés egy politikai kommentár webhelyről (4liberty.eu) származik, nem hivatalos kormányzati értékelésből vagy független auditból; egy perspektívát képvisel, nem lezárt empirikus megállapítást."
+        },
+        {
+          "en": "Does not provide quantitative evidence on whether KLIK reduced inter-regional spending variation or compare pre/post equity metrics.",
+          "hu": "Nem nyújt mennyiségi bizonyítékot arról, hogy a KLIK csökkentette-e a régiók közötti kiadási eltéréseket vagy összehasonlítja az előtti/utáni egyenlőségi mérőszámokat."
+        }
+      ],
+      "source_title": {
+        "en": "KLIK centralization outcomes: critical policy assessment",
+        "hu": "KLIK-centralizáció eredményei: kritikus politikai értékelés"
+      },
+      "source_url": "https://www.4liberty.eu"
+    },
+    {
+      "claim": {
+        "en": "Small rural schools with one class per grade structurally constrain within-school segregation but permit between-school segregation, as earlier decades' efficiency losses were mitigated by reducing parallel classes rather than closing schools, creating a large network of small schools with limited internal tracking options but high village-level social composition heterogeneity.",
+        "hu": "Az egy osztály/évfolyam szerkezetű kis falusi iskolák strukturálisan korlátozzák az iskolán belüli szegregációt, de lehetővé teszik az iskolák közötti szegregációt, mivel az előző évtizedek hatékonysági veszteségeit a párhuzamos osztályok csökkentésével enyhítették az iskolazárások helyett, amely kis iskolák nagy hálózatát hozta létre korlátozott belső differenciálással, de magas községi szintű társadalmi összetételi heterogenitással."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Source does not quantify the magnitude of between-school versus within-school segregation indices or compare temporal trends across consolidation periods.",
+          "hu": "A forrás nem számszerűsíti az iskolák közötti vs. iskolán belüli szegregációs indexek nagyságrendjét vagy nem hasonlítja össze az időbeli trendeket az összevonási periódusok során."
+        },
+        {
+          "en": "Evidence for 'white flight' commuting (non-Roma pupils enrolling in other settlements' schools) is inferred from segregation patterns but direct enrollment-flow data is not provided.",
+          "hu": "A 'fehér fuga' közlekedésre vonatkozó bizonyíték (nem roma tanulók más települések iskoláiba való beiratkozása) a szegregációs mintázatokból következik, de a direkt beiratkozási adatok nincsenek megadva."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian school segregation patterns and structural mechanisms",
+        "hu": "Magyar iskolai szegregáció mintázatai és strukturális mechanizmusok"
+      },
+      "source_url": "hungarian_segregation_research"
+    },
+    {
+      "claim": {
+        "en": "The March 2023 European Court of Human Rights judgment against Hungary found racial segregation of Romani children at Jókai Mór Primary School (Piliscsaba), where Roma pupils comprised nearly 100% of enrollment despite being <4% of the catchment population, and mandated Hungary to develop a national desegregation policy.",
+        "hu": "A 2023 márciusi Európai Emberi Jogi Bíróság ítélete Magyarország ellen az Apátfalva Jókai Mór Általános Iskolában (Piliscsaba) lezajlott roma gyermekek rasszisztikus szegregációját találta, ahol a roma tanulók közel 100%-ot képviseltek a beiskolázásban, pedig a lakóterület <4%-át teszik ki, és Magyarország felkérte a nemzeti szegregációmentesítési politika kidolgozására."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Judgment is binding but does not specify implementation mechanisms, timeline, or enforcement procedures for desegregation; Hungary's compliance record remains contested.",
+          "hu": "Az ítélet kötelező, de nem specifikálja a végrehajtási mechanizmusokat, határidőket vagy a szegregációmentesítés végrehajtási eljárásait; Magyarország megfelelésének nyilvántartása vitatott."
+        },
+        {
+          "en": "Single case study; does not quantify segregation prevalence across other Hungarian primary schools or estimate system-wide compliance costs.",
+          "hu": "Egyetlen esettanulmány; nem számszerűsíti a szegregáció prevalenciáját más magyar általános iskolákban vagy nem becsüli a rendszerszintű megfelelési költségeket."
+        }
+      ],
+      "source_title": {
+        "en": "European Court of Human Rights judgment: Diouf v. Hungary (2023)",
+        "hu": "Európai Emberi Jogi Bíróság ítélete: Diouf v. Magyarország (2023)"
+      },
+      "source_url": "https://hudoc.echr.coe.int"
+    },
+    {
+      "claim": {
+        "en": "Small-school quality evidence is contested: one source reports rural schools 'exhibit lower results in all performance measures than urban schools,' while a peer-reviewed study using 2013 national assessment data found village schools more likely to be 'resilient' (outperforming SES predictions), particularly in areas with restricted school-choice options where selection-driven segregation is lower.",
+        "hu": "A kis iskolai minőségre vonatkozó bizonyíték vitatott: egy forrás azt jelenti, hogy a falusi iskolák 'minden teljesítménymérőben alacsonyabb eredményeket mutatnak, mint a városi iskolák,' míg egy lektorált tanulmány 2013-as nemzeti felmérési adatokkal azt találta, hogy a községi iskolák nagyobb valószínűséggel 'rugalmasak' (felülmúlják az SES-t), különösen a korlátozott iskola-választási lehetőségekkel rendelkező területeken, ahol a kiválogatási szegregáció alacsonyabb."
+      },
+      "evidence_strength": "contested",
+      "limitations": [
+        {
+          "en": "Direct contradiction between sources on whether small schools underperform or overperform; likely reflects different dependent variables (raw achievement vs. value-added/resilience) without explicit reconciliation in literature.",
+          "hu": "Közvetlen ellentmondás a források között arról, hogy a kis iskolák alul- vagy túlteljesítik-e; valószínűleg különböző függő változókat tükröz (nyers teljesítmény vs. hozzáadott érték/rugalmasság) a irodalomban explicit összeférhetetlenség nélkül."
+        },
+        {
+          "en": "Resilience study uses 2013 baseline; no information on temporal stability of these effects or replication in later cohorts.",
+          "hu": "A rugalmassági tanulmány 2013-as alapadatokat használ; nincs információ e hatások időbeli stabilitásáról vagy későbbi kohorszok replikációjáról."
+        }
+      ],
+      "source_title": {
+        "en": "Rural school performance measurement: outcome-based versus resilience-adjusted comparisons",
+        "hu": "Falusi iskolai teljesítménymérés: kimenetel-alapú versus rugalmassági-korrigált összehasonlítások"
+      },
+      "source_url": "hungarian_education_assessment_data_2013"
+    },
+    {
+      "claim": {
+        "en": "Causal evidence on whether school closures trigger further community depopulation is cross-nationally contested: a Finnish difference-in-differences study (2010–2018) found closure preceded accelerated population decline, while Swedish research found 'limited empirical evidence' for closure-driven depopulation, and a Greek Islands case study frames school closure as a symptom rather than primary cause of community decline.",
+        "hu": "Az a kérdés, hogy az iskolazárások további közösségi népesség-csökkenést váltanak-e ki, nemzetközi szinten vitatott: egy finn különbség-a-különbségek tanulmány (2010–2018) azt találta, hogy az iskolazárás megelőzte a gyorsított népesség-csökkenést, míg a svéd kutatás 'korlátozott empirikus bizonyítékot' talált a zárás-vezérelt népesség-csökkenésre, és egy görög szigeti esettanulmány az iskolazárást a közösségi visszaszorulás tünete helyett elsődleges okának tekinti."
+      },
+      "evidence_strength": "contested",
+      "limitations": [
+        {
+          "en": "Three distinct national contexts (Finland, Sweden, Greece) with different institutional, infrastructure, and labor-market conditions; results are not necessarily generalizable to Hungary.",
+          "hu": "Három különálló nemzeti kontextus (Finnország, Svédország, Görögország) különböző intézményi, infrastruktúra- és munkaerőpiaci feltételekkel; az eredmények nem feltétlenül általánosíthatók Magyarországra."
+        },
+        {
+          "en": "Finnish study does not isolate the causal direction (closure → depopulation vs. depopulation → closure via anticipation); Greek case study is qualitative and does not quantify the relative weight of school closure vs. broader service loss.",
+          "hu": "A finn tanulmány nem szigeteli el az oksági irányt (zárás → népesség-csökkenés vs. népesség-csökkenés → zárás várakozáson keresztül); a görög esettanulmány kvalitatív, és nem számszerűsíti az iskolazárás vs. szélesebb körű szolgáltatásvesztés relatív súlyát."
+        }
+      ],
+      "source_title": {
+        "en": "School closure and rural demographic change: cross-national comparative evidence",
+        "hu": "Iskolazárás és falusi demográfiai változás: nemzetközi összehasonlító bizonyíték"
+      },
+      "source_url": "Finnish_DID_study_2010-2018_and_Swedish_comparative_review"
+    },
+    {
+      "claim": {
+        "en": "Community mobilization and social capital (measured via inter-community networks and external partnerships) can sustain threatened village schools without formal structural reform, as demonstrated in a Hungary-specific case study where parental action and community social capital determined whether local school-rescue initiatives succeeded independent of top-down state policy.",
+        "hu": "A közösségi mobilizáció és szociális tőke (mérhető közösségek közötti hálózatok és külső partnerségek révén) képes fenntartani veszélyeztetett községi iskolákat formális strukturális reform nélkül, ahogyan egy Magyarország-specifikus esettanulmányban mutatták, ahol a szülői intézkedés és a közösségi szociális tőke határozta meg, hogy a helyi iskolafenntartási kezdeményezések sikeresek-e függetlenül a felülről lefelé irányított állami politikától."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Single case study; no data on replicability across regions or population subgroups; generalizability to Hungary's full set of threatened schools remains unestablished.",
+          "hu": "Egyetlen esettanulmány; nincsenek adatok a replikálhatóságról régiók vagy népességcsoportok között; a Magyarország összes veszélyeztetett iskolájára való általánosíthatóság nem bizonyított."
+        },
+        {
+          "en": "Does not quantify the interaction between local social capital and state funding constraints; unclear whether community mobilization can overcome structural financing gaps if enrollment-indexed subsidies remain in place.",
+          "hu": "Nem számszerűsíti a helyi szociális tőke és az állami finanszírozási korlátok közötti kölcsönhatást; nem világos, hogy a közösségi mobilizáció képes-e leküzdeni strukturális finanszírozási hiányokat, ha az osztálylétszámhoz kötött támogatások megmaradnak."
+        }
+      ],
+      "source_title": {
+        "en": "Community action and village school sustainability in Hungary: case-study evidence",
+        "hu": "Közösségi cselekvés és községi iskolák fenntarthatósága Magyarországon: esettanulmányi bizonyíték"
+      },
+      "source_url": "hungarian_community_school_case_study"
+    },
+    {
+      "claim": {
+        "en": "The OECD literature identifies multigrade pedagogy, rural teacher networks, and technology-mediated knowledge-sharing (e.g., NEMED Virtual Rural School platform) as leading non-closure quality interventions in OECD countries, exploiting collaborative pedagogy and teacher professional isolation reduction without requiring school consolidation.",
+        "hu": "Az OECD irodalom a multigrádus pedagógiát, falusi tanári hálózatokat és technológia-közvetített tudásmegosztást (pl. NEMED Virtual Rural School platform) azonosítja az OECD-országok vezető nem-zárás alapú minőség-fejlesztési beavatkozásaiként, amely együttműködéses pedagógiát és tanári szakmai izoláció csökkentést használ az iskola-összevonás nélkül."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Evidence is primarily from non-Hungarian contexts (Chile, European multigrade networks); no controlled trial in Hungary demonstrating effectiveness or cost per outcome.",
+          "hu": "A bizonyíték elsősorban nem magyarországi kontextusokból származik (Chile, európai multigrádus hálózatok); nincs kontrollált kísérlet Magyarországon a hatékonyságot vagy költség-per-eredményt demonstrálva."
+        },
+        {
+          "en": "Does not establish whether multigrade pedagogy quality gains persist with smaller overall enrollment or how results are affected by teacher turnover in remote locations.",
+          "hu": "Nem állapítja meg, hogy a multigrádus pedagógia minőségi nyeresége megmarad-e kisebb összes beiskolázással, vagy hogy az eredmények hogyan befolyásolódnak a tanári fluktuációtól távoli helyeken."
+        }
+      ],
+      "source_title": {
+        "en": "OECD rural education and multigrade teaching interventions",
+        "hu": "OECD falusi oktatás és multigrádus tanítási beavatkozások"
+      },
+      "source_url": "OECD_Chile_Puentes_Educativos_and_NEMED"
+    },
+    {
+      "claim": {
+        "en": "A coordinated bundle of non-closure protections including presumption-against-closure rules, federation/shared-leadership models, funding decoupled from raw enrollment, technology grants, and community-use incentives is documented in Wales (2010s reform) as a template for managing rural school sustainability without universal guarantees against closure.",
+        "hu": "Az iskolazárás elleni védelem koordinált csomagja, amely tartalmazza az iskolazárás elleni vélelmet, fúziós/megosztott vezetési modelleket, a nyers osztálylétszámtól független finanszírozást, technológiai támogatásokat és közösségi használati ösztönzőket, Walesben (2010-es évek reformja) dokumentált mint sablon a vidéki iskolák fenntarthatóságának kezelésére zárásos garanciák nélkül."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Welsh institutional context (governance, local authority, funding base) differs from Hungary; direct transplantation of the bundle without localization is unlikely to produce equivalent outcomes.",
+          "hu": "A walesi intézményi kontextus (irányítás, helyi önkormányzat, finanszírozási alap) eltér Magyarországtól; a csomag közvetlen átültetése lokalizáció nélkül valószínűleg nem ugyanolyan eredményt hoz."
+        },
+        {
+          "en": "Wales policy establishes procedures and funding increases but does not quantify closure reduction rates or long-term population/enrollment stabilization outcomes.",
+          "hu": "A walesi politika eljárásokat és finanszírozás-növekedéseket állapít meg, de nem számszerűsíti az iskolazárás csökkentési arányait vagy hosszú távú népesség/beiskolázás stabilizálási eredményeket."
+        }
+      ],
+      "source_title": {
+        "en": "Wales rural school policy: presumption against closure and federation model",
+        "hu": "Walesz vidéki iskolai politikája: iskolazárás elleni vélelme és fúziós modell"
+      },
+      "source_url": "Wales_education_reform_2010s_documentation"
+    },
+    {
+      "claim": {
+        "en": "Transportation burden for consolidated rural schools is a documented equity constraint: rural bus commutes exceed 30 minutes on average; students with longer travel times report lower breakfast consumption, lower grades, reduced fitness, fewer social activities, and worse study habits; bus operating costs per student are ~40% higher in rural districts with marginal costs 2.5× urban levels, and Hungary's active-travel programs (Pedibus/Bicibus since 2021) remain pilot-scale rather than systemic solutions.",
+        "hu": "Az összevont falusi iskolák közlekedési terhe dokumentált egyenlőségi korlát: a falusi buszok átlagosan 30+ percet közlekednek; a hosszabb utazási idővel rendelkező tanulók alacsonyabb reggeli fogyasztást, alacsonyabb osztályzatokat, csökkent fizikai aktivitást, kevesebb szociális tevékenységet és rosszabb tanulmányi szokásokat jeleznek; az autóbusz-üzemeltetési költségek falanként ~40%-kal magasabbak a falusi kerületekben, a peremköltsége 2,5× városi szint, és Magyarország aktív közlekedési programja (Pedibus/Bicibus 2021 óta) pilot méretű, nem rendszerszintű megoldás."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Rural transportation literature is primarily from North America (USA); applicability to Hungarian geography, fuel costs, and labor markets requires local cost-benefit analysis.",
+          "hu": "A falusi közlekedési irodalom elsősorban Észak-Amerikából (USA) származik; a Magyarországi földrajzra, üzemanyag-költségekre és munkaerőpiacra való alkalmazhatóság helyi költség-haszon elemzést igényel."
+        },
+        {
+          "en": "Hungarian Pedibus/Bicibus pilots are noted as increasing since 2021 but no outcome data (participation rates, modal shift, grades, attendance) is provided for these programs.",
+          "hu": "A magyarországi Pedibus/Bicibus pilotok 2021 óta növekedőnek jegyeznek, de e programok adatai (részvételi arányok, módváltás, osztályzatok, jelenlét) nincsenek megadva."
+        }
+      ],
+      "source_title": {
+        "en": "Rural school transportation equity: cross-national student wellbeing and cost analysis",
+        "hu": "Falusi iskolai közlekedési egyenlőség: nemzetközi tanulói jóléti és költségelemzés"
+      },
+      "source_url": "cross_national_rural_transportation_research_2021"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": {
+        "en": "Can non-structural interventions (multigrade pedagogy, rural teacher networks, community-school extended functions) sustain quality and enrollment in small village schools if enrollment-indexed subsidy formulas remain unchanged and administrative cost burdens persist?",
+        "hu": "A nem-strukturális beavatkozások (multigrádus pedagógia, falusi tanári hálózatok, közösségi iskolai kiterjesztett funkciók) képesek-e fenntartani a minőséget és beiskolázást kis községi iskolákban, ha az osztálylétszám-indexált támogatási képletek változatlanok maradnak és az adminisztratív költség-terhek fennmaradnak?"
+      },
+      "reduction_path": {
+        "en": "Conduct a randomized controlled trial in Hungary comparing village schools receiving (a) multigrade pedagogy + teacher network support alone vs. (b) pedagogical support + funding-formula modification (fixed-cost component + minimum allocation) vs. (c) control (status quo). Measure outcomes: enrollment stability, student learning (standardized assessment), teacher turnover, and per-pupil spending over 5 years. Pre-register hypotheses on cost-effectiveness threshold ($cost per student retained).",
+        "hu": "Végezzen randomizált kontrollált kísérletet Magyarországon olyan községi iskolákat összehasonlítva, amelyek: (a) multigrádus pedagógia + tanári hálózati támogatás egyedül vs. (b) pedagógiai támogatás + finanszírozási képlet módosítás (fix-költség összetevő + minimális allokáció) vs. (c) kontroll (status quo). Mérje az eredményeket: beiskolázás stabilitása, tanulói tanulás (szabványosított értékelés), tanári fluktuáció és per-tanulói költségvetés 5 éven keresztül. Regisztrálja előre a költség-hatékonyság küszöb hipotéziseit ($/tanulóként megtartott)."
+      }
+    },
+    {
+      "question": {
+        "en": "Does the closure of a village primary school causally accelerate demographic depopulation in that community (as Finnish DID evidence suggests) or is closure primarily a symptom of pre-existing population decline (as Swedish and Greek evidence implies)? The causal direction determines whether preventing closures is a viable rural-development tool or primarily a social-stabilization measure.",
+        "hu": "Az egy községi általános iskola zárása oksági módon felgyorsítja-e az abban a közösségben lezajló demográfiai népesség-csökkenést (mint a finn DID-bizonyíték sugallja) vagy az iskolazárás elsősorban egy már meglévő népesség-csökkenés tünete (mint a svéd és görög bizonyíték sugallja)? Az oksági irány határozza meg, hogy az iskolazárások megelőzése életképes vidékfejlesztési eszköz-e vagy elsősorban egy szociális stabilizálási intézkedés."
+      },
+      "reduction_path": {
+        "en": "Apply Hungarian administrative panel data (2000–2024) on village population, school enrollments, business registrations, and service availability (broadband, healthcare). Use Granger causality and vector autoregression (VAR) models with instrumental variables (e.g., state policy changes in 2004, 2008, 2013) to test closure→depopulation vs. depopulation→closure lag structures. Quantify the Impulse Response Function (IRF) showing population change following a school closure shock, controlling for labor-market access and commuting distance.",
+        "hu": "Alkalmazza a magyar adminisztratív panel adatokat (2000–2024) községi népességről, iskolai beiskolázásról, üzleti regisztrációkról és szolgáltatás-elérhetőségről (szélessáv, egészségügyi ellátás). Granger okság és vektorautoregresszió (VAR) modelleket használjon instrumentális változókkal (pl. 2004, 2008, 2013 állami politikai változások) a zárás→népesség-csökkenés vs. népesség-csökkenés→zárás lag struktúra tesztelésére. Számszerűsítse az Impulse Response Function (IRF) értékeket, amely az iskolazárás sokk utáni népesség-változást mutatja, munkaerőpiaci hozzáférés és közlekedési távolság kontrolljával."
+      }
+    },
+    {
+      "question": {
+        "en": "To what extent do village-school closures in Hungary that produce increased between-school (village-level) segregation inadvertently violate the ECHR desegregation mandate (F7) by concentrating Romani pupils in fewer, larger consolidated schools? Can procedural safeguards (pre-closure desegregation audit, catchment-boundary redesign, proportional enrollment guarantees) make closure-based consolidation compatible with legal desegregation obligations?",
+        "hu": "Milyen mértékben okoznak a magyarországi községi iskolazárások, amelyek megnövelt iskolák közötti (községi szintű) szegregációt az ECHR szegregációmentesítési mandátum (F7) véletlen megsértését roma tanulók kevesebb, nagyobb összevont iskolákban való koncentrációja révén? A procedurális biztosítékok (zárás előtti szegregációmentesítési audit, ellátási körzet átjóváhagyása, arányos beiskolázási garanciák) teszik-e az iskolazárás-alapú konsolidációt összeegyeztethetővé a jogi szegregációmentesítési kötelezettségekkel?"
+      },
+      "reduction_path": {
+        "en": "Map current and projected (post-consolidation) school enrollments by Romani/non-Romani student composition across all Hungarian primary schools. Quantify the between-school segregation index (Theil's entropy measure, Dissimilarity Index) before and after proposed closures in each district. Develop and cost a desegregation-compliant catchment-design algorithm ensuring: (a) no post-closure school exceeds Romani proportion >15 percentage points above district average, (b) commuting distance remains <30 minutes for 95% of consolidated students, and (c) school choice availability is preserved in larger catchments. Pilot in 2–3 depopulating districts and measure legal-compliance, transportation equity, and segregation outcomes.",
+        "hu": "Térképezze fel a jelenlegi és előrevetített (post-konszolidáció) iskolai beiskolázásokat roma/nem roma tanulók összetétele szerint az összes magyarországi általános iskolában. Számszerűsítse az iskolák közötti szegregációs indexet (Theil entrópia-mérték, Dissimilarity Index) az egyes kerületekben javasolt zárások előtt és után. Fejlesszen ki és költsön egy szegregációmentesítés-megfelelő ellátási-körzet-tervezési algoritmust, amely biztosítja: (a) a zárás után képződött iskola roma arányát ne haladja meg >15 százalékponttal a kerületi átlag feletti, (b) az utazási távolság maradjon <30 perc az összevont tanulók 95%-ára, és (c) az iskola-választási lehetőség megmaradjon nagyobb ellátási körzetekben. Próba 2–3 depopulálódó kerületben, mérve jogi megfelelést, közlekedési egyenlőséget és szegregációs eredményeket."
+      }
+    }
+  ]
+}

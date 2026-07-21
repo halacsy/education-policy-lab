@@ -1,0 +1,48 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The split model is well-matched to the observed demographic reality that multi-grade classes already cluster below the 3,000-resident threshold, making this a low-friction extension of an existing adaptive mechanism rather than a novel intervention. However, its stated lower viability bound—research modeling a 100-student threshold affecting over 500 village schools—indicates the model does not resolve viability for the most severely depopulated settlements, meaning cohort decline below a certain floor will exceed what a split structure can absorb regardless of legal sanction for merged classes.",
+      "hu": "A megosztott modell jól illeszkedik a megfigyelt demográfiai valósághoz, amelyben az összevont osztályok már a 3000 lakos alatti küszöb alatt koncentrálódnak, így ez egy már létező adaptív mechanizmus alacsony frikciójú kiterjesztése, nem pedig új beavatkozás. Ugyanakkor a kimondott alsó fenntarthatósági határa – a 100 fős küszöböt modellező kutatás, amely több mint 500 falusi iskolát érint – azt jelzi, hogy a modell nem oldja meg a legsúlyosabban elnéptelenedő települések fenntarthatóságát, azaz a bizonyos szint alá csökkenő kohorsz meghaladja azt, amit egy megosztott struktúra a összevont osztályok jogi engedélyezése ellenére is elviselhet."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-04",
+      "F-live-demography-03"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Could be paired with settlement-level demographic monitoring to identify which of the 645 sub-300-population localities remain within the split model's viability range versus which require a different pathway.",
+        "hu": "Kombinálható település szintű demográfiai megfigyeléssel annak azonosítására, hogy a 645, 300 fő alatti lakosságú település közül melyek maradnak a megosztott modell fenntarthatósági tartományában, és melyek igényelnek más útvonalat."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Leverages an already-legal, low-friction mechanism (multi-grade classes) that is empirically concentrated exactly at the settlement-size threshold where consolidation pressure begins, reducing implementation uncertainty.",
+        "hu": "Egy már jogilag engedélyezett, alacsony frikciójú mechanizmust (összevont osztályokat) használ fel, amely empirikusan pontosan azon a településméret-küszöbön koncentrálódik, ahol a konszolidációs nyomás megjelenik, csökkentve a végrehajtási bizonytalanságot."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued cohort decline (from 18% to 16% under-18 share, 2010-2020) concentrated in remote villages could push growing numbers of settlements past the model's lower viability bound over the stated planning horizon, requiring periodic reassessment.",
+        "hu": "A folytatódó kohorszcsökkenés (a 18 év alattiak arányának 18%-ról 16%-ra csökkenése, 2010-2020), amely a távoli falvakban koncentrálódik, egyre több települést szoríthat a modell alsó fenntarthatósági határa alá a megadott tervezési horizonton, ami időszakos újraértékelést igényel."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "The model has a documented lower viability bound (100-student threshold research) beyond which more than 500 village schools cannot survive even in split form, meaning it addresses moderate but not severe cohort decline.",
+        "hu": "A modellnek dokumentált alsó fenntarthatósági határa van (100 fős küszöböt vizsgáló kutatás), amelyen túl több mint 500 falusi iskola akkor sem maradhat fenn, ha megosztott formában működik, azaz a modell a mérsékelt, de nem a súlyos kohorszcsökkenést kezeli."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t3-demography",
+  "provenance_ref": "PV-assess_demography-d1138b74602deb9a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

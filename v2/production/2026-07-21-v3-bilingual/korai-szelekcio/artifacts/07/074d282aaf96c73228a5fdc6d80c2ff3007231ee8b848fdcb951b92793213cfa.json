@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-education_finance-01",
+      "A-live-education_finance-02",
+      "A-live-education_finance-03",
+      "A-live-education_finance-04"
+    ],
+    "claim": {
+      "en": "Less qualified teachers are systematically more likely to be employed in schools with higher concentrations of socio-economically disadvantaged students, creating a resource-allocation mechanism whereby the track-driven sorting of high-ability students is compounded by unequal human-capital distribution.",
+      "hu": "Az alacsonyabb képzettségű tanárok szisztematikusan nagyobb valószínűséggel alkalmazottak olyan iskolákban, ahol magasabb az szocioökonómiai szempontból hátrányos helyzetű tanulók koncentrációja, ami az erőforrás-allokációs mechanizmust hoz létre, ahol a nagy képességű tanulók sáv szerinti szelekciója az egyenlőtlen emberi tőke eloszlásával összeadódik."
+    },
+    "context": {
+      "en": "Fresh live research through the Education finance lens",
+      "hu": "Friss, élő kutatás a(z) oktatási finanszírozás nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The retrieved research notes cite the finding without providing the underlying study's publication details, methodology, or effect magnitudes; direct access to the primary paper would be needed for robustness assessment.",
+        "hu": "A letöltött kutatási jegyzetek megemlítik a megállapítást anélkül, hogy a mögötte lévő tanulmány publikációs részleteit, módszertanát vagy hatásmértékét adnák; az elsődleges cikk közvetlen hozzáférésére lenne szükség a robusztussági értékeléshez."
+      },
+      {
+        "en": "The mechanism is confounded with local municipal fiscal capacity (school funding is mixed central and municipal); the independent contribution of tracking versus fiscal-capacity sorting cannot be isolated from the retrieved evidence.",
+        "hu": "A mechanizmust a helyi önkormányzati költségvetési kapacitás zavarja (az iskolai finanszírozás központi és önkormányzati kevert); a követés és a költségvetési kapacitás szerinti válogatás független hozzájárulása nem választható el a letöltött bizonyítékokból."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-education_finance-04"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-02"
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "F-live-education_finance-04",
+  "provenance_ref": "PV-research_education_finance-c94d94e3cd29e8b3",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,3921 @@
+{
+  "dag_id": "policy_analysis",
+  "dag_version": "3.1.0",
+  "edges": [
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_hungarian_education_system"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_hungarian_education_system",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_hungarian_education_system"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_international_comparison"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_international_comparison",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_international_comparison"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_finnish_reform"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_finnish_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_finnish_reform"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_polish_reform"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_polish_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_polish_reform"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_portuguese_reform"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_portuguese_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_portuguese_reform"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_equity_and_social_mobility"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_equity_and_social_mobility",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_equity_and_social_mobility"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_demography"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_demography",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_demography"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_school_network_planning"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_school_network_planning",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_school_network_planning"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_education_finance"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_education_finance",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_education_finance"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_legal_and_governance"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_legal_and_governance",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_legal_and_governance"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_political_feasibility"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_political_feasibility",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_political_feasibility"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "research_implementation_planning"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_implementation_planning",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "research_implementation_planning"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_hungarian_education_system",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_international_comparison",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_finnish_reform",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_polish_reform",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_portuguese_reform",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_equity_and_social_mobility",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_demography",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_school_network_planning",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_education_finance",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_legal_and_governance",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_political_feasibility",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_implementation_planning",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_space"
+    },
+    {
+      "binding": "candidate",
+      "from": "derive_option_space",
+      "record_types": [
+        "option_space_proposal"
+      ],
+      "to": "approve_option_space"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_hungarian_education_system",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_international_comparison",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_finnish_reform",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_polish_reform",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_portuguese_reform",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_equity_and_social_mobility",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_demography",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_school_network_planning",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_education_finance",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_legal_and_governance",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_political_feasibility",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_implementation_planning",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "option_space",
+      "from": "approve_option_space",
+      "record_types": [
+        "approved_option_space"
+      ],
+      "to": "derive_transformations"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_hungarian_education_system",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_hungarian_education_system"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_hungarian_education_system"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_hungarian_education_system",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_hungarian_education_system"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_international_comparison",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_international_comparison"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_international_comparison"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_international_comparison",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_international_comparison"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_finnish_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_finnish_reform"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_finnish_reform"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_finnish_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_finnish_reform"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_polish_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_polish_reform"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_polish_reform"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_polish_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_polish_reform"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_portuguese_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_portuguese_reform"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_portuguese_reform"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_portuguese_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_portuguese_reform"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_equity_and_social_mobility",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_equity_and_social_mobility"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_equity_and_social_mobility"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_equity_and_social_mobility",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_equity_and_social_mobility"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_demography",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_demography"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_demography"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_demography",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_demography"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_school_network_planning",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_school_network_planning"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_school_network_planning"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_school_network_planning",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_school_network_planning"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_education_finance",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_education_finance"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_education_finance"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_education_finance",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_education_finance"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_legal_and_governance",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_legal_and_governance"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_legal_and_governance"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_legal_and_governance",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_legal_and_governance"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_political_feasibility",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_political_feasibility"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_political_feasibility"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_political_feasibility",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_political_feasibility"
+    },
+    {
+      "binding": "lens",
+      "from": "root:lens_implementation_planning",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assess_implementation_planning"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_implementation_planning"
+    },
+    {
+      "binding": "evidence",
+      "from": "research_implementation_planning",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assess_implementation_planning"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_hungarian_education_system",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_international_comparison",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_finnish_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_polish_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_portuguese_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_equity_and_social_mobility",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_demography",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_school_network_planning",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_education_finance",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_legal_and_governance",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_political_feasibility",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_implementation_planning",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_hungarian_education_system",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_international_comparison",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_finnish_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_polish_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_portuguese_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_equity_and_social_mobility",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_demography",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_school_network_planning",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_education_finance",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_legal_and_governance",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_political_feasibility",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "findings",
+      "from": "research_implementation_planning",
+      "record_types": [
+        "finding"
+      ],
+      "to": "identify_decision_dilemmas"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_hungarian_education_system",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_international_comparison",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_finnish_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_polish_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_portuguese_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_equity_and_social_mobility",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_demography",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_school_network_planning",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_education_finance",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_legal_and_governance",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_political_feasibility",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_implementation_planning",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_hungarian_education_system",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_international_comparison",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_finnish_reform",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_polish_reform",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_portuguese_reform",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_equity_and_social_mobility",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_demography",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_school_network_planning",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_education_finance",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_legal_and_governance",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_political_feasibility",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "research_implementation_planning",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "uncertainties",
+      "from": "derive_transformations",
+      "record_types": [
+        "uncertainty"
+      ],
+      "to": "build_research_agenda"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "transformations",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_family",
+        "transformation_proposal",
+        "coverage_ledger"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_hungarian_education_system",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_international_comparison",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_finnish_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_polish_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_portuguese_reform",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_equity_and_social_mobility",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_demography",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_school_network_planning",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_education_finance",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_legal_and_governance",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_political_feasibility",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "lenses",
+      "from": "root:lens_implementation_planning",
+      "record_types": [
+        "lens_definition"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_hungarian_education_system",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_international_comparison",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_finnish_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_polish_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_portuguese_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_equity_and_social_mobility",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_demography",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_school_network_planning",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_education_finance",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_legal_and_governance",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_political_feasibility",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_implementation_planning",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "dilemmas",
+      "from": "identify_decision_dilemmas",
+      "record_types": [
+        "dilemma"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "agenda",
+      "from": "build_research_agenda",
+      "record_types": [
+        "research_question"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_hungarian_education_system",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_international_comparison",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_finnish_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_polish_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_portuguese_reform",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_equity_and_social_mobility",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_demography",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_school_network_planning",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_education_finance",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_legal_and_governance",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_political_feasibility",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "findings",
+      "from": "research_implementation_planning",
+      "record_types": [
+        "finding"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_hungarian_education_system",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_international_comparison",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_finnish_reform",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_polish_reform",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_portuguese_reform",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_equity_and_social_mobility",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_demography",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_school_network_planning",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_education_finance",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_legal_and_governance",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_political_feasibility",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "sources",
+      "from": "research_implementation_planning",
+      "record_types": [
+        "source"
+      ],
+      "to": "assemble_decision_package"
+    },
+    {
+      "binding": "package",
+      "from": "assemble_decision_package",
+      "record_types": [
+        "decision_package"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_hungarian_education_system",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_international_comparison",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_finnish_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_polish_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_portuguese_reform",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_equity_and_social_mobility",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_demography",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_school_network_planning",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_education_finance",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_legal_and_governance",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_political_feasibility",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "assessments",
+      "from": "assess_implementation_planning",
+      "record_types": [
+        "lens_assessment"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "dilemmas",
+      "from": "identify_decision_dilemmas",
+      "record_types": [
+        "dilemma"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "agenda",
+      "from": "build_research_agenda",
+      "record_types": [
+        "research_question"
+      ],
+      "to": "evaluate_decision_package"
+    },
+    {
+      "binding": "package",
+      "from": "assemble_decision_package",
+      "record_types": [
+        "decision_package"
+      ],
+      "to": "assess_decision_readiness"
+    },
+    {
+      "binding": "evaluation",
+      "from": "evaluate_decision_package",
+      "record_types": [
+        "evaluation"
+      ],
+      "to": "assess_decision_readiness"
+    },
+    {
+      "binding": "proposals",
+      "from": "derive_transformations",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "assess_decision_readiness"
+    },
+    {
+      "binding": "dilemmas",
+      "from": "identify_decision_dilemmas",
+      "record_types": [
+        "dilemma"
+      ],
+      "to": "assess_decision_readiness"
+    },
+    {
+      "binding": "agenda",
+      "from": "build_research_agenda",
+      "record_types": [
+        "research_question"
+      ],
+      "to": "assess_decision_readiness"
+    }
+  ],
+  "nodes": [
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_hungarian_education_system",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_hungarian_education_system"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: hungarian education system",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_international_comparison",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_international_comparison"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: international comparison",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_finnish_reform",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_finnish_reform"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: finnish reform",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_polish_reform",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_polish_reform"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: polish reform",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_portuguese_reform",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_portuguese_reform"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: portuguese reform",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_equity_and_social_mobility",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_equity_and_social_mobility"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: equity and social mobility",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_demography",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_demography"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: demography",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_school_network_planning",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_school_network_planning"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: school network planning",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_education_finance",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_education_finance"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: education finance",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_legal_and_governance",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_legal_and_governance"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: legal and governance",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_political_feasibility",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_political_feasibility"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: political feasibility",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Research the approved problem through one admitted lens and produce sourced atomic evidence artifacts.",
+      "generation_parameters": {
+        "analysis_max_tokens": 16000,
+        "search_max_tokens": 10000
+      },
+      "handler": "research",
+      "id": "research_implementation_planning",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_implementation_planning"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "anthropic-task-ladder",
+      "output_types": [
+        "source",
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "provider": "anthropic",
+      "role": "research",
+      "schema_files": [
+        "schemas/v2/source.schema.json",
+        "schemas/v2/finding.schema.json",
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "research",
+      "title": "Research: implementation planning",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Derive candidate transformation directions from the complete fresh research record before any direction is approved.",
+      "generation_parameters": {
+        "max_tokens": 12000
+      },
+      "handler": "derive_option_space",
+      "id": "derive_option_space",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding",
+            "assumption",
+            "uncertainty"
+          ],
+          "sources": [
+            "research_hungarian_education_system",
+            "research_international_comparison",
+            "research_finnish_reform",
+            "research_polish_reform",
+            "research_portuguese_reform",
+            "research_equity_and_social_mobility",
+            "research_demography",
+            "research_school_network_planning",
+            "research_education_finance",
+            "research_legal_and_governance",
+            "research_political_feasibility",
+            "research_implementation_planning"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "option_space_proposal"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/option_space_proposal.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "option_space",
+      "title": "Derive option space",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "A human approves one exact candidate hash or returns it for a new derivation. The gate never edits generated content in place.",
+      "generation_parameters": {},
+      "handler": "approve_option_space",
+      "id": "approve_option_space",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "candidate",
+          "record_types": [
+            "option_space_proposal"
+          ],
+          "sources": [
+            "derive_option_space"
+          ]
+        }
+      ],
+      "kind": "human_gate",
+      "model": "human-decision",
+      "output_types": [
+        "human_gate_decision",
+        "approved_option_space"
+      ],
+      "provider": "human",
+      "role": "deterministic",
+      "schema_files": [
+        "schemas/v2/human_gate_decision.schema.json",
+        "schemas/v2/approved_option_space.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "human_gate",
+      "title": "Approve option space",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Build concrete proposals from fresh evidence and one exact human-approved option-space artifact.",
+      "generation_parameters": {
+        "max_tokens": 30000
+      },
+      "handler": "derive_transformations",
+      "id": "derive_transformations",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding",
+            "assumption",
+            "uncertainty"
+          ],
+          "sources": [
+            "research_hungarian_education_system",
+            "research_international_comparison",
+            "research_finnish_reform",
+            "research_polish_reform",
+            "research_portuguese_reform",
+            "research_equity_and_social_mobility",
+            "research_demography",
+            "research_school_network_planning",
+            "research_education_finance",
+            "research_legal_and_governance",
+            "research_political_feasibility",
+            "research_implementation_planning"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "option_space",
+          "record_types": [
+            "approved_option_space"
+          ],
+          "sources": [
+            "approve_option_space"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "assumption",
+        "uncertainty",
+        "transformation_proposal",
+        "transformation_family",
+        "coverage_ledger"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/assumption.schema.json",
+        "schemas/v2/uncertainty.schema.json",
+        "schemas/v2/transformation_proposal.schema.json",
+        "schemas/v2/transformation_family.schema.json",
+        "schemas/v2/coverage_ledger.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "transformations",
+      "title": "Derive transformations",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_hungarian_education_system",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_hungarian_education_system"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_hungarian_education_system"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: hungarian education system",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_international_comparison",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_international_comparison"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_international_comparison"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: international comparison",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_finnish_reform",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_finnish_reform"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_finnish_reform"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: finnish reform",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_polish_reform",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_polish_reform"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_polish_reform"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: polish reform",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_portuguese_reform",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_portuguese_reform"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_portuguese_reform"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: portuguese reform",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_equity_and_social_mobility",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_equity_and_social_mobility"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_equity_and_social_mobility"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: equity and social mobility",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_demography",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_demography"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_demography"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: demography",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_school_network_planning",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_school_network_planning"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_school_network_planning"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: school network planning",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_education_finance",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_education_finance"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_education_finance"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: education finance",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_legal_and_governance",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_legal_and_governance"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_legal_and_governance"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: legal and governance",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_political_feasibility",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_political_feasibility"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_political_feasibility"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: political feasibility",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assess every transformation through one admitted lens using only the proposal and that lens's evidence artifacts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "assess_lens",
+      "id": "assess_implementation_planning",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "lens",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_implementation_planning"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_implementation_planning"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "lens_assessment"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/lens_assessment.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "assessment",
+      "title": "Assess: implementation planning",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Separate evidence-resolvable disputes from residual value conflicts.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "identify_dilemmas",
+      "id": "identify_decision_dilemmas",
+      "inputs": [
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "assessments",
+          "record_types": [
+            "lens_assessment"
+          ],
+          "sources": [
+            "assess_hungarian_education_system",
+            "assess_international_comparison",
+            "assess_finnish_reform",
+            "assess_polish_reform",
+            "assess_portuguese_reform",
+            "assess_equity_and_social_mobility",
+            "assess_demography",
+            "assess_school_network_planning",
+            "assess_education_finance",
+            "assess_legal_and_governance",
+            "assess_political_feasibility",
+            "assess_implementation_planning"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "findings",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_hungarian_education_system",
+            "research_international_comparison",
+            "research_finnish_reform",
+            "research_polish_reform",
+            "research_portuguese_reform",
+            "research_equity_and_social_mobility",
+            "research_demography",
+            "research_school_network_planning",
+            "research_education_finance",
+            "research_legal_and_governance",
+            "research_political_feasibility",
+            "research_implementation_planning"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "dilemma"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/dilemma.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "synthesis",
+      "title": "Identify decision dilemmas",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Turn decision-critical uncertainties into concrete research questions.",
+      "generation_parameters": {
+        "max_tokens": 12000
+      },
+      "handler": "build_research_agenda",
+      "id": "build_research_agenda",
+      "inputs": [
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "assessments",
+          "record_types": [
+            "lens_assessment"
+          ],
+          "sources": [
+            "assess_hungarian_education_system",
+            "assess_international_comparison",
+            "assess_finnish_reform",
+            "assess_polish_reform",
+            "assess_portuguese_reform",
+            "assess_equity_and_social_mobility",
+            "assess_demography",
+            "assess_school_network_planning",
+            "assess_education_finance",
+            "assess_legal_and_governance",
+            "assess_political_feasibility",
+            "assess_implementation_planning"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "uncertainties",
+          "record_types": [
+            "uncertainty"
+          ],
+          "sources": [
+            "research_hungarian_education_system",
+            "research_international_comparison",
+            "research_finnish_reform",
+            "research_polish_reform",
+            "research_portuguese_reform",
+            "research_equity_and_social_mobility",
+            "research_demography",
+            "research_school_network_planning",
+            "research_education_finance",
+            "research_legal_and_governance",
+            "research_political_feasibility",
+            "research_implementation_planning",
+            "derive_transformations"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "research_question"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/research_question.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "synthesis",
+      "title": "Build research agenda",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Assemble a public decision package from exact upstream artifacts.",
+      "generation_parameters": {
+        "max_tokens": 20000
+      },
+      "handler": "assemble_decision_package",
+      "id": "assemble_decision_package",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "transformations",
+          "record_types": [
+            "transformation_family",
+            "transformation_proposal",
+            "coverage_ledger"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "lenses",
+          "record_types": [
+            "lens_definition"
+          ],
+          "sources": [
+            "root:lens_hungarian_education_system",
+            "root:lens_international_comparison",
+            "root:lens_finnish_reform",
+            "root:lens_polish_reform",
+            "root:lens_portuguese_reform",
+            "root:lens_equity_and_social_mobility",
+            "root:lens_demography",
+            "root:lens_school_network_planning",
+            "root:lens_education_finance",
+            "root:lens_legal_and_governance",
+            "root:lens_political_feasibility",
+            "root:lens_implementation_planning"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "assessments",
+          "record_types": [
+            "lens_assessment"
+          ],
+          "sources": [
+            "assess_hungarian_education_system",
+            "assess_international_comparison",
+            "assess_finnish_reform",
+            "assess_polish_reform",
+            "assess_portuguese_reform",
+            "assess_equity_and_social_mobility",
+            "assess_demography",
+            "assess_school_network_planning",
+            "assess_education_finance",
+            "assess_legal_and_governance",
+            "assess_political_feasibility",
+            "assess_implementation_planning"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "dilemmas",
+          "record_types": [
+            "dilemma"
+          ],
+          "sources": [
+            "identify_decision_dilemmas"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "agenda",
+          "record_types": [
+            "research_question"
+          ],
+          "sources": [
+            "build_research_agenda"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "findings",
+          "record_types": [
+            "finding"
+          ],
+          "sources": [
+            "research_hungarian_education_system",
+            "research_international_comparison",
+            "research_finnish_reform",
+            "research_polish_reform",
+            "research_portuguese_reform",
+            "research_equity_and_social_mobility",
+            "research_demography",
+            "research_school_network_planning",
+            "research_education_finance",
+            "research_legal_and_governance",
+            "research_political_feasibility",
+            "research_implementation_planning"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "sources",
+          "record_types": [
+            "source"
+          ],
+          "sources": [
+            "research_hungarian_education_system",
+            "research_international_comparison",
+            "research_finnish_reform",
+            "research_polish_reform",
+            "research_portuguese_reform",
+            "research_equity_and_social_mobility",
+            "research_demography",
+            "research_school_network_planning",
+            "research_education_finance",
+            "research_legal_and_governance",
+            "research_political_feasibility",
+            "research_implementation_planning"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "decision_package"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/decision_package.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "decision_package",
+      "title": "Assemble decision package",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Cross-family evaluation of the visible decision package and its graph.",
+      "generation_parameters": {
+        "max_tokens": 8000
+      },
+      "handler": "evaluate_decision_package",
+      "id": "evaluate_decision_package",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "package",
+          "record_types": [
+            "decision_package"
+          ],
+          "sources": [
+            "assemble_decision_package"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "assessments",
+          "record_types": [
+            "lens_assessment"
+          ],
+          "sources": [
+            "assess_hungarian_education_system",
+            "assess_international_comparison",
+            "assess_finnish_reform",
+            "assess_polish_reform",
+            "assess_portuguese_reform",
+            "assess_equity_and_social_mobility",
+            "assess_demography",
+            "assess_school_network_planning",
+            "assess_education_finance",
+            "assess_legal_and_governance",
+            "assess_political_feasibility",
+            "assess_implementation_planning"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "dilemmas",
+          "record_types": [
+            "dilemma"
+          ],
+          "sources": [
+            "identify_decision_dilemmas"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "agenda",
+          "record_types": [
+            "research_question"
+          ],
+          "sources": [
+            "build_research_agenda"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "gpt-5-mini",
+      "output_types": [
+        "evaluation"
+      ],
+      "provider": "openai",
+      "role": "judge",
+      "schema_files": [
+        "schemas/v2/evaluation.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "evaluation",
+      "title": "Evaluate decision package",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Apply the deterministic external-use and readiness gate.",
+      "generation_parameters": {},
+      "handler": "assess_decision_readiness",
+      "id": "assess_decision_readiness",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "package",
+          "record_types": [
+            "decision_package"
+          ],
+          "sources": [
+            "assemble_decision_package"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "evaluation",
+          "record_types": [
+            "evaluation"
+          ],
+          "sources": [
+            "evaluate_decision_package"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "derive_transformations"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "dilemmas",
+          "record_types": [
+            "dilemma"
+          ],
+          "sources": [
+            "identify_decision_dilemmas"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "agenda",
+          "record_types": [
+            "research_question"
+          ],
+          "sources": [
+            "build_research_agenda"
+          ]
+        }
+      ],
+      "kind": "deterministic",
+      "model": "deterministic-1.0.0",
+      "output_types": [
+        "decision_readiness"
+      ],
+      "provider": "local",
+      "role": "deterministic",
+      "schema_files": [
+        "schemas/v2/decision_readiness.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "readiness",
+      "title": "Assess decision readiness",
+      "version": "1.0.0"
+    }
+  ],
+  "roots": {
+    "lens_demography": [
+      {
+        "content_hash": "56e3705ef9cfc308e33e946ebcaf46c0e0d66d0ca6ce58807cceef9926ee6451",
+        "id": "L-live-demography",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_education_finance": [
+      {
+        "content_hash": "685214b448be9b7694e6b7d144cd21f9beff437d4606ad2b4421f2c3de1f1a92",
+        "id": "L-live-education_finance",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_equity_and_social_mobility": [
+      {
+        "content_hash": "c5135289610782918341d2a2d0be71977a58c9b9415e28ff7c528b8d39aae9c5",
+        "id": "L-live-equity_and_social_mobility",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_finnish_reform": [
+      {
+        "content_hash": "8bb6696563e13d9938433b1252f43ab97855c4bc687219d82f9ce6e72785e5d5",
+        "id": "L-live-finnish_reform",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_hungarian_education_system": [
+      {
+        "content_hash": "cdb5d5cc3ddefb8a342d0656c853ff646bbd206758607736f4d1b54098f68528",
+        "id": "L-live-hungarian_education_system",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_implementation_planning": [
+      {
+        "content_hash": "f58442280f8fdfcb41fc3df7e56b856cc6626a6b48725923c8b09510bbd5e182",
+        "id": "L-live-implementation_planning",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_international_comparison": [
+      {
+        "content_hash": "c4222e68ea18c030c48d2aba2722dfe0c78b656305e88ff0eb58861c530d5983",
+        "id": "L-live-international_comparison",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_legal_and_governance": [
+      {
+        "content_hash": "f7b51246c04d15bad765c0e7189a6db34d54b76c8973d757a2d6d2e050ecbc60",
+        "id": "L-live-legal_and_governance",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_polish_reform": [
+      {
+        "content_hash": "9499b1cc2efc3f6ebcfe506d36439146c747a83e6e7ba39c34de005ba423a326",
+        "id": "L-live-polish_reform",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_political_feasibility": [
+      {
+        "content_hash": "e49b5911a76a7af381b882196e53389557ffb27a64525c64a9ba6bb3f7a4f549",
+        "id": "L-live-political_feasibility",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_portuguese_reform": [
+      {
+        "content_hash": "c1ab0d58829e642010d86a7ccc0e0a9399f7dbf49f616d2dd5260d5b6d45aec9",
+        "id": "L-live-portuguese_reform",
+        "record_type": "lens_definition"
+      }
+    ],
+    "lens_school_network_planning": [
+      {
+        "content_hash": "fa24d84170b0778d999596f984c207c23a986208d8f42c454a65c32538307b55",
+        "id": "L-live-school_network_planning",
+        "record_type": "lens_definition"
+      }
+    ],
+    "problem_brief": [
+      {
+        "content_hash": "f263c5c501c08244f924e6f84f2ef804a8a93b3f4b240e1f02f04f39977165db",
+        "id": "PB-rural-school-closures",
+        "record_type": "problem_brief"
+      }
+    ]
+  },
+  "schema_version": "1.0.0",
+  "topic": "rural-school-closures"
+}

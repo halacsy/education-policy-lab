@@ -1,0 +1,99 @@
+TASK: expert_analysis
+AGENT: polish_reform
+LANG: en+hu
+
+Every semantic prose field must be authored natively in both languages as one exact {en, hu} object. The two texts must carry the same claim, scope, numbers, uncertainty, and references. Do not write Hungarian as a later translation step.
+
+
+Convert the live research notes below into a bilingual evidence artifact set for this policy problem.
+
+DISCIPLINE: whole-system reform analysis
+PUBLIC QUESTION: What should happen to primary schools in depopulating villages?
+CRITERIA: structural mechanism, distributional effects, reversibility, implementation sequence
+KNOWN LENS LIMITS: Polish outcome estimates and political history are not directly portable.
+
+RESEARCH NOTES:
+# Research Notes: Rural Primary Schools in Depopulating Areas — Poland Comparative Case & Reversal/Implementation Evidence
+
+## A. Poland's Structural Reorganization — What It Implies
+
+**1. Poland's 1999 reform decoupled early schooling from consolidation, but consolidation still followed via decentralization + per-pupil financing.**
+
+One of the most important initial tasks of the new local authorities was to configure a school network in their catchment area, establish lower secondary schools, and decide on the fate of significantly smaller primary schools; because financing was per-student, funds allocated to small rural schools were insufficient, and many were closed, with pupils transported to larger establishments.
+ This is a mechanism finding: decentralized ownership (post-1990) combined with per-capita funding formulas produces closure pressure on small schools even absent an explicit "close small schools" policy.
+
+**2. The 1999 structural reform (6+3+3 → gimnazjum system) explicitly used consolidation to raise rural educational equity, with mixed community cost.**
+
+Lower secondary schools were larger, and there were fewer of them than primary schools; they opened in larger settlements, which was especially important in rural areas, where one gimnazjum collected children from neighbouring villages who previously attended different local primary schools.
+ 
+The reform was in part a response to concerns that streaming at the end of 8 years of primary school was limiting opportunities for students from disadvantaged and rural backgrounds, since students entering vocational programs had very low levels of literacy and no pathway to university.
+ Academic assessments credit this consolidation with equity gains — 
+the establishment of new, better-equipped, lower secondary schools in rural areas narrowed performance differences between schools
+ — but this is contested by community-impact researchers (see #6-8 below) who document social costs at the primary (not just lower-secondary) level.
+
+**3. Financing design matters independently of consolidation policy: Poland's rural-weighted subsidy still routinely fails to cover full costs, and mandated rural teacher bonuses add fiscal strain.**
+
+The subsidy funds were not ear-marked in the local budget and in practice usually only covered teachers' wages, with local authorities having to cover remaining costs from their own resources.
+ Separately, 
+rural municipalities or urban municipalities with no more than 5,000 inhabitants are legally obliged to grant bonuses to teachers of at least 10% of basic remuneration, an extra charge for these municipalities' budgets.
+ This suggests subsidy design (formula-only vs. earmarked, weighted for rural cost realities) is a decision-relevant lever distinct from the school-size question itself.
+
+**4. A recent Polish legislative response explicitly reframes "small school" not as binary open/closed but as a repurposed dual-use asset — an alternative to closure.**
+
+According to a recent draft law, small schools after completion of compulsory classes may be used to meet local community needs, as an alternative to closure of small primary schools — guaranteeing education for younger children (grades I-III) close to home even with low pupil numbers, while providing older pupils (grades IV-VIII) adequate quality education with qualified teachers in well-equipped subject classrooms elsewhere.
+ 
+Unused parts of educational buildings could be used as social and cultural centres, supporting local community development.
+ This is a policy design in progress (per Eurydice, updated recently) — a split model (retain lower grades locally, bus upper grades) rather than full retention or full closure.
+
+**5. Scale of closures: an estimated ~3,300 Polish schools closed 2000–2016, driven primarily by demographic decline, not administrative fiat.**
+
+The main reasons for around 3,300 Polish schools closing over the 2000-2016 period were declining fertility plus migration, reducing primary-school pupil numbers, with economic reasons cited as the direct cause of closures in the countryside.
+ This empirically grounds the depopulation-driven (rather than purely policy-driven) character of closures in the Polish case, relevant for assessing how much closure is "reformable" vs. demographically inevitable.
+
+## B. Reversal and Implementation History — What It Reveals
+
+**6. Poland's 1999 gimnazjum reform was reversed in 2017 despite documented positive measured outcomes — a case of evidence-policy divergence.**
+
+Despite being successful in improving education outcomes (as shown by the PISA study) and labour market outcomes of post-reform students (shown by multiple studies using different data, methods and subgroups), after 18 years the Polish government reversed the reform in January 2017 and re-introduced the old system.
+ 
+The direction set in 1999 was not continued by the government that in 2016 reversed the reform extending comprehensive education; the paper notes that evidence from international and national studies was not sufficient to stop the reversal.
+ Researchers explicitly flag this as a case where **political/electoral motivation, not evidence, drove reversal**: 
+in 2017, partly due to political motivations, significant elements of the original reform were abolished; the influence of political motivations is pointed out, and it is recommended that further reforms be based more on evidence rather than political decisions.
+
+
+**7. The reversal was preceded by an explicit campaign promise exploiting nostalgia, then implemented despite expert/local opposition.**
+
+Despite strong student performance, the new lower secondary schools had developed a poor public reputation; in the 2015 election campaign the opposition party appealed to nostalgia for the "good old times" and promised to reverse the reform by eliminating lower secondary schools, then upon winning quickly reversed the earlier reforms, disregarding negative opinions of researchers and local authorities as well as protests of parents and teachers.
+ This is a governance-process finding: reform reversal correlated with electoral cycles and symbolic/reputational politics rather than performance data.
+
+**8. Implementation of the reversal produced acute transitional harm (double cohort bottleneck) and sustained labor unrest.**
+
+In 2017, 6th graders stayed in primary schools for two more years; the following year both gimnazjum graduates and primary-school graduates simultaneously applied to high schools, competition became so high that in Warsaw alone 3,173 students did not get into any school, reviving debate about how poorly the reform was implemented and whether it was necessary at all.
+ 
+Teachers' frustration from the chaos, poor working conditions and low salaries culminated in the 2019 strike in which almost 80% of schools participated; though not successful, it began informal civic-society activity like citizen debates on education.
+ This shows that reversing a structural reform carries its own transition costs comparable to (or exceeding) those of the original consolidation — relevant baseline for weighing "keep vs. reverse" school-network decisions generally.
+
+**9. Community-level Polish research finds durable social-capital costs specifically tied to primary (village-level) school closure, independent of the gimnazjum debate — a contested/parallel evidence stream.**
+
+A multiple-case study of four Polish villages that organized protests against school closures in 2000 (two schools saved, two closed) found the decline of structural social capital was significantly smaller in villages where the school was saved.
+ Complementary economic-geography work found similar results: 
+research showed much higher economic activity in places where the school was taken over [by the community] compared to where the school was closed.
+ Note: this is a small-N / case-study evidence base, not experimental, and concerns village-run "takeover" models (parents/associations assuming the school) rather than state retention — a distinct policy lever from either closure or centralized funding.
+
+**10. Comparative note (Hungary self-context, for triangulation): Hungary's own 2013 centralization (KLIK) and subsequent church-takeover trend altered — but did not resolve — the small-village-school viability question, with documented equity trade-offs.**
+
+Hungary's 2011 Act CXC on National Public Education mandated state oversight of school operations previously managed by municipalities, and from January 2013 transferred governance, funding and maintenance to the centralized KLIK.
+ Separately, church-run schools expanded sharply in small settlements: 
+according to TÁRKI data, increasingly only church-run schools are found in small towns and villages, with attendance rising 60% between 2001–2011 and a further 47% between 2011–2014.
+ This raises a distinct concern flagged by observers: 
+as many smaller villages have only one school and the closest neighbouring village is too far away, a church takeover can represent a violation of the right to unbiased, neutral education
+ — i.e., in single-school villages, ownership-model changes (centralization or church transfer) can function as a de facto reduction in choice even when the building stays open, a dynamic distinct from, but analytically parallel to, physical closure.
+
+---
+
+### Summary of Fact/Inference Separation
+- **Facts (sourced, dated):** scale of Polish closures (~3,300, 2000–2016); 1999 reform mechanics and 2017 reversal timeline; 2019 strike participation (~80%); Hungary's 2013 KLIK centralization; church-school enrollment growth figures (TÁRKI-based).
+- **Inference/contested:** whether PISA/labor-market gains attributable to the gimnazjum reform outweigh reputational/community costs is contested between econometric studies (positive) and qualitative community-capital studies (costly); whether reversal was evidence-based or politically motivated is presented as a conclusion by cited authors, not a neutral consensus.
+- **Not found in this search round:** direct Hungarian quantitative studies mirroring the Polish "social capital / entrepreneurship" school-closure studies; would require a further targeted search on Hungarian rural school-closure impact studies specifically (e.g., KSH or Hungarian academic literature) if needed for the {en,hu} artifact stage.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

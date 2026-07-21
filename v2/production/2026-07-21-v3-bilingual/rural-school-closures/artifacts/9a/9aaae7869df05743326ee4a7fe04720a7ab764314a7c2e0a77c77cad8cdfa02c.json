@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal interacts with Hungarian institutions by formalizing an obligation that already exists on paper: the maintainer's legal duty to provide transport to the mandatory-admission school, which the evidence indicates lapses in practice absent parental complaint. Converting this into an enforceable, monitored guarantee would require new administrative capacity within or alongside the tankerület structure, since no current mechanism proactively monitors compliance. The proposal does not alter the ministerial-level centralization of closure decisions themselves, so the core governance track (60 tankerület districts, ministerial authority) remains unchanged; only the downstream service obligation is targeted. System coverage would plausibly improve for children in consolidated catchments, but the transport guarantee's cost is explicitly not offset by the same economies of scale documented for instruction/administration, creating a durable funding gap this lens cannot resolve.",
+      "hu": "Ez a javaslat úgy lép kapcsolatba a magyar intézményekkel, hogy formalizál egy papíron már létező kötelezettséget: a fenntartó jogi kötelességét a kötelező felvételt biztosító iskolába való szállításra, amely a bizonyítékok szerint a gyakorlatban szülői panasz hiányában elmarad. Ennek végrehajthatóvá és monitorozottá tétele új igazgatási kapacitást igényelne a tankerületi struktúrán belül vagy mellett, mivel jelenleg nincs olyan mechanizmus, amely proaktívan felügyelné a megfelelést. A javaslat nem módosítja magát a bezárási döntések miniszteri szintű centralizációját, így az alapvető irányítási pálya (60 tankerület, miniszteri hatáskör) változatlan marad; csak az utólagos szolgáltatási kötelezettséget célozza. A rendszer lefedettsége valószínűleg javulna az összevont körzetekbe tartozó gyerekek számára, de a szállítási garancia költségét kifejezetten nem ellensúlyozza az oktatás/igazgatás terén dokumentált méretgazdaságosság, ami tartós finanszírozási hiányt hoz létre, amit ez a lencse nem tud feloldani."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-01"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could be layered onto the existing catchment-reassignment mechanism (already used in church-transfer cases) to extend enforceable transport guarantees system-wide without requiring a wholly new legal category.",
+        "hu": "Rátehető a meglévő körzet-átrendelési mechanizmusra (amelyet már az egyházi átadási esetekben is használnak), hogy kiterjeszthető legyen a végrehajtható szállítási garancia rendszerszinten, anélkül hogy teljesen új jogi kategóriát kellene létrehozni."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Directly targets a documented implementation gap (transport obligation not automatically fulfilled) rather than introducing an entirely novel mechanism, giving it clear institutional grounding.",
+        "hu": "Közvetlenül egy dokumentált végrehajtási hiányosságot céloz (a szállítási kötelezettség nem automatikusan teljesül), nem egy teljesen új mechanizmust vezet be, ami világos intézményi alapot ad neki."
+      },
+      {
+        "en": "Leaves the ministerial centralization of closure authority intact, meaning it requires no renegotiation of the tankerület governance hierarchy itself.",
+        "hu": "Érintetlenül hagyja a bezárási hatáskör miniszteri centralizációját, azaz nem igényli magának a tankerületi irányítási hierarchiának az újratárgyalását."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Contested cross-national evidence on whether consolidation accelerates population decline (Finnish DID findings versus null results in Saxony and Sweden) means the institutional fit of a consolidation-plus-transport model may vary unpredictably by local context.",
+        "hu": "A vitatott, országok közötti bizonyítékok arról, hogy az összevonás felgyorsítja-e a népességcsökkenést (finn DID-eredmények szemben a szászországi és svédországi null eredményekkel) azt jelentik, hogy az összevonás-plusz-szállítás modell intézményi illeszkedése kiszámíthatatlanul változhat a lokális kontextustól függően."
+      },
+      {
+        "en": "Documented short-run achievement effects for students from closing schools (Danish evidence) indicate a transitional cost that the transport guarantee alone does not mitigate.",
+        "hu": "A bezáró iskolákból érkező tanulók dokumentált rövid távú teljesítménycsökkenése (dán bizonyítékok) egy átmeneti költséget jelez, amelyet a szállítási garancia önmagában nem enyhít."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Requires new monitoring/enforcement capacity for transport compliance that does not currently exist in an operationalized form, representing an administrative compatibility gap.",
+        "hu": "Új monitorozási/végrehajtási kapacitást igényel a szállítási megfelelés terén, amely jelenleg nem létezik operacionalizált formában, ami igazgatási kompatibilitási hiányt jelent."
+      },
+      {
+        "en": "The transport guarantee's cost is not covered by the documented economies of scale (which apply to instruction/administration, not transportation), leaving an unresolved funding question within the existing fiscal framework.",
+        "hu": "A szállítási garancia költségét nem fedezi a dokumentált méretgazdaságosság (amely az oktatásra/igazgatásra vonatkozik, nem a szállításra), így megválaszolatlan finanszírozási kérdés marad a jelenlegi fiskális keretben."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t2-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-76283b5befd7fe2f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

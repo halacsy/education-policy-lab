@@ -1,0 +1,36 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Synthetic-control or structural microsimulation calibrated to Hungarian PISA/NABC panel data, incorporating baseline achievement distribution, teacher-qualification distribution, and track-coexistence structure as moderators; sensitivity analysis varying assumed transferability of the Polish effect size.",
+      "hu": "Szintetikus kontroll- vagy strukturális mikroszimulációs modell, magyar PISA/kompetenciamérés paneladatokra kalibrálva, a kiindulási teljesítmény-eloszlást, a tanári képesítés-eloszlást és a tagozatok párhuzamos létezését moderátorként bevonva; érzékenységi elemzés a lengyel hatásméret átvihetőségére tett feltevések variálásával."
+    },
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t3"
+    ],
+    "question": {
+      "en": "Does the Polish evidence of mean-achievement gains and reduced between-school variance from delaying tracking (age 12 to 15) generalize to Hungary, given Hungary's different baseline achievement, teacher preparation, and coexisting 4-/6-/8-year track diversity, and what would the expected Hungary-specific effect size be under full abolition (t2) versus partial delay (t3)?",
+      "hu": "Általánosítható-e Magyarországra a lengyel bizonyíték (a szelekció 12-ről 15 éves korra való halasztásából eredő átlagos teljesítménynövekedés és csökkent iskolák közötti varianciacsökkenés), tekintve Magyarország eltérő kiindulási teljesítményszintjét, tanárképzését és a párhuzamosan létező 4/6/8 évfolyamos tagozati sokféleséget, és mekkora lenne a Magyarországra jellemző várható hatásméret teljes megszüntetés (t2) versus részleges halasztás (t3) esetén?"
+    },
+    "uncertainty_refs": [
+      "U-live-international_comparison-03",
+      "U-live-polish_reform-01",
+      "U-live-t2-02",
+      "U-live-t3-01"
+    ],
+    "why_it_matters": {
+      "en": "Both structural proposals (t2, t3) rely heavily on the Polish analogy for their expected benefits; if Hungary's structural differences predict substantially weaker effects, the equity/achievement case for structural reform weakens relative to guardrail (t4) or package (t5) approaches that do not depend on this transfer assumption.",
+      "hu": "Mindkét strukturális javaslat (t2, t3) nagymértékben a lengyel analógiára támaszkodik a várható előnyök alátámasztásában; ha Magyarország strukturális különbségei jelentősen gyengébb hatásokat jeleznek előre, a strukturális reform esélyegyenlőségi/teljesítménybeli indoklása gyengül a védőháló-alapú (t4) vagy csomag-alapú (t5) megközelítésekhez képest, amelyek nem függnek ettől az átvételi feltevéstől."
+    }
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "RQ-live-production-03",
+  "provenance_ref": "PV-build_research_agenda-2b2b85418ec71a9b",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

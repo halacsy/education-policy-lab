@@ -1,0 +1,36 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Detailed cost-accounting study using Klebelsberg Center (KLIK) financial records and municipal budget data across a stratified sample of small rural schools and comparable consolidated/transport-served catchments, decomposing costs into instruction, administration, facilities, and transport, disaggregated by region and school type (single-grade vs. multigrade).",
+      "hu": "Részletes költségelemzési tanulmány a Klebelsberg Központ (KLIK) pénzügyi adatai és önkormányzati költségvetési adatok felhasználásával, kis vidéki iskolák és összehasonlítható konszolidált/szállítással ellátott körzetek rétegzett mintáján, a költségeket oktatásra, igazgatásra, létesítményekre és szállításra lebontva, régió és iskolatípus (egyosztatos vs. összevont osztályos) szerint."
+    },
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t3"
+    ],
+    "question": {
+      "en": "What is the actual per-pupil cost of operating small rural Hungarian primary schools (50–150 pupils) compared to consolidation with legally guaranteed transport, including transport costs that show no economies of scale?",
+      "hu": "Mekkora a kis vidéki magyar általános iskolák (50–150 tanuló) tényleges tanulónkénti működési költsége a konszolidációhoz és a jogilag garantált szállításhoz képest, beleértve azokat a szállítási költségeket, amelyek nem mutatnak méretgazdaságossági hatást?"
+    },
+    "uncertainty_refs": [
+      "U-live-education_finance-01",
+      "U-live-school_network_planning-02",
+      "U-live-t2-02",
+      "U-live-demography-01"
+    ],
+    "why_it_matters": {
+      "en": "Every consolidation-oriented proposal (TP-live-t2, TP-live-t3) implicitly assumes net fiscal savings, but the evidence shows US-style savings apply only to instruction/administration, not transport, and no Hungary-specific cost figures exist; without this data, cost-benefit claims underlying closure policy cannot be verified or refuted.",
+      "hu": "Minden konszolidáció-orientált javaslat (TP-live-t2, TP-live-t3) implicit módon nettó fiskális megtakarítást feltételez, de a bizonyítékok szerint az amerikai típusú megtakarítások csak az oktatásra/igazgatásra vonatkoznak, a szállításra nem, és nem léteznek Magyarországra vonatkozó konkrét költségadatok; e nélkül a bezárási politika mögötti költség-haszon állítások nem igazolhatók vagy cáfolhatók."
+    }
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "RQ-live-production-02",
+  "provenance_ref": "PV-build_research_agenda-a8c1800465d8c95c",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

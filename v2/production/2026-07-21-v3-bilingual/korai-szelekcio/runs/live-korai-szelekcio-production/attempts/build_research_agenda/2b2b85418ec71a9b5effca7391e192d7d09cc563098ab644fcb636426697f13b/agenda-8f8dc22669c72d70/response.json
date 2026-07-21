@@ -1,0 +1,266 @@
+{
+  "questions": [
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Quasi-experimental decomposition using administrative micro-data (student-level SES, ethnicity proxies, school assignment) exploiting the 2025 threshold-score change and cross-municipality variation in track availability as instruments; complement with a Gelbach-style decomposition separating gimnázium-selection, free-choice, and residential channels; triangulate with international comparative estimates only as priors, not substitutes.",
+        "hu": "Kvázi-experimentális dekompozíció igazgatási mikroadatok (tanulói szintű SES, etnikai proxyk, iskolai beosztás) felhasználásával, a 2025-ös ponthatár-változást és a tagozatok elérhetőségének településközi eltéréseit instrumentumként kihasználva; Gelbach-típusú dekompozícióval elkülönítve a gimnáziumi szelekció, a szabad választás és a lakóhelyi csatornák hatását; nemzetközi összehasonlító becslések csak előzetes referenciaként, nem helyettesítőként."
+      },
+      "proposal_refs": [
+        "TP-live-t1",
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t4",
+        "TP-live-t5"
+      ],
+      "question": {
+        "en": "What is the independent causal effect of the 6/8-year gimnázium track structure itself — net of free school choice, residential segregation, and church-school expansion — on socioeconomic and Roma school segregation in Hungary, and what share of total observed segregation would abolition or delay realistically remove versus merely displace into other sorting channels?",
+        "hu": "Mekkora a 6/8 évfolyamos gimnáziumi szerkezet önálló, ok-okozati hatása a szocioökonómiai és roma iskolai szegregációra Magyarországon — a szabad iskolaválasztástól, a lakóhelyi szegregációtól és az egyházi iskolabővüléstől függetlenítve —, és a szerkezet megszüntetése vagy a szelekció késleltetése a megfigyelt szegregáció mekkora hányadát csökkentené valóban, illetve mekkora hányadát csak áthelyezné más szelekciós csatornákba?"
+      },
+      "uncertainty_refs": [
+        "U-live-international_comparison-01",
+        "U-live-legal_and_governance-01",
+        "U-live-portuguese_reform-02",
+        "U-live-demography-02",
+        "U-live-hungarian_education_system-03"
+      ],
+      "why_it_matters": {
+        "en": "This is the pivotal empirical question underlying all five proposals: if the track structure explains only a small share of segregation, structural reform (t2/t3) would yield disappointing equity returns and non-structural/guardrail approaches (t4/t5) may be comparatively more cost-effective; if it explains a large share, structural abolition becomes far more clearly justified.",
+        "hu": "Ez az öt javaslat mindegyikének alapját képező kulcskérdés: ha a szerkezet a szegregáció csak kis hányadát magyarázza, a strukturális reform (t2/t3) gyenge esélyegyenlőségi hozamot adna, és a nem strukturális/védőháló-alapú megközelítések (t4/t5) relatíve költséghatékonyabbak lehetnek; ha nagy hányadot magyaráz, a strukturális megszüntetés indokoltsága jelentősen erősebb."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Panel analysis of admission applications, threshold scores, and enrollment 2020–2026 by institution and settlement type; difference-in-differences comparing cohorts affected vs. unaffected by the 2025 threshold change; forecasting model combining fertility-cohort projections with capacity data to estimate time-to-informal-closure for at-risk institutions.",
+        "hu": "Panel-elemzés a felvételi jelentkezésekről, ponthatárokról és beiratkozásokról 2020–2026 között, intézmény és településtípus szerint; differencia-a-differenciákban módszer a 2025-ös ponthatár-változás által érintett és nem érintett kohorszok összehasonlítására; előrejelző modell a termékenységi kohorsz-projekciók és kapacitásadatok összekapcsolásával a veszélyeztetett intézmények informális bezárásig hátralévő idejének becslésére."
+      },
+      "proposal_refs": [
+        "TP-live-t1",
+        "TP-live-t5"
+      ],
+      "question": {
+        "en": "What caused the 2026 divergence in track demand (6-year track +11%, 8-year track −14%), and does this pattern predict accelerating informal closures of peripheral 8-year programs before any formal policy decision is made?",
+        "hu": "Mi okozta a 2026-os tagozati kereslet szétválását (6 évfolyamos tagozat +11%, 8 évfolyamos tagozat −14%), és ez a minta előrejelzi-e a periférikus 8 évfolyamos programok felgyorsuló informális bezárását, mielőtt bármilyen formális szakpolitikai döntés megszületne?"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-02",
+        "U-live-t1-01",
+        "U-live-demography-01",
+        "U-live-school_network_planning-01"
+      ],
+      "why_it_matters": {
+        "en": "If demand collapse is driven by the 2025 threshold change or demographic decline rather than preference shift, policy intervention timelines are compressed — de facto network contraction may occur before any of the five proposals could be enacted, changing the baseline against which all options should be evaluated.",
+        "hu": "Ha a keresletcsökkenést a 2025-ös ponthatár-változás vagy a demográfiai visszaesés okozza, nem pedig preferenciaváltozás, a szakpolitikai beavatkozás időkerete lerövidül — a hálózat de facto zsugorodása bármelyik javaslat hatálybalépése előtt megtörténhet, megváltoztatva azt az alapállapotot, amelyhez az összes opciót viszonyítani kell."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Synthetic-control or structural microsimulation calibrated to Hungarian PISA/NABC panel data, incorporating baseline achievement distribution, teacher-qualification distribution, and track-coexistence structure as moderators; sensitivity analysis varying assumed transferability of the Polish effect size.",
+        "hu": "Szintetikus kontroll- vagy strukturális mikroszimulációs modell, magyar PISA/kompetenciamérés paneladatokra kalibrálva, a kiindulási teljesítmény-eloszlást, a tanári képesítés-eloszlást és a tagozatok párhuzamos létezését moderátorként bevonva; érzékenységi elemzés a lengyel hatásméret átvihetőségére tett feltevések variálásával."
+      },
+      "proposal_refs": [
+        "TP-live-t2",
+        "TP-live-t3"
+      ],
+      "question": {
+        "en": "Does the Polish evidence of mean-achievement gains and reduced between-school variance from delaying tracking (age 12 to 15) generalize to Hungary, given Hungary's different baseline achievement, teacher preparation, and coexisting 4-/6-/8-year track diversity, and what would the expected Hungary-specific effect size be under full abolition (t2) versus partial delay (t3)?",
+        "hu": "Általánosítható-e Magyarországra a lengyel bizonyíték (a szelekció 12-ről 15 éves korra való halasztásából eredő átlagos teljesítménynövekedés és csökkent iskolák közötti varianciacsökkenés), tekintve Magyarország eltérő kiindulási teljesítményszintjét, tanárképzését és a párhuzamosan létező 4/6/8 évfolyamos tagozati sokféleséget, és mekkora lenne a Magyarországra jellemző várható hatásméret teljes megszüntetés (t2) versus részleges halasztás (t3) esetén?"
+      },
+      "uncertainty_refs": [
+        "U-live-international_comparison-03",
+        "U-live-polish_reform-01",
+        "U-live-t2-02",
+        "U-live-t3-01"
+      ],
+      "why_it_matters": {
+        "en": "Both structural proposals (t2, t3) rely heavily on the Polish analogy for their expected benefits; if Hungary's structural differences predict substantially weaker effects, the equity/achievement case for structural reform weakens relative to guardrail (t4) or package (t5) approaches that do not depend on this transfer assumption.",
+        "hu": "Mindkét strukturális javaslat (t2, t3) nagymértékben a lengyel analógiára támaszkodik a várható előnyök alátámasztásában; ha Magyarország strukturális különbségei jelentősen gyengébb hatásokat jeleznek előre, a strukturális reform esélyegyenlőségi/teljesítménybeli indoklása gyengül a védőháló-alapú (t4) vagy csomag-alapú (t5) megközelítésekhez képest, amelyek nem függnek ettől az átvételi feltevéstől."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Comparative political-economy process tracing across Poland, Austria, and Finland reform trajectories matched against Hungarian coalition structure, interest-group mapping (PDSZ, alumni associations, church maintainers), and structured expert elicitation on reversal-risk indicators; complemented by a pre-registered stakeholder survey testing reaction to framing variants (abolition vs. admissions review).",
+        "hu": "Összehasonlító politikai gazdaságtani folyamatkövetés Lengyelország, Ausztria és Finnország reformtörténetein, a magyar koalíciós szerkezethez, érdekcsoport-térképezéshez (PDSZ, öregdiák-szövetségek, egyházi fenntartók) illesztve, strukturált szakértői becsléssel a visszafordítási kockázat indikátoraira; kiegészítve előregisztrált érintett-felmérésekkel, amelyek a keretezési variánsokra (megszüntetés vs. felvételi rendszer felülvizsgálata) adott reakciókat vizsgálják."
+      },
+      "proposal_refs": [
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t5"
+      ],
+      "question": {
+        "en": "Under what conditions of stakeholder communication, evidence dissemination, and implementation sequencing could a Hungarian tracking reform (abolition, delay, or guardrail-based) avoid the political reversal Poland experienced in 2016–17, and does Hungary's political economy (elite institutional memory, teacher-union structure, coalition arithmetic) predict greater or lesser durability than Poland's?",
+        "hu": "Milyen érdekelt felekkel folytatott kommunikáció, bizonyíték-terjesztés és végrehajtási ütemezés mellett kerülhetné el egy magyar tagozati reform (megszüntetés, halasztás vagy védőháló-alapú) a Lengyelországban 2016–17-ben bekövetkezett politikai visszafordítást, és Magyarország politikai gazdaságtana (elit intézményi memória, tanári szakszervezeti struktúra, koalíciós erőviszonyok) nagyobb vagy kisebb tartósságot jelez-e előre a lengyel esethez képest?"
+      },
+      "uncertainty_refs": [
+        "U-live-international_comparison-02",
+        "U-live-polish_reform-02",
+        "U-live-political_feasibility-01",
+        "U-live-political_feasibility-02",
+        "U-live-t2-01",
+        "U-live-t3-02"
+      ],
+      "why_it_matters": {
+        "en": "Durability is the central unresolved risk flagged across every structural proposal (t2, t3) and is the explicit design rationale for the package proposal (t5); without evidence on this, any structural reform risks being reversed regardless of its measured benefits, as occurred in Poland despite favorable PISA results.",
+        "hu": "A tartósság az összes strukturális javaslatnál (t2, t3) megjelölt központi, megoldatlan kockázat, és ez a csomagjavaslat (t5) kifejezett tervezési indoka; erre vonatkozó bizonyíték nélkül bármely strukturális reform visszafordítás kockázatával jár, mértékétől függetlenül, ahogyan Lengyelországban is történt a kedvező PISA-eredmények ellenére."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Comparative case study of jurisdictions that abolished early tracking (Finland 1972-77, Poland 1999) tracking post-reform trends in special-needs classification rates, private enrollment, and within-school grouping; supplemented by Hungarian legal analysis of current SEN classification criteria, private-school regulation, and catchment-area rules to assess displacement feasibility.",
+        "hu": "Összehasonlító esettanulmány olyan országokról, amelyek megszüntették a korai szelekciót (Finnország 1972–77, Lengyelország 1999), nyomon követve a reform utáni trendeket a sajátos nevelési igényű besorolási arányokban, a magániskolai beiskolázásban és az iskolán belüli csoportosításban; kiegészítve a jelenlegi magyar jogi kereteket vizsgáló elemzéssel az SNI-besorolási kritériumokról, a magániskolai szabályozásról és a körzethatár-szabályokról, az áthelyezési lehetőség felmérésére."
+      },
+      "proposal_refs": [
+        "TP-live-t2",
+        "TP-live-t3"
+      ],
+      "question": {
+        "en": "If the 6/8-year tracks were abolished or substantially delayed, into which alternative sorting mechanisms (within-school ability grouping, special-needs classification, private-school enrollment, residential sorting) would segregation migrate, and to what extent would each be legally and institutionally constrainable under current Hungarian law?",
+        "hu": "A 6/8 évfolyamos tagozatok megszüntetése vagy jelentős késleltetése esetén mely alternatív szelekciós mechanizmusokba (iskolán belüli képességcsoportosítás, sajátos nevelési igényű besorolás, magániskolai beiskolázás, lakóhelyi szelekció) tevődne át a szegregáció, és ezek mindegyike milyen mértékben lenne jogilag és intézményileg korlátozható a jelenlegi magyar jogszabályi keretek között?"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-03",
+        "U-live-finnish_reform-02",
+        "U-live-portuguese_reform-02"
+      ],
+      "why_it_matters": {
+        "en": "This determines whether structural abolition (t2) or delay (t3) actually reduces system-wide segregation or merely relocates it, which is decisive for whether these options represent genuine equity gains or symbolic-only reform, and it directly assesses the counterfactual assumption embedded in both proposals.",
+        "hu": "Ez határozza meg, hogy a strukturális megszüntetés (t2) vagy halasztás (t3) valóban csökkenti-e a rendszerszintű szegregációt, vagy csak áthelyezi azt, ami döntő abban, hogy ezek az opciók valódi esélyegyenlőségi nyereséget vagy csak szimbolikus reformot jelentenek, és közvetlenül teszteli a mindkét javaslatban rejlő kontrafaktuális feltevést."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Regression-discontinuity design around admission-score cutoffs linking administrative school records to tax/employment registry data for cohorts now in their 30s-40s, tracking earnings, employment stability, and tertiary attainment; complemented by mediation analysis testing whether any observed effect operates via peer effects, curriculum, or pure credentialing signal.",
+        "hu": "Regressziós törésponti (RDD) elemzés a felvételi ponthatárok körül, az igazgatási iskolai nyilvántartásokat az adó-/foglalkoztatási regiszter adataival összekapcsolva a jelenleg 30-40 éves kohorszok esetében, nyomon követve a kereseteket, a foglalkoztatási stabilitást és a felsőoktatási végzettséget; kiegészítve mediációs elemzéssel, amely teszteli, hogy a megfigyelt hatás a kortárshatásokon, a tantervi különbségeken vagy tisztán a kredencializálási jelzésen keresztül működik-e."
+      },
+      "proposal_refs": [
+        "TP-live-t1",
+        "TP-live-t2",
+        "TP-live-t4"
+      ],
+      "question": {
+        "en": "Do the short-term test-score gains for students admitted to 6-year academic tracks persist into adult labor-market outcomes and earnings, particularly for borderline-qualified students near the admission margin, or does the null long-run finding (Gurzó & Horn 2015) indicate that initial gains are pure selection artifacts or are offset by segregation-induced costs to excluded peers?",
+        "hu": "A 6 évfolyamos gimnáziumi tagozatba felvett tanulók rövid távú tesztpontszám-nyeresége fennmarad-e a felnőttkori munkaerőpiaci eredményekben és keresetekben, különösen a felvételi ponthatár közelében lévő, határeseti tanulók esetében, vagy a hosszú távú nulla hatásra utaló eredmény (Gurzó & Horn, 2015) azt jelzi, hogy a kezdeti nyereség tisztán szelekciós műtermék, vagy a kizárt társaknak okozott szegregációs költségek ellensúlyozzák azt?"
+      },
+      "uncertainty_refs": [
+        "U-live-portuguese_reform-01",
+        "U-live-equity_and_social_mobility-01",
+        "U-live-implementation_planning-01",
+        "U-live-hungarian_education_system-01"
+      ],
+      "why_it_matters": {
+        "en": "This directly tests whether the tracks provide genuine pedagogical value-added (justifying retention/guardrails, t1/t4) or merely credential-signaling/social-position protection with zero net benefit (favoring abolition, t2), making it foundational to choosing between preservation and structural reform.",
+        "hu": "Ez közvetlenül teszteli, hogy a tagozatok valódi pedagógiai hozzáadott értéket biztosítanak-e (ami indokolja a megtartást/védőhálókat, t1/t4), vagy csak kredencializálást/társadalmi státuszvédelmet szolgálnak nulla nettó haszonnal (ami a megszüntetést támogatja, t2), így alapvető a megőrzés és a strukturális reform közötti választáshoz."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "medium",
+      "method": {
+        "en": "Difference-in-differences or synthetic control comparing academic trajectories of remaining students in feeder schools before/after high-achiever exit, using variation in local track-entry rates across settlements as a natural experiment; heterogeneity analysis by grade, subject, and SES.",
+        "hu": "Differencia-a-differenciákban vagy szintetikus kontroll módszer, amely összehasonlítja a kibocsátó iskolákban maradó tanulók tanulmányi pályáját a kiemelkedő teljesítményűek kilépése előtt és után, a helyi tagozati belépési arányok településközi eltéréseit természetes kísérletként felhasználva; heterogenitás-elemzés évfolyam, tantárgy és szocioökonómiai státusz szerint."
+      },
+      "proposal_refs": [
+        "TP-live-t1",
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t4"
+      ],
+      "question": {
+        "en": "What is the magnitude of the peer-composition ('brain drain') effect on remaining students' academic outcomes in feeder schools when top achievers exit into 6/8-year gimnázium tracks, and how does this vary by grade, subject, and student socioeconomic background?",
+        "hu": "Mekkora a kortárs-összetételi ('elszívó') hatás mértéke a kibocsátó iskolákban maradó tanulók tanulmányi eredményeire, amikor a legjobb teljesítményű tanulók kilépnek a 6/8 évfolyamos gimnáziumi tagozatokba, és ez hogyan változik évfolyam, tantárgy és a tanulók szocioökonómiai háttere szerint?"
+      },
+      "uncertainty_refs": [
+        "U-live-education_finance-01"
+      ],
+      "why_it_matters": {
+        "en": "This quantifies a cost of the current system borne by students who remain in feeder schools, which is essential for a full cost-benefit comparison across proposals — abolition (t2) and delay (t3) would eliminate this cost, while retention-based options (t1, t4) would not, making the size of the effect decisive for prioritization.",
+        "hu": "Ez számszerűsíti a jelenlegi rendszer egyik költségét, amelyet a kibocsátó iskolákban maradó tanulók viselnek, ami elengedhetetlen a javaslatok teljes költség-haszon összehasonlításához — a megszüntetés (t2) és a halasztás (t3) megszüntetné ezt a költséget, míg a megtartás-alapú opciók (t1, t4) nem, így a hatás mértéke döntő a rangsoroláshoz."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "medium",
+      "method": {
+        "en": "Survey of non-applicant families in catchment areas of under-enrolled institutions combined with GIS-based commute-time analysis and a discrete-choice model estimating the relative weight of distance versus perceived quality in enrollment decisions; cost-effectiveness modeling of transport subsidy scenarios against projected enrollment/equity gains.",
+        "hu": "Nem jelentkező családok felmérése az alullátogatott intézmények körzeteiben, GIS-alapú utazási idő elemzéssel és diszkrét választási modellel kombinálva, amely megbecsüli a távolság és az észlelt minőség relatív súlyát a beiskolázási döntésekben; költség-hatékonysági modellezés a közlekedési támogatási forgatókönyvek és a becsült beiratkozási/esélyegyenlőségi nyereség összevetésével."
+      },
+      "proposal_refs": [
+        "TP-live-t5"
+      ],
+      "question": {
+        "en": "What fraction of unfilled seats in peripheral 6- and 8-year gimnaziums is attributable to genuine geographic/transport barriers versus rational preference for higher-reputation urban schools, and what would be the cost and delivery timeline of transport/infrastructure investment to close the accessible-barrier component, relative to its equity payoff?",
+        "hu": "A periférikus 6 és 8 évfolyamos gimnáziumok betöltetlen helyeinek mekkora hányada tulajdonítható valódi földrajzi/közlekedési akadályoknak, szemben a nagyobb hírnevű városi iskolák iránti racionális preferenciával, és mennyi lenne a közlekedési/infrastrukturális beruházás költsége és megvalósítási időtávja a hozzáférhetőségi akadály komponens megszüntetésére, az esélyegyenlőségi hozamhoz viszonyítva?"
+      },
+      "uncertainty_refs": [
+        "U-live-school_network_planning-01",
+        "U-live-school_network_planning-03"
+      ],
+      "why_it_matters": {
+        "en": "This is directly decision-relevant for the network-planning component of the package proposal (t5): if unfilled seats are mainly a transport problem, targeted infrastructure investment could be a comparatively low-cost, high-leverage equity intervention independent of the structural reform debate.",
+        "hu": "Ez közvetlenül döntésrelevanciájú a csomagjavaslat (t5) hálózattervezési komponense szempontjából: ha a betöltetlen helyek elsősorban közlekedési problémát jeleznek, a célzott infrastrukturális beruházás viszonylag alacsony költségű, nagy hatású esélyegyenlőségi beavatkozás lehet, a strukturális reformvitától függetlenül."
+      }
+    },
+    {
+      "answerability": "answerable_now",
+      "decision_impact": "high",
+      "method": {
+        "en": "Legal-doctrinal analysis of the Public Education Act, 2013 centralization statutes, and the 2014 Klebelsberg Center position paper against comparable EU desegregation-duty jurisprudence (including the ECHR ruling); administrative capacity audit via structured interviews and document review of Klebelsberg Center staffing, IT systems, and prior monitoring output.",
+        "hu": "Jogdogmatikai elemzés a Köznevelési törvényről, a 2013-as centralizációs jogszabályokról és a 2014-es Klebelsberg Központ álláspontról, összehasonlítva a hasonló uniós deszegregációs kötelezettségi joggyakorlattal (beleértve az EJEB ítéletet); igazgatási kapacitásvizsgálat strukturált interjúk és dokumentumelemzés révén a Klebelsberg Központ létszámáról, informatikai rendszereiről és korábbi monitorozási eredményeiről."
+      },
+      "proposal_refs": [
+        "TP-live-t4",
+        "TP-live-t5"
+      ],
+      "question": {
+        "en": "Is the Klebelsberg Center's 2014 legal position disclaiming a proactive desegregation duty a binding statutory constraint or a discretionary policy interpretation reversible via administrative directive without amending the Public Education Act, and what current staffing, IT, and evaluation capacity exists to support a nationwide segregation-monitoring mandate if imposed?",
+        "hu": "A Klebelsberg Fenntartói Központ 2014-es jogi álláspontja, amely elhárítja a proaktív deszegregációs kötelezettséget, kötelező törvényi korlátozás, vagy diszkrecionális szakpolitikai értelmezés, amely a Köznevelési törvény módosítása nélkül, igazgatási irányelvvel megváltoztatható, és milyen jelenlegi létszám-, informatikai és értékelési kapacitás áll rendelkezésre egy országos szegregáció-monitorozási megbízás támogatásához, ha azt bevezetnék?"
+      },
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-03",
+        "U-live-implementation_planning-02"
+      ],
+      "why_it_matters": {
+        "en": "This determines the feasibility and legal pathway of the guardrail proposal (t4), which relies on assigning a desegregation obligation to the Klebelsberg Center; if the 2014 position is merely discretionary, a lower-friction administrative fix may be available, but if capacity is absent, the proposal risks being unenforceable regardless of legal status.",
+        "hu": "Ez határozza meg a védőháló-javaslat (t4) megvalósíthatóságát és jogi útját, amely a deszegregációs kötelezettség Klebelsberg Központhoz rendelésére támaszkodik; ha a 2014-es álláspont csak diszkrecionális, alacsonyabb ütközési pontú igazgatási megoldás állhat rendelkezésre, de ha nincs kapacitás, a javaslat jogi státusztól függetlenül végrehajthatatlan kockázatot hordoz."
+      }
+    },
+    {
+      "answerability": "not_empirically_resolvable",
+      "decision_impact": "high",
+      "method": {
+        "en": "Not applicable as an empirical method; this question should instead be addressed through deliberative public consultation, legislative debate, and transparent articulation of the value weights implicit in each proposal, distinct from and following the empirical questions above.",
+        "hu": "Empirikus módszer nem alkalmazható; e kérdést inkább deliberatív társadalmi konzultáció, törvényhozási vita és az egyes javaslatokban rejlő értéksúlyok átlátható megfogalmazása útján kell kezelni, elkülönítve a fenti empirikus kérdésektől és azokat követően."
+      },
+      "proposal_refs": [
+        "TP-live-t1",
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t4",
+        "TP-live-t5"
+      ],
+      "question": {
+        "en": "Whether the value assigned to preserving elite gymnázium tracks as a mechanism of family social-position protection and credential signaling — as opposed to their role as genuine pedagogical value-added — should outweigh documented equity costs is a question of competing social values (meritocratic reward vs. egalitarian access) that no measurement of achievement or segregation effects can resolve by itself.",
+        "hu": "Az a kérdés, hogy az elit gimnáziumi tagozatok családi társadalmi státuszvédelmi és kredencializálási mechanizmusként való megőrzéséhez fűződő érték — szemben a valódi pedagógiai hozzáadott érték szerepével — felülírja-e a dokumentált esélyegyenlőségi költségeket, versengő társadalmi értékek (meritokratikus jutalmazás vs. egalitárius hozzáférés) kérdése, amelyet a teljesítmény- vagy szegregációs hatások semmilyen mérése önmagában nem tud megválaszolni."
+      },
+      "uncertainty_refs": [
+        "U-live-implementation_planning-01",
+        "U-live-equity_and_social_mobility-01"
+      ],
+      "why_it_matters": {
+        "en": "Even with complete causal evidence on value-added and segregation effects (addressed by other questions above), the choice among t1-t5 ultimately requires a societal judgment about how much weight to give meritocratic/elite-formation goals versus equity goals — a normative trade-off that data alone cannot adjudicate, though it should be made explicit rather than smuggled into a false empirical framing.",
+        "hu": "Még ha teljes ok-okozati bizonyíték is áll rendelkezésre a hozzáadott értékről és a szegregációs hatásokról (amint a fenti kérdések is célozzák), a t1-t5 közötti választás végső soron társadalmi ítéletet igényel arról, hogy mekkora súlyt kapjanak a meritokratikus/elitképzési célok az esélyegyenlőségi célokkal szemben — ez egy normatív mérlegelés, amelyet önmagában az adatok nem tudnak eldönteni, de amelyet explicitté kell tenni, nem pedig hamis empirikus keretbe csomagolni."
+      }
+    }
+  ]
+}

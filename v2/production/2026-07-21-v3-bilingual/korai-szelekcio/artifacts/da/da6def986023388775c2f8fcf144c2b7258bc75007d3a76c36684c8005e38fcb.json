@@ -1,0 +1,55 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "152bf1ecfd98605763d6e226664d73599623d44907847bb6c65ca0274fa3059d",
+        "response_hash": "c42c424be1d7bb0aec3c143c6ea6d9d68b0e2ba03a9a7fb6e8ce907d7544d4cf",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "5168d7556f8bc9682684ffe317a0e677aba45e614d7d71ac565f2a494ad79a1b",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "08de3b472b2424042f03148be2c46b3f0a99721372fca909ed0f6a9734a5b33c",
+      "0b2be50af08fe3a8c9427c653d64904573724f93cf4956472e1fbbe39136cf6b",
+      "0e5a86caab6b40aa3ee35d57728b04f612581782dcb89334f4d3b8b920281bda",
+      "29664e4c3c28ec9e96775d916a76bcbea448c47429c0b65e6f705c2cfc2c9283",
+      "3bfb212928e69a092d89f4e1e4fb11b085c0acdcb45d922ba5771072134fb00f",
+      "411836d6c31a4507060cf2d2b29b4568b6e7396def0ba76a1c593dcb473fef7a",
+      "552a94b439290f9c2cb784fa7e2e87078f0e6d5e40844bc7ba6654bd71ff42cf",
+      "59fb0b2cf8efdb1f62f1cf981fe29bab49faabcad166e4328d13b0cdbfe3d195",
+      "5f51e5d00ca29f2d0244ebaf9ed51e5ddde546f0fddab63b8047e88866e00904",
+      "60ca43f11ce78c05a67564baf112904961120cb9b711ef5f0afaf2bf978c50ef",
+      "8847262ce93c2a3747ed9d7dff59aeea8483da43e801e828175b0716ca932055",
+      "b0d17a66a180be9c0431a1b4be7ad484df0c42a50f0c7e059d7544b648055d85",
+      "b4b0c3b2d0a2f50d1c969f97c43f3c094ae621800fb6dda850385ab2cd98f220",
+      "c645f5873c49fe7380c914a3cf355af432d71af0fd303353021a8a2d6b1c3dfc",
+      "d3680ef7d2a6eada391589131e2646a3449dde0cd96c0ff2d2297510968711d6",
+      "f6c6f967763f9be40723dbdca5fee0ef84e283b3283ec2666f6749965a1fb045"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_demography",
+    "prompt_hash": "344d75fa3c0564f403852df5659bd6416857738a3de94404149830770788fc89",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "generator",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-assess_demography-5168d7556f8bc968",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "cb5202c5b868a6744ef6c76e7ccdaa2c099186921c2e1d9fe0647dedfcdc982a",
+  "topic": "korai-szelekcio"
+}

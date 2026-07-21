@@ -1,0 +1,47 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The split model is a partial, non-comprehensive bundle: it retains local access for the youngest cohort while consolidating older grades, which the lens would flag as addressing quality levelling for one age band while potentially reproducing the exact between-settlement segregation pattern Hungary's historical practice of reducing parallel classes rather than closing schools already created. The lens's causal-attribution caution applies strongly: this is one structural mechanism, and its success in preventing segregation depends entirely on how consolidation routing is designed, which is not specified.",
+      "hu": "A megosztott modell részleges, nem átfogó csomag: megtartja a helyi hozzáférést a legfiatalabb korosztály számára, míg összevonja a felsőbb évfolyamokat, amit a lencse úgy jelölne meg, hogy egy korcsoport minőség-kiegyenlítését kezeli, míg potenciálisan reprodukálja pontosan azt a településközi szegregációs mintát, amelyet Magyarország történelmi gyakorlata (párhuzamos osztályok csökkentése bezárás helyett) már létrehozott. A lencse ok-okozati óvatossága erősen érvényes: ez egyetlen strukturális mechanizmus, és sikere a szegregáció megelőzésében teljesen attól függ, hogyan alakítják ki az összevonási útvonalakat, amit a javaslat nem részletez."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-05"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      {
+        "en": "Could be paired with explicit routing rules for upper-grade consolidation (e.g., catchment redesign or quota mechanisms) that would convert this into a more comprehensive bundle addressing both access and equity simultaneously, consistent with the lens's demand for coordinated rather than singular reform.",
+        "hu": "Párosítható explicit útvonal-szabályokkal a felsőbb évfolyamok összevonásához (pl. beiskolázási körzet átalakítás vagy kvótamechanizmusok), amely átfogóbb csomaggá alakíthatná, egyszerre kezelve a hozzáférést és az esélyegyenlőséget, összhangban a lencse koordinált, nem egyedi reform iránti igényével."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Low administrative friction because multi-grade classes are already legally sanctioned, and the model has an international legislative analogue (Poland's draft split-model legislation) providing a coordinated design template rather than an isolated ad hoc fix.",
+        "hu": "Alacsony igazgatási ellenállás, mivel az összevonott osztályok már jogszabályilag engedélyezettek, és a modellnek van nemzetközi jogalkotási analógiája (Lengyelország tervezett megosztott modell törvénye), amely koordinált tervezési sablont biztosít, nem pedig elszigetelt, eseti megoldást."
+      }
+    ],
+    "threats": [
+      {
+        "en": "A modeled 100-student minimum-size threshold would affect over five hundred village schools, many unable to survive even in split form, indicating the split model has a hard viability floor below which this partial-bundle approach cannot substitute for either full retention or full consolidation.",
+        "hu": "Egy modellezett 100 fős minimális méretküszöb több mint ötszáz falusi iskolát érintene, amelyek közül sok még megosztott formában sem lenne életképes, ami azt jelzi, hogy a megosztott modellnek kemény életképességi alsó határa van, amely alatt ez a részleges csomag-megközelítés sem a teljes megtartást, sem a teljes konszolidációt nem tudja helyettesíteni."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Explicitly inherits the historically documented trade-off whereby limiting within-school segregation via small, single-track schools is associated with elevated between-settlement segregation, meaning the model reduces one equity risk while structurally risking another, unresolved in the current design.",
+        "hu": "Explicit módon örökli azt a történelmileg dokumentált átváltási hatást, amely szerint a belső iskolai szegregáció korlátozása kis, egysávos iskolákkal magasabb településközi szegregációval jár együtt, ami azt jelenti, hogy a modell egy esélyegyenlőségi kockázatot csökkent, míg strukturálisan egy másikat kockáztat, jelenleg megoldatlanul."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t3-portuguese_reform",
+  "provenance_ref": "PV-assess_portuguese_reform-3eaf35f426881728",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,26 @@
+{
+  "architecture_version": "3.1.0",
+  "run_tag": "2026-07-21-v3-bilingual",
+  "topics": [
+    {
+      "evaluation_ref": "EV-live-production",
+      "evaluation_total": 8.167,
+      "output_root": "v2/production/2026-07-21-v3-bilingual/korai-szelekcio",
+      "package_ref": "DP-live-production",
+      "readiness_ref": "DR-live-production",
+      "readiness_verdict": "ready_with_conditions",
+      "run_id": "live-korai-szelekcio-production",
+      "topic": "korai-szelekcio"
+    },
+    {
+      "evaluation_ref": "EV-live-production",
+      "evaluation_total": 8.5,
+      "output_root": "v2/production/2026-07-21-v3-bilingual/rural-school-closures",
+      "package_ref": "DP-live-production",
+      "readiness_ref": "DR-live-production",
+      "readiness_verdict": "ready_with_conditions",
+      "run_id": "live-rural-school-closures-production",
+      "topic": "rural-school-closures"
+    }
+  ]
+}

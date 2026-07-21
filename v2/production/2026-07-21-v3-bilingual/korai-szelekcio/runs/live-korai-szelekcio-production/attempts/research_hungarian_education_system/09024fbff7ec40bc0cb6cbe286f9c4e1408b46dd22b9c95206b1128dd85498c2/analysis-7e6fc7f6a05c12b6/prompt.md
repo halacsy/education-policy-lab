@@ -1,0 +1,104 @@
+TASK: expert_analysis
+AGENT: hungarian_education_system
+LANG: en+hu
+
+Every semantic prose field must be authored natively in both languages as one exact {en, hu} object. The two texts must carry the same claim, scope, numbers, uncertainty, and references. Do not write Hungarian as a later translation step.
+
+
+Convert the live research notes below into a bilingual evidence artifact set for this policy problem.
+
+DISCIPLINE: education system analysis
+PUBLIC QUESTION: Should Hungary keep its 6- and 8-year gimnázium tracks?
+CRITERIA: institutional fit, system coverage, unintended sorting, administrative compatibility
+KNOWN LENS LIMITS: Institutional description does not establish causal impact.
+
+RESEARCH NOTES:
+## Research Notes: Hungary's 6- and 8-Year Gimnázium Tracks (Early Academic Selection, Age 10–12)
+
+**Scope note:** These are non-canonical scratchpad findings from live web search, intended to inform (not pre-decide) later {en, hu} structured pairs. Contested claims are flagged. Facts are separated from inference where possible.
+
+---
+
+**1. Institutional structure: three parallel entry points create a triple selection system**
+
+The early-selective academic tracks skim off the best students first at age 10, then at age 12, and finally at age 14 all students enter secondary level.
+ Confirmed by OECD: 
+Tracking can partially start at Grade 5 (age 10-11) or at Grade 7 (age 12-13), when students can apply to an 8-year or 6-year general secondary school. Early school choice, selection may hamper equity.
+ This means the 4-year gimnázium/vocational split at 14 is layered on top of two earlier selection points, not replaced by them — the standard "comprehensive" primary school (grades 1–8) coexists with schools that begin creaming off students from grade 5 or 7.
+
+**2. Governance mechanism remains centralized and largely unchanged: a national admissions exam feeds all three tracks**
+Current empirical detail (2025/2026 admissions cycle) shows a single nationally standardized instrument gatekeeps entry: 
+Több mint negyvenezer negyedikes, hatodikos és nyolcadikos diák írja meg a középiskolák írásbeli felvételijét magyarból és matematikából 2026. január 24-én. Az országosan egységes, kétszer 45 perces vizsga komoly kihívás elé állítja a gyerekeket.
+ Coverage is near-universal for the elite track: 
+Tízből nyolc gimnáziumba csak azoknak van esélyük bekerülni, akik megírják a központi felvételit, de a legnépszerűbb technikumokban és szakgimnáziumokban is figyelembe veszik a vizsga eredményét.
+ This single centrally-designed exam (Oktatási Hivatal) is the same instrument used at ages 10, 12, and 14, meaning any reform of the 6/8-year tracks would interact directly with this pre-existing national testing infrastructure rather than requiring a wholly new mechanism.
+
+**3. A 2025 administrative change tightened access to state gimnázium places via minimum score thresholds — a governance lever short of abolishing tracks**
+
+A Szülői Hang Közösség közleményben tiltakozott az idei gimnáziumi felvételi rendszerben bevezetett korlátozás ellen, amelynek következtében szerintük gimnáziumi osztályok szűnhetnek meg az állami fenntartású intézményekben. Az állami fenntartású gimnáziumoknak olyan központi „ajánlást" adtak, hogy ha egy gimnázium kéri a központi írásbelin való részvételt, akkor csak azokat veheti fel, akik elérnek egy minimális pontszámot.
+ The thresholds cited were 
+olyan magasak, hogy a felvételizők jelentős része nem tudja ezeket elérni (például négy évfolyamos képzés esetében 50 pont, a nyelvi előkészítő esetében 60 pont, a hat évfolyamos képzéseknél 70 pont)
+. *Contested/inference:* parent advocacy groups frame this as risking closure of state gimnázium classes; government framing (not found in these sources) is not represented here — this is a one-sided advocacy source and should be checked against ministry statements.
+
+**4. Robust research consensus (contested only in magnitude, not direction) links early tracks to socioeconomic sorting independent of ability**
+Multiple independent studies converge: 
+Hungary exhibits one of the highest educational inequalities in OECD, influenced by family background. Early tracking at ages 10-12 exacerbates social inequalities in educational outcomes.
+ A separate panel-data study states: 
+Using a unique panel dataset I show that early selective tracks are more beneficial for higher status families. These tracks have a higher value-added in reading and mathematical literacy and in continuing studies in tertiary education.
+ The same study adds a distributional finding: 
+Their student composition is of higher status and higher skilled students. Thus they lead to an increase in the inequality of opportunities. Weaker tests show that while students' of early selective tracks gain, those left in general tracks loose.
+ Hanushek & Woessmann's cross-country study places Hungary among early-tracking outliers: 
+countries track students into differing-ability schools as early as at age 10 (e.g., Austria, Germany, Hungary and the Slovak Republic). By contrast, others including Canada, Japan, Norway, Sweden, the UK and the US essentially keep their entire lower secondary school system comprehensive.
+
+
+**5. Selection is driven more by family background/study records than by test performance alone — direct evidence against a pure "meritocratic sorting" justification**
+
+The paper first shows that higher socioeconomic status students are more likely to attend the early-selective academic tracks, even if previous test scores are controlled for.
+ Consistent with this, a 2016 summary states: 
+Family background significantly impacts students' access to academic tracks, more than test scores.
+ *Inference flag:* this undercuts (but does not fully refute — see finding 6 on genuine value-added) a pure ability-selection rationale for the tracks.
+
+**6. Some evidence of genuine (not purely compositional) achievement divergence between tracks — a genuinely contested empirical point**
+
+The second part of the empirical analysis looks at the value-added of the separate tracks between 6th and 8th grade, and between 8th and 10th grade, and shows that their mathematical and reading performance diverges, even if skill and status selection is taken into account.
+ This suggests tracks may add real instructional value beyond simply sorting students by prior ability/status — a finding in tension with a purely "credentialing/segregation" framing, though the same author elsewhere emphasizes the inequality-increasing net effect (see finding 4). Both findings originate from the same research program (Horn et al.) and should be read together, not as contradictory conclusions from independent teams.
+
+**7. Historical/institutional origin: tracks emerged from 1990s decentralization, not from a systemic redesign of the compulsory 8-grade primary school**
+
+Since 1991, there have also been six- and eight-year secondary schools. Pupils can enrol in these programmes earlier: they can attend eight-year secondary schools from the fifth grade and six-year secondary schools from the seventh grade. In these schools education therefore begins at lower secondary level (ISCED 2) and ends in the twelfth grade.
+ Historical expansion was rapid: 
+One specific form of increased mobility and selectivity was through the newly emerged 6-year and 8-year secondary schools... The fraction of students attending such secondary schools with a matriculation exam grew from 1% to 7.5% between the beginning and the end of the period.
+ (Period referenced: the 1990s.) This means the tracks are a post-1990 institutional layer added onto an older comprehensive 8-year primary structure that remains formally intact for the majority of students.
+
+**8. Governance/ownership context that is orthogonal to the tracking question but co-determines segregation outcomes: post-2011 centralization and church/private school growth**
+
+Post-2011 reforms reversed decentralization, potentially reducing school competition and increasing religious tracking.
+ Separately, a case study of segregation dynamics: 
+A four-grade, already government-owned upper-secondary general school got permission to expand their educational offering to include grades 7 and 8; due to this, the school started to cream off the higher status pupils from the final two years of the two (already also "nationalized") primary schools.
+ This indicates the tracking question interacts with, but is analytically separable from, church/state ownership structures and municipal school-network decisions — abolishing 6/8-year gimnáziums would not by itself change these separate creaming mechanisms via grade-expansion permissions or denominational school growth.
+
+**9. Current demand patterns (2026 admissions cycle) show diverging trends between the two track lengths, with net demand still far exceeding capacity**
+
+Az idei középfokú felvételi eljárásban idén összesen 89 541 tanuló vett részt. Közülük 76 198-an a 9. évfolyamra, 8 071-en hatévfolyamos gimnáziumba, míg 5 272-en nyolcévfolyamos gimnáziumba jelentkeztek az Oktatási Hivatal adatai szerint.
+ Trend divergence: 
+A statisztikák alapján a hatévfolyamos gimnáziumokba jelentkezők száma 11 százalékkal emelkedett az előző évhez képest... A nyolcévfolyamos gimnáziumok esetében ezzel szemben több mint 14 százalékkal csökkent a jelentkezők száma.
+ *Inference:* rising demand for the 6-year track alongside falling demand for the 8-year track could reflect shifting parental strategy (e.g., preferring a later, less disruptive selection point), demographic cohort effects, or changed admission thresholds (see finding 3) — the search results do not disambiguate causes.
+
+**10. Access/equity mechanisms for disadvantaged and Roma students remain largely separate, small-scale interventions layered alongside (not integrated into) the tracking system, and are described as under-resourced**
+
+Programs that targeted disadvantaged students in the early 2000s (Integrációs Pedagógiai Rendszer, Útravaló-Macika, Arany János Tehetséggondozó Program, Tanoda) subsequently became increasingly marginal and underfunded.
+ Broader segregation context: 
+About 14 percent of students in Hungarian primary schools (grades one through eight) are Roma. Roma children are substantially more likely to have multiple social disadvantages than their non-Roma peers, which results in significantly lower average test scores by grade 8. The distribution of Roma children across Hungarian schools is uneven leading to a moderate but increasing ethnic segregation across schools.
+ On legal/regulatory status: 
+Hungarian legislation still allows for segregation on the basis of disability, which... has become a tool for ethnic segregation.
+ This indicates that reforming (or retaining) the 6/8-year gimnázium tracks would leave this separate, legally distinct segregation channel (special-needs classification) untouched unless addressed independently.
+
+---
+
+### Summary of unresolved/contested points for later structured authoring
+- Whether track-related achievement divergence (finding 6) reflects genuine pedagogical value-added or residual unobserved selection is not fully settled in the literature reviewed.
+- The 2025 minimum-score threshold policy (finding 3) is documented mainly through a parent-advocacy source; government rationale/response was not located in this search pass and should be sourced separately before being treated as established fact.
+- No explicit government or opposition-party proposal to abolish the 6/8-year tracks was found in this search pass; found material addresses adjacent administrative tightening (score thresholds) and demand-side shifts, not a formal abolition proposal.
+- Causal drivers behind the 2026 divergence in 6-year vs 8-year demand (finding 9) are not established by the sources found; multiple explanations remain plausible.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

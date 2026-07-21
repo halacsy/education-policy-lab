@@ -1,0 +1,256 @@
+{
+  "assumptions": [
+    {
+      "en": "It is assumed that short-term test-score gains (10th-grade performance, Finding #4) and long-term labor-market outcomes (earnings, employment rates) are mechanistically linked through skill accumulation, educational signaling, or occupational sorting; if this link is absent or reversed, then the contested finding of null long-term effects would not imply that short-term gains are wasted, but rather that they reflect non-portable skills or test-specific inflation unrelated to economic outcomes.",
+      "hu": "Feltételezzük, hogy a rövid távú tesztpontszám-nyereségek (10. évfolyam teljesítménye, 4. megállapítás) és a hosszú távú munkaerőpiaci kimenetek (kereset, foglalkoztatottság) mekanizmusosan összekapcsoltok készségfelhalmozáson, oktatási jelézen vagy foglalkozási szortírozáson keresztül; ha ez a kapcsolat hiányzik vagy fordított, akkor a vitatott nulla hosszú távú hatások megállapítása nem azt jelentené, hogy a rövid távú nyereségek szétfosztottak, hanem azt tükrözik, hogy nem hordozható készségeket vagy a gazdasági eredményekhez nem kapcsolódó tesztre-specifikus inflációt."
+    },
+    {
+      "en": "It is assumed that abolishing the 6- and 8-year gimnazium tracks is technically and legally feasible within Hungary's constitutional and administrative framework and that such abolition would remove the selection mechanism at ages 10 and 12; this assumption excludes the possibility that selection pressure would be displaced to other institutional forms (e.g., intensified elite elementary schools, expanded private school selectivity, heightened university entrance competition) rather than eliminated, which would require direct measurement to confirm.",
+      "hu": "Feltételezzük, hogy a 6 és 8 éves gimnaziumi sávok abszolút megsemmisítése Magyarország verfassungrechtlich és közigazgatási keretén belül technikailag és jogi szempontból lehetséges, és hogy az ilyen megsemmisítés eltávolítaná a szelekciómekanizmust 10 és 12 éves korban; ez a feltevés kizárja annak lehetőségét, hogy a szelekciónyomás más intézményi formákra tolódna el (pl. intenzívített elit általános iskolák, kibővített magániskola szelekcióképessége, fokozott egyetemi felvételi verseny), nem pedig megsemmisülne, amely közvetlen mérést igényelne megerősítéshez."
+    }
+  ],
+  "findings": [
+    {
+      "claim": {
+        "en": "Hungary operates three distinct selection points in secondary education at ages 10, 12, and 14, with 6- and 8-year gimnazium tracks selecting students earlier than the standard 4-year track, concentrating high-achieving students in specialized academic pathways.",
+        "hu": "Magyarország három különálló szelekciós pontot működtet a középfokú oktatásban 10, 12 és 14 éves korban, ahol a 6 és 8 éves gimnaziumi sávok korábbi szelekcióval működnek, mint a standard 4 éves sáv, és a magas teljesítményű tanulókat specializált akadémiai pályákra koncentrálják."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "This describes the formal institutional structure but does not quantify the magnitude of student flows through each track or their demographic composition.",
+          "hu": "Ez a formális intézményi szerkezetet írja le, de nem számszerűsíti az egyes sávokon átfolyó tanulók számát vagy demográfiai összetételét."
+        },
+        {
+          "en": "Selection mechanism details (exam content, timing, appeal procedures) are not specified in the available notes.",
+          "hu": "A szelekciómekanizmus részletei (vizsga tartalma, időzítés, fellebbezési eljárások) nem kerülnek meghatározásra az elérhető jegyzetekben."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Secondary Education Structure (NABC dataset documentation)",
+        "hu": "Magyar középfokú oktatási struktúra (NABC adatbázis dokumentáció)"
+      },
+      "source_url": "NABC"
+    },
+    {
+      "claim": {
+        "en": "Hungary ranks at the extreme end of OECD/EU distribution on socioeconomic school segregation, with the highest level of segregation of students from less and more advantaged groups in 2022 PISA data; the achievement gap between children of graduates and non-graduates is 53 PISA points in Hungary versus an EU average of 33 points.",
+        "hu": "Magyarország az OECD/EU-eloszlás szélsőséges végén áll szocioökonómiai iskolai szegregáció tekintetében, a 2022-es PISA-adatok szerint a legmagasabb szintű szegregáció a kevésbé és a jobban szituált csoportokból származó tanulók között; a végzettséggel rendelkező és nem rendelkező szülők gyermekei közötti teljesítményrés Magyarországon 53 PISA-pont, az EU átlaga pedig 33 pont."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "PISA measures test performance at a single point in time (age 15) and does not distinguish between segregation caused by track selection versus free school choice or residential patterns.",
+          "hu": "A PISA egy időpontban (15 éves korban) méri a tesztteljesítményt, és nem különböztet meg a pályaszelekció, az ingyenes iskolaválasztás vagy a lakóhelyi minták által okozott szegregáció között."
+        },
+        {
+          "en": "The 53-point gap is an aggregate figure and does not reveal variation across regions, school types, or specific demographic subgroups within Hungary.",
+          "hu": "Az 53 pontos különbség egy aggregált adat, és nem tárja fel a régiók, iskolatípusok vagy a magyarországi демографikus alcsoportok közötti variációt."
+        },
+        {
+          "en": "Cross-national comparisons assume comparability of test administration, translation quality, and socioeconomic measurement across countries, which may introduce systematic bias.",
+          "hu": "A keresztnemzeti összehasonlítások feltételezik a tesztadminisztráció, fordítási minőség és szocioökonómiai mérés összehasonlíthatóságát az országok között, ami szisztematikus torzítást okozhat."
+        }
+      ],
+      "source_title": {
+        "en": "EU Education Monitoring and OECD Cross-National Equity Analysis",
+        "hu": "EU oktatási monitoring és OECD keresztnemzeti egyenlőségvizsgálat"
+      },
+      "source_url": "PISA_2022_EU_Monitor"
+    },
+    {
+      "claim": {
+        "en": "Higher socioeconomic status students are more likely to attend early-selective academic tracks even when prior test scores are controlled for, though the causal identification is imperfect due to endogeneity problems and the effect size varies by cohort and subject.",
+        "hu": "A magasabb szocioökonómiai státuszú tanulók nagyobb valószínűséggel járnak korai szelektív akadémiai pályákra még akkor is, ha az előzetes teszteredmények kontrolláltok, bár a kauzális azonosítás tökéletlen az endogenitási problémák miatt, és a hatásméret kohortonként és tantárgyanként változik."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "The researchers themselves flag endogeneity: unmeasured student ability, family preferences for selective schools, or differential application rates by SES may confound the observed association between SES and track placement.",
+          "hu": "A kutatók maguk jelzik az endogenitást: a nem mérhető tanulói képesség, a családok szelektív iskolák iránti preferenciai vagy az SES szerinti eltérő jelentkezési arányok zavaróhatásként működhetnek az SES és a pályaumutató közötti megfigyelt asszociációban."
+        },
+        {
+          "en": "The finding is directionally consistent across studies but the magnitude of the SES effect is reported as heterogeneous across cohorts and subjects, limiting generalization to all Hungarian students or time periods.",
+          "hu": "Az eredmény irányban konzisztens az összes tanulmány között, de az SES-hatás nagysága a kohortok és tantárgyak között heterogenként jelenik meg, korlátozva az általánosítást az összes magyar tanulóra vagy időszakra."
+        },
+        {
+          "en": "No direct measure of discrimination, implicit bias in teacher recommendations, or school-level admission practices is provided; the analysis is based on enrollment patterns after selection has occurred.",
+          "hu": "Az egyes tanári ajánlások vagy iskola szintű felvételi gyakorlatok diszkriminációjáról, implicit torzításáról nincs közvetlen mérés; az elemzés a szelekcióból adódó beiskolázási mintázatokon alapul."
+        }
+      ],
+      "source_title": {
+        "en": "Horn (2013) and contemporaneous Hungarian tracking studies",
+        "hu": "Horn (2013) és kortárs magyar nyomkövetési tanulmányok"
+      },
+      "source_url": "Horn_2013_NABC"
+    },
+    {
+      "claim": {
+        "en": "Six-year academic tracks show higher value-added on 10th-grade test scores compared to general academic tracks even when controlling for socioeconomic status, prior performance, and school fixed effects (Horn 2013; Hermann 2013); however, no visible effects of early tracking on average long-term labor-market outcomes have been detected (Gurzó & Horn 2015), creating a tension between short-term and long-term effects.",
+        "hu": "A 6 éves akadémiai sávok magasabb hozzáadott értéket mutatnak a 10. évfolyam teszteredményeire az általános akadémiai sávokhoz képest még akkor is, ha a szocioökonómiai státuszt, a korábbi teljesítményt és az iskola fix hatásait kontrolláljuk (Horn 2013; Hermann 2013); azonban a korai nyomkövetésnek a hosszú távú munkaerópiaci eredményekre nézve nem voltak kimutatható hatásai (Gurzó & Horn 2015), amely feszültséget teremt a rövid és hosszú távú hatások között."
+      },
+      "evidence_strength": "contested",
+      "limitations": [
+        {
+          "en": "The literature does not resolve whether short-term test gains reflect genuine skill development or test-specific preparation; long-run labor-market outcomes may be influenced by factors (migration, skill-biased technological change, credential inflation) not captured in the tracked-track analysis.",
+          "hu": "Az irodalom nem tisztázza, hogy a rövid távú tesztnyereségek valódi készségfejlesztést vagy tesztre való készülést tükrözik-e; a hosszú távú munkaerópiaci eredmények olyan tényezők által befolyásolhatók (migráció, készség-orientált technológiai változás, végzettség-infláció), amelyeket a nyomkövetési elemzés nem rögzít."
+        },
+        {
+          "en": "No comparable long-term follow-up data on earnings, employment rates, or job quality exist for the same cohorts measured for short-term test gains; the two evidence streams (10th-grade scores vs. labor-market outcomes) may not be directly comparable populations.",
+          "hu": "Nincsenek összehasonlítható hosszú távú követési adatok a rövid távú tesztnyereséggel mért kohortokra vonatkozóan; a két bizonyítékforrás (10. évfolyam eredmények és munkaerőpiaci kimenetek) nem közvetlenül összehasonlítható populációk lehetnek."
+        },
+        {
+          "en": "The 'null' long-term result from Gurzó & Horn (2015) does not distinguish whether tracking provides no benefit or whether benefits are offset by labor-market discrimination, changing employer preferences for track credentials, or selection effects (tracked students may pursue different occupations).",
+          "hu": "A Gurzó & Horn (2015) 'nulla' hosszú távú eredménye nem különböztet meg azt, hogy a nyomkövetés nem nyújt előnyt, vagy hogy az előnyöket munkaerőpiaci diszkrimináció, a munkaadók pályaképesítésekre vonatkozó preferenciáinak változása vagy szelekcióhatások ellensúlyozzák (a nyomkövetett tanulók eltérő foglalkozásokat követhetnek)."
+        }
+      ],
+      "source_title": {
+        "en": "Horn (2013), Hermann (2013), Gurzó & Horn (2015) NABC longitudinal analysis",
+        "hu": "Horn (2013), Hermann (2013), Gurzó & Horn (2015) NABC longitudinális elemzés"
+      },
+      "source_url": "NABC_Horn_2013_Gurzo_Horn_2015"
+    },
+    {
+      "claim": {
+        "en": "Selection into early-selective academic tracks creates measurable negative spillover effects on students left behind in general primary schools, with peer-quality depletion reducing achievement, behavior, and aspirations for higher education in non-selected students; these effects are moderate but heterogeneous across student subgroups.",
+        "hu": "A korai szelektív akadémiai pályákba történő szelekció kimutatható negatív externális hatásokat teremt az általános általános iskolákban hátrahagyott tanulók számára, a magasfokú tanulótársi viszony depletálása csökkenti az elégtelen teljesítményt, viselkedést és felsőoktatási aspirációkat; ezek a hatások mérsékeltek, de heterogének a tanulói alcsoportok között."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "The analysis exploits geographical immobility within Hungary but does not control for family migration responses: if high-SES families with high-achieving children move toward selective schools, this migration could amplify measured peer effects beyond the causal impact of peers leaving.",
+          "hu": "Az elemzés Magyarország közötti geografikus mozdulatlanságot kihasznál, de nem kontrollálja a családi migrációs válaszokat: ha a magas SES-ű családok magas teljesítményű gyermekekkel költöznek a szelektív iskolák felé, ez a migráció a paritásos hatások mért értékét túl a szomszédok elhagyásának kauzális hatása felett amplifikálhatja."
+        },
+        {
+          "en": "Heterogeneous effects imply the policy impact of removing early selection would vary across student types, schools, and regions; the notes do not specify which subgroups experience larger versus smaller spillover benefits.",
+          "hu": "A heterogén hatások azt sugallják, hogy a korai szelekcióból fakadó politikai hatás a tanulók típusai, iskolák és régiók szerint változik; a jegyzetekben nem szerepel, hogy mely alcsoportok tapasztalnak nagyobb vagy kisebb mellékhatás-előnyöket."
+        },
+        {
+          "en": "The time horizon of measurement is not specified: do peer effects fade over time or persist, and do they affect only immediate outcomes or long-term educational and occupational trajectories?",
+          "hu": "A mérés időhorizontja nincs meghatározva: a paritásos hatások idővel elhalványulnak vagy megtartódnak, és csak az azonnali eredményeket vagy a hosszú távú oktatási és foglalkozási pályákat érintik-e?"
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian peer-depletion analysis exploiting geographical variation",
+        "hu": "Magyar paritásos depletálási elemzés a földrajzi variáció kihasználásával"
+      },
+      "source_url": "Peer_Quality_Effects_NABC"
+    },
+    {
+      "claim": {
+        "en": "Free school choice and school hand-picking authority at the primary level form an independent, parallel segregation mechanism distinct from and compounding track selection; international evidence shows that when schools are more segregated through choice mechanisms, disadvantaged families are more likely to receive inferior education through adverse peer-group effects and lower teaching efficacy.",
+        "hu": "Az ingyenes iskolaválasztás és az iskola önálló felvételi hatósága az általános iskola szintjén független, párhuzamos szegregációs mekanizmus, amely különbözik a pályaszelekcióstől és azt fokozza; a nemzetközi bizonyítékok azt mutatják, hogy amikor az iskolák a választási mekanizmusokon keresztül szegregáltabbak, a hátrányos helyzetű családok nagyobb valószínűséggel rosszabb oktatást kapnak a nélkülözhető társadalmi hatásokon és az alacsonyabb tanítási hatékonyságon keresztül."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "The notes identify free choice as operating in elementary schools but do not quantify the current enrollment distribution, regional variation in choice uptake, or the strength of hand-picking relative to track selection in driving overall segregation in Hungary.",
+          "hu": "A jegyzetekben az ingyenes választás az általános iskolákban azonosítható, de nem számszerűsítik az aktuális beiskolázási eloszlást, a régiók közötti variációt a választás igénybevételében vagy az iskola önálló felvételének erősségét a pályaszelekcióhoz képest a magyarországi általános szegregáció során."
+        },
+        {
+          "en": "Causality between school choice and segregation is not definitively established within the Hungarian case: choice could be consequence of residential segregation rather than cause, or both could reflect endogenous family preferences correlated with unmeasured characteristics.",
+          "hu": "Az iskolaválasztás és a szegregáció közötti kauzalitás nem végérvényesen megállapított a magyar eseten belül: a választás a lakóhelyi szegregáció következménye lehet ahelyett, hogy ok volna, vagy mindkettő olyan endogén családi preferenciákat tükrözhet, amelyek korrelálnak a nem mért jellemzőkkel."
+        },
+        {
+          "en": "Abolishing track selection without simultaneous reform of elementary-level choice and hand-picking authority is identified as likely insufficient, but no Hungarian evidence directly tests whether combined reform would resolve segregation.",
+          "hu": "A pályaszelekcióból fakadó szelekciónak az általános iskola szintű választás és felvételi hatóság egyidejű reformja nélküli megsemmisítése valószínűleg elégtelennek azonosított, de nincsen magyar bizonyíték, amely közvetlenül azt teszteli, hogy az összes reformok feloldanák-e a szegregációt."
+        }
+      ],
+      "source_title": {
+        "en": "International school-choice segregation literature and Hungarian elementary system documentation",
+        "hu": "Nemzetközi iskolaválasztási szegregációs irodalom és magyar általános iskola rendszer dokumentáció"
+      },
+      "source_url": "School_Choice_Segregation_International"
+    },
+    {
+      "claim": {
+        "en": "Roma pupil segregation is exceptionally severe, with 62% of Roma children aged 6-15 attending schools where all or most pupils are Roma; this segregation operates substantially through residential catchment areas and free-choice mechanisms rather than primarily through gimnazium track-selection exams, indicating that track abolition alone would not address this distinct equity dimension.",
+        "hu": "A roma tanulók szegregációja kivételesen súlyos, 62%-a a 6-15 éves roma gyermekeknek olyan iskolákban tanul, ahol az összes vagy legtöbb tanuló roma; ez a szegregáció lényegesen a lakóhelyi körzeteken és az ingyenes választási mekanizmusokon keresztül működik, nem pedig elsősorban a gimnaziumi pályaszelekciós vizsgákon keresztül, ami azt jelzi, hogy a pályaszelekció abszolút megsemmisítése nem oldja meg ezt a különálló egyenlőségi dimenziót."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "The 62% figure is presented as a point estimate without confidence intervals or regional disaggregation; Roma segregation may vary substantially by municipality, urban/rural setting, or historical context.",
+          "hu": "A 62%-os szám konfidencia-intervallumok vagy régiós bontás nélkül kerül bemutatásra; a roma szegregáció jelentősen eltérhet az önkormányzatok, városi/vidéki környezet vagy történelmi kontextus szerint."
+        },
+        {
+          "en": "The mechanistic claim that Roma segregation operates 'substantially' through catchment and choice rather than track selection is inferred from general arguments about segregation sources but is not directly quantified for Hungary.",
+          "hu": "Az a mechanisztikus állítás, hogy a roma szegregáció 'lényegesen' a körzeteken és választáson keresztül működik, nem pedig a pályaszelekcióból, a szegregáció általános forrásiról szóló érvelésből származó következtetés, de Magyarország számára nem számszerűsített közvetlenül."
+        },
+        {
+          "en": "The counterfactual (what segregation levels would be if track selection were abolished but residential patterns and choice mechanisms unchanged) is not tested, limiting inference about the independent contribution of track reform to Roma equity.",
+          "hu": "Az alternatív eset (milyen szegregációs szintek lennének, ha a pályaszelekcióból fakadó szelekciónak vége, de a lakóhelyi minták és választási mekanizmusok változatlanok maradnak) nincs tesztelve, korlátozva a pályareform roma egyenlőséghez való független hozzájárulásáról szóló következtetést."
+        }
+      ],
+      "source_title": {
+        "en": "Roma segregation statistics and residential patterns analysis",
+        "hu": "Roma szegregációs statisztikák és lakóhelyi minták elemzése"
+      },
+      "source_url": "Roma_Segregation_Regional"
+    },
+    {
+      "claim": {
+        "en": "Finland dismantled early tracking in two separate phases as part of a multi-decade, coordinated reform: in 1968 the two-tier grammar and civic school system was abolished through parliamentary legislation creating comprehensive schools, and in 1985 within-school ability streaming was phased out and three ability levels were merged into heterogeneous groups; this reform was accompanied by parallel shifts in assessment practice (from standardized to teacher-based evaluation) and preceded by decades of curriculum commissions, illustrating that structural detracking elsewhere was combined with non-structural changes rather than substituted for them.",
+        "hu": "Finnország a korai nyomkövetést két különálló fázisban szüntette meg egy több évtizedes, koordinált reform részeként: 1968-ban a kétszintű gimnazista és polgári iskolai rendszert parlamentáris jogszabályon keresztül eltörölték, átfogó iskolakat hozva létre, és 1985-ben az iskolán belüli képességi csoportozást fokozatosan leépítették, és három képességszintet heterogén csoportokba összevontak; ezt a reformot a gyakorlatok párhuzamos változása kísérte (standardizáltból tanári-alapú értékelésre), és a kutatási bizottságok évtizedeivel megelőzték, szemléltetve, hogy a struktúraváltás másutt a nem strukturális változásokkal párosult, nem pedig helyettesítette azokat."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Finland's reform spanned 17 years (1968–1985) and occurred in a country with very different baseline conditions: higher overall socioeconomic equality, less ethnic diversity, smaller class sizes, and stronger teacher training systems than Hungary; direct transfer of Finland's approach may not account for institutional path dependencies in Hungary.",
+          "hu": "Finnország reformja 17 éven (1968-1985) belül játszódott, és egy nagyon eltérő alapvető feltételekkel rendelkező országban: magasabb általános szocioökonómiai egyenlőség, kevesebb etnikai sokszínűség, kisebb osztálylétszám és erősebb tanárképzési rendszerek, mint Magyarország; Finnország megközelítésének közvetlen átadása nem vehet figyelembe Magyarország intézményi pályafüggőségét."
+        },
+        {
+          "en": "Finland's success in reducing segregation and improving equity cannot be attributed to detracking alone; the parallel curriculum, assessment, and teacher training reforms occurred simultaneously, making causal attribution to track abolition specifically impossible from the Finnish case.",
+          "hu": "Finnország szegregáció csökkentésben és egyenlőség javításában elért sikeressége nem tulajdonítható egyedül a nyomkövetés megsemmisítésének; a párhuzamos kurikulum, értékelés és tanárképzési reformok egyidejűleg történtek, lehetővé téve a nyomkövetés abszolút megsemmisítésének specifikus kauzális attribúciót a finn eset alapján lehetetlenné."
+        },
+        {
+          "en": "The notes do not provide Finnish labor-market or long-term outcome data comparable to the contested Hungarian finding (#4) of null long-run effects, limiting cross-national evidence on whether detracking improves long-term economic outcomes.",
+          "hu": "A jegyzetekben nincsenek finn munkaerőpiaci vagy hosszú távú eredményadatok a vitatott magyar eredménnyel (#4) összehasonlítható, korlátozva a keresztnemzeti bizonyítékot arra, hogy a nyomkövetés megsemmisítése javítja-e a hosszú távú gazdasági eredményeket."
+        }
+      ],
+      "source_title": {
+        "en": "Finnish education system reform history (1968 Comprehensive School Act, 1985 streaming abolition)",
+        "hu": "Finn oktatási rendszer reform története (1968-as átfogó iskolai törvény, 1985-ös nyomkövetés abszolút megsemmisítése)"
+      },
+      "source_url": "Finland_Comprehensive_Reform_1968_1985"
+    },
+    {
+      "claim": {
+        "en": "Hungary implemented a comprehensive lower-secondary reorganization in 1945 introducing the compulsory eight-year algemeen general school (általános iskola), a unified non-selective system, which was later partially reversed through measures restoring the traditional elite character of the Gimnazium with intake pushed below 20%, demonstrating that selection/de-selection cycles have occurred within Hungary historically and suggesting the durability and reversibility of track-structure reforms may be path-dependent and politically contingent.",
+        "hu": "Magyarország 1945-ben átfogó alsó-középfokú újjászervezést hajtott végre, bevezetvén a kötelező nyolc éves általános iskola (általános iskola) egységes nem szelektív rendszerét, amelyet később részlegesen visszavontak az általános gimnazium tradicionális elit karakterének helyreállítására irányuló intézkedések révén, amelyek a felvételt 20% alá szorították, szem előtt tartva, hogy a szelekcióból/de-szelekcióból fakadó sávciklusok történelmileg Magyarország közötti előfordultak és azt sugallják, hogy a nyomkövetési struktúra reformjainak tartóssága és visszafordíthatósága pályafüggő és politikailag kontingensek lehetnek."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "The notes provide no quantitative data on the speed, completeness, or social consequences of the 1945 reform implementation or the subsequent reversal; it is unclear whether the reversion was due to ideological shifts, pressure from elite interests, measured dissatisfaction with comprehensive outcomes, or institutional inertia.",
+          "hu": "A jegyzetekben nincsenek számszerű adatok az 1945-ös reform végrehajtásának sebességéről, teljességéről vagy társadalmi következményeiről, vagy az azt követő visszavonásról; nem világos, hogy a visszavonás ideológiai eltolódások, az elit érdekek nyomása, az átfogó eredményekkel kapcsolatos mért elégedetlenség vagy intézményi inercián alapult-e."
+        },
+        {
+          "en": "No comparable contemporary comparison is available: the 1945 reform occurred under very different political (post-WWII communist transition), economic (post-war reconstruction), and educational (different baseline enrollment rates, curriculum standards) conditions than present-day Hungary, limiting inference about contemporary reform reversibility.",
+          "hu": "Nincsen összehasonlítható kortárs összehasonlítás: az 1945-ös reform nagyon eltérő politikai (WWII után kommunista átmenet), gazdasági (háború utáni újjáépítés) és oktatási (eltérő alapvető beiskolázási arányok, kurikulum normák) feltételek között történt, mint mai Magyarország, korlátozva a kortárs reformok visszavonhatóságáról szóló következtetést."
+        },
+        {
+          "en": "The partial nature of the reversion ('pushed below 20%' intake) suggests elite interest in maintaining some selective capacity; the notes do not clarify whether a future comprehensive reform would face similar political economy constraints or whether contemporary equity evidence might overcome historical reversals.",
+          "hu": "A visszavonás részleges jellegét ('felvételt 20% alá szorították') az elit szelektív kapacitás fenntartásában való érdeklődés sugallja; a jegyzetekben nem tisztázódik, hogy a jövőbeni átfogó reform hasonló politikai gazdasági korlátokkal szembesülne-e, vagy hogy a kortárs egyenlőségi bizonyítékok előzhetik-e az történelmi visszavonásokat."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian education history: 1945 comprehensive reform and subsequent selective reversion",
+        "hu": "Magyar oktatástörténet: 1945-ös átfogó reform és azt követő szelektív visszavonás"
+      },
+      "source_url": "Hungary_1945_Education_Reform"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": {
+        "en": "What is the causal weight of early track selection versus free primary-school choice and residential segregation in producing Hungary's current top-EU segregation ranking and 53-point PISA achievement gap?",
+        "hu": "Mi a korai pályaszelekciónak és az ingyenes általános iskolai választásnak és a lakóhelyi szegregációnak az oka Magyarország jelenlegi top-EU szegregációs rangsorolásának és 53 pontos PISA teljesítményrésének előállításában?"
+      },
+      "reduction_path": {
+        "en": "Reduce this uncertainty through decomposition analysis: quasi-experimentally compare segregation and achievement gaps in Hungarian regions where track selection exists versus counterfactual regions where track-selection were hypothetically abolished but free choice and residential patterns remain. Alternatively, exploit policy discontinuities at age thresholds (before vs. after track-entry age) to isolate track-selection effects from choice/residential effects using regression-discontinuity or difference-in-differences designs applied to regional administrative data on school enrollment and PISA performance.",
+        "hu": "Csökkentsd ezt a bizonytalanságot dekompozíciós elemzésen keresztül: kvázikísérletesen hasonlítsd össze a szegregációt és teljesítményréseket a magyarországi régiók között, ahol a pályaszelekcióm létezik, a közjavított régiók között, ahol a pályaszelekciónak hipotetikusan végét vetettékvolna, de az ingyenes választás és lakóhelyi minták maradnának. Alternatív megoldásként kihasználj a korhatár politikai folytonossági szakadásait (sáv-bejelentkezési kor előtt és után) a pályaszelekcióhatások szétválasztásához a választás/lakóhelyi hatásoktól, regresszió-szünettartást vagy különbség-különbséget használva az adminisztratív adatokra alkalmazott terveket az iskola beiskolázásáról és a PISA teljesítményre."
+      }
+    }
+  ]
+}

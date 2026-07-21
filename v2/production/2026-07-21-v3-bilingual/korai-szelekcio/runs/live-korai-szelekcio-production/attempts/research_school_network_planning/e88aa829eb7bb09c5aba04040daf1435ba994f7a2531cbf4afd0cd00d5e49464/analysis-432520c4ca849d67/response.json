@@ -1,0 +1,268 @@
+{
+  "assumptions": [
+    {
+      "en": "It is assumed that 'geographic access' to a 6- or 8-year gimnázium seat means nominal enrollment eligibility via public admission mechanics, rather than transport cost, actual travel time, or subjective perception of access by families — implying that high oversubscription in urban schools combined with unfilled seats elsewhere primarily reflects preference/reputation clustering rather than insurmountable distance barriers.",
+      "hu": "Feltételezzük, hogy egy 6 vagy 8 éves gimnáziumi helyre való 'földrajzi hozzáférés' azt jelenti, hogy nyilvános felvételi eljárások által biztosított névleges beiratkozási jogosultság, nem pedig közlekedési költségek, tényleges utazási idő vagy családok szubjektív hozzáférés-percepcója — ami azt jelenti, hogy a városi iskolák nagy túltúltöttsége párosulva más helyeken lévő üres helyekkel elsősorban preferencia/hírnév-csoportosulást tükröz, nem leküzdhetetlen távolsági akadályokat."
+    },
+    {
+      "en": "It is assumed that 'network resilience' in this context refers to the systemic capacity to adjust enrollment, redistribute students across geographic regions, or modify track availability without catastrophic disruption to existing school operations or student cohorts — implying that measuring resilience requires specification of the timeframe, sector (municipal vs. state schools), and whether transition costs to students/families are acceptable.",
+      "hu": "Feltételezzük, hogy az 'hálózati rugalmasság' ebben a kontextusban a rendszeres kapacitást jelenti a beiratkozás igazításához, tanulók újraelosztásához földrajzi régiók között, vagy a pályák elérhetőségének módosításához meglévő iskolai működés vagy tanulói kohorszok katasztrofális zavaruása nélkül — ami azt jelenti, hogy a rugalmasság mérése az időkeret, a szektor (önkormányzati vagy állami iskolák), valamint hogy a tanulók/családok számára az átmeneti költségek elfogadhatóak-e, megadását igényli."
+    },
+    {
+      "en": "It is assumed that the 26,000-strong aggregate enrollment in 6- and 8-year tracks masks substantial within-school heterogeneity in socioeconomic intake and teaching quality, and that capacity decisions made at the system level (e.g., overall place numbers) may have unequal impact across geographic regions and student subpopulations, implying that 'network' feasibility does not equal 'equity' feasibility.",
+      "hu": "Feltételezzük, hogy az 26 000 fős összesített létszám a 6 és 8 éves képzésekben rejtegeti az iskolán belüli jelentős heterogenitást a szocioökonómiai bevételben és tanítási minőségben, és hogy a rendszertési szinten hozott kapacitásdöntések (például helyek teljes száma) az egyes földrajzi régiók és tanulói alcsoportok között egyenlőtlen hatást gyakorolhatnak, ami azt jelenti, hogy a 'hálózat' megvalósíthatósága nem egyenlő az 'egyenlőség' megvalósíthatóságával."
+    },
+    {
+      "en": "It is assumed that transport and commuting patterns are endogenous to school choice policies and reputation effects rather than exogenously determined by physical geography, such that policy changes affecting the perceived status or selectivity of 6- and 8-year tracks will alter travel behavior and settlement demand, confounding estimates of 'true' geographic access barriers.",
+      "hu": "Feltételezzük, hogy az utazási és ingázási minták endogének az iskolaválasztási politikák és hírnév-hatások tekintetében, nem pedig külsőleg meghatározottak a fizikai földrajz által, így a 6 és 8 éves képzések észlelt státuszát vagy szelektivitását érintő politikai változások az utazási viselkedést és a település-keresletet megváltoztatják, ami az 'igazi' földrajzi hozzáférési akadályok becsléseit zavarik."
+    }
+  ],
+  "findings": [
+    {
+      "claim": {
+        "en": "Hungary's 6- and 8-year gimnázium tracks serve approximately 25,962 students (2024/2025), representing roughly 7% of all gimnázium students, distributed across 100 eight-grade schools and additional six-grade institutions.",
+        "hu": "Magyarország 6 és 8 éves gimnáziumi képzési pályái körülbelül 25 962 tanulót szolgálnak (2024/2025), amely a gimnáziumi tanulók körülbelül 7%-a, 100 nyolc évfolyamos iskola és további hat évfolyamos intézmények között elosztva."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Data captures only enrollment snapshot; does not distinguish demand unmet by capacity constraints from demand absorbed by vocational alternatives.",
+          "hu": "Az adat csak egy pillanatfelvétel a létszámról; nem különbözteti meg a kapacitáshiánnyal fedezetlen keresletet a szakképzési alternatívák által felfogott kereslettől."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian Central Statistical Office (KSH) education statistics, 2024/2025",
+        "hu": "Központi Statisztikai Hivatal (KSH) oktatási statisztikái, 2024/2025"
+      },
+      "source_url": "ksh.hu"
+    },
+    {
+      "claim": {
+        "en": "Geographic supply of 6- and 8-year gimnázium places is highly concentrated: approximately 121 schools (nearly half) are in small towns, 63 (one quarter) in provincial large cities, 59 (more than one-fifth) in Budapest, and only 8 in villages.",
+        "hu": "A 6 és 8 éves gimnáziumi helyek földrajzi kínálata erősen koncentrált: körülbelül 121 iskola (csaknem a fele) kisvárosban, 63 (egynegyed) vidéki nagyvárosban, 59 (több mint egyötöd) Budapesten és csupán 8 községben található."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Study does not explain mechanisms driving geographic concentration; cannot distinguish policy-induced clustering from demographic or transport factors.",
+          "hu": "A tanulmány nem magyarázza a földrajzi koncentráció mechanizmusait; nem képes megkülönböztetni a politika által kiváltott csoportosulást a demográfiai vagy közlekedési tényezőktől."
+        }
+      ],
+      "source_title": {
+        "en": "Dedicated Hungarian school-network study of 6/8-grade program geographic distribution",
+        "hu": "Magyarországi 6/8 évfolyamos képzési program földrajzi eloszlásáról szóló dedikált iskolaháló-tanulmány"
+      },
+      "source_url": "school_network_study_hu"
+    },
+    {
+      "claim": {
+        "en": "The institutional origin of 6- and 8-year tracks differs by settlement size: in Budapest and provincial large cities, most arose from existing primary schools expanding upward or from traditional pure gimnáziums; in small towns, 38 of 50 documented examples represent former vocational schools that switched to the new 6/8-grade track.",
+        "hu": "A 6 és 8 éves pályák intézményi eredete eltér a település mérete szerint: Budapesten és vidéki nagyvárosokban a legtöbb meglévő alapiskolákból fejlődött felfelé vagy tradicionális tiszta gimnáziumokból; kisvárosokban az 38 dokumentált eset az 50-ből korábbi szakképzési iskolákat képvisel, amelyek az új 6/8 évfolyamos képzésre váltottak."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Sample of 50 institutions does not represent nationwide distribution; does not quantify whether former-vocational conversions reflect genuine pedagogical reorientation or administrative reorganization only.",
+          "hu": "Az 50 intézmény nagy mintája nem reprezentálja az országos eloszlást; nem számszerűsíti, hogy a korábbi szakképzési átváltások valódi pedagógiai átorientálódást vagy csupán adminisztratív átszervezést tükröznek-e."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian institutional pathway analysis of 6/8-grade gimnázium origins",
+        "hu": "Magyar intézményi pályaanalízis a 6/8 évfolyamos gimnázium eredeti formáiról"
+      },
+      "source_url": "institutional_pathway_study_hu"
+    },
+    {
+      "claim": {
+        "en": "Extreme oversubscription exists in flagship urban 6- and 8-year programs: documented examples include 369 applicants for 38 places at ELTE practice primary/gimnázium (8-grade stream) and 300 applicants for 32 places at Radnóti school (6+1-grade program), representing 9.7× and 9.4× oversubscription respectively.",
+        "hu": "Szélsőséges túltúltöltöttség van a vezető városi 6 és 8 éves képzésekben: dokumentált példák 369 pályázó 38 helyért az ELTE gyakorlati alapiskola/gimnáziumban (8 évfolyamos képzés) és 300 pályázó 32 helyért a Radnóti iskolában (6+1 évfolyamos program), amely 9,7× és 9,4× túltúltöltöttséget jelent."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Data is point-in-time for one admission cycle; does not explain whether oversubscription reflects long-term demand growth, positive reputation effects, or temporary local factors. Capacity constraints may reflect deliberate policy restraint rather than physical or geographic limitation.",
+          "hu": "Az adatok egy felvételi ciklus egy pontjára vonatkoznak; nem magyarázza meg, hogy a túltúltöltöttség hosszú távú keresletnövekedést, pozitív hírnévhatásokat vagy helyi ideiglenes tényezőket tükröz-e. A kapacitás korlátozásai tudatos politikai visszafogottságot, nem pedig fizikai vagy földrajzi korlátot tükrözhetnek."
+        }
+      ],
+      "source_title": {
+        "en": "2026 admission cycle data, Budapest flagship gimnaziums",
+        "hu": "2026 felvételi ciklus adatai, Budapest vezető gimnáziumai"
+      },
+      "source_url": "admission_2026_hu"
+    },
+    {
+      "claim": {
+        "en": "Simultaneous with urban oversubscription, unfilled seats persist in 6- and 8-year programs in medium-sized and peripheral county towns during the 2026 admission cycle, with documented examples including 14 empty places in a Debrecen institution, 10 in Miskolc, 6 in Encs, and 3 in Pécs, concentrated more heavily in 6-grade programs than 8-grade.",
+        "hu": "Az urbánus túltúltöltöttséggel párhuzamosan üres helyek maradnak a 6 és 8 éves képzésekben közép- és periféria vidéki járásvárosokban a 2026 felvételi ciklus során, dokumentált példákkal, mint 14 üres hely debreceni intézményben, 10 Miskolcon, 6 Encsben és 3 Pécsben, kiterjedtebb mértékben koncentrálódva 6 évfolyamos mint 8 évfolyamos programokra."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Named institutions represent examples only, not a comprehensive census of all unfilled capacity. Does not distinguish whether undersubscription reflects geographic/transport barriers, poor school reputation, weak teaching quality, or rational student-preference clustering toward flagship schools.",
+          "hu": "Az elnevezett intézmények csak példák, nem az összes betöltetlen kapacitás teljes felmérése. Nem különbözteti meg, hogy az alulfinanszírozottság földrajzi/közlekedési akadályokat, rossz iskolai hírnevet, gyenge tanítási minőséget vagy racionális diák-preferenciacsoportosulást tükröz-e a vezető iskolák felé."
+        }
+      ],
+      "source_title": {
+        "en": "2026 secondary school admission cycle, extraordinary/second-round allocations data",
+        "hu": "2026 középiskolai felvételi ciklus, rendkívüli/második körös allokációs adatok"
+      },
+      "source_url": "admission_2026_hu"
+    },
+    {
+      "claim": {
+        "en": "Capacity in 6- and 8-year gimnázium programs has remained essentially unchanged for multiple years despite documented enormous demand, suggesting that stagnant enrollment growth may reflect deliberate policy steering toward vocational education rather than supply-side geographic or physical constraints.",
+        "hu": "A 6 és 8 éves gimnáziumi képzések kapacitása több éven keresztül lényegében változatlan maradt a dokumentált hatalmas kereslet ellenére, ami azt sugallja, hogy a stagnáló létszám-növekedés tudatos politikai irányítást a szakképzés felé, nem pedig kínálati oldali földrajzi vagy fizikai korlátokat tükröz."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "This is an inferential claim presented by a source as its own framing; it is not an independently verified infrastructural fact. Alternative explanations (e.g., municipal budgetary constraints, aging building stock, labor-market signaling by employers) are not ruled out. The distinction between deliberate policy vs. administrative inertia cannot be settled by enrollment data alone.",
+          "hu": "Ez egy olyan inferenciális állítás, amelyet a forrás saját értelmezéseként mutat be; nem egy függetlenül hitelesített infrastrukturális tény. Az alternatív magyarázatok (pl. önkormányzati költségvetési korlátok, öregedő épületállomány, munkaadók piacjelzése) nem kerülhetők ki. A szándékos politika és az adminisztratív tehetetlenség közötti különbség nem rendezhető csupán a létszám adatokkal."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian education policy analysis, capacity stagnation and steering hypothesis",
+        "hu": "Magyar oktatáspolitikai elemzés, kapacitási stagnáció és irányítási hipotézis"
+      },
+      "source_url": "education_policy_analysis_hu"
+    },
+    {
+      "claim": {
+        "en": "Students admitted to 6- and 8-year tracks show a documented socioeconomic skew: children of university-educated fathers attend these tracks at above-average rates, and international research confirms that higher socioeconomic status students are disproportionately concentrated in early-selective tracks, with the OECD noting that early school choice and selection mechanisms may hamper equity.",
+        "hu": "A 6 és 8 éves képzésekbe felvett tanulók dokumentált szocioökonómiai eltérést mutatnak: az egyetemvégzett apák gyermekei ezeken a pályákon átlagon felüli arányban vesznek részt, és a nemzetközi kutatás megerősíti, hogy a magasabb szocioökonómiai státuszú tanulók aránytalanul nagy számban koncentrálódnak a korai szelektív pályákon, az OECD pedig megjegyzi, hogy a korai iskolai választás és a kiválasztási mechanizmusok hátráltathatják az egyenlőséget."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Research documents correlation between parental education/income and track attendance; does not establish causation or determine whether selection tests accurately identify 'merit' independent of background, or whether outcome differences reflect pedagogical quality of tracks vs. pre-selection differences in student preparation.",
+          "hu": "A kutatás a szülői végzettség/jövedelem és a képzésben való részvétel közötti korrelációt dokumentálja; nem állapítja meg az oksági kapcsolatot, és nem határozza meg, hogy a kiválasztási tesztek pontosan azonosítják-e a 'tehetséget' a háttértől függetlenül, vagy hogy az eredménybeli különbségek a képzések pedagógiai minősége vagy a pre-kiválasztási tanulói felkészültségbeli különbségeket tükrözik-e."
+        },
+        {
+          "en": "The presence of socioeconomic skew in selection does not by itself settle whether the tracks improve educational outcomes for admitted students or the broader system.",
+          "hu": "A kiválasztásban tapasztalható szocioökonómiai eltérés jelenléte önmagában nem dönti el, hogy a képzések javítják-e az oktatási eredményeket a felvett tanulók vagy a szélesebb rendszer számára."
+        }
+      ],
+      "source_title": {
+        "en": "OECD country profile for Hungary; Hungarian pedagogical research literature",
+        "hu": "OECD országprofil Magyarország számára; magyar pedagógiai kutatási irodalom"
+      },
+      "source_url": "oecd.org; education_research_hu"
+    },
+    {
+      "claim": {
+        "en": "Within cities with multiple school options, selective commuting patterns interact with school choice to influence student composition and social segregation, such that geographic proximity to a nominally accessible school does not guarantee equitable access or social mixing, and this effect is particularly pronounced in 6- and 8-year program catchments which operate on choice-based rather than district-based enrollment logic.",
+        "hu": "Az olyan városokban, ahol több iskolaopció létezik, a szelektív ingázási minták interakcióban vannak az iskolaválasztással, és befolyásolják a tanulóösszetételt és a szociális szegregációt, úgy hogy a egy nominálisan elérhető iskola közelsége nem garantálja az egyenlő hozzáférést vagy a szociális keverést, és ezt a hatást különösen erősen mutatja a 6 és 8 éves program hálózata, amely a körzetalapú helyett választáson alapuló beiskolázási logikát követi."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "Research documents the phenomenon but does not quantify the magnitude of equity loss attributable specifically to 6/8-year tracks vs. other choice-based programs, nor does it isolate commuting behavior from reputation, quality, or family preference factors.",
+          "hu": "A kutatás a jelenséget dokumentálja, de nem számszerűsíti a 6/8 éves képzéseknek tulajdonított egyenlőség-veszteség nagyságát más választáson alapuló programokhoz képest, és nem különíti el az ingázási viselkedést a hírnév, minőség vagy szülői preferencia-tényezőktől."
+        },
+        {
+          "en": "The segregation indices explicitly excluded 6/8-grade sites, acknowledging downward bias in measured segregation — implying the actual equity impact may be larger than measured.",
+          "hu": "A szegregációs indexek kifejezetten kizárták a 6/8 évfolyamos helyeket, elismerve a mért szegregáció lefelé irányuló torzítottságát — ami azt sugallja, hogy a tényleges egyenlőség hatás nagyobb lehet, mint a mért."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian school segregation research literature",
+        "hu": "Magyar iskola-szegregációs kutatási irodalom"
+      },
+      "source_url": "segregation_research_hu"
+    },
+    {
+      "claim": {
+        "en": "As of mid-2026, Hungary's Minister of Education and Child Affairs (under the Tisza government) has stated that the admission system for secondary schools requires review, and the role of 6- and 8-year gimnáziums must be debated because they strengthen social selection, indicating that the institutional status of these tracks is an active, contested policy question rather than settled infrastructure.",
+        "hu": "2026 közepétől fogva Magyarország oktatási és gyermekvédelmi minisztere (a Tisza-kormányzat alatt) kijelentette, hogy a középiskolai felvételi rendszer felülvizsgálatra szorul, és a 6 és 8 éves gimnáziumok szerepét meg kell vitatni, mert erősítik a szociális szelekciót, amit azt jelzi, hogy ezeknek a képzéseknek az intézményi státusza aktív, vitatott politikai kérdés, nem lezárt infrastruktúra."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Statement is a political position, not an infrastructural or capacity analysis; does not prejudge the outcome of the policy review or the technical viability of alternative system designs.",
+          "hu": "A nyilatkozat politikai álláspont, nem infrastrukturális vagy kapacitáselemzés; nem ítéli meg előzetesen a politikai felülvizsgálat kimenetelét vagy az alternatív rendszerterv technikai megvalósíthatóságát."
+        },
+        {
+          "en": "The statement expresses a normative concern about social selection but does not itself establish whether system-level elimination or restructuring of the tracks is operationally feasible given current network dependencies.",
+          "hu": "A nyilatkozat a szociális kiválasztásról szóló normatív aggályt fejez ki, de önmagában nem állapítja meg, hogy a pályák rendszertési szintű eltörlése vagy átstrukturálása operatívan megvalósítható-e a jelenlegi hálózati függőségek figyelembe vételével."
+        }
+      ],
+      "source_title": {
+        "en": "Public statement by Minister Lannert Judit, 2026 education policy review",
+        "hu": "Lannert Judit miniszter nyilvános nyilatkozata, 2026 oktatáspolitikai felülvizsgálat"
+      },
+      "source_url": "government_statement_2026_hu"
+    },
+    {
+      "claim": {
+        "en": "Historical precedent demonstrates path-dependency: a 1995 legal amendment that favored the 8+4-year school structure created sufficient uncertainty about the future of 'structure-changing' 6- and 8-year gimnaziums that multiple municipalities abolished their existing programs and reverted to traditional four-year gimnázium models, showing that supply patterns are not fixed but sensitive to central policy signals.",
+        "hu": "A történelmi előzmény a pályafüggőséget mutatja: egy 1995-ös jogalkotási módosítás, amely az 8+4 éves iskolaszerkezetet részesítette előnyben, olyan bizonytalanságot okozott a 'szervezet-változtató' 6 és 8 éves gimnáziumok jövőjéről, hogy több település eltörölte meglévő képzéseit és visszatért a tradicionális négy éves gimnázium modellekhez, így azt mutatva, hogy a kínálati minták nem rögzítettek, hanem érzékenyek a központi politikai jelekre."
+      },
+      "evidence_strength": "strong",
+      "limitations": [
+        {
+          "en": "Historical example does not prove that current reversal is likely or politically feasible; municipal-level capacity responses depend on specific cost structures, teacher labor availability, and broader demographic trends that differ from 1995 context.",
+          "hu": "A történelmi példa nem bizonyítja, hogy a jelenlegi visszafordítás valószínű vagy politikailag megvalósítható; az önkormányzati szintű kapacitásválaszok az 1995-ös kontexttől eltérő specifikus költségstruktúráktól, tanári munkaerő-elérhetőségtől és szélesebb demográfiai trendektől függenek."
+        }
+      ],
+      "source_title": {
+        "en": "Hungarian education legal history, 1995 amendment analysis",
+        "hu": "Magyar oktatási joghistória, 1995-ös módosítás elemzése"
+      },
+      "source_url": "education_legal_history_hu"
+    },
+    {
+      "claim": {
+        "en": "A 2026 education researcher (Nahalka István) asserts that despite enormous oversubscription, international evidence (PISA) shows early selection in 6- and 8-year tracks does not increase top-student performance but does strengthen social differences, and that admitted students typically already exhibit socioeconomic-correlated knowledge differences prior to selection, making the selection primarily a mechanism of social reproduction rather than talent identification.",
+        "hu": "Egy 2026-os oktatáskutató (Nahalka István) azt állítja, hogy a nagy túltúltöttség ellenére a nemzetközi bizonyítékok (PISA) azt mutatják, hogy a korai kiválasztás a 6 és 8 éves képzésekben nem növeli a legjobb tanulók teljesítményét, hanem erősíti a szociális különbségeket, és hogy a felvett tanulók jellemzően már a kiválasztás előtt szocioökonómiailag korrelált tudáskülönbségeket mutatnak, így a kiválasztás elsősorban a szociális reprodukció, nem a tehetségfelismerés mechanizmusa."
+      },
+      "evidence_strength": "moderate",
+      "limitations": [
+        {
+          "en": "This is an interpretive/normative claim from one researcher presented during a policy debate, not a settled empirical fact. The cited PISA finding aligns with broader academic literature but remains politically contested.",
+          "hu": "Ez egy olyan interpretív/normatív állítás, amely egy kutatótól származik és egy politikai vitában kerül bemutatásra, nem egy lezárt empirikus tény. Az idézett PISA megállapítás szélesebb tudományos irodalommal összhangban van, de politikailag továbbra is vitatott."
+        },
+        {
+          "en": "The researcher also acknowledges that proponents defend selection as a mechanism for teaching talented students at high level without mixing with students with fundamental learning gaps; the relative validity of these competing pedagogical rationales requires evidence beyond network planning.",
+          "hu": "A kutató azt is elismeri, hogy a támogatók a kiválasztást úgy védekeznek, mint a tehetséges tanulók magas szinten történő tanítási mechanizmusa anélkül, hogy alapvető tanulási hiányosságokkal rendelkező tanulókkal keveredne; ezen konkuráló pedagógiai indokok relatív érvényessége hálózattervezésen túli bizonyítékot igényel."
+        }
+      ],
+      "source_title": {
+        "en": "Interview statement, Nahalka István, Hungarian education researcher, 2026 policy review context",
+        "hu": "Interjúnyilatkozat, Nahalka István, magyar oktatáskutató, 2026 politikai felülvizsgálat kontextusa"
+      },
+      "source_url": "researcher_interview_2026_hu"
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": {
+        "en": "What fraction of unfilled seats in peripheral 6- and 8-year gimnaziums reflects genuine geographic/transport barriers, family awareness gaps, or perceived poor school quality, versus rational preference for reputation-higher urban schools — and how would this decomposition change if the central prestige or admissions selectivity of the tracks were altered by policy?",
+        "hu": "A periféria 6 és 8 éves gimnaziumaiban lévő üres helyek hányada tükröz valódi földrajzi/közlekedési akadályokat, család-tudatosság-hiatuszokat vagy percepált gyenge iskolaminőséget, szemben azzal, hogy egy hírnévben magasabb városi iskolák iránti racionális preferencia — és hogyan változna ez a felbontás, ha a pályák központi presztízsét vagy felvételi szelektivitását a politika megváltoztatná?"
+      },
+      "reduction_path": {
+        "en": "Conduct stated-preference surveys in regions with unfilled 6/8-year seats (Debrecen, Miskolc, Pécs, Encs), sampling families of 10-12-year-old students, asking willingness-to-commute thresholds, perception of program quality/selectivity, and counterfactual scenarios (e.g., 'if admission were not competitive'). Cross-reference with transport cost data (public transit pricing, family vehicle availability) and school-quality proxies (teacher qualifications, PISA-style assessment results by institution). This would reveal the relative weight of preference vs. constraint and allow modeling of policy sensitivity.",
+        "hu": "Végezzen kijelentett-preferencia-felméréseket azokban a régiókban, ahol üres 6/8 éves helyek vannak (Debrecen, Miskolc, Pécs, Encs), mintavételezve 10-12 éves tanulók szüleivel, megkérdezve az ingázás-готовность küszöbértékeket, program-minőség/szelektivitás percepcióját és kontrafaktuális forgatókönyveket (például 'ha a felvétel nem lenne versengő'). Keresztreferálja a közlekedési költség adatokkal (tömegközlekedés díjszabása, családi jármű-hozzáférhetőség) és iskola-minőség proxikkal (tanári kvalifikáció, PISA-szerű felmérési eredmények intézmények szerint). Ez felfedné az preferencia vs. korlát relatív súlyát és lehetővé tenné a politikai érzékenység modellezését."
+      }
+    },
+    {
+      "question": {
+        "en": "If capacity in 6- and 8-year tracks were frozen at current levels or gradually reduced through attrition, what would be the flow-on effects for municipal school systems, pedagogical diversity, and student sorting across the remaining 4-year gimnázium and vocational tracks — and would these effects be equitably distributed across rich and poor municipalities?",
+        "hu": "Ha a 6 és 8 éves képzések kapacitása a jelenlegi szinten befagyott maradna vagy fokozatosan csökkent volna az erodálódáson keresztül, milyen továbbhatások lennének az önkormányzati iskolai rendszerekre, pedagógiai diverzitásra és tanulók szortírozására a megmaradt 4 éves gimnazium és szakképzési pályák között — és ezek a hatások egyenlően osztottak volnának a gazdag és szegény önkormányzatok között?"
+      },
+      "reduction_path": {
+        "en": "Develop a system-dynamics model of Hungarian secondary-school allocation incorporating (1) current capacity by track type and municipality; (2) historical enrollment elasticity with respect to track availability; (3) teacher labor-supply constraints (retraining costs, pension rules); (4) municipal budget dependencies on enrollment (per-pupil financing). Simulate scenarios: (a) freeze 6/8 seats at current national level, allow decline only through retirement; (b) explicit annual reduction target (e.g., −5% per year); (c) policy reversal (expand 6/8 capacity by 20%). For each scenario, trace (i) changes in vocational track enrollment; (ii) municipality-by-municipality fiscal impact; (iii) estimated distribution of 'pushed-down' students across socioeconomic quintiles. Validate model against the 1995 legal-amendment shock and subsequent enrollment shifts.",
+        "hu": "Fejlesszen ki egy rendszer-dinamika modellt a magyar középiskolai allokációból, amely tartalmazza (1) jelenlegi kapacitást pálya típus és önkormányzat szerint; (2) történeti beiratkozási rugalmasságot a pálya-elérhetőséghez képest; (3) tanári munkaerő-kínálat korlátait (átképzési költségek, nyugdíj-szabályok); (4) önkormányzati költségvetés-függőségeket a beiratkozáshoz (tanulónkénti finanszírozás). Szimuláljon forgatókönyveket: (a) 6/8 helyek befagyása az aktuális nemzeti szinten, hanyatlás csak nyugdíjozáson keresztül; (b) kifejezett éves csökkentési cél (például −5% évente); (c) politikai fordulat (6/8 kapacitás bővítése 20%-kal). Minden forgatókönyvhöz nyomon követi (i) a szakképzési pálya beiratkozásában történő változásokat; (ii) önkormányzat-szintenkénti költségvetési hatást; (iii) a 'lefelé tolódott' tanulók becsült eloszlását szocioökonómiai kvintilisek között. Validálja a modellt az 1995-ös jogalkotási sokk és az azt követő beiratkozási eltolódások alapján."
+      }
+    },
+    {
+      "question": {
+        "en": "What is the cost and delivery timeline for restructuring transport/commuting infrastructure (e.g., subsidized regional bus passes, school transport contracts) to reduce effective geographic barriers to peripheral 6- and 8-year program attendance, and would such investment be cost-effective relative to the social equity gain?",
+        "hu": "Mekkora költség és szállítási idősor szükséges az utazás/ingázás infrastruktúra átstrukturálásához (például szubvencionált regionális buszjegyek, iskolaszállítási szerződések) a perifériai 6 és 8 éves program-részvételhez való tényleges földrajzi akadályok csökkentéséhez, és lenne-e az ilyen beruházás költséghatékony az szociális egyenlőség nyereséghez képest?"
+      },
+      "reduction_path": {
+        "en": "Commission a cost-benefit analysis from transport-planning and education-economics experts, scoping (1) current transport subsidy levels (e.g., child pass discounts, school contract coverage) by region; (2) unmet demand estimates from peripheral sites (use surname proxies or school-zip-code data to estimate distance of commuters from undersubscribed programs); (3) quotes from regional public-transport operators for expanded pass-distribution or dedicated school-route contracts; (4) foregone earnings/attainment for families currently unable to access preferred tracks due to cost, estimated via wage-premium data for 6/8 vs. 4-year track completion; (5) equity-adjusted cost per 'new access opportunity' by municipality. Model sensitivity to transport-subsidy generosity and distance thresholds. Compare to alternative equity investments (e.g., remedial teaching in vocational programs, teacher salaries in underserved regions).",
+        "hu": "Bízzon meg egy költség-haszon elemzésben a közlekedési tervezési és oktatás-közgazdasági szakértőkről, amiből kiderül (1) a jelenlegi közlekedési szubvenció szintjei (például gyermekjegy-kedvezmények, iskolaszerzződés-lefedettség) régiók szerint; (2) a periféria helyeinek kielégítetlen keresletbecsléseit (használjon vezetékneveket vagy iskola-irányítószám adatokat a közlekedők távolságának becsléséhez az alulfinanszírozott programoktól); (3) ajánlatokat a regionális tömegközlekedési operátoroktól az kiterjesztett jegy-elosztáshoz vagy dedikált iskolai-útvonal szerződésekhez; (4) az elveszett jövedelmeket/eléréseket azoknak a családoknak, akik jelenleg nem férhetnek hozzá az előnyben részesített pályákhoz a költségek miatt, becsült bér-prémium adatokkal a 6/8 vs. 4 éves pálya-befejezéshez; (5) egyenlőség-igazított költséget az 'új hozzáférési lehetőségenként' önkormányzat szerint. A modell szenzitivitása a közlekedési szubvenció nagyhatalomhoz és távolság-küszöbhöz. Hasonlítsa össze az alternatív egyenlőség-beruházásokkal (például felzárkóztató tanítás a szakképzési programokban, tanári fizetések az alulszolgált régiókban)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-education_finance-01",
+      "A-live-education_finance-02",
+      "A-live-education_finance-03",
+      "A-live-education_finance-04"
+    ],
+    "claim": {
+      "en": "Hungary historically avoided formal school closures by reducing the number of parallel classes rather than closing or amalgamating schools, resulting in a large offer of small schools. This mechanism reduced scope for within-school separation of pupils by social or ethnic background, especially in small rural settlements running only one class per grade, but may have substituted between-school for within-school ethnic segregation.",
+      "hu": "Magyarország történetileg elkerülte a formális iskolazárásokat azáltal, hogy a párhuzamos osztályok számát csökkentette az iskolák bezárása vagy összevonása helyett, ami nagyszámú kis iskolát eredményezett. Ez a mechanizmus csökkentette a tanulók szociális vagy etnikai alapon történő iskolan belüli elkülönítésének lehetőségét, különösen az egy osztályt osztályzatonként futtató kis vidéki településekben, de az iskola közötti szegregáció helyettesítésével járulhatott az iskola belsejében történő etnikai szegregációhoz."
+    },
+    "context": {
+      "en": "Fresh live research through the Education finance lens",
+      "hu": "Friss, élő kutatás a(z) oktatási finanszírozás nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The causal link between parallel-class reduction and between-school segregation outcomes is inferred from structural logic rather than empirical segregation index comparisons between consolidated and non-consolidated districts.",
+        "hu": "A párhuzamos osztályok csökkenése és az iskola közötti szegregáció kimenetelei közötti okozati kapcsolat a szerkezeti logikából származik, nem pedig az összevont és nem konszolidált járulékok közötti szegregációs index empirikus összehasonlításaiból."
+      },
+      {
+        "en": "No quantitative evidence provided on the scale (percentage of small schools) or regional distribution of this adjustment practice across Hungary.",
+        "hu": "Nincs mennyiségi adat az igazítási gyakorlat skálájáról (kis iskolák százaléka) vagy regionális eloszlásáról Magyarország egészén."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-education_finance-05"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-02"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-education_finance-05",
+  "provenance_ref": "PV-research_education_finance-8952009a100f54f9",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

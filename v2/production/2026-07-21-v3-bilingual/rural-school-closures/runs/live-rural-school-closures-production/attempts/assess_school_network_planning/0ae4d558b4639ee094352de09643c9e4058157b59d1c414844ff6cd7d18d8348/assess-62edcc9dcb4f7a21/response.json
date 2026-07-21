@@ -1,0 +1,260 @@
+{
+  "assessments": [
+    {
+      "assessment": {
+        "en": "From a school-network-planning lens, this baseline documents an already-observed geographic feasibility failure rather than a functioning steady state: over 1,200 of 3,155 Hungarian settlements already lack any public education institution, and the network continues thinning (3,609 to 3,521 primary institutions, 2021-2024) without any early-warning mechanism linking demographic microdata to proactive planning at the 198-tankerület governance level established in 2013. Continuing this centralized, reactive model means access, capacity, and resilience outcomes remain a byproduct of case-by-case administrative decisions rather than planned network design.",
+        "hu": "Az iskolaháló-tervezési szemlélet szerint ez az alapforgatókönyv már megfigyelt földrajzi elérhetőségi kudarcot dokumentál, nem pedig működő egyensúlyi állapotot: Magyarország 3155 településéből több mint 1200-ban már nincs semmilyen köznevelési intézmény, és a hálózat tovább szűkül (3609-ről 3521 alapfokú intézményre 2021 és 2024 között), miközben nincs olyan korai-jelző mechanizmus, amely a demográfiai mikroadatokat összekapcsolná a 2013-ban létrehozott, 198 tankerületből álló irányítási szint proaktív tervezésével. E centralizált, reaktív modell fenntartása azt jelenti, hogy az elérhetőség, a kapacitás és a rezilienciakimenet továbbra is eseti igazgatási döntések mellékhatása marad, nem pedig tervezett hálózatfejlesztés eredménye."
+      },
+      "confidence": "high",
+      "finding_refs": [
+        "F-live-school_network_planning-01",
+        "F-live-school_network_planning-02"
+      ],
+      "opportunities": [
+        {
+          "en": "The 2026 diagnostic review, even absent structural change, could be redirected toward building the missing demographic early-warning function within existing tankerület authority.",
+          "hu": "A 2026-os diagnosztikai felülvizsgálat, még strukturális változás hiányában is, átirányítható a hiányzó demográfiai korai-jelző funkció kiépítésére a meglévő tankerületi hatáskörön belül."
+        }
+      ],
+      "proposal_ref": "TP-live-t1",
+      "strengths": [
+        {
+          "en": "Serves its stated methodological purpose as an explicit counterfactual, making the costs of inaction transparent and measurable against documented thinning trends.",
+          "hu": "Betölti kimondott módszertani célját, mint explicit kontrafaktuális forgatókönyv, átláthatóvá és mérhetővé téve a tétlenség költségeit a dokumentált hálózati szűkülési trendekhez viszonyítva."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Uncoordinated policy drift is likely if diagnostic findings are not integrated with any active planning direction, perpetuating the observed pace of institutional thinning indefinitely.",
+          "hu": "Összehangolatlan szakpolitikai sodródás valószínű, ha a diagnosztikai megállapításokat nem integrálják semmilyen aktív tervezési irányba, ami a megfigyelt intézményi szűkülési ütemet a belátható jövőben is fenntartja."
+        }
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        {
+          "en": "No systematic mechanism connects demographic microdata to proactive tankerület-level planning, so closures remain reactive (Garab-type) rather than anticipatory, a documented structural gap rather than a hypothetical risk.",
+          "hu": "Nincs szisztematikus mechanizmus, amely a demográfiai mikroadatokat összekapcsolná a tankerületi szintű proaktív tervezéssel, így a bezárások reaktívak (Garab-típusúak) maradnak, nem pedig előrelátóak; ez dokumentált strukturális hiányosság, nem hipotetikus kockázat."
+        },
+        {
+          "en": "Absence of local veto (except the narrow church-transfer case) removes a resilience feedback loop that could otherwise flag capacity or access problems before closure becomes unavoidable.",
+          "hu": "A helyi vétójog hiánya (az egyházi átadás szűk esetét kivéve) megszünteti azt a reziliencia-visszacsatolási hurkot, amely egyébként jelezhetné a kapacitási vagy elérhetőségi problémákat még a bezárás elkerülhetetlenné válása előtt."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "This proposal directly addresses network-planning criteria by pairing consolidation with an enforceable, monitored transport guarantee, following a Norway-style size-and-distance framework. However, the cost evidence is asymmetric: US data show large operating-cost reductions from mergers concentrated in instruction and administration, with no documented economies for transportation itself, meaning the very mechanism meant to preserve access carries a separate, unabsorbed fiscal burden. Network resilience implications are contested: Finnish DID evidence links closure to accelerated subsequent depopulation, while Saxony and Swedish studies find no such effect, so the demographic feedback loop this proposal might trigger cannot be resolved from the lens alone.",
+        "hu": "Ez a javaslat közvetlenül kezeli a hálózattervezési kritériumokat azáltal, hogy az összevonást kikényszeríthető, monitorozott közlekedési garanciával párosítja, egy Norvégia-típusú méret-és-távolság keretrendszert követve. A költségbizonyítékok azonban aszimmetrikusak: az amerikai adatok az összevonásokból eredő nagy működésiköltség-csökkenéseket az oktatásra és igazgatásra koncentráltan mutatják, miközben nincs dokumentált megtakarítás magára a közlekedésre, ami azt jelenti, hogy éppen az elérhetőséget megőrző mechanizmus önálló, le nem fedett fiskális terhet hordoz. A hálózati reziliencia-hatások vitatottak: a finn DID-bizonyítékok a bezárást a felgyorsult utólagos elnéptelenedéssel hozzák összefüggésbe, míg a szászországi és svéd vizsgálatok nem találnak ilyen hatást, így az e javaslat által potenciálisan kiváltott demográfiai visszacsatolási hurok e szemlélet alapján önmagában nem dönthető el."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-school_network_planning-03",
+        "F-live-school_network_planning-04"
+      ],
+      "opportunities": [
+        {
+          "en": "A target-size-and-distance framework could be calibrated to Hungary's settlement geography to systematize decisions currently made case by case.",
+          "hu": "A méret-és-távolság célrendszer Magyarország településföldrajzához igazítható, így szisztematizálhatja a jelenleg eseti alapon meghozott döntéseket."
+        }
+      ],
+      "proposal_ref": "TP-live-t2",
+      "strengths": [
+        {
+          "en": "Makes the maintainer's existing legal transport obligation enforceable and monitored, directly targeting the documented lapse in practice rather than assuming compliance.",
+          "hu": "Kikényszeríthetővé és monitorozottá teszi a fenntartó meglévő jogi közlekedési kötelezettségét, közvetlenül célozva a gyakorlatban dokumentált mulasztást, nem pedig a megfelelést feltételezve."
+        },
+        {
+          "en": "Adopts a quantified, precedented size-and-distance planning framework (Norway) rather than ad hoc closure, offering a replicable network-design methodology.",
+          "hu": "Kvantifikált, precedenssel alátámasztott méret-és-távolság tervezési keretrendszert (Norvégia) alkalmaz eseti bezárás helyett, reprodukálható hálózattervezési módszertant kínálva."
+        }
+      ],
+      "threats": [
+        {
+          "en": "If the depopulation-acceleration mechanism observed in Finland applies in Hungary's demographically declining regions (Baranya, Northern Hungary), consolidation could compound rather than stabilize network viability, though this causal link remains contested across national contexts.",
+          "hu": "Ha a Finnországban megfigyelt elnéptelenedés-gyorsító mechanizmus Magyarország demográfiailag zsugorodó régióiban (Baranya, Észak-Magyarország) is érvényes, az összevonás inkább felerősítheti, mint stabilizálhatja a hálózati fenntarthatóságot, bár ez az okozati összefüggés országonként vitatott marad."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "The transport guarantee's costs are not offset by the documented economies of scale, which apply to instruction and administration but not transportation, requiring separate and sustained funding commitment.",
+          "hu": "A közlekedési garancia költségeit nem fedezik a dokumentált méretgazdaságossági hatások, amelyek az oktatásra és igazgatásra vonatkoznak, a közlekedésre nem, így külön és tartós finanszírozási kötelezettségvállalást igényelnek."
+        },
+        {
+          "en": "Danish evidence of adverse short-run achievement effects, concentrated among students from the smallest closing schools, suggests capacity gains at consolidated sites may come with transitional access-quality costs not captured by network metrics alone.",
+          "hu": "A dán bizonyítékok a bezárt legkisebb iskolák tanulóira koncentrálódó rövid távú kedvezőtlen teljesítményhatásokra utalnak, jelezve, hogy az összevont intézmények kapacitásnyeresége olyan átmeneti hozzáférés-minőségi költségekkel járhat, amelyeket a hálózati mutatók önmagukban nem fognak meg."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "The split-model proposal is administratively low-friction for network planning since multi-grade classes are already legally sanctioned, requiring no new authorization to preserve local lower-grade access while consolidating upper grades. However, network-planning evidence identifies a firm lower viability bound: research modeling a 100-student minimum threshold indicates more than five hundred village schools would be directly affected, many unable to sustain even the reduced footprint a split model requires, meaning this mechanism has geographic limits that a pure administrative solution cannot overcome for the smallest settlements.",
+        "hu": "A megosztott-modell javaslat hálózattervezési szempontból alacsony ellenállású megvalósítási útnak tűnik, mivel az összevont osztályok már jogszabályilag engedélyezettek, így nem igényelnek új felhatalmazást a helyi alsó tagozati elérhetőség megőrzéséhez a felső tagozat összevonása mellett. A hálózattervezési bizonyítékok azonban egy határozott alsó viabilitási korlátot is azonosítanak: egy 100 fős minimum-küszöböt modellező kutatás szerint több mint ötszáz falusi iskolát érintene közvetlenül, közülük sok a megosztott modell csökkentett formáját sem tudná fenntartani, ami azt jelenti, hogy ennek a mechanizmusnak földrajzi korlátai vannak, amelyeket a legkisebb településeken tisztán igazgatási megoldással nem lehet leküzdeni."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-school_network_planning-06"
+      ],
+      "opportunities": [
+        {
+          "en": "Explicit routing design for upper-grade consolidation could actively counteract between-settlement segregation risk if planned with settlement-level equity criteria from the outset.",
+          "hu": "A felső tagozat összevonásához tartozó útvonaltervezés kifejezetten ellensúlyozhatja a települések közötti szegregáció kockázatát, ha kezdettől fogva településszintű méltányossági szempontokkal tervezik."
+        }
+      ],
+      "proposal_ref": "TP-live-t3",
+      "strengths": [
+        {
+          "en": "Multi-grade classes are already a legally sanctioned mechanism within the existing class-size framework, minimizing new administrative or legal barriers to implementation.",
+          "hu": "Az összevont osztályok már jogszabályilag engedélyezett mechanizmust jelentenek a meglévő osztálylétszám-keretrendszeren belül, minimalizálva a megvalósítás új igazgatási vagy jogi akadályait."
+        },
+        {
+          "en": "Directly transportable design precedent exists (Poland's draft split-model legislation) with an explicit building-repurposing component, aiding network resilience through multipurpose use of retained infrastructure.",
+          "hu": "Közvetlenül átvehető tervezési precedens létezik (Lengyelország megosztott-modell törvényjavaslata) egy kifejezett épület-átalakítási elemmel, ami az épületek többfunkciós hasznosításán keresztül támogatja a hálózati rezilienciát."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Between-settlement segregation could intensify if consolidation routes concentrate disadvantaged pupils in specific receiving schools, an outcome the historical parallel-class-reduction practice suggests is a persistent structural tendency.",
+          "hu": "A települések közötti szegregáció felerősödhet, ha az összevonási útvonalak hátrányos helyzetű tanulókat koncentrálnak bizonyos befogadó iskolákba, ami a történelmi párhuzamosztály-csökkentési gyakorlat alapján tartósan visszatérő strukturális tendenciának tűnik."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "A modeled 100-student minimum threshold would directly affect more than five hundred village schools, establishing that the split model has a lower geographic viability bound below which it cannot deliver access on its own.",
+          "hu": "Egy modellezett 100 fős minimum-küszöb több mint ötszáz falusi iskolát érintene közvetlenül, ami azt igazolja, hogy a megosztott modellnek van egy alsó földrajzi viabilitási korlátja, amely alatt önmagában nem képes elérhetőséget biztosítani."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "Legal presumption-against-closure mechanisms (Scotland, Wales) and targeted funding levers (Poland's rural teacher supplement, Hungary's pre-2004 practice) offer network-planning tools that directly address the small-school funding disadvantage structurally embedded in per-capita systems. However, this lens's core limitation applies acutely here: network feasibility (keeping buildings staffed and open) does not by itself establish that preservation delivers the community revitalization sometimes assumed, and the severe aging/attrition profile of the teaching workforce (roughly half aged 50+, only 7.2% under 30, 60% of new hires resigning within 3-4 years) threatens to erode retained capacity from the supply side even where funding and legal safeguards succeed.",
+        "hu": "A bezárás elleni törvényi vélelmi mechanizmusok (Skócia, Wales) és a célzott finanszírozási eszközök (Lengyelország vidéki tanári pótléka, Magyarország 2004 előtti gyakorlata) olyan hálózattervezési eszközöket kínálnak, amelyek közvetlenül kezelik a fejenkénti finanszírozási rendszerekbe strukturálisan beépült kisiskolai hátrányt. Ugyanakkor e szemlélet alapvető korlátja itt élesen érvényesül: a hálózati megvalósíthatóság (az épületek személyzettel ellátva, nyitva tartása) önmagában nem igazolja, hogy a megőrzés a néha feltételezett közösségi revitalizációt eredményezi, és a tanári munkaerő súlyos elöregedési/elvándorlási profilja (körülbelül a felük 50 éves vagy idősebb, csak 7,2%-uk 30 alatti, az új tanárok 60%-a 3-4 éven belül felmond) az ellátás oldaláról erodálhatja a megőrzött kapacitást akkor is, ha a finanszírozás és a jogi védelem sikeres."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-school_network_planning-05"
+      ],
+      "opportunities": [
+        {
+          "en": "Teacher-supplement mechanisms could be paired directly with the presumption-against-closure framework to jointly address both the demand-side (keep schools open) and supply-side (keep teachers staffed) network constraints.",
+          "hu": "A tanári pótlék-mechanizmusok közvetlenül párosíthatók a bezárás elleni vélelmi keretrendszerrel, hogy egyszerre kezeljék a keresleti oldali (iskolák nyitva tartása) és a kínálati oldali (tanárokkal való ellátottság) hálózati korlátokat."
+        }
+      ],
+      "proposal_ref": "TP-live-t4",
+      "strengths": [
+        {
+          "en": "Transferable legal-presumption models (Scotland's 'strong, positive case' test, Wales's designated 218 rural schools) provide concrete procedural templates that shift the default away from closure without banning it outright.",
+          "hu": "Átvehető jogi vélelmi modellek (Skócia 'erős, pozitív indok' tesztje, Wales 218 kijelölt vidéki iskolája) konkrét eljárási sablonokat adnak, amelyek eltolják az alapértelmezést a bezárástól anélkül, hogy teljesen megtiltanák azt."
+        },
+        {
+          "en": "A domestic precedent (Hungary's pre-2004 targeted state support) demonstrates that this lever type has historically maintained network density under comparable fiscal stress on municipalities.",
+          "hu": "Egy hazai precedens (Magyarország 2004 előtti célzott állami támogatása) igazolja, hogy ez az eszköztípus a múltban is fenntartotta a hálózati sűrűséget hasonló, önkormányzatokra ható fiskális nyomás mellett."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Projected teacher retirements (6,200 annually through 2030) combined with high early-career attrition could hollow out staffing at preserved schools regardless of legal or funding safeguards, undermining the policy's core mechanism from within.",
+          "hu": "A várható tanári nyugdíjazások (évi 6200, 2030-ig) a magas pályakezdő-lemorzsolódással kombinálva a jogi és finanszírozási védelemtől függetlenül kiüríthetik a megőrzött iskolák személyzetét, belülről ásva alá a szakpolitika alapvető mechanizmusát."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "Village-level demographic data show a mixed picture: schools correlate with better population outcomes but worse employment/welfare outcomes, undermining a simple assumption that network preservation drives broad revitalization.",
+          "hu": "A településszintű demográfiai adatok kettős képet mutatnak: az iskolák jobb népességmegtartási, de rosszabb foglalkoztatási/jóléti mutatókkal korrelálnak, ami aláássa azt az egyszerű feltételezést, hogy a hálózat megőrzése átfogó revitalizációt eredményez."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "From a network-planning perspective, the church/NGO transfer pathway preserves a building's role as an educational access point without requiring structural network redesign, and the parental veto and catchment reassignment mechanism maintain a minimal dual-option architecture. However, in single-school villages this pathway offers only nominal rather than substantive access diversity, since there is effectively one physical node regardless of maintainer identity; the lens can assess node survival but cannot independently establish that ownership change preserves meaningful choice, particularly given the documented rise in church-school enrollment share (60% 2001-2011, 47% 2011-2014) suggesting a broader compositional shift in the network beyond any single village case.",
+        "hu": "Hálózattervezési szempontból az egyházi/civil átadási útvonal megőrzi az épület oktatási hozzáférési pontként betöltött szerepét anélkül, hogy strukturális hálózat-átalakítást igényelne, és a szülői vétó, illetve a körzethatár-átsorolás mechanizmusa minimális kettős-választási architektúrát tart fenn. Egyiskolás falvakban azonban ez az útvonal csak névleges, nem valódi hozzáférési sokféleséget kínál, mivel a fenntartó identitásától függetlenül gyakorlatilag egyetlen fizikai csomópont marad; a szemlélet képes felmérni a csomópont túlélését, de önmagában nem igazolhatja, hogy a tulajdonosváltás érdemi választást őriz meg, különösen a dokumentált egyházi iskolai beiskolázási arány növekedés (60% 2001-2011, 47% 2011-2014) fényében, amely a hálózat egy adott falusi eseten túli, tágabb kompozíciós elmozdulására utal."
+      },
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-school_network_planning-06"
+      ],
+      "opportunities": [
+        {
+          "en": "The transfer mechanism could be extended with explicit multi-service commitments to increase network resilience value beyond the narrow administrative-continuity function currently observed.",
+          "hu": "Az átadási mechanizmus kiterjeszthető explicit többfunkciós szolgáltatási kötelezettségekkel, hogy a jelenleg megfigyelt szűk igazgatási-folytonossági funkción túl növelje a hálózati reziliencia-értéket."
+        }
+      ],
+      "proposal_ref": "TP-live-t5",
+      "strengths": [
+        {
+          "en": "Preserves the physical school node in local use without requiring state-funded structural reform, offering a lower-cost network-maintenance pathway relative to consolidation or active-preservation funding models.",
+          "hu": "Megőrzi a fizikai iskolai csomópontot helyi használatban állami finanszírozású strukturális reform nélkül, alacsonyabb költségű hálózat-fenntartási útvonalat kínálva az összevonáshoz vagy az aktív megőrzést célzó finanszírozási modellekhez képest."
+        },
+        {
+          "en": "The parental-majority veto and dual mandatory-admission requirement provide a documented, real constraint that channels transfer through community consent rather than unilateral administrative action.",
+          "hu": "A szülői többségi vétó és a kettős kötelező felvételi követelmény dokumentált, valódi korlátot jelent, amely az átadást közösségi beleegyezésen keresztül vezeti, nem pedig egyoldalú igazgatási döntésen."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Curricular and pedagogical inconsistency across a rural network with mixed state and church maintainers could complicate coordinated network-level capacity planning across catchment boundaries.",
+          "hu": "A vegyes állami és egyházi fenntartókkal jellemezhető vidéki hálózaton belüli tantervi és pedagógiai inkonzisztencia bonyolíthatja az összevont, körzethatárokon átívelő hálózati szintű kapacitástervezést."
+        }
+      ],
+      "verdict": "neutral",
+      "weaknesses": [
+        {
+          "en": "In single-school villages, the dual-choice architecture is formally preserved but substantively hollow, since the nearest alternative mandatory-admission school may be geographically distant, making the 'choice' costly to exercise in practice.",
+          "hu": "Egyiskolás falvakban a kettős választási architektúra formálisan megmarad, de tartalmilag kiüresedik, mivel a legközelebbi alternatív kötelező felvételi iskola földrajzilag távol lehet, ami a 'választást' a gyakorlatban költségessé teszi."
+        },
+        {
+          "en": "Documented precedent (2026 Kolping case) shows NGO/religious maintainers limiting scope to school administration alone, indicating the pathway does not automatically extend network resilience benefits (e.g., multi-service hub functions) beyond the narrow educational function.",
+          "hu": "A dokumentált precedens (2026-os Kolping-eset) azt mutatja, hogy az egyházi/civil fenntartók a hatókört kizárólag az iskolaigazgatásra korlátozzák, ami jelzi, hogy az útvonal nem terjeszti ki automatikusan a hálózati rezilienciaelőnyöket (pl. többfunkciós közösségi szolgáltatások) a szűk oktatási funkción túl."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "This combined proposal correctly subordinates network-preservation preference to a documented legal constraint: Hungarian case law (Piliscsaba, Nyíregyháza) establishes that keeping a school open is not a neutral network-planning default where it functions as de facto segregation, meaning geographic access and desegregation criteria can directly conflict and this proposal resolves that conflict by design rather than ignoring it. The Rákóczi Szövetség cross-border bus network (61 buses, 54 institutions, ~861 students) offers a concrete, already-operating transferable transport-access model, though this evidence describes a minority-language-access context whose network parameters may not translate directly to general rural consolidation. The teacher-supply crisis is correctly flagged as a cross-cutting constraint applicable to any staffing-dependent option, including this one.",
+        "hu": "Ez a kombinált javaslat helyesen rendeli alá a hálózat-megőrzési preferenciát egy dokumentált jogi korlátnak: a magyar joggyakorlat (Piliscsaba, Nyíregyháza) megállapítja, hogy egy iskola nyitva tartása nem semleges hálózattervezési alapértelmezés ott, ahol az de facto szegregációként funkcionál, ami azt jelenti, hogy a földrajzi elérhetőség és a deszegregációs kritériumok közvetlenül konfliktusba kerülhetnek, és ez a javaslat tervezetten, nem pedig figyelmen kívül hagyva oldja fel ezt a konfliktust. A Rákóczi Szövetség határon átnyúló buszhálózata (61 busz, 54 intézmény, kb. 861 tanuló) konkrét, már működő, átvehető közlekedési-hozzáférési modellt kínál, bár ez a bizonyíték egy kisebbségi nyelvi hozzáférési kontextust ír le, amelynek hálózati paraméterei nem feltétlenül ültethetők át közvetlenül az általános vidéki összevonásra. A tanári ellátási válságot helyesen jelölik meg minden személyzettől függő opcióra, beleértve ezt is, érvényes átfogó korlátként."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-school_network_planning-06",
+        "F-live-school_network_planning-07",
+        "F-live-school_network_planning-05"
+      ],
+      "opportunities": [
+        {
+          "en": "Community social-capital assessment tools (as in the Erdőkürt case) could be formalized into a technical-assistance targeting mechanism usable across the broader tankerület system.",
+          "hu": "A közösségi társadalmi tőke felmérésének eszközei (mint az erdőkürti eset) formalizálhatók egy technikai segítségnyújtási célzási mechanizmussá, amely a szélesebb tankerületi rendszerben is használható."
+        }
+      ],
+      "proposal_ref": "TP-live-t6",
+      "strengths": [
+        {
+          "en": "Explicitly integrates a legal desegregation constraint into network planning, avoiding the common error of treating 'keep the school open' as an unconditionally neutral network-access default.",
+          "hu": "Kifejezetten integrálja a jogi deszegregációs korlátot a hálózattervezésbe, elkerülve azt a gyakori hibát, hogy a 'tartsuk nyitva az iskolát' elvet feltétel nélkül semleges hálózati hozzáférési alapértelmezésként kezelik."
+        },
+        {
+          "en": "Draws on a concrete, already-operating cross-border transport network model as a transferable template for extending access to dispersed student populations.",
+          "hu": "Egy konkrét, már működő, határon átnyúló közlekedési hálózati modellre támaszkodik, mint átvehető sablonra a szórt tanulói populációk hozzáférésének kiterjesztéséhez."
+        }
+      ],
+      "threats": [
+        {
+          "en": "The teacher-supply crisis threatens to undermine both the community-preservation and the desegregation-consolidation halves of this proposal simultaneously, since both depend on stable staffing that current workforce trends do not support.",
+          "hu": "A tanárellátási válság egyszerre veszélyezteti e javaslat közösségi megőrzési és deszegregációs-összevonási felét is, mivel mindkettő stabil személyzeti ellátottságot igényel, amit a jelenlegi munkaerő-trendek nem támogatnak."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "The Rákóczi Szövetség network evidence originates in a minority-language-access context; its network parameters (route density, cost structure) may not generalize to domestic rural consolidation without further adaptation evidence.",
+          "hu": "A Rákóczi Szövetség hálózati bizonyítékai kisebbségi nyelvi hozzáférési kontextusból származnak; hálózati paraméterei (útvonal-sűrűség, költségstruktúra) további adaptációs bizonyítékok nélkül nem feltétlenül általánosíthatók a hazai vidéki összevonásra."
+        },
+        {
+          "en": "Judicially mandated closures on desegregation grounds face documented durable local political resistance and multi-year implementation delays, indicating that even a legally well-grounded network reconfiguration can stall in practice.",
+          "hu": "A deszegregációs okokból bíróságilag elrendelt bezárások dokumentáltan tartós helyi politikai ellenállással és többéves végrehajtási késésekkel szembesülnek, jelezve, hogy még egy jogilag jól megalapozott hálózati átalakítás is elakadhat a gyakorlatban."
+        }
+      ]
+    }
+  ]
+}

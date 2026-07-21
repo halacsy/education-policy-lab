@@ -1,0 +1,51 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Retaining tracks while adding equity guardrails directly engages the demographic finding that Hungary's between-school selection and Roma segregation are among the highest in the EU/region (F-live-demography-06, F-live-demography-08), since quotas and desegregation mandates target the sorting mechanism rather than cohort size per se. This is a plausible fit because segregation appears to be substantially a distributional/institutional phenomenon (documented independent of cohort trajectory), so demographic contraction alone would not resolve it and targeted guardrails could. However, the proposal does not address the spatial concentration of programmes in Budapest and a few cities (F-live-demography-05) or the settlement-level access gap (over 1,200 settlements without institutions, F-live-demography-04); guardrails on admissions cannot correct for the absence of a nearby track option. Under continued cohort shrinkage and urban-rural divergence, a counterfactual without this proposal would likely see selection ratios fall in shrinking/rural areas while remaining high in growth nodes (F-live-demography-09, weak evidence), intensifying status competition specifically where guardrails would be least able to reach absent complementary network measures.",
+      "hu": "A képzési szintek megtartása mellett méltányossági korlátok bevezetése közvetlenül kapcsolódik ahhoz a demográfiai megállapításhoz, hogy Magyarország iskolák közötti szelekciója és roma szegregációja az EU/régió legmagasabbjai közé tartozik (F-live-demography-06, F-live-demography-08), mivel a kvóták és deszegregációs kötelezettségek a szűrőmechanizmust célozzák meg, nem magát a kohortlétszámot. Ez plauzibilis megközelítés, mivel a szegregáció jelentős részben eloszlási/intézményi jelenségnek tűnik (a kohortpályától függetlenül dokumentált), így a demográfiai zsugorodás önmagában nem oldaná meg, célzott korlátok viszont igen. A javaslat azonban nem kezeli a programok budapesti és néhány városra koncentrálódó térbeli koncentrációját (F-live-demography-05), sem a településszintű hozzáférési szakadékot (több mint 1200 intézmény nélküli település, F-live-demography-04); a felvételi korlátok nem tudnak korrigálni egy közeli programlehetőség hiányán. A folytatódó kohortzsugorodás és a városi-vidéki divergencia mellett a javaslat nélküli kontrafaktuális helyzet valószínűleg azt eredményezné, hogy a zsugorodó/vidéki területeken csökkennek a felvételi arányok, míg a növekvő csomópontokban magasak maradnak (F-live-demography-09, gyenge bizonyíték), felerősítve a státuszalapú versenyt éppen olyan helyeken, ahol a korlátok kiegészítő hálózati intézkedések nélkül a legkevésbé érnek el."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-06",
+      "F-live-demography-08",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Because segregation appears structurally independent of cohort size, guardrail-style reform could remain robust across future demographic scenarios, offering durability advantages relative to reforms whose rationale depends on projected cohort trends (F-live-demography-06, F-live-demography-08).",
+        "hu": "Mivel a szegregáció szerkezetileg függetlennek tűnik a kohortlétszámtól, a korlát-alapú reform robusztus maradhat a jövőbeli demográfiai forgatókönyvek mellett is, tartósságbeli előnyt nyújtva azokkal a reformokkal szemben, amelyek indoklása a becsült kohorttrendektől függ (F-live-demography-06, F-live-demography-08)."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Directly targets a mechanism (segregation via admissions sorting) that operates largely independently of cohort size, meaning the intervention remains relevant regardless of demographic trajectory, unlike interventions that merely rely on shrinking demand to reduce competition (F-live-demography-06, F-live-demography-08).",
+        "hu": "Közvetlenül egy olyan mechanizmust céloz meg (a felvételi szűrésen keresztüli szegregáció), amely nagyrészt a kohortlétszámtól függetlenül működik, tehát a beavatkozás relevanciája a demográfiai pályától függetlenül fennmarad, ellentétben azokkal az intézkedésekkel, amelyek csak a csökkenő keresletre támaszkodnak a verseny mérséklésére (F-live-demography-06, F-live-demography-08)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued geographic divergence in cohort trends (F-live-demography-09, weak) could see selection ratios fall in shrinking rural areas even as guardrails operate mainly on urban oversubscribed schools, meaning the reform's effective reach could narrow over time to precisely the areas experiencing status-based competition rather than the areas facing under-enrollment.",
+        "hu": "A kohorttrendek térbeli divergenciájának folytatódása (F-live-demography-09, gyenge) azt eredményezheti, hogy a zsugorodó vidéki területeken csökkennek a felvételi arányok, míg a korlátok elsősorban a városi, túljegyzett iskolákra hatnak, tehát a reform tényleges hatóköre idővel pontosan azokra a területekre szűkülhet, ahol státuszalapú verseny zajlik, nem pedig azokra, amelyek alultöltöttséggel küzdenek."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Does not address the geographic concentration of 6/8-year programmes in Budapest and a handful of cities, nor the 1,200+ settlements lacking any educational institution, leaving a spatial access gap that admissions-side guardrails cannot close (F-live-demography-04, F-live-demography-05).",
+        "hu": "Nem kezeli a 6/8 évfolyamos programok budapesti és néhány városra koncentrálódó földrajzi koncentrációját, sem a 1200-nál több intézmény nélküli települést, ami olyan térbeli hozzáférési szakadékot hagy fennmaradni, amelyet a felvételi korlátok nem tudnak megszüntetni (F-live-demography-04, F-live-demography-05)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t4-demography",
+  "provenance_ref": "PV-assess_demography-5168d7556f8bc968",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

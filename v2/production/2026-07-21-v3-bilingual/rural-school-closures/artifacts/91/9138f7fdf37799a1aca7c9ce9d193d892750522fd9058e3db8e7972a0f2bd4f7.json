@@ -1,0 +1,56 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "6032e322e29296477987265e58c7c7ddbf3cc4b0c87d45c060e955b2595f5fc2",
+        "response_hash": "9ecbe9efbc61c6e91a02bc666d5e76a43404537423fd7ba2fb19c843f3bbfde7",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "293471d7f6ea96e44ae7fd853a645a6dc0ee982b6315831ac36b34d10050b408",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "067f59094db5ac01c5b893ea7fb98e86aaa017fc0f060f236130cd73f9707d4c",
+      "0b9f6d9409caacf083ede4344cfb261c4346d66eb7358c09a6272a7bacbf287d",
+      "1ddf0b35f6fa78419f1f4d5f752f32e8e7c9c311079ffcd6a36357301b9f5321",
+      "4b4c41ea099f3545343e001162b823c6decba595daf53b0291263c1fe4c1dea8",
+      "4c794c5db690a03a3ddd67a5fb6e62214bd58c9108156322d28481018e5a87e2",
+      "56653e88700bd35f1252af411a0a8a3100847d6ceebd78a67af1cc53e0d8ded0",
+      "675f000698995ab0d89577bdd2a00d764a3e509a4cd388200c87d859133d3cb2",
+      "685214b448be9b7694e6b7d144cd21f9beff437d4606ad2b4421f2c3de1f1a92",
+      "6b677824a2cf873ad06c99210b4315473c13641b3952fd44d33f782eb27b6e8b",
+      "6e7994c528a68aac7d12ed088d8be74e45d2e60d8cb2820bece420387ca94d8e",
+      "7562e45018b0788bda5f3a500af8e0f7577658fd2d6fc5a45afb37e00abb4c31",
+      "77f26ace6e756feeed76f2905b19d9358e0c64dbeb5fa430cf71556bdaa16878",
+      "84ac76535b219a1128c8b5785aca4d634528b5057602d15702e33b2b2a361409",
+      "85205401cb2efee68133dcef4ed16fea59b3962e05e4c8c9cbff554ba05b76e0",
+      "894badf90c70b1767202adcd10582978ab13ab485232d491ae2ff6878c3eeda0",
+      "b35c0f6f50a420b9d33491ac92ed4c42cb6348aab6ea8c9e1109c840b486b5e7",
+      "ffae86f025cd0e57aa732cf6c040d1772c69350988c9a70d5d6fdc4ed80c2baa"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_education_finance",
+    "prompt_hash": "344d75fa3c0564f403852df5659bd6416857738a3de94404149830770788fc89",
+    "provider": "anthropic",
+    "relevant_config_hash": "77acb284453957afd4436ccc6e8a029591e6f7b57781b9f7dfaf6443a09957e5",
+    "role": "generator",
+    "run_plan_hash": "d87ac5722d93cdbe99d8ee2900fdb0a26934e405e23a5f4862dc9d8e9590a60b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "PV-assess_education_finance-293471d7f6ea96e4",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "d380dc1406d81c329223b495b8b8dcb5cf5a59fca5fd4eaea1d486562f2fe898",
+  "topic": "rural-school-closures"
+}

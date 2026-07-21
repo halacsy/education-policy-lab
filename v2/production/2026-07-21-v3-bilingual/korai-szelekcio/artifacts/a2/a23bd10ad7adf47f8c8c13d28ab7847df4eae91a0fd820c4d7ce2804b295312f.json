@@ -1,0 +1,55 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "d441c4f28f1520d5b05170c4f84d94a6a0a4b3ebd851f388413a8caca077ceda",
+        "response_hash": "d8cb461f40213db8fb873354d922d32bd808150bdf4ea63fc6c4bd670d7d7e8c",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "db2943fd921696b72a2e1864b4553e21e770d5cf1aa5fdb80c2474aec446cee8",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "0e5a86caab6b40aa3ee35d57728b04f612581782dcb89334f4d3b8b920281bda",
+      "2b5192edbc7a86001635ad69edd7f3ab4264557cfa47b714403e4ad2021aab0a",
+      "3bfb212928e69a092d89f4e1e4fb11b085c0acdcb45d922ba5771072134fb00f",
+      "3ced04b866ab212dbaff81a0c635f6c0303693a6fb2d2fed24c8c7324607fd7f",
+      "445ee590047bd7ebee335e2f263998a1c70b12801efdf5d10440156319e0917c",
+      "5f51e5d00ca29f2d0244ebaf9ed51e5ddde546f0fddab63b8047e88866e00904",
+      "609ec42f97806a4b299d580c23478918d295d67766646ac7115dfc6732b1f17d",
+      "6de1e57a84fde60c8fa087bb73f794b7d9eaef2c7aa2a9bc47d292018e4428f4",
+      "71b74514d85c729bea3e22f62a430f38b7ab163163cb1e21aa831cf355564d26",
+      "7c0ac5a02f655d4ad39d5195d3bc33962e73c42fe8c2ead8233dae61e1487977",
+      "b0d17a66a180be9c0431a1b4be7ad484df0c42a50f0c7e059d7544b648055d85",
+      "b8e1ee209feb8bf06d0cbade71cf2153642a8d07043ffcf095e3f99da841660b",
+      "c645f5873c49fe7380c914a3cf355af432d71af0fd303353021a8a2d6b1c3dfc",
+      "d6b07814ec130182806bb5926331f6fc49d86de15fb99484f0baf1d6d5d4a7bf",
+      "d90798581b7537cc810d66ae4b3620195ed270ac0d71dd92d6f0c62d583fb6c4",
+      "fdc338159902b1edf0b01ec34500b185e59192024ad660641d67875198cc23d3"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_implementation_planning",
+    "prompt_hash": "344d75fa3c0564f403852df5659bd6416857738a3de94404149830770788fc89",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "generator",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-assess_implementation_planning-db2943fd921696b7",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "5e692c7a9d21e6c98a93f5e081f42d389fb6f348a43cabe41c08083c5843bf0c",
+  "topic": "korai-szelekcio"
+}

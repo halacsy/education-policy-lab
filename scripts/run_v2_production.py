@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 from pathlib import Path
@@ -22,6 +23,7 @@ from lab import llm  # noqa: E402
 from policy_lab.jsonio import write_json  # noqa: E402
 from policy_lab.dag import HumanGatePending  # noqa: E402
 from policy_lab.live import ArtifactDagRunner  # noqa: E402
+from policy_lab.live.dag_spec import VERSION as DAG_VERSION  # noqa: E402
 
 DEFAULT_TOPICS = ("korai-szelekcio", "rural-school-closures")
 
@@ -37,7 +39,15 @@ def main() -> int:
         raise SystemExit("generator and judge provider families must differ")
 
     run_root = args.output_root / args.run_tag
-    entries = []
+    catalog_path = run_root / "catalog.json"
+    entries_by_topic = {}
+    if catalog_path.exists():
+        existing_catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+        if existing_catalog.get("run_tag") == args.run_tag:
+            entries_by_topic = {
+                entry["topic"]: entry
+                for entry in existing_catalog.get("topics", [])
+            }
     for topic in topics:
         topic_root = run_root / topic
         runner = ArtifactDagRunner(
@@ -78,7 +88,7 @@ def main() -> int:
                 file=sys.stderr,
             )
             return 2
-        entries.append({
+        entries_by_topic[topic] = {
             "topic": topic,
             "output_root": str(topic_root.relative_to(ROOT)),
             "run_id": summary["run_id"],
@@ -87,11 +97,11 @@ def main() -> int:
             "readiness_ref": summary["readiness_ref"],
             "evaluation_total": summary["evaluation"]["total"],
             "readiness_verdict": summary["readiness"]["verdict"],
-        })
-        write_json(run_root / "catalog.json", {
-            "architecture_version": "3.0.0",
+        }
+        write_json(catalog_path, {
+            "architecture_version": DAG_VERSION,
             "run_tag": args.run_tag,
-            "topics": entries,
+            "topics": [entries_by_topic[key] for key in sorted(entries_by_topic)],
         })
     return 0
 

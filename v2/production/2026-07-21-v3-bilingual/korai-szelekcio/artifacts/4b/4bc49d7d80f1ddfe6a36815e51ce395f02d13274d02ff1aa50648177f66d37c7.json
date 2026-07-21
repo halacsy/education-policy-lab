@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Retaining the existing network footprint while re-engineering admissions is, from a network-planning standpoint, the least geographically disruptive of the proposals, since it makes no claim on physical capacity, catchment boundaries, or transport arrangements — it operates entirely within the current spatial distribution (roughly half in small towns, a quarter in provincial cities, over a fifth in Budapest, minimal village presence). This is a genuine strength for feasibility but also a genuine limitation: it does nothing to correct the underlying geographic mismatch between oversubscribed flagship urban schools and under-enrolled county-town programs, since quota and threshold changes affect who gets admitted, not where capacity physically exists.",
+      "hu": "A meglévő hálózati lenyomat megtartása mellett a felvételi rendszer átalakítása hálózattervezési szempontból a legkevésbé földrajzilag zavaró a javaslatok közül, mivel semmilyen igényt nem támaszt a fizikai kapacitással, a beiskolázási körzethatárokkal vagy a közlekedési feltételekkel szemben – teljes mértékben a jelenlegi térbeli eloszláson belül működik (kb. fele kisvárosban, negyede vidéki nagyvárosban, több mint egyötöde Budapesten, minimális falusi jelenlét). Ez valódi erősség a megvalósíthatóság szempontjából, de valódi korlátozás is: semmit nem javít a túljelentkezett fővárosi élintézmények és az alulkihasznált megyeszékhelyi programok közötti alapvető földrajzi eltérésen, mivel a kvóta- és küszöbérték-módosítások azt befolyásolják, ki nyer felvételt, nem azt, hogy hol létezik fizikailag a kapacitás."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-08"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Institutional precedent for guardrail-style administrative rules (guaranteed progression for schools with fewer than eight grades) demonstrates that non-structural, network-compatible interventions have prior operational viability within this system.",
+        "hu": "A garanciajellegű igazgatási szabályok intézményi előzménye (garantált továbbhaladás a nyolcnál kevesebb évfolyamos iskolák esetén) azt mutatja, hogy a nem strukturális, hálózat-kompatibilis beavatkozások korábban is működőképesnek bizonyultak ebben a rendszerben."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Preserves the entire existing physical network (institutions, buildings, staffing) with no reallocation burden, making it the most operationally feasible option purely from a capacity-and-infrastructure standpoint.",
+        "hu": "Megőrzi a teljes meglévő fizikai hálózatot (intézmények, épületek, személyzet) átcsoportosítási teher nélkül, így ez a leginkább operatívan megvalósítható lehetőség tisztán kapacitási és infrastrukturális szempontból."
+      },
+      {
+        "en": "Explicit desegregation obligations placed on the central maintainer address an accountability gap without requiring any change to the geographic distribution of schools.",
+        "hu": "A központi fenntartóra rótt kifejezett deszegregációs kötelezettségek az elszámoltathatósági hiányt kezelik anélkül, hogy szükség lenne az iskolák földrajzi eloszlásának megváltoztatására."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Because the reform leaves the spatial distribution of oversubscription and under-enrollment untouched, political or legal disputes over quota fairness could arise in exactly the same over-demanded urban nodes already identified, without any capacity-side relief valve.",
+        "hu": "Mivel a reform a túljelentkezés és alulkihasználtság térbeli eloszlását változatlanul hagyja, a kvóták igazságosságával kapcsolatos politikai vagy jogi viták pontosan azokban a már azonosított, túlkeresett városi csomópontokban merülhetnek fel, kapacitásoldali szelepmegoldás nélkül."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Does not touch the documented mismatch between 9.7x/9.4x oversubscribed flagship schools and unfilled seats in Debrecen, Miskolc, Encs, and Pécs; admissions re-engineering alone cannot move physical capacity across settlements.",
+        "hu": "Nem érinti a dokumentált eltérést a 9,7-/9,4-szeresen túljelentkezett élintézmények és a Debrecenben, Miskolcon, Encsen és Pécsen betöltetlen helyek között; a felvételi rendszer önmagában történő átalakítása nem képes a fizikai kapacitást településközök között áthelyezni."
+      },
+      {
+        "en": "Choice-based catchment logic (as opposed to district-based enrollment) combined with selective commuting means quotas may be partially circumvented through residential or commuting behavior not addressed by admissions rules alone.",
+        "hu": "A választás-alapú beiskolázási körzeti logika (a körzet-alapú beiskolázással szemben) a szelektív ingázással együtt azt jelenti, hogy a kvóták részben kikerülhetők a lakóhely-választás vagy ingázási magatartás révén, amit a felvételi szabályok önmagukban nem kezelnek."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t4-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-b071742057a48070",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

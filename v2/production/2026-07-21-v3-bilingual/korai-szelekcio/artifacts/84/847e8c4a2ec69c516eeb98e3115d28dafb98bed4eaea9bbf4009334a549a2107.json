@@ -1,0 +1,40 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Quasi-experimental decomposition using administrative micro-data (student-level SES, ethnicity proxies, school assignment) exploiting the 2025 threshold-score change and cross-municipality variation in track availability as instruments; complement with a Gelbach-style decomposition separating gimnázium-selection, free-choice, and residential channels; triangulate with international comparative estimates only as priors, not substitutes.",
+      "hu": "Kvázi-experimentális dekompozíció igazgatási mikroadatok (tanulói szintű SES, etnikai proxyk, iskolai beosztás) felhasználásával, a 2025-ös ponthatár-változást és a tagozatok elérhetőségének településközi eltéréseit instrumentumként kihasználva; Gelbach-típusú dekompozícióval elkülönítve a gimnáziumi szelekció, a szabad választás és a lakóhelyi csatornák hatását; nemzetközi összehasonlító becslések csak előzetes referenciaként, nem helyettesítőként."
+    },
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5"
+    ],
+    "question": {
+      "en": "What is the independent causal effect of the 6/8-year gimnázium track structure itself — net of free school choice, residential segregation, and church-school expansion — on socioeconomic and Roma school segregation in Hungary, and what share of total observed segregation would abolition or delay realistically remove versus merely displace into other sorting channels?",
+      "hu": "Mekkora a 6/8 évfolyamos gimnáziumi szerkezet önálló, ok-okozati hatása a szocioökonómiai és roma iskolai szegregációra Magyarországon — a szabad iskolaválasztástól, a lakóhelyi szegregációtól és az egyházi iskolabővüléstől függetlenítve —, és a szerkezet megszüntetése vagy a szelekció késleltetése a megfigyelt szegregáció mekkora hányadát csökkentené valóban, illetve mekkora hányadát csak áthelyezné más szelekciós csatornákba?"
+    },
+    "uncertainty_refs": [
+      "U-live-international_comparison-01",
+      "U-live-legal_and_governance-01",
+      "U-live-portuguese_reform-02",
+      "U-live-demography-02",
+      "U-live-hungarian_education_system-03"
+    ],
+    "why_it_matters": {
+      "en": "This is the pivotal empirical question underlying all five proposals: if the track structure explains only a small share of segregation, structural reform (t2/t3) would yield disappointing equity returns and non-structural/guardrail approaches (t4/t5) may be comparatively more cost-effective; if it explains a large share, structural abolition becomes far more clearly justified.",
+      "hu": "Ez az öt javaslat mindegyikének alapját képező kulcskérdés: ha a szerkezet a szegregáció csak kis hányadát magyarázza, a strukturális reform (t2/t3) gyenge esélyegyenlőségi hozamot adna, és a nem strukturális/védőháló-alapú megközelítések (t4/t5) relatíve költséghatékonyabbak lehetnek; ha nagy hányadot magyaráz, a strukturális megszüntetés indokoltsága jelentősen erősebb."
+    }
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "RQ-live-production-01",
+  "provenance_ref": "PV-build_research_agenda-2b2b85418ec71a9b",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

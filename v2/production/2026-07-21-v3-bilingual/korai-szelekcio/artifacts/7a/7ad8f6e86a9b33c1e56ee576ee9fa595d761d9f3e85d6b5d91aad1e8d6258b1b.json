@@ -1,0 +1,51 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "760366bc073e94b1bef87f936ab945d574fb8daba0dfe953757c21a0dee98c83",
+        "response_hash": "d8c5ee2a30ff813fa1a9cd4508d4235d639b43c7dd88e936c6bccffeb925b7bf",
+        "stage": "search",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "47230a607d4cfacba5ae16a4a2ae60d220b30819cdc65cd98448382b41b78e5f",
+        "response_hash": "e0c6dc4306a548fd7e6ba6be1652b83b0db08784168f1ad4de8c7398fd32efe3",
+        "stage": "analysis",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "9463732dbde6b6a637933de0db084f7f51476ae6a7549a6f4a1ce346b12bb77c",
+    "generation_parameters": {
+      "analysis_max_tokens": 16000,
+      "search_max_tokens": 10000
+    },
+    "input_artifact_hashes": [
+      "2e5df34d1aa0b66afa83b1bf98634c2cf65b866fa9df90fc360574a04666a895",
+      "82019026a89953532de847713b8d494a3547fcec7b2e545366e2c1a3c010a06b"
+    ],
+    "model": "anthropic-task-ladder",
+    "node_id": "research_legal_and_governance",
+    "prompt_hash": "4a3c2037df3353d1d5e0b5a43f6e06ed0a346b1b45d7c66fc9da6a3765670826",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "research",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/assumption.schema.json": "a2c90cb84524046f123b798eeafcbe30a872987b4f63a19ba25467b0a22fcec2",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/finding.schema.json": "7f08de87a5b809e4ebbdeb42e6c2265b5686984c0b71a01af896fea5cb670729",
+      "schemas/v2/source.schema.json": "0beda71026c753e0dcff6875401aa70ffd52fdbb6e81e9d68d9b1035b9dd085f",
+      "schemas/v2/uncertainty.schema.json": "e1e32dd216fcaa6af59322ed1fb36aed2bee508d91c17d3879d3daec28c9edd4"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-research_legal_and_governance-9463732dbde6b6a6",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "d2732ea9b6d89025737301ab707aeb1e1d017118cd4e507223976d5aa9db1d83",
+  "topic": "korai-szelekcio"
+}

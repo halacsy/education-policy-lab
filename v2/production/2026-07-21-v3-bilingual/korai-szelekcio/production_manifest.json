@@ -1,0 +1,216 @@
+{
+  "architecture_version": "3.1.0",
+  "completed_at": "2026-07-21T22:50:30.684583Z",
+  "root_refs": [
+    "DP-live-production",
+    "EV-live-production",
+    "DR-live-production"
+  ],
+  "run_id": "live-korai-szelekcio-production",
+  "run_plan": {
+    "content_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "path": "runs/live-korai-szelekcio-production/run_plan.json"
+  },
+  "summary": {
+    "arm": "production",
+    "completed_at": "2026-07-21T22:50:30.680274Z",
+    "counts": {
+      "coverage_ledger": 1,
+      "decision_readiness": 1,
+      "dilemma": 6,
+      "finding": 115,
+      "lens_assessment": 60,
+      "lens_definition": 0,
+      "research_question": 10,
+      "transformation_family": 5,
+      "transformation_proposal": 5
+    },
+    "dilemma_refs": [
+      "D-live-production-01",
+      "D-live-production-02",
+      "D-live-production-03",
+      "D-live-production-04",
+      "D-live-production-05",
+      "D-live-production-06"
+    ],
+    "evaluation": {
+      "concerns": [
+        {
+          "en": "Fiscal and resource-cost gap is material and visible: the appendix explicitly flags a missing direct fiscal-cost dataset for per-pupil comparisons and transition costs [F-live-education_finance-09]; without quantified budget and staffing estimates the package leaves a crucial operational risk unpriced for T2/T3/T5 transitions.",
+          "hu": "Anyagi és erőforrás-költség hiánya lényeges és látható: a melléklet nyíltan jelzi, hogy hiányzik a közvetlen költségadatbázis az egy tanulóra jutó összehasonlításhoz és az átállási költségekhez [F-live-education_finance-09]; költség- és személyzeti becslések nélkül a csomag lényegi végrehajtási kockázatot hagy számszerűsítetlenül a T2/T3/T5 átmeneteknél."
+        },
+        {
+          "en": "Insufficient Hungary-specific causal evidence on the gimnázium mechanism: the package repeatedly relies on cross-national and Polish/Finnish analogies but documents the absence of a direct Hungary causal estimate for the 6/8-year gimnázium effect [F-live-equity_and_social_mobility-10], leaving a central mechanism (how much the track itself vs. other channels drives segregation) under-identified.",
+          "hu": "Nem elégséges Magyarország-specifikus kauzális bizonyíték a gimnáziummechanizmusra: a csomag többször fordul nemzetközi és lengyel/finnekori analógiákhoz, miközben jelzi, hogy nincs közvetlen magyar kauzális becslés a 6/8 éves gimnázium hatásáról [F-live-equity_and_social_mobility-10], így egy központi mechanizmus (mennyiben a struktúra önmagában, és mennyiben más csatornák okozzák a szegregációt) azonosítása hiányos."
+        },
+        {
+          "en": "Implementation capacity and coordination risk are acknowledged but under-specified: the package cites central-bureaucracy strain (2013–2016) and maintainer dependence [F-live-implementation_planning-09, F-live-implementation_planning-08], yet lacks concrete mitigation sequencing, KPIs, or pilot/phase-in designs for T5’s complex multi-workstream coordination.",
+          "hu": "A végrehajtási kapacitás- és koordinációs kockázat ismert, de alul van részletezve: a csomag hivatkozik a központosított bürokrácia feszültségére és a fenntartói függésre [F-live-implementation_planning-09, F-live-implementation_planning-08], de nincs benne konkrét kockázatcsökkentő sorrendiség, mérőszámok vagy pilot/fázisos bevezetési terv a T5 több munkacsomagos koordinációjára."
+        },
+        {
+          "en": "Legal/constitutional exposure needs fuller legal mapping: the package flags potential collision with parental-choice protections (Art. XVI / Public Education Act) and Klebelsberg Center accountability gaps [F-live-legal_and_governance-03, F-live-legal_and_governance-09], but does not show formal legal-opinion scenarios or precedents for quotas/desegregation mandates that implementers would need to evaluate litigation risk.",
+          "hu": "Az alkotmányos/jogi expozíció részletesebb jogi feltérképezést igényel: a csomag jelzi a lehetséges ütközést a szülői választás védelmével (XVI. cikk / közoktatási törvény) és a Klebelsberg Központ felelősségvállalási hiányát [F-live-legal_and_governance-03, F-live-legal_and_governance-09], de nem tartalmaz hivatalos jogi értékelési forgatókönyveket vagy precedenseket a kvóták/leszegregációs mandátumok peres kockázatának felméréséhez."
+        },
+        {
+          "en": "Monitoring and success metrics are not operationalized: the package proposes research questions and high-level outcomes (segregation reduction) but omits specific indicators, baseline measures, or timelines that a ministry would need to commission pilots, track interim harms (e.g., admission denial spikes like Poland’s 3,173 case [F-live-education_finance-07]) and judge whether to scale or reverse.",
+          "hu": "A monitorozás és sikermutatók nincsenek operacionalizálva: a csomag kutatási kérdéseket és magas szintű célokat (szegregáció csökkentése) javasol, de hiányoznak a konkrét indikátorok, bázisvonal-mérések és ütemtervek, amelyekre a minisztériumnak szüksége lenne pilottámogatások megrendeléséhez, az átmeneti károk (pl. a lengyel 3 173 fős felvételi elutasítás [F-live-education_finance-07]) nyomon követéséhez és a skálázás/visszavonás eldöntéséhez."
+        }
+      ],
+      "dimensions": {
+        "artifact_integrity": 8,
+        "decision_usefulness": 8,
+        "dilemma_clarity": 9,
+        "evidence_discipline": 8,
+        "lens_traceability": 9,
+        "transformation_specificity": 7
+      },
+      "package_ref": "DP-live-production",
+      "strengths": [
+        {
+          "en": "Clear, auditable evidence trail: the package annotates claims with labeled evidence IDs and URN/URL citations (e.g., demographic trends [F-live-demography-01, F-live-demography-02], urban oversubscription 9.7× example [F-live-school_network_planning-04], and the Poland implementation shock of 3,173 Warsaw students [F-live-education_finance-07]), supporting traceability when assessing assumptions and prior findings.",
+          "hu": "Világos, ellenőrizhető bizonyítéklánc: a csomag címkézett bizonyítékhivatkozásokkal és URN/URL-forrásokkal támasztja alá az állításokat (pl. demográfiai trendek [F-live-demography-01, F-live-demography-02], 9,7×-es városi túljelentkezés példa [F-live-school_network_planning-04], valamint a varsói kapacitási sokk 3 173 diákkal [F-live-education_finance-07]), ami lehetővé teszi az állítások és feltételezések visszakövetését."
+        },
+        {
+          "en": "Disciplined separation of empirical uncertainty and value trade-offs: the package explicitly lists what is empirically contested (transferability of Polish results, guardrail efficacy, cohort/capacity interaction) versus what is a normative choice (acceptable legal risk, parental-choice limits), which helps decision-makers distinguish evidence gaps from political preferences.",
+          "hu": "Fegyelmezett elkülönítése az empirikus bizonytalanságnak és az értékválasztásoknak: a csomag világosan megfogalmazza, mi vitatható empirikusan (a lengyel eredmények átvihetősége, a jogi korlátok hatékonysága, a kohorszok és kapacitás kölcsönhatása) és mi normatív döntés (milyen jogi kockázatot, illetve a szülői választás korlátait fogadjuk el), így a döntéshozók könnyebben szét tudják választani a tudáshiányt és a politikai preferenciákat."
+        },
+        {
+          "en": "Concrete option set with constraints: five distinct T1–T5 packages are defined with targeted mechanisms (abolition/delay/quotas/integrated package), attendant risks (reversal vulnerability, capacity shock, constitutional collision), and institutional actors (Klebelsberg Center, church/foundation maintainers), making trade-offs explicit for implementers.",
+          "hu": "Konkrét opciók és korlátok: öt jól elhatárolt T1–T5 csomag szerepel részletes mechanizmusokkal (megszüntetés/halasztás/kvóták/integrált csomag), kísérő kockázatokkal (visszafordíthatóság, kapacitási sokk, alkotmányos ütközés) és szereplőkkel (Klebelsberg Központ, egyházi/alapítványi fenntartók), így az implementációs kompromisszumok világosan láthatók."
+        },
+        {
+          "en": "Lens-rich and traceable judgments: the package preserves disciplinary lenses (demography, finance, law, implementation, international comparison, political feasibility) and cites relevant appendix items for each judgment, enabling subject-matter experts to follow which evidence supports which claim.",
+          "hu": "Sokszínű, visszakövethető nézőpontok: a csomag megőrzi a diszciplináris nézőpontokat (demográfia, pénzügy, jog, végrehajtás, nemzetközi összehasonlítás, politikai megvalósíthatóság) és minden ítélethez mellékeli a megfelelő kiegészítő hivatkozásokat, így a szakértők nyomon követhetik, mely bizonyíték mely állítást támasztja alá."
+        },
+        {
+          "en": "Actionable research priorities: the package identifies focused, decision-relevant studies likely to change the choice (Hungary-specific causal estimate of gimnázium structure; guardrail-only effect evaluation; capacity/coordination assessment for a multi-workstream T5), which directly informs what evidence to commission next.",
+          "hu": "Végrehajtható kutatási prioritások: a csomag célzott, döntésre releváns kutatásokat javasol, amelyek a választ leginkább megváltoztathatják (Magyarország-specifikus kauzális becslés a gimnázium szerkezetéről; a csak jogi/guardrail beavatkozások hatásvizsgálata; kapacitás/koordináció felmérés a több munkacsomagot tartalmazó T5-höz), ami közvetlenül eligazítja a következő bizonyítékmegrendeléseket."
+        }
+      ],
+      "total": 8.167,
+      "verdict": "accept_with_caveats"
+    },
+    "evaluation_ref": "EV-live-production",
+    "execution": {
+      "cache_hits": 32,
+      "dispositions": {
+        "approve_option_space": "cache_hit",
+        "assemble_decision_package": "cache_hit",
+        "assess_decision_readiness": "cache_hit",
+        "assess_demography": "cache_hit",
+        "assess_education_finance": "cache_hit",
+        "assess_equity_and_social_mobility": "cache_hit",
+        "assess_finnish_reform": "cache_hit",
+        "assess_hungarian_education_system": "cache_hit",
+        "assess_implementation_planning": "cache_hit",
+        "assess_international_comparison": "cache_hit",
+        "assess_legal_and_governance": "cache_hit",
+        "assess_polish_reform": "cache_hit",
+        "assess_political_feasibility": "cache_hit",
+        "assess_portuguese_reform": "cache_hit",
+        "assess_school_network_planning": "cache_hit",
+        "build_research_agenda": "cache_hit",
+        "derive_option_space": "cache_hit",
+        "derive_transformations": "cache_hit",
+        "evaluate_decision_package": "cache_hit",
+        "identify_decision_dilemmas": "cache_hit",
+        "research_demography": "cache_hit",
+        "research_education_finance": "cache_hit",
+        "research_equity_and_social_mobility": "cache_hit",
+        "research_finnish_reform": "cache_hit",
+        "research_hungarian_education_system": "cache_hit",
+        "research_implementation_planning": "cache_hit",
+        "research_international_comparison": "cache_hit",
+        "research_legal_and_governance": "cache_hit",
+        "research_polish_reform": "cache_hit",
+        "research_political_feasibility": "cache_hit",
+        "research_portuguese_reform": "cache_hit",
+        "research_school_network_planning": "cache_hit"
+      },
+      "executed": 0,
+      "failed": 0,
+      "nodes": 32
+    },
+    "package_ref": "DP-live-production",
+    "readiness": {
+      "candidate_first_move_refs": [
+        "TP-live-t1",
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t4",
+        "TP-live-t5"
+      ],
+      "conditions": [
+        {
+          "en": "Fiscal and resource-cost gap is material and visible: the appendix explicitly flags a missing direct fiscal-cost dataset for per-pupil comparisons and transition costs [F-live-education_finance-09]; without quantified budget and staffing estimates the package leaves a crucial operational risk unpriced for T2/T3/T5 transitions.",
+          "hu": "Anyagi és erőforrás-költség hiánya lényeges és látható: a melléklet nyíltan jelzi, hogy hiányzik a közvetlen költségadatbázis az egy tanulóra jutó összehasonlításhoz és az átállási költségekhez [F-live-education_finance-09]; költség- és személyzeti becslések nélkül a csomag lényegi végrehajtási kockázatot hagy számszerűsítetlenül a T2/T3/T5 átmeneteknél."
+        },
+        {
+          "en": "Insufficient Hungary-specific causal evidence on the gimnázium mechanism: the package repeatedly relies on cross-national and Polish/Finnish analogies but documents the absence of a direct Hungary causal estimate for the 6/8-year gimnázium effect [F-live-equity_and_social_mobility-10], leaving a central mechanism (how much the track itself vs. other channels drives segregation) under-identified.",
+          "hu": "Nem elégséges Magyarország-specifikus kauzális bizonyíték a gimnáziummechanizmusra: a csomag többször fordul nemzetközi és lengyel/finnekori analógiákhoz, miközben jelzi, hogy nincs közvetlen magyar kauzális becslés a 6/8 éves gimnázium hatásáról [F-live-equity_and_social_mobility-10], így egy központi mechanizmus (mennyiben a struktúra önmagában, és mennyiben más csatornák okozzák a szegregációt) azonosítása hiányos."
+        },
+        {
+          "en": "Implementation capacity and coordination risk are acknowledged but under-specified: the package cites central-bureaucracy strain (2013–2016) and maintainer dependence [F-live-implementation_planning-09, F-live-implementation_planning-08], yet lacks concrete mitigation sequencing, KPIs, or pilot/phase-in designs for T5’s complex multi-workstream coordination.",
+          "hu": "A végrehajtási kapacitás- és koordinációs kockázat ismert, de alul van részletezve: a csomag hivatkozik a központosított bürokrácia feszültségére és a fenntartói függésre [F-live-implementation_planning-09, F-live-implementation_planning-08], de nincs benne konkrét kockázatcsökkentő sorrendiség, mérőszámok vagy pilot/fázisos bevezetési terv a T5 több munkacsomagos koordinációjára."
+        },
+        {
+          "en": "Legal/constitutional exposure needs fuller legal mapping: the package flags potential collision with parental-choice protections (Art. XVI / Public Education Act) and Klebelsberg Center accountability gaps [F-live-legal_and_governance-03, F-live-legal_and_governance-09], but does not show formal legal-opinion scenarios or precedents for quotas/desegregation mandates that implementers would need to evaluate litigation risk.",
+          "hu": "Az alkotmányos/jogi expozíció részletesebb jogi feltérképezést igényel: a csomag jelzi a lehetséges ütközést a szülői választás védelmével (XVI. cikk / közoktatási törvény) és a Klebelsberg Központ felelősségvállalási hiányát [F-live-legal_and_governance-03, F-live-legal_and_governance-09], de nem tartalmaz hivatalos jogi értékelési forgatókönyveket vagy precedenseket a kvóták/leszegregációs mandátumok peres kockázatának felméréséhez."
+        },
+        {
+          "en": "Monitoring and success metrics are not operationalized: the package proposes research questions and high-level outcomes (segregation reduction) but omits specific indicators, baseline measures, or timelines that a ministry would need to commission pilots, track interim harms (e.g., admission denial spikes like Poland’s 3,173 case [F-live-education_finance-07]) and judge whether to scale or reverse.",
+          "hu": "A monitorozás és sikermutatók nincsenek operacionalizálva: a csomag kutatási kérdéseket és magas szintű célokat (szegregáció csökkentése) javasol, de hiányoznak a konkrét indikátorok, bázisvonal-mérések és ütemtervek, amelyekre a minisztériumnak szüksége lenne pilottámogatások megrendeléséhez, az átmeneti károk (pl. a lengyel 3 173 fős felvételi elutasítás [F-live-education_finance-07]) nyomon követéséhez és a skálázás/visszavonás eldöntéséhez."
+        }
+      ],
+      "evaluation_ref": "EV-live-production",
+      "human_external_use_gate": "pending",
+      "package_ref": "DP-live-production",
+      "priority_research_question_refs": [
+        "RQ-live-production-01",
+        "RQ-live-production-02",
+        "RQ-live-production-03",
+        "RQ-live-production-04",
+        "RQ-live-production-05",
+        "RQ-live-production-06",
+        "RQ-live-production-09",
+        "RQ-live-production-10"
+      ],
+      "rationale": {
+        "en": "The cross-family evaluation accepted the package for human review; the external-use gate remains a human decision.",
+        "hu": "Az eltérő modellcsalád értékelése emberi felülvizsgálatra elfogadta a csomagot; a külső felhasználás kapuja továbbra is emberi döntés."
+      },
+      "unresolved_dilemma_refs": [
+        "D-live-production-01",
+        "D-live-production-02",
+        "D-live-production-03",
+        "D-live-production-04",
+        "D-live-production-05",
+        "D-live-production-06"
+      ],
+      "verdict": "ready_with_conditions"
+    },
+    "readiness_ref": "DR-live-production",
+    "research_question_refs": [
+      "RQ-live-production-01",
+      "RQ-live-production-02",
+      "RQ-live-production-03",
+      "RQ-live-production-04",
+      "RQ-live-production-05",
+      "RQ-live-production-06",
+      "RQ-live-production-07",
+      "RQ-live-production-08",
+      "RQ-live-production-09",
+      "RQ-live-production-10"
+    ],
+    "run_id": "live-korai-szelekcio-production",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "transformation_hashes": [
+      "0e5a86caab6b40aa3ee35d57728b04f612581782dcb89334f4d3b8b920281bda",
+      "3bfb212928e69a092d89f4e1e4fb11b085c0acdcb45d922ba5771072134fb00f",
+      "5f51e5d00ca29f2d0244ebaf9ed51e5ddde546f0fddab63b8047e88866e00904",
+      "b0d17a66a180be9c0431a1b4be7ad484df0c42a50f0c7e059d7544b648055d85",
+      "c645f5873c49fe7380c914a3cf355af432d71af0fd303353021a8a2d6b1c3dfc"
+    ]
+  },
+  "topic": "korai-szelekcio"
+}

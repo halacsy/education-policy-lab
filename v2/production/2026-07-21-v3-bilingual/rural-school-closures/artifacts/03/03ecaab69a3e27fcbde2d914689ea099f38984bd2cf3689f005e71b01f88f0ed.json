@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "As a no-new-policy counterfactual, this proposal accurately describes current delivery capacity: decision authority is already centralized in the tankerület structure, and no early-warning or feedback mechanism exists to convert demographic decline into proactive planning. From an implementation-planning lens, its main function is diagnostic rather than corrective: it documents that the status quo lacks sequencing, pilotability, and failure containment, and will continue producing reactive, case-by-case closures absent any structural change.",
+      "hu": "Mint szakpolitikai változás nélküli kontrafaktuális eset, a javaslat pontosan leírja a jelenlegi végrehajtási kapacitást: a döntési jogkör már most is a tankerületi struktúrában centralizált, és nincs olyan korai előrejelző vagy visszacsatolási mechanizmus, amely a demográfiai csökkenést proaktív tervezéssé alakítaná. A megvalósítás-tervezési szemléletből nézve a fő funkciója diagnosztikus, nem korrekciós: dokumentálja, hogy a status quo nélkülözi a szekvenálást, a pilot-lehetőséget és a hibakorlátozást, és továbbra is reaktív, eseti bezárásokat fog eredményezni bármilyen strukturális változás nélkül."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-implementation_planning-01",
+      "F-live-implementation_planning-10"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "The diagnostic review referenced in the proposal could itself be repurposed as the seed of an early-warning mechanism if institutionalized rather than left as a one-off exercise.",
+        "hu": "A javaslatban hivatkozott diagnosztikai felülvizsgálat maga is egy korai előrejelző mechanizmus csírájává válhatna, ha intézményesítenék, nem pedig egyszeri gyakorlatként hagynák."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Provides a transparent, evidence-grounded baseline (institutional thinning rate, kindergarten gaps) against which the delivery feasibility of other proposals can be benchmarked.",
+        "hu": "Átlátható, bizonyítékokon alapuló kiindulási alapot ad (intézményritkulási ütem, óvodai hiányok), amelyhez a többi javaslat megvalósíthatósága mérhető."
+      },
+      {
+        "en": "Requires no new actor capacity or coordination mechanism, so there is no implementation gap between design and current administrative reality.",
+        "hu": "Nem igényel új szereplői kapacitást vagy koordinációs mechanizmust, így nincs megvalósítási szakadék a tervezés és a jelenlegi igazgatási valóság között."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued split governance between municipalities (buildings) and the central Klebelsberg Center (staffing) weakens any actor's unilateral capacity to act even reactively, compounding delivery fragility already visible in ad hoc cases like Garab.",
+        "hu": "A települési önkormányzatok (épületek) és a központi Klebelsberg Központ (személyzet) közötti megosztott irányítás folytatódása gyengíti bármely szereplő egyoldalú cselekvési képességét még reaktív módon is, fokozva a már most is megfigyelhető megvalósítási törékenységet olyan eseti esetekben, mint Garab."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Confirms the absence of a systematic early-warning mechanism linking demographic microdata to network planning at district level, meaning closures will remain reactive rather than sequenced.",
+        "hu": "Megerősíti, hogy nincs olyan szisztematikus korai előrejelző mechanizmus, amely a demográfiai mikroadatokat kerületi szintű hálózattervezéshez kapcsolná, így a bezárások reaktívak maradnak a szekvenált tervezés helyett."
+      },
+      {
+        "en": "Lacks any monitoring or adaptation loop connecting the 2026 diagnostic review to actionable, integrated policy change, risking uncoordinated drift.",
+        "hu": "Nincs olyan monitoring vagy alkalmazkodási hurok, amely a 2026-os diagnosztikai felülvizsgálatot cselekvőképes, integrált szakpolitikai változáshoz kapcsolná, ami koordinálatlan elsodródás kockázatával jár."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-e1a507cf1927a894",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

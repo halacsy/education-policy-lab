@@ -1,0 +1,48 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Through the Polish reform lens, the baseline proposal is a decision not to reform structure at all, which is itself informative: Poland's experience shows that structural delay of tracking (1999) produced measurable system-wide gains and reduced between-school variance (F-live-polish_reform-07), while reversal (2016-17) occurred despite this evidence, not because of new contrary evidence (F-live-polish_reform-08). The baseline proposal forgoes any structural mechanism analogous to Poland's delay, so it cannot be expected to replicate Poland's measured gains; nor does it carry Poland's reversal risk since nothing is being changed. The lens mainly illuminates what is being left on the table: an available structural mechanism (delaying selection) with credible average and equity benefits elsewhere is not activated here.",
+      "hu": "A lengyel reform nézőpontjából az alapforgatókönyv valójában a strukturális reform elmaradásáról szóló döntés, ami önmagában is informatív: a lengyel tapasztalat szerint a szelekció késleltetése (1999) mérhető, rendszerszintű javulást és az iskolák közötti varianciacsökkenést hozott (F-live-polish_reform-07), míg a visszafordítás (2016-17) nem új, ellentétes bizonyítékok miatt történt, hanem ezek ellenére (F-live-polish_reform-08). Az alapforgatókönyv nem alkalmaz semmilyen, a lengyel késleltetéshez hasonló strukturális mechanizmust, így nem várható tőle a lengyel mérhető javulások megismétlése; viszont a lengyel visszafordítási kockázatot sem viseli, mivel semmi nem változik. A nézőpont főként azt világítja meg, hogy egy elérhető strukturális eszköz (a szelekció késleltetése), amely máshol hihető átlagos és esélyegyenlőségi előnyökkel járt, itt nincs aktiválva."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-polish_reform-07",
+      "F-live-polish_reform-08"
+    ],
+    "lens_ref": "L-live-polish_reform",
+    "opportunities": [
+      {
+        "en": "Serves as an explicit counterfactual baseline against which the measured Polish-style gains from delay could be benchmarked if pursued later.",
+        "hu": "Explicit kontrafaktuális alapként szolgálhat, amelyhez a lengyel típusú késleltetés esetleges későbbi, mérhető javulásait viszonyítani lehetne."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Avoids any reversal risk by definition, since no structural change is enacted that could later be undone (F-live-polish_reform-08).",
+        "hu": "Definíció szerint elkerüli a visszafordítás kockázatát, mivel nem lép életbe olyan strukturális változás, amelyet később vissza lehetne fordítani (F-live-polish_reform-08)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Absence of structural mechanism analogous to Poland's reform means the system-wide equity and mean-gain evidence from Poland cannot be invoked to justify or predict improvement under this proposal.",
+        "hu": "A lengyel reformhoz hasonló strukturális mechanizmus hiánya miatt a lengyel rendszerszintű esélyegyenlőségi és átlagteljesítmény-javulási bizonyítékok nem hívhatók fel e javaslat javulásának indoklására vagy előrejelzésére."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Forgoes the documented mechanism (delayed selection) that in Poland produced mean achievement gains and reduced between-school variance, concentrated among vocationally-bound students (F-live-polish_reform-07).",
+        "hu": "Lemond a dokumentált mechanizmusról (a szelekció késleltetése), amely Lengyelországban átlagos teljesítménynövekedést és az iskolák közötti varianciacsökkenést eredményezett, elsősorban a szakképzésre irányuló tanulók körében (F-live-polish_reform-07)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t1-polish_reform",
+  "provenance_ref": "PV-assess_polish_reform-f048a88cd80337a8",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

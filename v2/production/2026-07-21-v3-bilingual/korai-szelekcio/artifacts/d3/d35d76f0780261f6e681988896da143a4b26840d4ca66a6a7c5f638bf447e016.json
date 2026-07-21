@@ -1,0 +1,57 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "e39ff39d43486c17937ddf5c605a076634a18b4531f471d64f6740cfd3849020",
+        "response_hash": "09bac248295b9a7600102edee0a230a7711669f385c17d5addd35ec2d7cac294",
+        "stage": "search",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "3bcc29bcbf4dd59d822faf159de76cb8f03790566dbea3ede9aaead09403a050",
+        "response_hash": "236b6132e0b09f6b8629a550874c74c98eb2be5bedb6d4ba5e831f4cb95bccad",
+        "stage": "analysis",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "0078ea6de60695c79c79c05eb8c393910ba70b77e7818c40a87e5ecc29de6b9e",
+        "response_hash": "2ef1c8bb66164fc3c54461fb3d8f1ddddeb416f48aa94bf1a5e9246c8fa96b26",
+        "stage": "analysis-fill-uncertainties-1",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "c94d94e3cd29e8b3e973edb22a990942b59426e2cab8c815cee4635824a4bb86",
+    "generation_parameters": {
+      "analysis_max_tokens": 16000,
+      "search_max_tokens": 10000
+    },
+    "input_artifact_hashes": [
+      "82019026a89953532de847713b8d494a3547fcec7b2e545366e2c1a3c010a06b",
+      "b507716bd5a32c11ae54cde6aa180b4d07c9ff868e4151e047b406cd5c11661c"
+    ],
+    "model": "anthropic-task-ladder",
+    "node_id": "research_education_finance",
+    "prompt_hash": "4a3c2037df3353d1d5e0b5a43f6e06ed0a346b1b45d7c66fc9da6a3765670826",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "research",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/assumption.schema.json": "a2c90cb84524046f123b798eeafcbe30a872987b4f63a19ba25467b0a22fcec2",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/finding.schema.json": "7f08de87a5b809e4ebbdeb42e6c2265b5686984c0b71a01af896fea5cb670729",
+      "schemas/v2/source.schema.json": "0beda71026c753e0dcff6875401aa70ffd52fdbb6e81e9d68d9b1035b9dd085f",
+      "schemas/v2/uncertainty.schema.json": "e1e32dd216fcaa6af59322ed1fb36aed2bee508d91c17d3879d3daec28c9edd4"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-research_education_finance-c94d94e3cd29e8b3",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "db32ab43bc6bd31fff99ce35d7dd3a4193ed2b3ef4479c7262a2ac18bbc4e7c8",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,94 @@
+TASK: expert_analysis
+AGENT: political_feasibility
+LANG: en+hu
+
+Every semantic prose field must be authored natively in both languages as one exact {en, hu} object. The two texts must carry the same claim, scope, numbers, uncertainty, and references. Do not write Hungarian as a later translation step.
+
+
+Convert the live research notes below into a bilingual evidence artifact set for this policy problem.
+
+DISCIPLINE: political economy of reform
+PUBLIC QUESTION: Should Hungary keep its 6- and 8-year gimnázium tracks?
+CRITERIA: coalition support, opposition intensity, reversal risk, public legitimacy
+KNOWN LENS LIMITS: Political forecasts are time-sensitive and intrinsically uncertain.
+
+RESEARCH NOTES:
+# Research Notes: Political Economy of Hungary's 6-/8-Year Gimnázium Tracks
+
+**Scope note:** This is a live, actively contested policy question as of June 2026, following the April 2026 change of government (Tisza Párt/Péter Magyar replacing 16 years of Fidesz rule). This gives unusually current political-economy data.
+
+---
+
+## 1. Current political flashpoint (June 2026): a real-time test case of reversal dynamics
+
+Education Minister Judit Lannert denied proposing the unilateral abolition of 6- and 8-year gimnáziums, after giving an interview to a student newspaper discussing the problem these tracks pose in the domestic education system, stating there is no evidence children develop better in these schools than in traditional primary schools.
+ 
+Fidesz faction leader Gulyás Gergely countered that Lannert had discussed abolishing the tracks among other changes, throwing tens of thousands of students and families into uncertainty, and claimed there had been no precedent since communism for imposing a unified four-year secondary model on Hungarian society.
+ This shows the tracks are already a live wedge issue between the new governing coalition and the Fidesz opposition — inference: any reform will be framed by opponents as ideologically totalizing ("communist," "social re-engineering") rather than technical.
+
+## 2. The minister's own framing centers elite self-segregation, not pedagogy
+
+Lannert argued that in their current form these tracks mainly serve to let the elite separate itself more, and that there aren't large numbers of children needing to be sorted—so the entrance exam mainly serves to help roughly 15 gimnáziums maintain an elite position.
+ This is a minister-source claim, not independently verified data — flagged as **contested/interested-party framing**.
+
+## 3. Empirical evidence: tracks correlate with achievement gaps but the causal value-added is disputed
+
+Academic research finds these tracks have higher value-added in reading/math literacy and continuation to tertiary education, with a student composition of higher-status and higher-skilled students, thus increasing inequality of opportunity; weaker tests show early-track students gain while general-track students lose.
+ Separately, the minister's competency-test-based claim: 
+"In competency assessments we don't see these children developing faster... In six-to-eight-grade gimnáziums they start from a higher level, but then progress at the same pace."
+ These two evidentiary claims (academic literature vs. ministerial competency-test citation) point in a similar direction (selection effect > treatment effect) but derive from different, non-identical evidentiary bases — mark as **corroborating but not identical evidence**.
+
+## 4. Historical path-dependency explains why the tracks are hard to dislodge
+
+Analysis of the system's evolution argues three factors were important: historical conditions, decentralization, and democracy — specifically the memory of the elite 8-year-long academic gimnáziums and the decentralized administrative structure inherited from the Austro-Hungarian monarchy.
+ 
+Democratization and decentralization after the post-communist transition allowed higher-status people to shape local policies more easily
+ — inference: the tracks are embedded in multi-generational elite/middle-class reproduction strategies going back over a century, not merely a post-1990 policy artifact, raising the political cost of abolition.
+
+## 5. Teacher unions are internally split — no unified anti-selection coalition exists
+
+The future of the 6- and 8-grade gimnáziums divides the teaching profession: Tamás Totyik, president of the Teachers' Union (PSZ), would support even phasing out the system, while Erzsébet Nagy, PDSZ's spokesperson, is more focused on segregation concerns.
+ This fragmentation is decision-relevant: unions cannot be treated as a monolithic veto or support bloc.
+
+## 6. Legal/international pressure creates an external reform driver but has not forced structural change on tracking itself
+
+Due to residential segregation, free school choice at the primary level, and the highly stratified tracked system at the secondary level, school segregation by social status is among the highest in Hungary compared with other European countries.
+ The ECtHR's 2023 *Szolcsán v. Hungary* ruling 
+held that Hungary must develop a policy "against segregation in education and take steps to eliminate it..."
+ — but this case concerned Roma residential/catchment segregation in primary schools, not the gimnázium selection tracks specifically. Inference: legal pressure exists on segregation broadly, providing rhetorical ammunition for reformers, but no binding ruling directly mandates ending 6-/8-year tracks — a distinction reform advocates may blur and opponents may exploit as legally overreaching.
+
+## 7. Centralization under Fidesz (2010–2025) removed intermediary institutions that could broker gradual reform, raising reversal risk for any change now
+
+Under 15 years of Fidesz governance, local decision-making was replaced by centralized control, and uniformity replaced diversity; the very stakeholders in education — students, teachers, parents, professional organizations — were excluded from decisions.
+ 
+In a country where civil society is healthy, intermediary institutions such as teachers' unions, parents' associations, and local governments can bring pressure to bear on the state; but in Orbán's highly centralized system, evidence of looming crisis could be ignored until the "serfs suddenly took up arms."
+ Inference: the current Tisza government inherits a hollowed-out consultation infrastructure, meaning any reform of the gimnázium tracks lacks established negotiating channels and is more likely to be litigated via social media/press conflict (as seen in point 1) than institutional bargaining.
+
+## 8. Middle-class/parental demand for early selection is a durable demand-side constituency, including across ethnic-anxiety dynamics
+Ethnographic research on school choice found 
+Roma parents worried about the discouraging effect of having Roma peers, with one mother wanting her son to attend the state-run "elite" school instead of the "Gypsy school," reflecting fear that being surrounded by the "wrong group" would shape her child.
+ This indicates that demand for selective/segregated schooling options is not confined to the traditional "urban elite" but also motivates working-class and Roma parents seeking to opt children out of stigmatized peer groups — broadening the base of stakeholders with an interest in preserving selective exit options, even if the specific 6-/8-year gimnázium format is not their target.
+
+## 9. The reform's proponent coalition is currently a governing party with a supermajority mandate, but reform intent is ambiguous/contested even among reformers
+
+The Tisza Party, having won a two-thirds majority in the election, is expected to have around 16 ministers in its government.
+ Despite this strong mandate, the minister has publicly walked back the specific claim of abolition and instead reframed the issue as review of the *admissions system*, not the track structure itself: 
+Lannert said in the interview she spoke about the value of examining the secondary-school admissions system tied to 6- and 8-grade gimnáziums, which she said imposes a serious burden on many children and parents.
+ Inference: even a government with a strong majority is choosing incremental framing (admissions procedure reform) rather than structural abolition — suggesting anticipated political cost of full abolition exceeds perceived benefit, at least in initial positioning.
+
+## 10. Prior (2010s) education protest cycles show mobilization capacity exists but has been geographically/socially narrow and has not previously targeted track structure
+
+Resistance to Fidesz education policy has mainly been limited to urban high schools and the ever-shrinking urban middle class sympathetic to teachers' and students' struggles.
+ Protests in 2022-23 
+saw nearly 40,000 people demonstrate after teachers were fired for civil disobedience, the largest oppositional demonstration in a long time
+, but these mobilizations centered on teacher pay and autonomy, not on the selective-track structure. Inference: an organized mass constituency for or against the gimnázium tracks specifically has not yet been tested; existing protest infrastructure (student/teacher networks) could plausibly be redirected toward this fight given precedent, but this is inference, not observed fact.
+
+---
+
+## Summary of decision-relevant political-economy dynamics (inference layer, clearly separated from facts above)
+
+- **Coalitions likely to enact/sustain reform:** A Tisza-led government with parliamentary supermajority, some segments of teacher unions (PSZ leadership), and researchers/ministry technocrats citing equity data.
+- **Coalitions likely to resist:** Fidesz opposition (framing as radical/"communist" social engineering), the ~15 elite gimnáziums and their alumni/parent networks, PDSZ (segregation-focused wing skeptical of blanket abolition), and diffuse middle-class parents (including non-ethnic-majority parents) who use these tracks as an exit option from lower-quality or stigmatized general schools.
+- **Exposure to reversal/strategic resistance:** High. The minister's own retreat from "abolition" language within days of the interview, the absence of functioning corporatist consultation channels (destroyed by prior centralization), and the ambiguity between "reforming admissions" vs. "eliminating tracks" all suggest the policy is currently more a rhetorical battleground than a committed reform trajectory, making it vulnerable to being framed away, watered down to procedural tweaks, or reversed by a future Fidesz return to power given the party's stated opposition.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

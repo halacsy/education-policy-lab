@@ -1,0 +1,51 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a fiscal standpoint, this proposal is notable for what it does not require: it enables continued local educational use of a building without state-funded structural reform, effectively shifting the resourcing burden from the state to church/NGO maintainers. This makes it a low direct-cost pathway from the state budget's perspective, but the supplied evidence does not quantify what the transferred maintainer's cost structure looks like, whether it is cheaper, comparable, or more expensive per pupil than state operation, nor whether church/NGO maintainers receive their own per-pupil state subsidy formula that could produce a different, but not necessarily smaller, fiscal footprint. The documented 2026 Kolping case shows the maintainer explicitly limiting scope to school administration, suggesting the cost incidence of this pathway is narrower than a full community-hub model and may not internalize wider social-service costs sometimes bundled into 'keeping a school open' arguments. The lack of complete proposal-level cost estimates in the corpus is a material limitation for this lens specifically, since the whole appeal of the mechanism rests on an unstated assumption of fiscal neutrality or savings for the state that is not evidenced here.",
+      "hu": "Fiskális szempontból ez a javaslat abban különleges, amit nem igényel: lehetővé teszi az épület folyamatos oktatási használatát állami finanszírozású strukturális reform nélkül, hatékonyan áthelyezve a forrásbiztosítási terhet az államtól az egyházi/NGO fenntartókra. Ez az állami költségvetés szempontjából alacsony közvetlen költségű útvonallá teszi, de a rendelkezésre álló bizonyítékok nem számszerűsítik, milyen az átvevő fenntartó költségstruktúrája – olcsóbb, összehasonlítható vagy drágább tanulónként az állami működtetéshez képest –, sem azt, hogy az egyházi/NGO fenntartók saját tanulónkénti állami támogatási formulát kapnak-e, amely eltérő, de nem feltétlenül kisebb fiskális lábnyomot eredményezhet. A dokumentált 2026-os Kolping-eset azt mutatja, hogy a fenntartó explicit módon az iskolai igazgatásra korlátozta a hatókört, jelezve, hogy ennek az útvonalnak a költségviselése szűkebb, mint egy teljes közösségi-központ modellé, és lehet, hogy nem internalizálja azokat a szélesebb szociális szolgáltatási költségeket, amelyeket néhány 'tartsuk nyitva az iskolát' érv magába foglal. A korpuszban hiányzó teljes körű javaslatszintű költségbecslés e lencse szempontjából különösen releváns korlátozás, mivel a mechanizmus egész vonzereje egy kimondatlan feltevésen alapul az állam számára fiskálisan neutrális vagy megtakarítást jelentő hatásról, amelyet itt nem támaszt alá bizonyíték."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-education_finance-03"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "If church/NGO per-pupil subsidy rates are lower than state per-pupil costs, this pathway could represent genuine fiscal savings for the state; this remains untested in the supplied evidence.",
+        "hu": "Ha az egyházi/NGO tanulónkénti támogatási ráták alacsonyabbak az állami tanulónkénti költségeknél, ez az útvonal valódi fiskális megtakarítást jelenthetne az állam számára; ez a rendelkezésre álló bizonyítékokkal nincs tesztelve."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Requires no new state structural-reform expenditure, making it fiscally low-cost from the central budget's perspective as a bare mechanism.",
+        "hu": "Nem igényel új állami strukturális reformra irányuló kiadást, ezáltal önmagában, mint puszta mechanizmus, fiskálisan alacsony költségű a központi költségvetés szempontjából."
+      },
+      {
+        "en": "Parental veto establishes a genuine consent constraint, reducing the risk of unilateral cost-shifting onto communities without buy-in.",
+        "hu": "A szülői vétó valódi beleegyezési korlátot állít fel, csökkentve annak kockázatát, hogy a költségeket egyoldalúan, a közösség beleegyezése nélkül helyezzék át rá."
+      }
+    ],
+    "threats": [
+      {
+        "en": "In single-school villages, this pathway does not add fiscal capacity or reduce systemic cost pressure; it merely reallocates which institution bears operating costs, while documented enrollment shifts (60% rise 2001-2011, 47% rise 2011-2014 in church schools) suggest the choice architecture may narrow over time regardless of the funding source.",
+        "hu": "Egyetlen iskolával rendelkező falvakban ez az útvonal nem növeli a fiskális kapacitást és nem csökkenti a szisztémás költségnyomást; csupán átcsoportosítja, mely intézmény viseli a működési költségeket, míg a dokumentált beiratkozási elmozdulások (60%-os növekedés 2001-2011, 47%-os 2011-2014 az egyházi iskolákban) arra utalnak, hogy a választási architektúra a finanszírozási forrástól függetlenül szűkülhet idővel."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "No evidence on the comparative per-pupil cost structure of church/NGO maintainers versus state operation, making value-for-money assessment impossible with the supplied corpus.",
+        "hu": "Nincs bizonyíték az egyházi/NGO fenntartók és az állami működtetés összehasonlító tanulónkénti költségstruktúrájáról, ami lehetetlenné teszi a megtérülés értékelését a rendelkezésre álló korpusszal."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t5-education_finance",
+  "provenance_ref": "PV-assess_education_finance-293471d7f6ea96e4",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

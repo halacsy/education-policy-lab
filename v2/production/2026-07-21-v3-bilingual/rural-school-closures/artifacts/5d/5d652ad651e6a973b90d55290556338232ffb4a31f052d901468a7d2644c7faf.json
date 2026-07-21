@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a school-network-planning lens, this baseline documents an already-observed geographic feasibility failure rather than a functioning steady state: over 1,200 of 3,155 Hungarian settlements already lack any public education institution, and the network continues thinning (3,609 to 3,521 primary institutions, 2021-2024) without any early-warning mechanism linking demographic microdata to proactive planning at the 198-tankerület governance level established in 2013. Continuing this centralized, reactive model means access, capacity, and resilience outcomes remain a byproduct of case-by-case administrative decisions rather than planned network design.",
+      "hu": "Az iskolaháló-tervezési szemlélet szerint ez az alapforgatókönyv már megfigyelt földrajzi elérhetőségi kudarcot dokumentál, nem pedig működő egyensúlyi állapotot: Magyarország 3155 településéből több mint 1200-ban már nincs semmilyen köznevelési intézmény, és a hálózat tovább szűkül (3609-ről 3521 alapfokú intézményre 2021 és 2024 között), miközben nincs olyan korai-jelző mechanizmus, amely a demográfiai mikroadatokat összekapcsolná a 2013-ban létrehozott, 198 tankerületből álló irányítási szint proaktív tervezésével. E centralizált, reaktív modell fenntartása azt jelenti, hogy az elérhetőség, a kapacitás és a rezilienciakimenet továbbra is eseti igazgatási döntések mellékhatása marad, nem pedig tervezett hálózatfejlesztés eredménye."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-02"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "The 2026 diagnostic review, even absent structural change, could be redirected toward building the missing demographic early-warning function within existing tankerület authority.",
+        "hu": "A 2026-os diagnosztikai felülvizsgálat, még strukturális változás hiányában is, átirányítható a hiányzó demográfiai korai-jelző funkció kiépítésére a meglévő tankerületi hatáskörön belül."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Serves its stated methodological purpose as an explicit counterfactual, making the costs of inaction transparent and measurable against documented thinning trends.",
+        "hu": "Betölti kimondott módszertani célját, mint explicit kontrafaktuális forgatókönyv, átláthatóvá és mérhetővé téve a tétlenség költségeit a dokumentált hálózati szűkülési trendekhez viszonyítva."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Uncoordinated policy drift is likely if diagnostic findings are not integrated with any active planning direction, perpetuating the observed pace of institutional thinning indefinitely.",
+        "hu": "Összehangolatlan szakpolitikai sodródás valószínű, ha a diagnosztikai megállapításokat nem integrálják semmilyen aktív tervezési irányba, ami a megfigyelt intézményi szűkülési ütemet a belátható jövőben is fenntartja."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No systematic mechanism connects demographic microdata to proactive tankerület-level planning, so closures remain reactive (Garab-type) rather than anticipatory, a documented structural gap rather than a hypothetical risk.",
+        "hu": "Nincs szisztematikus mechanizmus, amely a demográfiai mikroadatokat összekapcsolná a tankerületi szintű proaktív tervezéssel, így a bezárások reaktívak (Garab-típusúak) maradnak, nem pedig előrelátóak; ez dokumentált strukturális hiányosság, nem hipotetikus kockázat."
+      },
+      {
+        "en": "Absence of local veto (except the narrow church-transfer case) removes a resilience feedback loop that could otherwise flag capacity or access problems before closure becomes unavoidable.",
+        "hu": "A helyi vétójog hiánya (az egyházi átadás szűk esetét kivéve) megszünteti azt a reziliencia-visszacsatolási hurkot, amely egyébként jelezhetné a kapacitási vagy elérhetőségi problémákat még a bezárás elkerülhetetlenné válása előtt."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-0ae4d558b4639ee0",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

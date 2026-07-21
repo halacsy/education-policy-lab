@@ -1,0 +1,49 @@
+{
+  "content": {
+    "assessment": {
+      "en": "As a counterfactual, this baseline is analytically valuable but demographically passive: it neither anticipates cohort trajectory nor responds to the sharply bifurcated spatial distribution of aging already documented across Hungarian settlements. Given TFR decline to 1.38 (2024, projected 1.31 in 2025) and shrinking child cohorts in already-thin rural areas, absence of any early-warning link between demographic microdata and network planning means closures will continue arriving reactively, after viability has already collapsed rather than being planned around a foreseeable trajectory.",
+      "hu": "Kontrafaktuálisként ez a viszonyítási alap analitikailag hasznos, de demográfiai szempontból passzív: nem veszi figyelembe a korcsoportok pályáját, és nem reagál a magyarországi településeken már dokumentált, erősen kettéosztott elöregedési térbeli eloszlásra. Mivel a TFR 1,38-ra csökkent (2024, 2025-re 1,31-re prognosztizált) és a gyermekkohorszok az amúgy is elszórt vidéki területeken zsugorodnak, a demográfiai mikroadatok és a hálózattervezés közötti korai előrejelző kapcsolat hiánya azt jelenti, hogy az iskolabezárások továbbra is reaktívan, a fenntarthatóság összeomlása után, nem pedig egy előre látható trajektória mentén tervezetten fognak érkezni."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "The 2026 diagnostic review referenced could, if integrated with demographic microdata, convert this passive baseline into an early-warning system without requiring new legal authority.",
+        "hu": "A hivatkozott 2026-os diagnosztikai felülvizsgálat, ha összekapcsolják a demográfiai mikroadatokkal, ezt a passzív alapmodellt új jogi felhatalmazás nélkül korai előrejelző rendszerré alakíthatná."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Provides a transparent, unmodified baseline against which demographic effects of alternative proposals can be measured.",
+        "hu": "Átlátható, módosítás nélküli viszonyítási alapot biztosít, amelyhez az alternatív javaslatok demográfiai hatásai mérhetők."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued ad hoc closures under demographic contraction risk repeating disruptive, non-anticipated events (Garab-type) as the under-18 share continues shrinking (18% to 16%, 2010-2020) and concentrates in already-declining villages.",
+        "hu": "A demográfiai zsugorodás melletti folytatódó eseti bezárások kockázata, hogy megismétlődnek a zavaró, előre nem látott események (Garab-típusú esetek), mivel a 18 év alattiak aránya továbbra is csökken (18%-ról 16%-ra, 2010-2020) és az amúgy is fogyó falvakban koncentrálódik."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No mechanism links declining and geographically bifurcated cohort data to proactive planning, leaving closure timing disconnected from the demonstrated aging trajectory in specific counties.",
+        "hu": "Nincs olyan mechanizmus, amely összekapcsolná a csökkenő és térben kettéosztott kohorsz-adatokat a proaktív tervezéssel, így a bezárás időzítése elszakad a konkrét megyékben kimutatott elöregedési trajektóriától."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t1-demography",
+  "provenance_ref": "PV-assess_demography-d1138b74602deb9a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

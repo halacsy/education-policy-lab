@@ -1,0 +1,257 @@
+{
+  "questions": [
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Difference-in-differences or matched-pair quasi-experimental design comparing village population trajectories before/after school closures across Hungarian tankerület districts since 2013, using KSH demographic microdata matched with Klebelsberg Center closure records, with pre-trend testing and placebo comparisons against non-closed but demographically similar villages.",
+        "hu": "Differencia-in-differencia vagy párosított kvázi-experimentális elemzés, amely a falvak népességi trajektóriáit hasonlítja össze az iskolabezárások előtt és után a magyar tankerületekben 2013 óta, a KSH demográfiai mikroadatait a Klebelsberg Központ bezárási nyilvántartásával összekapcsolva, előzetes trend-teszteléssel és placebo-összehasonlítással demográfiailag hasonló, de nem bezárt falvakkal."
+      },
+      "proposal_refs": [
+        "TP-live-t2",
+        "TP-live-t6"
+      ],
+      "question": {
+        "en": "Does school closure causally accelerate depopulation in Hungarian villages, or does depopulation drive closure with school presence having little independent effect, and how does this vary by region and settlement size?",
+        "hu": "A magyar falvakban az iskolabezárás okozza-e a további elnéptelenedést, vagy inkább a népességcsökkenés vezet a bezáráshoz, miközben az iskola megléte önmagában kevés önálló hatással bír, és ez hogyan változik régió és településnagyság szerint?"
+      },
+      "uncertainty_refs": [
+        "U-live-international_comparison-01",
+        "U-live-finnish_reform-01",
+        "U-live-portuguese_reform-02",
+        "U-live-school_network_planning-01",
+        "U-live-education_finance-02",
+        "U-live-implementation_planning-01",
+        "U-live-t2-01"
+      ],
+      "why_it_matters": {
+        "en": "This is the single most decision-relevant empirical question across the agenda: whether closure is treated as a rural-development lever or purely a social-stabilization/equity measure depends entirely on causal direction, and the international evidence (Finland vs. Saxony/Sweden) is directly contradictory, meaning Hungary-specific evidence is needed before any consolidation or preservation proposal can be justified on demographic grounds.",
+        "hu": "Ez a napirend egyetlen legdöntőbb empirikus kérdése: hogy a bezárást vidékfejlesztési eszközként vagy kizárólag társadalmi stabilizációs/esélyegyenlőségi intézkedésként kezeljük-e, teljes mértékben az okozati iránytól függ, és a nemzetközi bizonyítékok (Finnország vs. Szászország/Svédország) egymásnak ellentmondanak, ezért magyarországi specifikus bizonyítékra van szükség, mielőtt bármely konszolidációs vagy megőrzési javaslat demográfiai alapon igazolható lenne."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Detailed cost-accounting study using Klebelsberg Center (KLIK) financial records and municipal budget data across a stratified sample of small rural schools and comparable consolidated/transport-served catchments, decomposing costs into instruction, administration, facilities, and transport, disaggregated by region and school type (single-grade vs. multigrade).",
+        "hu": "Részletes költségelemzési tanulmány a Klebelsberg Központ (KLIK) pénzügyi adatai és önkormányzati költségvetési adatok felhasználásával, kis vidéki iskolák és összehasonlítható konszolidált/szállítással ellátott körzetek rétegzett mintáján, a költségeket oktatásra, igazgatásra, létesítményekre és szállításra lebontva, régió és iskolatípus (egyosztatos vs. összevont osztályos) szerint."
+      },
+      "proposal_refs": [
+        "TP-live-t2",
+        "TP-live-t3"
+      ],
+      "question": {
+        "en": "What is the actual per-pupil cost of operating small rural Hungarian primary schools (50–150 pupils) compared to consolidation with legally guaranteed transport, including transport costs that show no economies of scale?",
+        "hu": "Mekkora a kis vidéki magyar általános iskolák (50–150 tanuló) tényleges tanulónkénti működési költsége a konszolidációhoz és a jogilag garantált szállításhoz képest, beleértve azokat a szállítási költségeket, amelyek nem mutatnak méretgazdaságossági hatást?"
+      },
+      "uncertainty_refs": [
+        "U-live-education_finance-01",
+        "U-live-school_network_planning-02",
+        "U-live-t2-02",
+        "U-live-demography-01"
+      ],
+      "why_it_matters": {
+        "en": "Every consolidation-oriented proposal (TP-live-t2, TP-live-t3) implicitly assumes net fiscal savings, but the evidence shows US-style savings apply only to instruction/administration, not transport, and no Hungary-specific cost figures exist; without this data, cost-benefit claims underlying closure policy cannot be verified or refuted.",
+        "hu": "Minden konszolidáció-orientált javaslat (TP-live-t2, TP-live-t3) implicit módon nettó fiskális megtakarítást feltételez, de a bizonyítékok szerint az amerikai típusú megtakarítások csak az oktatásra/igazgatásra vonatkoznak, a szállításra nem, és nem léteznek Magyarországra vonatkozó konkrét költségadatok; e nélkül a bezárási politika mögötti költség-haszon állítások nem igazolhatók vagy cáfolhatók."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": {
+        "en": "Comparative segregation-index analysis (e.g., dissimilarity or exposure indices) using school-level enrollment and ethnicity/SES proxy data before and after historical Hungarian consolidation, split-model, and church-transfer cases, supplemented by case studies of documented catchment-boundary redesigns.",
+        "hu": "Összehasonlító szegregációs index elemzés (pl. eltérési vagy expozíciós indexek) iskolai szintű beiratkozási és etnikai/társadalmi-gazdasági státusz proxy adatok felhasználásával a történelmi magyar konszolidációs, osztott modell és egyházi átadási esetek előtt és után, kiegészítve a dokumentált körzethatár-átalakítások esettanulmányaival."
+      },
+      "proposal_refs": [
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t5",
+        "TP-live-t6"
+      ],
+      "question": {
+        "en": "Would consolidating rural village schools into town/city schools reduce, maintain, or re-concentrate between-school segregation of Roma and low-SES pupils in the receiving schools and settlements, and does this differ between full consolidation, the split model (grades I-III local, IV-VIII consolidated), and church-transfer pathways?",
+        "hu": "A vidéki falusi iskolák városi iskolákba történő konszolidálása csökkentené, fenntartaná vagy újrakoncentrálná-e a roma és alacsony társadalmi-gazdasági státuszú tanulók iskolák közötti szegregációját a befogadó iskolákban és településeken, és ez különbözik-e a teljes konszolidáció, a osztott modell (I-III. osztály helyben, IV-VIII. konszolidálva) és az egyházi átadási útvonalak között?"
+      },
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-01",
+        "U-live-equity_and_social_mobility-02",
+        "U-live-portuguese_reform-03",
+        "U-live-polish_reform-02"
+      ],
+      "why_it_matters": {
+        "en": "Hungary's ECHR desegregation obligations (Piliscsaba, Nyíregyháza) mean that any school-network policy choice has binding legal consequences if it increases segregation; without empirical evidence on segregation outcomes by policy type, proposals cannot be assessed for legal compliance or equity risk.",
+        "hu": "Magyarország ECHR deszegregációs kötelezettségei (Piliscsaba, Nyíregyháza) miatt minden iskolaháló-politikai döntésnek kötelező jogi következményei vannak, ha növeli a szegregációt; a szegregációs kimenetek politikatípusonkénti empirikus vizsgálata nélkül a javaslatok jogi megfelelése és esélyegyenlőségi kockázata nem értékelhető."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "medium",
+      "method": {
+        "en": "Structured household survey across a representative sample of single-school depopulating villages that have undergone or are candidates for church-transfer, capturing stated support/opposition and underlying reasons (religious preference, school quality, transportation, local attachment), stratified by whether an alternative provider is geographically accessible.",
+        "hu": "Strukturált háztartási felmérés az egyetlen iskolával rendelkező, elnéptelenedő falvak reprezentatív mintáján, amelyek egyházi átadáson mentek keresztül vagy annak jelöltjei, rögzítve a kimondott támogatást/ellenzést és az alapul szolgáló okokat (vallási preferencia, iskolai minőség, közlekedés, helyi kötődés), rétegezve aszerint, hogy elérhető-e földrajzilag alternatív fenntartó."
+      },
+      "proposal_refs": [
+        "TP-live-t5"
+      ],
+      "question": {
+        "en": "What proportion of parents in depopulating single-school villages support versus oppose church-school transfer of their local school, and to what extent does the parental veto function as substantive choice versus procedural consent given the absence of an alternative provider?",
+        "hu": "A elnéptelenedő, egyetlen iskolával rendelkező falvakban a szülők hány százaléka támogatja, illetve ellenzi a helyi iskola egyházi átadását, és a szülői vétó mennyiben működik tényleges választásként szemben az eljárási beleegyezéssel, tekintve, hogy nincs alternatív fenntartó?"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-02",
+        "U-live-legal_and_governance-01",
+        "U-live-t5-01",
+        "U-live-t5-02"
+      ],
+      "why_it_matters": {
+        "en": "TP-live-t5 relies entirely on the parental veto as its equity safeguard, but the evidence shows rising church-enrollment share (60% 2001-2011, 47% 2011-2014) predating and outpacing this mechanism, raising the concern that consent is nominal; without survey data on actual parental preferences and reasoning, the proposal's core legitimacy claim cannot be tested.",
+        "hu": "A TP-live-t5 teljes mértékben a szülői vétóra támaszkodik mint esélyegyenlőségi biztosítékra, de a bizonyítékok az egyházi beiskolázási arány növekedését mutatják (60% 2001-2011, 47% 2011-2014), amely megelőzi és túlszárnyalja ezt a mechanizmust, felvetve, hogy a beleegyezés csak formális; a szülői preferenciákra és indokokra vonatkozó felmérési adatok nélkül a javaslat központi legitimációs állítása nem tesztelhető."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "medium",
+      "method": {
+        "en": "Administrative audit combining tankerület and municipal records on transport provision requests, denials, and complaints, cross-referenced with school-catchment distance data, complemented by structured interviews with maintainers (state, church, private) regarding cost barriers and compliance practices.",
+        "hu": "Igazgatási audit, amely a tankerületi és önkormányzati nyilvántartásokat kombinálja a szállítási kérelmekre, elutasításokra és panaszokra vonatkozóan, keresztreferálva az iskolai körzetek távolsági adataival, kiegészítve a fenntartókkal (állami, egyházi, magán) végzett strukturált interjúkkal a költségkorlátokról és a megfelelési gyakorlatokról."
+      },
+      "proposal_refs": [
+        "TP-live-t2"
+      ],
+      "question": {
+        "en": "What are the actual enforcement rates and compliance gaps in the legal obligation to provide transportation to mandatory-admission schools in villages where such schools are more than 10 km away or where multiple maintainers operate, and how do these vary by maintainer type?",
+        "hu": "Mekkora a tényleges végrehajtási arány és a megfelelési hiányosságok a kötelező felvételt biztosító iskolákhoz való szállítás jogi kötelezettségében azokban a falvakban, ahol az ilyen iskolák több mint 10 km-re vannak, vagy ahol több fenntartó működik, és ez hogyan változik fenntartó típusa szerint?"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-03",
+        "U-live-t2-02"
+      ],
+      "why_it_matters": {
+        "en": "TP-live-t2 proposes converting an already-existing but weakly enforced transport obligation into a monitored guarantee; without baseline data on current enforcement gaps and their causes (cost, administrative capacity, maintainer type), it is impossible to design or cost an effective enforcement mechanism.",
+        "hu": "A TP-live-t2 egy már létező, de gyengén érvényesített szállítási kötelezettséget kíván monitorozott garanciává alakítani; az aktuális végrehajtási hiányosságokra és azok okaira (költség, igazgatási kapacitás, fenntartó típusa) vonatkozó alapadatok nélkül lehetetlen hatékony érvényesítési mechanizmust tervezni vagy költségbecslést adni."
+      }
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "medium",
+      "method": {
+        "en": "Sensitivity and scenario analysis re-running the Finnish Ministry's projection model (or a comparable structural demographic-enrollment model) under varied assumptions for immigration, fertility, return migration, and specific policy levers (subsidy changes, remote-learning infrastructure), reporting projection ranges rather than point estimates.",
+        "hu": "Érzékenységi és forgatókönyv-elemzés, amely a Finn Minisztérium előrejelzési modelljét (vagy egy hasonló strukturális demográfiai-beiskolázási modellt) újra futtatja a bevándorlásra, termékenységre, visszavándorlásra és konkrét politikai eszközökre (támogatásváltozások, távoktatási infrastruktúra) vonatkozó eltérő feltételezésekkel, pontbecslések helyett előrejelzési tartományokat közölve."
+      },
+      "proposal_refs": [
+        "TP-live-t1",
+        "TP-live-t6"
+      ],
+      "question": {
+        "en": "How robust is the 2025 Ministry projection of halving Finnish elementary schools by 2035 to alternative assumptions about immigration, fertility, and policy interventions, and what does sensitivity analysis imply for the credibility of similar long-range projections that might be used in Hungarian network planning?",
+        "hu": "Mennyire robusztus a Finn Oktatási Minisztérium 2025-ös előrejelzése, amely szerint 2035-re megfeleződik a finn általános iskolák száma, a bevándorlásra, termékenységre és politikai beavatkozásokra vonatkozó alternatív feltételezésekkel szemben, és mit jelent az érzékenységvizsgálat a hasonló hosszú távú előrejelzések hitelessége szempontjából, amelyeket a magyar iskolaháló-tervezésben felhasználhatnának?"
+      },
+      "uncertainty_refs": [
+        "U-live-finnish_reform-03",
+        "U-live-t1-02"
+      ],
+      "why_it_matters": {
+        "en": "If Hungary intends to build an early-warning demographic-to-planning linkage (as flagged for TP-live-t1 and TP-live-t6), the reliability of long-range enrollment projections under alternative scenarios directly determines whether such projections can be trusted as planning inputs rather than treated as point predictions.",
+        "hu": "Ha Magyarország demográfiai-tervezési korai előrejelző kapcsolatot kíván kiépíteni (amint azt a TP-live-t1 és TP-live-t6 esetében jelezték), a hosszú távú beiskolázási előrejelzések megbízhatósága alternatív forgatókönyvek mellett közvetlenül meghatározza, hogy ezek az előrejelzések tervezési bemenetként megbízhatóak-e, vagy pontbecslésként kezelendők."
+      }
+    },
+    {
+      "answerability": "requires_pilot",
+      "decision_impact": "high",
+      "method": {
+        "en": "Longitudinal mixed-methods study comparing matched village clusters under split-model, full-consolidation, and full-retention arrangements, tracking segregation indices, community social-capital survey measures, and local economic indicators (employment, migration) over a 5-10 year window, controlling for initial demographic decline trajectory.",
+        "hu": "Hosszmetszeti kevert módszertani vizsgálat, amely párosított falusi klasztereket hasonlít össze osztott modell, teljes konszolidáció és teljes megtartás elrendezések alatt, nyomon követve a szegregációs indexeket, a közösségi társadalmi tőke felmérési mutatóit és a helyi gazdasági indikátorokat (foglalkoztatás, migráció) 5-10 éves időszakban, a kezdeti demográfiai csökkenési trajektóriára kontrollálva."
+      },
+      "proposal_refs": [
+        "TP-live-t3"
+      ],
+      "question": {
+        "en": "What is the net social-capital and local economic effect of the split model (retaining grades I-III locally while busing grades IV-VIII to consolidated schools) compared to full consolidation or full retention, and does the split model reproduce between-settlement segregation at the point of upper-grade transition?",
+        "hu": "Mekkora az osztott modell (I-III. osztály helyi megtartása, IV-VIII. osztály buszoztatása konszolidált iskolákba) nettó társadalmi tőke és helyi gazdasági hatása a teljes konszolidációhoz vagy a teljes megtartáshoz képest, és az osztott modell reprodukálja-e a település közötti szegregációt a felső osztályos átmenet pontján?"
+      },
+      "uncertainty_refs": [
+        "U-live-polish_reform-02",
+        "U-live-demography-02",
+        "U-live-t3-01"
+      ],
+      "why_it_matters": {
+        "en": "TP-live-t3 is Hungary's most administratively low-friction consolidation-avoidance option, but its long-run social and equity effects are untested; both the Polish draft-legislation comparator and Hungary's own historical parallel-class-reduction practice suggest the split point could recreate exactly the segregation problem it is meant to avoid, so this must be resolved before scaling.",
+        "hu": "A TP-live-t3 Magyarország igazgatásilag legkevésbé konfliktusos konszolidáció-elkerülő lehetősége, de hosszú távú társadalmi és esélyegyenlőségi hatásai nincsenek tesztelve; mind a lengyel törvénytervezet komparátora, mind Magyarország saját történelmi párhuzamos osztálycsökkentési gyakorlata arra utal, hogy az osztási pont pontosan azt a szegregációs problémát reprodukálhatja, amelyet elkerülni szeretne, ezért ezt fel kell oldani a skálázás előtt."
+      }
+    },
+    {
+      "answerability": "not_empirically_resolvable",
+      "decision_impact": "high",
+      "method": {
+        "en": "Not resolvable by empirical method alone; requires explicit normative/political deliberation (e.g., legislative or judicial articulation of a priority rule), which could be informed by but not determined by empirical consequence studies of each pathway's outcomes.",
+        "hu": "Empirikus módszerrel önmagában nem megoldható; kifejezett normatív/politikai mérlegelést igényel (pl. törvényi vagy bírósági prioritási szabály megfogalmazása), amelyet az egyes útvonalak kimeneteinek empirikus következmény-vizsgálatai informálhatnak, de nem határozhatnak meg."
+      },
+      "proposal_refs": [
+        "TP-live-t6"
+      ],
+      "question": {
+        "en": "Should village school retention ('keep open') take precedence over desegregation obligations, or should desegregation-driven closure be legally and administratively prioritized, in cases where community-mobilization capacity and legal segregation findings conflict for the same school?",
+        "hu": "Az iskola nyitva tartásának ('helyben tartás') elsőbbséget kell-e adni a deszegregációs kötelezettségekkel szemben, vagy a deszegregáció-vezérelt bezárást kell jogilag és igazgatásilag priorizálni azokban az esetekben, amikor a közösségi mozgósítási képesség és a jogi szegregációs megállapítások ugyanazon iskola kapcsán ütköznek?"
+      },
+      "uncertainty_refs": [
+        "U-live-t6-02",
+        "U-live-portuguese_reform-03",
+        "U-live-t4-01"
+      ],
+      "why_it_matters": {
+        "en": "TP-live-t6 explicitly builds in a resolution rule (desegregation subordinates retention), but this is fundamentally a value trade-off between community-preservation and equity/anti-discrimination goals, not a fact that further data collection can settle; empirical work can describe consequences of each choice but cannot determine which value should win.",
+        "hu": "A TP-live-t6 kifejezetten beépít egy megoldási szabályt (a deszegregáció alárendeli a megtartást), de ez alapvetően értékbeli konfliktus a közösségmegőrzés és az esélyegyenlőségi/diszkriminációellenes célok között, nem olyan tény, amelyet további adatgyűjtés eldönthetne; az empirikus munka leírhatja az egyes választások következményeit, de nem határozhatja meg, melyik értéknek kell győznie."
+      }
+    },
+    {
+      "answerability": "requires_pilot",
+      "decision_impact": "high",
+      "method": {
+        "en": "Pilot design and evaluation of a demographic microdata dashboard linking municipal-level population/enrollment trends to tankerület planning cycles in 2-3 test districts, with process evaluation of decision timeliness and stakeholder coordination compared to non-pilot districts.",
+        "hu": "Kísérleti tervezés és kiértékelés egy demográfiai mikroadat-irányítópultra, amely az önkormányzati szintű népesség/beiskolázási trendeket a tankerületi tervezési ciklusokhoz kapcsolja 2-3 tesztkörzetben, a döntési időszerűség és az érdekelt felek koordinációjának folyamat-értékelésével a nem kísérleti körzetekhez képest."
+      },
+      "proposal_refs": [
+        "TP-live-t1",
+        "TP-live-t6"
+      ],
+      "question": {
+        "en": "What institutional mechanisms could close the coordination gap between tankerület-controlled school-network planning, municipal building-maintenance authority, and Magyar Falu Program rural-development investment to enable proactive rather than reactive school-network decisions?",
+        "hu": "Milyen intézményi mechanizmusok szüntethetnék meg a tankerület által irányított iskolaháló-tervezés, az önkormányzati épületfenntartási hatáskör és a Magyar Falu Program vidékfejlesztési beruházásai közötti koordinációs hiányt, hogy proaktív, nem pedig reaktív iskolaháló-döntéseket lehessen hozni?"
+      },
+      "uncertainty_refs": [
+        "U-live-implementation_planning-03",
+        "U-live-implementation_planning-04",
+        "U-live-t1-01"
+      ],
+      "why_it_matters": {
+        "en": "The governance split (state controls staffing/curriculum, municipalities own buildings) is identified across multiple proposals (TP-live-t1 through t6) as a structural constraint forcing crisis-driven decisions; without a tested early-warning or coordination protocol, none of the proposed reforms can be implemented proactively rather than reactively.",
+        "hu": "Az irányítási megosztás (az állam irányítja a személyzetet/tantervet, az önkormányzatok tulajdonolják az épületeket) több javaslatban is (TP-live-t1-től t6-ig) strukturális korlátként jelenik meg, amely válsághelyzet-vezérelt döntéseket kényszerít ki; egy tesztelt korai előrejelzési vagy koordinációs protokoll nélkül a javasolt reformok egyike sem hajtható végre proaktív, nem pedig reaktív módon."
+      }
+    },
+    {
+      "answerability": "requires_pilot",
+      "decision_impact": "high",
+      "method": {
+        "en": "Pilot program embedding multigrade-teaching modules into 2-3 teacher-training institutions with pre/post skills assessment, tracking placement rates, retention, and reported workload burden of participating rural teachers over a 3-5 year cohort, compared to a non-pilot control cohort.",
+        "hu": "Kísérleti program, amely összevont osztályos tanítási modulokat épít be 2-3 tanárképző intézménybe előzetes/utólagos készségértékeléssel, nyomon követve a résztvevő vidéki tanárok elhelyezkedési arányát, megtartását és jelentett munkaterhelését 3-5 éves kohorszban, egy nem kísérleti kontrollkohorszhoz képest."
+      },
+      "proposal_refs": [
+        "TP-live-t3",
+        "TP-live-t4"
+      ],
+      "question": {
+        "en": "Can existing multigrade teaching capability in Hungary be systematized and scaled into initial teacher education and professional development without reducing quality or overburdening rural teachers, given the projected 6,200 annual teacher retirements (2023-2030) and high early-career attrition?",
+        "hu": "Szisztematizálható és skálázható-e a Magyarországon meglévő összevont osztályos tanítási kapacitás a tanárképzésbe és a szakmai fejlesztésbe anélkül, hogy a minőség csökkenne vagy a vidéki tanárok túlterheltek lennének, tekintve a 2023-2030 közötti időszakra tervezett évi 6200 tanári nyugdíjazást és a magas pályakezdői lemorzsolódást?"
+      },
+      "uncertainty_refs": [
+        "U-live-implementation_planning-02",
+        "U-live-political_feasibility-01",
+        "U-live-t4-02"
+      ],
+      "why_it_matters": {
+        "en": "TP-live-t3 and TP-live-t4 both depend on sustainable multigrade/rural teaching capacity, but the teacher-supply crisis is repeatedly flagged as a binding constraint that funding or legal safeguards alone cannot resolve; without a tested scaling model, these proposals risk being undeliverable regardless of their administrative or legal merits.",
+        "hu": "A TP-live-t3 és a TP-live-t4 mindkettő fenntartható összevont osztályos/vidéki tanítási kapacitástól függ, de a tanárhiány-válságot ismételten olyan kötő korlátként jelzik, amelyet önmagában a finanszírozás vagy a jogi biztosítékok nem oldhatnak meg; egy tesztelt skálázási modell nélkül ezek a javaslatok kivitelezhetetlenek lehetnek, függetlenül igazgatási vagy jogi előnyeiktől."
+      }
+    }
+  ]
+}

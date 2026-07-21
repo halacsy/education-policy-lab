@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Between 2010 and 2020, the proportion of Hungarians below age 18 declined from 18% to 16% of the population, while the 40–59 age group expanded, concentrating this aging trend in small, remote villages already experiencing population loss.",
+      "hu": "2010 és 2020 között a 18 év alatti magyarok aránya a teljes népesség 18%-áról 16%-ára csökkent, míg a 40–59 éves csoport kiterjed, és ez az öregedési trend a lakosság elvesztéséből már szenvedő kis, távoli falvakban koncentrálódik."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a(z) Demográfia nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Age-structure shift data do not isolate causal drivers (fertility, migration, or mortality) by village; spatial concentration claim relies on GKI secondary analysis rather than individual municipal-level census data.",
+        "hu": "Az életkori szerkezet-váltás adatai nem különítik el az okozati tényezőket (termékenység, migráció vagy halálozás) községenként; a területi koncentrációs állítás a GKI másodlagos elemzésétől függ, nem az egyedi községi szintű népszámlálási adatoktól."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-demography-03",
+  "provenance_ref": "PV-research_demography-b9408e089fac9ea4",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,275 @@
+{
+  "assessments": [
+    {
+      "assessment": {
+        "en": "As a no-new-policy counterfactual, this proposal accurately describes current delivery capacity: decision authority is already centralized in the tankerület structure, and no early-warning or feedback mechanism exists to convert demographic decline into proactive planning. From an implementation-planning lens, its main function is diagnostic rather than corrective: it documents that the status quo lacks sequencing, pilotability, and failure containment, and will continue producing reactive, case-by-case closures absent any structural change.",
+        "hu": "Mint szakpolitikai változás nélküli kontrafaktuális eset, a javaslat pontosan leírja a jelenlegi végrehajtási kapacitást: a döntési jogkör már most is a tankerületi struktúrában centralizált, és nincs olyan korai előrejelző vagy visszacsatolási mechanizmus, amely a demográfiai csökkenést proaktív tervezéssé alakítaná. A megvalósítás-tervezési szemléletből nézve a fő funkciója diagnosztikus, nem korrekciós: dokumentálja, hogy a status quo nélkülözi a szekvenálást, a pilot-lehetőséget és a hibakorlátozást, és továbbra is reaktív, eseti bezárásokat fog eredményezni bármilyen strukturális változás nélkül."
+      },
+      "confidence": "high",
+      "finding_refs": [
+        "F-live-implementation_planning-01",
+        "F-live-implementation_planning-10"
+      ],
+      "opportunities": [
+        {
+          "en": "The diagnostic review referenced in the proposal could itself be repurposed as the seed of an early-warning mechanism if institutionalized rather than left as a one-off exercise.",
+          "hu": "A javaslatban hivatkozott diagnosztikai felülvizsgálat maga is egy korai előrejelző mechanizmus csírájává válhatna, ha intézményesítenék, nem pedig egyszeri gyakorlatként hagynák."
+        }
+      ],
+      "proposal_ref": "TP-live-t1",
+      "strengths": [
+        {
+          "en": "Provides a transparent, evidence-grounded baseline (institutional thinning rate, kindergarten gaps) against which the delivery feasibility of other proposals can be benchmarked.",
+          "hu": "Átlátható, bizonyítékokon alapuló kiindulási alapot ad (intézményritkulási ütem, óvodai hiányok), amelyhez a többi javaslat megvalósíthatósága mérhető."
+        },
+        {
+          "en": "Requires no new actor capacity or coordination mechanism, so there is no implementation gap between design and current administrative reality.",
+          "hu": "Nem igényel új szereplői kapacitást vagy koordinációs mechanizmust, így nincs megvalósítási szakadék a tervezés és a jelenlegi igazgatási valóság között."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Continued split governance between municipalities (buildings) and the central Klebelsberg Center (staffing) weakens any actor's unilateral capacity to act even reactively, compounding delivery fragility already visible in ad hoc cases like Garab.",
+          "hu": "A települési önkormányzatok (épületek) és a központi Klebelsberg Központ (személyzet) közötti megosztott irányítás folytatódása gyengíti bármely szereplő egyoldalú cselekvési képességét még reaktív módon is, fokozva a már most is megfigyelhető megvalósítási törékenységet olyan eseti esetekben, mint Garab."
+        }
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        {
+          "en": "Confirms the absence of a systematic early-warning mechanism linking demographic microdata to network planning at district level, meaning closures will remain reactive rather than sequenced.",
+          "hu": "Megerősíti, hogy nincs olyan szisztematikus korai előrejelző mechanizmus, amely a demográfiai mikroadatokat kerületi szintű hálózattervezéshez kapcsolná, így a bezárások reaktívak maradnak a szekvenált tervezés helyett."
+        },
+        {
+          "en": "Lacks any monitoring or adaptation loop connecting the 2026 diagnostic review to actionable, integrated policy change, risking uncoordinated drift.",
+          "hu": "Nincs olyan monitoring vagy alkalmazkodási hurok, amely a 2026-os diagnosztikai felülvizsgálatot cselekvőképes, integrált szakpolitikai változáshoz kapcsolná, ami koordinálatlan elsodródás kockázatával jár."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "The proposal's sequencing logic (size-and-distance framework, enforceable transport) is implementable in principle but depends on actor capacities and cost structures not yet demonstrated in the Hungarian context. The transport-enforcement mechanism directly targets a documented delivery gap, but the claim that consolidation yields savings is only partially supported: cost declines apply to instruction/administration, not transport, so the fiscal case for the transport guarantee itself remains unproven and must be separately resourced. The demographic side-effect risk (contested Finnish evidence vs. no-effect Saxon/Swedish evidence) means monitoring for population impacts is essential but the causal mechanism to monitor is itself uncertain.",
+        "hu": "A javaslat szekvenálási logikája (méret-távolság keretrendszer, kikényszeríthető közlekedés) elvben megvalósítható, de olyan szereplői kapacitásoktól és költségstruktúráktól függ, amelyek a magyar kontextusban még nem bizonyítottak. A közlekedés-kikényszerítési mechanizmus közvetlenül egy dokumentált megvalósítási hiányosságot céloz meg, de az az állítás, hogy a konszolidáció megtakarítást eredményez, csak részben megalapozott: a költségcsökkenés az oktatásra/igazgatásra vonatkozik, nem a közlekedésre, így magának a közlekedési garanciának a fiskális indoka bizonyítatlan és külön forrásigényes. A demográfiai mellékhatás kockázata (vitatott finn bizonyíték a szász/svéd nullhatás-eredménnyel szemben) azt jelenti, hogy a népességhatások monitorozása elengedhetetlen, de a monitorozandó okozati mechanizmus maga is bizonytalan."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-implementation_planning-07"
+      ],
+      "opportunities": [
+        {
+          "en": "A phased, monitored rollout modeled on Norway's approach could serve as a pilot to test the contested depopulation hypothesis directly within Hungarian conditions before nationwide application.",
+          "hu": "A norvég megközelítésen alapuló, fokozatos, monitorozott bevezetés pilotként szolgálhatna a vitatott elnéptelenedési hipotézis közvetlen teszteléséhez magyar körülmények között, mielőtt országos alkalmazásra kerülne."
+        }
+      ],
+      "proposal_ref": "TP-live-t2",
+      "strengths": [
+        {
+          "en": "Directly addresses a documented implementation lapse (transport obligation dependent on parental complaint rather than systematic monitoring) by making enforcement structural rather than reactive.",
+          "hu": "Közvetlenül kezel egy dokumentált végrehajtási hiányosságot (a közlekedési kötelezettség szülői panasztól függése a szisztematikus monitorozás helyett) azáltal, hogy az érvényesítést strukturálissá teszi a reaktív helyett."
+        },
+        {
+          "en": "Draws on an internationally tested sequencing template (Norway) with quantified outcomes, giving a concrete benchmark for pilotability and phased rollout.",
+          "hu": "Egy nemzetközileg tesztelt, számszerűsített eredményekkel bíró szekvenálási mintát (Norvégia) alkalmaz, konkrét referenciapontot adva a pilot-lehetőséghez és a fokozatos bevezetéshez."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Danish evidence of adverse short-run achievement effects concentrated among students from the smallest schools suggests a need for transitional pedagogical safeguards that the mechanism description does not currently include.",
+          "hu": "A dán bizonyítékok a legkisebb iskolákból érkező diákok körében koncentrálódó rövid távú, kedvezőtlen teljesítményhatásokról olyan átmeneti pedagógiai biztosítékok szükségességére utalnak, amelyeket a mechanizmus leírása jelenleg nem tartalmaz."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "Economies-of-scale evidence does not extend to transportation costs, undermining the assumption that consolidation savings can help fund the transport guarantee without additional dedicated financing.",
+          "hu": "A méretgazdaságossági bizonyítékok nem terjednek ki a közlekedési költségekre, ami aláássa azt a feltételezést, hogy a konszolidációs megtakarítások kiegészítő célzott finanszírozás nélkül is fedezhetnék a közlekedési garanciát."
+        },
+        {
+          "en": "No proposed failure-containment mechanism if consolidation triggers the population decline observed in the contested Finnish study, since the causal link is disputed rather than resolved.",
+          "hu": "Nincs javasolt hibakorlátozási mechanizmus arra az esetre, ha a konszolidáció kiváltja a vitatott finn tanulmányban megfigyelt népességcsökkenést, mivel az okozati kapcsolat vitatott, nem eldöntött."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "This proposal scores well on administrative feasibility since multigrade classes are already a legally sanctioned mechanism, lowering the implementation barrier relative to proposals requiring new legal instruments. However, the viability bound identified by threshold-modeling research (over 500 village schools affected at a 100-student threshold, many unable to survive even in split form) indicates that sequencing must account for a floor below which the split model itself becomes non-deliverable, and this floor is not addressed in the mechanism description.",
+        "hu": "Ez a javaslat jól teljesít az igazgatási megvalósíthatóság szempontjából, mivel az összevont osztályok már most is jogilag szankcionált mechanizmust jelentenek, alacsonyabb megvalósítási korlátot állítva az új jogi eszközöket igénylő javaslatokhoz képest. A küszöbérték-modellezési kutatás által azonosított életképességi határ (több mint 500 falusi iskola érintett egy 100 fős küszöbnél, sokuk még osztott formában sem életképes) azonban azt jelzi, hogy a szekvenálásnak figyelembe kell vennie egy olyan alsó határt, amely alatt a split modell maga is megvalósíthatatlanná válik, és ezt a határt a mechanizmus leírása nem kezeli."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-implementation_planning-04"
+      ],
+      "opportunities": [
+        {
+          "en": "Repurposing unused buildings as multipurpose community facilities (as in the Polish analog) could be piloted incrementally alongside the split model, providing a low-risk adaptation channel.",
+          "hu": "A nem használt épületek többfunkciós közösségi létesítményekké alakítása (a lengyel analógia szerint) fokozatosan pilotolható a split modellel párhuzamosan, alacsony kockázatú alkalmazkodási csatornát biztosítva."
+        }
+      ],
+      "proposal_ref": "TP-live-t3",
+      "strengths": [
+        {
+          "en": "Uses an already-authorized legal mechanism (multigrade classes), meaning no new legislative or administrative capacity is required to begin implementation, improving near-term pilotability.",
+          "hu": "Egy már felhatalmazott jogi mechanizmust (összevont osztályok) használ, ami azt jelenti, hogy a bevezetés megkezdéséhez nem szükséges új törvényi vagy igazgatási kapacitás, javítva a rövid távú pilot-lehetőséget."
+        },
+        {
+          "en": "Explicitly identifies a historical domestic analog (reducing parallel classes rather than closing schools) allowing planners to draw on documented local experience for sequencing decisions.",
+          "hu": "Kifejezetten hivatkozik egy hazai történeti analógiára (párhuzamos osztályok csökkentése iskolabezárás helyett), lehetővé téve a tervezők számára, hogy dokumentált hazai tapasztalatra támaszkodjanak a szekvenálási döntéseknél."
+        }
+      ],
+      "threats": [
+        {
+          "en": "If national policy later raises minimum size thresholds, as modeled in domestic research, the split model's lower grades component could become non-viable for a large share of the more than 500 affected village schools, undermining the proposal's core premise.",
+          "hu": "Ha a nemzeti szakpolitika később megemeli a minimális méretküszöböket, ahogy azt a hazai kutatás modellezte, a split modell alsó tagozatos komponense a több mint 500 érintett falusi iskola jelentős részénél életképtelenné válhat, aláásva a javaslat alapfeltevését."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "The mechanism description does not specify a monitoring threshold for when a village's pupil population falls below the split model's viability floor, leaving failure containment undefined.",
+          "hu": "A mechanizmus leírása nem határoz meg monitorozási küszöböt arra az esetre, amikor egy település tanulói létszáma a split modell életképességi határa alá csökken, így a hibakorlátozás definiálatlan marad."
+        },
+        {
+          "en": "Between-settlement segregation risk from historical practice is acknowledged but no specific safeguard or monitoring indicator is attached to the upper-grade consolidation routing decision.",
+          "hu": "A történeti gyakorlatból eredő településközi szegregációs kockázatot elismeri, de a felső tagozatos konszolidációs útvonal kijelöléséhez nem kapcsol konkrét biztosítékot vagy monitorozási indikátort."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "This proposal has a documented domestic precedent (pre-2004 targeted support) suggesting the mechanism is administratively deliverable within Hungary's institutional history, improving confidence in actor capacity. However, the rural teacher-supply crisis constitutes a severe binding constraint largely independent of funding levers: an ageing workforce, high youth attrition, and projected mass retirements mean that funding safeguards alone may not secure the staffing needed to keep designated schools open, regardless of legal presumption strength.",
+        "hu": "Ennek a javaslatnak dokumentált hazai előzménye van (2004 előtti célzott támogatás), amely arra utal, hogy a mechanizmus igazgatásilag megvalósítható Magyarország intézményi történetén belül, javítva a szereplői kapacitásba vetett bizalmat. A vidéki tanárhiány-válság azonban súlyos, a finanszírozási eszközöktől nagyrészt független korlátozó tényezőt jelent: az öregedő munkaerő, a magas fiatalkori lemorzsolódás és a várható tömeges nyugdíjazások azt jelentik, hogy a finanszírozási biztosítékok önmagukban nem feltétlenül biztosítják a kijelölt iskolák nyitva tartásához szükséges személyzetet, függetlenül a jogi vélelem erősségétől."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-implementation_planning-06",
+        "F-live-implementation_planning-07"
+      ],
+      "opportunities": [
+        {
+          "en": "Combining the procedural presumption-against-closure test with an explicit teacher-supply monitoring indicator could convert this proposal into an adaptive mechanism that adjusts targeted funding based on real staffing feasibility rather than static rules.",
+          "hu": "A bezárás elleni eljárási vélelem tesztjének kifejezett tanárellátottsági monitorozási indikátorral való kombinálása alkalmazkodó mechanizmussá alakíthatná ezt a javaslatot, amely a valós személyzeti megvalósíthatóság alapján, nem statikus szabályok szerint igazítja a célzott finanszírozást."
+        }
+      ],
+      "proposal_ref": "TP-live-t4",
+      "strengths": [
+        {
+          "en": "Domestic historical precedent (pre-2004 targeted support maintaining a relatively intact rural network) demonstrates that the underlying delivery mechanism has functioned before under comparable fiscal pressure.",
+          "hu": "A hazai történeti előzmény (2004 előtti célzott támogatás, amely viszonylag intakt vidéki hálózatot tartott fenn) bizonyítja, hogy az alapul szolgáló végrehajtási mechanizmus korábban is működött hasonló fiskális nyomás alatt."
+        },
+        {
+          "en": "The Scottish/Welsh 'strong positive case' and 'special regard' procedural tests provide a transferable, already-operationalized template for building monitoring and adaptation checkpoints into closure decisions.",
+          "hu": "A skót/walesi 'erős, pozitív indoklás' és 'különös figyelem' eljárási tesztek átvihető, már működő sablont adnak a monitorozási és alkalmazkodási ellenőrzési pontok bezárási döntésekbe való beépítéséhez."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Even with legal presumptions and funding in place, mixed evidence on whether school retention causally sustains village vitality (better demographics but worse employment/welfare outcomes in Hungarian data) means the policy's ultimate goal may not be achieved even if implementation succeeds procedurally.",
+          "hu": "Még jogi vélelmek és finanszírozás megléte esetén is, a vegyes bizonyítékok arra, hogy az iskola megtartása okozati módon fenntartja-e a település életképességét (jobb demográfia, de rosszabb foglalkoztatási/jóléti mutatók a magyar adatokban) azt jelentik, hogy a szakpolitika végső célja nem feltétlenül teljesül még akkor sem, ha a végrehajtás eljárásilag sikeres."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "The rural teacher-supply crisis (half of primary teachers 50+, only 7.2% under 30, 60% of new teachers resigning within 3-4 years) is a structural constraint that funding supplements alone have not been shown to resolve, creating a capability gap independent of the legal safeguard.",
+          "hu": "A vidéki tanárhiány-válság (az általános iskolai tanárok fele 50 éves vagy idősebb, csak 7,2%-uk 30 alatti, az új tanárok 60%-a 3-4 éven belül felmond) strukturális korlátot jelent, amelyet a bérpótlékok önmagukban nem bizonyítottan oldanak meg, kapacitáshiányt teremtve a jogi biztosítéktól függetlenül."
+        },
+        {
+          "en": "Poland's mandatory salary-supplement model creates sustained fiscal strain on small municipalities, and the proposal does not specify a containment mechanism if this strain becomes unsustainable for the poorest localities.",
+          "hu": "A lengyel kötelező bérpótlék-modell tartós fiskális terhet ró a kis önkormányzatokra, és a javaslat nem határoz meg korlátozó mechanizmust arra az esetre, ha ez a teher fenntarthatatlanná válik a legszegényebb településeken."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "The parental veto mechanism is a genuine, existing safeguard that channels this pathway through demonstrated community consent, and the 2026 Kolping precedent shows the transfer mechanism is operationally deliverable. However, the precedent also reveals a scope limitation: the maintainer restricted its role to school administration without committing to broader social-care functions, meaning actors executing this pathway may lack the capacity or mandate to deliver the wider community-anchoring benefits sometimes implicitly expected of alternative maintainers.",
+        "hu": "A szülői vétó mechanizmus valódi, létező biztosíték, amely ezt az útvonalat bizonyított közösségi hozzájáruláson keresztül vezeti, és a 2026-os Kolping-precedens azt mutatja, hogy az átadási mechanizmus működésileg megvalósítható. A precedens azonban egy hatásköri korlátozást is feltár: a fenntartó szerepét az iskolaigazgatásra korlátozta anélkül, hogy elköteleződött volna a szélesebb közösségi gondozási funkciók iránt, ami azt jelenti, hogy az ezt az útvonalat végrehajtó szereplők esetleg nem rendelkeznek az alternatív fenntartóktól néha implicit módon elvárt szélesebb közösségi horgony-előnyök nyújtásához szükséges kapacitással vagy mandátummal."
+      },
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-implementation_planning-03"
+      ],
+      "opportunities": [
+        {
+          "en": "Monitoring the scope of future alternative-maintainer transfers against the Kolping precedent could clarify whether social-care function commitments can be added as a condition of transfer approval.",
+          "hu": "A jövőbeli alternatív fenntartói átadások hatáskörének a Kolping-precedenshez viszonyított monitorozása tisztázhatná, hogy a közösségi gondozási funkcióra vonatkozó elkötelezettségek hozzáadhatók-e az átadás jóváhagyásának feltételeként."
+        }
+      ],
+      "proposal_ref": "TP-live-t5",
+      "strengths": [
+        {
+          "en": "The parental veto provides a documented, functioning consent mechanism that constrains unilateral administrative action, giving the pathway a built-in community-responsiveness safeguard absent from purely top-down closure.",
+          "hu": "A szülői vétó dokumentált, működő hozzájárulási mechanizmust biztosít, amely korlátozza az egyoldalú igazgatási cselekvést, beépített közösségi reagálóképességi biztosítékot adva az útvonalnak, amely a tisztán felülről lefelé irányuló bezárásból hiányzik."
+        },
+        {
+          "en": "A real, documented 2026 precedent (Kolping case) demonstrates the mechanism is already operational rather than theoretical, reducing implementation uncertainty relative to untested proposals.",
+          "hu": "Egy valódi, dokumentált 2026-os precedens (Kolping-ügy) bizonyítja, hogy a mechanizmus már működik, nem csak elméleti, csökkentve a végrehajtási bizonytalanságot a nem tesztelt javaslatokhoz képest."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Because this is a single, contested-scope precedent (weak evidence strength for the case's generalizability), scaling the pathway nationally risks encountering maintainers unwilling or unable to replicate even the limited administrative takeover observed once.",
+          "hu": "Mivel ez egyetlen, korlátozott hatáskörű precedens (gyenge bizonyítéki erő az eset általánosíthatóságára), az útvonal országos szintű kiterjesztése azzal a kockázattal jár, hogy olyan fenntartókkal találkozunk, akik nem hajlandók vagy nem képesek megismételni még a korábban megfigyelt korlátozott igazgatási átvételt sem."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "The documented precedent's explicit scope limitation (administration only, no community social-care commitment) means the mechanism as observed does not deliver the fuller community-hub function some framings of this proposal may assume.",
+          "hu": "A dokumentált precedens kifejezett hatásköri korlátozása (csak igazgatás, nincs közösségi gondozási elkötelezettség) azt jelenti, hogy a megfigyelt mechanizmus nem nyújtja azt a teljesebb közösségi központ funkciót, amelyet a javaslat egyes megfogalmazásai feltételezhetnek."
+        },
+        {
+          "en": "In single-school villages, the pathway offers no real choice architecture beyond a veto over transfer, since surrounding statistical trends already show substantial pre-existing drift toward church schools, raising doubt about whether the veto meaningfully preserves optionality over time.",
+          "hu": "Egyetlen iskolával rendelkező településeken az útvonal a transzfer feletti vétón kívül nem kínál valódi választási struktúrát, mivel a környező statisztikai trendek már most jelentős, egyházi iskolák felé irányuló elmozdulást mutatnak, kétségeket ébresztve afelől, hogy a vétó időben tartósan megőrzi-e a választási lehetőséget."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "This proposal correctly recognizes that any retention-based mechanism, including community mobilization, is bounded by the rural teacher-supply crisis, giving it a more realistic failure-containment posture than proposals assuming stable staffing. Its explicit subordination of 'keep open' preferences to desegregation obligations aligns with existing legal precedent (ECtHR rulings on de facto segregation), but this same subordination creates a documented implementation threat: judicially mandated closures on desegregation grounds have faced multi-year local political obstruction even after a final court ruling, indicating that legal correctness does not guarantee deliverability.",
+        "hu": "Ez a javaslat helyesen ismeri fel, hogy minden megtartás-alapú mechanizmust, beleértve a közösségi mobilizációt is, korlátoz a vidéki tanárhiány-válság, ezáltal realistább hibakorlátozási álláspontot biztosítva, mint azok a javaslatok, amelyek stabil személyzeti ellátást feltételeznek. A 'nyitva tartás' preferencia kifejezett alárendelése a deszegregációs kötelezettségeknek összhangban van a meglévő jogi precedenssel (EJEB-ítéletek a de facto szegregációról), de ugyanez az alárendelés dokumentált végrehajtási fenyegetést is teremt: a deszegregációs alapon elrendelt bírósági bezárások többéves helyi politikai akadályoztatással találkoztak még jogerős bírósági ítélet után is, jelezve, hogy a jogi helyesség nem garantálja a megvalósíthatóságot."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-implementation_planning-06",
+        "F-live-implementation_planning-09"
+      ],
+      "opportunities": [
+        {
+          "en": "The cross-border bus network model could be piloted domestically as a monitored intervention to test whether transport-based access extension measurably improves small-school survival before wider rollout.",
+          "hu": "A határon átnyúló buszos hálózati modell hazai pilotként bevezethető monitorozott intervencióként annak tesztelésére, hogy a közlekedés-alapú hozzáférés-bővítés mérhetően javítja-e a kis iskolák fennmaradását szélesebb bevezetés előtt."
+        }
+      ],
+      "proposal_ref": "TP-live-t6",
+      "strengths": [
+        {
+          "en": "Explicitly incorporates the rural teacher-supply crisis as a binding constraint on all retention approaches, providing a more realistic actor-capacity assessment than proposals silent on staffing.",
+          "hu": "Kifejezetten beépíti a vidéki tanárhiány-válságot mint minden megtartási megközelítést korlátozó tényezőt, realistább szereplői kapacitás-értékelést adva azoknál a javaslatoknál, amelyek nem foglalkoznak a személyzeti kérdéssel."
+        },
+        {
+          "en": "Draws on a documented, functioning cross-border transport network model (Rákóczi Szövetség buses) as a transferable mechanism for extending small-institution survival without requiring new legal instruments.",
+          "hu": "Egy dokumentált, működő, határon átnyúló közlekedési hálózati modellre (Rákóczi Szövetség buszai) támaszkodik, mint átvihető mechanizmusra a kis intézmények fennmaradásának meghosszabbítására új jogi eszközök nélkül."
+        },
+        {
+          "en": "Grounds the desegregation subordination in binding legal precedent (ECtHR rulings) rather than aspirational principle, giving this component of sequencing an enforceable legal anchor.",
+          "hu": "A deszegregációs alárendelést kötelező jogi precedensre (EJEB-ítéletek) alapozza, nem csak törekvő elvre, ezáltal e szekvenálási elem számára érvényesíthető jogi horgonyt biztosítva."
+        }
+      ],
+      "threats": [
+        {
+          "en": "The combination of judicial desegregation mandates and local obstruction risk means that even a well-sequenced policy could stall for years at the implementation stage, independent of the mechanism's technical soundness.",
+          "hu": "A bírósági deszegregációs kötelezettségek és a helyi akadályoztatási kockázat kombinációja azt jelenti, hogy még egy jól szekvenált szakpolitika is évekre megakadhat a végrehajtási szakaszban, függetlenül a mechanizmus technikai megalapozottságától."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "The technical-assistance-for-social-capital mechanism (Erdőkürt-type cases) relies on locally variable bonding/bridging capital that is not systematically measured or targetable, weakening the reliability of sequencing based on this factor.",
+          "hu": "A társadalmi tőke technikai segítségnyújtási mechanizmusa (Erdőkürt-típusú esetek) helyileg változó kötő/hidazó tőkére támaszkodik, amelyet nem mérnek szisztematikusan és nem célozható meg megbízhatóan, gyengítve az ezen tényezőre alapozott szekvenálás megbízhatóságát."
+        },
+        {
+          "en": "No specific monitoring or adaptation mechanism is proposed to track whether desegregation-mandated closures are actually being implemented given the documented history of municipal obstruction after final court rulings.",
+          "hu": "Nincs konkrét monitorozási vagy alkalmazkodási mechanizmus javasolva a deszegregációs kötelezettségű bezárások tényleges végrehajtásának követésére, tekintve a dokumentált önkormányzati akadályoztatás történetét jogerős bírósági ítéletek után."
+        }
+      ]
+    }
+  ]
+}

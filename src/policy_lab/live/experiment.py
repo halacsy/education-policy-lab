@@ -30,6 +30,65 @@ def _slug(value: str) -> str:
     return re.sub(r"[^a-zA-Z0-9._-]+", "-", value).strip("-").lower()
 
 
+def _cardinality_repair_instruction(
+    constraints: dict[str, tuple[int, int]], violations: list[str]
+) -> str:
+    """Turn range failures into unambiguous exact targets for a retry.
+
+    Anthropic's structured-output grammar cannot express array maxima. A retry
+    that only repeats a range tends to over-correct one collection while
+    under-filling another, so every collection receives a stable midpoint
+    target on the replacement attempt.
+    """
+
+    targets = []
+    for field, (minimum, maximum) in constraints.items():
+        target = minimum if minimum == maximum else (minimum + maximum) // 2
+        targets.append(
+            f"{field} MUST contain exactly {target} items"
+            f" (the accepted range is {minimum}-{maximum})"
+        )
+    return (
+        "\n\nSTRICT CARDINALITY REPAIR: The previous complete response was rejected: "
+        + "; ".join(violations)
+        + ". Return a complete replacement. "
+        + "; ".join(targets)
+        + ". Do not return fewer or more items in any named collection."
+    )
+
+
+def _normalize_collection_counts(
+    result: dict[str, Any], constraints: dict[str, tuple[int, int]]
+) -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, int]]:
+    """Trim deterministic surplus and report semantic deficits to fill."""
+
+    normalized = dict(result)
+    actions: list[dict[str, Any]] = []
+    deficits: dict[str, int] = {}
+    for field, (minimum, maximum) in constraints.items():
+        values = list(normalized.get(field, []))
+        if len(values) > maximum:
+            actions.append({
+                "field": field,
+                "action": "truncate_surplus",
+                "before": len(values),
+                "after": maximum,
+            })
+            values = values[:maximum]
+            normalized[field] = values
+        if len(values) < minimum:
+            deficits[field] = minimum - len(values)
+    return normalized, actions, deficits
+
+
+def _escalated_token_budget(max_tokens: int, error: Exception) -> int | None:
+    """Return the bounded bilingual retry budget for a real truncation."""
+
+    if "structured output truncated at max_tokens=" not in str(error):
+        return None
+    return min(max_tokens * 3 // 2, 48000)
+
+
 class ArtifactDagRunner:
     """Run the live artifact DAG for production or a localized lens test."""
 
@@ -1847,17 +1906,74 @@ Score only what is visible. Treat an inline finding id as auditable only when th
         max_tokens: int, arm: str, node: str, run_dir: Path, suffix: str,
     ) -> dict[str, Any]:
         self._persist_prompt(run_dir, node, suffix, prompt)
+        recovered = self._recover_structured_attempt(
+            run_dir, node, suffix, prompt
+        )
+        if recovered is not None:
+            return recovered
+        escalation_budget = min(max_tokens * 3 // 2, 48000)
+        escalation_suffix = f"{suffix}-token-escalation-{escalation_budget}"
+        recovered = self._recover_structured_attempt(
+            run_dir, node, escalation_suffix, prompt
+        )
+        if recovered is not None:
+            return recovered
         marker = self.llm.call_log_len()
         try:
-            result = self.llm.call_structured(
-                prompt, schema, role, max_tokens=max_tokens
-            )
+            response_stage = suffix
+            try:
+                result = self.llm.call_structured(
+                    prompt, schema, role, max_tokens=max_tokens
+                )
+            except Exception as exc:
+                escalated = _escalated_token_budget(max_tokens, exc)
+                if escalated is None or escalated <= max_tokens:
+                    raise
+                response_stage = f"{suffix}-token-escalation-{escalated}"
+                self._persist_prompt(run_dir, node, response_stage, prompt)
+                result = self.llm.call_structured(
+                    prompt, schema, role, max_tokens=escalated
+                )
             self._persist_attempt(
-                run_dir, node, suffix, prompt, canonical_json_bytes(result), "json"
+                run_dir, node, response_stage, prompt,
+                canonical_json_bytes(result), "json"
             )
             return result
         finally:
             self._record_calls(marker, arm=arm, node=node)
+
+    @staticmethod
+    def _recover_structured_attempt(
+        run_dir: Path, node: str, stage: str, prompt: str
+    ) -> dict[str, Any] | None:
+        """Replay an immutable response for the exact prompt during resume."""
+
+        current_path = run_dir / "attempts" / node / "current.json"
+        execution_ids = []
+        if current_path.exists():
+            execution_ids.append(
+                json.loads(current_path.read_text(encoding="utf-8"))["execution_id"]
+            )
+        attempts_root = run_dir / "attempts" / node
+        if attempts_root.exists():
+            execution_ids.extend(
+                path.name for path in sorted(attempts_root.iterdir())
+                if path.is_dir() and path.name not in execution_ids
+            )
+        prompt_bytes = prompt.encode("utf-8")
+        prompt_hash = hashlib.sha256(prompt_bytes).hexdigest()
+        leaf = f"{stage}-{prompt_hash[:16]}"
+        for execution_id in execution_ids:
+            attempt_dir = attempts_root / execution_id / leaf
+            prompt_path = attempt_dir / "prompt.md"
+            response_path = attempt_dir / "response.json"
+            if (
+                prompt_path.exists()
+                and response_path.exists()
+                and prompt_path.read_bytes() == prompt_bytes
+            ):
+                return json.loads(response_path.read_text(encoding="utf-8"))
+        return None
 
     def _call_structured_counted(
         self, prompt: str, schema: dict[str, Any], *, role: str,
@@ -1872,6 +1988,34 @@ Score only what is visible. Treat an inline finding id as auditable only when th
                 current_prompt, schema, role=role, max_tokens=max_tokens,
                 arm=arm, node=node, run_dir=run_dir, suffix=attempt_suffix,
             )
+            result, normalizations, deficits = _normalize_collection_counts(
+                result, constraints
+            )
+            for field, missing in deficits.items():
+                result[field] = self._fill_structured_collection(
+                    prompt=prompt,
+                    schema=schema,
+                    field=field,
+                    existing=list(result.get(field, [])),
+                    missing=missing,
+                    role=role,
+                    max_tokens=max_tokens,
+                    arm=arm,
+                    node=node,
+                    run_dir=run_dir,
+                    suffix=attempt_suffix,
+                )
+                normalizations.append({
+                    "field": field,
+                    "action": "targeted_fill",
+                    "added": missing,
+                    "after": len(result[field]),
+                })
+            if normalizations:
+                self._record_semantic_normalizations(
+                    run_dir, arm=arm, node=node, attempt=attempt + 1,
+                    actions=normalizations,
+                )
             violations = []
             for field, (minimum, maximum) in constraints.items():
                 count = len(result.get(field, []))
@@ -1896,14 +2040,69 @@ Score only what is visible. Treat an inline finding id as auditable only when th
             rejection_path = run_dir / "semantic_rejections.jsonl"
             with rejection_path.open("a", encoding="utf-8") as handle:
                 handle.write(json.dumps(rejection, ensure_ascii=False, sort_keys=True) + "\n")
-            current_prompt = prompt + (
-                "\n\nSTRICT CARDINALITY REPAIR: The previous complete response was rejected: "
-                + "; ".join(violations)
-                + ". Generate a complete replacement, obeying every requested range exactly."
+            current_prompt = prompt + _cardinality_repair_instruction(
+                constraints, violations
             )
         raise ValueError(
             f"{node} failed semantic cardinality after {retries + 1} attempts"
         )
+
+    def _fill_structured_collection(
+        self, *, prompt: str, schema: dict[str, Any], field: str,
+        existing: list[Any], missing: int, role: str, max_tokens: int,
+        arm: str, node: str, run_dir: Path, suffix: str,
+    ) -> list[Any]:
+        """Generate missing semantic items one at a time without replacing valid data."""
+
+        item_schema = schema["properties"][field]["items"]
+        repaired = list(existing)
+        for offset in range(missing):
+            fill_prompt = (
+                prompt
+                + "\n\nTARGETED CARDINALITY FILL: The main response is otherwise valid, "
+                f"but {field} is missing {missing} required item(s). Generate exactly "
+                "ONE additional, non-duplicative item for that collection. Existing "
+                f"items:\n{json.dumps(repaired, ensure_ascii=False, indent=2)}\n"
+                "Return only the requested item in the wrapper field named item."
+            )
+            wrapper_schema = {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {"item": item_schema},
+                "required": ["item"],
+            }
+            filled = self._call_structured(
+                fill_prompt,
+                wrapper_schema,
+                role=role,
+                max_tokens=min(max_tokens, 4000),
+                arm=arm,
+                node=node,
+                run_dir=run_dir,
+                suffix=f"{suffix}-fill-{field}-{offset + 1}",
+            )
+            repaired.append(filled["item"])
+        return repaired
+
+    @staticmethod
+    def _record_semantic_normalizations(
+        run_dir: Path, *, arm: str, node: str, attempt: int,
+        actions: list[dict[str, Any]],
+    ) -> None:
+        path = run_dir / "semantic_normalizations.jsonl"
+        entry = {
+            "arm": arm,
+            "node_id": node,
+            "attempt": attempt,
+            "actions": actions,
+        }
+        existing = (
+            [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+            if path.exists() else []
+        )
+        if entry not in existing:
+            with path.open("a", encoding="utf-8") as handle:
+                handle.write(json.dumps(entry, ensure_ascii=False, sort_keys=True) + "\n")
 
     def _call_structured_text_checked(
         self, prompt: str, schema: dict[str, Any], *, field: str,

@@ -1,0 +1,217 @@
+{
+  "assessments": [
+    {
+      "assessment": {
+        "en": "From an implementation-planning lens, this proposal requires no new delivery mechanism, so actor capacity and sequencing risks are minimal by construction. However, it does not address the delivery failure already documented: the ministry's current approach relies on case-by-case administrative veto rather than systemic monitoring or an adaptation loop, and this ad hoc pattern would simply continue. The lens's core question—can actors deliver the mechanism in the proposed sequence—is trivially satisfied because no new mechanism is proposed, but this also means no missing capability is remedied and no failure-containment structure is added to a system already showing signs of governance strain.",
+        "hu": "A megvalósítás-tervezési szemléletből nézve ez a javaslat nem igényel új végrehajtási mechanizmust, így a szereplői kapacitás és a szekvenálás kockázatai eleve minimálisak. Ugyanakkor nem kezeli a már dokumentált végrehajtási hiányosságot: a minisztérium jelenlegi megközelítése eseti közigazgatási vétóra támaszkodik, nem pedig szisztematikus monitoringra vagy visszacsatolási hurokra, és ez az ad hoc minta egyszerűen folytatódna. A szemlélet alapkérdése – hogy a szereplők képesek-e a mechanizmust a javasolt sorrendben megvalósítani – trivialitásból teljesül, mivel nincs új mechanizmus, de ez azt is jelenti, hogy semmilyen hiányzó képesség nem kerül orvoslásra, és nem épül be kudarc-elhárítási struktúra egy már most is kormányzási feszültséget mutató rendszerbe."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-implementation_planning-05",
+        "F-live-implementation_planning-09"
+      ],
+      "opportunities": [
+        {
+          "en": "Could serve as an explicit, monitored counterfactual baseline against which the delivery performance of alternative proposals is measured, provided monitoring is added.",
+          "hu": "Explicit, monitorozott alapforgatókönyvként szolgálhatna, amelyhez az alternatív javaslatok végrehajtási teljesítménye mérhető, feltéve, hogy monitoring hozzáadásra kerül."
+        }
+      ],
+      "proposal_ref": "TP-live-t1",
+      "strengths": [
+        {
+          "en": "Requires no new institutional capability, sequencing, or coordination mechanism, so implementation risk in the narrow delivery sense is negligible.",
+          "hu": "Nincs szükség új intézményi képességre, szekvenálásra vagy koordinációs mechanizmusra, így a szűkebb értelemben vett végrehajtási kockázat elhanyagolható."
+        }
+      ],
+      "threats": [
+        {
+          "en": "The existing centralized school-governance bureaucracy already shows documented operational strain and opacity, meaning even passive continuation may not reliably track segregation indicators over time.",
+          "hu": "A meglévő centralizált iskolairányítási bürokrácia már most is dokumentált működési feszültséget és átláthatatlanságot mutat, ami azt jelenti, hogy még a passzív folytatás sem biztos, hogy megbízhatóan nyomon követi a szegregációs mutatókat az idő során."
+        }
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        {
+          "en": "Perpetuates a governance pattern of case-by-case administrative veto (e.g., Tiszavasvári denial) rather than systemic monitoring, leaving no feedback loop to detect or correct worsening segregation trends.",
+          "hu": "Fenntartja az eseti közigazgatási vétó kormányzási mintáját (pl. a tiszavasvári elutasítás), szisztematikus monitoring helyett, így nem marad visszacsatolási hurok a romló szegregációs tendenciák felismerésére vagy korrigálására."
+        },
+        {
+          "en": "No pilot or adaptation structure is embedded, so if geographic capacity mismatches worsen, there is no built-in mechanism to trigger course correction.",
+          "hu": "Nincs beépített kísérleti vagy adaptációs struktúra, így ha a területi kapacitás-eltérések romlanak, nincs beépített mechanizmus a korrekció kiváltására."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "Implementation planning surfaces a severe sequencing and actor-capacity problem for full abolition. The Hungarian ministry itself has so far only exercised individual licensing vetoes rather than legislative or system-wide action, and has explicitly denied any abolition plan while pursuing 'social consultation'—indicating current actor intent and administrative posture diverge sharply from what full abolition would require. Partisan contestation is already high-salience (opposition framing reform signaling as an illegitimate systemic overhaul), which is a threat to durability independent of evidence quality. No pilot phase is described, and the proposal's own risk section acknowledges capacity mismatches seen in Poland's 2017 implementation, but no Hungary-specific containment or monitoring mechanism is specified to prevent an analogous admission shock.",
+        "hu": "A megvalósítás-tervezés súlyos szekvenálási és szereplői kapacitásproblémát tár fel a teljes megszüntetéssel kapcsolatban. A magyar minisztérium maga eddig csak egyedi engedélyezési vétókat alkalmazott, nem törvényi vagy rendszerszintű lépést, és kifejezetten tagadta bármilyen megszüntetési tervet, míg 'társadalmi konzultációt' folytat – ez azt jelzi, hogy a jelenlegi szereplői szándék és közigazgatási hozzáállás élesen eltér attól, amit a teljes megszüntetés igényelne. A partizán szembenállás már most is magas intenzitású (az ellenzék illegitim, rendszerszintű felforgatásként keretezi a reformjelzéseket), ami a bizonyítékok minőségétől függetlenül veszélyezteti a fenntarthatóságot. Nincs leírt kísérleti szakasz, és a javaslat saját kockázati része elismeri a Lengyelországban 2017-ben tapasztalt kapacitás-eltéréseket, de nincs meghatározva magyar-specifikus elhárítási vagy monitoring mechanizmus egy hasonló beiskolázási megrázkódtatás megelőzésére."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-implementation_planning-05",
+        "F-live-implementation_planning-06",
+        "F-live-implementation_planning-07"
+      ],
+      "opportunities": [
+        {
+          "en": "Explicit acknowledgment of Poland's and Austria's reversal history could inform design of durability safeguards (e.g., constitutional entrenchment, phased legal locking) not yet specified in the mechanism.",
+          "hu": "A lengyel és ausztriai visszafordulási történelem explicit elismerése megalapozhatja a fenntarthatósági biztosítékok (pl. alkotmányos rögzítés, fokozatos jogi zárás) kialakítását, amelyek a mechanizmusban még nincsenek meghatározva."
+        }
+      ],
+      "proposal_ref": "TP-live-t2",
+      "strengths": [
+        {
+          "en": "Explicitly names reform-reversal and transition-shock risks (Poland) and thus demonstrates awareness of failure-containment need, which is a necessary first step even though concrete containment mechanisms are not specified.",
+          "hu": "Kifejezetten megnevezi a reform-visszafordulás és az átmeneti megrázkódtatás kockázatait (Lengyelország), így tudatosságot mutat a kudarc-elhárítás szükségességéről, ami szükséges első lépés, még ha konkrét elhárítási mechanizmusok nincsenek is meghatározva."
+        }
+      ],
+      "threats": [
+        {
+          "en": "High-salience partisan framing of preliminary signaling as an illegitimate systemic overhaul indicates that political actors may block or reverse implementation regardless of evidentiary basis, a risk the lens treats as a first-order implementation threat rather than a peripheral concern.",
+          "hu": "Az előzetes jelzések illegitim, rendszerszintű felforgatásként való magas intenzitású partizán keretezése azt jelzi, hogy a politikai szereplők a bizonyítéki alaptól függetlenül blokkolhatják vagy visszafordíthatják a végrehajtást, amit a szemlélet elsőrendű végrehajtási veszélyként kezel, nem periférikus problémaként."
+        }
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        {
+          "en": "No described pilot phase or phased sequencing; the mechanism section implies an abrupt structural conversion, in tension with cross-national capacity-mismatch evidence cited within the proposal's own risk analysis.",
+          "hu": "Nincs leírt kísérleti szakasz vagy fokozatos szekvenálás; a mechanizmus szekció hirtelen strukturális átalakítást sugall, ami feszültségben áll a javaslat saját kockázatelemzésében hivatkozott, országok közötti kapacitás-eltérési bizonyítékkal."
+        },
+        {
+          "en": "Current ministry actor behavior (case-by-case veto, explicit denial of abolition intent) diverges substantially from what full legislative abolition requires, indicating a large gap between proposed mechanism and demonstrated actor capacity/willingness.",
+          "hu": "A minisztérium jelenlegi szereplői viselkedése (eseti vétó, a megszüntetési szándék kifejezett tagadása) jelentősen eltér attól, amit a teljes törvényi megszüntetés igényelne, ami nagy szakadékot jelez a javasolt mechanizmus és a bizonyított szereplői kapacitás/hajlandóság között."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "This proposal offers somewhat more sequencing plausibility than full abolition since it involves a phased entry-age shift rather than one-shot structural conversion, aligning better with actor capacity constraints. However, it inherits the same core delivery gap: current ministerial action is limited to individual licensing decisions, and no described legislative sequencing, pilot testing, or phased rollout schedule bridges the current administrative posture to the proposed age-14 harmonization. The proposal's own risk section concedes that even partial delay reforms carry durability risk analogous to Poland's 2017 reversal, but does not specify what monitoring or adaptation mechanism would detect early warning signs of reversal pressure in the Hungarian context.",
+        "hu": "Ez a javaslat valamivel nagyobb szekvenálási plauzibilitást kínál, mint a teljes megszüntetés, mivel fokozatos belépési kor-eltolást jelent, nem pedig egyszeri strukturális átalakítást, így jobban igazodik a szereplői kapacitáskorlátokhoz. Ugyanakkor örökli az ugyanazt az alapvető végrehajtási hiányosságot: a jelenlegi minisztériumi cselekvés egyedi engedélyezési döntésekre korlátozódik, és nincs leírt törvényi szekvenálás, kísérleti tesztelés vagy fokozatos bevezetési ütemterv, amely hidat képezne a jelenlegi közigazgatási hozzáállástól a javasolt 14 éves korra való harmonizációhoz. A javaslat saját kockázati része elismeri, hogy még a részleges halasztási reformok is a lengyelországi 2017-es visszafordulásra hasonlító fenntarthatósági kockázatot hordoznak, de nem határozza meg, milyen monitoring vagy adaptációs mechanizmus jelezné előre a visszafordulási nyomás korai figyelmeztető jeleit a magyar kontextusban."
+      },
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-implementation_planning-05"
+      ],
+      "opportunities": [
+        {
+          "en": "The Polish 1999 precedent offers a template for phased implementation that could be adapted with explicit Hungarian monitoring checkpoints not present in current mechanism design.",
+          "hu": "A 1999-es lengyel precedens sablont kínál a fokozatos végrehajtáshoz, amely a jelenlegi mechanizmus-tervezésben nem szereplő, explicit magyar monitoring ellenőrző pontokkal adaptálható lenne."
+        }
+      ],
+      "proposal_ref": "TP-live-t3",
+      "strengths": [
+        {
+          "en": "Phased/gradual age-shift design is more compatible with incremental administrative capacity than a single structural break, offering a more plausible sequencing pathway.",
+          "hu": "A fokozatos/gradualis kor-eltolási kialakítás jobban összeegyeztethető az inkrementális közigazgatási kapacitással, mint egy egyszeri strukturális törés, plauzibilisebb szekvenálási útvonalat kínálva."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Partial reforms may attract the same durability-undermining coalition dynamics documented in Poland's 2016-17 reversal, since a delay-only design leaves the underlying selective institutions and their advocacy networks intact.",
+          "hu": "A részleges reformok kiválthatják a lengyelországi 2016–17-es visszafordulásnál dokumentált, fenntarthatóságot aláásó koalíciós dinamikákat, mivel a csak-halasztásos kialakítás érintetlenül hagyja az alapul fekvő szelektív intézményeket és azok érdekképviseleti hálózatait."
+        }
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        {
+          "en": "No specified pilot region, phased legislative timeline, or monitoring indicators for detecting emerging reversal pressure, despite the proposal's own acknowledgment of this precise risk from the Polish case.",
+          "hu": "Nincs meghatározott kísérleti régió, fokozatos törvényi ütemterv vagy monitoring indikátor a kialakuló visszafordulási nyomás felismerésére, annak ellenére, hogy a javaslat maga is elismeri ezt a pontos kockázatot a lengyel eset alapján."
+        },
+        {
+          "en": "Retaining a 6-year track in delayed form still requires the same central licensing/administrative apparatus already shown to operate through discretionary, case-by-case decisions rather than rule-based criteria, so the sorting mechanism's administration is not clearly re-engineered.",
+          "hu": "A 6 éves képzés halasztott formában való megtartása továbbra is ugyanazt a központi engedélyezési/közigazgatási apparátust igényli, amely már bizonyítottan diszkrecionális, eseti döntések alapján működik, nem szabályalapú kritériumok szerint, így a szelekciós mechanizmus igazgatása nincs egyértelműen újratervezve."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "This proposal aligns best among the five with observed actor behavior: it does not require the ministry to abandon its current preference for retaining existing gimnáziums' status, and quota/threshold and desegregation-obligation mechanisms could in principle be implemented through existing licensing and regulatory channels already exercised (case-by-case denial precedent, existing guaranteed-progression rules). This gives it comparatively higher pilotability. However, the same centralized bureaucracy tasked with delivering guardrails has documented operational strain, opacity, and funding shortfalls from 2013-2016, raising a direct capacity question for uniform, nationwide enforcement of any new desegregation obligation—an unresolved feedback-loop and monitoring gap the mechanism section does not address.",
+        "hu": "Az öt közül ez a javaslat illeszkedik legjobban a megfigyelt szereplői viselkedéshez: nem igényli, hogy a minisztérium feladja a meglévő gimnáziumok státuszának megtartására vonatkozó jelenlegi preferenciáját, és a kvóta/küszöbérték és a szegregáció-ellenes kötelezettség mechanizmusai elvben megvalósíthatók lennének a már gyakorolt meglévő engedélyezési és szabályozási csatornákon keresztül (eseti elutasítási precedens, meglévő garantált továbbhaladási szabályok). Ez viszonylag magasabb kísérletezhetőséget biztosít számára. Azonban ugyanaz a centralizált bürokrácia, amelynek a védőintézkedéseket kellene végrehajtania, dokumentált működési feszültséget, átláthatatlanságot és finanszírozási hiányt mutatott a 2013–2016 közötti időszakban, ami közvetlen kapacitáskérdést vet fel bármely új szegregáció-ellenes kötelezettség egységes, országos szintű érvényesítésére – ez egy megoldatlan visszacsatolási hurok és monitoring hiányosság, amelyet a mechanizmus szekció nem kezel."
+      },
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-implementation_planning-05",
+        "F-live-implementation_planning-09"
+      ],
+      "opportunities": [
+        {
+          "en": "Existing case-by-case licensing veto precedent (Tiszavasvári) could be formalized into a rule-based, monitored desegregation-impact assessment process, converting ad hoc discretion into a repeatable, auditable mechanism.",
+          "hu": "A meglévő eseti engedélyezési vétó precedens (Tiszavasvári) formalizálható szabályalapú, monitorozott szegregációs hatásvizsgálati folyamattá, az ad hoc diszkréciót ismételhető, ellenőrizhető mechanizmussá alakítva."
+        }
+      ],
+      "proposal_ref": "TP-live-t4",
+      "strengths": [
+        {
+          "en": "Builds on existing institutional precedent (guaranteed progression rules, prior case-by-case licensing denials) rather than requiring an entirely new administrative apparatus, improving near-term deliverability.",
+          "hu": "Meglévő intézményi precedensre épül (garantált továbbhaladási szabályok, korábbi eseti engedélyezési elutasítások), nem igényel teljesen új közigazgatási apparátust, javítva a rövid távú megvalósíthatóságot."
+        },
+        {
+          "en": "Compatible with the ministry's stated current position of retaining existing gimnáziums' status, reducing near-term political friction relative to structural abolition options.",
+          "hu": "Összeegyeztethető a minisztérium jelenlegi kinyilatkoztatott álláspontjával a meglévő gimnáziumok státuszának megtartásáról, csökkentve a rövid távú politikai feszültséget a strukturális megszüntetési opciókhoz képest."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Legal challenge risk to quota mechanisms (parental choice tension) could stall implementation mid-rollout, and the proposal does not specify a contingency or fallback sequencing if guardrail provisions are struck down.",
+          "hu": "A kvóta-mechanizmusok jogi megtámadásának kockázata (szülői választási jog feszültsége) megállíthatja a végrehajtást a bevezetés közben, és a javaslat nem határoz meg vészhelyzeti vagy visszaeső szekvenálást, ha a védőintézkedési rendelkezéseket megsemmisítik."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "The maintainer executing any statutory desegregation obligation is the same centralized bureaucracy already shown to have operational opacity and deficit spending, casting doubt on uniform enforcement capacity across all licensing decisions nationwide.",
+          "hu": "A bármely törvényi szegregáció-ellenes kötelezettséget végrehajtó fenntartó ugyanaz a centralizált bürokrácia, amelyről már bebizonyult a működési átláthatatlanság és a hiányos finanszírozás, ami megkérdőjelezi az egységes érvényesítési kapacitást minden engedélyezési döntésben országosan."
+        },
+        {
+          "en": "No monitoring or adaptation mechanism is specified for tracking whether quota/threshold adjustments actually reduce segregation over time, leaving the guardrail approach without a feedback loop.",
+          "hu": "Nincs meghatározva monitoring vagy adaptációs mechanizmus annak nyomon követésére, hogy a kvóta/küszöbérték-módosítások valóban csökkentik-e a szegregációt idővel, így a védőintézkedési megközelítés visszacsatolási hurok nélkül marad."
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "en": "This proposal most directly engages the implementation-planning lens by explicitly naming coordination complexity and maintainer buy-in dependency as risks, reflecting awareness that Finland's successful detracking bundled structural and non-structural elements and that Poland's reversal shows evidence alone is insufficient. However, this breadth is itself the central implementation risk: coordinating legislative, network-planning, teacher-distribution, equity-program, and consultation workstreams simultaneously demands cross-agency capacity that the same centralized bureaucracy has not reliably demonstrated (documented deficit spending, delayed payments, and opacity from 2013-2016). The proposal names but does not resolve dependency on church/foundation maintainer cooperation, which affects a substantial share of the very institutions the reform targets, and no sequencing priority or minimum viable subset is specified for phased delivery if full coordination proves infeasible.",
+        "hu": "Ez a javaslat foglalkozik legközvetlenebbül a megvalósítás-tervezési szemlélettel, mivel kifejezetten megnevezi a koordinációs komplexitást és a fenntartói együttműködési függőséget kockázatként, tükrözve azt a felismerést, hogy Finnország sikeres szintosztás-megszüntetése strukturális és nem-strukturális elemeket egyaránt tartalmazott, és hogy a lengyel visszafordulás azt mutatja, a bizonyíték önmagában nem elegendő. Azonban ez a szélesség maga a központi végrehajtási kockázat: a törvényi, hálózat-tervezési, tanár-elosztási, esélyegyenlőségi program és konzultációs munkafolyamatok egyidejű koordinálása olyan intézményközi kapacitást igényel, amelyet ugyanaz a centralizált bürokrácia nem bizonyított megbízhatóan (dokumentált hiányos finanszírozás, késleltetett kifizetések és átláthatatlanság 2013–2016-ból). A javaslat megnevezi, de nem oldja meg a fenntartók (egyházi/alapítványi) együttműködésétől való függést, amely a reform által célzott intézmények jelentős részét érinti, és nincs meghatározva szekvenálási prioritás vagy minimálisan életképes alrészhalmaz a fokozatos megvalósításhoz, ha a teljes koordináció megvalósíthatatlannak bizonyul."
+      },
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-implementation_planning-08",
+        "F-live-implementation_planning-09"
+      ],
+      "opportunities": [
+        {
+          "en": "Package design allows for staged piloting of individual components (e.g., teacher-distribution correction or equity-program integration first) even if full structural change is deferred, offering a natural containment strategy not yet made explicit.",
+          "hu": "A csomag-kialakítás lehetővé teszi az egyes összetevők (pl. tanár-elosztási korrekció vagy esélyegyenlőségi program integrálása) fokozatos kísérleti bevezetését, akkor is, ha a teljes strukturális változás elhalasztott, ez egy még nem explicit módon kimondott természetes elhárítási stratégiát kínálva."
+        }
+      ],
+      "proposal_ref": "TP-live-t5",
+      "strengths": [
+        {
+          "en": "Explicitly names both coordination complexity and maintainer buy-in dependency as risks, demonstrating the most direct engagement with the lens's core question about missing capabilities and safeguards compared to the other proposals.",
+          "hu": "Kifejezetten megnevezi mind a koordinációs komplexitást, mind a fenntartói együttműködési függőséget mint kockázatokat, ami a leginkább közvetlen foglalkozást jelenti a szemlélet alapkérdésével a hiányzó képességekről és biztosítékokról a többi javaslathoz képest."
+        },
+        {
+          "en": "Incorporates lessons from both Finland (multi-measure success) and Poland (evidence-alone insufficiency) into design logic, reflecting some structured learning from comparator failure modes.",
+          "hu": "Beépíti mind a finn (több intézkedésen alapuló siker), mind a lengyel (önmagában elégtelen bizonyíték) tanulságokat a kialakítási logikába, tükrözve a komparátorok kudarcmintáiból való strukturált tanulást."
+        }
+      ],
+      "threats": [
+        {
+          "en": "Simultaneous dependency on maintainer cooperation and centralized bureaucratic execution creates a compound failure risk: if either fails, the package's multi-measure rationale (avoiding Finland/Poland's failure modes) collapses into a partial, potentially incoherent implementation.",
+          "hu": "A fenntartói együttműködéstől és a centralizált bürokratikus végrehajtástól való egyidejű függés összetett kudarckockázatot hoz létre: ha bármelyik meghiúsul, a csomag több intézkedésen alapuló indoklása (a finn/lengyel kudarcminták elkerülése) részleges, potenciálisan inkoherens végrehajtássá omlik össze."
+        }
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        {
+          "en": "No specified sequencing priority or minimum viable subset of workstreams; if full coordination across legislative, network, teacher, and equity-program tracks proves infeasible, no fallback pathway is described.",
+          "hu": "Nincs meghatározott szekvenálási prioritás vagy minimálisan életképes munkafolyamat-alrészhalmaz; ha a törvényi, hálózati, tanári és esélyegyenlőségi program munkafolyamatok teljes koordinációja megvalósíthatatlannak bizonyul, nincs leírt visszaeső útvonal."
+        },
+        {
+          "en": "The delivery agency for most workstreams is the same centralized bureaucracy already documented with high bureaucratic burden and deficit spending, casting direct doubt on multi-track execution capacity.",
+          "hu": "A legtöbb munkafolyamat végrehajtó ügynöksége ugyanaz a centralizált bürokrácia, amelyről már dokumentálták a magas bürokratikus terhelést és a hiányos finanszírozást, közvetlen kétséget vetve fel a több nyomvonalú végrehajtási kapacitásra vonatkozóan."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a legal and governance perspective, this baseline proposal accurately describes the existing legal authority structure: closure/reorganization decisions rest with the centrally-controlled tankerület system under KLIK, a deconcentrated rather than devolved arm of state administration, with no binding local veto except the narrow church-transfer parental veto. The individual-level (not institutional-level) right-to-education framework legally permits this arrangement, and advisory bodies (Ombudsman offices) can only recommend, not reverse, decisions. The proposal's core governance weakness is structural rather than novel: it perpetuates the accountability ambiguity from split ownership (municipality owns buildings, state controls operations) and offers no mechanism to close the gap between the constitutional right and demographic reality documented in cases like Garab.",
+      "hu": "Jogi és kormányzási szempontból ez az alapforgatókönyv pontosan írja le a jelenlegi jogosultsági struktúrát: a bezárási/átszervezési döntések a KLIK alá tartozó, centralizáltan irányított tankerületi rendszer kezében vannak, amely az állami közigazgatás dekoncentrált – nem pedig decentralizált – ága, és nincs kötelező érvényű helyi vétó, kivéve a szűk körű, egyházi átadásra vonatkozó szülői vétót. Az egyéni szintű (nem intézményi szintű) oktatáshoz való jog jogi kerete lehetővé teszi ezt a berendezkedést, és a tanácsadó testületek (ombudsmani hivatalok) csak ajánlásokat tehetnek, döntéseket nem érvényteleníthetnek. A javaslat fő kormányzási gyengesége nem új keletű, hanem strukturális: fennmarad a megosztott tulajdonlásból (önkormányzati épület, állami üzemeltetés) fakadó elszámoltathatósági bizonytalanság, és nincs mechanizmus a Garab-típusú esetekben dokumentált szakadék áthidalására az alkotmányos jog és a demográfiai valóság között."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-03",
+      "F-live-legal_and_governance-05",
+      "F-live-legal_and_governance-06",
+      "F-live-legal_and_governance-09"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "Serving explicitly as a counterfactual clarifies, in governance terms, exactly which legal levers (early-warning duties, binding oversight, transport enforceability) are absent and would need new authority to add.",
+        "hu": "Az, hogy explicit módon kontrafaktuálisként szolgál, kormányzási szempontból pontosan tisztázza, mely jogi eszközök (korai figyelmeztető kötelezettségek, kötelező felügyelet, kikényszeríthető szállítás) hiányoznak, és melyekhez új jogosultság szükséges."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Accurately reflects the current, legally settled distribution of maintainer authority, requiring no new legislation or governance restructuring to implement.",
+        "hu": "Pontosan tükrözi a fenntartói jogosultságok jelenlegi, jogilag rögzített megosztását, így nincs szükség új jogszabályra vagy kormányzási átalakításra a végrehajtáshoz."
+      },
+      {
+        "en": "Preserves the existing, functioning parental veto mechanism for church transfers as the sole community check within the system.",
+        "hu": "Megőrzi a meglévő, működő szülői vétómechanizmust az egyházi átadásokra, mint a rendszeren belüli egyetlen közösségi kontrollt."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Absent a systematic demographic early-warning mechanism, ad hoc closures recurring in the Garab pattern remain legally permissible but generate governance legitimacy costs and recurring localized disputes over accountability.",
+        "hu": "Szisztematikus demográfiai korai figyelmeztető mechanizmus nélkül a Garab-mintát követő ad hoc bezárások jogilag megengedettek maradnak, de kormányzási legitimitási költségeket és ismétlődő, elszámoltathatósággal kapcsolatos helyi vitákat generálnak."
+      },
+      {
+        "en": "Any 2026 diagnostic review recommendations risk remaining non-binding policy drift absent integration into a governance framework with enforcement teeth.",
+        "hu": "A 2026-os diagnosztikai felülvizsgálat ajánlásai fennáll a veszélye, hogy nem kötelező érvényű, irányvesztett szakpolitikai törmelékké válnak, ha nem integrálódnak egy kikényszerítő erővel bíró kormányzási keretbe."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Does not address the documented accountability ambiguity from split ownership between municipalities (buildings) and the state (operations), which produced concrete disputes such as Tiszavasvári/Bűd.",
+        "hu": "Nem kezeli a dokumentált elszámoltathatósági bizonytalanságot, amely az önkormányzatok (épület) és az állam (üzemeltetés) közötti megosztott tulajdonlásból ered, és amely konkrét vitákhoz vezetett, mint a Tiszavasvári/Bűd-ügy."
+      },
+      {
+        "en": "Leaves oversight bodies structurally toothless: the Education Rights Commissioner and Deputy Ombudsman can investigate and recommend but cannot bind or reverse maintainer decisions.",
+        "hu": "A felügyeleti testületeket strukturálisan foghíjasan hagyja: az Oktatási Jogok Biztosa és a nemzetiségi jogok ombudsmanhelyettese vizsgálhat és ajánlást tehet, de nem kötelezheti vagy érvénytelenítheti a fenntartói döntéseket."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t1-legal_and_governance",
+  "provenance_ref": "PV-assess_legal_and_governance-88f4e3825b72872a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

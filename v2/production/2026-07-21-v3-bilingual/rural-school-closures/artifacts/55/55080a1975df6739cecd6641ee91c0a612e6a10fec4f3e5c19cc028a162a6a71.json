@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The split-model has a distinctive cost-incidence profile: administrative implementation is low-friction because multi-grade classes are already legally sanctioned, meaning no new statutory or bureaucratic cost is required to permit the mechanism itself. This is functionally similar to Hungary's historical practice of reducing parallel classes rather than closing schools, a low-cost adaptation that avoided formal closure costs but is associated with between-settlement segregation as a side effect. The fiscal magnitude of the intervention is asymmetric by design: lower-grade retention is comparatively cheap (no new transport, minimal facility investment) while upper-grade consolidation concentrates the transport and facility cost burden on older pupils. However, the proposal's own risk evidence establishes a hard viability floor: a 100-student threshold modeled in Hungarian research would directly affect over 500 village schools, many of which cannot sustain even the reduced lower-grade-only model, indicating that for a substantial subset of settlements this is not truly a cost-saving intermediate option but a deferred full closure.",
+      "hu": "A szétválasztott modellnek egyedi költségviselési profilja van: a végrehajtás alacsony frikciójú, mivel az összevont osztályok már jogilag engedélyezettek, azaz magának a mechanizmusnak az engedélyezéséhez nincs szükség új jogi vagy bürokratikus költségre. Ez funkcionálisan hasonló Magyarország történelmi gyakorlatához, amely az iskolabezárás helyett a párhuzamos osztályok csökkentését alkalmazta – alacsony költségű adaptáció, amely elkerülte a formális bezárási költségeket, ám mellékhatásként települések közötti szegregációval járt. A beavatkozás fiskális nagyságrendje tervezetten aszimmetrikus: az alsó tagozat megtartása viszonylag olcsó (nincs új szállítás, minimális infrastrukturális beruházás), míg a felső tagozat konszolidációja az idősebb diákokra koncentrálja a szállítási és infrastrukturális költségterhet. Ugyanakkor a javaslat saját kockázati bizonyítéka egy éles viabilitási küszöböt állít fel: a magyar kutatásban modellezett 100 fős küszöb közvetlenül érintene több mint 500 falusi iskolát, amelyek jelentős része még a csökkentett, csak alsó tagozatos modellben sem tartható fenn, azaz a települések egy jelentős csoportjánál ez nem valódi költségmegtakarító átmeneti opció, hanem elhalasztott teljes bezárás."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Repurposing partially-vacated buildings (as in the Polish analogue) for multipurpose community use could offset facility carrying costs, though this financial offset is not separately quantified in the supplied evidence.",
+        "hu": "A részlegesen kiürült épületek többfunkciós közösségi célra történő átalakítása (mint a lengyel analógiában) ellensúlyozhatná az infrastruktúra-fenntartási költségeket, bár ezt a pénzügyi ellensúlyozást a rendelkezésre álló bizonyítékok nem számszerűsítik külön."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Requires no additional statutory authorization, minimizing implementation and transaction costs relative to proposals requiring new legal frameworks.",
+        "hu": "Nem igényel további jogszabályi felhatalmazást, minimalizálva a végrehajtási és tranzakciós költségeket az új jogi kereteket igénylő javaslatokhoz képest."
+      },
+      {
+        "en": "Concentrates the higher fiscal cost (transport, specialized facilities) on the smaller subset of older pupils rather than the entire student body, which may be more cost-effective if facility specialization has genuine returns.",
+        "hu": "A magasabb fiskális költséget (szállítás, speciális infrastruktúra) a diákok kisebb részhalmazára, az idősebb tanulókra koncentrálja a teljes tanulói létszám helyett, ami költséghatékonyabb lehet, ha az infrastrukturális specializáció valódi hozammal jár."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If upper-grade consolidation routes are not carefully designed, the historical Hungarian pattern of within-school segregation reduction being offset by between-school segregation could recur, generating a distributional cost not captured in aggregate fiscal accounting.",
+        "hu": "Ha a felső tagozatos konszolidációs útvonalakat nem alakítják ki körültekintően, megismétlődhet a történelmi magyar minta, amelyben az iskolán belüli szegregáció csökkenését iskolák közötti szegregáció ellensúlyozta, olyan elosztási költséget generálva, amelyet az összesített fiskális elszámolás nem tükröz."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "The 100-student viability threshold implies the model has a lower bound below which it functions as deferred closure rather than genuine cost-effective retention, and the proposal does not specify how many affected settlements fall below this bound.",
+        "hu": "A 100 fős viabilitási küszöb azt jelzi, hogy a modellnek van egy alsó határa, amely alatt elhalasztott bezárásként funkcionál, nem valódi költséghatékony megtartásként, és a javaslat nem specifikálja, hány érintett település esik e küszöb alá."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t3-education_finance",
+  "provenance_ref": "PV-assess_education_finance-293471d7f6ea96e4",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

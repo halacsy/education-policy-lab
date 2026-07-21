@@ -1,0 +1,39 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Difference-in-differences or matched-pair quasi-experimental design comparing village population trajectories before/after school closures across Hungarian tankerület districts since 2013, using KSH demographic microdata matched with Klebelsberg Center closure records, with pre-trend testing and placebo comparisons against non-closed but demographically similar villages.",
+      "hu": "Differencia-in-differencia vagy párosított kvázi-experimentális elemzés, amely a falvak népességi trajektóriáit hasonlítja össze az iskolabezárások előtt és után a magyar tankerületekben 2013 óta, a KSH demográfiai mikroadatait a Klebelsberg Központ bezárási nyilvántartásával összekapcsolva, előzetes trend-teszteléssel és placebo-összehasonlítással demográfiailag hasonló, de nem bezárt falvakkal."
+    },
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t6"
+    ],
+    "question": {
+      "en": "Does school closure causally accelerate depopulation in Hungarian villages, or does depopulation drive closure with school presence having little independent effect, and how does this vary by region and settlement size?",
+      "hu": "A magyar falvakban az iskolabezárás okozza-e a további elnéptelenedést, vagy inkább a népességcsökkenés vezet a bezáráshoz, miközben az iskola megléte önmagában kevés önálló hatással bír, és ez hogyan változik régió és településnagyság szerint?"
+    },
+    "uncertainty_refs": [
+      "U-live-international_comparison-01",
+      "U-live-finnish_reform-01",
+      "U-live-portuguese_reform-02",
+      "U-live-school_network_planning-01",
+      "U-live-education_finance-02",
+      "U-live-implementation_planning-01",
+      "U-live-t2-01"
+    ],
+    "why_it_matters": {
+      "en": "This is the single most decision-relevant empirical question across the agenda: whether closure is treated as a rural-development lever or purely a social-stabilization/equity measure depends entirely on causal direction, and the international evidence (Finland vs. Saxony/Sweden) is directly contradictory, meaning Hungary-specific evidence is needed before any consolidation or preservation proposal can be justified on demographic grounds.",
+      "hu": "Ez a napirend egyetlen legdöntőbb empirikus kérdése: hogy a bezárást vidékfejlesztési eszközként vagy kizárólag társadalmi stabilizációs/esélyegyenlőségi intézkedésként kezeljük-e, teljes mértékben az okozati iránytól függ, és a nemzetközi bizonyítékok (Finnország vs. Szászország/Svédország) egymásnak ellentmondanak, ezért magyarországi specifikus bizonyítékra van szükség, mielőtt bármely konszolidációs vagy megőrzési javaslat demográfiai alapon igazolható lenne."
+    }
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "RQ-live-production-01",
+  "provenance_ref": "PV-build_research_agenda-a8c1800465d8c95c",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Settlement structure in Hungary is fragmented, with 645 localities having populations below 300, and 114 of these with under-18 populations below 10%; this fragmentation is geographically bifurcated, with 91 municipalities averaging under age 35 and 42 municipalities averaging over age 50, concentrated in Vas and Zala counties.",
+      "hu": "Magyarország településszerkezete fragmentált, 645 településnek 300 fő alatti a lélekszáma, és közülük 114-nek 10% alatt a 18 év alatti népesség; ez a fragmentáció földrajzilag megosztott, 91 önkormányzatban átlagosan 35 év alatti, 42-ben pedig 50 év feletti az átlagéletkor, amely Vas és Zala megyékben koncentrálódik."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a(z) Demográfia nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Data from 2020 may not reflect rapid recent migration or fertility shifts; age structure alone does not predict educational enrollment without accounting for fertility within age cohorts.",
+        "hu": "A 2020-as adatok nem tükrözik a közelmúltbeli migrációs vagy termékenységi eltolódásokat; az életkori szerkezet önmagában nem jósolja meg az oktatási beiratkozásokat a korcsoportok termékenységének figyelembevétele nélkül."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-demography-02",
+  "provenance_ref": "PV-research_demography-b9408e089fac9ea4",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

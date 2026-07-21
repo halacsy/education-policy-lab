@@ -1,0 +1,65 @@
+{
+  "content": {
+    "affected_groups": [
+      {
+        "en": "Ministry and central administrative bureaucracy",
+        "hu": "Minisztérium és központi közigazgatási bürokrácia"
+      },
+      {
+        "en": "Church- and foundation-run school maintainers",
+        "hu": "Egyházi és alapítványi iskolafenntartók"
+      },
+      {
+        "en": "Students and teachers subject to sequential vs. simultaneous reform workstreams",
+        "hu": "Az egymást követő vagy egyidejű reform-munkafolyamatoknak kitett diákok és tanárok"
+      }
+    ],
+    "decision_question": {
+      "en": "Should reform pursue a single-lever structural change for speed and simplicity, or a multi-workstream package for durability, given documented coordination strain in the existing centralized bureaucracy and non-guaranteed maintainer cooperation?",
+      "hu": "A reform törekedjen-e egytényezős strukturális változásra a gyorsaság és egyszerűség kedvéért, vagy egy több munkafolyamatot tartalmazó csomagra a tartósság érdekében, tekintve a jelenlegi központosított bürokrácia dokumentált koordinációs feszültségeit és a nem garantált fenntartói együttműködést?"
+    },
+    "dilemma_type": "mixed",
+    "evidence_boundary": {
+      "en": "Evidence on administrative capacity and maintainer cooperation rates could clarify feasibility of coordinated delivery, but cannot resolve whether the value of durability is worth the added complexity and slower rollout — this is a governance-design preference, not something evidence alone settles.",
+      "hu": "A közigazgatási kapacitásra és a fenntartói együttműködési arányokra vonatkozó bizonyítékok tisztázhatják a koordinált végrehajtás megvalósíthatóságát, de nem dönthetik el, hogy a tartósság értéke megéri-e a többletbonyolultságot és a lassabb bevezetést — ez irányítási-tervezési preferencia, nem valami, amit önmagában a bizonyíték eldönt."
+    },
+    "finding_refs": [
+      "F-live-polish_reform-08",
+      "F-live-implementation_planning-09",
+      "F-live-implementation_planning-08",
+      "F-live-portuguese_reform-08"
+    ],
+    "origin": "live_generation",
+    "proposal_refs": [
+      "TP-live-t5",
+      "TP-live-t2",
+      "TP-live-t3"
+    ],
+    "tension": {
+      "en": "TP-live-t5 packages structural change with curriculum, teacher-distribution, equity-program, and network-planning workstreams specifically to avoid the fate of Poland's 2016-17 reversal, where strong outcome evidence alone did not prevent reversal (F-live-polish_reform-08). This design is comparatively best-supported for durability but multiplies veto points and depends on cooperation from church- and foundation-run maintainers that is 'not guaranteed' (F-live-implementation_planning-09, F-live-implementation_planning-08). A narrower, single-lever reform (TP-live-t2 or TP-live-t3) is faster and administratively simpler but inherits the same reversal vulnerability the evidence documents without a comparative solution. This is partly an empirical question about whether coordination capacity exists, but it also embeds a value trade-off between comprehensive, better-targeted reform and simpler, faster action whose political survivability is unresolved either way.",
+      "hu": "A TP-live-t5 a strukturális változást kimondottan tanterv-, tanárelosztási, esélyegyenlőségi programot és hálózattervezési munkafolyamatokat kombinálva csomagolja, hogy elkerülje a lengyel 2016-17-es visszafordítás sorsát, ahol az erős hatásbizonyíték önmagában nem akadályozta meg a visszafordítást (F-live-polish_reform-08). Ez a kialakítás tartósság szempontjából relatíve legjobban alátámasztott, de megsokszorozza a vétópontok számát, és olyan egyházi és alapítványi fenntartók együttműködésétől függ, amely „nem garantált” (F-live-implementation_planning-09, F-live-implementation_planning-08). Egy szűkebb, egytényezős reform (TP-live-t2 vagy TP-live-t3) gyorsabb és igazgatásilag egyszerűbb, de ugyanazt a visszafordítási sebezhetőséget örökli anélkül, hogy megoldást kínálna rá. Ez részben empirikus kérdés a koordinációs kapacitás meglétéről, de értékkonfliktust is magában rejt a átfogóbb, jobban célzott reform és az egyszerűbb, gyorsabb cselekvés között, amelynek politikai túlélési esélye mindkét esetben megoldatlan."
+    },
+    "title": {
+      "en": "Reform durability vs. speed: does packaging structural change with support workstreams justify the added coordination burden?",
+      "hu": "Reformtartósság vagy gyorsaság: indokolja-e a strukturális változás kísérő munkafolyamatokkal való kiegészítése a többletkoordinációs terhet?"
+    },
+    "value_poles": [
+      {
+        "en": "Comprehensive, durable reform design",
+        "hu": "Átfogó, tartós reformkialakítás"
+      },
+      {
+        "en": "Simplicity, speed, and lower execution risk",
+        "hu": "Egyszerűség, gyorsaság és alacsonyabb végrehajtási kockázat"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "D-live-production-02",
+  "provenance_ref": "PV-identify_decision_dilemmas-1a428c94c4f33710",
+  "record_type": "dilemma",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

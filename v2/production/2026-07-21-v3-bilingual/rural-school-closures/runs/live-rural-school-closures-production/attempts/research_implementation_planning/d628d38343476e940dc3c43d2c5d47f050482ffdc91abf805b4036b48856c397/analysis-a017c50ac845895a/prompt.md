@@ -1,0 +1,103 @@
+TASK: expert_analysis
+AGENT: implementation_planning
+LANG: en+hu
+
+Every semantic prose field must be authored natively in both languages as one exact {en, hu} object. The two texts must carry the same claim, scope, numbers, uncertainty, and references. Do not write Hungarian as a later translation step.
+
+
+Convert the live research notes below into a bilingual evidence artifact set for this policy problem.
+
+DISCIPLINE: public-sector change and implementation science
+PUBLIC QUESTION: What should happen to primary schools in depopulating villages?
+CRITERIA: actor capacity, sequencing, pilotability, monitoring, adaptation, failure containment
+KNOWN LENS LIMITS: Implementation readiness cannot be inferred from policy intent alone.
+
+RESEARCH NOTES:
+# Research Notes: Village Primary Schools & Depopulation in Hungary — Implementation-Science Lens
+
+## 1. Governance authority for school closure/consolidation is split and centralized, weakening local actor capacity to "deliver" any locally-designed mechanism
+Since 2013, ownership of school buildings remained with municipalities but 
+the municipalities now own the buildings and therefore are responsible for their maintenance while the activities within these buildings are supervised by the central government.
+ Operationally, 
+the government centralised the running of schools in 2013, taking control away from local authorities, with the Klebelsberg Institution Maintenance Centre, under the ministry of education, employing all of Hungary's teachers with direct hire/fire power.
+ **Implication (inference):** a village mayor cannot unilaterally decide to keep a school open or merge it; the effective decision-maker is a district-level state office (tankerület), so any "sequence" that assumes municipal agency alone is not deliverable as designed.
+
+## 2. Sub-3,000-population settlements have a structurally different maintainer than larger towns, adding a second administrative layer
+
+Where population exceeds 3,000, the municipality remains the school's "operator" (működtető) while the state center holds maintainer duties; below 3,000 residents, the state district office is both maintainer and operator.
+ **Inference:** depopulating villages (nearly all under this threshold) sit in the more centralized tier, meaning local feedback (parents, mayor) has fewer formal levers than in towns — a capability gap for any locally-triggered escalation mechanism.
+
+## 3. Church/NGO takeover is an existing, actively used alternative pathway to state closure — but with narrow, self-limited scope
+A 2026 case shows a religious-affiliated maintainer (Kolping) absorbing two small-town schools threatened by low enrollment into a shared management structure rather than closing them, with the organization's director stating explicitly that 
+"we are not solving the region's social care needs"
+ — i.e., the intervention is scoped strictly to school administration, not the broader community-hub function. **Fact/example, single case; contested generalizability** — cannot be assumed to be a systemic safeguard rather than an ad hoc rescue.
+
+## 4. There is a documented minimum-size/efficiency policy lever, but its own analysts flag large collateral closure counts
+Hungarian education-research modeling found that 
+raising the minimum school size to just 100 students would affect more than five hundred village schools (as of 2002 data), and even though some could survive via merging with other small schools, hundreds would still close under a 100-pupil floor
+. **Fact, but dated (2002 baseline) — no confirmation this exact threshold is current law; treat as illustrative of mechanism design trade-offs, not current binding rule.**
+
+## 5. A large share of Hungary's smallest villages structurally cannot sustain a normal graded school, pointing to multigrade ("osztatlan") teaching as the only feasible instructional model at small scale
+As of a 2008 count, 
+Hungary had 1,036 settlements (aprófalu) under 500 residents, capable of sustaining schools of at most ~20 pupils, mostly as branch institutions; in autumn 2008 there were 109 such ≤20-pupil schools nationally with 1,698 students total
+, and 
+these schools are forced into ungraded or partially graded teaching because low pupil numbers cannot support multiple parallel classes
+. **Inference:** any "keep the school open" mechanism implicitly requires teachers trained/willing to run multigrade classrooms — a distinct pedagogical capability not automatically present in a system built around single-grade classes.
+
+## 6. Teacher supply is the binding constraint most likely to break any "keep schools open" sequence, independent of buildings or governance
+EU monitoring data confirm 
+education outcomes are lowest in rural settlements, where the capacity to provide quality education services is more limited and teacher shortages are more pressing — Hungary has the largest urban/rural gap in education outcomes of all OECD countries even before accounting for socio-economic status.
+ More recent monitoring adds that 
+teacher shortages are a growing concern linked to an ageing workforce: the number of teachers aged 30–44 has declined, so half of all primary teachers in 2024/2025 were 50 or older while only 7.2% were under 30
+, and 
+teacher shortages are greatest in rural areas, with the share of unqualified teachers in disadvantaged schools 2 to 3 times higher than in non-disadvantaged schools.
+ **Strong fact base; directly threatens implementability of any policy that assumes staffing a kept-open rural school is routine.**
+
+## 7. The core causal claim behind "keep the school to save the village" is empirically contested, not settled
+International comparative literature is split: some studies find closure worsens depopulation — e.g., Finnish DID analysis 
+using difference-in-differences regression combined with matching, focusing on 2010–2018, found that after school closure the population of the surrounding community decreased more than before the closure
+ — while other national studies find no such effect: 
+Barakat (2015) in Saxony and Amcoff (2012) in Sweden find there is no significant connection between school closure and population decline
+, and 
+Barakat (2014) demonstrated that while school location may play a role for some individuals looking for housing, there is generally no evidence of a localized depopulating effect of primary school closures.
+ A Hungarian dataset itself found ambiguous socioeconomic correlates: 
+villages with schools had better demographic performance and partly better living/infrastructural conditions, but worse employment and welfare characteristics, compared to villages without schools.
+ **Explicitly contested — the mechanism's theory of change (school retention → community survival) lacks robust causal confirmation and cannot be assumed as a safe design premise.**
+
+## 8. Perceived symbolic value of the school diverges sharply from revealed preference/actual hardship reporting, a feedback-loop distortion risk
+A Czech-context study found 
+that in villages with a school, the majority of residents consider it difficult to do without, but only 17% of inhabitants of municipalities without an elementary school consider its absence a major shortcoming
+, and the broader literature notes 
+among local policymakers and rural inhabitants a persistent belief that villages without a primary school are unattractive to families with children, making closures a "recipe for depopulation."
+ **Inference for implementation science:** community consultation mechanisms that rely on stated preference (surveys, hearings) may systematically overweight symbolic attachment relative to actual post-closure adjustment, distorting any feedback loop meant to calibrate the policy.
+
+## 9. Hungary already runs a parallel, non-education-specific rural-revitalization funding channel that could substitute or compete with a school-focused mechanism
+The "Hungarian Village Program" (Magyar Falu Program) is 
+directed specifically at financing municipalities to avoid depopulation and improve living circumstances in rural areas
+, and 
+has provided 600 localities with a combined 10 billion forints (EUR 28.3 million) to develop communal spaces and establish community life
+, against a backdrop where 
+the population of every fifth Hungarian locality faces slow decline into complete depopulation, with 147 localities projected to be fully depopulated absent significant change.
+ A Romanian-Hungarian (Székely) cross-border case illustrates the limits of infrastructure-only responses: even after a village office 
+commissioned a demand forecast before renovating the school and took concrete steps (paving roads, building water/sewage infrastructure) to keep young families locally
+, the renovated school was closed five years later for lack of children — indicating infrastructure investment alone did not alter the underlying demographic trajectory. **Mixed evidence: shows an existing non-school funding instrument exists, but a case example suggests infrastructure-side interventions do not reliably reverse the enrollment decline driving closure decisions.**
+
+## 10. No identified monitoring/early-warning mechanism links demographic microdata to school-network planning in a documented, systematic way
+A 2025 territorial study explicitly aims to fill this gap: it 
+sets out to identify community-level characteristics associated with the presence or absence of a school using 2015 Hungarian Central Statistical Office territorial databases
+, and a related 2025 paper maps that 
+"white spaces" in 2024 — settlements with no public education institutions — reflect either lack of school-age population or institutional disappearance, concentrated in remote and depopulated regions.
+ **Inference:** the existence of academic post-hoc mapping (rather than a named, institutionalized state early-warning/trigger system feeding into tankerület-level planning) suggests any real-time feedback loop connecting demographic decline to proactive (as opposed to reactive/crisis-driven) school-network decisions is not documented as operational — a likely missing safeguard.
+
+---
+
+### Summary of implementation-science gaps identified (not recommendations)
+- **Actor/authority mismatch:** decision rights sit with a centralized state tankerület system, not municipalities or communities, for sub-3,000 population villages — sequence design must route through this actor, not around it.
+- **Missing capability:** systemic multigrade-teacher training and recruitment pipeline for small rural schools.
+- **Missing capability:** rural teacher supply pipeline generally (ageing workforce, under-30 share only 7.2%).
+- **Weak/contested feedback signal:** the core causal assumption (school = community survival) is empirically split across country contexts and even within Hungarian data.
+- **Distorted feedback loop risk:** stated community preference for keeping schools may not match revealed post-closure adjustment behavior.
+- **Fragmented instruments:** an existing non-education rural fund (Magyar Falu Program) and ad hoc church/NGO takeovers exist in parallel with, but not demonstrably integrated into, formal school-network planning — raising coordination-safeguard questions.
+- **No documented systematic early-warning trigger** connecting demographic microdata to proactive network-planning decisions at tankerület level.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

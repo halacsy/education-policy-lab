@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This package proposal is the only one among the five that explicitly names network rationalization as a required workstream alongside structural and non-structural change, directly acknowledging the documented urban-oversubscription/rural-under-enrollment mismatch as an inheritable transition risk. This is a genuine network-planning strength, but the lens also notes that bundling network rationalization with legislative, teacher-distribution, and equity-program workstreams multiplies coordination points, and that maintainer dependency (church- and foundation-run schools) directly affects whether physical capacity adjustments in the network can actually be executed, since these maintainers control significant shares of the institutional base outside direct central authority.",
+      "hu": "Az öt javaslat közül ez az egyetlen csomagjavaslat, amely kifejezetten megnevezi a hálózat-racionalizálást szükséges munkafolyamatként a strukturális és nem strukturális változtatások mellett, közvetlenül elismerve a dokumentált városi túljelentkezés/vidéki alulkihasználtság eltérést mint az átállás során átvett kockázatot. Ez valódi hálózattervezési erősség, de a nézőpont azt is megjegyzi, hogy a hálózat-racionalizálás jogalkotási, tanárelosztási és esélyegyenlőségi programmal való összekapcsolása megsokszorozza a koordinációs pontokat, és hogy a fenntartói függőség (egyházi és alapítványi fenntartású iskolák) közvetlenül befolyásolja, hogy a hálózaton belüli fizikai kapacitás-kiigazítások valóban végrehajthatók-e, mivel ezek a fenntartók az intézményi bázis jelentős részét a közvetlen központi hatáskörön kívül irányítják."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-02"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "An explicit network-planning bridge phase could be used to pilot capacity reallocation or transport/access adjustments in the specific documented under-enrolled sites (Debrecen, Miskolc, Encs, Pécs) before nationwide rollout.",
+        "hu": "Egy kifejezett hálózattervezési híd-szakasz felhasználható lehet a kapacitás-átcsoportosítás vagy a közlekedési/hozzáférési kiigazítások kísérleti bevezetésére a konkrétan dokumentált alulkihasznált helyszíneken (Debrecen, Miskolc, Encs, Pécs), az országos bevezetés előtt."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Explicitly identifies the network mismatch (oversubscription vs. unfilled seats) as a transition-risk to be actively resolved rather than an incidental byproduct, distinguishing it from all other proposals on this specific criterion.",
+        "hu": "Kifejezetten a hálózati eltérést (túljelentkezés vs. betöltetlen helyek) aktívan megoldandó átállási kockázatként azonosítja, nem pedig mellékes következményként, ezzel megkülönböztetve magát a többi javaslattól e konkrét szempont tekintetében."
+      },
+      {
+        "en": "Combines structural change with an interim administrative/network-planning bridge, which is the network-planning-appropriate way to sequence capacity changes rather than attempting a single-step conversion.",
+        "hu": "A strukturális változást átmeneti igazgatási/hálózattervezési híddal kombinálja, ami a kapacitásváltozások ütemezésének hálózattervezés szempontjából megfelelő módja, egyetlen lépésben történő átalakítás megkísérlése helyett."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If maintainer cooperation fails in a subset of institutions, the network-planning bridge could produce a patchwork outcome where some regions rationalize capacity and others do not, potentially exacerbating rather than resolving the current geographic imbalance.",
+        "hu": "Ha az intézmények egy részénél a fenntartói együttműködés nem sikerül, a hálózattervezési híd foltokból álló eredményt hozhat, ahol egyes régiók racionalizálják a kapacitást, mások nem, ami a jelenlegi földrajzi egyenetlenséget inkább súlyosbíthatja, mint megoldaná."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Multi-workstream coordination (legislative, network, teacher, equity-program, consultation) raises execution complexity that the network dimension alone cannot resolve, since network rationalization success depends on synchronized progress in unrelated domains.",
+        "hu": "A többféle munkafolyamat (jogalkotási, hálózati, tanári, esélyegyenlőségi program, konzultáció) összehangolása olyan végrehajtási komplexitást eredményez, amelyet a hálózati dimenzió önmagában nem tud megoldani, mivel a hálózat-racionalizálás sikere más, nem kapcsolódó területeken való szinkron előrehaladástól függ."
+      },
+      {
+        "en": "Maintainer buy-in dependency directly limits the network-planning bridge's reach, since church- and foundation-run institutions are not fully subject to central capacity-reallocation authority.",
+        "hu": "A fenntartói együttműködésre való ráutaltság közvetlenül korlátozza a hálózattervezési híd hatókörét, mivel az egyházi és alapítványi fenntartású intézmények nem tartoznak teljes mértékben a központi kapacitás-átcsoportosítási hatáskör alá."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t5-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-b071742057a48070",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

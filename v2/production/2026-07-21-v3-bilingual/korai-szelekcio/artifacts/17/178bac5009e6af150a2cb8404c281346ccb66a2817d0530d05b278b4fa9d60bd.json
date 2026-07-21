@@ -1,0 +1,35 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "medium",
+    "method": {
+      "en": "Difference-in-differences or synthetic control comparing academic trajectories of remaining students in feeder schools before/after high-achiever exit, using variation in local track-entry rates across settlements as a natural experiment; heterogeneity analysis by grade, subject, and SES.",
+      "hu": "Differencia-a-differenciákban vagy szintetikus kontroll módszer, amely összehasonlítja a kibocsátó iskolákban maradó tanulók tanulmányi pályáját a kiemelkedő teljesítményűek kilépése előtt és után, a helyi tagozati belépési arányok településközi eltéréseit természetes kísérletként felhasználva; heterogenitás-elemzés évfolyam, tantárgy és szocioökonómiai státusz szerint."
+    },
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4"
+    ],
+    "question": {
+      "en": "What is the magnitude of the peer-composition ('brain drain') effect on remaining students' academic outcomes in feeder schools when top achievers exit into 6/8-year gimnázium tracks, and how does this vary by grade, subject, and student socioeconomic background?",
+      "hu": "Mekkora a kortárs-összetételi ('elszívó') hatás mértéke a kibocsátó iskolákban maradó tanulók tanulmányi eredményeire, amikor a legjobb teljesítményű tanulók kilépnek a 6/8 évfolyamos gimnáziumi tagozatokba, és ez hogyan változik évfolyam, tantárgy és a tanulók szocioökonómiai háttere szerint?"
+    },
+    "uncertainty_refs": [
+      "U-live-education_finance-01"
+    ],
+    "why_it_matters": {
+      "en": "This quantifies a cost of the current system borne by students who remain in feeder schools, which is essential for a full cost-benefit comparison across proposals — abolition (t2) and delay (t3) would eliminate this cost, while retention-based options (t1, t4) would not, making the size of the effect decisive for prioritization.",
+      "hu": "Ez számszerűsíti a jelenlegi rendszer egyik költségét, amelyet a kibocsátó iskolákban maradó tanulók viselnek, ami elengedhetetlen a javaslatok teljes költség-haszon összehasonlításához — a megszüntetés (t2) és a halasztás (t3) megszüntetné ezt a költséget, míg a megtartás-alapú opciók (t1, t4) nem, így a hatás mértéke döntő a rangsoroláshoz."
+    }
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "RQ-live-production-07",
+  "provenance_ref": "PV-build_research_agenda-2b2b85418ec71a9b",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal requires no fundamental change in legal authority—the tankerület retains closure/consolidation decision power—but introduces a significant accountability shift by converting the maintainer's existing but loosely-enforced transport obligation into a monitored, enforceable duty. This directly targets the documented governance lapse where transport/catchment disputes (Tiszavasvári/Bűd) arose from ambiguous accountability. However, the proposal does not alter maintainer autonomy at the local level, and Hungary's individual-level right-to-education framework legally supports consolidation with guaranteed transport as compliant. The main governance gap is that no new binding oversight or veto mechanism is created for affected communities; enforceability improvements target the state's own compliance monitoring rather than expanding rights of protest or standing for parents/municipalities.",
+      "hu": "Ez a javaslat nem igényel alapvető változást a jogosultsági struktúrában – a tankerület megtartja a bezárási/összevonási döntési jogkört –, de jelentős elszámoltathatósági váltást hoz azáltal, hogy a fenntartó meglévő, de lazán érvényesített szállítási kötelezettségét felügyelt, kikényszeríthető kötelezettséggé alakítja. Ez közvetlenül célozza azt a dokumentált kormányzási hiányosságot, amely a szállítással/körzethatárokkal kapcsolatos, bizonytalan elszámoltathatóságból fakadó vitákból eredt (Tiszavasvári/Bűd). Ugyanakkor a javaslat nem változtatja meg a helyi fenntartói autonómiát, és Magyarország egyéni szintű oktatáshoz való jogi kerete jogilag megfelelőnek tekinti a garantált szállítással párosított összevonást. A fő kormányzási hiányosság, hogy nem keletkezik új kötelező érvényű felügyeleti vagy vétómechanizmus az érintett közösségek számára; a végrehajthatósági javítások az állam saját megfelelési nyomon követését célozzák, nem a szülők/önkormányzatok tiltakozási vagy jogi keresetindítási jogainak kiterjesztését."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-legal_and_governance-03",
+      "F-live-legal_and_governance-05",
+      "F-live-legal_and_governance-06"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "An enforceable transport monitoring regime could be layered onto the existing legal transport obligation without new primary legislation, offering a comparatively fast governance implementation path.",
+        "hu": "Egy kikényszeríthető szállítási monitoring rendszer rárétegezhető a meglévő jogi szállítási kötelezettségre új alapjogszabály nélkül, viszonylag gyors kormányzási végrehajtási utat kínálva."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Directly closes a documented accountability gap by converting an already-existing legal transport obligation into a monitored, enforceable duty, addressing the specific failure mode seen in practice.",
+        "hu": "Közvetlenül megszünteti egy dokumentált elszámoltathatósági hiányosságot azáltal, hogy egy már meglévő jogi szállítási kötelezettséget felügyelt, kikényszeríthető kötelezettséggé alakít, kezelve a gyakorlatban megfigyelt konkrét hibamódot."
+      },
+      {
+        "en": "Requires no restructuring of maintainer authority or ownership arrangements, making it legally low-friction to implement within existing tankerület competence.",
+        "hu": "Nem igényli a fenntartói jogkör vagy tulajdonlási megállapodások átalakítását, így jogilag alacsony ellenállással bevezethető a meglévő tankerületi hatáskörön belül."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Because economies of scale do not extend to transportation costs, the enforceable transport guarantee creates a durable, separately-funded fiscal and administrative obligation that could become a source of future non-compliance or underfunded mandate disputes.",
+        "hu": "Mivel a méretgazdaságosság nem terjed ki a szállítási költségekre, a kikényszeríthető szállítási garancia egy tartós, önállóan finanszírozandó fiskális és igazgatási kötelezettséget hoz létre, amely a jövőben forrása lehet a nem-megfelelésnek vagy alulfinanszírozott mandátumvitáknak."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Creates no new participatory or veto rights for affected communities beyond the existing status quo, leaving decision-making authority as unilateral as under the baseline.",
+        "hu": "Nem hoz létre új részvételi vagy vétójogokat az érintett közösségek számára a jelenlegi status quón túl, így a döntéshozási jogkör ugyanolyan egyoldalú marad, mint az alapforgatókönyvben."
+      },
+      {
+        "en": "Does not resolve the split ownership/accountability ambiguity between municipalities and the state that underlies disputes like Tiszavasvári/Bűd, since the mechanism only strengthens transport enforcement, not general operational accountability.",
+        "hu": "Nem oldja fel az önkormányzatok és az állam közötti megosztott tulajdonlási/elszámoltathatósági bizonytalanságot, amely a Tiszavasvári/Bűd-típusú viták hátterében áll, mivel a mechanizmus csak a szállítási végrehajtást erősíti, nem az általános üzemeltetési elszámoltathatóságot."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t2-legal_and_governance",
+  "provenance_ref": "PV-assess_legal_and_governance-88f4e3825b72872a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

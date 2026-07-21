@@ -1,0 +1,49 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From an institutional-fit perspective, the baseline proposal preserves the existing three-entry-point admissions architecture (age 10, 12, 14) and the single national exam gate unchanged, meaning no new administrative burden is introduced but also none of the documented selection and sorting mechanisms are altered. The system continues to operate exactly as institutionally structured since the 1990s, so this option scores highest on administrative compatibility by definition, but leaves unaddressed the socioeconomic sorting and segregation dynamics already embedded in the current tracks.",
+      "hu": "Az intézményi illeszkedés szempontjából a kiinduló (baseline) javaslat változatlanul hagyja a jelenlegi hárompontos beiskolázási architektúrát (10, 12, illetve 14 éves korban) és az egységes országos felvételi vizsga kapuőr szerepét, ami azt jelenti, hogy nem keletkezik új igazgatási terhelés, de a dokumentált szelekciós és szűrési mechanizmusok sem változnak. A rendszer pontosan úgy működik tovább, ahogyan az 1990-es évek óta intézményileg felépült, ezért ez az opció definíció szerint a legjobban teljesít az igazgatási kompatibilitás terén, viszont nem kezeli a jelenlegi tagozatokba már beépült társadalmi-gazdasági szűrődési és szegregációs dinamikákat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-07"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Serves as a clean counterfactual baseline against which the institutional consequences of alternative admission or structural designs can be measured within the same governance framework.",
+        "hu": "Tiszta kontrafaktuális kiindulópontként szolgál, amelyhez képest az alternatív felvételi vagy strukturális megoldások intézményi következményei mérhetők ugyanazon irányítási kereten belül."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Requires no change to the existing three-track entry architecture or the national admissions exam, minimizing administrative disruption to a well-established governance structure.",
+        "hu": "Nem igényel semmilyen változást a meglévő hárompontos belépési architektúrában vagy az országos felvételi vizsgában, így minimálisra csökkenti a jól bejáratott irányítási struktúra megzavarását."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Because no corrective governance mechanism is introduced, the existing coverage gaps and compositional sorting embedded in the three-entry-point system persist by construction, with institutional description alone unable to establish whether this stasis is causally responsible for future inequality trends.",
+        "hu": "Mivel semmilyen korrekciós irányítási mechanizmus nem kerül bevezetésre, a hárompontos rendszerbe beépült lefedettségi hiányosságok és kompozíciós szűrődés a konstrukció miatt fennmaradnak, ugyanakkor az intézményi leírás önmagában nem alkalmas annak megállapítására, hogy ez a stagnálás okozati szerepet játszik-e a jövőbeli egyenlőtlenségi trendekben."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Leaves unchanged the documented pattern that socioeconomic status predicts track entry beyond prior test scores, meaning the institutional sorting mechanism continues to operate as before.",
+        "hu": "Változatlanul hagyja azt a dokumentált mintát, hogy a társadalmi-gazdasági státusz az előzetes tesztpontszámokon túl is előre jelzi a tagozatba kerülést, azaz az intézményi szűrési mechanizmus a korábbi módon működik tovább."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t1-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-45b1fbdfa6da237b",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

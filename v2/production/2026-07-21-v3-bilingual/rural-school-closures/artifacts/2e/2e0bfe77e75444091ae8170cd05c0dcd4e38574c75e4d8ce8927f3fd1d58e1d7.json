@@ -1,0 +1,57 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "b4ada89e863abb5f3e1f3c466fb5453ed48418ae14d4220385a1e568c8cf9886",
+        "response_hash": "b123c73f2c481a62f3bfe9c2f02c3033a7e794551ffa9609bc74d5a0884b4d8a",
+        "stage": "search",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "553b61e3b76160380370f8743ccd606f4a2d39619e31902afae0fdfe6caf2ce9",
+        "response_hash": "0ab0f54626d9783fbc2e49640cf0e0892fb9aae4bb88dbecb6c3f6e71f45cce4",
+        "stage": "analysis",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "ef4e9dd00f8b1a73bee1ea2f8ebe3f5989666b612352ec6de2d666edfdf43cae",
+        "response_hash": "4a199bca6b4fe308733be2eec6c9f88492a2b631f9b88816ad16285d0eb389a2",
+        "stage": "analysis-fill-uncertainties-1",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "e1350e81b195209a5663dfed86051ff2c1fdf9b9b4f421e709aaa11adba1e12c",
+    "generation_parameters": {
+      "analysis_max_tokens": 16000,
+      "search_max_tokens": 10000
+    },
+    "input_artifact_hashes": [
+      "f263c5c501c08244f924e6f84f2ef804a8a93b3f4b240e1f02f04f39977165db",
+      "fa24d84170b0778d999596f984c207c23a986208d8f42c454a65c32538307b55"
+    ],
+    "model": "anthropic-task-ladder",
+    "node_id": "research_school_network_planning",
+    "prompt_hash": "4a3c2037df3353d1d5e0b5a43f6e06ed0a346b1b45d7c66fc9da6a3765670826",
+    "provider": "anthropic",
+    "relevant_config_hash": "77acb284453957afd4436ccc6e8a029591e6f7b57781b9f7dfaf6443a09957e5",
+    "role": "research",
+    "run_plan_hash": "d87ac5722d93cdbe99d8ee2900fdb0a26934e405e23a5f4862dc9d8e9590a60b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/assumption.schema.json": "a2c90cb84524046f123b798eeafcbe30a872987b4f63a19ba25467b0a22fcec2",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/finding.schema.json": "7f08de87a5b809e4ebbdeb42e6c2265b5686984c0b71a01af896fea5cb670729",
+      "schemas/v2/source.schema.json": "0beda71026c753e0dcff6875401aa70ffd52fdbb6e81e9d68d9b1035b9dd085f",
+      "schemas/v2/uncertainty.schema.json": "e1e32dd216fcaa6af59322ed1fb36aed2bee508d91c17d3879d3daec28c9edd4"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "PV-research_school_network_planning-e1350e81b195209a",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "ed47560ea97cb36b6faafbb9427a93f8f6bea5bcac2fbd87d516d9a6249a5eba",
+  "topic": "rural-school-closures"
+}

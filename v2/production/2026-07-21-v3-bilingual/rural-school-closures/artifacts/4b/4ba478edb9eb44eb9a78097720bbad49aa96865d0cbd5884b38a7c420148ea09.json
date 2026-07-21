@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-implementation_planning-01",
+      "A-live-implementation_planning-02",
+      "A-live-implementation_planning-03",
+      "A-live-implementation_planning-04"
+    ],
+    "claim": {
+      "en": "Hungarian education-research modeling determined that raising the minimum school size threshold to 100 students would directly affect more than five hundred village schools (2002 baseline), with many unable to survive even via consolidation with nearby small schools, demonstrating a fundamental trade-off between efficiency-based thresholds and school-network coverage in depopulated regions.",
+      "hu": "A magyar oktatáskutatási modellezés megállapította, hogy a minimális iskolaméret-küszöb 100 tanulóra emelése több mint ötszáz falusi iskolát érintene közvetlenül (2002-es kiinduláspont), sok nem maradna életképes még a közeli kis iskolákkal való konszolidáció révén sem, ami a hatékonysági küszöbök és az iskolaháló-lefedettség között alapvető kompromisszumot mutat a depopuláló régiókban."
+    },
+    "context": {
+      "en": "Fresh live research through the Implementation planning lens",
+      "hu": "Friss, élő kutatás a(z) végrehajtás megtervezése nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Data is from 2002, over two decades old; no confirmation of current school-size distribution or whether this exact 100-pupil threshold remains binding policy.",
+        "hu": "Az adatok 2002-ből származnak, több mint két évtizede; nincs megerősítés az iskola-méret jelenlegi eloszlásáról, vagy hogy ez a 100 tanulós küszöb még mindig kötelező érvényű szabályzat-e."
+      },
+      {
+        "en": "The modeling outcome is illustrative of mechanism design trade-offs but does not address whether there exist other pedagogical or organizational models (e.g., multigrade teaching, cluster schools) that could alter the efficiency frontier.",
+        "hu": "A modellezés kimenetele a mechanizmusfejlesztés kompromisszumait szemlélteti, de nem foglalkozik azzal, hogy léteznek-e egyéb pedagógiai vagy szervezeti modellek (például vegyes osztályzat, klasztert-iskolák), amelyek megváltoztathatnák a hatékonysági határvonalat."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-implementation_planning-04"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-implementation_planning-01",
+      "U-live-implementation_planning-02",
+      "U-live-implementation_planning-03",
+      "U-live-implementation_planning-04"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-implementation_planning-04",
+  "provenance_ref": "PV-research_implementation_planning-d628d38343476e94",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

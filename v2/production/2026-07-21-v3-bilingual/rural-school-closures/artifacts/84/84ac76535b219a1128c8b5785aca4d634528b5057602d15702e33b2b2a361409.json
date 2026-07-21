@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-education_finance-01",
+      "A-live-education_finance-02",
+      "A-live-education_finance-03",
+      "A-live-education_finance-04"
+    ],
+    "claim": {
+      "en": "Analysis of approximately 3,300 Polish school closures (2000–2016) found that declining fertility plus migration combined to reduce primary-pupil numbers, yet economic reasons were cited as the direct cause of school closures in the countryside. This indicates that decision-makers often frame closures as budget-driven even when the root cause is demographic, allowing the stated incentive (cost savings) and the underlying driver (fewer children) to be politically decoupled.",
+      "hu": "Körülbelül 3300 lengyel iskolazárás elemzése (2000–2016) azt mutatta, hogy a csökkenő termékenység és migráció együttesen csökkentette az általános iskolás tanulók számát, azonban az iskolazárások közvetlen okként gazdasági okokra hivatkoztak vidéken. Ez azt jelzi, hogy a döntéshozók gyakran a zárásokat költségvetés-vezéreltnek tekintik, még ha az alapvető ok demográfiai, lehetővé téve az állított ösztönző (költségmegtakarítás) és az alapvető hajtóerő (kevesebb gyermek) politikai szétválasztását."
+    },
+    "context": {
+      "en": "Fresh live research through the Education finance lens",
+      "hu": "Friss, élő kutatás a(z) oktatási finanszírozás nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Polish data may not transfer directly to Hungarian institutional or cultural context; no equivalent granular analysis of Hungarian closure justifications against root-cause data found in sources.",
+        "hu": "A lengyel adatok nem vihetők át közvetlenül a magyar intézmények vagy kulturális kontextusára; nincs egyenértékű részletes magyar zárás-indoklást az alapok-oka adatokkal szemben az forrásokban."
+      },
+      {
+        "en": "The framing decoupling (budget vs. demographic) is an inference from divergence between stated and root causes; no direct evidence of intentional rhetorical manipulation or outcome bias provided.",
+        "hu": "A keretezés szétválasztása (költségvetés versus demográfiai) az állított és az alapvető okok közötti eltérésből vont következtetés; nincs közvetlen bizonyíték az szándékos retorikai manipulációra vagy az eredmény-torzításra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-education_finance-09"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-02"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-education_finance-09",
+  "provenance_ref": "PV-research_education_finance-8952009a100f54f9",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a public-finance lens, the baseline proposal is fiscally passive: it holds nominal capacity constant while demographic change reallocates real per-pupil resources unevenly across geography. This creates a de facto subsidy pattern favoring oversubscribed urban flagship schools (implicitly rationing scarce, high-value seats) while rural capacity sits underused, wasting sunk infrastructure and staffing costs. No mechanism exists to redirect resources toward the disadvantaged periphery, so cost incidence continues to fall on low-SES and Roma students who lack access to the well-resourced tracks, while benefits concentrate upward. Direct fiscal cost data for comparing track types is absent from the evidence base, which limits precision but does not change the qualitative incidence pattern implied by segregation and staffing findings.",
+      "hu": "Az államháztartási-oktatásfinanszírozási szempontból nézve a status quo javaslat fiskálisan passzív: a névleges kapacitást állandó szinten tartja, míg a demográfiai változás egyenetlenül osztja újra a valós tanulónkénti forrásokat a földrajzi térben. Ez egy de facto támogatási mintát hoz létre, amely a túljelentkezéssel küzdő városi elit iskolákat kedvezményezi (implicit módon adagolva a szűkös, magas értékű helyeket), míg a vidéki kapacitás kihasználatlan marad, elherdálva a már beruházott infrastruktúra és személyzet költségeit. Nincs mechanizmus, amely a forrásokat a hátrányos helyzetű periféria felé irányítaná, így a költségek terhe továbbra is az alacsony társadalmi-gazdasági státuszú és roma tanulókra hárul, akik nem férnek hozzá a jól ellátott tagozatokhoz, míg az előnyök felfelé koncentrálódnak. A tagozattípusok közötti közvetlen fiskális összehasonlító adatok hiányoznak a bizonyítási alapból, ami korlátozza a pontosságot, de nem változtatja meg a szegregációs és személyzeti eredmények által jelzett minőségi elosztási mintát."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-03",
+      "F-live-education_finance-04",
+      "F-live-education_finance-06",
+      "F-live-education_finance-09"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Serves as a necessary zero-cost counterfactual baseline against which the fiscal magnitude and incidence of every alternative proposal can be benchmarked.",
+        "hu": "Szükséges, nulla költségű ellenpont-alapvonalként szolgál, amelyhez az összes alternatív javaslat fiskális nagyságrendje és elosztási hatása mérhető."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Zero direct implementation or transition cost since no structural or administrative change is proposed.",
+        "hu": "Nulla közvetlen bevezetési vagy átállási költség, mivel nincs strukturális vagy igazgatási változás."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued geographic capacity mismatch risks entrenching localized political friction and potential future emergency reallocation costs, echoing prior rural consolidation disputes.",
+        "hu": "A folytatódó földrajzi kapacitásaránytalanság kockázatot jelent a helyi politikai feszültségek elmélyülésére és jövőbeli sürgősségi átcsoportosítási költségekre, felidézve a korábbi vidéki iskola-összevonási vitákat."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No mechanism to correct the documented misallocation between oversubscribed urban capacity and unfilled rural seats, implying continued inefficient use of existing public infrastructure spend.",
+        "hu": "Nincs mechanizmus a dokumentált forráselosztási aránytalanság korrekciójára a túljelentkezéssel küzdő városi kapacitás és a be nem telt vidéki helyek között, ami a meglévő állami infrastrukturális kiadások folyamatos hatékonytalan felhasználását jelenti."
+      },
+      {
+        "en": "Resource concentration (peer quality, staffing) continues to flow toward already-advantaged schools while disadvantaged schools retain the residual and lower-qualified teacher stock, compounding unequal per-pupil value for money.",
+        "hu": "A forráskoncentráció (társak minősége, személyzet) továbbra is a már előnyben lévő iskolák felé áramlik, míg a hátrányos helyzetű iskolák a maradék és alacsonyabban kvalifikált tanári állományt tartják meg, ami tovább mélyíti a tanulónkénti ráfordítás egyenlőtlen megtérülését."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-assess_education_finance-73db37a9107855c3",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,53 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "730ac3494c486dd490bca4b8aa9a4c563683c73776b6a26920c1336a22c743be",
+        "response_hash": "210feedfcee29f237ebf05f3db2edfcaab4685b777d7b8ac504e823fc6bc45d1",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "f048a88cd80337a857498c16599272fc66a4e2dfdc321a81ed61eca07e803a28",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "0ce32f5b4765723b829cc7ee7273513997c0dda6e79db07e2228786f62c21034",
+      "0e5a86caab6b40aa3ee35d57728b04f612581782dcb89334f4d3b8b920281bda",
+      "3bfb212928e69a092d89f4e1e4fb11b085c0acdcb45d922ba5771072134fb00f",
+      "3ec4c71c30d2e2a154efc93e1fc35807f05219572cdf3acdf25ec9f62330e5c5",
+      "5f51e5d00ca29f2d0244ebaf9ed51e5ddde546f0fddab63b8047e88866e00904",
+      "85361209bfe25617832697f781128bfa18bab26839eb9633c8ef4c9aa253a5a3",
+      "85519c4155378411cbcf9abf4f796b8ca7b4536228970fcbdb02859bbba81c30",
+      "89c15dc4b910db481b883f5d9ce43dd40cdb0ff146cce7402bf31aa4a36ea418",
+      "9051dcfeee83f24bb6d381c7ad2b448e8cf283a2719b2de75b7114987da5487f",
+      "ac1bb4a0c76bc75d60427ebd70170fce84126f2fce3fba9fe14f0428bd9e05d4",
+      "b0d17a66a180be9c0431a1b4be7ad484df0c42a50f0c7e059d7544b648055d85",
+      "c3d723317ac9d866726cde63bb182523dc0c7faa8a66240bf38095e9453d8212",
+      "c645f5873c49fe7380c914a3cf355af432d71af0fd303353021a8a2d6b1c3dfc",
+      "e048f1dc5a41c0517c12f299639b4982fe26b40afdb179262c70c4c8bb81b629"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_polish_reform",
+    "prompt_hash": "344d75fa3c0564f403852df5659bd6416857738a3de94404149830770788fc89",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "generator",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-assess_polish_reform-f048a88cd80337a8",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "bcc5949ee9e99cd081bd97ac547ebd0beb18498199cd28078ea1a2cf8181c134",
+  "topic": "korai-szelekcio"
+}

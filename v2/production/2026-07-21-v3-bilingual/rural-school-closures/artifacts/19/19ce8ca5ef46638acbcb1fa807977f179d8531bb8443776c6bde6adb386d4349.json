@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This combined proposal correctly subordinates network-preservation preference to a documented legal constraint: Hungarian case law (Piliscsaba, Nyíregyháza) establishes that keeping a school open is not a neutral network-planning default where it functions as de facto segregation, meaning geographic access and desegregation criteria can directly conflict and this proposal resolves that conflict by design rather than ignoring it. The Rákóczi Szövetség cross-border bus network (61 buses, 54 institutions, ~861 students) offers a concrete, already-operating transferable transport-access model, though this evidence describes a minority-language-access context whose network parameters may not translate directly to general rural consolidation. The teacher-supply crisis is correctly flagged as a cross-cutting constraint applicable to any staffing-dependent option, including this one.",
+      "hu": "Ez a kombinált javaslat helyesen rendeli alá a hálózat-megőrzési preferenciát egy dokumentált jogi korlátnak: a magyar joggyakorlat (Piliscsaba, Nyíregyháza) megállapítja, hogy egy iskola nyitva tartása nem semleges hálózattervezési alapértelmezés ott, ahol az de facto szegregációként funkcionál, ami azt jelenti, hogy a földrajzi elérhetőség és a deszegregációs kritériumok közvetlenül konfliktusba kerülhetnek, és ez a javaslat tervezetten, nem pedig figyelmen kívül hagyva oldja fel ezt a konfliktust. A Rákóczi Szövetség határon átnyúló buszhálózata (61 busz, 54 intézmény, kb. 861 tanuló) konkrét, már működő, átvehető közlekedési-hozzáférési modellt kínál, bár ez a bizonyíték egy kisebbségi nyelvi hozzáférési kontextust ír le, amelynek hálózati paraméterei nem feltétlenül ültethetők át közvetlenül az általános vidéki összevonásra. A tanári ellátási válságot helyesen jelölik meg minden személyzettől függő opcióra, beleértve ezt is, érvényes átfogó korlátként."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-07",
+      "F-live-school_network_planning-05"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Community social-capital assessment tools (as in the Erdőkürt case) could be formalized into a technical-assistance targeting mechanism usable across the broader tankerület system.",
+        "hu": "A közösségi társadalmi tőke felmérésének eszközei (mint az erdőkürti eset) formalizálhatók egy technikai segítségnyújtási célzási mechanizmussá, amely a szélesebb tankerületi rendszerben is használható."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Explicitly integrates a legal desegregation constraint into network planning, avoiding the common error of treating 'keep the school open' as an unconditionally neutral network-access default.",
+        "hu": "Kifejezetten integrálja a jogi deszegregációs korlátot a hálózattervezésbe, elkerülve azt a gyakori hibát, hogy a 'tartsuk nyitva az iskolát' elvet feltétel nélkül semleges hálózati hozzáférési alapértelmezésként kezelik."
+      },
+      {
+        "en": "Draws on a concrete, already-operating cross-border transport network model as a transferable template for extending access to dispersed student populations.",
+        "hu": "Egy konkrét, már működő, határon átnyúló közlekedési hálózati modellre támaszkodik, mint átvehető sablonra a szórt tanulói populációk hozzáférésének kiterjesztéséhez."
+      }
+    ],
+    "threats": [
+      {
+        "en": "The teacher-supply crisis threatens to undermine both the community-preservation and the desegregation-consolidation halves of this proposal simultaneously, since both depend on stable staffing that current workforce trends do not support.",
+        "hu": "A tanárellátási válság egyszerre veszélyezteti e javaslat közösségi megőrzési és deszegregációs-összevonási felét is, mivel mindkettő stabil személyzeti ellátottságot igényel, amit a jelenlegi munkaerő-trendek nem támogatnak."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "The Rákóczi Szövetség network evidence originates in a minority-language-access context; its network parameters (route density, cost structure) may not generalize to domestic rural consolidation without further adaptation evidence.",
+        "hu": "A Rákóczi Szövetség hálózati bizonyítékai kisebbségi nyelvi hozzáférési kontextusból származnak; hálózati paraméterei (útvonal-sűrűség, költségstruktúra) további adaptációs bizonyítékok nélkül nem feltétlenül általánosíthatók a hazai vidéki összevonásra."
+      },
+      {
+        "en": "Judicially mandated closures on desegregation grounds face documented durable local political resistance and multi-year implementation delays, indicating that even a legally well-grounded network reconfiguration can stall in practice.",
+        "hu": "A deszegregációs okokból bíróságilag elrendelt bezárások dokumentáltan tartós helyi politikai ellenállással és többéves végrehajtási késésekkel szembesülnek, jelezve, hogy még egy jogilag jól megalapozott hálózati átalakítás is elakadhat a gyakorlatban."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "AS-live-t6-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-0ae4d558b4639ee0",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}
