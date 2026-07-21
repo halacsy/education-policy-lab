@@ -27,10 +27,13 @@
   };
 
   const TYPE_POSITIONS = {
-    source: [20, 80], assumption: [20, 220], uncertainty: [20, 360], finding: [250, 180],
-    transformation_family: [480, 40], transformation_proposal: [480, 210], lens_definition: [480, 390],
-    coverage_ledger: [710, 20], lens_assessment: [710, 170], dilemma: [710, 330], research_question: [710, 490],
-    decision_package: [960, 210], evaluation: [1190, 100], decision_readiness: [1190, 340], provenance: [960, 520],
+    policy_question: [20, 20], problem_brief_proposal: [240, 20], problem_brief_decision: [460, 20],
+    problem_brief: [680, 20], option_space_proposal: [900, 20], human_gate_decision: [1120, 20],
+    approved_option_space: [1120, 110], source: [20, 190], assumption: [20, 340], uncertainty: [20, 490],
+    finding: [250, 340], transformation_family: [480, 190], transformation_proposal: [480, 340],
+    coverage_ledger: [710, 190], lens_definition: [710, 340], lens_assessment: [710, 490],
+    dilemma: [940, 190], research_question: [940, 340], provenance: [940, 520],
+    decision_package: [1160, 280], evaluation: [1160, 430], decision_readiness: [1160, 570],
   };
 
   const EXECUTION_POSITIONS = {
@@ -130,6 +133,8 @@
 
   function executionGroup(nodeId) {
     if (nodeId.startsWith("root:")) return "roots";
+    if (nodeId === "draft_problem_brief") return "brief_draft";
+    if (nodeId === "approve_problem_brief") return "brief_gate";
     if (nodeId.startsWith("research_")) return "research";
     if (nodeId.startsWith("assess_") || nodeId === "apply_scientific_lenses") return "assessments";
     if (nodeId.startsWith("register_")) return "registry";
@@ -148,6 +153,8 @@
     const labels = {
       research: { en: `${count} research steps`, hu: `${count} kutatási lépés` },
       roots: { en: "Admitted run inputs", hu: "Jóváhagyott futási bemenetek" },
+      brief_draft: { en: "Draft problem brief", hu: "Problémafelvetés tervezete" },
+      brief_gate: { en: "Human problem-brief gate", hu: "Emberi problémafelvetés-kapu" },
       option_space: { en: "Derive option space", hu: "Opciótér levezetése" },
       human_gate: { en: "Human option-space gate", hu: "Emberi opciótér-kapu" },
       registry: { en: "Perspective registry", hu: "Nézőpontjegyzék" },
@@ -347,22 +354,34 @@
 
     if (run.provenance_status === "complete") {
       const problemRoot = nodes.find((node) => node.id === "root:problem_brief");
+      const questionRoot = nodes.find((node) => node.id === "root:policy_question");
       const lensRoots = nodes.filter((node) => node.id.startsWith("root:lens_"));
+      const draftBrief = nodes.find((node) => node.id === "draft_problem_brief");
+      const briefGate = nodes.find((node) => node.id === "approve_problem_brief");
       const deriveOptions = nodes.find((node) => node.id === "derive_option_space");
       const optionGate = nodes.find((node) => node.id === "approve_option_space");
-      flow.append(flowPhase("00", language() === "hu" ? "Pontos, jóváhagyott gyökerek" : "Exact admitted roots", language() === "hu" ? "A brief és a szakmai lencsék hash-elt adatbázis-rekordok; ezek a RunPlan változtathatatlan bemenetei." : "The brief and professional lenses are hashed database records and immutable RunPlan inputs.", [flowCard(problemRoot), ...lensRoots.map((node) => flowCard(node, true))], "phase-input"));
+      let step = 0;
+      if (questionRoot) {
+        flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? "Nyers kérdés és szakmai lencsék" : "Raw question and professional lenses", language() === "hu" ? "A felhasználó által elfogadott nyers kérdés és a lencsék hash-elt, változtathatatlan RunPlan-bemenetek." : "The user-admitted raw question and lenses are hashed, immutable RunPlan inputs.", [flowCard(questionRoot), ...lensRoots.map((node) => flowCard(node, true))], "phase-input"));
+        flow.append(connector(language() === "hu" ? "nyers kérdés → auditált LLM-prompt" : "raw question → audited LLM prompt"));
+        flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? "Problémafelvetés tervezete" : "Draft problem brief", language() === "hu" ? "Az LLM körülhatárolt kutatási szerződést javasol, de még nem indíthat kutatást." : "The LLM proposes a bounded research contract but cannot start research yet.", [flowCard(draftBrief)], "phase-synthesis"));
+        flow.append(connector(language() === "hu" ? "egy pontos brief-jelölthash emberi döntése" : "human decision on one exact brief-candidate hash"));
+        flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? "Emberi problémafelvetés-kapu" : "Human problem-brief gate", language() === "hu" ? "Csak a változtatás nélkül jóváhagyott brief válhat a kutatóágak közös bemenetévé." : "Only the unchanged, approved brief can become the shared input of the research branches.", [flowCard(briefGate)], "phase-input"));
+      } else {
+        flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? "Pontos, jóváhagyott gyökerek" : "Exact admitted roots", language() === "hu" ? "A brief és a szakmai lencsék hash-elt adatbázis-rekordok; ezek a RunPlan változtathatatlan bemenetei." : "The brief and professional lenses are hashed database records and immutable RunPlan inputs.", [flowCard(problemRoot), ...lensRoots.map((node) => flowCard(node, true))], "phase-input"));
+      }
       flow.append(connector(language() === "hu" ? "ugyanaz a brief + egy pontos lencse-artifakt minden kutatóágon" : "the same brief + one exact lens artifact on each research branch"));
-      flow.append(flowPhase("01", language() === "hu" ? `${research.length} explicit kutatóág` : `${research.length} explicit research branches`, language() === "hu" ? "Minden kártya külön node, saját deklarált bemenetekkel, prompttal és válaszlenyomattal." : "Every card is a separate node with declared inputs, prompt, and response hash.", research.map((node) => flowCard(node)), "phase-parallel"));
+      flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? `${research.length} explicit kutatóág` : `${research.length} explicit research branches`, language() === "hu" ? "Minden kártya külön node, saját deklarált bemenetekkel, prompttal és válaszlenyomattal." : "Every card is a separate node with declared inputs, prompt, and response hash.", research.map((node) => flowCard(node)), "phase-parallel"));
       flow.append(connector(language() === "hu" ? "a friss megállapításokból új opciótér-jelölt készül" : "fresh findings produce a new option-space candidate"));
-      flow.append(flowPhase("02", language() === "hu" ? "Opciótér levezetése" : "Derive option space", language() === "hu" ? "Ez az LLM-lépés még nem kap jóváhagyott irányokat: kizárólag a briefből és a friss kutatási rekordokból dolgozik." : "This LLM step receives no approved directions; it uses only the brief and fresh research records.", [flowCard(deriveOptions)], "phase-synthesis"));
+      flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? "Opciótér levezetése" : "Derive option space", language() === "hu" ? "Ez az LLM-lépés még nem kap jóváhagyott irányokat: kizárólag a briefből és a friss kutatási rekordokból dolgozik." : "This LLM step receives no approved directions; it uses only the brief and fresh research records.", [flowCard(deriveOptions)], "phase-synthesis"));
       flow.append(connector(language() === "hu" ? "egy pontos jelölthash emberi jóváhagyása" : "human approval of one exact candidate hash"));
-      flow.append(flowPhase("03", language() === "hu" ? "Emberi opciótér-kapu" : "Human option-space gate", language() === "hu" ? "A kapu változtatás nélkül fogadja be vagy küldi vissza a jelöltet. Más hashhez új döntés kell." : "The gate admits the candidate unchanged or sends it back. A different hash requires a new decision.", [flowCard(optionGate)], "phase-input"));
+      flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? "Emberi opciótér-kapu" : "Human option-space gate", language() === "hu" ? "A kapu változtatás nélkül fogadja be vagy küldi vissza a jelöltet. Más hashhez új döntés kell." : "The gate admits the candidate unchanged or sends it back. A different hash requires a new decision.", [flowCard(optionGate)], "phase-input"));
       flow.append(connector(language() === "hu" ? "jóváhagyott opciótér + friss bizonyítékok" : "approved option space + fresh evidence"));
-      flow.append(flowPhase("04", language() === "hu" ? "Átalakítások levezetése" : "Derive transformations", language() === "hu" ? "Az LLM itt már a jóváhagyott opciótér-artifaktot kapja, és minden irány lefedését géppel ellenőrzött jegyzékben rögzíti." : "The LLM now receives the approved option-space artifact and records machine-checked coverage of every direction.", [flowCard(derive), ...proposals.map(proposalCard)], "phase-records"));
+      flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? "Átalakítások levezetése" : "Derive transformations", language() === "hu" ? "Az LLM itt már a jóváhagyott opciótér-artifaktot kapja, és minden irány lefedését géppel ellenőrzött jegyzékben rögzíti." : "The LLM now receives the approved option-space artifact and records machine-checked coverage of every direction.", [flowCard(derive), ...proposals.map(proposalCard)], "phase-records"));
       flow.append(connector(language() === "hu" ? "minden átalakítás × minden szakmai nézőpont" : "every transformation × every professional perspective"));
-      flow.append(flowPhase("05", language() === "hu" ? `${assessments.length} szakmai vizsgálat` : `${assessments.length} professional assessments`, language() === "hu" ? "Minden node ugyanazokat a javaslatokat, a saját lencsét és a saját kutatási eredményeit kapja." : "Each node receives the same proposals, its exact lens, and its own research findings.", assessments.map((node) => flowCard(node, true)), "phase-parallel"));
+      flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? `${assessments.length} szakmai vizsgálat` : `${assessments.length} professional assessments`, language() === "hu" ? "Minden node ugyanazokat a javaslatokat, a saját lencsét és a saját kutatási eredményeit kapja." : "Each node receives the same proposals, its exact lens, and its own research findings.", assessments.map((node) => flowCard(node, true)), "phase-parallel"));
       flow.append(connector(language() === "hu" ? "dilemmák → kutatási agenda → csomag → értékelés → készültség" : "dilemmas → research agenda → package → evaluation → readiness"));
-      flow.append(flowPhase("06", language() === "hu" ? "Összeállítás és ellenőrzés" : "Assembly and checks", language() === "hu" ? "Az utolsó node-ok is kizárólag a RunPlanban deklarált rekordokat olvassák." : "The final nodes also read only records declared by the RunPlan.", downstream.map((node) => flowCard(node, true)), "phase-downstream"));
+      flow.append(flowPhase(String(step++).padStart(2, "0"), language() === "hu" ? "Összeállítás és ellenőrzés" : "Assembly and checks", language() === "hu" ? "Az utolsó node-ok is kizárólag a RunPlanban deklarált rekordokat olvassák." : "The final nodes also read only records declared by the RunPlan.", downstream.map((node) => flowCard(node, true)), "phase-downstream"));
       graphRoot.append(flow);
       graphFallback.textContent = nodes.map((node) => `${local(node.title)}: ${node.output_count}`).join("; ");
       return;
