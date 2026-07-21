@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -41,7 +42,10 @@ def esc(value: Any) -> str:
 
 
 def bi(en: Any, hu: Any, tag: str = "span") -> str:
-    return f'<{tag} class="lang lang-hu" lang="hu">{esc(hu)}</{tag}><{tag} class="lang lang-en" lang="en">{esc(en)}</{tag}>'
+    localized = str(hu)
+    for replacement in CATALOGS["hu"]["content_replacements"]:
+        localized = re.sub(replacement["pattern"], replacement["replacement"], localized)
+    return f'<{tag} class="lang lang-hu" lang="hu">{esc(localized)}</{tag}><{tag} class="lang lang-en" lang="en">{esc(en)}</{tag}>'
 
 
 def ui(key: str, tag: str = "span") -> str:
@@ -99,9 +103,10 @@ def render_topic(data: dict[str, Any]) -> str:
     qs = "".join(f"<li><b>{tx(data,q['id']+'.question',q['content']['question'])}</b><p>{tx(data,q['id']+'.why_it_matters',q['content']['why_it_matters'])}</p></li>" for q in questions)
     def source_links(entry: dict[str, Any]) -> str:
         return " · ".join(
-            f'<a href="{esc(source["url"])}">{esc(source["title"])}</a>'
-            if source["url"].startswith("http") else esc(source["title"])
-            for source in entry["sources"]
+            f'<a href="{esc(source["url"])}">{bi(source["title"], msg("hu", "production.sources") + " " + str(index))}</a>'
+            if source["url"].startswith("http")
+            else bi(source["title"], msg("hu", "production.sources") + " " + str(index))
+            for index, source in enumerate(entry["sources"], 1)
         )
     appendix = "".join(f"<li><b>{esc(e['finding_ref'])}</b> {tx(data,e['finding_ref']+'.claim',e['claim'])}<div>{source_links(e)}</div></li>" for e in package["content"]["evidence_appendix"])
     concerns = list_bi(data,data["evaluation"],"concerns")

@@ -3,6 +3,7 @@
   "locale": "hu",
   "catalog_version": "1.0.0",
   "content_replacements": [
+    {"pattern": "(?i)\\bevidence\\b", "replacement": "bizonyíték"},
     {"pattern": "(?i)\\bstatus quo\\b", "replacement": "jelenlegi állapot"},
     {"pattern": "(?i)\\bmonitoring\\b", "replacement": "nyomon követés"},
     {"pattern": "(?i)\\bpilotvizsgálat\\b", "replacement": "kísérleti vizsgálat"},
