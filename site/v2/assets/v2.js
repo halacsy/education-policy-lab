@@ -12,6 +12,9 @@
       if (element.tagName === "OPTION") element.textContent = localized;
       else element.setAttribute("aria-label", localized);
     });
+    document.querySelectorAll("[data-title-en][data-title-hu]").forEach((element) => {
+      element.setAttribute("title", element.dataset[`title${language === "hu" ? "Hu" : "En"}`]);
+    });
     buttons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.setLanguage === language));
     });

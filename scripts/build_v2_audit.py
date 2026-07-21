@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Build the isolated v2 lineage explorer prototype.
-
-The prototype deliberately has its own page and assets so it can evolve beside
-the main site generator without rewriting shared work in progress.
-"""
+"""Build the public artifact-lineage explorer from accepted v2 production runs."""
 
 from __future__ import annotations
 
@@ -17,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+ASSET_VERSION = "d55"
 sys.path.insert(0, str(ROOT / "src"))
 
 from policy_lab.jsonio import content_hash  # noqa: E402
@@ -24,7 +21,7 @@ from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
 
 SCHEMA_ROOT = ROOT / "schemas" / "v2"
-OUT = ROOT / "site" / "v2"
+OUT = ROOT / "site"
 
 
 @dataclass(frozen=True)
@@ -95,6 +92,9 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+LENS_HU = load_json(ROOT / "config" / "v2" / "locales" / "hu.json")["messages"]["lens"]
+
+
 def esc(value: Any) -> str:
     return html.escape(str(value), quote=True)
 
@@ -116,31 +116,18 @@ def topic_titles(topic: str) -> dict[str, str]:
 
 def discover_runs() -> list[RunSource]:
     runs: list[RunSource] = []
-    for manifest_path in sorted((ROOT / "v2" / "runs").glob("*/run_manifest.json")):
+    production_root = ROOT / "v2" / "production" / "2026-07-20-live"
+    for manifest_path in sorted(production_root.glob("*/production_manifest.json")):
         manifest = load_json(manifest_path)
         topic = manifest["topic"]
+        topic_root = manifest_path.parent
         runs.append(RunSource(
-            run_id=manifest["run_id"], topic=topic, kind="migration",
-            label_en="V1 → V2 corpus migration", label_hu="V1 → V2 korpuszátemelés",
-            notice_en=manifest["honesty_notice"],
-            notice_hu="Ez a futás rögzített v1-tartalmat rendezett át a v2 adatgráfjába; nem friss kutatás.",
-            repository_root=ROOT / "v2", run_dir=manifest_path.parent,
-        ))
-
-    experiment_root = ROOT / "v2" / "experiments" / "2026-07-20-psychology-lens-live"
-    for summary_path in sorted(experiment_root.glob("runs/*/arm_summary.json")):
-        summary = load_json(summary_path)
-        arm = summary["arm"]
-        label = {
-            "baseline": ("Live v2 · 12 perspectives", "Élő v2 · 12 nézőpont"),
-            "psychology": ("Live v2 · + educational psychology", "Élő v2 · + neveléslélektan"),
-        }.get(arm, (f"Live v2 · {arm}", f"Élő v2 · {arm}"))
-        runs.append(RunSource(
-            run_id=summary["run_id"], topic="korai-szelekcio", kind="live",
-            label_en=label[0], label_hu=label[1],
-            notice_en="Fresh model-generated v2 run. The psychology arm is a sensitivity test, not admitted shared knowledge.",
-            notice_hu="Friss modellfutás. A neveléslélektani ág érzékenységi vizsgálat, nem befogadott közös tudás.",
-            repository_root=experiment_root, run_dir=summary_path.parent,
+            run_id=manifest["run_id"], topic=topic, kind="production",
+            label_en="Current sourced analysis", label_hu="Jelenlegi forrásolt elemzés",
+            notice_en="Fresh sourced analysis. External policy use still requires human approval.",
+            notice_hu="Friss, forrásolt elemzés. Külső szakpolitikai használatához továbbra is emberi jóváhagyás szükséges.",
+            repository_root=topic_root,
+            run_dir=topic_root / "runs" / manifest["run_id"],
         ))
     return runs
 
@@ -213,10 +200,12 @@ def node_title(node_id: str) -> dict[str, str]:
         en, hu = NODE_COPY[node_id]
     elif node_id.startswith("research_"):
         suffix = node_id.removeprefix("research_").replace("_", " ")
-        en, hu = f"Research · {suffix}", f"Kutatás · {suffix}"
+        lens_key = node_id.removeprefix("research_")
+        en, hu = f"Research · {suffix}", f"Kutatás · {LENS_HU.get(lens_key, suffix)}"
     elif node_id.startswith("assess_"):
         suffix = node_id.removeprefix("assess_").replace("_", " ")
-        en, hu = f"Assess · {suffix}", f"Vizsgálat · {suffix}"
+        lens_key = node_id.removeprefix("assess_")
+        en, hu = f"Assess · {suffix}", f"Vizsgálat · {LENS_HU.get(lens_key, suffix)}"
     else:
         en = node_id.replace("_", " ")
         hu = en
@@ -354,31 +343,31 @@ def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
 def page(payload: dict[str, Any]) -> str:
     encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True).replace("</", "<\\/")
     return f"""<!doctype html>
-<html lang="hu" data-language="hu" data-title-en="How it was made · Transformation Observatory" data-title-hu="Hogyan készült? · Transformation Observatory">
+<html lang="hu" data-language="hu" data-title-en="How it was made · Education Policy Atlas" data-title-hu="Hogyan készült? · Oktatáspolitikai Atlasz">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A v2 artefaktumok futási, adatbázis- és sématérképe." data-description-en="Execution, database, and schema maps of v2 artifacts." data-description-hu="A v2 artefaktumok futási, adatbázis- és sématérképe.">
-  <title>Hogyan készült? · Transformation Observatory</title>
-  <link rel="stylesheet" href="assets/v2.css"><link rel="stylesheet" href="assets/audit.css">
+  <title>Hogyan készült? · Oktatáspolitikai Atlasz</title>
+  <link rel="stylesheet" href="v2/assets/v2.css?v={ASSET_VERSION}"><link rel="stylesheet" href="v2/assets/audit.css?v={ASSET_VERSION}">
 </head>
 <body>
   <a class="skip" href="#content">{text_pair('Skip to content', 'Ugrás a tartalomra')}</a>
   <header class="masthead">
-    <a class="brand" href="index.html" aria-label="A Transformation Observatory kezdőlapja" data-label-en="Transformation Observatory home" data-label-hu="A Transformation Observatory kezdőlapja">
-      <span class="brand-mark" aria-hidden="true">↳</span><span><b>TRANSFORMATION</b><em>OBSERVATORY · EPL v2</em></span>
+    <a class="brand" href="index.html" aria-label="Oktatáspolitikai Atlasz — főoldal" data-label-en="Education Policy Atlas home" data-label-hu="Oktatáspolitikai Atlasz — főoldal">
+      <span class="brand-mark" aria-hidden="true">↳</span><span><b>{text_pair('EDUCATION POLICY','OKTATÁSPOLITIKAI')}</b><em>{text_pair('ATLAS · EPL','ATLASZ · EPL')}</em></span>
     </a>
     <nav aria-label="Elsődleges navigáció" data-label-en="Primary navigation" data-label-hu="Elsődleges navigáció">
-      <a href="index.html">{text_pair('Portfolio', 'Tárház')}</a><a href="comparison.html">V1 ↔ V2</a><a href="experiments/psychology-lens.html">{text_pair('Live perspective test', 'Élő nézőpontvizsgálat')}</a><a href="audit.html" aria-current="page">{text_pair('How it was made', 'Hogyan készült?')}</a>
+      <a href="index.html#questions">{text_pair('Questions', 'Kérdések')}</a><a href="index.html#about">{text_pair('What is this?', 'Mi ez?')}</a><a href="audit.html" aria-current="page">{text_pair('How it was made', 'Hogyan készült?')}</a>
     </nav>
     <div class="language-switch" role="group" aria-label="Nyelv" data-label-en="Language" data-label-hu="Nyelv"><button type="button" data-set-language="hu" aria-pressed="true">HU</button><button type="button" data-set-language="en" aria-pressed="false">EN</button></div>
   </header>
   <main id="content" class="audit-page">
     <section class="audit-hero blueprint-grid">
-      <div><p class="eyebrow">{text_pair('V2 LINEAGE EXPLORER', 'V2 EREDETTÉRKÉP')}</p><h1>{text_pair('Every conclusion leaves a trail.', 'Minden következtetés nyomot hagy.')}</h1></div>
+      <div><p class="eyebrow">{text_pair('LINEAGE EXPLORER', 'EREDETTÉRKÉP')}</p><h1>{text_pair('Every conclusion leaves a trail.', 'Minden következtetés nyomot hagy.')}</h1></div>
       <p class="hero-deck">{text_pair('The schema shows what may connect. The database shows what actually connects. The run shows when and how it came into being.', 'A séma megmutatja, mi kapcsolódhat. Az adatbázis megmutatja, mi kapcsolódik ténylegesen. A futás megmutatja, mikor és hogyan jött létre.')}</p>
     </section>
     <section class="audit-workbench" aria-labelledby="workbench-title">
-      <h2 id="workbench-title" class="sr-only">{text_pair('Artifact explorer', 'Artefaktumböngésző')}</h2>
+      <h2 id="workbench-title" class="sr-only">{text_pair('Record explorer', 'Rekordböngésző')}</h2>
       <div class="audit-controls">
         <label>{text_pair('Question', 'Kérdés')}<select id="audit-topic"></select></label>
         <label>{text_pair('Run', 'Futás')}<select id="audit-run"></select></label>
@@ -397,8 +386,8 @@ def page(payload: dict[str, Any]) -> str:
       </div>
     </section>
   </main>
-  <footer><span>{text_pair('Education Policy Lab · artifact-first architecture', 'Education Policy Lab · rekordközpontú architektúra')}</span><span>v2.0.0 · {len(payload['runs'])} {text_pair('inspectable runs', 'vizsgálható futás')}</span></footer>
-  <script id="audit-data" type="application/json">{encoded}</script><script src="assets/v2.js"></script><script src="assets/audit.js"></script>
+  <footer><span>{text_pair('Education Policy Lab · transparent, sourced analysis', 'Education Policy Lab · átlátható, forrásolt elemzés')}</span><span>{len(payload['runs'])} {text_pair('inspectable runs', 'vizsgálható futás')}</span></footer>
+  <script id="audit-data" type="application/json">{encoded}</script><script src="v2/assets/v2.js?v={ASSET_VERSION}"></script><script src="v2/assets/audit.js?v={ASSET_VERSION}"></script>
 </body></html>"""
 
 

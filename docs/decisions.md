@@ -785,3 +785,18 @@ technical production baseline is accepted and publishable as an internal
 preview, while replacement of v1 at the public entry point still requires the
 owner's explicit cutover decision and the remaining unchecked public-v2
 definition-of-done items.
+
+**D-55 — V2 becomes the default public Atlas; v1 remains only in Git history
+(2026-07-21, owner-approved).** The public homepage and deploy workflow now
+render exclusively from the accepted two-topic v2 production stores. The
+public v1/v2 comparison, migrated-corpus pages, and psychology experiment page
+are removed from the deployed site; their code, artifacts, and reports remain
+recoverable in repository history. The primary reader is not a policy expert
+or researcher but an interested person learning how the education system
+works. Consequently the first layer uses plain-language questions and a
+five-step reading path (problem → options → professional checks → dilemmas →
+unknowns). Scores, execution details, schemas, and provenance move to the
+optional “How it was made?” layer. The artifact-lineage explorer reads only
+accepted production runs. This public cutover does not waive the separate
+human gate for external policy endorsement: published dossiers remain
+`ready_with_conditions` with `human_external_use_gate=pending`.

@@ -1829,7 +1829,7 @@ V2 is ready for its first public release when:
 - [x] localized output cannot become an upstream canonical input;
 - [ ] public topic, transformation, lens, dilemma, and audit views exist;
 - [x] qualitative v1/v2 comparison finds no critical content attrition;
-- [ ] the owner has explicitly approved cutover.
+- [x] the owner has explicitly approved cutover.
 
 ## 29. Architecture Decision Package for Owner Approval
 

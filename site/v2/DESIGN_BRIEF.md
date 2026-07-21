@@ -2,17 +2,19 @@
 
 ## Subject
 
-An education-system transformation observatory: a public workspace where
-policy researchers and decision makers can inspect change directions, the
-scientific lenses applied to them, and the value dilemmas evidence cannot
-settle.
+An education-system transformation atlas: a public learning space where a
+curious reader can start with a concrete question, understand possible change
+directions, see how different professional perspectives assess them, and
+recognise the value dilemmas evidence cannot settle.
 
 ## Audience
 
-Hungarian education-policy practitioners first; researchers, civil actors,
-and interested citizens second. The interface is bilingual, with Hungarian as
-the default view and English as an exact downstream projection where source
-localization exists.
+Interested people who are only beginning to learn how the Hungarian education
+system works come first. Policy practitioners, researchers, and civil actors
+are secondary audiences served by progressively deeper layers. The first
+screen must use plain language and require no policy vocabulary. The interface
+is bilingual, with Hungarian as the default view and English as an exact
+downstream projection where source localization exists.
 
 ## One job
 
@@ -58,6 +60,8 @@ without turning the site into a developer console.
 
 ## Honesty boundary
 
-The first v2 vertical slice is a deterministic compilation of committed v1
-content, not a new research run. This must remain visible in every topic view
-and in the v1/v2 comparison.
+The public dossiers are generated only from the accepted, fresh, sourced v2
+production runs. They may be used for learning and public scrutiny, but their
+current `ready_with_conditions` status and pending human policy gate must stay
+visible. Migration fixtures, experiments, and the retired v1/v2 comparison
+remain internal audit material rather than public navigation.

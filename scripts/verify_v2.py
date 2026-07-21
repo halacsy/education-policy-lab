@@ -306,8 +306,8 @@ def main() -> int:
         node_dir = ROOT / "v2" / "runs" / topic["run_id"] / "nodes"
         if len(list(node_dir.glob("*.json"))) != 6:
             raise AssertionError(f"Expected six node manifests for {topic['topic']}")
-    checked_links = verify_links(ROOT / "site" / "v2")
-    localized_messages, localized_pages = verify_localization(ROOT / "site" / "v2")
+    checked_links = verify_links(ROOT / "site")
+    localized_messages, localized_pages = verify_localization(ROOT / "site")
     live_artifacts, live_calls = verify_live_experiment(schemas)
     production_topics, production_artifacts, production_calls = verify_production_runs(schemas)
     print(f"PASS schemas: {len(schemas.available())} versioned record types")

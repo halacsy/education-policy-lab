@@ -5,9 +5,10 @@ dokumentum az elsődleges forrás, ez a brief annak design-következményeit
 rögzíti. A korábbi brief (rendszer-központú bemutatás, git-napló mint
 hero-bizonyíték) érvénytelen.*
 
-**Fontos státusz-változás:** a jelenlegi `index.html` NEM tartalom-kész — a
-régi, projekt-központú szerkezetet hordozza, átépítés előtt áll. A designnak
-az itt leírt új információs hierarchiára kell készülnie.
+**Megvalósítási státusz (D-55):** a v2 az alapértelmezett nyilvános Atlasz.
+A főoldal a kérdésekkel nyit, a témaoldalak fokozatosan mélyülnek, az
+eredettérkép pedig csak az elfogadott, forrásolt production futásokat mutatja.
+A v1 és a nyilvános v1/v2 összehasonlítás már csak a Git-történetben él.
 
 ## Mi ez a termék (egy bekezdésben)
 
@@ -25,10 +26,12 @@ főszereplő, nem a rendszer. Kifelé kerülendő szókincs: „önjavító",
 
 ## Célcsoportok (fontossági sorrendben)
 
-1. **A friss döntéshozó** — most pozícióba került politikus, képviselő,
-   önkormányzati vezető, stábtag. Fél óra alatt akarja átlátni az opcióteret
-   és a valódi vitákat. Bizalmat és komolyságot kell látnia, nem tech-demót.
-2. **Intézményvezetők, oktatási szakértők** — mélyebb rétegek: források,
+1. **Az érdeklődő, aki most tanul bele az oktatási rendszerbe** — nincs
+   szakpolitikai előképzettsége, de egy konkrét kérdést fél óra alatt szeretne
+   megérteni: mi a probléma, mit lehetne tenni, kinek lenne jobb vagy rosszabb,
+   és hol marad valódi vita. Köznyelvi belépőt és fokozatos mélyülést kér, nem
+   szakértői zsargont vagy technológiai bemutatót.
+2. **Döntéshozók, intézményvezetők, oktatási szakértők** — mélyebb rétegek: források,
    bizonyíték-fokozatok, nyitott kérdések.
 3. **EU-s / nemzetközi szakpolitikai kollégák** — a teljes EN tükör nekik szól.
 4. **Kutatók, AI-módszertan iránt érdeklődők** — őket a módszertan-aloldal és
@@ -143,7 +146,7 @@ Módszertan-oldalra (NEM a főoldalra):
   fókusz-állapotok, `prefers-reduced-motion`).
 - A táblázatok/kódblokkok saját konténerben görgethetők, az oldal maga soha
   nem görget vízszintesen.
-- A témaoldalak generáltak (`build_site_topics.py`) — a design komponensei
+- A témaoldalak generáltak (`build_v2_production_site.py`) — a design komponensei
   ezekben a sablonokban élnek majd, tervezz ismétlődő, adatvezérelt
   komponensekben.
 

@@ -1,10 +1,12 @@
 # Education Policy Lab
 
-A self-improving, bilingual (HU/EN), multi-agent policy-design system — an
-experiment in whether AI agents plus human experts can dramatically accelerate
-education policy design. AI does the information processing (comparison,
-synthesis, critique, scenario generation); **humans keep judgment, values,
-risk assessment and decisions**.
+A bilingual (HU/EN), artifact-first system for mapping education-policy
+questions into sourced findings, concrete transformation proposals,
+professional assessments, value dilemmas, and a research agenda. The public
+site is the **Education Policy Atlas**: it is written first for interested
+people who are only beginning to learn how the Hungarian education system
+works. AI assists the analysis; **humans keep judgment, values, risk assessment,
+knowledge admission, and policy decisions**.
 
 Demonstration question (not the target — the pipeline is reusable):
 
@@ -14,6 +16,13 @@ Demonstration question (not the target — the pipeline is reusable):
 ## Run it
 
 ```bash
+.venv/bin/python scripts/run_v2_production.py --topic korai-szelekcio
+.venv/bin/python scripts/verify_v2.py
+.venv/bin/python scripts/build_v2_production_site.py
+.venv/bin/python scripts/build_v2_audit.py
+python3 -m http.server 8765 --directory site
+
+# Archived v1 pipeline (kept for reproducibility, no longer the public site)
 python3 scripts/run_iteration_loop.py --max-rounds 5   # the real loop (commits each round)
 python3 scripts/verify.py                              # definition of done; exits 0 iff met
 python3 scripts/run_mock_sprint.py                     # 1 deterministic round, no keys, no commits
@@ -26,7 +35,16 @@ Providers: `ANTHROPIC_API_KEY` / `GOOGLE_API_KEY` (read from `.env`;
 differ). Without keys, everything runs on a deterministic mock built from the
 curated briefing pack in `scripts/lab/knowledge.py`.
 
-## How it works
+## How the default v2 works
+
+Each topic follows an explicit artifact DAG: **question → sourced findings →
+transformation proposals → professional-lens assessments → value dilemmas →
+research agenda → decision-readiness report**. JSON Schemas define every
+artifact; immutable records and lineage edges preserve how each conclusion was
+produced. The website compiles only accepted production stores and exposes the
+same lineage in its “How was it made?” view.
+
+## Archived v1 loop
 
 Each round: **experts → scenario builder → editor synthesis → societal
 discourse (argument ledger) → translator → critics (incl.

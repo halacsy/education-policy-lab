@@ -14,7 +14,7 @@ First topic: `korai-szelekcio` (early academic selection and the 6/8-year
 gimnázium). Architecture: orchestrator-workers + evaluator-optimizer,
 Reflexion/ADAS archive, Habermas-Machine disagreement preservation. Read
 `docs/architecture.md`, `docs/workflow.md`, and the decision log
-`docs/decisions.md` (D-01…D-36) — the decision log is the single source of
+`docs/decisions.md` (D-01…D-55) — the decision log is the single source of
 truth for design rationale.
 
 ## Ground rules (owner-set, do not violate)
@@ -56,7 +56,9 @@ resumes with the expert outputs reused.
 .venv/bin/python scripts/run_iteration_loop.py [--topic S] --max-rounds N [--start-round K]
 .venv/bin/python scripts/new_topic.py draft --text "..."  # intake; then: approve, approve-frames
 python3 scripts/build_registry.py --check                 # knowledge freshness gate (CI)
-python3 scripts/build_site_topics.py                      # topic-browser pages (CI)
+.venv/bin/python scripts/verify_v2.py                     # v2 architecture + site gate
+.venv/bin/python scripts/build_v2_production_site.py      # default Atlas pages (CI)
+.venv/bin/python scripts/build_v2_audit.py                # production lineage explorer (CI)
 ```
 
 - `.env` (gitignored — COPY IT MANUALLY to a new machine): GOOGLE_API_KEY,
@@ -84,7 +86,15 @@ python3 scripts/build_site_topics.py                      # topic-browser pages 
   the cheapest generator path; a discourse-enabled round ≈ 40 generator +
   15-25 judge calls (reciprocity off: −10).
 
-## Current state (2026-07-15, end of session)
+## Current state (2026-07-21)
+
+- **V2 IS THE DEFAULT PUBLIC ATLAS (D-55).** The public site is generated from
+  the two accepted, sourced production stores. Its primary audience is an
+  interested person with no policy background: question → possible changes →
+  professional perspectives → value dilemmas → unknowns. The v1 pages and the
+  public comparison are retired to Git history. `site/audit.html` is generated
+  from production lineage only; migration and psychology-lens experiments stay
+  internal. External policy use still requires the pending human gate.
 
 - **MULTI-TOPIC SPRINT DONE on main (D-35 + D-36, 2026-07-15, pushed;
   commits 2558dc8..7acbc59).** Per-topic config/state/outputs + scoped

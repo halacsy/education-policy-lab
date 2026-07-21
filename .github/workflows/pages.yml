@@ -3,7 +3,7 @@ name: Deploy website to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ["site/**", "knowledge/**", "topics/**", "outputs/**", "scripts/build_site_kb.py", "scripts/build_site_explorer.py", "scripts/build_site_topics.py", "scripts/build_site_audit.py", "scripts/lab/site_data.py", ".github/workflows/pages.yml"]
+    paths: ["site/**", "topics/**", "v2/production/**", "schemas/v2/**", "config/v2/locales/**", "scripts/build_v2_production_site.py", "scripts/build_v2_audit.py", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -24,17 +24,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/build_registry.py --check
-      - run: python3 scripts/build_site_kb.py
-      - run: |
-          # per-topic explorer pages: every topic that already has final outputs
-          for f in topics/*/topic.json; do
-            slug=$(basename "$(dirname "$f")")
-            if [ -f "outputs/topics/$slug/final/final_brief.hu.md" ]; then
-              python3 scripts/build_site_explorer.py --topic "$slug"
-            fi
-          done
-      - run: python3 scripts/build_site_topics.py
-      - run: python3 scripts/build_site_audit.py
+      - run: python3 -m pip install 'jsonschema[format]==4.26.0'
+      - run: python3 scripts/build_v2_production_site.py
+      - run: python3 scripts/build_v2_audit.py
+      - run: python3 scripts/verify_v2.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
