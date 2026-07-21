@@ -1,0 +1,28 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/policy_question.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^QI-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "policy_question"},
+      "schema_version": {"const": "2.0.0"},
+      "status": {"const": "admitted"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "question": {"type": "string", "minLength": 1},
+          "submission_context": {"type": "string", "minLength": 1},
+          "source_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "language": {"enum": ["hu", "en"]},
+          "approval_basis": {"type": "string", "minLength": 1}
+        },
+        "required": ["question", "submission_context", "source_refs", "language", "approval_basis"]
+      }
+    }}
+  ],
+  "x-artifact-references": [{"path": "/provenance_ref", "record_type": "provenance"}],
+  "x-record-type": "policy_question",
+  "x-schema-version": "2.0.0"
+}

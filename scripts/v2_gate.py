@@ -25,23 +25,28 @@ def _load(path: Path) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Approve one exact option-space candidate at the v2 human gate."
+        description="Approve one exact candidate at a declared v2 human gate."
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
-    approve = subparsers.add_parser("approve")
-    approve.add_argument("--topic", required=True)
-    approve.add_argument("--run-tag", required=True)
-    approve.add_argument("--candidate-hash")
-    approve.add_argument("--decided-by", required=True)
-    approve.add_argument("--rationale", required=True)
-    approve.add_argument(
-        "--output-root", type=Path, default=ROOT / "v2" / "production"
-    )
+    for command in ("approve", "approve-brief"):
+        approve = subparsers.add_parser(command)
+        approve.add_argument("--topic", required=True)
+        approve.add_argument("--run-tag", required=True)
+        approve.add_argument("--candidate-hash")
+        approve.add_argument("--decided-by", required=True)
+        approve.add_argument("--rationale", required=True)
+        approve.add_argument(
+            "--output-root", type=Path, default=ROOT / "v2" / "production"
+        )
     args = parser.parse_args()
 
+    gate_id = (
+        "approve_problem_brief" if args.command == "approve-brief"
+        else "approve_option_space"
+    )
     gate_dir = (
         args.output_root / args.run_tag / args.topic / "runs"
-        / f"live-{args.topic}-production" / "gates" / "approve_option_space"
+        / f"live-{args.topic}-production" / "gates" / gate_id
     )
     requests = sorted(gate_dir.glob("*.request.json"))
     if args.candidate_hash:

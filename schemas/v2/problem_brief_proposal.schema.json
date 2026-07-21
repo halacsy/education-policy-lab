@@ -1,0 +1,34 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/problem_brief_proposal.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^PBP-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "problem_brief_proposal"},
+      "schema_version": {"const": "2.0.0"},
+      "status": {"const": "candidate"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "question_ref": {"type": "string", "pattern": "^QI-[A-Za-z0-9._-]+$"},
+          "title": {"type": "string", "minLength": 1},
+          "public_question": {"type": "string", "minLength": 1},
+          "problem_statement": {"type": "string", "minLength": 1},
+          "learning_goals": {"type": "array", "minItems": 3, "maxItems": 7, "items": {"type": "string", "minLength": 1}},
+          "scope": {"type": "string", "minLength": 1},
+          "seed_sources": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "framing_notes": {"type": "array", "minItems": 1, "maxItems": 7, "items": {"type": "string", "minLength": 1}}
+        },
+        "required": ["question_ref", "title", "public_question", "problem_statement", "learning_goals", "scope", "seed_sources", "framing_notes"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/question_ref", "record_type": "policy_question"}
+  ],
+  "x-record-type": "problem_brief_proposal",
+  "x-schema-version": "2.0.0"
+}

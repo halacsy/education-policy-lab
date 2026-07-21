@@ -17,6 +17,24 @@ def array(items: dict[str, Any], minimum: int = 1, maximum: int | None = None) -
 TEXT = {"type": "string", "minLength": 1}
 STRENGTH = {"type": "string", "enum": ["strong", "moderate", "weak", "contested"]}
 
+
+PROBLEM_BRIEF_OUTPUT = {
+    "type": "object", "additionalProperties": False,
+    "properties": {
+        "title": TEXT,
+        "public_question": TEXT,
+        "problem_statement": TEXT,
+        "learning_goals": array(TEXT, 3, 7),
+        "scope": TEXT,
+        "seed_sources": array(TEXT, 0, 12),
+        "framing_notes": array(TEXT, 1, 7),
+    },
+    "required": [
+        "title", "public_question", "problem_statement", "learning_goals",
+        "scope", "seed_sources", "framing_notes",
+    ],
+}
+
 RESEARCH_OUTPUT = {
     "type": "object", "additionalProperties": False,
     "properties": {

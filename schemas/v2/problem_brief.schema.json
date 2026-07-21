@@ -13,6 +13,9 @@
         "type": "object", "additionalProperties": false,
         "properties": {
           "title": {"type": "string", "minLength": 1},
+          "candidate_ref": {"type": "string", "pattern": "^PBP-[A-Za-z0-9._-]+$"},
+          "candidate_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "decision_ref": {"type": "string", "pattern": "^HGB-[A-Za-z0-9._-]+$"},
           "public_question": {"type": "string", "minLength": 1},
           "problem_statement": {"type": "string", "minLength": 1},
           "learning_goals": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
@@ -24,7 +27,11 @@
       }
     }}
   ],
-  "x-artifact-references": [{"path": "/provenance_ref", "record_type": "provenance"}],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/candidate_ref", "record_type": "problem_brief_proposal", "optional": true},
+    {"path": "/content/decision_ref", "record_type": "problem_brief_decision", "optional": true}
+  ],
   "x-record-type": "problem_brief",
   "x-schema-version": "2.0.0"
 }

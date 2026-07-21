@@ -823,3 +823,17 @@ candidate cannot reuse an earlier human decision. The 2026-07-20 production
 stores predate this mechanism and are not retroactively rewritten: the public
 audit labels their reconstructed execution graph `incomplete_provenance` until
 a new live run reaches and passes the declared option-space gate.
+
+**D-57 — A raw policy question and an admitted problem brief are separate,
+human-gated artifacts (2026-07-21, owner correction).** Selecting a question
+authorizes only the question itself; it does not silently approve a title,
+scope, premise, learning goals, or source set. For new topics the DagSpec now
+starts with `policy_question` → `draft_problem_brief` →
+`approve_problem_brief`. The draft is an LLM call with an audited prompt and
+response, but it is forbidden to research, answer the question, propose
+interventions, or treat the question's empirical premise as fact. Research
+can depend only on the admitted `problem_brief` emitted by a human decision
+bound to the exact proposal hash. Relaunching after approval reuses the
+unchanged draft and starts the first research node; changing the draft hash
+invalidates the earlier decision. Existing topics with an already approved
+brief remain valid roots and do not acquire a fictitious retroactive gate.

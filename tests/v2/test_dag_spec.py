@@ -80,6 +80,23 @@ class DagSpecTests(unittest.TestCase):
             plan.write(path)
             self.assertTrue(path.exists())
 
+    def test_raw_question_dag_requires_brief_approval_before_research(self) -> None:
+        dag = build_policy_analysis_dag(
+            ("legal", "finance"), brief_mode="draft_and_approve"
+        )
+        dag.validate()
+
+        self.assertEqual(len(dag.roots), 3)
+        self.assertEqual(dag.roots[0].name, "policy_question")
+        self.assertEqual(len(dag.nodes), 14)
+        self.assertEqual(dag.nodes[0].id, "draft_problem_brief")
+        self.assertEqual(dag.nodes[1].id, "approve_problem_brief")
+        self.assertEqual(dag.nodes[1].kind, "human_gate")
+        research = next(node for node in dag.nodes if node.id == "research_legal")
+        problem = next(binding for binding in research.inputs if binding.name == "problem")
+        self.assertEqual(problem.sources, ("approve_problem_brief",))
+        self.assertEqual(problem.record_types, ("problem_brief",))
+
     def test_unknown_or_later_source_fails_static_validation(self) -> None:
         first = DagNode(
             id="first", version="1.0.0", kind="deterministic",
@@ -139,6 +156,27 @@ class DagSpecTests(unittest.TestCase):
             self.assertEqual(problem["record_type"], "problem_brief")
             self.assertEqual(len(roots), 13)
             self.assertEqual(len(plan.nodes), 32)
+
+    def test_raw_question_runner_materializes_question_not_problem_brief(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            runner = ArtifactDagRunner(
+                root=ROOT, output_root=directory, llm_module=NoCallLlm(),
+                topic="sni-letszamnovekedes",
+            )
+            roots = runner._admit_run_roots()
+            plan = build_policy_analysis_dag(
+                (lens["id"] for lens in runner.base_lenses),
+                brief_mode="draft_and_approve",
+            ).compile(topic=runner.topic, root_artifacts=roots)
+
+            question = runner.repository.get_by_hash(
+                roots["policy_question"][0].content_hash
+            )
+            self.assertEqual(question["record_type"], "policy_question")
+            self.assertEqual(question["status"], "admitted")
+            self.assertNotIn("problem_brief", roots)
+            self.assertEqual(len(roots), 13)
+            self.assertEqual(len(plan.nodes), 34)
 
     def test_human_gate_is_bound_to_one_exact_candidate_hash(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -205,6 +243,74 @@ class DagSpecTests(unittest.TestCase):
             self.assertEqual(approved["status"], "admitted")
             self.assertEqual(
                 approved["content"]["candidate_hash"], candidate_ref.content_hash
+            )
+
+    def test_problem_brief_gate_is_bound_to_one_exact_candidate_hash(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            runner = ArtifactDagRunner(
+                root=ROOT, output_root=directory, llm_module=NoCallLlm(),
+                topic="sni-letszamnovekedes",
+            )
+            roots = runner._admit_run_roots()
+            provenance = runner._admission_provenance(
+                "test_problem_brief_candidate",
+                source_files=("topics/sni-letszamnovekedes/topic.json",),
+                admitted_content={"test": True},
+            )
+            candidate_ref = runner.repository.put(runner._record(
+                "PBP-live-test", "problem_brief_proposal", provenance.id,
+                {
+                    "question_ref": roots["policy_question"][0].id,
+                    "title": "Test brief",
+                    "public_question": "What should be learned?",
+                    "problem_statement": "A bounded test problem.",
+                    "learning_goals": ["Goal one", "Goal two", "Goal three"],
+                    "scope": "Test scope.",
+                    "seed_sources": [],
+                    "framing_notes": ["Do not assume the premise."],
+                },
+            ))
+            run_dir = Path(directory) / "runs" / "test"
+            executor = NodeExecutor(
+                repository=runner.repository, run_dir=run_dir, source_root=ROOT,
+                run_id="test", artifact_created_at=runner.created_at,
+                topic=runner.topic, run_plan_hash="a" * 64,
+            )
+            with self.assertRaises(HumanGatePending) as context:
+                runner._require_problem_brief_decision(
+                    executor, run_dir, candidate_ref, "a" * 64
+                )
+            request_path = context.exception.request_path
+            decision_path = request_path.with_name(
+                request_path.name.replace(".request.json", ".decision.json")
+            )
+            decision = {
+                "gate_id": "approve_problem_brief",
+                "candidate_ref": candidate_ref.id,
+                "candidate_hash": "b" * 64,
+                "decision": "approved",
+                "decided_by": "test-owner",
+                "decided_at": datetime.now(timezone.utc).isoformat(),
+                "rationale": "The brief preserves uncertainty and has bounded scope.",
+            }
+            write_json(decision_path, decision)
+            with self.assertRaisesRegex(ValueError, "does not match exact candidate"):
+                runner._require_problem_brief_decision(
+                    executor, run_dir, candidate_ref, "a" * 64
+                )
+            decision["candidate_hash"] = candidate_ref.content_hash
+            write_json(decision_path, decision)
+            accepted = runner._require_problem_brief_decision(
+                executor, run_dir, candidate_ref, "a" * 64
+            )
+            records = runner._approved_problem_brief_records(
+                candidate_ref, accepted, provenance.id
+            )
+            refs = [runner.repository.put(record) for record in records]
+            brief = runner.repository.get_by_hash(refs[1].content_hash)
+            self.assertEqual(brief["status"], "admitted")
+            self.assertEqual(
+                brief["content"]["candidate_hash"], candidate_ref.content_hash
             )
 
     def test_llm_attempt_hashes_enter_output_provenance(self) -> None:

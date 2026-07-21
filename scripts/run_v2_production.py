@@ -46,14 +46,28 @@ def main() -> int:
         try:
             summary = runner.run_production()
         except HumanGatePending as exc:
+            gate_command = (
+                "approve-brief" if exc.gate_id == "approve_problem_brief"
+                else "approve"
+            )
+            gate_label = (
+                "problem brief" if exc.gate_id == "approve_problem_brief"
+                else "option space"
+            )
+            rationale_hint = (
+                "WHY THIS BRIEF IS A SOUND RESEARCH CONTRACT"
+                if exc.gate_id == "approve_problem_brief"
+                else "WHY THIS OPTION SPACE IS COMPLETE"
+            )
             print(
                 "\nProduction run paused at the declared human gate.\n"
+                f"Gate: {gate_label}\n"
                 f"Candidate hash: {exc.candidate_hash}\n"
                 f"Review request: {exc.request_path}\n"
                 "Approve only after reviewing the exact candidate:\n"
-                f"  .venv/bin/python scripts/v2_gate.py approve --topic {topic} "
+                f"  .venv/bin/python scripts/v2_gate.py {gate_command} --topic {topic} "
                 f"--run-tag {args.run_tag} --candidate-hash {exc.candidate_hash} "
-                "--decided-by YOUR_NAME --rationale 'WHY THIS OPTION SPACE IS COMPLETE'\n"
+                f"--decided-by YOUR_NAME --rationale '{rationale_hint}'\n"
                 "Then relaunch the same production command.",
                 file=sys.stderr,
             )

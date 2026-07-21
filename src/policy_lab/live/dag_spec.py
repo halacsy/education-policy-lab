@@ -49,15 +49,73 @@ def _node(
     )
 
 
-def build_policy_analysis_dag(lens_ids: Iterable[str]) -> DagSpec:
+def build_policy_analysis_dag(
+    lens_ids: Iterable[str], *, brief_mode: str = "approved_root"
+) -> DagSpec:
     """Build the question-independent logical DAG for one admitted lens set."""
 
     lens_ids = tuple(lens_ids)
-    roots = [RootPort("problem_brief", ("problem_brief",))]
+    if brief_mode not in {"approved_root", "draft_and_approve"}:
+        raise ValueError(f"Unknown brief mode: {brief_mode}")
+    roots = [
+        RootPort(
+            "problem_brief" if brief_mode == "approved_root" else "policy_question",
+            ("problem_brief",) if brief_mode == "approved_root" else ("policy_question",),
+        )
+    ]
     roots.extend(
         RootPort(f"lens_{lens_id}", ("lens_definition",))
         for lens_id in lens_ids
     )
+
+    brief_nodes: tuple[DagNode, ...] = ()
+    problem_source = "root:problem_brief"
+    if brief_mode == "draft_and_approve":
+        draft_brief = _node(
+            "draft_problem_brief",
+            kind="llm",
+            role="generator",
+            stage="problem_framing",
+            title="Draft problem brief",
+            description=(
+                "Turn the admitted raw policy question into a bounded, "
+                "epistemically neutral problem-brief proposal."
+            ),
+            handler="draft_problem_brief",
+            inputs=(
+                InputBinding(
+                    "question", ("root:policy_question",),
+                    ("policy_question",), maximum=1,
+                ),
+            ),
+            outputs=("problem_brief_proposal",),
+            schemas=_schemas("problem_brief_proposal"),
+            generation_parameters=(("max_tokens", 6000),),
+        )
+        approve_brief = _node(
+            "approve_problem_brief",
+            kind="human_gate",
+            role="deterministic",
+            stage="human_gate",
+            title="Approve problem brief",
+            description=(
+                "A human approves one exact problem-brief candidate hash before "
+                "any research node may start."
+            ),
+            handler="approve_problem_brief",
+            inputs=(
+                InputBinding(
+                    "candidate", ("draft_problem_brief",),
+                    ("problem_brief_proposal",), maximum=1,
+                ),
+            ),
+            outputs=("problem_brief_decision", "problem_brief"),
+            schemas=_schemas("problem_brief_decision", "problem_brief"),
+            provider="human",
+            model="human-decision",
+        )
+        brief_nodes = (draft_brief, approve_brief)
+        problem_source = "approve_problem_brief"
 
     research_nodes = tuple(
         _node(
@@ -72,7 +130,7 @@ def build_policy_analysis_dag(lens_ids: Iterable[str]) -> DagSpec:
             ),
             handler="research",
             inputs=(
-                InputBinding("problem", ("root:problem_brief",), ("problem_brief",), maximum=1),
+                InputBinding("problem", (problem_source,), ("problem_brief",), maximum=1),
                 InputBinding("lens", (f"root:lens_{lens_id}",), ("lens_definition",), maximum=1),
             ),
             outputs=EVIDENCE_TYPES,
@@ -97,7 +155,7 @@ def build_policy_analysis_dag(lens_ids: Iterable[str]) -> DagSpec:
         ),
         handler="derive_option_space",
         inputs=(
-            InputBinding("problem", ("root:problem_brief",), ("problem_brief",), maximum=1),
+            InputBinding("problem", (problem_source,), ("problem_brief",), maximum=1),
             InputBinding("evidence", research_ids, ("finding", "assumption", "uncertainty")),
         ),
         outputs=("option_space_proposal",),
@@ -135,7 +193,7 @@ def build_policy_analysis_dag(lens_ids: Iterable[str]) -> DagSpec:
         ),
         handler="derive_transformations",
         inputs=(
-            InputBinding("problem", ("root:problem_brief",), ("problem_brief",), maximum=1),
+            InputBinding("problem", (problem_source,), ("problem_brief",), maximum=1),
             InputBinding("evidence", research_ids, ("finding", "assumption", "uncertainty")),
             InputBinding("option_space", ("approve_option_space",), ("approved_option_space",), maximum=1),
         ),
@@ -210,7 +268,7 @@ def build_policy_analysis_dag(lens_ids: Iterable[str]) -> DagSpec:
         description="Assemble a public decision package from exact upstream artifacts.",
         handler="assemble_decision_package",
         inputs=(
-            InputBinding("problem", ("root:problem_brief",), ("problem_brief",), maximum=1),
+            InputBinding("problem", (problem_source,), ("problem_brief",), maximum=1),
             InputBinding(
                 "transformations", ("derive_transformations",),
                 ("transformation_family", "transformation_proposal", "coverage_ledger"),
@@ -264,7 +322,7 @@ def build_policy_analysis_dag(lens_ids: Iterable[str]) -> DagSpec:
         version=VERSION,
         roots=tuple(roots),
         nodes=(
-            *research_nodes, option_space, gate, transformations,
+            *brief_nodes, *research_nodes, option_space, gate, transformations,
             *assessment_nodes, dilemmas, agenda, package, evaluation, readiness,
         ),
     )

@@ -4,14 +4,19 @@
 
 Fresh v2 production does not reconstruct its workflow from Python call order.
 `src/policy_lab/live/dag_spec.py` declares the complete typed `DagSpec`. At the
-start of a topic run, the admitted problem brief and lens definitions are
-stored as content-addressed root artifacts and the spec is compiled into an
+start of a topic run, the admitted input and lens definitions are stored as
+content-addressed root artifacts and the spec is compiled into an
 immutable `run_plan.json`. Every node resolves its named inputs from that plan;
 its manifest and provenance carry the plan hash. The public audit builder reads
 the same persisted nodes and edges, while `verify_v2.py` recomputes every input
 binding from exact upstream output hashes.
 
-The option-space boundary is explicit: research → option-space proposal →
+For a new topic, the problem-framing boundary is explicit: admitted raw
+question → LLM-authored problem-brief proposal → hash-bound human decision →
+admitted problem brief. No research node can run before that decision. Topics
+that already have an admitted brief start from that brief as their root.
+
+The option-space boundary is also explicit: research → option-space proposal →
 hash-bound human decision → approved option space → transformations. A fresh
 run stops before transformations if the exact option-space candidate has not
 been approved. Historical production stores without a RunPlan remain readable

@@ -96,8 +96,15 @@ class ArtifactDagRunner:
         arm = "production"
         run_id = f"live-{self.topic}-{arm}"
         run_dir = self.output_root / "runs" / run_id
+        brief_mode = (
+            "draft_and_approve"
+            if "raw_question" in self.topic_data and "problem_brief" not in self.topic_data
+            else "approved_root"
+        )
         root_refs = self._admit_run_roots()
-        dag = build_policy_analysis_dag(lens["id"] for lens in self.base_lenses)
+        dag = build_policy_analysis_dag(
+            (lens["id"] for lens in self.base_lenses), brief_mode=brief_mode
+        )
         plan = dag.compile(topic=self.topic, root_artifacts=root_refs)
         plan_path = run_dir / "run_plan.json"
         if plan_path.exists():
@@ -119,6 +126,52 @@ class ArtifactDagRunner:
         )
         outputs: dict[str, tuple[ArtifactRef, ...]] = {}
         common_config = {"topic": self.topic, "run_plan_hash": plan.hash}
+
+        if brief_mode == "draft_and_approve":
+            node_id = "draft_problem_brief"
+            node = plan.node(node_id)
+            inputs = plan.resolve_inputs(node_id, outputs)
+            brief_candidate_refs = executor.run(
+                node.node_spec(),
+                inputs=inputs,
+                relevant_config=common_config,
+                provider=node.provider,
+                model=node.model,
+                generation_parameters=dict(node.generation_parameters),
+                prompt_hash=self._contract_hash("draft_problem_brief_v1"),
+                builder=lambda pv: self._problem_brief_proposal_records(
+                    inputs["question"][0], pv, node=node_id,
+                    run_dir=run_dir, arm=arm,
+                ),
+            )
+            outputs[node_id] = brief_candidate_refs
+            self._report_node(run_dir, node_id)
+
+            gate_id = "approve_problem_brief"
+            gate_node = plan.node(gate_id)
+            gate_inputs = plan.resolve_inputs(gate_id, outputs)
+            candidate_ref = gate_inputs["candidate"][0]
+            decision = self._require_problem_brief_decision(
+                executor, run_dir, candidate_ref, plan.hash
+            )
+            gate_refs = executor.run(
+                gate_node.node_spec(),
+                inputs=gate_inputs,
+                relevant_config={
+                    **common_config, "decision_hash": content_hash(decision),
+                },
+                provider=gate_node.provider,
+                model=gate_node.model,
+                generation_parameters={},
+                prompt_hash=content_hash({
+                    "gate": gate_id, "version": gate_node.version,
+                }),
+                builder=lambda pv: self._approved_problem_brief_records(
+                    candidate_ref, decision, pv
+                ),
+            )
+            outputs[gate_id] = gate_refs
+            self._report_node(run_dir, gate_id)
 
         for lens in self.base_lenses:
             node_id = f"research_{lens['id']}"
@@ -550,35 +603,56 @@ class ArtifactDagRunner:
     def _admit_run_roots(self) -> dict[str, tuple[ArtifactRef, ...]]:
         """Materialize the exact, externally admitted inputs compiled into a run."""
 
-        problem = self.topic_data["problem_brief"]
-        problem_content = {
-            "title": self._english(problem["title"]),
-            "public_question": self._english(problem["public_question"]),
-            "problem_statement": self._english(problem["problem_statement"]),
-            "learning_goals": [self._english(value) for value in problem["learning_goals"]],
-            "scope": self._english(problem["scope"]),
-            "seed_sources": [self._english(value) for value in problem.get("seed_sources", [])],
-            "approval_basis": (
-                f"Human-approved topic brief admitted from topics/{self.topic}/topic.json "
-                "as an immutable run root."
-            ),
-        }
-        problem_provenance = self._admission_provenance(
-            "admit_problem_brief",
-            source_files=(f"topics/{self.topic}/topic.json",),
-            admitted_content=problem_content,
-        )
-        problem_ref = self.repository.put_successor({
-            **self._record(
-                f"PB-{self.topic}", "problem_brief", problem_provenance.id,
-                problem_content,
-            ),
-            "status": "admitted",
-        })
-
-        roots: dict[str, tuple[ArtifactRef, ...]] = {
-            "problem_brief": (problem_ref,),
-        }
+        roots: dict[str, tuple[ArtifactRef, ...]] = {}
+        if "raw_question" in self.topic_data and "problem_brief" not in self.topic_data:
+            raw = self.topic_data["raw_question"]
+            question_content = {
+                "question": self._english(raw["question"]),
+                "submission_context": self._english(raw["submission_context"]),
+                "source_refs": list(raw.get("source_refs", [])),
+                "language": raw["language"],
+                "approval_basis": raw["approval_basis"],
+            }
+            provenance = self._admission_provenance(
+                "admit_policy_question",
+                source_files=(f"topics/{self.topic}/topic.json",),
+                admitted_content=question_content,
+            )
+            question_ref = self.repository.put_successor({
+                **self._record(
+                    f"QI-{self.topic}", "policy_question", provenance.id,
+                    question_content,
+                ),
+                "status": "admitted",
+            })
+            roots["policy_question"] = (question_ref,)
+        else:
+            problem = self.topic_data["problem_brief"]
+            problem_content = {
+                "title": self._english(problem["title"]),
+                "public_question": self._english(problem["public_question"]),
+                "problem_statement": self._english(problem["problem_statement"]),
+                "learning_goals": [self._english(value) for value in problem["learning_goals"]],
+                "scope": self._english(problem["scope"]),
+                "seed_sources": [self._english(value) for value in problem.get("seed_sources", [])],
+                "approval_basis": (
+                    f"Human-approved topic brief admitted from topics/{self.topic}/topic.json "
+                    "as an immutable run root."
+                ),
+            }
+            problem_provenance = self._admission_provenance(
+                "admit_problem_brief",
+                source_files=(f"topics/{self.topic}/topic.json",),
+                admitted_content=problem_content,
+            )
+            problem_ref = self.repository.put_successor({
+                **self._record(
+                    f"PB-{self.topic}", "problem_brief", problem_provenance.id,
+                    problem_content,
+                ),
+                "status": "admitted",
+            })
+            roots["problem_brief"] = (problem_ref,)
         for lens in self.base_lenses:
             lens_id = lens["id"]
             lens_content = {
@@ -602,6 +676,142 @@ class ArtifactDagRunner:
             })
             roots[f"lens_{lens_id}"] = (lens_ref,)
         return roots
+
+    def _problem_brief_proposal_records(
+        self,
+        question_ref: ArtifactRef,
+        provenance: str,
+        *,
+        node: str,
+        run_dir: Path,
+        arm: str,
+    ) -> list[dict[str, Any]]:
+        question = self.repository.get_by_hash(question_ref.content_hash)["content"]
+        prompt = self._header("draft_problem_brief", "problem_framing_editor") + f"""
+Turn the admitted raw policy question below into a bounded English problem-brief proposal for human review. Do not research or answer the question yet.
+
+RAW QUESTION: {question['question']}
+SUBMISSION CONTEXT: {question['submission_context']}
+SOURCE POINTERS: {'; '.join(question['source_refs']) or 'none'}
+
+Rules:
+- Treat every empirical premise in the raw question as something research must verify, not as an established fact.
+- Preserve the submitter's real concern while distinguishing prevalence, measurement, definitions, access, incentives, implementation, and value choices where relevant.
+- Define a decision-useful scope and state exclusions inside the scope text.
+- Write 3-7 learning goals that the later research and option-space nodes can answer.
+- Do not propose interventions, scenarios, preferred outcomes, or expert seats.
+- Seed sources are pointers only; never infer their contents.
+- Framing notes must make the important interpretation choices visible to the human reviewer.
+"""
+        result = self._call_structured_counted(
+            prompt,
+            contracts.PROBLEM_BRIEF_OUTPUT,
+            role="generator",
+            max_tokens=6000,
+            arm=arm,
+            node=node,
+            run_dir=run_dir,
+            suffix="draft",
+            constraints={"learning_goals": (3, 7), "framing_notes": (1, 7)},
+        )
+        return [self._record(
+            f"PBP-live-{self.topic}",
+            "problem_brief_proposal",
+            provenance,
+            {"question_ref": question_ref.id, **result},
+        )]
+
+    def _require_problem_brief_decision(
+        self,
+        executor: NodeExecutor,
+        run_dir: Path,
+        candidate_ref: ArtifactRef,
+        run_plan_hash: str,
+    ) -> dict[str, Any]:
+        gate_dir = run_dir / "gates" / "approve_problem_brief"
+        gate_dir.mkdir(parents=True, exist_ok=True)
+        request_path = gate_dir / f"{candidate_ref.content_hash}.request.json"
+        decision_path = gate_dir / f"{candidate_ref.content_hash}.decision.json"
+        candidate = self.repository.get_by_hash(candidate_ref.content_hash)
+        request = {
+            "candidate": candidate["content"],
+            "candidate_hash": candidate_ref.content_hash,
+            "candidate_ref": candidate_ref.id,
+            "created_at": self.created_at,
+            "gate_id": "approve_problem_brief",
+            "run_plan_hash": run_plan_hash,
+        }
+        if request_path.exists() and self._load(request_path) != request:
+            raise ValueError(f"Problem-brief gate request changed at {request_path}")
+        if not request_path.exists():
+            write_json(request_path, request)
+        if not decision_path.exists():
+            executor.events.append(
+                "human_gate_waiting", run_id=executor.run_id,
+                node_id="approve_problem_brief",
+                candidate_hash=candidate_ref.content_hash,
+                request_path=str(request_path),
+            )
+            raise HumanGatePending(
+                "approve_problem_brief", candidate_ref.content_hash, request_path
+            )
+        decision = self._load(decision_path)
+        required = {
+            "gate_id", "candidate_ref", "candidate_hash", "decision",
+            "decided_by", "decided_at", "rationale",
+        }
+        if set(decision) != required:
+            raise ValueError(f"Problem-brief decision fields differ at {decision_path}")
+        if decision["gate_id"] != "approve_problem_brief" or (
+            decision["candidate_ref"] != candidate_ref.id
+        ) or decision["candidate_hash"] != candidate_ref.content_hash:
+            raise ValueError(
+                f"Problem-brief decision does not match exact candidate "
+                f"{candidate_ref.id} @ {candidate_ref.content_hash}"
+            )
+        if decision["decision"] != "approved":
+            raise HumanGatePending(
+                "approve_problem_brief", candidate_ref.content_hash, request_path
+            )
+        for key in ("decided_by", "decided_at", "rationale"):
+            if not isinstance(decision[key], str) or not decision[key].strip():
+                raise ValueError(f"Problem-brief decision has empty {key}")
+        return decision
+
+    def _approved_problem_brief_records(
+        self,
+        candidate_ref: ArtifactRef,
+        decision: dict[str, Any],
+        provenance: str,
+    ) -> list[dict[str, Any]]:
+        candidate = self.repository.get_by_hash(candidate_ref.content_hash)
+        content = candidate["content"]
+        decision_id = f"HGB-live-{self.topic}-{candidate_ref.content_hash[:16]}"
+        decision_record = {
+            **self._record(
+                decision_id, "problem_brief_decision", provenance, dict(decision)
+            ),
+            "status": "admitted",
+        }
+        brief_record = {
+            **self._record(
+                f"PB-{self.topic}", "problem_brief", provenance,
+                {
+                    "candidate_ref": candidate_ref.id,
+                    "candidate_hash": candidate_ref.content_hash,
+                    "decision_ref": decision_id,
+                    "title": content["title"],
+                    "public_question": content["public_question"],
+                    "problem_statement": content["problem_statement"],
+                    "learning_goals": content["learning_goals"],
+                    "scope": content["scope"],
+                    "seed_sources": content["seed_sources"],
+                    "approval_basis": decision["rationale"],
+                },
+            ),
+            "status": "admitted",
+        }
+        return [decision_record, brief_record]
 
     def _admission_provenance(
         self,
@@ -1834,6 +2044,10 @@ Score only what is visible. Treat an inline finding id as auditable only when th
         """
 
         dependencies = {
+            "draft_problem_brief_v1": (
+                cls._problem_brief_proposal_records,
+                contracts.PROBLEM_BRIEF_OUTPUT,
+            ),
             "research_v1": (cls._research_records, contracts.RESEARCH_OUTPUT),
             "derive_option_space_v1": (
                 cls._option_space_records,

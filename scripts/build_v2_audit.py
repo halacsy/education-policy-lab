@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSET_VERSION = "d56-explicit-run-plan"
+ASSET_VERSION = "d57-brief-gate"
 sys.path.insert(0, str(ROOT / "src"))
 
 from policy_lab.jsonio import content_hash  # noqa: E402
@@ -54,6 +54,9 @@ TYPE_COPY = {
     "decision_readiness": ("Decision readiness", "Döntési készültség", "A structured verdict on what can be decided and what still blocks action.", "Strukturált ítélet arról, mi dönthető el, és mi akadályozza még a cselekvést."),
     "provenance": ("Provenance", "Eredetnapló", "The node, inputs, prompt, provider, model, and contracts behind a record.", "A rekord mögötti lépés, bemenetek, prompt, szolgáltató, modell és szerződések."),
     "problem_brief": ("Problem brief", "Problémafelvetés", "The exact human-admitted question and scope compiled into the run.", "A futásba fordított, ember által jóváhagyott pontos kérdés és hatókör."),
+    "policy_question": ("Raw policy question", "Nyers szakpolitikai kérdés", "The admitted question before its scope and premises are normalized.", "A befogadott kérdés, mielőtt a hatókörét és előfeltevéseit pontosítanánk."),
+    "problem_brief_proposal": ("Problem-brief proposal", "Problémafelvetés-javaslat", "A bounded research contract awaiting human review.", "Körülhatárolt kutatási szerződés, amely emberi felülvizsgálatra vár."),
+    "problem_brief_decision": ("Problem-brief decision", "Problémafelvetés-döntés", "A human decision bound to one exact problem-brief candidate hash.", "Egy pontos problémafelvetés-jelölthashhez kötött emberi döntés."),
     "option_space_proposal": ("Option-space proposal", "Opciótér-javaslat", "Directions derived from fresh research before human approval.", "Friss kutatásból, emberi jóváhagyás előtt levezetett irányok."),
     "human_gate_decision": ("Human gate decision", "Emberi kapudöntés", "A decision bound to one exact candidate hash.", "Egy pontos jelölthashhez kötött emberi döntés."),
     "approved_option_space": ("Approved option space", "Jóváhagyott opciótér", "The immutable option-space candidate admitted by the human gate.", "Az emberi kapun változtatás nélkül befogadott opciótér-jelölt."),
@@ -73,6 +76,8 @@ NODE_COPY = {
     "assess_decision_readiness": ("Assess decision readiness", "Döntési készültség vizsgálata"),
     "derive_option_space": ("Derive option space", "Opciótér levezetése"),
     "approve_option_space": ("Approve option space", "Opciótér jóváhagyása"),
+    "draft_problem_brief": ("Draft problem brief", "Problémafelvetés tervezete"),
+    "approve_problem_brief": ("Approve problem brief", "Problémafelvetés jóváhagyása"),
 }
 
 PREVIEW_FIELDS = {
@@ -92,6 +97,9 @@ PREVIEW_FIELDS = {
     "decision_readiness": ("verdict", "rationale"),
     "provenance": ("node_id", "model"),
     "problem_brief": ("title", "public_question"),
+    "policy_question": ("question",),
+    "problem_brief_proposal": ("title", "public_question"),
+    "problem_brief_decision": ("decision", "rationale"),
     "option_space_proposal": ("derivation_notice",),
     "human_gate_decision": ("decision", "rationale"),
     "approved_option_space": ("candidate_ref",),
@@ -119,8 +127,11 @@ def text_pair(english: str, hungarian: str, tag: str = "span") -> str:
 
 
 def topic_titles(topic: str) -> dict[str, str]:
-    brief = load_json(ROOT / "topics" / topic / "topic.json")["problem_brief"]
-    raw = brief["title"]
+    topic_data = load_json(ROOT / "topics" / topic / "topic.json")
+    if "problem_brief" in topic_data:
+        raw = topic_data["problem_brief"]["title"]
+    else:
+        raw = topic_data["raw_question"]["question"]
     if isinstance(raw, dict):
         return {"en": str(raw.get("en", topic)), "hu": str(raw.get("hu", raw.get("en", topic)))}
     return {"en": str(raw), "hu": str(raw)}
