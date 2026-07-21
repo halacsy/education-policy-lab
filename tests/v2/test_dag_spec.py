@@ -174,6 +174,17 @@ class DagSpecTests(unittest.TestCase):
             )
             self.assertEqual(question["record_type"], "policy_question")
             self.assertEqual(question["status"], "admitted")
+            self.assertEqual(
+                question["content"]["research_directions"]["status"],
+                "human_provided_hypotheses_and_priorities",
+            )
+            question_provenance = runner.repository.get_current(
+                question["provenance_ref"]
+            )
+            self.assertIn(
+                "topics/sni-letszamnovekedes/research-proposal.hu.md",
+                question_provenance["content"]["spec_hashes"],
+            )
             self.assertNotIn("problem_brief", roots)
             self.assertEqual(len(roots), 13)
             self.assertEqual(len(plan.nodes), 34)

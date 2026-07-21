@@ -613,9 +613,30 @@ class ArtifactDagRunner:
                 "language": raw["language"],
                 "approval_basis": raw["approval_basis"],
             }
+            if raw.get("research_directions"):
+                directions = raw["research_directions"]
+                question_content["research_directions"] = {
+                    "status": directions["status"],
+                    "hypotheses_to_test": [
+                        self._english(value)
+                        for value in directions["hypotheses_to_test"]
+                    ],
+                    "inquiry_priorities": [
+                        self._english(value)
+                        for value in directions["inquiry_priorities"]
+                    ],
+                    "candidate_response_domains": list(
+                        directions["candidate_response_domains"]
+                    ),
+                    "source_ref": directions["source_ref"],
+                }
+            source_files = (
+                f"topics/{self.topic}/topic.json",
+                *tuple(raw.get("context_files", [])),
+            )
             provenance = self._admission_provenance(
                 "admit_policy_question",
-                source_files=(f"topics/{self.topic}/topic.json",),
+                source_files=source_files,
                 admitted_content=question_content,
             )
             question_ref = self.repository.put_successor({
@@ -687,12 +708,18 @@ class ArtifactDagRunner:
         arm: str,
     ) -> list[dict[str, Any]]:
         question = self.repository.get_by_hash(question_ref.content_hash)["content"]
+        directions = question.get("research_directions")
+        directions_text = (
+            json.dumps(directions, ensure_ascii=False, indent=2)
+            if directions else "none"
+        )
         prompt = self._header("draft_problem_brief", "problem_framing_editor") + f"""
 Turn the admitted raw policy question below into a bounded English problem-brief proposal for human review. Do not research or answer the question yet.
 
 RAW QUESTION: {question['question']}
 SUBMISSION CONTEXT: {question['submission_context']}
 SOURCE POINTERS: {'; '.join(question['source_refs']) or 'none'}
+HUMAN RESEARCH DIRECTIONS: {directions_text}
 
 Rules:
 - Treat every empirical premise in the raw question as something research must verify, not as an established fact.
@@ -701,6 +728,10 @@ Rules:
 - Write 3-7 learning goals that the later research and option-space nodes can answer.
 - Do not propose interventions, scenarios, preferred outcomes, or expert seats.
 - Seed sources are pointers only; never infer their contents.
+- Treat human hypotheses as questions to test and response domains as areas to
+  examine; do not convert either into facts or approved solutions.
+- Preserve the requested links among service capacity, classroom experience,
+  parental school choice, institutional sorting, and inequality.
 - Framing notes must make the important interpretation choices visible to the human reviewer.
 """
         result = self._call_structured_counted(
