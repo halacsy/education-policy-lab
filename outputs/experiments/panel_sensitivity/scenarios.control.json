@@ -1,0 +1,181 @@
+{
+  "scenarios": [
+    {
+      "id": "S1",
+      "title": "Admission Reform within Current Structure",
+      "goal": "Improve equity and reduce socio-economic segregation within the existing 6- and 8-year gimnazium system by reforming admission processes.",
+      "mechanism": [
+        "Introduce a more holistic and less preparation-sensitive assessment at application time to reduce the advantage of high-SES families [evidence: weak].",
+        "Implement a quota system for disadvantaged socio-economic status (SES) pupils in selective tracks to ensure broader representation [evidence: weak].",
+        "Strengthen the compliance and audit mechanisms for admission processes to prevent informal selection and ensure fairness [evidence: weak]."
+      ],
+      "evidence_status": "The proposed reforms are based on theoretical mechanisms for improving fairness, but lack direct empirical evidence of effectiveness in the Hungarian context, particularly regarding the feasibility of a 'less preparation-sensitive' assessment and the impact of quotas on actual equity gains.",
+      "assumptions": [
+        "A workable SES indicator exists at application time that can be reliably used for admissions [assumption].",
+        "The central written admission examination can be reformed to be less reliant on test preparation and more reflective of innate ability or potential [assumption].",
+        "Quotas for disadvantaged SES pupils will be effectively implemented and monitored across all selective schools [assumption].",
+        "Existing school choice mechanisms will not fully counteract the intended effects of admission reform [assumption]."
+      ],
+      "expected_benefits": [
+        "More balanced intake into selective tracks within 2-3 admission cycles [evidence: moderate].",
+        "Reduced test-preparation arms race pressure on age-10 children [evidence: weak].",
+        "Gains accrue to high-ability low-SES pupils who are currently underrepresented in selective tracks [evidence: weak]."
+      ],
+      "equity_impact": "This scenario aims to increase the representation of disadvantaged SES pupils in selective tracks, thereby potentially improving their academic and social mobility. However, it does not address the fundamental issue of early sorting itself, and gains may be limited if the underlying structure continues to disadvantage non-selected students.",
+      "cost_categories": [
+        "One-off: Assessment redesign and validation (medium).",
+        "One-off: Development of SES indicator and data infrastructure (medium).",
+        "Recurring: Compliance audit and monitoring (low)."
+      ],
+      "implementation_steps": [
+        "Ministry of Education — Design and pilot new assessment methods in volunteer districts.",
+        "Oktatási Hivatal — Develop and validate a reliable SES indicator for use in admissions.",
+        "School District Centres — Implement and monitor admission quotas for disadvantaged SES pupils.",
+        "Ministry of Education — Establish a national compliance and audit framework for selective school admissions."
+      ],
+      "political_risks": [
+        "Elite-school and middle-class parent opposition to reformed admissions and potential reduction in their children's chances.",
+        "Resistance from schools to implementing quotas, potentially through legal challenges or administrative loopholes.",
+        "Challenges in defining and measuring SES accurately and fairly, leading to disputes and potential manipulation."
+      ],
+      "uncertainties": [
+        "The actual effectiveness of a reformed assessment in reducing the advantage of test preparation [confidence: medium; would be reduced by: pilot studies comparing reformed vs. traditional assessments and their correlation with later academic success].",
+        "The extent to which SES quotas will be accepted and effectively implemented by schools and parents [confidence: medium; would be reduced by: surveys of parental and school administrator attitudes towards admissions reform and quotas].",
+        "The existence and reliability of a workable SES indicator in the Hungarian administrative context [confidence: high; would be reduced by: detailed analysis of existing administrative data sources and their suitability for SES measurement]."
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "Gradual Phase-Down of 6/8-Year Entry Places",
+      "goal": "Reduce the number of early selective places (6- and 8-year gimnaziums) over time, encouraging a shift towards a more comprehensive lower-secondary system.",
+      "mechanism": [
+        "Gradually reduce the number of available places in 6- and 8-year gimnaziums through a declining trajectory over 10 years [evidence: strong].",
+        "Introduce 'advanced-programme funding' in general schools to retain ambitious families in the common track by offering enriched curricula [evidence: weak].",
+        "Strengthen the capacity of general schools to absorb and challenge high-achievers through targeted professional development and resources [evidence: weak]."
+      ],
+      "evidence_status": "The mechanism relies on the assumption that reducing selective places will naturally lead to better distribution and that general schools can be adequately enhanced to retain high-achievers. Evidence for the latter is weak, and the impact of caps alone on peer composition is contested.",
+      "assumptions": [
+        "General schools can absorb and challenge high-achievers if funded for it [assumption].",
+        "A declining trajectory of selective places will not lead to a significant increase in demand for non-state selective schools [assumption].",
+        "Advanced-programme funding will be sufficient to incentivize families to remain in general schools [assumption]."
+      ],
+      "expected_benefits": [
+        "Stronger peer composition in urban general-school upper grades as high-achievers remain [evidence: moderate].",
+        "Steadily falling early-sorting share of each cohort (measurable annually) [evidence: strong].",
+        "Reduced pressure on younger children to prepare for early selective admissions [evidence: weak]."
+      ],
+      "equity_impact": "By gradually reducing early selection, this scenario aims to decrease socio-economic segregation and provide more equitable opportunities for students who would otherwise be channeled into less academically rigorous tracks. However, it risks exacerbating SES-skew in the remaining selective places if not carefully managed.",
+      "cost_categories": [
+        "One-off: Curriculum development for advanced programmes in general schools (medium).",
+        "Recurring: Advanced-programme funding in general schools (medium, formula-based).",
+        "Recurring: Teacher retraining for general school teachers (medium)."
+      ],
+      "implementation_steps": [
+        "Ministry of Education — Enact legislation to establish a declining trajectory for 6- and 8-year gimnazium places.",
+        "Ministry of Education — Develop and implement a funding formula for advanced programmes in general schools.",
+        "School District Centres — Support general schools in developing and delivering advanced programmes.",
+        "Ministry of Education — Monitor the share of early-sorted students annually."
+      ],
+      "political_risks": [
+        "Strong opposition from parents and institutions benefiting from the current selective system.",
+        "Risk of a successor government reversing the trajectory, as seen in Poland.",
+        "Potential for increased demand and SES-skew in the remaining selective places if general schools are not sufficiently enhanced."
+      ],
+      "uncertainties": [
+        "The capacity of general schools to effectively absorb and challenge high-achievers with enhanced funding and programmes [confidence: medium; would be reduced by: pilot programmes in selected general schools demonstrating improved outcomes for high-achievers].",
+        "The extent to which families will remain in general schools rather than seeking alternative selective options (e.g., private schools) as selective places decline [confidence: medium; would be reduced by: tracking enrollment trends in private and non-state schools during the phase-down period].",
+        "The political durability of the declining trajectory against potential government changes [confidence: medium; would be reduced by: establishing cross-party consensus or entrenchment mechanisms for the policy."
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "Comprehensive School to Age 14 (Structural Reform)",
+      "goal": "Implement a comprehensive school system until age 14, eliminating early academic selection and promoting greater equity and talent development.",
+      "mechanism": [
+        "Phase out all 6- and 8-year gimnaziums, establishing a unified comprehensive school structure until age 14 [evidence: strong].",
+        "Invest heavily in teacher training for differentiated instruction and support for diverse learners within comprehensive schools [evidence: moderate].",
+        "Develop robust diagnostic and remedial support systems for students identified with learning difficulties or high potential [evidence: moderate]."
+      ],
+      "evidence_status": "The mechanism relies on the successful implementation of comprehensive schooling, drawing parallels with Finland. However, the evidence for the effectiveness of comprehensive systems is moderate, and the Finnish success was bundled with other factors not explicitly addressed here, such as highly selective teacher training.",
+      "assumptions": [
+        "Postponing academic selection requires a school infrastructure capable of handling high student heterogeneity [assumption].",
+        "The Hungarian comprehensive track (general school) currently lacks the equivalent teacher quality and support systems that supported the Finnish transition [assumption].",
+        "Later, better-informed track choice at 14 reduces misallocation of talent [evidence: moderate].",
+        "Sorting does not simply migrate to school choice between general schools and to non-state maintainers [assumption]."
+      ],
+      "expected_benefits": [
+        "Weaker SES-outcome gradient within a decade [evidence: moderate].",
+        "Improved equity and social mobility through delayed tracking [evidence: strong].",
+        "Better-informed and more appropriate track choice at age 14 [evidence: moderate]."
+      ],
+      "equity_impact": "This scenario represents the most significant structural reform aimed at equity. By eliminating early selection, it seeks to prevent the entrenchment of socio-economic disparities and provide all students with a common educational foundation, thereby fostering greater social mobility.",
+      "cost_categories": [
+        "One-off: Nationwide teacher retraining for comprehensive pedagogy (high).",
+        "One-off: Network and building reconfiguration to support comprehensive models (high).",
+        "Recurring: Enhanced funding for diagnostic and remedial support systems (medium)."
+      ],
+      "implementation_steps": [
+        "Parliament — Amend the Public Education Act to mandate comprehensive schooling until age 14.",
+        "Ministry of Education — Launch nationwide teacher retraining programs focused on differentiated instruction.",
+        "Klebelsberg Centre — Develop and implement universal diagnostic and remedial support systems.",
+        "School District Centres — Facilitate the transition of existing schools to the comprehensive model."
+      ],
+      "political_risks": [
+        "Highest-intensity opposition of all scenarios from parents, teachers, and institutions invested in the current selective system.",
+        "Risk of middle-class flight to non-state schools if comprehensive schools are perceived as lower quality.",
+        "Potential for significant disruption and resistance from church and foundation maintainers.",
+        "Polish-style reversal after government change destroys sunk transition costs."
+      ],
+      "uncertainties": [
+        "The precise causal weight of postponed tracking versus accompanying teacher reforms in achieving equity outcomes [confidence: low; would be reduced by: comparative natural experiments isolating tracking from teacher reform policy].",
+        "The willingness of the Hungarian middle class to support comprehensive schools rather than seeking private or alternative selective schooling [confidence: medium; would be reduced by: Hungarian parent survey data and school choice simulation models].",
+        "The extent to which sorting will migrate to non-state schools or other forms of informal selection [confidence: medium; would be reduced by: monitoring enrollment in non-state schools and informal education markets."
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "Keep Structure, Compensate General Schools (Portuguese-style Package)",
+      "goal": "Mitigate the negative equity impacts of the current 6- and 8-year gimnazium system by strengthening general schools and providing targeted support, without structural changes to selection.",
+      "mechanism": [
+        "Implement rigorous national curriculum standards across all schools to raise the baseline quality of education [evidence: moderate].",
+        "Introduce targeted support for disadvantaged schools via a program similar to Portugal's TEIP (Territórios Educativos de Intervenção Prioritária), focusing resources on schools with high proportions of disadvantaged students [evidence: moderate].",
+        "Provide compensation and incentives to general schools to offset the effects of early selection and retain higher-achieving students [evidence: weak]."
+      ],
+      "evidence_status": "This scenario draws on the Portuguese experience, which showed improvements without structural change. However, the effectiveness of these non-structural interventions in Hungary is uncertain, particularly the 'compensation' mechanism, which lacks clear definition and evidence of success in offsetting early selection.",
+      "assumptions": [
+        "Non-structural interventions (standards, targeted funding) are politically easier to implement and sustain than structural changes [assumption].",
+        "The mechanisms of Portugal's TEIP and curriculum standards are transferable to the Hungarian socio-economic and institutional context [assumption].",
+        "Compensation can meaningfully offset, not just mask, the effects of early sorting [assumption].",
+        "Teacher shortages will not prevent the implementation of rigorous curriculum standards and targeted support."
+      ],
+      "expected_benefits": [
+        "Improved outcomes in disadvantaged general schools within 5 years (Portuguese trajectory) [evidence: moderate].",
+        "Narrowing of the SES gradient through enhanced support for struggling schools [evidence: weak].",
+        "Politically inexpensive; implementable under any government [evidence: strong]."
+      ],
+      "equity_impact": "This scenario aims to improve equity by bolstering the quality and resources of general schools, particularly those serving disadvantaged populations. It seeks to mitigate the disadvantages of early selection without dismantling the existing structure, potentially benefiting a broader range of students than selective tracks alone.",
+      "cost_categories": [
+        "One-off: Development and rollout of national curriculum standards (medium).",
+        "Recurring: Funding for targeted school intervention programs (TEIP-style) (high).",
+        "Recurring: Compensation and incentive funding for general schools (medium-high)."
+      ],
+      "implementation_steps": [
+        "Ministry of Education — Develop and mandate national curriculum standards for all school levels.",
+        "Ministry of Education — Design and launch a TEIP-style program for disadvantaged schools.",
+        "School District Centres — Implement compensation and incentive schemes for general schools.",
+        "Ministry of Education — Monitor PISA scores and SES gradients to assess impact."
+      ],
+      "political_risks": [
+        "Budget vulnerability: compensation lines are the first cut in fiscal consolidation, risking policy reversal.",
+        "Resistance from selective schools to any measures perceived as devaluing their status.",
+        "Difficulty in ensuring equitable distribution and effective use of targeted funds in disadvantaged schools.",
+        "Potential for compensation to legitimize early selection permanently."
+      ],
+      "uncertainties": [
+        "The precise impact of Hungarian teacher shortages on the viability of implementing Portuguese-style curriculum standards and targeted school support plans [confidence: high; would be reduced by: comparative studies on teacher supply and qualifications in Hungarian disadvantaged schools versus historical Portuguese levels].",
+        "Whether Hungarian political consensus can support sustained, long-term funding for targeted school intervention programs without policy reversals [confidence: medium; would be reduced by: analysis of Hungarian budgetary commitments and legislative continuity in education policy].",
+        "Whether compensation can meaningfully offset the effects of early selection at Hungary's selection age [confidence: medium; would be reduced by: longitudinal studies tracking student outcomes in compensated general schools versus those in selective tracks]."
+      ]
+    }
+  ]
+}

@@ -16,6 +16,7 @@ EXPERTS = {
     "legal_and_governance": "Statutory anchoring (Nkt.), maintainer plurality, felmenő rendszer guarantees, and the legally feasible speed of change.",
     "political_feasibility": "Stakeholder mobilisation, reversal risk, and what makes education reforms politically durable in Hungary.",
     "implementation_planning": "Sequencing, teacher-supply constraints, administrative bandwidth, and realistic timelines.",
+    "conservative_education": "The conservative case in the selection debate: parental school choice as a right, subsidiarity, talent development and institutional autonomy. Steel-man the strongest argument for keeping structured early tracks — under the same evidence discipline as every other expert.",
 }
 
 # Societal-discourse layer (D-29, reframed D-30, D-32): this is a STAKEHOLDER
