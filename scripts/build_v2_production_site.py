@@ -17,12 +17,9 @@ from policy_lab.jsonio import content_hash  # noqa: E402
 from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
 
-RUN_TAG = "2026-07-20-live"
 ASSET_VERSION = "d55"
-RUN_ROOT = ROOT / "v2" / "production" / RUN_TAG
 OUT = ROOT / "site"
 QUESTION_OUT = OUT / "questions"
-TOPICS = ("korai-szelekcio", "rural-school-closures")
 
 
 def load(path: Path) -> Any:
@@ -32,6 +29,12 @@ def load(path: Path) -> Any:
 CATALOGS = {
     language: load(ROOT / "config" / "v2" / "locales" / f"{language}.json")
     for language in ("en", "hu")
+}
+PUBLICATION = load(ROOT / "config" / "v2" / "publication.json")
+PUBLICATION_LABEL = PUBLICATION["label"]
+PUBLIC_TOPICS = {
+    item["topic"]: item["run_tag"]
+    for item in PUBLICATION["topics"]
 }
 
 
@@ -94,13 +97,13 @@ def page(title: dict[str, str], body: str, *, depth: int = 0, description: dict[
     <div class="language-switch" role="group" aria-label="Nyelv" data-label-en="Language" data-label-hu="Nyelv"><button type="button" data-set-language="hu" aria-pressed="true">HU</button><button type="button" data-set-language="en" aria-pressed="false">EN</button></div>
   </header>
   <main id="content">{body}</main>
-  <footer><span>{ui('footer.architecture')}</span><span>Oktatáspolitikai Atlasz · {RUN_TAG}</span></footer>
+  <footer><span>{ui('footer.architecture')}</span><span>Oktatáspolitikai Atlasz · {PUBLICATION_LABEL}</span></footer>
   <script src="{asset_prefix}v2.js?v={ASSET_VERSION}"></script>
 </body></html>'''
 
 
 def dataset(topic: str, schemas: SchemaRegistry) -> dict[str, Any]:
-    root = RUN_ROOT / topic
+    root = ROOT / "v2" / "production" / PUBLIC_TOPICS[topic] / topic
     repository = ArtifactRepository(root, schemas)
     manifest = load(root / "production_manifest.json")
     summary = manifest["summary"]
@@ -108,8 +111,31 @@ def dataset(topic: str, schemas: SchemaRegistry) -> dict[str, Any]:
     bundle = load(root / "localization" / "hu.json")
     if bundle["source_package_hash"] != content_hash(package):
         raise ValueError(f"Stale localization bundle: {topic}")
+    topic_data = load(ROOT / "topics" / topic / "topic.json")
+    if "problem_brief" not in topic_data:
+        briefs = repository.list(record_type="problem_brief")
+        if len(briefs) != 1:
+            raise ValueError(f"Expected one admitted problem brief for {topic}, found {len(briefs)}")
+        brief = briefs[0]
+        content = brief["content"]
+        translations = bundle["translations"]
+
+        def localized(field: str, value: str, index: int | None = None) -> dict[str, str]:
+            suffix = f".{field}" if index is None else f".{field}.{index}"
+            return {"en": value, "hu": translations[f"{brief['id']}{suffix}"]}
+
+        topic_data["problem_brief"] = {
+            "title": localized("title", content["title"]),
+            "public_question": localized("public_question", content["public_question"]),
+            "problem_statement": localized("problem_statement", content["problem_statement"]),
+            "learning_goals": [
+                localized("learning_goals", goal, index)
+                for index, goal in enumerate(content["learning_goals"])
+            ],
+            "scope": localized("scope", content["scope"]),
+        }
     return {
-        "topic": load(ROOT / "topics" / topic / "topic.json"),
+        "topic": topic_data,
         "repo": repository,
         "summary": summary,
         "package": package,
@@ -197,10 +223,19 @@ def render_topic(data: dict[str, Any]) -> str:
         )
         cards.append(f'''<article class="proposal-sheet"><header><div class="proposal-code">{esc(proposal_id.split('-')[-1].upper())}<small>{ui('public_site.proposal_short')}</small></div><div><h2>{tx(data, proposal_id+'.title', content['title'])}</h2><p class="proposal-goal">{tx(data, proposal_id+'.goal', content['goal'])}</p></div><span class="evidence evidence-{esc(content['evidence_status'])}">{bi(content['evidence_status'], msg('hu','enum.evidence.'+content['evidence_status']))}</span></header><details class="proposal-detail"><summary>{ui('public_site.proposal_details')}</summary><div class="proposal-grid"><section><h3>{ui('production.mechanisms')}</h3><ol class="mechanisms">{list_bi(data, proposal, 'mechanisms')}</ol></section><section><h3>{ui('production.implementation')}</h3><ol class="timeline">{steps}</ol></section></div><div class="proposal-grid"><section><h3>{ui('production.benefits')}</h3><ul>{list_bi(data,proposal,'expected_benefits')}</ul><h3>{ui('production.equity')}</h3><p>{tx(data,proposal_id+'.equity_impact',content['equity_impact'])}</p></section><section><h3>{ui('production.costs')}</h3><ul>{list_bi(data,proposal,'costs')}</ul><h3>{ui('production.risks')}</h3><ul>{list_bi(data,proposal,'risks')}</ul></section></div></details></article>''')
 
-    frame_hu = {frame["id"]: frame["title"]["hu"] for frame in topic["frames"]["scenarios"]}
+    frame_hu = {
+        frame["id"]: frame["title"]["hu"]
+        for frame in topic.get("frames", {}).get("scenarios", [])
+    }
+
+    def coverage_title_hu(index: int, entry: dict[str, Any]) -> str:
+        if entry["direction_id"] in frame_hu:
+            return frame_hu[entry["direction_id"]]
+        return data["tr"][f"{coverage['id']}.entries.{index}.direction_title"]
+
     coverage_items = "".join(
-        f"<li><b>{entry['direction_id']}</b> {bi(entry['direction_title'], frame_hu[entry['direction_id']])} → {esc(', '.join(entry['proposal_refs']))}</li>"
-        for entry in coverage["content"]["entries"]
+        f"<li><b>{entry['direction_id']}</b> {bi(entry['direction_title'], coverage_title_hu(index, entry))} → {esc(', '.join(entry['proposal_refs']))}</li>"
+        for index, entry in enumerate(coverage["content"]["entries"])
     )
     dilemma_cards = "".join(
         f'''<article class="dilemma"><span>{bi(record['content']['dilemma_type'],msg('hu','enum.dilemma_type.'+record['content']['dilemma_type']))}</span><h4>{tx(data,record['id']+'.title',record['content']['title'])}</h4><p>{tx(data,record['id']+'.tension',record['content']['tension'])}</p><small>{tx(data,record['id']+'.evidence_boundary',record['content']['evidence_boundary'])}</small></article>'''
@@ -261,7 +296,7 @@ def main() -> int:
     schemas = SchemaRegistry(ROOT / "schemas" / "v2")
     OUT.mkdir(parents=True, exist_ok=True)
     QUESTION_OUT.mkdir(parents=True, exist_ok=True)
-    data = {topic: dataset(topic, schemas) for topic in TOPICS}
+    data = {topic: dataset(topic, schemas) for topic in PUBLIC_TOPICS}
     home_title = {"en": msg("en", "public_site.home_title"), "hu": msg("hu", "public_site.home_title")}
     (OUT / "index.html").write_text(page(home_title, render_home(data)), encoding="utf-8")
     for topic, item in data.items():
@@ -270,7 +305,7 @@ def main() -> int:
             page(problem["public_question"], render_topic(item), depth=1, description=problem["problem_statement"]),
             encoding="utf-8",
         )
-    print(f"Built the default Atlas homepage and {len(TOPICS)} question dossiers in {OUT}")
+    print(f"Built the default Atlas homepage and {len(PUBLIC_TOPICS)} question dossiers in {OUT}")
     return 0
 
 

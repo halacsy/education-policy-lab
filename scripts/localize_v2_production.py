@@ -67,6 +67,15 @@ def public_text(repository: ArtifactRepository, package: dict[str, Any], evaluat
     add_fields(items, readiness, ("rationale",))
     for entry in package["content"]["evidence_appendix"]:
         items[f"{entry['finding_ref']}.claim"] = entry["claim"]
+    briefs = repository.list(record_type="problem_brief")
+    if briefs:
+        add_fields(items, briefs[0], (
+            "title", "public_question", "problem_statement", "learning_goals", "scope",
+        ))
+    for coverage_ref in package["content"]["coverage_ledger_refs"]:
+        coverage = repository.get_current(coverage_ref)
+        for index, entry in enumerate(coverage["content"]["entries"]):
+            items[f"{coverage['id']}.entries.{index}.direction_title"] = entry["direction_title"]
     return items
 
 

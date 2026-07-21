@@ -214,32 +214,32 @@ def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
 
 
 def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
-    """Validate the two fresh production DAGs and their publication boundary."""
+    """Validate every explicitly published production DAG and its publication boundary."""
 
-    root = ROOT / "v2" / "production" / "2026-07-20-live"
-    catalog = json.loads((root / "catalog.json").read_text(encoding="utf-8"))
-    expected_topics = {"korai-szelekcio", "rural-school-closures"}
-    actual_topics = {item["topic"] for item in catalog["topics"]}
-    if actual_topics != expected_topics:
-        raise AssertionError(f"Production catalog topics differ: {sorted(actual_topics)}")
+    publication = json.loads(
+        (ROOT / "config" / "v2" / "publication.json").read_text(encoding="utf-8")
+    )
+    items = publication["topics"]
+    if len({item["topic"] for item in items}) != len(items):
+        raise AssertionError("Publication manifest contains duplicate topics")
 
     artifact_count = 0
     call_count = 0
-    for item in catalog["topics"]:
-        topic_root = root / item["topic"]
+    for item in items:
+        topic_root = ROOT / "v2" / "production" / item["run_tag"] / item["topic"]
         repository = ArtifactRepository(topic_root, schemas)
-        roots = (item["package_ref"], item["evaluation_ref"], item["readiness_ref"])
+        manifest = json.loads((topic_root / "production_manifest.json").read_text(encoding="utf-8"))
+        summary = manifest["summary"]
+        roots = (summary["package_ref"], summary["evaluation_ref"], summary["readiness_ref"])
         repository.validate_graph(roots)
         records = repository.list()
         artifact_count += len(records)
 
-        manifest = json.loads((topic_root / "production_manifest.json").read_text(encoding="utf-8"))
-        summary = manifest["summary"]
-        has_run_plan = verify_declared_run_plan(topic_root, manifest, repository)
-        expected_nodes = 32 if has_run_plan else 31
+        declared_nodes = verify_declared_run_plan(topic_root, manifest, repository)
+        expected_nodes = declared_nodes or 31
         if summary["execution"]["nodes"] != expected_nodes or summary["execution"]["failed"] != 0:
             raise AssertionError(f"Production DAG is incomplete for {item['topic']}")
-        if summary["counts"]["lens_definition"] != 12:
+        if len(repository.list(record_type="lens_definition")) != 12:
             raise AssertionError(f"Production panel must contain 12 admitted lenses for {item['topic']}")
         expected_assessments = 12 * summary["counts"]["transformation_proposal"]
         if summary["counts"]["lens_assessment"] != expected_assessments:
@@ -248,7 +248,7 @@ def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
             raise AssertionError(f"Research breadth floor failed for {item['topic']}")
 
         coverage = repository.get_current("CL-live-approved-frames")["content"]
-        if has_run_plan:
+        if declared_nodes:
             approved_frames = repository.get_current(
                 f"AO-live-{item['topic']}"
             )["content"]["directions"]
@@ -267,13 +267,13 @@ def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
         if actual_directions != expected_directions:
             raise AssertionError(f"Approved-frame identities differ for {item['topic']}")
 
-        package = repository.get_current(item["package_ref"])
+        package = repository.get_current(summary["package_ref"])
         if len(package["content"]["evidence_appendix"]) < 1:
             raise AssertionError(f"Evidence appendix is empty for {item['topic']}")
         if package["content"]["summary"].count("[F-") < summary["counts"]["transformation_proposal"]:
             raise AssertionError(f"Inline claim-to-source carriage failed for {item['topic']}")
 
-        readiness = repository.get_current(item["readiness_ref"])["content"]
+        readiness = repository.get_current(summary["readiness_ref"])["content"]
         if readiness["verdict"] != "ready_with_conditions":
             raise AssertionError(f"Unexpected readiness verdict for {item['topic']}")
         if readiness["human_external_use_gate"] != "pending":
@@ -297,14 +297,14 @@ def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
         if not {"anthropic", "openai"}.issubset(providers):
             raise AssertionError(f"Cross-family generation/judging missing for {item['topic']}")
 
-    return len(catalog["topics"]), artifact_count, call_count
+    return len(items), artifact_count, call_count
 
 
 def verify_declared_run_plan(
     topic_root: Path,
     production_manifest: dict,
     repository: ArtifactRepository,
-) -> bool:
+) -> int | None:
     """Prove that a fresh run executed the exact persisted plan and attempts."""
 
     plan_meta = production_manifest.get("run_plan")
@@ -312,7 +312,7 @@ def verify_declared_run_plan(
     if not plan_meta:
         if architecture == "3.0.0":
             raise AssertionError("Architecture 3 production manifest has no RunPlan")
-        return False
+        return None
     plan_path = topic_root / plan_meta["path"]
     if not plan_path.exists():
         raise AssertionError(f"Missing persisted RunPlan: {plan_path}")
@@ -399,7 +399,7 @@ def verify_declared_run_plan(
         raise AssertionError("Approved option-space hash differs from candidate")
     if decision["candidate_hash"] != approved["candidate_hash"] or decision["decision"] != "approved":
         raise AssertionError("Human gate decision is not bound to approved option space")
-    return True
+    return len(declared)
 
 
 def _verify_attempts(run_dir: Path, node_id: str, provenance: dict) -> None:
