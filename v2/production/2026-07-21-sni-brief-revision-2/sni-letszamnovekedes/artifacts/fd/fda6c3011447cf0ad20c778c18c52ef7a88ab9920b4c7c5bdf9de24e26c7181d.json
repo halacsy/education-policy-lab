@@ -1,0 +1,38 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "ffa36c9130ef6688cc9a4501f1de1e0c0a65e782bf7e09f47d59d67c00b9f7c6",
+        "response_hash": "61c9e11c17b15d83f5a7ecadb7ad546e3314b0e116ab82b3c245498d998a5085",
+        "stage": "draft",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "caf4a9bfe0aaf0873e83e27296012d4a1d9efd4d695436e8abd3c3037afb0fd9",
+    "generation_parameters": {
+      "max_tokens": 6000
+    },
+    "input_artifact_hashes": [
+      "6568f4cb1ddb105fd129e2f7e5a4671e0be50e071bfa89d22c590ced8ae83d46"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "draft_problem_brief",
+    "prompt_hash": "cc23f2ef8c7455942825e096a0552e62f9d48aa893af3e46e5f732b7d84103a3",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "generator",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/problem_brief_proposal.schema.json": "fb07b5c34bb4a831d857c9e5401ac5cfa37ed1ffbe93100611fcf752fafacd31"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-draft_problem_brief-caf4a9bfe0aaf087",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "0317f31a1dfae2c8c4110d3e621d6eab0cd0d66a7d8b350c4708575f3076fd11",
+  "topic": "sni-letszamnovekedes"
+}
