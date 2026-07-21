@@ -153,6 +153,90 @@ body { overflow-x: hidden; }
 .graph-node .node-count { align-self: start; font-family: var(--display); font-size: 2rem; font-weight: 900; line-height: .78; }
 .graph-node .node-meta { grid-column: 1 / -1; font-family: var(--utility); font-size: .57rem; line-height: 1.25; text-transform: uppercase; }
 
+.audit-graph.is-flow {
+  overflow: visible;
+  border: 0;
+  background: none;
+}
+.execution-flow { position: relative; padding-left: 2.8rem; }
+.execution-flow::before {
+  content: "";
+  position: absolute;
+  top: 2.8rem;
+  bottom: 2.8rem;
+  left: 1rem;
+  width: 4px;
+  background: var(--ink);
+}
+.flow-phase { position: relative; padding: 1.35rem 0 1.65rem; }
+.flow-phase::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: -2.35rem;
+  width: 15px;
+  height: 15px;
+  border: 4px solid var(--cobalt);
+  border-radius: 50%;
+  background: var(--paper);
+}
+.flow-phase-header {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid var(--ink);
+}
+.flow-step { color: var(--vermilion); font-family: var(--display); font-size: 2.2rem; font-weight: 900; line-height: .8; }
+.flow-phase-header h3 { font-size: clamp(1.45rem, 2.2vw, 2.1rem); text-transform: uppercase; }
+.flow-phase-header p { max-width: 850px; margin: .4rem 0 0; color: var(--muted); font-size: .92rem; }
+.flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: .75rem; }
+.phase-input .flow-grid { grid-template-columns: minmax(260px, 680px); }
+.phase-synthesis .flow-grid { grid-template-columns: minmax(240px, .7fr) minmax(280px, 1.3fr); }
+.phase-records .flow-grid { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+.flow-card {
+  min-width: 0;
+  min-height: 142px;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: .45rem;
+  padding: .9rem;
+  border: 1px solid var(--ink);
+  border-left: 7px solid var(--cobalt);
+  border-radius: 0;
+  color: var(--ink);
+  background: var(--paper-bright);
+  box-shadow: 4px 4px 0 var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.flow-card:hover { transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--ink); }
+.flow-card[aria-pressed="true"] { color: var(--paper-bright); background: var(--cobalt); border-color: var(--cobalt-dark); box-shadow: 5px 5px 0 var(--vermilion); }
+.flow-card-input { border-left-color: var(--chartreuse); }
+.flow-card-record { border-left-color: var(--vermilion); }
+.flow-card.is-compact { min-height: 122px; }
+.flow-kind { font-family: var(--utility); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; opacity: .72; }
+.flow-title { font-family: var(--display); font-size: 1.08rem; font-weight: 800; line-height: 1.02; text-transform: uppercase; overflow-wrap: anywhere; }
+.flow-agent { font-family: var(--utility); font-size: .6rem; line-height: 1.35; overflow-wrap: anywhere; }
+.flow-output { align-self: end; color: var(--muted); font-size: .76rem; line-height: 1.35; overflow-wrap: anywhere; }
+.flow-card[aria-pressed="true"] .flow-output { color: var(--paper-bright); }
+.flow-connector {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: .7rem;
+  align-items: center;
+  color: var(--cobalt);
+  font-family: var(--utility);
+  font-size: .62rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.flow-connector span { font-family: var(--display); font-size: 2.2rem; line-height: 1; }
+.flow-connector b { font-weight: 600; }
+
 .audit-inspector {
   position: sticky;
   top: 108px;
@@ -174,6 +258,39 @@ body { overflow-x: hidden; }
 .inspector-list { margin: 0; padding: 0; list-style: none; }
 .inspector-list li { padding: .45rem 0; border-bottom: 1px solid var(--line); font-size: .78rem; overflow-wrap: anywhere; }
 .inspector-preview { margin: 0; padding: .8rem; border-left: 5px solid var(--vermilion); background: color-mix(in srgb, var(--vermilion) 7%, var(--paper-bright)); font-size: .82rem; }
+.inspector-boundary { margin: 1.2rem 0 0; padding: .8rem; border-left: 5px solid var(--chartreuse); background: color-mix(in srgb, var(--chartreuse) 14%, var(--paper-bright)); font-size: .8rem; }
+.inspector-jump {
+  width: 100%;
+  margin-top: 1rem;
+  padding: .7rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  color: var(--paper-bright);
+  background: var(--cobalt);
+  font-family: var(--utility);
+  font-size: .63rem;
+  text-align: left;
+  cursor: pointer;
+}
+.inspector-details-stack { display: grid; gap: .55rem; }
+.inspector-details { border-bottom: 1px solid var(--line); }
+.inspector-details summary { padding: .55rem 0; font-family: var(--utility); font-size: .62rem; text-transform: uppercase; cursor: pointer; }
+.inspector-records li { display: grid; gap: .25rem; }
+.inspector-records li b { font-family: var(--utility); font-size: .61rem; overflow-wrap: anywhere; }
+.inspector-records li span { color: var(--muted); font-size: .75rem; line-height: 1.35; }
+.prompt-text {
+  max-height: 420px;
+  margin: 0 0 .7rem;
+  padding: .8rem;
+  overflow: auto;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--cobalt) 5%, var(--paper));
+  font-family: var(--utility);
+  font-size: .61rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
 .field-table { width: 100%; margin: 0; font-size: .61rem; }
 .field-table th, .field-table td { padding: .45rem; }
 .field-table thead th { position: static; }
@@ -185,6 +302,9 @@ body { overflow-x: hidden; }
   .audit-layout { grid-template-columns: 1fr; }
   .audit-inspector { position: static; min-height: 0; }
   .masthead nav a:nth-child(3) { display: none; }
+  .execution-flow { padding-left: 2.3rem; }
+  .execution-flow::before { left: .75rem; }
+  .flow-phase::before { left: -1.95rem; }
 }
 
 @media (max-width: 760px) {
@@ -215,6 +335,12 @@ body { overflow-x: hidden; }
   .graph-canvas { min-width: 0 !important; height: auto !important; display: grid; grid-template-columns: 1fr; gap: .8rem; padding: 1rem; }
   .graph-canvas::after, .graph-edges { display: none; }
   .graph-node { position: static; width: 100%; min-height: 0; }
+  .execution-flow { padding-left: 1.8rem; }
+  .execution-flow::before { left: .4rem; }
+  .flow-phase::before { left: -1.72rem; }
+  .flow-phase-header { grid-template-columns: 42px minmax(0, 1fr); }
+  .flow-grid, .phase-input .flow-grid, .phase-synthesis .flow-grid, .phase-records .flow-grid { grid-template-columns: 1fr; }
+  .flow-card { min-height: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

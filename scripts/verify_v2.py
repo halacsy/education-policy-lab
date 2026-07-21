@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import ast
+import hashlib
 import json
 import re
 import sys
@@ -234,19 +235,31 @@ def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
 
         manifest = json.loads((topic_root / "production_manifest.json").read_text(encoding="utf-8"))
         summary = manifest["summary"]
-        if summary["execution"]["nodes"] != 31 or summary["execution"]["failed"] != 0:
+        has_run_plan = verify_declared_run_plan(topic_root, manifest, repository)
+        expected_nodes = 32 if has_run_plan else 31
+        if summary["execution"]["nodes"] != expected_nodes or summary["execution"]["failed"] != 0:
             raise AssertionError(f"Production DAG is incomplete for {item['topic']}")
         if summary["counts"]["lens_definition"] != 12:
             raise AssertionError(f"Production panel must contain 12 admitted lenses for {item['topic']}")
-        if summary["counts"]["lens_assessment"] != 72:
-            raise AssertionError(f"Every lens must assess all six proposals for {item['topic']}")
+        expected_assessments = 12 * summary["counts"]["transformation_proposal"]
+        if summary["counts"]["lens_assessment"] != expected_assessments:
+            raise AssertionError(f"Every lens must assess every proposal for {item['topic']}")
         if summary["counts"]["finding"] < 84:
             raise AssertionError(f"Research breadth floor failed for {item['topic']}")
 
         coverage = repository.get_current("CL-live-approved-frames")["content"]
-        approved_frames = json.loads(
-            (ROOT / "topics" / item["topic"] / "topic.json").read_text(encoding="utf-8")
-        )["frames"]["scenarios"]
+        if has_run_plan:
+            approved_frames = repository.get_current(
+                f"AO-live-{item['topic']}"
+            )["content"]["directions"]
+            if coverage["gate_basis"] != "approved_option_space":
+                raise AssertionError(
+                    f"Fresh RunPlan bypassed approved option space for {item['topic']}"
+                )
+        else:
+            approved_frames = json.loads(
+                (ROOT / "topics" / item["topic"] / "topic.json").read_text(encoding="utf-8")
+            )["frames"]["scenarios"]
         expected_directions = {frame["id"] for frame in approved_frames}
         actual_directions = {entry["direction_id"] for entry in coverage["entries"]}
         if coverage["verdict"] != "complete" or coverage["critical_attrition_count"] != 0:
@@ -287,6 +300,126 @@ def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
     return len(catalog["topics"]), artifact_count, call_count
 
 
+def verify_declared_run_plan(
+    topic_root: Path,
+    production_manifest: dict,
+    repository: ArtifactRepository,
+) -> bool:
+    """Prove that a fresh run executed the exact persisted plan and attempts."""
+
+    plan_meta = production_manifest.get("run_plan")
+    architecture = production_manifest.get("architecture_version")
+    if not plan_meta:
+        if architecture == "3.0.0":
+            raise AssertionError("Architecture 3 production manifest has no RunPlan")
+        return False
+    plan_path = topic_root / plan_meta["path"]
+    if not plan_path.exists():
+        raise AssertionError(f"Missing persisted RunPlan: {plan_path}")
+    plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    plan_hash = content_hash(plan)
+    if plan_hash != plan_meta["content_hash"]:
+        raise AssertionError(f"RunPlan hash mismatch: {plan_path}")
+    if architecture != plan["dag_version"]:
+        raise AssertionError("Production manifest and RunPlan architecture differ")
+
+    run_dir = topic_root / "runs" / production_manifest["run_id"]
+    manifests = {
+        path.stem: json.loads(path.read_text(encoding="utf-8"))
+        for path in (run_dir / "nodes").glob("*.json")
+    }
+    declared = {node["id"]: node for node in plan["nodes"]}
+    if set(manifests) != set(declared):
+        raise AssertionError(
+            f"Executed nodes differ from RunPlan: missing={sorted(set(declared)-set(manifests))}, "
+            f"extra={sorted(set(manifests)-set(declared))}"
+        )
+
+    outputs: dict[str, list[dict]] = {}
+    root_outputs = {
+        f"root:{name}": refs for name, refs in plan["roots"].items()
+    }
+    provenance = {
+        record["id"]: record
+        for record in repository.list(record_type="provenance")
+    }
+    for root_refs in root_outputs.values():
+        for ref in root_refs:
+            record = repository.get_by_hash(ref["content_hash"])
+            if (record["id"], record["record_type"]) != (ref["id"], ref["record_type"]):
+                raise AssertionError("RunPlan root metadata differs from stored artifact")
+
+    for node_id, node in declared.items():
+        node_manifest = manifests[node_id]
+        if node_manifest.get("run_plan_hash") != plan_hash:
+            raise AssertionError(f"Node {node_id} was not bound to this RunPlan")
+        expected_inputs: dict[str, list[str]] = {}
+        for binding in node["inputs"]:
+            refs = []
+            for source in binding["sources"]:
+                source_refs = root_outputs[source] if source.startswith("root:") else outputs[source]
+                refs.extend(
+                    ref for ref in source_refs
+                    if ref["record_type"] in binding["record_types"]
+                )
+            count = len(refs)
+            if count < binding["minimum"] or (
+                binding["maximum"] is not None and count > binding["maximum"]
+            ):
+                raise AssertionError(f"RunPlan input cardinality failed at {node_id}.{binding['name']}")
+            expected_inputs[binding["name"]] = [ref["content_hash"] for ref in refs]
+        if node_manifest["input_artifacts"] != expected_inputs:
+            raise AssertionError(f"Manifest inputs differ from RunPlan at {node_id}")
+        node_outputs = node_manifest["output_artifacts"]
+        undeclared = {
+            ref["record_type"] for ref in node_outputs
+        } - set(node["output_types"])
+        if undeclared or not node_outputs:
+            raise AssertionError(f"Node {node_id} output contract failed: {sorted(undeclared)}")
+        for ref in node_outputs:
+            record = repository.get_by_hash(ref["content_hash"])
+            if (record["id"], record["record_type"]) != (ref["id"], ref["record_type"]):
+                raise AssertionError(f"Stored output differs at {node_id}")
+            provenance_record = provenance.get(record["provenance_ref"])
+            if not provenance_record:
+                raise AssertionError(f"Missing provenance for {ref['id']}")
+            contract = provenance_record["content"]
+            if contract.get("run_plan_hash") != plan_hash:
+                raise AssertionError(f"Artifact provenance has wrong RunPlan at {ref['id']}")
+            if node["kind"] == "llm":
+                _verify_attempts(run_dir, node_id, contract)
+        outputs[node_id] = node_outputs
+
+    approved = repository.get_current(
+        f"AO-live-{production_manifest['topic']}"
+    )["content"]
+    decision = repository.get_current(approved["decision_ref"])["content"]
+    candidate = repository.get_current(approved["candidate_ref"])
+    if approved["candidate_hash"] != content_hash(candidate):
+        raise AssertionError("Approved option-space hash differs from candidate")
+    if decision["candidate_hash"] != approved["candidate_hash"] or decision["decision"] != "approved":
+        raise AssertionError("Human gate decision is not bound to approved option space")
+    return True
+
+
+def _verify_attempts(run_dir: Path, node_id: str, provenance: dict) -> None:
+    attempts = provenance.get("attempts", [])
+    if not attempts:
+        raise AssertionError(f"LLM node {node_id} has no exact prompt/response attempts")
+    execution_id = provenance["execution_id"]
+    attempt_root = run_dir / "attempts" / node_id / execution_id
+    for attempt in attempts:
+        stage_dirs = list(attempt_root.glob(f"{attempt['stage']}-{attempt['prompt_hash'][:16]}"))
+        if len(stage_dirs) != 1:
+            raise AssertionError(f"Missing immutable attempt files for {node_id}.{attempt['stage']}")
+        prompt = stage_dirs[0] / "prompt.md"
+        responses = list(stage_dirs[0].glob("response.*"))
+        if hashlib.sha256(prompt.read_bytes()).hexdigest() != attempt["prompt_hash"]:
+            raise AssertionError(f"Prompt hash mismatch for {node_id}.{attempt['stage']}")
+        if len(responses) != 1 or hashlib.sha256(responses[0].read_bytes()).hexdigest() != attempt["response_hash"]:
+            raise AssertionError(f"Response hash mismatch for {node_id}.{attempt['stage']}")
+
+
 def main() -> int:
     schemas = SchemaRegistry(ROOT / "schemas" / "v2")
     repository = ArtifactRepository(ROOT / "v2", schemas)
@@ -317,7 +450,11 @@ def main() -> int:
     print(f"PASS site: {checked_links} local links/assets resolved")
     print(f"PASS localization: {localized_messages} paired messages, {localized_pages} Hungarian pages free of raw UI terms")
     print(f"PASS live experiment: {live_artifacts} current artifacts, {live_calls} audited calls, position carriage green")
-    print(f"PASS production: {production_topics} topics, {production_artifacts} current artifacts, {production_calls} audited calls, human gate preserved")
+    print(
+        f"PASS production: {production_topics} topics, {production_artifacts} current artifacts, "
+        f"{production_calls} audited calls; legacy runs remain explicitly incomplete, "
+        "fresh runs require an exact RunPlan and hash-bound human gate"
+    )
     return 0
 
 

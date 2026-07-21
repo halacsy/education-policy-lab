@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSET_VERSION = "d55"
+ASSET_VERSION = "d56-explicit-run-plan"
 sys.path.insert(0, str(ROOT / "src"))
 
 from policy_lab.jsonio import content_hash  # noqa: E402
@@ -53,6 +53,10 @@ TYPE_COPY = {
     "evaluation": ("Evaluation", "Értékelés", "A cross-family assessment of the completed decision package.", "A kész döntési csomag eltérő modellcsaládú értékelése."),
     "decision_readiness": ("Decision readiness", "Döntési készültség", "A structured verdict on what can be decided and what still blocks action.", "Strukturált ítélet arról, mi dönthető el, és mi akadályozza még a cselekvést."),
     "provenance": ("Provenance", "Eredetnapló", "The node, inputs, prompt, provider, model, and contracts behind a record.", "A rekord mögötti lépés, bemenetek, prompt, szolgáltató, modell és szerződések."),
+    "problem_brief": ("Problem brief", "Problémafelvetés", "The exact human-admitted question and scope compiled into the run.", "A futásba fordított, ember által jóváhagyott pontos kérdés és hatókör."),
+    "option_space_proposal": ("Option-space proposal", "Opciótér-javaslat", "Directions derived from fresh research before human approval.", "Friss kutatásból, emberi jóváhagyás előtt levezetett irányok."),
+    "human_gate_decision": ("Human gate decision", "Emberi kapudöntés", "A decision bound to one exact candidate hash.", "Egy pontos jelölthashhez kötött emberi döntés."),
+    "approved_option_space": ("Approved option space", "Jóváhagyott opciótér", "The immutable option-space candidate admitted by the human gate.", "Az emberi kapun változtatás nélkül befogadott opciótér-jelölt."),
 }
 
 NODE_COPY = {
@@ -67,6 +71,8 @@ NODE_COPY = {
     "register_educational_psychology_lens": ("Register psychology perspective", "Neveléslélektani nézőpont regisztrálása"),
     "evaluate_decision_package": ("Evaluate decision package", "Döntési csomag értékelése"),
     "assess_decision_readiness": ("Assess decision readiness", "Döntési készültség vizsgálata"),
+    "derive_option_space": ("Derive option space", "Opciótér levezetése"),
+    "approve_option_space": ("Approve option space", "Opciótér jóváhagyása"),
 }
 
 PREVIEW_FIELDS = {
@@ -85,6 +91,10 @@ PREVIEW_FIELDS = {
     "evaluation": ("summary", "verdict"),
     "decision_readiness": ("verdict", "rationale"),
     "provenance": ("node_id", "model"),
+    "problem_brief": ("title", "public_question"),
+    "option_space_proposal": ("derivation_notice",),
+    "human_gate_decision": ("decision", "rationale"),
+    "approved_option_space": ("candidate_ref",),
 }
 
 
@@ -92,6 +102,8 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+BASE_LENSES = load_json(ROOT / "config" / "v2" / "lenses.json")["lenses"]
+LENS_BY_ID = {lens["id"]: lens for lens in BASE_LENSES}
 LENS_HU = load_json(ROOT / "config" / "v2" / "locales" / "hu.json")["messages"]["lens"]
 
 
@@ -218,15 +230,106 @@ def parse_timestamp(value: str | None) -> datetime | None:
     return datetime.fromisoformat(value.replace("Z", "+00:00"))
 
 
+def bilingual(value: Any) -> dict[str, str]:
+    if isinstance(value, dict):
+        english = str(value.get("en", value.get("hu", "")))
+        return {"en": english, "hu": str(value.get("hu", english))}
+    return {"en": str(value), "hu": str(value)}
+
+
+def agent_profile(
+    node_id: str,
+    calls: list[dict[str, Any]],
+    exact_lenses: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    lens_id = ""
+    if node_id.startswith("research_"):
+        lens_id = node_id.removeprefix("research_")
+    elif node_id.startswith("assess_"):
+        lens_id = node_id.removeprefix("assess_")
+    lens = (exact_lenses or {}).get(lens_id) or LENS_BY_ID.get(lens_id)
+    if lens:
+        return {
+            "id": lens_id,
+            "name": {"en": lens["name"], "hu": LENS_HU.get(lens_id, lens["name"])},
+            "discipline": lens["discipline"],
+            "questions": lens["questions"],
+            "criteria": lens["criteria"],
+            "limitations": lens["limitations"],
+            "definition_source": (
+                "RunPlan root artifact" if lens_id in (exact_lenses or {})
+                else "config/v2/lenses.json"
+            ),
+        }
+    call = calls[-1] if calls else {}
+    agent_id = call.get("agent") or node_id
+    return {
+        "id": agent_id,
+        "name": {"en": agent_id.replace("_", " "), "hu": agent_id.replace("_", " ")},
+        "discipline": call.get("task", "deterministic workflow"),
+        "questions": [],
+        "criteria": [],
+        "limitations": [],
+        "definition_source": "recorded prompt" if calls else "deterministic node contract",
+    }
+
+
+def prompt_files(run_dir: Path, node_id: str) -> list[dict[str, str]]:
+    paths = sorted((run_dir / "prompts").glob(f"{node_id}.*.md"))
+    base_paths = [path for path in paths if "semantic-retry" not in path.name]
+    if base_paths:
+        paths = base_paths
+    return [
+        {
+            "name": path.name,
+            "stage": path.name.removeprefix(f"{node_id}.").removesuffix(".md"),
+            "text": path.read_text(encoding="utf-8"),
+        }
+        for path in paths
+    ]
+
+
 def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
     repository = ArtifactRepository(source.repository_root, registry)
+    topic_data = load_json(ROOT / "topics" / source.topic / "topic.json")
+    production_manifest = load_json(source.repository_root / "production_manifest.json")
+    plan_path = source.run_dir / "run_plan.json"
+    run_plan = load_json(plan_path) if plan_path.exists() else None
+    expected_plan_hash = production_manifest.get("run_plan", {}).get("content_hash")
+    actual_plan_hash = content_hash(run_plan) if run_plan else None
+    if run_plan and expected_plan_hash != actual_plan_hash:
+        raise AssertionError(
+            f"RunPlan hash mismatch for {source.run_id}: "
+            f"manifest={expected_plan_hash}, actual={actual_plan_hash}"
+        )
+    provenance_status = "complete" if run_plan else "incomplete_provenance"
+    plan_node_by_id = {
+        node["id"]: node for node in (run_plan or {}).get("nodes", [])
+    }
+    plan_sequence = {
+        node["id"]: index for index, node in enumerate((run_plan or {}).get("nodes", []), 1)
+    }
     manifest_paths = sorted((source.run_dir / "nodes").glob("*.json"))
     manifests = [load_json(path) for path in manifest_paths]
     events_path = source.run_dir / "events.jsonl"
     events = [json.loads(line) for line in events_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    calls_path = source.repository_root / "backend_calls.jsonl"
+    backend_calls = [
+        json.loads(line)
+        for line in calls_path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ] if calls_path.exists() else []
+    calls_by_node: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for call in backend_calls:
+        if call.get("arm") == "production" and call.get("node_id"):
+            calls_by_node[call["node_id"]].append(call)
 
     artifact_hashes: set[str] = set()
     producer_by_hash: dict[str, str] = {}
+    for root_name, refs in (run_plan or {}).get("roots", {}).items():
+        for ref in refs:
+            artifact_hashes.add(ref["content_hash"])
+            producer_by_hash[ref["content_hash"]] = f"root:{root_name}"
     for manifest in manifests:
         for values in manifest.get("input_artifacts", {}).values():
             artifact_hashes.update(values)
@@ -256,6 +359,50 @@ def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
         digest = content_hash(provenance)
         if all(existing != digest for existing, _ in stored):
             stored.append((digest, provenance))
+
+    record_by_hash = {digest: record for digest, record in stored}
+    record_by_id = {record["id"]: (digest, record) for digest, record in stored}
+    exact_lenses = {
+        record["id"].removeprefix("L-live-"): record["content"]
+        for digest, record in stored
+        if record["record_type"] == "lens_definition"
+        and producer_by_hash.get(digest, "").startswith("root:lens_")
+    }
+
+    def summarize_record(digest: str, record: dict[str, Any]) -> dict[str, Any]:
+        refs = []
+        for ref in registry.references(record):
+            target = record_by_id.get(ref.target_id)
+            refs.append({
+                "id": ref.target_id,
+                "type": ref.target_type,
+                "field": ref.field,
+                "producer": producer_by_hash.get(target[0]) if target else None,
+            })
+        summary = {
+            "id": record["id"],
+            "hash": digest,
+            "type": record["record_type"],
+            "status": record["status"],
+            "preview": record_preview(record)[:360],
+            "producer": producer_by_hash.get(digest),
+            "provenance_ref": record.get("provenance_ref"),
+            "references": refs,
+        }
+        if record["record_type"] == "transformation_proposal":
+            content = record["content"]
+            summary["proposal"] = {
+                "title": content["title"],
+                "goal": content["goal"],
+                "change_level": content["change_level"],
+                "evidence_status": content["evidence_status"],
+                "finding_refs": content["finding_refs"],
+                "assumption_refs": content["assumption_refs"],
+                "uncertainty_refs": content["uncertainty_refs"],
+                "mechanisms": content["mechanisms"],
+                "implementation_steps": content["implementation_steps"],
+            }
+        return summary
 
     type_records: dict[str, list[tuple[str, dict[str, Any]]]] = defaultdict(list)
     for digest, record in stored:
@@ -296,6 +443,8 @@ def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
     run_nodes = []
     for manifest in manifests:
         node_id = manifest["node_id"]
+        declared = plan_node_by_id.get(node_id, {})
+        node_calls = calls_by_node.get(node_id, [])
         node_events = events_by_node.get(node_id, [])
         starts = [event for event in node_events if event["event_type"] == "node_started"]
         completions = [event for event in node_events if event["event_type"] == "node_completed"]
@@ -306,27 +455,123 @@ def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
         start_dt, finish_dt = parse_timestamp(start), parse_timestamp(finish)
         duration = (finish_dt - start_dt).total_seconds() if start_dt and finish_dt else None
         output_counts = Counter(output["record_type"] for output in manifest.get("output_artifacts", []))
+        node_inputs = {
+            group: [digest for digest in values if digest in record_by_hash]
+            for group, values in manifest.get("input_artifacts", {}).items()
+        }
+        node_outputs = [
+            output["content_hash"] for output in manifest.get("output_artifacts", [])
+            if output["content_hash"] in record_by_hash
+        ]
+        provenance = next((
+            record for record in provenance_by_id.values()
+            if record["content"].get("node_id") == node_id
+            and record["content"].get("execution_id") == manifest.get("cache_key")
+        ), None)
         run_nodes.append({
-            "id": node_id, "title": node_title(node_id), "disposition": manifest.get("disposition", "unknown"),
+            "id": node_id,
+            "title": bilingual(declared.get("title")) if declared else node_title(node_id),
+            "description": declared.get("description", ""),
+            "stage": declared.get("stage", "legacy"),
+            "disposition": manifest.get("disposition", "unknown"),
             "start": start, "finish": finish, "duration_seconds": duration,
-            "sequence": min((event["sequence"] for event in node_events), default=9999),
+            "sequence": plan_sequence.get(
+                node_id, min((event["sequence"] for event in node_events), default=9999)
+            ),
             "input_count": sum(len(values) for values in manifest.get("input_artifacts", {}).values()),
             "output_count": len(manifest.get("output_artifacts", [])), "output_types": dict(sorted(output_counts.items())),
             "cache_hits": len(cache_hits), "failures": len(failures), "cache_key": manifest.get("cache_key", ""),
+            "kind": declared.get("kind", "llm" if node_calls else "deterministic"),
+            "agent": agent_profile(node_id, node_calls, exact_lenses),
+            "calls": [{
+                key: call[key] for key in (
+                    "agent", "task", "provider", "backend", "model", "role", "input_tokens",
+                    "output_tokens", "ms", "web_searches", "recorded_at",
+                ) if key in call
+            } for call in node_calls],
+            "prompts": prompt_files(source.run_dir, node_id),
+            "inputs": node_inputs,
+            "outputs": node_outputs,
+            "contract": provenance["content"] if provenance else {},
         })
 
+    if run_plan:
+        root_nodes = []
+        for index, (root_name, refs) in enumerate(run_plan["roots"].items()):
+            output_counts = Counter(ref["record_type"] for ref in refs)
+            root_nodes.append({
+                "id": f"root:{root_name}",
+                "title": bilingual(root_name.replace("_", " ")),
+                "description": "Exact admitted root artifact compiled into the RunPlan.",
+                "stage": "root",
+                "disposition": "admitted",
+                "start": None, "finish": None, "duration_seconds": None,
+                "sequence": -1000 + index,
+                "input_count": 0, "output_count": len(refs),
+                "output_types": dict(sorted(output_counts.items())),
+                "cache_hits": 0, "failures": 0, "cache_key": "",
+                "kind": "root",
+                "agent": {
+                    "id": "human_admission", "name": bilingual("human admission"),
+                    "discipline": "declared external run input", "questions": [],
+                    "criteria": [], "limitations": [],
+                    "definition_source": "run_plan.json",
+                },
+                "calls": [], "prompts": [], "inputs": {},
+                "outputs": [ref["content_hash"] for ref in refs],
+                "contract": {"run_plan_hash": actual_plan_hash},
+            })
+        run_nodes = [*root_nodes, *run_nodes]
+
     run_edges: dict[tuple[str, str], int] = Counter()
-    for manifest in manifests:
-        for values in manifest.get("input_artifacts", {}).values():
-            for digest in values:
-                producer = producer_by_hash.get(digest)
-                if producer and producer != manifest["node_id"]:
-                    run_edges[(producer, manifest["node_id"])] += 1
+    if run_plan:
+        for edge in run_plan["edges"]:
+            run_edges[(edge["from"], edge["to"])] += 1
+    else:
+        for manifest in manifests:
+            for values in manifest.get("input_artifacts", {}).values():
+                for digest in values:
+                    producer = producer_by_hash.get(digest)
+                    if producer and producer != manifest["node_id"]:
+                        run_edges[(producer, manifest["node_id"])] += 1
+
+    problem_records = [record for _, record in stored if record["record_type"] == "problem_brief"]
+    option_records = [record for _, record in stored if record["record_type"] == "approved_option_space"]
+    if problem_records:
+        brief = problem_records[0]["content"]
+    else:
+        brief = topic_data["problem_brief"]
+    if option_records:
+        frames = option_records[0]["content"]["directions"]
+        direction_source = "approved_option_space"
+    else:
+        frames = topic_data.get("frames", {}).get("scenarios", [])
+        direction_source = "legacy_topic_snapshot"
+    execution_records = [
+        summarize_record(digest, record)
+        for digest, record in stored
+        if record["record_type"] != "provenance"
+    ]
 
     return {
         "id": source.run_id, "topic": source.topic, "kind": source.kind,
         "label": {"en": source.label_en, "hu": source.label_hu},
-        "notice": {"en": source.notice_en, "hu": source.notice_hu},
+        "notice": {
+            "en": source.notice_en + (
+                " This historical run has no persisted RunPlan; displayed execution "
+                "edges are reconstructed and its provenance is incomplete."
+                if provenance_status == "incomplete_provenance" else
+                " The displayed graph is read from the exact persisted RunPlan."
+            ),
+            "hu": source.notice_hu + (
+                " Ehhez a korábbi futáshoz nem maradt perzisztált RunPlan; a bemutatott "
+                "futási élek rekonstruáltak, ezért az eredetleírás hiányos."
+                if provenance_status == "incomplete_provenance" else
+                " A megjelenített gráf forrása a pontosan eltárolt RunPlan."
+            ),
+        },
+        "provenance_status": provenance_status,
+        "run_plan_hash": actual_plan_hash,
         "database": {
             "nodes": database_nodes,
             "edges": [{"from": key[0], "to": key[1], "count": count} for key, count in sorted(database_edges.items())],
@@ -336,6 +581,24 @@ def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
             "nodes": sorted(run_nodes, key=lambda node: (node["sequence"], node["id"])),
             "edges": [{"from": key[0], "to": key[1], "count": count} for key, count in sorted(run_edges.items())],
             "event_count": len(events),
+            "context": {
+                "title": bilingual(brief["title"]),
+                "public_question": bilingual(brief["public_question"]),
+                "problem_statement": bilingual(brief["problem_statement"]),
+                "scope": bilingual(brief["scope"]),
+                "frames": [{
+                    "id": frame["id"],
+                    "title": bilingual(frame["title"]),
+                    "scope": bilingual(frame["scope"]),
+                } for frame in frames],
+                "direction_source": direction_source,
+            },
+            "records": sorted(execution_records, key=lambda record: (record["type"], record["id"])),
+            "proposals": sorted(
+                record["hash"] for record in execution_records
+                if record["type"] == "transformation_proposal"
+                and record["producer"] == "derive_transformations"
+            ),
         },
     }
 

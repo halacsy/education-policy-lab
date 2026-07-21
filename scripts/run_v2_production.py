@@ -20,6 +20,7 @@ os.environ.setdefault("OPENAI_MODEL", "gpt-5-mini")
 
 from lab import llm  # noqa: E402
 from policy_lab.jsonio import write_json  # noqa: E402
+from policy_lab.dag import HumanGatePending  # noqa: E402
 from policy_lab.live import ArtifactDagRunner  # noqa: E402
 
 DEFAULT_TOPICS = ("korai-szelekcio", "rural-school-closures")
@@ -42,7 +43,21 @@ def main() -> int:
         runner = ArtifactDagRunner(
             root=ROOT, output_root=topic_root, llm_module=llm, topic=topic,
         )
-        summary = runner.run_production()
+        try:
+            summary = runner.run_production()
+        except HumanGatePending as exc:
+            print(
+                "\nProduction run paused at the declared human gate.\n"
+                f"Candidate hash: {exc.candidate_hash}\n"
+                f"Review request: {exc.request_path}\n"
+                "Approve only after reviewing the exact candidate:\n"
+                f"  .venv/bin/python scripts/v2_gate.py approve --topic {topic} "
+                f"--run-tag {args.run_tag} --candidate-hash {exc.candidate_hash} "
+                "--decided-by YOUR_NAME --rationale 'WHY THIS OPTION SPACE IS COMPLETE'\n"
+                "Then relaunch the same production command.",
+                file=sys.stderr,
+            )
+            return 2
         entries.append({
             "topic": topic,
             "output_root": str(topic_root.relative_to(ROOT)),
@@ -54,7 +69,7 @@ def main() -> int:
             "readiness_verdict": summary["readiness"]["verdict"],
         })
         write_json(run_root / "catalog.json", {
-            "architecture_version": "2.0.0",
+            "architecture_version": "3.0.0",
             "run_tag": args.run_tag,
             "topics": entries,
         })

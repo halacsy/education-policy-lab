@@ -1,0 +1,57 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/approved_option_space.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^AO-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "approved_option_space"},
+      "schema_version": {"const": "2.0.0"},
+      "status": {"const": "admitted"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "candidate_ref": {"type": "string", "pattern": "^OS-[A-Za-z0-9._-]+$"},
+          "candidate_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "decision_ref": {"type": "string", "pattern": "^HG-[A-Za-z0-9._-]+$"},
+          "directions": {
+            "type": "array", "minItems": 2, "maxItems": 7,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "properties": {
+                "id": {"type": "string", "pattern": "^S[1-9][0-9]*$"},
+                "title": {"type": "string", "minLength": 1},
+                "scope": {"type": "string", "minLength": 1},
+                "finding_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}}
+              },
+              "required": ["id", "title", "scope", "finding_refs"]
+            }
+          },
+          "rejected_framings": {
+            "type": "array", "minItems": 1,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "properties": {
+                "framing": {"type": "string", "minLength": 1},
+                "reason": {"type": "string", "minLength": 1},
+                "finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}}
+              },
+              "required": ["framing", "reason", "finding_refs"]
+            }
+          }
+        },
+        "required": ["candidate_ref", "candidate_hash", "decision_ref", "directions", "rejected_framings"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/candidate_ref", "record_type": "option_space_proposal"},
+    {"path": "/content/decision_ref", "record_type": "human_gate_decision"},
+    {"path": "/content/directions/*/finding_refs/*", "record_type": "finding"},
+    {"path": "/content/rejected_framings/*/finding_refs/*", "record_type": "finding"}
+  ],
+  "x-record-type": "approved_option_space",
+  "x-schema-version": "2.0.0"
+}

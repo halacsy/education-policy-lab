@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import hashlib
+import json
 from pathlib import Path
 from typing import Any, Callable, Mapping, Sequence
 
 from policy_lab.dag.node import NodeSpec, compute_cache_key
-from policy_lab.jsonio import write_json
+from policy_lab.jsonio import content_hash, write_json
 from policy_lab.store.artifacts import ArtifactRef, ArtifactRepository
 from policy_lab.store.events import EventLog, utc_now
 
@@ -28,6 +29,7 @@ class NodeExecutor:
         run_id: str,
         artifact_created_at: str,
         topic: str | None = None,
+        run_plan_hash: str | None = None,
     ):
         self.repository = repository
         self.run_dir = Path(run_dir)
@@ -35,6 +37,7 @@ class NodeExecutor:
         self.run_id = run_id
         self.artifact_created_at = artifact_created_at
         self.topic = topic
+        self.run_plan_hash = run_plan_hash
         self.events = EventLog(self.run_dir / "events.jsonl")
 
     def run(
@@ -86,39 +89,53 @@ class NodeExecutor:
             cache_key=cache_key, input_count=sum(map(len, inputs.values()))
         )
         provenance_id = f"PV-{spec.name}-{cache_key[:16]}"
+        provenance_content = {
+            "node_id": spec.name,
+            "execution_id": cache_key,
+            "input_artifact_hashes": sorted(
+                digest for values in input_hashes.values() for digest in values
+            ),
+            "spec_hashes": spec_hashes,
+            "schema_hashes": schema_hashes,
+            "prompt_hash": prompt_hash or "0" * 64,
+            "provider": provider or "local",
+            "model": model or f"deterministic-{spec.version}",
+            "role": spec.role,
+            "generation_parameters": dict(generation_parameters or {}),
+            "relevant_config_hash": content_hash(dict(relevant_config or {})),
+        }
+        if self.run_plan_hash is not None:
+            provenance_content["run_plan_hash"] = self.run_plan_hash
         provenance = {
             "id": provenance_id,
             "record_type": "provenance",
             "schema_version": "2.0.0",
             "topic": self._topic(inputs),
             "status": "candidate",
-            "content": {
-                "node_id": spec.name,
-                "execution_id": cache_key,
-                "input_artifact_hashes": sorted(
-                    digest for values in input_hashes.values() for digest in values
-                ),
-                "spec_hashes": spec_hashes,
-                "schema_hashes": schema_hashes,
-                "prompt_hash": prompt_hash or "0" * 64,
-                "provider": provider or "local",
-                "model": model or f"deterministic-{spec.version}",
-                "role": spec.role,
-            },
+            "content": provenance_content,
             "provenance_ref": None,
             "created_at": self.artifact_created_at,
             "supersedes": None,
         }
         self.repository.put(provenance)
+        self._begin_attempts(spec.name, cache_key)
         try:
             records = list(builder(provenance_id))
         except Exception as exc:
+            self._end_attempts(spec.name)
             self.events.append(
                 "node_failed", run_id=self.run_id, node_id=spec.name,
                 cache_key=cache_key, error_type=type(exc).__name__,
                 error=str(exc)[:500]
             )
             raise
+        attempts = self._attempts(spec.name, cache_key)
+        self._end_attempts(spec.name)
+        if attempts:
+            enriched = dict(provenance)
+            enriched["content"] = {**provenance_content, "attempts": attempts}
+            enriched["supersedes"] = content_hash(provenance)
+            self.repository.put(enriched)
         refs = tuple(self.repository.put_successor(record) for record in records)
         actual_types = tuple(sorted({ref.record_type for ref in refs}))
         unexpected = sorted(set(actual_types) - set(spec.output_types))
@@ -194,4 +211,29 @@ class NodeExecutor:
                 for ref in outputs
             ],
             "run_id": self.run_id,
+            "run_plan_hash": self.run_plan_hash,
         })
+
+    def _begin_attempts(self, node_id: str, cache_key: str) -> None:
+        path = self.run_dir / "attempts" / node_id / "current.json"
+        write_json(path, {"execution_id": cache_key})
+
+    def _end_attempts(self, node_id: str) -> None:
+        path = self.run_dir / "attempts" / node_id / "current.json"
+        if path.exists():
+            path.unlink()
+
+    def _attempts(self, node_id: str, cache_key: str) -> list[dict[str, str]]:
+        path = self.run_dir / "attempts" / node_id / cache_key / "index.jsonl"
+        if not path.exists():
+            return []
+        attempts = []
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            item = json.loads(line)
+            attempts.append({
+                key: item[key]
+                for key in ("stage", "prompt_hash", "response_hash", "status")
+            })
+        return attempts

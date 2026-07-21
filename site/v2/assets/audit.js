@@ -40,8 +40,8 @@
 
   const copy = {
     execution: {
-      kicker: { en: "ACTUAL EXECUTION DAG", hu: "TÉNYLEGES FUTÁSI GRÁF" },
-      title: { en: "What happened, and when?", hu: "Mi történt, és mikor?" },
+      kicker: { en: "FROM QUESTION TO DATABASE", hu: "A KÉRDÉSTŐL AZ ADATBÁZISIG" },
+      title: { en: "How was the database built?", hu: "Hogyan épült fel az adatbázis?" },
     },
     database: {
       kicker: { en: "CONCRETE ARTIFACT DATABASE", hu: "KONKRÉT ARTEFAKTUM-ADATBÁZIS" },
@@ -129,10 +129,13 @@
   }
 
   function executionGroup(nodeId) {
+    if (nodeId.startsWith("root:")) return "roots";
     if (nodeId.startsWith("research_")) return "research";
     if (nodeId.startsWith("assess_") || nodeId === "apply_scientific_lenses") return "assessments";
     if (nodeId.startsWith("register_")) return "registry";
     if (nodeId === "derive_transformations" || nodeId === "compile_transformations") return "transformations";
+    if (nodeId === "derive_option_space") return "option_space";
+    if (nodeId === "approve_option_space") return "human_gate";
     if (nodeId === "identify_decision_dilemmas") return "dilemmas";
     if (nodeId === "build_research_agenda") return "agenda";
     if (nodeId === "assemble_decision_package") return "package";
@@ -144,6 +147,9 @@
   function groupTitle(id, count) {
     const labels = {
       research: { en: `${count} research steps`, hu: `${count} kutatási lépés` },
+      roots: { en: "Admitted run inputs", hu: "Jóváhagyott futási bemenetek" },
+      option_space: { en: "Derive option space", hu: "Opciótér levezetése" },
+      human_gate: { en: "Human option-space gate", hu: "Emberi opciótér-kapu" },
       registry: { en: "Perspective registry", hu: "Nézőpontjegyzék" },
       transformations: { en: "Derive transformations", hu: "Átalakítások levezetése" },
       assessments: { en: `${count} assessment steps`, hu: `${count} vizsgálati lépés` },
@@ -200,7 +206,7 @@
   }
 
   function modelForView(run) {
-    if (state.view === "execution") return aggregateExecution(run);
+    if (state.view === "execution") return run.execution;
     if (state.view === "schema") {
       return { nodes: data.schema.nodes.map((node) => ({ ...node })), edges: data.schema.edges, width: 1400, height: 680 };
     }
@@ -209,6 +215,172 @@
       nodes: data.schema.nodes.map((node) => ({ ...node, ...(counts.get(node.id) || { count: 0, example: null }) })),
       edges: run.database.edges, width: 1400, height: 680,
     };
+  }
+
+  function executionRecordMap(run) {
+    return new Map(run.execution.records.map((record) => [record.hash, record]));
+  }
+
+  function executionNodeMap(run) {
+    return new Map(run.execution.nodes.map((node) => [node.id, node]));
+  }
+
+  function normalizeExecutionSelection(run) {
+    const nodes = run.execution.nodes;
+    const aliases = {
+      research: nodes.find((node) => node.id.startsWith("research_"))?.id,
+      transformations: "derive_transformations",
+      assessments: nodes.find((node) => node.id.startsWith("assess_"))?.id,
+      registry: "register_baseline_lenses",
+      dilemmas: "identify_decision_dilemmas",
+      agenda: "build_research_agenda",
+      package: "assemble_decision_package",
+      evaluation: "evaluate_decision_package",
+      readiness: "assess_decision_readiness",
+    };
+    if (run.provenance_status === "complete" && state.selection.execution === "context") {
+      state.selection.execution = "root:problem_brief";
+    }
+    if (aliases[state.selection.execution]) state.selection.execution = aliases[state.selection.execution];
+    const isNode = nodes.some((node) => node.id === state.selection.execution);
+    const isRecord = String(state.selection.execution || "").startsWith("record:");
+    const isContext = ["context", "frames"].includes(state.selection.execution);
+    if (!isNode && !isRecord && !isContext) state.selection.execution = "context";
+  }
+
+  function outputSummary(node) {
+    return Object.entries(node.output_types)
+      .map(([type, count]) => `${count} ${local(schemaById.get(type)?.title || type)}`)
+      .join(" · ");
+  }
+
+  function selectExecution(id) {
+    state.selection.execution = id;
+    render();
+    if (window.matchMedia("(max-width: 1100px)").matches) {
+      requestAnimationFrame(() => inspector.scrollIntoView({ behavior: "smooth", block: "start" }));
+    }
+  }
+
+  function flowCard(node, compact = false) {
+    const button = element("button", `flow-card flow-card-call${compact ? " is-compact" : ""}`);
+    button.type = "button";
+    button.setAttribute("aria-pressed", String(state.selection.execution === node.id));
+    const call = node.calls.at(-1);
+    const kinds = {
+      llm: { en: "LLM CALL", hu: "LLM-HÍVÁS" },
+      human_gate: { en: "HUMAN GATE", hu: "EMBERI KAPU" },
+      root: { en: "ADMITTED ROOT", hu: "JÓVÁHAGYOTT GYÖKÉR" },
+      deterministic: { en: "DETERMINISTIC", hu: "DETERMINISZTIKUS" },
+    };
+    button.append(element("span", "flow-kind", local(kinds[node.kind] || kinds.deterministic)));
+    button.append(element("strong", "flow-title", local(node.title)));
+    button.append(element("span", "flow-agent", `${local(node.agent.name)} · ${call?.model || node.contract.model || "local"}`));
+    button.append(element("span", "flow-output", outputSummary(node) || (language() === "hu" ? "nincs új rekord" : "no new record")));
+    button.addEventListener("click", () => selectExecution(node.id));
+    return button;
+  }
+
+  function contextCard(run, kind) {
+    const context = run.execution.context;
+    const button = element("button", "flow-card flow-card-input");
+    button.type = "button";
+    button.setAttribute("aria-pressed", String(state.selection.execution === kind));
+    button.append(element("span", "flow-kind", language() === "hu" ? "EMBER ÁLTAL JÓVÁHAGYOTT BEMENET" : "HUMAN-APPROVED INPUT"));
+    button.append(element("strong", "flow-title", kind === "frames" ? (language() === "hu" ? "Lefedendő változtatási irányok" : "Required transformation directions") : local(context.title)));
+    button.append(element("span", "flow-agent", kind === "frames" ? `${context.frames.length} ${language() === "hu" ? "irány" : "directions"}` : local(context.public_question)));
+    button.append(element("span", "flow-output", language() === "hu" ? "Ez még nem adatbázis-rekord." : "This is not a database record yet."));
+    button.addEventListener("click", () => selectExecution(kind));
+    return button;
+  }
+
+  function proposalCard(record) {
+    const proposal = record.proposal;
+    const button = element("button", "flow-card flow-card-record");
+    button.type = "button";
+    const selection = `record:${record.hash}`;
+    button.setAttribute("aria-pressed", String(state.selection.execution === selection));
+    button.append(element("span", "flow-kind", language() === "hu" ? "ADATBÁZIS-REKORD" : "DATABASE RECORD"));
+    button.append(element("strong", "flow-title", proposal.title));
+    button.append(element("span", "flow-agent", `${record.id} · ${proposal.finding_refs.length} ${language() === "hu" ? "hivatkozott megállapítás" : "cited findings"}`));
+    button.append(element("span", "flow-output", proposal.goal));
+    button.addEventListener("click", () => selectExecution(selection));
+    return button;
+  }
+
+  function connector(label) {
+    const node = element("div", "flow-connector");
+    node.append(element("span", "", "↓"));
+    node.append(element("b", "", label));
+    return node;
+  }
+
+  function flowPhase(number, title, description, cards, className = "") {
+    const section = element("section", `flow-phase ${className}`.trim());
+    const header = element("header", "flow-phase-header");
+    header.append(element("span", "flow-step", number));
+    const copy = element("div");
+    copy.append(element("h3", "", title));
+    copy.append(element("p", "", description));
+    header.append(copy);
+    section.append(header);
+    const grid = element("div", "flow-grid");
+    cards.forEach((card) => grid.append(card));
+    section.append(grid);
+    return section;
+  }
+
+  function renderExecutionFlow(run) {
+    normalizeExecutionSelection(run);
+    graphRoot.replaceChildren();
+    graphRoot.classList.add("is-flow");
+    const flow = element("div", "execution-flow");
+    const nodes = run.execution.nodes;
+    const research = nodes.filter((node) => node.id.startsWith("research_"));
+    const derive = nodes.find((node) => node.id === "derive_transformations");
+    const register = nodes.find((node) => node.id === "register_baseline_lenses");
+    const assessments = nodes.filter((node) => node.id.startsWith("assess_") && node.id !== "assess_decision_readiness");
+    const downstreamIds = ["identify_decision_dilemmas", "build_research_agenda", "assemble_decision_package", "evaluate_decision_package", "assess_decision_readiness"];
+    const downstream = downstreamIds.map((id) => nodes.find((node) => node.id === id)).filter(Boolean);
+    const recordMap = executionRecordMap(run);
+    const proposals = run.execution.proposals.map((hash) => recordMap.get(hash)).filter(Boolean);
+
+    if (run.provenance_status === "complete") {
+      const problemRoot = nodes.find((node) => node.id === "root:problem_brief");
+      const lensRoots = nodes.filter((node) => node.id.startsWith("root:lens_"));
+      const deriveOptions = nodes.find((node) => node.id === "derive_option_space");
+      const optionGate = nodes.find((node) => node.id === "approve_option_space");
+      flow.append(flowPhase("00", language() === "hu" ? "Pontos, jóváhagyott gyökerek" : "Exact admitted roots", language() === "hu" ? "A brief és a szakmai lencsék hash-elt adatbázis-rekordok; ezek a RunPlan változtathatatlan bemenetei." : "The brief and professional lenses are hashed database records and immutable RunPlan inputs.", [flowCard(problemRoot), ...lensRoots.map((node) => flowCard(node, true))], "phase-input"));
+      flow.append(connector(language() === "hu" ? "ugyanaz a brief + egy pontos lencse-artifakt minden kutatóágon" : "the same brief + one exact lens artifact on each research branch"));
+      flow.append(flowPhase("01", language() === "hu" ? `${research.length} explicit kutatóág` : `${research.length} explicit research branches`, language() === "hu" ? "Minden kártya külön node, saját deklarált bemenetekkel, prompttal és válaszlenyomattal." : "Every card is a separate node with declared inputs, prompt, and response hash.", research.map((node) => flowCard(node)), "phase-parallel"));
+      flow.append(connector(language() === "hu" ? "a friss megállapításokból új opciótér-jelölt készül" : "fresh findings produce a new option-space candidate"));
+      flow.append(flowPhase("02", language() === "hu" ? "Opciótér levezetése" : "Derive option space", language() === "hu" ? "Ez az LLM-lépés még nem kap jóváhagyott irányokat: kizárólag a briefből és a friss kutatási rekordokból dolgozik." : "This LLM step receives no approved directions; it uses only the brief and fresh research records.", [flowCard(deriveOptions)], "phase-synthesis"));
+      flow.append(connector(language() === "hu" ? "egy pontos jelölthash emberi jóváhagyása" : "human approval of one exact candidate hash"));
+      flow.append(flowPhase("03", language() === "hu" ? "Emberi opciótér-kapu" : "Human option-space gate", language() === "hu" ? "A kapu változtatás nélkül fogadja be vagy küldi vissza a jelöltet. Más hashhez új döntés kell." : "The gate admits the candidate unchanged or sends it back. A different hash requires a new decision.", [flowCard(optionGate)], "phase-input"));
+      flow.append(connector(language() === "hu" ? "jóváhagyott opciótér + friss bizonyítékok" : "approved option space + fresh evidence"));
+      flow.append(flowPhase("04", language() === "hu" ? "Átalakítások levezetése" : "Derive transformations", language() === "hu" ? "Az LLM itt már a jóváhagyott opciótér-artifaktot kapja, és minden irány lefedését géppel ellenőrzött jegyzékben rögzíti." : "The LLM now receives the approved option-space artifact and records machine-checked coverage of every direction.", [flowCard(derive), ...proposals.map(proposalCard)], "phase-records"));
+      flow.append(connector(language() === "hu" ? "minden átalakítás × minden szakmai nézőpont" : "every transformation × every professional perspective"));
+      flow.append(flowPhase("05", language() === "hu" ? `${assessments.length} szakmai vizsgálat` : `${assessments.length} professional assessments`, language() === "hu" ? "Minden node ugyanazokat a javaslatokat, a saját lencsét és a saját kutatási eredményeit kapja." : "Each node receives the same proposals, its exact lens, and its own research findings.", assessments.map((node) => flowCard(node, true)), "phase-parallel"));
+      flow.append(connector(language() === "hu" ? "dilemmák → kutatási agenda → csomag → értékelés → készültség" : "dilemmas → research agenda → package → evaluation → readiness"));
+      flow.append(flowPhase("06", language() === "hu" ? "Összeállítás és ellenőrzés" : "Assembly and checks", language() === "hu" ? "Az utolsó node-ok is kizárólag a RunPlanban deklarált rekordokat olvassák." : "The final nodes also read only records declared by the RunPlan.", downstream.map((node) => flowCard(node, true)), "phase-downstream"));
+      graphRoot.append(flow);
+      graphFallback.textContent = nodes.map((node) => `${local(node.title)}: ${node.output_count}`).join("; ");
+      return;
+    }
+
+    flow.append(flowPhase("00", language() === "hu" ? "Kiinduló kérdés" : "Starting question", language() === "hu" ? "A futás ezt az ember által jóváhagyott problémafelvetést kapta. Nem LLM állította elő ebben a futásban." : "The run received this human-approved problem statement. It was not generated by an LLM in this run.", [contextCard(run, "context")], "phase-input"));
+    flow.append(connector(language() === "hu" ? "ugyanaz a brief + külön agent-leírás minden ágon" : "the same brief + a different agent definition on each branch"));
+    flow.append(flowPhase("01", language() === "hu" ? `${research.length} párhuzamos kutatóág` : `${research.length} parallel research branches`, language() === "hu" ? "Mindegyik külön LLM-folyamat: webes kutatás, majd strukturált válasz. Egy kártya egy valódi futási node." : "Each is a separate LLM process: web research followed by a structured answer. One card is one actual execution node.", research.map((node) => flowCard(node)), "phase-parallel"));
+    flow.append(connector(language() === "hu" ? `${research.reduce((sum, node) => sum + (node.output_types.finding || 0), 0)} megállapítás + források + feltételezések + bizonytalanságok` : `${research.reduce((sum, node) => sum + (node.output_types.finding || 0), 0)} findings + sources + assumptions + uncertainties`));
+    flow.append(flowPhase("02", language() === "hu" ? "Átalakítások levezetése" : "Derive transformations", language() === "hu" ? "A transformation_architect agent egyszerre megkapta a kutatási rekordokat és a jóváhagyott lefedési irányokat." : "The transformation_architect agent received the research records and the approved coverage directions together.", [contextCard(run, "frames"), flowCard(derive)], "phase-synthesis"));
+    flow.append(connector(language() === "hu" ? `${proposals.length} külön átalakítási rekord — mind ugyanennek az LLM-hívásnak a kimenete` : `${proposals.length} distinct transformation records — all outputs of this LLM call`));
+    flow.append(flowPhase("03", language() === "hu" ? "Az adatbázisba írt átalakítások" : "Transformations written to the database", language() === "hu" ? "Kattints egy átalakításra: látható lesz az előállító agent, a prompt és a pontos megállapítások, amelyekre hivatkozik." : "Select a transformation to see its producing agent, prompt, and the exact findings it cites.", proposals.map(proposalCard), "phase-records"));
+    flow.append(connector(language() === "hu" ? "minden átalakítás × minden szakmai nézőpont" : "every transformation × every professional perspective"));
+    flow.append(flowPhase("04", language() === "hu" ? `${assessments.length} párhuzamos szakmai vizsgálat` : `${assessments.length} parallel professional assessments`, language() === "hu" ? "A nézőpontjegyzék determinisztikusan rögzül, majd minden agent mind a hat változtatást értékeli." : "The perspective registry is recorded deterministically, then every agent evaluates all six transformations.", [flowCard(register, true), ...assessments.map((node) => flowCard(node, true))], "phase-parallel"));
+    flow.append(connector(language() === "hu" ? "értékelésekből dilemmák, kutatási kérdések és döntési csomag" : "assessments become dilemmas, research questions, and a decision package"));
+    flow.append(flowPhase("05", language() === "hu" ? "Összeállítás és ellenőrzés" : "Assembly and checks", language() === "hu" ? "Az utolsó node-ok már az előző rekordokra hivatkozva építik és ellenőrzik a döntési csomagot." : "The final nodes build and check the decision package by referencing the previous records.", downstream.map((node) => flowCard(node, true)), "phase-downstream"));
+    graphRoot.append(flow);
+    graphFallback.textContent = nodes.map((node) => `${local(node.title)}: ${node.output_count}`).join("; ");
   }
 
   function positionFor(node, index) {
@@ -388,44 +560,195 @@
     }
   }
 
-  function renderExecutionInspector(node) {
-    inspectorHeader(language() === "hu" ? "FUTÁSI LÉPÉS" : "EXECUTION STEP", local(node.title), node.id);
+  function recordList(run, hashes, emptyText) {
+    const recordMap = executionRecordMap(run);
+    const list = element("ul", "inspector-list inspector-records");
+    hashes.map((hash) => recordMap.get(hash)).filter(Boolean).forEach((record) => {
+      const item = element("li");
+      const heading = element("b", "", `${record.id} · ${local(schemaById.get(record.type)?.title || record.type)}`);
+      item.append(heading);
+      item.append(element("span", "", record.preview));
+      list.append(item);
+    });
+    if (!list.childElementCount) list.append(element("li", "", emptyText));
+    return list;
+  }
+
+  function collapsibleRecordGroups(run, groups) {
+    const wrapper = element("div", "inspector-details-stack");
+    Object.entries(groups).forEach(([name, hashes], index) => {
+      const details = element("details", "inspector-details");
+      if (index === 0 && hashes.length <= 20) details.open = true;
+      details.append(element("summary", "", `${name} · ${hashes.length}`));
+      details.append(recordList(run, hashes, language() === "hu" ? "Nincs rekord." : "No records."));
+      wrapper.append(details);
+    });
+    return wrapper;
+  }
+
+  function promptStack(prompts) {
+    const wrapper = element("div", "inspector-details-stack");
+    prompts.forEach((prompt) => {
+      const details = element("details", "inspector-details prompt-details");
+      details.append(element("summary", "", prompt.name));
+      const pre = element("pre", "prompt-text");
+      pre.append(element("code", "", prompt.text));
+      details.append(pre);
+      wrapper.append(details);
+    });
+    if (!prompts.length) wrapper.append(element("p", "inspector-preview", language() === "hu" ? "Ez a node nem indított LLM-hívást, ezért nincs promptja." : "This node did not make an LLM call, so it has no prompt."));
+    return wrapper;
+  }
+
+  function renderContextInspector(run, kind) {
+    const context = run.execution.context;
+    if (kind === "frames") {
+      inspectorHeader(language() === "hu" ? "EMBERI BEMENET" : "HUMAN INPUT", language() === "hu" ? "Lefedendő változtatási irányok" : "Required transformation directions", "approved_frames");
+      inspector.append(element("p", "inspector-description", language() === "hu" ? "Ezeket az irányokat a transformation_architect promptja kötelező lefedési kapuként kapta meg." : "The transformation_architect prompt received these directions as mandatory coverage gates."));
+      const list = element("ul", "inspector-list inspector-records");
+      context.frames.forEach((frame) => {
+        const item = element("li");
+        item.append(element("b", "", `${frame.id} · ${local(frame.title)}`));
+        item.append(element("span", "", local(frame.scope)));
+        list.append(item);
+      });
+      appendSection(language() === "hu" ? "Jóváhagyott irányok" : "Approved directions", list);
+      return;
+    }
+    inspectorHeader(language() === "hu" ? "FUTÁSI BEMENET" : "RUN INPUT", local(context.title), "problem_brief");
+    inspector.append(element("p", "inspector-description", local(context.public_question)));
+    appendSection(language() === "hu" ? "Problémafelvetés" : "Problem statement", element("p", "inspector-preview", local(context.problem_statement)));
+    appendSection(language() === "hu" ? "Hatókör" : "Scope", element("p", "inspector-preview", local(context.scope)));
+    inspector.append(element("p", "inspector-boundary", language() === "hu" ? "Ez a production futás bemenete volt; nem állítjuk, hogy ebben a DAG-ban egy LLM készítette." : "This was an input to the production run; the DAG does not claim an LLM generated it here."));
+  }
+
+  function renderProposalInspector(run, record) {
+    const proposal = record.proposal;
+    const nodeMap = executionNodeMap(run);
+    const producer = nodeMap.get(record.producer);
+    const recordById = new Map(run.execution.records.map((item) => [item.id, item]));
+    inspectorHeader(language() === "hu" ? "ÁTALAKÍTÁSI REKORD" : "TRANSFORMATION RECORD", proposal.title, record.id);
+    inspector.append(element("p", "inspector-description", proposal.goal));
+    inspector.append(factList([
+      [language() === "hu" ? "Előállító agent" : "Producing agent", local(producer?.agent.name) || "—"],
+      [language() === "hu" ? "Előállító node" : "Producing node", record.producer || "—"],
+      [language() === "hu" ? "Modell" : "Model", producer?.calls.at(-1)?.model || producer?.contract.model || "—"],
+      [language() === "hu" ? "Bizonyítékállapot" : "Evidence status", proposal.evidence_status],
+      [language() === "hu" ? "Hivatkozott megállapítás" : "Cited findings", String(proposal.finding_refs.length)],
+    ]));
+    if (producer) {
+      const producerButton = element("button", "inspector-jump", language() === "hu" ? "Mutasd az előállító LLM-hívást és promptot →" : "Show producing LLM call and prompt →");
+      producerButton.type = "button";
+      producerButton.addEventListener("click", () => selectExecution(producer.id));
+      inspector.append(producerButton);
+    }
+    const findings = element("ul", "inspector-list inspector-records");
+    proposal.finding_refs.forEach((id) => {
+      const finding = recordById.get(id);
+      const item = element("li");
+      item.append(element("b", "", `${id} · ${finding?.producer || "—"}`));
+      item.append(element("span", "", finding?.preview || ""));
+      findings.append(item);
+    });
+    appendSection(language() === "hu" ? "Mely kutatási eredményekből?" : "Which research findings feed it?", findings);
+    const mechanisms = element("ol", "inspector-list inspector-records");
+    proposal.mechanisms.forEach((value) => mechanisms.append(element("li", "", value)));
+    appendSection(language() === "hu" ? "Levezetett mechanizmusok" : "Derived mechanisms", mechanisms);
+  }
+
+  function renderExecutionInspector(run, node) {
+    const inspectorKinds = {
+      llm: { en: "LLM PROCESS", hu: "LLM-FOLYAMAT" },
+      human_gate: { en: "HUMAN GATE", hu: "EMBERI KAPU" },
+      root: { en: "ADMITTED RUN ROOT", hu: "JÓVÁHAGYOTT FUTÁSI GYÖKÉR" },
+      deterministic: { en: "DETERMINISTIC STEP", hu: "DETERMINISZTIKUS LÉPÉS" },
+    };
+    inspectorHeader(local(inspectorKinds[node.kind] || inspectorKinds.deterministic), local(node.title), node.id);
     const status = node.failures ? (language() === "hu" ? "sikertelen" : "failed") : node.disposition === "cache_hit" ? (language() === "hu" ? "újrafelhasznált" : "reused") : (language() === "hu" ? "végrehajtott" : "executed");
+    const call = node.calls.at(-1);
     inspector.append(factList([
       [language() === "hu" ? "Állapot" : "Status", status],
-      [language() === "hu" ? "Kezdés" : "Started", formatTime(node.start)],
-      [language() === "hu" ? "Befejezés" : "Finished", formatTime(node.finish)],
+      [language() === "hu" ? "Agent" : "Agent", local(node.agent.name)],
+      [language() === "hu" ? "Szerep" : "Role", call?.role || node.contract.role || "local"],
+      [language() === "hu" ? "Szolgáltató / modell" : "Provider / model", `${call?.provider || node.contract.provider || "local"} / ${call?.model || node.contract.model || "deterministic"}`],
       [language() === "hu" ? "Időtartam" : "Duration", formatDuration(node.duration_seconds)],
       [language() === "hu" ? "Bemenet" : "Inputs", String(node.input_count)],
       [language() === "hu" ? "Kimenet" : "Outputs", String(node.output_count)],
-      [language() === "hu" ? "Újrafelhasználás" : "Cache hits", String(node.cache_hits)],
+      [language() === "hu" ? "Rögzített LLM-hívás" : "Recorded LLM calls", String(node.calls.length)],
+      ["RunPlan hash", node.contract.run_plan_hash ? `${node.contract.run_plan_hash.slice(0, 16)}…` : "—"],
+      [language() === "hu" ? "Hash-elt próbálkozás" : "Hashed attempts", String(node.contract.attempts?.length || 0)],
     ]));
-    const outputs = element("ul", "inspector-list");
-    Object.entries(node.output_types).forEach(([type, count]) => outputs.append(element("li", "", `${local(schemaById.get(type)?.title || type)} · ${count}`)));
-    appendSection(language() === "hu" ? "Létrehozott artefaktumok" : "Produced artifacts", outputs);
-    if (node.children.length > 1) {
-      const children = element("ul", "inspector-list");
-      node.children.forEach((child) => children.append(element("li", "", `${local(child.title)} · ${formatTime(child.start)} · ${child.output_count}`)));
-      appendSection(language() === "hu" ? "Összevont lépések" : "Grouped steps", children);
+    inspector.append(element("p", "inspector-description", `${node.agent.discipline} · ${node.agent.definition_source}`));
+
+    if (node.agent.questions.length) {
+      const contract = element("ul", "inspector-list");
+      node.agent.questions.forEach((question) => contract.append(element("li", "", question)));
+      appendSection(language() === "hu" ? "Az agent kérdései" : "Agent questions", contract);
     }
+    if (node.calls.length) {
+      const calls = element("ul", "inspector-list inspector-records");
+      node.calls.forEach((entry, index) => {
+        const item = element("li");
+        item.append(element("b", "", `${index + 1}. ${entry.task} · ${entry.model}`));
+        const searches = entry.web_searches != null ? ` · ${entry.web_searches} web search` : "";
+        item.append(element("span", "", `${entry.input_tokens || 0} → ${entry.output_tokens || 0} token · ${formatDuration((entry.ms || 0) / 1000)}${searches}`));
+        calls.append(item);
+      });
+      appendSection(language() === "hu" ? "Tényleges modellhívások" : "Actual model calls", calls);
+    }
+    if (node.contract.attempts?.length) {
+      const attempts = element("ul", "inspector-list inspector-records");
+      node.contract.attempts.forEach((attempt) => {
+        const item = element("li");
+        item.append(element("b", "", attempt.stage));
+        item.append(element("span", "", `prompt ${attempt.prompt_hash.slice(0, 16)}… · response ${attempt.response_hash.slice(0, 16)}… · ${attempt.status}`));
+        attempts.append(item);
+      });
+      appendSection(language() === "hu" ? "Változtathatatlan prompt–válasz párok" : "Immutable prompt–response pairs", attempts);
+    }
+    const inputGroups = Object.keys(node.inputs).length ? node.inputs : {
+      [language() === "hu" ? "problem_brief + agent-leírás (konfigurációs bemenet)" : "problem brief + agent definition (configuration input)"]: [],
+    };
+    appendSection(language() === "hu" ? "Pontos bemenetek" : "Exact inputs", collapsibleRecordGroups(run, inputGroups));
+    appendSection(language() === "hu" ? "A modellnek elküldött prompt" : "Prompt sent to the model", promptStack(node.prompts));
+    appendSection(language() === "hu" ? "Létrehozott adatbázis-rekordok" : "Database records produced", collapsibleRecordGroups(run, {outputs: node.outputs}));
   }
 
   function renderInspector(run, model) {
+    if (state.view === "execution") {
+      normalizeExecutionSelection(run);
+      if (state.selection.execution === "context" || state.selection.execution === "frames") {
+        renderContextInspector(run, state.selection.execution);
+        return;
+      }
+      if (state.selection.execution.startsWith("record:")) {
+        const hash = state.selection.execution.slice("record:".length);
+        const record = executionRecordMap(run).get(hash);
+        if (record?.proposal) {
+          renderProposalInspector(run, record);
+          return;
+        }
+      }
+      const selectedNode = run.execution.nodes.find((node) => node.id === state.selection.execution) || run.execution.nodes[0];
+      state.selection.execution = selectedNode.id;
+      renderExecutionInspector(run, selectedNode);
+      return;
+    }
     let selected = model.nodes.find((node) => node.id === state.selection[state.view]);
     if (!selected) {
       selected = model.nodes.find((node) => node.id === (state.view === "execution" ? "transformations" : "transformation_proposal")) || model.nodes[0];
       state.selection[state.view] = selected.id;
     }
-    if (state.view === "execution") renderExecutionInspector(selected);
-    else renderSchemaInspector(run, selected, state.view === "database");
+    renderSchemaInspector(run, selected, state.view === "database");
   }
 
   function renderHeading(run, model) {
     graphKicker.textContent = local(copy[state.view].kicker);
     graphTitle.textContent = local(copy[state.view].title);
     if (state.view === "execution") {
-      const outputCount = model.nodes.reduce((sum, node) => sum + node.output_count, 0);
-      graphSummary.textContent = language() === "hu" ? `${run.execution.nodes.length} tényleges lépés, ${run.execution.event_count} esemény és ${outputCount} rögzített kimenet. A párhuzamos kutatási és vizsgálati lépések összevonva látszanak.` : `${run.execution.nodes.length} actual steps, ${run.execution.event_count} events, and ${outputCount} recorded outputs. Parallel research and assessment steps are grouped.`;
+      const researchCount = run.execution.nodes.filter((node) => node.id.startsWith("research_")).length;
+      const proposalCount = run.execution.proposals.length;
+      graphSummary.textContent = language() === "hu" ? `${run.execution.nodes.length} tényleges node. A ${researchCount} kutatóág és a ${proposalCount} létrehozott átalakítás külön-külön látszik; kattintásra megnyílik az agent, a prompt és a pontos I/O.` : `${run.execution.nodes.length} actual nodes. All ${researchCount} research branches and ${proposalCount} resulting transformations are shown separately; select one to inspect the agent, prompt, and exact I/O.`;
     } else if (state.view === "database") {
       const present = model.nodes.filter((node) => node.count).length;
       const references = model.edges.reduce((sum, edge) => sum + edge.count, 0);
@@ -442,7 +765,11 @@
     notice.replaceChildren(element("p", "", local(run.notice)));
     const model = modelForView(run);
     renderHeading(run, model);
-    renderGraph(model);
+    if (state.view === "execution") renderExecutionFlow(run);
+    else {
+      graphRoot.classList.remove("is-flow");
+      renderGraph(model);
+    }
     renderInspector(run, model);
     updateUrl();
   }

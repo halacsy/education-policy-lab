@@ -40,6 +40,37 @@ RESEARCH_OUTPUT = {
 }
 
 
+def option_space_output(finding_ids: list[str]) -> dict[str, Any]:
+    """Provider contract for evidence-derived, pre-approval option space."""
+
+    finding_ref = {"type": "string", "enum": finding_ids}
+    return {
+        "type": "object", "additionalProperties": False,
+        "properties": {
+            "directions": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "id": {"type": "string", "pattern": "^S[1-7]$"},
+                    "title": TEXT,
+                    "scope": TEXT,
+                    "finding_refs": array(finding_ref, 1, 20),
+                },
+                "required": ["id", "title", "scope", "finding_refs"],
+            }, 2, 7),
+            "rejected_framings": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "framing": TEXT,
+                    "reason": TEXT,
+                    "finding_refs": array(finding_ref, 0, 20),
+                },
+                "required": ["framing", "reason", "finding_refs"],
+            }, 1, 7),
+        },
+        "required": ["directions", "rejected_framings"],
+    }
+
+
 def transformation_output(finding_ids: list[str], direction_ids: list[str] | None = None) -> dict[str, Any]:
     direction_ids = direction_ids or []
     return {

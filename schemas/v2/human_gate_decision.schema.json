@@ -1,0 +1,33 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/human_gate_decision.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^HG-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "human_gate_decision"},
+      "schema_version": {"const": "2.0.0"},
+      "status": {"const": "admitted"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "gate_id": {"const": "approve_option_space"},
+          "candidate_ref": {"type": "string", "pattern": "^OS-[A-Za-z0-9._-]+$"},
+          "candidate_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "decision": {"enum": ["approved", "rejected", "changes_requested"]},
+          "decided_by": {"type": "string", "minLength": 1},
+          "decided_at": {"type": "string", "format": "date-time"},
+          "rationale": {"type": "string", "minLength": 1}
+        },
+        "required": ["gate_id", "candidate_ref", "candidate_hash", "decision", "decided_by", "decided_at", "rationale"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/candidate_ref", "record_type": "option_space_proposal"}
+  ],
+  "x-record-type": "human_gate_decision",
+  "x-schema-version": "2.0.0"
+}

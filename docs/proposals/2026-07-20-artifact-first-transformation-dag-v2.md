@@ -1798,7 +1798,9 @@ across multiple topics.
 V2 is ready for its first public release when:
 
 - [x] v1 is frozen, documented, and separately available;
-- [x] the full v2 workflow is an explicit `NodeSpec` DAG;
+- [x] the full v2 workflow is a typed `DagSpec` compiled into an immutable,
+  root-hash-bound `RunPlan`; runner, verifier, and audit page consume that same
+  plan (D-56);
 - [x] there is no global resume hash;
 - [ ] every model call has prompt, provider, usage, and attempt audit;
 - [x] every semantic artifact is schema-valid canonical JSON;

@@ -11,9 +11,10 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import quote, urlsplit
 
-from policy_lab.dag import NodeExecutor, NodeSpec
-from policy_lab.jsonio import content_hash, write_json
+from policy_lab.dag import HumanGatePending, NodeExecutor, NodeSpec
+from policy_lab.jsonio import canonical_json_bytes, content_hash, write_json
 from policy_lab.live import contracts
+from policy_lab.live.dag_spec import build_policy_analysis_dag
 from policy_lab.schema_registry import SchemaRegistry
 from policy_lab.store import ArtifactRef, ArtifactRepository
 
@@ -68,14 +69,18 @@ class ArtifactDagRunner:
         return results
 
     def run_production(self) -> dict[str, Any]:
-        """Run one admitted-lens production replicate for this topic."""
+        """Run one production replicate from the persisted declarative plan."""
 
-        summary = self.run_arm("production", include_psychology=False)
+        summary, plan_hash = self._run_planned_production()
         self._write_cost_report()
         write_json(self.output_root / "production_manifest.json", {
-            "architecture_version": VERSION,
+            "architecture_version": "3.0.0",
             "topic": self.topic,
             "run_id": summary["run_id"],
+            "run_plan": {
+                "content_hash": plan_hash,
+                "path": f"runs/{summary['run_id']}/run_plan.json",
+            },
             "root_refs": [
                 summary["package_ref"], summary["evaluation_ref"],
                 summary["readiness_ref"],
@@ -84,6 +89,191 @@ class ArtifactDagRunner:
             "completed_at": _now(),
         })
         return summary
+
+    def _run_planned_production(self) -> tuple[dict[str, Any], str]:
+        """Execute exactly the nodes and bindings in the compiled RunPlan."""
+
+        arm = "production"
+        run_id = f"live-{self.topic}-{arm}"
+        run_dir = self.output_root / "runs" / run_id
+        root_refs = self._admit_run_roots()
+        dag = build_policy_analysis_dag(lens["id"] for lens in self.base_lenses)
+        plan = dag.compile(topic=self.topic, root_artifacts=root_refs)
+        plan_path = run_dir / "run_plan.json"
+        if plan_path.exists():
+            existing = self._load(plan_path)
+            if existing != plan.as_dict():
+                raise ValueError(
+                    f"RunPlan changed for existing run {run_id}; use a new run tag"
+                )
+        else:
+            plan.write(plan_path)
+        executor = NodeExecutor(
+            repository=self.repository,
+            run_dir=run_dir,
+            source_root=self.root,
+            run_id=run_id,
+            artifact_created_at=self.created_at,
+            topic=self.topic,
+            run_plan_hash=plan.hash,
+        )
+        outputs: dict[str, tuple[ArtifactRef, ...]] = {}
+        common_config = {"topic": self.topic, "run_plan_hash": plan.hash}
+
+        for lens in self.base_lenses:
+            node_id = f"research_{lens['id']}"
+            node = plan.node(node_id)
+            inputs = plan.resolve_inputs(node_id, outputs)
+            problem = self.repository.get_by_hash(
+                inputs["problem"][0].content_hash
+            )["content"]
+            exact_lens = {
+                "id": lens["id"],
+                **self.repository.get_by_hash(
+                    inputs["lens"][0].content_hash
+                )["content"],
+            }
+            refs = executor.run(
+                node.node_spec(),
+                inputs=inputs,
+                relevant_config=common_config,
+                provider=node.provider,
+                model=node.model,
+                generation_parameters=dict(node.generation_parameters),
+                prompt_hash=self._contract_hash("research_v1"),
+                builder=lambda pv, lens=exact_lens, node_id=node_id, problem=problem: self._research_records(
+                    lens, pv, node=node_id, run_dir=run_dir, arm=arm,
+                    problem=problem,
+                ),
+            )
+            outputs[node_id] = refs
+            self._report_node(run_dir, node_id)
+
+        node_id = "derive_option_space"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        option_refs = executor.run(
+            node.node_spec(),
+            inputs=inputs,
+            relevant_config=common_config,
+            provider=node.provider,
+            model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("derive_option_space_v1"),
+            builder=lambda pv: self._option_space_records(
+                inputs["problem"][0], inputs["evidence"], pv,
+                node=node_id, run_dir=run_dir, arm=arm,
+            ),
+        )
+        outputs[node_id] = option_refs
+        self._report_node(run_dir, node_id)
+
+        gate_id = "approve_option_space"
+        gate_node = plan.node(gate_id)
+        gate_inputs = plan.resolve_inputs(gate_id, outputs)
+        candidate_ref = gate_inputs["candidate"][0]
+        decision = self._require_gate_decision(
+            executor, run_dir, candidate_ref, plan.hash
+        )
+        gate_refs = executor.run(
+            gate_node.node_spec(),
+            inputs=gate_inputs,
+            relevant_config={
+                **common_config,
+                "decision_hash": content_hash(decision),
+            },
+            provider=gate_node.provider,
+            model=gate_node.model,
+            generation_parameters={},
+            prompt_hash=content_hash({"gate": gate_id, "version": gate_node.version}),
+            builder=lambda pv: self._approved_option_space_records(
+                candidate_ref, decision, pv
+            ),
+        )
+        outputs[gate_id] = gate_refs
+        self._report_node(run_dir, gate_id)
+
+        node_id = "derive_transformations"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        problem = self.repository.get_by_hash(inputs["problem"][0].content_hash)["content"]
+        approved = self.repository.get_by_hash(inputs["option_space"][0].content_hash)["content"]
+        finding_refs = tuple(
+            ref for ref in inputs["evidence"] if ref.record_type == "finding"
+        )
+        transformation_refs = executor.run(
+            node.node_spec(),
+            inputs=inputs,
+            relevant_config=common_config,
+            provider=node.provider,
+            model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("derive_transformations_v1"),
+            builder=lambda pv: self._transformation_records(
+                finding_refs, pv, node=node_id, run_dir=run_dir, arm=arm,
+                problem=problem, option_space=approved,
+            ),
+        )
+        outputs[node_id] = transformation_refs
+        self._report_node(run_dir, node_id)
+        proposals = self._types(transformation_refs, "transformation_proposal")
+
+        assessment_refs: list[ArtifactRef] = []
+        for lens in self.base_lenses:
+            node_id = f"assess_{lens['id']}"
+            node = plan.node(node_id)
+            inputs = plan.resolve_inputs(node_id, outputs)
+            exact_lens = {
+                "id": lens["id"],
+                **self.repository.get_by_hash(
+                    inputs["lens"][0].content_hash
+                )["content"],
+            }
+            refs = executor.run(
+                node.node_spec(),
+                inputs=inputs,
+                relevant_config=common_config,
+                provider=node.provider,
+                model=node.model,
+                generation_parameters=dict(node.generation_parameters),
+                prompt_hash=self._contract_hash("apply_lens_v1"),
+                builder=lambda pv, lens=exact_lens, node_id=node_id, inputs=inputs: self._assessment_records(
+                    lens, inputs["proposals"], inputs["evidence"], pv,
+                    node=node_id, run_dir=run_dir, arm=arm,
+                ),
+            )
+            outputs[node_id] = refs
+            assessment_refs.extend(refs)
+            self._report_node(run_dir, node_id)
+
+        downstream = self._run_planned_downstream(
+            plan=plan,
+            outputs=outputs,
+            executor=executor,
+            run_dir=run_dir,
+            arm=arm,
+            common_config=common_config,
+        )
+        package_ref = downstream["package"][0]
+        evaluation_ref = downstream["evaluation"][0]
+        readiness_ref = downstream["readiness"][0]
+        plan.assert_complete(outputs)
+        self.repository.validate_graph((
+            package_ref.id, evaluation_ref.id, readiness_ref.id,
+        ))
+        summary = self._summarize_arm(
+            arm, run_dir, package_ref, evaluation_ref, proposals,
+            assessment_refs, downstream,
+        )
+        summary["run_plan_hash"] = plan.hash
+        write_json(self._arm_summary(arm), summary)
+        print(
+            f"ARM {arm}: total={summary['evaluation']['total']:.3f}, "
+            f"cache_hits={summary['execution']['cache_hits']}, "
+            f"executed={summary['execution']['executed']}",
+            flush=True,
+        )
+        return summary, plan.hash
 
     def rebuild_reports(self) -> dict[str, Any]:
         """Recompute manifest-derived summaries and the A/B comparison without model calls."""
@@ -357,16 +547,323 @@ class ArtifactDagRunner:
             "evaluation": evaluation, "readiness": readiness,
         }
 
+    def _admit_run_roots(self) -> dict[str, tuple[ArtifactRef, ...]]:
+        """Materialize the exact, externally admitted inputs compiled into a run."""
+
+        problem = self.topic_data["problem_brief"]
+        problem_content = {
+            "title": self._english(problem["title"]),
+            "public_question": self._english(problem["public_question"]),
+            "problem_statement": self._english(problem["problem_statement"]),
+            "learning_goals": [self._english(value) for value in problem["learning_goals"]],
+            "scope": self._english(problem["scope"]),
+            "seed_sources": [self._english(value) for value in problem.get("seed_sources", [])],
+            "approval_basis": (
+                f"Human-approved topic brief admitted from topics/{self.topic}/topic.json "
+                "as an immutable run root."
+            ),
+        }
+        problem_provenance = self._admission_provenance(
+            "admit_problem_brief",
+            source_files=(f"topics/{self.topic}/topic.json",),
+            admitted_content=problem_content,
+        )
+        problem_ref = self.repository.put_successor({
+            **self._record(
+                f"PB-{self.topic}", "problem_brief", problem_provenance.id,
+                problem_content,
+            ),
+            "status": "admitted",
+        })
+
+        roots: dict[str, tuple[ArtifactRef, ...]] = {
+            "problem_brief": (problem_ref,),
+        }
+        for lens in self.base_lenses:
+            lens_id = lens["id"]
+            lens_content = {
+                "name": lens["name"],
+                "discipline": lens["discipline"],
+                "questions": lens["questions"],
+                "criteria": lens["criteria"],
+                "limitations": lens["limitations"],
+            }
+            provenance = self._admission_provenance(
+                f"admit_lens_{lens_id}",
+                source_files=("config/v2/lenses.json",),
+                admitted_content=lens_content,
+            )
+            lens_ref = self.repository.put_successor({
+                **self._record(
+                    f"L-live-{lens_id}", "lens_definition", provenance.id,
+                    lens_content,
+                ),
+                "status": "admitted",
+            })
+            roots[f"lens_{lens_id}"] = (lens_ref,)
+        return roots
+
+    def _admission_provenance(
+        self,
+        node_id: str,
+        *,
+        source_files: tuple[str, ...],
+        admitted_content: dict[str, Any],
+    ) -> ArtifactRef:
+        source_hashes = {
+            name: hashlib.sha256((self.root / name).read_bytes()).hexdigest()
+            for name in source_files
+        }
+        execution_id = content_hash({
+            "node_id": node_id,
+            "source_hashes": source_hashes,
+            "admitted_content": admitted_content,
+        })
+        return self.repository.put({
+            "id": f"PV-{node_id}-{execution_id[:16]}",
+            "record_type": "provenance",
+            "schema_version": VERSION,
+            "topic": self.topic,
+            "status": "candidate",
+            "content": {
+                "node_id": node_id,
+                "execution_id": execution_id,
+                "input_artifact_hashes": [],
+                "spec_hashes": source_hashes,
+                "schema_hashes": {},
+                "prompt_hash": "0" * 64,
+                "provider": "local",
+                "model": "deterministic-1.0.0",
+                "role": "deterministic",
+                "generation_parameters": {},
+                "relevant_config_hash": content_hash({"topic": self.topic}),
+            },
+            "provenance_ref": None,
+            "created_at": self.created_at,
+            "supersedes": None,
+        })
+
+    def _require_gate_decision(
+        self,
+        executor: NodeExecutor,
+        run_dir: Path,
+        candidate_ref: ArtifactRef,
+        run_plan_hash: str,
+    ) -> dict[str, Any]:
+        """Load a decision bound to one exact candidate or stop at the gate."""
+
+        gate_dir = run_dir / "gates" / "approve_option_space"
+        gate_dir.mkdir(parents=True, exist_ok=True)
+        stem = candidate_ref.content_hash
+        request_path = gate_dir / f"{stem}.request.json"
+        decision_path = gate_dir / f"{stem}.decision.json"
+        candidate = self.repository.get_by_hash(candidate_ref.content_hash)
+        request = {
+            "candidate_hash": candidate_ref.content_hash,
+            "candidate_ref": candidate_ref.id,
+            "created_at": self.created_at,
+            "directions": candidate["content"]["directions"],
+            "gate_id": "approve_option_space",
+            "rejected_framings": candidate["content"]["rejected_framings"],
+            "run_plan_hash": run_plan_hash,
+        }
+        if request_path.exists() and self._load(request_path) != request:
+            raise ValueError(f"Human-gate request changed at {request_path}")
+        if not request_path.exists():
+            write_json(request_path, request)
+        if not decision_path.exists():
+            executor.events.append(
+                "human_gate_waiting",
+                run_id=executor.run_id,
+                node_id="approve_option_space",
+                candidate_hash=candidate_ref.content_hash,
+                request_path=str(request_path),
+            )
+            raise HumanGatePending(
+                "approve_option_space", candidate_ref.content_hash, request_path
+            )
+        decision = self._load(decision_path)
+        required = {
+            "gate_id", "candidate_ref", "candidate_hash", "decision",
+            "decided_by", "decided_at", "rationale",
+        }
+        if set(decision) != required:
+            raise ValueError(
+                f"Gate decision fields differ at {decision_path}: "
+                f"expected {sorted(required)}, got {sorted(decision)}"
+            )
+        if decision["gate_id"] != "approve_option_space":
+            raise ValueError(f"Wrong gate id in {decision_path}")
+        if decision["candidate_ref"] != candidate_ref.id or (
+            decision["candidate_hash"] != candidate_ref.content_hash
+        ):
+            raise ValueError(
+                f"Gate decision does not match exact candidate {candidate_ref.id} "
+                f"@ {candidate_ref.content_hash}"
+            )
+        if decision["decision"] != "approved":
+            raise HumanGatePending(
+                "approve_option_space", candidate_ref.content_hash, request_path
+            )
+        for key in ("decided_by", "decided_at", "rationale"):
+            if not isinstance(decision[key], str) or not decision[key].strip():
+                raise ValueError(f"Gate decision has empty {key} at {decision_path}")
+        return decision
+
+    def _approved_option_space_records(
+        self,
+        candidate_ref: ArtifactRef,
+        decision: dict[str, Any],
+        provenance: str,
+    ) -> list[dict[str, Any]]:
+        candidate = self.repository.get_by_hash(candidate_ref.content_hash)
+        decision_id = f"HG-live-option-space-{candidate_ref.content_hash[:16]}"
+        approved_id = f"AO-live-{self.topic}"
+        decision_record = {
+            **self._record(
+                decision_id,
+                "human_gate_decision",
+                provenance,
+                dict(decision),
+            ),
+            "status": "admitted",
+        }
+        approved_record = {
+            **self._record(
+                approved_id,
+                "approved_option_space",
+                provenance,
+                {
+                    "candidate_ref": candidate_ref.id,
+                    "candidate_hash": candidate_ref.content_hash,
+                    "decision_ref": decision_id,
+                    "directions": candidate["content"]["directions"],
+                    "rejected_framings": candidate["content"]["rejected_framings"],
+                },
+            ),
+            "status": "admitted",
+        }
+        return [decision_record, approved_record]
+
+    def _run_planned_downstream(
+        self,
+        *,
+        plan: Any,
+        outputs: dict[str, tuple[ArtifactRef, ...]],
+        executor: NodeExecutor,
+        run_dir: Path,
+        arm: str,
+        common_config: dict[str, Any],
+    ) -> dict[str, tuple[ArtifactRef, ...]]:
+        """Execute the remaining graph by resolving every input from RunPlan."""
+
+        arm_config = {**common_config, "arm": arm, "lens_count": len(self.base_lenses)}
+
+        node_id = "identify_decision_dilemmas"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        dilemmas = executor.run(
+            node.node_spec(), inputs=inputs, relevant_config=arm_config,
+            provider=node.provider, model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("identify_dilemmas_v1"),
+            builder=lambda pv: self._dilemma_records(
+                arm, inputs["proposals"], inputs["assessments"], inputs["findings"], pv,
+                node=node_id, run_dir=run_dir,
+            ),
+        )
+        outputs[node_id] = dilemmas
+        self._report_node(run_dir, node_id)
+
+        node_id = "build_research_agenda"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        agenda = executor.run(
+            node.node_spec(), inputs=inputs, relevant_config=arm_config,
+            provider=node.provider, model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("research_agenda_v1"),
+            builder=lambda pv: self._agenda_records(
+                arm, inputs["proposals"], inputs["assessments"],
+                inputs["uncertainties"], pv, node=node_id, run_dir=run_dir,
+            ),
+        )
+        outputs[node_id] = agenda
+        self._report_node(run_dir, node_id)
+
+        node_id = "assemble_decision_package"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        package_inputs = tuple(
+            ref for refs in inputs.values() for ref in refs
+        )
+        package = executor.run(
+            node.node_spec(), inputs=inputs, relevant_config=arm_config,
+            provider=node.provider, model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("decision_package_v1"),
+            builder=lambda pv: self._package_records(
+                arm, package_inputs, pv, node=node_id, run_dir=run_dir,
+                problem=self.repository.get_by_hash(
+                    inputs["problem"][0].content_hash
+                )["content"],
+            ),
+        )
+        outputs[node_id] = package
+        self._report_node(run_dir, node_id)
+
+        node_id = "evaluate_decision_package"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        evaluation = executor.run(
+            node.node_spec(), inputs=inputs, relevant_config=arm_config,
+            provider=node.provider, model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("evaluate_package_v1"),
+            builder=lambda pv: self._evaluation_records(
+                arm, inputs["package"][0], inputs["proposals"],
+                inputs["assessments"], inputs["dilemmas"], inputs["agenda"], pv,
+                node=node_id, run_dir=run_dir,
+            ),
+        )
+        outputs[node_id] = evaluation
+        self._report_node(run_dir, node_id)
+
+        node_id = "assess_decision_readiness"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        readiness = executor.run(
+            node.node_spec(), inputs=inputs, relevant_config=arm_config,
+            provider=node.provider, model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("decision_readiness_v1"),
+            builder=lambda pv: self._readiness_records(
+                arm, inputs["package"][0], inputs["evaluation"][0],
+                inputs["proposals"], inputs["dilemmas"], inputs["agenda"], pv,
+            ),
+        )
+        outputs[node_id] = readiness
+        self._report_node(run_dir, node_id)
+        return {
+            "dilemmas": dilemmas,
+            "agenda": agenda,
+            "package": package,
+            "evaluation": evaluation,
+            "readiness": readiness,
+        }
+
     def _research_records(
         self, lens: dict[str, Any], provenance: str, *, node: str,
-        run_dir: Path, arm: str,
+        run_dir: Path, arm: str, problem: dict[str, Any] | None = None,
     ) -> list[dict[str, Any]]:
-        problem = self.topic_data["problem_brief"]
+        problem = problem or self.topic_data["problem_brief"]
+        public_question = self._english(problem["public_question"])
+        problem_statement = self._english(problem["problem_statement"])
         search_prompt = self._header("expert_research", lens["id"]) + f"""
 Research the following Hungarian education-policy problem from the disciplinary perspective of {lens['discipline']}.
 
-PUBLIC QUESTION: {problem['public_question']['en']}
-PROBLEM: {problem['problem_statement']['en']}
+PUBLIC QUESTION: {public_question}
+PROBLEM: {problem_statement}
 
 QUESTIONS:
 {self._bullets(lens['questions'])}
@@ -380,7 +877,7 @@ Use live web search. Return concise English research notes with direct source UR
 Convert the live research notes below into an English-only evidence artifact set for this policy problem.
 
 DISCIPLINE: {lens['discipline']}
-PUBLIC QUESTION: {problem['public_question']['en']}
+PUBLIC QUESTION: {public_question}
 CRITERIA: {', '.join(lens['criteria'])}
 KNOWN LENS LIMITS: {'; '.join(lens['limitations'])}
 
@@ -464,27 +961,94 @@ Rules: preserve contested labels; never invent a source or statistic; findings m
         }))
         return records
 
+    def _option_space_records(
+        self,
+        problem_ref: ArtifactRef,
+        evidence_refs: tuple[ArtifactRef, ...],
+        provenance: str,
+        *,
+        node: str,
+        run_dir: Path,
+        arm: str,
+    ) -> list[dict[str, Any]]:
+        """Derive an option-space candidate before any human approval."""
+
+        problem = self.repository.get_by_hash(problem_ref.content_hash)["content"]
+        findings = [
+            self.repository.get_by_hash(ref.content_hash)
+            for ref in evidence_refs if ref.record_type == "finding"
+        ]
+        digest = "\n".join(
+            f"- {record['id']} [{record['content']['evidence_strength']}]: "
+            f"{record['content']['claim']}"
+            for record in findings
+        )
+        prompt = self._header("derive_option_space", "option_space_architect") + f"""
+Derive the real option space for the approved education-policy problem below. Work in English only. This is a pre-approval proposal, not a policy recommendation and not a transformation portfolio.
+
+PUBLIC QUESTION: {problem['public_question']}
+PROBLEM: {problem['problem_statement']}
+SCOPE: {problem['scope']}
+
+FRESH EVIDENCE RECORD:
+{digest}
+
+Produce 2-7 materially distinct direction families with sequential ids S1..Sn. Each direction must cite at least one supplied finding id and state a bounded scope. Include a no-new-policy or passive-change baseline when decision-relevant. Do not import any previously approved frame, scenario title, or knowledge outside the supplied evidence. Record at least one considered-but-rejected framing with reasons and finding references. The directions must span rather than prematurely collapse the option space.
+"""
+        finding_ids = [record["id"] for record in findings]
+        result = self._call_structured_counted(
+            prompt,
+            contracts.option_space_output(finding_ids),
+            role="generator",
+            max_tokens=12000,
+            arm=arm,
+            node=node,
+            run_dir=run_dir,
+            suffix="generate",
+            constraints={"directions": (2, 7), "rejected_framings": (1, 7)},
+            item_constraints={("directions", "finding_refs"): (1, 20)},
+        )
+        ids = [item["id"] for item in result["directions"]]
+        expected = [f"S{index}" for index in range(1, len(ids) + 1)]
+        if ids != expected:
+            raise ValueError(
+                f"Option-space direction ids must be sequential: expected {expected}, got {ids}"
+            )
+        return [self._record(
+            f"OS-live-{self.topic}", "option_space_proposal", provenance,
+            {
+                "directions": result["directions"],
+                "rejected_framings": result["rejected_framings"],
+                "derivation_notice": (
+                    "Derived only from the exact fresh finding artifacts declared "
+                    "by the run plan; pending an explicit human gate."
+                ),
+            },
+        )]
+
     def _transformation_records(
         self, finding_refs: tuple[ArtifactRef, ...], provenance: str, *,
         node: str, run_dir: Path, arm: str,
+        problem: dict[str, Any] | None = None,
+        option_space: dict[str, Any] | None = None,
     ) -> list[dict[str, Any]]:
         findings = [self.repository.get_by_hash(ref.content_hash) for ref in finding_refs]
         digest = "\n".join(
             f"- {record['id']} [{record['content']['evidence_strength']}; {', '.join(record['content']['domain_tags'])}]: {record['content']['claim']}"
             for record in findings
         )
-        problem = self.topic_data["problem_brief"]
-        frames = self.topic_data["frames"]["scenarios"]
+        problem = problem or self.topic_data["problem_brief"]
+        frames = option_space["directions"] if option_space else self.topic_data["frames"]["scenarios"]
         frame_digest = "\n".join(
-            f"- {frame['id']} — {frame['title']['en']}: {frame['scope']['en']}"
+            f"- {frame['id']} — {self._english(frame['title'])}: {self._english(frame['scope'])}"
             for frame in frames
         )
         prompt = self._header("build_scenarios", "transformation_architect") + f"""
 Derive an education-system transformation portfolio from the evidence record below. Work in English only. The final product is a library of change directions, not a debate among experts.
 
-PUBLIC QUESTION: {problem['public_question']['en']}
-PROBLEM: {problem['problem_statement']['en']}
-SCOPE: {problem['scope']['en']}
+PUBLIC QUESTION: {self._english(problem['public_question'])}
+PROBLEM: {self._english(problem['problem_statement'])}
+SCOPE: {self._english(problem['scope'])}
 
 EVIDENCE RECORD:
 {digest}
@@ -559,11 +1123,11 @@ Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a 
             }))
         frame_by_id = {frame["id"]: frame for frame in frames}
         records.append(self._record("CL-live-approved-frames", "coverage_ledger", provenance, {
-            "gate_basis": "approved_frames",
+            "gate_basis": "approved_option_space" if option_space else "approved_frames",
             "entries": [
                 {
                     "direction_id": direction_id,
-                    "direction_title": frame_by_id[direction_id]["title"]["en"],
+                    "direction_title": self._english(frame_by_id[direction_id]["title"]),
                     "status": "covered",
                     "proposal_refs": [f"TP-live-{key.lower()}" for key in coverage[direction_id]["proposal_keys"]],
                     "rationale": coverage[direction_id]["rationale"],
@@ -692,7 +1256,7 @@ Return 4-10 prioritized questions with concrete methods. Cite proposal and uncer
 
     def _package_records(
         self, arm: str, refs: tuple[ArtifactRef, ...], provenance: str, *,
-        node: str, run_dir: Path,
+        node: str, run_dir: Path, problem: dict[str, Any] | None = None,
     ) -> list[dict[str, Any]]:
         records = [self.repository.get_by_hash(ref.content_hash) for ref in refs]
         by_type: dict[str, list[dict[str, Any]]] = {}
@@ -751,11 +1315,11 @@ Return 4-10 prioritized questions with concrete methods. Cite proposal and uncer
                 "academic self-concept/BFLPE, labeling, motivation, or goal orientation) "
                 "into the summary. Do not merely mention the lens name."
             )
-        problem = self.topic_data["problem_brief"]
+        problem = problem or self.topic_data["problem_brief"]
         prompt = self._header("brief", "decision_package_writer") + f"""
 Write a concise English decision-package summary for the public question below. The summary must preserve the transformation option space, distinguish empirical uncertainty from value choice, and name material disciplinary mechanisms rather than speakers. Do not choose one winner.
 
-PUBLIC QUESTION: {problem['public_question']['en']}
+PUBLIC QUESTION: {self._english(problem['public_question'])}
 
 TRANSFORMATIONS:
 {proposal_text}
@@ -793,7 +1357,8 @@ Write 500-900 words. Explain what can change, the leading mechanism and constrai
         def ids(record_type: str) -> list[str]:
             return sorted(r["id"] for r in by_type.get(record_type, []))
         return [self._record(f"DP-live-{arm}", "decision_package", provenance, {
-            "title": problem["title"]["en"], "public_question": problem["public_question"]["en"],
+            "title": self._english(problem["title"]),
+            "public_question": self._english(problem["public_question"]),
             "summary": result["summary"],
             "transformation_family_refs": ids("transformation_family"),
             "proposal_refs": ids("transformation_proposal"),
@@ -964,6 +1529,9 @@ Score only what is visible. Treat an inline finding id as auditable only when th
             raw = run_dir / "raw" / f"{node}.{suffix}.txt"
             raw.parent.mkdir(parents=True, exist_ok=True)
             raw.write_text(result, encoding="utf-8")
+            self._persist_attempt(
+                run_dir, node, suffix, prompt, result.encode("utf-8"), "txt"
+            )
             return result
         finally:
             self._record_calls(marker, arm=arm, node=node)
@@ -999,9 +1567,13 @@ Score only what is visible. Treat an inline finding id as auditable only when th
         self._persist_prompt(run_dir, node, suffix, prompt)
         marker = self.llm.call_log_len()
         try:
-            return self.llm.call_structured(
+            result = self.llm.call_structured(
                 prompt, schema, role, max_tokens=max_tokens
             )
+            self._persist_attempt(
+                run_dir, node, suffix, prompt, canonical_json_bytes(result), "json"
+            )
+            return result
         finally:
             self._record_calls(marker, arm=arm, node=node)
 
@@ -1117,8 +1689,54 @@ Score only what is visible. Treat an inline finding id as auditable only when th
     def _persist_prompt(run_dir: Path, node: str, suffix: str, prompt: str) -> None:
         path = run_dir / "prompts" / f"{node}.{suffix}.md"
         path.parent.mkdir(parents=True, exist_ok=True)
+        if path.exists() and path.read_text(encoding="utf-8") != prompt:
+            digest = hashlib.sha256(prompt.encode("utf-8")).hexdigest()[:16]
+            path = path.with_name(f"{node}.{suffix}.{digest}.md")
         if not path.exists():
             path.write_text(prompt, encoding="utf-8")
+
+    @staticmethod
+    def _persist_attempt(
+        run_dir: Path, node: str, stage: str, prompt: str,
+        response: bytes, extension: str,
+    ) -> None:
+        current_path = run_dir / "attempts" / node / "current.json"
+        if current_path.exists():
+            execution_id = json.loads(
+                current_path.read_text(encoding="utf-8")
+            )["execution_id"]
+        else:
+            # Compatibility for direct method tests outside NodeExecutor.
+            execution_id = "unbound"
+        prompt_bytes = prompt.encode("utf-8")
+        prompt_hash = hashlib.sha256(prompt_bytes).hexdigest()
+        response_hash = hashlib.sha256(response).hexdigest()
+        attempt_dir = run_dir / "attempts" / node / execution_id / (
+            f"{stage}-{prompt_hash[:16]}"
+        )
+        attempt_dir.mkdir(parents=True, exist_ok=True)
+        prompt_path = attempt_dir / "prompt.md"
+        response_path = attempt_dir / f"response.{extension}"
+        if prompt_path.exists() and prompt_path.read_bytes() != prompt_bytes:
+            raise ValueError(f"Attempt prompt hash collision at {prompt_path}")
+        if response_path.exists() and response_path.read_bytes() != response:
+            raise ValueError(f"Attempt response changed at {response_path}")
+        prompt_path.write_bytes(prompt_bytes)
+        response_path.write_bytes(response)
+        index_path = attempt_dir.parent / "index.jsonl"
+        entry = {
+            "stage": stage,
+            "prompt_hash": prompt_hash,
+            "response_hash": response_hash,
+            "status": "completed",
+        }
+        existing = (
+            [json.loads(line) for line in index_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+            if index_path.exists() else []
+        )
+        if entry not in existing:
+            with index_path.open("a", encoding="utf-8") as handle:
+                handle.write(json.dumps(entry, ensure_ascii=False, sort_keys=True) + "\n")
 
     def _write_cost_report(self) -> None:
         if not self.call_log_path.exists():
@@ -1197,6 +1815,14 @@ Score only what is visible. Treat an inline finding id as auditable only when th
     def _bullets(items: Iterable[str]) -> str:
         return "\n".join(f"- {item}" for item in items)
 
+    @staticmethod
+    def _english(value: Any) -> str:
+        """Read canonical English text or a legacy bilingual leaf."""
+
+        if isinstance(value, dict):
+            return str(value["en"])
+        return str(value)
+
     @classmethod
     def _contract_hash(cls, name: str) -> str:
         """Hash the exact node implementation and provider contract.
@@ -1209,6 +1835,10 @@ Score only what is visible. Treat an inline finding id as auditable only when th
 
         dependencies = {
             "research_v1": (cls._research_records, contracts.RESEARCH_OUTPUT),
+            "derive_option_space_v1": (
+                cls._option_space_records,
+                contracts.option_space_output,
+            ),
             "baseline_lens_registry_v1": (cls._baseline_lens_records, None),
             "psychology_lens_pr29": (cls._psychology_lens_records, None),
             "derive_transformations_v1": (

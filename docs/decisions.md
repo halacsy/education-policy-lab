@@ -800,3 +800,26 @@ optional “How it was made?” layer. The artifact-lineage explorer reads only
 accepted production runs. This public cutover does not waive the separate
 human gate for external policy endorsement: published dossiers remain
 `ready_with_conditions` with `human_external_use_gate=pending`.
+
+**D-56 — One typed DagSpec compiles the immutable RunPlan consumed by both
+execution and audit (2026-07-21).** The accepted 31-node production runner
+constructed its control flow imperatively, while the public audit view inferred
+edges from manifests and read the current topic file for undeclared coverage
+directions. That was insufficient evidence that the displayed lineage was the
+lineage that produced the data. Fresh production therefore uses one validated
+`DagSpec` as the logical source of truth and compiles it against exact,
+content-addressed `problem_brief` and `lens_definition` roots. The resulting
+`run_plan.json` is immutable and hash-bound in every node manifest and
+provenance record. The runner resolves each named input only from this plan;
+the audit renderer reads its nodes and edges directly; verification recomputes
+every binding from stored upstream hashes and rejects any undeclared execution.
+
+The option space is now a first-class causal chain: fresh research produces an
+`option_space_proposal`; a human decision approves one exact candidate hash;
+an `approved_option_space` is then the sole coverage input to transformation
+derivation. The exact prompt and response bytes of every LLM attempt are stored
+under the execution cache key and their hashes enter provenance. A changed
+candidate cannot reuse an earlier human decision. The 2026-07-20 production
+stores predate this mechanism and are not retroactively rewritten: the public
+audit labels their reconstructed execution graph `incomplete_provenance` until
+a new live run reaches and passes the declared option-space gate.

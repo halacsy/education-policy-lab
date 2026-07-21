@@ -95,6 +95,7 @@ class SchemaRegistryTests(unittest.TestCase):
         self.assertEqual(
             self.schemas.available(),
             (
+                ("approved_option_space", "2.0.0"),
                 ("assumption", "2.0.0"),
                 ("coverage_ledger", "2.0.0"),
                 ("decision_package", "2.0.0"),
@@ -102,8 +103,11 @@ class SchemaRegistryTests(unittest.TestCase):
                 ("dilemma", "2.0.0"),
                 ("evaluation", "2.0.0"),
                 ("finding", "2.0.0"),
+                ("human_gate_decision", "2.0.0"),
                 ("lens_assessment", "2.0.0"),
                 ("lens_definition", "2.0.0"),
+                ("option_space_proposal", "2.0.0"),
+                ("problem_brief", "2.0.0"),
                 ("provenance", "2.0.0"),
                 ("research_question", "2.0.0"),
                 ("source", "2.0.0"),

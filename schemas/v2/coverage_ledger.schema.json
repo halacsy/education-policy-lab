@@ -11,7 +11,7 @@
       "content": {
         "type": "object", "additionalProperties": false,
         "properties": {
-          "gate_basis": {"const": "approved_frames"},
+          "gate_basis": {"enum": ["approved_frames", "approved_option_space"]},
           "entries": {
             "type": "array", "minItems": 1,
             "items": {
