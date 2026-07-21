@@ -1,0 +1,91 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t5-01",
+      "A-live-t5-02"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Setup and ongoing operational cost of a national registry and evaluation infrastructure",
+      "Administrative reporting burden on tankerület centers",
+      "Time lag before registry accumulates sufficient data to inform decisions meaningfully"
+    ],
+    "equity_impact": "Positive as an enabling condition: transparent thresholds and outcome tracking make disadvantage-concentration effects (e.g., church-school segregation, Roma enrollment disparities) visible and auditable across all models, supporting evidence-based equity interventions regardless of which structural direction (T1-T4) a given village follows; does not by itself alter distributional outcomes without complementary action.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Breaks the historical cycle of politically-driven, non-evidence-based policy swings (F-live-implementation_planning-02)",
+      "Enables verification of contested cost-savings claims, addressing weaknesses identified in Finnish and US consolidation literature (F-live-finnish_reform-04, F-live-education_finance-02)",
+      "Provides Hungary-specific evidence on closure-depopulation linkage rather than relying on non-replicated foreign findings",
+      "Improves accountability and consistency without prescribing a single operational model, preserving local flexibility across T1-T4 approaches"
+    ],
+    "finding_refs": [
+      "F-live-implementation_planning-02",
+      "F-live-education_finance-10",
+      "F-live-finnish_reform-04",
+      "F-live-education_finance-02",
+      "F-live-school_network_planning-06",
+      "F-live-education_finance-04",
+      "F-live-polish_reform-07",
+      "F-live-education_finance-05",
+      "F-live-education_finance-03",
+      "F-live-legal_and_governance-05",
+      "F-live-implementation_planning-10",
+      "F-live-polish_reform-04"
+    ],
+    "goal": "Establish a national, cross-cutting evidence and transparency framework — publicly visible minimum-viability thresholds, standardized cost accounting, and a closure/outcome registry — that informs but does not mandate any specific local model (status quo, grade-split, network, or consolidation), improving the quality and accountability of decisions made under any of T1-T4.",
+    "implementation_steps": [
+      {
+        "action": "Design and launch a public closure/retention outcome registry recording enrollment, cost, demographic, and academic indicators for every village school decision",
+        "actor": "National statistics office / Ministry of Interior",
+        "timeline": "Year 1-2"
+      },
+      {
+        "action": "Publish standardized minimum-viability thresholds and cost-accounting methodology, including transport and adjustment costs, applicable uniformly across tankerület centers",
+        "actor": "Ministry of Education (or Interior Ministry education unit)",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Conduct mandatory ex-post evaluation of a sample of closure and retention decisions against registry data every 2 years",
+        "actor": "Independent research body / university partnership",
+        "timeline": "Starting Year 3, recurring"
+      },
+      {
+        "action": "Standardize training criteria for multigrade, rural, and network teaching roles, tied to registry-documented best practices",
+        "actor": "Teacher training institutions and Ministry",
+        "timeline": "Years 2-4"
+      },
+      {
+        "action": "Report all closure/retention decisions and rationale to the registry as a condition of decision validity",
+        "actor": "Tankerületi centers",
+        "timeline": "From Year 2 onward, ongoing"
+      }
+    ],
+    "mechanisms": [
+      "Historical evidence shows repeated top-down policy swings without institutionalized feedback mechanisms (interwar expansion, Stalinist demolition, 1970s rationalization, 2013 centralization, 2017 re-decentralization), indicating the absence of a standing evidence infrastructure as a root cause of policy instability (F-live-implementation_planning-02, F-live-education_finance-10).",
+      "Finnish municipalities cited cost-savings as the primary closure rationale, but few rigorous follow-up studies verified whether savings were realized — indicating a need for mandatory post-decision cost verification (F-live-finnish_reform-04, F-live-education_finance-02).",
+      "Contested and mixed cross-national evidence on closure-depopulation linkage (Finland vs. Saxony vs. Sweden) demonstrates the need for a Hungary-specific evidence base rather than reliance on non-replicated foreign findings (F-live-school_network_planning-06, F-live-education_finance-04, F-live-polish_reform-07).",
+      "The 2022 finding that only 17% of residents in schoolless municipalities consider the absence a major shortcoming, versus over 81% anticipatory attachment in villages with schools, shows a measurement gap between anticipated and revealed preferences that a registry could track over time (F-live-education_finance-05).",
+      "Transport-cost offsets are rarely fully counted in closure proposals, indicating a need for standardized cost-accounting rules covering transportation as well as instructional costs (F-live-education_finance-03).",
+      "Legal ambiguity over transport-obligation assignment (municipality vs. district) similarly indicates the need for standardized, transparent procedural rules independent of which operational model is used (F-live-legal_and_governance-05)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Purely informational infrastructure may be circumvented or ignored absent binding decision rules, as seen in the historical pattern of top-down political decisions overriding evidence (F-live-implementation_planning-02, F-live-polish_reform-04)",
+      "Given post-2010 curtailment of stakeholder consultation mechanisms, a new registry could be under-resourced or politically deprioritized (F-live-implementation_planning-10)",
+      "Data collection itself could be gamed or inconsistently reported by tankerület centers absent independent audit"
+    ],
+    "title": "National transparency and evidence infrastructure: viability thresholds, cost-visibility, and a closure/outcome registry",
+    "uncertainty_refs": [
+      "U-live-t5-01",
+      "U-live-t5-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t5",
+  "provenance_ref": "PV-derive_transformations-b3116f53e1969490",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "This proposal exploits an existing discretionary lever (ministerial approval power already used to deny track-expansion requests, F-live-implementation_planning-06 context) and frames contraction as demographically driven, which is a defensible sequencing strategy for political containment. However, it faces a structural implementation gap: the church-run sector, now comprising roughly 20% of all schools and over a third of secondary schools with documented preferential funding and admissions discretion (F-live-implementation_planning-05), sits outside the jurisdiction that state-sector capacity caps could reach, meaning contraction of the public track may simply displace selection into an ungoverned channel rather than eliminating it. No monitoring mechanism is specified to detect this displacement in real time, and the disputed-statistics problem (F-live-implementation_planning-09) would hamper verification of whether net selective capacity is actually shrinking or merely relocating.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-06",
+      "F-live-implementation_planning-09"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Centralized authority over state-sector capacity decisions (F-live-implementation_planning-06) enables uniform threshold application without needing to coordinate across the former 198 municipal bodies"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Builds on an already-exercised ministerial discretionary power, suggesting the administrative capacity and precedent to enact capacity caps exists (F-live-implementation_planning-06)",
+      "Framing contraction as demographic response rather than ideological reversal may reduce active resistance sequencing risk compared to overt structural reform"
+    ],
+    "threats": [
+      "Church-sector expansion outside Klebelsberg jurisdiction is a documented, scaled pattern (over 33% of secondary schools) that could neutralize the intended contraction without any active resistance being visible in state-sector metrics (F-live-implementation_planning-05)",
+      "Absence of a trusted shared statistical baseline (F-live-implementation_planning-09) means displacement to church schools could persist undetected or unacknowledged for extended periods"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "No monitoring design is proposed to track whether church/foundation schools absorb displaced demand, despite this being a documented risk given their scale and admissions discretion (F-live-implementation_planning-05)",
+      "Disputed baseline statistics on church-sector participation and outcomes (F-live-implementation_planning-09) directly undermine the ability to verify whether net selective capacity contraction is occurring or is being offset"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t2-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-425a1efc6c6d860f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

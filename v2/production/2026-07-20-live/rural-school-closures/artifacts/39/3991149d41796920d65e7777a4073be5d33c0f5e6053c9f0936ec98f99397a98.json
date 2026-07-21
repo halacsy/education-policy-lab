@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assessment": "From a public finance lens, the status-quo counterfactual leaves resource allocation governed by ad hoc administrative discretion and unequal local social capital rather than transparent fiscal criteria. It perpetuates the structural mismatch between low national per-pupil funding and the higher per-pupil overhead of small rural schools, without ever formally weighing consolidation savings against transport and equity costs. Because outcomes depend on informal mobilization rather than rule-based cost accounting, fiscal incidence becomes arbitrary: villages with similar demographics and cost profiles may face divergent outcomes purely due to differential lobbying capacity, which is inefficient from a value-for-money standpoint and creates unpredictable budget exposure for school district centers.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-01",
+      "F-live-education_finance-03",
+      "F-live-education_finance-07",
+      "F-live-education_finance-10"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "A do-nothing baseline could still be paired with incremental, low-cost fiscal transparency measures without requiring full statutory reform."
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Avoids the transition/adjustment costs associated with any new statutory overhaul, since governance oscillation itself is costly (F-live-education_finance-10).",
+      "Preserves whatever local funding flexibility currently exists without imposing new compliance costs on district centers."
+    ],
+    "threats": [
+      "Continued informal reversal of closure decisions after protest creates fiscal unpredictability for district budget planning, since decisions are not codified (F-live-education_finance-10 analog governance instability logic).",
+      "Absent standardized cost accounting, the true comparative cost of retention versus consolidation remains unknown, risking poor value-for-money outcomes system-wide."
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "No rule-based cost-incidence framework; survival is determined by social capital rather than fiscal criteria, producing inequitable resource distribution across similarly-situated villages (F-live-education_finance-01).",
+      "Structural per-pupil funding pressure from national formulas persists unaddressed, and Hungary's comparatively low per-pupil spending ($7,115, rank 25/29) leaves little fiscal slack to informally subsidize small schools that survive by discretion rather than design (F-live-education_finance-07).",
+      "Transportation cost offsets and other hidden costs of small/dispersed schools remain uncounted in ad hoc decisions, understating true fiscal exposure (F-live-education_finance-03)."
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-assess_education_finance-32c04ed15d72fb89",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

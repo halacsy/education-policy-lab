@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assessment": "A transparency and evidence infrastructure is well-justified from a demographic standpoint precisely because the underlying cohort data are volatile, geographically uneven, and the causal links between closure and further population decline remain contested (Danish evidence of causal acceleration versus fading effects found in Amsterdam settings). A national registry with standardized viability thresholds could operationalize cohort-trajectory and spatial-distribution criteria consistently, replacing the current situation where demographic viability judgments are made ad hoc and inconsistently. This model is agnostic about which structural response (T1-T4) to apply, making it compatible with any planning horizon, but for that same reason it does not itself resolve counterfactual-contraction uncertainty; it only makes such uncertainty visible and trackable over time, including whether the Hungary-specific closure-depopulation link resembles the Danish or the Amsterdam pattern.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-06",
+      "F-live-demography-07",
+      "F-live-demography-01",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      "Could enable early identification of zero-enrollment cliff cases before they occur, using leading demographic indicators (e.g., cohort-age pyramids, birth registries) rather than reactive enrollment counts"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Could resolve the contested cross-national evidence on closure-depopulation linkage by generating Hungary-specific longitudinal data rather than relying on non-replicated foreign findings",
+      "Directly responsive to demographic unevenness by potentially incorporating cohort trajectory and age-structure divergence into standardized viability thresholds applied consistently across counties",
+      "Compatible with any planning horizon and any of the other four proposals, since it does not prescribe a specific structural response"
+    ],
+    "threats": [
+      "If demographic decline continues at documented rates faster than registry data collection and review cycles, the evidence infrastructure could perpetually lag behind the reality it aims to inform",
+      "Absent binding decision rules, transparency infrastructure could be circumvented in politically salient demographic-crisis cases exactly when it is most needed"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "Purely informational; does not by itself alter cohort trajectory, spatial distribution, or halt counterfactual contraction, so provides no direct demographic benefit absent adoption of a substantive model",
+      "Registry-based evidence generation operates on a multi-year lag relative to the pace of cohort decline (22% over four years), risking chronic under-currency of the very data meant to inform decisions"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t5-demography",
+  "provenance_ref": "PV-assess_demography-4d0e82db5299b14f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

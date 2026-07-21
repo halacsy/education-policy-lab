@@ -1,0 +1,142 @@
+TASK: expert_analysis
+AGENT: implementation_planning
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: public-sector change and implementation science
+PUBLIC QUESTION: Should Hungary keep its 6- and 8-year gimnázium tracks?
+CRITERIA: actor capacity, sequencing, pilotability, monitoring, adaptation, failure containment
+KNOWN LENS LIMITS: Implementation readiness cannot be inferred from policy intent alone.
+
+RESEARCH NOTES:
+# Research Notes: Early Academic Selection in Hungarian Secondary Education (6- and 8-Year Gimnázium Tracks)
+*Disciplinary lens: public-sector change / implementation science — actor capacity, sequencing, feedback loops, safeguards*
+
+---
+
+**1. Scope and structural mechanics of the tracks (Fact)**
+Hungary's system is hybrid: 
+primary education usually lasts for eight years, and secondary education includes three traditional types of schools, with the Gymnasium enrolling the most gifted children and preparing students for university studies
+. Structurally, 
+the upper secondary grammar school (gimnázium) provides general education, mostly for four years, though six- and eight-grade variants also exist
+, meaning students can be selected out of the general primary track at ages ~10 (6-year entry) or ~12 (8-year entry). A documented system quirk relevant to implementation is that 
+institutional structures and the structure of educational programmes are not aligned with each other, with early-selection programmes showing similarities to Central European and ex-socialist countries
+. This mismatch between formal ISCED staging and actual selection points is itself a coordination problem for any reform: multiple entry gates (6th, 8th, or standard 9th grade) already coexist inside "one" system.
+
+---
+
+**2. Comparative/causal evidence on early tracking's inequality effect (Contested, but broadly convergent)**
+Cross-country econometric work grouping Hungary among early-tracking countries found 
+that early tracking increases educational inequality, and there is also a tendency, though less clear, for early tracking to reduce mean performance
+. Hungary-specific research reaches a similar but more strongly worded conclusion: 
+early tracking and school competition contribute to significant educational inequalities in Hungary, exacerbating inequalities, hindering intergenerational mobility, and creating a highly stratified education system
+. A related Hungarian-focused synthesis states 
+OECD's PISA studies in the early 2000s highlighted the need for the Hungarian school system to improve both effectiveness and equality, contending that achievement gaps among schools make Hungary one of the most unequal systems among PISA participants
+. *Caveat:* these are largely correlational/quasi-experimental studies using cross-national PISA/TIMSS comparisons; causal attribution to the 6-/8-year gimnázium specifically (versus tracking in general, including vocational/technical splits) is not cleanly isolated in the sources found.
+
+---
+
+**3. Socio-economic gradient in outcomes, independent of the tracking debate (Fact, current data)**
+Recent PISA analysis for Hungary shows 
+the gap in reading comprehension scores between the 10% most socio-economically advantaged and 10% most disadvantaged students was 170 points — equal to four years of formal education
+. The EU's own 2025 monitor reports 
+the share of disadvantaged students who reach a good level in at least one basic skill is 12.1%, considerably below the EU average
+. This establishes a baseline inequality that predates any specific policy choice about the gimnázium tracks and complicates isolating what the 6-/8-year structure adds versus underlying socio-economic stratification.
+
+---
+
+**4. Roma segregation as an amplified, judicially contested sub-problem (Fact + ongoing legal dispute)**
+Early selection interacts with a separately documented, decades-long segregation problem. The European Court of Human Rights has repeatedly ruled that 
+the education of Roma children in segregated classes or schools without adequate measures to correct inequalities was incompatible with the State's duty not to discriminate
+, and ordered Hungary 
+not only to end segregation of Roma pupils at a particular school but to ensure the development of a policy to put a stop to segregation in education
+. Enforcement remains unresolved: 
+the Committee of Ministers monitoring implementation of a 2013 ECtHR judgment has been unable to close the case because the Hungarian government has not convincingly demonstrated elimination of discriminatory practices
+, and 
+the European Commission launched infringement proceedings in 2016, with no publicly available update on the investigation's status
+. A 2024 study concludes 
+the education system continues to fail many Romani children
+. This is a clear example of a feedback loop failure: formal accountability mechanisms (EU infringement, ECtHR monitoring) exist but have not produced observable policy correction over roughly a decade.
+
+---
+
+**5. Church-school expansion functions as a parallel, less-scrutinized selection channel (Fact, contested framing)**
+A UN Special Rapporteur visit in March 2025 flagged that structural reform of academic tracks cannot be considered in isolation from a growing selection channel outside state control: 
+church-run institutions now account for about 20% of schools overall, with over 33% of secondary schools under church control
+, and she warned of 
+a "hollowing out" of public education, with growing inequalities between under-resourced state schools and better-funded church-run institutions as more schools go private, particularly in remote areas
+. Reporting on the same visit notes church schools 
+enjoy considerably higher resourcing from state funds than secular equivalents and are able to attract "better qualified teachers and select higher achieving students,"
+ which 
+is accompanied by widespread reports of an exodus of non-Roma children from established state schools in favour of the new religious institutions, which enjoy greater admissions discretion
+. *Inference:* any reform confined to the gimnázium 6-/8-year structure without addressing church-school admissions discretion may simply displace selective sorting into an adjacent, less transparent channel — a substitution risk relevant to sequencing.
+
+---
+
+**6. Governance centralization since 2013 reduces the number of independent implementing actors (Fact)**
+Since the 2011 Public Education Act, 
+a profound consolidation of administration and financing shifted authority from roughly 198 municipal bodies to a unified national body (Klebelsberg Institution Maintenance Center, subsequently the Educational Authority), uniformizing teacher hiring, pay scales, and instructional content via the National Core Curriculum
+. Prior to this, 
+municipalities maintained and operated public schools with significant local autonomy, a decentralized model that allowed tailored local responses but contributed to disparities across regions
+; after 2013, 
+a highly centralized body curtailed institutional autonomy by centralizing financial control, teacher employment, and curriculum oversight, with principals losing authority over hiring and budgets
+. *Implementation-science read:* this concentrates formal authority to change the tracking structure in a single national actor (reducing coordination costs for top-down reform) but simultaneously strips school-level actors of discretion needed for differentiated local implementation or piloting — a classic centralization trade-off between control and adaptive capacity.
+
+---
+
+**7. Teacher-workforce capacity constraints threaten any reform requiring redeployment or retraining (Fact)**
+Any restructuring of track entry points (e.g., delaying selection) would require redeploying teachers across primary/lower-secondary boundaries, but the workforce itself is under strain: 
+the number of students enrolled in teacher training courses has fallen by almost 25% over the past four years, and there is a significant shortage of teachers, totalling 16,000
+. Aging compounds this: 
+teacher shortages linked to an ageing workforce are a growing concern; the number of teachers aged 30–44 has declined, so half of all teachers in 2024/2025 were 50 or older, while only 7.2% were under 30
+. This is a direct capability gap for implementation: structural reform of selection ages presumes a stable, redeployable teaching corps, which current data does not show.
+
+---
+
+**8. Demographic decline creates divergent, possibly confusing signals for planners (Fact)**
+National statistics show 
+the number of children in kindergartens and students in secondary and tertiary education increased in 2024/2025 compared to the previous year, while primary school student numbers decreased
+. Historically, 
+Hungary's population decline that started in 1981 has continued in recent years, producing one of Europe's most irregular age pyramids, with major differences in generation sizes
+. *Inference:* a shrinking primary cohort feeding into a track-selection point (age 10-12) could ease capacity pressure on gimnázium places over time, but the near-term divergence between falling primary and rising secondary enrollment complicates any planning model built on stable cohort assumptions — a monitoring/data-interpretation risk for reformers.
+
+---
+
+**9. Disputed evidentiary baseline is itself a safeguard failure (Fact)**
+A structural obstacle to any evidence-based reform process is that 
+the opposing sides—civil society/researchers versus government—many times cannot even agree on statistical data on education finance, the results of international and national student performance tests, or the indicators of church participation in education
+. Civil-society monitoring separately notes 
+several international and domestic institutions highlighted the severity of school segregation between 2019 and 2023, yet no meaningful progress has been made
+, and that a December 2023 anti-discrimination law 
+passed in response to suspended EU funds "merely introduces sanctions and affects only a fraction"
+ of the problem (fragment as quoted in source). *Implementation-science read:* without a shared, trusted measurement baseline, feedback loops needed to evaluate any reform to the 6-/8-year tracks (positive or negative) are structurally weak — a core missing safeguard independent of which reform path is chosen.
+
+---
+
+**10. International/comparative reference point exists but is not Hungary-specific in these sources (Fact, limited scope)**
+The cross-country NBER analysis situates Hungary within a recognized cluster of early-tracking systems used for causal-style comparison (
+Hungary, and the Slovak Republic among tracked countries
+), noting that among early trackers overall 
+the top four countries by increase in inequality between primary and secondary school are all early trackers (Germany, Greece, Czech Republic, Italy)
+ — Hungary is grouped with these systems but not itself listed among the top four inequality-increase cases in the retrieved excerpt. This suggests Hungary is a data point in the broader early-tracking literature rather than a uniquely extreme case, though the source's full country-by-country breakdown was not fully accessible in search results.
+
+---
+
+## Summary of Implementation-Science Gaps (Analytical Synthesis, not recommendation)
+
+| Category | Observed Gap |
+|---|---|
+| **Actor capacity** | Centralized authority (Klebelsberg/Educational Authority) holds formal reform power, but school-level actors have lost operational discretion; teacher-workforce shortage and aging limit redeployment capacity for any structural change (#6, #7). |
+| **Sequencing risk** | Church-school expansion offers a parallel, less regulated selection channel; reforming gimnázium tracks alone risks displacement rather than resolution of selection effects (#5). |
+| **Feedback loops** | EU infringement proceedings (since 2016) and ECtHR monitoring have not produced demonstrable correction over roughly a decade — accountability mechanisms exist on paper but show weak real-world traction (#4, #9). |
+| **Data/measurement safeguards** | Government and civil-society actors dispute basic statistics on finance, test results, and church-sector share, undermining any shared evaluative baseline (#9). |
+| **Demographic planning** | Diverging primary vs. secondary enrollment trends complicate capacity forecasting for any age-of-selection change (#8). |
+
+*All items above are drawn from cited sources; inferential/synthesis statements are explicitly marked as such and are not source-derived facts.*
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.
+
+
+STRICT CARDINALITY REPAIR: The previous complete response was rejected: findings requires 7-10 items, got 12. Generate a complete replacement, obeying every requested range exactly.

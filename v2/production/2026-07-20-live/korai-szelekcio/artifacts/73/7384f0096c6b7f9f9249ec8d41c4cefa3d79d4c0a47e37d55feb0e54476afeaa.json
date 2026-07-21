@@ -1,0 +1,40 @@
+{
+  "content": {
+    "assessment": "This proposal works entirely within the existing centrally-graded uniform exam infrastructure (F-live-hungarian_education_system-02), making it highly institutionally compatible since it requires no new legal architecture, only redesign of item types and interview weighting within the current three-track structure (F-live-hungarian_education_system-01). However, the lens questions about which selection/access/governance mechanisms remain unchanged expose a major limitation: free school choice, the 4/6/8-year track structure, and the underlying legal basis for early selection are all left intact. The documented coaching market (F-live-hungarian_education_system-05) and stark parental-education gaps (F-live-hungarian_education_system-04) originate partly from family capacity to prepare for the specific exam format, but exam redesign does not address the pre-existing sorting occurring in feeder primary schools, nor does it reach families whose schools do not facilitate competition entry.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-08",
+      "F-live-hungarian_education_system-10"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "Could be layered onto the ministry's already-stated intent to review the entrance-exam system (F-live-hungarian_education_system-10)"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Uses an existing, already-centralized administrative lever (uniform national exam) rather than requiring new institutional architecture (F-live-hungarian_education_system-02)",
+      "Directly targets a documented mechanism (coaching investment concentrated among university-educated parents) with a plausible institutional handle (F-live-hungarian_education_system-05)"
+    ],
+    "threats": [
+      "Elite self-selection dynamics documented by the ministry (favorable family background driving outcomes, not added value) suggest exam redesign may not touch the underlying composition effect even if coaching-specific advantage is reduced (F-live-hungarian_education_system-08)"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Leaves the three-track legal structure and free school choice completely unchanged, meaning the core institutional architecture generating segregation persists (F-live-hungarian_education_system-01, F-live-hungarian_education_system-03)",
+      "Does not address the documented parental-education composition gap in track access, which reflects entrenched pre-exam sorting rather than exam format alone (F-live-hungarian_education_system-04)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-f8fc3b274f90b8df",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "9d072c1e8b159492d70c205c51b1d723290758c6a7604b08e9f16374a2d58729",
+  "topic": "korai-szelekcio"
+}

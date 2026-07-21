@@ -1,0 +1,74 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t3-01",
+      "A-live-t3-02"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Transport infrastructure investment for grades 5-8 consolidation routes",
+      "Dual-track curriculum/staffing planning cost during transition",
+      "Retraining cost for multigrade pedagogy in retained lower-grade schools"
+    ],
+    "equity_impact": "May reduce the acute harms of long commutes for the youngest and most vulnerable children while concentrating upper-grade resources in larger schools; must be paired with non-discrimination safeguards given catchment-based decisions are subject to legal constraints following Szolcsán v. Hungary (F-live-portuguese_reform-09), and does not by itself resolve church-school segregation dynamics.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Preserves community hub function and short commutes for youngest, most commute-vulnerable children",
+      "Allows upper-grade pupils access to broader curriculum, specialist teachers, and facilities unavailable in small village schools",
+      "Provides an intermediate policy option between full retention and full closure, potentially more fiscally sustainable long-term"
+    ],
+    "finding_refs": [
+      "F-live-polish_reform-03",
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05",
+      "F-live-equity_and_social_mobility-10",
+      "F-live-portuguese_reform-07",
+      "F-live-hungarian_education_system-04",
+      "F-live-school_network_planning-07",
+      "F-live-portuguese_reform-09"
+    ],
+    "goal": "Preserve early-years village schooling (grades 1-4) while consolidating upper primary grades into larger, better-resourced town schools, following the structural logic of the Polish 1999 gimnazjum-style reorganization adapted to Hungarian primary-grade structure.",
+    "implementation_steps": [
+      {
+        "action": "Define national criteria and pilot regions for grade-split structural reorganization, selecting settlements with viable grades 1-4 enrollment but declining grades 5+ enrollment",
+        "actor": "Ministry of Education (post-2026 restructured authority)",
+        "timeline": "years 1-2"
+      },
+      {
+        "action": "Designate consolidated ISCED2-type upper-grade schools in town centers and establish transport routes for grades 5-8 pupils",
+        "actor": "Tankerületi centers",
+        "timeline": "years 1-3, phased by region"
+      },
+      {
+        "action": "Develop mandatory multigrade/mixed-age pedagogy training and cross-school professional learning networks for retained lower-grade village schools",
+        "actor": "Teacher training institutions",
+        "timeline": "years 1-2, ongoing"
+      }
+    ],
+    "mechanisms": [
+      "Poland's 1999 gimnazjum reform functioned as a structural reorganization lever distinct from simple closure, consolidating pupil access across neighbouring villages while formally preserving some primary buildings (F-live-polish_reform-03).",
+      "Poland's 2017 reversal of this reform was explicitly political rather than evidence-based, disregarding positive PISA and labour-market evidence, and caused acute disruption including displacement of 10,000 teachers and unplaced student cohorts, indicating high transition risk if reorganization is later reversed abruptly (F-live-polish_reform-04, F-live-polish_reform-05).",
+      "Younger children (grades 1-4) benefit most from proximity given documented harms of long rural bus commutes (breakfast-skipping, lower grades, reduced social activity), while older students can more feasibly travel to a consolidated school (F-live-equity_and_social_mobility-10).",
+      "Multigrade/mixed-age teaching quality depends on deliberate teacher training and cross-school professional networks, as shown in non-Hungarian systems (Chile, Norway), which would be required to support the retained lower-grade village schools (F-live-portuguese_reform-07)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Reversal risk if structural reform is later abandoned for political reasons, as in Poland 2017, with severe disruption to displaced teachers and students (F-live-polish_reform-04, F-live-polish_reform-05)",
+      "Older students' commute burden shifts rather than disappears, and current rural transport infrastructure is documented as impractical in several regions (F-live-school_network_planning-07)",
+      "Risk that even lower-grade retention remains fiscally exposed to national class-size minimums (F-live-hungarian_education_system-04)"
+    ],
+    "title": "Structural grade split: village-based lower grades with centrally sited upper-grade schools",
+    "uncertainty_refs": [
+      "U-live-t3-01",
+      "U-live-t3-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t3",
+  "provenance_ref": "PV-derive_transformations-2c645211a7e2ee76",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "8972c2cd9646faeaf44c54ae259b6bba144d2c79d22beab36973c09312c260cd",
+  "topic": "rural-school-closures"
+}

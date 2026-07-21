@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "This proposal keeps the existing selection architecture intact and layers technical adjustments (exam redesign, SES proxies, interview cap, outreach mandates) onto a centralized algorithmic admissions system that already exists (F-live-implementation_planning-06), which is a meaningful implementation advantage: the delivery infrastructure and central authority to enact rule changes are already consolidated. However, the proposal offers no explicit sequencing, piloting, or monitoring design, and it must operate within a system beset by an unresolved measurement-trust crisis: disputed statistics on performance and finance outcomes (F-live-implementation_planning-09) would compromise any feedback loop meant to detect whether coaching-resistant exams or SES proxies are working or being gamed. The workforce capacity crisis (F-live-implementation_planning-07) is largely orthogonal to this proposal since it does not require new teacher deployment, which is a relative strength versus structural alternatives.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-06",
+      "F-live-implementation_planning-07",
+      "F-live-implementation_planning-09"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Centralized control over curriculum, hiring, and finance (F-live-implementation_planning-06) could be used to mandate uniform outreach/registration support to disadvantaged schools with lower administrative friction than a decentralized system would allow"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Leverages an already-centralized admissions algorithm and unified national authority, reducing the number of actors who must coordinate to implement rule changes (F-live-implementation_planning-06)",
+      "Does not require teacher redeployment or workforce expansion, sidestepping the acute teacher-capacity crisis that constrains more structural reforms (F-live-implementation_planning-07)"
+    ],
+    "threats": [
+      "Absence of monitoring infrastructure to detect elite adaptation to new exam formats means erosion of gains could go undetected for years",
+      "Persistent disputes over education statistics (F-live-implementation_planning-09) could be exploited by opposing actors to contest whether the reform is achieving its stated goal, stalling adaptation cycles"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "No specified piloting phase, monitoring protocol, or adaptation mechanism is described for testing whether SES proxies or exam redesign actually reduce coaching-driven sorting before full rollout",
+      "Contested and disputed baseline statistics on performance and outcomes undermine the independent feedback loop needed to evaluate whether the reform is working (F-live-implementation_planning-09)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-425a1efc6c6d860f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

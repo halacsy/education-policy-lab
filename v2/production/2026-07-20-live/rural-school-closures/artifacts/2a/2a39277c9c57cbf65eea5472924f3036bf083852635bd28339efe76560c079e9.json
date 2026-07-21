@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "Splitting grades so that young children remain local while older students travel to consolidated schools is demographically coherent: it matches the differential vulnerability of younger cohorts (who suffer most from commute-related harms) to their differential need for proximity, while conceding that upper-grade cohorts are typically too small in any single village to sustain viable class sizes. However, this only forestalls rather than resolves the underlying contraction, and the retained lower-grade unit itself may cross the zero-enrollment cliff observed in the smallest settlements independent of structural redesign.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-05",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      "Structural split could be phased in gradually along the demographic gradient, applied first to municipalities with moderate (not yet collapsed) cohort decline"
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      "Matches known differential harms by age (younger children benefit most from proximity) to a structural design that keeps grades 1-4 local",
+      "Could extend village-school life expectancy even where upper-grade cohorts alone would be too small to sustain a standalone school under current class-size norms"
+    ],
+    "threats": [
+      "Reversal risk (as in Poland 2017) is amplified in a demographically contracting context, since any later re-consolidation would need to be executed against an even smaller and more dispersed pupil base",
+      "Continued national cohort decline (22% over four years) may erode even the reduced lower-grade cohort needed to sustain a grades 1-4 unit within the planning horizon of the reform"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Does not prevent the youngest-cohort collapse itself; in settlements like Garab (44 residents, no births in nine years) there is no lower-grade cohort left to structurally preserve",
+      "Multigrade retained schools remain exposed to the same national class-size minimums driving current closure pressure"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t3-demography",
+  "provenance_ref": "PV-assess_demography-b8d9f3bab8b87e8e",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "db4a404e5e3e9ef7cc103c184dfe7122bb3438dc235e59a7be3951260a340d79",
+  "topic": "rural-school-closures"
+}

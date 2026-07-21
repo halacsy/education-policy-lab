@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "From a public-finance lens, this proposal targets the admissions mechanism rather than the capitation-funding structure that drives resource flight from feeder schools (F-live-education_finance-05). It leaves the fiscal incentive for high-performing students to exit unchanged, so even with fairer selection, feeder schools will continue losing per-capita funding and peer effects when top performers depart into gimnázium tracks. The reform's cost incidence is redistributive at the margin of selection (who gets in) but not at the margin of institutional resourcing (who bears the funding loss). Given Hungary's already-low overall education spending share (F-live-education_finance-06), a reform that does not address the compensatory funding gap for schools losing students leaves a documented resource-incidence problem unaddressed, even as it may improve procedural fairness in access.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-02",
+      "F-live-education_finance-05",
+      "F-live-education_finance-06"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "Could be paired with a compensatory funding mechanism (as in TP-live-t4) to jointly address both selection fairness and fiscal incidence"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Directly targets the family-capital-driven sorting mechanism at entry, which is the demand-side counterpart to the supply-side capitation losses documented for feeder schools (F-live-education_finance-02)",
+      "Outreach/registration mandates could increase disadvantaged-school participation, potentially altering which schools bear capitation losses at the margin (F-live-education_finance-02)"
+    ],
+    "threats": [
+      "Elite families adapting coaching strategies to a new exam format could preserve socioeconomic sorting while consuming administrative resources on redesign with limited durable equity return"
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      "Does not alter the capitation funding mechanism itself, so feeder schools continue to lose both funding and peer effects when high performers exit regardless of how fairly the exit is selected (F-live-education_finance-05)",
+      "No new resources are proposed for schools serving disadvantaged populations, only a change in who competes for existing selective places"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-assess_education_finance-c5890cd7c752bd9c",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

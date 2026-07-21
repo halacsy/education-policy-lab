@@ -1,0 +1,29 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Segregation index (dissimilarity/isolation indices) comparison before and after consolidation events across a sample of Hungarian districts, disaggregated by consolidation type, paired with enrollment-flow tracking to church-run versus state schools.",
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5"
+    ],
+    "question": "What is the net segregation effect of consolidating village schools into hub/urban schools—does it reduce isolated single-class segregation or increase it via non-Roma family flight to church or alternative schools—and does this vary by consolidation model (full closure, grade-split, networked hub)?",
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-equity_and_social_mobility-01",
+      "U-live-portuguese_reform-02",
+      "U-live-implementation_planning-02"
+    ],
+    "why_it_matters": "T1, T3, T4, and T5 all carry unresolved segregation risk claims; T5 explicitly targets equity mitigation but cannot be evaluated without knowing the actual sorting effect, and T3's age-based split may relocate rather than resolve sorting."
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "RQ-live-production-05",
+  "provenance_ref": "PV-build_research_agenda-60762b3fab4931d0",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,99 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t3-01",
+      "A-live-t3-02",
+      "A-live-t3-03"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Major legislative and curriculum-redesign costs across the entire lower-secondary system",
+      "Teacher retraining and redeployment costs amid an already aging, shrinking workforce (F-live-implementation_planning-07)",
+      "Multi-year transition management costs to avoid Polish-style double-cohort shortfalls"
+    ],
+    "equity_impact": "Highest potential equity impact among proposals if fully bundled (curriculum harmonization + anti-sorting choice rules + phased transition), directly targeting the mechanism most strongly associated with Hungary's outlier segregation and SES gap; however, does not by itself resolve Roma segregation, which is documented as a legally distinct issue requiring separate remedies (F-live-polish_reform-08).",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Addresses the structural root of Hungary's outlier between-school segregation and SES achievement gap rather than symptoms",
+      "Aligns Hungary with comprehensive-system comparators showing lower between-school variance",
+      "Removes multiple early selection gates simultaneously if bundled properly, reducing the four-gate fragmentation problem"
+    ],
+    "finding_refs": [
+      "F-live-international_comparison-04",
+      "F-live-equity_and_social_mobility-01",
+      "F-live-international_comparison-08",
+      "F-live-finnish_reform-06",
+      "F-live-portuguese_reform-05",
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05",
+      "F-live-international_comparison-07",
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-02",
+      "F-live-portuguese_reform-06",
+      "F-live-polish_reform-07",
+      "F-live-finnish_reform-07",
+      "F-live-finnish_reform-08",
+      "F-live-political_feasibility-07",
+      "F-live-legal_and_governance-07",
+      "F-live-implementation_planning-07"
+    ],
+    "goal": "Raise the statutory age of first academic tracking, converting 6- and 8-year entry points into a unified comprehensive lower-secondary phase paired with anti-sorting catchment rules, following the Finnish/Polish structural-delay model.",
+    "implementation_steps": [
+      {
+        "action": "Amend Act CXC of 2011 to raise statutory first-tracking age and set a multi-year phase-out schedule for 6/8-year entry cohorts (grandfathering existing enrolled students)",
+        "actor": "Parliament",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Design unified national lower-secondary curriculum spanning ages 10-14 to replace differentiated 4/6/8-year curricula",
+        "actor": "Ministry of Education / Klebelsberg Centre",
+        "timeline": "Years 1-2"
+      },
+      {
+        "action": "Draft and enact anti-sorting catchment/choice regulations to prevent informal within-system sorting from replacing formal tracking (addressing Finnish 'emphasized classes' precedent)",
+        "actor": "Ministry of Education",
+        "timeline": "Years 2-3"
+      },
+      {
+        "action": "Manage phased cohort transition avoiding simultaneous double-cohort competition for places, using Poland's disruption as an explicit negative case",
+        "actor": "Klebelsberg Centre district sub-units",
+        "timeline": "Years 2-5"
+      },
+      {
+        "action": "Deploy teacher retraining and redeployment program addressing workforce capacity constraints during transition",
+        "actor": "Ministry of Education",
+        "timeline": "Years 1-5"
+      }
+    ],
+    "mechanisms": [
+      "Cross-national econometric evidence shows early tracking increases inequality and tends to reduce mean performance, providing the core rationale for delay (F-live-international_comparison-04, F-live-equity_and_social_mobility-01).",
+      "Finland's 1972-77 comprehensive reform delayed tracking from 11 to 16 and was bundled with ability-grouping abolition and curriculum/teacher-training change, showing bundling is necessary for the mechanism to work, not delay alone (F-live-international_comparison-08, F-live-finnish_reform-06, F-live-portuguese_reform-05).",
+      "Poland's 2017 reversal (advancing tracking by one year) without phased transition caused acute capacity shortfalls (3,173 unplaced students in Warsaw), demonstrating the transition-design risk that any Hungarian reform must explicitly avoid via phasing (F-live-polish_reform-04, F-live-polish_reform-05, F-live-international_comparison-07).",
+      "The 6/8-year tracks are codified in primary legislation, meaning structural delay requires parliamentary amendment, not administrative action, raising the legal bar for enactment (F-live-legal_and_governance-01).",
+      "Free school choice is constitutionally protected, creating a legal tension that must be resolved via explicit anti-sorting catchment rules bundled with the tracking-age change, since delay alone without choice regulation may not reduce segregation given documented independent primary-school sorting (F-live-legal_and_governance-02, F-live-portuguese_reform-06, F-live-polish_reform-07)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Unbundled delay (age change without curriculum/choice reform) may fail to reduce inequality, as comparative evidence shows delay works only when bundled (F-live-portuguese_reform-05)",
+      "Poorly phased transition risks acute capacity shortfalls analogous to Poland 2017 (F-live-polish_reform-05)",
+      "Organized gimnázium-director interest groups with demonstrated political access constitute a concrete veto-player risk to enactment or later reversal (F-live-political_feasibility-07)",
+      "Constitutional free-choice guarantee may be invoked to challenge anti-sorting catchment rules, creating legal risk of partial implementation (F-live-legal_and_governance-02)",
+      "Finland's own recent PISA decline and informal 'emphasized classes' sorting show even a successfully delayed system does not guarantee durable equity or performance gains (F-live-finnish_reform-07, F-live-finnish_reform-08)",
+      "Church/private schools outside state maintainer jurisdiction could continue informal early selection, undermining uniform delay (F-live-legal_and_governance-07)"
+    ],
+    "title": "Statutory delay of first academic tracking to age 14+ with unified comprehensive lower-secondary phase",
+    "uncertainty_refs": [
+      "U-live-t3-01",
+      "U-live-t3-02",
+      "U-live-t3-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t3",
+  "provenance_ref": "PV-derive_transformations-08f8484f67a159b0",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "95c313a1cfa12eca1f7f4b3e309115665e68029493e132a69df0c7eb5285b4b3",
+  "topic": "korai-szelekcio"
+}

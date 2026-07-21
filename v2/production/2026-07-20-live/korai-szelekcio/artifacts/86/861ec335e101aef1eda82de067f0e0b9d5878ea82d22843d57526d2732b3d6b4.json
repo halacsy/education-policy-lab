@@ -1,0 +1,27 @@
+{
+  "content": {
+    "answerability": "answerable_now",
+    "decision_impact": "medium",
+    "method": "Geospatial demographic projection modeling combining municipal-level birth-cohort data with statutory class-size thresholds (26-34 band); scenario analysis under low/medium/high fertility and migration assumptions; overlay with existing selective-track location data to identify settlements at risk.",
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t5"
+    ],
+    "question": "At what local cohort size do peripheral Hungarian settlements become unable to sustain even one viable selective-track intake class, and how many settlements are projected to fall below this threshold under current fertility trajectories, with what implications for a passive-baseline (T5) versus managed-contraction (T2) approach?",
+    "uncertainty_refs": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-t5-02",
+      "U-live-school_network_planning-01"
+    ],
+    "why_it_matters": "This determines whether passive demographic contraction (T5) will produce geographically uneven and potentially segregation-worsening outcomes that require active management (T2/T6), or whether demographic decline alone will resolve capacity pressures without policy intervention."
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "RQ-live-production-09",
+  "provenance_ref": "PV-build_research_agenda-ed25a85499afb525",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "93330c636118eb93f6c87f2deb2599db5cbe358b0f392fe1e8ec80f76a0525b3",
+  "topic": "korai-szelekcio"
+}

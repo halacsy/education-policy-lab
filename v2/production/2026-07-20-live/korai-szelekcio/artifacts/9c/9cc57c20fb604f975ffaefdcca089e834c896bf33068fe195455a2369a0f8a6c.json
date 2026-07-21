@@ -1,0 +1,42 @@
+{
+  "content": {
+    "assessment": "This proposal has the strongest and most direct comparative basis of the six. Cross-national econometric evidence (Hanushek & Woessmann) explicitly names Hungary as an early-tracking country and finds early tracking increases inequality with a tendency to reduce mean performance (F-live-international_comparison-04, moderate), directly supporting the proposal's rationale. Finland's 1972-77 delay from age 11 to 16 is a genuine comparable mechanism (statutory delay of first tracking), but the evidence is explicit that the reform worked only because it was bundled with ability-grouping abolition and systemic curriculum/teacher-training change (F-live-international_comparison-08), and even then produced only modest long-run gains. Poland offers a comparable case of tracking-age change, but its 2017 reversal (moving tracking earlier, without phasing) caused severe capacity shortfalls (F-live-international_comparison-07), which is directly relevant as a transition-design warning for any Hungarian delay, particularly the reverse-direction risk of insufficient phasing. Crucially, Hungary's context differs from these comparators in two consequential ways not present in Finland or Germany: entangled ethnic/Roma segregation (F-live-international_comparison-06) and the tracking-choice interaction (F-live-international_comparison-09), meaning delay alone, unbundled from choice regulation, has uncertain transferability even if the Finnish bundling lesson is heeded.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-international_comparison-04",
+      "F-live-international_comparison-08",
+      "F-live-international_comparison-07",
+      "F-live-international_comparison-06",
+      "F-live-international_comparison-09",
+      "F-live-international_comparison-02",
+      "F-live-international_comparison-03"
+    ],
+    "lens_ref": "L-live-international_comparison",
+    "opportunities": [
+      "The Polish reversal case offers actionable transition-design lessons (explicit phasing, capacity planning) that could be built directly into implementation sequencing"
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      "Direct, named cross-national econometric evidence supports the core causal claim that early tracking (as practiced in Hungary) increases inequality and can reduce mean performance (F-live-international_comparison-04)",
+      "Finland provides an actual comparable mechanism—statutory delay of first tracking from age-equivalent 11 to 16—demonstrating this exact policy lever has been implemented and evaluated (F-live-international_comparison-08)",
+      "Poland provides a directly relevant transition-design case study, showing what happens when tracking-age changes are not carefully phased (F-live-international_comparison-07), which the proposal explicitly attempts to design around"
+    ],
+    "threats": [
+      "Hungary's ethnic/Roma segregation dimension is structurally distinct from all cited comparator countries (F-live-international_comparison-06), meaning even a well-bundled and well-phased delay modeled on Finland/Poland could fail to address the specific segregation channel most salient in the Hungarian case",
+      "Hungary's between-school variance is already the third-highest in the OECD (F-live-international_comparison-02) and its socioeconomic gap the largest (F-live-international_comparison-03), suggesting the starting-point severity may exceed anything in the Finnish or Polish reform contexts, complicating outcome-relevance extrapolation from those cases"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Finland's positive effects were 'modest' and contingent on bundling with ability-grouping abolition and teacher-training reform; delay alone (unbundled) has no clean comparative precedent of success (F-live-international_comparison-08)",
+      "Hungary's tracking-choice interaction is a bundled institutional feature 'not present in the same form' in Germany or Nordic comprehensive systems, meaning even a successfully bundled Finnish-style delay may not transfer if free choice remains unregulated (F-live-international_comparison-09)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t3-international_comparison",
+  "provenance_ref": "PV-assess_international_comparison-487fae16d1585618",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "0a9960ef87a668c8950596613b74c35a6c21f88b63077bd84e9528dd2cefbb61",
+  "topic": "korai-szelekcio"
+}

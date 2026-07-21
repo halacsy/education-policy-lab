@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
+from policy_lab.jsonio import content_hash  # noqa: E402
 
 
 class LinkParser(HTMLParser):
@@ -211,6 +212,81 @@ def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
     return len(repository.list()), len(calls)
 
 
+def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
+    """Validate the two fresh production DAGs and their publication boundary."""
+
+    root = ROOT / "v2" / "production" / "2026-07-20-live"
+    catalog = json.loads((root / "catalog.json").read_text(encoding="utf-8"))
+    expected_topics = {"korai-szelekcio", "rural-school-closures"}
+    actual_topics = {item["topic"] for item in catalog["topics"]}
+    if actual_topics != expected_topics:
+        raise AssertionError(f"Production catalog topics differ: {sorted(actual_topics)}")
+
+    artifact_count = 0
+    call_count = 0
+    for item in catalog["topics"]:
+        topic_root = root / item["topic"]
+        repository = ArtifactRepository(topic_root, schemas)
+        roots = (item["package_ref"], item["evaluation_ref"], item["readiness_ref"])
+        repository.validate_graph(roots)
+        records = repository.list()
+        artifact_count += len(records)
+
+        manifest = json.loads((topic_root / "production_manifest.json").read_text(encoding="utf-8"))
+        summary = manifest["summary"]
+        if summary["execution"]["nodes"] != 31 or summary["execution"]["failed"] != 0:
+            raise AssertionError(f"Production DAG is incomplete for {item['topic']}")
+        if summary["counts"]["lens_definition"] != 12:
+            raise AssertionError(f"Production panel must contain 12 admitted lenses for {item['topic']}")
+        if summary["counts"]["lens_assessment"] != 72:
+            raise AssertionError(f"Every lens must assess all six proposals for {item['topic']}")
+        if summary["counts"]["finding"] < 84:
+            raise AssertionError(f"Research breadth floor failed for {item['topic']}")
+
+        coverage = repository.get_current("CL-live-approved-frames")["content"]
+        approved_frames = json.loads(
+            (ROOT / "topics" / item["topic"] / "topic.json").read_text(encoding="utf-8")
+        )["frames"]["scenarios"]
+        expected_directions = {frame["id"] for frame in approved_frames}
+        actual_directions = {entry["direction_id"] for entry in coverage["entries"]}
+        if coverage["verdict"] != "complete" or coverage["critical_attrition_count"] != 0:
+            raise AssertionError(f"Approved-frame coverage gate failed for {item['topic']}")
+        if actual_directions != expected_directions:
+            raise AssertionError(f"Approved-frame identities differ for {item['topic']}")
+
+        package = repository.get_current(item["package_ref"])
+        if len(package["content"]["evidence_appendix"]) < 1:
+            raise AssertionError(f"Evidence appendix is empty for {item['topic']}")
+        if package["content"]["summary"].count("[F-") < summary["counts"]["transformation_proposal"]:
+            raise AssertionError(f"Inline claim-to-source carriage failed for {item['topic']}")
+
+        readiness = repository.get_current(item["readiness_ref"])["content"]
+        if readiness["verdict"] != "ready_with_conditions":
+            raise AssertionError(f"Unexpected readiness verdict for {item['topic']}")
+        if readiness["human_external_use_gate"] != "pending":
+            raise AssertionError(f"Machine output bypassed the human external-use gate for {item['topic']}")
+
+        bundle = json.loads((topic_root / "localization" / "hu.json").read_text(encoding="utf-8"))
+        if bundle["locale"] != "hu" or bundle["source_package_hash"] != content_hash(package):
+            raise AssertionError(f"Hungarian localization is not hash-bound to the current package for {item['topic']}")
+        if not bundle["translations"]:
+            raise AssertionError(f"Hungarian localization bundle is empty for {item['topic']}")
+
+        calls = [
+            json.loads(line)
+            for line in (topic_root / "backend_calls.jsonl").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        call_count += len(calls)
+        if any(call.get("backend") == "mock" for call in calls):
+            raise AssertionError(f"Production run contains a mock call for {item['topic']}")
+        providers = {call.get("provider") for call in calls if call.get("backend") != "failed"}
+        if not {"anthropic", "openai"}.issubset(providers):
+            raise AssertionError(f"Cross-family generation/judging missing for {item['topic']}")
+
+    return len(catalog["topics"]), artifact_count, call_count
+
+
 def main() -> int:
     schemas = SchemaRegistry(ROOT / "schemas" / "v2")
     repository = ArtifactRepository(ROOT / "v2", schemas)
@@ -233,6 +309,7 @@ def main() -> int:
     checked_links = verify_links(ROOT / "site" / "v2")
     localized_messages, localized_pages = verify_localization(ROOT / "site" / "v2")
     live_artifacts, live_calls = verify_live_experiment(schemas)
+    production_topics, production_artifacts, production_calls = verify_production_runs(schemas)
     print(f"PASS schemas: {len(schemas.available())} versioned record types")
     print(f"PASS graph: {len(records)} current artifacts, {len(roots)} decision roots")
     print("PASS language boundary: no en/hu objects in canonical artifact content")
@@ -240,6 +317,7 @@ def main() -> int:
     print(f"PASS site: {checked_links} local links/assets resolved")
     print(f"PASS localization: {localized_messages} paired messages, {localized_pages} Hungarian pages free of raw UI terms")
     print(f"PASS live experiment: {live_artifacts} current artifacts, {live_calls} audited calls, position carriage green")
+    print(f"PASS production: {production_topics} topics, {production_artifacts} current artifacts, {production_calls} audited calls, human gate preserved")
     return 0
 
 

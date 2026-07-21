@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "From a network-planning perspective, this proposal redesigns admission mechanics without altering the geographic footprint of the 6/8-year network. Since selective schools remain concentrated in urban settlements and Budapest (F-live-school_network_planning-05), and the secondary network's proximity guarantee applies to generic secondary schools rather than selective clustered tracks (F-live-school_network_planning-06), an SES-weighted exam redesign does not by itself address distance-to-school access gaps. Capacity itself is untouched: the stagnant ~25,962 places (F-live-school_network_planning-03) remain the ceiling regardless of how the exam sorts within that ceiling.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "Could be paired with geographic-access data to identify where SES-weighting would need supplementary transport or dormitory provision"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Works within the existing centrally-administered exam infrastructure rather than requiring new school-network capacity or facilities",
+      "Does not require reallocation of physical places, avoiding transport or capacity disruption"
+    ],
+    "threats": [
+      "Distance/access non-randomness (implied by geographic clustering, F-live-school_network_planning-05) could mean SES-index benefits are captured disproportionately by urban disadvantaged families while rural disadvantaged families still cannot reach a network node"
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      "Does not address the geographic concentration of six/eight-year gimnázium capacity in urban/Budapest areas (F-live-school_network_planning-05)",
+      "Leaves the stagnant capacity ceiling of ~25,962 places unchanged, so oversubscription pressure at flagship schools persists (F-live-school_network_planning-03)",
+      "Feeder-school dilution dynamics (F-live-school_network_planning-07) are untouched since demand concentration on selective urban schools continues regardless of exam format"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-28b41b2852521866",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "0ea31dcebdebc2fd7b178228bafa055df25d04ee7eadd8611310f08184792b3f",
+  "topic": "korai-szelekcio"
+}

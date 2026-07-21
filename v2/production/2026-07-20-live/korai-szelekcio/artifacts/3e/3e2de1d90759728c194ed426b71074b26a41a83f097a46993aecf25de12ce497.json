@@ -1,0 +1,31 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Quasi-experimental decomposition using variance-partitioning or instrumental-variable designs exploiting regional variation in track availability, combined with sibling/twin or discontinuity designs around admission-score cutoffs; replicate Hanushek-Woessmann style cross-national decomposition with Hungary-specific microdata linking student SES, residential location, commuting patterns, and school-choice records.",
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4"
+    ],
+    "question": "What is the causal contribution of the 6/8-year gimnázium track structure itself—net of free school choice, residential sorting, church-school expansion, and selective commuting—to Hungary's EU-leading segregation and SES/performance gradient?",
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-international_comparison-02",
+      "U-live-equity_and_social_mobility-03",
+      "U-live-education_finance-02",
+      "U-live-legal_and_governance-01",
+      "U-live-implementation_planning-01"
+    ],
+    "why_it_matters": "This is the foundational empirical question underlying all five proposals: without isolating the track structure's independent contribution, it is impossible to know whether structural reform (T3), capacity contraction (T2), admissions reform (T1), or compensatory funding (T4) target the actual causal driver versus a correlated but secondary mechanism."
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "RQ-live-production-01",
+  "provenance_ref": "PV-build_research_agenda-d7641f4da6072aca",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

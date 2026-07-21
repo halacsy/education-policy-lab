@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "As a no-new-policy counterfactual, this proposal requires no active implementation capacity, sequencing, or monitoring design by definition, which trivially satisfies deliverability but only because there are no actors executing a mechanism to assess. The lens evidence confirms the proposal's own stated risk profile: demographic contraction (F-live-implementation_planning-08) will interact with statutory class-size minimums unevenly across geography, and the existing pattern of church-sector growth outside state jurisdiction (F-live-implementation_planning-05) suggests that passive public-sector contraction could be offset by relative expansion of an unregulated selective channel, exactly the failure-containment gap this lens is designed to flag. Since no active mechanism exists to monitor or adapt to this displacement, this baseline scenario has zero built-in capacity to detect or correct for it, which is a structural rather than incidental weakness of the counterfactual.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-08"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Because no active policy is required, this baseline could still be paired retroactively with monitoring instruments to track church-sector share and geographic divergence, even though none is specified"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Requires no actor coordination, workforce redeployment, or new governance capacity, since no active mechanism is being implemented",
+      "Provides a lower-bound comparison against which the delivery costs of active proposals can be assessed"
+    ],
+    "threats": [
+      "Documented church-sector scale and admissions discretion (F-live-implementation_planning-05) creates a strong likelihood that passive state-sector contraction is offset by relative growth of an unregulated selective channel, with no corrective mechanism available under a no-new-policy baseline",
+      "Uneven demographic contraction (F-live-implementation_planning-08) could produce urban-rural divergence in selectivity that persists indefinitely absent any policy lever to address it"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Contains no monitoring or adaptation mechanism whatsoever, since it is explicitly the absence of policy, meaning any adverse distributional shift (e.g., urban-rural divergence) would proceed fully undetected by any dedicated feedback loop",
+      "Irregular demographic age pyramids (F-live-implementation_planning-08) mean the contraction this proposal relies on will not proceed smoothly or predictably, undermining its implicit assumption of gradual, manageable decline"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-425a1efc6c6d860f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

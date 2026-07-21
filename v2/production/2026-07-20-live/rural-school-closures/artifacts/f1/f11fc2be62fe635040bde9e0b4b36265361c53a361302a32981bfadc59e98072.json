@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "This structural split directly engages transport and capacity criteria by matching commute burden to age-appropriate travel capacity, but its geographic feasibility rests on whether village populations retain sufficient cohort size for even grades 1-4, given the ongoing school-age cohort shrinkage nationwide.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-07",
+      "F-live-school_network_planning-08",
+      "F-live-school_network_planning-02"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "Multi-village route-based transport logistics models (as used for minority-language school buses across 13 counties) offer a transferable operational template for the upper-grade consolidation leg, though direct applicability to domestic consolidation is unconfirmed"
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      "Explicitly targets the transport criterion by aligning younger children's proximity needs with documented harms of long rural commutes, while shifting only older students to consolidated sites",
+      "Provides a network resilience mechanism (formally preserved buildings) distinct from simple closure, potentially reducing outright network attrition"
+    ],
+    "threats": [
+      "Reversal risk analogous to Poland's 2017 rollback would be network-disruptive, particularly since Hungary's rural transport infrastructure gap makes any structural reorganization more fragile to reversal shocks than in better-connected systems",
+      "Continuing population decline could erode grade 1-4 cohorts below viability thresholds regardless of structural preservation, especially in villages already losing migration-driven population gains"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Older students' commute burden is redistributed rather than eliminated, and rural public transport in North-Eastern, South-Western, and Western regions is documented as impractical for daily commuting",
+      "Retained lower-grade village schools remain exposed to national enrollment/class-size thresholds, so the geographic preservation may not be capacity-durable amid continuing population decline"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t3-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-6ddbcc2959189a89",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "855e46526b2c2340ec628d1d2eb71cd643762eb49df10cdbb61f0ef9f50f24b5",
+  "topic": "rural-school-closures"
+}

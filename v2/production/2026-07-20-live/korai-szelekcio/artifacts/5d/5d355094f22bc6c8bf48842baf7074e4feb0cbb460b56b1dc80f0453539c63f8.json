@@ -1,0 +1,80 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t5-01",
+      "A-live-t5-02",
+      "A-live-t5-03"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Foregone equity gains that active intervention could have captured during the same window",
+      "Continued high segregation and SES achievement gaps persisting without correction (F-live-hungarian_education_system-06, F-live-international_comparison-03)",
+      "Risk of uncoordinated, crisis-driven local closures rather than planned consolidation, particularly harming rural settlement viability (F-live-school_network_planning-10)"
+    ],
+    "equity_impact": "Passive contraction reduces the absolute scale of the selective track over time but does so unevenly (concentrated in rural/low-density areas already showing minimal uptake), leaving urban segregation and Roma/ethnic segregation dynamics largely untouched; it is a scale-reduction mechanism, not an equity-targeting mechanism, and should be treated as the null baseline rather than a policy solution.",
+    "evidence_status": "strong",
+    "expected_benefits": [
+      "Requires no new legislation, political capital, or administrative redesign",
+      "Provides a necessary evidence baseline for evaluating whether active interventions (T1-T4) outperform passive demographic effects alone",
+      "Avoids Polish-style abrupt-transition disruption since no discrete reform event occurs"
+    ],
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-05",
+      "F-live-demography-04",
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-03",
+      "F-live-demography-09",
+      "F-live-implementation_planning-07",
+      "F-live-school_network_planning-10",
+      "F-live-demography-03",
+      "F-live-school_network_planning-05"
+    ],
+    "goal": "Establish the explicit no-new-policy counterfactual in which shrinking birth cohorts mechanically force network consolidation and shrink the selective track's absolute size, against which active interventions (T1-T4) are measured.",
+    "implementation_steps": [
+      {
+        "action": "Continue current legal, admissions, and capacity settings unchanged; monitor cohort-driven attrition of rural/peripheral 6/8-year provision as it occurs",
+        "actor": "Ministry of Education (no-action baseline)",
+        "timeline": "Ongoing, Years 1-10"
+      },
+      {
+        "action": "Respond ad hoc to individual school viability crises (e.g., approve/deny class formation) as cohorts fall below statutory minimums, without a systematic consolidation plan",
+        "actor": "Klebelsberg Centre district sub-units (reactive only)",
+        "timeline": "Ongoing"
+      },
+      {
+        "action": "Track and publish the passive contraction trajectory as a counterfactual baseline against any future active reform proposal",
+        "actor": "Statistical/monitoring bodies",
+        "timeline": "Years 1-5"
+      }
+    ],
+    "mechanisms": [
+      "Cohort decline is structurally embedded for 20+ years via both falling fertility and a shrinking pool of reproductive-age women, meaning the contraction pressure is not a short-term fluctuation but a durable structural trend (F-live-demography-01, F-live-demography-02).",
+      "Statutory minimum class-size rules (26 minimum, 34 maximum) create a mechanical threshold below which forming even a single viable gimnázium intake class becomes numerically untenable in shrinking localities, independent of any policy choice (F-live-demography-05).",
+      "Rural settlements in specific regions already show 10-30% child-population contraction with some settlements down to 50-70 school-age children total, showing the mechanism is already operating in the current system without new policy (F-live-demography-04).",
+      "Applications data already show an emerging shift (6-year applications +11%, 8-year applications -14% in 2026) and stagnant physical capacity despite oversubscription, indicating passive market/demographic adjustment is already underway within the unchanged legal structure (F-live-school_network_planning-02, F-live-school_network_planning-03).",
+      "Aging teacher workforce (50% age 50+, only 7.2% under 30) with rural/disadvantaged shortages compounds the passive contraction pressure on peripheral selective provision without requiring active policy (F-live-demography-09, F-live-implementation_planning-07)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Passive contraction is geographically uneven: urban/Budapest selective capacity may persist largely intact while rural provision collapses, potentially worsening geographic equity even as aggregate track size shrinks (F-live-demography-03, F-live-school_network_planning-05)",
+      "Uncoordinated closures could trigger settlement-viability consequences and unplanned disruption similar in kind (though smaller in scale) to the Polish transition-cost pattern, absent any phased management (F-live-school_network_planning-10, F-live-international_comparison-07)",
+      "Roma segregation and church-sector selective growth are not addressed at all by passive demographic contraction and could persist or worsen even as overall track size shrinks (F-live-equity_and_social_mobility-07, F-live-polish_reform-08)"
+    ],
+    "title": "Demographically-driven passive contraction baseline (no new policy)",
+    "uncertainty_refs": [
+      "U-live-t5-01",
+      "U-live-t5-02",
+      "U-live-t5-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t5",
+  "provenance_ref": "PV-derive_transformations-08f8484f67a159b0",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "68898e5ed8ec505b7910201d097e801fdf64e2ff2f12b7cdb8d44128b562e214",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,85 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t3-01",
+      "A-live-t3-02"
+    ],
+    "change_level": "network",
+    "costs": [
+      "Coordination overhead across multiple municipalities and tankerület boundaries",
+      "Transport costs for rotating specialist teachers between cluster sites",
+      "Building conversion/renovation costs for hub multi-service functions"
+    ],
+    "equity_impact": "Positive if well-designed: retains local access reducing commute burden and preserves community hub functions, particularly relevant given up to 94% disadvantage rates in some rural settlements; risk that voluntary networking is only adopted by better-organized villages, reproducing service inequality (F-live-portuguese_reform-03, F-live-portuguese_reform-10).",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Avoids school closure and the documented depopulation-acceleration risk associated with it (F-live-international_comparison-01, F-live-demography-07)",
+      "Addresses kindergarten and primary access gaps jointly through hub models",
+      "Provides specialist-teacher access via network rotation without full consolidation",
+      "Draws on evidenced multigrade-teaching quality practices"
+    ],
+    "finding_refs": [
+      "F-live-international_comparison-03",
+      "F-live-polish_reform-06",
+      "F-live-hungarian_education_system-08",
+      "F-live-education_finance-09",
+      "F-live-hungarian_education_system-05",
+      "F-live-portuguese_reform-07",
+      "F-live-international_comparison-01",
+      "F-live-demography-07",
+      "F-live-portuguese_reform-10",
+      "F-live-school_network_planning-09",
+      "F-live-legal_and_governance-04",
+      "F-live-portuguese_reform-03"
+    ],
+    "goal": "Keep village primary schools open by pooling resources across multiple villages through inter-municipal pedagogical networks and multi-service hub models, avoiding closure while addressing the diseconomies of very small isolated schools.",
+    "implementation_steps": [
+      {
+        "action": "Define legal category for multi-village school networks with shared staffing allocations distinct from single-school funding formulas",
+        "actor": "Ministry of Interior / Klebelsberg Center",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Identify viable village clusters (2-5 settlements) based on travel distance and enrollment complementarity and pilot networked staffing in 5-10 clusters",
+        "actor": "Tankerületi centers",
+        "timeline": "Years 1-2"
+      },
+      {
+        "action": "Co-design multi-service hub conversion of school buildings, integrating kindergarten, library, or social services where enrollment alone cannot sustain a standalone school",
+        "actor": "Municipalities / community organizations",
+        "timeline": "Years 2-3"
+      },
+      {
+        "action": "Develop cross-school professional learning community and multigrade-teaching training modules for network-assigned teachers",
+        "actor": "Teacher training institutions",
+        "timeline": "Years 1-3, ongoing"
+      }
+    ],
+    "mechanisms": [
+      "French conventions ruralité demonstrate a reciprocal three-year State-municipality contract model where the State maintains teaching posts while municipalities reorganize school networks, with co-financing grants (F-live-international_comparison-03).",
+      "Poland's 2025 draft legislation proposes repurposing small-school infrastructure as social/cultural centers rather than binary closure, a template for hub conversion (F-live-polish_reform-06).",
+      "Kindergarten coverage gaps mirror primary-school gaps in the same villages and are governed by similar enrollment thresholds, so combining kindergarten and primary provision in a hub addresses both problems jointly (F-live-hungarian_education_system-08).",
+      "Historically, Hungary limited within-school segregation by avoiding closures via reduced parallel classes; networked retention could preserve this benefit while addressing enrollment viability (F-live-education_finance-09, F-live-hungarian_education_system-05).",
+      "Multigrade/mixed-age teaching models show quality potential when supported by deliberate teacher training and cross-school professional networks, as demonstrated in Chile and Norway, informing the pedagogical design of clusters (F-live-portuguese_reform-07)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Success may be contingent on rare local social capital and bridging networks, as in the single documented Erdőkürt case, limiting scalability (F-live-portuguese_reform-10)",
+      "Inter-municipal competition for pupils (documented informal competition dynamics) could undermine cooperative network design (F-live-school_network_planning-09)",
+      "No dedicated statutory closure/network procedure currently exists, creating implementation ambiguity absent new legislation (F-live-legal_and_governance-04)"
+    ],
+    "title": "Networked retention: multi-village pedagogical clusters and multi-service community hubs",
+    "uncertainty_refs": [
+      "U-live-t3-01",
+      "U-live-t3-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t3",
+  "provenance_ref": "PV-derive_transformations-b3116f53e1969490",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

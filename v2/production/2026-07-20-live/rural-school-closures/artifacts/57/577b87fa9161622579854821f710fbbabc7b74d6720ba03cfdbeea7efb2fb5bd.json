@@ -1,0 +1,64 @@
+{
+  "content": {
+    "critical_attrition_count": 0,
+    "entries": [
+      {
+        "direction_id": "S1",
+        "direction_title": "Status quo plus incremental adaptation",
+        "proposal_refs": [
+          "TP-live-t6"
+        ],
+        "rationale": "T6 explicitly documents and formalizes the no-new-policy/status-quo counterfactual (continuing ad hoc administrative practice) as the baseline against which the transparency framework's marginal value is assessed, incorporating the current reliance on informal negotiation, disputed transport responsibility, and absence of standing feedback mechanisms that characterize S1's status quo; it also references the demographic-cliff dynamic (F-live-demography-05) that makes indefinite passive retention untenable for some villages.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S2",
+        "direction_title": "Structural grade reorganization (lower grades stay, upper grades centralize)",
+        "proposal_refs": [
+          "TP-live-t3"
+        ],
+        "rationale": "T3 directly implements the structural grade-split model (lower grades retained locally, upper grades consolidated centrally) following the Polish 1999 gimnazjum-pattern explicitly named in S2, including the associated transition-risk lessons from Poland's 2017 reversal.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S3",
+        "direction_title": "Networked retention: clustering, association-run and multi-service hub models",
+        "proposal_refs": [
+          "TP-live-t2",
+          "TP-live-t4"
+        ],
+        "rationale": "T2 implements the French-style reciprocal contract/RPI-adjacent negotiation mechanism for networked municipal retention, and T4 implements inter-municipal pedagogical clustering and multi-service hub conversion (Polish repurposing model), together covering the clustering, association-style, and multi-service-hub variants named in S3.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S4",
+        "direction_title": "Consolidation with mitigation (closure as default, compensatory measures)",
+        "proposal_refs": [
+          "TP-live-t5"
+        ],
+        "rationale": "T5 implements consolidation-as-default paired with statutory transport guarantees, TEIP-style targeted support, and transparent cost/consultation rules, directly matching S4's compensatory-mitigation consolidation model.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S5",
+        "direction_title": "National systemic framework: transparency, thresholds and evidence infrastructure",
+        "proposal_refs": [
+          "TP-live-t6",
+          "TP-live-t1"
+        ],
+        "rationale": "T6 is the core national evidence/transparency/threshold/registry infrastructure specified in S5; T1 complements it by codifying the procedural (alternatives-assessment, presumption-against-closure, appeal) dimension of a national framework that informs rather than dictates local closure decisions, together covering S5's transparency-plus-procedural-safeguard scope.",
+        "status": "covered"
+      }
+    ],
+    "gate_basis": "approved_frames",
+    "verdict": "complete"
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "CL-live-approved-frames",
+  "provenance_ref": "PV-derive_transformations-2c645211a7e2ee76",
+  "record_type": "coverage_ledger",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "d162b474bb247904f87025b1425c463e35b1fc35ec207ed4141fb23292b45426",
+  "topic": "rural-school-closures"
+}

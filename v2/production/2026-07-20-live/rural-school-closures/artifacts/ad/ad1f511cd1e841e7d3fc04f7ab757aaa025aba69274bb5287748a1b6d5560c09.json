@@ -1,0 +1,43 @@
+{
+  "content": {
+    "assessment": "A transparency and evidence-registry framework does not itself alter distributional outcomes but could substantially improve the measurement basis for equity-relevant decisions across any of the substantive models, particularly by tracking segregation, teacher-quality, and commute-burden indicators that are currently inconsistently documented. Its equity value is conditional: purely informational infrastructure has historically been overridden by top-down political decisions, so without binding linkage to segregation and access safeguards, this proposal risks producing better data on inequities without producing better outcomes.",
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-01",
+      "F-live-equity_and_social_mobility-03",
+      "F-live-equity_and_social_mobility-04",
+      "F-live-equity_and_social_mobility-07",
+      "F-live-equity_and_social_mobility-08",
+      "F-live-equity_and_social_mobility-09",
+      "F-live-equity_and_social_mobility-10"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      "Could be designed to specifically disaggregate outcomes by Roma/non-Roma status and settlement type, directly operationalizing the equity lens's intersectional risk criterion given the documented early-leaving gap (F-live-equity_and_social_mobility-08)",
+      "Tracking teacher qualification rates by school disadvantage status over time could create accountability pressure to close the 2-3x unqualified-teacher gap (F-live-equity_and_social_mobility-09)"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "A closure/outcome registry could systematically track the contested church-transfer segregation dynamic and its association with advantaged intake, generating the evidence needed to evaluate that pathway (F-live-equity_and_social_mobility-03, F-live-equity_and_social_mobility-04)",
+      "Standardized cost accounting including transport could surface the disproportionate burden long commutes place on lower-income households, informing future policy correction (F-live-equity_and_social_mobility-10)",
+      "Viability thresholds made publicly visible could help distinguish genuine demographic decline from administratively discretionary closures, addressing the uneven social-capital-driven survival pattern in the current baseline (F-live-equity_and_social_mobility-01)"
+    ],
+    "threats": [
+      "Absent binding decision rules, evidence infrastructure may be circumvented by political decisions exactly as in the historical pattern, leaving the documented inequities in outcomes and access unaddressed despite better data",
+      "Data reported by tankerület centers could be gamed or inconsistent, undermining the registry's ability to detect segregation or resource-gap patterns reliably"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Registry and transparency alone cannot correct territorial concentration of disadvantage or the urban-rural outcome gap; it is a measurement layer, not a distributive intervention (F-live-equity_and_social_mobility-07)",
+      "Does not directly address the acute rural teacher shortage or aging workforce, only potentially making the problem more visible (F-live-equity_and_social_mobility-09)"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t5-equity_and_social_mobility",
+  "provenance_ref": "PV-assess_equity_and_social_mobility-f41d16293fdc47dc",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

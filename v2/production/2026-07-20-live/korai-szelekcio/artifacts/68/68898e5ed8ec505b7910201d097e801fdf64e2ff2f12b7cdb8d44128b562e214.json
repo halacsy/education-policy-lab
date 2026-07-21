@@ -1,0 +1,79 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t5-01",
+      "A-live-t5-02",
+      "A-live-t5-03"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Opportunity cost: no active reduction in segregation intensity or SES-sorting logic within remaining places, since contraction is size-driven, not composition-driven",
+      "No mitigation for compounding teacher workforce aging/shortage pressures interacting with demographic decline (F-live-demography-09, F-live-implementation_planning-07)",
+      "Potential settlement-viability harm where rural secondary institutions close due to combined demographic and outflow pressures, an effect noted as under-audited (F-live-school_network_planning-10)"
+    ],
+    "equity_impact": "Neutral-to-negative on sorting logic: reduces the absolute scale of the selective system over time but does nothing to change who is selected or to address Roma segregation, primary-choice sorting, or the family-capital admissions advantage; equity gains, if any, are incidental rather than designed",
+    "evidence_status": "strong",
+    "expected_benefits": [
+      "Requires no legislative capital, no confrontation with the directors' lobby, and no constitutional tension with free-choice guarantees, since no new rule is introduced",
+      "Provides a genuine, evidence-grounded counterfactual against which the added value of T1-T4 can be measured",
+      "Already partially observable in evidence: urban schools see 20-30% grade-7 class-size drops as students leave for gimnázium, while rural schools already show minimal selective-track uptake, indicating the passive dynamic is underway (F-live-demography-03)"
+    ],
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-09",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-10",
+      "F-live-legal_and_governance-07",
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-07"
+    ],
+    "goal": "Serve as the explicit counterfactual: allow shrinking birth cohorts and statutory class-size minimums to force network consolidation and a natural decline in the selective track's absolute size and share, absent any new active equity or structural policy",
+    "implementation_steps": [
+      {
+        "action": "Continue current practice of applying statutory class-size minimums without new equity or capacity policy, allowing natural attrition of under-enrolled tracks",
+        "actor": "Ministry of Education / Klebelsberg Centre",
+        "timeline": "Ongoing, no defined end-state"
+      },
+      {
+        "action": "Process school-network adjustments (mergers, closures) reactively as local cohorts fall below viability thresholds, using existing administrative procedures",
+        "actor": "District authorities",
+        "timeline": "Ongoing, Years 1-10+"
+      },
+      {
+        "action": "Track the passive decline in absolute and share terms of 6/8-year enrollment as an explicit monitoring baseline for comparison with active-policy scenarios",
+        "actor": "Ministry of Education / Statistical bodies",
+        "timeline": "Annual reporting, ongoing"
+      }
+    ],
+    "mechanisms": [
+      "Structural, multi-decade fertility and cohort decline reducing absolute demand for all track types including 6/8-year gimnázium (F-live-demography-01, F-live-demography-02)",
+      "Statutory minimum class-size thresholds (26 recommended/28/34 maximum) becoming mechanically unenforceable in shrinking rural and low-density regions, forcing de facto closure or consolidation of viable intake classes independent of policy preference (F-live-demography-05)",
+      "Regional child-population contraction (10-30% in Western Transdanubia, Southern Baranya, Northern Hungary) creating structural viability challenges for multi-track pipelines even absent any equity-motivated reform (F-live-demography-04)",
+      "Existing geographic concentration of tracks in urban/Budapest areas means rural contraction disproportionately affects already-marginal rural provision, while urban flagship oversubscription may persist longer (F-live-school_network_planning-05, F-live-demography-03)"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Passive contraction is geographically uneven: urban flagship schools with path-dependent prestige may retain oversubscription and selectivity intensity even as rural provision withers, potentially worsening geographic equity even as national aggregate share falls (F-live-school_network_planning-05, F-live-demography-04)",
+      "Without any composition-focused rule, the SES/family-capital sorting mechanism identified across the evidence record continues unabated among whatever reduced capacity remains",
+      "Church/private schools outside demographic-driven state consolidation pressure (or with different capacity dynamics) could see relatively increased share, altering sector composition beyond public-sector planning intent (F-live-legal_and_governance-07, F-live-implementation_planning-05)"
+    ],
+    "title": "Demographically-driven passive contraction (no-new-policy baseline)",
+    "uncertainty_refs": [
+      "U-live-t5-01",
+      "U-live-t5-02",
+      "U-live-t5-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t5",
+  "provenance_ref": "PV-derive_transformations-c17ebf673d4d0734",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

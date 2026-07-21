@@ -1,0 +1,43 @@
+{
+  "content": {
+    "assessment": "Delaying first tracking to 14+ addresses the mechanism most strongly linked to inequality in the evidence base: age-10/12 selection is significantly associated with higher inequality cross-nationally (F-live-equity_and_social_mobility-01), and Hungary's SES/performance gradient is among the strongest in the OECD, though this cannot be attributed solely to track type given testing-age timing (F-live-equity_and_social_mobility-09). Explicitly bundling structural delay with anti-sorting catchment rules is a notable strength since it recognizes that primary-school choice is an independent segregation mechanism (F-live-equity_and_social_mobility-08) and that four distinct selection points exist. However, within-school classroom sorting by SES is documented to persist and substantially affect inequality even absent formal tracking, meaning delay alone would likely see sorting relocate into classroom composition (F-live-equity_and_social_mobility-10), and Roma segregation—distinct from SES sorting—is not clearly addressed by tracking-age reform alone (F-live-equity_and_social_mobility-06).",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-01",
+      "F-live-equity_and_social_mobility-03",
+      "F-live-equity_and_social_mobility-05",
+      "F-live-equity_and_social_mobility-06",
+      "F-live-equity_and_social_mobility-08",
+      "F-live-equity_and_social_mobility-09",
+      "F-live-equity_and_social_mobility-10"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      "If successfully bundled with classroom-composition rules, could pre-empt the relocation of sorting into within-school tracking documented elsewhere (F-live-equity_and_social_mobility-10)",
+      "Could reduce the capital-intensive pre-testing investment race currently required for entry, benefiting disadvantaged families who report no genuine participation opportunity (F-live-equity_and_social_mobility-03)"
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      "Targets the single mechanism with the strongest evidentiary link to inequality across comparable systems (F-live-equity_and_social_mobility-01)",
+      "Explicitly bundles delay with anti-sorting/catchment rules addressing the independent primary-choice segregation mechanism (F-live-equity_and_social_mobility-08)",
+      "Recognizes multiple selection points exist beyond the age-10/12 juncture, a structurally realistic framing"
+    ],
+    "threats": [
+      "Within-school classroom sorting by SES is documented to persist and substantially affect test-score inequality independent of formal track structure, meaning delay may simply relocate rather than eliminate sorting absent sustained classroom-composition enforcement (F-live-equity_and_social_mobility-10)",
+      "Testing-age confound noted in PISA data means the causal contribution of track structure itself to Hungary's strong SES gradient is not fully isolated, creating uncertainty about how much delay alone would improve outcomes (F-live-equity_and_social_mobility-09)"
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      "Does not have a clear mechanism for addressing Roma segregation, which is distinct from and additive to SES-based sorting (F-live-equity_and_social_mobility-06)",
+      "Short-term advantages of selective tracks are shown not to reliably persist into long-run outcomes, complicating claims about what exactly is being equalized by delay (F-live-equity_and_social_mobility-05)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t3-equity_and_social_mobility",
+  "provenance_ref": "PV-assess_equity_and_social_mobility-5d961ba14eb06e8e",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

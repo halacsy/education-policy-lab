@@ -1,0 +1,70 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t2-01",
+      "A-live-t2-02"
+    ],
+    "change_level": "network",
+    "costs": [
+      "State must commit multi-year staffing allowances even where enrollment is below optimal, creating a subsidy cost",
+      "Negotiation and contract-administration capacity requirements at county level",
+      "Risk of unequal uptake between well-organized and poorly organized municipalities"
+    ],
+    "equity_impact": "Could disproportionately benefit villages with strong local organizational capacity (mirroring the Erdőkürt social-capital pattern, F-live-portuguese_reform-10), leaving poorly organized or Roma-concentrated settlements without negotiating power unless a baseline entitlement is mandated centrally.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Restores a formal, time-bound negotiation channel for municipalities without requiring full re-decentralization",
+      "Provides predictability (3-year staffing guarantee) that mitigates the zero-enrollment cliff dynamic in the interim",
+      "Leverages existing rural development funding architecture (Magyar Falu Program) already politically prioritized"
+    ],
+    "finding_refs": [
+      "F-live-international_comparison-03",
+      "F-live-international_comparison-04",
+      "F-live-portuguese_reform-01",
+      "F-live-hungarian_education_system-04",
+      "F-live-portuguese_reform-10"
+    ],
+    "goal": "Re-introduce municipal co-responsibility and bargaining power over village-school viability through time-bound reciprocal contracts, replicating the French convention ruralité logic within Hungary's centralized maintenance framework.",
+    "implementation_steps": [
+      {
+        "action": "Design a pilot reciprocal-contract instrument for a sample of tankerületi districts with high closure risk",
+        "actor": "Ministry of Interior / Klebelsberg Center",
+        "timeline": "first 12 months"
+      },
+      {
+        "action": "Negotiate 3-year contracts specifying staffing guarantees, transport co-financing, and shared-service commitments",
+        "actor": "County/municipal associations",
+        "timeline": "months 12-24"
+      },
+      {
+        "action": "Link existing rural development funding stream to co-financing obligations under the contracts",
+        "actor": "Magyar Falu Program administrators",
+        "timeline": "ongoing, integrated with existing program from year 1"
+      }
+    ],
+    "mechanisms": [
+      "France's conventions ruralité establish reciprocal three-year contracts between the State and local elected officials where the State maintains posts while municipalities commit to network reorganization, with co-financing via equipment grants (F-live-international_comparison-03).",
+      "Hungary's 2013 centralization removed municipal bargaining power that such reciprocal arrangements presume, meaning any Hungarian version must be constructed as a state-initiated contractual instrument rather than a municipal right (F-live-international_comparison-04, F-live-portuguese_reform-01).",
+      "National class-size and per-pupil funding formulas create structural fiscal pressure independent of governance form, meaning the contract must include a funding-formula exception or guarantee to be effective (F-live-hungarian_education_system-04)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Municipalities lack the fiscal capacity and legal standing that French communes have, so contracts may be asymmetric or purely symbolic",
+      "Contract enforcement is unclear given no precedent of binding state commitments at this scale (F-live-international_comparison-04)",
+      "Political sensitivity value if perceived as re-introducing municipal financial burden without matching devolved authority"
+    ],
+    "title": "Reciprocal rural-school contracts (convention-style) between state and municipalities",
+    "uncertainty_refs": [
+      "U-live-t2-01",
+      "U-live-t2-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t2",
+  "provenance_ref": "PV-derive_transformations-2c645211a7e2ee76",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "b8f201ecc90d6079e02d73f09a2281073ab5d8846a7d9c0c3c9cc209957de67c",
+  "topic": "rural-school-closures"
+}

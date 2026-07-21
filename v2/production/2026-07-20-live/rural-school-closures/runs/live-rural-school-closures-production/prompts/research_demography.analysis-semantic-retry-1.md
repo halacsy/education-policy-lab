@@ -1,0 +1,122 @@
+TASK: expert_analysis
+AGENT: demography
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: population and cohort analysis
+PUBLIC QUESTION: What should happen to primary schools in depopulating villages?
+CRITERIA: cohort trajectory, spatial distribution, counterfactual contraction, planning horizon
+KNOWN LENS LIMITS: Population projections do not determine the normative response.
+
+RESEARCH NOTES:
+I'll research this systematically, covering Hungarian demographic data, cohort trends, geographic/settlement structure, and evidence on effects of school closures/retention.
+# Research Notes: Cohort/Geographic Viability of Primary Schools in Depopulating Hungarian Villages
+
+## I. Cohort decline — scale and trajectory (demographic facts)
+
+**1. National birth-cohort collapse is severe and continuing.** 
+In 2025, just 72,000 children were born, 7.1% fewer than in 2024: a drop of more than 5,500 births in a single year.
+ 
+In 2024, only 77,500 children were born – the lowest figure since records began – representing a year-on-year decline of more than 7,000.
+ 
+Overall 2025 was heading for about 73,000 births, 22% down on the 2021 peak of 93,000.
+ This directly shrinks the pool of children available to sustain village-level school cohorts nationwide.
+
+**2. Total fertility rate has fallen back below replacement after a temporary rise.** 
+The total fertility rate dropped to 1.31 children per woman, down from 1.39 a year earlier: the lowest level in the past 14 years and far below the 2.1 needed for long-term replacement.
+ Earlier gains (2011: 1.23 → 2021 peak ~1.61, per OSW) have since reversed; 
+since 2022, Hungary has experienced a renewed decline in its fertility rate, dropping to 1.38 in 2024, a 9.1% decrease compared to 2023.
+
+
+**3. Regional variation in birth decline is uneven, affecting some counties more.** 
+In the first half of 2024, the number of births fell by 14% compared to the first half of 2021. In Zala County, the decline was 25%, while in Budapest, it was 22%.
+ This indicates cohort attrition is not uniform across settlement types, so viability thresholds will be crossed at different times in different regions.
+
+**4. Compositional shift, not just fewer women, drives the decline.** *(Contested/nuanced)* 
+In the two extreme years in terms of fertility – 2011 and 2022 – nearly the same number of children were born; this paradox results from a demographic shift in which more women in 2011 gave birth to approximately the same total number of children as fewer women did in 2022, indicating a growing tendency among Hungarian women to have larger families.
+ Academic demographers caution the earlier fertility "recovery" mainly reflected family-size composition rather than a genuine rise in cohort-specific birth propensity: 
+Spéder (2021) points out that only the share of families with fewer children increased, and the cohort-specific live birth rates of younger cohorts did not.
+
+
+## II. Geography — settlement structure and small-village viability
+
+**5. A large share of settlements are structurally small and demographically marginal.** 
+One-third of the country's settlements are small villages with less than 500 inhabitants, at the same time only 3% of the country's population live there.
+ More specifically, 
+645 localities have populations below 300, and 114 of those localities have under-18 populations below 10 percent.
+ An economic-research assessment (GKI) judges that 
+it is unlikely that these villages will survive without significant development programs.
+
+
+**6. Age-structure divergence across municipalities is sharp and geographically clustered.** 
+According to a 2020 statistic, there are 91 municipalities where the average age is under 35, while there are 42 municipalities where the average age is above 50, primarily in the counties of Vas and Zala.
+ Nationally, 
+between 2010 and 2020 the share of Hungarians below the age of 18 was reduced from 18 to 16 percent of the population.
+ This means the same national birth decline translates into far more acute local-cohort collapse in already-aged micro-regions.
+
+**7. Below a certain size, schools reach zero-enrollment cliff, not gradual decline.** Field reporting from the village of Garab (44 residents) illustrates the mechanism directly: 
+the mayor's office now occupies the space where the village school once stood — the school had to close because there were no more children.
+ 
+The last time a child was born in this village was nine years ago,
+ per the mayor — showing that in the smallest settlements viability does not decline smoothly but can fall to literally zero local children, making a "school" a demographic impossibility regardless of resource allocation.
+
+**8. Historical evidence shows Hungary has cycled between centralizing and decentralizing small (tanyai/village) schools before, driven by both ideology and demography**, e.g., interwar and communist-era policy: 
+Hóman's initiatives were accompanied by a tendentious centralization of education, whose implementers attempted to reduce geographical disparities in the school system while reducing the impact of local communities on their schools.
+ This is background/historical inference for interpreting current policy cycles, not new data.
+
+## III. Effects that would occur without intervention (i.e., under continued closures / status quo drift)
+
+**9. Effects on children's outcomes when schools close are contested internationally — no settled consensus.** Studies disagree by context: 
+findings on academic performance are mixed and vary depending on type of closure (accountability vs. enrollment driven), grade levels of displaced students, and prior student performance.
+ Negative-effect studies include: 
+test scores of students exposed to school closure decrease by 5.9% of a standard deviation.
+ In Chile, 
+school closure increases the probability of high-school dropout between 49 and 68% (1.8 and 2.5 percentage points), with large causal effects on grade repetition in primary school.
+ Conversely, some studies find 
+no negative impacts
+ (e.g., Amsterdam), and effects that fade over time: 
+a study of Danish school consolidations from 2010-2011 showed adverse effects on achievement in the short run, but effects appeared to weaken over time, suggesting part of the effect was due to disruption.
+
+
+**10. Rural school closures are causally linked to accelerated local population decline in at least one rigorous quasi-experimental study (Denmark) — though this contradicts most prior literature.** 
+The results show clear evidence of a negative population effect of rural school closures; the ordinary difference-in-differences analysis shows a population decline of 7.6 percentage points during the 10-year post-closure period.
+ Critically, this is a **delayed** effect: 
+the flexible DiD analysis points to long-term effects, as the population decline first becomes statistically significant from the sixth year following the closures and onwards.
+ The mechanism proposed is not immediate flight but structural: 
+findings from interviews point to lock-in effects in terms of social capital and housing markets, which helps to understand the dominance of long-term population effects from school closures.
+ *Contested:* the same source paper notes 
+previous studies generally report mixed results — most tend to find no population effect of school closures — and this Denmark finding is a departure from that pattern
+, alongside a German (Saxony) study using similar framing 
+on whether school closures function as a "recipe for depopulation."
+
+
+**11. In Hungary specifically, closure/restructuring of small rural schools has occurred via church transfer rather than outright shutdown, with geography-driven "no alternative" dynamics.** Because of settlement geography, 
+many smaller villages have only one school and the closest neighbouring village is too far away, so a takeover can represent a violation of the right to unbiased, neutral education
+ for families with no real exit option. Academic analysis finds this restructuring has increased ethnic/social sorting: 
+in rural peripheries with a significant Roma population, church-run schools' market advantage of selective enrolment quickly translates into social selection and ethnic separation.
+ Quantitatively, 
+while in 2010 segregated schools were almost exclusively operated by local authorities, by 2019 more than 14% of such schools were run by religious organisations,
+ and 
+the proportion of segregated schools increased from 12.1% to 14.8% while ethnically mixed primary schools decreased from 14.7% to 12.6% over a decade.
+ This shows that "keeping a school open" in a depopulating, low-cohort village does not neutrally preserve the status quo — the *type* of institution filling the gap changes distributional/equity outcomes.
+
+**12. Non-closure alone does not solve the underlying cohort problem — small national youth cohorts create structural fiscal/staffing pressure regardless of the school-network decision.** A demographic-structure analysis notes: 
+Hungary demonstrates negative demographic momentum with severely contracted youth cohorts (14.4%) presaging population decline.
+ This is linked to network-level consequences: 
+declining birth rates may lead to school consolidations and teacher surplus in some regions,
+ even as, in principle, 
+fewer students per capita could allow for enhanced per-pupil investment and smaller class sizes.
+ These are two competing structural readings of the same cohort data (inference, not settled finding).
+
+## Summary of fact vs. inference
+
+- **Established facts:** national birth/fertility decline magnitudes (KSH-sourced), settlement-size distribution (KSH Regional Atlas), age-structure divergence by county, existence of church-takeover mechanism and its measured segregation effects, Denmark DiD population-decline estimate (peer-reviewed, published effect size).
+- **Contested/mixed evidence:** whether school closure harms child academic outcomes (achievement literature is genuinely split by country/context); whether closures cause local population decline (Denmark finds yes with a specific causal channel, but this is described in the literature itself as a departure from the general "no effect" consensus).
+- **Inference (not directly measured):** that below-threshold rural cohorts make school closure numerically inevitable in the very smallest villages (illustrated by a single case, Garab, not a systematic threshold study); that keeping schools nominally "open" via alternative operators changes equity outcomes rather than neutrally preserving community function.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.
+
+
+STRICT CARDINALITY REPAIR: The previous complete response was rejected: findings requires 7-10 items, got 11. Generate a complete replacement, obeying every requested range exactly.

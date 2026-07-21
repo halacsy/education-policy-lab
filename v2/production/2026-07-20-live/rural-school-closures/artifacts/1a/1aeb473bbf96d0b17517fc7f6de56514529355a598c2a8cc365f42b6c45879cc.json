@@ -1,0 +1,42 @@
+{
+  "content": {
+    "assessment": "From a school network planning perspective, the status-quo counterfactual leaves geographic access, capacity, and transport outcomes to be determined by ad hoc administrative discretion and uneven local social capital rather than by network-level criteria. Given the strong demographic pressure of a shrinking school-age cohort and a rural-to-town population shift, informal negotiation offers no mechanism to plan capacity or transport provision proactively, and the historical precedent of top-down consolidation waves suggests the current framework will not prevent similarly disruptive, non-rule-based closures. Network resilience is weak because survival depends on discretionary intervention rather than systematic assessment of access or capacity thresholds.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-09"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "A future statutory framework could formalize the currently informal survival logic into transparent geographic-access criteria"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Requires no new statutory infrastructure, so it does not disrupt whatever access arrangements currently exist",
+      "Allows flexible, locally responsive outcomes in cases where informal political-administrative intervention favors retention"
+    ],
+    "threats": [
+      "Continued population decline will keep shrinking enrollment pools feeding rural schools, increasing pressure for ad hoc closures without network-level mitigation (F-live-school_network_planning-01)",
+      "Declining rural in-migration removes a countervailing demographic force that had previously supported village school viability (F-live-school_network_planning-02)",
+      "Inter-municipal competition for pupils, documented in Hungarian micro-regions, can distort which schools survive independent of genuine geographic-efficiency logic (F-live-school_network_planning-09)"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "No rule-based procedure exists for demographic decline, so closure/access decisions occur without systematic geographic or capacity assessment (F-live-school_network_planning-04)",
+      "Reliance on informal mobilization produces geographically inconsistent access outcomes among villages with comparable enrollment profiles (F-live-school_network_planning-05)",
+      "Historical precedent shows large-scale network contraction can occur independent of demographic demand alone, indicating the current governance form provides no protective planning function (F-live-school_network_planning-03)"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-b54fb07791352c39",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "Because this proposal explicitly leaves the selection age and track structure unchanged, it does not alter network geography, capacity allocation, or transport requirements at all. From a network-planning lens it is largely orthogonal: the geographic concentration of selective capacity (F-live-school_network_planning-05), the network's proximity design for ordinary secondary schools (F-live-school_network_planning-06), and feeder-school dilution (F-live-school_network_planning-07) all persist unaltered. The lens's own limitation applies directly here: network feasibility (in this case, network non-disruption) does not establish whether compensatory funding achieves educational quality or equity gains, which is the proposal's actual target and lies outside this lens's competence.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "Because it is network-neutral, it could be layered onto any of the other proposals without conflicting with their capacity or geographic mechanisms"
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      "Requires no network restructuring, avoiding transition risk, capacity shortfalls, or transport disruption entirely"
+    ],
+    "threats": [
+      "Absent any network change, urban concentration and feeder dilution dynamics may continue to offset compensatory funding gains through continued outflow of higher-performing students"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "Does not address geographic concentration of selective capacity (F-live-school_network_planning-05)",
+      "Does not relieve feeder-school dilution or staffing complications in upper primary grades (F-live-school_network_planning-07)",
+      "Leaves the stagnant capacity ceiling (F-live-school_network_planning-03) and its associated oversubscription pressure fully in place"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t4-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-28b41b2852521866",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "1c0a87230f0fe4bf74fe5b34b205a3baa98d7698d0f708837e6990a59985aaeb",
+  "topic": "korai-szelekcio"
+}

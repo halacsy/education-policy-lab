@@ -1,0 +1,31 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Quasi-experimental decomposition using variation in local track availability, school-choice regulations, and settlement-level demographic data; difference-in-differences exploiting regional differences in track density combined with school-level segregation indices (dissimilarity/Gorard indices); triangulate with the disputed Horn/TARKI vs PISA-comparative statistics to reconcile methodological divergence.",
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t6"
+    ],
+    "question": "What is the causal contribution of the 6/8-year gimnázium track structure itself—net of free school choice, residential sorting, church-school expansion, and selective commuting—to Hungary's EU-leading segregation levels?",
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-polish_reform-01",
+      "U-live-equity_and_social_mobility-03",
+      "U-live-legal_and_governance-01",
+      "U-live-education_finance-02"
+    ],
+    "why_it_matters": "This is the foundational empirical question underlying every proposed reform option; without decomposing the causal channels, policymakers cannot know whether structural reform (T3), capacity contraction (T2/T6), or non-structural measures (T1/T4) will actually move the segregation outcome, or whether gains will simply be displaced."
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "RQ-live-production-01",
+  "provenance_ref": "PV-build_research_agenda-ed25a85499afb525",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "3e2de1d90759728c194ed426b71074b26a41a83f097a46993aecf25de12ce497",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,35 @@
+{
+  "content": {
+    "assessment": "As a counterfactual baseline rather than an active policy, T5 requires no new actor capability to occur, but this lens's criteria (capacity, sequencing, monitoring, adaptation, failure containment) apply differently: the risk here is that a structurally embedded, decades-long demographic trend combined with an aging/shrinking teacher workforce is already producing uneven, unmanaged consolidation with no adaptive governance layer described. The proposal's own evidence acknowledges this is happening unevenly and could worsen geographic and segregation outcomes even as aggregate size falls, but names no containment or monitoring mechanism because, by design, it is the absence of new policy.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-07"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Could serve as the empirical monitoring baseline against which any of T1-T4 or T6 could be evaluated, since it establishes what would happen absent intervention"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Grounded in structurally durable, multi-decade demographic and workforce trends rather than a policy assumption, giving high confidence that the baseline mechanism itself will operate as described",
+      "Already observable in current application and capacity data, indicating this is not a speculative projection but a documented in-progress process"
+    ],
+    "threats": [
+      "Rural provision could collapse while urban/Budapest selective capacity persists, worsening geographic equity even as aggregate track size shrinks, with no policy lever described to contain this divergence",
+      "Roma segregation and church-sector selective growth are structurally untouched and could worsen even as the state-sector track shrinks in aggregate"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "No governance or adaptation layer exists to manage the uneven geographic distribution of contraction, since by definition this baseline involves no new policy intervention",
+      "No described mechanism to prevent settlement-viability disruption from uncoordinated closures"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-c0d3987772a88282",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "7d467586860dbec3b5c01dc79ef01523a8633bec817f4f10d3693bcaf29f2489",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,85 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t6-01",
+      "A-live-t6-02"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Establishment and ongoing operating cost of an independent statutory evidence body",
+      "Data-reporting compliance burden on tankerületi centers",
+      "Political cost if published data (e.g., on urban-school funding decline, KLIK deficits) proves embarrassing to current administration (F-live-political_feasibility-06)"
+    ],
+    "equity_impact": "By making segregation and disadvantage-concentration outcomes visible in a public registry, this proposal increases pressure for accountability on decisions with documented equity consequences (F-live-education_finance-06, F-live-equity_and_social_mobility-05), but as an advisory framework it has no binding equity-protection power on its own and depends on other mechanisms (e.g., T1, T5) to convert visibility into enforceable safeguards.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Provides a shared, verifiable evidence base currently absent, reducing reliance on contested or unverified cost-saving claims",
+      "Enables ex-post learning from past Hungarian closure/retention decisions rather than repeating politically-driven cycles without feedback (F-live-implementation_planning-02)",
+      "Supports better-informed application of any of T1-T5 by making true costs, thresholds, and outcomes visible",
+      "Establishes an explicit no-new-policy baseline for comparison, clarifying the marginal cost of inaction"
+    ],
+    "finding_refs": [
+      "F-live-implementation_planning-02",
+      "F-live-education_finance-02",
+      "F-live-finnish_reform-04",
+      "F-live-education_finance-03",
+      "F-live-education_finance-04",
+      "F-live-demography-07",
+      "F-live-hungarian_education_system-06",
+      "F-live-legal_and_governance-05",
+      "F-live-political_feasibility-06",
+      "F-live-demography-05",
+      "F-live-education_finance-06",
+      "F-live-equity_and_social_mobility-05"
+    ],
+    "goal": "Establish a national, non-mandating framework of transparent minimum-viability thresholds, standardized cost-visibility rules, teacher-training standards, and a closure/outcome registry to inform local and central decisions across whichever structural model (T1-T5) is applied, while explicitly documenting the counterfactual of continuing current ad hoc practice.",
+    "implementation_steps": [
+      {
+        "action": "Establish an independent statutory body (or mandate an existing statistical/education-research institute) responsible for the viability registry, cost-visibility rules, and outcome tracking",
+        "actor": "National legislature",
+        "timeline": "within 18 months"
+      },
+      {
+        "action": "Submit standardized cost, enrollment, transport, and segregation-indicator data annually to the registry for every village school",
+        "actor": "Klebelsberg Center / tankerületi centers",
+        "timeline": "ongoing from year 1"
+      },
+      {
+        "action": "Publish annual public reports on realized (not projected) cost outcomes of past consolidations, closure/retention outcomes on segregation and achievement, and threshold-benchmark comparisons",
+        "actor": "Independent evidence body",
+        "timeline": "annually beginning year 2"
+      },
+      {
+        "action": "Develop and publish national multigrade/rural-pedagogy training standards referenced by the registry",
+        "actor": "Ministry of Education / teacher training institutions",
+        "timeline": "years 1-2"
+      }
+    ],
+    "mechanisms": [
+      "Hungary has experienced repeated historical cycles of rural school expansion and contraction without establishing a durable institutionalized feedback mechanism, meaning past sequences were driven by top-down political decisions rather than standing demographic-trigger rules (F-live-implementation_planning-02).",
+      "Whether school consolidation produces actual cost savings is contested internationally (NY studies found savings, Texas and multi-state studies found none), and Finnish municipalities cited cost-saving as rationale without rigorous follow-up verification, indicating a registry tracking realized (not projected) savings is needed before further consolidation decisions rely on cost claims (F-live-education_finance-02, F-live-finnish_reform-04).",
+      "Transportation cost offsets systematically reduce net fiscal savings from consolidation but are rarely fully counted in closure proposals, meaning cost-visibility rules must explicitly require their inclusion (F-live-education_finance-03).",
+      "Evidence on whether closure causes further population decline is genuinely mixed across contexts (Saxony/Sweden find no link, Finland and Denmark find a link), meaning any national framework should track Hungary-specific outcomes rather than assume international findings transfer directly (F-live-education_finance-04, F-live-demography-07).",
+      "A no-new-policy counterfactual (continuing current ad hoc administrative practice) is documented as producing 38% of settlements without any public educational institution and unresolved disputed transport-responsibility assignment, establishing the baseline against which a transparency framework's marginal value must be assessed (F-live-hungarian_education_system-06, F-live-legal_and_governance-05)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "An information-only framework may be ignored in practice given the historical pattern of top-down political decisions overriding technical evidence (F-live-implementation_planning-02, F-live-polish_reform-04)",
+      "Risk of registry capture or selective publication reducing its independence and credibility",
+      "Delay risk: establishing evidence infrastructure takes time during which the underlying demographic cliff (F-live-demography-05) continues"
+    ],
+    "title": "National evidence and transparency infrastructure: viability registry, cost-visibility rules, and no-new-policy baseline",
+    "uncertainty_refs": [
+      "U-live-t6-01",
+      "U-live-t6-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t6",
+  "provenance_ref": "PV-derive_transformations-2c645211a7e2ee76",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

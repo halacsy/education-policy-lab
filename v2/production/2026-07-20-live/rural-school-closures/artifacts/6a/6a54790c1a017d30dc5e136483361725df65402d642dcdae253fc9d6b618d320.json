@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "The proposal explicitly models itself on Scotland's presumption-against-closure mechanism (F-live-international_comparison-02), a strong, well-documented procedural safeguard. However, the international comparison lens reveals a critical implementation-similarity problem: Scotland's mechanism presumes municipal or local authority standing to contest closure decisions, whereas Hungary's 2013 centralization eliminated exactly this kind of local bargaining power by transferring management to KLIK (F-live-international_comparison-04). Wales's contrasting non-presumptive guidance model (F-live-international_comparison-05) shows that even among UK devolved nations, the presumption model is not universally adopted, suggesting contextual factors shape design choice. Transferability is therefore constrained not by comparability of the closure problem itself but by the absence of a local actor empowered to invoke the presumption in Hungary's governance structure.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-international_comparison-02",
+      "F-live-international_comparison-04",
+      "F-live-international_comparison-05"
+    ],
+    "lens_ref": "L-live-international_comparison",
+    "opportunities": [
+      "The 2013 centralization creates a clean single point of accountability where a presumption duty could be imposed centrally without needing multi-actor municipal buy-in, unlike Scotland's model"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Directly modeled on a strong-evidence mechanism (Scotland) with documented procedural requirements for alternatives assessment, educational benefit, community effect, and travel documentation (F-live-international_comparison-02)",
+      "Wales's alternative non-presumptive model (F-live-international_comparison-05) offers a fallback design if full presumption proves institutionally incompatible"
+    ],
+    "threats": [
+      "Without genuine authority to halt closure vested somewhere, the procedural duty risks becoming a documentation exercise rather than a substantive safeguard (F-live-international_comparison-04)",
+      "Divergence between Scotland's and Wales's approaches suggests no single 'correct' transferable model exists even within comparable UK contexts, weakening the claim of a proven template"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Scotland's and Wales's mechanisms both presume a local/devolved authority holding real decision-making power, a structural precondition absent in Hungary's centralized KLIK-successor system (F-live-international_comparison-04)",
+      "Cross-country analogy from UK devolved contexts cannot substitute for Hungarian evidence on whether a procedural duty would function without matching local authority (lens limitation)"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t1-international_comparison",
+  "provenance_ref": "PV-assess_international_comparison-1b829a650482b79d",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "1dac5022aec70af6de7d24d7443566e4ceac20c11f95c16a6d86cc49a508e4b9",
+  "topic": "rural-school-closures"
+}

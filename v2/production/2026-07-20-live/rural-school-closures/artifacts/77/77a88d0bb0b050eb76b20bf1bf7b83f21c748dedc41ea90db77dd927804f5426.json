@@ -1,0 +1,40 @@
+{
+  "content": {
+    "assessment": "Grade-splitting responds partially to demographic reality by matching provision to the age-structure of the shrinking cohort: retaining lower grades locally suits villages where remaining children are concentrated in early years, while upper-grade consolidation addresses the scale economies increasingly necessary as cohorts contract nationally (14.4% youth share) and locally (settlements under 300 residents with under-18 shares below 10%). However, the model assumes a continuous cohort trickle sufficient to populate even reduced local lower-grade classes; in the most extreme cases (e.g., the Garab-type zero-enrollment cliff) there may be no cohort left to split, since decline in the smallest settlements is not gradual but discontinuous. The lens also flags that consolidation of upper grades onto fewer sites may itself alter incentives for church-sector schools to selectively absorb pupils, a documented sorting mechanism operating independent of cohort size.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-08",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      "Could be calibrated village-by-village using cohort-trajectory data to decide where lower-grade retention remains viable versus where full consolidation is warranted"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Matches instructional structure to the differential vulnerability and travel-tolerance of younger versus older cohorts, tracking known age-related fragility patterns",
+      "Addresses cohort-driven specialist-teacher shortages by concentrating older pupils where minimum class-size thresholds are more feasible amid overall national cohort decline"
+    ],
+    "threats": [
+      "If national cohort decline continues at the observed rate, today's viable lower-grade wing may itself approach non-viability within a single planning horizon, requiring repeated restructuring",
+      "Selective absorption of upper-grade pupils into segregated church-run schools could accelerate given the same cohort-scarcity dynamics that drove consolidation"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Does not address settlements experiencing the discontinuous zero-enrollment cliff pattern, where no local cohort remains to sustain even a lower-grade wing",
+      "Provides no explicit mechanism to track or respond to the geographically clustered aging pattern (age-structure divergence concentrated in specific counties)"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t2-demography",
+  "provenance_ref": "PV-assess_demography-4d0e82db5299b14f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

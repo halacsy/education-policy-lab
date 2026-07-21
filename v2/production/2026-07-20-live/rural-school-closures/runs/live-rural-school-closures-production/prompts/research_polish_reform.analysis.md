@@ -1,0 +1,91 @@
+TASK: expert_analysis
+AGENT: polish_reform
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: whole-system reform analysis
+PUBLIC QUESTION: What should happen to primary schools in depopulating villages?
+CRITERIA: structural mechanism, distributional effects, reversibility, implementation sequence
+KNOWN LENS LIMITS: Polish outcome estimates and political history are not directly portable.
+
+RESEARCH NOTES:
+I'll research this by examining Poland's school network reforms (both the 1990s decentralization/consolidation of rural schools and the 1999–2017 gimnazjum reform and its reversal), then connect findings to the Hungarian village-school depopulation problem.
+# Research Notes: Rural Primary Schools in Depopulating Areas — Poland's Structural Reforms as Comparative Reference for Hungary
+
+## A. What Poland's structural reorganization implies
+
+**1. Decentralization (1993) set the structural precondition for closures.**
+
+Following the political transition in 1989, the Ministry of National Education prioritized depoliticizing curricula, as part of broader systemic decentralization that transferred school management to local governments by 1993.
+ *Inference:* transferring ownership/funding of schools to municipalities (gminas) created the fiscal exposure that later made small rural schools vulnerable to closure decisions made at local, not national, level.
+
+**2. Scale and drivers of closures are documented, not just anecdotal.** 
+The main reasons for around 3300 Polish schools closing over the 2000-2016 period were declining fertility plus migration, combining to reduce numbers of primary-school pupils; economic reasons were cited as the direct cause of school closures in the countryside.
+ This is desk-research/interview-based (gmina-level data), Poland, published 2021.
+
+**3. The 1999 grade-structure reform independently reorganized the school network, beyond simple demographic attrition.** 
+Lower secondary schools were larger, and there were fewer of them than primary schools; they opened in larger settlements, which was especially important in rural areas, where one gimnazjum collected the children from neighbouring villages who previously attended different local primary schools.
+ *Inference:* structural reorganization (creating bigger catchment-area institutions) is a distinct policy lever from closing individual small schools — it can consolidate access while formally keeping some local primary buildings.
+
+**4. The 2017 reversal reform interacted with demographic decline to compound rural closures, particularly in mountain/marginal areas.** 
+A study of the Polish Carpathians (2000-2020) found reorganization of the primary school network was determined by population dynamics and the education reform abolishing middle schools and returning to eight-year primary schools; primary schools there represent almost 10% of Poland's total, usually with much smaller pupil numbers than the national average.
+ *Inference:* structural/organizational reform decisions (not only demographic decline) directly reshape which rural schools survive.
+
+**5. Poland's most recent (2025) legislative response reframes the problem away from binary closure vs. survival, toward repurposing.** 
+Draft legislation on small schools aims to introduce regulations allowing adaptation of primary education to demographic changes while protecting, where possible, primary schools located close to the family home as safe places for children's education; primary schools, especially rural ones, are perceived as centres of social and cultural life, and the law would let local authorities broaden support to residents, using disused school infrastructure to meet needs such as providing crèche care.
+ This is a 2025 draft under consultation (per Eurydice, "3 weeks ago" as of search), not yet finalized law — status should be treated as *current but unconfirmed as enacted*.
+
+## B. What reversal and implementation history reveal
+
+**6. The 1999 gimnazjum reform is empirically associated with positive outcomes, yet was reversed regardless.** 
+After 18 years, the Polish government reversed the reform in January 2017 and re-introduced the old system, despite the reform being successful in improving education outcomes (as shown by the PISA study) and labour market outcomes of post-reform students.
+ 
+Poland's OECD educational rankings for reading and science shifted from being below average to being in the top 10, and to the top 15 for mathematics.
+ This is a contested-outcome case: evidence-based success did not prevent political reversal — a directly relevant precedent for judging whether "rational, evidence-based" reorganization proposals are durable.
+
+**7. The reversal's rationale was explicitly political/populist rather than technical, per an academic account.** 
+The incoming party promised, among other populist proposals, to reverse the education reform by bringing back the old structure, including eliminating lower secondary schools and raising the school starting age to seven; when it won, it quickly pushed new regulations through Parliament and reversed the reforms, disregarding the protests of teachers, parents, local authorities and researchers.
+ 
+That reform (of 2017) was not rooted in evidence-based research and policy, but was a reaction to collective public opinion that schools were not working properly.
+ *Note:* this is one scholarly interpretation (Springer chapter); framing of "populist" is an analytic judgment, not a neutral fact.
+
+**8. Implementation of the reversal produced acute short-term disruption, illustrating transition-cost risk in any rapid school-network restructuring.** 
+The reform drew criticism mostly due to the speed of its introduction but also to the fact that some 7,000 junior high schools had to be closed, and the Polish Teachers' Union stated that 10,000 teachers might lose their jobs.
+ 
+In the double-cohort year, both those graduating from gimnazjums and those graduating from primary schools applied to high schools, resulting in competition so high that in Warsaw alone, 3,173 students did not get into any school.
+ This is a documented implementation failure specific to overlapping cohort transitions — relevant to any Hungarian phase-out/restructuring timeline design (not a claim about closure policy itself).
+
+**9. Protest and legitimacy contestation accompanied the reversal, indicating durable political conflict around school-network restructuring.** 
+PiS's education reforms have triggered protest actions since 2017, including a petition with more than a million signatures calling for a nationwide referendum on education, which the PiS-dominated parliament dismissed; in April, three-quarters of Polish schools went on strike.
+ *Inference:* structural reorganization of school networks (whether toward consolidation or reversal to smaller/local units) generates high political mobilization independent of the substantive merits.
+
+**10. Empirical evidence on whether closing/consolidating rural schools affects local depopulation is contested across countries, and Poland-specific studies show community-level costs from closures that "reversal" or "protection" policies are designed to address.** A Polish multiple-case study found 
+the decline of structural social capital was significantly smaller in those villages where the school was saved
+, while 
+in the village where the school building did not serve the local population due to the authorities' decision, a significant and long-term decline in both structural and cognitive social capital was observed.
+ This contrasts with cross-national findings: a Finnish DID study found 
+in Finland after school closure, the population of the surrounding community decreased more than before school closure
+, whereas other research reports 
+Barakat (2015) in Saxony, and Amcoff (2012) in Sweden, find there is no significant connection between school closure and population decline.
+ This is explicitly **contested evidence** — causal direction and magnitude of school-closure effects on depopulation are not settled in the comparative literature.
+
+## Supplementary: Hungary-specific structural/reversal parallel (for direct transferability)
+
+**11. Hungary itself has a domestic "protect-then-reverse" precedent analogous to Poland's cycle.** 
+Closures or amalgamations in Hungary occurred only rarely, with the rural school network kept relatively intact until as late as 2004 due to state support for small villages to maintain schools and a 1997 act promoting voluntary local-government associations; in 2004, however, an Act on Multi-Functional Micro-Regional Local Government Associations came into force which rechanneled state incentives and promoted amalgamation of rural schools, and the combination of legislative and fiscal changes brought a dramatic speed-up in closures.
+ *Fact, Hungary-specific, dated 2004 turning point.*
+
+**12. A parallel Hungarian institutional pathway — church takeover — has substituted for closure in many small settlements since 2010, with contested implications for choice/neutrality.** 
+As many smaller villages have only one school and the closest neighbouring village is too far away, such a takeover can represent a violation of the right to unbiased, neutral education.
+ 
+According to the TÁRKI Societal Report, increasingly only church-run schools are found in small towns and villages; between 2001 and 2011 attendance at church schools increased 60 percent, and a further 47 percent between 2011 and 2014.
+ This is a Hungary-specific alternative to closure (ownership transfer rather than network reorganization), distinct from Poland's grade-structure and network-consolidation approach, and it carries its own contested normative costs (parental choice/monopoly concerns) rather than efficiency costs.
+
+---
+**Key distinctions for policy analysis (not recommendations):**
+- *Structural reorganization* (Poland-style: changing grade spans/catchment areas) and *simple closure/consolidation* (busing to larger schools) are separate levers with different implementation risks — Poland's evidence base speaks more directly to the former's reversibility and transition costs; the causal link to depopulation is contested cross-nationally.
+- *Reversal history* shows political reversal can occur even against positive outcome evidence, and implementation speed itself (not just the substantive direction) generates major disruption and legitimacy conflict — a distinct risk factor from the substantive open/close question.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

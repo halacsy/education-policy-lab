@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "This proposal directly engages network capacity levers: raising thresholds and formalizing the existing passive capacity ceiling (F-live-school_network_planning-03, F-live-school_network_planning-04) would mechanically shrink the state-sector selective footprint. However, network resilience is undermined by partial jurisdictional reach: because contraction levers apply only to the state sector, any capacity reduction risks being geographically uneven, concentrated wherever state-sector share is highest, without a parallel mechanism for church/private capacity which is not addressed by this lens's findings but is flagged as a structural risk. The feeder-school dilution problem (F-live-school_network_planning-07) may be partially alleviated if demand pressure is genuinely reduced rather than displaced.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "Could formalize an already-emerging passive capacity ceiling into an explicit, plannable network policy"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Builds on an already-operating administrative capacity ceiling (F-live-school_network_planning-03), suggesting technical feasibility of extending it",
+      "Threshold-based capacity control (F-live-school_network_planning-04) is an existing, tested lever within the current network"
+    ],
+    "threats": [
+      "Oversubscription ratios of 9-26x at flagship schools (F-live-school_network_planning-03) indicate demand pressure is severe enough that contraction could exacerbate rather than relieve access strain at the highest-demand urban nodes"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Jurisdiction covers only state-sector maintainers, leaving a substantial share of network capacity (church/private) outside the contraction mechanism",
+      "Threshold increases risk pushing marginal students into vocational tracks involuntarily, altering network flows in ways not modeled here"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t2-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-28b41b2852521866",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "36c20eff4a2bf65caffcb3aef45c2de1a9433bea6a44f6cf24ce4aca509ac01a",
+  "topic": "korai-szelekcio"
+}

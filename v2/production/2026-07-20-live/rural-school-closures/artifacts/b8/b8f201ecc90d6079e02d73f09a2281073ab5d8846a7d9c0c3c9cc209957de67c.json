@@ -1,0 +1,82 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t2-01",
+      "A-live-t2-02"
+    ],
+    "change_level": "organization",
+    "costs": [
+      "Dual-site administrative and staffing overhead during transition",
+      "Legislative amendment cost and negotiation time",
+      "Risk of transitional disruption similar to Poland's 2017 double-cohort bottleneck if poorly sequenced (F-live-polish_reform-05)"
+    ],
+    "equity_impact": "Mixed: benefits younger children's access and commute burden but shifts equity risk to older pupils' consolidated site sorting; requires explicit non-discrimination safeguards given ECtHR rulings on catchment-based segregation (F-live-portuguese_reform-09).",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Preserves youngest children's local schooling, avoiding the longest relative commute burden on the most vulnerable age group",
+      "Improves access to specialist teaching for older pupils without requiring full-village closure",
+      "Provides a middle path distinct from binary open/close decisions"
+    ],
+    "finding_refs": [
+      "F-live-polish_reform-03",
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05",
+      "F-live-equity_and_social_mobility-10",
+      "F-live-portuguese_reform-04",
+      "F-live-equity_and_social_mobility-09",
+      "F-live-hungarian_education_system-04",
+      "F-live-school_network_planning-09",
+      "F-live-finnish_reform-09",
+      "F-live-portuguese_reform-08",
+      "F-live-portuguese_reform-09"
+    ],
+    "goal": "Preserve early-years community access to schooling in the village while consolidating upper primary grades into a larger, better-resourced center school, reducing per-pupil overhead for the highest grades where economies of scale matter most.",
+    "implementation_steps": [
+      {
+        "action": "Identify tankerület clusters where lower-grade viability differs materially from upper-grade viability and pilot cycle-splitting in 3-5 districts",
+        "actor": "Ministry of Interior / Klebelsberg Center",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Establish or designate a regional ISCED2-type consolidated school with guaranteed transport for upper-grade pupils from constituent villages",
+        "actor": "Regional school district centers",
+        "timeline": "Years 1-2"
+      },
+      {
+        "action": "Amend Public Education Act provisions to permit and standardize partial-cycle village schools as a distinct legal category",
+        "actor": "National government",
+        "timeline": "Year 1 (legislative), ongoing rollout"
+      },
+      {
+        "action": "Track disruption effects (achievement, attendance) of the transition, learning from Poland's 2017 reversal disruption evidence",
+        "actor": "Independent monitoring body",
+        "timeline": "Years 2-4"
+      }
+    ],
+    "mechanisms": [
+      "Splitting cycles mirrors Poland's 1999 catchment-area consolidation for older pupils while preserving primary buildings, distinct from outright closure (F-live-polish_reform-03).",
+      "Retaining only lower grades locally reduces the commute burden for younger children, who are most vulnerable to the documented negative effects of long bus rides (F-live-equity_and_social_mobility-10).",
+      "Consolidating upper grades allows access to specialist teachers, addressing the shortage/aging-workforce problem more efficiently than spreading thin subject specialists across many small schools (F-live-portuguese_reform-04, F-live-equity_and_social_mobility-09).",
+      "National funding formula minimum class-size thresholds (14-27 pupils) are more feasible to meet at a consolidated upper-grade site than dispersed across villages (F-live-hungarian_education_system-04)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Poland's 2017 experience shows structural reorganization reversed for political rather than evidence reasons can create acute disruption (~7,000 school closures, 10,000 displaced teachers) if implementation is rushed (F-live-polish_reform-04, F-live-polish_reform-05)",
+      "Upper-grade consolidation site selection could recreate inter-municipal competition dynamics documented in Hungarian micro-regions (F-live-school_network_planning-09)",
+      "Church-sector schools may selectively absorb upper-grade pupils, intensifying segregation given their greater selection freedom (F-live-finnish_reform-09, F-live-portuguese_reform-08)"
+    ],
+    "title": "Structural grade-splitting: retain lower grades locally, centralize upper grades (Polish-pattern reorganization)",
+    "uncertainty_refs": [
+      "U-live-t2-01",
+      "U-live-t2-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t2",
+  "provenance_ref": "PV-derive_transformations-b3116f53e1969490",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

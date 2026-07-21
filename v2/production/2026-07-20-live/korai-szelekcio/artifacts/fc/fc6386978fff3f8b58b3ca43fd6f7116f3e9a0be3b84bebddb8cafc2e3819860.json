@@ -1,0 +1,62 @@
+{
+  "content": {
+    "critical_attrition_count": 0,
+    "entries": [
+      {
+        "direction_id": "S1",
+        "direction_title": "Admissions and intake-equity regulation (keep structure, fix the gate)",
+        "proposal_refs": [
+          "TP-live-t1"
+        ],
+        "rationale": "T1 directly regulates the admissions mechanism (exam coachability, SES-weighted proxies, algorithm inputs) while explicitly preserving the 6/8-year structure, matching S1's definition of keeping structure and fixing the gate.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S2",
+        "direction_title": "Supply-side contraction of the selective track (shrink the gate, not the rules)",
+        "proposal_refs": [
+          "TP-live-t2"
+        ],
+        "rationale": "T2 formalizes score thresholds and capacity caps to shrink the state-sector selective track's footprint while leaving admission criteria within remaining places largely unchanged, matching S2's supply-side contraction logic.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S3",
+        "direction_title": "Structural delay of the selection age (Finnish/Polish model)",
+        "proposal_refs": [
+          "TP-live-t3"
+        ],
+        "rationale": "T3 proposes raising the statutory tracking age to 14+ via legislative amendment, converting 6/8-year entry points into a unified comprehensive lower-secondary phase bundled with anti-sorting catchment rules, directly matching the Finnish/Polish structural-delay model of S3.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S4",
+        "direction_title": "Non-structural compensatory reform (leave selection age unchanged)",
+        "proposal_refs": [
+          "TP-live-t4"
+        ],
+        "rationale": "T4 leaves the 10-12 selection age and track structure entirely untouched and instead pursues targeted funding, curriculum clarity, teacher-quality levelling, and workload reduction, matching S4's Portugal-style non-structural compensatory approach.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S5",
+        "direction_title": "Demographically-driven passive contraction (status-quo baseline)",
+        "proposal_refs": [
+          "TP-live-t5"
+        ],
+        "rationale": "T5 is the explicit no-new-policy counterfactual in which declining birth cohorts and existing statutory class-size minimums force passive network consolidation and shrinkage of the selective track's absolute size and share, serving as the baseline against which T1-T4 are measured.",
+        "status": "covered"
+      }
+    ],
+    "gate_basis": "approved_frames",
+    "verdict": "complete"
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "CL-live-approved-frames",
+  "provenance_ref": "PV-derive_transformations-c17ebf673d4d0734",
+  "record_type": "coverage_ledger",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

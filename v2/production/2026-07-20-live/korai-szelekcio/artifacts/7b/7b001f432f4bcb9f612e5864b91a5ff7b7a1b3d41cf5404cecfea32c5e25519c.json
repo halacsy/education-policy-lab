@@ -1,0 +1,41 @@
+{
+  "content": {
+    "assessment": "This proposal operates within the existing centralized deferred-acceptance administrative apparatus (F-live-legal_and_governance-03), which is a governance strength: it likely requires only regulatory/ministerial-level adjustment to admission criteria and interview weighting rather than primary legislative amendment, since the 6/8-year track structure itself (codified in Act CXC of 2011, F-live-legal_and_governance-01) is left unchanged. However, layering SES-aware quotas or bonus-point proxies onto admissions raises a live rights-compatibility question: Hungary's constitutionally protected free choice of educational institution (F-live-legal_and_governance-02) creates doctrinal tension when selection criteria differentiate by socioeconomic proxy without express legislative basis, opening a plausible legal challenge pathway. Enforceability is aided by the existing centralized algorithm's capacity to encode new weighting rules uniformly nationwide, but accountability for defining and validating SES proxies would need clear designation of responsible authority.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-03",
+      "F-live-legal_and_governance-08",
+      "F-live-legal_and_governance-07"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      "Could be codified via ministerial decree or regulation rather than requiring parliamentary action, easing enactment relative to structural reforms (F-live-legal_and_governance-01)",
+      "Existing algorithmic infrastructure allows uniform, auditable enforcement of new criteria across all participating schools (F-live-legal_and_governance-03)"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Works within already-centralized, nationally uniform admission algorithm, minimizing new governance architecture (F-live-legal_and_governance-03)",
+      "Does not require primary legislative amendment to the track structure itself, unlike structural alternatives (F-live-legal_and_governance-01)",
+      "Interview weight is already regulated and capped, providing an existing enforceable mechanism to tighten further (F-live-legal_and_governance-03)"
+    ],
+    "threats": [
+      "Legal challenge risk under constitutional educational-choice doctrine could stall or invalidate SES-weighting components (F-live-legal_and_governance-02)",
+      "Jurisdictional gap: reform would only bind schools under Klebelsberg/state administration control unless the national algorithm's participation extends to church/private/foundation schools, potentially limiting reach (F-live-legal_and_governance-07)"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "SES-aware quotas or proxies could be legally contested as discriminatory absent explicit legislative basis, given constitutional free-choice protections (F-live-legal_and_governance-02)",
+      "No engagement with the four-point selection structure; leaves earlier selection junctures (primary school choice) outside its governance scope (F-live-legal_and_governance-08)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-legal_and_governance",
+  "provenance_ref": "PV-assess_legal_and_governance-bfa54df6dad68644",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

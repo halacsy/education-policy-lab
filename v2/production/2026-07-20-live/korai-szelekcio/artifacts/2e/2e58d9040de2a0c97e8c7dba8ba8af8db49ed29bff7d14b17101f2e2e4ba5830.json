@@ -1,0 +1,81 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t4-01",
+      "A-live-t4-02",
+      "A-live-t4-03"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Requires increased or reallocated public spending within an already low overall education-spending envelope",
+      "Administrative cost of designing and monitoring targeted funding formulas",
+      "Evaluation infrastructure costs given documented lack of a shared trusted measurement baseline"
+    ],
+    "equity_impact": "Likely to produce incremental, bounded equity gains for students remaining in comprehensive schools, but does not address the between-school segregation mechanism itself, which is the dominant driver of Hungary's outlier PISA-measured inequality; best framed as a floor-raising measure rather than a structural fix.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Politically low-friction path since it does not touch the constitutionally protected choice architecture or the entrenched track structure",
+      "Directly compensates the documented funding/peer-effect loss mechanism in feeder schools",
+      "Builds on existing legal and administrative infrastructure (2023 reform) rather than requiring new legislation"
+    ],
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-07",
+      "F-live-implementation_planning-03",
+      "F-live-education_finance-06",
+      "F-live-portuguese_reform-07",
+      "F-live-equity_and_social_mobility-07",
+      "F-live-implementation_planning-09",
+      "F-live-equity_and_social_mobility-10"
+    ],
+    "goal": "Pursue equity and achievement gains through targeted compensatory investment and quality-levelling measures while leaving the 10-12 selection age and track structure untouched.",
+    "implementation_steps": [
+      {
+        "action": "Design a targeted supplementary funding stream for schools with high shares of disadvantaged students and high departure rates to selective tracks (TEIP-style)",
+        "actor": "Ministry of Education / Ministry of Finance",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Revise curriculum guidance for comprehensive-track schools to improve clarity and reduce reliance on informal test-prep culture",
+        "actor": "Ministry of Education",
+        "timeline": "Years 1-2"
+      },
+      {
+        "action": "Implement retention-reduction measures (early intervention, tutoring support) targeted at grades most affected by peer-composition dilution",
+        "actor": "Klebelsberg Centre district sub-units",
+        "timeline": "Years 1-3"
+      },
+      {
+        "action": "Commission independent evaluation of the 2023 teacher-career reform and incentive funding for equity impact, and expand if positive",
+        "actor": "Ministry of Education",
+        "timeline": "Years 2-3"
+      }
+    ],
+    "mechanisms": [
+      "Capitation funding causes feeder schools to lose both student funding and positive peer effects when high-performers depart for selective tracks, with no documented compensatory mechanism, making targeted counter-funding a direct lever against this specific loss (F-live-education_finance-05).",
+      "Only 12.1% of disadvantaged students reach a good level in at least one basic skill versus 16.3% EU average, indicating substantial room for targeted skill-support investment independent of tracking structure (F-live-education_finance-07, F-live-implementation_planning-03).",
+      "Hungary's overall low spending share (4.1%, rank 41/42) and low instructional time (rank 32/34) make internal reallocation toward disadvantaged/feeder schools more consequential than in higher-spending systems (F-live-education_finance-06).",
+      "The 2023 teacher-career reform (Act LII) and subject-teacher incentive funding already exist as a non-structural quality lever but remain unevaluated for equity impact, indicating an existing policy channel to strengthen and evaluate rather than invent from scratch (F-live-portuguese_reform-07)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Structural segregation mechanisms (tracking, free choice, church-school growth) remain fully intact, so compensatory funding may only partially offset ongoing sorting rather than reverse it (F-live-equity_and_social_mobility-07)",
+      "Disputed statistics baseline between government and civil society could undermine credible evaluation of whether targeted funding is working (F-live-implementation_planning-09)",
+      "Within-school sorting (classroom-level SES sorting) would likely persist and could absorb any gains from school-level funding without also addressing classroom composition (F-live-equity_and_social_mobility-10)"
+    ],
+    "title": "Non-structural compensatory equity package (targeted funding, curriculum clarity, retention reduction) with selection age unchanged",
+    "uncertainty_refs": [
+      "U-live-t4-01",
+      "U-live-t4-02",
+      "U-live-t4-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t4",
+  "provenance_ref": "PV-derive_transformations-08f8484f67a159b0",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "c43104fa7fbb5426a5397127a39fb8a34bfff2ea4ce9f2540bbd0d7ac6af8bdd",
+  "topic": "korai-szelekcio"
+}

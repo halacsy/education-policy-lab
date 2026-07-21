@@ -1,0 +1,35 @@
+{
+  "content": {
+    "assessment": "The passive-contraction baseline has no direct fiscal-policy content since it is a counterfactual, but the lens still applies to its underlying resource dynamics: demographic decline will mechanically shrink capitation revenue flows to peripheral schools regardless of policy, and this baseline is useful precisely because it clarifies what portion of contraction would occur without any deliberate reallocation of funding to address the feeder-school losses noted in F-live-education_finance-05 or the disadvantaged-achievement gap in F-live-education_finance-07. As a counterfactual it neither spends nor saves relative to other options but exposes that inaction leaves both funding-incidence and achievement-gap problems unaddressed while population-driven contraction proceeds unevenly.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-06",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "Could serve as a fiscal-neutral reference point that clarifies which portion of any future spending should be attributed to active policy value-added versus demographic drift"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Provides a fiscally cost-free baseline against which the resource commitments of active proposals (T1-T4) can be benchmarked"
+    ],
+    "threats": [
+      "Uneven geographic contraction could leave already-thin resource allocations (given Hungary's low overall spending share, F-live-education_finance-06) even more skewed between urban and rural systems without any corrective reallocation"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "Does nothing to correct the capitation funding/peer-effect loss mechanism harming feeder schools (F-live-education_finance-05), which will persist unaddressed regardless of demographic contraction",
+      "Does not allocate any resources toward closing the severe disadvantaged-student achievement gap documented in F-live-education_finance-07"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-education_finance",
+  "provenance_ref": "PV-assess_education_finance-51852e84a028699d",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "042ba5df73c85fa919e8153d49858702c38c24174f4d945f52c5bede1358e446",
+  "topic": "korai-szelekcio"
+}

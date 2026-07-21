@@ -1797,38 +1797,38 @@ across multiple topics.
 
 V2 is ready for its first public release when:
 
-- [ ] v1 is frozen, documented, and separately available;
-- [ ] the full v2 workflow is an explicit `NodeSpec` DAG;
-- [ ] there is no global resume hash;
+- [x] v1 is frozen, documented, and separately available;
+- [x] the full v2 workflow is an explicit `NodeSpec` DAG;
+- [x] there is no global resume hash;
 - [ ] every model call has prompt, provider, usage, and attempt audit;
-- [ ] every semantic artifact is schema-valid canonical JSON;
-- [ ] every canonical JSON key, enum, metadata value, and semantic text value
+- [x] every semantic artifact is schema-valid canonical JSON;
+- [x] every canonical JSON key, enum, metadata value, and semantic text value
   is English;
 - [ ] the schema registry is versioned and every schema change has an explicit
   migration;
-- [ ] graph verification enforces reference integrity and lifecycle rules;
+- [x] graph verification enforces reference integrity and lifecycle rules;
 - [ ] every finding and option seed has a coverage-ledger disposition;
-- [ ] there is no expert position, holder majority, or modeled stakeholder
+- [x] there is no expert position, holder majority, or modeled stakeholder
   voice;
-- [ ] educational psychology and multiple other lenses operate successfully;
-- [ ] every proposal has an explicit theory of change;
+- [x] educational psychology and multiple other lenses operate successfully;
+- [x] every proposal has an explicit theory of change;
 - [ ] every proposal has separate evidence maturity and implementation
   readiness;
 - [ ] multiple transformation families and at least one portfolio exist;
-- [ ] dilemmas are first-class records with resolvability tests;
-- [ ] empirical subquestions enter a research agenda;
-- [ ] decision readiness is produced;
-- [ ] no evaluation node runs on the same model family as the artifact
+- [x] dilemmas are first-class records with resolvability tests;
+- [x] empirical subquestions enter a research agenda;
+- [x] decision readiness is produced;
+- [x] no evaluation node runs on the same model family as the artifact
   generator;
 - [ ] time, tokens, and estimated cost aggregate from append-only events;
 - [ ] knowledge, lens, and transformation admission are human-gated;
-- [ ] at least one topic passes a fully live, mock-free acceptance run;
-- [ ] English public pages render from canonical JSON;
+- [x] at least one topic passes a fully live, mock-free acceptance run;
+- [x] English public pages render from canonical JSON;
 - [ ] Hungarian pages are localized downstream with complete provenance and
   fidelity checks;
-- [ ] localized output cannot become an upstream canonical input;
+- [x] localized output cannot become an upstream canonical input;
 - [ ] public topic, transformation, lens, dilemma, and audit views exist;
-- [ ] qualitative v1/v2 comparison finds no critical content attrition;
+- [x] qualitative v1/v2 comparison finds no critical content attrition;
 - [ ] the owner has explicitly approved cutover.
 
 ## 29. Architecture Decision Package for Owner Approval

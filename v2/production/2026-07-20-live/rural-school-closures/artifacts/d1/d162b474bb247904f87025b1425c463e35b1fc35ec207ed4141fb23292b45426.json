@@ -1,0 +1,62 @@
+{
+  "content": {
+    "critical_attrition_count": 0,
+    "entries": [
+      {
+        "direction_id": "S1",
+        "direction_title": "Status quo plus incremental adaptation",
+        "proposal_refs": [
+          "TP-live-t1"
+        ],
+        "rationale": "T1 is the explicit no-new-policy/passive-change counterfactual, describing continuation of the existing municipal/state-maintained model with multigrade classrooms and ad hoc local negotiation absent a national framework, directly matching S1's status-quo-plus-incremental-adaptation description.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S2",
+        "direction_title": "Structural grade reorganization (lower grades stay, upper grades centralize)",
+        "proposal_refs": [
+          "TP-live-t2"
+        ],
+        "rationale": "T2 implements the Polish 1999-pattern structural reorganization explicitly described in S2: lower grades (1-4/1-6) remain village-based while upper grades or an ISCED2-type school are consolidated centrally, distinguishing structural reform from the 2017 reversal disruption.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S3",
+        "direction_title": "Networked retention: clustering, association-run and multi-service hub models",
+        "proposal_refs": [
+          "TP-live-t3"
+        ],
+        "rationale": "T3 directly implements S3's networked-retention family, combining French RPI-style inter-municipal clustering, Polish community-run/repurposing models, and multi-service hub conversion (school plus kindergarten/social/civic functions) as an alternative to both status quo and closure.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S4",
+        "direction_title": "Consolidation with mitigation (closure as default, compensatory measures)",
+        "proposal_refs": [
+          "TP-live-t4"
+        ],
+        "rationale": "T4 operationalizes S4's consolidation-with-mitigation model: closure as a managed default for genuinely non-viable/zero-enrollment villages, paired with statutory transport guarantees, TEIP-style targeted support, and transparent consultation/documentation rules to offset travel and equity harms.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S5",
+        "direction_title": "National systemic framework: transparency, thresholds and evidence infrastructure",
+        "proposal_refs": [
+          "TP-live-t5"
+        ],
+        "rationale": "T5 is the national systemic framework proposal establishing transparent minimum-viability thresholds, cost-visibility rules, teacher-training standardization, and a closure/outcome registry that informs rather than dictates local choices across T1-T4, matching S5 exactly.",
+        "status": "covered"
+      }
+    ],
+    "gate_basis": "approved_frames",
+    "verdict": "complete"
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "CL-live-approved-frames",
+  "provenance_ref": "PV-derive_transformations-b3116f53e1969490",
+  "record_type": "coverage_ledger",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

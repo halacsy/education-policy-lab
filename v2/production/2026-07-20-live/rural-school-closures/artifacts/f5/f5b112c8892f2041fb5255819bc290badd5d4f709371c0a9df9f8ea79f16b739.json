@@ -1,0 +1,37 @@
+{
+  "content": {
+    "concerns": [
+      "Transformations are conceptually clear but often lack operational detail (who exactly would implement T1–T5, statutory text examples, budgetary implications, enforcement mechanisms, timelines).",
+      "Some causal inferences rest on non-Hungarian studies; the package flags this uncertainty but does not supply Hungary-specific quasi-experimental evidence (necessary for decision confidence).",
+      "Cost and fiscal impact estimates (net savings, transport offsets, staffing implications) are discussed qualitatively but absent quantitatively, limiting short-term budgeting decisions.",
+      "Stakeholder mapping and political feasibility analysis is present in high-level form but needs concrete actor incentives and veto points (e.g., ministerial incentives, party politics, church maintainers) to be decision-operational.",
+      "A few referenced items use URNs or terse summaries; while auditable, the package sometimes presumes the reader will accept the cited study’s generalizability rather than unpacking key methods/limitations."
+    ],
+    "dimensions": {
+      "artifact_integrity": 9,
+      "decision_usefulness": 7,
+      "dilemma_clarity": 9,
+      "evidence_discipline": 8,
+      "lens_traceability": 8,
+      "transformation_specificity": 6
+    },
+    "package_ref": "DP-live-production",
+    "strengths": [
+      "Clear mapping of a policy option space (T1–T6) linked to specific governance levers and trade-offs.",
+      "Extensive, auditable citation practice: inline finding IDs consistently map to appendix claims with URIs/URNs.",
+      "Explicit separation of empirical uncertainty and value/political choices; includes concrete research questions likely to change decisions.",
+      "Cross-national comparisons and historical precedents are used defensibly to highlight mechanism risks (e.g., Poland, Finland, Scotland).",
+      "Dilemmas are clearly stated, with attention to distributional effects (Roma, rural disadvantage) and implementation constraints (tankerület structure, transport responsibility)."
+    ],
+    "total": 7.833,
+    "verdict": "accept_with_caveats"
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "EV-live-production",
+  "provenance_ref": "PV-evaluate_decision_package-2901bda059837875",
+  "record_type": "evaluation",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "This proposal's threshold-tightening mechanism is demographically consonant with an already-operating contraction dynamic: physical capacity has stagnated near ~26,000 students even amid oversubscription, suggesting the passive ceiling this proposal seeks to formalize is already partially in place. However, the proposal's jurisdictional limitation to the state sector interacts poorly with the geographically uneven cohort decline pattern: rural settlements in Western Transdanubia, Southern Baranya, and Northern Hungary already show severe, region-specific contraction (10-30%, down to 50-70 school-age children in some settlements), independent of national trends. Raising thresholds nationally, without regional differentiation, risks a mismatch between where administrative capacity caps bind and where demographic viability constraints (the 26-34 statutory class-size band) already bind mechanically. The state-sector-only jurisdiction also means church/private schools, which are demographically insulated from this lever, could absorb displaced demand differentially by region.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      "Could be refined with region-specific thresholds informed by local cohort trajectories rather than a single national dial"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Formalizing an existing discretionary lever tracks the reality that capacity has already plateaued, suggesting administrative capacity constraints are demographically informed already",
+      "Aligns with counterfactual contraction already underway, potentially smoothing rather than fighting the trend"
+    ],
+    "threats": [
+      "National cohort decline (F-live-demography-01, F-live-demography-02) combined with aging, rural-shortage-prone teacher workforce (F-live-demography-09) means state-sector contraction alone may simply relocate rather than resolve the viability problem, with rural areas facing compounding constraints this proposal does not target"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Uniform threshold-raising does not account for the sharply uneven spatial distribution of cohort decline documented across specific regions (F-live-demography-04), risking mismatched pressure in already-fragile rural systems where the statutory class-size floor (F-live-demography-05) is the binding constraint, not the recommended threshold",
+      "Excludes church/private schools from the contraction lever, precisely where demographic pressure could be redirected rather than absorbed"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t2-demography",
+  "provenance_ref": "PV-assess_demography-69be8f80f4f224d6",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "678dd5550ced63a36cc2a8c9c46a44b625ed095f97edba8739ccfc27110d870d",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,28 @@
+{
+  "content": {
+    "answerability": "answerable_now",
+    "decision_impact": "high",
+    "method": "Demographic microsimulation combining municipal-level birth-cohort projections (2025-2040) with statutory minimum class-size rules to forecast school-level viability thresholds; sensitivity analysis across fertility/migration scenarios.",
+    "proposal_refs": [
+      "TP-live-t5",
+      "TP-live-t2",
+      "TP-live-t3"
+    ],
+    "question": "At what local cohort size and under which demographic scenarios do peripheral Hungarian settlements become unable to sustain even one viable selective-track or comprehensive-school intake class, and how many settlements cross this threshold under current fertility trends?",
+    "uncertainty_refs": [
+      "U-live-demography-02",
+      "U-live-demography-01",
+      "U-live-school_network_planning-03",
+      "U-live-t5-01"
+    ],
+    "why_it_matters": "This directly determines the plausibility and geographic even-handedness of the passive-contraction baseline (T5) and shapes whether T2's capacity caps or T3's structural conversion need geographically targeted design rather than uniform national rules."
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "RQ-live-production-04",
+  "provenance_ref": "PV-build_research_agenda-d7641f4da6072aca",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

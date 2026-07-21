@@ -1,0 +1,72 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t4-01",
+      "A-live-t4-02"
+    ],
+    "change_level": "network",
+    "costs": [
+      "Coordination costs of establishing and maintaining inter-municipal cluster agreements",
+      "Capital cost of building conversion for multi-service use",
+      "Ongoing administrative overhead distinct from single-school administration"
+    ],
+    "equity_impact": "Could mitigate segregation risk relative to church-school transfer by keeping schools within the state/public system and combining resources, but the informal inter-municipal competition dynamic (F-live-school_network_planning-09) suggests risk of favoring settlements with stronger existing organizational capacity or lower Roma population share unless equity criteria are built into cluster-formation rules.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Preserves community hub function of the school building even where standalone enrollment is sub-threshold",
+      "Enables cost-sharing of specialist teachers across a cluster, partially addressing the higher per-pupil cost documented for small schools",
+      "Provides an alternative to binary closure that Polish 2025 draft legislation and French clustering both demonstrate as functioning models"
+    ],
+    "finding_refs": [
+      "F-live-polish_reform-06",
+      "F-live-international_comparison-03",
+      "F-live-portuguese_reform-10",
+      "F-live-political_feasibility-03",
+      "F-live-hungarian_education_system-08",
+      "F-live-school_network_planning-09"
+    ],
+    "goal": "Retain village primary schools as viable units by formally networking them into inter-municipal pedagogical clusters and/or converting them into multi-service hubs, drawing on French RPI-style clustering and Polish community-run and repurposing models.",
+    "implementation_steps": [
+      {
+        "action": "Identify micro-regional clusters of 2-4 village schools with combined enrollment sufficient to share specialist staff and establish formal cluster agreements",
+        "actor": "Klebelsberg Center / tankerületi centers",
+        "timeline": "years 1-2"
+      },
+      {
+        "action": "Apply existing rural development funding to convert non-classroom school space into co-located community/kindergarten services",
+        "actor": "Municipal governments and Magyar Falu Program administrators",
+        "timeline": "years 1-3, using existing program funding stream"
+      },
+      {
+        "action": "Issue regulatory guidance permitting multi-service co-location and shared cross-cluster staffing without triggering closure classification",
+        "actor": "Ministry of Interior",
+        "timeline": "within 12 months"
+      }
+    ],
+    "mechanisms": [
+      "Poland's 2025 draft legislation proposes repurposing small-school infrastructure for crèches and community services rather than binary closure, framing rural schools as social/cultural centres (F-live-polish_reform-06).",
+      "France's conventions ruralité and clustering logic enable co-financing and staffing allowances across cooperating municipalities, providing a template for shared-resource networks (F-live-international_comparison-03).",
+      "Local social capital and bonding/bridging networks were the determining factor in the one documented Hungarian case (Erdőkürt) of a saved school, indicating that formal networked structures could substitute for reliance on rare organic social capital (F-live-portuguese_reform-10, F-live-political_feasibility-03).",
+      "Kindergarten coverage gaps mirror primary-school access problems under the same enrollment-threshold framework, suggesting hub co-location with kindergarten services could jointly stabilize both under shared thresholds (F-live-hungarian_education_system-08)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Success may remain uneven and dependent on local social capital, replicating the Erdőkürt pattern rather than producing uniform outcomes (F-live-portuguese_reform-10)",
+      "Informal inter-municipal competition over pupil 'pull' has been documented and could undermine voluntary clustering cooperation (F-live-school_network_planning-09)",
+      "Regulatory guidance alone (without funding guarantee) may be insufficient absent dedicated capital investment"
+    ],
+    "title": "Networked retention: inter-municipal school clusters and multi-service community hubs",
+    "uncertainty_refs": [
+      "U-live-t4-01",
+      "U-live-t4-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t4",
+  "provenance_ref": "PV-derive_transformations-2c645211a7e2ee76",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "1016102a20fb29df3f8fc6016e4af6ce730092948a33b77c0361e96d5d51a926",
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,35 @@
+{
+  "content": {
+    "assessment": "The Finnish lens is highly relevant to T5, since T5's default-closure-with-mitigation model is structurally closest to what Finland actually implemented, making Finnish evidence a strong empirical test case rather than an analogy. Findings directly speak to T5's core assumptions: quasi-experimental Finnish evidence shows closures can accelerate rather than merely follow depopulation, meaning T5's mitigation package (transport, funding transparency, equity support) addresses individual-level harms but may not offset community-level depopulation dynamics, a limitation T5 itself acknowledges. The Finnish consolidation-shock study directly validates T5's claim that transition support for displaced students must be distinct from general disadvantage funding, since even cost-driven, non-performance-related closures produced achievement disruption independent of prior school quality. Finland's unverified cost-saving claims caution against treating fiscal rationale for threshold-triggered closures as self-evidently sound, reinforcing T5's own noted uncertainty about consolidation savings.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-finnish_reform-04",
+      "F-live-finnish_reform-05",
+      "F-live-finnish_reform-06"
+    ],
+    "lens_ref": "L-live-finnish_reform",
+    "opportunities": [
+      "T5's cost-visibility and transparency provisions could be strengthened by requiring verified (not projected) savings, directly informed by the Finnish finding that claimed municipal savings were rarely rigorously checked (F-live-finnish_reform-04)."
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Direct empirical support for T5's inclusion of distinct transition support: Finnish quasi-experimental evidence isolates a genuine 'pure consolidation shock' independent of prior school quality (F-live-finnish_reform-06), validating the proposal's mechanism design.",
+      "Finland's evidence that municipalities cited cost-saving without rigorous verification (F-live-finnish_reform-04) supports T5's acknowledgment of contested fiscal rationale for closures."
+    ],
+    "threats": [
+      "If Hungary's demographic and settlement context resembles Finland's rural social-capital dynamics, T5's default-closure model risks the same accelerated-decline effect documented quasi-experimentally in Finland (F-live-finnish_reform-05), undermining the policy's core viability logic even with mitigation."
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Difference-in-differences evidence that Finnish rural communities declined more after closure than before (F-live-finnish_reform-05) directly challenges T5's premise that mitigation (transport, funding, equity support) can adequately offset consolidation harms, since the depopulation effect operates through community/social-capital channels not addressed by individual mitigations, a limitation T5 itself flags."
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t5-finnish_reform",
+  "provenance_ref": "PV-assess_finnish_reform-0a73c171a468c609",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "c2ef833d49875994a95a33ff37795e01122e81581998042dfdff4b74b9e0c25e",
+  "topic": "rural-school-closures"
+}

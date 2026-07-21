@@ -1,0 +1,40 @@
+{
+  "content": {
+    "assessment": "This is the most structurally ambitious proposal and the lens evidence raises the most serious implementation concerns for it. It requires realigning institutional structures and programme structures that are documented as currently misaligned around age-10/12 selection gates (F-live-implementation_planning-01), while simultaneously executing this against a severe teacher-workforce capacity crisis — a 25% enrollment drop in teacher training, a 16,000-teacher shortfall, and an aging workforce with only 7.2% under age 30 (F-live-implementation_planning-07) — that sharply limits the redeployment capacity any comprehensive-phase restructuring would require. The proposal's own phased-transition design (explicitly built to avoid Poland's abrupt reversal shock) is a genuine implementation-science strength, but phasing over multiple cohort years compounds with irregular demographic age pyramids (F-live-implementation_planning-08), making cohort-based capacity planning for a multi-year transition considerably harder than in a stable-demographic context. Church/foundation schools outside state jurisdiction (F-live-implementation_planning-05) represent an uncontained failure channel: even a successfully phased state-sector transition would leave a parallel selective track intact.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-01",
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-07",
+      "F-live-implementation_planning-08"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "A phased, multi-cohort approach in principle creates natural checkpoints where monitoring and adaptation could be inserted, though none are specified in the mechanism description"
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      "Explicit multi-year phasing design directly responds to a documented failure mode (Poland's single-year reversal shock), showing awareness of sequencing risk",
+      "Attempts to address multiple selection points simultaneously (early-childhood, primary choice, age-10/12, post-16) rather than treating tracking-age alone as sufficient, reflecting systemic rather than partial diagnosis"
+    ],
+    "threats": [
+      "Teacher-capacity crisis could force either delay or under-resourced implementation of the comprehensive lower-secondary phase, reproducing exactly the capacity-shortfall failure mode the phasing was designed to avoid (F-live-implementation_planning-07)",
+      "Church/foundation schools outside Klebelsberg jurisdiction (F-live-implementation_planning-05) constitute a failure-containment gap: state-sector structural reform could leave the selective mechanism fully intact in a growing parallel sector",
+      "Demographic irregularity (F-live-implementation_planning-08) increases the risk that phased cohort transitions encounter capacity mismatches at unpredictable points, undermining the core rationale for phasing"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Requires substantial workforce redeployment and curriculum restructuring precisely when teacher-training enrollment has fallen ~25% and there is already a 16,000-teacher shortage, with an aging workforce ill-suited to large-scale retraining (F-live-implementation_planning-07)",
+      "Institutional/programme structure misalignment already documented as a coordination problem at existing entry points (F-live-implementation_planning-01) would need to be resolved as a precondition, not a side effect, of the reform, and no mechanism for this resolution is specified",
+      "Multi-year phased cohort transition must be planned against irregular, unstable age-pyramid demographics (F-live-implementation_planning-08), complicating the very capacity planning the phasing strategy depends on"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t3-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-425a1efc6c6d860f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

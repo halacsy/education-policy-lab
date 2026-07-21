@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "As a no-new-policy baseline, this proposal requires no legal authority change and involves no new governance action, which is itself the central governance-relevant fact: it operates entirely through the passive interaction of existing statutory class-size minimums and demographic decline rather than through any exercise of legislative or ministerial authority. This makes it maximally enforceable in a trivial sense (no new rule needs enforcement) but also means it provides no accountability mechanism for the segregation and inequality dynamics documented across the evidence record — no authority is tasked with correcting outcomes. Critically, this proposal would leave untouched the jurisdictional split between Klebelsberg-administered state schools and church/foundation/private schools (F-live-legal_and_governance-07); since demographic pressure and consolidation dynamics could differ significantly between these governance categories, passive contraction risks an uneven, ungoverned redistribution of selective capacity toward the jurisdictional segment least subject to state planning authority, with no legal mechanism to correct for it.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-legal_and_governance-07",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-03"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      "Serves a legitimate governance-analytic function as an explicit counterfactual baseline against which the legal-authority burden of active proposals can be measured"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Requires no legislative or ministerial action, avoiding any constitutional rights conflict or legal authority contest (implicitly avoids the tension in F-live-legal_and_governance-02)",
+      "Operates entirely through existing statutory class-size thresholds without requiring new administrative rulemaking"
+    ],
+    "threats": [
+      "Church/private schools outside demographic-driven state consolidation pressure could see a relatively increased and legally unaddressed share of selective capacity, altering sector composition beyond any public-sector planning intent or accountability structure (F-live-legal_and_governance-07)",
+      "Absence of any composition-focused legal rule means existing constitutional and administrative structures (free-choice guarantee, centralized admissions algorithm) continue to operate exactly as before, with no governance lever introduced to interrupt current segregation-producing dynamics (F-live-legal_and_governance-02, F-live-legal_and_governance-03)"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Provides no accountability mechanism: no authority is responsible for correcting the segregation and inequality outcomes the evidence record associates with the current system",
+      "Leaves the jurisdictional fragmentation between state-run and church/foundation/private schools (F-live-legal_and_governance-07) entirely ungoverned, permitting an uncontrolled shift in sector composition"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-legal_and_governance",
+  "provenance_ref": "PV-assess_legal_and_governance-bfa54df6dad68644",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

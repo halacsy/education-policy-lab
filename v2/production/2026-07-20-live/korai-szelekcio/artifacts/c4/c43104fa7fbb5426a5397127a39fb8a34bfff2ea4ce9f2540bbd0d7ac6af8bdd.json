@@ -1,0 +1,84 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t4-01",
+      "A-live-t4-02",
+      "A-live-t4-03"
+    ],
+    "change_level": "organization",
+    "costs": [
+      "Recurrent funding commitment for targeted school subsidies, against a backdrop of already low overall education spending (4.1% of government expenditure, rank 41/42) (F-live-education_finance-06)",
+      "Administrative cost of designing and monitoring a needs-based formula distinct from existing capitation funding",
+      "Teacher incentive costs amid a 16,000-teacher shortage that constrains redeployment capacity (F-live-implementation_planning-07)"
+    ],
+    "equity_impact": "Moderate and indirect: improves conditions and outcomes for disadvantaged students within the existing sorted system but does not change who gets selected into gimnázium tracks or reduce the segregation intensity between schools; functions as a mitigation layer rather than a structural fix",
+    "evidence_status": "weak",
+    "expected_benefits": [
+      "Politically lower-cost than structural reform since it avoids confronting the free-choice constitutional guarantee, the directors' lobby, or Act CXC amendment (F-live-legal_and_governance-01, F-live-political_feasibility-07)",
+      "Directly targets documented resource and teacher-quality gaps in disadvantaged schools (F-live-education_finance-07, F-live-demography-09)",
+      "Consistent with the comparative finding that delayed tracking only improves equity when bundled with broader reform — this proposal instead substitutes broad non-structural bundling absent the age change"
+    ],
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-06",
+      "F-live-education_finance-07",
+      "F-live-demography-09",
+      "F-live-portuguese_reform-07",
+      "F-live-portuguese_reform-09",
+      "F-live-polish_reform-10",
+      "F-live-school_network_planning-07",
+      "F-live-equity_and_social_mobility-10",
+      "F-live-implementation_planning-07"
+    ],
+    "goal": "Improve outcomes and narrow equity gaps for disadvantaged students without altering the 10-12 selection age or track structure, via targeted funding, curriculum clarity, and school-quality levelling",
+    "implementation_steps": [
+      {
+        "action": "Design and fund a targeted supplementary-funding formula for schools with high concentrations of disadvantaged students and/or high peer-outflow to selective tracks",
+        "actor": "Ministry of Education / Ministry of Finance",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Prioritize qualified-teacher placement and retention incentives in rural and disadvantaged-area feeder schools",
+        "actor": "Klebelsberg Centre",
+        "timeline": "Years 1-3"
+      },
+      {
+        "action": "Extend curriculum-clarity and workload-reduction reforms (already on the 2024 agenda) to all comprehensive lower-secondary schools with implementation monitoring",
+        "actor": "Ministry of Education",
+        "timeline": "Years 1-2"
+      },
+      {
+        "action": "Establish an evaluation framework to track equity-gap indicators (PISA disadvantaged-student skill attainment, early school leaving) attributable to the compensatory package, addressing the documented lack of shared trusted baseline",
+        "actor": "Ministry of Education / independent evaluators",
+        "timeline": "Year 1 onward, annual reporting"
+      }
+    ],
+    "mechanisms": [
+      "Targeted (TEIP-style) supplementary per-pupil or per-school funding for schools serving disadvantaged populations, compensating for capitation losses when high performers depart (F-live-education_finance-05, F-live-education_finance-06)",
+      "Address teacher-quality gap in disadvantaged/feeder schools where unqualified-teacher proportion is 2-3x higher, via incentive funding and placement policy (F-live-demography-09, F-live-portuguese_reform-07)",
+      "Curriculum clarity and workload/memorization reduction reforms already proposed by the ministry, extended systematically to comprehensive-track schools (F-live-polish_reform-10)",
+      "Increase overall instructional time allocation, given Hungary ranks 32/34 OECD in lower-secondary instruction hours, as a lever independent of track structure (F-live-education_finance-06)"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Evidence record explicitly notes this class of reform has not been evaluated for impact on the equity gaps it targets, meaning outcomes are unproven (F-live-portuguese_reform-07)",
+      "Without altering the selection mechanism or track structure, high-performing peer and funding outflows continue unabated, so compensatory funding may only partially offset — not eliminate — the underlying structural loss (F-live-education_finance-05, F-live-school_network_planning-07)",
+      "Government has selectively invoked equity findings for legitimation while implementation has lagged in the past, raising credibility and follow-through risk (F-live-portuguese_reform-09)",
+      "Persistent within-school classroom sorting by SES may absorb some of the intended benefit, since sorting tends to relocate rather than disappear (F-live-equity_and_social_mobility-10)"
+    ],
+    "title": "Non-structural compensatory equity package (Portugal-style, selection age unchanged)",
+    "uncertainty_refs": [
+      "U-live-t4-01",
+      "U-live-t4-02",
+      "U-live-t4-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t4",
+  "provenance_ref": "PV-derive_transformations-c17ebf673d4d0734",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

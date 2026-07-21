@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "T6 is the proposal most directly aligned with implementation-planning criteria, as it is explicitly designed to supply the missing feedback loops, monitoring, and evidence base that other proposals (T1-T5) lack. It correctly diagnoses the central historical failure mode: Hungary's repeated cycles of school expansion and contraction were driven by top-down political decisions without institutionalized feedback mechanisms, and this proposal directly targets that gap with a registry and cost-visibility rules. However, the proposal's own risk section acknowledges the central implementation threat: an information-only framework may simply be overridden by political decision-making, exactly as occurred historically and in the Polish 2017 reversal, meaning the mechanism's success depends entirely on whether it is coupled to binding decision procedures elsewhere in the system.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-02"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Coupling the registry with any of T1, T3, or T5's procedural mechanisms could convert transparency into an actual constraint on decision-making, addressing the core implementation weakness of an information-only design.",
+      "Early establishment of Hungary-specific outcome tracking (e.g., on closure-depopulation linkage) could resolve some of the contested international evidence within a Hungarian-specific timeframe, informing later policy adaptation."
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      "Directly targets the documented absence of durable institutionalized feedback mechanisms across repeated historical cycles of Hungarian rural school contraction and expansion.",
+      "Requires tracking of realized (not merely projected) cost savings and full inclusion of transportation cost offsets, addressing a documented gap in how consolidation fiscal rationale is currently presented.",
+      "Explicitly proposes tracking Hungary-specific demographic-depopulation outcomes rather than assuming international findings transfer, appropriately treating that evidence as contested rather than settled."
+    ],
+    "threats": [
+      "Delay risk is explicit and significant: building evidence infrastructure takes time during which demographic pressures continue, and if not paired with interim action, the registry may only document a crisis it did not help avert.",
+      "Historical precedent of political decisions overriding technical evidence, plus the Polish 2017 reversal despite positive evidence, suggests a material risk that this infrastructure will be built but not used at decision points."
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "As an information/transparency infrastructure, it carries no binding authority over the centralized decision-maker, so its practical effect depends entirely on voluntary uptake by an actor with a documented history of top-down, evidence-independent decisions.",
+      "No described mechanism protects the registry from capture or selective publication, which would undermine the credibility this proposal depends on for influence."
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t6-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-99eb47a51c938608",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

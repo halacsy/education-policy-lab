@@ -1,0 +1,42 @@
+{
+  "content": {
+    "assessment": "A transparency/evidence infrastructure is institutionally neutral: it does not change who holds closure authority (tankerület centers, F-live-hungarian_education_system-01) nor the criteria they apply (F-live-hungarian_education_system-03), but it could make visible the previously undocumented link between legislative/fiscal incentive shifts and closure waves (F-live-hungarian_education_system-02), and could quantify the currently opaque interaction between national funding formulas and small-school viability (F-live-hungarian_education_system-04). Because it is explicitly designed to inform rather than mandate any model, its institutional fit is high, but by the same token it cannot by itself close the 38% coverage gap (F-live-hungarian_education_system-06) or alter tier authority ahead of the 2026 reform (F-live-hungarian_education_system-07).",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-06",
+      "F-live-hungarian_education_system-07",
+      "F-live-hungarian_education_system-08"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "A closure/outcome registry could track whether the 2026 reform's restored principal/municipal input actually changes closure incidence relative to the pre-reform baseline (F-live-hungarian_education_system-07)",
+      "Could be extended to track kindergarten coverage alongside primary schools, since both operate under similar enrollment-threshold logic and are currently monitored separately (F-live-hungarian_education_system-08)"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "High institutional fit: an information/registry layer can be added without altering existing tankerület authority or criteria, minimizing administrative disruption (F-live-hungarian_education_system-01, F-live-hungarian_education_system-03)",
+      "Could retrospectively quantify the mechanism behind the 2004-2008 closure wave, converting a documented historical pattern into an ongoing monitoring capability (F-live-hungarian_education_system-02)",
+      "Directly relevant to making visible how national funding-formula thresholds (F-live-hungarian_education_system-04) interact with local viability, a currently under-documented mechanism"
+    ],
+    "threats": [
+      "Without binding decision rules, transparency infrastructure risks being informationally rich but institutionally inert, since actual closure decisions remain within tankerület discretion applying enrollment/efficiency criteria unchanged (F-live-hungarian_education_system-01, F-live-hungarian_education_system-03)"
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      "Being purely informational, it does not by itself remedy the territorial coverage gap already present in 38% of settlements (F-live-hungarian_education_system-06)",
+      "Registry design would need to anticipate the 2026 governance restructuring to remain applicable to a changed tier system rather than only the current one (F-live-hungarian_education_system-07)"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t5-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-c85ff868ea290d7d",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

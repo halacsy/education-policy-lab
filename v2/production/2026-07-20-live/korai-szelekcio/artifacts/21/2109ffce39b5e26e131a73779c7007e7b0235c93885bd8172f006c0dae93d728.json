@@ -1,0 +1,79 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02",
+      "A-live-t1-03"
+    ],
+    "change_level": "practice",
+    "costs": [
+      "Design and validation costs for new exam item banks and SES-index construction",
+      "Administrative burden of outreach programs at disadvantaged feeder schools",
+      "Risk of formula complexity reducing public trust in exam fairness"
+    ],
+    "equity_impact": "Likely modest positive equity effect at the gimnázium entry gate itself, but does not address upstream primary-school sorting, church-school admissions discretion, or Roma segregation, which operate through separate mechanisms (F-live-equity_and_social_mobility-07, F-live-polish_reform-08).",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduced weight of purchasable exam-prep advantage in determining admission outcomes",
+      "Potential narrowing of the tertiary-educated-parent overrepresentation documented in 6/8-year cohorts",
+      "Preserves politically entrenched track structure, lowering legal and political barriers to enactment"
+    ],
+    "finding_refs": [
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-05",
+      "F-live-legal_and_governance-03",
+      "F-live-equity_and_social_mobility-08",
+      "F-live-education_finance-02"
+    ],
+    "goal": "Reduce family-capital-driven sorting at the point of gimnázium entry while preserving the current 4/6/8-year track structure.",
+    "implementation_steps": [
+      {
+        "action": "Commission redesign of math/Hungarian exam items toward reasoning-based, less-coachable formats and pilot SES-linked scoring adjustments (e.g., feeder-school disadvantage index) in a subset of districts",
+        "actor": "Ministry of Education / centralized exam authority",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Mandate outreach programs at disadvantaged-population feeder primary schools to raise application rates prior to exam rollout",
+        "actor": "Klebelsberg Centre and district sub-units",
+        "timeline": "Years 1-2"
+      },
+      {
+        "action": "Evaluate pilot results against baseline admission composition data and adjust SES-weighting formula",
+        "actor": "Ministry of Education",
+        "timeline": "Years 2-3"
+      },
+      {
+        "action": "Enact any statutory quota/proxy provisions found necessary beyond ministerial discretion",
+        "actor": "Parliament (if quota component requires legal basis)",
+        "timeline": "Year 3"
+      }
+    ],
+    "mechanisms": [
+      "Uniform national exam already exists and is centrally graded, giving an existing lever to redesign item types toward coaching-resistance without new legal architecture (F-live-hungarian_education_system-02).",
+      "Documented coaching investment (3.5 hrs/week, 34,000 HUF/month) concentrated among university-educated parents shows the exam interacts with a private prep market that a redesigned exam format could weaken (F-live-hungarian_education_system-05).",
+      "Interview weight is already capped at 25% by regulation, providing a lever to reduce or reallocate subjective components that may favor coached/higher-SES applicants (F-live-legal_and_governance-03).",
+      "Distance to nearest 6-/8-year school is non-random and clusters in urban areas, meaning SES-aware entry adjustments would need to also account for geographic access gaps to be effective (F-live-equity_and_social_mobility-08).",
+      "Elementary schools serving disadvantaged populations often do not facilitate participation in the entry competition at all, indicating an admissions-mechanism fix alone may not reach non-applicant pools (F-live-education_finance-02)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "SES-index proxies may be gamed or contested as unfair by advantaged families with political access (F-live-political_feasibility-07)",
+      "Reform does not touch free school choice or primary-school sorting occurring before age 10, which independently drives segregation (F-live-portuguese_reform-06, F-live-polish_reform-07)",
+      "Coaching-resistant redesign may simply shift coaching investment to new exam formats rather than eliminating the advantage"
+    ],
+    "title": "Coaching-resistant, SES-weighted admission redesign for existing 6/8-year tracks",
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02",
+      "U-live-t1-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-derive_transformations-08f8484f67a159b0",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "e2208243b684de3b2ba2fd24aba370777b2cf5474176698c9c024c7590851b50",
+  "topic": "korai-szelekcio"
+}

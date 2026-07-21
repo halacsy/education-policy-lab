@@ -1,0 +1,162 @@
+{
+  "architecture_version": "2.0.0",
+  "completed_at": "2026-07-20T23:23:17.052749Z",
+  "root_refs": [
+    "DP-live-production",
+    "EV-live-production",
+    "DR-live-production"
+  ],
+  "run_id": "live-rural-school-closures-production",
+  "summary": {
+    "arm": "production",
+    "completed_at": "2026-07-20T23:23:17.049695Z",
+    "counts": {
+      "coverage_ledger": 1,
+      "decision_readiness": 1,
+      "dilemma": 6,
+      "finding": 116,
+      "lens_assessment": 72,
+      "lens_definition": 12,
+      "research_question": 10,
+      "transformation_family": 6,
+      "transformation_proposal": 6
+    },
+    "dilemma_refs": [
+      "D-live-production-01",
+      "D-live-production-02",
+      "D-live-production-03",
+      "D-live-production-04",
+      "D-live-production-05",
+      "D-live-production-06"
+    ],
+    "evaluation": {
+      "concerns": [
+        "Transformations are conceptually clear but often lack operational detail (who exactly would implement T1–T5, statutory text examples, budgetary implications, enforcement mechanisms, timelines).",
+        "Some causal inferences rest on non-Hungarian studies; the package flags this uncertainty but does not supply Hungary-specific quasi-experimental evidence (necessary for decision confidence).",
+        "Cost and fiscal impact estimates (net savings, transport offsets, staffing implications) are discussed qualitatively but absent quantitatively, limiting short-term budgeting decisions.",
+        "Stakeholder mapping and political feasibility analysis is present in high-level form but needs concrete actor incentives and veto points (e.g., ministerial incentives, party politics, church maintainers) to be decision-operational.",
+        "A few referenced items use URNs or terse summaries; while auditable, the package sometimes presumes the reader will accept the cited study’s generalizability rather than unpacking key methods/limitations."
+      ],
+      "dimensions": {
+        "artifact_integrity": 9,
+        "decision_usefulness": 7,
+        "dilemma_clarity": 9,
+        "evidence_discipline": 8,
+        "lens_traceability": 8,
+        "transformation_specificity": 6
+      },
+      "package_ref": "DP-live-production",
+      "strengths": [
+        "Clear mapping of a policy option space (T1–T6) linked to specific governance levers and trade-offs.",
+        "Extensive, auditable citation practice: inline finding IDs consistently map to appendix claims with URIs/URNs.",
+        "Explicit separation of empirical uncertainty and value/political choices; includes concrete research questions likely to change decisions.",
+        "Cross-national comparisons and historical precedents are used defensibly to highlight mechanism risks (e.g., Poland, Finland, Scotland).",
+        "Dilemmas are clearly stated, with attention to distributional effects (Roma, rural disadvantage) and implementation constraints (tankerület structure, transport responsibility)."
+      ],
+      "total": 7.833,
+      "verdict": "accept_with_caveats"
+    },
+    "evaluation_ref": "EV-live-production",
+    "execution": {
+      "cache_hits": 13,
+      "dispositions": {
+        "assemble_decision_package": "executed",
+        "assess_decision_readiness": "executed",
+        "assess_demography": "executed",
+        "assess_education_finance": "executed",
+        "assess_equity_and_social_mobility": "executed",
+        "assess_finnish_reform": "executed",
+        "assess_hungarian_education_system": "executed",
+        "assess_implementation_planning": "executed",
+        "assess_international_comparison": "executed",
+        "assess_legal_and_governance": "executed",
+        "assess_polish_reform": "executed",
+        "assess_political_feasibility": "executed",
+        "assess_portuguese_reform": "executed",
+        "assess_school_network_planning": "executed",
+        "build_research_agenda": "executed",
+        "derive_transformations": "executed",
+        "evaluate_decision_package": "executed",
+        "identify_decision_dilemmas": "executed",
+        "register_baseline_lenses": "cache_hit",
+        "research_demography": "cache_hit",
+        "research_education_finance": "cache_hit",
+        "research_equity_and_social_mobility": "cache_hit",
+        "research_finnish_reform": "cache_hit",
+        "research_hungarian_education_system": "cache_hit",
+        "research_implementation_planning": "cache_hit",
+        "research_international_comparison": "cache_hit",
+        "research_legal_and_governance": "cache_hit",
+        "research_polish_reform": "cache_hit",
+        "research_political_feasibility": "cache_hit",
+        "research_portuguese_reform": "cache_hit",
+        "research_school_network_planning": "cache_hit"
+      },
+      "executed": 18,
+      "failed": 0,
+      "nodes": 31
+    },
+    "package_ref": "DP-live-production",
+    "readiness": {
+      "candidate_first_move_refs": [
+        "TP-live-t1",
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t4",
+        "TP-live-t5",
+        "TP-live-t6"
+      ],
+      "conditions": [
+        "Transformations are conceptually clear but often lack operational detail (who exactly would implement T1–T5, statutory text examples, budgetary implications, enforcement mechanisms, timelines).",
+        "Some causal inferences rest on non-Hungarian studies; the package flags this uncertainty but does not supply Hungary-specific quasi-experimental evidence (necessary for decision confidence).",
+        "Cost and fiscal impact estimates (net savings, transport offsets, staffing implications) are discussed qualitatively but absent quantitatively, limiting short-term budgeting decisions.",
+        "Stakeholder mapping and political feasibility analysis is present in high-level form but needs concrete actor incentives and veto points (e.g., ministerial incentives, party politics, church maintainers) to be decision-operational.",
+        "A few referenced items use URNs or terse summaries; while auditable, the package sometimes presumes the reader will accept the cited study’s generalizability rather than unpacking key methods/limitations."
+      ],
+      "evaluation_ref": "EV-live-production",
+      "human_external_use_gate": "pending",
+      "package_ref": "DP-live-production",
+      "priority_research_question_refs": [
+        "RQ-live-production-01",
+        "RQ-live-production-02",
+        "RQ-live-production-03",
+        "RQ-live-production-04",
+        "RQ-live-production-05",
+        "RQ-live-production-08"
+      ],
+      "rationale": "The cross-family evaluation accepted the package for human review; the external-use gate remains a human decision.",
+      "unresolved_dilemma_refs": [
+        "D-live-production-01",
+        "D-live-production-02",
+        "D-live-production-03",
+        "D-live-production-04",
+        "D-live-production-05",
+        "D-live-production-06"
+      ],
+      "verdict": "ready_with_conditions"
+    },
+    "readiness_ref": "DR-live-production",
+    "research_question_refs": [
+      "RQ-live-production-01",
+      "RQ-live-production-02",
+      "RQ-live-production-03",
+      "RQ-live-production-04",
+      "RQ-live-production-05",
+      "RQ-live-production-06",
+      "RQ-live-production-07",
+      "RQ-live-production-08",
+      "RQ-live-production-09",
+      "RQ-live-production-10"
+    ],
+    "run_id": "live-rural-school-closures-production",
+    "transformation_hashes": [
+      "4914686802236ebafaf08831b3b7b46700cba25c51641d3d9e7ec37afb42bc79",
+      "4934e79a0bcf494b0ee904fd4df9fb5c64e01b5fc4379a57d4bcfb147aab4e3a",
+      "550495ae6f4286b95885ead1422eb4bd57cb10643a28f9036c27ebc917e4f7ad",
+      "88cbce8b41461ebbf248881f7b8e16d2acb15dd2cc0f135715a747ca3983aaeb",
+      "b4754056bb64ed9139511a82c1d0436fb4d9548dbb736fa1224664614b164608",
+      "fd7047eb3dc7583e0d0f7606852e3b3fdbbc1c9f9365754f5df4b1ee34cb3f02"
+    ]
+  },
+  "topic": "rural-school-closures"
+}

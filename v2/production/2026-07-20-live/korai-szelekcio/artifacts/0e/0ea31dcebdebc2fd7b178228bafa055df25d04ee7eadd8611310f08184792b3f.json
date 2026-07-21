@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "This proposal keeps the existing 6/8-year track geography and physical network unchanged, instead modifying admission mechanics. From a network-planning lens, it does not alter capacity, transport, or geographic distribution at all, so the feasibility question is less about network delivery than about whether the existing concentrated network can absorb a differently-selected pool without physical adjustment. Since tracks remain geographically concentrated in urban/Budapest settings with fixed stagnant capacity, SES-weighted admission changes operate entirely within that fixed geographic footprint and cannot address the network-level access disparities documented for rural and peripheral areas.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "Could be paired with outreach requirements that specifically target geographically isolated or rural disadvantaged schools, partially mitigating (though not solving) network-access gaps"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Requires no new construction, capacity expansion, or transport reconfiguration, since it operates purely on selection mechanics within the existing network footprint",
+      "Outreach/registration mandates for disadvantaged-school non-participation could improve effective access to existing capacity without new infrastructure"
+    ],
+    "threats": [
+      "Historically established, larger schools retain greater selective capacity than newer or rural schools regardless of track type; SES-weighted admissions without capacity redistribution may reinforce this path-dependent geographic stratification rather than reduce it"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "Does not change the geographic concentration of six- and eight-year programs in large urban settlements and Budapest, so rural/peripheral access constraints persist unaddressed",
+      "Physical capacity remains stagnant at approximately 25,962 students regardless of admissions redesign, meaning oversubscription pressure at flagship urban schools continues unabated",
+      "Does not address the primary-school 'dilution' dynamic that concentrates demand on selective urban institutions while leaving feeder schools with excess capacity"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-ff34a4de56a27e28",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

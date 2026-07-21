@@ -1,0 +1,66 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02"
+    ],
+    "change_level": "practice",
+    "costs": [
+      "Continued unpredictability for families and staff planning",
+      "No systematic data collection improvement"
+    ],
+    "equity_impact": "Negative/neutral: perpetuates existing inequity because school survival depends on local social capital and political salience rather than need, disadvantaging villages with weaker mobilization capacity, including many with higher Roma population shares.",
+    "evidence_status": "strong",
+    "expected_benefits": [
+      "No new administrative or fiscal burden created",
+      "Preserves existing informal channels that have occasionally saved schools (e.g., 2025 Budapest reversal)"
+    ],
+    "finding_refs": [
+      "F-live-legal_and_governance-04",
+      "F-live-legal_and_governance-08",
+      "F-live-political_feasibility-07",
+      "F-live-portuguese_reform-10",
+      "F-live-political_feasibility-03",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-06"
+    ],
+    "goal": "Describe the baseline trajectory if no new statutory framework is adopted: village schools persist only as long as enrollment and district-center discretion allow, with survival determined by informal local mobilization rather than rule-based criteria.",
+    "implementation_steps": [
+      {
+        "action": "Maintain current administrative practice without introducing new thresholds, transport guarantees, or consultation rules",
+        "actor": "Central government / Klebelsberg Center",
+        "timeline": "Ongoing, no defined end point"
+      },
+      {
+        "action": "Continue ad hoc mobilization (petitions, protests, NGO support) as the only available lever against closure",
+        "actor": "Villages and parents",
+        "timeline": "Reactive, triggered by individual closure proposals"
+      }
+    ],
+    "mechanisms": [
+      "Closure decisions continue to be made administratively by school district centers citing enrollment/cost criteria without a dedicated statutory procedure for demographic decline (F-live-legal_and_governance-04).",
+      "Closure/merger decisions are occasionally reversed via informal political-administrative intervention after public protest, not through codified appeal (F-live-legal_and_governance-08, F-live-political_feasibility-07).",
+      "Local social capital (bonding/bridging networks) determines survival unevenly across villages with similar demographics (F-live-portuguese_reform-10, F-live-political_feasibility-03).",
+      "Structural fiscal pressure from national class-size/per-pupil funding formulas persists regardless of governance form (F-live-hungarian_education_system-04)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Uneven outcomes across villages with similar demographics purely due to differential social capital (F-live-portuguese_reform-10)",
+      "Continued territorial equity gaps as 38% of settlements already lack any public educational institution (F-live-hungarian_education_system-06)",
+      "Persistent contested segregation dynamics via church-sector growth continuing unchecked (F-live-finnish_reform-09, F-live-demography-08)"
+    ],
+    "title": "Status-quo continuation with informal ad hoc negotiation (passive-change counterfactual)",
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-derive_transformations-b3116f53e1969490",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

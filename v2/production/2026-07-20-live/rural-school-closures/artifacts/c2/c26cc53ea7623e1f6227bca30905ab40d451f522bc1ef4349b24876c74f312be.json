@@ -1,0 +1,48 @@
+{
+  "content": {
+    "candidate_first_move_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5",
+      "TP-live-t6"
+    ],
+    "conditions": [
+      "Transformations are conceptually clear but often lack operational detail (who exactly would implement T1–T5, statutory text examples, budgetary implications, enforcement mechanisms, timelines).",
+      "Some causal inferences rest on non-Hungarian studies; the package flags this uncertainty but does not supply Hungary-specific quasi-experimental evidence (necessary for decision confidence).",
+      "Cost and fiscal impact estimates (net savings, transport offsets, staffing implications) are discussed qualitatively but absent quantitatively, limiting short-term budgeting decisions.",
+      "Stakeholder mapping and political feasibility analysis is present in high-level form but needs concrete actor incentives and veto points (e.g., ministerial incentives, party politics, church maintainers) to be decision-operational.",
+      "A few referenced items use URNs or terse summaries; while auditable, the package sometimes presumes the reader will accept the cited study’s generalizability rather than unpacking key methods/limitations."
+    ],
+    "evaluation_ref": "EV-live-production",
+    "human_external_use_gate": "pending",
+    "package_ref": "DP-live-production",
+    "priority_research_question_refs": [
+      "RQ-live-production-01",
+      "RQ-live-production-02",
+      "RQ-live-production-03",
+      "RQ-live-production-04",
+      "RQ-live-production-05",
+      "RQ-live-production-08"
+    ],
+    "rationale": "The cross-family evaluation accepted the package for human review; the external-use gate remains a human decision.",
+    "unresolved_dilemma_refs": [
+      "D-live-production-01",
+      "D-live-production-02",
+      "D-live-production-03",
+      "D-live-production-04",
+      "D-live-production-05",
+      "D-live-production-06"
+    ],
+    "verdict": "ready_with_conditions"
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "DR-live-production",
+  "provenance_ref": "PV-assess_decision_readiness-0e24c0da89b346e1",
+  "record_type": "decision_readiness",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

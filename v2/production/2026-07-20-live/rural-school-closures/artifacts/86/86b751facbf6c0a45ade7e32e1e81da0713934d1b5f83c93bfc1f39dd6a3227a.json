@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "Grade-splitting addresses transport and access constraints for the most transport-vulnerable cohort (younger children) by keeping them local, while shifting the capacity and specialist-teacher problem to a consolidated upper-grade site where economies of scale are more attainable. This is coherent with a network planning logic that recognizes uneven vulnerability to travel burden by age. However, site selection for the consolidated tier risks reproducing the same inter-municipal pull dynamics already documented in Hungarian micro-regions, and transport infrastructure gaps in rural regions could undermine the very commute this model imposes on older children.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-07",
+      "F-live-school_network_planning-08",
+      "F-live-school_network_planning-09",
+      "F-live-school_network_planning-01"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "Route-based, multi-village transport logistics models (as demonstrated in a minority-language school bus program) offer a transferable operational template for moving upper-grade pupils, though domestic applicability is inferred rather than confirmed (F-live-school_network_planning-08)"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Reduces commute burden specifically for younger pupils by preserving local lower-grade access",
+      "Concentrates upper-grade capacity where specialist staffing and class-size thresholds are more feasible to meet at scale"
+    ],
+    "threats": [
+      "Selection of the consolidated upper-grade site could trigger the same informal inter-municipal competition for pupils documented elsewhere, distorting a purely geographic-efficiency rationale for site choice (F-live-school_network_planning-09)",
+      "Underlying population decline continues to shrink the pool of upper-grade pupils feeding the consolidated site, potentially undermining the capacity gains the model seeks (F-live-school_network_planning-01)"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "The model still requires functioning transport for upper-grade pupils, which is precisely where documented public transport frequency and scheduling gaps are most acute in North-Eastern, South-Western, and Western rural regions (F-live-school_network_planning-07)"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t2-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-b54fb07791352c39",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

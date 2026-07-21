@@ -1,0 +1,78 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t6-01",
+      "A-live-t6-02",
+      "A-live-t6-03"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Administrative capacity needed to conduct segregation-impact assessments consistently and defensibly",
+      "Potential legal challenge from church/private maintainers regarding the extension of discretionary refusal to their sector",
+      "Risk of politically sensitive conflict with religious/private institutional stakeholders"
+    ],
+    "equity_impact": "Provides a maintainer-neutral backstop against further segregation growth from track expansion, complementing state-sector contraction (T2) and admissions redesign (T1) by closing the church/private expansion loophole; does not reduce currently existing segregation levels but caps future growth in the segregation-generating channel most likely to escape other levers.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Closes a documented gap where state-sector-only levers (T2) cannot reach church/private track expansion",
+      "Builds directly on an already-exercised, legally tested precedent, minimizing novel legal risk relative to structural reform (T3)",
+      "Prevents future segregation growth even if it does not reduce existing track size"
+    ],
+    "finding_refs": [
+      "F-live-hungarian_education_system-07",
+      "F-live-hungarian_education_system-09",
+      "F-live-legal_and_governance-09",
+      "F-live-equity_and_social_mobility-07",
+      "F-live-implementation_planning-05"
+    ],
+    "goal": "Use and formalize existing ministerial discretionary approval power to prevent new or expanded 6/8-year track approvals that would foreseeably increase local segregation, closing the gap left by state-sector-only contraction levers.",
+    "implementation_steps": [
+      {
+        "action": "Codify a standardized segregation-impact assessment (modeled on the Tiszavasvári precedent) that all new/expanded 6/8-year track applications must pass, applicable to all maintainer types",
+        "actor": "Ministry of Education",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Confirm legal basis for extending discretionary refusal power over church/foundation/private applicants under the 2023 unified legal-status framework",
+        "actor": "Ministry of Education / legal counsel",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Apply the segregation-impact test to all pending and future track-expansion applications",
+        "actor": "Klebelsberg Centre and relevant church/private oversight bodies",
+        "timeline": "Years 1-3"
+      },
+      {
+        "action": "Publish annual transparency report on approvals/denials and their segregation-impact assessments to build public trust and precedent consistency",
+        "actor": "Ministry of Education",
+        "timeline": "Years 2-3"
+      }
+    ],
+    "mechanisms": [
+      "The Encs case shows that permission for a school to add lower grades (7-8) directly caused creaming of higher-status pupils from feeder primary schools, establishing a documented causal channel from expansion approval to local segregation (F-live-hungarian_education_system-07).",
+      "The ministry has already exercised discretionary refusal in the Tiszavasvári case explicitly citing segregation risk, establishing a legal/administrative precedent that a formalized test would generalize and make consistent (F-live-hungarian_education_system-09).",
+      "A 2023 law extended uniform state employment/legal-status terms across all provider types including church and private, indicating an existing legal channel through which cross-maintainer regulatory reach has already been expanded and could be extended to approval-gatekeeping (F-live-legal_and_governance-09).",
+      "Church-run institutions have grown substantially (8.6% to 16.6% of primary, 10% to 26.1% of secondary schools 2010-2021) with documented admissions discretion enabling selection of higher-achieving students, indicating the segregation-expansion risk is concentrated precisely in the maintainer segment least covered by existing state-sector capacity levers like T2 (F-live-equity_and_social_mobility-07, F-live-implementation_planning-05)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Church and private maintainers may contest the extension of ministerial discretion over their admissions/expansion decisions as an infringement on institutional autonomy, especially given their partial exemption from state maintenance jurisdiction (F-live-legal_and_governance-07)",
+      "A purely preventive (expansion-blocking) tool does not reduce existing segregation from already-approved tracks, limiting its scope to marginal future growth only",
+      "Inconsistent or politically selective application of the segregation-impact test could undermine its legitimacy and invite accusations of arbitrary discretion"
+    ],
+    "title": "Targeted administrative constraint on segregation-generating track expansion (discretionary gatekeeping across all maintainer types)",
+    "uncertainty_refs": [
+      "U-live-t6-01",
+      "U-live-t6-02",
+      "U-live-t6-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t6",
+  "provenance_ref": "PV-derive_transformations-08f8484f67a159b0",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

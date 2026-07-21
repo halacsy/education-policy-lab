@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "T4 is the proposal most directly framed in education-finance terms: it proposes targeted compensatory funding to feeder/disadvantaged schools precisely because capitation financing currently strips them of both student revenue and peer effects with no compensatory mechanism (F-live-education_finance-05), and it targets the severe disadvantaged-skill gap (12.1% vs 16.3% EU average, F-live-education_finance-07) through resource reallocation rather than structural change. Given Hungary's low overall spending share and instructional time (F-live-education_finance-06), such reallocation could yield high marginal value for money since baseline provision is thin. However, it leaves cost incidence from tracking-driven sorting fully in place, meaning compensatory spending is an ongoing transfer rather than a one-time fix, with unclear scale of budget required relative to the depth of the disadvantaged-skill gap.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-06",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "Existing teacher-career/incentive funding channels (referenced qualitatively) could be redirected toward disadvantaged-school retention with lower marginal implementation cost than new structural reform"
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      "Directly targets the specific, evidenced funding/peer-effect loss mechanism affecting feeder schools under capitation financing (F-live-education_finance-05)",
+      "Addresses a severe and quantified resource-need gap: only 12.1% of disadvantaged students reach basic skill proficiency vs 16.3% EU average (F-live-education_finance-07)",
+      "Low baseline spending share (4.1%, rank 41/42) and instructional time (rank 32/34) mean marginal reallocation toward disadvantaged schools may have outsized value-for-money relative to systems with more fiscal slack (F-live-education_finance-06)"
+    ],
+    "threats": [
+      "If compensatory funding is set below the scale of the structural loss documented in F-live-education_finance-05, it may function as a symbolic rather than substantive offset, especially given the system's overall low spending capacity (F-live-education_finance-06)"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "As a compensatory rather than structural fix, funding must be sustained indefinitely to offset an ongoing sorting mechanism, implying recurring rather than one-time fiscal commitment",
+      "No cost estimate provided for the scale of targeted investment needed to meaningfully close the 12.1%/16.3% gap"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t4-education_finance",
+  "provenance_ref": "PV-assess_education_finance-51852e84a028699d",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "8dff9f272218d79646ca7a4513a0a85c9d6e3b212ea91fdada56a0e0e33fcb25",
+  "topic": "korai-szelekcio"
+}

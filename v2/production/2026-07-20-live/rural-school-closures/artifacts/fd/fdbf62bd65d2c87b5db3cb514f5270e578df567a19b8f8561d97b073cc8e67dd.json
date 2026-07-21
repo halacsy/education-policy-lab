@@ -1,0 +1,25 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "medium",
+    "method": "Statistical modeling (e.g., cost-function and class-size regression analysis) of historical enrollment trajectories against closure/merger events, incorporating teacher-supply data and settlement-geography covariates (distance to nearest alternative school, road/transport infrastructure).",
+    "proposal_refs": [
+      "TP-live-t3",
+      "TP-live-t5"
+    ],
+    "question": "What is the enrollment/cohort-size threshold below which a village primary school (or grade-band unit) becomes operationally unsustainable, and how does this threshold interact with teacher-labor availability and settlement geography?",
+    "uncertainty_refs": [
+      "U-live-demography-01",
+      "U-live-implementation_planning-04"
+    ],
+    "why_it_matters": "T3's grade-split design and T5's default-closure trigger both require a defensible viability threshold; without it, 'transparent minimum-enrollment criteria' (T5) or retained lower-grade viability (T3) cannot be operationalized credibly."
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "RQ-live-production-06",
+  "provenance_ref": "PV-build_research_agenda-60762b3fab4931d0",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

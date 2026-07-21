@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "From a demographic lens, this admissions-redesign proposal operates entirely within a shrinking-cohort environment (F-live-demography-01, F-live-demography-02) but does not itself engage cohort size or geography as design variables. Its coaching-resistance mechanism targets sorting quality, not sorting quantity, so it leaves untouched the structural viability question of whether enough students exist locally to sustain 4/6/8-year pipelines. Given that selective-track uptake is already concentrated in urban/county-seat schools while 40-60% of rural schools see zero competition entrants (F-live-demography-03), a nationally uniform exam redesign will interact with a geographically skewed applicant pool: it may improve fairness among those who already apply from well-served areas without altering the rural non-participation baseline. The proposal's own risk register acknowledges that admissions-mechanism fixes may not reach non-applicant pools, which aligns with the demographic finding that rural elementary schools often do not facilitate entry-competition participation at all.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-05"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      "Could be paired with geographic weighting to compensate for the documented urban clustering of applicants, addressing part of the spatial distribution criterion"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Uses an existing centrally-graded exam lever, requiring no new institutional capacity in a period of demographic strain (consistent with F-live-demography-09 workforce constraints)",
+      "Does not add new selective-track infrastructure, avoiding exacerbation of viability problems in shrinking rural cohorts (F-live-demography-04)"
+    ],
+    "threats": [
+      "Without a structural or geographic complement, continued cohort decline (F-live-demography-01, F-live-demography-02) will erode the pool of applicants faster in rural areas than urban ones, potentially making the redesigned exam increasingly irrelevant outside urban centers over a 20-year horizon"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "Does not address the rural/urban divide in selective-track access documented at baseline (F-live-demography-03), since it only reforms the exam faced by those who already apply",
+      "Ignores the mechanical class-size threshold problem (F-live-demography-05): coaching-resistant admissions criteria do not change whether a locality can form a viable intake class as cohorts shrink"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-demography",
+  "provenance_ref": "PV-assess_demography-69be8f80f4f224d6",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "10c6bac4da8198da92eb25adfc8db1603fd2c0484c89ea80e43e4a43a85853c4",
+  "topic": "korai-szelekcio"
+}

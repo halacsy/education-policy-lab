@@ -1,0 +1,162 @@
+{
+  "architecture_version": "2.0.0",
+  "completed_at": "2026-07-20T23:07:55.089157Z",
+  "root_refs": [
+    "DP-live-production",
+    "EV-live-production",
+    "DR-live-production"
+  ],
+  "run_id": "live-korai-szelekcio-production",
+  "summary": {
+    "arm": "production",
+    "completed_at": "2026-07-20T23:07:55.087031Z",
+    "counts": {
+      "coverage_ledger": 1,
+      "decision_readiness": 1,
+      "dilemma": 6,
+      "finding": 114,
+      "lens_assessment": 72,
+      "lens_definition": 12,
+      "research_question": 10,
+      "transformation_family": 6,
+      "transformation_proposal": 6
+    },
+    "dilemma_refs": [
+      "D-live-production-01",
+      "D-live-production-02",
+      "D-live-production-03",
+      "D-live-production-04",
+      "D-live-production-05",
+      "D-live-production-06"
+    ],
+    "evaluation": {
+      "concerns": [
+        "Implementation detail is uneven: several levers (notably T1 and T4) lack concrete operational specifications (e.g., exact SES-weighting formula, funding amounts/targets, phasing plans).",
+        "Some evidence items point to generic or placeholder URIs (example.com) or URNs without clear public access, reducing immediate auditability for a non-specialist reader.",
+        "No quantified impact estimates, budgetary costs, or projected enrolment/capacity models are provided to permit cost–benefit or fiscal feasibility comparison across levers.",
+        "Stakeholder mapping and likely political responses (beyond noting director lobby and ministerial positions) are not systematically modeled, limiting strategic enactment planning.",
+        "The package flags displacement risks but does not present empirical scenarios or sensitivity analyses showing where displaced demand or coaching advantage would concentrate under each lever."
+      ],
+      "dimensions": {
+        "artifact_integrity": 9,
+        "decision_usefulness": 8,
+        "dilemma_clarity": 9,
+        "evidence_discipline": 9,
+        "lens_traceability": 8,
+        "transformation_specificity": 7
+      },
+      "package_ref": "DP-live-production",
+      "strengths": [
+        "Well-structured, artifact-first framing that enumerates six distinct policy lever options (T1–T6) and a clear counterfactual baseline (T5).",
+        "Extensive referencing: almost every substantive claim is tagged to an F-live ID with a corresponding visible-evidence appendix entry and many entries include URIs or resolvable identifiers.",
+        "Explicit separation of empirical uncertainties versus value trade-offs; the package identifies which research questions would most change the choice.",
+        "Legal and governance constraints are made concrete (primary-legislation vs. ministerial discretion, Klebelsberg Centre jurisdiction, constitutional free-choice tension), supporting practical feasibility assessment.",
+        "Comparative case synthesis (Finland, Poland, Portugal references) is used carefully with transferability caveats called out."
+      ],
+      "total": 8.333,
+      "verdict": "accept_with_caveats"
+    },
+    "evaluation_ref": "EV-live-production",
+    "execution": {
+      "cache_hits": 13,
+      "dispositions": {
+        "assemble_decision_package": "executed",
+        "assess_decision_readiness": "executed",
+        "assess_demography": "executed",
+        "assess_education_finance": "executed",
+        "assess_equity_and_social_mobility": "executed",
+        "assess_finnish_reform": "executed",
+        "assess_hungarian_education_system": "executed",
+        "assess_implementation_planning": "executed",
+        "assess_international_comparison": "executed",
+        "assess_legal_and_governance": "executed",
+        "assess_polish_reform": "executed",
+        "assess_political_feasibility": "executed",
+        "assess_portuguese_reform": "executed",
+        "assess_school_network_planning": "executed",
+        "build_research_agenda": "executed",
+        "derive_transformations": "executed",
+        "evaluate_decision_package": "executed",
+        "identify_decision_dilemmas": "executed",
+        "register_baseline_lenses": "cache_hit",
+        "research_demography": "cache_hit",
+        "research_education_finance": "cache_hit",
+        "research_equity_and_social_mobility": "cache_hit",
+        "research_finnish_reform": "cache_hit",
+        "research_hungarian_education_system": "cache_hit",
+        "research_implementation_planning": "cache_hit",
+        "research_international_comparison": "cache_hit",
+        "research_legal_and_governance": "cache_hit",
+        "research_polish_reform": "cache_hit",
+        "research_political_feasibility": "cache_hit",
+        "research_portuguese_reform": "cache_hit",
+        "research_school_network_planning": "cache_hit"
+      },
+      "executed": 18,
+      "failed": 0,
+      "nodes": 31
+    },
+    "package_ref": "DP-live-production",
+    "readiness": {
+      "candidate_first_move_refs": [
+        "TP-live-t1",
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t4",
+        "TP-live-t5",
+        "TP-live-t6"
+      ],
+      "conditions": [
+        "Implementation detail is uneven: several levers (notably T1 and T4) lack concrete operational specifications (e.g., exact SES-weighting formula, funding amounts/targets, phasing plans).",
+        "Some evidence items point to generic or placeholder URIs (example.com) or URNs without clear public access, reducing immediate auditability for a non-specialist reader.",
+        "No quantified impact estimates, budgetary costs, or projected enrolment/capacity models are provided to permit cost–benefit or fiscal feasibility comparison across levers.",
+        "Stakeholder mapping and likely political responses (beyond noting director lobby and ministerial positions) are not systematically modeled, limiting strategic enactment planning.",
+        "The package flags displacement risks but does not present empirical scenarios or sensitivity analyses showing where displaced demand or coaching advantage would concentrate under each lever."
+      ],
+      "evaluation_ref": "EV-live-production",
+      "human_external_use_gate": "pending",
+      "package_ref": "DP-live-production",
+      "priority_research_question_refs": [
+        "RQ-live-production-01",
+        "RQ-live-production-02",
+        "RQ-live-production-03",
+        "RQ-live-production-04",
+        "RQ-live-production-05",
+        "RQ-live-production-10"
+      ],
+      "rationale": "The cross-family evaluation accepted the package for human review; the external-use gate remains a human decision.",
+      "unresolved_dilemma_refs": [
+        "D-live-production-01",
+        "D-live-production-02",
+        "D-live-production-03",
+        "D-live-production-04",
+        "D-live-production-05",
+        "D-live-production-06"
+      ],
+      "verdict": "ready_with_conditions"
+    },
+    "readiness_ref": "DR-live-production",
+    "research_question_refs": [
+      "RQ-live-production-01",
+      "RQ-live-production-02",
+      "RQ-live-production-03",
+      "RQ-live-production-04",
+      "RQ-live-production-05",
+      "RQ-live-production-06",
+      "RQ-live-production-07",
+      "RQ-live-production-08",
+      "RQ-live-production-09",
+      "RQ-live-production-10"
+    ],
+    "run_id": "live-korai-szelekcio-production",
+    "transformation_hashes": [
+      "2109ffce39b5e26e131a73779c7007e7b0235c93885bd8172f006c0dae93d728",
+      "2e58d9040de2a0c97e8c7dba8ba8af8db49ed29bff7d14b17101f2e2e4ba5830",
+      "3ccb1ab6773bce8971bef4a826fe03ced2fc7f49f2e15e7068c589e1d672bcc5",
+      "5d355094f22bc6c8bf48842baf7074e4feb0cbb460b56b1dc80f0453539c63f8",
+      "5dc5bc6390604551a9ef0901ff0421529fe672d9aa499ca0f8f27f3543553b09",
+      "b735569bc57883d35b266b1795f9477b6f7a3963d26048d756f3d1a635711581"
+    ]
+  },
+  "topic": "korai-szelekcio"
+}

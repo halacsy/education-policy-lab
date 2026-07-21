@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "As a no-new-policy counterfactual, this proposal by construction leaves every existing institutional mechanism unchanged: the three-track structure (F-live-hungarian_education_system-01), the centrally administered exam (F-live-hungarian_education_system-02), free school choice (F-live-hungarian_education_system-03), and the ministry's discretionary approval practice (F-live-hungarian_education_system-09) all continue exactly as currently governed. This provides a clean institutional baseline for comparison, which is methodologically useful, but the lens flags an important limitation: institutional description of unchanged mechanisms does not establish that demographic contraction alone will address the documented segregation problems. The ministry's own view that declining demographics make the selective system 'less justifiable' (F-live-hungarian_education_system-10) reinforces that passive contraction is being watched as a possible catalyst for review, but this proposal's structural inertia means composition effects such as the parental-education gap (F-live-hungarian_education_system-04) and EU-topping segregation (F-live-hungarian_education_system-06) are not mechanically resolved by fewer students; the tracks could persist as selective even at smaller scale.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-06",
+      "F-live-hungarian_education_system-09",
+      "F-live-hungarian_education_system-10"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "Aligns with the ministry's own stated observation that declining demographics undermine the justification for the current selective system, potentially creating political space for later active reform even under this passive baseline (F-live-hungarian_education_system-10)"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Provides an institutionally honest baseline in which no governance, admission, or access mechanism is altered, useful as an analytic comparison point (F-live-hungarian_education_system-01, F-live-hungarian_education_system-02, F-live-hungarian_education_system-03)"
+    ],
+    "threats": [
+      "The ministry's discretionary approval/denial practice (as in Tiszavasvári) operates independently of demographic trends, meaning passive contraction does not substitute for or guarantee continuation of active segregation-prevention gatekeeping (F-live-hungarian_education_system-09)"
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      "Does not engage with any of the documented segregation-generating mechanisms (composition gaps, coaching advantage, EU-topping segregation) which persist independent of cohort size (F-live-hungarian_education_system-04, F-live-hungarian_education_system-05, F-live-hungarian_education_system-06)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-f8fc3b274f90b8df",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "997400987c48573a7b7c6daed92c0fa0c9f8250419a234aa6c06d930943c62f1",
+  "topic": "korai-szelekcio"
+}

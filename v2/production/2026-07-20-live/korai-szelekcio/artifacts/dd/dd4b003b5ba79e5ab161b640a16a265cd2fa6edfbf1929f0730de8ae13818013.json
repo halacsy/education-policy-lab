@@ -1,0 +1,40 @@
+{
+  "content": {
+    "assessment": "This proposal is the demographic lens's native terrain: it explicitly models the counterfactual contraction baseline using the strongest evidence set in this lens (F-live-demography-01 through F-live-demography-09 collectively). Its core claim—that cohort decline plus statutory class-size floors mechanically force consolidation independent of policy choice—is well-supported. The proposal correctly identifies that this contraction is already underway (application shifts, capacity stagnation) and is structurally embedded for 20+ years, not a short-term fluctuation. Its own risk analysis appropriately flags the central demographic weakness: passive contraction is geographically uneven, meaning urban/Budapest selective capacity could persist while rural provision collapses, an outcome directly evidenced by the region-specific contraction data and the settlements down to 50-70 school-age children. This makes the proposal analytically strong as a counterfactual baseline, but the lens's own limitation applies squarely: population projections describing what will mechanically happen do not determine whether that outcome (uneven geographic collapse, unaddressed Roma segregation, church-sector growth) is normatively acceptable.",
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      "Serves as an essential comparison baseline against which the demographic cost-effectiveness of T1-T4 can be measured, since it isolates what happens with zero new policy"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Directly and comprehensively grounds itself in the strongest available cohort-decline evidence (F-live-demography-01, F-live-demography-02), correctly framing decline as structurally embedded rather than transient",
+      "Correctly identifies the mechanical class-size threshold (F-live-demography-05) as an independent-of-policy constraint already binding in shrinking localities",
+      "Explicitly incorporates the aging/rural-shortage teacher workforce (F-live-demography-09) as a compounding pressure, showing awareness of multiple demographic mechanisms operating simultaneously",
+      "Own risk analysis correctly anticipates the geographically uneven outcome (urban persistence vs. rural collapse) that the regional contraction data (F-live-demography-04) would predict"
+    ],
+    "threats": [
+      "Uncoordinated, unplanned contraction could produce settlement-viability disruptions analogous in kind to the Polish transition-cost pattern, and does nothing to prevent Roma segregation or church-sector growth from persisting or worsening even as aggregate selective-track size shrinks"
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      "As a passive baseline, it has no mechanism to manage the uneven spatial distribution it correctly identifies as a risk; contraction will occur but its geographic pattern is left entirely to market/demographic drift"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-demography",
+  "provenance_ref": "PV-assess_demography-69be8f80f4f224d6",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "dab21fdc7a68f3a1e046bc1502c60894e70f30b90d472bd5e24e3cbf8f44374b",
+  "topic": "korai-szelekcio"
+}

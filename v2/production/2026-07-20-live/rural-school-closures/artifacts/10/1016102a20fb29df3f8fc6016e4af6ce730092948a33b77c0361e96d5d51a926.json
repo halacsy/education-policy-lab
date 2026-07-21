@@ -1,0 +1,96 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t4-01",
+      "A-live-t4-02"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Fiscal cost of statutory transport guarantees and TEIP-style compensatory programming",
+      "Administrative cost of alternatives-assessment documentation for every proposed closure",
+      "Potential legislative negotiation cost given documented political sensitivity of closures"
+    ],
+    "equity_impact": "Mixed but structurally improved over status quo: formal consultation and transport guarantees reduce arbitrary harm distribution, but consolidation itself may still concentrate disadvantage and reduce accessible options most for poorer, lower-mobility and Roma families unless the compensatory and non-discrimination provisions are rigorously enforced (F-live-education_finance-06, F-live-equity_and_social_mobility-07).",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Removes current legal ambiguity over transport responsibility, reducing risk of uncompensated harm to lower-income families (F-live-legal_and_governance-05)",
+      "Provides procedural consistency and transparency currently absent from ad hoc administrative closure decisions (F-live-legal_and_governance-04)",
+      "Creates auditable non-discrimination check against catchment-based segregation consistent with ECtHR jurisprudence (F-live-portuguese_reform-09)",
+      "Acknowledges and manages unavoidable zero-enrollment cases with dignity rather than contested indefinite retention"
+    ],
+    "finding_refs": [
+      "F-live-international_comparison-02",
+      "F-live-legal_and_governance-05",
+      "F-live-equity_and_social_mobility-10",
+      "F-live-implementation_planning-09",
+      "F-live-school_network_planning-07",
+      "F-live-portuguese_reform-09",
+      "F-live-implementation_planning-07",
+      "F-live-demography-05",
+      "F-live-international_comparison-08",
+      "F-live-legal_and_governance-04",
+      "F-live-international_comparison-01",
+      "F-live-demography-07",
+      "F-live-portuguese_reform-05",
+      "F-live-international_comparison-06",
+      "F-live-political_feasibility-07",
+      "F-live-school_network_planning-05",
+      "F-live-education_finance-06",
+      "F-live-equity_and_social_mobility-07"
+    ],
+    "goal": "Where village schools are demonstrably no longer viable (including zero-enrollment cliff cases), close them through a formal, transparent procedure with binding transport guarantees, targeted disadvantage compensation, and consultation rights, rather than through the current ad hoc administrative closure practice.",
+    "implementation_steps": [
+      {
+        "action": "Enact a statutory closure procedure specifying required alternatives-assessment documentation, consultation timelines, and mandatory transport guarantees",
+        "actor": "National legislature",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Issue implementing regulations clarifying transport-obligation assignment and minimum service frequency standards for consolidated destination schools",
+        "actor": "Ministry of Interior / Klebelsberg Center",
+        "timeline": "Year 1-2"
+      },
+      {
+        "action": "Apply the new procedure to pending and future closure decisions, including formal documentation of alternatives considered",
+        "actor": "Tankerületi centers",
+        "timeline": "From Year 2 onward"
+      },
+      {
+        "action": "Design and fund TEIP-style targeted support for pupils displaced to consolidated schools, monitored for segregation effects",
+        "actor": "Education Ministry / equity office",
+        "timeline": "Years 2-4, ongoing"
+      },
+      {
+        "action": "Track segregation and disadvantage-concentration indicators at consolidated destination schools post-implementation",
+        "actor": "Independent equity monitor",
+        "timeline": "Ongoing from Year 2"
+      }
+    ],
+    "mechanisms": [
+      "Scotland's presumption-against-closure model requires formal documented assessment of alternatives, educational benefits, community effects and travel arrangements before any closure — a template for procedural rigor even where Hungary does not adopt an outright presumption (F-live-international_comparison-02).",
+      "The legal ambiguity over transport-provision responsibility (municipality vs. school district) documented by the ombudsman must be resolved by statute to prevent transport gaps that disproportionately burden lower-income households (F-live-legal_and_governance-05, F-live-equity_and_social_mobility-10).",
+      "Free public transport for children under 14 introduced in 2023 provides a partial foundation but rural frequency gaps remain unaddressed and must be closed via route guarantees (F-live-implementation_planning-09, F-live-school_network_planning-07).",
+      "Given ECtHR (Szolcsán v. Hungary 2023) and ongoing EU infringement proceedings on segregation, any consolidated destination school must be subject to non-discrimination catchment review to prevent reproducing segregation via closure (F-live-portuguese_reform-09, F-live-implementation_planning-07).",
+      "Zero-enrollment cliff cases (e.g., Garab) demonstrate that in some settlements closure is not a policy choice but a demographic fact, requiring dignified/managed closure procedures analogous to Austria's 'gestures of reconciliation' model rather than contested viability debate (F-live-demography-05, F-live-international_comparison-08)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Consolidation can accelerate local depopulation according to Finnish and Danish quasi-experimental evidence, an effect not yet tested for Hungary (F-live-international_comparison-01, F-live-demography-07, F-live-portuguese_reform-05)",
+      "Closure decisions have historically provoked political costs and reversals (Swedish evidence on trust decline; Hungarian precedent for protest-driven reversal), risking policy instability if mitigation is perceived as insufficient (F-live-international_comparison-06, F-live-political_feasibility-07)",
+      "Consolidated destination schools may face 'association pressure' cascades affecting neighboring villages not originally targeted (F-live-school_network_planning-05)"
+    ],
+    "title": "Consolidation with statutory mitigation: closure as managed default plus transport, equity and consultation guarantees",
+    "uncertainty_refs": [
+      "U-live-t4-01",
+      "U-live-t4-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t4",
+  "provenance_ref": "PV-derive_transformations-b3116f53e1969490",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

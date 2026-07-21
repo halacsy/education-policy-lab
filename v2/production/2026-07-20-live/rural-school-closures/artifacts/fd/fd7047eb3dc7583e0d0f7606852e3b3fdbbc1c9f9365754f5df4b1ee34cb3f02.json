@@ -1,0 +1,72 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Administrative burden of producing alternatives assessments for each proposed closure",
+      "Possible delay in addressing genuinely unviable schools",
+      "Training costs for tankerületi staff to conduct assessments"
+    ],
+    "equity_impact": "Provides villages and disadvantaged communities, who currently lack formal standing, a documented voice in closure decisions; does not by itself address segregation risk from church-school alternatives, but increases transparency around closures affecting Roma-concentrated schools (F-live-education_finance-06).",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduces arbitrary or purely cost-driven closures by forcing consideration of community and educational effects",
+      "Creates a transparent, appealable record replacing informal protest-driven reversals",
+      "Aligns Hungary with established European closure-prevention practice"
+    ],
+    "finding_refs": [
+      "F-live-international_comparison-02",
+      "F-live-legal_and_governance-04",
+      "F-live-legal_and_governance-08",
+      "F-live-political_feasibility-07",
+      "F-live-hungarian_education_system-07",
+      "F-live-legal_and_governance-09"
+    ],
+    "goal": "Prevent avoidable closures of viable village primary schools by requiring formal, documented consideration of alternatives before any closure decision, replicating the Scotland/Wales procedural safeguard within Hungary's centralized governance structure.",
+    "implementation_steps": [
+      {
+        "action": "Draft and enact amendment to the Public Education Act establishing a presumption-against-closure duty and mandatory alternatives-assessment procedure for tankerületi center closure decisions",
+        "actor": "Ministry of Interior / national legislature",
+        "timeline": "within 12 months, timed to the 2026 governance restructuring"
+      },
+      {
+        "action": "Develop standardized alternatives-assessment templates (educational benefit, community impact, transport impact) and publish decisions with reasoning",
+        "actor": "Klebelsberg Center / tankerületi centers",
+        "timeline": "months 6-18"
+      },
+      {
+        "action": "Formal right to submit alternatives and receive written response within statutory timeframe; right of appeal to a designated review body",
+        "actor": "Municipalities and parent/community councils",
+        "timeline": "ongoing from enactment"
+      }
+    ],
+    "mechanisms": [
+      "Codifying a presumption-against-closure duty analogous to Scotland's model forces documented consideration of alternatives, educational benefits, community effects, and travel arrangements before closure (F-live-international_comparison-02).",
+      "Currently closures are decided via administrative 'temporary closure'/'suspension' actions without a dedicated statutory procedure specific to demographic decline (F-live-legal_and_governance-04).",
+      "Existing reversals of closure decisions happen only through informal political-administrative intervention after protest, not codified appeal (F-live-legal_and_governance-08, F-live-political_feasibility-07).",
+      "The 2026 governance reform already plans to restore some principal/municipal input while retaining centralized authority, providing a legislative vehicle for adding procedural safeguards (F-live-hungarian_education_system-07, F-live-legal_and_governance-09)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Procedural safeguard may become a formality if not paired with genuine authority to halt closure, given centralized ownership of the maintenance function (F-live-international_comparison-04)",
+      "Risk of inconsistent application in absence of independent oversight body",
+      "Political resistance from central authorities protecting administrative discretion"
+    ],
+    "title": "Legally codified presumption-against-closure with mandatory alternatives assessment",
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-derive_transformations-2c645211a7e2ee76",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "06db6aec301da123bfbd26d283e1cff878a3be42d0211488274214448d4f4aa1",
+  "topic": "rural-school-closures"
+}

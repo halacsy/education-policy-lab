@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "As an explicit no-policy counterfactual, this proposal is not a reform bundle at all, which is directly relevant to the lens's causal-attribution question: any observed contraction or performance change under this baseline cannot be attributed to policy design, since it is driven purely by demographic mechanics. The lens is well-suited to flag that this baseline, while methodologically useful for isolating the causal contribution of active interventions (T1-T4, T6), does not itself constitute or substitute for whole-system reform, and its own risk section concedes Roma segregation and church-sector selective growth are unaddressed.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-10",
+      "F-live-portuguese_reform-06"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      "Serves as the necessary comparison baseline against which the causal contribution of T1-T4/T6 can be isolated, strengthening the evidentiary basis for evaluating those proposals"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Provides a methodologically necessary counterfactual for causal attribution when evaluating other proposals, directly serving the lens's own causal-attribution criterion",
+      "Demographic mechanisms (cohort decline, class-size thresholds) are well-documented as durable structural trends operating independently of policy choice, making the baseline empirically grounded"
+    ],
+    "threats": [
+      "Uncoordinated closures could trigger settlement-viability disruption without any phased management, a risk structurally similar to (if smaller than) the Polish transition-cost pattern",
+      "Absence of active policy means none of the documented segregation mechanisms (tracking, church growth, Roma exclusion) are addressed, so this baseline cannot be mistaken for a reform achieving the stated equity goal"
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      "Passive contraction is geographically uneven and could worsen geographic equity even as aggregate selective-track size shrinks, contradicting any implicit assumption that shrinkage alone improves equity",
+      "Roma segregation and church-sector selective growth are not addressed at all, meaning the equity gaps most clearly documented in the evidence base persist or could worsen under this baseline"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-portuguese_reform",
+  "provenance_ref": "PV-assess_portuguese_reform-caaf722e5a46ea7a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "89c8d543e70df4ccfeb5688c87253d12cb573f2a58f2f57bb9e0d0c8b0d6be1f",
+  "topic": "korai-szelekcio"
+}

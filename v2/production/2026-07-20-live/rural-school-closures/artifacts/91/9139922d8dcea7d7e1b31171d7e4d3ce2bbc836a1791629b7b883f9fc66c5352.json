@@ -1,0 +1,33 @@
+{
+  "content": {
+    "assessment": "T5 addresses the lens's causal-attribution criterion most explicitly by proposing a Hungary-specific evidence infrastructure rather than relying on non-replicated foreign findings, directly responding to the epistemic limitation that gains or losses in one system cannot be mechanically attributed to interventions observed elsewhere. This transparency/registry approach is itself a textbook non-structural measure — it does not mandate any specific model but aims to improve decision quality across whatever bundle (T1-T4) is chosen. However, the lens's core finding about the Portuguese case — that systemic gains require coordinated reform bundles, not merely better information — implies a genuine limitation: an evidence infrastructure alone, absent binding decision rules or complementary structural/equity levers, cannot address quality levelling or equity by itself, since data visibility does not by itself alter incentives that drive segregation (F-live-portuguese_reform-08, F-live-portuguese_reform-09). The proposal's own risk framing (informational infrastructure can be ignored absent binding rules) implicitly concedes this same lens-consistent point.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-08",
+      "F-live-portuguese_reform-09"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      "Could be designed to explicitly track segregation and church/state enrollment composition indicators, converting the registry into an equity-monitoring tool that strengthens (without replacing) legal enforcement under F-live-portuguese_reform-09"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Directly targets the causal-attribution problem by proposing generation of Hungary-specific evidence rather than continued reliance on non-replicated foreign findings, aligning precisely with the lens's stated limitation about cross-national attribution"
+    ],
+    "threats": [
+      "Without binding linkage to the equity and legal constraints already active in the system (ECtHR ruling, EU infringement proceedings), a transparency framework risks being a necessary but insufficient component of reform, consistent with the lens's warning against attributing systemic gains to single, isolated measures"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "As a purely informational/non-structural measure, it cannot by itself resolve equity levelling problems such as selective church-school growth or segregation risk, which require binding structural or legal coordination (F-live-portuguese_reform-08, F-live-portuguese_reform-09)"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t5-portuguese_reform",
+  "provenance_ref": "PV-assess_portuguese_reform-d6541bea333aefda",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

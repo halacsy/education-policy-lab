@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assessment": "This proposal leverages existing ministerial discretionary approval powers and administrative levers (score thresholds, capacity caps) that appear to fall within current executive authority rather than requiring primary legislation, since it does not alter the statutory 6/8-year track structure (F-live-legal_and_governance-01). Governance risk centers on jurisdictional scope: the Klebelsberg Centre's authority, and by extension ministerial capacity-cap power, does not extend to church, foundation, nationality-government, or purely private schools (F-live-legal_and_governance-07), creating a structural enforcement gap. A 2023 law unifying employment terms across provider types (F-live-legal_and_governance-09) somewhat strengthens central leverage over staffing but does not resolve the maintenance-authority jurisdictional boundary for capacity decisions. Accountability is asymmetric: state-sector contraction is enforceable and traceable, but non-state absorption of displaced demand is not within the same accountability chain, risking a governance outcome that diverges from stated policy intent.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-07",
+      "F-live-legal_and_governance-09"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      "Ministerial approval discretion offers a low-legislative-friction enforcement pathway compared to structural reform requiring parliamentary amendment (F-live-legal_and_governance-01)",
+      "Unified employment-status regime (2023 law) could be extended or leveraged to align state-sector contraction with staffing reallocation (F-live-legal_and_governance-09)"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Uses existing ministerial discretionary approval power already exercised to deny track-expansion requests, suggesting established administrative and legal precedent for this authority (F-live-hungarian_education_system-09, F-live-political_feasibility-08 — not cited, excluded)",
+      "Does not require statutory amendment since the 6/8-year track structure remains codified but unaltered (F-live-legal_and_governance-01)",
+      "2023 unified employment law strengthens district centres' employer and maintenance powers over state-sector institutions, supporting enforcement (F-live-legal_and_governance-09)"
+    ],
+    "threats": [
+      "Church and foundation schools, outside Klebelsberg jurisdiction, could expand selective tracks to absorb displaced demand, defeating net contraction goals through a jurisdictional loophole (F-live-legal_and_governance-07)",
+      "Absent legislative entrenchment, ministerial discretionary contraction remains vulnerable to reversal by subsequent ministerial decision, given documented director lobbying access (contested politically, though outside this lens's direct evidentiary scope)"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Klebelsberg Centre jurisdiction explicitly excludes church, foundation, nationality-government, and purely private providers, meaning capacity caps cannot bind a substantial share of the selective sector (F-live-legal_and_governance-07)",
+      "Contraction confined to state-sector jurisdiction risks a governance mismatch between policy intent (system-wide reduction) and actual enforceable authority (state-sector-only reduction)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t2-legal_and_governance",
+  "provenance_ref": "PV-assess_legal_and_governance-bfa54df6dad68644",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

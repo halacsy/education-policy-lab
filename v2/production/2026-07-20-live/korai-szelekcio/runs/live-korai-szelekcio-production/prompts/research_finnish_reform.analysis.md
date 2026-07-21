@@ -1,0 +1,116 @@
+TASK: expert_analysis
+AGENT: finnish_reform
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: whole-system reform analysis
+PUBLIC QUESTION: Should Hungary keep its 6- and 8-year gimnázium tracks?
+CRITERIA: tracking age, comprehensive provision, political durability, context fit
+KNOWN LENS LIMITS: Finland's institutional and demographic context differs from Hungary's.
+
+RESEARCH NOTES:
+I'll research this from multiple angles: the Hungarian system's mechanics and effects, the Finnish comprehensive model, and evidence on erosion/school-choice dynamics in both contexts.
+# Research Notes: Age-10/12 Academic Selection in Hungary — Whole-System Reform Perspective
+
+*Scope: comparative evidence on Hungary's 6- and 8-year gimnázium tracks vs. Finland's comprehensive model. Compiled from peer-reviewed studies, OECD data, and policy commentary, current as of mid-2026.*
+
+---
+
+**1. Structural mechanics of the Hungarian system (fact)**
+Hungary layers an early-selection track onto an otherwise long comprehensive phase. 
+In contrast to the Anglo-Saxon context, Hungary is characterized by a highly stratified between-school tracking system at the upper secondary level; for most students general education lasts 8 years (Grades 1–8), longer than in Germany or Austria, but some general secondary schools provide 6- or 8-year-long programs starting already in Grades 5 and 7, and these highly selective programs attract the highest-achieving students from general schools.
+ Compulsory education currently runs to age 16, though for earlier cohorts studied it ran to 18.
+
+**2. Historical growth and self-selection dynamics (fact)**
+The tracks are a post-1990 phenomenon, not a socialist-era legacy. 
+One specific form of increased mobility and selectivity emerged through the newly emerged 6-year and 8-year secondary schools, which co-exist with the traditional 4-year secondary schools; the children of more ambitious families could increasingly continue their basic education in elite institutions.
+ 
+The fraction of students in 6- or 8-grade secondary schools grew markedly during the 1990s, most spectacularly among 8th graders, rising from 1% to 7.5% of that cohort over the period.
+
+
+**3. Distributional effect: gains concentrated among higher-status families (finding, single-study evidence)**
+Panel-data research on the tracks' value-added found 
+that early selective tracks are more beneficial for higher-status families, with higher value-added in reading and mathematical literacy and in continuing to tertiary education; their student composition is of higher status and higher-skilled students, leading to an increase in the inequality of opportunities, while weaker tests show that students in early selective tracks gain but those left in general tracks lose.
+ This is inference from one dataset/study (Horn), not a consensus multi-study finding — flagged as contested in scope (single research design).
+
+**4. Downstream segregation effects on remaining general-school population (fact, large administrative dataset)**
+The flip side of selective outflow is concentration of disadvantage in schools left behind. 
+Attending a high-poverty school in Grade 8 is negatively associated with reading scores and secondary education attainment (no significant math association); estimates on higher-education enrollment are negative though significance is model-dependent; there is suggestive evidence of a large direct negative effect on educational attainment beyond the indirect effect through test scores, implying effects on noncognitive skills and later educational choices can be as important as achievement effects.
+
+
+**5. System-wide segregation trend and its policy uptake (fact)**
+
+Inequalities between schools have increased significantly in Hungary and school segregation has become increasingly common (and accepted).
+ 
+The role of supplementary private tutoring has steadily increased due to competition, particularly during the most competitive periods for eight-year, six-year and traditional upper-secondary enrollment, which have the highest rates of admission to higher education.
+ 
+Government recognition of school segregation as a policy problem has grown over time.
+ Historical-institutional inference: one analysis argues the system's persistence reflects 
+three factors — historical conditions (memory of elite 8-year gimnáziums and the decentralized Austro-Hungarian administrative structure), decentralization, and democracy
+ — a causal/interpretive claim, not a directly measured effect.
+
+**6. Cross-national tracking literature: no equity-efficiency trade-off found (contested but convergent across studies)**
+Comparative econometric work situates Hungary among the earliest-tracking OECD systems. 
+The age of first selection is lowest in Austria, Germany, and Hungary, where students are usually first selected at age ten, and highest in comprehensive systems like Australia, Finland, and Poland.
+ The seminal difference-in-differences study found 
+that early tracking increases educational inequality, with a less clear tendency to also reduce mean performance, so there does not appear to be any equity-efficiency trade-off.
+ This has been partly replicated: 
+OECD reviews show social background has a greater impact on achievement at the end of compulsory schooling in systems with early between-school tracking, and studies of large datasets show the effect of family background on attainment increases with tracking duration, leading some to conclude that length of school-type differentiation increases inequality of opportunity.
+ Note: a 2021 Springer meta-analytic paper flags this literature as **contested** — 
+research to date on tracking's effects on inequality and performance has been "inconclusive," partly because studies differ in data, domain, and inequality measures.
+ A newer meta-analysis using PISA/PIRLS/TIMSS nonetheless 
+found strong evidence that tracking increased social achievement gaps, with smaller effects on other outcomes.
+
+
+**7. Finland's comprehensive model: design and rationale (fact)**
+
+The Finnish comprehensive reform of the 1960s–70s replaced a dual-track system (the folk school for most students and the academically-oriented lyseo grammar school accessible mainly to urban, higher-income families); rapid industrialization and welfare-state expansion created demand for a more equitable, skilled workforce, and empirical observation showed grammar-school enrollment remained skewed toward privileged groups even as it expanded from 34,000 (1955) to 324,000 (1970).
+ 
+From age 7 to 16, Finnish students attend comprehensive basic education with no tracking and minimal testing; all students receive the same comprehensive education until the end of basic school at age 16.
+
+
+**8. Finland's equity record and its recent erosion in outcomes (fact, with trend caveat)**
+
+Since PISA 2000, Finland has been lauded as a high-performing, high-equity country, attributed partly to the egalitarian 9-year comprehensive school created by de-tracking reforms in the late 1960s/early 1970s.
+ However, this equity advantage is not static: 
+recent international assessments show this picture may be changing — not only has Finland's average performance fallen in recent PISA cycles, but achievement inequality appears to be increasing, with SES achievement gaps having declined after de-tracking reforms but increased more recently.
+ Separately, 
+Finland's PISA math score fell from 548 in 2003 to 484 in 2022 — a 64-point drop, though still above the OECD average.
+
+
+**9. School-choice/segregation "erosion" within Finland's formally untracked system (contested)**
+Even without formal tracking, informal selection has grown. 
+The Finnish comprehensive school is officially non-selective, and its egalitarian aim to guarantee high-quality basic education for everybody has always been only partially achieved; in the last two decades, residential and school segregation has been identified as a new, growing challenge to equal educational opportunities.
+ A specific mechanism: 
+since the 1990s, lower secondary schools have been allowed to create selective "emphasized classes" offering supplementary lessons in specific subjects
+, and 
+pupils are selected into these classes via testing or previous school success, with effects visible especially at the class level as classes differ greatly in performance.
+ 
+Research suggests educational equality in Finland has been affected by increasing socio-spatial segregation, with Finnish school choice associated with growing school segregation through middle-class choice patterns.
+ **Contested counter-finding:** one 2021 ScienceDirect study concluded 
+that modest diversification via selective classes caters to better-achieving students from higher-educational-status families, but interprets this as signaling resilience of the comprehensive model rather than its claimed erosion attributed by some policy analysts to a neoliberal turn.
+ Analysts disagree on whether this constitutes genuine "erosion" of the comprehensive ideal or a marginal adaptation.
+
+**10. Current comparative performance snapshot (fact, contextual — not causally tied to tracking structure)**
+
+In PISA 2022, Hungarian 15-year-olds scored 473 in mathematics (OECD average 472), 473 in reading (OECD average 476), and 482 in science (OECD average 485).
+ A Hungarian researcher characterized this as a 
+"competency trap" with no visible escape — neither triumph nor disaster relative to the OECD average.
+ Note this is a population-average descriptive fact; it does not by itself isolate the causal contribution of early tracking versus other system features (curriculum centralization, teacher shortages — 
+41% of Hungarian students in 2022 were in schools whose principal reported a lack of teaching staff hindering instruction
+ — funding, pandemic effects).
+
+---
+
+## Synthesis notes (analytic framing, not recommendation)
+
+- **What the tracks solve (claimed/observed):** they provide an outlet for high-achieving/motivated students and their families within a system that otherwise offers 8 years of undifferentiated general school; enrollment data show sustained parental demand growth since the 1990s (Finding 2).
+- **What they create:** measurable social stratification of value-added benefit (Finding 3), concentration of poverty/disadvantage in schools left behind with attainment consequences (Finding 4), system-wide segregation trends now acknowledged in Hungarian policy discourse (Finding 5), and placement of Hungary among the earliest-tracking OECD systems associated cross-nationally with higher inequality of opportunity without a clear compensating mean-performance gain (Finding 6) — though the tracking-inequality literature itself is not fully settled (Finding 6 caveat).
+- **Finnish comprehensive-school implication:** the model demonstrates that delaying formal selection to 16 is compatible with high mean performance and low between-school variance in earlier PISA cycles (Findings 7–8), but its later trajectory shows (a) declining absolute PISA scores and (b) rising SES achievement gaps, alongside informal, choice-driven segregation mechanisms (emphasized classes, residential sorting) that partially replicate selection effects without formal tracking (Finding 9) — with genuine scholarly disagreement about whether this represents "erosion" or a resilient core model with peripheral adaptation.
+- **Alternatives implied by the evidence** (not evaluated here for desirability): (i) full comprehensive delay of selection to 15/16 as in Finland; (ii) retention of early academic tracks but with admissions/segregation safeguards; (iii) accepting informal/choice-based sorting mechanisms (Finnish-style emphasized classes) as a partial substitute for formal tracking, which the evidence suggests still produces socioeconomic sorting, just via a different mechanism.
+
+All causal claims above are drawn from the cited studies' own designs (matching methods, panel data, difference-in-differences); where a single study or contested literature underlies a claim, this is flagged explicitly rather than presented as settled consensus.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

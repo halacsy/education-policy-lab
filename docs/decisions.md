@@ -769,3 +769,19 @@ summary, all proposals, approved-direction coverage, dilemmas, research
 agenda, readiness conditions, and claim-to-source appendix. Its comparison
 page shows both legacy and v2 scores but labels them non-comparable because
 the rubric and architecture changed.
+
+**D-54 — The two-topic v2 production baseline is accepted for internal human
+review, not yet for public cutover (2026-07-21; experiment:
+docs/experiments/2026-07-21-v2-two-topic-production-results.md).** Both
+approved topics completed the same 31-node, mock-free Artifact DAG with the
+admitted 12-lens registry, Anthropic generation, and OpenAI evaluation. The
+accepted current graphs contain 1,016 artifacts and 138 audited analytical
+calls. Every approved S1–S5 direction maps to at least one proposal with zero
+critical attrition; the packages contain visible finding-to-source links,
+first-class dilemmas, research agendas, and a decision-readiness record. The
+judge returned `accept_with_caveats` and `ready_with_conditions` for both
+topics. Machine output keeps `human_external_use_gate=pending`. Therefore the
+technical production baseline is accepted and publishable as an internal
+preview, while replacement of v1 at the public entry point still requires the
+owner's explicit cutover decision and the remaining unchecked public-v2
+definition-of-done items.

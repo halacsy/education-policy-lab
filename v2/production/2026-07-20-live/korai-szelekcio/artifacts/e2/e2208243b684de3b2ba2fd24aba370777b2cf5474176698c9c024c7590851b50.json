@@ -1,0 +1,84 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02",
+      "A-live-t1-03"
+    ],
+    "change_level": "practice",
+    "costs": [
+      "Exam redesign and psychometric validation costs",
+      "Administrative burden of SES-proxy verification and algorithm changes",
+      "Ongoing audit and monitoring infrastructure"
+    ],
+    "equity_impact": "Direct and immediate, but partial: targets the entry gate specifically while leaving intact the upstream primary-school choice segregation and downstream track-based inequality; expected to reduce but not eliminate the 43.6%-vs-9.2% type composition gaps",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduced weight of purchased coaching relative to underlying ability in determining admission (F-live-hungarian_education_system-05)",
+      "Potential narrowing of the stark parental-education composition gap documented since 2000 (F-live-hungarian_education_system-04)",
+      "Preserves existing legal structure, avoiding constitutional confrontation over free school choice (F-live-hungarian_education_system-03, F-live-legal_and_governance-02)"
+    ],
+    "finding_refs": [
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-05",
+      "F-live-equity_and_social_mobility-03",
+      "F-live-legal_and_governance-03",
+      "F-live-legal_and_governance-02",
+      "F-live-political_feasibility-07",
+      "F-live-portuguese_reform-06",
+      "F-live-polish_reform-07",
+      "F-live-education_finance-02"
+    ],
+    "goal": "Reduce family-capital-driven sorting at the point of gimnázium entry without altering the 6/8-year track structure itself",
+    "implementation_steps": [
+      {
+        "action": "Commission redesign of maths/Hungarian exam items toward reasoning over coachable pattern-recognition, pilot with psychometric coachability testing",
+        "actor": "Ministry of Education / Educational Authority",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Issue regulation adding SES-based proxy weighting (e.g., school-level disadvantage index bonus) into the national ranking algorithm",
+        "actor": "Ministry of Education",
+        "timeline": "Year 1-2"
+      },
+      {
+        "action": "Mandate that every primary school actively register and prepare eligible disadvantaged students for the exam, tracked via participation audits",
+        "actor": "District education authorities (Klebelsberg Centre)",
+        "timeline": "Year 1 ongoing"
+      },
+      {
+        "action": "Publish annual audit of admitted-cohort SES composition vs. baseline to monitor effect",
+        "actor": "Ministry of Education",
+        "timeline": "Annually from Year 2"
+      }
+    ],
+    "mechanisms": [
+      "National uniform exam design changes to reduce coaching-return (F-live-hungarian_education_system-02, F-live-hungarian_education_system-05)",
+      "SES-aware quota or bonus-point proxies layered onto the existing centralized deferred-acceptance algorithm (F-live-legal_and_governance-03)",
+      "Capping interview weight already regulated at 25% and further limiting subjective/coachable components (F-live-legal_and_governance-03)",
+      "Address disadvantaged-school non-participation in the entry competition by mandating outreach/registration support (F-live-equity_and_social_mobility-03, F-live-education_finance-02)"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Elite families adapt coaching strategies to new exam format, eroding gains over time",
+      "Gimnázium directors, an organized interest group with direct political access, may resist changes perceived as diluting selectivity (F-live-political_feasibility-07)",
+      "SES proxies could be legally contested as discriminatory absent explicit legislative basis (F-live-legal_and_governance-02)",
+      "Does not address segregation originating in primary-school choice, a documented independent mechanism (F-live-portuguese_reform-06, F-live-polish_reform-07)"
+    ],
+    "title": "Coaching-resistant, SES-weighted admissions reform within the existing track structure",
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02",
+      "U-live-t1-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-derive_transformations-c17ebf673d4d0734",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

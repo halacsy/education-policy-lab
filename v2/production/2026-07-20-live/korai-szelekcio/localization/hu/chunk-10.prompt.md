@@ -1,0 +1,28 @@
+TASK: localize_public_view
+AGENT: hungarian_policy_editor
+LANG: hu
+
+Translate every keyed English string below into natural, publication-quality Hungarian. Preserve artifact ids such as [F-live-...] exactly, preserve numbers and URLs, and use established Hungarian education-policy terminology. Translate meaning, not sentence structure. Return every key exactly once and no extra key.
+
+TOPIC: korai-szelekcio
+STRINGS:
+D-live-production-02.tension	Church and private schools are documented as the fastest-growing source of selective/segregative admission yet sit partly outside state maintainer jurisdiction. Extending administrative gatekeeping (T6) or contraction (T2) across all maintainer types would close this coverage gap but raises genuine institutional-autonomy and legal-extension questions for church/private providers, while confining reform to the state sector (T2 alone) leaves a structural loophole that could offset any gains.
+D-live-production-02.value_poles.0	comprehensive equity coverage
+D-live-production-02.value_poles.1	institutional/religious autonomy and legal certainty
+D-live-production-02.decision_question	Should ministerial discretionary gatekeeping be extended over church and private school admissions/expansion decisions to close the segregation-displacement loophole, even though this stretches an existing legal authority (grounded in an unrelated employment-status law) into an untested domain and risks autonomy disputes?
+D-live-production-02.evidence_boundary	Legal analysis and precedent-testing (e.g., how courts or the constitution treat extension of ministerial discretion to church/private admissions) can clarify feasibility and risk of legal challenge. It cannot determine how much weight institutional/religious autonomy should carry against equity goals — that is a value choice, not an empirical one.
+D-live-production-03.title	Preventive gatekeeping versus remediation of existing segregation
+D-live-production-03.tension	T6 (and T2) are explicitly preventive/marginal tools that block future segregation-generating expansion but do nothing to remediate segregation already embedded in existing approved tracks. A more remedial approach (T3's structural delay) addresses the existing stock of segregation but at much higher political/legal cost and implementation risk. This raises a genuine trade-off between limiting future harm cheaply versus addressing accumulated harm at high cost.
+D-live-production-03.value_poles.0	harm prevention at the margin
+D-live-production-03.value_poles.1	remediation of existing inequity
+D-live-production-03.value_poles.2	cost and feasibility of intervention
+D-live-production-03.decision_question	Given finite political and administrative capacity, should reform prioritize preventing new segregation-generating expansion (cheap, feasible, but only marginal) or tackling the segregation embedded in the existing track structure (comprehensive, but costly and legally fraught)?
+D-live-production-03.evidence_boundary	Evidence on segregation trends and the counterfactual growth trajectory of existing tracks can clarify how large the 'already-approved' stock problem is relative to future marginal growth, informing where marginal policy effort has more impact. It cannot settle whether preventing future harm is intrinsically as valuable as remedying existing harm — a normative weighting question.
+D-live-production-04.title	Passive demographic contraction as sufficient response versus need for active policy
+D-live-production-04.tension	Demographic decline mechanically shrinks the selective track's size over decades without any new policy (T5), which is politically costless and legally uncomplicated, but the same evidence shows this contraction will be geographically uneven, potentially worsening rural collapse while leaving urban/Budapest capacity, Roma segregation, and church-sector growth entirely unaddressed. Relying on demographic drift versus actively managing consolidation embodies a tension between minimizing intervention and ensuring equitable, planned outcomes.
+D-live-production-04.value_poles.0	non-interventionism / avoiding disruption
+D-live-production-04.value_poles.1	planned equity and geographic fairness
+D-live-production-04.decision_question	Should policymakers actively manage the demographically-driven contraction of selective capacity (e.g., regionally differentiated thresholds, phased consolidation) or allow the passive baseline to unfold, accepting its uneven geographic and segregation consequences as a byproduct of non-intervention?
+D-live-production-04.evidence_boundary	Further demographic and settlement-level projection data can clarify where and how severely uneven contraction will occur, and modeling can estimate whether active regional management would mitigate specific harms. It cannot resolve whether the resulting geographic unevenness is an acceptable price for minimizing state intervention, since that is a value judgment about the role of active governance versus market/demographic drift.
+D-live-production-05.title	Compensatory investment versus structural reform as the locus of equity effort
+D-live-production-05.tension	T4 offers a politically low-risk, legally uncomplicated path via targeted compensatory funding and quality-levelling that leaves selection age and track structure untouched, but multiple lenses (Finnish, Portuguese, equity, international comparison) converge on finding that non-structural measures alone are consistently shown, where evidence exists, to be insufficient substitutes for structural reform, only effective as a complement to it. This poses a values question about whether to accept a lower equity ceiling in exchange for feasibility and non-disruption.

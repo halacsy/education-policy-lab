@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "This proposal operates directly on fiscal magnitude and capacity allocation: capping or reducing the ~25,962 stagnant state-sector place count against falling cohorts is a structural resource-reallocation lever, distinct from admission-rule redesign. Given Hungary's capitation-based financing (F-live-education_finance-05), reducing selective-track capacity while cohorts shrink could, in principle, redirect per-capita funding and retained high-performing peers back toward comprehensive schools — addressing the underlying fiscal-incidence problem more directly than admissions reform alone. However, the proposal's own risk analysis flags that church/foundation schools outside Klebelsberg jurisdiction could absorb displaced demand, which from a finance perspective would mean state-sector fiscal contraction without a corresponding reduction in overall selective-track resourcing or segregation, simply shifting cost incidence to a different sector with different (and less transparent) funding rules.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-06",
+      "F-live-education_finance-02"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "If capacity contraction is paired with the SES-aware admissions design of TP-live-t1, the combined fiscal and access effects could be more equity-favorable than either alone"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Directly reduces the scale of the capitation-funding leakage from feeder schools by shrinking the destination capacity that drives high-performer exit (F-live-education_finance-05)",
+      "Uses demographic decline (falling cohorts) as a lower-conflict resource-reallocation lever rather than requiring new appropriations, which is relevant given Hungary's constrained overall spending envelope (F-live-education_finance-06)"
+    ],
+    "threats": [
+      "Displacement of demand to church/foundation schools outside state jurisdiction could preserve or worsen aggregate segregation and cost-incidence patterns while appearing to shrink the state-sector footprint on paper (F-live-education_finance-05 is silent on non-state sector capitation rules, limiting ability to assess net fiscal effect)"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Does not address the admissions-bias mechanism, so any remaining places may become even more concentrated among socioeconomically advantaged families, worsening cost-incidence concentration even as aggregate capacity falls (F-live-education_finance-02)",
+      "No mechanism proposed for compensating feeder schools for capitation losses already incurred under the existing footprint"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t2-education_finance",
+  "provenance_ref": "PV-assess_education_finance-c5890cd7c752bd9c",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

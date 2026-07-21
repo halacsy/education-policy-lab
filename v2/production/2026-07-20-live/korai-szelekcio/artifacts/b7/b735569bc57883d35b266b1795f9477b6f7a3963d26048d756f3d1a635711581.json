@@ -1,0 +1,73 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t2-01",
+      "A-live-t2-02",
+      "A-live-t2-03"
+    ],
+    "change_level": "organization",
+    "costs": [
+      "Political friction with organized gimnázium-director interest groups who have demonstrated direct access to top leadership (F-live-political_feasibility-07)",
+      "Risk of parental backlash given free-choice framing as non-negotiable (F-live-hungarian_education_system-03)",
+      "Administrative capacity needed to manage differentiated caps across urban/rural schools"
+    ],
+    "equity_impact": "Reduces the absolute scale of segregation-generating capacity in the state sector, but risk of migration to unregulated church/private selective capacity could neutralize net equity gains unless paired with parallel constraints on those sectors.",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduced state-sector selective-track share without requiring parliamentary legislation",
+      "Uses existing discretionary and threshold-setting tools already validated by precedent (Tiszavasvári case)",
+      "Aligns capacity contraction with genuine demographic decline, reducing political framing as ideologically motivated abolition"
+    ],
+    "finding_refs": [
+      "F-live-hungarian_education_system-09",
+      "F-live-political_feasibility-08",
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-03",
+      "F-live-legal_and_governance-07"
+    ],
+    "goal": "Shrink the state-sector footprint of the selective track by tightening admission thresholds and capacity allocation, without altering admission criteria for remaining places.",
+    "implementation_steps": [
+      {
+        "action": "Set nationwide capacity ceiling for state-sector 6/8-year gimnázium intake, tied to declining cohort projections",
+        "actor": "Ministry of Education",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Apply threshold increases and capacity caps at flagship oversubscribed schools first",
+        "actor": "Klebelsberg Centre district sub-units",
+        "timeline": "Years 1-2"
+      },
+      {
+        "action": "Monitor displacement of rejected applicants into 4-year gimnázium or vocational tracks and adjust caps to avoid unintended vocational-track overflow",
+        "actor": "Ministry of Education",
+        "timeline": "Years 2-3"
+      }
+    ],
+    "mechanisms": [
+      "Ministry already exercises discretionary approval power to deny new 6/8-year track requests on segregation grounds, demonstrating an existing administrative lever for capacity control without new legislation (F-live-hungarian_education_system-09, F-live-political_feasibility-08).",
+      "Recommended entry thresholds (70/100) already function as a de facto capacity-limiting tool, and raising them further would mechanically shrink the admitted pool (F-live-school_network_planning-04).",
+      "Physical capacity has already stagnated at ~25,962 students despite oversubscription, showing a passive capacity ceiling exists that active policy could formalize and extend (F-live-school_network_planning-03).",
+      "State-sector jurisdiction covers Klebelsberg Centre and its 60 district sub-units but explicitly excludes church, foundation, and private schools, meaning contraction levers are legally partial (F-live-legal_and_governance-07)."
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Church and private schools, exempt from state capacity caps, could absorb displaced demand and expand their already-growing selective share, offsetting state-sector contraction (F-live-implementation_planning-05, F-live-equity_and_social_mobility-07)",
+      "Threshold increases could push marginal students into vocational tracks involuntarily, a concern already raised by parent advocacy groups (F-live-school_network_planning-04)",
+      "Contraction without addressing underlying admission criteria leaves selection mechanism's inequity-per-seat unchanged (F-live-equity_and_social_mobility-02)"
+    ],
+    "title": "Capacity-capped contraction of state-sector 6/8-year places via demographic-linked thresholds",
+    "uncertainty_refs": [
+      "U-live-t2-01",
+      "U-live-t2-02",
+      "U-live-t2-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t2",
+  "provenance_ref": "PV-derive_transformations-08f8484f67a159b0",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "a9ad91f052618f39ac4be681724c582d05bad0562bc900add0cd23fded9493ac",
+  "topic": "korai-szelekcio"
+}

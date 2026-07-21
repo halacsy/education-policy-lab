@@ -1,0 +1,37 @@
+{
+  "content": {
+    "concerns": [
+      "Implementation detail is uneven: several levers (notably T1 and T4) lack concrete operational specifications (e.g., exact SES-weighting formula, funding amounts/targets, phasing plans).",
+      "Some evidence items point to generic or placeholder URIs (example.com) or URNs without clear public access, reducing immediate auditability for a non-specialist reader.",
+      "No quantified impact estimates, budgetary costs, or projected enrolment/capacity models are provided to permit cost–benefit or fiscal feasibility comparison across levers.",
+      "Stakeholder mapping and likely political responses (beyond noting director lobby and ministerial positions) are not systematically modeled, limiting strategic enactment planning.",
+      "The package flags displacement risks but does not present empirical scenarios or sensitivity analyses showing where displaced demand or coaching advantage would concentrate under each lever."
+    ],
+    "dimensions": {
+      "artifact_integrity": 9,
+      "decision_usefulness": 8,
+      "dilemma_clarity": 9,
+      "evidence_discipline": 9,
+      "lens_traceability": 8,
+      "transformation_specificity": 7
+    },
+    "package_ref": "DP-live-production",
+    "strengths": [
+      "Well-structured, artifact-first framing that enumerates six distinct policy lever options (T1–T6) and a clear counterfactual baseline (T5).",
+      "Extensive referencing: almost every substantive claim is tagged to an F-live ID with a corresponding visible-evidence appendix entry and many entries include URIs or resolvable identifiers.",
+      "Explicit separation of empirical uncertainties versus value trade-offs; the package identifies which research questions would most change the choice.",
+      "Legal and governance constraints are made concrete (primary-legislation vs. ministerial discretion, Klebelsberg Centre jurisdiction, constitutional free-choice tension), supporting practical feasibility assessment.",
+      "Comparative case synthesis (Finland, Poland, Portugal references) is used carefully with transferability caveats called out."
+    ],
+    "total": 8.333,
+    "verdict": "accept_with_caveats"
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "EV-live-production",
+  "provenance_ref": "PV-evaluate_decision_package-bd3da4b175f64e85",
+  "record_type": "evaluation",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "b30a47867ec24c5add629c787ef457b79d143e6a79fcaa44b8a8b00cf1d8dde8",
+  "topic": "korai-szelekcio"
+}

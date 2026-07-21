@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assessment": "From an implementation-planning lens, T1 proposes a procedural safeguard (presumption-against-closure with mandatory alternatives assessment) layered onto a governance structure where the actor with closure authority is a centralized state body, not the municipalities or communities the safeguard is meant to empower. The proposal correctly identifies the 2026 governance reform as a legislative vehicle, but sequencing is fragile: a documentation duty imposed on the same centralized actor that currently exercises unchecked discretion, without an independent body to enforce or adjudicate the assessment, risks becoming a paperwork exercise rather than a binding constraint. There is no described monitoring or appeals infrastructure to detect non-compliance, and Hungary's own history shows consultation mechanisms were curtailed after 2010 and stakeholder warnings in 2016 produced no formal consultation channel, suggesting weak institutional appetite for exactly this kind of procedural check.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-01",
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-10"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "The 2026 reform's restoration of some principal/municipal input could be extended to include statutory rights of appeal or independent review, closing the monitoring gap.",
+      "A phased pilot in a subset of centrally-administered districts could test whether the documentation duty changes actual outcomes before national rollout."
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Uses an existing legislative vehicle (2026 reform) rather than requiring a wholly new statute, improving sequencing feasibility.",
+      "Targets a documented gap: closures currently proceed via administrative action without a dedicated statutory procedure."
+    ],
+    "threats": [
+      "Centralized authorities have institutional incentive to preserve administrative discretion, creating political resistance to any binding (rather than symbolic) constraint.",
+      "Without a feedback/monitoring mechanism, inconsistent application across regions is likely given no precedent for standardized enforcement."
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "No independent oversight or appeals body is specified to enforce the presumption, so the safeguard could operate as documentation-only rather than a real constraint on the centralized decision-maker.",
+      "Historical precedent (2016 stakeholder warnings producing no formal consultation mechanism) suggests low institutional readiness to operationalize procedural safeguards even when drafted.",
+      "Post-2010 curtailment of stakeholder-consultation architecture removes the procedural infrastructure (consultation bodies, feedback channels) that a presumption-against-closure duty would normally rely on."
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-99eb47a51c938608",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "cfb7dedf3aa60909b5d642a11e37f7934b341c048239ffd5367cbf9bbae99841",
+  "topic": "rural-school-closures"
+}

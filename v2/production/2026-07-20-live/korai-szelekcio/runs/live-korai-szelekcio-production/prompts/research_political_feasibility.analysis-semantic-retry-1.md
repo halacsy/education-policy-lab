@@ -1,0 +1,104 @@
+TASK: expert_analysis
+AGENT: political_feasibility
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: political economy of reform
+PUBLIC QUESTION: Should Hungary keep its 6- and 8-year gimnázium tracks?
+CRITERIA: coalition support, opposition intensity, reversal risk, public legitimacy
+KNOWN LENS LIMITS: Political forecasts are time-sensitive and intrinsically uncertain.
+
+RESEARCH NOTES:
+# Research Notes: Political Economy of Hungary's 6/8-Year Gimnázium Tracks
+
+## 1. Baseline institutional facts
+Hungary's default structure is an 8-grade comprehensive "általános iskola" (ages 6–14) followed by 4-year upper-secondary tracks (gimnázium/vocational). 
+Basic education in Hungary is mostly provided in 8-year basic schools (single structure) for the 6–14-year-olds, but the upper secondary grammar school (gimnázium) provides general education mostly for 4 years, though 6- and 8-grade variants also exist.
+ 
+8-year gimnázium education is the most widespread; the 6- and 5-year options were introduced only in the early 1990s
+ — i.e., the selective tracks are a post-1990 policy addition layered onto an inherited comprehensive base, not an ancient institution. This matters for feasibility: proponents can frame either the *selective tracks* or the *comprehensive default* as the "status quo," which is itself a point of political contestation. *(Fact)*
+
+## 2. Comparative severity of selection is empirically well documented, though causal weighting is contested
+
+Using science assessment data of the 2015 PISA survey, selection in Hungary is even stronger than in three out of the four European countries (Austria, Germany, Lithuania and the Netherlands) that stream pupils into parallel school tracks as early as the age of 10 or 11.
+ Cross-national work by Hanushek and Woessmann places Hungary among a small group of early-tracking systems: 
+countries track students into differing-ability schools as early as age 10 (e.g., Austria, Germany, Hungary and the Slovak Republic), while others including Canada, Japan, Norway, Sweden, the UK and the US essentially keep their entire lower secondary school system comprehensive.
+ Their difference-in-differences design finds 
+early tracking increases educational inequality, while there is also a tendency—though less clear—for early tracking to reduce mean performance.
+ *(Fact/finding, with the mean-performance effect explicitly flagged by the authors as less robust — contested/weaker evidence.)*
+
+## 3. Domestic research links early selection directly to segregation and inequality of opportunity
+
+The most unambiguous finding of the literature is that selective educational institutions associate strongly with inequality; earlier age of selection and the number of school-types are significantly associated with higher inequality of opportunity across OECD countries.
+ Applied to Hungary specifically: 
+early selection replaced the more comprehensive school system, a rare development in international perspective, and the early selective tracks cream-skim the best students at age 10 and at age 12 instead of the official age 14.
+ A 2026 study using administrative national-assessment data confirms this persists into the tracked secondary system: 
+due to residential segregation, free school choice at the primary level, and the highly stratified tracked system at the secondary level, school segregation by social status is among the highest in Hungary compared with other European countries.
+ Separately, international comparative work finds 
+between-school ability tracking increases segregation
+ when comparing tracked vs. comprehensive systems, controlling for primary-level segregation. *(Fact — convergent evidence across independent studies.)*
+
+## 4. The "value-added" question is explicitly contested and politically weaponized
+A key empirical claim now driving policy debate is whether selective gimnáziums add value beyond what selection itself explains. Hungary's newly appointed education minister argued 
+"the whole thing really only serves one purpose: for the elite to separate itself," arguing that research shows the stronger performance of students at such schools is primarily explained by their family background rather than the added value of the institutions themselves.
+ This was echoed in Hungarian coverage: 
+competence-measurement data show no evidence that children develop better in six- or eight-grade gimnáziums than in traditional primary schools — they start from a higher level because they were selected, but progress at the same pace, meaning the whole system's function is for the elite to select itself and secure its position in society.
+ This is a strong policy-relevant claim but is presented by a partisan political actor (a sitting minister) rather than as settled independent consensus in these sources — *flagged as contested/advocacy-inflected, though broadly consistent with academic segregation literature above.*
+
+## 5. Historical political entrenchment: the 2010–2026 Fidesz government actively embraced selection/segregation as ideology, not just as a technical byproduct
+
+The 2010 general election, and especially 2012 legislation, marked a turning point: the conservative-nationalist FIDESZ-KDNP coalition abolished the decentralised system and reintroduced a strictly centralised one, standing for a more traditional and conservative educational model.
+ Notably, 
+the minister of human resources responsible for public education stated that instead of the former system of equal opportunities, the government would opt for "affectionate segregation," inferring that pupils from the least well-off social class are more likely to have less educational ability.
+ *(Fact: this shows the 14-year incumbent coalition had an explicit ideological rationale for tolerating/defending stratification, which constitutes a durable political constituency resistant to comprehensivization.)*
+
+## 6. Middle-class parental demand and local "elite" capture form a durable social coalition favoring retention
+Analysis from over a decade ago already described a self-reinforcing market dynamic: 
+many critics of the Hungarian education system have argued that municipalities—led by local "elites"—tend to mark out one or two schools in their area for children of the elite and foster them to the detriment of others.
+ The same source noted stark distributional consequences: 
+while in Hungary differences between schools are significantly higher than differences among pupils of the same school, this first difference is virtually non-existent in Finland; Hungary performs clearly below the OECD average in eliminating the impact of socio-economic background on performance, suggesting its school system reproduces rather than reduces social inequalities.
+ More recent ethnographic research under the Orbán governments finds this dynamic persists at the household level: 
+politics of the Orbán regime are reshaping possibilities for middle-class reproduction and social mobility through parental dilemmas around school choice, with small towns—an important voter base for the regime—being particularly relevant sites of these dynamics.
+ *(Fact/inference blend: empirical segregation data are factual; the framing of "elite capture" and "voter base" linkage is more interpretive/sociological.)*
+
+## 7. Organized producer-interest veto players: gimnázium directors as a mobilized political bloc
+When the new (2026) Tisza-led government was forming its education ministry, sector insiders organized collectively before the minister was even named: 
+17 gimnázium principals wrote a letter asking Prime Minister-designate Péter Magyar to nominate the education-minister candidate primarily by taking into account the opinions of professional organizations and public-education stakeholders,
+ and 
+he received most of these directors in person the following day, with discussion centered on launching public-education reforms.
+ This demonstrates that gimnázium leadership constitutes an organized interest group with direct access to top political leadership at the moment of policy formation — a concrete veto-player mechanism relevant to both enactment and reversal. *(Fact.)*
+
+## 8. Church-maintained schools are a distinct, legally empowered actor whose expansion requests can be blocked administratively — showing a lever short of full abolition
+A recent case illustrates administrative (not legislative) contestation: the ministry 
+did not approve the Reformed Church congregation of Tiszavasvári's request to launch 8-grade gimnázium (and later technikum) training at its Váci Mihály Reformed Gimnázium,
+ on the grounds that 
+the ministry said the planned transformation would further strengthen local school segregation.
+ The rejection explicitly invoked prior precedent and equity law: 
+the ministry noted a similar situation had previously arisen in another municipality where, despite a positive decision, an irreversible situation was created after a church school launched; the professional opinion also cited a former deputy ombudsman for national minorities, according to whom such processes can lead to selection between public-education institutions and systemic segregation.
+ This case shows: (a) church-run gimnáziums are a distinct constituency with expansion incentives, (b) the ministry retains discretionary administrative tools to constrain (not abolish) the practice without new legislation, and (c) disadvantaged-family advocacy groups (e.g., the Roma press center, the National Association of Disadvantaged Families) actively monitor and publicize such decisions, indicating an organized counter-coalition. *(Fact — a single case; generalizability to systemic policy is inference.)*
+
+## 9. Demographic/fiscal pressure is an emerging enabling condition for reform, independent of equity arguments
+The incoming minister linked the selection question to shrinking cohorts rather than only to equity: 
+she also questioned whether it remains justified to maintain a highly selective admissions system at a time when Hungary's school-age population is steadily declining.
+ This introduces a potential cross-cutting coalition logic: demographic decline could make maintaining parallel selective and non-selective tracks less fiscally/administratively viable regardless of one's equity stance, though this is a minister's stated rationale rather than an independently verified fiscal analysis. *(Inference-labeled: plausible political logic, not yet demonstrated with budget data in sources found.)*
+
+## 10. Reversal/resistance risk: framing battles between incumbent and opposition blocs are already active
+The current reform-minded stance has triggered immediate partisan counter-mobilization. 
+The minister's comments prompted a sharp reaction from Fidesz parliamentary group leader Gergely Gulyás, who accused the Tisza government of preparing a sweeping transformation of Hungary's education system without adequate consultation, stating on social media that "the Tisza Party is planning a total restructuring of the school system."
+ Separately, controversy over whether a religiously affiliated school leader should become minister generated public "polemics," with the eventual government leader publicly appealing for calm. 
+After news of one such candidate broke, many people—including public figures—commented on it, prompting the party leader to respond in parliament, remarking on "the polemic and back-and-forth already going on the internet" and appealing "for everyone to stop the verbal lynching."
+ This indicates the issue is highly salient, subject to rapid partisan framing (elite/technocratic reform vs. "ideological restructuring"), and vulnerable to being litigated in the court of public/media opinion before any formal legislative process, which raises exposure to reversal via change of government or media-driven backlash. *(Fact — observed political dynamic as of mid-2026.)*
+
+---
+
+### Summary of what remains genuinely unsettled in the evidence base
+- Whether measured achievement gaps between selective-track and comprehensive-track students reflect *added educational value* or *pure selection/family-background effects* is asserted strongly by the current minister but is not independently adjudicated in the sources retrieved here — treat as a contested empirical claim actively used for political mobilization, not a settled finding.
+- The *mean-performance* (efficiency) effect of early tracking is explicitly described by Hanushek & Woessmann as statistically weaker/less clear than the *inequality* effect — these two outcome dimensions should not be conflated.
+- No source found here documents a formal legislative reversal (i.e., statutory abolition) attempt; observed mechanisms of contestation so far are (a) rhetorical/ministerial framing, (b) case-by-case administrative denial of expansion requests, and (c) interest-group lobbying over ministerial appointments — suggesting that, absent a supermajority legislative push, reform is more likely to proceed incrementally through administrative levers than through outright abolition of existing 6/8-year tracks.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.
+
+
+STRICT CARDINALITY REPAIR: The previous complete response was rejected: findings requires 7-10 items, got 12. Generate a complete replacement, obeying every requested range exactly.

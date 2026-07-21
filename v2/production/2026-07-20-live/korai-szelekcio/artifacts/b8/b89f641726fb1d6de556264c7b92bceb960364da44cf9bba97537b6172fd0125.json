@@ -1,0 +1,28 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Value-added modeling using longitudinal student-level competency assessment data with propensity-score or regression-discontinuity designs around admission cutoffs, disaggregated by region, urbanization, and prior socioeconomic status; replicate Gurzó & Horn (2015) with updated cohorts and labor-market outcome data.",
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t3",
+      "TP-live-t4"
+    ],
+    "question": "Does the ministerial claim that 6/8-year gimnázium students show no value-added learning advantage over peers hold up once measurement limitations and student-composition confounding are controlled for, and how large is any genuine heterogeneity in track effects across regions and prior-achievement groups?",
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-02",
+      "U-live-finnish_reform-03",
+      "U-live-equity_and_social_mobility-02",
+      "U-live-portuguese_reform-03"
+    ],
+    "why_it_matters": "This shapes the case for T1 (admissions redesign, which presumes tracks have pedagogical value worth sorting fairly for) versus T3/T4 (which presume tracks are largely credentialing/sorting devices); if effects are null on average but heterogeneous, targeted rather than blanket reform may be warranted."
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "RQ-live-production-03",
+  "provenance_ref": "PV-build_research_agenda-ed25a85499afb525",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "f9110f703dd0e803991279d837aabf85b656aa79580d3fc60392d578318e12bd",
+  "topic": "korai-szelekcio"
+}

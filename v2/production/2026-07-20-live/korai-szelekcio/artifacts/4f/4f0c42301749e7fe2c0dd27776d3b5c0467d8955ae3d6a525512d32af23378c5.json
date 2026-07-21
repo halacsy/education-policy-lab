@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assessment": "As an explicit no-new-policy baseline, passive demographic contraction shrinks the aggregate size of the selective track without altering its selection mechanism, access criteria, or the maintainer-type asymmetries driving segregation; from this lens it represents an uncontrolled natural experiment whose distributional consequences depend entirely on where contraction falls.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-02",
+      "F-live-equity_and_social_mobility-06",
+      "F-live-equity_and_social_mobility-07",
+      "F-live-equity_and_social_mobility-08"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      "Could be leveraged to consolidate provision in ways that reduce, rather than worsen, geographic access disparities if paired with deliberate planning (F-live-equity_and_social_mobility-08)"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Provides an empirically grounded counterfactual against which the equity effects of active interventions can be measured",
+      "Documents an already-operating structural trend (cohort decline, application shifts) that constrains how much marginal effect active policy can add"
+    ],
+    "threats": [
+      "Passive contraction is likely to be geographically uneven, potentially worsening rural-urban access disparities even as aggregate selective-track size shrinks, compounding existing geographic clustering of selective schools in urban areas (F-live-equity_and_social_mobility-08)",
+      "Roma segregation and church-sector selective growth could persist or worsen entirely unaddressed under a no-policy baseline (F-live-equity_and_social_mobility-06, F-live-equity_and_social_mobility-07)"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Does nothing to address the core inequity-per-seat mechanism: SES-skewed access to remaining selective seats persists unchanged (F-live-equity_and_social_mobility-02)",
+      "Does not touch Roma segregation, which is distinct from socioeconomic segregation and has been increasing structurally since 1989 (F-live-equity_and_social_mobility-06)",
+      "Does not address church-sector growth, which is documented as amplifying segregation and selection independent of demographic pressure (F-live-equity_and_social_mobility-07)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-equity_and_social_mobility",
+  "provenance_ref": "PV-assess_equity_and_social_mobility-74819801bc13676a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "0371c33665b5efdf7df13674a444d23b6602b68037991844dff94a860331dd51",
+  "topic": "korai-szelekcio"
+}

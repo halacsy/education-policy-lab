@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "As an explicit no-new-policy counterfactual, this proposal relies entirely on demographic contraction rather than any structural mechanism change, admissions redesign, or compensatory funding. The Polish lens, which centers on structural mechanism, distributional effects, reversibility, and implementation sequencing of deliberate reform, has limited direct purchase on a passive demographic scenario, since Poland's reform history involves active legislative structural change (1999 introduction, 2017 reversal) rather than demographically-driven drift. Insofar as the lens is informative, it underscores by contrast what is absent here: no structural mechanism is altered, so none of Poland's documented distributional gains from delayed tracking are invoked, and there is no reversal risk because there is no active reform to reverse — though this also means no active correction of the underlying selection mechanism, which Polish evidence suggests is the more consequential variable for distributional outcomes.",
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-polish_reform-03",
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05",
+      "F-live-polish_reform-07"
+    ],
+    "lens_ref": "L-live-polish_reform",
+    "opportunities": [
+      "None identified under this lens; the scenario's structural passivity limits any opportunity the Polish reform-mechanism lens can surface"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Carries no implementation-shock risk of the kind documented in Poland's 2017 single-year reversal, since there is no active structural change being sequenced (F-live-polish_reform-05)",
+      "No legislative reversibility risk in the Polish sense, since a passive baseline cannot be politically reversed the way an active structural reform can (F-live-polish_reform-04)"
+    ],
+    "threats": [
+      "Without active correction of the selection mechanism, the SES/family-capital sorting dynamics that Polish-adjacent evidence identifies as independent of tracking-age alone may continue entirely unaddressed indefinitely (F-live-polish_reform-07)"
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      "Does not employ or test the structural mechanism (delayed first tracking) that Polish evidence [moderate] associates with documented distributional gains, leaving the passive scenario without any comparable equity lever (F-live-polish_reform-03)",
+      "The proposal's own risk section acknowledges that geographically uneven contraction could worsen equity even as aggregate share falls, a distributional effect the Polish lens cannot corroborate or refute given the absence of a comparable passive-contraction case in the evidence record"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-polish_reform",
+  "provenance_ref": "PV-assess_polish_reform-5d6a1848cf12fa37",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

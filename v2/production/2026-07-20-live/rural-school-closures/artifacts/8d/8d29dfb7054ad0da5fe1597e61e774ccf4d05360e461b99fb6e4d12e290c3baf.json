@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03"
+    ],
+    "claim": "Hungary's birth cohort has collapsed from 93,000 births in 2021 to approximately 72,000-73,000 in 2025, a decline of 22% over four years, directly shrinking the child population available to sustain village-level school cohorts.",
+    "context": "Fresh live research through the Demography lens",
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      "Data covers only the national aggregate; does not specify local age-cohort distribution by settlement type",
+      "Does not account for migration flows that might partially offset natural decline in specific villages"
+    ],
+    "population": "Population described in the cited finding",
+    "source_refs": [
+      "SRC-live-demography-01"
+    ],
+    "time_scope": "As reported by the cited source",
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "F-live-demography-01",
+  "provenance_ref": "PV-research_demography-04aa628834a59f5b",
+  "record_type": "finding",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,41 @@
+{
+  "content": {
+    "assessment": "This proposal directly engages the most load-bearing Finnish finding: quasi-experimental evidence that closures accelerate rather than merely follow rural depopulation (F-live-finnish_reform-05), and that consolidation itself produces measurable short-term achievement disruption independent of prior school quality (F-live-finnish_reform-06). The proposal's own risk section already flags the depopulation-acceleration finding as untested for Hungary, which is an appropriately cautious framing given the Finnish evidence is strong but context-specific. The non-discrimination catchment review requirement is a reasonable response to Finland's contested but plausible segregation link with decentralization/choice (F-live-finnish_reform-07), and is reinforced by the sharper Hungarian evidence on church-sector selection effects (F-live-finnish_reform-09). However, Finland's cost-savings rationale for closures was rarely verified by rigorous follow-up (F-live-finnish_reform-04), and T4 does not appear to build in mandatory savings verification, a gap given that consolidation is being adopted as a 'managed default.'",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-finnish_reform-01",
+      "F-live-finnish_reform-04",
+      "F-live-finnish_reform-05",
+      "F-live-finnish_reform-06",
+      "F-live-finnish_reform-07",
+      "F-live-finnish_reform-09"
+    ],
+    "lens_ref": "L-live-finnish_reform",
+    "opportunities": [
+      "Could adopt Finland's phased piloting logic (1972-1977) to test consolidation-with-mitigation in select regions before wider application, generating Hungary-specific evidence on the depopulation-acceleration question"
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      "Directly incorporates the Finnish demographic-acceleration finding as an acknowledged, not-yet-Hungary-tested risk, avoiding overconfident transfer of foreign findings (F-live-finnish_reform-05)",
+      "Non-discrimination catchment review for destination schools responds to documented segregation risks from selective operators, paralleling (with contested causal weight) Finnish choice/decentralization segregation concerns (F-live-finnish_reform-07, F-live-finnish_reform-09)",
+      "Zero-enrollment cliff case handling avoids over-applying comprehensive-provision logic where a school's viability precondition (per Finland's 1972-1977 model) cannot practically be met"
+    ],
+    "threats": [
+      "If municipal-level cost claims go unverified as in Finland, mitigation costs (transport, compensation) could exceed realized savings, undermining the fiscal rationale for consolidation-as-default (F-live-finnish_reform-04)",
+      "Consolidation could still trigger the demographic-acceleration dynamic documented in Finland even with statutory mitigation, since mitigation targets procedural fairness and equity, not the underlying settlement-viability mechanism (F-live-finnish_reform-05)"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Does not appear to mandate ex-post verification of claimed cost savings, despite Finnish evidence that closure cost-savings claims were rarely rigorously confirmed (F-live-finnish_reform-04)",
+      "Consolidation-as-default risks reproducing the pure consolidation shock documented in Finland even where mitigation (transport, consultation) addresses procedural fairness but not the disruption mechanism itself (F-live-finnish_reform-06)"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t4-finnish_reform",
+  "provenance_ref": "PV-assess_finnish_reform-d8bd61efb62ed904",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

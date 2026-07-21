@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "T3's grade-split model has a plausible internal sequencing logic (protect youngest children locally, consolidate older grades centrally) but implementation planning must weigh the explicit Polish precedent cited in the proposal's own evidence: the 2017 reversal caused severe disruption from abrupt structural reversal, and this risk is not paired with any described containment or exit-ramp mechanism for the Hungarian context. Multigrade teaching quality for retained village schools requires teacher-training infrastructure that is not currently present, especially set against an aging, attrition-prone teaching workforce. Fiscal exposure to national class-size minimums is acknowledged but unresolved, meaning even the preserved lower-grade schools may remain vulnerable to the same demographic-driven closure pressure the reform is meant to prevent.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-08"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "A pilot in a small number of districts could test multigrade staffing feasibility and transport burden shifts before national rollout.",
+      "Explicit design of a reversal-containment clause (unlike Poland's abrupt 2017 reversal) could be built into legislation from the outset."
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      "Recognizes the differential vulnerability of younger vs. older children to commute burden and calibrates the mechanism accordingly.",
+      "Draws on a concrete comparator (Poland) for both the reform's structural logic and its reversal failure mode, providing an explicit cautionary case for sequencing and failure containment."
+    ],
+    "threats": [
+      "Political reversal risk, evidenced directly by the Polish 2017 case, threatens catastrophic disruption to displaced teachers and students if not structurally insulated from short-term political cycles.",
+      "Documented impracticality of rural transport infrastructure in several regions undermines the assumption that older students can feasibly travel to consolidated schools."
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "No described mechanism for teacher training or cross-school professional networks required to sustain multigrade teaching quality, despite the proposal noting this dependency.",
+      "The aging, attrition-affected teaching workforce (50% aged 50+, high shortage-driven involuntary transfers) is not addressed as a capacity constraint for staffing dual-tier structures.",
+      "Retained lower-grade schools remain fiscally exposed to national class-size minimums, meaning the core viability problem may recur even after restructuring."
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t3-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-99eb47a51c938608",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "84a15c98c155087c321000de0dbb1679f728e5fd2b37d5b077f82d680f826fba",
+  "topic": "rural-school-closures"
+}

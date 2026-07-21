@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assessment": "Networked retention directly engages the spatial-distribution dimension of demographic decline by pooling cohorts across multiple villages rather than requiring each settlement to sustain a viable enrollment alone. This is a rational response to the finding that one-third of settlements have populations below 500 and many lack sufficient under-18 population individually, since cross-village pooling can reconstruct a viable aggregate cohort where no single village retains one. It also addresses counterfactual contraction more directly than closure-based models by explicitly aiming to avoid the population-decline acceleration linked to closure in Danish evidence. However, viability is bounded: in the most extreme demographic contexts, such as zero-enrollment cliff villages, even networked pooling across neighbors experiencing similar decline may not generate a viable joint cohort, especially where neighboring municipalities are simultaneously in steep decline rather than complementary demographic profiles.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-03",
+      "F-live-demography-07",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      "Could extend planning horizon by building resilience into clusters of villages with complementary or offsetting cohort trajectories rather than uniform decline"
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      "Directly targets spatial distribution problem by aggregating dispersed, declining cohorts across multiple villages rather than treating each settlement in isolation",
+      "Aligns with counterfactual-contraction concerns, since avoiding closure may forestall the population-decline acceleration documented in Danish quasi-experimental evidence",
+      "Combining kindergarten and primary provision addresses compounding demographic pressure across both age bands simultaneously"
+    ],
+    "threats": [
+      "If neighboring villages within a proposed cluster are all experiencing similarly steep and synchronized birth-cohort decline, the network itself may face collective non-viability within a single planning cycle",
+      "Inter-municipal competition dynamics could fragment cohorts across competing centers rather than pooling them effectively, undermining the aggregation logic central to this model's demographic rationale"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Model's real-world viability may depend on the same social-capital variation that produces uneven outcomes under status quo, rather than being demographically self-sustaining",
+      "Provides no explicit accommodation for zero-enrollment cliff cases where pooling with equally declining neighbors cannot reconstruct a viable cohort"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t3-demography",
+  "provenance_ref": "PV-assess_demography-4d0e82db5299b14f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

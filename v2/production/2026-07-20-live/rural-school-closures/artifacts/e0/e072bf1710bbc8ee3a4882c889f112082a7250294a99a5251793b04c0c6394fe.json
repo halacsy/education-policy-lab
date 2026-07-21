@@ -1,0 +1,39 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03"
+    ],
+    "claim": "Total fertility rate in Hungary has fallen to 1.31 children per woman in 2025, down from 1.39 in 2024 and far below the 2.1 replacement level, with regional variation: Zala County experienced a 25% birth decline in H1 2024 compared to H1 2021, versus 22% in Budapest.",
+    "context": "Fresh live research through the Demography lens",
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      "Regional birth decline data cover only a single 6-month period (H1 2024 vs. H1 2021); longer time series needed to confirm sustained trend",
+      "Does not directly measure which settlement types experience the sharpest cohort attrition"
+    ],
+    "population": "Population described in the cited finding",
+    "source_refs": [
+      "SRC-live-demography-02"
+    ],
+    "time_scope": "As reported by the cited source",
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "F-live-demography-02",
+  "provenance_ref": "PV-research_demography-04aa628834a59f5b",
+  "record_type": "finding",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

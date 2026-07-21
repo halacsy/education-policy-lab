@@ -1,0 +1,42 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": "System-level OECD indicators show Hungary has high between-school variance (third-highest among OECD countries), below-average within-school variance, 28.1% of students below proficiency Level 2 (vs. OECD average 23.0%), and socioeconomic background impact of 23.1% (vs. OECD average 14.8%), consistent with a tracked, academically sorted school architecture.",
+    "context": "Fresh live research through the Demography lens",
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      "Between-school variance results from multiple factors (tracking, residential segregation, private/public mix, resource allocation) and cannot be attributed solely to selective-track system",
+      "Correlation between variance indicators and outcomes does not prove causal direction or relative policy impact",
+      "OECD data are cross-sectional; longitudinal tracking of cohort trajectories not available"
+    ],
+    "population": "Population described in the cited finding",
+    "source_refs": [
+      "SRC-live-demography-08"
+    ],
+    "time_scope": "As reported by the cited source",
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "F-live-demography-08",
+  "provenance_ref": "PV-research_demography-b7a0f381177b6f0c",
+  "record_type": "finding",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,42 @@
+{
+  "content": {
+    "assessment": "As an explicit no-new-policy counterfactual, this proposal makes visible that demographic contraction alone does not engage any of the documented equity mechanisms—SES-skewed access (F-live-equity_and_social_mobility-02), Roma segregation (F-live-equity_and_social_mobility-06), or within-school sorting (F-live-equity_and_social_mobility-10)—all of which are independent of aggregate cohort size. The proposal's own risk analysis correctly anticipates that urban flagship schools with path-dependent prestige may retain selectivity intensity even as rural provision withers, which is consistent with the documented geographic clustering of track access in urban areas (F-live-equity_and_social_mobility-08) and could deepen rather than resolve geographic equity gaps.",
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-02",
+      "F-live-equity_and_social_mobility-03",
+      "F-live-equity_and_social_mobility-06",
+      "F-live-equity_and_social_mobility-07",
+      "F-live-equity_and_social_mobility-08",
+      "F-live-equity_and_social_mobility-10"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      "None identified within this lens beyond serving as a comparison baseline; passive contraction offers no equity-improving mechanism of its own"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Provides a clear counterfactual baseline against which active equity interventions can be measured",
+      "Avoids introduction of new legally contestable mechanisms (e.g., SES-based admission criteria)"
+    ],
+    "threats": [
+      "Geographic unevenness of contraction risks worsening rather than improving equity, as urban flagship prestige-driven oversubscription may persist while rural provision disproportionately withers, compounding documented rural-urban access disparities (F-live-equity_and_social_mobility-08)",
+      "Church/private schools outside demographic consolidation pressure could gain relative share, and given documented association between privatization growth and segregation amplification, this could worsen rather than improve system-wide sorting (F-live-equity_and_social_mobility-07)",
+      "Persistent within-school and primary-choice sorting mechanisms continue entirely unaddressed, meaning aggregate contraction of track share need not translate into reduced inequality of access or outcome (F-live-equity_and_social_mobility-08, F-live-equity_and_social_mobility-10)"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Leaves the SES-skewed sorting mechanism fully intact and unaddressed since demographic contraction is orthogonal to who gains access (F-live-equity_and_social_mobility-02)",
+      "Does not engage Roma segregation, a distinct and worsening mechanism unrelated to cohort size (F-live-equity_and_social_mobility-06)",
+      "Does not address the capital-intensive pre-selection competition documented for disadvantaged families (F-live-equity_and_social_mobility-03)"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-equity_and_social_mobility",
+  "provenance_ref": "PV-assess_equity_and_social_mobility-5d961ba14eb06e8e",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

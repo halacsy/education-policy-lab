@@ -1,0 +1,42 @@
+{
+  "content": {
+    "assessment": "As an explicit no-new-policy counterfactual, this proposal leaves every governance and selection mechanism identified in the lens evidence untouched by design: the three-track structure (F-live-hungarian_education_system-01), the centralized exam (F-live-hungarian_education_system-02), free-choice rights (F-live-hungarian_education_system-03), and the discretionary approval power the ministry has used against expansion requests (F-live-hungarian_education_system-09) all continue operating exactly as at present, with only external demographic pressure altering absolute scale. This makes it maximally institutionally compatible but also the proposal least likely to alter the documented sorting mechanisms; institutional description of demographic contraction does not itself establish that segregation outcomes (F-live-hungarian_education_system-06) will improve, only that raw capacity may shrink.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-06",
+      "F-live-hungarian_education_system-09",
+      "F-live-hungarian_education_system-10"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "The minister's own framing of demographic decline as grounds for review (F-live-hungarian_education_system-10) suggests this counterfactual pathway is not merely academic but already part of live institutional discourse"
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      "Requires no change to any existing governance, admission, or legal mechanism, representing zero institutional friction by construction",
+      "Consistent with the minister's own observation that declining demographics undermine the practical justification for the current selective scale (F-live-hungarian_education_system-10), lending some institutional plausibility to passive contraction as a real dynamic rather than a hypothetical"
+    ],
+    "threats": [
+      "Passive contraction does nothing to alter the parental-education composition skew documented between track types (F-live-hungarian_education_system-04), so the qualitative sorting problem persists even as quantitative capacity falls",
+      "EU-topping segregation by socioeconomic group (F-live-hungarian_education_system-06) is a compositional, not merely a capacity, phenomenon, and institutional description of shrinking cohort size does not establish that this composition problem will resolve on its own"
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      "The exam-based, coaching-sensitive admission mechanism (F-live-hungarian_education_system-02, F-live-hungarian_education_system-05) continues operating unchanged, so whatever capacity remains is filled through the same selection logic",
+      "Discretionary ministerial power already exercised against segregation-reinforcing expansion (F-live-hungarian_education_system-09) is not leveraged or extended under this passive path, foregoing an active governance tool that already has precedent"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t5-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-43c991abdb827d5f",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

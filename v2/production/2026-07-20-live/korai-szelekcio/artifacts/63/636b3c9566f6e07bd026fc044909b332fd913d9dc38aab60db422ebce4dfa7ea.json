@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "From an implementation-planning perspective, T1 uses an existing administrative lever (the centrally graded national exam and the regulated interview cap) rather than requiring new legal architecture, which improves near-term deliverability. However, the sequencing logic is incomplete: it targets the admissions instrument while leaving upstream non-application and geographic-access gaps unaddressed, meaning the mechanism cannot reach the populations most affected by sorting even if perfectly executed. No monitoring or adaptation loop is specified to detect coaching-market displacement to new exam formats, and the disputed statistics baseline elsewhere in the evidence base raises doubt about whether effects could be credibly monitored at all.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-03"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Could be piloted at a subset of schools/exam administrations before national rollout, since the exam is already centrally graded",
+      "Interview-weight reallocation could be tested incrementally within the existing 25% cap without new legislation"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Reform channel (exam redesign, interview weight reallocation) is administratively existing and centrally controlled, lowering legal/actor-capacity barriers to initiating a pilot",
+      "Interview-weight cap already in regulation gives a bounded, low-risk lever to test incrementally"
+    ],
+    "threats": [
+      "SES-index proxies are contestable and could be captured or delegitimized by politically connected advantaged families, undermining monitoring integrity",
+      "Absence of primary-school sorting reform means measured gains at the admissions gate could be offset by unmeasured upstream sorting, confounding evaluation"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "No mechanism to reach disadvantaged elementary schools that do not facilitate competition participation, so the intervention may not touch the non-applicant pool at all",
+      "Geographic clustering of 6/8-year schools in urban areas is not addressed by an admissions-criteria fix, leaving a structural access gap unmitigated",
+      "No specified feedback loop to detect whether coaching investment displaces to new exam formats rather than being reduced"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-c0d3987772a88282",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "852f3a4c2a56e42f1b552ea34350be7ea999d07e24e486b627e9e9e445a96e98",
+  "topic": "korai-szelekcio"
+}

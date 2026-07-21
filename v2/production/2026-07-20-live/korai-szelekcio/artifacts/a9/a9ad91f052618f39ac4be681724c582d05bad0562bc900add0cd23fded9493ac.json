@@ -1,0 +1,81 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t2-01",
+      "A-live-t2-02",
+      "A-live-t2-03"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Political cost of visible contraction against organized director lobbying interests (F-live-political_feasibility-07)",
+      "Parental backlash risk given oversubscription already generates frustration; tighter thresholds may push more students into vocational tracks against family preference (F-live-school_network_planning-04)",
+      "Administrative cost of managing differentiated capacity across state vs. church/private sectors"
+    ],
+    "equity_impact": "Reduces the scale of the segregating mechanism system-wide but does not directly change who is selected within remaining places; may leave the most advantaged families with even more concentrated influence over fewer places unless paired with T1-style admission reform",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduces the absolute and relative size of the segregating mechanism without requiring a change to selection age or admissions criteria design",
+      "Uses discretionary tools already legally exercised and politically tested (F-live-hungarian_education_system-09)",
+      "Aligns with demographic trend, reducing political framing risk as the minister has already linked declining demographics to reduced justification for the current system (F-live-hungarian_education_system-10)"
+    ],
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-04",
+      "F-live-hungarian_education_system-09",
+      "F-live-hungarian_education_system-10",
+      "F-live-political_feasibility-07",
+      "F-live-political_feasibility-08",
+      "F-live-legal_and_governance-07",
+      "F-live-implementation_planning-05"
+    ],
+    "goal": "Shrink the state-sector footprint of 6/8-year gimnázium places using score thresholds and capacity caps rather than admission-rule redesign",
+    "implementation_steps": [
+      {
+        "action": "Convert the 2024/25 recommended 70-point threshold from advisory guidance into binding national minimum for state-sector track admission",
+        "actor": "Ministry of Education",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Freeze or reduce state-sector 6/8-year gimnázium capacity allocations in multi-year school-network plan, prioritizing reduction in oversubscribed urban flagship schools",
+        "actor": "Klebelsberg Centre",
+        "timeline": "Years 1-3"
+      },
+      {
+        "action": "Apply discretionary approval power systematically to deny new or expanded 6/8-year tracks in state and, where legally possible, church/foundation schools citing segregation risk",
+        "actor": "Ministry of Education",
+        "timeline": "Ongoing from Year 1"
+      },
+      {
+        "action": "Review whether capacity caps require legislative backing versus administrative regulation, given Act CXC codification",
+        "actor": "Ministry of Education / Parliament",
+        "timeline": "Year 1"
+      }
+    ],
+    "mechanisms": [
+      "Binding national minimum score thresholds (building on 2024/25 recommended 70-point threshold) applied uniformly to reduce places awarded below a rigor bar (F-live-school_network_planning-04)",
+      "Capacity caps on state-sector 6/8-year gimnázium enrollment, holding or reducing the current ~25,962 stagnant capacity in the face of falling cohorts (F-live-school_network_planning-03)",
+      "Use of demographic decline as political cover to justify contraction rather than framing as ideological reversal (F-live-hungarian_education_system-10)",
+      "Ministerial discretionary approval power already used to deny track expansion requests on segregation grounds, extended systematically (F-live-hungarian_education_system-09, F-live-political_feasibility-08)"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Church and foundation schools, outside Klebelsberg jurisdiction, could absorb displaced demand and expand their own selective tracks, undermining net contraction (F-live-legal_and_governance-07, F-live-implementation_planning-05)",
+      "Contraction without addressing admission-mechanism bias could simply concentrate remaining highly limited places even more among already-advantaged families",
+      "Risk of political reversal given documented director lobbying access to top leadership (F-live-political_feasibility-07)"
+    ],
+    "title": "Score-threshold and capacity-cap contraction of the selective state-sector track",
+    "uncertainty_refs": [
+      "U-live-t2-01",
+      "U-live-t2-02",
+      "U-live-t2-03"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "TP-live-t2",
+  "provenance_ref": "PV-derive_transformations-c17ebf673d4d0734",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

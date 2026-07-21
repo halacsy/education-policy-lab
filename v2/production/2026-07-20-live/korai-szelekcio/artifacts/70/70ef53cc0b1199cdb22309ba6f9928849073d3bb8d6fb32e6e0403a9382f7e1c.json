@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "This proposal treats admission-mechanism redesign as an isolated fix within the existing 4/6/8-year architecture. The whole-system reform lens indicates this is precisely the kind of non-structural, single-lever intervention that comparative evidence suggests cannot substitute for coordinated structural change. Coaching-resistant exam redesign addresses one entry point but leaves untouched the primary-school choice sorting that precedes and independently drives segregation, and leaves Roma/regional equity gaps entirely unaddressed since these operate on dimensions (ethnicity, settlement type, early school-leaving) distinct from exam format.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-06",
+      "F-live-portuguese_reform-10",
+      "F-live-portuguese_reform-05"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      "Could be combined with T3's anti-sorting catchment rules to jointly address both entry-exam bias and primary-sorting, better approximating the bundled reforms that comparative cases show are necessary"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Uses an existing administrative lever (exam redesign) without requiring new legal architecture, which is procedurally efficient even if substantively partial",
+      "Explicitly acknowledges its own limitation regarding geographic access gaps and non-applicant pools, showing awareness that admissions-mechanism fixes alone are insufficient"
+    ],
+    "threats": [
+      "SES-proxy gaming by advantaged families with political access could hollow out the reform's intended equity effect, consistent with the lens's caution that non-structural quality/equity measures alone rarely achieve durable gains",
+      "Coaching investment may simply migrate to new exam formats, reproducing the same SES-driven advantage the reform is meant to eliminate"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Does not touch free school choice or primary-school sorting occurring before age 10, which the lens evidence identifies as an independent segregation driver distinct from formal tracking",
+      "Fails to address Roma and regional equity gaps that operate through mechanisms (early school-leaving, village/regional disadvantage) unrelated to exam format",
+      "As a single isolated lever, it cannot achieve what comparative cases show requires bundling with curricular and choice-regulation reform"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t1-portuguese_reform",
+  "provenance_ref": "PV-assess_portuguese_reform-caaf722e5a46ea7a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "4f6d9f7a4624dda70ebd6e230323e9a53e35edc7250a37f64640c52a87fecae7",
+  "topic": "korai-szelekcio"
+}

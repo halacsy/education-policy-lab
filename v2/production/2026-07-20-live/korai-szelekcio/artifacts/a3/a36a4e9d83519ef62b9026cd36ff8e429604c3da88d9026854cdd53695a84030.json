@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "Delaying tracking to 14+ would fundamentally restructure network geography and capacity by converting the currently bifurcated (primary/gimnázium) network into a unified lower-secondary phase. This is the proposal most directly implicating network-wide capacity and transport planning: the existing 880-school network is designed for proximity to generic secondary schools (F-live-school_network_planning-06), but a unified comprehensive phase at ages 10-14 would require redrawing catchment areas and potentially reallocating capacity away from concentrated urban gimnázium buildings (F-live-school_network_planning-05) toward broader, more geographically distributed provision. This is a large-scale network re-engineering task with significant transition risk.",
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      "A unified comprehensive phase could resolve the geographic stratification driven by path-dependent school size and founding history (F-live-school_network_planning-05)"
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      "Addresses the root cause of geographic sorting identified in this lens: concentration of selective capacity in urban/Budapest nodes (F-live-school_network_planning-05) versus the network's general proximity design for ordinary secondary schools (F-live-school_network_planning-06)",
+      "Would eliminate the feeder-school dilution dynamic (F-live-school_network_planning-07) since no early transfer point would exist to trigger departures"
+    ],
+    "threats": [
+      "Historic urban/rural capacity asymmetry (F-live-school_network_planning-05) could reassert itself informally even after formal delay, if catchment boundaries are not carefully redrawn",
+      "Feeder-school staffing dilution (F-live-school_network_planning-07) dynamics could reappear in a different form if any residual selective options remain at the network edges"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "No transition-phasing evidence specific to the Hungarian network's capacity is present in this lens's findings, leaving unclear how the network would absorb converted catchment demand",
+      "Existing physical capacity stagnation (F-live-school_network_planning-03) suggests limited spare capacity exists to reabsorb students previously filtered into 6/8-year tracks without new construction or reallocation"
+    ]
+  },
+  "created_at": "2026-07-20T21:25:06.714548Z",
+  "id": "AS-live-t3-school_network_planning",
+  "provenance_ref": "PV-assess_school_network_planning-28b41b2852521866",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "353167ff1126ff34150a705d2beffa62c3a3a98561eb8091398b3f0f9d96cc97",
+  "topic": "korai-szelekcio"
+}

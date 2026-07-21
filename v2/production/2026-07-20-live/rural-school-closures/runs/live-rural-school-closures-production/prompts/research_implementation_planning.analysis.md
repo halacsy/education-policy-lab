@@ -1,0 +1,164 @@
+TASK: expert_analysis
+AGENT: implementation_planning
+LANG: en
+
+
+Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+
+DISCIPLINE: public-sector change and implementation science
+PUBLIC QUESTION: What should happen to primary schools in depopulating villages?
+CRITERIA: actor capacity, sequencing, pilotability, monitoring, adaptation, failure containment
+KNOWN LENS LIMITS: Implementation readiness cannot be inferred from policy intent alone.
+
+RESEARCH NOTES:
+# Research Notes: Hungarian Village Primary Schools and Depopulation — Implementation Perspective
+
+*Scope: Findings are organized as decision-relevant facts (with citations) followed by analytic inferences (clearly flagged as such) relevant to the two framing questions — (1) can the current institutional actors deliver a school-viability mechanism in sequence, and (2) which capabilities, feedback loops, and safeguards appear to be missing.*
+
+---
+
+## 1. Governance authority over school survival/closure sits with a centralized state actor, not local communities
+
+Since 2013, school maintenance, funding, staffing and closure/merger decisions have been removed from municipalities. **Fact:** 
+in 2013, the central government assumed responsibility for public schools, transferring maintenance duties from local authorities to the state, and schools were consolidated under the Klebelsberg Institution Maintenance Centre (KLIK), a highly centralized body that curtailed institutional autonomy by centralizing financial control, teacher employment, and curriculum oversight, with principals losing authority over hiring and budgets.
+ This structure was later reorganized: 
+it is known as the Klebelsberg Center, consisting of educational district centers that serve as the legal successor of the old Klik with regard to its rights and obligations in connection with the operation of Hungary's public schools.
+
+
+**Inference:** A "sequence" of mechanism (e.g., graduated triggers → community consultation → merger/closure) depends on which actor holds decision rights. Because closure/merger authority is now vested in a central ministry-linked body rather than the municipality or school community, any proposed local-level sequencing mechanism (staged interventions, local co-design) would need to be re-routed through — or explicitly delegated by — this central body; local actors alone cannot execute the mechanism's later stages (merger, staffing reallocation) without central sign-off.
+
+---
+
+## 2. Historical precedent shows repeated cycles of "build small rural schools → rationalize/close them," suggesting the sequence has been attempted before, with mixed durability
+
+Hungary has cycled through this policy problem multiple times across regime changes. **Fact:** 
+the post-1948 Stalinist dictatorship targeted a radical demolition of small settlements and their schools now considered as "uneconomic," and later, attempts at limited decentralization led to regional administrative organs exploiting their own periphery, resulting in a mass closure of rural schools in the 1970s under the motto of "rationalization."
+ Earlier, the interwar Klebelsberg program had done the opposite — building capacity: 
+Klebelsberg's education reforms aimed to reduce illiteracy from 15.2% in 1920 to 7.6% by 1941, and the establishment of 5,000 new elementary schoolrooms targeted rural areas with insufficient educational infrastructure.
+ A Hungarian archival account similarly notes closures of farmstead ("tanyasi") schools driven by depopulation combined with modernized transport: 
+by the late 1950s and early 1960s pupil numbers showed drastic year-on-year decline in most farmstead schools, with causes including depopulation of the farmsteads, modernization of mass transit, and the outdatedness of the ungraded teaching system.
+
+
+**Inference:** The repeated build-close-build cycle suggests no durable equilibrium mechanism has existed; each "sequence" (expansion or contraction) has been driven by top-down political/administrative decisions rather than a standing feedback-and-review process tied to demographic indicators. This is evidence of missing institutionalized feedback loops rather than proof that closure or retention is inherently right.
+
+---
+
+## 3. A specific 2016 policy signal shows local actors (school directors, county association) explicitly flagged closure risk but reported no consultation mechanism existed
+
+**Fact:** 
+The ministry stated it was not preparing to dismantle small village schools, but teachers said the creation of regional school centers could pose a risk to them; there was no consultation at that time either.
+ A county self-government association secretary acknowledged the underlying tension directly: 
+"That's why it matters what future a given rural school can expect... However painful it is, there are settlements where, due to declining child numbers, the school simply cannot be sustained, and this has to be faced," the secretary-general said.
+ The same source noted a structural side-effect of the 2013 centralization: 
+many mayors reportedly felt relief when the state took over school maintenance from municipalities via KLIK, but the change of operator did not change the underlying problem — when there are very few children, it is more economical for them to attend school elsewhere.
+
+
+**Inference:** This is a documented capability gap: as of the mid-2010s there was no formal consultation/appeals mechanism for affected municipalities or school staff when centralized re-mapping ("iskolaközpont" formation) threatened small schools — a missing safeguard for voice/procedural fairness in the proposed sequence.
+
+---
+
+## 4. Demographic trend data confirm depopulation is structural, national, and accelerating — the "trigger condition" for any mechanism is real and quantified
+
+**Fact:** 
+Hungary's population of 9.6 million has declined by nearly 8% since the political transition; in 2023 the country recorded the third-largest annual population decline among EU member states, and this ongoing depopulation, persisting since the mid-1980s, is accompanied by a low fertility rate and an ageing population.
+ Projections indicate continuation: 
+projections based on a trend-based scenario indicate that Hungary's population could fall to 8.5 million by 2050, amounting to a 13% decrease over the next three decades.
+ However, regional variation is large and was already noted as a distinct feature by KSH officials: 
+a KSH deputy noted that if the situation does not change, some local societies could empty out and structurally collapse, with Northeast Hungary as the prime example, and that because births, deaths, and migration are not evenly distributed, depressive regions can easily emerge within a few decades, altering local age structure (more over-65s, fewer working-age people).
+
+
+**Inference:** Because decline is spatially uneven, a single national mechanism/threshold (e.g., a uniform enrollment cutoff) risks mismatching local conditions — this points to a missing capability for regionally differentiated triggers/thresholds rather than a nationally uniform rule.
+
+---
+
+## 5. Comparative evidence (Finland) — cited in Hungarian rural-school scholarship — finds school closure is followed by *further* community depopulation, not stabilization
+
+**Fact:** 
+a Finnish study using difference-in-differences regression combined with matching methods found that after school closure, the population of the surrounding community decreased more than before school closure.
+ The same literature frames this as a systemic finding: 
+the increasing depopulation after a school closure means that school closures do not just raise questions about the individual school or the municipal school network, but more broadly about the vitality of the municipality and its development.
+
+
+**Contested/caveat:** This is Finnish, not Hungarian, evidence — a directly comparable causal study for Hungary was not found in this search. It is cited by Hungarian rural-schooling researchers as an analog, not as domestic proof. Whether the same causal relationship (closure → accelerated depopulation, versus reverse causation from depopulation → closure) holds in the different Hungarian administrative and funding context is untested here.
+
+---
+
+## 6. Efficiency logic and equity/segregation dynamics are structurally entangled — closing or not closing schools has second-order effects on ethnic segregation
+
+**Fact:** A CEU working paper on Roma segregation traces a direct structural link between small-school retention and school segregation patterns: 
+between-school segregation is much stronger in Hungary than within-school segregation partly because, over previous decades, local self-governments mitigated declining pupil numbers by reducing the number of parallel classes rather than by closing or amalgamating schools — this produced a large supply of small schools but reduced opportunities for within-school separation of pupils by social/ethnic background, a situation especially applying to small schools in small rural settlements running only one class per grade.
+ Current EU monitoring confirms disadvantage is spatially concentrated: 
+teacher shortages are greatest in rural areas, with the proportion of unqualified teachers in disadvantaged schools 2 to 3 times higher than in schools not disadvantaged.
+ Advocacy groups similarly assert: 
+Roma students mostly live in small settlements where they do not have access to quality education in the first place, and most schools in these settlements have struggled with a shortage of specialist teachers for decades.
+
+
+**Contested framing:** Whether merging small schools into larger ones *reduces* segregation (by preventing standalone "Roma-majority" village schools) or *increases* it (by triggering non-Roma flight to church-run or other schools with "greater admissions discretion," as reported by a UN expert: 
+state-sponsored expansion of the church school network has played a role in deepening segregation in Hungarian education, with widespread reports of an exodus of non-Roma children from established state schools in favour of new religious institutions
+) is actively disputed and not resolved by the sources found.
+
+**Inference:** A closure/consolidation mechanism sequenced purely on enrollment/cost thresholds risks omitting an equity/segregation safeguard — no source found describes a formal ex-ante segregation-impact check built into the school-network rationalization process.
+
+---
+
+## 7. Legal/rights enforcement mechanisms exist but have shown weak implementation traction over a decade
+
+**Fact:** 
+In 2013 the ECtHR found Hungary failed to offer the necessary guarantees to undo a history of racial segregation in special schools; over the past decade the Committee of Ministers monitoring implementation of the judgment has not been able to close the case because the Hungarian government has not convincingly demonstrated elimination of the discriminatory practices, and 2024 research conclusively demonstrates the education system continues to fail many Romani children.
+ A separate 2023 ECtHR ruling addressed a specific village-area school: 
+on 30 March 2023 the ECtHR issued a judgment against Hungary for racial segregation of Romani children in the Jókai Mór Primary School in Piliscsaba, ordering desegregation and damages.
+
+
+**Inference:** International legal/monitoring mechanisms function as an external feedback loop, but their decade-long non-closure suggests weak enforcement capability domestically — a relevant "safeguard" that exists on paper (court oversight) but has not reliably translated into corrective implementation, which bears on whether any new closure/retention mechanism could rely on existing oversight bodies for course-correction.
+
+---
+
+## 8. Workforce pipeline for rural schools is structurally weak, threatening the feasibility of any mechanism that assumes staffing can be re-deployed or sustained
+
+**Fact:** 
+half of all teachers in the 2024/2025 academic year were 50 or older, while only 7.2% of teachers were under 30, partly due to a relaxation of rules for rehiring retired teachers in 2022.
+ 
+Teacher shortages, linked to an ageing workforce, are a growing concern, and the number of teachers in the younger age group (30–44) in primary schools has declined.
+ A related dynamic in disadvantaged-composition schools: 
+schools educating disadvantaged ethnic-minority students often face teachers leaving due to lack of appropriate tools, methods, and motivation, which can lead to teacher shortages and a high proportion of "guest teachers" coming from other schools.
+ A 2023 labor-relations shock is also documented: 
+the July 2023 Status Law revokes teachers' status as public employees, increases allowable weekly working hours and allows educators to be transferred to other schools experiencing teacher shortages.
+
+
+**Inference:** Any mechanism that presumes teachers can be reallocated smoothly from a closing small school to a consolidated hub school assumes a workforce capability (mobile, adequately staffed, motivated) that current evidence suggests is under strain (ageing, shortage-driven forced transfers, low prestige) — this is a plausible missing capability, though the direct causal link between the Status Law and rural-school outcomes specifically was not found in these sources and should be treated as inference, not established fact.
+
+---
+
+## 9. Transport substitutability for closed schools is real but incomplete, especially in the very regions where school viability is most contested
+
+**Fact:** A 2023 tariff reform improved affordability: 
+a tariff reform introduced in March 2023 significantly altered the affordability of public transport, and public transport became free for children up to 14 years of age.
+ However, structural coverage gaps persist: 
+almost every Hungarian settlement has access to some form of public transport, but in rural areas and small settlements — characteristic of the hilly North-Eastern, South-Western, and Western parts of the country — the frequency and scheduling of public transport is limited.
+ National ridership is also declining overall: 
+from 2001 to 2023, public bus passengers in Hungary decreased by 35%, and overall public transport usage dropped by around 20%.
+
+
+**Inference:** Because the regions cited as having the weakest transport frequency (North-East, South-West, West) substantially overlap with regions flagged elsewhere as demographically "depressive" (see Finding 4), a mechanism that assumes bussing children to a consolidated hub school as a safe default may face capability gaps precisely where the demographic pressure for consolidation is greatest — a potential mismatch between mechanism assumptions and on-the-ground service capacity. This overlap is inferred from combining two separate sources, not directly stated in either.
+
+---
+
+## 10. No institutionalized stakeholder-consultation architecture appears to have survived the 2010s centralization, removing a key procedural safeguard for local sequencing
+
+**Fact:** 
+after 2010, the Hungarian government suspended almost all EU-funded school development programs and reallocated the available funds to newly established mechanisms such as centrally issued curricula and textbooks and administrative professional control of teachers; in line with the gradual building of an autocratic regime, all institutionalized stakeholder consultation mechanisms [were curtailed].
+
+
+**Inference:** If institutionalized stakeholder consultation mechanisms were dismantled as part of broader centralization, this represents a specific, named missing safeguard for any proposed mechanism that depends on staged local consultation (e.g., a sequence of "warning → community input → decision") — the source suggests the *architecture* for such consultation was removed, not merely underused, which is a stronger claim about capability absence than mere underperformance.
+
+---
+
+## Summary of Answers to the Two Framing Questions (analytical synthesis, not recommendation)
+
+**Can actors deliver the mechanism in the proposed sequence?**
+Evidence suggests partial capacity at best: closure/merger decision authority is centralized (Finding 1), historical precedent shows top-down rather than sequenced/negotiated cycles of closure and re-expansion (Finding 2), and a documented episode (2016) shows the sequence proceeding without consultation despite local actors flagging risk (Finding 3). Workforce (Finding 8) and transport (Finding 9) capabilities that a consolidation-style mechanism would depend on show documented strain, particularly in the highest-need regions.
+
+**Which capabilities, feedback loops, and safeguards are missing?**
+Findings point to: (a) no clear regionally differentiated trigger/threshold system given uneven demographic decline (Finding 4); (b) no domestic ex-ante segregation-impact check in school-network rationalization despite well-documented segregation risk (Finding 6); (c) weak enforcement traction on existing legal safeguards (ECtHR/EU infringement mechanisms) over a decade (Finding 7); and (d) apparent removal of institutionalized stakeholder-consultation architecture after 2010 (Finding 10). The Finland-derived finding that closure may accelerate rather than stabilize community decline (Finding 5) is flagged as contested/non-domestic evidence and would itself function as a needed feedback loop if validated for the Hungarian context, but no domestic causal study of this kind was located in this search.
+
+Rules: preserve contested labels; never invent a source or statistic; findings must be empirical claims rather than recommendations; source_url must be a direct URL when present in the notes, otherwise a short source identifier. Produce 7-10 distinct findings, 1-4 assumptions, and 2-4 uncertainties with concrete reduction paths.

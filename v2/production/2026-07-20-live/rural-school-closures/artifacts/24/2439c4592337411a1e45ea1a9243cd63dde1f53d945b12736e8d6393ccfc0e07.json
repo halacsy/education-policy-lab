@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "T2's reciprocal-contract mechanism presumes a bargaining relationship between state and municipality that Hungary's 2013 centralization explicitly removed; the proposal acknowledges this and reframes the contract as state-initiated, but this substantially weakens the reciprocity that gives the French model its enforcement logic. Implementation sequencing requires municipalities to hold some fiscal or legal standing to make commitments credible, which is not established. The proposal itself flags contract enforceability as unresolved, and no monitoring or adaptation mechanism is described for tracking whether municipalities honor reorganization commitments or whether the state honors post-maintenance guarantees.",
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-implementation_planning-01"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "A small-scale pilot contract in a single county could test enforceability and fiscal mechanics before wider adoption.",
+      "Linking the contract explicitly to the funding-formula exception could create a testable, measurable feasibility marker in a pilot."
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Explicitly designed around Hungary's centralized structure rather than assuming municipal authority that does not exist.",
+      "Identifies the specific structural fix needed (funding-formula exception) for the contract to have teeth against national per-pupil formulas."
+    ],
+    "threats": [
+      "Absent devolved authority, municipalities may perceive the contract as reintroducing financial burden without matching power, generating political resistance.",
+      "Without independent contract enforcement infrastructure, defection risk by either party is high and undetectable in real time."
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      "Municipalities lack the fiscal capacity and legal standing presumed by the French model, undermining the core reciprocity mechanism the proposal borrows.",
+      "No enforcement or monitoring architecture is specified for either party's compliance, and the proposal itself notes there is no precedent for binding state commitments at this scale.",
+      "The centralized locus of closure authority (Klebelsberg Center) means municipalities entering such contracts have limited leverage to alter outcomes even if they comply."
+    ]
+  },
+  "created_at": "2026-07-20T22:09:43.057043Z",
+  "id": "AS-live-t2-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-99eb47a51c938608",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "0200e79c5633f9605dbdb670f398b10819c52309510ed79f1df577c73d66cd2b",
+  "topic": "rural-school-closures"
+}
