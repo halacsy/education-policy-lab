@@ -1,0 +1,35 @@
+{
+  "content": {
+    "assessment": "A measurement and monitoring reform is comparatively low-threat politically because it does not immediately redistribute resources or authority, potentially making it easier to build a technocratic coalition around. However, the existing pattern of centralized control over diagnostic infrastructure (F-live-political_feasibility-04) means that whoever controls the reconciled dataset controls a politically sensitive narrative; the state's demonstrated capacity to centralize is a double-edged strength enabling implementation but also raising legitimacy concerns if data reconciliation is not conducted transparently.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-political_feasibility-04",
+      "F-live-political_feasibility-03",
+      "F-live-political_feasibility-06",
+      "F-live-political_feasibility-09"
+    ],
+    "lens_ref": "L-live-political_feasibility",
+    "opportunities": [
+      "A single publicly auditable dataset could strengthen the government's hand in demonstrating compliance efforts to the EU and Council of Europe monitoring bodies (F-live-political_feasibility-06, F-live-political_feasibility-09), potentially aiding negotiations over infringement resolution"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "State has already centralized diagnostic and support infrastructure to regional authorities (F-live-political_feasibility-04), providing an institutional locus with authority to implement standardized monitoring without needing municipal cooperation"
+    ],
+    "threats": [
+      "Centralized control over the data architecture (F-live-political_feasibility-04) creates risk that inconvenient findings, such as incentive-driven over-identification, could be suppressed or selectively released rather than published, undermining the proposal's legitimacy function"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Legally mandated parental consent and expert-committee gatekeeping (F-live-political_feasibility-03) mean that even a reconciled dataset cannot alter the underlying identification process without separate political action, limiting the reform's independent leverage"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "AS-live-t2-political_feasibility",
+  "provenance_ref": "PV-assess_political_feasibility-82bdb53b5c09a491",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

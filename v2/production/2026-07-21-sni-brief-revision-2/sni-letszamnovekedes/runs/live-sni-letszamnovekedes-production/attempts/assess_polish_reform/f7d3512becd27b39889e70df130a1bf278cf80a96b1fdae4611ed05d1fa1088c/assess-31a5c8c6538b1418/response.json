@@ -1,0 +1,148 @@
+{
+  "assessments": [
+    {
+      "assessment": "The Polish reform lens illuminates this passive-baseline proposal mainly by contrast: Poland's experience shows that inaction is not neutral, since static institutional capacity interacting with demographic and diagnostic shifts produces visible strain (rising autism identification by 30% in one year, regional disparities exceeding 1,000%) even without deliberate policy change. This suggests that a 'no new policy' baseline in another system would likely also generate drift in identification and capacity strain that compounds silently until forced into crisis-driven reform, as happened in Poland's 2016-2017 case. The lens's core caution is that unaddressed structural mismatches (e.g., gatekeeping capacity vs. demand) tend to accumulate rather than stabilize.",
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-polish_reform-06",
+        "F-live-polish_reform-08",
+        "F-live-polish_reform-10"
+      ],
+      "opportunities": [
+        "A rigorously observed counterfactual could later serve as an implementation-sequence benchmark, akin to the natural policy variation Poland's own centralized diagnostic and finance changes could offer for future comparative analysis"
+      ],
+      "proposal_ref": "TP-live-t1",
+      "strengths": [
+        "Establishing a counterfactual is scientifically useful for isolating the causal contribution of policy versus drift, an issue Poland's contested PISA 2022 evidence shows is otherwise hard to disentangle after the fact"
+      ],
+      "threats": [
+        "Poland's 2016-2017 case shows that static gatekeeping capacity combined with demographic/diagnostic change eventually produces crisis-driven, non-consensual reform (F-live-polish_reform-06), implying prolonged inaction elsewhere may similarly generate a later abrupt correction rather than smooth stability"
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "Poland's history offers no positive evidence for the value of inaction itself; all cited findings pertain to consequences of active reorganization, so this lens has limited direct applicability to the passive baseline"
+      ]
+    },
+    {
+      "assessment": "Poland's centralized diagnostic gatekeeping (Psychological and Pedagogical Counselling Centres and superintendents) and its steep per-pupil disability weighting scale (1.4 to 9.5, with autism-linked subsidies reaching ~9,500 zł) together generate a structural mechanism in which diagnostic category and funding incentive are tightly coupled at a level separate from schools. The rapid 30% single-year rise in autism identification and regional variation exceeding 1,000% demonstrates that identification statistics are highly sensitive to definitional, gatekeeping, and incentive structure rather than to prevalence alone — directly supporting the proposed decomposition goal. However, Poland's own reform history (2016-2017) shows that even well-documented structural problems were addressed through non-consensual, rapid change rather than a monitoring/reconciliation phase, suggesting measurement architecture alone is not what determined implementation choices in this comparator.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-polish_reform-03",
+        "F-live-polish_reform-04",
+        "F-live-polish_reform-05",
+        "F-live-polish_reform-08"
+      ],
+      "opportunities": [
+        "The Polish per-pupil weighting and subvention growth data (14% increase 2023-2024 independent of prevalence changes) could serve as a template variable for decomposition analysis distinguishing incentive-driven from true-need-driven identification change"
+      ],
+      "proposal_ref": "TP-live-t2",
+      "strengths": [
+        "Poland's finding that autism identification rose 30% in one year with regional variance over 1,000% and a declining male-to-female ratio (4.56 to 2.99) offers strong evidence that identification statistics are decomposable into diagnostic-practice and recognition-improvement components, validating the proposed decomposition mechanism",
+        "Poland's centralized gatekeeping structure being distinct from schools illustrates how gatekeeping location itself is a measurable, disentanglable variable relevant to the proposal's monitoring goals"
+      ],
+      "threats": [
+        "Poland's own reform record suggests that even where data patterns are visible, political actors may reorganize systems abruptly rather than wait for reconciled evidence, indicating monitoring architecture may be politically sidestepped rather than acted upon"
+      ],
+      "verdict": "supports",
+      "weaknesses": [
+        "Poland's own experience does not include an analogous reconciled-monitoring intervention prior to structural reform, so the lens offers no direct implementation precedent for this proposal's specific mechanism"
+      ]
+    },
+    {
+      "assessment": "Poland's 2016-2017 experience is the most directly relevant precedent in this lens for assessing structural/categorical reform, and it is unambiguously cautionary. The reform reversed a prior comprehensive-education direction, was implemented rapidly against objections from researchers, local authorities, parents, and teachers, and produced a severe implementation crisis: a double-cohort crunch leaving 3,173 Warsaw students without high school placement and contributing to an 80%-school teacher strike in 2019. This directly substantiates the proposal's own risk statement that rapid, non-consensual restructuring can produce severe disruption. Additionally, Poland's parallel rollback of special-needs mainstreaming during the same restructuring shows that categorical/structural redesign can regress inclusion rather than advance it, a distributional risk not fully addressed in the proposal's mechanism description.",
+      "confidence": "high",
+      "finding_refs": [
+        "F-live-polish_reform-01",
+        "F-live-polish_reform-02",
+        "F-live-polish_reform-06",
+        "F-live-polish_reform-07",
+        "F-live-polish_reform-09"
+      ],
+      "opportunities": [
+        "Poland's implementation failure (double-cohort crunch, strike) offers a specific transferable lesson: transition mechanisms and cohort-bridging protections should be built into sequencing design before restructuring gatekeeping or categories"
+      ],
+      "proposal_ref": "TP-live-t3",
+      "strengths": [
+        "The proposal itself explicitly anticipates the Polish precedent as a risk, showing awareness that rapid, non-consensual structural reform produces disruption — a well-evidenced pattern from F-live-polish_reform-06 and F-live-polish_reform-07"
+      ],
+      "threats": [
+        "Poland's rapid, low-consensus implementation model, if replicated, risks equivalent short-term system shocks (placement backlogs, workforce unrest) that could undermine the credibility and durability of a tiered support transition",
+        "Poland's mainstreaming rollback during structural reform shows that categorical restructuring is reversible in either direction, meaning transition to non-categorical models is not guaranteed to be a one-way improvement"
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "The proposal's mechanisms do not specify an implementation-sequencing strategy that addresses the double-cohort/transition-crunch risk Poland's experience demonstrates concretely and at scale",
+        "The proposal does not address the distributional risk that structural reform of gatekeeping and categories could inadvertently reduce mainstreaming/inclusion, as occurred in Poland's parallel special-needs rollback"
+      ]
+    },
+    {
+      "assessment": "Poland's financing architecture directly contradicts the proposal's incentive theory in an important respect: rather than removing diagnosis-gated multipliers, Poland expanded its disability-weighted per-pupil system (weights 1.4 to 9.5) and increased subvention amounts (14% rise 2023-2024) independent of prevalence changes, while also centralizing diagnostic gatekeeping away from schools. This shows diagnosis-linked funding and rising identification/funding levels are not simply causally coupled in the way the proposal's theory implies, and that a system can retain (even strengthen) diagnosis-gated financing while separately managing gatekeeping through independent centralized authorities. This is a genuinely contested point: Poland's case does not prove census-based reform would fail elsewhere, but it demonstrates that diagnosis-gated financing and its expansion are not universally linked to runaway over-identification, weakening the generalizability of the proposal's core mechanism assumption.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-polish_reform-03",
+        "F-live-polish_reform-04",
+        "F-live-polish_reform-05"
+      ],
+      "opportunities": [
+        "Poland's 2025 shift from 'subwencja oświatowa' to 'kwota potrzeus oświatowych' shows algorithmic financing formulas can be restructured relatively rapidly (implementation within a defined timeline), offering a technical precedent for formula redesign processes, though not for the specific census-based direction proposed"
+      ],
+      "proposal_ref": "TP-live-t4",
+      "strengths": [
+        "Poland's centralized gatekeeping structure, separate from school-level financial incentives, illustrates one way diagnosis-linked funding can coexist with controlled gatekeeping without triggering the specific over-identification dynamic the proposal seeks to prevent"
+      ],
+      "threats": [
+        "If diagnosis-gated financing is retained or expanded as in Poland, and this proves administratively durable and politically acceptable, it undermines the case that shifting away from diagnosis-gated systems is a necessary or even common reform pathway, per the proposal's own acknowledged tension with Polish evidence"
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "Poland's evidence directly contradicts the proposal's premise that diagnosis-gated financing structurally drives over-identification: Poland expanded its diagnosis-weighted funding formula and increased subventions independent of prevalence, without necessarily linking this to runaway identification growth by design"
+      ]
+    },
+    {
+      "assessment": "This lens offers limited direct evidence on workforce capacity expansion specifically, since the Polish findings supplied concern structural reorganization, diagnostic gatekeeping, and financing rather than workforce supply dynamics. However, indirect inference is possible: Poland's steep disability-weighted funding scale (up to 9.5x for profound disability) implies substantial fiscal resources are already directed toward specialist support in principle, yet no finding here confirms whether this translated into adequate practicing specialist supply, leaving the proposal's central assumption — that funding/enrollment growth does not guarantee workforce capacity — neither confirmed nor refuted by this evidence base.",
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-polish_reform-03",
+        "F-live-polish_reform-05"
+      ],
+      "opportunities": [
+        "Poland's Psychological and Pedagogical Counselling Centre model, as a centralized diagnostic body distinct from schools, could offer a structural analogy for how a targeted specialist workforce or traveling-network infrastructure might be centrally coordinated, though this is speculative extrapolation beyond the supplied evidence"
+      ],
+      "proposal_ref": "TP-live-t5",
+      "strengths": [
+        "The proposal's core concern (that legally prescribed support does not automatically follow from rising identification or funding) is consistent with the general pattern in Poland where funding and administrative structures expanded but no data here confirms proportional workforce or service-delivery outcomes"
+      ],
+      "threats": [
+        "Absent direct evidence, there is a risk of over-extending the Polish case to workforce questions it was not designed to address, which could produce false confidence in transferability"
+      ],
+      "verdict": "insufficient_evidence",
+      "weaknesses": [
+        "No Polish finding directly addresses specialist workforce numbers, recruitment, or training completion, making this lens largely inapplicable to the proposal's central workforce-capacity mechanism"
+      ]
+    },
+    {
+      "assessment": "Poland's record offers a partial but instructive parallel: the 2016-2017 reform rolled back special-needs mainstreaming as part of a broader structural reorganization, showing that adjacent structural changes (school network restructuring, category changes) can interact with and undermine inclusion/anti-segregation goals if not explicitly coordinated. This supports the proposal's premise that SEN identification interacts with adjacent policy domains (school network structure, entry rules) in ways that require deliberate cross-domain coordination rather than siloed management. However, Poland's implementation approach — rapid, non-consensual, provoking sustained backlash including an 80%-school strike — is a cautionary structural-mechanism lesson for any coordinated package requiring broad institutional buy-in across multiple policy domains, echoing the proposal's own cited risk of institutional resistance to structural anti-segregation reform.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-polish_reform-02",
+        "F-live-polish_reform-06",
+        "F-live-polish_reform-09"
+      ],
+      "opportunities": [
+        "The Polish case of rollback provides a specific negative template: a coordination mechanism could explicitly screen for and prevent the kind of mainstreaming rollback documented in Poland, strengthening the proposal's anticipatory impact-assessment design"
+      ],
+      "proposal_ref": "TP-live-t6",
+      "strengths": [
+        "Poland's explicit rollback of special-needs mainstreaming during broader structural reform empirically demonstrates that adjacent structural policy changes can quietly reverse inclusion gains if not explicitly safeguarded, validating the proposal's coordination rationale"
+      ],
+      "threats": [
+        "Poland's history of rapid, high-conflict structural reform (teacher strikes, implementation chaos, sustained stakeholder objection) suggests that a coordinated package spanning multiple sensitive domains (school choice, network consolidation, private growth) faces a high risk of similar institutional resistance and disruption if pursued without extensive consensus-building",
+        "The Polish case shows structural reorganization decisions (e.g., network consolidation) can be driven by considerations unrelated to segregation/inclusion goals and may override coordination intentions"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "Poland offers no positive precedent for successful cross-domain coordination mechanisms; its evidence is entirely about a case where adjacent domains were reorganized in ways that reduced inclusion, not integrated to protect it"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "c90fd689d4240056bcb6c063ba108663d23becda6527139be71efc909f56b09a",
+        "response_hash": "a90f757c3d682602b444200b2e3f9d2531f132db10bc629248a2ab77052b07d7",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "c132ce016cb5d1e2a81fc53d43a34e1af4db64f9d4e072946661e08a2e182325",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "022ee2fe50fff81885d47b09fcdf7de3de3e9af4838006131b4dfde07c413364",
+      "0a3b8f91aa4a381a920052d41600dc2b1a4898522aed16dc65075ea9bb1f79c7",
+      "3306746efb68c19040af1dc9d595fdb7f5a2b964d26480b3eb2f617e0189142c",
+      "3bd90714e3bfe77e7bffbd774a255275681b13f8f0eeb2ac9ba76ce0c31ab1ca",
+      "3eba21bccf8f1af6192d812107266acfe25bcdb845c81fe323e3295f5df14da3",
+      "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+      "6acbadd854976f479a41d50c7559527b28be87806785d33f8946aa57fa3d91a2",
+      "6ebef7bbbf3fa28605fd987c78210b5cb40be48409a80a7bf58b8efd5c341ccd",
+      "8551b262f1061d8dcd2e3f85c1043e9f9a11e18650ecf20f1e97346467cb34a9",
+      "8c8cf6c687adfbfc6b2ac15254a5b5584c9b8014e2904c7954c5bbcac1a0b0b0",
+      "8e781e2ed72c785362814602d38d97f8f131211aa397399b4bc8acf316a78ffe",
+      "977c693a79677e23d3ea6ada15f7edb5066d586ba91e5396c31f18acdb6ea812",
+      "9aca69e533a97de1e9c698a63711e770299fdebed45e7ecc6739bf53da3f4162",
+      "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438",
+      "a5cd266b5fd436c89794b19a63e660304718a12f4bf925b9e3a6c9046c554f1e",
+      "e472beecfe3b01d5fd0c7d356529565d998084621fd9f48dfdda7e280ba9caa0",
+      "fb40b9c08986b588869c3b49334b7cd44f0368e3a97bf93659c2191f44cdaa00"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_finnish_reform",
+    "prompt_hash": "32a9c27166f4ab529a15efcfaeb1851a85f824b56921345238c564b16168765b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "generator",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-assess_finnish_reform-c132ce016cb5d1e2",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "0399c065cc5ba4a7822e895f449e2fe058c68b53e222355b7551119d6e388d80",
+  "topic": "sni-letszamnovekedes"
+}

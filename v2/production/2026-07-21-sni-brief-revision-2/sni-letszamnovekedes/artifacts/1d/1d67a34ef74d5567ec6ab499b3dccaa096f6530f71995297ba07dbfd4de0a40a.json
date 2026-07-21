@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "201dd996debfa59a0ddcceb4ca6e0ef71cf0c46b7c04df72097527e2cd49c380",
+        "response_hash": "8a905eb23ac5369947381b5ae4437cbacc3a360282a3fe968609eeb9cbcd5ab8",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "65e44307b58c003689f70cc54c459e5c3d49a7310594fed1714f5cab7b1a9761",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "0612b0fa0338bec0bc892cbc04d37f8fe25f2734e1654c4421366f837affac0a",
+      "0a3b8f91aa4a381a920052d41600dc2b1a4898522aed16dc65075ea9bb1f79c7",
+      "258a61d1afbdb22437eca8010111f19aaf14c4645656d6cc052742b141d84961",
+      "3306746efb68c19040af1dc9d595fdb7f5a2b964d26480b3eb2f617e0189142c",
+      "37aebfb9fd97676b49f7cc18d6b44dcafad9752d64f2e29bac5a567830269723",
+      "3bd90714e3bfe77e7bffbd774a255275681b13f8f0eeb2ac9ba76ce0c31ab1ca",
+      "57eaea4d33d0ca810c292ff337deb231896c728715be01cf636b937bb44e6274",
+      "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+      "6d78711171a4907899196063559c48aa050d61e95541b579e2089b96fdc62813",
+      "7d7dc160d1a97b4ca2e7398cbabfe4504f217d41b0f60c5a40ddce1094e86a45",
+      "868bdcdecc5fcfbb837d8d7164a5048153cadf8c4eb352cf008747743c38c051",
+      "8e16dd9ef8d2fa99ef67866955201057090ccf340009c9986518be2a84935888",
+      "9aca69e533a97de1e9c698a63711e770299fdebed45e7ecc6739bf53da3f4162",
+      "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438",
+      "c4ecb744c96c1d492732e190699388d6ba9ce1de7b7e68fb48e632d21ff41563",
+      "c7cf7964eb5edc2fc42086d3e96dca496a98872e7db1e1750396055855433dbc",
+      "c93201f505ffee3ef9d422208bfdaa3a77cccaa861b3c677e0f9a7cc0ef7ccfc"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_international_comparison",
+    "prompt_hash": "32a9c27166f4ab529a15efcfaeb1851a85f824b56921345238c564b16168765b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "generator",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-assess_international_comparison-65e44307b58c0036",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "d70310038377def12eba30a2e5d28894fe1b216cd3abcf46682fdd68922403cb",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "31a5c8c6538b14186eb9e0aa5b4d68c6d5f6f4c3e2b821d5ec92daf2f67ebd94",
+        "response_hash": "75c6128026e274c816f7e0c0d61716e402c7dc3f8c2ac12bd02a8bc06cbe077e",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "f7d3512becd27b39889e70df130a1bf278cf80a96b1fdae4611ed05d1fa1088c",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "0225aec2573df983a0093f0b30ae70c60579c1d0b4fc3600676afe5a3a1a0e00",
+      "09ad1d3ebd612957c5c6e0ee5a7138c87896cb928ba7e3d3aec2475d7a9a27ff",
+      "0a3b8f91aa4a381a920052d41600dc2b1a4898522aed16dc65075ea9bb1f79c7",
+      "3306746efb68c19040af1dc9d595fdb7f5a2b964d26480b3eb2f617e0189142c",
+      "3bd90714e3bfe77e7bffbd774a255275681b13f8f0eeb2ac9ba76ce0c31ab1ca",
+      "42f0bdfcbd4c8c7d809696ceeffefdd261d710db3c5aa7f6e5e2bcd6d3fc9426",
+      "46163f7cb047e4c03af932b572a32f1c17ce8c3a2b41653dbbe4f5c2a9517544",
+      "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+      "6dc042cb61643d08dc9759fd8304165935765b9e611562316f60a07c2d08765f",
+      "8512cd66a19928e619be55859e12d8518ed9a5532ca49dbf58aba5cd74df6d96",
+      "8c89418769fbf17ab05a373fa388d9293f913317e23b091f8ddaeda107e0d984",
+      "9aca69e533a97de1e9c698a63711e770299fdebed45e7ecc6739bf53da3f4162",
+      "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438",
+      "b7237fbca798401a5541a437380863333a9f42c28f40e9c54caf2cba0c8f11d1",
+      "b77a570fba74d01676f21fc84bef527b172818718bdd07c4984044781e54ca43",
+      "cef6625b625e981c728640e2832f35acdf0b96e46f1aa8115e45e724c7cd49ec",
+      "e439933d0e4c9d93f41700934e36d32ad1a6ead9349b28d3c08fe95ada9ab128"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_polish_reform",
+    "prompt_hash": "32a9c27166f4ab529a15efcfaeb1851a85f824b56921345238c564b16168765b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "generator",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-assess_polish_reform-f7d3512becd27b39",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "7290a226dd73c6221bb4e93e3044bdd2a628eef69ff6ed52bb1d8fb882d9b197",
+  "topic": "sni-letszamnovekedes"
+}

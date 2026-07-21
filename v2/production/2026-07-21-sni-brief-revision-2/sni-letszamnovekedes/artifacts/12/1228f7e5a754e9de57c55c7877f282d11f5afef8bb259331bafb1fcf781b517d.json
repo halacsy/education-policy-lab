@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "From an institutional-fit perspective, the passive baseline preserves every existing selection and gatekeeping mechanism unchanged: the sole nationwide expert-committee gatekeeper (F-live-hungarian_education_system-04), the BTMN/SNI categorical architecture (F-live-hungarian_education_system-03), and current finance/incentive structures. This makes the proposal maximally 'institutionally compatible' in the narrow sense of requiring no administrative change, but it does nothing to address documented sorting effects (county variation, sex disparity) or the gatekeeper's mounting caseload and waiting lists. Institutional description of current strain does not itself establish that inaction will worsen outcomes, but the trend data are suggestive.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-02"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "Could serve as a rigorous counterfactual dataset if paired with monitoring, clarifying how much of current drift is structural versus incidental"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Requires no new administrative capacity or institutional redesign, avoiding disruption risk",
+      "Provides a documented empirical baseline (rising SNI/BTMN figures) against which any future reform's effect could be measured"
+    ],
+    "threats": [
+      "Continued interaction of static gatekeeping capacity with rising identified caseloads risks further deterioration of already-documented bottlenecks",
+      "Unresolved misclassification concerns tied to segregation patterns remain structurally unaddressed, compounding existing sorting mechanisms"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Leaves the single nationwide gatekeeping bottleneck and multi-month waiting lists completely unaddressed despite rising caseloads",
+      "Does not touch the large unexplained county-level variation (5.4%-14%) or sex disparity in classification, both signs of unintended sorting"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "AS-live-t1-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-b53825dd41f751ee",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

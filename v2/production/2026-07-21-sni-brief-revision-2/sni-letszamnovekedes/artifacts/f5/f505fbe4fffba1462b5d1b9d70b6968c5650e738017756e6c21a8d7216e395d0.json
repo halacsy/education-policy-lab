@@ -1,0 +1,80 @@
+{
+  "content": {
+    "critical_attrition_count": 0,
+    "entries": [
+      {
+        "direction_id": "S1",
+        "direction_title": "Baseline: no new SEN policy, observe passive trajectory",
+        "proposal_refs": [
+          "TP-live-t1"
+        ],
+        "rationale": "T1 explicitly constructs the passive, no-new-policy counterfactual describing drift in identification, capacity, and inequality under current rules, without proposing intervention, directly fulfilling S1's bounded scope.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S2",
+        "direction_title": "Verify and reconcile the identification trend and its drivers",
+        "proposal_refs": [
+          "TP-live-t2"
+        ],
+        "rationale": "T2 is dedicated to reconciling inconsistent statistical series and decomposing prevalence, diagnostic-practice, access, and incentive drivers, plus testing county variation, matching S2's evidence-and-monitoring-architecture boundary exactly.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S3",
+        "direction_title": "Redesign category and gatekeeping architecture",
+        "proposal_refs": [
+          "TP-live-t3"
+        ],
+        "rationale": "T3 addresses SNI/BTMN category boundaries, expert-committee gatekeeping restructuring, and waiting lists, explicitly using transferability-tested comparative tiered/non-categorical models (Wales, Finland), matching S3's definitional-and-diagnostic-structure boundary.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S4",
+        "direction_title": "Realign finance incentives away from diagnosis-gated funding",
+        "proposal_refs": [
+          "TP-live-t4"
+        ],
+        "rationale": "T4 focuses on redesigning per-pupil weighting and normative multipliers toward census/needs-based allocation as an incentive-design mechanism, matching S4's funding-design boundary and explicitly excluding service-delivery capacity.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S5",
+        "direction_title": "Build specialist and mainstream support capacity",
+        "proposal_refs": [
+          "TP-live-t5"
+        ],
+        "rationale": "T5 targets gyógypedagógus shortages, regional maldistribution, traveling networks, and the assess-to-serve implementation gap, matching S5's workforce-and-support-capacity boundary while excluding identification rules and finance formulas.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S6",
+        "direction_title": "Address sorting, school choice, and segregation interaction",
+        "proposal_refs": [
+          "TP-live-t6"
+        ],
+        "rationale": "T6's anti-segregation and school-choice component directly confronts how SEN identification interacts with free choice, institutional selectivity, and Roma over-classification to reshape composition, including outstanding ECtHR/EU legal-accountability obligations, matching S6.",
+        "status": "covered"
+      },
+      {
+        "direction_id": "S7",
+        "direction_title": "Coordinate adjacent-domain policy levers affecting identification",
+        "proposal_refs": [
+          "TP-live-t6"
+        ],
+        "rationale": "T6's cross-domain coordination mechanism explicitly addresses school-readiness/entry-age rules, rural network structure, and private/church school growth as adjacent-domain levers measurably affecting SEN identification and capacity, matching S7's coordination boundary.",
+        "status": "covered"
+      }
+    ],
+    "gate_basis": "approved_option_space",
+    "verdict": "complete"
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "CL-live-approved-frames",
+  "provenance_ref": "PV-derive_transformations-6264602c133b0150",
+  "record_type": "coverage_ledger",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

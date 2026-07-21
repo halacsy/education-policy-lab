@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "a9d346aa5e5fc2f4f997a5723e781e04971b52250d4ee47b87a382b3dedd663f",
+        "response_hash": "955a49efcbfbacb89e5e48f1f600edfcec967b1dac68b1d50e1a036e2fc7c491",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "2193a95e754b28296e1bd438f1a238b666517b5b7c320f220d4ae7dba5ea4cb4",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "0a3b8f91aa4a381a920052d41600dc2b1a4898522aed16dc65075ea9bb1f79c7",
+      "235ede4ffab4189b8500f0668325c529fd5afee0fd035e8a45583fe4692e45c4",
+      "29d223319139d6e53e0aee3d70e364f9ca137be111f95562642a8dd7e625570b",
+      "3306746efb68c19040af1dc9d595fdb7f5a2b964d26480b3eb2f617e0189142c",
+      "3bd90714e3bfe77e7bffbd774a255275681b13f8f0eeb2ac9ba76ce0c31ab1ca",
+      "5b42d98d6211f0fa66372c17233f3bcb122538ec4f5f3a8a8ce25c1ed2fd5e0d",
+      "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+      "6993b2bd0fb6d029f3915591b8e516f3f333f93ca785e759cd3cf910acdc5d57",
+      "7386f33c5d85b5b43c56383aece7ac57c6830e1e5c81155f76f52fb4bd7e0a1d",
+      "9aca69e533a97de1e9c698a63711e770299fdebed45e7ecc6739bf53da3f4162",
+      "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438",
+      "a28c0f1ceeb94ca9cbf1f3a14256e797371da065477cf89b9f002ebe87b9230c",
+      "a895f3e2a262d65e5ff99f923e7ced3a645038a639b9d450b828f0ccc49588c4",
+      "b1d28647fc17320cf4263fc41ae48daae6366c3304d8d1edad08f382fc67b60f",
+      "beae93dfc2ec2743adff6b47521a4e4e78dae126e875aa94d8ac4db79b506aa3",
+      "c3097e792c598958d354362920d20de81222540821f758a96f420ea6d15f855d",
+      "eeda18529df44d59ae98e4f2308201511381aa0dca293c54db218009c6325a9b"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_equity_and_social_mobility",
+    "prompt_hash": "32a9c27166f4ab529a15efcfaeb1851a85f824b56921345238c564b16168765b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "generator",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-assess_equity_and_social_mobility-2193a95e754b2829",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "8e3d0e159a32e8a73f53c7d73af5c7b63386a4d5ea58ebb0311bfb11514781d9",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "b83b4c4ceec7056acf6235315ccee17962ce23f39f5e0683a98ba503f43c5780",
+        "response_hash": "005e1b39cb6e0f49bfadf86e3d87eb17b22a7eb461010e2845b24aafe7645fe0",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "ec709ee919c331fcfe4d9b025b9e3f92e7dfa1266bff1a1d6bdcadb88e268546",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "09e57d2a67e02d2345c2a26819c06757627c4c8d188aebd9cfd5d0f03a6b69ac",
+      "0a3b8f91aa4a381a920052d41600dc2b1a4898522aed16dc65075ea9bb1f79c7",
+      "1059f0aa25854df4be1d759943a7290c831dd0c259570a9de6fac8c75d839427",
+      "1d6976137f83a87dcbaaa8ce8f27edaeb50df85cb40663f1c2af465bf7b67dc6",
+      "3306746efb68c19040af1dc9d595fdb7f5a2b964d26480b3eb2f617e0189142c",
+      "3bd90714e3bfe77e7bffbd774a255275681b13f8f0eeb2ac9ba76ce0c31ab1ca",
+      "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+      "65e082b552208512502915be954cb8ab6b7d6a9cffeaa79b0a7fb0702b60bc01",
+      "9707e6cbc37367216b439f1a0f1e6dac9a95e7a842e6e5cb1b9130b1cee2e9ad",
+      "9aca69e533a97de1e9c698a63711e770299fdebed45e7ecc6739bf53da3f4162",
+      "9d484a3d09e9a7ee3dbeccceafda29cb090b1e49c60496abdcca27fd142b3202",
+      "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438",
+      "a27f4152506a3ef6c4e7566e13aa3ca395f2d0ee83e06f2ade1eef0108ac3589",
+      "a5f5e101fdc06ca4aad3d38a601743ae848f43583027dd4d32bd5910e655fe98",
+      "b9df955028dd259a4a3bf57e7267bfa22e30ea548d3fa08d473859fc0a6d6f30",
+      "c9c6d2c5dd8cc801c8cbf1f266513f8a6a4b5f2285be10d08600f05cadff0c80",
+      "ef5140e12942cf4d8ec9605c4aae3f6160fe916deaac95c3d90781494f4e4384"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_implementation_planning",
+    "prompt_hash": "32a9c27166f4ab529a15efcfaeb1851a85f824b56921345238c564b16168765b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "generator",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-assess_implementation_planning-ec709ee919c331fc",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "a2ae0b4ec173a98997ebff8c17066cbc9c5279ea19bef385ec17c6397d2afee8",
+  "topic": "sni-letszamnovekedes"
+}

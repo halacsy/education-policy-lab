@@ -1,0 +1,165 @@
+{
+  "assessments": [
+    {
+      "assessment": "From a public-finance perspective, a passive baseline is not fiscally neutral: it locks in the current per-pupil multiplier architecture (2x-3x for SNI) that plausibly incentivizes over-identification in enrollment-declining schools (F-live-education_finance-08), while the underlying enrollment base continues to grow (F-live-education_finance-01) and specialist assessment capacity is already strained (F-live-education_finance-06). Doing nothing preserves existing cost incidence patterns and incentive distortions without generating the evidence needed to evaluate value for money.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-education_finance-01",
+        "F-live-education_finance-06",
+        "F-live-education_finance-07",
+        "F-live-education_finance-08"
+      ],
+      "opportunities": [
+        "Could still generate useful baseline cost and incidence data if paired with passive monitoring, even without policy change"
+      ],
+      "proposal_ref": "TP-live-t1",
+      "strengths": [
+        "Provides a transparent counterfactual against which the fiscal effects of any active intervention can be measured",
+        "Avoids near-term transition costs associated with restructuring finance or gatekeeping systems"
+      ],
+      "threats": [
+        "Continued growth in SNI/BTMN registration (F-live-education_finance-01) under an unchanged finance formula risks escalating normative funding outlays without corresponding value-for-money verification",
+        "Persistent workforce completion/entry shortfalls (F-live-education_finance-07) mean rising demand is not matched by supply, worsening cost-effectiveness over time"
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "Leaves unaddressed the fiscal incentive structure that may drive enrollment-linked over-classification (F-live-education_finance-08)",
+        "Does not relieve the crowding-out of therapeutic/remedial capacity by expert-committee assessment demand (F-live-education_finance-06)"
+      ]
+    },
+    {
+      "assessment": "A reconciled measurement architecture has clear value-for-money logic: it is a comparatively low fiscal-magnitude intervention (data/analytics) that could clarify whether current spending growth reflects true need, diagnostic-practice shifts (F-live-education_finance-03, contested against F-live-education_finance-02), or incentive-driven classification (F-live-education_finance-08). This directly serves the finance lens's core question of whether costs are being incurred efficiently and whether benefits are distributed as intended.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-education_finance-01",
+        "F-live-education_finance-02",
+        "F-live-education_finance-03",
+        "F-live-education_finance-05",
+        "F-live-education_finance-08"
+      ],
+      "opportunities": [
+        "Could identify which categories (SNI vs BTMN, F-live-education_finance-05) are driving disproportionate resource claims, informing targeted rather than blanket funding reform",
+        "Findings could inform redesign of the per-pupil multiplier system by revealing where incentive effects are strongest"
+      ],
+      "proposal_ref": "TP-live-t2",
+      "strengths": [
+        "Enables decomposition of cost drivers (true prevalence vs. diagnostic practice vs. incentive effects), improving the evidence base for value-for-money judgments",
+        "Low direct fiscal magnitude relative to workforce or structural reforms, since it is primarily an analytical/administrative investment"
+      ],
+      "threats": [
+        "Political resistance to publishing findings that reveal incentive-driven over-identification could stall translation of evidence into fiscal reform",
+        "Absent complementary action, the exercise risks being a sunk analytical cost without downstream affordability or incidence benefits"
+      ],
+      "verdict": "supports",
+      "weaknesses": [
+        "Does not itself alter cost incidence or incentives; produces knowledge but not automatic savings or reallocation",
+        "Contested underlying data (F-live-education_finance-02) may limit how definitively reconciliation can attribute cost drivers"
+      ]
+    },
+    {
+      "assessment": "A tiered, non-categorical model addresses a key finance-lens concern: the fivefold jump in BTMN prevalence at school entry (F-live-education_finance-04) suggests that current categorical gatekeeping itself is a driver of measured demand, not just underlying need. Decoupling support from formal labeling could reduce administrative/assessment costs currently crowding out therapeutic delivery (F-live-education_finance-06), but this is a structurally large-magnitude reform whose cost incidence across regions remains uncertain.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-education_finance-04",
+        "F-live-education_finance-05",
+        "F-live-education_finance-06",
+        "F-live-education_finance-08"
+      ],
+      "opportunities": [
+        "Reduced assessment burden could reallocate specialist time toward habilitation/therapy, improving value for money without necessarily increasing total spend"
+      ],
+      "proposal_ref": "TP-live-t3",
+      "strengths": [
+        "Targets a documented structural discontinuity (2.1% preschool vs 9.5% school-age BTMN, F-live-education_finance-04) that implies gatekeeping design, not just need, drives resource claims",
+        "Could free specialist committee time currently consumed by BTMN/SNI evaluations for direct therapeutic care (F-live-education_finance-06)"
+      ],
+      "threats": [
+        "Restructuring risks disrupting the already strained assessment pipeline (F-live-education_finance-06) during transition, temporarily worsening service delivery",
+        "If funding remains diagnosis-linked, schools retain incentive to seek formal classification regardless of tiered support design (F-live-education_finance-08), blunting expected efficiency gains"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "High fiscal magnitude and transition cost of restructuring the sole nationwide gatekeeping body are not quantified in the supplied evidence",
+        "Reform does not by itself address the finance incentive (F-live-education_finance-08) unless paired with funding-formula change"
+      ]
+    },
+    {
+      "assessment": "This proposal targets the finance lens's central mechanism directly: the documented (though weak-evidence) per-pupil multiplier incentive (F-live-education_finance-08) that may reward diagnostic classification rather than actual service delivery. Moving toward census-based allocation would change cost incidence—decoupling school revenue from individual labeling—and could improve value for money by tying grants to service delivery rather than headcount, though the causal link between Hungary's specific financing rules and the identification rise remains unestablished.",
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-education_finance-08",
+        "F-live-education_finance-06",
+        "F-live-education_finance-01"
+      ],
+      "opportunities": [
+        "If implemented, could reduce incentive-driven variance in classification, improving alignment between measured need (F-live-education_finance-01) and actual resource allocation"
+      ],
+      "proposal_ref": "TP-live-t4",
+      "strengths": [
+        "Directly addresses the only documented fiscal-incentive mechanism in the evidence base linking funding structure to identification behavior (F-live-education_finance-08)",
+        "Proposed conditionality (tying grants to service delivery) responds to a genuine value-for-money gap if current grants are headcount-based only"
+      ],
+      "threats": [
+        "Comparative experience (referenced in the proposal, not in supplied findings) suggests funding redesign choices are not universally convergent, and removing multipliers without alternative funding certainty could destabilize schools serving genuinely high-need populations",
+        "Crowded-out assessment capacity (F-live-education_finance-06) is not resolved by finance reform alone; funding change without workforce investment may not translate into improved service delivery"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "The underlying finding is explicitly weak-evidence and no causal link to Hungary's actual identification rise is established, so the fiscal rationale for reform is plausible but unproven",
+        "No cost estimate exists for transition to census-based allocation, an acknowledged corpus-wide limitation"
+      ]
+    },
+    {
+      "assessment": "Workforce expansion addresses a documented supply-side gap: high training admissions but low completion/practice-entry rates (F-live-education_finance-07) mean that rising identified/enrolled populations (F-live-education_finance-01) are not being matched by usable specialist capacity, and existing specialist time is already diverted toward assessment rather than therapy (F-live-education_finance-06). This is a high fiscal-magnitude proposal whose value for money depends heavily on whether retention incentives actually convert training pipeline numbers into practicing specialists.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-education_finance-01",
+        "F-live-education_finance-06",
+        "F-live-education_finance-07"
+      ],
+      "opportunities": [
+        "Regional targeting could improve cost incidence by directing scarce specialist resources toward underserved areas rather than uniform national expansion",
+        "Monitoring whether assessed children receive legally prescribed therapy hours creates an explicit value-for-money accountability mechanism"
+      ],
+      "proposal_ref": "TP-live-t5",
+      "strengths": [
+        "Targets a clearly evidenced bottleneck: training pipeline strength (2,944 applicants) versus weak practice-entry conversion (roughly one-fifth entering the field per union sources) (F-live-education_finance-07)",
+        "Could relieve the crowding-out of therapeutic delivery by assessment demand if capacity expansion is properly targeted (F-live-education_finance-06)"
+      ],
+      "threats": [
+        "Risk that expanded spending increases enrollment/training numbers without proportional increase in practicing workforce, yielding poor return on investment (F-live-education_finance-07)",
+        "Continued growth in identified populations (F-live-education_finance-01) could outpace even successful capacity expansion, sustaining structural underfunding relative to need"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "High fiscal magnitude (recruitment/retention incentives, infrastructure investment) is not quantified in the supplied evidence, an acknowledged corpus limitation",
+        "Success depends on solving completion/entry attrition, a documented weakness in the pipeline (F-live-education_finance-07) that funding alone may not fix"
+      ]
+    },
+    {
+      "assessment": "This proposal reframes the finance question as one of distributional incidence across the whole system: SEN/BTMN classification interacts with school choice and institutional selectivity in ways that may deepen inequality in how resources and quality are distributed (F-live-education_finance-09, F-live-education_finance-10). It is a broad, high-magnitude coordination effort whose direct fiscal costs are unspecified, but its rationale rests on documented structural segregation risk rather than a narrow cost-incentive mechanism.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-education_finance-09",
+        "F-live-education_finance-10"
+      ],
+      "opportunities": [
+        "Cross-domain review could reveal where adjacent policies (e.g., readiness rule changes) generate downstream fiscal costs via SNI classification, enabling more efficient anticipatory budgeting"
+      ],
+      "proposal_ref": "TP-live-t6",
+      "strengths": [
+        "Addresses documented precedent for administrative mechanisms producing segregation pathways (F-live-education_finance-09), which has direct equity-of-incidence implications for how public education resources are distributed",
+        "Aligns with an external authoritative concern (UN Special Rapporteur, F-live-education_finance-10) about equitable funding and the hollowing out of public education, reinforcing the affordability/incidence stakes"
+      ],
+      "threats": [
+        "Middle-class exit toward private/church schools driven by trust erosion may continue regardless of coordination, meaning public system cost burdens could keep concentrating on lower-resourced populations independent of this reform (F-live-education_finance-10)",
+        "Strong institutional resistance to structural anti-segregation reform, evidenced by unresolved historical precedent, threatens the fiscal and equity returns on this investment (F-live-education_finance-09)"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "Coordination mechanisms and cross-domain review carry unspecified but likely nontrivial administrative costs, not quantified in the supplied evidence",
+        "Broad scope (school choice, readiness rules, network consolidation, private/church growth) makes fiscal magnitude and cost incidence difficult to bound or evaluate for value for money"
+      ]
+    }
+  ]
+}

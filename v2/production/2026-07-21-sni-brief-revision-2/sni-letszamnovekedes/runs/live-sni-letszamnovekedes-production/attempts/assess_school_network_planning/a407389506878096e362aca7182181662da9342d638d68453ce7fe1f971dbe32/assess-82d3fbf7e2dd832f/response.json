@@ -1,0 +1,156 @@
+{
+  "assessments": [
+    {
+      "assessment": "From a school-network-planning lens, the passive baseline is a feasible null option in the trivial sense that it requires no new network infrastructure, but the evidence base shows the existing network is already geographically strained and unevenly resourced, so 'no change' is not neutral in effect. Regional capacity gaps (Northeast Hungary lacking a training program until 2017, weak diagnostic/service access with long waiting lists) combine with rising and regionally variable identification (15.6% in Békés vs 6.2% in Borsod-Abaúj-Zemplén) to suggest drift will widen existing geographic access disparities rather than hold them constant.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-school_network_planning-01",
+        "F-live-school_network_planning-05",
+        "F-live-school_network_planning-06",
+        "F-live-school_network_planning-08"
+      ],
+      "opportunities": [
+        "Could inform future network-capacity planning by clarifying the trajectory of unmet need if monitored carefully."
+      ],
+      "proposal_ref": "TP-live-t1",
+      "strengths": [
+        "Requires no new network buildout, so it avoids introducing new geographic-access or capacity risks in the short term.",
+        "Provides a documented baseline against which network strain (e.g., traveling specialist network coverage variance) can be measured over time."
+      ],
+      "threats": [
+        "Demographic decline combined with static specialist supply risks further service collapse in already underserved regions, compounding geographic inequity documented in the traveling specialist network variance."
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "Static workforce numbers (approx. 7,253 specialist positions nationally) against continued or rising SNI counts imply capacity strain will worsen without intervention.",
+        "Existing regional disparities in specialist training and service access (Northeast Hungary) are network-structural and will not self-correct absent policy action."
+      ]
+    },
+    {
+      "assessment": "A measurement and monitoring architecture does not itself alter the physical school network, transport arrangements, or specialist deployment, but it is a necessary precondition for identifying where geographic access and capacity constraints are most severe. The lens's own limitation applies directly here: better data cannot establish delivery capability, only illuminate it. Reconciling divergent series and decomposing rule-change effects (e.g., the contested 2020 readiness-rule tightening) could reveal which regions' rising identification reflects genuine unmet need versus definitional artifact, informing subsequent network-capacity decisions.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-school_network_planning-03",
+        "F-live-school_network_planning-04",
+        "F-live-school_network_planning-09"
+      ],
+      "opportunities": [
+        "Improved data could support targeted network investment decisions in underserved regions once workforce and infrastructure limitations are known."
+      ],
+      "proposal_ref": "TP-live-t2",
+      "strengths": [
+        "Could integrate county-level prevalence variance data (15.6% vs 6.2%) with network-capacity data to identify where access gaps are most acute.",
+        "Decomposition of the contested 2020 rule-change effect could clarify whether observed identification changes reflect true demand shifts relevant to network planning or artifacts of gatekeeping policy."
+      ],
+      "threats": [
+        "Without paired capacity investment, better data alone risks becoming an administrative exercise disconnected from actual geographic service delivery."
+      ],
+      "verdict": "neutral",
+      "weaknesses": [
+        "A monitoring architecture has no direct mechanism to expand transport entitlements, training-program coverage, or specialist capacity; it is diagnostic, not operational.",
+        "The finding on unmeasured need among multiply disadvantaged families' children indicates that even reconciled official statistics will systematically undercount true network demand."
+      ]
+    },
+    {
+      "assessment": "Restructuring gatekeeping and category architecture interacts directly with network delivery: a single nationwide expert-committee model already produces multi-month waiting lists, and traveling specialist networks show wide capacity variance, with some unable to provide category-specific care locally. A shift to tiered support could reduce diagnosis-dependent bottlenecks, but the lens flags that comparative evidence (persistent Finnish municipal variance) suggests restructuring gatekeeping does not resolve underlying geographic capacity or resilience gaps, since network delivery ultimately still depends on physical specialist distribution.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-school_network_planning-05",
+        "F-live-school_network_planning-08"
+      ],
+      "opportunities": [
+        "Could be paired with targeted specialist deployment to address both the gatekeeping bottleneck and the underlying capacity shortfall simultaneously."
+      ],
+      "proposal_ref": "TP-live-t3",
+      "strengths": [
+        "Directly targets the documented single-gatekeeper bottleneck responsible for waiting-list strain across the traveling specialist network.",
+        "A tiered, non-categorical model could reduce dependence on formal diagnosis, potentially easing pressure on stretched assessment capacity in underserved regions."
+      ],
+      "threats": [
+        "Rapid, non-consensual restructuring (as in Poland) risks disrupting an already strained traveling-network infrastructure serving 30-50+ institutions per network."
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "Restructuring administrative gatekeeping does not by itself add specialist positions or resolve the documented inability of some traveling networks to provide sensory-disability or category-specific specialist care locally.",
+        "Comparative evidence indicates persistent regional variance survives tiered-model transitions, suggesting Hungary's county-level network disparities (Northeast training gaps) may persist regardless of categorical redesign."
+      ]
+    },
+    {
+      "assessment": "Finance-architecture reform operates upstream of network delivery: it changes incentives for identification but does not directly add transport routes, specialist positions, or training-program capacity. From this lens, shifting to census-based allocation could reduce diagnosis-driven demand surges on an already capacity-constrained network, but the proposal's own acknowledgment that no causal evidence links Hungary's financing mechanism to the identification rise means the network-capacity benefit is speculative rather than established.",
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-school_network_planning-05",
+        "F-live-school_network_planning-08"
+      ],
+      "opportunities": [
+        "Could be sequenced with workforce expansion (as in TP-live-t5) so that reduced over-identification incentives free capacity for genuine unmet need in underserved regions."
+      ],
+      "proposal_ref": "TP-live-t4",
+      "strengths": [
+        "Removing diagnosis-gated fiscal incentives could reduce artificial demand pressure on the already-strained expert-committee and traveling-specialist network infrastructure.",
+        "Tying supplementary grants to documented service delivery rather than headcount could improve alignment between funding and actual network capacity where specialists are physically deployed."
+      ],
+      "threats": [
+        "Poland's contrasting experience of expanding rather than removing disability-weighted funding suggests financing reform direction is not self-evidently network-improving and could have unpredictable effects on specialist deployment incentives."
+      ],
+      "verdict": "insufficient_evidence",
+      "weaknesses": [
+        "Financing redesign does not address the underlying regional specialist-training and workforce distribution gaps (e.g., Northeast Hungary) that constrain network delivery regardless of funding formula.",
+        "The mechanism rests on untested incentive theory for Hungary specifically, per the proposal's own risk statement, so network-level effects cannot be assessed with confidence."
+      ]
+    },
+    {
+      "assessment": "This proposal maps most directly onto the lens's core questions of geographic access, capacity, transport, and resilience. It explicitly targets the documented specialist workforce shortfall (approximately 7,253 total specialist positions nationally against rising SNI/SEN counts exceeding 69,000-120,000) and regional gaps such as Northeast Hungary's absent training program until 2017 and long-documented service waiting lists. Regionally targeted recruitment directly addresses the network-resilience concern that some traveling specialist networks cannot provide category-specific care locally.",
+      "confidence": "high",
+      "finding_refs": [
+        "F-live-school_network_planning-01",
+        "F-live-school_network_planning-05",
+        "F-live-school_network_planning-06",
+        "F-live-school_network_planning-07",
+        "F-live-school_network_planning-08"
+      ],
+      "opportunities": [
+        "Targeted deployment could reduce reliance on free intercity travel entitlements by bringing specialists closer to underserved populations, improving both access and resilience simultaneously."
+      ],
+      "proposal_ref": "TP-live-t5",
+      "strengths": [
+        "Directly targets the documented mismatch between rising identified/assessed populations and static specialist workforce numbers.",
+        "Regional targeting explicitly addresses the historically underserved Northeast Hungary region, which lacked any special-education-teacher training program until 2017.",
+        "Investment in traveling-specialist-network infrastructure responds directly to documented wide variance in network coverage and capacity, including networks unable to provide sensory-disability specialist care locally."
+      ],
+      "threats": [
+        "Without addressing assessment/gatekeeping bottlenecks in parallel, expanded workforce may not translate into expanded actual service delivery if children remain unassessed or unvouchered."
+      ],
+      "verdict": "supports",
+      "weaknesses": [
+        "Rising training enrollment does not guarantee proportional increases in practicing workforce, per the proposal's own acknowledged risk, so capacity gains may lag need even with this program.",
+        "Travel-support entitlement for accessing distant institutions is itself gated by prior expert-committee assessment, meaning workforce expansion alone does not resolve the access chain if assessment bottlenecks persist."
+      ]
+    },
+    {
+      "assessment": "Anti-segregation and cross-domain alignment intersects with network planning primarily through school-choice and settlement-level composition effects rather than direct capacity or transport mechanics. Extreme within-locality segregation (20%-80% disadvantaged-pupil concentration ranges) shows that network geography alone does not determine access equity; institutional selectivity and choice behavior shape which children reach which schools independent of physical network structure. This is a genuine network-resilience concern but is largely outside what capacity/transport metrics alone can capture, consistent with the lens's limitation that network feasibility does not establish educational quality or equity outcomes.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-school_network_planning-04",
+        "F-live-school_network_planning-09",
+        "F-live-school_network_planning-10"
+      ],
+      "opportunities": [
+        "Coordination mechanisms could align rural network consolidation decisions with anti-segregation goals if capacity and access data are integrated into the review process."
+      ],
+      "proposal_ref": "TP-live-t6",
+      "strengths": [
+        "Directly engages documented extreme segregation variance within single localities, a network-composition issue not resolvable by capacity expansion alone.",
+        "Recognizes that the 2020 school-readiness rule change had measurable network-wide effects on SNI growth, providing a precedent for anticipating cross-domain interaction effects on the network."
+      ],
+      "threats": [
+        "Historical institutional resistance to structural reform (documented since 2013) and continuing private/church school growth driven by trust erosion suggest that network-level coordination may be insufficient against demand-side exit behavior that operates independently of school-network structure."
+      ],
+      "verdict": "neutral",
+      "weaknesses": [
+        "The lens's core metrics (geographic access, capacity, transport) do not directly address the covert admissions practices and parental mobility responses driving segregation, since these are behavioral/institutional rather than infrastructural in nature.",
+        "Multiply disadvantaged children's unmet and undiagnosed needs suggest that segregation and identification gaps are intertwined with data blind spots not resolved by network coordination mechanisms alone."
+      ]
+    }
+  ]
+}

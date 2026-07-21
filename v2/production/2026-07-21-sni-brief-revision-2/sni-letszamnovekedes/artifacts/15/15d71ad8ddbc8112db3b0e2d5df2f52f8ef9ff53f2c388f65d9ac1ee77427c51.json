@@ -1,0 +1,26 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": "Exploit within-country variation in enrollment decline and financial capacity using panel regression with school and year fixed effects, testing whether SNI classification rates rise disproportionately in schools facing enrollment/funding pressure; where feasible, use a natural-experiment design around any past multiplier-rate change as a quasi-experimental shock.",
+    "proposal_refs": [
+      "TP-live-t4"
+    ],
+    "question": "To what extent does Hungary's per-capita SNI funding multiplier (2x-3x) create a measurable fiscal incentive for schools to classify marginal/borderline students as SNI, and does identification vary systematically with school financial capacity, enrollment decline, and size?",
+    "uncertainty_refs": [
+      "U-live-education_finance-02",
+      "U-live-legal_and_governance-02",
+      "U-live-t4-01",
+      "U-live-political_feasibility-01"
+    ],
+    "why_it_matters": "This is the central untested causal claim underlying the finance-redesign proposal (T4); the international evidence is genuinely mixed (Finland's census-shift correlates with reduced placement, Poland expanded diagnosis-linked weighting without runaway effects), so Hungary-specific evidence is needed before committing to a structural finance change."
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "RQ-live-production-04",
+  "provenance_ref": "PV-build_research_agenda-35d1f19ffa24f08a",
+  "record_type": "research_question",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

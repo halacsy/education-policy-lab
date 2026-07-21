@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "bee073b6843de4ab1bd32f993dadff9b3220d8ecb864f31c69d5f0e971487e73",
+        "response_hash": "ca5a50a1923fc57a6edcfce4e2040e6a85dac9751b14fb8399930773c9a2e6aa",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "2f3793f98962343f7f00de698bdf3ef017c5ee3f2e442784d8829790a29b00c3",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "0a3b8f91aa4a381a920052d41600dc2b1a4898522aed16dc65075ea9bb1f79c7",
+      "120dec75e50e75979a616250d6fe8a70401083c172e40c1d2990a991ff29ca0b",
+      "31ebecda2f456ae5cb90160f6ac318247742a06412cd1b19efb664a9d497d128",
+      "3306746efb68c19040af1dc9d595fdb7f5a2b964d26480b3eb2f617e0189142c",
+      "362336dd4af19edf3b96e64ffdd6c1b6fd9ded9eac0e77bdf50f17363459ef00",
+      "39197e7cfe4e2053384419ee5ee5e40ff2f151d209f3b1b0cff7c5b126764476",
+      "3bd90714e3bfe77e7bffbd774a255275681b13f8f0eeb2ac9ba76ce0c31ab1ca",
+      "4b1cb2de1fcc9ff8815d173fde1d4ed2760b5127d6999e8031a181c03ff2c2d2",
+      "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+      "61f38524b63d07bfa13985fdd54f528a051eeb2d0d3bf121f7492c9ae4986868",
+      "75d9dca09520ee8ae4a2d693837c3bee3bff71bd5a92d4f61f0c572a743392e9",
+      "9aca69e533a97de1e9c698a63711e770299fdebed45e7ecc6739bf53da3f4162",
+      "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438",
+      "a8d7c2b68519923858cf0688e442bc8fbedd0861e8d14e85b261cc6c3af0ca96",
+      "b28e1ac4900f7be64ae0cc1d851d01e7312bc50b6498898aaa1bb4f5bebca364",
+      "f14d54df235db2c35d16f82f13a857ca5d1f36b31f260e0e84fe698bece4972f",
+      "f67e62ff8bfd5dd7f19f4b9e38f1d5c274e4d3e91f51a0e46bf643e835e51656"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_portuguese_reform",
+    "prompt_hash": "32a9c27166f4ab529a15efcfaeb1851a85f824b56921345238c564b16168765b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "generator",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-assess_portuguese_reform-2f3793f98962343f",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "cce2c7100b38f442de66b99da5871829c0257681d9bfcfd74b0e8a7fb34afecf",
+  "topic": "sni-letszamnovekedes"
+}

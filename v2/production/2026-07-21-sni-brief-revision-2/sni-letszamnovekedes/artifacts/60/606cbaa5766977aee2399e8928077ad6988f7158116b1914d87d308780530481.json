@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02"
+    ],
+    "change_level": "system",
+    "costs": [
+      "Continued workforce shortages and regional maldistribution persist unaddressed (F-live-hungarian_education_system-05, F-live-legal_and_governance-08)",
+      "Continued fiscal squeeze on local governments and rural schools compounds without mitigation (F-live-demography-09)"
+    ],
+    "equity_impact": "Passive drift is very unlikely to be equity-neutral: existing evidence shows regional disparities (2.6-fold county variation), Roma over-classification, and unresolved segregation litigation would continue on their current trajectory absent intervention, plausibly deepening inequality",
+    "evidence_status": "strong",
+    "expected_benefits": [
+      "Provides an explicit, evidence-grounded counterfactual against which any future policy proposal's marginal value can be assessed",
+      "Avoids the risk of premature or poorly evidenced intervention given contested causal attribution of the identification rise"
+    ],
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-09"
+    ],
+    "goal": "Establish a rigorous counterfactual describing what happens to identification rates, capacity strain, and inequality if no policy changes are made to identification, gatekeeping, finance, or placement rules",
+    "implementation_steps": [
+      {
+        "action": "Continue existing statistical reporting cadence for SNI/BTMN counts without procedural change",
+        "actor": "Ministry of Interior (education) and KSH",
+        "timeline": "Ongoing, no new mandate"
+      },
+      {
+        "action": "Track and publish trend projections assuming current rules persist, for use as a comparison baseline in future evaluations",
+        "actor": "Independent research bodies",
+        "timeline": "Within 12 months, then annually"
+      }
+    ],
+    "mechanisms": [
+      "Continued interaction of demographic decline (shrinking cohorts) with static gatekeeping capacity and workforce numbers, as documented in the record",
+      "Persistence of existing finance architecture (per-pupil multipliers, task-based financing) and category definitions absent reform, continuing current incentive structures unchanged"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Unresolved ECtHR and EU infringement obligations remain outstanding, risking further legal and financial exposure (F-live-legal_and_governance-09, F-live-political_feasibility-06, F-live-political_feasibility-09)",
+      "Demographic decline combined with static specialist numbers could produce further regional service collapse, particularly in northeastern counties (F-live-demography-01, F-live-school_network_planning-05)"
+    ],
+    "title": "Passive baseline: no new SEN policy, observe demographic and system drift",
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-derive_transformations-6264602c133b0150",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

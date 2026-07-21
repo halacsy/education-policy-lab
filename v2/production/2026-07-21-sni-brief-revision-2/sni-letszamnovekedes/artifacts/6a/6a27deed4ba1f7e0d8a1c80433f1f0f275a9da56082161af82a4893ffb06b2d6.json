@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "This proposal targets the finance lens's central mechanism directly: the documented (though weak-evidence) per-pupil multiplier incentive (F-live-education_finance-08) that may reward diagnostic classification rather than actual service delivery. Moving toward census-based allocation would change cost incidence—decoupling school revenue from individual labeling—and could improve value for money by tying grants to service delivery rather than headcount, though the causal link between Hungary's specific financing rules and the identification rise remains unestablished.",
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-education_finance-08",
+      "F-live-education_finance-06",
+      "F-live-education_finance-01"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "If implemented, could reduce incentive-driven variance in classification, improving alignment between measured need (F-live-education_finance-01) and actual resource allocation"
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      "Directly addresses the only documented fiscal-incentive mechanism in the evidence base linking funding structure to identification behavior (F-live-education_finance-08)",
+      "Proposed conditionality (tying grants to service delivery) responds to a genuine value-for-money gap if current grants are headcount-based only"
+    ],
+    "threats": [
+      "Comparative experience (referenced in the proposal, not in supplied findings) suggests funding redesign choices are not universally convergent, and removing multipliers without alternative funding certainty could destabilize schools serving genuinely high-need populations",
+      "Crowded-out assessment capacity (F-live-education_finance-06) is not resolved by finance reform alone; funding change without workforce investment may not translate into improved service delivery"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "The underlying finding is explicitly weak-evidence and no causal link to Hungary's actual identification rise is established, so the fiscal rationale for reform is plausible but unproven",
+      "No cost estimate exists for transition to census-based allocation, an acknowledged corpus-wide limitation"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "AS-live-t4-education_finance",
+  "provenance_ref": "PV-assess_education_finance-a1bddb0447754670",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

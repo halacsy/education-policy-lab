@@ -1,0 +1,426 @@
+{
+  "coverage": [
+    {
+      "direction_id": "S1",
+      "proposal_keys": [
+        "T1"
+      ],
+      "rationale": "T1 explicitly constructs the passive, no-new-policy counterfactual describing drift in identification, capacity, and inequality under current rules, without proposing intervention, directly fulfilling S1's bounded scope."
+    },
+    {
+      "direction_id": "S2",
+      "proposal_keys": [
+        "T2"
+      ],
+      "rationale": "T2 is dedicated to reconciling inconsistent statistical series and decomposing prevalence, diagnostic-practice, access, and incentive drivers, plus testing county variation, matching S2's evidence-and-monitoring-architecture boundary exactly."
+    },
+    {
+      "direction_id": "S3",
+      "proposal_keys": [
+        "T3"
+      ],
+      "rationale": "T3 addresses SNI/BTMN category boundaries, expert-committee gatekeeping restructuring, and waiting lists, explicitly using transferability-tested comparative tiered/non-categorical models (Wales, Finland), matching S3's definitional-and-diagnostic-structure boundary."
+    },
+    {
+      "direction_id": "S4",
+      "proposal_keys": [
+        "T4"
+      ],
+      "rationale": "T4 focuses on redesigning per-pupil weighting and normative multipliers toward census/needs-based allocation as an incentive-design mechanism, matching S4's funding-design boundary and explicitly excluding service-delivery capacity."
+    },
+    {
+      "direction_id": "S5",
+      "proposal_keys": [
+        "T5"
+      ],
+      "rationale": "T5 targets gyógypedagógus shortages, regional maldistribution, traveling networks, and the assess-to-serve implementation gap, matching S5's workforce-and-support-capacity boundary while excluding identification rules and finance formulas."
+    },
+    {
+      "direction_id": "S6",
+      "proposal_keys": [
+        "T6"
+      ],
+      "rationale": "T6's anti-segregation and school-choice component directly confronts how SEN identification interacts with free choice, institutional selectivity, and Roma over-classification to reshape composition, including outstanding ECtHR/EU legal-accountability obligations, matching S6."
+    },
+    {
+      "direction_id": "S7",
+      "proposal_keys": [
+        "T6"
+      ],
+      "rationale": "T6's cross-domain coordination mechanism explicitly addresses school-readiness/entry-age rules, rural network structure, and private/church school growth as adjacent-domain levers measurably affecting SEN identification and capacity, matching S7's coordination boundary."
+    }
+  ],
+  "proposals": [
+    {
+      "assumptions": [
+        "Current rules and funding levels remain materially unchanged over the projection horizon",
+        "No major exogenous shock (fiscal, legal, or demographic) disrupts the observed trend lines"
+      ],
+      "boundary": "Bounded to describing passive drift and its distributional consequences under current rules; does not propose any change to identification, finance, capacity, or sorting mechanisms",
+      "change_level": "system",
+      "change_lever": "None — this is a deliberate non-intervention that uses continued monitoring of existing trends as an analytic device rather than a policy change",
+      "costs": [
+        "Continued workforce shortages and regional maldistribution persist unaddressed (F-live-hungarian_education_system-05, F-live-legal_and_governance-08)",
+        "Continued fiscal squeeze on local governments and rural schools compounds without mitigation (F-live-demography-09)"
+      ],
+      "equity_impact": "Passive drift is very unlikely to be equity-neutral: existing evidence shows regional disparities (2.6-fold county variation), Roma over-classification, and unresolved segregation litigation would continue on their current trajectory absent intervention, plausibly deepening inequality",
+      "evidence_status": "strong",
+      "expected_benefits": [
+        "Provides an explicit, evidence-grounded counterfactual against which any future policy proposal's marginal value can be assessed",
+        "Avoids the risk of premature or poorly evidenced intervention given contested causal attribution of the identification rise"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-01",
+        "F-live-demography-01",
+        "F-live-demography-02",
+        "F-live-legal_and_governance-01",
+        "F-live-legal_and_governance-09"
+      ],
+      "goal": "Establish a rigorous counterfactual describing what happens to identification rates, capacity strain, and inequality if no policy changes are made to identification, gatekeeping, finance, or placement rules",
+      "implementation_steps": [
+        {
+          "action": "Continue existing statistical reporting cadence for SNI/BTMN counts without procedural change",
+          "actor": "Ministry of Interior (education) and KSH",
+          "timeline": "Ongoing, no new mandate"
+        },
+        {
+          "action": "Track and publish trend projections assuming current rules persist, for use as a comparison baseline in future evaluations",
+          "actor": "Independent research bodies",
+          "timeline": "Within 12 months, then annually"
+        }
+      ],
+      "key": "T1",
+      "mechanisms": [
+        "Continued interaction of demographic decline (shrinking cohorts) with static gatekeeping capacity and workforce numbers, as documented in the record",
+        "Persistence of existing finance architecture (per-pupil multipliers, task-based financing) and category definitions absent reform, continuing current incentive structures unchanged"
+      ],
+      "risks": [
+        "Unresolved ECtHR and EU infringement obligations remain outstanding, risking further legal and financial exposure (F-live-legal_and_governance-09, F-live-political_feasibility-06, F-live-political_feasibility-09)",
+        "Demographic decline combined with static specialist numbers could produce further regional service collapse, particularly in northeastern counties (F-live-demography-01, F-live-school_network_planning-05)"
+      ],
+      "system_problem": "Current identification, gatekeeping, finance, and placement rules are already producing rising SNI/BTMN counts, workforce shortages, and county-level disparities; without an explicit baseline, any future intervention cannot be evaluated against what would have happened anyway",
+      "title": "Passive baseline: no new SEN policy, observe demographic and system drift",
+      "uncertainties": [
+        "Whether the demographic decline in birth cohorts will mechanically reduce absolute SNI counts even as identification rates per capita continue rising",
+        "Whether unresolved ECtHR/EU infringement pressure will force policy change regardless of domestic inaction"
+      ]
+    },
+    {
+      "assumptions": [
+        "Administrative microdata necessary for reconciliation and decomposition exists and can be made accessible to researchers",
+        "Definitional harmonization across historical series is technically feasible despite differing legal bases over time"
+      ],
+      "boundary": "Bounded to evidence and monitoring architecture; does not change service delivery, placement rules, gatekeeping structure, or finance formulas",
+      "change_level": "governance",
+      "change_lever": "Creation of a mandated, harmonized statistical and monitoring architecture with disaggregation by category, region, gender, and demographic driver, plus a standing analytic capacity to test competing explanations",
+      "costs": [
+        "Statistical reconciliation and decomposition research requires sustained analytic investment and access to administrative microdata",
+        "Risk of political sensitivity around ethnically disaggregated data collection given historical avoidance (F-live-legal_and_governance-10)"
+      ],
+      "equity_impact": "Directly enables detection of Roma misclassification and county-level inequities that are currently obscured by inconsistent reporting, a precondition for any equity-targeted remedy, though data collection itself does not redistribute resources",
+      "evidence_status": "strong",
+      "expected_benefits": [
+        "Enables evidence-based targeting of subsequent capacity, finance, or gatekeeping reforms rather than acting on contested or unaudited figures",
+        "Provides the EU Commission and ECtHR monitoring bodies with the disaggregated ethnic and regional data currently missing, potentially unblocking infringement resolution"
+      ],
+      "finding_refs": [
+        "F-live-implementation_planning-01",
+        "F-live-hungarian_education_system-01",
+        "F-live-equity_and_social_mobility-01",
+        "F-live-equity_and_social_mobility-03",
+        "F-live-legal_and_governance-10",
+        "F-live-school_network_planning-04"
+      ],
+      "goal": "Establish a single, harmonized, publicly auditable statistical series and monitoring framework that disentangles prevalence change from diagnostic-practice, access, and incentive effects across SNI, BTMN, and adjacent categories",
+      "implementation_steps": [
+        {
+          "action": "Publish a single reconciled time series with explicit definitional notes bridging pre- and post-2018/2020 rule changes",
+          "actor": "KSH and Ministry responsible for education statistics",
+          "timeline": "12–18 months"
+        },
+        {
+          "action": "Conduct decomposition analysis using county-level variation and policy-timing discontinuities to estimate relative contribution of drivers",
+          "actor": "Independent research consortium (commissioned)",
+          "timeline": "18–24 months"
+        },
+        {
+          "action": "Establish an annual public monitoring report disaggregating SNI/BTMN trends by category, county, gender, and cohort",
+          "actor": "Ministry oversight body",
+          "timeline": "From year 2 onward, annually"
+        }
+      ],
+      "key": "T2",
+      "mechanisms": [
+        "Reconciliation of divergent existing series (e.g., 92,800→97,300 vs. 112,060 vs. 69,000 figures using different bases) into one definitionally consistent longitudinal dataset, as the current fragmentation is documented across multiple independent findings",
+        "Decomposition analysis separating the contribution of school-readiness rule changes, category redefinition (e.g., BTMN grading-exemption reform), and diagnostic-practice shifts from true prevalence change, using natural policy variation such as the 2018 and 2020 rule changes as identification points"
+      ],
+      "risks": [
+        "Without political commitment to act on findings, reconciled data alone may not change outcomes",
+        "Data reconciliation could reveal politically inconvenient patterns (e.g., incentive-driven over-identification) that face resistance to publication"
+      ],
+      "system_problem": "Multiple inconsistent statistical series (varying baselines, cross-level vs. primary-only totals, differing reference populations) prevent policymakers from knowing whether the identification rise reflects true prevalence change, definitional change, access change, or incentive effects, undermining any evidence-based response",
+      "title": "Build a reconciled national SEN measurement and monitoring architecture",
+      "uncertainties": [
+        "Whether decomposition can cleanly separate overlapping drivers (e.g., 2018 grading reform and 2020 readiness reform occurred close together in time)",
+        "Whether the government will collect and release ethnically disaggregated data given past non-compliance with EU/ECtHR requests"
+      ]
+    },
+    {
+      "assumptions": [
+        "Hungary's legal-administrative system can accommodate a tiered model without requiring full constitutional or foundational legal restructuring",
+        "Transferability testing will be conducted in good faith before adoption rather than as post-hoc justification"
+      ],
+      "boundary": "Bounded to how identification is defined and adjudicated; does not address finance formulas, workforce capacity, or school-choice/sorting mechanisms directly",
+      "change_level": "governance",
+      "change_lever": "Structural redesign of identification categories and/or the gatekeeping process, drawing on comparative tiered/non-categorical models as evidence subject to explicit Hungarian transferability testing",
+      "costs": [
+        "Legal and administrative redesign cost, including retraining expert committees and rewriting decree-level regulation",
+        "Risk of transitional confusion and disputes during phase-in, as seen in comparative reforms"
+      ],
+      "equity_impact": "Could reduce incentive-driven or definitionally volatile reclassification that disproportionately affects disadvantaged and Roma children if implemented with safeguards against misclassification, but comparative evidence also shows tiered systems can mask rather than resolve regional and socioeconomic disparities",
+      "evidence_status": "moderate",
+      "expected_benefits": [
+        "Potential reduction in diagnostic bottleneck and waiting lists by decoupling support access from full categorical determination, as Finland's model demonstrates support can be delivered without mandatory labeling",
+        "Reduced volatility from category-boundary incentive effects such as the documented BTMN/SNI grading-exemption asymmetry"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-04",
+        "F-live-hungarian_education_system-03",
+        "F-live-legal_and_governance-03",
+        "F-live-legal_and_governance-04",
+        "F-live-international_comparison-06",
+        "F-live-international_comparison-07",
+        "F-live-finnish_reform-01",
+        "F-live-finnish_reform-04",
+        "F-live-polish_reform-06"
+      ],
+      "goal": "Redesign the SNI/BTMN category architecture and expert-committee gatekeeping process to reduce waiting-list bottlenecks, definitional volatility, and diagnosis-dependent access to support, informed by transferability-tested comparative models",
+      "implementation_steps": [
+        {
+          "action": "Commission a formal transferability assessment comparing Hungary's legal/administrative context to Wales' ALN and Finland's tiered-support reforms before drafting legislation",
+          "actor": "Ministry of Education legal/policy unit",
+          "timeline": "Year 1"
+        },
+        {
+          "action": "Draft and consult on amendments to Act CXC of 2011 and EMMI 15/2013 to pilot a tiered support framework in a subset of counties",
+          "actor": "Legislature",
+          "timeline": "Years 1–2"
+        },
+        {
+          "action": "Pilot restructured gatekeeping process with capacity monitoring to test waiting-list impact",
+          "actor": "Pedagógiai szakszolgálat (expert committee network)",
+          "timeline": "Years 2–3, evaluated before national rollout"
+        }
+      ],
+      "key": "T3",
+      "mechanisms": [
+        "Adoption of a tiered support structure decoupling access to support from formal categorical labeling, modeled on international evidence that non-categorical or tiered frameworks materially change measured identification rates (e.g., Wales' ALN transition and Finland's three-tier model)",
+        "Restructuring or augmenting the sole nationwide expert-committee gatekeeper to address documented multi-month waiting lists, informed by evidence that gatekeeping structure itself shapes measured prevalence independent of true need"
+      ],
+      "risks": [
+        "Comparative evidence shows non-categorical/tiered reforms produce large persistent regional variation even after redesign (Finland's 4%–13% municipal range), so redesign alone may not resolve Hungary's county-level disparities",
+        "Poland's experience shows rapid, non-consensual structural reform can produce severe implementation disruption and stakeholder backlash"
+      ],
+      "system_problem": "The sole nationwide expert-committee gatekeeper faces rising caseloads and multi-month waiting lists without restructuring; the SNI/BTMN binary and its severity-based legal distinctions (e.g., unequal grading-exemption treatment) may themselves drive volatile reclassification incentives rather than reflecting genuine need",
+      "title": "Transition toward a non-categorical, tiered support model with restructured gatekeeping",
+      "uncertainties": [
+        "Whether a tiered model would reduce or simply relocate identification volatility given Hungary's distinct diagnosis-gated funding architecture",
+        "Whether restructured gatekeeping would resolve or merely redistribute waiting-list bottlenecks absent parallel workforce investment"
+      ]
+    },
+    {
+      "assumptions": [
+        "Funding formula redesign is administratively and politically feasible within existing fiscal constraints",
+        "Census-based allocation can be calibrated using existing regional data on child population and disadvantage concentration"
+      ],
+      "boundary": "Bounded to funding-design mechanisms and their incentive effects; does not address service delivery capacity, gatekeeping procedure, or school-choice/sorting mechanisms directly",
+      "change_level": "governance",
+      "change_lever": "Redesign of funding formula from diagnosis-gated per-pupil weighting toward census-based or needs-based allocation decoupled from individual categorical determination",
+      "costs": [
+        "Transition costs and potential short-term funding disruption for institutions currently reliant on diagnosis-linked multipliers",
+        "Risk of underfunding actual support needs if census-based allocation is not calibrated to real regional demand"
+      ],
+      "equity_impact": "Could reduce a documented channel of incentive-driven over-identification, particularly relevant to reports that SNI status increasingly functions as exclusionary in admissions where institutional financing fails to support extra resources; but census-based allocation risks underserving genuinely high-need regions unless carefully calibrated to existing county-level disparities",
+      "evidence_status": "moderate",
+      "expected_benefits": [
+        "Reduced fiscal incentive for schools facing enrollment decline to classify students as SNI to offset revenue loss, addressing a documented theoretical risk",
+        "Alignment with international precedent (Finland's 2010 shift to census-based allocation coinciding with reduced full-time special placement)"
+      ],
+      "finding_refs": [
+        "F-live-equity_and_social_mobility-04",
+        "F-live-legal_and_governance-07",
+        "F-live-education_finance-08",
+        "F-live-finnish_reform-03",
+        "F-live-polish_reform-03",
+        "F-live-polish_reform-04",
+        "F-live-implementation_planning-06"
+      ],
+      "goal": "Reduce identification-linked fiscal incentives by redesigning per-pupil funding multipliers and normative financing so that support resources are not contingent on formal diagnostic classification",
+      "implementation_steps": [
+        {
+          "action": "Commission an incentive-impact analysis of current per-pupil multiplier and task-based financing structure",
+          "actor": "Ministry of Finance and Ministry of Education",
+          "timeline": "Year 1"
+        },
+        {
+          "action": "Draft amendments transitioning a defined share of SNI-linked funding toward census/needs-based allocation, piloted in selected counties",
+          "actor": "Legislature",
+          "timeline": "Years 1–2"
+        },
+        {
+          "action": "Establish conditionality audits linking supplementary grants to verified service delivery outcomes",
+          "actor": "National Audit Office or equivalent",
+          "timeline": "Years 2–3"
+        }
+      ],
+      "key": "T4",
+      "mechanisms": [
+        "Replacement or supplementation of diagnosis-triggered per-pupil multipliers with census-based or population-level allocation formulas, following the evidenced pattern that census-based systems remove fiscal incentives to over-identify while non-census systems correlate with rising identification",
+        "Introduction of stricter accountability requirements tying supplementary SNI grants to documented local service delivery rather than headcount alone, addressing the finding that weak conditionality currently limits the grants' effectiveness"
+      ],
+      "risks": [
+        "No causal evidence currently links Hungary's specific financing mechanism to the documented identification rise, so the intervention rests on a plausible but untested incentive theory",
+        "Poland's contrasting experience shows disability-weighted per-pupil funding was expanded rather than removed, with subventions rising independent of prevalence, suggesting funding redesign choices are not universally convergent"
+      ],
+      "system_problem": "Hungary's per-capita normative funding historically offered higher multipliers (2x–3x) for SNI-classified pupils, and task-based financing continues to count SNI pupils as multiple pupils for teacher-post subsidy calculation, creating a theoretical incentive structure that comparative evidence (England, Poland, Finland) shows can drive identification independent of true need",
+      "title": "Shift SEN finance architecture from diagnosis-gated to needs/census-based allocation",
+      "uncertainties": [
+        "Whether removing diagnosis-gated incentives would reduce identification rates in Hungary specifically, given no direct causal test exists in the record",
+        "Whether census-based allocation would adequately fund the documented regional workforce shortages without diagnosis-linked earmarking"
+      ]
+    },
+    {
+      "assumptions": [
+        "Regional deployment incentives can meaningfully shift specialist location choices despite historically low rural attractiveness",
+        "Recurrent budget capacity exists or can be created to sustain expanded specialist workforce indefinitely"
+      ],
+      "boundary": "Bounded to workforce and support-delivery capacity; does not change identification rules, category definitions, or finance formulas governing eligibility",
+      "change_level": "organization",
+      "change_lever": "Targeted workforce capacity-building combining regional deployment incentives, co-teaching infrastructure investment, and closing the assess-to-serve implementation gap",
+      "costs": [
+        "Substantial recurrent salary and infrastructure investment, particularly for rural and northeastern regions",
+        "Workforce pipeline development has multi-year lag before regional shortages are resolved"
+      ],
+      "equity_impact": "Directly targets the regions with the most acute shortages (Northeastern counties, rural Transdanubia) which also show the highest disadvantage concentrations, potentially reducing the compounding of specialist scarcity and socioeconomic disadvantage; risk of continued urban-rural gap if incentives are insufficiently targeted",
+      "evidence_status": "strong",
+      "expected_benefits": [
+        "Directly addresses the UN Special Rapporteur finding that specialist support has not kept pace with rising SEN identification",
+        "Closes the documented second-stage implementation failure where assessed children do not receive prescribed services"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-05",
+        "F-live-equity_and_social_mobility-05",
+        "F-live-portuguese_reform-04",
+        "F-live-implementation_planning-03",
+        "F-live-implementation_planning-04",
+        "F-live-education_finance-07",
+        "F-live-school_network_planning-05",
+        "F-live-school_network_planning-06",
+        "F-live-demography-06"
+      ],
+      "goal": "Close the gap between rising numbers of identified and assessed children and the specialist workforce and support infrastructure available to serve them, with priority targeting of underserved regions",
+      "implementation_steps": [
+        {
+          "action": "Design regional deployment incentive scheme (relocation grants, salary premiums) targeted at documented shortage districts",
+          "actor": "Ministry of Education / Human Resources ministry",
+          "timeline": "Year 1"
+        },
+        {
+          "action": "Track and report workforce-entry rates of special-education graduates, distinguishing practicing teachers from parent-enrollees, to correct the current supply-signal distortion",
+          "actor": "Teacher-training institutions",
+          "timeline": "Year 1, ongoing"
+        },
+        {
+          "action": "Implement audit mechanism to monitor whether prescribed therapy/habilitation hours are actually delivered post-assessment",
+          "actor": "Pedagógiai szakszolgálat and school districts",
+          "timeline": "Years 1–2"
+        },
+        {
+          "action": "Expand and standardize network coverage capacity, prioritizing regions currently unable to provide category-specific specialist care",
+          "actor": "Regional traveling specialist networks",
+          "timeline": "Years 2–3"
+        }
+      ],
+      "key": "T5",
+      "mechanisms": [
+        "Regionally targeted recruitment and retention incentives for gyógypedagógus positions in underserved areas (e.g., northeastern counties with zero specialists in some districts), addressing the documented mismatch between rising enrollment and practicing workforce supply",
+        "Investment in co-teaching and traveling specialist-network infrastructure modeled on evidenced capacity gaps, alongside monitoring of whether assessed children actually receive legally prescribed habilitation and therapy hours"
+      ],
+      "risks": [
+        "Rising enrollment in special-education training does not guarantee proportional increase in practicing workforce, given documented low completion/entry rates",
+        "Broader teacher salary reforms may not specifically address specialist shortages if not targeted, since no source quantifies whether general raises reach specialist supply"
+      ],
+      "system_problem": "Specialist workforce (gyógypedagógus) shortages are acute and regionally concentrated, waiting lists for assessment run months, and even after assessment many children do not receive legally prescribed therapy hours; rising training-program enrollment does not reliably translate into practicing workforce supply",
+      "title": "National specialist workforce and support-capacity expansion program",
+      "uncertainties": [
+        "Whether recent 21.2% teacher salary increases translate into improved specialist-specific recruitment, since no source disaggregates specialist from generalist effects",
+        "How much of the training-enrollment increase reflects genuine future workforce supply versus parent-enrollees unlikely to practice"
+      ]
+    },
+    {
+      "assumptions": [
+        "Political conditions permit extension of anti-segregation obligations to free-choice and selective-track structures despite prior legislative avoidance",
+        "Cross-domain coordination review can be institutionalized without becoming a purely symbolic bureaucratic layer"
+      ],
+      "boundary": "Bounded to compositional-sorting, anti-segregation mechanisms including legal-accountability obligations, and coordination of adjacent-domain levers; does not itself redesign SEN-specific identification rules or finance formulas covered elsewhere",
+      "change_level": "network",
+      "change_lever": "Coordinated package combining anti-segregation/school-choice safeguards with cross-domain policy alignment covering school-readiness rules, rural network planning, and private-sector growth monitoring",
+      "costs": [
+        "Political cost of confronting free-choice and selective-track structures that have entrenched constituencies",
+        "Administrative cost of establishing and sustaining cross-domain coordination review capacity"
+      ],
+      "equity_impact": "Directly targets the most consequential documented inequality mechanisms — Roma over-classification, school-choice-driven sorting, and unresolved discrimination litigation — representing the proposal with the most direct equity orientation in the portfolio, though effectiveness depends on political will to enforce against entrenched selective-admission practices",
+      "evidence_status": "strong",
+      "expected_benefits": [
+        "Addresses the documented structural gap left by the 2023 anti-segregation law regarding free choice and selective tracks",
+        "Provides a pathway toward resolving decade-plus unresolved ECtHR and EU infringement obligations, reducing ongoing legal and financial exposure"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-06",
+        "F-live-hungarian_education_system-07",
+        "F-live-hungarian_education_system-09",
+        "F-live-equity_and_social_mobility-08",
+        "F-live-legal_and_governance-09",
+        "F-live-legal_and_governance-10",
+        "F-live-political_feasibility-06",
+        "F-live-political_feasibility-08",
+        "F-live-portuguese_reform-09",
+        "F-live-education_finance-09",
+        "F-live-hungarian_education_system-08"
+      ],
+      "goal": "Address how SEN/BTMN identification interacts with free school choice, institutional selectivity, and adjacent non-SEN policies (school-readiness rules, rural network structure, private/church growth) to reshape school composition and deepen inequality, while meeting outstanding legal obligations",
+      "implementation_steps": [
+        {
+          "action": "Draft amendments extending the December 2023 anti-segregation law to cover voucher-financed free choice and selective track admissions",
+          "actor": "Ministry of Justice / Education, in coordination with Equal Treatment Authority",
+          "timeline": "Year 1"
+        },
+        {
+          "action": "Provide the ethnically disaggregated misclassification data requested by the EU Commission infringement procedure and implement Szolcsán v. Hungary compliance measures",
+          "actor": "Government, in response to ECtHR/EU monitoring bodies",
+          "timeline": "Year 1, ongoing until case closure"
+        },
+        {
+          "action": "Establish a standing cross-domain impact-review process requiring adjacent-policy changes (readiness rules, network planning, private-school licensing) to be screened for SEN-identification and segregation effects before adoption",
+          "actor": "Inter-ministerial coordination unit",
+          "timeline": "Years 1–2"
+        }
+      ],
+      "key": "T6",
+      "mechanisms": [
+        "Extension of anti-segregation safeguards to cover free school choice and selective gimnázium tracks, directly responding to documented evidence that these channels remain structurally unaddressed and that school-switching behavior independently alters school ethnic composition",
+        "Establishment of a cross-domain coordination mechanism reviewing how school-readiness/entry-age rules, rural school-network consolidation decisions, and private/church school growth interact with SEN identification and segregation, using documented precedent that the 2020 readiness rule change measurably affected SNI growth as a model for anticipatory impact assessment"
+      ],
+      "risks": [
+        "Historical precedent (Bridge classes, unresolved ECtHR compliance since 2013/2023) suggests strong institutional resistance to structural anti-segregation reform",
+        "Private/church school growth driven by middle-class exit from public schools may continue independent of policy coordination, as documented trust-erosion dynamics are not easily reversed by administrative review alone"
+      ],
+      "system_problem": "Free parental school choice and selective tracks remain unaddressed by the 2023 anti-segregation law; Roma children are disproportionately classified as SEN and placed in segregated settings; unresolved ECtHR and EU infringement obligations persist; and non-SEN policies (school-readiness rule changes, rural single-class-school structure, private/church school expansion) measurably move identification and capacity without being designed to do so",
+      "title": "Coordinated anti-segregation and adjacent-policy alignment package",
+      "uncertainties": [
+        "Whether extending anti-segregation law to free choice would survive political and constitutional challenge given entrenched voucher-financing structures",
+        "Whether coordination review would meaningfully alter adjacent-policy design choices or merely document effects after the fact"
+      ]
+    }
+  ]
+}

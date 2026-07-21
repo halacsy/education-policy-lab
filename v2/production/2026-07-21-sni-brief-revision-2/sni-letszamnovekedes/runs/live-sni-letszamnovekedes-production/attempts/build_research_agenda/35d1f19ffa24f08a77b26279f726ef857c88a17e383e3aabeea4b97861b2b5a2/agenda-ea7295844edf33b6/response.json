@@ -1,0 +1,174 @@
+{
+  "questions": [
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": "Interrupted time-series and difference-in-differences analysis exploiting the temporal separation between the 2017-18 legal reform, 2020 readiness-rule change, and COVID period, combined with sub-category (BTMN vs SNI, diagnostic category) and cohort-level decomposition using longitudinal administrative microdata; triangulate with regional variation to test whether jumps track rule implementation dates versus diagnostic capacity expansion.",
+      "proposal_refs": [
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t4"
+      ],
+      "question": "What is the relative causal contribution of the 2020 school-readiness rule change, the 2017-18 BTMN/SNI legal reform, per-pupil funding incentives, diagnostic-practice evolution, and true prevalence increase to Hungary's documented SNI/BTMN identification growth over 20 years, including the sharper post-2021/22 acceleration and threefold autism rise?",
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-01",
+        "U-live-international_comparison-02",
+        "U-live-finnish_reform-01",
+        "U-live-portuguese_reform-01",
+        "U-live-equity_and_social_mobility-01",
+        "U-live-legal_and_governance-01",
+        "U-live-implementation_planning-01",
+        "U-live-t2-01"
+      ],
+      "why_it_matters": "Nearly every proposed reform (measurement, tiered restructuring, finance redesign) rests on an unresolved assumption about which driver dominates identification growth; without decomposition, policy design risks targeting the wrong lever and misallocating scarce reform capacity."
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": "Multilevel regression linking county-level SNI/BTMN rates to specialist-teacher-to-pupil ratios, expert-committee waiting times, and sociodemographic composition; supplement with case-file audits in a stratified sample of high- and low-prevalence counties to compare diagnostic thresholds applied to similar presenting cases.",
+      "proposal_refs": [
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t5"
+      ],
+      "question": "Does regional variation in Hungary's SNI/BTMN prevalence (5.4%-14% across counties, e.g., Békés vs Borsod-Abaúj-Zemplén) reflect genuine population differences, or differences in diagnostic/administrative capacity, expert-committee practice, and specialist availability?",
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-02",
+        "U-live-finnish_reform-03",
+        "U-live-school_network_planning-02",
+        "U-live-demography-03"
+      ],
+      "why_it_matters": "If variation is capacity-driven rather than epidemiological, then network-planning and workforce-expansion proposals (T5) are more urgent and better targeted than categorical or finance reforms, and current 'high-prevalence' regions may simply have better detection rather than more need."
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": "National census of specialist positions (filled/vacant) cross-referenced with expert-committee waiting-list data and prescribed-vs-delivered service hour audits at a representative sample of schools; combine with advocacy-sourced hidden-population estimates validated against school-health screening pilot data in underserved counties.",
+      "proposal_refs": [
+        "TP-live-t5",
+        "TP-live-t3"
+      ],
+      "question": "What is the actual specialist-teacher-to-SNI-pupil ratio by district and county, how large is the unmet/undiagnosed ('hidden') SEN population, and what magnitude of unmet prescribed habilitation/therapy hours exists by school type and region?",
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-03",
+        "U-live-school_network_planning-02",
+        "U-live-school_network_planning-03",
+        "U-live-portuguese_reform-03",
+        "U-live-implementation_planning-02"
+      ],
+      "why_it_matters": "Workforce-expansion (T5) and finance-redesign (T4) proposals cannot be sized or targeted without knowing where and how large capacity gaps are; this also determines whether observed identification rates understate true need, which changes the interpretation of all growth-decomposition findings."
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": "Exploit within-country variation in enrollment decline and financial capacity using panel regression with school and year fixed effects, testing whether SNI classification rates rise disproportionately in schools facing enrollment/funding pressure; where feasible, use a natural-experiment design around any past multiplier-rate change as a quasi-experimental shock.",
+      "proposal_refs": [
+        "TP-live-t4"
+      ],
+      "question": "To what extent does Hungary's per-capita SNI funding multiplier (2x-3x) create a measurable fiscal incentive for schools to classify marginal/borderline students as SNI, and does identification vary systematically with school financial capacity, enrollment decline, and size?",
+      "uncertainty_refs": [
+        "U-live-education_finance-02",
+        "U-live-legal_and_governance-02",
+        "U-live-t4-01",
+        "U-live-political_feasibility-01"
+      ],
+      "why_it_matters": "This is the central untested causal claim underlying the finance-redesign proposal (T4); the international evidence is genuinely mixed (Finland's census-shift correlates with reduced placement, Poland expanded diagnosis-linked weighting without runaway effects), so Hungary-specific evidence is needed before committing to a structural finance change."
+    },
+    {
+      "answerability": "requires_pilot",
+      "decision_impact": "high",
+      "method": "Regional pilot with staggered rollout (stepped-wedge design) comparing tier assignment patterns, mainstream inclusion rates, and pre/post reclassification flows against matched non-pilot regions; track whether prior top-tier or unclassified students shift into the new middle tier using linked administrative records, mirroring Finland's post-2010 tier-flow analysis.",
+      "proposal_refs": [
+        "TP-live-t3"
+      ],
+      "question": "If a Finland-style tiered support model were introduced in Hungary, would the new middle tier capture genuinely unmet need, or would it primarily relabel/reclassify students already served in mainstream or top-tier settings, and would county-level disparities persist under the new architecture?",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-02",
+        "U-live-t3-01",
+        "U-live-t3-02",
+        "U-live-hungarian_education_system-03"
+      ],
+      "why_it_matters": "This determines whether the most structurally ambitious proposal (T3) delivers real capacity gains or merely relocates existing classification volatility, which is decision-critical given the high implementation risk and legal-reform burden T3 entails."
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "high",
+      "method": "Spatial correlation analysis linking school/committee-level SNI classification rates to settlement-level Roma population share (using proxy indicators where direct ethnic data is unavailable), combined with case-file review replicating ECtHR-referenced methodology; pursue formal data-sharing agreements to obtain ethnically disaggregated administrative data where legally permissible.",
+      "proposal_refs": [
+        "TP-live-t6",
+        "TP-live-t2"
+      ],
+      "question": "Are discriminatory misclassification patterns affecting Roma children statistically distinguishable from general over-identification trends, and what is the geographic/demographic overlap between high-SEN-identification zones and majority-Roma catchment areas?",
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-03",
+        "U-live-international_comparison-04",
+        "U-live-t2-02",
+        "U-live-equity_and_social_mobility-02"
+      ],
+      "why_it_matters": "This bears directly on Hungary's outstanding ECtHR obligations and on whether any of the six reform proposals (especially T3, T4, T6) would need explicit desegregation safeguards to avoid perpetuating or masking discriminatory sorting; it is foundational to evaluating T6's coordination logic."
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "medium",
+      "method": "Cohort tracking study following training-program entrants through graduation and employment placement over 3-5 years, disaggregated by region and motivation (career-track vs. parent-enrollee); combine with salary-differential analysis comparing specialist versus generalist compensation trajectories post-reform.",
+      "proposal_refs": [
+        "TP-live-t5"
+      ],
+      "question": "Will the January 2025 teacher salary reform and rising special-education training enrollments translate into increased practicing specialist supply, particularly in underserved regions, or does the training pipeline overstate future workforce availability?",
+      "uncertainty_refs": [
+        "U-live-portuguese_reform-03",
+        "U-live-t5-01",
+        "U-live-t5-02",
+        "U-live-hungarian_education_system-03"
+      ],
+      "why_it_matters": "Workforce expansion (T5) is politically the least contentious proposal, but its value-for-money and equity impact depend entirely on whether generalist salary reforms reach specialists and whether enrollment growth reflects real future supply rather than non-practicing parent-trainees."
+    },
+    {
+      "answerability": "requires_new_data",
+      "decision_impact": "medium",
+      "method": "Instrumental-variable or discontinuity design using classification-threshold cutoffs to isolate the causal effect of SNI status on subsequent school-switching behavior, linked to receiving-school Roma/disadvantaged composition; complement with legal feasibility analysis of comparable admissions-regulation precedents in EU member states with similar constitutional protections for school choice.",
+      "proposal_refs": [
+        "TP-live-t6"
+      ],
+      "question": "Does SNI/BTMN classification status itself operate as a sorting variable driving parental school mobility under Hungary's free-choice regime, amplifying segregation beyond baseline school-choice effects, and would extending anti-segregation law to free choice be legally and politically sustainable?",
+      "uncertainty_refs": [
+        "U-live-implementation_planning-03",
+        "U-live-equity_and_social_mobility-03",
+        "U-live-t6-01",
+        "U-live-legal_and_governance-03"
+      ],
+      "why_it_matters": "T6 is the only proposal addressing relocation of sorting outside the formal SEN system, but it faces the highest legal/political feasibility uncertainty (voucher-financing entrenchment, maintainer autonomy); this determines whether T6 is a viable policy lever or primarily a diagnostic exercise."
+    },
+    {
+      "answerability": "not_empirically_resolvable",
+      "decision_impact": "high",
+      "method": "not_applicable_normative",
+      "proposal_refs": [
+        "TP-live-t3",
+        "TP-live-t1"
+      ],
+      "question": "Should Hungary prioritize structural reform (categorical/gatekeeping redesign) over incremental measures (measurement, workforce, finance) given documented implementation risks from Poland's disruptive 2016-2017 reform experience, or does phased sequencing reduce this risk sufficiently to justify structural change now?",
+      "uncertainty_refs": [
+        "U-live-polish_reform-03",
+        "U-live-t3-01",
+        "U-live-t3-02"
+      ],
+      "why_it_matters": "This is fundamentally a sequencing and risk-tolerance judgment about how much disruption to accept for potential systemic gains; it cannot be settled by more data alone because it depends on value weightings between speed of reform and disruption cost that stakeholders may reasonably disagree on."
+    },
+    {
+      "answerability": "requires_pilot",
+      "decision_impact": "medium",
+      "method": "Time-use audit of specialist staff pre/post a piloted organizational redesign (e.g., decentralizing assessment scheduling or reallocating administrative tasks) in a sample of districts, using before-after comparison with matched control districts retaining current centralized structure.",
+      "proposal_refs": [
+        "TP-live-t5"
+      ],
+      "question": "What is the current specialist capacity gap and would restructuring the 2013 KLIK-centralized service model reverse the documented shift of specialist time from therapy toward assessment, without requiring additional total staffing?",
+      "uncertainty_refs": [
+        "U-live-implementation_planning-04",
+        "U-live-portuguese_reform-03",
+        "U-live-hungarian_education_system-03"
+      ],
+      "why_it_matters": "This tests whether organizational redesign alone (a low-cost lever) can recover therapeutic capacity, which would materially change the cost-effectiveness case for T5 versus more expensive workforce-expansion-only approaches."
+    }
+  ]
+}

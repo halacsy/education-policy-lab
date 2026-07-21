@@ -1,0 +1,38 @@
+{
+  "content": {
+    "assessment": "From a public-finance perspective, a passive baseline is not fiscally neutral: it locks in the current per-pupil multiplier architecture (2x-3x for SNI) that plausibly incentivizes over-identification in enrollment-declining schools (F-live-education_finance-08), while the underlying enrollment base continues to grow (F-live-education_finance-01) and specialist assessment capacity is already strained (F-live-education_finance-06). Doing nothing preserves existing cost incidence patterns and incentive distortions without generating the evidence needed to evaluate value for money.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-01",
+      "F-live-education_finance-06",
+      "F-live-education_finance-07",
+      "F-live-education_finance-08"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "Could still generate useful baseline cost and incidence data if paired with passive monitoring, even without policy change"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Provides a transparent counterfactual against which the fiscal effects of any active intervention can be measured",
+      "Avoids near-term transition costs associated with restructuring finance or gatekeeping systems"
+    ],
+    "threats": [
+      "Continued growth in SNI/BTMN registration (F-live-education_finance-01) under an unchanged finance formula risks escalating normative funding outlays without corresponding value-for-money verification",
+      "Persistent workforce completion/entry shortfalls (F-live-education_finance-07) mean rising demand is not matched by supply, worsening cost-effectiveness over time"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "Leaves unaddressed the fiscal incentive structure that may drive enrollment-linked over-classification (F-live-education_finance-08)",
+      "Does not relieve the crowding-out of therapeutic/remedial capacity by expert-committee assessment demand (F-live-education_finance-06)"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-assess_education_finance-a1bddb0447754670",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

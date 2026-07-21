@@ -1,0 +1,173 @@
+{
+  "architecture_version": "3.0.0",
+  "completed_at": "2026-07-21T17:17:56.940506Z",
+  "root_refs": [
+    "DP-live-production",
+    "EV-live-production",
+    "DR-live-production"
+  ],
+  "run_id": "live-sni-letszamnovekedes-production",
+  "run_plan": {
+    "content_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "path": "runs/live-sni-letszamnovekedes-production/run_plan.json"
+  },
+  "summary": {
+    "arm": "production",
+    "completed_at": "2026-07-21T17:17:56.937335Z",
+    "counts": {
+      "coverage_ledger": 1,
+      "decision_readiness": 1,
+      "dilemma": 7,
+      "finding": 119,
+      "lens_assessment": 72,
+      "lens_definition": 0,
+      "research_question": 10,
+      "transformation_family": 6,
+      "transformation_proposal": 6
+    },
+    "dilemma_refs": [
+      "D-live-production-01",
+      "D-live-production-02",
+      "D-live-production-03",
+      "D-live-production-04",
+      "D-live-production-05",
+      "D-live-production-06",
+      "D-live-production-07"
+    ],
+    "evaluation": {
+      "concerns": [
+        "Some numeric inconsistencies/typos in the summary (e.g., '112,060–112,007') and multiple conflicting totals are presented without a single reconciled headline series.",
+        "Implementation detail is thin for several transformations (costs, sequencing, legal instruments, timelines, metrics of success), limiting immediate operationalization.",
+        "Several interpretive claims rely on contested sources or advocacy estimates (e.g., NGO figures on Roma segregation) without clearly flagging confidence levels for each claim.",
+        "Causal inference gaps are noted but remain large; the package describes needed research rather than providing causal evidence that would make some options decisively preferable.",
+        "Ethnicity-disaggregated and service-outcome data are identified as missing; absence of these data constrains assessment of equity impacts and monitoring feasibility."
+      ],
+      "dimensions": {
+        "artifact_integrity": 8,
+        "decision_usefulness": 8,
+        "dilemma_clarity": 9,
+        "evidence_discipline": 8,
+        "lens_traceability": 8,
+        "transformation_specificity": 6
+      },
+      "package_ref": "DP-live-production",
+      "strengths": [
+        "Well-structured, artifact-first package: six distinct transformation options (T1–T6) are clearly separated and compared.",
+        "Extensive, auditable evidence appendix linking many claims to named sources and URNs/URLs, enabling traceability of key factual assertions.",
+        "Multidisciplinary lensing (demography, legal, finance, implementation, international comparison, political feasibility) with candid discussion of transferability and limits.",
+        "Explicit identification of core uncertainties and actionable research questions (causal decomposition, fiscal-incentive test, tiering vs relabeling) that would change policy choice.",
+        "Clear presentation of the central dilemma (politically easier levers vs evidence-rich but disruptive reforms) useful for decision trade-offs."
+      ],
+      "total": 7.833,
+      "verdict": "accept_with_caveats"
+    },
+    "evaluation_ref": "EV-live-production",
+    "execution": {
+      "cache_hits": 15,
+      "dispositions": {
+        "approve_option_space": "executed",
+        "approve_problem_brief": "cache_hit",
+        "assemble_decision_package": "executed",
+        "assess_decision_readiness": "executed",
+        "assess_demography": "executed",
+        "assess_education_finance": "executed",
+        "assess_equity_and_social_mobility": "executed",
+        "assess_finnish_reform": "executed",
+        "assess_hungarian_education_system": "executed",
+        "assess_implementation_planning": "executed",
+        "assess_international_comparison": "executed",
+        "assess_legal_and_governance": "executed",
+        "assess_polish_reform": "executed",
+        "assess_political_feasibility": "executed",
+        "assess_portuguese_reform": "executed",
+        "assess_school_network_planning": "executed",
+        "build_research_agenda": "executed",
+        "derive_option_space": "cache_hit",
+        "derive_transformations": "executed",
+        "draft_problem_brief": "cache_hit",
+        "evaluate_decision_package": "executed",
+        "identify_decision_dilemmas": "executed",
+        "research_demography": "cache_hit",
+        "research_education_finance": "cache_hit",
+        "research_equity_and_social_mobility": "cache_hit",
+        "research_finnish_reform": "cache_hit",
+        "research_hungarian_education_system": "cache_hit",
+        "research_implementation_planning": "cache_hit",
+        "research_international_comparison": "cache_hit",
+        "research_legal_and_governance": "cache_hit",
+        "research_polish_reform": "cache_hit",
+        "research_political_feasibility": "cache_hit",
+        "research_portuguese_reform": "cache_hit",
+        "research_school_network_planning": "cache_hit"
+      },
+      "executed": 19,
+      "failed": 0,
+      "nodes": 34
+    },
+    "package_ref": "DP-live-production",
+    "readiness": {
+      "candidate_first_move_refs": [
+        "TP-live-t1",
+        "TP-live-t2",
+        "TP-live-t3",
+        "TP-live-t4",
+        "TP-live-t5",
+        "TP-live-t6"
+      ],
+      "conditions": [
+        "Some numeric inconsistencies/typos in the summary (e.g., '112,060–112,007') and multiple conflicting totals are presented without a single reconciled headline series.",
+        "Implementation detail is thin for several transformations (costs, sequencing, legal instruments, timelines, metrics of success), limiting immediate operationalization.",
+        "Several interpretive claims rely on contested sources or advocacy estimates (e.g., NGO figures on Roma segregation) without clearly flagging confidence levels for each claim.",
+        "Causal inference gaps are noted but remain large; the package describes needed research rather than providing causal evidence that would make some options decisively preferable.",
+        "Ethnicity-disaggregated and service-outcome data are identified as missing; absence of these data constrains assessment of equity impacts and monitoring feasibility."
+      ],
+      "evaluation_ref": "EV-live-production",
+      "human_external_use_gate": "pending",
+      "package_ref": "DP-live-production",
+      "priority_research_question_refs": [
+        "RQ-live-production-01",
+        "RQ-live-production-02",
+        "RQ-live-production-03",
+        "RQ-live-production-04",
+        "RQ-live-production-05",
+        "RQ-live-production-06",
+        "RQ-live-production-09"
+      ],
+      "rationale": "The cross-family evaluation accepted the package for human review; the external-use gate remains a human decision.",
+      "unresolved_dilemma_refs": [
+        "D-live-production-01",
+        "D-live-production-02",
+        "D-live-production-03",
+        "D-live-production-04",
+        "D-live-production-05",
+        "D-live-production-06",
+        "D-live-production-07"
+      ],
+      "verdict": "ready_with_conditions"
+    },
+    "readiness_ref": "DR-live-production",
+    "research_question_refs": [
+      "RQ-live-production-01",
+      "RQ-live-production-02",
+      "RQ-live-production-03",
+      "RQ-live-production-04",
+      "RQ-live-production-05",
+      "RQ-live-production-06",
+      "RQ-live-production-07",
+      "RQ-live-production-08",
+      "RQ-live-production-09",
+      "RQ-live-production-10"
+    ],
+    "run_id": "live-sni-letszamnovekedes-production",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "transformation_hashes": [
+      "0a3b8f91aa4a381a920052d41600dc2b1a4898522aed16dc65075ea9bb1f79c7",
+      "3306746efb68c19040af1dc9d595fdb7f5a2b964d26480b3eb2f617e0189142c",
+      "3bd90714e3bfe77e7bffbd774a255275681b13f8f0eeb2ac9ba76ce0c31ab1ca",
+      "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+      "9aca69e533a97de1e9c698a63711e770299fdebed45e7ecc6739bf53da3f4162",
+      "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438"
+    ]
+  },
+  "topic": "sni-letszamnovekedes"
+}

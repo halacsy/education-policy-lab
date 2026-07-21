@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "A reconciled measurement architecture interacts directly with the institutional fact that current data series are fragmented and that the single gatekeeping body (pedagógiai szakszolgálat) determines both SNI and BTMN status without apparent capacity for self-audit. Decomposing school-readiness rule effects (F-live-hungarian_education_system-08) from category redefinition and diagnostic practice would clarify how much of the observed jump between preschool (2.1%) and school-age (9.5%) BTMN prevalence reflects genuine onset versus differential screening sensitivity. This proposal does not itself change selection or access mechanisms—it only measures them—so it leaves the gatekeeper's authority and county-level sorting patterns institutionally intact while making them visible.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-08",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-07"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      "Reconciled data could reveal which portion of the 2.6-fold county spread reflects true prevalence versus administrative artifact, informing future targeted reform"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Directly targets the documented data fragmentation across multiple divergent official series, an institutional coordination gap rather than a substantive policy gap",
+      "Could operationalize decomposition of confounds already flagged in the record, such as the 2020 school-readiness rule change's plausible contribution to SNI growth"
+    ],
+    "threats": [
+      "Reconciliation could surface incentive-driven over-identification patterns that face institutional resistance to publication, given Hungary's documented non-response to EU Commission data requests on misclassification"
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      "Does not alter the sole-gatekeeper structure, category definitions, or finance incentives, so measurement alone cannot close access or sorting mechanisms",
+      "Nearly five-fold jump between preschool and school-age BTMN prevalence remains attributed ambiguously to either genuine emergence or screening differences, and better data may not resolve which explanation dominates without additional investigative work"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "AS-live-t2-hungarian_education_system",
+  "provenance_ref": "PV-assess_hungarian_education_system-b53825dd41f751ee",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

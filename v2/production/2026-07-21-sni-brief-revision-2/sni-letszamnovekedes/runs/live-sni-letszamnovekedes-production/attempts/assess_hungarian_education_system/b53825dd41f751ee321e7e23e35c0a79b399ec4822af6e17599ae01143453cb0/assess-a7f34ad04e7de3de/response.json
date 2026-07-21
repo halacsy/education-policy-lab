@@ -1,0 +1,157 @@
+{
+  "assessments": [
+    {
+      "assessment": "From an institutional-fit perspective, the passive baseline preserves every existing selection and gatekeeping mechanism unchanged: the sole nationwide expert-committee gatekeeper (F-live-hungarian_education_system-04), the BTMN/SNI categorical architecture (F-live-hungarian_education_system-03), and current finance/incentive structures. This makes the proposal maximally 'institutionally compatible' in the narrow sense of requiring no administrative change, but it does nothing to address documented sorting effects (county variation, sex disparity) or the gatekeeper's mounting caseload and waiting lists. Institutional description of current strain does not itself establish that inaction will worsen outcomes, but the trend data are suggestive.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-hungarian_education_system-04",
+        "F-live-hungarian_education_system-01",
+        "F-live-hungarian_education_system-02"
+      ],
+      "opportunities": [
+        "Could serve as a rigorous counterfactual dataset if paired with monitoring, clarifying how much of current drift is structural versus incidental"
+      ],
+      "proposal_ref": "TP-live-t1",
+      "strengths": [
+        "Requires no new administrative capacity or institutional redesign, avoiding disruption risk",
+        "Provides a documented empirical baseline (rising SNI/BTMN figures) against which any future reform's effect could be measured"
+      ],
+      "threats": [
+        "Continued interaction of static gatekeeping capacity with rising identified caseloads risks further deterioration of already-documented bottlenecks",
+        "Unresolved misclassification concerns tied to segregation patterns remain structurally unaddressed, compounding existing sorting mechanisms"
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "Leaves the single nationwide gatekeeping bottleneck and multi-month waiting lists completely unaddressed despite rising caseloads",
+        "Does not touch the large unexplained county-level variation (5.4%-14%) or sex disparity in classification, both signs of unintended sorting"
+      ]
+    },
+    {
+      "assessment": "A reconciled measurement architecture interacts directly with the institutional fact that current data series are fragmented and that the single gatekeeping body (pedagógiai szakszolgálat) determines both SNI and BTMN status without apparent capacity for self-audit. Decomposing school-readiness rule effects (F-live-hungarian_education_system-08) from category redefinition and diagnostic practice would clarify how much of the observed jump between preschool (2.1%) and school-age (9.5%) BTMN prevalence reflects genuine onset versus differential screening sensitivity. This proposal does not itself change selection or access mechanisms—it only measures them—so it leaves the gatekeeper's authority and county-level sorting patterns institutionally intact while making them visible.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-hungarian_education_system-03",
+        "F-live-hungarian_education_system-08",
+        "F-live-hungarian_education_system-02",
+        "F-live-hungarian_education_system-07"
+      ],
+      "opportunities": [
+        "Reconciled data could reveal which portion of the 2.6-fold county spread reflects true prevalence versus administrative artifact, informing future targeted reform"
+      ],
+      "proposal_ref": "TP-live-t2",
+      "strengths": [
+        "Directly targets the documented data fragmentation across multiple divergent official series, an institutional coordination gap rather than a substantive policy gap",
+        "Could operationalize decomposition of confounds already flagged in the record, such as the 2020 school-readiness rule change's plausible contribution to SNI growth"
+      ],
+      "threats": [
+        "Reconciliation could surface incentive-driven over-identification patterns that face institutional resistance to publication, given Hungary's documented non-response to EU Commission data requests on misclassification"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "Does not alter the sole-gatekeeper structure, category definitions, or finance incentives, so measurement alone cannot close access or sorting mechanisms",
+        "Nearly five-fold jump between preschool and school-age BTMN prevalence remains attributed ambiguously to either genuine emergence or screening differences, and better data may not resolve which explanation dominates without additional investigative work"
+      ]
+    },
+    {
+      "assessment": "This proposal directly targets the core unchanged institutional mechanism identified in the record: the sole nationwide expert-committee gatekeeper with documented multi-month waiting lists (F-live-hungarian_education_system-04). Moving to a tiered, non-categorical model would restructure how selection and access operate, which is a substantial institutional fit question given Hungary's current single-point, diagnosis-gated system. However, the record's own comparative evidence (Finland's persistent 4%-13% municipal range post-reform) suggests structural redesign does not eliminate unintended sorting by geography, meaning county-level disparities documented in Hungary (F-live-hungarian_education_system-02) may persist under a new architecture. Administrative compatibility is uncertain since rapid restructuring elsewhere caused disruption.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-hungarian_education_system-04",
+        "F-live-hungarian_education_system-02",
+        "F-live-hungarian_education_system-05"
+      ],
+      "opportunities": [
+        "Could reduce diagnosis-dependent access frictions currently imposed by the sole-gatekeeper structure",
+        "Might realign incentives that produce sex-based and county-based classification disparities if support becomes need-triggered rather than label-triggered"
+      ],
+      "proposal_ref": "TP-live-t3",
+      "strengths": [
+        "Addresses the single most concretely documented governance bottleneck (the sole gatekeeper with waiting lists) rather than only its downstream statistical symptoms",
+        "Decoupling support from formal labeling is responsive to evidence that BTMN/SNI categorical boundaries are themselves definitionally volatile"
+      ],
+      "threats": [
+        "Non-consensual rapid structural reform elsewhere produced severe implementation disruption and stakeholder backlash, a transferable risk given Hungary's existing institutional resistance to change (F-live-hungarian_education_system-07)",
+        "Existing specialist shortage, concentrated in Budapest and other underserved regions, could limit the tiered model's practical capacity regardless of formal redesign"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "Comparative evidence cited alongside the proposal shows tiered models can leave large regional variation intact, undermining the coverage goal",
+        "Restructuring the sole gatekeeper is a major administrative undertaking with no Hungary-specific evidence yet on transferability or capacity to absorb the shortage of gyógypedagógus specialists (F-live-hungarian_education_system-05)"
+      ]
+    },
+    {
+      "assessment": "This proposal targets finance architecture rather than the gatekeeping or categorical structures directly, meaning the sole-gatekeeper mechanism (F-live-hungarian_education_system-04) and the SNI/BTMN category definitions (F-live-hungarian_education_system-03) remain institutionally unchanged even as the fiscal trigger for accessing resources shifts. The lens evidence provides no causal demonstration linking Hungary's specific per-pupil financing to the documented identification rise, so administrative compatibility and expected effect on sorting remain speculative rather than institutionally verified.",
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-hungarian_education_system-04",
+        "F-live-hungarian_education_system-03"
+      ],
+      "opportunities": [
+        "If incentive effects are real, census-based reallocation could reduce fiscal pressure toward over-identification documented as a concern in comparative contexts"
+      ],
+      "proposal_ref": "TP-live-t4",
+      "strengths": [
+        "Targets a plausible incentive channel (diagnosis-gated funding) that would, if causal, interact with the documented SNI/BTMN growth independent of true prevalence change",
+        "Proposed accountability conditionality responds to a documented weak-conditionality gap in supplementary grants"
+      ],
+      "threats": [
+        "Divergent international experience is directly noted: expansion of diagnosis-weighted funding elsewhere did not track prevalence, indicating funding redesign choices are not convergent and Hungary's institutional response is unpredictable"
+      ],
+      "verdict": "insufficient_evidence",
+      "weaknesses": [
+        "No finding in the record establishes a causal link between Hungary's financing mechanism and the observed identification rise; the theory of incentive-driven over-identification remains untested for this specific system",
+        "Leaves the sole gatekeeping body and category architecture fully intact, so even if financing shifts, administrative pathways to diagnosis and placement are unchanged"
+      ]
+    },
+    {
+      "assessment": "This proposal addresses a directly documented institutional shortfall: uneven regional distribution of gyógypedagógus specialists, with the largest concentration of unfilled positions in Budapest, alongside rising training-program applications that do not guarantee proportional workforce growth (F-live-hungarian_education_system-05). It leaves selection and gatekeeping mechanisms (the sole expert-committee system) fully unchanged, focusing instead on capacity to serve those already identified. System coverage would improve if targeting is regionally precise, but the record does not establish that current application growth translates into practicing specialists, and no source quantifies whether general salary reforms reach specialist supply specifically.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-hungarian_education_system-05"
+      ],
+      "opportunities": [
+        "Regionally targeted recruitment could directly narrow the county-level service gaps described elsewhere in the record, improving system coverage where specialist numbers are currently zero in some districts"
+      ],
+      "proposal_ref": "TP-live-t5",
+      "strengths": [
+        "Directly responsive to a documented, moderate-strength finding of specialist shortage and uneven regional distribution",
+        "Monitoring of whether assessed children receive legally prescribed habilitation hours would test administrative compatibility between diagnosis and actual service delivery, a documented gap"
+      ],
+      "threats": [
+        "Without addressing the gatekeeping bottleneck itself, expanded workforce may reduce service delivery gaps without reducing diagnostic waiting lists, since the two are institutionally distinct choke points"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "Rising applications to the special-education degree program do not guarantee proportional increases in practicing workforce, a documented uncertainty in completion/entry rates",
+        "No source quantifies whether broader salary reforms specifically reach specialist supply, leaving the mechanism partly speculative"
+      ]
+    },
+    {
+      "assessment": "This proposal most directly engages the lens's core question about which existing selection and access mechanisms remain unchanged: it explicitly targets free parental school choice and selective gimnázium tracks, mechanisms the record identifies as structurally unaddressed by the 2023 anti-segregation law (F-live-hungarian_education_system-06). It also proposes cross-domain coordination linking school-readiness rules, rural network consolidation, and private/church growth to SEN identification and segregation, using the documented 2020 readiness-rule effect as a precedent for anticipatory review. This is the proposal most attentive to unintended sorting via mechanisms other than formal SEN/BTMN classification, including the contested, NGO-sourced estimate that two-thirds of Roma children are taught separately, and the unresolved ECtHR/EU Commission findings on misclassification.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-hungarian_education_system-06",
+        "F-live-hungarian_education_system-07",
+        "F-live-hungarian_education_system-09",
+        "F-live-hungarian_education_system-08"
+      ],
+      "opportunities": [
+        "Coordinating readiness-rule, network-consolidation, and school-choice review could reveal and preempt future adjacent-policy effects on identification, following the documented 2020 precedent"
+      ],
+      "proposal_ref": "TP-live-t6",
+      "strengths": [
+        "Directly addresses documented structural channels (free school choice, selective gimnázium tracks) left untouched by existing anti-segregation law, an explicit finding of institutional gap",
+        "Responds to standing legal obligations from ECtHR rulings and an ongoing EU infringement procedure that current policy has not resolved, including Hungary's non-provision of requested misclassification data"
+      ],
+      "threats": [
+        "Middle-class exit driving private/church school growth is described as a trust-erosion dynamic not easily reversed by administrative coordination alone",
+        "Strong institutional resistance to structural reform, evidenced by over a decade of unresolved ECtHR and EU Commission engagement, threatens implementation regardless of design quality"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "Institutional resistance to structural anti-segregation reform is itself documented via historical precedent (unresolved compliance since 2013), suggesting administrative compatibility is low without stronger enforcement mechanisms",
+        "The estimate that two-thirds of Roma children are segregated is explicitly weak, unaudited advocacy evidence, so the scale of the problem this proposal targets is contested rather than established"
+      ]
+    }
+  ]
+}

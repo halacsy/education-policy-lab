@@ -1,0 +1,54 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "82d3fbf7e2dd832fec374dd6e729c88e9e5639625deda7465e62ee7f9ce318e9",
+        "response_hash": "6a28f906a723bf495b4dc9d47ca11962098d36654c38183b56b20afb0db19bc8",
+        "stage": "assess",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "a407389506878096e362aca7182181662da9342d638d68453ce7fe1f971dbe32",
+    "generation_parameters": {
+      "max_tokens": 16000
+    },
+    "input_artifact_hashes": [
+      "0a3b8f91aa4a381a920052d41600dc2b1a4898522aed16dc65075ea9bb1f79c7",
+      "0ef8cc347f0409617915db1af01d44f0a3defdea68d23f9630f36fb6cb3a518e",
+      "1c0888cbfc50a629290bba9dc0278910ab7dbcdd4584d0ca5060734cbaa414af",
+      "3306746efb68c19040af1dc9d595fdb7f5a2b964d26480b3eb2f617e0189142c",
+      "3bd90714e3bfe77e7bffbd774a255275681b13f8f0eeb2ac9ba76ce0c31ab1ca",
+      "463e5762485ad7aecc92a32daa95e7cfbc919bc7267647eac2270110c29f891e",
+      "5982263a95f4523dcd6a40c5b9f9ce03542806595c85bf7964d040565a1f879d",
+      "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+      "9aca69e533a97de1e9c698a63711e770299fdebed45e7ecc6739bf53da3f4162",
+      "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438",
+      "b1d368cc4f8db65eaa031f4b2cecd74c008989492c65061b94799c1f4f94c569",
+      "c2b139f01aac0bd409f33a37776fa0a0ab293bf1d58f813d89cbbd6d257e8d34",
+      "c458d28ca4595731c242dc61471f66150349d7deb1ae17148b2081eebe23340b",
+      "d20150605d5bd0ed093c5d351770136435605e7439fbdf254c07a66f79094bed",
+      "df5a6f07344a2a16ad957aa3d4a65048ba2f216427da2820a2d362a6670c639a",
+      "f5be12b99efca6782559d26d0f7560b81776a6cfc484ab67249c5e8fc5fb3ec3",
+      "fd862447f9eb3e8c1b6ed877c68e264da5a18433f863cf57a166dcb6a6803597"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "assess_school_network_planning",
+    "prompt_hash": "32a9c27166f4ab529a15efcfaeb1851a85f824b56921345238c564b16168765b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "generator",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/lens_assessment.schema.json": "14b06c1934935a0cdba6f0792d76d811805bc95ac7012b484369b820698d3ff2"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-assess_school_network_planning-a407389506878096",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "bd070caa4e78814d545f713d07da0a82994c411d0cb598295c4579d9d2f3b7b5",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,40 @@
+{
+  "content": {
+    "assessment": "A reconciled measurement architecture has clear value-for-money logic: it is a comparatively low fiscal-magnitude intervention (data/analytics) that could clarify whether current spending growth reflects true need, diagnostic-practice shifts (F-live-education_finance-03, contested against F-live-education_finance-02), or incentive-driven classification (F-live-education_finance-08). This directly serves the finance lens's core question of whether costs are being incurred efficiently and whether benefits are distributed as intended.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-01",
+      "F-live-education_finance-02",
+      "F-live-education_finance-03",
+      "F-live-education_finance-05",
+      "F-live-education_finance-08"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      "Could identify which categories (SNI vs BTMN, F-live-education_finance-05) are driving disproportionate resource claims, informing targeted rather than blanket funding reform",
+      "Findings could inform redesign of the per-pupil multiplier system by revealing where incentive effects are strongest"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Enables decomposition of cost drivers (true prevalence vs. diagnostic practice vs. incentive effects), improving the evidence base for value-for-money judgments",
+      "Low direct fiscal magnitude relative to workforce or structural reforms, since it is primarily an analytical/administrative investment"
+    ],
+    "threats": [
+      "Political resistance to publishing findings that reveal incentive-driven over-identification could stall translation of evidence into fiscal reform",
+      "Absent complementary action, the exercise risks being a sunk analytical cost without downstream affordability or incidence benefits"
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      "Does not itself alter cost incidence or incentives; produces knowledge but not automatic savings or reallocation",
+      "Contested underlying data (F-live-education_finance-02) may limit how definitively reconciliation can attribute cost drivers"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "AS-live-t2-education_finance",
+  "provenance_ref": "PV-assess_education_finance-a1bddb0447754670",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

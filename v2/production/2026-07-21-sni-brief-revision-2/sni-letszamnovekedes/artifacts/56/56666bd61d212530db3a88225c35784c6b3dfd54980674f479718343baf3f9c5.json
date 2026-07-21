@@ -1,0 +1,37 @@
+{
+  "content": {
+    "assessment": "From an implementation-planning lens, the passive baseline is not a delivery mechanism at all but a decision to forgo intervention, so classic implementation criteria (actor capacity, sequencing, pilotability) are largely inapplicable except insofar as existing bottlenecks continue unaddressed. The proposal implicitly assumes system stability, but documented evidence shows active, compounding dysfunctions (diagnostic bottlenecks, second-stage service failure, capacity misallocation after centralization) that will continue to run without any monitoring or containment mechanism attached.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-04",
+      "F-live-implementation_planning-05"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Could be paired with the monitoring architecture proposal (TP-live-t2) to at least generate feedback data even absent active intervention"
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      "Requires no new actor capacity or coordination, so there is no implementation delivery risk in the conventional sense",
+      "Provides an analytically clean counterfactual against which other proposals' marginal effects could be measured, which is itself useful for adaptive management"
+    ],
+    "threats": [
+      "Absence of any containment mechanism means existing bottlenecks and misallocations documented in the evidence base will persist or compound without any capacity to detect deterioration early"
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      "No monitoring or feedback loop is proposed to track whether the documented capacity constraints in diagnostic services worsen (F-live-implementation_planning-03)",
+      "No mechanism addresses the already-documented second-stage failure where assessed children do not receive prescribed habilitation and therapy hours (F-live-implementation_planning-04)",
+      "The organizational capacity misallocation from the 2013 centralization is left completely unaddressed, allowing the paperwork/therapy imbalance to continue indefinitely (F-live-implementation_planning-05)"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-ec709ee919c331fc",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,146 @@
+{
+  "assessments": [
+    {
+      "assessment": "A passive baseline is politically 'feasible' in the trivial sense of requiring no new legislative coalition, but this lens evaluates whether inaction is politically sustainable given standing legal exposure. Hungary already faces an open ECtHR judgment (2023) and an unresolved 2016 EU infringement procedure over Romani segregation, both of which persist under a no-change scenario. Continued non-compliance carries reversal/escalation risk in the form of further legal and financial sanction, and the EU's demonstrated willingness to link fund releases to political bargains (F-live-political_feasibility-10) suggests non-action is not cost-free even if administratively convenient.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-political_feasibility-06",
+        "F-live-political_feasibility-09",
+        "F-live-political_feasibility-10",
+        "F-live-political_feasibility-05"
+      ],
+      "opportunities": [
+        "Could serve as a politically low-cost interim stance while other reforms are negotiated, avoiding premature commitments"
+      ],
+      "proposal_ref": "TP-live-t1",
+      "strengths": [
+        "Requires no new coalition-building, legislative negotiation, or public buy-in, making it trivially executable by any incumbent government"
+      ],
+      "threats": [
+        "The EU has shown willingness to use financial leverage transactionally rather than on strict SEN/education conditionality (F-live-political_feasibility-10), meaning continued inaction may not trigger proportionate consequences in the short term, weakening any implicit political pressure to reform",
+        "Persistent non-compliance with binding ECtHR judgment risks reputational and legitimacy costs that accumulate over time even absent immediate enforcement"
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "Leaves outstanding ECtHR and EU infringement obligations unresolved, sustaining chronic legal illegitimacy rather than resolving it (F-live-political_feasibility-06, F-live-political_feasibility-09)",
+        "Offers no political response to documented capacity strain (F-live-political_feasibility-05), which could itself become a source of public and professional grievance"
+      ]
+    },
+    {
+      "assessment": "A measurement and monitoring reform is comparatively low-threat politically because it does not immediately redistribute resources or authority, potentially making it easier to build a technocratic coalition around. However, the existing pattern of centralized control over diagnostic infrastructure (F-live-political_feasibility-04) means that whoever controls the reconciled dataset controls a politically sensitive narrative; the state's demonstrated capacity to centralize is a double-edged strength enabling implementation but also raising legitimacy concerns if data reconciliation is not conducted transparently.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-political_feasibility-04",
+        "F-live-political_feasibility-03",
+        "F-live-political_feasibility-06",
+        "F-live-political_feasibility-09"
+      ],
+      "opportunities": [
+        "A single publicly auditable dataset could strengthen the government's hand in demonstrating compliance efforts to the EU and Council of Europe monitoring bodies (F-live-political_feasibility-06, F-live-political_feasibility-09), potentially aiding negotiations over infringement resolution"
+      ],
+      "proposal_ref": "TP-live-t2",
+      "strengths": [
+        "State has already centralized diagnostic and support infrastructure to regional authorities (F-live-political_feasibility-04), providing an institutional locus with authority to implement standardized monitoring without needing municipal cooperation"
+      ],
+      "threats": [
+        "Centralized control over the data architecture (F-live-political_feasibility-04) creates risk that inconvenient findings, such as incentive-driven over-identification, could be suppressed or selectively released rather than published, undermining the proposal's legitimacy function"
+      ],
+      "verdict": "supports_with_conditions",
+      "weaknesses": [
+        "Legally mandated parental consent and expert-committee gatekeeping (F-live-political_feasibility-03) mean that even a reconciled dataset cannot alter the underlying identification process without separate political action, limiting the reform's independent leverage"
+      ]
+    },
+    {
+      "assessment": "Restructuring the sole nationwide gatekeeping mechanism is a high-stakes political undertaking because it touches an institution the state has deliberately centralized (F-live-political_feasibility-04), meaning reform authority rests entirely with central government rather than distributed stakeholders, which could ease top-down enactment but also concentrates opposition risk if central authorities resist ceding gatekeeping power. The 2023 teacher legal-status law (F-live-political_feasibility-07), enacted without adequate union consultation, is a directly analogous precedent showing the government's willingness to impose structural change on the education sector unilaterally, which could work for or against sustained reform depending on whether this proposal follows the same non-consultative pattern.",
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-political_feasibility-04",
+        "F-live-political_feasibility-07"
+      ],
+      "opportunities": [
+        "Precedent of successful unilateral legal restructuring of teacher status (F-live-political_feasibility-07) shows the state has demonstrated capacity to push through major structural education reforms despite opposition, indicating political feasibility of enactment even if contested"
+      ],
+      "proposal_ref": "TP-live-t3",
+      "strengths": [
+        "Centralized control of the expert-committee and support infrastructure (F-live-political_feasibility-04) means a single reform decision at the national level could restructure gatekeeping without needing sub-national political coalitions"
+      ],
+      "threats": [
+        "Restricted strike rights under the 2023 legal-status law (F-live-political_feasibility-07) limit the primary channel through which teacher/specialist opposition could otherwise be expressed, meaning discontent may surface as informal resistance, attrition, or non-compliance rather than open negotiation, threatening durable implementation"
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "The government's demonstrated preference for unilateral, low-consultation structural reform (F-live-political_feasibility-07) suggests any tiered-model transition may similarly bypass educator and union input, generating professional resistance and legitimacy deficits"
+      ]
+    },
+    {
+      "assessment": "Finance architecture reform directly implicates fiscal relationships between the state and school providers, an area where the state has already shown willingness to restructure institutional relationships unilaterally, as evidenced by the 2023 teacher status law imposed without union consultation. This suggests the state retains structural authority to legislate financing changes, but any redesign converting diagnosis-gated multipliers to census-based allocation would alter the resource incentives of school administrators and provider-type coalitions (state, church, private, foundation), a stakeholder landscape whose interests are not detailed in the supplied evidence, leaving the coalition dynamics for this specific proposal largely unassessable from the record.",
+      "confidence": "low",
+      "finding_refs": [
+        "F-live-political_feasibility-07"
+      ],
+      "opportunities": [
+        "Applying stricter accountability tied to grants rather than headcount could align with the state's demonstrated preference (per F-live-political_feasibility-07) for centralizing control and constraining discretionary local practice"
+      ],
+      "proposal_ref": "TP-live-t4",
+      "strengths": [
+        "Government has recent precedent (F-live-political_feasibility-07) of enacting structural changes to educator/provider relationships across all school provider types via unilateral legislation, indicating institutional capacity to legislate financing changes across the same multi-provider landscape"
+      ],
+      "threats": [
+        "Any provider or institutional actors currently benefiting from diagnosis-linked multipliers constitute a latent opposition bloc whose reversal risk cannot be assessed from supplied evidence, representing a significant feasibility unknown"
+      ],
+      "verdict": "insufficient_evidence",
+      "weaknesses": [
+        "No finding in the supplied evidence directly addresses stakeholder or provider-type reactions to financing-formula changes specifically, leaving coalition support or opposition intensity for this proposal without direct evidentiary grounding"
+      ]
+    },
+    {
+      "assessment": "Workforce expansion is among the least politically contentious proposals in this set since it does not challenge existing gatekeeping, financing incentives, or provider structures, but rather adds capacity within them; this is likely to attract broad coalition support given documented staff shortages that virtually all stakeholder types would recognize as a shared problem. However, the extreme regional disparity noted (one county at 39.6 students per specialist) suggests that even politically uncontroversial expansion faces implementation risk if not paired with binding regional targeting mechanisms, since past general workforce growth has not resolved uneven distribution.",
+      "confidence": "medium",
+      "finding_refs": [
+        "F-live-political_feasibility-05",
+        "F-live-political_feasibility-06",
+        "F-live-political_feasibility-09"
+      ],
+      "opportunities": [
+        "Broad-based support for addressing specialist shortages could provide a politically safe entry point for a government otherwise facing legitimacy pressure on segregation issues (F-live-political_feasibility-06, F-live-political_feasibility-09), offering a visible, low-controversy reform to demonstrate responsiveness"
+      ],
+      "proposal_ref": "TP-live-t5",
+      "strengths": [
+        "Addresses a shortage (F-live-political_feasibility-05) that is likely to command cross-cutting support from teachers, administrators, and parents alike, since it does not require redistributing existing categorical privileges or challenging gatekeeping authority",
+        "Doubling of specialist staff numbers from 2010 to 2023 demonstrates that some prior expansion effort has already occurred and achieved measurable results, indicating political and administrative feasibility of continued investment (F-live-political_feasibility-05)"
+      ],
+      "threats": [
+        "Absent enforceable regional-targeting conditions, funding could again be captured disproportionately by better-resourced regions, reproducing the disparity pattern already observed despite the 2010-2023 workforce doubling"
+      ],
+      "verdict": "supports",
+      "weaknesses": [
+        "Despite doubling of specialist numbers, geographic distribution remains uneven with severe regional disparities (F-live-political_feasibility-05), indicating that past expansion policy, however politically popular, has not translated into equitable capacity, raising doubt about whether renewed investment alone resolves the underlying distributional problem without additional targeted mechanisms"
+      ]
+    },
+    {
+      "assessment": "This proposal directly confronts the most politically fraught dimension of the Hungarian SEN landscape: segregation. The evidentiary record shows sustained institutional resistance to desegregation across multiple channels and over a decade, including an unresolved 2023 ECtHR judgment with ongoing Committee of Ministers monitoring due to insufficient compliance, an EU infringement procedure open since 2016 naming church schools as a contributing factor, documented use of catchment-area discretion to exclude Roma transfer students, and an EU funding-release decision that observers characterized as politically transactional rather than conditioned on education/SEN compliance. Together these findings indicate very high opposition intensity, low likelihood of durable enactment absent external enforcement, and elevated reversal risk, since even nominal desegregation commitments (implicit in the ECtHR judgment) have not been substantively implemented in the year following the ruling.",
+      "confidence": "high",
+      "finding_refs": [
+        "F-live-political_feasibility-06",
+        "F-live-political_feasibility-08",
+        "F-live-political_feasibility-09",
+        "F-live-political_feasibility-10"
+      ],
+      "opportunities": [
+        "The EU's release of cohesion funds in December 2023 shows a demonstrated, if contested, channel through which compliance-linked incentives can be activated (F-live-political_feasibility-10), suggesting a template through which future fund conditionality could be more deliberately tied to segregation remedies, strengthening the external coalition supporting reform"
+      ],
+      "proposal_ref": "TP-live-t6",
+      "strengths": [
+        "Provides a direct policy response to binding legal obligations (F-live-political_feasibility-06) and an open infringement procedure (F-live-political_feasibility-09), offering the government a pathway to demonstrate compliance that could reduce accumulated legal and reputational exposure"
+      ],
+      "threats": [
+        "Committee of Ministers monitoring reports insufficient compliance as of 2024, a full year after the ECtHR judgment (F-live-political_feasibility-06), and the parallel EU infringement procedure has remained open without resolution since 2016 (F-live-political_feasibility-09), together indicating durable institutional resistance to structural desegregation that this proposal's coordination mechanism has not yet overcome in analogous prior efforts",
+        "The Commission's explicit non-deployment of sector-specific SEN/education conditionality despite the open infringement procedure (F-live-political_feasibility-10) suggests the strongest available external lever is not currently being used, reducing external pressure that might otherwise support enactment of this proposal domestically"
+      ],
+      "verdict": "cautions",
+      "weaknesses": [
+        "Documented persistence of exclusionary practices via catchment-area discretion (F-live-political_feasibility-08) indicates that even where legal instruments exist, school-level actors retain and use administrative tools to circumvent desegregation intent, suggesting weak sub-national enforcement capacity for this proposal's coordination mechanism"
+      ]
+    }
+  ]
+}

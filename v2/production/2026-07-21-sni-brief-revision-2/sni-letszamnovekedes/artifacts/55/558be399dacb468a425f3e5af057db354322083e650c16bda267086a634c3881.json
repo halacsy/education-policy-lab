@@ -1,0 +1,36 @@
+{
+  "content": {
+    "assessment": "This proposal directly targets the monitoring and feedback-loop gap that implementation science treats as a precondition for adaptive management. It is well-sequenced as a foundational, low-risk first step (data before structural reform) and is highly pilotable since it does not require frontline behavior change, only administrative/statistical coordination. However, actor capacity to execute decomposition analysis and reconcile divergent series is not established in the evidence, and the proposal's own risk framing acknowledges that political will to act on findings is a separate, unaddressed capability.",
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-01",
+      "F-live-implementation_planning-02"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      "Could use the 2018 BTMN grading-exemption reform and 2020 readiness rule change as natural experiments for decomposition, as the proposal itself notes, strengthening causal inference"
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      "Directly closes the documented monitoring gap where a single reconciled statistical series does not exist across years and levels (F-live-implementation_planning-01)",
+      "Sequencing logic is sound: establishing a shared evidence base before attempting structural or financial reform reduces risk of misdiagnosing the problem",
+      "High pilotability since it is a technical/statistical undertaking rather than a frontline service change, limiting failure-containment risk"
+    ],
+    "threats": [
+      "Even if data reconciliation succeeds, there is no guaranteed downstream actor or process committed to acting on findings, risking a well-executed monitoring system with no policy consequence"
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      "No described mechanism for building the technical/statistical capacity or authority needed to reconcile fragmented series and enforce a single public standard",
+      "The proposal does not specify safeguards for what happens if decomposition analysis produces contested findings, given documented sharp disagreement over whether reclassification incentives drove SNI growth (F-live-implementation_planning-02, contested)"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "AS-live-t2-implementation_planning",
+  "provenance_ref": "PV-assess_implementation_planning-ec709ee919c331fc",
+  "record_type": "lens_assessment",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}
