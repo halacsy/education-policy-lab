@@ -1,0 +1,67 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T2's reciprocal-contract mechanism presumes a bargaining relationship between state and municipality that Hungary's 2013 centralization explicitly removed; the proposal acknowledges this and reframes the contract as state-initiated, but this substantially weakens the reciprocity that gives the French model its enforcement logic. Implementation sequencing requires municipalities to hold some fiscal or legal standing to make commitments credible, which is not established. The proposal itself flags contract enforceability as unresolved, and no monitoring or adaptation mechanism is described for tracking whether municipalities honor reorganization commitments or whether the state honors post-maintenance guarantees.",
+      "hu": "A T2 kölcsönös szerződés mechanizmusa olyan alkuviszonyt tételez fel az állam és az önkormányzat között, amelyet Magyarország 2013-as központosítása kifejezetten megszüntetett; a javaslat ezt ismerve az állam által kezdeményezett szerződésként értelmezi a megoldást, de ez lényegesen gyengíti azt a kölcsönösséget, amely a francia modell végrehajthatósági logikájának alapja. A megvalósítás sorrendisége megköveteli, hogy az önkormányzatok rendelkezzenek némi pénzügyi vagy jogi jogosultsággal a kötelezettségvállalások hitelességéhez, ami jelenlegi állapot szerint nem biztosított. Maga a javaslat is megjelöli a szerződés érvényesíthetőségét megoldatlan kérdésként, és nem ír le monitoring- vagy adaptációs mechanizmust annak nyomon követésére, hogy az önkormányzatok betartják-e az átszervezési kötelezettségeket, illetve az állam betartja-e az üzemeltetés utáni garanciákat."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-implementation_planning-01"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "A small-scale pilot contract in a single county could test enforceability and fiscal mechanics before wider adoption.",
+        "hu": "Egy kis léptékű, egy megye területére korlátozott pilot szerződés tesztelhetné a végrehajthatóságot és a költségvetési mechanikát a szélesebb körű bevezetés előtt."
+      },
+      {
+        "en": "Linking the contract explicitly to the funding-formula exception could create a testable, measurable feasibility marker in a pilot.",
+        "hu": "A szerződés kifejezett összekapcsolása a finanszírozási képlet kivételével egy pilotban tesztelhető, mérhető megvalósíthatósági jelzőt hozhat létre"
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Explicitly designed around Hungary's centralized structure rather than assuming municipal authority that does not exist.",
+        "hu": "Kifejezetten Magyarország központosított struktúrájára tervezték, ahelyett, hogy olyan önkormányzati hatalmat tételeznének fel, amely nem létezik."
+      },
+      {
+        "en": "Identifies the specific structural fix needed (funding-formula exception) for the contract to have teeth against national per-pupil formulas.",
+        "hu": "Megnevezi a szükséges konkrét strukturális javítást (funding-formula exception), hogy a szerződés érdemi hatással legyen a nemzeti egy tanulóra jutó képletekre."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Absent devolved authority, municipalities may perceive the contract as reintroducing financial burden without matching power, generating political resistance.",
+        "hu": "Ha nem ruháznak át hatáskört, az önkormányzatok a szerződést úgy észlelhetik, hogy pénzügyi terhet vezet vissza döntési jogosítványok nélkül, ami politikai ellenállást válthat ki"
+      },
+      {
+        "en": "Without independent contract enforcement infrastructure, defection risk by either party is high and undetectable in real time.",
+        "hu": "Független szerződés‑végrehajtási infrastruktúra hiányában mindkét fél részéről magas a szerződésszegés kockázata, és ez valós időben észlelhetetlen."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Municipalities lack the fiscal capacity and legal standing presumed by the French model, undermining the core reciprocity mechanism the proposal borrows.",
+        "hu": "Az önkormányzatok nem rendelkeznek a francia modell által feltételezett fiskális kapacitással és jogi státusszal, ami aláássa a javaslat által átvett alapvető kölcsönösségi mechanizmust."
+      },
+      {
+        "en": "No enforcement or monitoring architecture is specified for either party's compliance, and the proposal itself notes there is no precedent for binding state commitments at this scale.",
+        "hu": "Egyik fél megfelelését sem szolgáló érvényesítési vagy monitorozási architektúra nincs meghatározva, és maga a javaslat megjegyzi, hogy nincs precedens állami kötelezettségvállalások ilyen mértékű lekötésére."
+      },
+      {
+        "en": "The centralized locus of closure authority (Klebelsberg Center) means municipalities entering such contracts have limited leverage to alter outcomes even if they comply.",
+        "hu": "A bezárási hatáskör központosított helye (Klebelsberg Központ) azt jelenti, hogy az ilyen szerződésekbe belépő önkormányzatoknak korlátozott befolyásuk van az eredmények megváltoztatására, még akkor is, ha eleget tesznek a feltételeknek."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2439c4592337411a1e45ea1a9243cd63dde1f53d945b12736e8d6393ccfc0e07",
+  "topic": "rural-school-closures"
+}

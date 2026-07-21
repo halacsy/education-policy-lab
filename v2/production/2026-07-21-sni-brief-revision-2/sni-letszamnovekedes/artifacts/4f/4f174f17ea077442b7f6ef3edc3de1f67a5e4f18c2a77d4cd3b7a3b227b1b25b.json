@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal aligns well with implementation-planning criteria because it targets a documented, specific capacity gap (regional specialist shortages, second-stage service failure) with a phased, regionally targetable mechanism rather than a wholesale structural overhaul. It also explicitly proposes monitoring of whether assessed children receive legally prescribed hours, directly closing part of the feedback-loop gap. However, actor capacity for delivery is uncertain: the proposal does not resolve whether training pipeline throughput can be increased, and the documented organizational drag from the 2013 centralization (time reallocation toward paperwork) suggests added workforce alone may not translate into more therapeutic service time without organizational redesign.",
+      "hu": "A javaslat jól illeszkedik a megvalósítási‑tervezési kritériumokhoz, mert egy dokumentált, specifikus kapacitáshiányt céloz (regionális szakemberhiányok, második‑szakaszos szolgáltatási kudarc) egy fázisos, regionálisan célozható mechanizmussal a teljes strukturális átalakítás helyett. Emellett kifejezetten javasolja annak monitorozását, hogy az értékelt gyerekek megkapják‑e a jogilag előírt óraszámot, ezáltal részben bezárva a visszacsatolási hurok hiányát. Ugyanakkor a szereplők végrehajtó kapacitása bizonytalan: a javaslat nem oldja meg, hogy a képzési csatorna áteresztőképessége növelhető‑e, és a 2013‑as centralizációból dokumentált szervezeti vontatottság (az idő átcsoportosítása az adminisztráció felé) azt jelzi, hogy önmagában a megnövelt munkaerő nem feltétlenül fordul át több terápiás szolgáltatási idővé szervezeti átalakítás nélkül."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-04",
+      "F-live-implementation_planning-05"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Could be sequenced with organizational redesign to counteract the paperwork-time misallocation, increasing the effective yield of new specialist hires",
+        "hu": "Szekvenciálható szervezeti átalakítással a papírmunkára fordított idő rossz allokációjának ellensúlyozására, növelve az új szakemberek tényleges hozamát"
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Directly targets the documented second-stage implementation failure where assessed children do not receive prescribed habilitation and therapy hours (F-live-implementation_planning-04)",
+        "hu": "Közvetlenül célozza a dokumentált második fázisú végrehajtási hibát, amelyben a felmért gyermekek nem kapják meg az előírt habilitációs és terápiás óraszámot (F-live-implementation_planning-04)"
+      },
+      {
+        "en": "Regional targeting addresses documented capacity gaps such as zero-specialist districts in the northeast, aligning mechanism with diagnosed need rather than uniform national rollout",
+        "hu": "A regionális célzás dokumentált kapacitáshiányokat céloz, például északkeleti, szakemberrel nem rendelkező járásokat, így a mechanizmus a feltárt szükségletekhez igazodik ahelyett, hogy egységes országos bevezetést alkalmazna."
+      },
+      {
+        "en": "Includes an explicit monitoring component (tracking whether legally prescribed hours are delivered), partially closing the feedback-loop gap",
+        "hu": "Tartalmaz egy expliciten megfogalmazott monitoring-komponenst (a jogilag előírt óraszámok teljesülésének nyomon követése), részben zárva a visszacsatolási hurok hiányát"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Without addressing the underlying organizational time-allocation problem, workforce expansion risks being absorbed into non-therapeutic administrative functions rather than closing the service gap it targets",
+        "hu": "Ha nem kezelik az alapul fekvő szervezeti időbeosztási problémát, a munkaerő-bővítés veszélye, hogy nem terápiás adminisztratív funkciókba szívódik fel ahelyett, hogy a célzott szolgáltatási hézagot csökkentené."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Does not address the organizational-design driver of capacity misallocation from the 2013 centralization, where staff time shifted toward assessment/paperwork rather than therapy, which could blunt the effect of new hires (F-live-implementation_planning-05)",
+        "hu": "Nem foglalkozik a 2013-as centralizációból eredő szervezeti tervezési hajtóerővel, amely a kapacitások félreallokálásához vezetett, amikor a személyzet ideje az értékelés/papírmunkára tolódott el a terápia helyett, ami tompíthatja az új felvételek hatását (F-live-implementation_planning-05)"
+      },
+      {
+        "en": "No mechanism is proposed to verify that increased training enrollment converts into practicing workforce, a gap acknowledged in the proposal's own risk framing but not resolved with a specific pipeline intervention",
+        "hu": "Nincs javasolt mechanizmus annak ellenőrzésére, hogy a megnövelt képzési részvétel/gépzési beiratkozás gyakorló munkaerővé alakul-e; ez a hiány a javaslat saját kockázati keretezésében elismert, de konkrét utánpótlási beavatkozással nem oldották meg."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "00c54534bce933c8ea9e35a49361282e2d0803299733b21df8ad4144d2115f35",
+  "topic": "sni-letszamnovekedes"
+}

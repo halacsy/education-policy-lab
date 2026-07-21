@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A procedural safeguard on closure decisions is fiscally cheap to legislate but does not by itself address the underlying resource question: Hungary's per-pupil spending is already low by international comparison (F-live-education_finance-07), constraining the fiscal slack needed to subsidize retained small schools even after a documented alternatives assessment. The mechanism shifts costs toward administrative/process expenditure (documentation, assessment staff) rather than resolving the incidence of overhead costs. Because the maintenance function remains centrally owned, the proposal creates limited new incentive structure for local actors and does not address transportation cost offsets or contested consolidation-savings evidence directly.",
+      "hu": "Egy procedurális biztosíték a bezárási döntéseknél törvényalkotásilag költséghatékony, de önmagában nem foglalkozik az alapvető erőforrás-kérdéssel: Magyarország tanulónkénti kiadása nemzetközi összevetésben már most alacsony (F-live-education_finance-07), ami korlátozza azt a fiskális mozgásteret, amely a megtartott, kis iskolák szubvencionálásához szükséges még egy dokumentált alternatívák értékelése után is. A mechanizmus a költségeket az adminisztratív/eljárási kiadások felé tolja (dokumentáció, értékelő személyzet), ahelyett, hogy rendezné a rezsiköltségek viselésének incidenciáját. Mivel a fenntartói funkció továbbra is központi tulajdonban marad, a javaslat korlátozott új ösztönzési struktúrát teremt a helyi szereplők számára, és nem kezeli közvetlenül a szállítási költségek kompenzációját vagy a vitatott konszolidációs megtakarítási bizonyítékokat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-07",
+      "F-live-education_finance-03",
+      "F-live-education_finance-02"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Could be paired with a value-for-money requirement inside the alternatives assessment, forcing explicit accounting of contested cost-saving claims (F-live-education_finance-02) and transportation offsets (F-live-education_finance-03) before any closure",
+        "hu": "Összepárosítható egy költséghatékonysági követelménnyel az alternatívák értékelésén belül, amely kötelezi a vitatott költségmegtakarítási állítások (F-live-education_finance-02) és a szállítási kompenzációk (F-live-education_finance-03) explicitt elszámolását bármilyen bezárás előtt."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Low direct fiscal cost to introduce a documentation/procedural requirement relative to structural reforms",
+        "hu": "Alacsony közvetlen fiskális költség egy dokumentációs/eljárási követelmény bevezetésére a strukturális reformokhoz képest."
+      },
+      {
+        "en": "Could surface transportation and other offset costs (F-live-education_finance-03) that are 'rarely fully counted' if the alternatives assessment is required to include them explicitly",
+        "hu": "Felszínre hozhatná a szállítási és egyéb kompenzációs költségeket (F-live-education_finance-03), amelyek 'ritkán teljesen vannak beszámítva', ha az alternatívákat értékelő elemzést kifejezetten kötelezővé teszik azok tartalmazására"
+      }
+    ],
+    "threats": [
+      {
+        "en": "If assessment becomes formality without funding attached, it produces administrative cost without changing fiscal viability outcomes",
+        "hu": "Ha az értékelés formálissá válik finanszírozás nélkül, adminisztratív költséget eredményez anélkül, hogy megváltoztatná a költségvetési fenntarthatóság kimeneteleit."
+      },
+      {
+        "en": "Centralized fiscal authority retains discretion regardless of procedural findings, so incentive effects on cost behavior may be minimal",
+        "hu": "A központosított fiskális hatóság megőrzi mérlegelési jogkörét a procedurális megállapításoktól függetlenül, így a költségviselkedésre gyakorolt ösztönzőhatások minimálisak lehetnek"
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Does not address the constrained fiscal envelope implied by Hungary's comparatively low per-pupil spending (F-live-education_finance-07), so even a well-documented case against closure may still face resource limits",
+        "hu": "Nem kezeli a korlátozott költségvetési keretet, amely Magyarország viszonylag alacsony egy tanulóra jutó kiadásából következik (F-live-education_finance-07), így még egy jól dokumentált érv az iskola bezárása ellen is forráskorlátokba ütközhet."
+      },
+      {
+        "en": "Procedural safeguard alone creates no new financing mechanism or incentive to sustain small-school overhead costs",
+        "hu": "Az eljárási jogorvoslat önmagában nem teremt új finanszírozási mechanizmust vagy ösztönzőt a kisiskolák általános költségeinek fenntartására."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5fcdb08e13c1fc3a1b4a56fdb462267236c5e7eb944d4de939c6b78c13eb3cb3",
+  "topic": "rural-school-closures"
+}

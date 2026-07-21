@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A procedural safeguard requiring alternatives assessment does not itself change the underlying geographic distribution of pupils, capacity constraints, or transport gaps; it is a governance overlay on a network that is already contracting via demographic decline and centralized administrative control. Its network-feasibility value lies in slowing or scrutinizing closures in marginal cases (e.g., the 35–65 pupil, mixed-year-class pattern seen in Nógrád) rather than resolving capacity or transport deficits.",
+      "hu": "Egy eljárási biztosíték, amely alternatívák értékelését írja elő, önmagában nem változtatja meg a tanulók földrajzi eloszlását, a kapacitáskorlátokat vagy a szállítási hiányosságokat; ez egy kormányzati felügyeleti réteg egy olyan hálózat fölött, amely demográfiai apadás és központosított adminisztratív kontroll miatt már összehúzódik. A hálózat-megvalósíthatósági értéke abban rejlik, hogy lassítja vagy szigorúbb vizsgálat alá vonja a marginalizált esetek bezárását (például a Nógrád megyében megfigyelt 35–65 fős, vegyes évfolyamú mintázat), ahelyett, hogy megoldaná a kapacitás- vagy szállítási hiányokat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Could be paired with existing 2026 governance reform vehicle to embed alternatives assessment into a restructured decision process that already touches principal/municipal input",
+        "hu": "Összepárosítható a meglévő 2026-os kormányzati reformeszközzel, hogy a lehetséges alternatívák értékelését beágyazzák egy átalakított döntési folyamatba, amely már érinti az iskolaigazgatói/önkormányzati beleszólást."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Targets the documented cascade dynamic where neighboring small schools face 'association pressure' as enrollment falls, potentially interrupting closure cascades before they propagate geographically",
+        "hu": "Rámutat a dokumentált kaszkáddinamikára, amikor a szomszédos kisiskolák a csökkenő beiratkozás miatt 'association pressure' nyomásának vannak kitéve, ami potenciálisan megakaszthatja a bezárási kaszkádokat, mielőtt azok földrajzilag továbbterjednének."
+      },
+      {
+        "en": "Could formalize consideration of travel arrangements, directly engaging the transport-access criterion in regions with documented public transport gaps",
+        "hu": "Formálissá teheti az utazási megoldások figyelembevételét, közvetlenül bevonva a közlekedés‑hozzáférhetőségi kritériumot azokban a régiókban, ahol dokumentált hiányosságok vannak a tömegközlekedésben."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Uneven application without independent oversight could produce inconsistent network outcomes across regions with differing transport and capacity baselines",
+        "hu": "Független felügyelet nélküli egyenetlen alkalmazás eltérő hálózati eredményeket eredményezhet a közlekedésben és kapacitásokban eltérő alapokkal rendelkező régiók között."
+      },
+      {
+        "en": "Historical precedent shows large-scale network contraction proceeded via top-down policy independent of demographic demand alone, suggesting procedural safeguards may not resist centrally driven consolidation waves",
+        "hu": "A történelmi precedens azt mutatja, hogy a nagyszabású hálózati összehúzódás felülről vezérelt politikával történt, függetlenül pusztán a demográfiai kereslettől, ami arra utal, hogy az eljárási védőhálók nem feltétlenül állják útját a központilag vezérelt koncentrációs hullámoknak."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Does not add capacity, transport infrastructure, or funding; it only mandates documentation, leaving the underlying geographic access and capacity constraints unaddressed",
+        "hu": "Nem növeli a kapacitást, a közlekedési infrastruktúrát vagy a finanszírozást; csak dokumentációt ír elő, így a mögöttes földrajzi hozzáférési és kapacitáskorlátokat érintetlenül hagyja."
+      },
+      {
+        "en": "Centralized maintenance authority (KLIK-style control across 198 districts) means procedural requirements could be satisfied on paper without altering network outcomes",
+        "hu": "A központosított fenntartói hatáskör (KLIK-stílusú kontroll a 198 járásban) azt jelenti, hogy az eljárási követelmények papíron teljesíthetők anélkül, hogy a hálózati kimenetek megváltoznának."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "f17d3248cb240cd2bbee1289b9d65a6dd888695bab2cec78d27e896839c45151",
+  "topic": "rural-school-closures"
+}

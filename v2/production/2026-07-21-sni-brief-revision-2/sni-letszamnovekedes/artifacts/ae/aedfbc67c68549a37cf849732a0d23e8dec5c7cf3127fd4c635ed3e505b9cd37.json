@@ -1,0 +1,67 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A reconciled measurement architecture has clear value-for-money logic: it is a comparatively low fiscal-magnitude intervention (data/analytics) that could clarify whether current spending growth reflects true need, diagnostic-practice shifts (F-live-education_finance-03, contested against F-live-education_finance-02), or incentive-driven classification (F-live-education_finance-08). This directly serves the finance lens's core question of whether costs are being incurred efficiently and whether benefits are distributed as intended.",
+      "hu": "A konszolidált mérési architektúrának világos költséghatékonysági logikája van: ez viszonylag alacsony költségvetési nagyságrendű beavatkozás (adatok/analitika), amely tisztázhatná, hogy a jelenlegi kiadások növekedése a valódi szükségletet tükrözi-e, diagnosztikai gyakorlat-váltásokat (F-live-education_finance-03, vitatott a F-live-education_finance-02-vel szemben), vagy ösztönzővezérelt osztályozást (F-live-education_finance-08). Ez közvetlenül szolgálja a pénzügyi nézőpont alapvető kérdését, vagyis azt, hogy a költségek hatékonyan merülnek-e fel, és hogy az előnyök a tervek szerint kerülnek-e elosztásra."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-01",
+      "F-live-education_finance-02",
+      "F-live-education_finance-03",
+      "F-live-education_finance-05",
+      "F-live-education_finance-08"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Could identify which categories (SNI vs BTMN, F-live-education_finance-05) are driving disproportionate resource claims, informing targeted rather than blanket funding reform",
+        "hu": "Meg tudná határozni, mely kategóriák (SNI vs BTMN, F-live-education_finance-05) hajtják az aránytalan forrásigényeket, és ez célzott, nem általános finanszírozási reformra adna információt"
+      },
+      {
+        "en": "Findings could inform redesign of the per-pupil multiplier system by revealing where incentive effects are strongest",
+        "hu": "Az eredmények hozzájárulhatnak az egy tanulóra jutó szorzórendszer áttervezéséhez azáltal, hogy feltárják, hol a legerősebbek az ösztönzőhatások."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Enables decomposition of cost drivers (true prevalence vs. diagnostic practice vs. incentive effects), improving the evidence base for value-for-money judgments",
+        "hu": "Lehetővé teszi a költséghajtók dekompozícióját (true prevalence vs. diagnostic practice vs. incentive effects), javítva ezzel az ár-érték megítélésének bizonyítékbázisát."
+      },
+      {
+        "en": "Low direct fiscal magnitude relative to workforce or structural reforms, since it is primarily an analytical/administrative investment",
+        "hu": "Alacsony közvetlen fiskális nagyságrend a munkaerő- vagy strukturális reformokhoz képest, mivel elsősorban analitikai/adminisztratív befektetés"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Political resistance to publishing findings that reveal incentive-driven over-identification could stall translation of evidence into fiscal reform",
+        "hu": "A politikai ellenállás azoknak az eredményeknek a közzététele ellen, amelyek az ösztönzők által vezérelt túlazonosítást tárják fel, megakaszthatja a bizonyítékok fiskális reformba történő átültetését."
+      },
+      {
+        "en": "Absent complementary action, the exercise risks being a sunk analytical cost without downstream affordability or incidence benefits",
+        "hu": "Komplementer intézkedés hiányában a gyakorlat kockázata, hogy elsüllyedt elemzési költséggé válik, és nem hoz későbbi megfizethetőségi vagy terheléseloszlási előnyöket."
+      }
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      {
+        "en": "Does not itself alter cost incidence or incentives; produces knowledge but not automatic savings or reallocation",
+        "hu": "Önmagában nem változtatja meg a költségek viselését vagy az ösztönzőket; tudást teremt, de nem eredményez automatikus megtakarítást vagy átcsoportosítást"
+      },
+      {
+        "en": "Contested underlying data (F-live-education_finance-02) may limit how definitively reconciliation can attribute cost drivers",
+        "hu": "A vitatott háttéradatok (F-live-education_finance-02) korlátozhatják, hogy az egyeztetés mennyire határozottan tulajdoníthatja a költséghajtókat"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-education_finance",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "149188b9c255e97d718d0659374e2af4dda56aab7e2de03b3403e89b3f92d89e",
+  "topic": "sni-letszamnovekedes"
+}

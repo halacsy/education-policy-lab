@@ -1,0 +1,35 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "medium",
+    "method": {
+      "en": "Legal review of the ombudsman's transport-responsibility finding and any subsequent regulatory response, combined with a before/after natural-experiment analysis in districts where transport responsibility has been clarified or transport services expanded, measuring commute time and attendance/dropout outcomes.",
+      "hu": "Az ombudsman szállítási felelősségre vonatkozó megállapításának és az esetleges szabályozói válaszoknak a jogi felülvizsgálata, valamint egy előtte/utána természetes kísérlet-elemzés azon járásokban, ahol a szállítási felelősséget tisztázták vagy a szállítási szolgáltatásokat bővítették; mért kimenetek: ingázási idő, iskolalátogatás és lemorzsolódás."
+    },
+    "proposal_refs": [
+      "TP-live-t5",
+      "TP-live-t3"
+    ],
+    "question": {
+      "en": "What is the actual current legal responsibility for pupil transport between the Interior Ministry and municipalities, and does resolving this ambiguity measurably improve transport access and reduce commute-related harm in regions with documented infrastructure gaps?",
+      "hu": "Mi a tényleges jelenlegi jogi felelősség a tanulók szállításáért a Belügyminisztérium és az önkormányzatok között, és a felelősség e bizonytalanságának rendezése mérhetően javítja-e a szállítási hozzáférést és csökkenti-e az ingázással kapcsolatos károkat azokban a régiókban, ahol dokumentált infrastrukturális hiányok vannak?"
+    },
+    "uncertainty_refs": [
+      "U-live-legal_and_governance-02",
+      "U-live-equity_and_social_mobility-03",
+      "U-live-t5-01"
+    ],
+    "why_it_matters": {
+      "en": "T5's mitigation package and T3's grade-split model both depend on functioning transport guarantees; if legal ambiguity persists or infrastructure gaps are independent of legal clarity, transport-based mitigation may be insufficient regardless of statutory fixes.",
+      "hu": "A T5-ös mérséklő csomag és a T3-as évfolyam-megosztó modell egyaránt működő szállítási garanciákon alapul; ha a jogi felelősség továbbra is homályos, vagy az infrastrukturális hiányok függetlenek a jogi tisztázottságtól, akkor a szállításon alapuló mérséklés önmagában elégtelen lehet, függetlenül a jogi korrekcióktól."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-09",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "69e751d0b51e3aae1d7c5aa715ad5dc77d4319fd93d5360184c160abb1ddc04b",
+  "topic": "rural-school-closures"
+}

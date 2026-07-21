@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-implementation_planning-01",
+      "A-rural-school-closures-implementation_planning-02"
+    ],
+    "claim": {
+      "en": "A demographic cliff is projected to hit kindergartens around 2027 and become visible in lower-primary grades by 2030, driven by a 22.5% ten-year decline in annual births (110,800 in 2015 to 77,600 in 2025).",
+      "hu": "A demográfiai törés előreláthatóan 2027 körül éri el az óvodákat, és 2030-ra láthatóvá válik az alsó tagozatos beiskolázásban, amit a születések 22,5%-os tízéves csökkenése hajt (110 800 2015-ben, 77 600 2025-ben)."
+    },
+    "context": {
+      "en": "Any rural school consolidation policy should be sequenced around the 2027–2030 demographic decline window using per-settlement differentiated criteria and mandatory transport lead times, rather than pursued as a blanket teacher-shortage rationalization, since evidence shows small schools are not the shortage's primary driver.",
+      "hu": "A vidéki iskola-összevonási politikát a 2027–2030-as demográfiai csökkenési időszakhoz kell ütemezni, településenkénti differenciált kritériumokkal és kötelező szállítási felkészülési idővel, nem pedig átfogó tanárhiány-racionalizálásként, mivel a bizonyítékok szerint a kisiskolák nem a hiány fő okozói."
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-3c48d690948471"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-implementation_planning-01",
+      "U-rural-school-closures-implementation_planning-02",
+      "U-rural-school-closures-implementation_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-implementation_planning-04",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c24451fbf4e57bd1411f17e8af8546f0b71e894b5ebfaf91d6f52195d494443c",
+  "topic": "rural-school-closures"
+}

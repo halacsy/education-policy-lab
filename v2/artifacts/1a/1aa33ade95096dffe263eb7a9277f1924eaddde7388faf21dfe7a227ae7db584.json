@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-school_network_planning-01",
+      "A-korai-szelekcio-school_network_planning-02"
+    ],
+    "claim": {
+      "en": "Long-run population projections place Hungary at approximately 8.5 million inhabitants by 2040-2050, requiring school-network planning to account for sustained demographic decline, not a temporary fluctuation.",
+      "hu": "A hosszú távú népesség-előrejelzések Magyarország lélekszámát 2040-2050-re körülbelül 8,5 millióra teszik, ami az iskolahálózat tervezésének évtizedeken átívelő demográfiai csökkenésével kell számolnia, nem átmeneti ingadozással."
+    },
+    "context": {
+      "en": "Physical school-network capacity is currently sufficient to sustain early selection almost anywhere; the genuine town-by-town feasibility bottleneck is the shrinking and unevenly distributed child population, combined with a maintainer and admissions design that concentrates selection into a minority of settlements.",
+      "hu": "A fizikai iskolahálózati kapacitás jelenleg szinte mindenhol elegendő a korai szelekció fenntartásához; a valódi településenkénti megvalósíthatósági szűk keresztmetszet a zsugorodó és egyenlőtlenül eloszló gyermeklétszám, valamint a fenntartói és felvételi rendszer, amely a szelekciót a települések kisebbségében koncentrálja."
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-044596f4670472"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-school_network_planning-01",
+      "U-korai-szelekcio-school_network_planning-02",
+      "U-korai-szelekcio-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-school_network_planning-05",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e0a633d5501e6a7c098cf3dedc24b168e92b42380e2f36c9387224227c1506d4",
+  "topic": "korai-szelekcio"
+}

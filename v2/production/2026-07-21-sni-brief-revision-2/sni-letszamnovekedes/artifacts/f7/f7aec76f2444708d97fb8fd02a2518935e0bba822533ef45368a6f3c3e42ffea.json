@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A reconciled measurement architecture interacts directly with the institutional fact that current data series are fragmented and that the single gatekeeping body (pedagógiai szakszolgálat) determines both SNI and BTMN status without apparent capacity for self-audit. Decomposing school-readiness rule effects (F-live-hungarian_education_system-08) from category redefinition and diagnostic practice would clarify how much of the observed jump between preschool (2.1%) and school-age (9.5%) BTMN prevalence reflects genuine onset versus differential screening sensitivity. This proposal does not itself change selection or access mechanisms—it only measures them—so it leaves the gatekeeper's authority and county-level sorting patterns institutionally intact while making them visible.",
+      "hu": "Egy összehangolt mérési architektúra közvetlenül reagál arra az intézményi tényre, hogy a jelenlegi adatsorok töredezettek, és hogy az egyetlen kapuőri szerv (pedagógiai szakszolgálat) határozza meg egyaránt az SNI és a BTMN státuszt anélkül, hogy láthatóan önellenőrzési kapacitása lenne. Az iskolára felkészültségi szabályhatások (F-live-hungarian_education_system-08) hatásainak a kategória-újradefiniálástól és diagnosztikai gyakorlatoktól való felbontása tisztázna, hogy a bölcsődei/kora óvodás (2.1%) és iskoláskorú (9.5%) BTMN-előfordulás közti megfigyelt ugrás mekkora része tükrözi valódi kezdetet, és mekkora része a szűrés érzékenységének különbségét. Ez a javaslat önmagában nem változtat a szelekción vagy a hozzáférés mechanizmusain—csak méri azokat—így intézményesen érintetlenül hagyja a kapuőr hatalmát és a megyei szintű szétválogatási mintákat, miközben láthatóvá teszi azokat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-08",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-07"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Reconciled data could reveal which portion of the 2.6-fold county spread reflects true prevalence versus administrative artifact, informing future targeted reform",
+        "hu": "Az egyeztetett adatok feltárhatnák, hogy a 2.6-fold megyei szóródásnak mekkora része tükrözi a valódi előfordulást, és mekkora adminisztratív artefaktum, informálva a jövőbeli célzott reformokat."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Directly targets the documented data fragmentation across multiple divergent official series, an institutional coordination gap rather than a substantive policy gap",
+        "hu": "Közvetlenül célozza a dokumentált adatszéttöredezést a több, egymástól eltérő hivatalos sorozat között; ez intézményi koordinációs hiány, nem pedig tényleges szakpolitikai hiány."
+      },
+      {
+        "en": "Could operationalize decomposition of confounds already flagged in the record, such as the 2020 school-readiness rule change's plausible contribution to SNI growth",
+        "hu": "Működésbe ültethetné a rekordban már jelzett zavaró tényezők felbontását, például a 2020-as iskolakészültségi szabályváltozás SNI-növekedéshez való valószínű hozzájárulását"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Reconciliation could surface incentive-driven over-identification patterns that face institutional resistance to publication, given Hungary's documented non-response to EU Commission data requests on misclassification",
+        "hu": "A rekonsziláció feltárhatna ösztönzővezérelt túlbesorolási mintákat, amelyek intézményi ellenállásba ütközhetnek a publikálás során, tekintettel Magyarország dokumentált nemválaszára az EU Bizottság téves besorolásra vonatkozó adatmegkereséseire."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Does not alter the sole-gatekeeper structure, category definitions, or finance incentives, so measurement alone cannot close access or sorting mechanisms",
+        "hu": "Nem változtatja meg az egyedüli kapuőri struktúrát, a kategória-definíciókat vagy a finanszírozási ösztönzőket, így önmagában a mérés nem képes megszüntetni a hozzáférési vagy szelekciós mechanizmusokat"
+      },
+      {
+        "en": "Nearly five-fold jump between preschool and school-age BTMN prevalence remains attributed ambiguously to either genuine emergence or screening differences, and better data may not resolve which explanation dominates without additional investigative work",
+        "hu": "Az óvodáskorú és iskoláskorú BTMN előfordulásának közel ötszörös növekedése továbbra is kétértelműen tulajdonítható vagy a valódi megjelenésnek, vagy a szűrési különbségeknek, és jobb adatok önmagukban talán nem döntenek arról, melyik magyarázat a meghatározó további vizsgálati munka nélkül."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2c80c2fca5b3b8aae723f55588fee559f25b17de0815bc9b249f1189781c821b",
+  "topic": "sni-letszamnovekedes"
+}

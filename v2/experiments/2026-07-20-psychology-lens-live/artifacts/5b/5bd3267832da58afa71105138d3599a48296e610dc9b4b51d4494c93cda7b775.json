@@ -1,0 +1,42 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Quasi-experimental design exploiting variation in local availability of 6/8-year gimnazium places (e.g., regression discontinuity around admission thresholds, or difference-in-differences comparing regions/cohorts with differing track availability), controlling for residential sorting via geocoded address data and church/private enrollment shares.",
+      "hu": "Kváziexperimentális felépítés, amely kihasználja a helyi 6/8 évfolyamos gimnáziumi férőhelyek változatosságát (pl. regressziós diszkontinuitás a felvételi küszöbök körül, vagy kettős különbség–analízis (difference-in-differences) az eltérő tagozati elérhetőséggel rendelkező régiók/kohorszok összehasonlítására), miközben ellenőrzi a lakóhelyi szelekciót geokódolt címadatok és egyházi/magánbeiratkozási arányok figyelembevételével."
+    },
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5",
+      "TP-live-t6"
+    ],
+    "question": {
+      "en": "What is the independent causal effect of the 6/8-year track structure itself (age-10/12 selection) on between-school segregation and SES stratification, net of free school choice, residential sorting, and church/private admissions exemptions?",
+      "hu": "Mi a 6/8 éves tagozati struktúra maga (10/12 éves kiválasztás) független okozati hatása az iskolák közötti szegregációra és a SES szerinti rétegződésre, a szabad iskolaválasztás, a lakóhelyi szelekció és az egyházi/privát felvételi kivételek nettó hatásától tisztítva?"
+    },
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-international_comparison-01",
+      "U-live-finnish_reform-01",
+      "U-live-polish_reform-01",
+      "U-live-implementation_planning-01",
+      "U-live-school_network_planning-01",
+      "U-live-education_finance-01"
+    ],
+    "why_it_matters": {
+      "en": "This is the foundational causal question underlying all six proposals: without isolating the track structure's own contribution, it is impossible to know whether abolishing or delaying tracking (T2, T6) will meaningfully reduce segregation or whether sorting will simply relocate to other channels (T3, T4, T5), wasting political capital on the wrong lever.",
+      "hu": "Ez az alapvető oksági kérdés, amely az összes hat javaslat mögött áll: a tagozati struktúra saját hozzájárulását nem izolálva lehetetlen tudni, hogy a tagozatok eltörlése vagy elhalasztása (T2, T6) érdemben csökkentené-e a szegregációt, vagy egyszerűen más csatornákra helyeződne át a szelekció (T3, T4, T5), és így politikai tőkét pazarolnának a rossz kart feszítve."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-psychology-01",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "b836eed1a25bda1051a9aab32488ec11481d3e8297273efc9dab58979d9338a5",
+  "topic": "korai-szelekcio"
+}

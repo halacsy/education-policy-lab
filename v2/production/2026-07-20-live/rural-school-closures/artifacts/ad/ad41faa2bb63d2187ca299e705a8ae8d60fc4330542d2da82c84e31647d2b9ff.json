@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Splitting grades so that young children remain local while older students travel to consolidated schools is demographically coherent: it matches the differential vulnerability of younger cohorts (who suffer most from commute-related harms) to their differential need for proximity, while conceding that upper-grade cohorts are typically too small in any single village to sustain viable class sizes. However, this only forestalls rather than resolves the underlying contraction, and the retained lower-grade unit itself may cross the zero-enrollment cliff observed in the smallest settlements independent of structural redesign.",
+      "hu": "A tagozatok szétválasztása úgy, hogy a kisgyermekek helyben maradjanak, míg az idősebb tanulók a konszolidált iskolákba utaznak, demográfiailag koherens: illeszkedik a fiatalabb kohorszok differenciált sérülékenységéhez (akik a legtöbbet szenvednek az ingázással kapcsolatos károktól) és a közelség iránti eltérő szükségletükhöz, miközben elismeri, hogy a felsőbb évfolyamok kohorszai általában túl kicsik bármely egyes faluban ahhoz, hogy fenntartható osztálylétszámokat hozzanak létre. Ugyanakkor ez csak elodázza, nem oldja meg az alapvető zsugorodást, és önmagában a megőrzött alsóbb évfolyamos egység is átlépheti a legkisebb településeken megfigyelt nulla-beiratkozási szakadékot a strukturális átalakítástól függetlenül."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-05",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Structural split could be phased in gradually along the demographic gradient, applied first to municipalities with moderate (not yet collapsed) cohort decline",
+        "hu": "A szerkezeti szétválasztás fokozatosan, a demográfiai gradiens mentén vezethető be, először azokra a településekre alkalmazva, ahol mérsékelt (még nem összeomlott) évfolyamcsökkenés tapasztalható"
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Matches known differential harms by age (younger children benefit most from proximity) to a structural design that keeps grades 1-4 local",
+        "hu": "Összepárosítja a kor szerint ismert különbséges károkat (a fiatalabb gyermekek részesülnek leginkább a közelségből) egy olyan strukturális kialakítással, amely megtartja az 1–4. osztályokat helyben."
+      },
+      {
+        "en": "Could extend village-school life expectancy even where upper-grade cohorts alone would be too small to sustain a standalone school under current class-size norms",
+        "hu": "Kiterjesztheti a falusi iskola életképességét még ott is, ahol a felsőbb évfolyamos kohorszok önmagukban túl kicsik lennének egy önálló iskola fenntartásához a jelenlegi osztálylétszám-normák mellett"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Reversal risk (as in Poland 2017) is amplified in a demographically contracting context, since any later re-consolidation would need to be executed against an even smaller and more dispersed pupil base",
+        "hu": "A visszafordulás kockázata (mint Lengyelország 2017-es esete) egy demografikusan zsugorodó környezetben felerősödik, mivel bármilyen későbbi újrakonszolidációt egy még kisebb és szórtabb tanulói bázis ellen kellene végrehajtani"
+      },
+      {
+        "en": "Continued national cohort decline (22% over four years) may erode even the reduced lower-grade cohort needed to sustain a grades 1-4 unit within the planning horizon of the reform",
+        "hu": "A nemzeti évfolyamcsökkenés folytatódása (22% négy év alatt) még a csökkentett alsó tagozatos évfolyamot is erodálhatja, amely a 1-4. évfolyamos egység fenntartásához szükséges lenne a reform tervezési időhorizontján belül."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Does not prevent the youngest-cohort collapse itself; in settlements like Garab (44 residents, no births in nine years) there is no lower-grade cohort left to structurally preserve",
+        "hu": "Nem akadályozza magát a legfiatalabb kohorsz összeomlását; olyan településeken, mint Garab (44 lakos, kilenc éve egyetlen születés sem), nincs alsóbb évfolyamos kohorsz, amelyet strukturálisan megőrizni lehetne."
+      },
+      {
+        "en": "Multigrade retained schools remain exposed to the same national class-size minimums driving current closure pressure",
+        "hu": "A több évfolyamos megtartott iskolák továbbra is ki vannak téve ugyanazon országos osztálylétszám-minimumoknak, amelyek a jelenlegi bezárási nyomást okozzák."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-demography",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2a39277c9c57cbf65eea5472924f3036bf083852635bd28339efe76560c079e9",
+  "topic": "rural-school-closures"
+}

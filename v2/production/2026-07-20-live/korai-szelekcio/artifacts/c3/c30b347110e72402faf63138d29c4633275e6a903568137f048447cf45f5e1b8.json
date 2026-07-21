@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-implementation_planning-01",
+      "A-live-implementation_planning-02",
+      "A-live-implementation_planning-03"
+    ],
+    "claim": {
+      "en": "Hungary faces a teacher-workforce capacity crisis: enrollment in teacher training has fallen by approximately 25% over four years, creating a shortage of 16,000 teachers, with aging workforce concentration such that half of all teachers in 2024/2025 were age 50 or older and only 7.2% were under 30, limiting redeployment capacity for structural education reform.",
+      "hu": "Magyarország tanárhiányos kapacitásválsággal küzd: a pedagógusképzésbe való beiskolázás az elmúlt négy évben mintegy 25%-kal esett vissza, ami körülbelül 16 000 tanár hiányát eredményezi; a munkaerő elöregedése is koncentrált: a 2024/2025-ös tanévben a pedagógusok fele 50 éves vagy idősebb volt, és csak 7,2% volt 30 év alatti, ami jelentősen korlátozza az átcsoportosítási és átalakítási kapacitást strukturális reformok esetén."
+    },
+    "context": {
+      "en": "Fresh live research through the Implementation planning lens",
+      "hu": "Friss, naprakész kutatás a végrehajtási tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Shortage figure is point estimate without confidence interval",
+        "hu": "A hiányra vonatkozó szám pontbecslés, konfidencia-intervallum nélkül."
+      },
+      {
+        "en": "Aging profile does not include international comparative benchmark for normalcy",
+        "hu": "Az elöregedési profil nem tartalmaz nemzetközi összehasonlító referenciaértéket a normál állapotra vonatkozóan"
+      },
+      {
+        "en": "Does not specify whether shortage is evenly distributed across subject areas or regions",
+        "hu": "Nem határozza meg, hogy a hiány egyenletesen oszlik-e meg tantárgyak szerint vagy régiók között."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-implementation_planning-07"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-implementation_planning-01",
+      "U-live-implementation_planning-02",
+      "U-live-implementation_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-implementation_planning-07",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "ecdf246d15030779edc6498d743b5533c5d28ebf0b4a24bb069d14f29de379b0",
+  "topic": "korai-szelekcio"
+}

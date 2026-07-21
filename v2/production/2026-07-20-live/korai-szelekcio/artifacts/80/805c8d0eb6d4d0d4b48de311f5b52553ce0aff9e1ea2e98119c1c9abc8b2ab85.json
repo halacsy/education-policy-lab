@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Structural delay to age 14+ directly addresses the scale problem identified by education-finance findings: Hungary's low overall spending (4.1%, rank 41/42) and instructional time (rank 32/34) mean that internal reallocation between selective and comprehensive tracks is unusually consequential (F-live-education_finance-06), and delaying selection would remove the capitation-driven funding/peer-effect loss to feeder schools altogether by eliminating the early exit point (F-live-education_finance-05). However, this is the highest-magnitude fiscal proposal among the six — it requires system-wide curriculum, teacher-training, and transition-management investment analogous to Finland's bundled reform, and the Polish 2017 case shows that poorly financed capacity transitions produce acute unplaced-student shortfalls, an affordability risk with direct cost incidence on students and municipalities.",
+      "hu": "A 14 év feletti strukturális késleltetés közvetlenül kezeli az oktatásfinanszírozási megállapítások által azonosított méretproblémát: Magyarország alacsony összkiadása (4,1%, rang 41/42) és az óraszámok (rang 32/34) azt jelentik, hogy a szelekciós és átfogó pályák közötti belső újraelosztás rendkívül következményes (F-live-education_finance-06), és a szelekedés elhalasztása megszüntetné a kapacitáshoz kötött finanszírozásból/peereffektusból eredő veszteséget a betápláló iskolák számára azáltal, hogy eltünteti a korai kilépési pontot (F-live-education_finance-05). Ugyanakkor ez a hat közül a legnagyobb költségvonzatú fiskális javaslat — rendszerszintű tantervi, tanárképzési és átmenet-kezelési beruházást igényel, analóg módon Finnország csomagolt reformjához, és a lengyel 2017-es eset azt mutatja, hogy rosszul finanszírozott kapacitásváltások súlyos, el nem helyezett diákhiányt okoznak, ami megfizethetőségi kockázatként közvetlen költségvetési teherrel jár a diákokra és az önkormányzatokra nézve."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-06"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Reallocating the resources currently concentrated in the small 6/8-year selective segment (25,962 students) toward a unified comprehensive phase could improve system-wide value for money given Hungary's low baseline spending share (F-live-education_finance-06)",
+        "hu": "A jelenleg a kis, 6/8 éves szelektív szegmensben koncentrálódó erőforrások (25,962 diák) egy egységes átfogó szakasz felé történő átcsoportosítása javíthatja a rendszer szintű költséghatékonyságát, tekintettel Magyarország alacsony kiadási alaparányára (F-live-education_finance-06)"
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Eliminates the structural funding/peer-effect drain on feeder schools identified in F-live-education_finance-05 by removing the age-10-12 exit point entirely",
+        "hu": "Megszünteti a F-live-education_finance-05-ben azonosított strukturális finanszírozási és kortárshatások miatti elszívást a betápláló iskolákból azzal, hogy teljesen eltörli a 10–12 éves kilépési pontot."
+      },
+      {
+        "en": "Addresses the achievement-inequality mechanism (F-live-education_finance-03, cross-referenced) at a moment when Hungary's low overall education spending (F-live-education_finance-06) makes internal reallocation efficiency especially important",
+        "hu": "Foglalkozik a teljesítmény-egyenlőtlenségi mechanizmussal (F-live-education_finance-03, cross-referenced) éppen akkor, amikor Magyarország alacsony összoktatási kiadása (F-live-education_finance-06) különösen fontossá teszi a belső újraelosztás hatékonyságát"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Given already-low overall spending rank (41/42) and instructional time (32/34), a transition management failure comparable to Poland's could impose costs the system has limited fiscal slack to absorb",
+        "hu": "Tekintettel a már eleve alacsony összkiadási rangsorra (41/42) és a tanítási időre (32/34), egy Lengyelországhoz hasonló átmenetkezelési kudarc olyan költségeket róhat, amelyeket a rendszer korlátozott fiskális tartalékkal képes csak elviselni."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Fiscal magnitude is large and uncertain: comprehensive-phase curriculum and teacher-training bundling (per the Finnish precedent) implies substantial transition cost not itemized in the proposal",
+        "hu": "A fiskális nagyságrend nagy és bizonytalan: az átfogó fázis tantervének és a tanárképzés csomagolásának (a finn precedens szerint) jelentős átmeneti költségei vannak, amelyeket a javaslat nem részletez"
+      },
+      {
+        "en": "Affordability risk demonstrated by the Polish 2017 unphased transition, where capacity shortfalls imposed direct costs on displaced students and local systems",
+        "hu": "A megfizethetőségi kockázatot a lengyel 2017‑es, fokozat nélküli átmenet példázza, ahol a kapacitáshiányok közvetlen költségeket róttak az elhelyezésüket vesztett diákokra és a helyi rendszerekre."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-education_finance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4799b6972c4f3b437dc408e8473f1661a0ee3b8f9342c740a0286fb11db13f0c",
+  "topic": "korai-szelekcio"
+}

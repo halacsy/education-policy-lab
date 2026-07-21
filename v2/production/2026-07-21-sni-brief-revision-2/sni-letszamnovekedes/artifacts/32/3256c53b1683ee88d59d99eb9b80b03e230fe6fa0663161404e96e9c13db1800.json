@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03"
+    ],
+    "claim": {
+      "en": "A shortage of special-education teachers (gyógypedagógus) exists with the largest concentration of unfilled positions in Budapest (45 advertised positions) and unequal regional distribution, while applications to the state-subsidized special-education degree program rose 15% from 2025 to 2026 cohorts (from 3,270 to 3,768 first-choice applicants).",
+      "hu": "Hiány van gyógypedagógusokból: a betöltetlen állások legnagyobb koncentrációja Budapesten található (45 meghirdetett állás), és egyenetlen a regionális eloszlás. Ugyanakkor a kormányzati támogatással működő gyógypedagógus-képzésbe jelentkezők első helyes pályázatai 2025 és 2026 között 15%-kal nőttek (3 270-ről 3 768 főre)."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Whether increased applications will address regional or functional specialization gaps is not established",
+        "hu": "Nem bizonyított, hogy a megnövekedett jelentkezések orvosolnák-e a regionális vagy funkcionális specializációs hiányosságokat."
+      },
+      {
+        "en": "Current unfilled positions by region are a snapshot; turnover and actual deployment are not detailed",
+        "hu": "A jelenlegi régiók szerinti betöltetlen pozíciók pillanatfelvételt jelentenek; a fluktuációt és a tényleges beosztást nem részletezik."
+      },
+      {
+        "en": "No data on whether training pipeline growth will meet identified shortage within a specified timeframe",
+        "hu": "Nincsenek adatok arra vonatkozóan, hogy a képzési utánpótlás növekedése kielégíti-e az azonosított hiányt egy meghatározott időkereten belül."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-05"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-05",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "fb62535b2d16dcd14a17610731c10243d884ab90a605cc549fd5794afe8e6f7f",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T4 is the proposal most directly framed in education-finance terms: it proposes targeted compensatory funding to feeder/disadvantaged schools precisely because capitation financing currently strips them of both student revenue and peer effects with no compensatory mechanism (F-live-education_finance-05), and it targets the severe disadvantaged-skill gap (12.1% vs 16.3% EU average, F-live-education_finance-07) through resource reallocation rather than structural change. Given Hungary's low overall spending share and instructional time (F-live-education_finance-06), such reallocation could yield high marginal value for money since baseline provision is thin. However, it leaves cost incidence from tracking-driven sorting fully in place, meaning compensatory spending is an ongoing transfer rather than a one-time fix, with unclear scale of budget required relative to the depth of the disadvantaged-skill gap.",
+      "hu": "A T4 a legközvetlenebbül oktatás-finanszírozási szempontokban megfogalmazott javaslat: célzott kompenzáló forrásokat javasol a felvevő/hátrányos iskoláknak éppen azért, mert a fejkvóta-finanszírozás jelenleg megfosztja őket mind a tanulói bevételtől, mind a társhatástól kompenzáló mechanizmus nélkül (F-live-education_finance-05), és erőforrás-átcsoportosítással célozza meg a súlyos hátrányos készségbeli rést (12.1% vs 16.3% EU-átlag, F-live-education_finance-07) a strukturális változtatás helyett. Magyarország alacsony összkiadási arányát és tanítási időt figyelembe véve (F-live-education_finance-06) az ilyen átcsoportosítás magas marginális költséghatékonyságot eredményezhet, mivel a kiinduló szolgáltatás vékony. Ugyanakkor ez változatlanul hagyja a szelekció által vezérelt rendeződés költségviselését, ami azt jelenti, hogy a kompenzáló kiadások folyamatos átutalást jelentenek, nem egyszeri megoldást, és a szükséges költségvetés nagysága a hátrányos készségbeli rés mélységéhez képest bizonytalan."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-06",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Existing teacher-career/incentive funding channels (referenced qualitatively) could be redirected toward disadvantaged-school retention with lower marginal implementation cost than new structural reform",
+        "hu": "A meglévő tanári pálya- és ösztönző finanszírozási csatornák (minőségi hivatkozással) átirányíthatók a hátrányos helyzetű iskolák megtartására, alacsonyabb marginális végrehajtási költséggel, mint egy új strukturális reform."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Directly targets the specific, evidenced funding/peer-effect loss mechanism affecting feeder schools under capitation financing (F-live-education_finance-05)",
+        "hu": "Közvetlenül célozza meg a fejkvóta-finanszírozás alatt működő beszállító iskolákat érintő, bizonyított finanszírozási és kortárshatás-veszteség mechanizmust (F-live-education_finance-05)."
+      },
+      {
+        "en": "Addresses a severe and quantified resource-need gap: only 12.1% of disadvantaged students reach basic skill proficiency vs 16.3% EU average (F-live-education_finance-07)",
+        "hu": "Egy súlyos, számszerűsített erőforrásszükségletet céloz: a hátrányos helyzetű tanulók mindössze 12,1%-a éri el az alapkompetencia‑szintet szemben a 16,3%-os EU‑átlaggal (F-live-education_finance-07)."
+      },
+      {
+        "en": "Low baseline spending share (4.1%, rank 41/42) and instructional time (rank 32/34) mean marginal reallocation toward disadvantaged schools may have outsized value-for-money relative to systems with more fiscal slack (F-live-education_finance-06)",
+        "hu": "Az alacsony kiinduló költésrész (4.1%, rang 41/42) és az oktatási idő (rang 32/34) azt jelenti, hogy a marginális újraelosztás a hátrányos helyzetű iskolák felé aránytalanul nagy érték-megtérülést eredményezhet azokhoz a rendszerekhez képest, amelyeknél több fiskális tartalék áll rendelkezésre (F-live-education_finance-06)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If compensatory funding is set below the scale of the structural loss documented in F-live-education_finance-05, it may function as a symbolic rather than substantive offset, especially given the system's overall low spending capacity (F-live-education_finance-06)",
+        "hu": "Ha a kompenzációs finanszírozás a F-live-education_finance-05-ben dokumentált strukturális veszteség mértéke alatt kerül meghatározásra, akkor inkább szimbolikus, semmint érdemi ellensúlyként funkcionálhat, különösen a rendszer általános alacsony költési kapacitását figyelembe véve (F-live-education_finance-06)."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "As a compensatory rather than structural fix, funding must be sustained indefinitely to offset an ongoing sorting mechanism, implying recurring rather than one-time fiscal commitment",
+        "hu": "Kompenzatív, nem strukturális megoldásként a finanszírozást határozatlan ideig fenn kell tartani az folyamatban lévő szelekciós mechanizmus ellensúlyozására, ami ismétlődő, nem egyszeri fiskális elköteleződést jelent."
+      },
+      {
+        "en": "No cost estimate provided for the scale of targeted investment needed to meaningfully close the 12.1%/16.3% gap",
+        "hu": "Nem áll rendelkezésre költségbecslés a célzott beruházás mértékére, amely szükséges lenne a 12.1%/16.3% rés érdemi bezárásához."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-education_finance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "3a0cb8b8147307a61f3efd5090921872408bd7930d1102ce7c931311224dba85",
+  "topic": "korai-szelekcio"
+}

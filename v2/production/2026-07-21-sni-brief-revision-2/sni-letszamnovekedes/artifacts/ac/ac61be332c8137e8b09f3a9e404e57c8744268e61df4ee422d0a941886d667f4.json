@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-education_finance-01",
+      "A-live-education_finance-02",
+      "A-live-education_finance-03"
+    ],
+    "claim": {
+      "en": "SNI student enrollment in Hungary has increased by 40% over the past 20 years, with 112,007 children registered in the 2024/2025 school year, representing nearly 10% of primary school students and over 11% by 8th grade",
+      "hu": "Az SNI-nyilvántartásba vett tanulók száma Magyarországon az elmúlt 20 évben 40%-kal nőtt; a 2024/2025-ös tanévben 112,007 gyermek szerepelt a nyilvántartásban, ami közel 10%-át jelenti az általános iskolás tanulóknak, és több mint 11%-ot a nyolcadikosok között."
+    },
+    "context": {
+      "en": "Fresh live research through the Education finance lens",
+      "hu": "Friss, naprakész kutatás az oktatásfinanszírozás szemszögéből"
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Source is secondary aggregator rather than primary KSH statistical release",
+        "hu": "A forrás másodlagos aggregátor, nem az elsődleges KSH-statisztikai közlés"
+      },
+      {
+        "en": "No breakdown provided of whether increase reflects true prevalence change versus improved identification/diagnostic practice",
+        "hu": "Nincs bontás arra vonatkozóan, hogy a növekedés valódi prevalencia-változást vagy a jobb azonosítás/diagnosztikai gyakorlat hatását tükrözi-e."
+      },
+      {
+        "en": "Most recent data point is single school year (2024/25) without multi-year trend confidence intervals",
+        "hu": "A legfrissebb adatpont egyetlen tanévre (2024/25) vonatkozik, többéves trendre vonatkozó konfidencia-intervallumok nélkül."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-education_finance-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-02",
+      "U-live-education_finance-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-education_finance-01",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "278e4f85405fabc4150ab3886bdfb184be26512e190b3fa034cd06052dd7bc32",
+  "topic": "sni-letszamnovekedes"
+}

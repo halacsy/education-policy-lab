@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from policy_lab.jsonio import write_json  # noqa: E402
+from policy_lab.i18n import localized  # noqa: E402
 
 
 def _now() -> str:
@@ -34,7 +35,8 @@ def main() -> int:
         approve.add_argument("--run-tag", required=True)
         approve.add_argument("--candidate-hash")
         approve.add_argument("--decided-by", required=True)
-        approve.add_argument("--rationale", required=True)
+        approve.add_argument("--rationale-en", required=True)
+        approve.add_argument("--rationale-hu", required=True)
         approve.add_argument(
             "--output-root", type=Path, default=ROOT / "v2" / "production"
         )
@@ -72,7 +74,7 @@ def main() -> int:
             "candidate_hash": request["candidate_hash"],
             "decision": "approved",
             "decided_by": args.decided_by.strip(),
-            "rationale": args.rationale.strip(),
+            "rationale": localized(args.rationale_en, args.rationale_hu),
         }
         if all(existing.get(key) == value for key, value in expected_identity.items()):
             print(f"Decision already recorded: {decision_path}")
@@ -85,10 +87,10 @@ def main() -> int:
         "decision": "approved",
         "decided_by": args.decided_by.strip(),
         "decided_at": _now(),
-        "rationale": args.rationale.strip(),
+        "rationale": localized(args.rationale_en, args.rationale_hu),
     }
-    if not decision["decided_by"] or not decision["rationale"]:
-        raise SystemExit("--decided-by and --rationale must not be empty")
+    if not decision["decided_by"]:
+        raise SystemExit("--decided-by must not be empty")
     write_json(decision_path, decision)
     print(f"Approved {decision['candidate_ref']} @ {decision['candidate_hash']}")
     print(f"Decision: {decision_path}")

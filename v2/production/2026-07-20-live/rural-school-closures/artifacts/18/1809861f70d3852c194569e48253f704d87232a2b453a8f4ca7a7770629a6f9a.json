@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Networked clustering and hub conversion is demographically flexible in that it does not require any single village to maintain a viable standalone cohort; it pools thinly distributed children across cooperating municipalities. This directly addresses the spatial distribution problem highlighted by the one-third of settlements under 500 inhabitants, though its dependence on documented but non-uniform social capital (the Erdőkürt case) means outcomes may remain geographically uneven, tracking existing age-structure divergence between younger and older municipality clusters rather than correcting it.",
+      "hu": "A hálózatba szervezett klaszterezés és a központi csomópontokká alakítás demográfiailag rugalmas, mivel nem követeli meg, hogy bármely egyetlen falu önállóan fenntartható kohorszot tartson; vékonyan elosztott gyermekeket gyűjt össze együttműködő önkormányzatok között. Ez közvetlenül kezeli a helyi eloszlás problémáját, amelyet az 500 fő alatti települések egyharmada kiemel, bár mivel függ a dokumentált, de nem egyenletes társadalmi tőkétől (the Erdőkürt case), az eredmények földrajzilag továbbra is egyenetlenek maradhatnak, követve a fiatalabb és idősebb önkormányzati klaszterek közötti meglévő életkor-szerkezetbeli eltérést ahelyett, hogy korrigálnák azt."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Could formally target the 645 sub-300-population localities identified as unlikely to survive without development programs, using clustering as an alternative to that unmet development requirement",
+        "hu": "Formálisan célozhatná azokat a 645, 300 fő alatti települést, amelyek fejlesztési programok nélkül valószínűtlenül maradnának fenn, és klaszterezést alkalmazhatna az elmaradt fejlesztési igény helyettesítésére."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Cluster/hub model directly addresses spatial fragmentation: pooling cohorts across municipalities is well suited to a landscape where a third of settlements have under-500 populations and cannot sustain standalone schools",
+        "hu": "A klaszter/központi modell közvetlenül kezeli a térbeli fragmentációt: a települések közötti évfolyamok összpontosítása jól illeszkedik egy olyan képhez, ahol a települések egyharmada 500 fő alatti lakosságú és nem képes önálló iskolát fenntartani."
+      },
+      {
+        "en": "Co-location with kindergarten under shared thresholds could extend the effective catchment cohort, partially offsetting TFR-driven declines by widening the enrollment base rather than shrinking it",
+        "hu": "Óvodával való együttelhelyezés közös küszöbértékek mellett kiterjesztheti a tényleges beiskolázási kohorszot, részben ellensúlyozva a TFR által vezérelt csökkenést azzal, hogy szélesíti a beiratkozási bázist ahelyett, hogy leszűkítené azt."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Informal inter-municipal competition for pupils could undermine cooperation precisely where cohort scarcity is most acute, i.e., where cooperation is most needed",
+        "hu": "A diákokért folyó informális települések közötti verseny alááshatja az együttműködést ott, ahol a kohorsz-hiány a legsúlyosabb, azaz ott, ahol az együttműködésre a legnagyobb szükség lenne."
+      },
+      {
+        "en": "Persistent negative demographic momentum (14.4% youth share) means clusters themselves may face renewed viability pressure within a single generation, requiring recurrent re-networking",
+        "hu": "A tartós negatív demográfiai lendület (14.4% youth share) azt jelenti, hogy maguk a klaszterek egyetlen nemzedéken belül is újra működőképességi nyomással szembesülhetnek, ismételt újrahálózódást igényelve."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Reliance on local social capital (the singular Erdőkürt case) as an implicit template risks reproducing uneven outcomes correlated with existing demographic disparities between younger (91) and older (42) municipality clusters",
+        "hu": "A helyi társadalmi tőkére való támaszkodás (az egyetlen Erdőkürt eset) implicit mintaként kockázatot jelent arra, hogy reprodukálja a fiatalabb (91) és az idősebb (42) településcsoportok közötti meglévő demográfiai különbségekkel korreláló egyenetlen eredményeket."
+      },
+      {
+        "en": "No mechanism addresses the zero-enrollment cliff in settlements with under-18 shares below 10 percent, where clustering has no local cohort to network",
+        "hu": "Nincs olyan mechanizmus, amely kezeli a nulla beiratkozási szakadékot azon településeken, ahol a 18 év alattiak aránya 10 percent alatt van, és ahol a klaszterezésnek nincs helyi kohorsz, amelyre hálózat épülhet."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-demography",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "51e7d595b9ee6f9c824f32bf7c1b9afb592f1d4f010168ae221fb86f5aad6a36",
+  "topic": "rural-school-closures"
+}

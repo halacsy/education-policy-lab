@@ -1,0 +1,66 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From an implementation-planning lens, status quo requires no new actor capability or sequencing, making it trivially deliverable, but the lens's own criteria (monitoring feeding adaptation, failure containment) are demonstrably unmet: existing monitoring infrastructure has not historically produced correction. This is a case where 'can actors deliver the mechanism' is answered yes, but the mechanism itself contains no adaptive loop, so deliverability is not evidence of adequacy.",
+      "hu": "A végrehajtástervezési nézőpontból a status quo nem igényel új szereplői képességet vagy sorrendiségváltozást, ezért triviálisan kivitelezhetőnek tűnik, de maga a nézőpont kritériumrendszere (monitorozás, ami az alkalmazkodást táplálja; hibák korlátozása) vitathatatlanul nincs teljesítve: a meglévő monitoring-infrastruktúra történelmileg nem eredményezett korrekciókat. Ez az a helyzet, ahol a „tudják-e a szereplők végrehajtani a mechanizmust” kérdésre az igen a válasz, de maga a mechanizmus nem tartalmaz adaptív kört, így a kivitelezhetőség nem bizonyítéka az alkalmasságnak."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-04",
+      "F-live-implementation_planning-05",
+      "F-live-implementation_planning-07"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Could be paired with an explicit trigger-based commitment (e.g., pre-specified segregation thresholds that mandate review) to convert passive monitoring into an adaptive loop",
+        "hu": "Összekapcsolható lenne egy explicit, trigger-alapú elköteleződéssel (pl. előre meghatározott szegregációs küszöbértékek, amelyek felülvizsgálatot írnak elő), hogy a passzív monitoringból adaptív visszacsatolási hurkot alakítson ki."
+      },
+      {
+        "en": "Existing data infrastructure could be repurposed as a baseline for eventually piloting alternatives (T6) without additional data-system investment",
+        "hu": "A meglévő adatinfrastruktúra alapul szolgálhat az alternatívák későbbi pilotálásához (T6) további adat-rendszer beruházás nélkül."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "No new actor capacity, sequencing, or coordination is required since the mechanism is already operating (F-live-implementation_planning-04)",
+        "hu": "Nincs szükség új szereplői kapacitásra, sorrendiségre vagy koordinációra, mivel a mechanizmus már működik (F-live-implementation_planning-04)."
+      },
+      {
+        "en": "Assessment infrastructure (National ABC, PISA) is already institutionalized and does not require new monitoring systems to be built (F-live-implementation_planning-04)",
+        "hu": "A mérési infrastruktúra (National ABC, PISA) már intézményesült, és nem igényel új monitoring rendszerek kiépítését (F-live-implementation_planning-04)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Ministerial acknowledgment of problems (F-live-implementation_planning-05) without mechanism change may accelerate legitimacy erosion, undermining future implementation capacity for any reform by increasing public distrust in state follow-through",
+        "hu": "A minisztériumi problémelismerés (F-live-implementation_planning-05) mechanizmusváltoztatás nélkül felgyorsíthatja a legitimitás erózióját, és alááshatja bármely reform jövőbeli végrehajtási kapacitását azáltal, hogy növeli a közbizalmatlanságot az állami következetességgel kapcsolatban."
+      },
+      {
+        "en": "Structural teacher shortage and thin workforce capacity mean that even if reform becomes necessary later, foundational capacity will not have been built during the monitoring period (F-live-implementation_planning-07)",
+        "hu": "A strukturális tanárhiány és a vékony munkaerőkapacitás azt jelenti, hogy még ha a reform később szükségessé is válik, az alapvető kapacitás a monitorozási időszak alatt nem fog kialakulni (F-live-implementation_planning-07)."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Monitoring exists but has no demonstrated adaptation pathway — PISA and ABC data have not historically translated into structural policy correction (F-live-implementation_planning-04)",
+        "hu": "Van monitoring, de nincs bizonyított alkalmazkodási út — a PISA és ABC adatok történetileg nem fordultak át strukturális politika-korrekcióvá (F-live-implementation_planning-04)."
+      },
+      {
+        "en": "Centralized governance structure (KLIK) has created bottlenecks rather than facilitating responsive policy adjustment, undermining any future ability to act on monitoring signals (F-live-implementation_planning-03)",
+        "hu": "A centralizált kormányzati struktúra (KLIK) torlódásokat hozott létre ahelyett, hogy elősegítette volna a rugalmas politikai kiigazítást, aláásva bármely jövőbeni képességet a monitoring-jelzések alapján való fellépésre (F-live-implementation_planning-03)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "00ffed58cd90b7be9e466da6f10c938f283ce4ff18c87f18bc4adc2db9ec89b8",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03",
+      "A-live-hungarian_education_system-04"
+    ],
+    "claim": {
+      "en": "Hungary's overall PISA performance (mathematics 473, reading 473, science 486) is close to OECD averages (472, 476, 485 respectively), but disadvantaged students reaching proficiency in basic skills (12.1%) lags below the EU average (16.3%)",
+      "hu": "Magyarország összesített PISA‑teljesítménye (matematika 473, szövegértés 473, természettudományok 486) közel áll az OECD‑átlagokhoz (472, 476, 485), de a hátrányos helyzetű tanulók között az alapkompetenciákban elérők aránya (12.1%) elmarad az EU‑átlagtól (16.3%)."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Outcome data does not attribute performance gaps to 6/8-year track mechanisms versus other factors (residential sorting, church-school exemptions, resource disparities)",
+        "hu": "Az eredményadatok nem tulajdonítják a teljesítménybeli különbségeket kifejezetten a 6/8 éves tagozatos mechanizmusnak a többi tényezőtől (lakóhely szerinti szelekció, egyházi iskolai mentességek, erőforrásbeli különbségek) elkülönítve."
+      },
+      {
+        "en": "Cross-sectional snapshot does not enable causal inference about tracking effects",
+        "hu": "A keresztmetszeti pillanatfelvétel nem teszi lehetővé a tagozódás (tracking) hatásainak ok-okozati feltárását."
+      },
+      {
+        "en": "Aggregate scores mask heterogeneity within student populations",
+        "hu": "az összesített pontszámok elfedik a tanulói populációk belső heterogenitását"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-07"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-07",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "d43f3b598d87d8cc323586f730b200ccd1191774c7631881868b16f8a5deaa32",
+  "topic": "korai-szelekcio"
+}

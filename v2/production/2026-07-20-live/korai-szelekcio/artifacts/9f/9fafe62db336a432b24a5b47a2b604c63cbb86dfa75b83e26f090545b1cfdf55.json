@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assessment": {
+      "en": "As a no-new-policy baseline, this proposal requires no legal authority change and raises no new rights conflicts by definition; its governance implications are those of inaction under demographic pressure operating within the unchanged legal-constitutional framework. The lens finds it legally uncomplicated but governance-inert: it neither exercises nor claims accountability for outcomes, which is itself a governance characteristic worth flagging.",
+      "hu": "Új politika nélküli (no-new-policy) alapváltozatként ez a javaslat definíció szerint nem igényel jogi hatáskör-változtatást és nem vet fel új jogi ütközéseket; kormányzati hatásai az inaktivitás demográfiai nyomás alatti következményei az érintetlen jogi-alkotmányos kereten belül. A lencse megállapítása szerint jogilag nem bonyolult, de kormányzatilag tehetetlen: sem nem gyakorol, sem nem vállal felelősséget a kimenetekért, ami önmagában egy figyelemre méltó kormányzati jellemző."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-04",
+      "F-live-legal_and_governance-06",
+      "F-live-legal_and_governance-07"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "Serves a legitimate governance function as an explicit counterfactual baseline, which is analytically useful for evaluating whether active legal interventions produce marginal accountability gains",
+        "hu": "Legitím kormányzati funkciót tölt be mint explicitt ellenhipotetikus alapállapot, amely analitikusan hasznos annak értékelésére, hogy az aktív jogi beavatkozások előidéznek-e marginális elszámoltathatósági javulást"
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Requires no legislative or constitutional action, and therefore carries zero legal-authority risk, since it changes nothing in the codified structure (F-live-legal_and_governance-01) or the constitutional choice guarantee (F-live-legal_and_governance-02)",
+        "hu": "Nem igényel törvényi vagy alkotmányos intézkedést, ezért nem hordoz jogi felhatalmazási kockázatot, mivel nem változtat semmit a kodifikált struktúrán (F-live-legal_and_governance-01) vagy az alkotmányos választási garancián (F-live-legal_and_governance-02)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Passive contraction concentrated in the state sector while church/private schools remain outside Klebelsberg Centre jurisdiction could produce a governance-accountability vacuum where no authority is responsible for the resulting uneven outcomes (F-live-legal_and_governance-07)",
+        "hu": "A passzív összehúzódás, ha az állami szektorban koncentrálódik, miközben az egyházi/privát iskolák a Klebelsberg Központ hatáskörén kívül maradnak, kormányzási-elszámoltathatósági vákuumot eredményezhet, ahol egyetlen hatóság sem felelős a kialakuló egyenetlen eredményekért (F-live-legal_and_governance-07)"
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Leaves unaddressed the outlier degree of selectivity and the highest-in-EU segregation level, meaning existing legal and governance structures continue producing the same accountability gap regardless of demographic contraction (F-live-legal_and_governance-04, F-live-legal_and_governance-06)",
+        "hu": "Nem kezeli a kivételesen magas szelektivitás és az EU-ban legmagasabb szegregáció szintjét, ami azt jelenti, hogy a meglévő jogi és kormányzati struktúrák továbbra is ugyanolyan elszámoltathatósági hiányt eredményeznek a demográfiai zsugorodástól függetlenül (F-live-legal_and_governance-04, F-live-legal_and_governance-06)."
+      },
+      {
+        "en": "Provides no mechanism to manage the differential legal reach across maintainer types, so church/private growth could proceed unchecked even as state-sector capacity mechanically shrinks (F-live-legal_and_governance-07)",
+        "hu": "Nem biztosít mechanizmust a fenntartótípusok közötti jogi hatókör eltéréseinek kezelésére, így az egyházi/magán növekedés ellenőrizetlenül folytatódhat még akkor is, ha az állami szektor kapacitása mechanikusan csökken (F-live-legal_and_governance-07)"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-legal_and_governance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a2f1377940300d5c913e1b7e7c46d94267eb82ed5872b8fcda10f1f00d613e08",
+  "topic": "korai-szelekcio"
+}

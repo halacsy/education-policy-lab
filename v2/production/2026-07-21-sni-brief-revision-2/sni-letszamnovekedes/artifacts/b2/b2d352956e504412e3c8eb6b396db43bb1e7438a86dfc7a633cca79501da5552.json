@@ -1,0 +1,65 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal directly targets the core unchanged institutional mechanism identified in the record: the sole nationwide expert-committee gatekeeper with documented multi-month waiting lists (F-live-hungarian_education_system-04). Moving to a tiered, non-categorical model would restructure how selection and access operate, which is a substantial institutional fit question given Hungary's current single-point, diagnosis-gated system. However, the record's own comparative evidence (Finland's persistent 4%-13% municipal range post-reform) suggests structural redesign does not eliminate unintended sorting by geography, meaning county-level disparities documented in Hungary (F-live-hungarian_education_system-02) may persist under a new architecture. Administrative compatibility is uncertain since rapid restructuring elsewhere caused disruption.",
+      "hu": "Ez a javaslat közvetlenül célozza a rekordokban azonosított, magától értetődően változatlan intézményi mechanizmust: az egyetlen országos szakértői bizottság kapuőri szerepét, amely többhónapos várólistákkal dokumentált (F-live-hungarian_education_system-04). A szintezett, nem-kategoriális modellre való áttérés átalakítaná a kiválasztás és a hozzáférés működését, ami jelentős intézményi illeszkedési kérdés Magyarország jelenlegi egy-pontos, diagnózis-kapuzott rendszerében. Ugyanakkor a rekord összehasonlító bizonyítéka (Finnország 4%-13% önkormányzati tartomány a reform után) azt sugallja, hogy a strukturális átalakítás nem szünteti meg a földrajzi szerinti nem kívánt szelektálódást, ami azt jelenti, hogy a Magyarországon dokumentált megyei egyenlőtlenségek (F-live-hungarian_education_system-02) egy új architektúra mellett is fennmaradhatnak. Az adminisztratív kompatibilitás bizonytalan, mivel máshol a gyors átalakítás zavarokat okozott."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-05"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could reduce diagnosis-dependent access frictions currently imposed by the sole-gatekeeper structure",
+        "hu": "Csökkentheti a diagnózishoz kötött hozzáférési akadályokat, amelyeket jelenleg az egyetlen kapuőr struktúra ró."
+      },
+      {
+        "en": "Might realign incentives that produce sex-based and county-based classification disparities if support becomes need-triggered rather than label-triggered",
+        "hu": "Megváltoztathatja azokat az ösztönzőket, amelyek nemi és megyei alapú besorolási egyenlőtlenségeket hoznak létre, ha a támogatás szükséglet-vezérelté válik a címke-vezérelt helyett"
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Addresses the single most concretely documented governance bottleneck (the sole gatekeeper with waiting lists) rather than only its downstream statistical symptoms",
+        "hu": "A legkonkrétabban dokumentált kormányzati szűk keresztmetszetet célozza (az egyetlen kaput őrző szereplőt, akinek várólistái vannak), nem csupán annak leszármaztatott statisztikai tüneteit."
+      },
+      {
+        "en": "Decoupling support from formal labeling is responsive to evidence that BTMN/SNI categorical boundaries are themselves definitionally volatile",
+        "hu": "A támogatás leválasztása a formális cimkézésről reagál arra a bizonyítékra, hogy a BTMN/SNI kategóriahatárai maguk is definíciós szempontból ingadozóak"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Non-consensual rapid structural reform elsewhere produced severe implementation disruption and stakeholder backlash, a transferable risk given Hungary's existing institutional resistance to change (F-live-hungarian_education_system-07)",
+        "hu": "Nem konszenzusos, gyors strukturális reform máshol súlyos végrehajtási zavarokat és érintetti ellenállást eredményezett; ez átvihető kockázat Magyarország meglévő intézményi ellenállása miatt a változással szemben (F-live-hungarian_education_system-07)"
+      },
+      {
+        "en": "Existing specialist shortage, concentrated in Budapest and other underserved regions, could limit the tiered model's practical capacity regardless of formal redesign",
+        "hu": "A meglévő szakemberhiány, amely Budapestre és más alulszolgáltatott régiókra koncentrálódik, korlátozhatja a réteges modell gyakorlati kapacitását a formális átalakítástól függetlenül."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Comparative evidence cited alongside the proposal shows tiered models can leave large regional variation intact, undermining the coverage goal",
+        "hu": "A javaslattal együtt hivatkozott komparatív bizonyítékok azt mutatják, hogy a rétegzett modellek nagy regionális eltéréseket hagyhatnak meg, aláásva a lefedettségi célt."
+      },
+      {
+        "en": "Restructuring the sole gatekeeper is a major administrative undertaking with no Hungary-specific evidence yet on transferability or capacity to absorb the shortage of gyógypedagógus specialists (F-live-hungarian_education_system-05)",
+        "hu": "Az egyedüli beléptető átalakítása nagy közigazgatási vállalkozás, és egyelőre nincs Magyarország-specifikus bizonyíték a transzferálhatóságra vagy arra, hogy a rendszer képes lesz-e felszívni a gyógypedagógus-szakemberek hiányát (F-live-hungarian_education_system-05)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "218e799a0a5d754b2b199a651afa73d260568f017c1000eade47cf489d77e917",
+  "topic": "sni-letszamnovekedes"
+}

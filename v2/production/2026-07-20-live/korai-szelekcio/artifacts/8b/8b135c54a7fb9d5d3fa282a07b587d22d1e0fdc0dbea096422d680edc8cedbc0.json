@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-legal_and_governance-01",
+      "A-live-legal_and_governance-02",
+      "A-live-legal_and_governance-03",
+      "A-live-legal_and_governance-04"
+    ],
+    "claim": {
+      "en": "Hungary operates one of the most selective education systems in the EU: between-school variation in outcomes exceeds that in Austria, Germany, Lithuania, and the Netherlands (all of which also practice age-10/11 early tracking), indicating that Hungary's selection intensity is an outlier even among early-tracking countries.",
+      "hu": "Magyarország az EU egyik legszigorúbban szelektív oktatási rendszere: az iskolák közötti eredménykülönbségek nagyobbak, mint Ausztriában, Németországban, Litvániában és Hollandiában (mindegyikben gyakorolnak 10/11 éves korban történő korai szelekciót), tehát a magyar szelekciós intenzitás még a korai szelekciót gyakorló országok között is kilóg."
+    },
+    "context": {
+      "en": "Fresh live research through the Legal and governance lens",
+      "hu": "Friss, aktuális kutatás jogi és kormányzati szemszögből"
+    },
+    "domain_tags": [
+      "legal_and_governance"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Comparison is cross-sectional and does not control for other systemic differences (e.g., curriculum design, capacity distribution) that may explain the variance difference.",
+        "hu": "Az összehasonlítás keresztmetszeti jellegű, és nem kontrollál más rendszerszintű különbségeket (e.g., curriculum design, capacity distribution), amelyek magyarázhatják a variancia különbségét."
+      },
+      {
+        "en": "This finding describes the intensity of observed selection, not the causal contribution of the 6/8-year gimnázium alone.",
+        "hu": "Ez a megállapítás a megfigyelt szelekció intenzitását írja le, nem pedig kizárólag a 6/8 éves gimnáziumok oksági hozzájárulását."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-legal_and_governance-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-legal_and_governance-01",
+      "U-live-legal_and_governance-02",
+      "U-live-legal_and_governance-03",
+      "U-live-legal_and_governance-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-legal_and_governance-06",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e8b28d0d5f2de5c8775f33e017eb7700ee75d1ab7d93d3e10151badf6c94d41b",
+  "topic": "korai-szelekcio"
+}

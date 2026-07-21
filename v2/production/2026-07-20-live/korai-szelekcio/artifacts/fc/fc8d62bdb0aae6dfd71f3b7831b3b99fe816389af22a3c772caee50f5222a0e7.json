@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03"
+    ],
+    "claim": {
+      "en": "Hungary ranks as the highest in the EU for segregation of students from less and more advantaged socioeconomic groups into different schools (Gutiérrez et al., 2020) and shows the highest segregation of most and least disadvantaged students in the 2022 PISA study.",
+      "hu": "Magyarország az EU-ban az élen áll abban, hogy a társadalmi-gazdasági szempontból hátrányos és előnyösebb helyzetű tanulókat külön iskolákba szelektálják (Gutiérrez et al., 2020), és a 2022-es PISA-vizsgálatban a legmagasabb a leginkább és legkevésbé hátrányos helyzetű tanulók közötti szegregáció mértéke."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "These are system-wide segregation metrics; sources do not isolate the specific causal contribution of 6/8-year gimnázium tracks versus other segregation channels (residential sorting, church-school expansion, selective commuting)",
+        "hu": "Ezek rendszerszintű szeparációs mutatók; a források nem különítik el a 6/8 éves gimnáziumi tagozatok specifikus okozati hozzájárulását más szeparációs csatornáktól (lakóhelyi szelekció, egyházi iskolák terjeszkedése, szelektív ingázás)."
+      },
+      {
+        "en": "PISA parental-education achievement gap (53 points in Hungary vs. 33-point EU average) does not establish track-specific causation",
+        "hu": "A PISA szülői iskolázottság szerinti teljesítménykülönbség (53 pont Magyarországon vs. 33 pontos EU-átlag) nem állít fel pályaspecifikus oksági összefüggést."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-06",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "1e5adbe215e59bef1ee51d3b9afe8e28d89250aad4c8a47947bb22f920c69ccc",
+  "topic": "korai-szelekcio"
+}

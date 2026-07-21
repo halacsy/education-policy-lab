@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "Hungary's secondary school network comprises 880 schools designed to ensure access within one hour by public transport, but the 6- and 8-year gimnázium tracks are geographically concentrated in Budapest and a few regional centers rather than evenly distributed across settlements.",
+      "hu": "A magyar középiskolai hálózat 880 iskolából áll, amelyeket úgy terveztek, hogy tömegközlekedéssel egy órán belüli elérést biztosítsanak, de a 6- és 8 évfolyamos gimnáziumi képzések földrajzilag koncentráltak Budapesten és néhány regionális központban, nem pedig egyenletesen elosztva a településeken."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Travel-time verification ('under one hour') is a stated aim, not verified empirical data specific to 6-/8-year track users",
+        "hu": "Az utazási idő ellenőrzése ('under one hour') megfogalmazott cél, nem pedig ellenőrzött empirikus adat, amely kifejezetten a 6-/8-year pályarendszerű felhasználókra vonatkozna."
+      },
+      {
+        "en": "Geographic concentration claim based on directory ranking data (top-10 schools), not complete network inventory",
+        "hu": "A földrajzi koncentrációra vonatkozó állítás a címtár rangsorolási adataira (top-10 iskolák) alapul, nem a teljes hálózati leltárra"
+      },
+      {
+        "en": "Rural gimnázium representation in top rankings does not quantify actual capacity or applicant pools by settlement type",
+        "hu": "A vidéki gimnáziumok megjelenése a felső rangsorokban nem méri a tényleges kapacitást vagy a jelentkezői állományt településtípusonként."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-01",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c3933b77df71e7b5caef962c856a831876bb91c7552495fcac945750244faf23",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-education_finance-01",
+      "A-live-education_finance-02",
+      "A-live-education_finance-03",
+      "A-live-education_finance-04"
+    ],
+    "claim": {
+      "en": "Hungary's per-pupil spending is comparatively low internationally at approximately $7,115 USD equivalent (rank 25 of 29 OECD/partner countries, 2022), constraining fiscal slack available to subsidize higher per-pupil overhead costs of small rural schools.",
+      "hu": "Magyarországon az egy tanulóra jutó kiadások nemzetközi összehasonlításban viszonylag alacsonyak, nagyjából 7 115 USD-nek megfelelő összeg (2022-ben a 29 OECD/partnerország közül a 25. helyen), ami korlátozza azt a fiskális mozgásteret, amely a kis vidéki iskolák magasabb egy tanulóra jutó általános költségeit támogatná."
+    },
+    "context": {
+      "en": "Fresh live research through the Education finance lens",
+      "hu": "Friss, naprakész kutatás az oktatásfinanszírozás szemszögéből"
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Comparison to OECD average does not establish optimal spending level",
+        "hu": "Az OECD-átlaghoz való viszonyítás nem bizonyítja az optimális kiadási szintet"
+      },
+      {
+        "en": "Low baseline spending may reflect policy choice rather than constraint",
+        "hu": "Az alacsony kiinduló költés inkább politikai döntésre, semmint korlátozottságra utalhat."
+      },
+      {
+        "en": "Does not directly measure marginal cost of rural school operation vs. consolidation",
+        "hu": "Nem méri közvetlenül a vidéki iskola működtetésének marginális költségét a konszolidációval szemben."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-education_finance-07"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-02",
+      "U-live-education_finance-03",
+      "U-live-education_finance-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-education_finance-07",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "3702e404a9224f32fcbb60b9c5ebbde8581c809d36dd5840a3d2f6d098d6fe45",
+  "topic": "rural-school-closures"
+}

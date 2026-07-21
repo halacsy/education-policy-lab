@@ -1,0 +1,41 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Interrupted time-series and difference-in-differences analysis exploiting the temporal separation between the 2017-18 legal reform, 2020 readiness-rule change, and COVID period, combined with sub-category (BTMN vs SNI, diagnostic category) and cohort-level decomposition using longitudinal administrative microdata; triangulate with regional variation to test whether jumps track rule implementation dates versus diagnostic capacity expansion.",
+      "hu": "Megszakított idősortelemzés és különbségek-különbségek (difference-in-differences) elemzés, kihasználva a 2017–18-as jogszabályi reform, a 2020-as iskolaérettségi szabályváltozás és a COVID-időszak közötti időbeli elkülönülést; altípus- (BTMN kontra SNI, diagnosztikai kategória) és kohorszszintű bontás longitudinális adminisztratív mikroadatokkal; trianguláció regionális variációkkal annak tesztelésére, hogy az ugrások a szabályok bevezetésének időpontjaihoz vagy a diagnosztikai kapacitás bővüléséhez kötődnek-e."
+    },
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4"
+    ],
+    "question": {
+      "en": "What is the relative causal contribution of the 2020 school-readiness rule change, the 2017-18 BTMN/SNI legal reform, per-pupil funding incentives, diagnostic-practice evolution, and true prevalence increase to Hungary's documented SNI/BTMN identification growth over 20 years, including the sharper post-2021/22 acceleration and threefold autism rise?",
+      "hu": "Mekkora relatív okozati szerepet játszott a 2020-as iskolaérettségi szabályváltozás, a 2017–18-as BTMN/SNI jogszabályi reform, a tanulónkénti finanszírozási ösztönzők, a diagnosztikai gyakorlat alakulása és a valódi előfordulási gyakoriság növekedése a magyarországi SNI/BTMN-azonosítás 20 éves növekedésében, beleértve az 2021/22 utáni éles gyorsulást és az autizmus háromszoros emelkedését?"
+    },
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-international_comparison-02",
+      "U-live-finnish_reform-01",
+      "U-live-portuguese_reform-01",
+      "U-live-equity_and_social_mobility-01",
+      "U-live-legal_and_governance-01",
+      "U-live-implementation_planning-01",
+      "U-live-t2-01"
+    ],
+    "why_it_matters": {
+      "en": "Nearly every proposed reform (measurement, tiered restructuring, finance redesign) rests on an unresolved assumption about which driver dominates identification growth; without decomposition, policy design risks targeting the wrong lever and misallocating scarce reform capacity.",
+      "hu": "Szinte minden javasolt reform (mérés, rétegzett szerkezet, finanszírozás átalakítása) azon a feloldatlan feltételezésen alapul, hogy melyik tényező a meghatározó az azonosítás növekedésében; a hatóerők szétbontása nélkül a politika kockázata, hogy rossz kart céloz meg, és tévesen osztja el a korlátozott reformkapacitást."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-01",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "98395923752d23e083c7e3557573c49fd50df40647c3a37d1b057ad6f67d6d66",
+  "topic": "sni-letszamnovekedes"
+}

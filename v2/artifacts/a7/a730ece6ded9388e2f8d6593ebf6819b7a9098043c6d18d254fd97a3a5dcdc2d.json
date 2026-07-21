@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-implementation_planning-01",
+      "A-korai-szelekcio-implementation_planning-02",
+      "A-korai-szelekcio-implementation_planning-03",
+      "A-korai-szelekcio-implementation_planning-04"
+    ],
+    "claim": {
+      "en": "A major teacher salary reform (2024–2031) backed by EUR 1.8 billion in EU funds aims to raise average teacher salaries to 80% of higher-education-graduate earnings by 2031, with mandatory institutional salary increases of 10% from January 2026; this is a load-bearing precondition for any staffing-dependent selection reform.",
+      "hu": "Egy jelentős pedagógus-béremelési reform (2024–2031) 1,8 milliárd euró EU-támogatással célja, hogy az átlagos tanári bérek elérjék a felsőoktatásban végzett diplomások jövedelmének 80%-át 2031-ig, kötelező intézményi 10%-os bérnöveléssel 2026. január 1-től; ez egy terhelhetetlen előfeltétele bármely személyzetfelhasználást igénylő szelekciós reformnak."
+    },
+    "context": {
+      "en": "Hungary cannot feasibly implement a structural reform eliminating or significantly delaying early selection before 2030 without (a) substantial prior teacher-workforce stabilization in rural and STEM areas, (b) explicit sequencing away from concurrent National Core Curriculum and AI-integration reforms, and (c) multi-party legislative consensus to protect against political reversal—only the first precondition is currently in progress.",
+      "hu": "Magyarország nem képes szerkezetileg végrehajtani a korai szelekciónak az eltörléséről vagy jelentős halasztásáról szóló reformot 2030 előtt anélkül, hogy (a) lényeges korábbi pedagógus-munkaerő stabilizáció vidéki és STEM-területeken, (b) kifejezett szekvencionálás az egyidejű Nemzeti alaptanterv és AI-integrációs reformoktól, és (c) multi-pártú törvényhozási konszenzus a politikai reverziós ellen való védelemhez—csak az első előfeltétel van jelenleg folyamatban."
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-3685df61cb6360"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-implementation_planning-01",
+      "U-korai-szelekcio-implementation_planning-02",
+      "U-korai-szelekcio-implementation_planning-03",
+      "U-korai-szelekcio-implementation_planning-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-implementation_planning-04",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "0f05e5cb6246a378dd14a56945bd63347b0e2d59b40dc0521a689719bc4bb502",
+  "topic": "korai-szelekcio"
+}

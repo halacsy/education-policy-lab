@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03"
+    ],
+    "claim": {
+      "en": "School maintenance authority for villages under 3,000 inhabitants is held by tankerületi centers (school district centers), not by municipal governments, eliminating village-level formal authority over school closure decisions.",
+      "hu": "A 3,000 lakosnál kisebb települések iskolafenntartói joga a tankerületi központoknál van, nem az önkormányzatoknál, így a falvaknak nincs formális helyi döntési joguk az iskolabezárásokat illetően."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Describes institutional structure but does not establish causal impact on village school outcomes",
+        "hu": "Leírja az intézményi struktúrát, de nem állapít meg oksági hatást a falusi iskolák eredményeire."
+      },
+      {
+        "en": "Does not account for informal village-level influence on tankerület decision-making",
+        "hu": "Nem veszi figyelembe a tankerület döntéshozatalára gyakorolt informális, falusi szintű befolyást"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-01",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "83e7693e547ddc9a76048594d81f0b0b25d35653e65e4acae6c8b562449e9b8a",
+  "topic": "rural-school-closures"
+}

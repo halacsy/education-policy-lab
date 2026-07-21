@@ -1,0 +1,53 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-equity_and_social_mobility-01",
+      "A-rural-school-closures-equity_and_social_mobility-02",
+      "A-rural-school-closures-equity_and_social_mobility-03",
+      "A-rural-school-closures-equity_and_social_mobility-04"
+    ],
+    "claim": {
+      "en": "Nearly 300 'ghetto schools' with over 50% Roma enrollment exist in Hungary; three-quarters operate in villages, with nearly half concentrated in Northern Hungary, where school-choice restrictions historically limited segregation.",
+      "hu": "Magyarországon közel 300 'gettó iskola' működik 50% feletti roma tanulói aránnyal; ezek háromnegyede községekben működik, szinte fele pedig Észak-Magyarországon, ahol a korábbi iskolaválasztási korlátozások korlátozták a szegregációt."
+    },
+    "context": {
+      "en": "Rural primary school closures in Hungary would disproportionately harm low-income and Roma students through increased dropout risk and long-term earnings loss, unless accompanied by carefully designed consolidation (multi-grade organization, not exodus-inducing hub schools) and genuine transport/resource equity safeguards.",
+      "hu": "A vidéki általános iskolák bezárása Magyarországon aránytalanul nagyobb károkat okozna az alacsony jövedelmű és roma tanulóknál a növekvő lemorzsolódási kockázat és hosszú távú jövedelemveszteség révén, hacsak nem kíséri gondosan megtervezett konszolidáció (többosztályos szervezet, nem exodusra ösztönző központi iskola) és valódi közlekedési/erőforrás-egyenlőségi biztosítékok."
+    },
+    "domain_tags": [
+      "equity_and_social_mobility"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-7cc6a1112ba517"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-equity_and_social_mobility-01",
+      "U-rural-school-closures-equity_and_social_mobility-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-equity_and_social_mobility-03",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "cd9dc1d7d0130b78f285a30cc08f945d0db14fc1263d9e5b889418be4642c012",
+  "topic": "rural-school-closures"
+}

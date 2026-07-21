@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal most directly confronts the counterfactual-contraction question by accepting that default closure is appropriate where cohorts are genuinely below viability thresholds, while adding mitigation for the harms closure produces. It is the only proposal to explicitly engage the contested cross-national evidence on whether closure itself causes further population decline; the lens notes this evidence is genuinely mixed (Danish causal finding of 7.6 percentage point decline over ten years, contested elsewhere) and therefore the mitigation package's adequacy to offset second-round demographic effects remains uncertain rather than established.",
+      "hu": "Ez a javaslat a legközvetlenebbül szembesül a kontra-faktuális zsugorodás kérdésével azáltal, hogy elfogadja: a default bezárás megfelelő ott, ahol a kohorszok valóban a életképességi küszöbök alatt vannak, ugyanakkor kármentesítést ad a bezárás által előidézett károkra. Ez az egyetlen javaslat, amely kifejezetten foglalkozik a vitatott nemzetközi bizonyítékokkal arra nézve, hogy maga a bezárás okoz-e további népességcsökkenést; a lencse megállapítja, hogy ezek a bizonyítékok valóban kevertek (dán kauzális eredmény: 7,6 százalékpontos csökkenés tíz év alatt, máshol vitatott), ezért a kármentesítési csomag alkalmassága a második körös demográfiai hatások ellensúlyozására bizonytalan, nem pedig bizonyított."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-07"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Threshold criteria could be calibrated directly to cohort-decline metrics (TFR, under-18 share, average age) to make closure decisions demographically transparent rather than discretionary",
+        "hu": "A küszöbkritériumokat közvetlenül kalibrálhatnák a kohorszcsökkenés-mutatókhoz (TFR, 18 év alattiak aránya, átlagéletkor), hogy a bezárási döntések demográfiailag átláthatóak legyenek a diszkrecionális döntéshozatal helyett."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Directly addresses viability thresholds using transparent criteria, appropriate for settlements that have already crossed the zero-enrollment cliff (e.g., under-10-percent under-18 share)",
+        "hu": "Közvetlenül kezeli a fenntarthatósági küszöbértékeket átlátható kritériumok alkalmazásával, megfelelő olyan településekre, amelyek már átlépték a zéró‑beiratkozási szakadékot (pl. 18 év alattiak aránya 10% alatt)."
+      },
+      {
+        "en": "Explicitly engages contested demographic evidence on closure-driven depopulation rather than assuming a single causal direction",
+        "hu": "Kifejezetten foglalkozik a vitatott demográfiai bizonyítékokkal a bezárások által vezérelt elnéptelenedésről, ahelyett, hogy egyetlen oksági irányt tételezne fel."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If Hungary's context resembles the Danish/Finnish pattern rather than the Saxony/Swedish no-link pattern, default closure under this model could accelerate exactly the depopulation dynamic it aims to manage, contradicting its own mitigation goals",
+        "hu": "Ha Magyarország kontextusa inkább a dán/finn mintát követi, semmint a szász/svéd 'no-link' mintát, akkor az e modell szerinti alapértelmezett bezárás éppen azt a népességcsökkenési dinamikát gyorsíthatja fel, amelyet kezelni kíván, ellentmondva saját mérséklési céljainak."
+      },
+      {
+        "en": "Regional disparities (Zala's steeper decline) mean uniform national thresholds may trigger disproportionate closures in already-vulnerable counties, compounding existing spatial age-structure divergence",
+        "hu": "A regionális egyenlőtlenségek (Zala meredekebb csökkenése) azt jelentik, hogy az egységes országos küszöbök aránytalan bezárásokat válthatnak ki már amúgy is sérülékeny megyékben, súlyosbítva a meglévő térbeli korstruktúra-eltérést."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Mitigation measures (transport, funding transparency, equity support) do not address the delayed structural depopulation mechanism (social capital and housing-market lock-in) documented in the Danish study, which emerges only from year six onward and thus outlasts most transition-support programs",
+        "hu": "A mérséklő intézkedések (közlekedés, finanszírozási átláthatóság, esélyegyenlőségi támogatás) nem kezelik a dán tanulmányban dokumentált késleltetett strukturális elnéptelenedési mechanizmust (társadalmi tőke és ingatlanpiaci rögzülés), amely csak a hatodik évtől jelenik meg, és így túléli a legtöbb átmeneti támogatási programot."
+      },
+      {
+        "en": "Contested cost-savings evidence (Texas vs. NY) means the fiscal rationale underlying threshold-triggered defaults is itself demographically and financially uncertain",
+        "hu": "A vitatott költségmegtakarítási bizonyítékok (Texas vs. NY) azt jelentik, hogy a küszöbérték által kiváltott alapértelmezések mögötti fiskális indoklás maga demográfiailag és pénzügyileg bizonytalan"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-demography",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2725b6bc0b4668c4421ea662f59c20ea8d8c458ae61c7a7c995396a3f5e07fe0",
+  "topic": "rural-school-closures"
+}

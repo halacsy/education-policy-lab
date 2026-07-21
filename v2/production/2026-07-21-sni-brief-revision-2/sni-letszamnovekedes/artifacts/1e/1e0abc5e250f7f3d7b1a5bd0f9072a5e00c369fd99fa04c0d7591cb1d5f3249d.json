@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03"
+    ],
+    "claim": {
+      "en": "A tightening of school-readiness rules from January 2020, which restricted school-start deferral and required six-year-olds to enter school rather than remain in kindergarten, is cited in sources as one plausible non-exclusive explanation for part of the observed SNI growth, implying that policy changes in adjacent domains (school-entry age) can measurably affect SEN identification without intent to change SEN policy itself.",
+      "hu": "A 2020. januárjától szigorodó iskolakezdési szabályok — amelyek korlátozták a beiskolázás halasztását és előírták, hogy a hatévesek iskolába lépjenek ahelyett, hogy óvodában maradnának — a források szerint valós, nem kizárólagos magyarázatként szerepelnek az SNI-növekedés egy részére, ami azt jelzi, hogy a kapcsolódó politikai változások (pl. iskolakezdési életkor) érzékelhetően befolyásolhatják az SNI‑azonosítást anélkül, hogy az SNI‑politikát közvetlenül megváltoztatták volna."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "This causal explanation is explicitly presented as contested and non-exclusive, not verified",
+        "hu": "Ez az okozati magyarázat kifejezetten vitatottnak és nem kizárónak van bemutatva, nem igazolt"
+      },
+      {
+        "en": "No quantified impact assessment isolates the contribution of the 2020 rule change from other drivers of identification growth",
+        "hu": "Nincs számszerűsített hatásvizsgálat, amely elkülönítené a 2020-as szabályváltozás hozzájárulását az azonosítás növekedésének egyéb hajtóerőitől"
+      },
+      {
+        "en": "Alternative hypotheses (improved diagnostic methods, genuine prevalence increase, increased referral sensitivity) are possible and unranked",
+        "hu": "Alternatív hipotézisek (javult diagnosztikai módszerek, valódi prevalencia-növekedés, megnövekedett beutalási érzékenység) lehetségesek és nem rangsoroltak."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-08"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-08",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c597e782473a49403af73fd5a20f3924ac5f11f5b850b21da0eed133b79f1830",
+  "topic": "sni-letszamnovekedes"
+}

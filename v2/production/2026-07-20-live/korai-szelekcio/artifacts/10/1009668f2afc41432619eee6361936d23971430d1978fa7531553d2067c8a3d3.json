@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-portuguese_reform-01",
+      "A-live-portuguese_reform-02",
+      "A-live-portuguese_reform-03",
+      "A-live-portuguese_reform-04"
+    ],
+    "claim": {
+      "en": "Poland's partial reversal of its successful 1999 comprehensive reform (delaying vocational tracking) correlates with PISA 2022 performance decline, but the decline is confounded by COVID-19 pandemic learning loss in the same PISA cycle",
+      "hu": "Lengyelország 1999‑es átfogó reformjának részleges visszafordítása (a szakmai pályák korábbi visszaállítása) összefüggést mutat a PISA 2022‑es eredmények visszaesésével, de ezt a visszaesést a ugyanabban a PISA-ciklusban jelentkező COVID‑19 miatti tanulási veszteség is zavarja."
+    },
+    "context": {
+      "en": "Fresh live research through the Portuguese system reform lens",
+      "hu": "Friss, aktuális kutatás a portugál rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "portuguese_reform"
+    ],
+    "evidence_strength": "contested",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Causal attribution is explicitly confounded; source itself frames decline as joint COVID/reversal effect",
+        "hu": "Az oksági hozzárendelés kifejezetten zavaros; maga a forrás a csökkenést a COVID és a visszarendeződés együttes hatásaként keretezi"
+      },
+      {
+        "en": "Single country case with no control group; cannot isolate re-tracking effect from pandemic learning disruption",
+        "hu": "Egyetlen ország esete kontrollcsoport nélkül; nem lehet elkülöníteni az újra-sávosítás hatását a pandémia miatti tanulási zavaroktól."
+      },
+      {
+        "en": "No within-cohort tracking on pandemic vs. structural effects",
+        "hu": "Kohorszon belüli követés nincs a pandémiás vs. strukturális hatások elkülönítésére"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-portuguese_reform-08"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-portuguese_reform-01",
+      "U-live-portuguese_reform-02",
+      "U-live-portuguese_reform-03",
+      "U-live-portuguese_reform-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-portuguese_reform-08",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "7706bbd77ca693559d15fe9261c51c2942c69efe7a4e4664c17ecbd8ae761199",
+  "topic": "korai-szelekcio"
+}

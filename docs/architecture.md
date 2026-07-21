@@ -23,6 +23,23 @@ been approved. Historical production stores without a RunPlan remain readable
 but are labelled as incomplete provenance and are never presented as proof of
 the new execution path.
 
+## V2 language contract (D-58, restoring D-34)
+
+Every semantic prose leaf declared in `config/v2/bilingual_fields.json` is a
+canonical `{en, hu}` object in artifact schema 2.1.0. Provider contracts require
+the generator or judge to author both texts in the same structured response;
+there is no translation node between analytical stages. Identifiers, enums,
+references, URLs, and provenance stay language-neutral. Validation first checks
+the exact language pair, then projects the English leaf into the unchanged
+strict 2.0.0 record schema, preserving one structural contract.
+
+The 2.0.0 production history is immutable. The one-time D-58 retrofit creates
+2.1.0 successor records with distinct migration provenance and retains every
+original record through `supersedes`; it does not rerun research or evaluation.
+The public Atlas reads canonical pairs directly. UI labels remain in the
+separate locale catalogs because they are presentation controls, not policy
+content.
+
 The system deliberately instantiates established multi-agent research patterns.
 Each pattern is named here with the caution its own literature documents, and
 the mitigation we implement.

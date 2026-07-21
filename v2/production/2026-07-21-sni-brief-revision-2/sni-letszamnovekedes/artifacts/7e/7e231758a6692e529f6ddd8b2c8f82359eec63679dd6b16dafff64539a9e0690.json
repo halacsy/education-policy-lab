@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This is the broadest, most cross-domain proposal, requiring coordination across multiple actor types (school-choice policy, network planning, private/church sector oversight, legal compliance bodies) with no single implementing authority clearly identified. It correctly identifies a structural precondition (free-school-choice-driven segregation) into which SEN identification enters, and it proposes using a documented precedent (the 2020 readiness rule change) as a model for anticipatory impact assessment, which is a reasonable monitoring innovation. However, the proposal's own risk section acknowledges strong documented institutional resistance to structural anti-segregation reform, and no sequencing or pilot pathway is specified for overcoming this resistance before full-scale coordination is attempted.",
+      "hu": "Ez a legszélesebb, legtöbb domént átfogó javaslat, amely koordinációt igényel több szereplőtípus között (iskolaválasztási politika, hálózattervezés, magán/egyház fenntartók felügyelete, jogi megfelelésért felelős szervek) úgy, hogy nincs egyértelműen azonosítható, egyetlen végrehajtó hatóság. Helyesen azonosít egy strukturális előfeltételt (a szabad iskolaválasztás okozta szegregáció), amelybe a SNI-azonosítás beépül, és azt javasolja, hogy a dokumentált precedenst (a 2020-as readiness szabályváltozást) használják előretekintő hatásvizsgálati modellként, ami ésszerű monitorozási innovációnak tűnik. Ugyanakkor a javaslat kockázati szakasza elismeri a strukturális, antiszegregációs reformokkal szembeni erős dokumentált intézményi ellenállást, és nincs megadva sem sorrendiség, sem pilot-útvonal annak az ellenállásnak a leküzdésére, mielőtt a teljes körű koordinációt megkísérelnék."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-08",
+      "F-live-implementation_planning-09"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "A narrower pilot focusing solely on extending safeguards to free school choice and selective tracks, before attempting full cross-domain coordination, could test feasibility with lower failure-containment risk",
+        "hu": "Egy szűkebb pilot, amely kizárólag az ingyenes iskolaválasztásra és a szelektív tagozatokra kiterjedő védőmechanizmusok kiterjesztésére fókuszálna, mielőtt a teljes átfogó koordinációt megkísérelnék, alacsonyabb kockázattal tesztelhetné a megvalósíthatóságot a kudarcok korlátozása szempontjából."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Grounds the mechanism in an established structural driver of segregation (free school choice plus residential mobility) rather than treating SEN identification as an isolated phenomenon (F-live-implementation_planning-08)",
+        "hu": "A mechanizmust egy bevett szegregációs strukturális hajtóerőre (ingyenes iskolaválasztás plusz lakóhelyi mobilitás) alapozza, ahelyett hogy a sajátos nevelési igények (SEN) azonosítását izolált jelenségként kezelné (F-live-implementation_planning-08)"
+      },
+      {
+        "en": "Proposes using the documented 2020 readiness rule change as a template for anticipatory cross-domain impact assessment, offering a concrete monitoring innovation grounded in precedent",
+        "hu": "A dokumentált 2020-as readiness szabályváltozás használatát javasolja mintátként az előretekintő, ágazatokon átívelő hatásvizsgálathoz, konkrét, precedensre épülő monitorozási újítást kínálva"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Documented historical precedent of institutional resistance to structural anti-segregation reform suggests a high risk of stalled or diluted implementation absent a phased, politically sequenced rollout",
+        "hu": "A dokumentált történelmi precedens, amely intézményi ellenállást mutat a strukturális szegregációellenes reformokkal szemben, arra utal, hogy magas a kockázata a megvalósítás elakadásának vagy elhigításának, ha nincs fokozatos, politikailag ütemezett bevezetés."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No single coordinating actor or authority is specified for the cross-domain review mechanism, leaving unclear who has the capacity or mandate to execute it",
+        "hu": "Nincs megnevezve egyetlen koordináló szereplő vagy hatóság a keresztágazati felülvizsgálati mechanizmus számára, így nem világos, kinek van meg a kapacitása vagy mandátuma annak végrehajtására."
+      },
+      {
+        "en": "The proposal does not address how documented informal school-level gatekeeping behavior (self-limiting SNI intake) would interact with or undermine a centrally coordinated anti-segregation mechanism (F-live-implementation_planning-09)",
+        "hu": "A javaslat nem tárgyalja, hogy a dokumentált iskola szintű informális beléptetési kapuzáró magatartás (az SNI felvétel önkorlátozása) hogyan lépne kölcsönhatásba egy központilag koordinált szegregáció-ellenes mechanizmussal, vagy hogyan gyengítené azt (F-live-implementation_planning-09)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e5cfb723f9903266bf8c99e4555c1db0d533737e3fe34d108095dbfd2431ca98",
+  "topic": "sni-letszamnovekedes"
+}

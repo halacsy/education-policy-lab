@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03"
+    ],
+    "claim": {
+      "en": "Total fertility rate in Hungary has fallen to 1.31 children per woman in 2025, down from 1.39 in 2024 and far below the 2.1 replacement level, with regional variation: Zala County experienced a 25% birth decline in H1 2024 compared to H1 2021, versus 22% in Budapest.",
+      "hu": "A teljes termékenységi arányszám Magyarországon 2025-re 1.31 gyermekre esett nőnként, 2024-ben 1.39 volt, és jóval elmarad a 2.1-es reprodukciós szinttől; területi különbségek is vannak: Zala megyében a 2024 első félévében a születések 25%-kal csökkentek az 2021 első félévéhez képest, míg Budapesten 22%-os volt a csökkenés."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Regional birth decline data cover only a single 6-month period (H1 2024 vs. H1 2021); longer time series needed to confirm sustained trend",
+        "hu": "A regionális születésszám-csökkenés adatai csak egy 6 hónapos időszakra terjednek ki (H1 2024 vs. H1 2021); a tartós trend megerősítéséhez hosszabb idősorra van szükség."
+      },
+      {
+        "en": "Does not directly measure which settlement types experience the sharpest cohort attrition",
+        "hu": "Nem méri közvetlenül, mely településtípusoknál jelentkezik a legélesebb kohorszveszteség."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-02",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e072bf1710bbc8ee3a4882c889f112082a7250294a99a5251793b04c0c6394fe",
+  "topic": "rural-school-closures"
+}

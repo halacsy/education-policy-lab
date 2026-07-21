@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03"
+    ],
+    "claim": {
+      "en": "One-third of Hungary's settlements have populations below 500 inhabitants; 645 localities have populations below 300, and 114 of those have under-18 populations below 10 percent. Economic assessment judges these villages unlikely to survive without significant development programs.",
+      "hu": "A magyar települések egyharmadának lakossága 500 fő alatti; 645 településen kevesebb mint 300 fő él, és ezek közül 114-ben a 18 év alattiak aránya 10% alatti. Gazdasági értékelés szerint ezek a falvak fejlesztési programok nélkül valószínűleg nem maradnak fenn."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "'Unlikely to survive' is a qualitative judgment from a single economic research institute, not a quantified viability threshold",
+        "hu": "'Unlikely to survive' egyetlen gazdasági kutatóintézettől származó kvalitatív megítélés, nem pedig számszerűsített életképességi küszöb"
+      },
+      {
+        "en": "Does not specify how many of these micro-settlements operate schools or what enrollment they currently sustain",
+        "hu": "Nem határozza meg, hogy ezek közül a mikrotelepülések közül hány működtet iskolát, illetve mekkora a jelenlegi tanulólétszámuk"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-03",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "3480aec872e1abc3242e89b77946201d589aecc6a43ed2bb02793ed6df4faacc",
+  "topic": "rural-school-closures"
+}

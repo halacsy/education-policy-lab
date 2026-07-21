@@ -1,0 +1,34 @@
+{
+  "content": {
+    "execution_id": "ec5226636ae932a21c482f37cc8ced4f9071d32851058b71a7ed0150d8a753c5",
+    "generation_parameters": {
+      "analytical_rerun": false,
+      "semantic_change_allowed": false
+    },
+    "input_artifact_hashes": [
+      "aaf24539949795b4d9a83c53c075183f96536fa009751584ae1ad838924f24da",
+      "c2191ece52f87f0d3bc71f948dd3a0345dbb9f8d5c570fec0da5e20b83d090c5"
+    ],
+    "model": "gpt-5-mini",
+    "node_id": "bilingual_migration",
+    "prompt_hash": "ef58be3ae3fd21d555559396c13cfecffb70eb4f7ac117bbce3ee2a475007387",
+    "provider": "openai",
+    "relevant_config_hash": "1d738640a9460c52c1c21bd2b75ea4544e119ebbadc2235e17ef2b91bf6830d9",
+    "role": "localizer",
+    "schema_hashes": {
+      "schemas/v2/bilingual.schema.json": "959fdffdaeded774cfb84515d633cae42ad14131ca94d5b620269f2784b1c8c1"
+    },
+    "spec_hashes": {
+      "config/v2/bilingual_fields.json": "3c7ba9bc692342da21d7d4af3ff6a51d186b7938d4f0cde55b8e613abc8517cf",
+      "scripts/migrate_v2_bilingual.py": "b4151dbc804c11db77bf22c3ec068602d46c4a65714bab122b4537f2bb3344c8"
+    }
+  },
+  "created_at": "2026-07-21T19:04:41.725832Z",
+  "id": "PV-bilingual-migration-ec5226636ae932a2",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

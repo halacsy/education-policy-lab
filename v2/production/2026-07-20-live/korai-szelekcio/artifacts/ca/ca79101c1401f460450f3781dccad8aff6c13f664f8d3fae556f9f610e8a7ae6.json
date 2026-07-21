@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This baseline is grounded in demographic mechanics but this lens's findings add a layer: applications data already show the beginning of a passive shift (six-year applications +11%, eight-year -14%) alongside stagnant physical capacity (F-live-school_network_planning-02, F-live-school_network_planning-03), corroborating the proposal's premise that market/demographic adjustment is already underway. However, the lens's geographic-concentration finding (F-live-school_network_planning-05) suggests this passive contraction is unlikely to be geographically uniform: urban/Budapest capacity, being older, larger, and more established, may prove far more resilient to demographic decline than rural or newer selective schools, consistent with the proposal's own stated risk of uneven geographic outcomes. Feeder-school dilution (F-live-school_network_planning-07) would also likely persist unevenly, concentrated wherever urban selective demand remains strong.",
+      "hu": "Ez az alapvonal demográfiai mechanikákon alapul, de ennek a lencsének a megállapításai egy további réteget adnak: a jelentkezési adatok már a passzív elmozdulás kezdetét mutatják (a hatéves jelentkezések +11%, a nyolcévesek -14%), miközben a fizikai kapacitás stagnál (F-live-school_network_planning-02, F-live-school_network_planning-03), ami alátámasztja a javaslat premisszáját, miszerint a piaci/demográfiai alkalmazkodás már folyamatban van. Azonban a lencse földrajzi koncentrációra vonatkozó megállapítása (F-live-school_network_planning-05) azt sugallja, hogy ez a passzív zsugorodás valószínűleg nem lesz földrajzilag egyenletes: a városi/Budapesti kapacitás, mivel öregebb, nagyobb és befogadottabb, sokkal ellenállóbbnak bizonyulhat a demográfiai csökkenéssel szemben, mint a vidéki vagy újabb szelektív iskolák, összhangban a javaslat saját megfogalmazott kockázatával az egyenetlen földrajzi eredményekről. A betápláló iskolák hígulása (F-live-school_network_planning-07) szintén valószínűleg egyenetlenül fog folytatódni, ott koncentrálódva, ahol a városi szelektív kereslet erős marad."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Provides an empirically grounded counterfactual baseline against which the geographic and capacity effects of active proposals (T1-T4, T6) can be measured",
+        "hu": "Empirikusan megalapozott ellenfaktuális bázist szolgáltat, amelyhez képest az aktív javaslatok (T1-T4, T6) földrajzi és kapacitásbeli hatásai mérhetők."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Corroborated directly by observed data: emerging application shift and capacity stagnation are already visible in the network (F-live-school_network_planning-02, F-live-school_network_planning-03)",
+        "hu": "Közvetlenül megfigyelt adatokkal alátámasztva: a kialakuló jelentkezési eltolódás és a kapacitás-stagnálás már látható a hálózatban (F-live-school_network_planning-02, F-live-school_network_planning-03)"
+      },
+      {
+        "en": "Requires no active administrative capacity to implement, since it describes an already-operating mechanism",
+        "hu": "Nem igényel aktív adminisztratív kapacitást a végrehajtáshoz, mivel egy már működő mechanizmust ír le"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Uneven geographic contraction could deepen the existing urban/rural network stratification identified in F-live-school_network_planning-05, worsening rather than resolving access inequality even as aggregate selective enrollment shrinks",
+        "hu": "A földrajzi szempontból egyenetlen zsugorodás mélyítheti a F-live-school_network_planning-05 által azonosított városi/vidéki hálózati rétegződést, így az aggregált szelektív felvétel csökkenése ellenére is a hozzáférési egyenlőtlenségeket súlyosbíthatja."
+      },
+      {
+        "en": "Feeder-school dilution effects (F-live-school_network_planning-07) may persist disproportionately in regions where selective demand remains concentrated despite aggregate decline",
+        "hu": "A feeder-iskolák felhígulási hatásai (F-live-school_network_planning-07) aránytalanul továbbra is megmaradhatnak olyan térségekben, ahol a szelektív kereslet koncentrálódik, annak összesített csökkenése ellenére"
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Passive contraction is not geographically self-correcting: historically larger, urban, path-dependent schools are documented as retaining greater selective capacity regardless of track type (F-live-school_network_planning-05), suggesting rural network nodes bear disproportionate contraction risk",
+        "hu": "A passzív összehúzódás földrajzilag nem önkorrekciós: a történelmileg nagyobb, városi, útfüggő iskolákról dokumentáltan megmarad nagyobb szelekciós kapacitás függetlenül a tagozattól (F-live-school_network_planning-05), ami azt sugallja, hogy a vidéki hálózati csomópontok aránytalanul nagy kockázatot viselnek az összehúzódásban"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "21849454b53de93a3b1610dbf98683de21619ff12ff94c43aabff517502a8faf",
+  "topic": "korai-szelekcio"
+}

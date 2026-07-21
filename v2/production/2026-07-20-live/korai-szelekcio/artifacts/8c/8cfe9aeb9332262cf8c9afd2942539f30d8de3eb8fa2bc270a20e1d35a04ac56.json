@@ -1,0 +1,64 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal is the demographic lens's native terrain: it explicitly models the counterfactual contraction baseline using the strongest evidence set in this lens (F-live-demography-01 through F-live-demography-09 collectively). Its core claim—that cohort decline plus statutory class-size floors mechanically force consolidation independent of policy choice—is well-supported. The proposal correctly identifies that this contraction is already underway (application shifts, capacity stagnation) and is structurally embedded for 20+ years, not a short-term fluctuation. Its own risk analysis appropriately flags the central demographic weakness: passive contraction is geographically uneven, meaning urban/Budapest selective capacity could persist while rural provision collapses, an outcome directly evidenced by the region-specific contraction data and the settlements down to 50-70 school-age children. This makes the proposal analytically strong as a counterfactual baseline, but the lens's own limitation applies squarely: population projections describing what will mechanically happen do not determine whether that outcome (uneven geographic collapse, unaddressed Roma segregation, church-sector growth) is normatively acceptable.",
+      "hu": "Ez a javaslat a demográfiai lencse természetes terepére tartozik: explicit módon modellezi a kontrafaktuális összehúzódási alapvonalat e lencse legerősebb bizonyítékkészletével (F-live-demography-01 through F-live-demography-09 collectively). Alapvető állítása — miszerint a kohorszcsökkenés és a törvényi osztálylétszám-minimumok mechanikusan kényszerítik az egyesítést, függetlenül a politikai választástól — jól alátámasztott. A javaslat helyesen azonosítja, hogy ez az összehúzódás már folyamatban van (beiratkozási eltolódások, kapacitásstagnáció), és strukturálisan beágyazott 20+ évre, nem rövid távú ingadozásra. Saját kockázatelemzése megfelelően felhívja a figyelmet a demográfiai központi gyengeségre: a passzív összehúzódás földrajzilag egyenetlen, ami azt jelenti, hogy a városi/Budapest-i kiválasztott kapacitás fennmaradhat, miközben a vidéki ellátás összeomolhat — ennek az eredményeit közvetlenül igazolják a régióspecifikus összehúzódási adatok és a 50-70 iskoláskorú gyermekig terjedő települési minták. Ez analitikailag erőssé teszi a javaslatot mint kontrafaktuális alapvonalat, de érvényes a lencse saját korlátja is: a népesség-előrejelzések, amelyek leírják, mi fog mechanikusan történni, nem határozzák meg, hogy az a kimenetel (a földrajzi egyenlőtlen összeomlás, a kezeletlen roma szegregáció, az egyházi szektor növekedése) normatívan elfogadható-e."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Serves as an essential comparison baseline against which the demographic cost-effectiveness of T1-T4 can be measured, since it isolates what happens with zero new policy",
+        "hu": "Alapvető összehasonlítási referenciaérként szolgál, amelyhez viszonyítva mérhető T1–T4 demográfiai költséghatékonysága, mivel izolálja, mi történik új politika hiányában."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Directly and comprehensively grounds itself in the strongest available cohort-decline evidence (F-live-demography-01, F-live-demography-02), correctly framing decline as structurally embedded rather than transient",
+        "hu": "Közvetlenül és átfogóan a legmegbízhatóbb elérhető kohorszcsökkenési bizonyítékokra támaszkodik (F-live-demography-01, F-live-demography-02), helyesen értelmezve a csökkenést strukturálisan beágyazottnak, nem átmenetinek"
+      },
+      {
+        "en": "Correctly identifies the mechanical class-size threshold (F-live-demography-05) as an independent-of-policy constraint already binding in shrinking localities",
+        "hu": "Helyesen azonosítja a mechanikus osztálylétszám-küszöbértéket (F-live-demography-05) mint a politikától független korlátot, amely már kötelező érvényű a zsugorodó településeken."
+      },
+      {
+        "en": "Explicitly incorporates the aging/rural-shortage teacher workforce (F-live-demography-09) as a compounding pressure, showing awareness of multiple demographic mechanisms operating simultaneously",
+        "hu": "Kifejezetten beépíti az elöregedő/vidéki hiánnyal küzdő pedagógusállományt (F-live-demography-09) mint összetett nyomástényezőt, jelezve, hogy tisztában van a több demográfiai mechanizmus egyidejű hatásával"
+      },
+      {
+        "en": "Own risk analysis correctly anticipates the geographically uneven outcome (urban persistence vs. rural collapse) that the regional contraction data (F-live-demography-04) would predict",
+        "hu": "A saját kockázatelemzés helyesen előre jelzi a földrajzilag egyenetlen kimenetet (városi kitartás vs. vidéki összeomlás), amelyet a regionális összehúzódási adatok (F-live-demography-04) valószínűsítenek."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Uncoordinated, unplanned contraction could produce settlement-viability disruptions analogous in kind to the Polish transition-cost pattern, and does nothing to prevent Roma segregation or church-sector growth from persisting or worsening even as aggregate selective-track size shrinks",
+        "hu": "A koordinálatlan, meg nem tervezett összehúzódás települési életképességi zavarokat idézhet elő, amelyek jellegükben analógok a Polish transition-cost pattern‑nel, és semmit sem tesznek azért, hogy megakadályozzák a Roma szegregációt vagy az egyházi szektor növekedését abban, hogy fennmaradjanak vagy romoljanak akkor is, amikor az aggregált szelekciós pálya mérete csökken."
+      }
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      {
+        "en": "As a passive baseline, it has no mechanism to manage the uneven spatial distribution it correctly identifies as a risk; contraction will occur but its geographic pattern is left entirely to market/demographic drift",
+        "hu": "Passzív alapként nincs olyan mechanizmusa, amely kezelné az általa helyesen kockázatként jelzett egyenetlen térbeli eloszlást; a zsugorodás bekövetkezik, de földrajzi mintázata teljes egészében a piaci/népességdinamikai sodródásra van bízva."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-demography",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "dd4b003b5ba79e5ab161b640a16a265cd2fa6edfbf1929f0730de8ae13818013",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Reciprocal contracts presume a level of municipal fiscal and demographic stability that Hungary's most affected villages lack. The proposal's viability depends heavily on which municipalities can credibly commit to network reorganization; those already below the 10% under-18 threshold have little to offer in reciprocal bargaining. This lens finds the mechanism plausible for moderately declining but not yet collapsed cohorts, with limited applicability to the most demographically extreme third of settlements.",
+      "hu": "A kölcsönösségen alapuló szerződések olyan önkormányzati fiskális és demográfiai stabilitást feltételeznek, amely hiányzik Magyarország legsérülékenyebb falvaiból. A javaslat életképessége nagymértékben attól függ, hogy mely önkormányzatok képesek hitelesen elkötelezni magukat a hálózati átszervezés mellett; azoknak, amelyek már az alattiak a 10% alatti 18 év alatti küszöbértéknél, kevés alkuerejük marad. Ez a nézőpont a mechanizmust mérsékelten csökkenő, de még nem összeomlott kohorszokra tartja plausibilisnek, és korlátozottan alkalmazhatónak a települések legsúlyosabb demográfiai harmadára."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Age-structure divergence data (91 young vs. 42 old municipalities) could inform differentiated contract terms by demographic cluster rather than a uniform national template",
+        "hu": "A korstruktúra eltérésére vonatkozó adatok (91 fiatal vs. 42 elöregedő település) alapot adhatnak demográfiai klaszterek szerinti differenciált szerződéses feltételek kialakításához, ahelyett hogy egységes országos sablont alkalmaznának."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Time-bound contracts (three-year cycles) align reasonably with medium-term planning horizons for gradually declining rather than collapsed cohorts",
+        "hu": "Az időhöz kötött szerződések (three-year cycles) viszonylag összhangban vannak a középtávú tervezési horizontokkal, ha a kohorszok fokozatos csökkenése áll fenn, nem pedig hirtelen összeomlás."
+      },
+      {
+        "en": "Could differentiate treatment by regional variation, addressing e.g. Zala's steeper 25% birth decline distinctly from Budapest's 22%",
+        "hu": "Különbséget tehet a kezelésben a regionális eltérések szerint, például kezelheti Zala meredekebb, 25%-os születésszámcsökkenését eltérően Budapest 22%-ától"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Municipalities in the most demographically depleted areas (Vas, Zala, average age above 50) may be structurally unable to fulfill reciprocal commitments, producing asymmetric contracts that function as delayed closure rather than genuine co-responsibility",
+        "hu": "A legnagyobb demográfiai elöregedéssel sújtott települések (Vas, Zala, átlagéletkor 50 felett) strukturálisan képtelenek lehetnek teljesíteni a kölcsönös elköteleződéseket, olyan aszimmetrikus szerződéseket eredményezve, amelyek inkább halasztott bezárásként működnek, semmint valódi együttfelelősségként."
+      },
+      {
+        "en": "Continuing TFR decline (1.31, still falling) shortens the effective life of any three-year contract before renegotiation is needed under a worse baseline",
+        "hu": "A TFR folyamatos csökkenése (1.31, still falling) lerövidíti bármely hároméves szerződés hatékony élettartamát, mielőtt újratárgyalásra lenne szükség egy rosszabb kiindulóhelyzet mellett"
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Contract logic assumes municipal capacity to negotiate and commit resources, which is absent in the third of settlements under 500 inhabitants with minimal fiscal base",
+        "hu": "A szerződéslogika feltételezi az önkormányzati kapacitást tárgyalásra és források lekötésére, ami hiányzik az 500 főnél kisebb, minimális költségvetési bázissal rendelkező települések egyharmadából."
+      },
+      {
+        "en": "No mechanism specified for settlements that have already reached the zero-enrollment cliff, where there is no cohort left to bargain over",
+        "hu": "Nincs meghatározott mechanizmus azokra a településekre, amelyek már elérték a nulla-beiratkozás peremét, ahol nincs több évfolyam, amiről tárgyalni lehetne."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-demography",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "0ba0cdd4d7a4a2b5d170faf2de37a725060c7df9376a61b2f15f819df3906f38",
+  "topic": "rural-school-closures"
+}

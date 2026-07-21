@@ -1,0 +1,67 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T3's grade-split model has a plausible internal sequencing logic (protect youngest children locally, consolidate older grades centrally) but implementation planning must weigh the explicit Polish precedent cited in the proposal's own evidence: the 2017 reversal caused severe disruption from abrupt structural reversal, and this risk is not paired with any described containment or exit-ramp mechanism for the Hungarian context. Multigrade teaching quality for retained village schools requires teacher-training infrastructure that is not currently present, especially set against an aging, attrition-prone teaching workforce. Fiscal exposure to national class-size minimums is acknowledged but unresolved, meaning even the preserved lower-grade schools may remain vulnerable to the same demographic-driven closure pressure the reform is meant to prevent.",
+      "hu": "A T3 osztály-megosztásos modelljének van ésszerű belső sorrendiség-logikája (a legfiatalabb gyerekek helyben való védelme, az idősebb évfolyamok központosított konszolidálása), de a megvalósítási tervezésnek mérlegelnie kell a javaslat saját bizonyítékában hivatkozott egyértelmű lengyel precedenst: a 2017-es visszafordítás súlyos zavarokat okozott az éles szerkezeti visszafordulás miatt, és ezt a kockázatot nem párosítják semmilyen leírt tartalék- vagy kilépési mechanizmussal a magyar kontextusra. A többkorosztályos (multigrade) tanítás minősége a megmaradó falusi iskolákban olyan tanárképzési infrastruktúrát igényel, amely jelenleg nincs jelen, különösen tekintettel az öregedő, az elvándorlásra érzékeny tanári állományra. A nemzeti minimális osztálylétszámokhoz fűződő fiskális kitettség elismerésre került, de megoldatlan marad, ami azt jelenti, hogy még a megőrzött alsóbb évfolyamú iskolák is sérülékenyek maradhatnak ugyanazon demográfiai eredetű bezárási nyomással szemben, amelytől a reform meg kívánja védeni őket."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-08"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "A pilot in a small number of districts could test multigrade staffing feasibility and transport burden shifts before national rollout.",
+        "hu": "Egy kis számú járásban végrehajtott pilot tesztelhetné a többévfolyamos (multigrade) tanári ellátás megvalósíthatóságát és a szállítási terhek átrendeződését az országos bevezetés előtt."
+      },
+      {
+        "en": "Explicit design of a reversal-containment clause (unlike Poland's abrupt 2017 reversal) could be built into legislation from the outset.",
+        "hu": "Egy visszafordulást megakadályozó záradék kifejezett megtervezése (ellentétben Lengyelország 2017-es hirtelen visszafordulásával) már a jogszabály tervezetekor beépíthető lenne"
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Recognizes the differential vulnerability of younger vs. older children to commute burden and calibrates the mechanism accordingly.",
+        "hu": "Elismeri a fiatalabb és az idősebb gyerekek ingázási terhelésre vonatkozó eltérő sérülékenységét, és ennek megfelelően kalibrálja a mechanizmust."
+      },
+      {
+        "en": "Draws on a concrete comparator (Poland) for both the reform's structural logic and its reversal failure mode, providing an explicit cautionary case for sequencing and failure containment.",
+        "hu": "Konkrét összehasonlító esetre támaszkodik (Lengyelország) mind a reform strukturális logikája, mind a visszafordulás kudarc-módja tekintetében, egyértelmű óvintézkedésként szolgálva a sorrendiség és a kudarcok kordában tartására."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Political reversal risk, evidenced directly by the Polish 2017 case, threatens catastrophic disruption to displaced teachers and students if not structurally insulated from short-term political cycles.",
+        "hu": "A politikai visszafordulás kockázata, melyet közvetlenül igazol a lengyel 2017-es eset, katasztrofális zavarokat fenyeget a kiszorított tanárok és diákok számára, ha azt nem védik strukturálisan a rövid távú politikai ciklusoktól."
+      },
+      {
+        "en": "Documented impracticality of rural transport infrastructure in several regions undermines the assumption that older students can feasibly travel to consolidated schools.",
+        "hu": "Több régióban dokumentáltan gyakorlatilag használhatatlan vidéki közlekedési infrastruktúra aláássa a feltételezést, hogy az idősebb tanulók ésszerűen eljuthatnak a konszolidált iskolákba."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No described mechanism for teacher training or cross-school professional networks required to sustain multigrade teaching quality, despite the proposal noting this dependency.",
+        "hu": "Nincs leírt mechanizmus a tanárképzésre vagy az iskolák közötti szakmai hálózatokra, amelyek szükségesek lennének a többévfolyamos oktatás minőségének fenntartásához, bár a javaslat megjegyzi ezt a függőséget."
+      },
+      {
+        "en": "The aging, attrition-affected teaching workforce (50% aged 50+, high shortage-driven involuntary transfers) is not addressed as a capacity constraint for staffing dual-tier structures.",
+        "hu": "Az elöregedő, lemorzsolódás által érintett tanári állomány (50% 50 éves vagy idősebb, a hiány miatt sok kényszeráthelyezés) nincs kezelve mint kapacitáskorlát a két szintű struktúrák személyzeti ellátásánál."
+      },
+      {
+        "en": "Retained lower-grade schools remain fiscally exposed to national class-size minimums, meaning the core viability problem may recur even after restructuring.",
+        "hu": "A megtartott alsó tagozatos iskolák továbbra is fiskálisan ki vannak téve az országos osztálylétszám-minimumoknak, ami azt jelenti, hogy az alapvető működőképességi probléma az átszervezés után is ismétlődhet."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "94de99dd050e1f05ee03760729542940da4d4cee6574ac2cb5b36fcaa551b48d",
+  "topic": "rural-school-closures"
+}

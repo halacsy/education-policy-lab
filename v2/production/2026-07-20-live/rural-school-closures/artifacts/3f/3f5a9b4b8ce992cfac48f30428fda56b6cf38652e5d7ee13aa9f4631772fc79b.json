@@ -1,0 +1,34 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "medium",
+    "method": {
+      "en": "Statistical modeling (e.g., cost-function and class-size regression analysis) of historical enrollment trajectories against closure/merger events, incorporating teacher-supply data and settlement-geography covariates (distance to nearest alternative school, road/transport infrastructure).",
+      "hu": "Statisztikai modellezés (például költségfüggvény‑ és osztálylétszám‑regressziók) a történeti beiratkozási pályákon a bezárási/egyesítési események tükrében, bevonva a tanár‑kínálati adatokat és települési földrajzi kovariátumokat (távolság a legközelebbi alternatív iskolához, út‑ és közlekedési infrastruktúra)."
+    },
+    "proposal_refs": [
+      "TP-live-t3",
+      "TP-live-t5"
+    ],
+    "question": {
+      "en": "What is the enrollment/cohort-size threshold below which a village primary school (or grade-band unit) becomes operationally unsustainable, and how does this threshold interact with teacher-labor availability and settlement geography?",
+      "hu": "Mekkora az a beiratkozási/évfolyamlétszám‑küszöb, amely alatt egy falu általános iskola (vagy évfolyamsáv) működésileg nem fenntartható, és hogyan hat ez a küszöb a tanár‑ellátottságra és a települési földrajzi adottságokra?"
+    },
+    "uncertainty_refs": [
+      "U-live-demography-01",
+      "U-live-implementation_planning-04"
+    ],
+    "why_it_matters": {
+      "en": "T3's grade-split design and T5's default-closure trigger both require a defensible viability threshold; without it, 'transparent minimum-enrollment criteria' (T5) or retained lower-grade viability (T3) cannot be operationalized credibly.",
+      "hu": "A T3 évfolyam‑megosztó terve és a T5 alapértelmezett bezárási trigger mind megalapozott fenntarthatósági küszöböt igényelnek; nélküle a „átlátható minimális beiratkozási kritériumok” (T5) vagy a megtartott alsó évfolyamok fenntarthatósága (T3) nem üzemeltethető hitelesen."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-06",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "fdbf62bd65d2c87b5db3cb514f5270e578df567a19b8f8561d97b073cc8e67dd",
+  "topic": "rural-school-closures"
+}

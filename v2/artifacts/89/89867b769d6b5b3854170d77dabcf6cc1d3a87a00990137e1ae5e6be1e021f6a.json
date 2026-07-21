@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-demography-01",
+      "A-rural-school-closures-demography-02",
+      "A-rural-school-closures-demography-03",
+      "A-rural-school-closures-demography-04",
+      "A-rural-school-closures-demography-05",
+      "A-rural-school-closures-demography-06",
+      "A-rural-school-closures-demography-07",
+      "A-rural-school-closures-demography-08",
+      "A-rural-school-closures-demography-09",
+      "A-rural-school-closures-demography-10"
+    ],
+    "claim": {
+      "en": "The number of women aged 15–49 in Hungary is projected to fall to approximately 1.4 million by 2060 in the medium demographic variant, structurally capping recovery of the school-age population base even with increased fertility policy through 2040.",
+      "hu": "Magyarországon a 15-49 éves nők száma a középsőváltozatban körülbelül 1,4 millióra csökken 2060-ra, ami szerkezetileg korlátozza az iskoláskorú népesség alapjának helyreállítását még a 2040-ig megerősített termékenységpolitika ellenére is."
+    },
+    "context": {
+      "en": "Demographic and administrative dynamics already in motion will force the closure or radical consolidation of primary schools in Hungarian villages with declining populations through 2040, unless explicit community-preservation or equity-based policy interventions are implemented to decouple school viability from enrollment-based cost thresholds.",
+      "hu": "A már mozgásban lévő demográfiai és igazgatási dinamika kénytelen lesz bezárni vagy radikálisan konszolidálni az alapiskolákat a csökkenő népességű magyar községekben 2040-ig, hacsak az explicit közösség-megőrzési vagy egyenlőség-alapú szakpolitikai beavatkozások nincsenek megvalósítva az iskolai viabilitas az beiratkozás-alapú költségküszöböktől való leválasztására."
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-d58f08dc643b14"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-demography-01",
+      "U-rural-school-closures-demography-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-demography-09",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e8ea601365b024157d6187786bb743a877f438ab2c54bfaf48702d56c3cf8416",
+  "topic": "rural-school-closures"
+}

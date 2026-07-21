@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal directly engages network capacity levers: raising thresholds and formalizing the existing passive capacity ceiling (F-live-school_network_planning-03, F-live-school_network_planning-04) would mechanically shrink the state-sector selective footprint. However, network resilience is undermined by partial jurisdictional reach: because contraction levers apply only to the state sector, any capacity reduction risks being geographically uneven, concentrated wherever state-sector share is highest, without a parallel mechanism for church/private capacity which is not addressed by this lens's findings but is flagged as a structural risk. The feeder-school dilution problem (F-live-school_network_planning-07) may be partially alleviated if demand pressure is genuinely reduced rather than displaced.",
+      "hu": "Ez a javaslat közvetlenül érinti a hálózati kapacitás-emelőket: a küszöbszintek emelése és a meglévő passzív kapacitásplafon formalizálása (F-live-school_network_planning-03, F-live-school_network_planning-04) mechanikusan szűkítené az állami szektor szelekciós lábnyomát. Ugyanakkor a hálózati ellenálló képességet aláássa a részleges illetékességi elérés: mivel a visszahúzó emelők csak az állami szektorra vonatkoznak, bármilyen kapacitáscsökkentés földrajzilag egyenetlen kockázatot hordozhat, koncentrálódva ott, ahol az állami szektor részesedése a legmagasabb, párhuzamos mechanizmus nélkül az egyházi/magán kapacitásra, amelyet ez a lencse nem kezel, de strukturális kockázatként jelöl. Az utánpótló iskolák hígulásának problémája (F-live-school_network_planning-07) részben enyhülhet, ha a keresleti nyomás ténylegesen csökken és nem csak áthelyeződik."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Could formalize an already-emerging passive capacity ceiling into an explicit, plannable network policy",
+        "hu": "Formálisan szabályozhat egy már megjelenő, passzív kapacitáskorlátot egy explicit, tervezhető hálózati politikává"
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Builds on an already-operating administrative capacity ceiling (F-live-school_network_planning-03), suggesting technical feasibility of extending it",
+        "hu": "Egy már működő adminisztratív kapacitásplafonra épít (F-live-school_network_planning-03), ami a kiterjesztés műszaki megvalósíthatóságát sugallja"
+      },
+      {
+        "en": "Threshold-based capacity control (F-live-school_network_planning-04) is an existing, tested lever within the current network",
+        "hu": "A küszöbalapú kapacitás-ellenőrzés (F-live-school_network_planning-04) a jelenlegi hálózaton belül meglévő, tesztelt beavatkozási eszköz."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Oversubscription ratios of 9-26x at flagship schools (F-live-school_network_planning-03) indicate demand pressure is severe enough that contraction could exacerbate rather than relieve access strain at the highest-demand urban nodes",
+        "hu": "A zászlóshajó iskoláknál tapasztalt 9–26-szoros túljelentkezési arányok (F-live-school_network_planning-03) azt jelzik, hogy a keresleti nyomás olyan súlyos, hogy a kapacitáscsökkentés tovább ronthatja a hozzáférési terhelést a legnagyobb keresletű városi csomópontoknál, ahelyett, hogy enyhítené azt."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Jurisdiction covers only state-sector maintainers, leaving a substantial share of network capacity (church/private) outside the contraction mechanism",
+        "hu": "A hatáskör csak az állami fenntartókat fedi le, így a hálózati kapacitás jelentős része (egyház/magán) kívül marad a szűkítési mechanizmuson"
+      },
+      {
+        "en": "Threshold increases risk pushing marginal students into vocational tracks involuntarily, altering network flows in ways not modeled here",
+        "hu": "A küszöbérték növelése kockázatot jelent arra, hogy marginalizált tanulókat kényszerűen szakmai pályákra tereljen, és megváltoztassa a hálózati áramlásokat olyan módokon, amelyeket itt nem modelleztek."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "13b8b6c692a0c083ae2b2c9cc94991b6058483e3ceb057b814ed867b45219c1c",
+  "topic": "korai-szelekcio"
+}

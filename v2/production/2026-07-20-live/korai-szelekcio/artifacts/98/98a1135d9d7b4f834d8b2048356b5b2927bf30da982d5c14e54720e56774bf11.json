@@ -1,0 +1,64 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This is the most legally demanding proposal: it requires parliamentary amendment to primary legislation and direct confrontation with a constitutionally protected right to free choice of institution, creating an unresolved rights-compatibility problem. It also requires clarifying which authority locus, Parliament, Klebelsberg Centre, or church/private maintainers, would control implementation, since current governance is split between centralized operational control and constitutionally protected choice.",
+      "hu": "Ez a jogilag leginkább igényes javaslat: országgyűlési módosítást igényelne a törvényekben és közvetlen konfrontációt a konstucionálisan védett intézményválasztási joggal, ami megoldatlan jogösszhang-problémát teremt. Emellett tisztázni kellene, hogy melyik hatalmi szerv — az Országgyűlés, a Klebelsberg Központ vagy az egyházi/magánfenntartók — irányítaná a végrehajtást, mivel a jelenlegi kormányzás megosztott a központosított operatív kontroll és az alkotmányosan védett választás között."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-07",
+      "F-live-legal_and_governance-10",
+      "F-live-legal_and_governance-04",
+      "F-live-legal_and_governance-06"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "A parliamentary process, while a high bar, would at least produce a durable and unambiguous legal instrument rather than a contestable administrative order, potentially resolving the authority-locus ambiguity identified across the system (F-live-legal_and_governance-10)",
+        "hu": "Egy parlamenti eljárás, bár magas követelmény, legalább tartós és egyértelmű jogi eszközt eredményezne a vitatható közigazgatási rendelkezés helyett, és potenciálisan feloldhatná a rendszerben azonosított hatáskör-helyzeti bizonytalanságot (F-live-legal_and_governance-10)."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Correctly identifies that structural delay requires parliamentary amendment rather than administrative action, matching the codification of the 6/8-year tracks in primary legislation (F-live-legal_and_governance-01)",
+        "hu": "Helyesen azonosítja, hogy a strukturális késleltetés parlamenti módosítást igényel, nem pedig adminisztratív intézkedést, összhangban a 6/8 éves nyomvonalak alapvető jogszabályba történő kodifikálásával (F-live-legal_and_governance-01)."
+      },
+      {
+        "en": "Explicitly recognizes that anti-sorting catchment rules must be bundled with the age change to have legal traction given the constitutional choice guarantee, showing awareness of the core legal design tension (F-live-legal_and_governance-02)",
+        "hu": "Kifejezetten elismeri, hogy a szelekcióellenes beiskolázási körzeti szabályokat az életkorváltozással együtt kell csomagolni ahhoz, hogy jogi súlyt kapjanak a választáshoz való alkotmányos garancia fényében, ami a jogi tervezés alapvető feszültségének tudatosságát mutatja (F-live-legal_and_governance-02)"
+      }
+    ],
+    "threats": [
+      {
+        "en": "The multiplicity of authority loci (Parliament, Klebelsberg Centre, individual maintainers, church/private entities) with no single accountable implementer creates a serious risk of fragmented or contested implementation even after enactment (F-live-legal_and_governance-10)",
+        "hu": "A hatalmi helyek sokfélesége (Parlament, Klebelsberg Központ, egyes fenntartók, egyházi/magán szervezetek), egyetlen felelős végrehajtó hiányával, komoly kockázatot teremt a széttagolt vagy vitatott végrehajtásra még a törvényhozás után is (F-live-legal_and_governance-10)."
+      },
+      {
+        "en": "Extreme existing selectivity and segregation levels indicate the governance system currently tolerates high inequality outcomes despite constitutional guarantees, suggesting judicial or political resistance to change is plausible (F-live-legal_and_governance-04, F-live-legal_and_governance-06)",
+        "hu": "A szélsőséges meglévő szelekciós és szegregációs szintek azt jelzik, hogy az irányítási rendszer jelenleg tolerálja a magas egyenlőtlenségi eredményeket az alkotmányos garanciák ellenére, ami arra utal, hogy bírósági vagy politikai ellenállás a változással szemben valószínű (F-live-legal_and_governance-04, F-live-legal_and_governance-06)."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "The proposal does not resolve, only names, the constitutional tension: restricting selection without restricting choice is not straightforward under current doctrine, and no concrete legal mechanism is offered for reconciling the two (F-live-legal_and_governance-02)",
+        "hu": "A javaslat nem oldja meg, csak megnevezi az alkotmányos feszültséget: a szelekció korlátozása a választás korlátozása nélkül a jelenlegi jogelmélet szerint nem egyszerű, és nem kínál konkrét jogi mechanizmust a kettő összeegyeztetésére (F-live-legal_and_governance-02)."
+      },
+      {
+        "en": "Church and private schools fall outside state maintainer jurisdiction, so a uniform delay enacted via state legislation may not bind these providers, undermining enforceability of a supposedly uniform reform (F-live-legal_and_governance-07)",
+        "hu": "Az egyházi és magániskolák kívül esnek az állami fenntartói jogkörön, így az állami törvényhozás által bevezetett egységes elhalasztás ezekre a szolgáltatókra nem feltétlenül kötelező, aláásva egy állítólag egységes reform végrehajthatóságát (F-live-legal_and_governance-07)"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-legal_and_governance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "6cb9a54d8ddcda91fe2bc79faf082b841145658a5752641505c2e91d064720ed",
+  "topic": "korai-szelekcio"
+}

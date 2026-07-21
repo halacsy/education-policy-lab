@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assessment": {
+      "en": "As a counterfactual baseline rather than an active policy, T5 requires no new actor capability to occur, but this lens's criteria (capacity, sequencing, monitoring, adaptation, failure containment) apply differently: the risk here is that a structurally embedded, decades-long demographic trend combined with an aging/shrinking teacher workforce is already producing uneven, unmanaged consolidation with no adaptive governance layer described. The proposal's own evidence acknowledges this is happening unevenly and could worsen geographic and segregation outcomes even as aggregate size falls, but names no containment or monitoring mechanism because, by design, it is the absence of new policy.",
+      "hu": "Mint kontra-faktuális baseline, nem aktív politika, a T5 megvalósulásához nincs szükség új szereplői képességre, de ennek a lencsének a kritériumai (kapacitás, sorrendiség, monitorozás, adaptáció, kudarc-elkülönítés) máshogy érvényesülnek: a kockázat itt az, hogy egy strukturálisan beágyazott, évtizedes demográfiai trend, kombinálva az öregedő/ürülő tanári munkaerővel, már most egyenetlen, kezeletlen konszolidációt hoz létre monitorozó, adaptív kormányzási réteg nélkül. A javaslat bizonyítéka maga is elismeri, hogy ez egyenetlenül történik és földrajzi és szeparációs kimeneteket súlyosbíthat, miközben az aggregált méret csökken, de nem nevez meg semmiféle elkülönítési vagy monitorozási mechanizmust, mert design szerint éppen az új politika hiánya a lényege."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-07"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Could serve as the empirical monitoring baseline against which any of T1-T4 or T6 could be evaluated, since it establishes what would happen absent intervention",
+        "hu": "Empirikus monitorozási alappontként szolgálhatna, amellyel a T1–T4 vagy a T6 bármelyikét értékelni lehetne, mivel meghatározza, mi történne beavatkozás hiányában."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Grounded in structurally durable, multi-decade demographic and workforce trends rather than a policy assumption, giving high confidence that the baseline mechanism itself will operate as described",
+        "hu": "Szerkezetileg tartós, több évtizedes demográfiai és munkaerő-piaci trendeken alapul, nem pedig politikai feltevésen, ami magas bizalmat ad arra, hogy maga az alapmechanizmus a leírt módon fog működni"
+      },
+      {
+        "en": "Already observable in current application and capacity data, indicating this is not a speculative projection but a documented in-progress process",
+        "hu": "Már megfigyelhető a jelenlegi jelentkezési és kapacitási adatokban, ami azt jelzi, hogy ez nem spekulatív előrejelzés, hanem dokumentált, folyamatban lévő jelenség."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Rural provision could collapse while urban/Budapest selective capacity persists, worsening geographic equity even as aggregate track size shrinks, with no policy lever described to contain this divergence",
+        "hu": "A vidéki ellátás összeomolhat, miközben a városi/Budapesti szelektív kapacitás fennmarad, rontva a földrajzi esélyegyenlőséget még akkor is, ha az összes tagozatméret csökken; a leírás nem tartalmaz olyan politikai eszközt, amely korlátozná ezt az eltérést."
+      },
+      {
+        "en": "Roma segregation and church-sector selective growth are structurally untouched and could worsen even as the state-sector track shrinks in aggregate",
+        "hu": "A roma szegregáció és az egyházi szektor szelektív növekedése strukturálisan érintetlen marad, és romolhat még akkor is, ha az állami szektor összességében zsugorodik."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "No governance or adaptation layer exists to manage the uneven geographic distribution of contraction, since by definition this baseline involves no new policy intervention",
+        "hu": "Nincs kormányzati vagy adaptációs réteg a szűkülés egyenetlen földrajzi eloszlásának kezelésére, mivel definíció szerint ez az alapvonal nem tartalmaz új politikai beavatkozást."
+      },
+      {
+        "en": "No described mechanism to prevent settlement-viability disruption from uncoordinated closures",
+        "hu": "Nincs leírt mechanizmus arra, hogy az összehangolatlan bezárások ne veszélyeztessék egy település életképességét."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "093d0e55e1028d485ced0d2483993bc23b0e8cf1df9a235e5f3eabcb050dc285",
+  "topic": "korai-szelekcio"
+}

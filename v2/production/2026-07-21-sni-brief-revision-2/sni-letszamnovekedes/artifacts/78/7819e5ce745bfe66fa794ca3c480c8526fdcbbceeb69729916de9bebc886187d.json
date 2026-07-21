@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Restructuring gatekeeping and categorical architecture addresses a real capacity bottleneck, but the demographic lens flags that non-categorical/tiered models do not resolve—and may not even reduce—regional disparity, since comparable systems (Finland's 4%-13% municipal range) retain wide sub-national variation after reform. Given Hungary's own pronounced spatial unevenness in both child-population contraction and disadvantage concentration, and its historical pattern of retaining small single-class rural schools rather than consolidating, any redesigned tiered model must operate within a structural landscape where single-class schools cannot easily implement tiered/parallel-track support.",
+      "hu": "A kapuzás és a kategorizáló architektúra átalakítása valós kapacitási szűk keresztmetszetet céloz, de a demográfiai lencse rámutat, hogy a nem-kategórikus/szintelt modell nem oldja meg — és akár nem is csökkentheti — a regionális egyenlőtlenségeket, mivel összehasonlítható rendszerek (Finnország 4%–13% közötti önkormányzati sávja) a reform után is széles alárendelt eltérést tartanak meg. Tekintettel Magyarország erőteljes térbeli egyenetlenségére mind a gyermek-populáció zsugorodásában, mind a hátránykoncentrációban, és történelmi gyakorlatára, hogy megtartja a kis, egy osztályos tanyasi iskolákat a konszolidáció helyett, bármely újratervezett szintezett modellnek olyan strukturális környezetben kell működnie, ahol az egy osztályos iskolák nehezen tudják megvalósítani a szintezett/párhuzamos pályákon nyújtott támogatást."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-08",
+      "F-live-demography-10",
+      "F-live-demography-06"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Could be sequenced with school-network planning to identify which rural single-class schools require alternative delivery mechanisms (e.g., traveling specialists) rather than assuming uniform tiered rollout",
+        "hu": "Ütemezhető az iskolahálózat-tervezéssel, hogy azonosítsák, mely vidéki, egyosztályos iskolák igényelnek alternatív szolgáltatásnyújtási mechanizmusokat (pl. vándorló szakemberek), ahelyett, hogy egységes, lépcsőzetes bevezetést feltételeznének."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Addresses gatekeeping bottlenecks that interact with workforce shortage geography, a documented structural constraint",
+        "hu": "Foglalkozik a gatekeeping szűk keresztmetszeteivel, amelyek kölcsönhatásban állnak a munkaerőhiány területi eloszlásával: ez egy dokumentált strukturális korlát."
+      },
+      {
+        "en": "Draws on comparative evidence acknowledging that tiered reforms have measurable effects on identification rates",
+        "hu": "Összehasonlító bizonyítékokra támaszkodik, amelyek elismerik, hogy a lépcsőzetes reformok mérhető hatással vannak az azonosítási arányokra"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Applying a uniform national tiered model without accounting for locked-in regional child-population contraction and disadvantage concentration risks replicating the North-South/East-West divide inside the new architecture",
+        "hu": "Egy egységes, országos többszintű modell alkalmazása anélkül, hogy figyelembe venné a rögzült regionális gyermekpopuláció-csökkenést és a hátrány koncentrációját, kockáztatja az Észak–Dél/Kelet–Nyugat megosztottság reprodukálódását az új architektúrán belül."
+      },
+      {
+        "en": "Rapid non-consensual reform (as in the Poland comparator) could be especially disruptive in regions already experiencing workforce and demographic strain",
+        "hu": "A gyors, konszenzus nélküli reform (amint a lengyel összehasonlításban) különösen zavaró lehet olyan régiókban, amelyek már munkaerő- és demográfiai feszültségekkel küzdenek."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "International comparative evidence itself shows persistent regional variation post-reform, undermining an implicit assumption that restructuring alone resolves geographic disparity",
+        "hu": "A nemzetközi összehasonlító bizonyítékok maguk is tartós regionális eltérést mutatnak a reform után, aláásva azt a nem kifejezetten kimondott feltételezést, hogy önmagában az átalakítás megszünteti a földrajzi egyenlőtlenségeket"
+      },
+      {
+        "en": "Does not directly confront the single-class rural school structural legacy, which mechanically limits how a tiered support model could be delivered in the many small rural schools created by Hungary's historical non-consolidation approach",
+        "hu": "Nem száll szembe közvetlenül az egyosztályos vidéki iskolák szerkezeti örökségével, amely mechanikusan korlátozza, hogy egy több szintű támogatási modellt hogyan lehetne nyújtani a sok kis vidéki iskolában, amelyeket Magyarország történeti nem-összevonási gyakorlata hozott létre."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-demography",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "dda23d7a3bf6dc1e3db7d7b93d488d88a4e3dcdb94f73093bbf081e76a79b961",
+  "topic": "sni-letszamnovekedes"
+}

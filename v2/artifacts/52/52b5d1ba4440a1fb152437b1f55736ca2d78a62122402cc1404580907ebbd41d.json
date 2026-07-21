@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-hungarian_education_system-01",
+      "A-rural-school-closures-hungarian_education_system-02",
+      "A-rural-school-closures-hungarian_education_system-03",
+      "A-rural-school-closures-hungarian_education_system-04",
+      "A-rural-school-closures-hungarian_education_system-05"
+    ],
+    "claim": {
+      "en": "In 2011, four Balaton-felvidék municipalities attempted to found a 6-year gimnázium rather than merely a primary school to attract in-migrating families and counteract depopulation, but county government rejected this proposal and pushed for a primary school instead; most interested families ultimately did not relocate.",
+      "hu": "2011-ben négy Balaton-felvidéki település 6 éves gimnáziumot kívánt alapítani, nem csak általános iskolát, hogy bevándorlókat vonzzon és a depopulációt megállítsa, de a megyei kormányhivatal ezt elutasította és általános iskolát javasolt; az érdeklődő családok többsége végül nem költözött át."
+    },
+    "context": {
+      "en": "The unavoidable contraction of rural primary school provision in Hungary must be managed through transparent, locally-led merger and maintainer-change mechanisms that prioritize pupil welfare, transport safety, and informed parental consent, rather than through top-down administrative consolidation that disconnects school governance from community voice and decision-making.",
+      "hu": "A magyar vidéki általános iskolai ellátás elkerülhetetlen összehúzódása transzparent, helyi szinten vezetett összevonási és fenntartóváltási mechanizmusokon keresztül kell, hogy történjen, amelyek a tanuló jólétét, az utazás biztonságát és a tájékozott szülői beleegyezést helyezik előtérbe, szemben a felülről lefelé irányuló közigazgatási konszolidációval, amely szétválasztja az iskola-irányítást a közösségi szóból és a döntéshozatalból."
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "weak",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-d35eaf4963790f"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-hungarian_education_system-01",
+      "U-rural-school-closures-hungarian_education_system-02",
+      "U-rural-school-closures-hungarian_education_system-03",
+      "U-rural-school-closures-hungarian_education_system-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-hungarian_education_system-12",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "7534f4991b07dbb4b2f1204d2bd50251d048298a749cc8c82dc7958828120348",
+  "topic": "rural-school-closures"
+}

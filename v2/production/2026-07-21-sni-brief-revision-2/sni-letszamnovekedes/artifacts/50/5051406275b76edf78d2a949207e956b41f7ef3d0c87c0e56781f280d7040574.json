@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A measurement and monitoring architecture does not itself alter the physical school network, transport arrangements, or specialist deployment, but it is a necessary precondition for identifying where geographic access and capacity constraints are most severe. The lens's own limitation applies directly here: better data cannot establish delivery capability, only illuminate it. Reconciling divergent series and decomposing rule-change effects (e.g., the contested 2020 readiness-rule tightening) could reveal which regions' rising identification reflects genuine unmet need versus definitional artifact, informing subsequent network-capacity decisions.",
+      "hu": "A mérési és monitorozási architektúra önmagában nem változtatja meg a fizikai iskolahálózatot, a szállítási rendet vagy a szakember-telepítést, de szükséges előfeltétel annak feltárásához, hogy hol súlyosak a földrajzi hozzáférési és kapacitási korlátok. A lencse saját korlátja itt közvetlenül alkalmazandó: a jobb adatok nem teremtenek szolgáltatási képességet, csak feltárják azt. A különböző sorozatok egyeztetése és a szabályváltozás hatásainak dekomponálása (pl. a vitatott 2020 readiness-rule tightening) feltárhatja, hogy mely régiók növekvő azonosítása valódi kielégítetlen szükségletet tükröz-e vagy definíciós artifactumot, és ez informálhatja a hálózati-kapacitás döntéseket."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-09"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Improved data could support targeted network investment decisions in underserved regions once workforce and infrastructure limitations are known.",
+        "hu": "Fejlettebb adatok támogathatnák a célzott hálózati beruházási döntéseket a szolgáltatásban elmaradott régiókban, miután ismertté válnak a munkaerő- és infrastrukturális korlátok."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Could integrate county-level prevalence variance data (15.6% vs 6.2%) with network-capacity data to identify where access gaps are most acute.",
+        "hu": "Integrálhatná a megyei szintű prevalencia-ingadozás adatait (15.6% vs 6.2%) a hálózati kapacitásadatokkal, hogy azonosítsa, hol a legsúlyosabbak a hozzáférési hiányok."
+      },
+      {
+        "en": "Decomposition of the contested 2020 rule-change effect could clarify whether observed identification changes reflect true demand shifts relevant to network planning or artifacts of gatekeeping policy.",
+        "hu": "A vitatott 2020-as szabályváltozás hatásának dekompozíciója tisztázhatná, hogy a megfigyelt azonosítási változások valódi, a hálózattervezés szempontjából releváns keresleti eltolódásokat tükröznek-e, vagy a kapuőrzési politika által előidézett artefaktumok."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Without paired capacity investment, better data alone risks becoming an administrative exercise disconnected from actual geographic service delivery.",
+        "hu": "Páros kapacitásberuházás nélkül a jobb adatok önmagukban kockázatot jelentenek, hogy csupán adminisztratív gyakorlattá válnak, amely nem kapcsolódik a tényleges földrajzi szolgáltatásnyújtáshoz."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "A monitoring architecture has no direct mechanism to expand transport entitlements, training-program coverage, or specialist capacity; it is diagnostic, not operational.",
+        "hu": "A monitorozási architektúrának nincs közvetlen mechanizmusa a szállítási jogosultságok, a képzési programok lefedettsége vagy a szakértői kapacitás bővítésére; diagnosztikus, nem operatív jellegű."
+      },
+      {
+        "en": "The finding on unmeasured need among multiply disadvantaged families' children indicates that even reconciled official statistics will systematically undercount true network demand.",
+        "hu": "A többszörösen hátrányos helyzetű családok gyermekeinél nem mért szükségletre vonatkozó megállapítás azt mutatja, hogy még a rendezett hivatalos statisztikák is rendszerszerűen alulbecsülik a valós hálózati keresletet."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "6318efd568e79280ef571928cff59e8fbb80c7aa0469c609695fcf4bf321dda8",
+  "topic": "sni-letszamnovekedes"
+}

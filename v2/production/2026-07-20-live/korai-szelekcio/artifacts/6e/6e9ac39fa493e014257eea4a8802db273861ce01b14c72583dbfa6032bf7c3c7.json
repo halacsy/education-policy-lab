@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-equity_and_social_mobility-01",
+      "A-live-equity_and_social_mobility-02",
+      "A-live-equity_and_social_mobility-03"
+    ],
+    "claim": {
+      "en": "Even absent formal early-selection tracks, Hungarian schools engage in substantial within-school classroom sorting by socioeconomic status, which has significant effects on test-score inequality; sorting would likely relocate rather than be eliminated if the 6-/8-year gimnázium structure were abolished.",
+      "hu": "Még ha formálisan nem is léteznének korai szelekciós pályák, a magyar iskolákon belül jelentős osztályon belüli szegregáció zajlik társadalmi–gazdasági státusz alapján, ami jelentősen befolyásolja a teszteredmények egyenlőtlenségét; ha eltörölnék a 6-/8-os gimnáziumi struktúrát, ez a szelekció feltehetően áthelyeződne, nem szűnne meg."
+    },
+    "context": {
+      "en": "Fresh live research through the Equity and social mobility lens",
+      "hu": "Friss, élő kutatás az egyenlőség és a társadalmi mobilitás szemszögéből"
+    },
+    "domain_tags": [
+      "equity_and_social_mobility"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Sorting effect is demonstrated but the counterfactual (what sorting would look like without formal tracks) is not directly tested",
+        "hu": "A szelektálódási hatás kimutatható, de a kontra‑faktuális (hogyan nézne ki a szelektálódás formális pályák nélkül) nincs közvetlenül tesztelve."
+      },
+      {
+        "en": "Causal claim about relocation of sorting is an inference rather than an empirical finding in the source",
+        "hu": "A szelekció áthelyeződésére vonatkozó oksági állítás inkább következtetés, semmint empirikus megállapítás a forrásban"
+      },
+      {
+        "en": "Magnitude of overlap between formal-track and within-school sorting effects is not quantified",
+        "hu": "A formális nyomvonal és az iskolán belüli szelekciós hatások átfedésének mértéke nincs számszerűsítve"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-equity_and_social_mobility-10"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-equity_and_social_mobility-01",
+      "U-live-equity_and_social_mobility-02",
+      "U-live-equity_and_social_mobility-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-equity_and_social_mobility-10",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "8b7936cbe7904d07cecafa2947320a4dcbfa1ba1fb7be6cfeb95b1a49fc46077",
+  "topic": "korai-szelekcio"
+}

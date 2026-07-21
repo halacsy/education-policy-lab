@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a public-finance perspective, a passive baseline is not fiscally neutral: it locks in the current per-pupil multiplier architecture (2x-3x for SNI) that plausibly incentivizes over-identification in enrollment-declining schools (F-live-education_finance-08), while the underlying enrollment base continues to grow (F-live-education_finance-01) and specialist assessment capacity is already strained (F-live-education_finance-06). Doing nothing preserves existing cost incidence patterns and incentive distortions without generating the evidence needed to evaluate value for money.",
+      "hu": "Közpénzügyi szempontból a passzív alapvonal nem fiskálisan semleges: rögzíti a jelenlegi tanulónkénti multiplikátor-architektúrát (2x–3x az SNI esetében), amely valószínűleg ösztönzi a túlidetifikálást a beiratkozásban csökkenő iskolákban (F-live-education_finance-08), miközben az alapul szolgáló beiratkozási bázis növekszik (F-live-education_finance-01) és a szakmai értékelő kapacitás már most is feszült (F-live-education_finance-06). A semmittevés megőrzi a meglévő költségviselési mintákat és ösztönzőtorzulásokat anélkül, hogy előállítaná az ár-érték vizsgálatához szükséges bizonyítékokat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-01",
+      "F-live-education_finance-06",
+      "F-live-education_finance-07",
+      "F-live-education_finance-08"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Could still generate useful baseline cost and incidence data if paired with passive monitoring, even without policy change",
+        "hu": "Még intézkedésváltozás nélkül is hasznos kiindulási költség- és incidenciainformációkat állíthat elő, ha passzív monitorozással párosul."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Provides a transparent counterfactual against which the fiscal effects of any active intervention can be measured",
+        "hu": "Átlátható ellenfaktumot biztosít, amelyhez viszonyítva bármely aktív beavatkozás fiskális hatásai mérhetők."
+      },
+      {
+        "en": "Avoids near-term transition costs associated with restructuring finance or gatekeeping systems",
+        "hu": "Elkerüli a pénzügyi átstrukturálással vagy a kapuzási rendszerekkel kapcsolatos rövid távú átállási költségeket."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued growth in SNI/BTMN registration (F-live-education_finance-01) under an unchanged finance formula risks escalating normative funding outlays without corresponding value-for-money verification",
+        "hu": "Az SNI/BTMN-nyilvántartás folyamatos növekedése (F-live-education_finance-01) változatlan finanszírozási képlet mellett kockáztatja a normatív támogatások növekedését anélkül, hogy párhuzamos értékarányos teljesítményellenőrzés történne."
+      },
+      {
+        "en": "Persistent workforce completion/entry shortfalls (F-live-education_finance-07) mean rising demand is not matched by supply, worsening cost-effectiveness over time",
+        "hu": "A tartós munkaerő-képzés/belépés hiányosságai (F-live-education_finance-07) azt jelentik, hogy a növekvő keresletet nem fedi a kínálat, és ez idővel rontja a költséghatékonyságot."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Leaves unaddressed the fiscal incentive structure that may drive enrollment-linked over-classification (F-live-education_finance-08)",
+        "hu": "Nem kezeli a beiratkozáshoz kötődő túlbesorolást előidéző fiskális ösztönzőrendszert (F-live-education_finance-08)"
+      },
+      {
+        "en": "Does not relieve the crowding-out of therapeutic/remedial capacity by expert-committee assessment demand (F-live-education_finance-06)",
+        "hu": "Nem enyhíti a terápiás/javító kapacitás kiszorulását a szakértői bizottsági értékelési igény miatt (F-live-education_finance-06)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "ba258c9e1f052dccad0345fd3fd3f52e05d49de30576fb3ccef03b96cd9045a1",
+  "topic": "sni-letszamnovekedes"
+}

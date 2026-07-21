@@ -1,0 +1,50 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal leverages the ministry's demonstrated discretionary approval power, most clearly evidenced in the Tiszavasvári refusal, which shows an existing administrative lever operating without new legislation and explicitly invoking segregation concerns (F-live-hungarian_education_system-09). This gives the mechanism strong institutional fit for the state sector. However, the three-track system itself, including its coexistence since the early 1990s (F-live-hungarian_education_system-01) and the centrally graded uniform exam, remains fully unchanged for whichever places persist, meaning the admission criteria's differential access effects (documented by parental-education gaps, F-live-hungarian_education_system-04) are preserved for surviving capacity. System coverage is also a critical limitation from this lens: because ministerial discretion as exercised has been directed at specific institutional cases rather than systemic capacity, and because the underlying legal framework for the tracks is untouched, this remains a partial, case-by-case tool rather than a structural contraction mechanism.",
+      "hu": "Ez a javaslat a minisztérium demonstrált mérlegelési jóváhagyási hatalmát használja ki, amit legvilágosabban a tiszavasvári elutasítás bizonyít, és amely azt mutatja, hogy létezik egy működő adminisztratív kar, amely új jogszabály nélkül is érvényesíthető és kifejezetten a szeparációs aggályokra hivatkozik (F-live-hungarian_education_system-09). Ez erős intézményi illeszkedést ad a mechanizmusnak az állami szektor számára. Ugyanakkor maga a hárompályás rendszer, beleértve korábbi, 1990-es évektől fennálló együttélését (F-live-hungarian_education_system-01) és a központilag értékelt egységes vizsgát, maradéktalanul változatlan bármely megmaradó hely tekintetében, ami azt jelenti, hogy a felvételi kritériumok különböző hozzáférési hatásai (amelyeket a szülők iskolázottságával mért különbségek dokumentálnak, F-live-hungarian_education_system-04) megmaradnak a fennmaradó kapacitásban. A rendszer lefedettsége ebből a szempontból kritikus korlát is: mivel a gyakorlatban alkalmazott minisztériumi mérlegelés konkrét intézményi esetekre irányult, nem pedig a rendszerszintű kapacitásra, és mert a pályák jogi alapja érintetlen marad, ez továbbra is részleges, eseti eszköz marad a strukturális visszahúzás helyett."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-09"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could be combined with the ministry's stated agenda to review the entrance-exam system, since both operate through existing administrative/policy channels rather than new legislation (F-live-hungarian_education_system-10)",
+        "hu": "Összekapcsolható a minisztérium kijelölt napirendjével a felvételi vizsga rendszerének áttekintésére, mivel mindkettő meglévő adminisztratív/politikai csatornákon keresztül működik, nem új jogszabály révén (F-live-hungarian_education_system-10)."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Grounded in a real, already-exercised administrative precedent (Tiszavasvári refusal) demonstrating institutional feasibility without new statute (F-live-hungarian_education_system-09)",
+        "hu": "Egy valós, már alkalmazott közigazgatási precedensre (Tiszavasvári elutasítás) épít, amely intézményi megvalósíthatóságot mutat új törvény nélkül (F-live-hungarian_education_system-09)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "The three parallel track lengths were themselves introduced as institutional add-ons (F-live-hungarian_education_system-01), suggesting the underlying legal structure has proven durable and may resist administrative-only contraction over time",
+        "hu": "A három párhuzamos tagozathossz önmagában intézményi kiegészítőként került bevezetésre (F-live-hungarian_education_system-01), ami arra utal, hogy az alapul szolgáló jogi struktúra tartósnak bizonyult, és idővel ellenállhat kizárólag igazgatási eszközökkel történő összevonásnak."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Admission criteria and track structure for any remaining places are untouched, so the composition effects tied to parental education (F-live-hungarian_education_system-04) and coaching markets (F-live-hungarian_education_system-05) persist unabated for whoever remains admitted",
+        "hu": "Az esetlegesen megmaradó helyek felvételi kritériumai és tagozati szerkezete érintetlenek, így a szülők iskolai végzettségéhez kötődő összetételi hatások (F-live-hungarian_education_system-04) és a felkészítőpiacok hatása (F-live-hungarian_education_system-05) változatlanul érvényesül azoknál, akiket felvesznek"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "877c64593fbc2cac40e1d45410efc4a36033bd1c3e1e051f69a2f15091863885",
+  "topic": "korai-szelekcio"
+}

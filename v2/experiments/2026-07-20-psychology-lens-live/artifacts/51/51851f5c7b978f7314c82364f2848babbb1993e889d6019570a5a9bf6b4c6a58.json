@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal engages precisely with the centrally organised admissions process (F-live-hungarian_education_system-03), attempting institutional reform at the level where the 85%-selective-school statistic is generated (F-live-hungarian_education_system-01). Institutional fit is comparatively strong because it works within the existing Ministry-managed process rather than replacing the structure. However, system coverage is structurally limited: church-maintained and private schools operate under separate exemptions (F-live-hungarian_education_system-05) and fall outside standard admissions authority, meaning a Klebelsberg Centre-administered reform cannot reach a segment of the segregation-producing sector. This creates an unintended sorting risk in which reform-compliant public schools become more accessible while exempt institutions remain untouched or even absorb displaced selective demand.",
+      "hu": "Ez a javaslat közvetlenül a központilag szervezett felvételi folyamattal foglalkozik (F-live-hungarian_education_system-03), és intézményi reformra törekszik azon a szinten, ahol az 85%-os szelektív iskola statisztika keletkezik (F-live-hungarian_education_system-01). Az intézményi illeszkedés viszonylag erős, mert a meglévő, minisztérium által kezelt folyamaton belül működik, a struktúra helyett. Ugyanakkor a rendszerlefedettség strukturálisan korlátozott: az egyházi fenntartású és a magániskolák külön mentességek alatt működnek (F-live-hungarian_education_system-05), és kívül esnek a standard felvételi hatáskörön, ami azt jelenti, hogy a Klebelsberg Központ által adminisztrált reform nem ér el egy szeletét annak a szegregációt előidéző szektornak. Ez akaratlan szelekciós kockázatot teremt, amelyben a reformnak engedelmes állami iskolák könnyebben hozzáférhetővé válnak, míg a mentesség alá eső intézmények érintetlenek maradnak vagy akár felszívhatják az eltolódó szelektív keresletet."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-05"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Precedent exists for admission-level interventions producing measurable segregation reductions without structural abolition",
+        "hu": "Vannak precedensek arra, hogy felvételi szintű beavatkozások mérhető elkülönülés-csökkenést eredményeznek a struktúra megszüntetése nélkül."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Works within existing centralized admissions infrastructure rather than requiring new governance architecture",
+        "hu": "A meglévő központosított felvételi infrastruktúrán belül működik, ahelyett hogy új kormányzati architektúrát igényelne."
+      },
+      {
+        "en": "Directly targets the SES-correlated selection mechanism documented as an OECD outlier",
+        "hu": "Közvetlenül célozza az OECD által kivételként dokumentált, a társadalmi‑gazdasági státusszal (SES) korreláló szelekciós mechanizmust."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Non-covered exempt schools could function as an unintended sorting valve, concentrating advantaged demand outside the reformed admissions channel",
+        "hu": "A nem lefedett, mentességet élvező iskolák akaratlan szelekciós szelepként működhetnek, koncentrálva a kedvező helyzetű keresletet a reformált felvételi csatornán kívül."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Church-maintained and private schools' admissions exemptions place a substantial share of the sector outside the reform's institutional reach",
+        "hu": "Az egyházi fenntartású és magániskolák felvételi mentessége a szektor jelentős részét a reform intézményi hatókörén kívülre helyezi."
+      },
+      {
+        "en": "Administrative compatibility is undermined by fragmented authority over admissions across maintainer types",
+        "hu": "Az adminisztratív kompatibilitást aláássa a felvételi hatáskör fenntartótípusok közötti fragmentáltsága"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a196b8f108fb067f615e8732aec8596c0570670a2a5016b1fe3a01e530cd464a",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,277 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-korai-szelekcio-s1-01",
+      "A-korai-szelekcio-s1-02",
+      "A-korai-szelekcio-s1-03"
+    ],
+    "change_level": "governance",
+    "costs": [
+      {
+        "en": "SES-proxy data infrastructure (administrative data-linkage/register build); low-cost option (self-declared SES checklist) has minimal fiscal footprint, while the high-cost option (verified administrative register linkage, akin to Admin3-scale infrastructure) lacks a published fiscal range in current Hungarian costing studies.",
+        "hu": "SES-proxy adatinfrastruktúra (adminisztratív adatkapcsolási/nyilvántartás-építés); az alacsony költségű opció (önbevallásos SES-lista) fiskális lábnyoma minimális, míg a magas költségű opció (ellenőrzött adminisztratív nyilvántartás-kapcsolás, az Admin3-szintű infrastruktúrához hasonlóan) fiskális tartományára nincs publikált adat a jelenlegi magyar költségbecslésekben."
+      },
+      {
+        "en": "Exam redesign and psychometric validation costs, one-off plus recurring revalidation, magnitude unpublished in Hungarian sources.",
+        "hu": "Vizsgaátalakítási és pszichometriai validálási költségek, egyszeri plusz ismétlődő revalidáció, mértéke nem publikált magyar forrásokban."
+      },
+      {
+        "en": "Enforcement and monitoring costs across state, church, and foundation maintainers, unbudgeted and structurally complicated by maintainer plurality.",
+        "hu": "Végrehajtási és monitoring költségek állami, egyházi és alapítványi fenntartók körében, betervezetlenek és strukturálisan bonyolítottak a fenntartói pluralitás miatt."
+      }
+    ],
+    "equity_impact": {
+      "en": "Likely reduces SES-skew within remaining selective places, but middle-SES or rural pupils without qualifying SES-proxy status could face reduced access if quotas displace them from the residual non-quota places, and the scenario offers no specific safeguard or compensating mechanism for this displaced group; it also does nothing to address the ~40% of general schools (60% in villages) that send zero pupils to tracked programs regardless of admission-rule design.",
+      "hu": "Valószínűleg csökkenti a SES-torzítást a megmaradó szelektív helyeken, de a középső SES-sávba tartozó vagy vidéki tanulók, akik nem felelnek meg az SES-proxy feltételeknek, csökkent hozzáférést szenvedhetnek el, ha a kvóták kiszorítják őket a maradék nem-kvótás helyekről, és a forgatókönyv nem javasol konkrét biztosítékot vagy kompenzáló mechanizmust ennek a kiszorult csoportnak; továbbá semmit nem tesz azon általános iskolák kb. 40%-ának (falvakban 60%-ának) helyzetén, amelyek egyáltalán nem küldenek tanulót tagozatos programokba, függetlenül a felvételi szabályok kialakításától."
+    },
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      {
+        "en": "Reduced SES-skew in admitted cohorts at the 6/8-year gate, addressing the documented near-zero intake share of multiply-disadvantaged pupils.",
+        "hu": "Csökkentett SES-torzítás a felvett évfolyamokban a hat/nyolcosztályos kapunál, kezelve a többszörösen hátrányos helyzetű tanulók dokumentáltan közel nulla felvételi arányát."
+      },
+      {
+        "en": "Preserves the approximately 10% competency-gain advantage associated with 6/8-year tracks for admitted students, since the track structure itself is untouched.",
+        "hu": "Megőrzi a hat/nyolcosztályos képzésekhez kapcsolódó, felvett tanulóknál mért mintegy 10%-os kompetencia-növekedési előnyt, mivel a képzési szerkezet önmagában érintetlen marad."
+      },
+      {
+        "en": "Lower political disruption than structural reform, since it does not touch the statutory definition of secondary education or require felmenő-rendszer treatment of the whole system, though this should not be read as evidence the approach is free of reversal risk given the 2026 Fidesz culture-war framing of any selection-related change.",
+        "hu": "Kisebb politikai zavart okoz, mint a szerkezeti reform, mivel nem érinti a középfokú oktatás törvényi meghatározását és nem igényli a felmenő rendszer alkalmazását az egész rendszerre, ám ez nem tekinthető annak bizonyítékaként, hogy a megközelítés mentes a visszafordítási kockázattól, tekintve a 2026-os Fidesz kultúrharcos keretezését minden szelekcióval kapcsolatos változásra."
+      }
+    ],
+    "finding_refs": [
+      "F-korai-szelekcio-demography-01",
+      "F-korai-szelekcio-demography-02",
+      "F-korai-szelekcio-demography-03",
+      "F-korai-szelekcio-demography-04",
+      "F-korai-szelekcio-demography-05",
+      "F-korai-szelekcio-demography-06",
+      "F-korai-szelekcio-demography-07",
+      "F-korai-szelekcio-demography-08",
+      "F-korai-szelekcio-demography-09",
+      "F-korai-szelekcio-demography-10",
+      "F-korai-szelekcio-education_finance-01",
+      "F-korai-szelekcio-education_finance-02",
+      "F-korai-szelekcio-education_finance-03",
+      "F-korai-szelekcio-education_finance-04",
+      "F-korai-szelekcio-education_finance-05",
+      "F-korai-szelekcio-education_finance-06",
+      "F-korai-szelekcio-education_finance-07",
+      "F-korai-szelekcio-education_finance-08",
+      "F-korai-szelekcio-equity_and_social_mobility-01",
+      "F-korai-szelekcio-equity_and_social_mobility-02",
+      "F-korai-szelekcio-equity_and_social_mobility-03",
+      "F-korai-szelekcio-equity_and_social_mobility-04",
+      "F-korai-szelekcio-equity_and_social_mobility-05",
+      "F-korai-szelekcio-equity_and_social_mobility-06",
+      "F-korai-szelekcio-equity_and_social_mobility-07",
+      "F-korai-szelekcio-equity_and_social_mobility-08",
+      "F-korai-szelekcio-finnish_reform-01",
+      "F-korai-szelekcio-finnish_reform-02",
+      "F-korai-szelekcio-finnish_reform-03",
+      "F-korai-szelekcio-finnish_reform-04",
+      "F-korai-szelekcio-finnish_reform-05",
+      "F-korai-szelekcio-finnish_reform-06",
+      "F-korai-szelekcio-finnish_reform-07",
+      "F-korai-szelekcio-finnish_reform-08",
+      "F-korai-szelekcio-finnish_reform-09",
+      "F-korai-szelekcio-finnish_reform-10",
+      "F-korai-szelekcio-finnish_reform-11",
+      "F-korai-szelekcio-hungarian_education_system-01",
+      "F-korai-szelekcio-hungarian_education_system-02",
+      "F-korai-szelekcio-hungarian_education_system-03",
+      "F-korai-szelekcio-hungarian_education_system-04",
+      "F-korai-szelekcio-hungarian_education_system-05",
+      "F-korai-szelekcio-hungarian_education_system-06",
+      "F-korai-szelekcio-hungarian_education_system-07",
+      "F-korai-szelekcio-hungarian_education_system-08",
+      "F-korai-szelekcio-hungarian_education_system-09",
+      "F-korai-szelekcio-hungarian_education_system-10",
+      "F-korai-szelekcio-hungarian_education_system-11",
+      "F-korai-szelekcio-hungarian_education_system-12",
+      "F-korai-szelekcio-hungarian_education_system-13",
+      "F-korai-szelekcio-implementation_planning-01",
+      "F-korai-szelekcio-implementation_planning-02",
+      "F-korai-szelekcio-implementation_planning-03",
+      "F-korai-szelekcio-implementation_planning-04",
+      "F-korai-szelekcio-implementation_planning-05",
+      "F-korai-szelekcio-implementation_planning-06",
+      "F-korai-szelekcio-implementation_planning-07",
+      "F-korai-szelekcio-implementation_planning-08",
+      "F-korai-szelekcio-implementation_planning-09",
+      "F-korai-szelekcio-implementation_planning-10",
+      "F-korai-szelekcio-implementation_planning-11",
+      "F-korai-szelekcio-international_comparison-01",
+      "F-korai-szelekcio-international_comparison-02",
+      "F-korai-szelekcio-international_comparison-03",
+      "F-korai-szelekcio-international_comparison-04",
+      "F-korai-szelekcio-international_comparison-05",
+      "F-korai-szelekcio-international_comparison-06",
+      "F-korai-szelekcio-international_comparison-07",
+      "F-korai-szelekcio-international_comparison-08",
+      "F-korai-szelekcio-international_comparison-09",
+      "F-korai-szelekcio-international_comparison-10",
+      "F-korai-szelekcio-international_comparison-11",
+      "F-korai-szelekcio-international_comparison-12",
+      "F-korai-szelekcio-legal_and_governance-01",
+      "F-korai-szelekcio-legal_and_governance-02",
+      "F-korai-szelekcio-legal_and_governance-03",
+      "F-korai-szelekcio-legal_and_governance-04",
+      "F-korai-szelekcio-legal_and_governance-05",
+      "F-korai-szelekcio-legal_and_governance-06",
+      "F-korai-szelekcio-legal_and_governance-07",
+      "F-korai-szelekcio-legal_and_governance-08",
+      "F-korai-szelekcio-legal_and_governance-09",
+      "F-korai-szelekcio-polish_reform-01",
+      "F-korai-szelekcio-polish_reform-02",
+      "F-korai-szelekcio-polish_reform-03",
+      "F-korai-szelekcio-polish_reform-04",
+      "F-korai-szelekcio-polish_reform-05",
+      "F-korai-szelekcio-polish_reform-06",
+      "F-korai-szelekcio-polish_reform-07",
+      "F-korai-szelekcio-polish_reform-08",
+      "F-korai-szelekcio-polish_reform-09",
+      "F-korai-szelekcio-polish_reform-10",
+      "F-korai-szelekcio-political_feasibility-01",
+      "F-korai-szelekcio-political_feasibility-02",
+      "F-korai-szelekcio-political_feasibility-03",
+      "F-korai-szelekcio-political_feasibility-04",
+      "F-korai-szelekcio-political_feasibility-05",
+      "F-korai-szelekcio-political_feasibility-06",
+      "F-korai-szelekcio-political_feasibility-07",
+      "F-korai-szelekcio-political_feasibility-08",
+      "F-korai-szelekcio-political_feasibility-09",
+      "F-korai-szelekcio-political_feasibility-10",
+      "F-korai-szelekcio-political_feasibility-11",
+      "F-korai-szelekcio-political_feasibility-12",
+      "F-korai-szelekcio-political_feasibility-13",
+      "F-korai-szelekcio-political_feasibility-14",
+      "F-korai-szelekcio-political_feasibility-15",
+      "F-korai-szelekcio-portuguese_reform-01",
+      "F-korai-szelekcio-portuguese_reform-02",
+      "F-korai-szelekcio-portuguese_reform-03",
+      "F-korai-szelekcio-portuguese_reform-04",
+      "F-korai-szelekcio-portuguese_reform-05",
+      "F-korai-szelekcio-portuguese_reform-06",
+      "F-korai-szelekcio-portuguese_reform-07",
+      "F-korai-szelekcio-portuguese_reform-08",
+      "F-korai-szelekcio-school_network_planning-01",
+      "F-korai-szelekcio-school_network_planning-02",
+      "F-korai-szelekcio-school_network_planning-03",
+      "F-korai-szelekcio-school_network_planning-04",
+      "F-korai-szelekcio-school_network_planning-05",
+      "F-korai-szelekcio-school_network_planning-06",
+      "F-korai-szelekcio-school_network_planning-07",
+      "F-korai-szelekcio-school_network_planning-08",
+      "F-korai-szelekcio-school_network_planning-09"
+    ],
+    "goal": {
+      "en": "Reduce family-capital-driven sorting at the point of entry into 6/8-year gimnázium tracks, without dismantling the track structure itself.",
+      "hu": "Csökkenteni a családi tőke által vezérelt szelekciót a hat- és nyolcosztályos gimnáziumi belépési pontnál, a szerkezet lebontása nélkül."
+    },
+    "implementation_steps": [
+      {
+        "action": {
+          "en": "Design SES-proxy criteria and draft legislative or decree text, incorporating felmenő-rendszer phase-in requirements and at least the ~1-year statutory lead time established by past Nkt. amendments.",
+          "hu": "SES-proxy kritériumok kidolgozása és törvényi vagy rendeleti szövegtervezet, beépítve a felmenő rendszerű bevezetés követelményeit és a korábbi Nkt.-módosítások által megállapított legalább 1 éves törvényi felkészülési időt."
+        },
+        "actor": {
+          "en": "Ministry of Education / Oktatási Hivatal",
+          "hu": "Oktatási Minisztérium / Oktatási Hivatal"
+        },
+        "timeline": {
+          "en": "year 1-2",
+          "hu": "1-2. év"
+        }
+      },
+      {
+        "action": {
+          "en": "Legislate uniform admission-equity rules applicable across maintainer types, with explicit negotiation provisions for church/foundation maintainer autonomy agreements; given documented litigation and consultation risks, this step is more realistically multi-year than a single legislative session.",
+          "hu": "Egységes felvételi méltányossági szabályok törvénybe iktatása minden fenntartótípusra kiterjedően, kifejezett tárgyalási rendelkezésekkel az egyházi/alapítványi fenntartói autonómia-megállapodásokra vonatkozóan; a dokumentált peres és konzultációs kockázatok miatt ez a lépés realisztikusan több évet vesz igénybe egy törvényhozási ülésszaknál."
+        },
+        "actor": {
+          "en": "Legislature (Országgyűlés)",
+          "hu": "Országgyűlés"
+        },
+        "timeline": {
+          "en": "year 2-4",
+          "hu": "2-4. év"
+        }
+      },
+      {
+        "action": {
+          "en": "Pilot the SES-proxy admission mechanism and coaching-resistant exam format in a subset of regions/schools before national rollout, monitoring for circumvention.",
+          "hu": "Az SES-proxy felvételi mechanizmus és a korrepetálás-ellenálló vizsgaforma kísérleti bevezetése régiók/iskolák egy részében a nemzeti kiterjesztés előtt, a kijátszás monitorozásával."
+        },
+        "actor": {
+          "en": "Oktatási Hivatal + school maintainers",
+          "hu": "Oktatási Hivatal és iskolafenntartók"
+        },
+        "timeline": {
+          "en": "year 3-5",
+          "hu": "3-5. év"
+        }
+      },
+      {
+        "action": {
+          "en": "National rollout with felmenő-rendszer cohort protections and published annual monitoring of admitted-cohort SES composition.",
+          "hu": "Országos kiterjesztés felmenő rendszerű évfolyam-védelemmel és a felvett évfolyamok SES-összetételéről szóló éves nyilvános monitoring jelentéssel."
+        },
+        "actor": {
+          "en": "Ministry of Education / national administration",
+          "hu": "Oktatási Minisztérium / országos igazgatás"
+        },
+        "timeline": {
+          "en": "year 5-7",
+          "hu": "5-7. év"
+        }
+      }
+    ],
+    "legacy_scenario_id": "S1",
+    "mechanisms": [
+      {
+        "en": "SES-aware quotas or proxy indicators reserve a share of places for disadvantaged applicants, directly countering the documented ~46% vs ~22% rejection-rate gap between low- and high-poverty-share classes.",
+        "hu": "Az SES-alapú kvóták vagy proxy-mutatók a hátrányos helyzetű jelentkezők számára helyeket tartanak fenn, közvetlenül ellensúlyozva a dokumentált kb. 46% és 22% közötti elutasítási rátakülönbséget az alacsony és magas szegénységi arányú osztályok között."
+      },
+      {
+        "en": "A less coaching-sensitive exam format would reduce the weight of family test-prep resources in admission outcomes, though no Hungarian evidence confirms any specific alternative format's effectiveness.",
+        "hu": "Egy kevésbé korrepetálás-érzékeny felvételi vizsgaforma csökkentené a családi felkészítő erőforrások súlyát a felvételi eredményekben, bár semmilyen magyar bizonyíték nem igazolja konkrét alternatív forma hatékonyságát."
+      },
+      {
+        "en": "Uniform score-threshold rules across maintainers would reduce administratively inconsistent, tightening cutoffs (e.g., 70/100 points at some institutions) that currently vary by maintainer discretion.",
+        "hu": "A fenntartók közötti egységes ponthatár-szabályok csökkentenék a jelenleg fenntartónkénti belátás szerint változó, egyre szigorodó és administratívan inkonzisztens (pl. néhány intézményben 70/100 pontos) küszöbértékeket."
+      }
+    ],
+    "risks": [
+      {
+        "en": "Implementation by ministerial decree rather than cardinal law leaves the mechanism exposed to reversal by a subsequent government within a single electoral cycle; the scenario does not propose a specific entrenchment design (e.g., cardinal-law status, cross-party pact, or sunset-clause safeguard) to mitigate this.",
+        "hu": "A miniszteri rendelettel — nem sarkalatos törvénnyel — történő végrehajtás a mechanizmust kiteszi egy következő kormány által történő, egyetlen választási cikluson belüli visszafordításnak; a forgatókönyv nem javasol konkrét beágyazási megoldást (pl. sarkalatos törvényi státusz, pártközi megállapodás vagy sunset-clause biztosíték) ennek mérséklésére."
+      },
+      {
+        "en": "Fidesz's demonstrated framing of any selection-related change as ideologically totalitarian creates reversal risk even for a narrower admissions-only intervention, not only for structural abolition.",
+        "hu": "A Fidesz bizonyított hajlama arra, hogy minden szelekcióval kapcsolatos változást ideológiailag totalitáriusnak keretezzen, visszafordítási kockázatot teremt még egy szűkebb, csak a felvételre vonatkozó beavatkozás esetén is, nem csak a szerkezeti megszüntetésnél."
+      },
+      {
+        "en": "Church and foundation maintainer coalition constraints (Tisza's 12-point program commitment to preserve prior operating conditions) may block uniform enforcement, creating a two-tier compliance landscape.",
+        "hu": "Az egyházi és alapítványi fenntartói koalíciós kötöttségek (Tisza 12 pontos programjának vállalása a korábbi működési feltételek megtartására) blokkolhatják az egységes végrehajtást, kétszintű megfelelési helyzetet létrehozva."
+      }
+    ],
+    "title": {
+      "en": "Admissions and intake-equity regulation (keep structure, fix the gate)",
+      "hu": "Felvételi és bejutási méltányossági szabályozás (a szerkezet marad, a kapu változik)"
+    },
+    "uncertainty_refs": [
+      "U-korai-szelekcio-s1-01",
+      "U-korai-szelekcio-s1-02",
+      "U-korai-szelekcio-s1-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "TP-korai-szelekcio-s1",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a1afd53364abb5ed903ce8b2150725261c76be8c67a324e422228450207a2baa",
+  "topic": "korai-szelekcio"
+}

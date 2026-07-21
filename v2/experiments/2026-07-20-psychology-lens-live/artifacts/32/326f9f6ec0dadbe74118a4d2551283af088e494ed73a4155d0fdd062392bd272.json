@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal explicitly targets structural drivers (zoning, choice, legal exemptions) distinct from the tracking mechanism itself, which is consistent with the lens's emphasis that whole-system segregation has multiple independent causal channels requiring coordinated, not singular, correction. However, by design it leaves the tracking funnel and SES-linked admissions advantage untouched, so it addresses only one strand of a multi-strand problem.",
+      "hu": "Ez a javaslat kifejezetten a strukturális hajtóerőkre (zoning, választás, jogi kivételek) céloz, amelyek különböznek magától a szelekciós mechanizmustól, ami összhangban áll azzal a nézettel, hogy a rendszerszintű szegregációnak több, egymástól független oksági csatornája van, amelyek koordinált, nem egyedüli korrekciót igényelnek. Ugyanakkor tervezésénél fogva a szelekciós tölcsért és a társadalmi-gazdasági státusszal összekapcsolt felvételi előnyt érintetlenül hagyja, tehát csak a több szálból álló probléma egyetlen szálát kezeli."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-02",
+      "F-live-portuguese_reform-03",
+      "F-live-portuguese_reform-06"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      {
+        "en": "Directly complements structural-age reforms (T2) or admissions reforms (T3), and the proposal itself acknowledges this by referencing coordination with T4-style levers in other proposals' mechanisms",
+        "hu": "Közvetlenül kiegészíti a strukturális életkor-reformokat (T2) vagy a felvételi reformokat (T3), és a javaslat maga is elismeri ezt azáltal, hogy hivatkozik a többi javaslat mechanizmusában szereplő T4-szerű karokkal való koordinációra."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Recognizes that segregation has channels independent of tracking age, aligning with the whole-system principle that isolated interventions targeting only one channel (e.g., age or admissions) will not resolve segregation attributable to other channels",
+        "hu": "Elismeri, hogy a szegregációt olyan csatornák is alakítják, amelyek függetlenek a sávos beiskolázás életkorától, és összhangban áll azzal az egész rendszerre vonatkozó elvvel, hogy egyetlen csatornára (pl. életkor vagy felvételi) célzott elszigetelt beavatkozások nem fogják megszüntetni az egyéb csatornákra visszavezethető szegregációt."
+      },
+      {
+        "en": "Precedent exists that administrative/structural levers of this kind produced at least temporary measurable reduction in segregation (F-live-portuguese_reform-06)",
+        "hu": "Létezik precedens arra, hogy az ilyen jellegű adminisztratív/szerkezeti eszközök legalább átmeneti, mérhető csökkenést eredményeztek a szegregációban (F-live-portuguese_reform-06)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Because segregation is a whole-system property (highest in EU, F-live-portuguese_reform-03), a zoning-only lever risks being overwhelmed by the larger structural funnel and SES-selection effects it does not touch, reproducing the historical stagnation pattern",
+        "hu": "Mivel a szegregáció egész rendszerre jellemző tulajdonság (highest in EU, F-live-portuguese_reform-03), a kizárólag zoning-alapú beavatkozás könnyen túlterhelődhet az általános strukturális tölcsérrel és a SES-szelektivitási hatásokkal, amelyekhez nem nyúl, így reprodukálva a történeti stagnálás mintázatát."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Same precedent shows these gains stagnated, indicating the equity criterion may only be partially and temporarily satisfied absent complementary quality-levelling or structural age reform",
+        "hu": "Ugyanez a precedens azt mutatja, hogy ezek a nyereségek stagnáltak, ami azt jelzi, hogy az egyenlőség kritériuma csak részben és átmenetileg teljesülhet kiegészítő minőségkiegyenlítő vagy strukturális életkor-reform hiányában."
+      },
+      {
+        "en": "Does not address the SES-linked selection advantage documented independent of geography (F-live-portuguese_reform-02), leaving a core equity mechanism outside its scope",
+        "hu": "Nem foglalkozik a földrajztól függetlenül dokumentált, a társadalmi‑gazdasági státuszhoz (SES) kötődő szelekciós előnnyel (F-live-portuguese_reform-02), így egy alapvető egyenlőségi mechanizmust hagy ki a hatóköréből."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-portuguese_reform",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4589c8c5fc11818343ec1e12110e2cf4a38a542eca8025724c06c51bb2c3e59d",
+  "topic": "korai-szelekcio"
+}

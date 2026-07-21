@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal is unusual in explicitly targeting mechanisms distinct from the age-10 selection process: maintainer exemptions permitting Roma-only segregated schooling (F-live-hungarian_education_system-05) and geographic/settlement-driven stratification independent of academic tracking (F-live-hungarian_education_system-06). Institutional fit is mixed: it requires confronting a specific judicial precedent (the Curia's exemption ruling) and municipal-level zoning authority, both of which sit partly outside standard ministerial admissions control. By leaving the centralized entrance-exam mechanism (F-live-hungarian_education_system-03) and its associated 85% selective-school share (F-live-hungarian_education_system-01) fully unchanged, system coverage of the tracking-related sorting channel is intentionally zero, meaning this proposal alone cannot address the segregation dimension most closely tied to the exam-based selection statistics, even if it succeeds on its own distinct causal channel.",
+      "hu": "Ez a javaslat szokatlan abban, hogy kifejezetten olyan mechanizmusokat céloz meg, amelyek különböznek a 10 éves szelekciós folyamattól: a fenntartói kivételek, amelyek roma‑csak szegregált oktatást engednek meg (F-live-hungarian_education_system-05), és a földrajzi/település‑alapú stratifikáció, amely független az akadémiai tagolástól (F-live-hungarian_education_system-06). Az intézményi illeszkedés vegyes: szembesíteni kell egy konkrét jogi precedenssel (a Kúria kivételről szóló ítélete) és az önkormányzati szintű zónázási hatáskörrel, amelyek részben a minisztériumi felvételi kontroll hatáskörén kívül esnek. Azáltal, hogy a központosított felvételi vizsga mechanizmust (F-live-hungarian_education_system-03) és annak kapcsolt, 85%-os szelektív iskolai részesedését (F-live-hungarian_education_system-01) teljesen érintetlenül hagyja, a rendszer lefedettsége a tagoláshoz kapcsolódó szűrőcsatorna tekintetében szándékosan nulla, ami azt jelenti, hogy önmagában ez a javaslat nem tudja kezelni a szegregációs dimenziót, amely legközvetlenebben kapcsolódik a vizsgán alapuló kiválasztási statisztikákhoz, még akkor sem, ha saját külön oksági csatornáján sikeres."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-06"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could reduce segregation through a genuinely separate causal channel without requiring resolution of the politically fraught track-age debate",
+        "hu": "Csökkentheti a szegregációt egy valóban különálló kauzális csatornán keresztül anélkül, hogy meg kellene oldani a politikailag kényes tagozat–életkor vitát."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Targets a documented, legally identifiable lever (maintainer exemptions) distinct from the admissions-exam mechanism",
+        "hu": "Egy dokumentált, jogilag azonosítható beavatkozási pontot (fenntartói mentességek) céloz, amely elkülönül a felvételi vizsgamechanizmustól."
+      },
+      {
+        "en": "Recognizes geographic sorting as an independent institutional channel requiring separate governance tools",
+        "hu": "Felismeri a földrajzi szelekciót független intézményi csatornaként, amely külön irányítási eszközöket igényel."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Prior administrative desegregation measures already stagnated mid-decade, and the Curia's precedent creates a specific legal reversal risk for any exemption-review component",
+        "hu": "A korábbi adminisztratív deszegregációs intézkedések már évtized közepén elakadtak, és a Kúria precedense konkrét jogi visszafordítási kockázatot teremt bármely kivétel-ellenőrzési elem számára."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Leaves the centralized admissions/selection mechanism and its associated high selectivity share completely unchanged",
+        "hu": "A központosított felvételi/szelekciós mechanizmust és annak magas kiválasztottsági arányát teljesen változatlanul hagyja."
+      },
+      {
+        "en": "Legal and administrative levers (Curia precedent, municipal zoning under KLIK centralization) sit outside straightforward ministerial control",
+        "hu": "A jogi és adminisztratív eszközök (Curia precedens, önkormányzati övezeti szabályozás a KLIK központosítása alatt) nincsenek közvetlenül a minisztériumi kontrollon belül."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "b1b9f12e4cb246507bfd947855ff5ddfe7a4c30df1bdc7bb4a0d7bb803ad1e3c",
+  "topic": "korai-szelekcio"
+}

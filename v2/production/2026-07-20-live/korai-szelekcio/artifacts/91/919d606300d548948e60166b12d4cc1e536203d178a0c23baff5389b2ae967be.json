@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal's discretionary gatekeeping mechanism is demographically relevant primarily through its cross-maintainer reach: by extending administrative constraint to church and private schools, it closes a gap that purely state-sector contraction levers (like T2) cannot address, which matters because church-sector growth has occurred specifically in a period of shrinking overall cohorts, suggesting relative rather than absolute expansion in some cases. The proposal does not directly engage cohort-decline evidence, but its logic of blocking new/expanded tracks that would increase segregation is compatible with, and arguably strengthened by, the demographic case for contraction rather than expansion: in a shrinking-cohort environment, any new track approval is inherently harder to justify on capacity-need grounds alone, making segregation-risk review a plausible complementary filter. However, as a purely preventive tool, it does nothing about already-existing tracks in localities already showing severe contraction (F-live-demography-04), nor does it address the mechanical class-size threshold problem for existing tracks in shrinking areas.",
+      "hu": "Ennek a javaslatnak a mérlegelésen alapuló kapuőri mechanizmusa demográfiailag elsősorban a fenntartók közötti hatókörén keresztül releváns: az adminisztratív korlátozás kiterjesztésével az egyházi és magániskolákra bezárja azt a rést, amelyet a tisztán állami szektor zsugorodási eszközei (mint a T2) nem képesek kezelni, ami azért fontos, mert az egyházi szektor növekedése kifejezetten egy zsugorodó összkohorsz időszakában következett be, ami egyes esetekben relatív, nem abszolút bővülést sugall. A javaslat nem lép közvetlenül a kohorszcsökkenés bizonyítékával kapcsolatban, de az az elve, hogy blokkolja az új/bővített pályákat, amelyek növelnék a szeparációt, összhangban áll, és talán megerősödik is a demográfiai ügy mellett a bővítés helyett való zsugorodás érveivel: egy zsugorodó kohorsz-környezetben bármely új pálya-engedélyezés önmagában nehezebben igazolható kapacitási szükségletek alapján, így a szeparáció-kockázat felülvizsgálata ésszerű kiegészítő szűrő lehet. Azonban mint tisztán megelőző eszköz, nem tesz semmit a már létező pályákkal kapcsolatban azokban a településekben, amelyek már súlyos zsugorodást mutatnak (F-live-demography-04), és nem kezeli a mechanikus osztálylétszám-küszöb problémáját a már meglévő pályák esetében a zsugorodó területeken."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Segregation-impact test criteria could explicitly incorporate demographic viability data (local cohort trajectory, class-size thresholds) to strengthen the objectivity and consistency of gatekeeping decisions",
+        "hu": "A szegregációs hatásvizsgálati kritériumok kifejezetten beépíthetnék a demográfiai életképességi adatokat (helyi kohorsz pályák, osztálylétszám‑határértékek), hogy megerősítsék a kapuzási döntések objektivitását és következetességét."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Cross-maintainer reach addresses the demographic reality that state-sector-only contraction levers leave church/private schools, a growing segment, outside demographic-linked capacity management",
+        "hu": "A többfenntartós hatókör kezeli azt a demográfiai valóságot, hogy az állami szektor kizárólagos szűkítési eszközei a növekvő egyházi/magániskola-szegmenst a demográfiához kötött kapacitáskezelésen kívülre helyezik"
+      },
+      {
+        "en": "Preventing new-track expansion in a shrinking-cohort environment is demographically coherent, since new selective capacity is harder to justify when the underlying student population is contracting nationally (F-live-demography-01, F-live-demography-02)",
+        "hu": "Az új tagozati bővítés megakadályozása zsugorodó kohorszok környezetében demográfiailag koherens, hiszen új szelektív kapacitás nehezebben indokolható, ha az alapul szolgáló tanulólétszám országosan csökken (F-live-demography-01, F-live-demography-02)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Without addressing existing tracks or teacher workforce constraints, formalized gatekeeping addresses only marginal future growth while the bulk of demographic pressure on existing selective provision continues unabated",
+        "hu": "A meglévő tagozatok vagy a tanári munkaerő korlátainak kezelés nélkül a formalizált beléptetési korlátozások csak a jövőbeni növekedés marginális részét kezelik, miközben a demográfiai nyomás zöme a meglévő szelektív kínálaton változatlanul fennmarad."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Purely preventive scope means it does not address the already-existing tracks facing mechanical viability threats from cohort decline (F-live-demography-05) in regions already showing severe contraction (F-live-demography-04)",
+        "hu": "A kizárólag megelőző jelleg azt jelenti, hogy nem kezeli azokat a már meglévő tagozatokat, amelyek mechanikai életképességi veszélyekkel néznek szembe a kohorszcsökkenés miatt (F-live-demography-05) olyan régiókban, amelyek már súlyos zsugorodást mutatnak (F-live-demography-04)."
+      },
+      {
+        "en": "No engagement with the aging teacher workforce or rural staffing shortage (F-live-demography-09), which independently constrains the operational viability of any surviving tracks in peripheral regions",
+        "hu": "Nem foglalkozik az elöregedő tanári állománnyal vagy a vidéki személyzethiánnyal (F-live-demography-09), amelyek önmagukban korlátozzák bármely perifériás régióban fennmaradó szelektív pálya működési életképességét"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-demography",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "abc1e4984622c54b0e3b4f721cdf539e93331fdc266fae17a894178f8d512ff5",
+  "topic": "korai-szelekcio"
+}

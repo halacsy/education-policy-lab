@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Shifting to census-based allocation is a finance-architecture question that the demography lens can only assess indirectly, through its interaction with cohort decline and fiscal capacity. The lens notes long-standing fiscal deterioration (central funding coverage falling from 80-90% to 50-70%, 50% in small villages) predating and compounding current cohort decline; a census-based formula tied to population counts would need explicit adjustment for shrinking and unevenly distributed child populations, or it risks replicating the fiscal squeeze in regions with the fastest contraction.",
+      "hu": "A népszámlálás-alapú allokáció pénzügyi-architektúrális kérdés, amelyet a demográfiai lencse csak közvetetten tud értékelni, a kohorsz-összeomlás és a fiskális kapacitás kölcsönhatásán keresztül. A lencse megjegyzi a régóta tartó fiskális romlást (a központi finanszírozás fedezete 80–90%-ról 50–70%-ra csökkent, kis falvakban 50%), amely a jelenlegi kohorsz-összeomlást megelőzi és fokozza; egy népszámlálásra kötött képlettel működő finanszírozásnak kifejezett kiigazításokra lenne szüksége a fogyó és egyenetlenül elosztott gyermekpopuláció miatt, különben fennáll a kockázata, hogy a fiskális megszorítást lemásolja azokban a régiókban, ahol a leggyorsabb a zsugorodás."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-demography-09",
+      "F-live-demography-10"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Census-based funding could be explicitly indexed to locked-in demographic projections (0-4 cohort decline) to build a multi-year predictable financing horizon rather than reactive annual adjustment",
+        "hu": "A népszámlálás-alapú finanszírozás kifejezetten indexelhető a rögzült demográfiai előrejelzésekhez (0–4 korosztály csökkenése), hogy többéves, kiszámítható finanszírozási horizontot teremtsen a reaktív éves kiigazítás helyett."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Recognizes a documented independent fiscal pressure (declining central cost-coverage share) that compounds demographic contraction, suggesting finance redesign is timely regardless of SEN-specific incentive effects",
+        "hu": "Elismeri a dokumentált, független fiskális nyomást (a központi költség-támogatási arány csökkenése), amely összegződik a demográfiai zsugorodással, és azt sugallja, hogy a finanszírozás áttervezése időszerű, függetlenül a SEN-specifikus ösztönzőhatásoktól"
+      }
+    ],
+    "threats": [
+      {
+        "en": "If census-based formulas do not account for the disproportionate cost structure of small single-class rural schools already underfunded relative to the 1990s baseline, contraction could accelerate closures or service withdrawal in exactly the areas with highest disadvantage concentration",
+        "hu": "Ha a népszámláláson alapuló képletek nem veszik figyelembe a kis, egylégterű vidéki iskolák aránytalan költségszerkezetét, amelyek már a 1990-es évek bázisához képest alulfinanszírozottak, a szűkítés felgyorsíthatja a bezárásokat vagy a szolgáltatások visszavonását éppen azokban a térségekben, ahol a hátrány koncentrációja a legnagyobb."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "No demographic evidence directly links Hungary's financing mechanism to the identification rise, so the intervention's core rationale sits outside this lens's evidentiary reach",
+        "hu": "Nincs demográfiai bizonyíték, amely közvetlenül összekötné Magyarország finanszírozási mechanizmusát a diagnosztizálások növekedésével, ezért a beavatkozás központi indoklása e szemszög bizonyítéki hatókörén kívül esik"
+      },
+      {
+        "en": "Population-level allocation formulas require careful design to avoid disadvantaging shrinking or sparsely populated rural areas already facing per-pupil cost disadvantages under the small-village funding shortfall",
+        "hu": "A népességszintű elosztási formulákat gondosan kell megtervezni, hogy elkerüljük a zsugorodó vagy ritkán lakott vidéki területek hátrányos megkülönböztetését, amelyek amúgy is egy tanulóra jutó költséghátránnyal küzdenek a kis lélekszámú falvak finanszírozási hiánya miatt"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-demography",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5fde70a06090e1daa78c74e343a657523755e1b8d8a84056e450e191ab9cc230",
+  "topic": "sni-letszamnovekedes"
+}

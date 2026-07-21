@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03",
+      "A-live-school_network_planning-04"
+    ],
+    "claim": {
+      "en": "Hungary's secondary education network comprises 880 schools designed to ensure proximity (public transport access within one hour) for all students, with dormitory places available for those unable to commute; however, this proximity guarantee applies to generic secondary schools, not specifically to geographically clustered six- and eight-year selective tracks.",
+      "hu": "A magyar középfokú oktatási hálózat 880 iskolából áll, amelyeket úgy terveztek, hogy minden tanuló számára biztosítsák a közelséget (tömegközlekedéssel egy órán belüli elérhetőség), és bentlakási férőhelyek állnak rendelkezésre azoknak, akik nem tudnak bejárni; ez a közelségi garancia azonban általános középfokú iskolákra vonatkozik, nem pedig kifejezetten a földrajzilag koncentrált hat‑ és nyolcosztályos szelekciós pályákra."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "System-level accessibility claim (under one hour) is not differentiated by track type",
+        "hu": "A rendszer szintű hozzáférhetőségi állítás (egy órán belül) nem különbözteti meg a szolgáltatási típusokat"
+      },
+      {
+        "en": "No dedicated school-bus service exists; reliance on public transport varies by rural settlement infrastructure",
+        "hu": "Nincs külön iskolabusz‑szolgáltatás; a közösségi közlekedésre való támaszkodás a vidéki települések infrastruktúrájától függően változik."
+      },
+      {
+        "en": "Dormitory supply data noted as 'exceeding demand,' but capacity and location relative to six-/eight-year tracks not specified",
+        "hu": "A kollégiumi kínálatra vonatkozó adatokat 'exceeding demand' megjegyzéssel rögzítették, de a kapacitás és az elhelyezkedés a hat-/nyolcéves tagozatokhoz viszonyítva nincs megadva"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-06",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "0a9c72c2b1627859a083d694bd9421c7f4d80487a16844c49ec4f0cc51fc69c9",
+  "topic": "korai-szelekcio"
+}

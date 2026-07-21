@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal preserves the centralized admissions exam and track structure (F-live-hungarian_education_system-03) entirely, seeking only to change compositional outcomes through quotas and outreach. Institutional fit is high in the narrow sense of requiring no structural or governance change, but system coverage is constrained by the same exemption gap seen elsewhere: church-maintained and private schools (F-live-hungarian_education_system-05) are not bound by standard admissions rules and could remain outside any quota mandate. The severity of the underlying selection differential (F-live-hungarian_education_system-01) and segregation extremity (F-live-hungarian_education_system-02) suggests quotas would need to operate against a strong existing institutional current rather than reforming it, raising questions about whether compositional mandates alone reach sufficient scale given below-average disadvantaged proficiency outcomes (F-live-hungarian_education_system-07).",
+      "hu": "Ez a javaslat a központosított felvételi vizsgát és pályastruktúrát (F-live-hungarian_education_system-03) teljes egészében megőrzi, és csak a kvóták és elérésnövelő intézkedések révén kíván összetételi kimeneteket változtatni. Az intézményi illeszkedés szűk értelemben magas, mivel nem igényel strukturális vagy kormányzati változást, de a rendszer‑lefedettséget ugyanaz a kivételi rés korlátozza, amelyet máshol is látunk: az egyházi fenntartású és magániskolák (F-live-hungarian_education_system-05) nincsenek kötve a szabványos felvételi szabályokhoz, és bármely kvóta‑kötelezettség alól kikerülhetnek. Az alapkiválasztási differenciál súlyossága (F-live-hungarian_education_system-01) és a szegregáció extrémitása (F-live-hungarian_education_system-02) azt sugallja, hogy a kvótáknak egy erős meglévő intézményi áramlattal szemben kellene működniük, ahelyett, hogy azt átalakítanák, ami felveti a kérdést, hogy maguk a kompozíciós kötelezettségek elérnek‑e elégséges skálát, tekintettel az átlag alatti hátrányos helyzetű tanulói teljesítményre (F-live-hungarian_education_system-07)."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-02",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-07"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could be layered onto existing centralized admissions infrastructure without new governance mechanisms",
+        "hu": "Ráépíthető a meglévő központosított felvételi infrastruktúrára új kormányzási mechanizmusok nélkül"
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Requires minimal structural disruption to existing centralized admissions and track architecture",
+        "hu": "A meglévő központosított felvételi és tagolási (track) architektúrában minimális strukturális zavarást igényel."
+      },
+      {
+        "en": "Directly targets compositional outcomes without needing consensus on track-age or admissions-design reform",
+        "hu": "Közvetlenül a szerkezeti összetétel eredményeit célozza, anélkül hogy konszenzusra lenne szükség a tagozódási életkorral vagy a felvételi rendszer átalakításával kapcsolatban."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Given the scale of Hungary's segregation being the highest measured in the EU, quota mechanisms confined to non-exempt public schools may be insufficient to shift system-wide sorting patterns",
+        "hu": "Figyelembe véve, hogy Magyarország szegregációja az EU-ban a mért legmagasabb, a kivételezett intézményekre nem vonatkozó köznevelési iskolákra korlátozott kvóta-mechanizmusok önmagukban valószínűleg nem elegendőek a rendszerszintű szelekciós minták eltolásához."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Church-maintained and private schools' admissions exemptions likely place a meaningful share of the selective sector outside quota coverage",
+        "hu": "Az egyházi fenntartású és magániskolák felvételi mentessége valószínűleg azt eredményezi, hogy a szelektív szektor jelentős hányada kívül esik a kvóták hatályán."
+      },
+      {
+        "en": "Operates against, rather than through reform of, the underlying selection mechanism producing Hungary's outlier selectivity rate",
+        "hu": "Ahelyett, hogy az alapul szolgáló szelekciós mechanizmus reformján keresztül működne, épp azzal ellentétesen hat, amely Magyarország kiugró szelektivitási arányát előidézi."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "99a5059171f45c15e8badc9a0d9a5d32b4ad8bd64870a989c7137d8399adaf95",
+  "topic": "korai-szelekcio"
+}

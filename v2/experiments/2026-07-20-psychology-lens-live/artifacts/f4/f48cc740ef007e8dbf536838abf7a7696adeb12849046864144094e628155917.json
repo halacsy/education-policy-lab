@@ -1,0 +1,41 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Quasi-experimental design exploiting variation in local availability of 6/8-year tracks (distance/capacity discontinuities) combined with administrative panel data on school-level SES/Roma composition; complement with synthetic control comparison against Hungarian regions/cohorts without such tracks.",
+      "hu": "Kvázi-kísérleti dizájn, amely kihasználja a helyi 6/8-year képzési formák elérhetőségének variációját (távolság-/kapacitás-diszkontinuitások), kombinálva adminisztratív paneladatokkal az iskola szintű SES/Roma összetételről; egészítse ki szintetikus kontroll összehasonlítással magyar régiók/koho rtok ellen, amelyeknél nincsenek ilyen képzések."
+    },
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t6"
+    ],
+    "question": {
+      "en": "What is the independent causal effect of the 6-/8-year gimnázium track structure itself (age of selection) on between-school socioeconomic and Roma segregation, net of free school choice, residential sorting, and church/private admissions exemptions?",
+      "hu": "Milyen független oksági hatása van maga a 6-/8 éves gimnáziumi sávstruktúrának (a kiválasztás életkora) az iskolák közötti társadalmi-gazdasági és roma szegregációra, figyelembe véve a szabad iskolaválasztást, a lakóhelyi szeparációt és az egyházi/ magánfelvételi mentességeket?"
+    },
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-international_comparison-01",
+      "U-live-finnish_reform-01",
+      "U-live-polish_reform-01",
+      "U-live-school_network_planning-01",
+      "U-live-education_finance-01",
+      "U-live-implementation_planning-01"
+    ],
+    "why_it_matters": {
+      "en": "Nearly every proposal's expected impact depends on how much of Hungary's segregation is attributable to the track structure versus other channels; without this, reforms may target the wrong lever entirely.",
+      "hu": "A szinte minden javaslat várható hatása attól függ, hogy a magyarországi szegregáció mekkora része tulajdonítható a tagozódási szerkezetnek szemben egyéb csatornákkal; enélkül a reformok teljesen rossz kart célozhatnak."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-baseline-01",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "40fd91b977a4705e22bedc365077de8f687525cd7535054a367afcddf060bef5",
+  "topic": "korai-szelekcio"
+}

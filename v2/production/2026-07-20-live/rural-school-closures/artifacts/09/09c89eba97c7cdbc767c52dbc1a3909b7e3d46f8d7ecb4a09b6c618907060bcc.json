@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This structural split directly engages transport and capacity criteria by matching commute burden to age-appropriate travel capacity, but its geographic feasibility rests on whether village populations retain sufficient cohort size for even grades 1-4, given the ongoing school-age cohort shrinkage nationwide.",
+      "hu": "Ez a strukturális szétválasztás közvetlenül érinti a közlekedési és kapacitási kritériumokat azzal, hogy a napi ingázási terhet összehangolja a koruknak megfelelő utazási kapacitással, de földrajzi megvalósíthatósága azon múlik, hogy a falusi népességek megtartják-e az 1–4. évfolyamokhoz szükséges elegendő kohorszméretet, tekintettel az országos iskoláskorú kohorsz folyamatos zsugorodására."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-07",
+      "F-live-school_network_planning-08",
+      "F-live-school_network_planning-02"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Multi-village route-based transport logistics models (as used for minority-language school buses across 13 counties) offer a transferable operational template for the upper-grade consolidation leg, though direct applicability to domestic consolidation is unconfirmed",
+        "hu": "A többfalu alapú, útvonaltervezésen nyugvó közlekedési‑logisztikai modellek (amelyeket például a kisebbségi nyelvű iskolabuszok 13 megyében használnak) átvihető működési sablont kínálnak a felsőbb évfolyamos konszolidációhoz, bár a hazai konszolidációra való közvetlen alkalmazhatóság nem megerősített."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Explicitly targets the transport criterion by aligning younger children's proximity needs with documented harms of long rural commutes, while shifting only older students to consolidated sites",
+        "hu": "Kifejezetten a közlekedési kritériumot célozza meg azáltal, hogy a kisebb gyerekek közelségi igényeit összehangolja a hosszú vidéki ingázások dokumentált károsaival, miközben csak az idősebb tanulókat helyezi át összevont helyszínekre"
+      },
+      {
+        "en": "Provides a network resilience mechanism (formally preserved buildings) distinct from simple closure, potentially reducing outright network attrition",
+        "hu": "Hálózati ellenállóképességi mechanizmust biztosít (formálisan megőrzött épületek), amely különbözik az egyszerű bezárástól, és potenciálisan csökkentheti a hálózat teljes körű elsorvadását."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Reversal risk analogous to Poland's 2017 rollback would be network-disruptive, particularly since Hungary's rural transport infrastructure gap makes any structural reorganization more fragile to reversal shocks than in better-connected systems",
+        "hu": "A Lengyelország 2017-es visszalépéséhez analóg visszafordulási kockázat hálózati szinten zavaró lenne, különösen mivel Magyarország vidéki közlekedési infrastruktúrahiánya minden szerkezeti átalakítást sérülékenyebbé tesz a visszafordulási sokkokkal szemben, mint a jobb összekapcsoltsággal rendelkező rendszerekben."
+      },
+      {
+        "en": "Continuing population decline could erode grade 1-4 cohorts below viability thresholds regardless of structural preservation, especially in villages already losing migration-driven population gains",
+        "hu": "A folyamatos népességcsökkenés a 1–4. évfolyamos kohorszokat a fenntarthatósági küszöb alá erodálhatja a strukturális megőrzés ellenére is, különösen azokban a falvakban, amelyek már elveszítik a migrációból származó népességnövekedést."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Older students' commute burden is redistributed rather than eliminated, and rural public transport in North-Eastern, South-Western, and Western regions is documented as impractical for daily commuting",
+        "hu": "A nagyobb korú tanulók ingázási terhe átcsoportosul ahelyett, hogy megszűnne, és a vidéki tömegközlekedést az Északkeleti, Délnyugati és Nyugati régiókban dokumentáltan alkalmatlannak tartják a napi ingázásra."
+      },
+      {
+        "en": "Retained lower-grade village schools remain exposed to national enrollment/class-size thresholds, so the geographic preservation may not be capacity-durable amid continuing population decline",
+        "hu": "A megmaradó alsóbb évfolyamú falusi iskolák továbbra is ki vannak téve a nemzeti beiratkozási/osztálylétszám-küszöböknek, ezért a földrajzi megőrzés nem biztos, hogy kapacitásban tartós marad a folyamatos népességcsökkenés közepette"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "f11fc2be62fe635040bde9e0b4b36265361c53a361302a32981bfadc59e98072",
+  "topic": "rural-school-closures"
+}

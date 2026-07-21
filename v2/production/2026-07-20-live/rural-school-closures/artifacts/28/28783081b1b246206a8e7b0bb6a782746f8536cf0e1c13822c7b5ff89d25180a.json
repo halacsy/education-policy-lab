@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "Nearly 18% of Hungary's population lived in the capital, almost 53% in towns, and 30% in villages as of 1 January 2024; migration gains in villages declined significantly from 2023 onward, reversing a pandemic-era counter-urbanization trend.",
+      "hu": "2024. január 1-jei adatok szerint a magyar lakosság közel 18%-a élt a fővárosban, majdnem 53%-a városokban és 30%-a falvakban; a falvakba irányuló vándorlási nyereség 2023-tól jelentősen csökkent, megfordítva a járvány idején megfigyelt vissza-városiasodás elleni tendencia egy részét."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Regional sub-variation within villages category not disaggregated",
+        "hu": "A falvak kategórián belüli regionális alcsoportok nincsenek szétbontva."
+      },
+      {
+        "en": "Short-term migration volatility may not reflect long-term structural settlement patterns",
+        "hu": "A rövid távú migrációs ingadozás nem feltétlenül tükrözi a hosszú távú strukturális települési mintázatokat"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-02",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "974cc5f3f0bbf15a9fc7cb91e64960bb251c52cdd28d94a01a7f19e05c1024be",
+  "topic": "rural-school-closures"
+}

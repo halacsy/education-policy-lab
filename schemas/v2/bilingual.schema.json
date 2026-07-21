@@ -1,0 +1,16 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/bilingual.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "localized_text": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "en": {"type": "string", "minLength": 1},
+        "hu": {"type": "string", "minLength": 1}
+      },
+      "required": ["en", "hu"]
+    }
+  },
+  "title": "Education Policy Lab bilingual semantic text"
+}

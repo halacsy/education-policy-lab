@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "Rural areas in Hungary's North-Eastern, South-Western, and Western regions have uneven public transport access; frequency and scheduling in small settlements make public transport impractical for daily school commutes, with a significant gap between Budapest and rural areas in barrier-free transport infrastructure development.",
+      "hu": "Magyarország északkeleti, délnyugati és nyugati vidéki térségeiben egyenetlen a közösségi közlekedéshez való hozzáférés; a kis települések menetrendi és járatsűrűségi korlátai miatt a tömegközlekedés sok esetben nem alkalmas napi iskolába járásra, továbbá jelentős különbség van Budapest és a vidéki területek között az akadálymentes közlekedési infrastruktúra fejlesztésében."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Specific route density and frequency data not quantified in research notes",
+        "hu": "A konkrét útvonal-sűrűségre és járatsűrűségre vonatkozó adatok nem számszerűsítettek a kutatási jegyzetekben."
+      },
+      {
+        "en": "Gap between Budapest and rural areas is asserted but not measured against concrete service standards",
+        "hu": "A Budapest és a vidéki területek közötti különbséget állítják, de nem vetették össze konkrét szolgáltatási normákkal."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-07"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-07",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5fa13a88d9c4a22e7c6140b2b17b56e7be94d9f53bb732784d5a1c7b08e565e5",
+  "topic": "rural-school-closures"
+}

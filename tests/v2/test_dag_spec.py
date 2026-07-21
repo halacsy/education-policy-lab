@@ -35,13 +35,17 @@ def ref(record_id: str, record_type: str, marker: str) -> ArtifactRef:
     )
 
 
+def pair(english: str, hungarian: str | None = None) -> dict[str, str]:
+    return {"en": english, "hu": hungarian or f"HU: {english}"}
+
+
 class DagSpecTests(unittest.TestCase):
     def test_live_dag_is_explicit_and_contains_human_gate(self) -> None:
         lenses = ("legal", "finance")
         dag = build_policy_analysis_dag(lenses)
         dag.validate()
 
-        self.assertEqual(dag.version, "3.0.0")
+        self.assertEqual(dag.version, "3.1.0")
         self.assertEqual(len(dag.roots), 3)
         self.assertEqual(len(dag.nodes), 12)
         self.assertEqual(dag.nodes[2].id, "derive_option_space")
@@ -203,13 +207,13 @@ class DagSpecTests(unittest.TestCase):
                 "OS-live-test", "option_space_proposal", provenance.id,
                 {
                     "directions": [
-                        {"id": "S1", "title": "One", "scope": "First", "finding_refs": ["F-test"]},
-                        {"id": "S2", "title": "Two", "scope": "Second", "finding_refs": ["F-test"]},
+                        {"id": "S1", "title": pair("One"), "scope": pair("First"), "finding_refs": ["F-test"]},
+                        {"id": "S2", "title": pair("Two"), "scope": pair("Second"), "finding_refs": ["F-test"]},
                     ],
                     "rejected_framings": [
-                        {"framing": "Too narrow", "reason": "Misses the evidence", "finding_refs": []}
+                        {"framing": pair("Too narrow"), "reason": pair("Misses the evidence"), "finding_refs": []}
                     ],
-                    "derivation_notice": "Test candidate pending exact approval.",
+                    "derivation_notice": pair("Test candidate pending exact approval."),
                 },
             ))
             run_dir = Path(directory) / "runs" / "test"
@@ -233,7 +237,7 @@ class DagSpecTests(unittest.TestCase):
                 "decision": "approved",
                 "decided_by": "test-owner",
                 "decided_at": datetime.now(timezone.utc).isoformat(),
-                "rationale": "The candidate spans the test option space.",
+                "rationale": pair("The candidate spans the test option space."),
             }
             write_json(decision_path, decision)
             with self.assertRaisesRegex(ValueError, "does not match exact candidate"):
@@ -272,13 +276,13 @@ class DagSpecTests(unittest.TestCase):
                 "PBP-live-test", "problem_brief_proposal", provenance.id,
                 {
                     "question_ref": roots["policy_question"][0].id,
-                    "title": "Test brief",
-                    "public_question": "What should be learned?",
-                    "problem_statement": "A bounded test problem.",
-                    "learning_goals": ["Goal one", "Goal two", "Goal three"],
-                    "scope": "Test scope.",
+                    "title": pair("Test brief"),
+                    "public_question": pair("What should be learned?"),
+                    "problem_statement": pair("A bounded test problem."),
+                    "learning_goals": [pair("Goal one"), pair("Goal two"), pair("Goal three")],
+                    "scope": pair("Test scope."),
                     "seed_sources": [],
-                    "framing_notes": ["Do not assume the premise."],
+                    "framing_notes": [pair("Do not assume the premise.")],
                 },
             ))
             run_dir = Path(directory) / "runs" / "test"
@@ -302,7 +306,7 @@ class DagSpecTests(unittest.TestCase):
                 "decision": "approved",
                 "decided_by": "test-owner",
                 "decided_at": datetime.now(timezone.utc).isoformat(),
-                "rationale": "The brief preserves uncertainty and has bounded scope.",
+                "rationale": pair("The brief preserves uncertainty and has bounded scope."),
             }
             write_json(decision_path, decision)
             with self.assertRaisesRegex(ValueError, "does not match exact candidate"):
@@ -351,7 +355,7 @@ class DagSpecTests(unittest.TestCase):
                 return [runner._record(
                     "SRC-attempt-test", "source", provenance_id,
                     {
-                        "title": "Test source", "url": "https://example.org/test",
+                        "title": pair("Test source"), "url": "https://example.org/test",
                         "source_type": "web_page",
                         "license_status": "public_pointer_only",
                         "accessed_at": runner.created_at,

@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03",
+      "A-live-school_network_planning-04"
+    ],
+    "claim": {
+      "en": "Six- and eight-year gimnázium enrollment represents approximately 8% of each age cohort, with applications to six-year programs rising 11% year-on-year while eight-year applications fell 14% in 2026, suggesting a shift toward the more selective later-entry track.",
+      "hu": "A hat‑ és nyolcosztályos gimnáziumokban tanulók aránya körülbelül 8% minden korosztályon belül; a hatéves programokra jelentkezések 2026‑ban éves szinten 11%-kal növekedtek, míg a nyolcosztályosokra 14%-kal csökkentek, ami a későbbi, szelektívebb belépés felé történő eltolódást jelez."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Single year of application data; trend direction is clear but one-year data cannot establish stability",
+        "hu": "Egy évre vonatkozó alkalmazási adatok; a tendencia iránya világos, de egyéves adatokkal nem lehet a stabilitást megállapítani."
+      },
+      {
+        "en": "Data source is a podcast citation; original Ministry admission records not directly verified",
+        "hu": "Az adatforrás egy podcast hivatkozása; a minisztériumi felvételi nyilvántartásokat nem ellenőrizték közvetlenül."
+      },
+      {
+        "en": "Does not explain whether the shift reflects parental preference change or demographic pressure",
+        "hu": "Nem magyarázza meg, hogy a változás a szülői preferenciák megváltozását vagy demográfiai nyomást tükrözi-e."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-02",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "afda21c5d1b58825baa90f710d6d04ff59394e21b0bfcb3154c3214889b2e419",
+  "topic": "korai-szelekcio"
+}

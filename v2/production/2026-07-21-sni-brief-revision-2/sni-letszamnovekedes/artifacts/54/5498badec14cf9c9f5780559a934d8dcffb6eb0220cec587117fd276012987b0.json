@@ -1,0 +1,37 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "National census of specialist positions (filled/vacant) cross-referenced with expert-committee waiting-list data and prescribed-vs-delivered service hour audits at a representative sample of schools; combine with advocacy-sourced hidden-population estimates validated against school-health screening pilot data in underserved counties.",
+      "hu": "Országos felmérés a szakember-állásokról (betöltött/üres) keresztellenőrzéssel a szakértői bizottsági várólistákkal és az előírt vs. ténylegesen nyújtott szolgáltatási órák auditjával egy reprezentatív iskolamintában; kombinálva érdekvédelmi forrásból származó rejtett-populáció becslésekkel, melyeket alulellátott megyék iskolai egészségügyi szűrőpilot adatain validálnak."
+    },
+    "proposal_refs": [
+      "TP-live-t5",
+      "TP-live-t3"
+    ],
+    "question": {
+      "en": "What is the actual specialist-teacher-to-SNI-pupil ratio by district and county, how large is the unmet/undiagnosed ('hidden') SEN population, and what magnitude of unmet prescribed habilitation/therapy hours exists by school type and region?",
+      "hu": "Mi az aktuális gyógypedagógus/fejlesztőpedagógus–SNI-tanuló arány járásonként és megyénként, mekkora a kielégítetlen/diagnosztizálatlan ('rejtett') SNI-populáció, és milyen nagyságrendű a kielégítetlen, előírt habilitációs/terápiás óraszám iskolatípusonként és régiónként?"
+    },
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-03",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03",
+      "U-live-portuguese_reform-03",
+      "U-live-implementation_planning-02"
+    ],
+    "why_it_matters": {
+      "en": "Workforce-expansion (T5) and finance-redesign (T4) proposals cannot be sized or targeted without knowing where and how large capacity gaps are; this also determines whether observed identification rates understate true need, which changes the interpretation of all growth-decomposition findings.",
+      "hu": "A munkaerő-bővítésre (T5) és a finanszírozás átalakítására (T4) vonatkozó javaslatok méretezése és célzása lehetetlen pontos kapacitásdeficit-ismeretek nélkül; ez az is meghatározza, hogy az észlelt azonosítási arányok alulbecsülik-e a valós szükségletet, ami befolyásolja minden növekedés-bontási eredmény értelmezését."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-03",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "abfc8dd191ef1482108bbc13b0a885ca5e5077b50d3ebf1dd8eb370d2961400e",
+  "topic": "sni-letszamnovekedes"
+}

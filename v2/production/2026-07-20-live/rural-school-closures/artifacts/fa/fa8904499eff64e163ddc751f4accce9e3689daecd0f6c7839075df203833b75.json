@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-polish_reform-01",
+      "A-live-polish_reform-02",
+      "A-live-polish_reform-03"
+    ],
+    "claim": {
+      "en": "Cross-national causal evidence on school closure and population decline is contested: Polish village-level studies found smaller structural social-capital decline where schools were saved, while Finnish and Swedish studies found school closure correlated with or unrelated to population decline respectively.",
+      "hu": "A nemzetközi bizonyítékok az iskolabezárás és a népességcsökkenés oksági kapcsolatáról vitatottak: lengyel települési vizsgálatok szerint kisebb volt a strukturális társadalmi tőke csökkenése azokban a falvakban, ahol megmentették az iskolát, míg egyes finn tanulmányok bezárással való korrelációt találtak, svéd kutatások pedig nem mutattak összefüggést."
+    },
+    "context": {
+      "en": "Fresh live research through the Polish system reform lens",
+      "hu": "Friss, aktuális kutatás a lengyel rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "polish_reform"
+    ],
+    "evidence_strength": "contested",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Conflicting findings across national contexts suggest institutional/demographic heterogeneity not captured by single causal mechanism",
+        "hu": "A nemzeti kontextusok közötti ellentmondó eredmények azt sugallják, hogy intézményi/demográfiai heterogenitás áll fenn, amelyet egyetlen kauzális mechanizmus nem ragad meg."
+      },
+      {
+        "en": "Polish studies measure social capital as outcome, not population retention directly",
+        "hu": "A lengyel tanulmányok a társadalmi tőkét mérik kimenetként, nem pedig közvetlenül a népesség megtartását."
+      },
+      {
+        "en": "Reverse causality and selection bias (schools close where depopulation is already occurring) not adequately disentangled in cited work",
+        "hu": "A fordított okság és a szelekciós torzítás (az iskolák ott zárnak be, ahol a népességfogyás már zajlik) nincsenek megfelelően elkülönítve a hivatkozott munkában."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-polish_reform-07"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-polish_reform-01",
+      "U-live-polish_reform-02",
+      "U-live-polish_reform-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-polish_reform-07",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e8d623d0dae2e4f923f852bad62356be8f6700d21f55777e5dd8c4ae5854006b",
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,45 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Difference-in-differences or event-study design using settlement-level panel data on school closures, population counts, births, and out-migration 2001-2025, matched with propensity-score or synthetic control comparisons against similar non-closure villages; replicate Finnish/Danish quasi-experimental designs with Hungarian registry data.",
+      "hu": "Difference‑in‑differences vagy esemény‑tanulmány kialakítás települési paneladatokkal az iskolabezárásokról, népességszámokról, születésekről és elvándorlásról 2001–2025-re, párosítva propensity‑score vagy szintetikus kontroll összehasonlításokkal hasonló, nem bezárt falvakkal; a finn/dán kvázi‑kísérleti megközelítések reprodukálása magyar nyilvántartási adatokkal."
+    },
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5",
+      "TP-live-t6"
+    ],
+    "question": {
+      "en": "What is the causal effect of village school closure on subsequent out-migration and depopulation in Hungary specifically, net of pre-existing socioeconomic and demographic trends?",
+      "hu": "Mi a faluiskolák bezárásának kauzális hatása a későbbi elvándorlásra és elnéptelenedésre Magyarországon, nettó módon a meglévő társadalmi‑gazdasági és demográfiai trendektől?"
+    },
+    "uncertainty_refs": [
+      "U-live-international_comparison-01",
+      "U-live-international_comparison-03",
+      "U-live-finnish_reform-01",
+      "U-live-polish_reform-01",
+      "U-live-portuguese_reform-03",
+      "U-live-equity_and_social_mobility-02",
+      "U-live-demography-02",
+      "U-live-school_network_planning-01",
+      "U-live-education_finance-02",
+      "U-live-implementation_planning-01"
+    ],
+    "why_it_matters": {
+      "en": "Nearly every proposal (default-closure, presumption-against-closure, grade-split, networked retention) implicitly assumes an answer to whether closure accelerates decline or merely follows it. Without this, mitigation packages and safeguard designs cannot be calibrated, and the entire policy debate rests on contested international analogies (Finland, Denmark, Poland) that may not transfer.",
+      "hu": "Szinte minden javaslat (alapértelmezett bezárás, bezárás ellen való feltevés, évfolyam‑megosztás, hálózatban tartás) implicit módon feltételezi, hogy a bezárás gyorsítja‑e a hanyatlást vagy csupán követi azt. Enélkül a mérséklési csomagok és védőintézkedések nem hangolhatók, és az egész szakpolitikai vita vitatott nemzetközi analógiákra (Finnország, Dánia, Lengyelország) támaszkodik, amelyek nem feltétlenül átültethetők."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-01",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "56a9016981f290fe77442ba3b9821c7bae3c44aba2c92ae9da6c8492de578c90",
+  "topic": "rural-school-closures"
+}

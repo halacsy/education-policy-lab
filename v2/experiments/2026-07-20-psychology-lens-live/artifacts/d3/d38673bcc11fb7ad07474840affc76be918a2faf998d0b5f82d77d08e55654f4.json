@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Hungary's selective secondary tracks (6- and 8-year gimnaziums) serve only 2-3% of the student population, concentrated in urban and county-seat locations; approximately 85% of Hungarian students attend schools with academic selection capacity, compared to 43% OECD average.",
+      "hu": "Magyarország szelektív középfokú tagozatai (6- és 8 évfolyamos gimnáziumok) a diákpopuláció mindössze 2–3%-át szolgálják, és elsősorban városi, megyei jogú városi helyszíneken koncentrálódnak; mintegy 85%‑a a magyar tanulóknak olyan iskolákba jár, amelyek rendelkeznek akadémiai szelekciós kapacitással, szemben az OECD-átlag 43%-ával."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Figure of 85% selective-capacity schools is cited from unspecified comparison data",
+        "hu": "A 85%‑os szelektív kapacitású iskolák arányára vonatkozó adat nem meghatározott összehasonlító forrásból származik."
+      },
+      {
+        "en": "The 2-3% figure reflects current snapshot but lacks historical trend data",
+        "hu": "A 2–3%-os adat a jelenlegi pillanatképet tükrözi, de hiányoznak a történeti trendadatok"
+      },
+      {
+        "en": "Does not account for variation in selection stringency across the 85% of schools with selection capacity",
+        "hu": "Nem veszi figyelembe a szelekció szigorúságának eltérését a szelekciós kapacitással rendelkező iskolák 85%-a között."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-01",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "de716019123477a2e09cd949247c93936736c13f466ae4bc1de11478b6bdd791",
+  "topic": "korai-szelekcio"
+}

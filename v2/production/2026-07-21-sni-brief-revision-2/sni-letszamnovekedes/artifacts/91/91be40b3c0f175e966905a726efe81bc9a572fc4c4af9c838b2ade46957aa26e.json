@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Viewed through the Portuguese-reform lens, which teaches that observed system-level gains or stability cannot be attributed to any single lever and require coordinated, multi-front reform, a passive baseline is analytically useful only as a counterfactual, not as a policy. The lens's core caution — that isolated variables cannot explain aggregate outcomes — cuts against the proposal's implicit premise that 'no action' is a neutral or informative state; in a system with documented unresolved incentive structures, definitional volatility, and workforce gaps (F-live-portuguese_reform-01, F-live-portuguese_reform-04), inaction allows uncoordinated drift among finance, gatekeeping, and workforce subsystems to continue, which the lens would expect to produce continued divergence rather than a clean counterfactual signal.",
+      "hu": "A portugál reform lencséjén keresztül nézve — amely azt tanítja, hogy a megfigyelt rendszer-szintű nyereségek vagy stabilitás nem tulajdoníthatók egyetlen kar-nak, és koordinált, többfrontos reformot igényelnek — a passzív alapvonal analitikailag hasznos csupán kontrafaktuálisként, de nem politikaként. A lencse alapvető figyelmeztetése — hogy az elszigetelt változók nem magyarázzák az aggregált kimeneteket — a javaslat implicit premisszájával szemben áll, miszerint a „no action” semleges vagy informatív állapot; egy olyan rendszerben, ahol dokumentáltan megoldatlan ösztönzési struktúrák, definíciós volatilitás és munkaerőhiányok vannak (F-live-portuguese_reform-01, F-live-portuguese_reform-04), a tétlenség lehetővé teszi a finanszírozás, a kapuőrség és a munkaerő alrendszerek rendezetlen sodródását, amit a lencse várakozása szerint folyamatos eltérés, nem pedig tiszta kontrafaktuális jel adata fog követni."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-01",
+      "F-live-portuguese_reform-04"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      {
+        "en": "Could be reframed as a deliberate control/comparison arm within a broader coordinated evaluation design, consistent with the lens's emphasis on disentangling bundled effects",
+        "hu": "Átfogalmazható úgy, mint egy szándékos kontroll/összehasonlító ág egy szélesebb, koordinált értékelési terven belül, összhangban a lencse csomagolt hatások szétválasztására helyezett hangsúlyával"
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Provides a genuine counterfactual baseline against which coordinated bundle effects (the lens's central concern) could eventually be measured",
+        "hu": "Valódi kontra‑faktuális bázist biztosít, amelyhez képest a koordinált csomaghatásokat (a vizsgálat központi aggálya) végül mérni lehetne."
+      },
+      {
+        "en": "Avoids introducing new, uncoordinated single-lever interventions that the lens warns cannot be causally isolated anyway",
+        "hu": "Kerüli új, összehangolatlan, egyetlen kart használó beavatkozások bevezetését, amelyekről a lencse figyelmeztet, hogy amúgy sem izolálhatók okságilag."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Absent coordinated quality-levelling and equity measures, continued drift risks widening regional and category-based disparities documented elsewhere in the record, undermining any future causal analysis of reforms introduced later",
+        "hu": "Koordinált minőségkiegyenlítő és esélyegyenlőségi intézkedések hiányában a további elmozdulás kockázata, hogy szélesíti a rekordban máshol dokumentált regionális és kategóriaalapú egyenlőtlenségeket, aláásva bármely későbbi reform okozati elemzését."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "The lens stresses causal attribution problems; a passive baseline does not resolve the existing unreconciled, multi-source identification data problem (F-live-portuguese_reform-01), making even the counterfactual itself scientifically ambiguous",
+        "hu": "A szemlélet hangsúlyozza az okozati tulajdonítás problémáit; egy passzív kiindulási helyzet nem oldja meg a meglévő, össze nem hangolt, több forrásból származó azonosítási adatok problémáját (F-live-portuguese_reform-01), így maga az ellenfaktuális forgatókönyv is tudományosan ambivalenssé válik."
+      },
+      {
+        "en": "Non-structural drift (workforce, finance, gatekeeping) proceeding unlevelled is exactly the kind of uncoordinated single-track change the whole-system lens warns is insufficient and potentially harmful",
+        "hu": "A nem strukturális eltolódás (munkaerő, finanszírozás, kapusfunkció) kiegyenlítetlenül haladva pontosan az a fajta koordinálatlan egyirányú változás, amelyre a rendszerszemlélet figyelmeztet, hogy elégtelen és potenciálisan káros."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-portuguese_reform",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5dc8da5b26e453a80eb79f45679a85e4dec0a449f231997243f1ef95c1a318ec",
+  "topic": "sni-letszamnovekedes"
+}

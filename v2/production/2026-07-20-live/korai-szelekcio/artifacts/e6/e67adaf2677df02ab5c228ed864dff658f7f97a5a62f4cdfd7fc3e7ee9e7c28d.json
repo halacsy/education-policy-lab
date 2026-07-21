@@ -1,0 +1,67 @@
+{
+  "content": {
+    "concerns": [
+      {
+        "en": "Implementation detail is uneven: several levers (notably T1 and T4) lack concrete operational specifications (e.g., exact SES-weighting formula, funding amounts/targets, phasing plans).",
+        "hu": "A végrehajtás részletezése egyenetlen: több eszköz (különösen T1 és T4) hiányos műveleti specifikációkat tartalmaz (pl. a szocioökonómiai státusz (SES) pontos súlyozási képlete, finanszírozási összegek/célok, ütemezési tervek)."
+      },
+      {
+        "en": "Some evidence items point to generic or placeholder URIs (example.com) or URNs without clear public access, reducing immediate auditability for a non-specialist reader.",
+        "hu": "Néhány bizonyítéktétel generikus vagy helyettesítő URI-ra (például example.com) vagy nyilvánosan nem hozzáférhető URN-re mutat, ami csökkenti az azonnali auditálhatóságot egy nem szakértő olvasó számára."
+      },
+      {
+        "en": "No quantified impact estimates, budgetary costs, or projected enrolment/capacity models are provided to permit cost–benefit or fiscal feasibility comparison across levers.",
+        "hu": "Nincsenek kvantifikált hatásbecslések, költségvetési számítások vagy becsült beiskolázási/kapacitásmodellek, amelyek lehetővé tennék az eszközök közötti költség–haszon vagy fiskális megvalósíthatósági összehasonlítást."
+      },
+      {
+        "en": "Stakeholder mapping and likely political responses (beyond noting director lobby and ministerial positions) are not systematically modeled, limiting strategic enactment planning.",
+        "hu": "Az érintetti térkép és a várható politikai reakciók (az igazgatói lobbizás és a minisztériumi pozíciók említésén túl) rendszerszintű modellezése hiányzik, ami korlátozza a stratégiai bevezetési tervezést."
+      },
+      {
+        "en": "The package flags displacement risks but does not present empirical scenarios or sensitivity analyses showing where displaced demand or coaching advantage would concentrate under each lever.",
+        "hu": "A csomag jelzi a kiszorítási kockázatokat, de nem mutat be empirikus forgatókönyveket vagy érzékenységelemzéseket arról, hogy egyes eszközök hatására hol koncentrálódna a kiszoruló kereslet vagy a felkészítők előnye."
+      }
+    ],
+    "dimensions": {
+      "artifact_integrity": 9,
+      "decision_usefulness": 8,
+      "dilemma_clarity": 9,
+      "evidence_discipline": 9,
+      "lens_traceability": 8,
+      "transformation_specificity": 7
+    },
+    "package_ref": "DP-live-production",
+    "strengths": [
+      {
+        "en": "Well-structured, artifact-first framing that enumerates six distinct policy lever options (T1–T6) and a clear counterfactual baseline (T5).",
+        "hu": "Jól strukturált, „artefaktum-első” keret, amely hat különböző politikai eszközt sorol fel (T1–T6) és világos kontra-faktuális bázisvonalat ad (T5)."
+      },
+      {
+        "en": "Extensive referencing: almost every substantive claim is tagged to an F-live ID with a corresponding visible-evidence appendix entry and many entries include URIs or resolvable identifiers.",
+        "hu": "Kiterjedt hivatkozások: szinte minden érdemi állításhoz F-live azonosító tartozik, a hozzájuk kapcsolódó látható-evidencia mellékletekkel, és sok tételhez URI vagy feloldható azonosító csatolva van."
+      },
+      {
+        "en": "Explicit separation of empirical uncertainties versus value trade-offs; the package identifies which research questions would most change the choice.",
+        "hu": "Kifejezetten elkülöníti az empirikus bizonytalanságokat az érték-választási kompromisszumoktól; a csomag azonosítja azokat a kutatási kérdéseket, amelyek a legnagyobb mértékben változtatnák meg a választást."
+      },
+      {
+        "en": "Legal and governance constraints are made concrete (primary-legislation vs. ministerial discretion, Klebelsberg Centre jurisdiction, constitutional free-choice tension), supporting practical feasibility assessment.",
+        "hu": "A jogi és kormányzati korlátok konkréttá tétele (törvényi szabályozás kontra miniszteri mérlegelés, Klebelsberg Központ hatásköre, az alkotmányos iskolaválasztási szabadsággal való feszültség) támogatja a gyakorlati megvalósíthatóság értékelését."
+      },
+      {
+        "en": "Comparative case synthesis (Finland, Poland, Portugal references) is used carefully with transferability caveats called out.",
+        "hu": "Összehasonlító esettanulmány-szintézis (Finnország, Lengyelország, Portugália hivatkozások) óvatosan alkalmazva, az átültethetőség korlátai külön ki vannak emelve."
+      }
+    ],
+    "total": 8.333,
+    "verdict": "accept_with_caveats"
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "EV-live-production",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "evaluation",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "7c58b46aa4ae0751847a565b0a5dbe1ad35b94fe5daf57601c818f1503fb811d",
+  "topic": "korai-szelekcio"
+}

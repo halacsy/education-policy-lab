@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03"
+    ],
+    "claim": {
+      "en": "Hungary exhibits negative demographic momentum with youth cohorts contracted to 14.4% of the population, presaging structural fiscal and staffing pressures that constrain school-network decisions across regions independent of whether individual schools remain open.",
+      "hu": "Magyarországon negatív demográfiai lendület figyelhető meg: a fiatal (18 év alatti) korosztályok aránya 14,4%-ra zsugorodott, ami strukturális költségvetési és munkaerő-ellátási nyomást vetít előre, és régiónként korlátozza az iskolahálózati döntéseket függetlenül attól, hogy egyes iskolák nyitva maradnak-e."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "'Negative demographic momentum' is inferred from cohort structure; does not directly measure fiscal impact magnitude per region or school type",
+        "hu": "A „negatív demográfiai lendület” a kohorszszerkezetből van kikövetkeztetve; nem méri közvetlenül a költségvetési hatás nagyságát régiónként vagy iskolatípusonként."
+      },
+      {
+        "en": "The relationship between contracted youth cohorts and regional teacher surplus/redistribution is stated as a possibility, not a measured outcome",
+        "hu": "A szerződött fiatalok kohorszai és a regionális tanárfelesleg/átrendezés közötti kapcsolat lehetőségként van megfogalmazva, nem pedig mért eredményként."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-09"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-09",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c0d05e443174ef4f0b837f2f6d3281240bc83cf2a4462ce6eabb73e886cf237d",
+  "topic": "rural-school-closures"
+}

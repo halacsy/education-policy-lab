@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-school_network_planning-01",
+      "A-rural-school-closures-school_network_planning-02",
+      "A-rural-school-closures-school_network_planning-03",
+      "A-rural-school-closures-school_network_planning-04",
+      "A-rural-school-closures-school_network_planning-05",
+      "A-rural-school-closures-school_network_planning-06"
+    ],
+    "claim": {
+      "en": "Since 2021, the nationalization of schools shifted control from local municipalities to centralized authorities, significantly reducing municipalities' autonomy in responding to local educational needs, particularly in Western Transdanubia and low-density Northern Hungarian regions.",
+      "hu": "2021 óta az iskolák centralizációja átkerült a helyhatóságoktól a központi hatóságokhoz, lényegesen csökkentve a helyi önkormányzatok autonómiáját az oktatási szükségletek kezelésében, különösen a Nyugat-Dunántúl és az észak-magyarországi ritka lélekszámú térségekben."
+    },
+    "context": {
+      "en": "Rural primary-school closures in demographically collapsing villages of under 2,000 residents risk accelerating population decline by severing community cohesion and family-settlement decisions, and are justified primarily by per-pupil cost differences that do not constitute a serious system-wide efficiency problem, making alternative models (satellite campuses, mixed-grade instruction, or controlled consolidation with local hub-school retention) preferable to outright closure.",
+      "hu": "A 2000 fő alatti falvakban az általános iskolabezárások a közösség-összetartás és család-letelepedési döntések megsértésével felgyorsíthatják a népességcsökkenést, és elsősorban olyan tanulóenkénti költségkülönbségek alapján indokoltak, amelyek nem jelentenek komolyabb rendszersz intű hatékonyságvesztést, így az alternatív modellek (telephelyes fiókok, vegyes-évfolyam oktatás vagy kontrollált konszolidáció helyi hub-iskola megtartásával) előnyösebbek a teljes bezárás helyett."
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-1934ccec76ef2b"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-school_network_planning-01",
+      "U-rural-school-closures-school_network_planning-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-school_network_planning-10",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "61a35fe64de0875ddd12d3d45c53d94fd555e1a0bd58c7756bd9243800d4251c",
+  "topic": "rural-school-closures"
+}

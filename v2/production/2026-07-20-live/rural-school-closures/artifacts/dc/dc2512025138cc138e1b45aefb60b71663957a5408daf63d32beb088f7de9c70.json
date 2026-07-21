@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-portuguese_reform-01",
+      "A-live-portuguese_reform-02",
+      "A-live-portuguese_reform-03",
+      "A-live-portuguese_reform-04"
+    ],
+    "claim": {
+      "en": "OECD evidence indicates rural-urban academic achievement gaps generally disappear after accounting for socio-economic status, suggesting composition rather than school size drives performance gaps, but this finding has not been verified for Hungary specifically.",
+      "hu": "Az OECD-adatok azt mutatják, hogy a városi és vidéki tanulmányi teljesítménykülönbségek általában eltűnnek, ha figyelembe vesszük a társadalmi-gazdasági státuszt, ami azt sugallja, hogy a kompozíció, nem pedig az iskola mérete hajtja a teljesítménykülönbségeket, de ezt az eredményt kifejezetten Magyarországra vonatkozóan még nem igazolták."
+    },
+    "context": {
+      "en": "Fresh live research through the Portuguese system reform lens",
+      "hu": "Friss, aktuális kutatás a portugál rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "portuguese_reform"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "General OECD pattern; no Hungary-specific causal test provided",
+        "hu": "Általános OECD-minta; nem áll rendelkezésre Magyarország-specifikus oksági vizsgálat"
+      },
+      {
+        "en": "Does not address whether Hungarian rural schools have different SES-adjusted staffing or resource levels",
+        "hu": "Nem vizsgálja, hogy a magyar vidéki iskolák eltérő társadalmi-gazdasági státushoz igazított pedagógusi vagy erőforrás-szinttel rendelkeznek-e"
+      },
+      {
+        "en": "Assumes SES controls are sufficient to isolate location effects",
+        "hu": "Feltételezi, hogy a társadalmi–gazdasági státusz (SES) kontrolljai elegendőek a helyhatások izolálásához"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-portuguese_reform-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-portuguese_reform-01",
+      "U-live-portuguese_reform-02",
+      "U-live-portuguese_reform-03",
+      "U-live-portuguese_reform-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-portuguese_reform-06",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "fa59b02198f30c95c655b6fa678e411daa0022f47074949762b859e0f837daab",
+  "topic": "rural-school-closures"
+}

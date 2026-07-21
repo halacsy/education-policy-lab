@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03"
+    ],
+    "claim": {
+      "en": "Kindergarten coverage gaps (31% of municipalities with no kindergarten in 2022) mirror and compound primary-school access problems in the same small villages, governed by the same national framework with enrollment thresholds (8-child minimum) rather than local discretion.",
+      "hu": "A bölcsődei/óvodai ellátottság hiányosságai (2022‑ben a települések 31%-ának nem volt óvodája) tükrözik és súlyosbítják az ugyanazon kis falvakban tapasztalható általános iskolai hozzáférési problémákat; mindkettőt ugyanaz a nemzeti szabályrendszer kormányozza, amely beíratási küszöböket ír elő (8 gyermekes minimum) a helyi mérlegelés helyett."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Documents parallel gap but does not establish causal linkage between kindergarten and primary school closure sequencing",
+        "hu": "Párhuzamos hiányt dokumentál, de nem bizonyít oksági összefüggést az óvoda és az általános iskola bezárási sorrendje között"
+      },
+      {
+        "en": "Does not assess whether resolving kindergarten gaps would mitigate downstream primary school viability",
+        "hu": "Nem vizsgálja, hogy az óvodai hiányok megszüntetése enyhítené-e a későbbi általános iskolák fenntarthatósági problémáit."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-08"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-08",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "df9808d63bc43d743f56dbc4412eb977ac23ca3cf26de4d8eeb77e14663ace89",
+  "topic": "rural-school-closures"
+}

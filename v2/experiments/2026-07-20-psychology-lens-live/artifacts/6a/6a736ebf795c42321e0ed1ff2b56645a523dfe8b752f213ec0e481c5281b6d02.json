@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Delaying selection age changes the incidence of educational investment by extending comprehensive schooling and removing early sorting points, which the cross-national evidence links to reduced inequality of opportunity (F-live-education_finance-02), though the finance lens cannot verify the specific fiscal cost of restructuring middle-tier schooling in Hungary since the corpus lacks proposal-level cost estimates. The Polish comparator suggests plausible long-run labour-market returns, but the reform requires substantial teacher workforce capacity that may itself carry retraining costs not quantified here.",
+      "hu": "A szelekció életkorának késleltetése megváltoztatja az oktatási beruházás terheit azáltal, hogy meghosszabbítja az átfogó iskoláztatást és eltávolítja a korai szétválogatási pontokat; a nemzetközi összehasonlító bizonyítékok ezt az esélyegyenlőség csökkenéséhez kötik (F-live-education_finance-02), bár a finanszírozási szemlélet nem tudja ellenőrizni a középszintű oktatás átalakításának konkrét fiskális költségét Magyarországon, mivel a korpusz nem tartalmaz javaslat-szintű költségbecsléseket. A lengyel összehasonlító példa ésszerű hosszú távú munkapiaci hozamokat sejtet, de a reform jelentős tanári kapacitást igényel, amelyhez képzési költségek is társulhatnak, és ezeket itt nem kvantifikáltuk."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-02",
+      "F-live-education_finance-06"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Potential long-run fiscal payoff via labour-market gains if outcomes mirror the Polish case, improving aggregate value for money over time",
+        "hu": "Potenciális hosszú távú költségvetési megtérülés a munkaerőpiaci nyereségek révén, ha az eredmények a lengyel esettel tükörszerűek, és idővel javítják az összesített költséghatékonyságot."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Cross-country evidence associates delayed selection with reduced inequality of opportunity, addressing a distributional cost of the status quo",
+        "hu": "Országok közötti bizonyítékok szerint a késleltetett szelekció az esélyegyenlőtlenség csökkenésével jár, így kezelve a status quo elosztási költségét."
+      },
+      {
+        "en": "Removes the 'brain drain' externality on ordinary schools' peer composition and incentive structure, even though this benefit is unquantified (F-live-education_finance-06)",
+        "hu": "Eltávolítja az 'agyelszívás' externáliáját a közönséges iskolák tanulói összetételére és ösztönzési struktúrájára nézve, bár ez a haszon számszerűtlen (F-live-education_finance-06)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Political reversal risk (as in Poland post-2016) could waste sunk implementation costs if reform is not institutionally durable",
+        "hu": "A politikai visszafordulás kockázata (ahogy Lengyelországban 2016 után) elpazarolhatja a már elsüllyedt végrehajtási költségeket, ha a reform nem intézményileg tartós."
+      },
+      {
+        "en": "High symbolic salience and opposition mobilization could raise the political-economy cost of implementation beyond direct fiscal cost",
+        "hu": "A magas szimbolikus jelentőség és az ellenzéki mozgósítás megnövelheti a végrehajtás politikai–gazdasági költségét a közvetlen fiskális költségen túl."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "No proposal-level cost estimate exists for restructuring Hungary's middle-tier schooling to match the Polish comprehensive model",
+        "hu": "Nem létezik javaslatszintű költségbecslés Magyarország középszintű iskolarendszerének átalakítására a lengyel átfogó modellhez való igazításhoz."
+      },
+      {
+        "en": "Teacher workforce demographics (aging, low pay) imply implementation costs for training and incentives not accounted for in the mechanism description",
+        "hu": "A tanári munkaerő demográfiája (elöregedés, alacsony fizetések) azt jelzi, hogy a mechanizmus leírása nem számol a képzésre és ösztönzőkre fordítandó megvalósítási költségekkel."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-education_finance",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "af5d8a40aa4bb5a8696db2600087cc05529d06509b0188e0dd5ad952feb8bda2",
+  "topic": "korai-szelekcio"
+}

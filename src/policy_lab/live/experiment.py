@@ -13,12 +13,13 @@ from urllib.parse import quote, urlsplit
 
 from policy_lab.dag import HumanGatePending, NodeExecutor, NodeSpec
 from policy_lab.jsonio import canonical_json_bytes, content_hash, write_json
+from policy_lab.i18n import BILINGUAL_VERSION, is_localized_text, localized, text
 from policy_lab.live import contracts
-from policy_lab.live.dag_spec import build_policy_analysis_dag
+from policy_lab.live.dag_spec import VERSION as DAG_VERSION, build_policy_analysis_dag
 from policy_lab.schema_registry import SchemaRegistry
 from policy_lab.store import ArtifactRef, ArtifactRepository
 
-VERSION = "2.0.0"
+ARTIFACT_VERSION = BILINGUAL_VERSION
 
 
 def _now() -> str:
@@ -74,7 +75,7 @@ class ArtifactDagRunner:
         summary, plan_hash = self._run_planned_production()
         self._write_cost_report()
         write_json(self.output_root / "production_manifest.json", {
-            "architecture_version": "3.0.0",
+            "architecture_version": DAG_VERSION,
             "topic": self.topic,
             "run_id": summary["run_id"],
             "run_plan": {
@@ -607,8 +608,8 @@ class ArtifactDagRunner:
         if "raw_question" in self.topic_data and "problem_brief" not in self.topic_data:
             raw = self.topic_data["raw_question"]
             question_content = {
-                "question": self._english(raw["question"]),
-                "submission_context": self._english(raw["submission_context"]),
+                "question": raw["question"],
+                "submission_context": raw["submission_context"],
                 "source_refs": list(raw.get("source_refs", [])),
                 "language": raw["language"],
                 "approval_basis": raw["approval_basis"],
@@ -617,14 +618,8 @@ class ArtifactDagRunner:
                 directions = raw["research_directions"]
                 question_content["research_directions"] = {
                     "status": directions["status"],
-                    "hypotheses_to_test": [
-                        self._english(value)
-                        for value in directions["hypotheses_to_test"]
-                    ],
-                    "inquiry_priorities": [
-                        self._english(value)
-                        for value in directions["inquiry_priorities"]
-                    ],
+                    "hypotheses_to_test": directions["hypotheses_to_test"],
+                    "inquiry_priorities": directions["inquiry_priorities"],
                     "candidate_response_domains": list(
                         directions["candidate_response_domains"]
                     ),
@@ -650,15 +645,15 @@ class ArtifactDagRunner:
         else:
             problem = self.topic_data["problem_brief"]
             problem_content = {
-                "title": self._english(problem["title"]),
-                "public_question": self._english(problem["public_question"]),
-                "problem_statement": self._english(problem["problem_statement"]),
-                "learning_goals": [self._english(value) for value in problem["learning_goals"]],
-                "scope": self._english(problem["scope"]),
+                "title": problem["title"],
+                "public_question": problem["public_question"],
+                "problem_statement": problem["problem_statement"],
+                "learning_goals": problem["learning_goals"],
+                "scope": problem["scope"],
                 "seed_sources": [self._english(value) for value in problem.get("seed_sources", [])],
-                "approval_basis": (
-                    f"Human-approved topic brief admitted from topics/{self.topic}/topic.json "
-                    "as an immutable run root."
+                "approval_basis": localized(
+                    f"Human-approved topic brief admitted from topics/{self.topic}/topic.json as an immutable run root.",
+                    f"Az ember által jóváhagyott témaleírás a topics/{self.topic}/topic.json fájlból változtathatatlan futási gyökérként befogadva.",
                 ),
             }
             problem_provenance = self._admission_provenance(
@@ -714,10 +709,10 @@ class ArtifactDagRunner:
             if directions else "none"
         )
         prompt = self._header("draft_problem_brief", "problem_framing_editor") + f"""
-Turn the admitted raw policy question below into a bounded English problem-brief proposal for human review. Do not research or answer the question yet.
+Turn the admitted raw policy question below into a bounded bilingual problem-brief proposal for human review. Do not research or answer the question yet.
 
-RAW QUESTION: {question['question']}
-SUBMISSION CONTEXT: {question['submission_context']}
+RAW QUESTION: {self._english(question['question'])}
+SUBMISSION CONTEXT: {self._english(question['submission_context'])}
 SOURCE POINTERS: {'; '.join(question['source_refs']) or 'none'}
 HUMAN RESEARCH DIRECTIONS: {directions_text}
 
@@ -804,9 +799,11 @@ Rules:
             raise HumanGatePending(
                 "approve_problem_brief", candidate_ref.content_hash, request_path
             )
-        for key in ("decided_by", "decided_at", "rationale"):
+        for key in ("decided_by", "decided_at"):
             if not isinstance(decision[key], str) or not decision[key].strip():
                 raise ValueError(f"Problem-brief decision has empty {key}")
+        if not is_localized_text(decision["rationale"]):
+            raise ValueError("Problem-brief decision rationale must be an exact {en, hu} pair")
         return decision
 
     def _approved_problem_brief_records(
@@ -863,7 +860,7 @@ Rules:
         return self.repository.put({
             "id": f"PV-{node_id}-{execution_id[:16]}",
             "record_type": "provenance",
-            "schema_version": VERSION,
+            "schema_version": "2.0.0",
             "topic": self.topic,
             "status": "candidate",
             "content": {
@@ -946,9 +943,13 @@ Rules:
             raise HumanGatePending(
                 "approve_option_space", candidate_ref.content_hash, request_path
             )
-        for key in ("decided_by", "decided_at", "rationale"):
+        for key in ("decided_by", "decided_at"):
             if not isinstance(decision[key], str) or not decision[key].strip():
                 raise ValueError(f"Gate decision has empty {key} at {decision_path}")
+        if not is_localized_text(decision["rationale"]):
+            raise ValueError(
+                f"Gate decision rationale must be an exact {{en, hu}} pair at {decision_path}"
+            )
         return decision
 
     def _approved_option_space_records(
@@ -1100,8 +1101,12 @@ Rules:
         problem = problem or self.topic_data["problem_brief"]
         public_question = self._english(problem["public_question"])
         problem_statement = self._english(problem["problem_statement"])
-        search_prompt = self._header("expert_research", lens["id"]) + f"""
-Research the following Hungarian education-policy problem from the disciplinary perspective of {lens['discipline']}.
+        search_prompt = f"""TASK: expert_research\nAGENT: {lens['id']}\nLANG: en\n
+This is a non-canonical web-search scratchpad. Its claims become artifacts
+only after the next structured step authors and validates exact {{en, hu}}
+pairs.
+
+Research the following Hungarian education-policy problem from the disciplinary perspective of {self._english(lens['discipline'])}.
 
 PUBLIC QUESTION: {public_question}
 PROBLEM: {problem_statement}
@@ -1115,12 +1120,12 @@ Use live web search. Return concise English research notes with direct source UR
             search_prompt, arm=arm, node=node, run_dir=run_dir
         )
         analysis_prompt = self._header("expert_analysis", lens["id"]) + f"""
-Convert the live research notes below into an English-only evidence artifact set for this policy problem.
+Convert the live research notes below into a bilingual evidence artifact set for this policy problem.
 
-DISCIPLINE: {lens['discipline']}
+DISCIPLINE: {self._english(lens['discipline'])}
 PUBLIC QUESTION: {public_question}
-CRITERIA: {', '.join(lens['criteria'])}
-KNOWN LENS LIMITS: {'; '.join(lens['limitations'])}
+CRITERIA: {', '.join(self._english(value) for value in lens['criteria'])}
+KNOWN LENS LIMITS: {'; '.join(self._english(value) for value in lens['limitations'])}
 
 RESEARCH NOTES:
 {notes}
@@ -1139,7 +1144,9 @@ Rules: preserve contested labels; never invent a source or statistic; findings m
             assumption_ids.append(artifact_id)
             records.append(self._record(artifact_id, "assumption", provenance, {
                 "statement": statement, "domain_tags": [lens["id"]],
-                "testability": "partly_testable", "source_context": "Fresh live v2 domain research",
+                "testability": "partly_testable", "source_context": localized(
+                    "Fresh live v2 domain research", "Friss, élő v2 szakterületi kutatás"
+                ),
             }))
         uncertainty_ids = []
         for index, item in enumerate(result["uncertainties"], 1):
@@ -1159,9 +1166,17 @@ Rules: preserve contested labels; never invent a source or statistic; findings m
             records.append(self._record(f"F-live-{lens['id']}-{index:02d}", "finding", provenance, {
                 "claim": item["claim"], "kind": "fact", "domain_tags": [lens["id"]],
                 "evidence_strength": item["evidence_strength"], "source_refs": [source_id],
-                "population": "Population described in the cited finding",
-                "context": f"Fresh live research through the {lens['name']} lens",
-                "time_scope": "As reported by the cited source",
+                "population": localized(
+                    "Population described in the cited finding",
+                    "A hivatkozott megállapításban leírt populáció",
+                ),
+                "context": localized(
+                    f"Fresh live research through the {self._english(lens['name'])} lens",
+                    f"Friss, élő kutatás a(z) {text(lens['name'], 'hu')} nézőpontján keresztül",
+                ),
+                "time_scope": localized(
+                    "As reported by the cited source", "A hivatkozott forrás közlése szerint"
+                ),
                 "transferability": "uncertain", "limitations": item["limitations"],
                 "assumption_ids": assumption_ids, "uncertainty_ids": uncertainty_ids,
             }))
@@ -1188,11 +1203,23 @@ Rules: preserve contested labels; never invent a source or statistic; findings m
                 "claim": note["claim"], "kind": "fact",
                 "domain_tags": ["educational_psychology"],
                 "evidence_strength": note["evidence_strength"], "source_refs": [source_id],
-                "population": "Students in learning and educational-sorting contexts",
-                "context": "PR #29 curated educational-psychology evidence base",
-                "time_scope": "Evidence base admitted to the PR #29 sensitivity test",
+                "population": localized(
+                    "Students in learning and educational-sorting contexts",
+                    "Tanulási és oktatási szelekciós helyzetben lévő tanulók",
+                ),
+                "context": localized(
+                    "PR #29 curated educational-psychology evidence base",
+                    "A PR #29 válogatott oktatáspszichológiai bizonyítékbázisa",
+                ),
+                "time_scope": localized(
+                    "Evidence base admitted to the PR #29 sensitivity test",
+                    "A PR #29 érzékenységi vizsgálatába befogadott bizonyítékbázis",
+                ),
                 "transferability": "uncertain",
-                "limitations": ["Use only within the stated population, domain, and evidence-strength boundary."],
+                "limitations": [localized(
+                    "Use only within the stated population, domain, and evidence-strength boundary.",
+                    "Csak a megadott populációs, szakterületi és bizonyítékerősségi határok között használható.",
+                )],
                 "assumption_ids": [], "uncertainty_ids": [],
             }))
         records.append(self._record("L-live-educational_psychology", "lens_definition", provenance, {
@@ -1221,15 +1248,15 @@ Rules: preserve contested labels; never invent a source or statistic; findings m
         ]
         digest = "\n".join(
             f"- {record['id']} [{record['content']['evidence_strength']}]: "
-            f"{record['content']['claim']}"
+            f"{self._english(record['content']['claim'])}"
             for record in findings
         )
         prompt = self._header("derive_option_space", "option_space_architect") + f"""
-Derive the real option space for the approved education-policy problem below. Work in English only. This is a pre-approval proposal, not a policy recommendation and not a transformation portfolio.
+Derive the real bilingual option space for the approved education-policy problem below. This is a pre-approval proposal, not a policy recommendation and not a transformation portfolio.
 
-PUBLIC QUESTION: {problem['public_question']}
-PROBLEM: {problem['problem_statement']}
-SCOPE: {problem['scope']}
+PUBLIC QUESTION: {self._english(problem['public_question'])}
+PROBLEM: {self._english(problem['problem_statement'])}
+SCOPE: {self._english(problem['scope'])}
 
 FRESH EVIDENCE RECORD:
 {digest}
@@ -1260,9 +1287,9 @@ Produce 2-7 materially distinct direction families with sequential ids S1..Sn. E
             {
                 "directions": result["directions"],
                 "rejected_framings": result["rejected_framings"],
-                "derivation_notice": (
-                    "Derived only from the exact fresh finding artifacts declared "
-                    "by the run plan; pending an explicit human gate."
+                "derivation_notice": localized(
+                    "Derived only from the exact fresh finding artifacts declared by the run plan; pending an explicit human gate.",
+                    "Kizárólag a futási tervben deklarált, pontos friss megállapítás-artefaktokból levezetve; explicit emberi kapudöntésre vár.",
                 ),
             },
         )]
@@ -1275,7 +1302,7 @@ Produce 2-7 materially distinct direction families with sequential ids S1..Sn. E
     ) -> list[dict[str, Any]]:
         findings = [self.repository.get_by_hash(ref.content_hash) for ref in finding_refs]
         digest = "\n".join(
-            f"- {record['id']} [{record['content']['evidence_strength']}; {', '.join(record['content']['domain_tags'])}]: {record['content']['claim']}"
+            f"- {record['id']} [{record['content']['evidence_strength']}; {', '.join(record['content']['domain_tags'])}]: {self._english(record['content']['claim'])}"
             for record in findings
         )
         problem = problem or self.topic_data["problem_brief"]
@@ -1285,7 +1312,7 @@ Produce 2-7 materially distinct direction families with sequential ids S1..Sn. E
             for frame in frames
         )
         prompt = self._header("build_scenarios", "transformation_architect") + f"""
-Derive an education-system transformation portfolio from the evidence record below. Work in English only. The final product is a library of change directions, not a debate among experts.
+Derive a bilingual education-system transformation portfolio from the evidence record below. The final product is a library of change directions, not a debate among experts.
 
 PUBLIC QUESTION: {self._english(problem['public_question'])}
 PROBLEM: {self._english(problem['problem_statement'])}
@@ -1337,7 +1364,9 @@ Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a 
                 assumption_ids.append(artifact_id)
                 records.append(self._record(artifact_id, "assumption", provenance, {
                     "statement": statement, "domain_tags": ["transformation_design"],
-                    "testability": "partly_testable", "source_context": f"Live proposal {item['key']}",
+                    "testability": "partly_testable", "source_context": localized(
+                        f"Live proposal {item['key']}", f"Élő {item['key']} javaslat"
+                    ),
                 }))
             uncertainty_ids = []
             for index, question in enumerate(item["uncertainties"], 1):
@@ -1345,7 +1374,10 @@ Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a 
                 uncertainty_ids.append(artifact_id)
                 records.append(self._record(artifact_id, "uncertainty", provenance, {
                     "question": question, "uncertainty_type": "implementation",
-                    "current_confidence": "low", "reduction_path": "Targeted research or a reversible pilot.",
+                    "current_confidence": "low", "reduction_path": localized(
+                        "Targeted research or a reversible pilot.",
+                        "Célzott kutatás vagy visszafordítható kísérleti bevezetés.",
+                    ),
                 }))
             proposal_id = f"TP-live-{key}"
             records.append(self._record(proposal_id, "transformation_proposal", provenance, {
@@ -1368,7 +1400,7 @@ Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a 
             "entries": [
                 {
                     "direction_id": direction_id,
-                    "direction_title": self._english(frame_by_id[direction_id]["title"]),
+                    "direction_title": frame_by_id[direction_id]["title"],
                     "status": "covered",
                     "proposal_refs": [f"TP-live-{key.lower()}" for key in coverage[direction_id]["proposal_keys"]],
                     "rationale": coverage[direction_id]["rationale"],
@@ -1389,27 +1421,28 @@ Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a 
         proposal_records = [self.repository.get_by_hash(ref.content_hash) for ref in proposals]
         finding_records = [self.repository.get_by_hash(ref.content_hash) for ref in finding_refs]
         proposal_digest = "\n\n".join(
-            f"{record['id']} — {record['content']['title']}\nGoal: {record['content']['goal']}\nMechanisms: {'; '.join(record['content']['mechanisms'])}\nRisks: {'; '.join(record['content']['risks'])}\nEvidence: {record['content']['evidence_status']}"
+            f"{record['id']} — {self._english(record['content']['title'])}\nGoal: {self._english(record['content']['goal'])}\nMechanisms: {'; '.join(self._english(value) for value in record['content']['mechanisms'])}\nRisks: {'; '.join(self._english(value) for value in record['content']['risks'])}\nEvidence: {record['content']['evidence_status']}"
             for record in proposal_records
         )
         evidence_digest = "\n".join(
-            f"- {record['id']} [{record['content']['evidence_strength']}]: {record['content']['claim']}"
+            f"- {record['id']} [{record['content']['evidence_strength']}]: {self._english(record['content']['claim'])}"
             for record in finding_records
         )
         note_text = ""
         if evidence_notes:
             note_text = "\nCURATED EVIDENCE BOUNDARIES:\n" + "\n".join(
-                f"- [{note['evidence_strength']}] {note['claim']} Source: {note['source']}"
+                f"- [{note['evidence_strength']}] {self._english(note['claim'])} "
+                f"Source: {self._english(note['source'])}"
                 for note in evidence_notes
             )
         prompt = self._header("synthesis", lens["id"]) + f"""
-Apply one reusable scientific lens to every unchanged transformation proposal. The proposal is the object of evaluation; do not simulate a person or attribute authority to a speaker. Work in English only.
+Apply one reusable scientific lens to every unchanged transformation proposal. The proposal is the object of evaluation; do not simulate a person or attribute authority to a speaker. Author every assessment bilingually.
 
-LENS: {lens['name']}
-DISCIPLINE: {lens['discipline']}
-QUESTIONS: {'; '.join(lens['questions'])}
-CRITERIA: {'; '.join(lens['criteria'])}
-LIMITATIONS: {'; '.join(lens['limitations'])}
+LENS: {self._english(lens['name'])}
+DISCIPLINE: {self._english(lens['discipline'])}
+QUESTIONS: {'; '.join(self._english(value) for value in lens['questions'])}
+CRITERIA: {'; '.join(self._english(value) for value in lens['criteria'])}
+LIMITATIONS: {'; '.join(self._english(value) for value in lens['limitations'])}
 {note_text}
 
 LENS EVIDENCE:
@@ -1445,11 +1478,11 @@ Return exactly one assessment per proposal. Cite only supplied finding ids. Pres
         proposal_records = [self.repository.get_by_hash(ref.content_hash) for ref in proposals]
         assessments = [self.repository.get_by_hash(ref.content_hash) for ref in assessment_refs]
         digest = "\n".join(
-            f"- {record['id']} / {record['content']['lens_ref']} / {record['content']['verdict']}: {record['content']['assessment']}"
+            f"- {record['id']} / {record['content']['lens_ref']} / {record['content']['verdict']}: {self._english(record['content']['assessment'])}"
             for record in assessments
         )
         prompt = self._header("argument_map", "dilemma_mapper") + f"""
-Identify the decision tensions revealed by the transformation proposals and scientific lens assessments. Work in English only. Distinguish an empirical open question from a value conflict or irreducible trade-off. Evidence may clarify consequences but must not be presented as ranking public values.
+Identify the decision tensions revealed by the transformation proposals and scientific lens assessments. Author every tension bilingually. Distinguish an empirical open question from a value conflict or irreducible trade-off. Evidence may clarify consequences but must not be presented as ranking public values.
 
 PROPOSALS:
 {self._compact_proposals(proposal_records)}
@@ -1477,13 +1510,13 @@ Return 3-8 non-duplicative dilemmas. Cite proposal ids and finding ids. The evid
         assessments = [self.repository.get_by_hash(ref.content_hash) for ref in assessment_refs]
         uncertainties = [self.repository.get_by_hash(ref.content_hash) for ref in uncertainty_refs]
         prompt = self._header("synthesis", "research_agenda") + f"""
-Build a decision-relevant research agenda from the explicit uncertainties and low-confidence scientific lens assessments. Work in English only. Do not convert value conflicts into fake research questions.
+Build a bilingual, decision-relevant research agenda from the explicit uncertainties and low-confidence scientific lens assessments. Do not convert value conflicts into fake research questions.
 
 UNCERTAINTIES:
-{chr(10).join(f"- {r['id']}: {r['content']['question']}" for r in uncertainties)}
+{chr(10).join(f"- {r['id']}: {self._english(r['content']['question'])}" for r in uncertainties)}
 
 ASSESSMENT SIGNALS:
-{chr(10).join(f"- {r['content']['proposal_ref']} / {r['content']['lens_ref']} / {r['content']['confidence']}: {r['content']['assessment']}" for r in assessments if r['content']['confidence'] != 'high')}
+{chr(10).join(f"- {r['content']['proposal_ref']} / {r['content']['lens_ref']} / {r['content']['confidence']}: {self._english(r['content']['assessment'])}" for r in assessments if r['content']['confidence'] != 'high')}
 
 Return 4-10 prioritized questions with concrete methods. Cite proposal and uncertainty ids exactly. Mark questions that evidence cannot resolve as not_empirically_resolvable only when they expose a normative premise rather than ask for more data.
 """
@@ -1505,13 +1538,13 @@ Return 4-10 prioritized questions with concrete methods. Cite proposal and uncer
             by_type.setdefault(record["record_type"], []).append(record)
         proposal_text = self._compact_proposals(by_type["transformation_proposal"])
         lens_text = "\n".join(
-            f"- {r['content']['proposal_ref']} / {r['content']['lens_ref']} / {r['content']['verdict']}: {r['content']['assessment']}"
+            f"- {r['content']['proposal_ref']} / {r['content']['lens_ref']} / {r['content']['verdict']}: {self._english(r['content']['assessment'])}"
             for r in by_type["lens_assessment"]
         )
-        dilemma_text = "\n".join(f"- {r['content']['title']}: {r['content']['tension']}" for r in by_type["dilemma"])
-        agenda_text = "\n".join(f"- {r['content']['question']}" for r in by_type["research_question"])
+        dilemma_text = "\n".join(f"- {self._english(r['content']['title'])}: {self._english(r['content']['tension'])}" for r in by_type["dilemma"])
+        agenda_text = "\n".join(f"- {self._english(r['content']['question'])}" for r in by_type["research_question"])
         coverage_text = "\n".join(
-            f"- {entry['direction_id']} -> {', '.join(entry['proposal_refs'])}: {entry['rationale']}"
+            f"- {entry['direction_id']} -> {', '.join(entry['proposal_refs'])}: {self._english(entry['rationale'])}"
             for ledger in by_type.get("coverage_ledger", [])
             for entry in ledger["content"]["entries"]
         )
@@ -1542,9 +1575,9 @@ Return 4-10 prioritized questions with concrete methods. Cite proposal and uncer
             for finding in sorted(finding_records, key=lambda item: item["id"])
         ]
         citation_index = "\n".join(
-            f"- [{entry['finding_ref']}] {entry['claim']} — "
+            f"- [{entry['finding_ref']}] {self._english(entry['claim'])} — "
             + "; ".join(
-                f"{source['title']} ({source['url']})" for source in entry["sources"]
+                f"{self._english(source['title'])} ({source['url']})" for source in entry["sources"]
             )
             for entry in evidence_appendix
         )
@@ -1558,7 +1591,7 @@ Return 4-10 prioritized questions with concrete methods. Cite proposal and uncer
             )
         problem = problem or self.topic_data["problem_brief"]
         prompt = self._header("brief", "decision_package_writer") + f"""
-Write a concise English decision-package summary for the public question below. The summary must preserve the transformation option space, distinguish empirical uncertainty from value choice, and name material disciplinary mechanisms rather than speakers. Do not choose one winner.
+Write a concise bilingual decision-package summary for the public question below. The summary must preserve the transformation option space, distinguish empirical uncertainty from value choice, and name material disciplinary mechanisms rather than speakers. Do not choose one winner.
 
 PUBLIC QUESTION: {self._english(problem['public_question'])}
 
@@ -1598,8 +1631,8 @@ Write 500-900 words. Explain what can change, the leading mechanism and constrai
         def ids(record_type: str) -> list[str]:
             return sorted(r["id"] for r in by_type.get(record_type, []))
         return [self._record(f"DP-live-{arm}", "decision_package", provenance, {
-            "title": self._english(problem["title"]),
-            "public_question": self._english(problem["public_question"]),
+            "title": problem["title"],
+            "public_question": problem["public_question"],
             "summary": result["summary"],
             "transformation_family_refs": ids("transformation_family"),
             "proposal_refs": ids("transformation_proposal"),
@@ -1617,13 +1650,13 @@ Write 500-900 words. Explain what can change, the leading mechanism and constrai
     ) -> list[dict[str, Any]]:
         package = self.repository.get_by_hash(package_ref.content_hash)
         prompt = self._header("judge_score", "cross_family_evaluator") + f"""
-Evaluate this artifact-first decision package on six dimensions from 0 to 10. You are the judge family and must evaluate the generator's output, not rewrite it. Work in English only.
+Evaluate this artifact-first decision package on six dimensions from 0 to 10. You are the judge family and must evaluate the generator's output, not rewrite it. Return bilingual strengths and concerns.
 
 PACKAGE SUMMARY:
-{package['content']['summary']}
+{self._english(package['content']['summary'])}
 
 VISIBLE EVIDENCE APPENDIX:
-{chr(10).join(f"- [{entry['finding_ref']}] {entry['claim']} — " + '; '.join(source['url'] for source in entry['sources']) for entry in package['content'].get('evidence_appendix', []))}
+{chr(10).join(f"- [{entry['finding_ref']}] {self._english(entry['claim'])} — " + '; '.join(source['url'] for source in entry['sources']) for entry in package['content'].get('evidence_appendix', []))}
 
 STRUCTURAL COUNTS: proposals={len(proposals)}, lens_assessments={len(assessments)}, dilemmas={len(dilemmas)}, research_questions={len(agenda)}.
 
@@ -1667,10 +1700,15 @@ Score only what is visible. Treat an inline finding id as auditable only when th
             if record["content"]["decision_impact"] == "high":
                 priority_questions.append(ref.id)
         rationale = (
-            "The cross-family evaluation accepted the package for human review; "
-            "the external-use gate remains a human decision."
+            localized(
+                "The cross-family evaluation accepted the package for human review; the external-use gate remains a human decision.",
+                "Az eltérő modellcsalád értékelése emberi felülvizsgálatra elfogadta a csomagot; a külső felhasználás kapuja továbbra is emberi döntés.",
+            )
             if verdict != "needs_revision"
-            else "The cross-family evaluation requires revision before human external-use review."
+            else localized(
+                "The cross-family evaluation requires revision before human external-use review.",
+                "Az eltérő modellcsalád értékelése módosítást kér az emberi külsőfelhasználási felülvizsgálat előtt.",
+            )
         )
         return [self._record(f"DR-live-{arm}", "decision_readiness", provenance, {
             "package_ref": package_ref.id,
@@ -1692,10 +1730,13 @@ Score only what is visible. Treat an inline finding id as auditable only when th
         psych_assessments = self.repository.list(record_type="lens_assessment", topic=self.topic)
         psych_assessments = [r for r in psych_assessments if r["content"]["lens_ref"] == "L-live-educational_psychology"]
         keywords = ["big-fish", "little-pond", "self-concept", "label", "stereotype", "motivation", "goal orientation", "psycholog"]
-        assessment_text = " ".join(r["content"]["assessment"] for r in psych_assessments).lower()
-        package_text = psych_package["content"]["summary"].lower()
+        assessment_text = " ".join(
+            self._english(r["content"]["assessment"])
+            for r in psych_assessments
+        ).lower()
+        package_text = self._english(psych_package["content"]["summary"]).lower()
         comparison = {
-            "architecture_version": VERSION,
+            "architecture_version": DAG_VERSION,
             "baseline_package_ref": baseline["package_ref"],
             "psychology_package_ref": psychology["package_ref"],
             "transformation_hashes_identical": baseline["transformation_hashes"] == psychology["transformation_hashes"],
@@ -1878,20 +1919,20 @@ Score only what is visible. Treat an inline finding id as auditable only when th
                 current_prompt, schema, role=role, max_tokens=max_tokens,
                 arm=arm, node=node, run_dir=run_dir, suffix=attempt_suffix,
             )
-            text = result.get(field, "")
-            word_count = len(text.split())
+            checked_text = self._english(result.get(field, ""))
+            word_count = len(checked_text.split())
             violations = []
             if not minimum_words <= word_count <= maximum_words:
                 violations.append(
                     f"{field} requires {minimum_words}-{maximum_words} words, got {word_count}"
                 )
-            normalized = text.lower()
+            normalized = checked_text.lower()
             if required_terms and not any(term in normalized for term in required_terms):
                 violations.append(
                     f"{field} must carry at least one named mechanism from: "
                     + ", ".join(required_terms)
                 )
-            citation_count = text.count("[F-")
+            citation_count = checked_text.count("[F-")
             if citation_count < minimum_citations:
                 violations.append(
                     f"{field} requires at least {minimum_citations} inline finding citations, "
@@ -2030,7 +2071,7 @@ Score only what is visible. Treat an inline finding id as auditable only when th
     ) -> dict[str, Any]:
         return {
             "id": artifact_id, "record_type": record_type,
-            "schema_version": VERSION, "topic": self.topic, "status": "candidate",
+            "schema_version": ARTIFACT_VERSION, "topic": self.topic, "status": "candidate",
             "content": content, "provenance_ref": provenance,
             "created_at": self.created_at, "supersedes": None,
         }
@@ -2041,7 +2082,7 @@ Score only what is visible. Treat an inline finding id as auditable only when th
             return self._load(path)["created_at"]
         created_at = _now()
         write_json(path, {
-            "architecture_version": VERSION, "created_at": created_at,
+            "architecture_version": DAG_VERSION, "created_at": created_at,
             "generator_provider": self.provider_generator if hasattr(self, "provider_generator") else "anthropic",
             "judge_provider": self.provider_judge if hasattr(self, "provider_judge") else "openai",
             "topic": self.topic,
@@ -2050,19 +2091,23 @@ Score only what is visible. Treat an inline finding id as auditable only when th
 
     @staticmethod
     def _header(task: str, agent: str) -> str:
-        return f"TASK: {task}\nAGENT: {agent}\nLANG: en\n\n"
+        return (
+            f"TASK: {task}\nAGENT: {agent}\nLANG: en+hu\n\n"
+            "Every semantic prose field must be authored natively in both "
+            "languages as one exact {en, hu} object. The two texts must carry "
+            "the same claim, scope, numbers, uncertainty, and references. "
+            "Do not write Hungarian as a later translation step.\n\n"
+        )
 
     @staticmethod
-    def _bullets(items: Iterable[str]) -> str:
-        return "\n".join(f"- {item}" for item in items)
+    def _bullets(items: Iterable[Any]) -> str:
+        return "\n".join(f"- {text(item, 'en')}" for item in items)
 
     @staticmethod
     def _english(value: Any) -> str:
         """Read canonical English text or a legacy bilingual leaf."""
 
-        if isinstance(value, dict):
-            return str(value["en"])
-        return str(value)
+        return text(value, "en")
 
     @classmethod
     def _contract_hash(cls, name: str) -> str:
@@ -2130,23 +2175,30 @@ Score only what is visible. Treat an inline finding id as auditable only when th
     @staticmethod
     def _compact_proposals(records: list[dict[str, Any]]) -> str:
         return "\n\n".join(
-            f"{r['id']} — {r['content']['title']}\nGoal: {r['content']['goal']}\nMechanisms: {'; '.join(r['content']['mechanisms'])}\nEvidence: {r['content']['evidence_status']}\nRisks: {'; '.join(r['content']['risks'])}"
+            f"{r['id']} — {text(r['content']['title'], 'en')}\nGoal: {text(r['content']['goal'], 'en')}\nMechanisms: {'; '.join(text(value, 'en') for value in r['content']['mechanisms'])}\nEvidence: {r['content']['evidence_status']}\nRisks: {'; '.join(text(value, 'en') for value in r['content']['risks'])}"
             for r in records
         )
 
     @staticmethod
-    def _generation_notice(arm: str) -> str:
+    def _generation_notice(arm: str) -> dict[str, str]:
         if arm == "psychology":
-            return (
+            return localized(
                 "Fresh live v2 psychology sensitivity arm. Generator=anthropic; "
-                "judge=openai. The PR #29 lens is test-only, not registry admission."
+                "judge=openai. The PR #29 lens is test-only, not registry admission.",
+                "Friss, élő v2 pszichológiai érzékenységi ág. Generátor=anthropic; "
+                "értékelő=openai. A PR #29 nézőpont csak teszt, nem jegyzékbe vétel.",
             )
         if arm == "production":
-            return (
+            return localized(
                 "Fresh live v2 production replicate using the admitted lens registry. "
-                "Generator=anthropic; judge=openai; human external-use gate remains pending."
+                "Generator=anthropic; judge=openai; human external-use gate remains pending.",
+                "Friss, élő v2 produkciós ismétlés a befogadott nézőpontjegyzékkel. "
+                "Generátor=anthropic; értékelő=openai; az emberi külsőfelhasználási kapu függőben marad.",
             )
-        return "Fresh live v2 baseline arm. Generator=anthropic; judge=openai."
+        return localized(
+            "Fresh live v2 baseline arm. Generator=anthropic; judge=openai.",
+            "Friss, élő v2 alapág. Generátor=anthropic; értékelő=openai.",
+        )
 
     def _arm_summary(self, arm: str) -> Path:
         return self.output_root / "runs" / f"live-{self.topic}-{arm}" / "arm_summary.json"

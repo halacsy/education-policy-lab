@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Finance-architecture reform operates upstream of network delivery: it changes incentives for identification but does not directly add transport routes, specialist positions, or training-program capacity. From this lens, shifting to census-based allocation could reduce diagnosis-driven demand surges on an already capacity-constrained network, but the proposal's own acknowledgment that no causal evidence links Hungary's financing mechanism to the identification rise means the network-capacity benefit is speculative rather than established.",
+      "hu": "A pénzügyi-architektúra reform a hálózatos szolgáltatásnyújtás előtt működik: megváltoztatja az azonosítás ösztönzőit, de közvetlenül nem ad hozzá szállítási útvonalakat, szakember-álláshelyeket vagy képzési programkapacitást. Ebből a szemszögből a népességalapú (census-based) allokációra való áttérés csökkentheti a diagnózisvezérelt keresleti hullámokat egy már eleve kapacitáskorlátos hálózaton, de a javaslat saját elismerése, miszerint nincs oksági bizonyíték arra, hogy Magyarország finanszírozási mechanizmusa összefüggésben áll az azonosítás növekedésével, azt jelenti, hogy a hálózati kapacitásra gyakorolt előny spekulatív, nem pedig bizonyított."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-08"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Could be sequenced with workforce expansion (as in TP-live-t5) so that reduced over-identification incentives free capacity for genuine unmet need in underserved regions.",
+        "hu": "Sorrendbe állítható a munkaerő-bővítéssel (ahogy a TP-live-t5-ben), így a túlazonosítást ösztönző motivációk csökkenése felszabadíthatja a kapacitást a valódi kielégítetlen igények számára az ellátatlan régiókban"
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Removing diagnosis-gated fiscal incentives could reduce artificial demand pressure on the already-strained expert-committee and traveling-specialist network infrastructure.",
+        "hu": "A diagnózishoz kötött fiskális ösztönzők eltörlése csökkentheti a mesterséges keresleti nyomást a már amúgy is megterhelt szakértői bizottságon és a vándorló szakemberhálózaton."
+      },
+      {
+        "en": "Tying supplementary grants to documented service delivery rather than headcount could improve alignment between funding and actual network capacity where specialists are physically deployed.",
+        "hu": "A kiegészítő támogatások létszám helyett dokumentált szolgáltatásnyújtáshoz kötése javíthatná a finanszírozás és a tényleges hálózati kapacitás (ahol a szakemberek fizikailag telepítve vannak) összehangoltságát."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Poland's contrasting experience of expanding rather than removing disability-weighted funding suggests financing reform direction is not self-evidently network-improving and could have unpredictable effects on specialist deployment incentives.",
+        "hu": "Lengyelország ellentétes tapasztalata — a fogyatékossághoz súlyozott finanszírozás bővítése a megszüntetése helyett — arra utal, hogy a finanszírozási reform iránya nem feltétlenül javítja az ellátóhálózatot, és kiszámíthatatlan hatásai lehetnek a szakemberek telepítésére ösztönző mechanizmusokra."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Financing redesign does not address the underlying regional specialist-training and workforce distribution gaps (e.g., Northeast Hungary) that constrain network delivery regardless of funding formula.",
+        "hu": "A finanszírozás átalakítása nem érinti a mögöttes regionális szakemberképzési és munkaerő-eloszlási hiányosságokat (pl. Északkelet-Magyarország), amelyek a hálózati szolgáltatásnyújtást a finanszírozási képlettől függetlenül korlátozzák."
+      },
+      {
+        "en": "The mechanism rests on untested incentive theory for Hungary specifically, per the proposal's own risk statement, so network-level effects cannot be assessed with confidence.",
+        "hu": "A mechanizmus kifejezetten Magyarországra vonatkozó, nem tesztelt ösztönzőelméleten nyugszik a javaslat saját kockázati nyilatkozata szerint, ezért a hálózatszintű hatások nem értékelhetők magabiztosan."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5219998939635d6e11117081d84ab26092fbeb970d3ecd09aa0a161f8577041c",
+  "topic": "sni-letszamnovekedes"
+}

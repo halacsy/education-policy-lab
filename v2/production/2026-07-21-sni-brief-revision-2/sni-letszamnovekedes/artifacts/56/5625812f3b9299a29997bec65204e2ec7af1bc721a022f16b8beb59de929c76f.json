@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-portuguese_reform-01",
+      "A-live-portuguese_reform-02",
+      "A-live-portuguese_reform-03"
+    ],
+    "claim": {
+      "en": "Between 2010 and 2020, primary education SEN identification increased from 6.7% to 7.7%, and secondary education rose from 3.9% to 6.2%; separately, absolute numbers increased 1.6-fold over 20 years, but these metrics use different reference periods and sources remain unreconciled into a single harmonized time series.",
+      "hu": "2010 és 2020 között az általános iskola szintjén az SNI-azonosítás 6,7%-ról 7,7%-ra emelkedett, a középfokon pedig 3,9%-ról 6,2%-ra nőtt; külön mérve az abszolút esetszám 20 év alatt 1,6-szorosára nőtt. Ezek a mutatók azonban eltérő referenciaidőszakokat és forrásokat használnak, és nem kerültek harmonizálásra egyetlen, összehangolt idősorba."
+    },
+    "context": {
+      "en": "Fresh live research through the Portuguese system reform lens",
+      "hu": "Friss, aktuális kutatás a portugál rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "portuguese_reform"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Different metrics (share vs. absolute multiplier) from different reference periods",
+        "hu": "Eltérő mutatók (arány vs. abszolút szorzó) különböző referenciaidőszakokból"
+      },
+      {
+        "en": "No single continuous time series across full 20+ years available",
+        "hu": "Nincs egyetlen, folytonos idősor, amely végig lefedné a teljes több mint 20 éves időszakot."
+      },
+      {
+        "en": "Magnitude estimates vary by source",
+        "hu": "A nagyságrendi becslések forrásonként eltérnek"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-portuguese_reform-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-portuguese_reform-01",
+      "U-live-portuguese_reform-02",
+      "U-live-portuguese_reform-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-portuguese_reform-01",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "31ebecda2f456ae5cb90160f6ac318247742a06412cd1b19efb664a9d497d128",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,67 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T4's networked/hub model is attractive from a failure-containment perspective because it avoids binary closure, but its central mechanism—inter-municipal cooperation—relies on the kind of social capital that the proposal's own evidence shows is rare and unevenly distributed (the Erdőkürt case). Substituting formal structures for organic social capital is a reasonable hypothesis but is untested; no monitoring or adaptation process is specified to detect where clustering fails to take hold. Coordination is further complicated by documented inter-municipal competition over pupil enrollment, which directly threatens the cooperative premise of clustering.",
+      "hu": "A T4 hálózatos/centrum modell a meghibásodás-konténmentálás szempontjából vonzó, mert elkerüli a bináris bezárást, de központi mechanizmusa — az önkormányzatok közötti együttműködés — azon társadalmi tőkére támaszkodik, amelyről a javaslat saját bizonyítéka kimutatja, hogy ritka és egyenetlenül elosztott (az Erdőkürt-eset). A formális struktúrák organikus társadalmi tőke helyettesítésére való betételre irányuló hipotézis ésszerű, de nem tesztelt; nincs meghatározva monitoring- vagy adaptációs folyamat arra, hogy észlelje, hol nem épül ki a klaszterezés. Az összehangolást tovább bonyolítja a dokumentált önkormányzatok közötti verseny a tanulólétszámért, ami közvetlenül veszélyezteti a klaszterezés együttműködési premisszáját."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-04"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Piloting hub co-location with kindergarten services in a few high-depopulation regions would test the mechanism at manageable scale before broader rollout.",
+        "hu": "A hubok együttes elhelyezésének pilótaprogramja óvodai szolgáltatásokkal néhány erősen elnéptelenedő régióban a mechanizmust kezelhető méretben tesztelné a szélesebb körű bevezetés előtt."
+      },
+      {
+        "en": "Formalizing successful informal networks (where they exist) into codified cluster agreements could create a replicable template.",
+        "hu": "A sikeres informális hálózatok (ahol léteznek) kodifikált klasztermegállapodásokká való formalizálása reprodukálható sablont hozhat létre."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Framing rural schools as multi-service hubs, aligned with kindergarten access thresholds, offers a plausible way to spread fixed costs and increase viability without full closure.",
+        "hu": "A vidéki iskolák többfunkciós központként való feltüntetése, összhangban az óvodai hozzáférési küszöbökkel, hihető módot kínál a fix költségek megosztására és a fenntarthatóság növelésére teljes bezárás nélkül."
+      },
+      {
+        "en": "Draws on a concrete Polish legislative comparator (2025 draft repurposing law) as a template for staged rather than binary transformation.",
+        "hu": "Konkrét lengyel jogalkotási összehasonlítót használ (2025 draft repurposing law) mintaként a lépcsőzetes, nem bináris átalakuláshoz."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Outcomes may remain as uneven as the Erdőkürt case, producing patchwork viability rather than a systemic solution.",
+        "hu": "Az eredmények maradhatnak olyan egyenetlenek, mint az Erdőkürt esete, ami foltokból álló életképességet eredményez ahelyett, hogy rendszerszintű megoldást nyújtana."
+      },
+      {
+        "en": "Absent capital investment, voluntary clustering may stall precisely in the highest-need, lowest-capacity municipalities.",
+        "hu": "Tőkeberuházás hiányában az önkéntes klasztereződés pontosan a legnagyobb szükségű, legalacsonyabb kapacitású településeken akadhat el."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "The proposal's own success case (Erdőkürt) was driven by rare local social capital, and no mechanism is specified for replicating this where such capital is absent.",
+        "hu": "A javaslat saját sikertörténetét (Erdőkürt) ritka helyi társadalmi tőke hajtotta, és nincs meghatározva olyan mechanizmus, amellyel ezt ott lehetne megismételni, ahol az ilyen tőke hiányzik."
+      },
+      {
+        "en": "Documented inter-municipal competition over pupil 'pull' is a direct threat to the voluntary cooperation the clustering model depends on, and no dispute-resolution or incentive-alignment mechanism is described.",
+        "hu": "A tanulók „átcsábításáért” folytatott önkormányzatok közötti verseny közvetlen fenyegetést jelent a klaszterezési modellre épülő önkéntes együttműködésre, és nem ismert semmilyen vitamegoldó vagy ösztönzés-egybehangoló mechanizmus."
+      },
+      {
+        "en": "Regulatory guidance without dedicated capital investment is flagged as potentially insufficient, and no funding commitment is specified.",
+        "hu": "A dedikált tőkebefektetés nélküli szabályozói útmutatás potenciálisan elégtelennek van jelölve, és nincs meghatározva finanszírozási kötelezettségvállalás."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "cb0d6ef986e54aae45e522bf6fbecaacc8901203f2fbe2421210dea60ad255ef",
+  "topic": "rural-school-closures"
+}

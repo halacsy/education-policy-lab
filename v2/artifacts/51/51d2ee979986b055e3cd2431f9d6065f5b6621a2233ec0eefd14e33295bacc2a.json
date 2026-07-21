@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-hungarian_education_system-01",
+      "A-rural-school-closures-hungarian_education_system-02",
+      "A-rural-school-closures-hungarian_education_system-03",
+      "A-rural-school-closures-hungarian_education_system-04",
+      "A-rural-school-closures-hungarian_education_system-05"
+    ],
+    "claim": {
+      "en": "The Hungarian primary school system operates under mandatory-catchment rules that assign pupils to geographically designated schools; small villages without local capacity are assigned to neighboring district schools, placing pupils and families in dependent relationships with respect to school access and travel.",
+      "hu": "A magyar általános iskolai rendszer kötelező felvételi körzeteken alapul, amely tanulókat geográfiai alapon kijelölt iskolákhoz rendel; saját kapacitás nélküli kis községeket szomszédos tankerületi iskolákhoz rendelik, ami tanulókat és családokat függ helyzetbe helyezi az iskola-hozzáféréssel és az utazással kapcsolatban."
+    },
+    "context": {
+      "en": "The unavoidable contraction of rural primary school provision in Hungary must be managed through transparent, locally-led merger and maintainer-change mechanisms that prioritize pupil welfare, transport safety, and informed parental consent, rather than through top-down administrative consolidation that disconnects school governance from community voice and decision-making.",
+      "hu": "A magyar vidéki általános iskolai ellátás elkerülhetetlen összehúzódása transzparent, helyi szinten vezetett összevonási és fenntartóváltási mechanizmusokon keresztül kell, hogy történjen, amelyek a tanuló jólétét, az utazás biztonságát és a tájékozott szülői beleegyezést helyezik előtérbe, szemben a felülről lefelé irányuló közigazgatási konszolidációval, amely szétválasztja az iskola-irányítást a közösségi szóból és a döntéshozatalból."
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-92476a6cef0cfa"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-hungarian_education_system-01",
+      "U-rural-school-closures-hungarian_education_system-02",
+      "U-rural-school-closures-hungarian_education_system-03",
+      "U-rural-school-closures-hungarian_education_system-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-hungarian_education_system-15",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "26a083fab2205c541552fe6bf637d403ad3e78e14fa849f48fe0c448232d7463",
+  "topic": "rural-school-closures"
+}

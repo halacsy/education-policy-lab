@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From an implementation-planning lens, the passive baseline is not a delivery mechanism at all but a decision to forgo intervention, so classic implementation criteria (actor capacity, sequencing, pilotability) are largely inapplicable except insofar as existing bottlenecks continue unaddressed. The proposal implicitly assumes system stability, but documented evidence shows active, compounding dysfunctions (diagnostic bottlenecks, second-stage service failure, capacity misallocation after centralization) that will continue to run without any monitoring or containment mechanism attached.",
+      "hu": "A végrehajtástervezési nézőpontból a passzív alapvonal nem is egy kézbesítési mechanizmus, hanem a beavatkozás mellőzésének döntése, így a klasszikus végrehajtási kritériumok (szereplői kapacitás, ütemezés, pilotálhatóság) nagyrészt alkalmazhatatlanok, kivéve amennyiben a meglévő szűk keresztmetszetek továbbra is megoldatlanok maradnak. A javaslat implicit feltételezi a rendszer stabilitását, azonban a dokumentált bizonyítékok aktív, egymást erősítő diszfunkciókat mutatnak (diagnosztikai torlódások, második szakaszbeli szolgáltatás-kudarc, kapacitásrosszallokáció a centralizáció után), amelyek a monitorozás vagy korlátozó mechanizmus hiányában tovább fognak működni."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-04",
+      "F-live-implementation_planning-05"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Could be paired with the monitoring architecture proposal (TP-live-t2) to at least generate feedback data even absent active intervention",
+        "hu": "Összekapcsolható a monitoring-architektúra javaslattal (TP-live-t2), hogy legalább visszacsatolási adatokat generáljon még aktív beavatkozás hiányában is"
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Requires no new actor capacity or coordination, so there is no implementation delivery risk in the conventional sense",
+        "hu": "Nem igényel új szereplői kapacitást vagy koordinációt, így a hagyományos értelemben nincs megvalósítási teljesítési kockázat."
+      },
+      {
+        "en": "Provides an analytically clean counterfactual against which other proposals' marginal effects could be measured, which is itself useful for adaptive management",
+        "hu": "Elemzőileg tiszta ellenfaktust biztosít, amelyhez képest más javaslatok marginális hatásai mérhetők, ami önmagában is hasznos az adaptív menedzsmenthez."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Absence of any containment mechanism means existing bottlenecks and misallocations documented in the evidence base will persist or compound without any capacity to detect deterioration early",
+        "hu": "Bármilyen korlátozó mechanizmus hiánya azt jelenti, hogy a bizonyítékokban dokumentált meglévő szűk keresztmetszetek és rossz allokációk fennmaradnak vagy összegződnek, mivel nincs kapacitás a romlás korai felismerésére."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No monitoring or feedback loop is proposed to track whether the documented capacity constraints in diagnostic services worsen (F-live-implementation_planning-03)",
+        "hu": "Nem javasolt monitoring- vagy visszacsatolási kör annak nyomon követésére, hogy a dokumentált kapacitáshiányok a diagnosztikai szolgáltatásokban romlanak-e (F-live-implementation_planning-03)"
+      },
+      {
+        "en": "No mechanism addresses the already-documented second-stage failure where assessed children do not receive prescribed habilitation and therapy hours (F-live-implementation_planning-04)",
+        "hu": "Nincs olyan mechanizmus, amely kezelné a már dokumentált második szakaszbeli hibát, amikor a felmért gyermekek nem kapják meg az előírt habilitációs és terápiás órákat (F-live-implementation_planning-04)"
+      },
+      {
+        "en": "The organizational capacity misallocation from the 2013 centralization is left completely unaddressed, allowing the paperwork/therapy imbalance to continue indefinitely (F-live-implementation_planning-05)",
+        "hu": "A 2013-as központosításból eredő szervezeti kapacitás téves allokációja teljesen megoldatlan marad, lehetővé téve a papírmunka/terápia egyensúlytalanságának korlátlan folytatódását (F-live-implementation_planning-05)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "56666bd61d212530db3a88225c35784c6b3dfd54980674f479718343baf3f9c5",
+  "topic": "sni-letszamnovekedes"
+}

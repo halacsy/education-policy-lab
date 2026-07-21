@@ -1,0 +1,62 @@
+{
+  "artifact_schema_version": "2.1.0",
+  "decision": "D-34 restored for v2 semantic artifacts",
+  "migrated_at": "2026-07-21T18:54:58.433208Z",
+  "migration_type": "retrospective_translation_without_analytical_rerun",
+  "roots": [
+    {
+      "current_bilingual_records": 1002,
+      "current_total_records": 1016,
+      "migrated_records": 1002,
+      "root": "v2"
+    },
+    {
+      "current_bilingual_records": 437,
+      "current_total_records": 517,
+      "migrated_records": 437,
+      "root": "v2/experiments/2026-07-20-psychology-lens-live"
+    },
+    {
+      "current_bilingual_records": 463,
+      "current_total_records": 516,
+      "migrated_records": 463,
+      "root": "v2/production/2026-07-20-live/korai-szelekcio"
+    },
+    {
+      "current_bilingual_records": 456,
+      "current_total_records": 502,
+      "migrated_records": 456,
+      "root": "v2/production/2026-07-20-live/rural-school-closures"
+    },
+    {
+      "current_bilingual_records": 467,
+      "current_total_records": 515,
+      "migrated_records": 467,
+      "root": "v2/production/2026-07-21-sni-brief-revision-2/sni-letszamnovekedes"
+    }
+  ],
+  "repairs": [
+    {
+      "repair_type": "long_identical_language_copy",
+      "repaired_at": "2026-07-21T19:04:41.725832Z",
+      "repaired_values": 17,
+      "roots": [
+        {"current_bilingual_records": 1002, "current_total_records": 1018, "migrated_records": 6, "root": "v2"},
+        {"current_bilingual_records": 437, "current_total_records": 518, "migrated_records": 1, "root": "v2/experiments/2026-07-20-psychology-lens-live"},
+        {"current_bilingual_records": 463, "current_total_records": 517, "migrated_records": 4, "root": "v2/production/2026-07-20-live/korai-szelekcio"},
+        {"current_bilingual_records": 456, "current_total_records": 503, "migrated_records": 1, "root": "v2/production/2026-07-20-live/rural-school-closures"},
+        {"current_bilingual_records": 467, "current_total_records": 516, "migrated_records": 5, "root": "v2/production/2026-07-21-sni-brief-revision-2/sni-letszamnovekedes"}
+      ]
+    }
+  ],
+  "current_state": [
+    {"current_bilingual_records": 1002, "current_total_records": 1018, "root": "v2"},
+    {"current_bilingual_records": 437, "current_total_records": 518, "root": "v2/experiments/2026-07-20-psychology-lens-live"},
+    {"current_bilingual_records": 463, "current_total_records": 517, "root": "v2/production/2026-07-20-live/korai-szelekcio"},
+    {"current_bilingual_records": 456, "current_total_records": 503, "root": "v2/production/2026-07-20-live/rural-school-closures"},
+    {"current_bilingual_records": 467, "current_total_records": 516, "root": "v2/production/2026-07-21-sni-brief-revision-2/sni-letszamnovekedes"}
+  ],
+  "translation_memory_size": 12489,
+  "updated_at": "2026-07-21T19:04:41.725832Z",
+  "version": "1.0.0"
+}

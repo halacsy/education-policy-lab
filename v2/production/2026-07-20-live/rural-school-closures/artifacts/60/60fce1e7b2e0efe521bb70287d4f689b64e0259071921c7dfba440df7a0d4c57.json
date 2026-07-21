@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal accepts network contraction as the default and shifts the lens question toward whether transport and equity mitigation can adequately substitute for lost geographic access; the evidence on both transport-responsibility clarity and closure-population effects remains unsettled, limiting confidence in the mitigation's sufficiency.",
+      "hu": "A javaslat alapértelmezésként elfogadja a hálózat összehúzódását, és a fókuszt arra helyezi, hogy a közlekedési és egyenlőség-szigorító intézkedések mennyiben tudják megfelelően helyettesíteni az elveszett földrajzi hozzáférést; mind a közlekedési felelősség tisztázására, mind a bezárások lakosságra gyakorolt hatásaira vonatkozó bizonyítékok rendezetlenek, ami korlátozza a bizalmat abban, hogy a mérséklés elegendő lesz."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-07",
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-10",
+      "F-live-school_network_planning-09"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Existing free public transport for under-14s provides partial infrastructure to build statutory transport guarantees upon, though it does not resolve frequency limitations in the highest-depopulation regions",
+        "hu": "A meglévő, 14 év alattiaknak járó ingyenes közösségi közlekedés részleges infrastruktúrát biztosít a jogszabályi közlekedési garanciák kiépítéséhez, bár nem oldja meg a legmagasabb elnéptelenedési régiókban jelentkező járatsűrűségi korlátokat"
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Directly addresses the transport criterion by proposing statutory clarity where legal responsibility for pupil transport is currently disputed and unassigned",
+        "hu": "Közvetlenül kezeli a szállítási kritériumot azáltal, hogy törvényi egyértelműséget javasol olyan területen, ahol a tanulók szállításáért való jogi felelősség jelenleg vitatott és nem kijelölt"
+      },
+      {
+        "en": "Targets capacity and equity together by tying anti-segregation safeguards to closure decisions in a context of documented Roma enrollment disparities tied to settlement geography",
+        "hu": "Egyidejűleg célozza a kapacitást és az egyenlőséget azzal, hogy a szegregációellenes védőintézkedéseket bezárással kapcsolatos döntésekhez köti olyan kontextusban, ahol dokumentált roma beiratkozási különbségek kapcsolódnak a települési földrajzhoz"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Closure-population decline causal link is genuinely contested internationally (Finnish DID studies vs. Saxony/Sweden null findings; only 17% of residents rating school absence a major shortcoming), meaning the policy's core justification for defaulting to closure with mitigation rests on unsettled evidence",
+        "hu": "Az iskolabezárások és a népességcsökkenés közötti oksági kapcsolat nemzetközileg valóban vitatott (finn DID-vizsgálatok vs. Szászország/Svédország nullás eredményei; a lakosok mindössze 17%-a tartja az iskola hiányát súlyos hiányosságnak), ami azt jelenti, hogy a zárás alapértelmezett alkalmazását mérsékléssel alátámasztó politika fő igazolása rendezetlen bizonyítéson nyugszik."
+      },
+      {
+        "en": "Informal inter-municipal competition and settlement-level Roma enrollment disparities suggest mitigation focused on individual pupil transport may not address network-level segregation effects from closures",
+        "hu": "A nem hivatalos települések közötti versengés és a települési szintű roma beiratkozási eltérések azt sugallják, hogy az egyéni tanulószállításra összpontosító enyhítések nem feltétlenül kezelik a bezárásokból eredő hálózati szintű szegregációs hatásokat"
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Even robust transport guarantees do not resolve the underlying rural transport frequency and scheduling gaps documented across North-Eastern, South-Western, and Western regions, meaning statutory entitlement may not translate into practical access",
+        "hu": "Még a szilárd közlekedési garanciák sem oldják meg az Északkeleti, Délnyugati és Nyugati régiókban dokumentált alapvető vidéki közlekedési gyakorisági és menetrendi hiányosságokat, ami azt jelenti, hogy a jogszabályi jogosultság nem feltétlenül válik gyakorlati hozzáféréssé."
+      },
+      {
+        "en": "Consolidation cost savings themselves are contested (Texas vs. NY findings), weakening the fiscal rationale underlying threshold-triggered defaults toward closure",
+        "hu": "Az összevonással járó költségmegtakarítások maguk is vitatottak (Texas vs. NY megállapítások), ami gyengíti a küszöbérték által kiváltott alapértelmezések zárás felé mutató fiskális indoklását"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "da95ddf1615321782938739438badd18e217dba8761d5ed2eace752ce354a151",
+  "topic": "rural-school-closures"
+}

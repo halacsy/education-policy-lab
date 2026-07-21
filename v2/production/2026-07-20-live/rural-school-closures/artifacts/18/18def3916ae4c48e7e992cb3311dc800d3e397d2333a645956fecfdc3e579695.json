@@ -1,0 +1,68 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A presumption-against-closure duty addresses the procedural gap in Hungary's centralized system but does not alter the underlying demographic trajectory. The cohort collapse (22% birth decline 2021-2025, TFR 1.31) and the existence of a zero-enrollment cliff in the smallest settlements mean that for a meaningful subset of villages, 'alternatives assessment' will document genuine non-viability rather than prevent closure. The lens value of this proposal lies in ensuring closures track actual demographic contraction rather than administrative convenience, and in creating a documented counterfactual record where none currently exists.",
+      "hu": "A bezárás ellenkező irányú vélelmezése (presumption-against-closure) a magyar központosított rendszer eljárási hiányosságát célozza, de nem változtatja meg az alapvető demográfiai pályát. A kohorsz összeomlás (22% születésszámcsökkenés 2021–2025, TFR 1.31) és a legkisebb településeken megfigyelt nulla beiratkozási szakadék létezése azt jelenti, hogy egy jelentős alcsoportra nézve az 'alternatívák értékelése' valódi nem-életképességet fog dokumentálni, ahelyett hogy megakadályozná a bezárást. Ennek a javaslatnak a lencseértéke abban rejlik, hogy biztosítja: a bezárások tényleges demográfiai zsugorodást kövessenek, nem pedig adminisztratív kényelmet, és dokumentált kontra-faktuális nyilvántartást hozzon létre ott, ahol jelenleg nincs."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Could be calibrated using demographic momentum data (14.4% youth cohort share) to set realistic planning horizons rather than reactive, single-year closure decisions",
+        "hu": "Demográfiai lendület adataival (14.4% youth cohort share) lehet kalibrálni, hogy reális tervezési horizontokat állítsanak be ahelyett, hogy reakciós, egyéves bezárási döntéseket hoznának"
+      },
+      {
+        "en": "Alternatives assessment could formally incorporate spatial clustering of aging municipalities (Vas/Zala) to plan region-specific responses ahead of crisis points",
+        "hu": "A lehetséges alternatívák értékelése hivatalosan beépíthetné az elöregedő önkormányzatok térbeli klasztereződését (Vas/Zala), hogy régióspecifikus válaszokat tervezzen a válságpontok előtt."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Creates a documented decision trail distinguishing genuinely unviable settlements (zero-cohort cliff) from administratively convenient closures",
+        "hu": "Dokumentált döntési nyomvonalat hoz létre, amely megkülönbözteti a valóban működésképtelen településeket (zero-cohort cliff) az adminisztratívan kényelmes bezárásoktól."
+      },
+      {
+        "en": "Procedural safeguard can incorporate age-structure and cohort-trajectory data into mandatory alternatives assessment",
+        "hu": "A procedurális garancia beépítheti a korstruktúra és a kohorszpálya adatait a kötelező alternatívák értékelésébe."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Negative demographic momentum continues independent of procedural reform, meaning even a fully functioning presumption-against-closure regime cannot indefinitely sustain cohorts approaching zero",
+        "hu": "A negatív demográfiai lendület az eljárásbeli reformtól függetlenül folytatódik, vagyis még egy teljesen működőképes, bezárás ellen vélelmező rendszer sem képes korlátlan ideig fenntartani a nullához közelítő évfolyamokat."
+      },
+      {
+        "en": "Delay introduced by mandatory assessment could outpace the speed of cohort collapse in the fastest-declining municipalities",
+        "hu": "A kötelező felmérés által bevezetett késedelem meghaladhatja a leggyorsabban fogyó települések csoportösszeomlásának sebességét"
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Does not address the structural cause of closure pressure: TFR collapse to 1.31 and 22% four-year birth decline that shrink the underlying pupil pool regardless of procedure",
+        "hu": "Nem kezeli a bezárási nyomás szerkezeti okát: a teljes termékenységi arányszám (TFR) 1,31-re zuhant és 22%-os négyéves születésszám-csökkenés következett be, amelyek a rendelkezésre álló tanulói létszámot zsugorítják a procedúrától függetlenül."
+      },
+      {
+        "en": "Provides no mechanism for settlements that have already crossed the zero-enrollment threshold, such as villages with under-18 shares below 10 percent",
+        "hu": "Nem biztosít mechanizmust azoknak a településeknek, amelyek már átlépték a nulla-beiratkozás küszöbét, például azok a falvak, amelyekben a 18 év alattiak aránya 10 percent alatt van."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-demography",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "17a0428c2bbe13f48d4c675eb33c79915d57e337a06c53584bea949b66973d6f",
+  "topic": "rural-school-closures"
+}

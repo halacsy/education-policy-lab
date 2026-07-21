@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "In a Hungarian micro-region, settlements with disproportionately high Roma population shares exhibited corresponding school-level Roma enrollment disparities; neighboring settlements perceived successful schools' pupil 'pull' as a threat to their own enrollment, creating informal inter-municipal competition that distorts simple geographic-efficiency models.",
+      "hu": "Egy magyar mikrorégióban a települések, ahol arányaiban nagy a roma lakosság, az iskolai roma beiskolázásban is arányosan magas eltéréseket mutattak; a szomszédos települések a sikeres iskolák 'vonzását' fenyegetésként élték meg, ami informális önkormányzatok közti versenyt teremtett és torzítja az egyszerű földrajzi hatékonysági modelleket."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Limited to a single micro-region; generalization to national school-planning context is speculative",
+        "hu": "Egyetlen mikrorégióra korlátozódik; az általánosítás a nemzeti iskolatervezési kontextusra spekulatív"
+      },
+      {
+        "en": "Underlying causal mechanisms (segregation preference, funding incentives, informal stigmatization) not disaggregated",
+        "hu": "A mögöttes oksági mechanizmusok (szegregációs preferencia, finanszírozási ösztönzők, informális megbélyegzés) nincsenek szétbontva."
+      },
+      {
+        "en": "Does not quantify the magnitude of competitive enrollment effects relative to distance-based factors",
+        "hu": "Nem számszerűsíti a versenyalapú beiratkozási hatások nagyságát a távolságon alapuló tényezőkhöz képest."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-09"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-09",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "9f04d67a4d25ec29e32111724a6579a1ee7b1ac563b0fc8829a6666f2cf437d7",
+  "topic": "rural-school-closures"
+}

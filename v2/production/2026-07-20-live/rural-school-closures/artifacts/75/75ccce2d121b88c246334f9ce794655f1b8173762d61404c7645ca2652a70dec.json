@@ -1,0 +1,66 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a public finance perspective, this proposal most directly targets the evidentiary gap that undermines value-for-money assessment across all other proposals: contested and unverified consolidation-savings claims (F-live-education_finance-02), routinely omitted transportation cost offsets (F-live-education_finance-03), and mixed evidence on closure's demographic/fiscal knock-on effects (F-live-education_finance-04). A registry tracking realized rather than projected savings would substantially improve the evidence base for future cost-incidence and value-for-money judgments, addressing a documented gap where past policy cycles were driven by political decision rather than verified fiscal outcomes. The chief limitation is that transparency infrastructure carries its own setup and maintenance costs and does not itself resolve fiscal magnitude or affordability questions, only informs them.",
+      "hu": "Közpénzügyi szempontból ez a javaslat közvetlenül azokra a bizonyíték-hiányokra céloz, amelyek aláássák az ár-érték (value-for-money) értékelését minden más javaslat esetében: vitatott és ellenőrizetlen konszolidációs megtakarítási állítások (F-live-education_finance-02), rutin módon kihagyott közlekedési költségkompenzációk (F-live-education_finance-03), valamint vegyes bizonyítékok az intézménybezárások demográfiai/fiskális másodlagos hatásairól (F-live-education_finance-04). Egy olyan nyilvántartás, amely a projekciók helyett a realizált megtakarításokat követi, lényegesen javítaná a bizonyítékalapot a jövőbeli költségterhelés- és ár-érték ítéletekhez, választ adva egy dokumentált hiányra, ahol a korábbi politikai ciklusokat inkább politikai döntések, mint ellenőrzött fiskális eredmények vezették. A fő korlát az, hogy az átláthatósági infrastruktúrának saját telepítési és fenntartási költségei vannak, és önmagában nem oldja meg a fiskális nagyságrendet vagy megfizethetőségi kérdéseket, csak informálja azokat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-02",
+      "F-live-education_finance-03",
+      "F-live-education_finance-04",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Could substantially improve future value-for-money assessments for all other proposals (T1-T5) by supplying verified, comparable cost data currently absent from the corpb",
+        "hu": "Jelentősen javíthatná a jövőbeni költséghatékonysági értékeléseket minden egyéb javaslatnál (T1-T5) azzal, hogy hitelesített, összehasonlítható költségadatokat szolgáltat, amelyek jelenleg hiányoznak a corpb-ból"
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Directly targets the contested/unverified nature of consolidation cost-savings claims (F-live-education_finance-02) by requiring tracking of realized, not projected, savings",
+        "hu": "Közvetlenül célozza a konszolidációs költségmegtakarítási állítások vitatott/ellenőrizetlen jellegét (F-live-education_finance-02) azáltal, hogy a projekciók helyett a ténylegesen realizált megtakarítások nyomon követését írja elő."
+      },
+      {
+        "en": "Mandates inclusion of transportation cost offsets in cost accounting (F-live-education_finance-03), closing a documented gap in current closure-proposal cost visibility",
+        "hu": "Előírja a szállítási költségek ellensúlyainak bevonását a költségelszámolásba (F-live-education_finance-03), ezzel lezárva a dokumentált hiányt a jelenlegi bezárási javaslat költségláthatóságában"
+      },
+      {
+        "en": "Establishes a Hungary-specific evidence base rather than assuming international findings on closure/depopulation linkage transfer directly (F-live-education_finance-04)",
+        "hu": "Magyarországspecifikus bizonyítékbázist hoz létre ahelyett, hogy közvetlenül átvinné a nemzetközi megállapításokat a bezárás/népességfogyás összefüggéséről (F-live-education_finance-04)"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Historical pattern of top-down political decisions overriding technical evidence suggests an information-only framework may not change fiscal outcomes in practice",
+        "hu": "A felülről jövő politikai döntések történelmi mintázata, amelyek felülbírálják a technikai bizonyítékokat, azt sugallja, hogy egy kizárólag információra épülő keret a gyakorlatban nem változtathatja meg a fiskális eredményeket."
+      },
+      {
+        "en": "Delay in establishing infrastructure means demographic and fiscal pressures continue accumulating during the buildout period",
+        "hu": "Az infrastruktúra kiépítésének késedelme azt jelenti, hogy a demográfiai és költségvetési nyomások a kiépítési időszak alatt tovább halmozódnak."
+      }
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      {
+        "en": "An information/evidence infrastructure itself requires resources to build and maintain, adding to overall system cost without guaranteeing behavioral change",
+        "hu": "Egy információs/bizonyítéki infrastruktúra önmagában forrásokat igényel kiépítéshez és fenntartáshoz, növelve a teljes rendszer költségét anélkül, hogy viselkedésváltozást garantálna."
+      },
+      {
+        "en": "Does not resolve the underlying fiscal constraint of low per-pupil spending (F-live-education_finance-07); better information does not expand the resource envelope",
+        "hu": "Nem oldja meg az alacsony egy tanulóra jutó kiadások mögötti költségvetési korlátot (F-live-education_finance-07); a jobb információ nem bővíti a forráskeretet"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-education_finance",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2efa67d27dd8fbb81b029d7243dab9fb4b538ef0eedd210b4416064d54377e89",
+  "topic": "rural-school-closures"
+}

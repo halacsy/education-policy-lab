@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-equity_and_social_mobility-01",
+      "A-live-equity_and_social_mobility-02",
+      "A-live-equity_and_social_mobility-03"
+    ],
+    "claim": {
+      "en": "Geographic and rural-urban disparities in access to extended-track gimnáziums layer on socioeconomic selection; distance to nearest 6- or 8-year track school is used as a causal instrument because proximity is not randomly distributed and clusters in urban areas.",
+      "hu": "A földrajzi, város–vidék hozzáférési különbségek a hat- vagy nyolcosztályos gimnáziumokhoz társadalmi–gazdasági szelekcióval rétegződnek; a legközelebbi 6- vagy 8 évfolyamos gimnáziumtól való távolságot ok-okozati instrumentumként használják, mert a közelség nem véletlenszerűen oszlik el, és városi területekre koncentrálódik."
+    },
+    "context": {
+      "en": "Fresh live research through the Equity and social mobility lens",
+      "hu": "Friss, élő kutatás az egyenlőség és a társadalmi mobilitás szemszögéből"
+    },
+    "domain_tags": [
+      "equity_and_social_mobility"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Geographic access disparities are inferred from methodological choices in causal research rather than directly quantified access statistics",
+        "hu": "A földrajzi hozzáférési egyenlőtlenségeket oksági kutatásban hozott módszertani választásokból következtetik, nem pedig közvetlenül számszerűsített hozzáférési statisztikákból"
+      },
+      {
+        "en": "Does not provide specific information on rural vs. urban participation rates in selective tracks",
+        "hu": "Nem ad meg konkrét információt a vidéki és városi részvételi arányokról a szelektív képzési irányokban"
+      },
+      {
+        "en": "Distance as an instrument assumes no other correlation between school location and family characteristics",
+        "hu": "A távolság, mint instrumentum azt feltételezi, hogy nincs más korreláció az iskola elhelyezkedése és a családi jellemzők között."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-equity_and_social_mobility-08"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-equity_and_social_mobility-01",
+      "U-live-equity_and_social_mobility-02",
+      "U-live-equity_and_social_mobility-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-equity_and_social_mobility-08",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c98db560a848994ee5170efb531e63cf96b086b70918ab035907b94bcbccec2f",
+  "topic": "korai-szelekcio"
+}

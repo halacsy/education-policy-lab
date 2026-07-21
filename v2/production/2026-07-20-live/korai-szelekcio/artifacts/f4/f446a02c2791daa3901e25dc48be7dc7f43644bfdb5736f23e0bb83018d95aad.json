@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Hungary's birth cohorts are in steep, accelerating decline: 77,500 children born in 2024 (lowest on record) and approximately 72,000 in 2025 (7.1% fewer than 2024), with total fertility rate fallen to 1.31 children per woman, the lowest in 14 years and far below replacement level of 2.1.",
+      "hu": "Magyarország születési kohorszai meredeken, gyorsuló ütemben csökkennek: 2024-ben 77 500 újszülött (rekordalacsony), és mintegy 72 000 várható 2025-ben (7,1%-kal kevesebb, mint 2024), a teljes termékenységi arányszám 1,31 gyermek/nőre esett, ami 14 éve a legalacsonyabb és jóval az utánpótlási szint (2,1) alatt van."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Projections of future fertility remain uncertain and subject to behavioral and policy changes",
+        "hu": "A jövőbeli termékenység előrejelzése bizonytalan, és viselkedési illetve politikai változások befolyásolhatják"
+      },
+      {
+        "en": "Birth counts do not directly determine whether current school-track structures remain educationally or administratively viable",
+        "hu": "A születésszámok nem határozzák meg közvetlenül, hogy a jelenlegi iskolai pályarendszerek oktatási vagy adminisztratív szempontból továbbra is életképesek-e."
+      },
+      {
+        "en": "Year-to-year volatility in reporting or data revision possible",
+        "hu": "Évről évre ingadozás a jelentésekben vagy az adatok revíziójában possible."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-01",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "981b287153732d966283c06db28e233800d691051229924247eba478fe102e6d",
+  "topic": "korai-szelekcio"
+}

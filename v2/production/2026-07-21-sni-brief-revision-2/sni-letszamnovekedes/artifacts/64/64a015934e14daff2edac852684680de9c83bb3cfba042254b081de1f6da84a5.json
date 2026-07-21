@@ -1,0 +1,68 @@
+{
+  "content": {
+    "affected_groups": [
+      {
+        "en": "school administrators managing budgets",
+        "hu": "költségvetést kezelő iskolaigazgatók"
+      },
+      {
+        "en": "children whose support depends on funding formulas",
+        "hu": "támogatásuk finanszírozási képletektől függő gyermekek"
+      },
+      {
+        "en": "finance ministry and local authorities",
+        "hu": "pénzügyminisztérium és helyi önkormányzatok"
+      },
+      {
+        "en": "provider-type coalitions (state, church, private, foundation)",
+        "hu": "szolgáltató-típusú koalíciók (állami, egyházi, magán, alapítványi)"
+      }
+    ],
+    "decision_question": {
+      "en": "Should Hungary redesign its SEN finance architecture based on plausible incentive theory even though the causal link to Hungary's identification rise remains unestablished, or wait for stronger domestic evidence before altering funding rules that schools currently depend on?",
+      "hu": "Átalakítsa‑e Magyarország az SNI finanszírozási rendszerét egy ésszerű ösztönzőelmélet alapján annak ellenére, hogy a hazai azonosítási növekedés és a finanszírozás közötti oksági kapcsolat még nincs bizonyítva, vagy várjon erősebb hazai bizonyítékokra, mielőtt megváltoztatná az iskolák jelenleg függő finanszírozási szabályait?"
+    },
+    "dilemma_type": "empirical_open_question",
+    "evidence_boundary": {
+      "en": "Further evidence, such as natural experiments around rule changes or cross-district comparison, could test whether Hungary's specific multipliers causally drive identification. It cannot resolve whether the value of fiscal caution should outweigh the value of proactively removing a plausible distortion before proof is complete.",
+      "hu": "További bizonyítékok — például a szabályváltozások körüli természetes kísérletek vagy járási összehasonlítások — tesztelhetik, hogy a magyar multiplikátorok oksági hatással vannak‑e az azonosításra. Nem dönthetik el azonban, hogy a fiskális óvatosság értékét felül kell‑e írnia annak az értéknek, hogy proaktívan megszüntessünk egy valószínű torzítást a bizonyítékok teljes körűsége előtt."
+    },
+    "finding_refs": [
+      "F-live-education_finance-08",
+      "F-live-polish_reform-04",
+      "F-live-portuguese_reform-06",
+      "F-live-political_feasibility-04"
+    ],
+    "origin": "live_generation",
+    "proposal_refs": [
+      "TP-live-t4",
+      "TP-live-t1"
+    ],
+    "tension": {
+      "en": "Shifting from diagnosis-gated to census-based finance (TP-live-t4) rests on the plausible theory that fiscal incentives drive over-identification, but no causal evidence links Hungary's specific financing mechanism to its identification rise, and Poland's contrasting experience of expanding rather than removing disability-weighted funding while separately managing gatekeeping shows the theorized link is not universal.",
+      "hu": "A diagnózisra épülő finanszírozásról a létszám‑alapú finanszírozásra (TP-live-t4) való áttérés azon ésszerű elméleten nyugszik, hogy a pénzügyi ösztönzők túlazonosításhoz vezetnek. Ugyanakkor nincs oksági bizonyíték arra, hogy a magyarországi finanszírozási mechanizmus konkrétan kiváltotta volna az azonosítás növekedését, és a lengyel tapasztalat — ahol a fogyatékosság súlyozását nem eltörölték, hanem kiterjesztették, miközben külön kezelték a kapuzást — azt mutatja, hogy az elméleti kapcsolat nem univerzális."
+    },
+    "title": {
+      "en": "Finance-incentive reform: theory-driven change versus unproven causal mechanism",
+      "hu": "Finanszírozási ösztönzőreform: elméletvezérelt változtatás kontra bizonyítatlan oksági mechanizmus"
+    },
+    "value_poles": [
+      {
+        "en": "fiscal incentive correction",
+        "hu": "a fiskális ösztönzők korrigálása"
+      },
+      {
+        "en": "caution against acting on unproven mechanisms",
+        "hu": "óvatosság a nem bizonyított mechanizmusok alapján történő lépésekkel szemben"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "D-live-production-03",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "dilemma",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "f41b4ebda3690d2b72d614ada34d8c89a4c88771ccbc343e933bb7bcd395bea0",
+  "topic": "sni-letszamnovekedes"
+}

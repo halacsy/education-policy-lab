@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The financing-redesign mechanism is conceptually pilotable (formula changes can be tested in subsets of districts) but the proposal itself concedes that no causal evidence links Hungary's specific financing mechanism to the documented identification rise, meaning the intervention rests on an untested incentive theory rather than a diagnosed implementation failure. The existing weak-conditionality problem in supplementary grants is documented, giving some grounding for the accountability component, but sequencing with other reforms (e.g., category redesign in TP-live-t3) is not addressed, risking incoherent or conflicting incentive signals if pursued in isolation.",
+      "hu": "A finanszírozás-újratervezési mechanizmus elméletileg pilotálható (a formula-változtatások tesztelhetők járások részhalmazán), de a javaslat maga is elismeri, hogy nincs kauzális bizonyíték arra, hogy Magyarország konkrét finanszírozási mechanizmusa összekapcsolható lenne a dokumentált azonosítási növekedéssel, ami azt jelenti, hogy a beavatkozás egy tesztetlen ösztönzőelméleten nyugszik, nem pedig diagnosztizált végrehajtási hibán. A kiegészítő támogatások gyenge feltételességének meglévő dokumentált problémája bizonyos alapot ad az elszámoltathatósági komponensnek, de az egyéb reformokkal való szekvenciálás (például kategória-újrarendezés a TP-live-t3-ban) nincs kezelve, ami incoherens vagy egymásnak ellentmondó ösztönzőjelek kockázatát hordozza, ha izoláltan hajtják végre."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-implementation_planning-06"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Accountability requirements tying grants to documented service delivery could be combined with the workforce monitoring proposed elsewhere to close both funding and delivery gaps simultaneously",
+        "hu": "A támogatásokat dokumentált szolgáltatásnyújtáshoz kötő elszámoltathatósági követelmények kombinálhatók a máshol javasolt munkaerő-monitorozással, hogy egyszerre zárják a finanszírozási és az ellátási hiányokat."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Targets a documented weak-incentive design flaw where supplementary grants are not tied to strict service-delivery requirements (F-live-implementation_planning-06)",
+        "hu": "Egy dokumentált, gyenge ösztönzőrendszer-tervezési hibát céloz, ahol a kiegészítő támogatások nincsenek szigorú szolgáltatásnyújtási követelményekhez kötve (F-live-implementation_planning-06)."
+      },
+      {
+        "en": "Financing formula changes are administratively pilotable at a formula-design level before national rollout, offering a plausible containment path",
+        "hu": "A finanszírozási képlet változtatásai adminisztratív szinten, a képlet-tervezés fázisában pilótázhatók a nemzeti bevezetés előtt, ami ésszerű korlátozási utat kínál."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Contrasting international experience (noted in the proposal's own risk section) shows funding redesign choices are not universally convergent, meaning transplanting this mechanism without local piloting could produce unanticipated distortions",
+        "hu": "A nemzetközi tapasztalatok eltérése (amelyet a javaslat saját kockázati fejezete is megjegyez) azt mutatja, hogy a finanszírozás átalakításának választásai nem univerzálisan konvergálnak, ami azt jelenti, hogy e mechanizmus helyi pilot nélkül történő átemelése előre nem látható torzulásokat okozhat."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "No causal evidence base ties Hungary's financing mechanism to the identification rise, so the theory of change driving this mechanism is unverified against the country's own data",
+        "hu": "Nincs oksági bizonyítékokból álló alap, amely Magyarország finanszírozási mechanizmusát az azonosítás növekedéséhez kötné; így a mechanizmust meghajtó változáselmélet nincs ellenőrizve az ország saját adataival szemben."
+      },
+      {
+        "en": "No mechanism specified for monitoring unintended effects on schools that currently rely on SNI-linked funding, including foundation schools' documented use of SNI status as a funding consideration despite reversed assessment-admission sequencing (F-live-implementation_planning-06)",
+        "hu": "Nincs meghatározva mechanizmus a véletlen hatások nyomon követésére azoknál az iskoláknál, amelyek jelenleg SNI-hez kötött finanszírozásra támaszkodnak, ideértve az alapítványi iskolák dokumentált gyakorlatát, amely az SNI-státuszt finanszírozási szempontként használja a felmérés–felvétel sorrendjének megfordulása ellenére (F-live-implementation_planning-06)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "cf9381ba023cfe02a738c42fb82de3189f935abef711359707326bd7f2ca73d0",
+  "topic": "sni-letszamnovekedes"
+}

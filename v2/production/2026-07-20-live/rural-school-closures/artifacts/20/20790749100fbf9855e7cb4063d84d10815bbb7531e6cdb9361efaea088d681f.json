@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-portuguese_reform-01",
+      "A-live-portuguese_reform-02",
+      "A-live-portuguese_reform-03",
+      "A-live-portuguese_reform-04"
+    ],
+    "claim": {
+      "en": "Finnish difference-in-differences evidence (2010-2018) shows school closures preceded accelerated local depopulation in surrounding communities, but this is Finland-specific and correlational; replication for Hungary not found.",
+      "hu": "A finn különbség-különbség bizonyíték (2010-2018) azt mutatja, hogy az iskolabezárások megelőzték a környező közösségek gyorsult népességcsökkenését, de ez Finnország-specifikus és korrelációs; magyarországi replikáció nem található."
+    },
+    "context": {
+      "en": "Fresh live research through the Portuguese system reform lens",
+      "hu": "Friss, aktuális kutatás a portugál rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "portuguese_reform"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Context-specific to Finland; causal direction not definitively proven (closure may precede but not cause depopulation)",
+        "hu": "Finnországra specifikus kontextus; az oksági irány nem bizonyított egyértelműen (a bezárás megelőzheti, de nem feltétlenül okozza a elnéptelenedést)."
+      },
+      {
+        "en": "No evidence of similar association tested in Hungarian data",
+        "hu": "Nincs bizonyíték arra, hogy hasonló összefüggést magyar adatokon tesztettek volna"
+      },
+      {
+        "en": "Confounding by shared prior economic decline not fully ruled out",
+        "hu": "A közös korábbi gazdasági visszaesés miatti torzítás nem zárható ki teljesen"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-portuguese_reform-05"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-portuguese_reform-01",
+      "U-live-portuguese_reform-02",
+      "U-live-portuguese_reform-03",
+      "U-live-portuguese_reform-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-portuguese_reform-05",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "054119b576e5be6e95dd6762394dfdb254c07d4035a4c3cfc8aae22543a37a7c",
+  "topic": "rural-school-closures"
+}

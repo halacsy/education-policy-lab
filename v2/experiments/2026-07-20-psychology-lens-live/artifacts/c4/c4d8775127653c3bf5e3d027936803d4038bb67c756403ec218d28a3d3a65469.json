@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Delaying selection age directly targets the centralized entrance-exam mechanism operating at age 10 (F-live-hungarian_education_system-03), which underlies Hungary's unusually high share of selective schools (F-live-hungarian_education_system-01). This is a high system-coverage intervention in principle, since it changes the core institutional sorting point rather than a peripheral lever. However, institutional fit is questionable: church-maintained and private schools retain admissions exemptions (F-live-hungarian_education_system-05) and are not clearly brought within a delayed-selection regime, and geographic sorting into vocational tracks (F-live-hungarian_education_system-06) operates independently of the academic selection age being targeted, meaning full national coverage of stratification drivers would not be achieved even if the reform succeeded as designed. The contested tracking-effects evidence (F-live-hungarian_education_system-04) further complicates institutional assessment of what would replace the abolished selection point.",
+      "hu": "A szelekciós életkor késleltetése közvetlenül a 10 éves korban működő központosított felvételi mechanizmust célozza (F-live-hungarian_education_system-03), amely a magyarországi rendkívül magas szelekciós iskolaarány mögött áll (F-live-hungarian_education_system-01). Elvben ez magas rendszerlefedettségű beavatkozás, mivel a perifériás kar helyett a magintézményi szelekciós pontot változtatja meg. Az intézményi illeszkedés azonban kérdéses: az egyházfenntartású és magániskolák fenntartói mentességei megmaradnak (F-live-hungarian_education_system-05) és nem világos, hogy be lennének-e vonva a késleltetett szelekciós rendszerbe, továbbá a földrajzi szelekció a szakiskolai pályákba (F-live-hungarian_education_system-06) függetlenül működik az érintett akadémiai szelekciós életkortól, ami azt jelenti, hogy még a reform tervezett sikeressége esetén sem valósulna meg a rétegződés hajtóerőinek teljes országos lefedése. A sávosítás hatásaira vonatkozó vitatott bizonyítékok (F-live-hungarian_education_system-04) tovább bonyolítják az intézményi értékelést arról, hogy mit válthatna fel az eltörölt szelekciós pont."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-06"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could reduce the scope of the pre-adolescent sorting mechanism most directly linked to Hungary's outlier selection statistics",
+        "hu": "Csökkentheti annak a serdülés előtti szelekciós mechanizmusnak a kiterjedését, amely közvetlenül leginkább kapcsolatba hozható Magyarország kilógó kiválasztási statisztikáival."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Targets the core centralized admissions mechanism identified as producing outlier selection rates relative to OECD peers",
+        "hu": "A központi felvételi mechanizmus magját célozza, amelyet kiugró kiválasztási arányokkal azonosítanak az OECD-országokhoz viszonyítva."
+      },
+      {
+        "en": "Addresses a documented age-10 sorting point rather than a downstream symptom",
+        "hu": "Egy dokumentált, 10 éves korban történő szétválogatási pontot kezel, nem egy későbbi tünetet."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Church/private school admissions exemptions remain a parallel unregulated channel that could absorb selection demand and undermine coverage of any age-based reform",
+        "hu": "Az egyházi/magániskolák felvételi mentessége párhuzamos, szabályozatlan csatornaként marad meg, amely elnyelheti a szelekciós keresletet és alááshatja bármely életkor-alapú reform lefedettségét."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Does not by design address maintainer-exemption sorting or geographic/settlement-driven stratification, leaving substantial segregation channels untouched",
+        "hu": "A tervezés nem kezeli a fenntartói mentesség miatti szelekciót vagy a földrajzi/településalapú rétegződést, így jelentős szeparációs csatornák maradnak érintetlenek."
+      },
+      {
+        "en": "Contested evidence on tracking's differential effects on remaining non-tracked-school students complicates predicting the net institutional outcome",
+        "hu": "A tagolásnak a megmaradó, nem tagolt iskolák tanulóira gyakorolt eltérő hatásáról szóló vitatott bizonyíték megnehezíti a nettó intézményi kimenetel előrejelzését."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "dd6d18ba7ffa2b82f5d8ae8cfce3700993d2461a852bb5150d701ffd83a20a92",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,37 @@
+{
+  "content": {
+    "answerability": "answerable_now",
+    "decision_impact": "medium",
+    "method": {
+      "en": "Cohort-projection modeling using existing birth-rate and enrollment administrative data, combined with capacity-utilization analysis of dormitory (kollégium) infrastructure across regions, disaggregated by settlement type.",
+      "hu": "Kohorsz-előrejelzési modellezés a meglévő születési arány és beiskolázási adminisztratív adatok felhasználásával, kombinálva a kollégiumi infrastruktúra kihasználtsági elemzésével a régiókban, településtípusonként diszaggregálva."
+    },
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t6"
+    ],
+    "question": {
+      "en": "What is the current and projected enrollment trajectory for 6/8-year gimnazium places relative to a declining student cohort over the next 5-10 years, and how would this affect selectivity ratios, dormitory utilization, and the marginal cost/benefit of structural reform versus natural attrition?",
+      "hu": "Mi a 6/8 évfolyamos gimnáziumi helyek jelenlegi és előre jelzett beiratkozási pályája a csökkenő tanulói kohorszhoz viszonyítva a következő 5–10 évben, és ez miként befolyásolná a szelektivitási arányokat, a kollégiumi kihasználtságot és a strukturális reform vs. természetes elöregedés marginális költség/haszon viszonyát?"
+    },
+    "uncertainty_refs": [
+      "U-live-demography-01",
+      "U-live-demography-04",
+      "U-live-t1-01",
+      "U-live-school_network_planning-03"
+    ],
+    "why_it_matters": {
+      "en": "Demographic contraction may force de facto network changes independent of policy choice; understanding this trajectory clarifies whether T1 (status quo/monitoring) is a passive-but-consequential choice, and whether reform costs (school closures, teacher redeployment) invoked against T2/T6 are overstated given already-anticipated capacity shifts.",
+      "hu": "A demográfiai zsugorodás kényszerítheti de facto hálózatváltozásokat politikai döntéstől függetlenül; ennek a pályáját megérteni tisztázza, hogy T1 (status quo/monitoring) passzív-de-konzekvenciális választás-e, és hogy a T2/T6 ellen felhozott reformköltségek (iskolabezárások, tanárok átcsoportosítása) túl vannak-e értékelve tekintettel az már előre várható kapacitáseltolódásokra."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-psychology-06",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2c78970431c49ed92168f393832e3c19569b94814e3633ed6dc51a4e51138fc7",
+  "topic": "korai-szelekcio"
+}

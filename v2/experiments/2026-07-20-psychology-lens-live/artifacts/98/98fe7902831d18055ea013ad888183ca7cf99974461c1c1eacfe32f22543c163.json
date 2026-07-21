@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Targeted quotas and exam-prep subsidies directly address the cost-incidence problem identified in F-live-education_finance-07, where equal per-pupil funding coexists with unequal private-resource-dependent access; this is a comparatively low-fiscal-magnitude intervention (supplementary funding rather than structural rebuild) that could improve the compositional imbalance documented in F-live-education_finance-04. However, the evidence base for post-admission value-for-money is weak, and if track-attributed gains are largely background-driven rather than institutional, the intervention risks generating access without commensurate benefit, undermining the case for the expenditure.",
+      "hu": "A célzott kvóták és a vizsgafelkészítési támogatások közvetlenül kezelik azt a költségviselési problémát, amelyet az F-live-education_finance-07 azonosított: az egyenlő per tanuló finanszírozás egyidejűsége egyenlőtlen, magánforrásoktól függő hozzáféréssel. Ez viszonylag alacsony fiskális nagyságrendet jelentő beavatkozás (kiegészítő források a strukturális újraépítés helyett), amely javíthatja az F-live-education_finance-04 által dokumentált alkotó összetételi egyensúlytalanságot. Ugyanakkor a felvétel utáni költség-hatékonyságra vonatkozó bizonyítékok gyengék, és ha a pályához kötődő nyereségek nagyrészt háttérfüggőek és nem intézményi eredetűek, a beavatkozás kockázata, hogy hozzáférést generál hasznot nem hozó módon, aláássa a kiadás indokoltságát."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-education_finance-04",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Earlier (kindergarten-stage) targeting could yield stronger equity returns per unit of spending than exam-prep support alone, per the school-starting-age evidence cited",
+        "hu": "A korábbi (óvodai szintű) célzás nagyobb egyenlőségi hozamot eredményezhet az egy költség egységre vetítve, mint a pusztán vizsgafelkészítést támogató intézkedések, a hivatkozott iskolakezdési életkori bizonyítékok szerint."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Directly compensates for the private-tutoring-driven cost gap in an otherwise equally-funded system, improving cost incidence",
+        "hu": "Közvetlenül kompenzálja a magántanároktól vezérelt költségkülönbséget egyébként egyenlő forrásokkal finanszírozott rendszerben, javítva a költségviselés eloszlását."
+      },
+      {
+        "en": "Quota design targets the specific compositional imbalance (14% vs 1%) at plausibly modest incremental fiscal cost relative to full structural reform",
+        "hu": "A kvótatervezés a konkrét összetételi egyenlőtlenséget célozza (14% vs 1%) ésszerűen mérsékelt többletkiadással a teljes strukturális reformhoz képest."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Zero measured tertiary-education effect in at least one study raises the risk of spending on access that does not translate into durable individual benefit",
+        "hu": "Legalább egy tanulmányban mért nulla hatás a felsőoktatásra növeli annak kockázatát, hogy az elérhetőségre fordított kiadások nem fordulnak át tartós egyéni előnnyé."
+      },
+      {
+        "en": "Without addressing parental distrust of local schools, quota-driven demand-side subsidies may not shift underlying enrollment incentives, wasting targeted funds",
+        "hu": "Ha nem kezelik a szülők helyi iskolákkal szembeni bizalmatlanságát, a kvóták által vezérelt keresletoldali támogatások nem feltétlenül változtatják meg a háttérbe húzódó beiratkozási ösztönzőket, pazarlva a célzott forrásokat."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "If track value-added is mostly attributable to family background rather than the institution, subsidized access may not deliver measurable returns for the funding spent",
+        "hu": "Ha a képzési sávhoz kötődő értéknövekedés elsősorban a családi háttérnek tulajdonítható, nem pedig az intézménynek, a támogatott hozzáférés nem feltétlenül hoz mérhető megtérülést a befektetett forrásokra."
+      },
+      {
+        "en": "Evidence base for this proposal is characterized as weak, limiting confidence in projected value for money",
+        "hu": "A javaslat bizonyítékalapja gyengének minősül, ami korlátozza a várható költséghatékonyságba vetett bizalmat."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-education_finance",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a6a65341d56fc2c9de542465d49fe72c285ce6e65d423cee716ea3a72d0b211d",
+  "topic": "korai-szelekcio"
+}

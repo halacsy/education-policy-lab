@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-portuguese_reform-01",
+      "A-live-portuguese_reform-02",
+      "A-live-portuguese_reform-03",
+      "A-live-portuguese_reform-04"
+    ],
+    "claim": {
+      "en": "Disadvantaged children are increasingly concentrated in rural settlements, with up to 94% disadvantage rates in certain rural settlements, driven partly by spatial selectivity, catchment policies, and school closures in peripheral areas.",
+      "hu": "A hátrányos helyzetű gyermekek egyre inkább a vidéki településeken koncentrálódnak; egyes vidéki településeken a hátrányos helyzet aránya akár 94%-os is lehet, amelyet részben térségi szelekció, beiskolázási körzetek politikái és perifériás területeken történt iskolabezárások hajtanak."
+    },
+    "context": {
+      "en": "Fresh live research through the Portuguese system reform lens",
+      "hu": "Friss, aktuális kutatás a portugál rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "portuguese_reform"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Finding of systemic causation is interpretive; does not isolate causal weight of school closures versus residential mobility and poverty sorting",
+        "hu": "A rendszerszintű okozatiság megállapítása értelmező jellegű; nem különíti el az iskolabezárások és a lakóhelyi mobilitás illetve a szegénység szerinti szelekció okozati súlyát."
+      },
+      {
+        "en": "No counterfactual comparison to settlements where schools were retained",
+        "hu": "Nincs kontrafaktuális összehasonlítás azokkal a településekkel, ahol az iskolákat megtartották"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-portuguese_reform-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-portuguese_reform-01",
+      "U-live-portuguese_reform-02",
+      "U-live-portuguese_reform-03",
+      "U-live-portuguese_reform-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-portuguese_reform-03",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "1686835f1be3ce3f4c77a686a91322cb14004c2441a07d5cc0daeee664856b5a",
+  "topic": "rural-school-closures"
+}

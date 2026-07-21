@@ -1,0 +1,35 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Exploit within-country variation in enrollment decline and financial capacity using panel regression with school and year fixed effects, testing whether SNI classification rates rise disproportionately in schools facing enrollment/funding pressure; where feasible, use a natural-experiment design around any past multiplier-rate change as a quasi-experimental shock.",
+      "hu": "Használjuk az országon belüli variációt a tanulólétszám csökkenésében és a pénzügyi kapacitásban panelregresszióval, iskola- és év fix hatásokkal, hogy teszteljük, nőnek-e aránytalanul az SNI-azonosítások az anyagi/népességvesztésnek kitett iskolákban; ahol lehetséges, alkalmazzunk természetes kísérlet-szerű tervezést korábbi szorzóváltozások körül, mint kvázi-kísérleti sokkot."
+    },
+    "proposal_refs": [
+      "TP-live-t4"
+    ],
+    "question": {
+      "en": "To what extent does Hungary's per-capita SNI funding multiplier (2x-3x) create a measurable fiscal incentive for schools to classify marginal/borderline students as SNI, and does identification vary systematically with school financial capacity, enrollment decline, and size?",
+      "hu": "Milyen mértékben teremt a tanulónkénti SNI-finanszírozás 2–3-szoros szorzója mérhető pénzügyi ösztönzést arra, hogy iskolák határeset/határhelyzetű tanulókat SNI-ként minősítsenek, és változik-e az azonosítás rendszerszerűen az iskola pénzügyi kapacitása, a tanulólétszám csökkenése és az iskola mérete szerint?"
+    },
+    "uncertainty_refs": [
+      "U-live-education_finance-02",
+      "U-live-legal_and_governance-02",
+      "U-live-t4-01",
+      "U-live-political_feasibility-01"
+    ],
+    "why_it_matters": {
+      "en": "This is the central untested causal claim underlying the finance-redesign proposal (T4); the international evidence is genuinely mixed (Finland's census-shift correlates with reduced placement, Poland expanded diagnosis-linked weighting without runaway effects), so Hungary-specific evidence is needed before committing to a structural finance change.",
+      "hu": "Ez a finanszírozás-átalakítási javaslat (T4) mögötti központi, még nem tesztelt okozati állítás; a nemzetközi bizonyítékok vegyesek (Finnországban egy népességalapú módszerváltás korrelálható volt a kihelyezések csökkenésével, Lengyelországban diagnózishoz kötött súlyozás bővült anélkül, hogy elszabadult volna a folyamat), ezért Magyarország-specifikus bizonyítékokra van szükség, mielőtt strukturális finanszírozási változás mellett döntenénk."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-04",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "15d71ad8ddbc8112db3b0e2d5df2f52f8ef9ff53f2c388f65d9ac1ee77427c51",
+  "topic": "sni-letszamnovekedes"
+}

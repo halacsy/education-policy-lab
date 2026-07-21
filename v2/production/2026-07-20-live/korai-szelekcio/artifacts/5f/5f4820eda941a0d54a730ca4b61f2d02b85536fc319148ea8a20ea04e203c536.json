@@ -1,0 +1,53 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal targets the mechanism by which network expansion (adding lower grades, approving new tracks) generates local segregation, directly engaging network-planning concerns about capacity growth and geographic access. It is preventive rather than corrective, meaning it constrains future network configuration without altering existing geographic concentration (F-live-school_network_planning-05) or feeder-school dilution already occurring (F-live-school_network_planning-07). Because expansion approvals are the mechanism by which selective capacity nodes proliferate or intensify locally, a formalized gatekeeping test is plausible as a capacity-growth control, though this lens's evidence base does not directly address the church/private maintainer dynamics central to the proposal's stated rationale.",
+      "hu": "Ez a javaslat azt a mechanizmust célozza meg, amelyen keresztül a hálózati bővülés (alsóbb évfolyamok hozzáadása, új pályák jóváhagyása) helyi szeparációt generál, közvetlenül bevonva a hálózattervezési aggályokat a kapacitásnövekedés és a földrajzi hozzáférés tekintetében. Inkább megelőző, mint korrekciós jellegű, vagyis korlátozza a jövőbeni hálózati konfigurációkat anélkül, hogy megváltoztatná a meglévő földrajzi koncentrációt (F-live-school_network_planning-05) vagy az már fennálló utánpótló iskolai hígulást (F-live-school_network_planning-07). Mivel a bővítési engedélyek azok a mechanizmusok, amelyek révén a szelekciós kapacitás csomópontjai lokálisan szaporodnak vagy erősödnek, egy formális kapuőri teszt elfogadható mint kapacitásnövekedés-kontroll, habár ennek a lencsének a bizonyítékbázisa nem foglalkozik közvetlenül azokkal az egyházi/magán fenntartói dinamikákkal, amelyek a javaslat indoklásának központi elemei."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Could halt further deepening of the urban-concentration pattern (F-live-school_network_planning-05) by preventing new expansion in already over-concentrated areas",
+        "hu": "Megállíthatja a városi koncentrációs minta további mélyülését (F-live-school_network_planning-05) azzal, hogy megakadályozza az új terjeszkedést már túlságosan koncentrált területeken"
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Targets the expansion-approval point, which is the network's primary lever for adding new capacity nodes, making it a structurally apt point of intervention for controlling future geographic concentration",
+        "hu": "A bővítési-engedélyezési pontot célozza, amely a hálózat elsődleges eszköze új kapacitáscsomópontok hozzáadására, így strukturálisan alkalmas beavatkozási pont a jövőbeni földrajzi koncentráció szabályozására."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Since capacity has already stagnated near its ceiling (F-live-school_network_planning-03), a purely preventive tool may have limited marginal effect if little new expansion is being proposed system-wide, concentrating its real-world impact on a narrow set of edge cases",
+        "hu": "Mivel a kapacitás már közel a plafonhoz stagnál (F-live-school_network_planning-03), egy pusztán preventív eszköz marginális hatása korlátozott lehet, ha rendszerszinten kevés új bővítés kerül javaslatra, és a tényleges hatás így egy szűk, peremes esetekre koncentrálódik."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Does not address already-existing geographic concentration of selective capacity in urban/Budapest schools (F-live-school_network_planning-05)",
+        "hu": "Nem foglalkozik a kiválasztó kapacitás már meglévő földrajzi koncentrációjával a városi/budapesti iskolákban (F-live-school_network_planning-05)."
+      },
+      {
+        "en": "Does not relieve current feeder-school dilution pressures from already-established selective schools (F-live-school_network_planning-07)",
+        "hu": "Nem csökkenti a jelenlegi feeder‑iskolákat érő hígulási nyomást a már létrejött szelektív iskolákkal szemben (F-live-school_network_planning-07)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4dca8a50111bd21034332cee1ed83d76a0e839d98fd8faa58e3692d877ac79e4",
+  "topic": "korai-szelekcio"
+}

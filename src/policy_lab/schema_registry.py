@@ -11,6 +11,14 @@ from typing import Any, Iterable
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
+from policy_lab.i18n import (
+    BILINGUAL_VERSION,
+    BilingualValidationError,
+    load_field_map,
+    project_record,
+    validate_bilingual_content,
+)
+
 TECHNICAL_NAME = re.compile(r"^[a-z][a-z0-9_]*$")
 
 
@@ -32,6 +40,7 @@ class SchemaRegistry:
 
     def __init__(self, schema_dir: str | Path):
         self.schema_dir = Path(schema_dir)
+        self._bilingual_fields = load_field_map(self.schema_dir.parents[1])
         self._schemas: dict[tuple[str, str], dict[str, Any]] = {}
         self._resources: list[tuple[str, Resource[Any]]] = []
         self._load()
@@ -59,7 +68,9 @@ class SchemaRegistry:
         for path, schema in raw_schemas:
             record_type = schema.get("x-record-type")
             version = schema.get("x-schema-version")
-            if not record_type and path.name != "common.schema.json":
+            if not record_type and path.name not in {
+                "common.schema.json", "bilingual.schema.json"
+            }:
                 raise SchemaValidationError(
                     f"Record schema lacks x-record-type: {path}"
                 )
@@ -81,9 +92,15 @@ class SchemaRegistry:
             raise SchemaValidationError("No record schemas were registered")
 
     def available(self) -> tuple[tuple[str, str], ...]:
-        return tuple(sorted(self._schemas))
+        bilingual = {
+            (record_type, BILINGUAL_VERSION)
+            for record_type in self._bilingual_fields
+        }
+        return tuple(sorted(set(self._schemas) | bilingual))
 
     def schema_for(self, record_type: str, version: str) -> dict[str, Any]:
+        if version == BILINGUAL_VERSION and record_type in self._bilingual_fields:
+            version = "2.0.0"
         try:
             return self._schemas[(record_type, version)]
         except KeyError as exc:
@@ -96,13 +113,24 @@ class SchemaRegistry:
             raise SchemaValidationError("Artifact must be a JSON object")
         record_type = record.get("record_type")
         version = record.get("schema_version")
+        candidate = record
+        if version == BILINGUAL_VERSION:
+            try:
+                validate_bilingual_content(
+                    record_type, record.get("content"), self._bilingual_fields
+                )
+            except BilingualValidationError as exc:
+                raise SchemaValidationError(str(exc)) from exc
+            candidate = project_record(
+                record, self._bilingual_fields, "en", archive_schema_version="2.0.0"
+            )
         schema = self.schema_for(record_type, version)
         validator = Draft202012Validator(
             schema,
             registry=self._registry,
             format_checker=Draft202012Validator.FORMAT_CHECKER,
         )
-        errors = sorted(validator.iter_errors(record), key=lambda e: list(e.path))
+        errors = sorted(validator.iter_errors(candidate), key=lambda e: list(e.path))
         if errors:
             details = "; ".join(
                 f"/{'/'.join(map(str, error.path))}: {error.message}"

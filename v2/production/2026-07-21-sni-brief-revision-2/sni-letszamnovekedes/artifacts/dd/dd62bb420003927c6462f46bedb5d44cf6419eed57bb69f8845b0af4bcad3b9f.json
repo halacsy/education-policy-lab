@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03"
+    ],
+    "claim": {
+      "en": "Composition of SNI growth is uneven: severe learning disorders increased 12% in 2021/2022 alone (45,300 children); boys are classified SNI at 11% versus girls at 6.1%; and county-level variation ranges from 5.4% to 14%, a 2.6-fold spread far larger than plausible true prevalence differences.",
+      "hu": "Az SNI-növekedés összetétele egyenetlen: a súlyos tanulási zavarok 2021/2022-ben egy év alatt 12%-kal emelkedtek (45 300 gyermek); a fiúknál az SNI-besorolás aránya 11%, a lányoknál 6,1%; megyénkénti eltérések 5,4% és 14% között mozognak, azaz 2,6-szoros szórást mutatnak, ami jóval nagyobb, mint ami a tényleges prevalencia különbségeiből reálisan adódna."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Large regional variation suggests administrative/diagnostic practice differences but this is inference, not confirmed by sources",
+        "hu": "A jelentős regionális eltérés adminisztratív/diagnosztikai gyakorlatbeli különbségekre utal, de ez következtetés, nem pedig a források által megerősített tény."
+      },
+      {
+        "en": "Sex disparity may reflect biological, diagnostic bias, or referral-pathway differences; none is established here",
+        "hu": "A nemek közötti eltérés tükrözheti biológiai tényezőket, diagnosztikai torzítást vagy a beutalási útvonalak különbségeit; egyik sem áll fenn bizonyítottan itt."
+      },
+      {
+        "en": "No independent audit of whether regional definitions are applied consistently",
+        "hu": "Nincs független ellenőrzés arról, hogy a regionális definíciókat következetesen alkalmazzák-e."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-02",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "6e75619f7ba782c109b24997a8b64e47a48d84640b890222376b6dc62aa54140",
+  "topic": "sni-letszamnovekedes"
+}

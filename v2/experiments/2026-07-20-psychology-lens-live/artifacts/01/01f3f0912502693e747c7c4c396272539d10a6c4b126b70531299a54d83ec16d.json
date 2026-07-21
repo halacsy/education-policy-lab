@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Through the Polish reform lens, status quo maintenance represents an absence of structural mechanism entirely — no change to sorting points, no distributional intervention, and thus no reversibility risk because nothing is being reversed. But this is precisely the lens's diagnostic weakness: Poland's own history shows that structural inertia is not neutral. The pre-1999 Polish system's early tracking was itself the problem that reform addressed; standing still preserves the structural mechanism that produces the distributional effects documented in Hungary. The lens's implementation-sequence question is moot here since no implementation occurs, but this also means no implementation-cost lessons from Poland's reversal apply — there is no disruption to sequence.",
+      "hu": "A lengyel reform-lencsén keresztül a status quo fenntartása tulajdonképpen a strukturális mechanizmus teljes hiányát jelenti — nincs változás a szétosztási pontokban, nincs elosztási beavatkozás, és így nincs visszafordíthatósági kockázat, mert nincs mi visszafordítandó. De ez éppen a lencse diagnosztikai gyengesége: Lengyelország saját története azt mutatja, hogy a strukturális tehetetlenség nem semleges. A 1999 előtti lengyel rendszer korai tagolása önmagában az a probléma volt, amelyet a reform kezelni kívánt; változatlanság megőrzése fenntartja azt a strukturális mechanizmust, amely a Magyarországon dokumentált elosztási hatásokat előállítja. A lencse végrehajtási-sorrend kérdése itt képtelenné válik, mivel nincs végrehajtás, de ez azt is jelenti, hogy Lengyelország visszafordításából származó végrehajtási költség-tanulságok nem alkalmazhatók — nincs megszakítás a sorrendben."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05"
+    ],
+    "lens_ref": "L-live-polish_reform",
+    "opportunities": [
+      {
+        "en": "Monitoring infrastructure could in principle detect deterioration early enough to inform a future, better-sequenced reform than Poland's abrupt 2017 reversal",
+        "hu": "A monitorozási infrastruktúra elvileg korai romlást képes lehet észlelni annyira időben, hogy egy későbbi, jobb sorrendű reformról tájékoztasson, ellentétben Lengyelország 2017-es hirtelen visszafordulásával."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Avoids the severe implementation costs (school closures, job losses, double-cohort overcrowding) that Poland's 2017 reversal demonstrates can accompany structural change",
+        "hu": "Elkerüli azokat a súlyos végrehajtási költségeket (iskolabezárások, munkahelyvesztés, dupla kohorsz miatti túlzsúfoltság), amelyeket Lengyelország 2017-es visszafordulása azt mutatja, hogy szerkezeti változások kísérhetnek."
+      },
+      {
+        "en": "No reversibility risk since no structural mechanism is altered",
+        "hu": "Nincs visszafordíthatósági kockázat, mivel nincs szerkezeti mechanizmus megváltoztatva"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Polish precedent shows that delaying structural reform does not make future reform easier or less disruptive when it eventually occurs — deferred reorganization does not avoid implementation costs, only postpones them",
+        "hu": "A lengyel precedens azt mutatja, hogy a strukturális reform elhalasztása nem teszi a jövőbeni reformot könnyebbé vagy kevésbé zavaróvá, amikor végül bekövetkezik — az elhalasztott átszervezés nem kerüli el a kivitelezési költségeket, csak elodázza azokat."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Preserves the exact structural mechanism (early selection age) that Poland's 1999 reform targeted and that produced measured PISA and labour-market gains when removed",
+        "hu": "Megőrzi ugyanazt a pontos strukturális mechanizmust (a korai kiválasztási életkort), amelyet Lengyelország 1999-es reformja célzott, és amelynek eltörlésekor mérhető PISA- és munkaerőpiaci nyereségek jelentkeztek."
+      },
+      {
+        "en": "Distributional effects (segregation, selection intensity) are left fully in place with no corrective mechanism, unlike any of the alternative proposals",
+        "hu": "Az elosztási hatásokat (szegregáció, szelekció intenzitása) érintetlenül hagyja korrekciós mechanizmus nélkül, ellentétben bármely alternatív javaslattal."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-polish_reform",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c973cc93f0d7d94a9b864e3393a35f212df9d5a0cb85593614de187bed9c0d02",
+  "topic": "korai-szelekcio"
+}

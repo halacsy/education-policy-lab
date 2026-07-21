@@ -1,0 +1,53 @@
+{
+  "content": {
+    "assessment": {
+      "en": "No international comparator for a passive demographic-contraction baseline is supplied; this is a counterfactual/no-policy scenario rather than a policy mechanism, so the international-comparison lens has limited direct applicability. Indirectly, the Polish case is relevant as a cautionary analogy: uncoordinated capacity shifts (there, from a reversal rather than demographic decline) produced severe unplanned placement shortfalls (F-live-international_comparison-07), suggesting that even demographically-driven, non-policy contraction could generate similar transition frictions if left uncoordinated, a risk the proposal itself flags.",
+      "hu": "No international comparator for a passive demographic-contraction baseline is supplied; this is a counterfactual/no-policy scenario rather than a policy mechanism, so the international-comparison lens has limited direct applicability. Indirectly, the Polish case is relevant as a cautionary analogy: uncoordinated capacity shifts (there, from a reversal rather than demographic decline) produced severe unplanned placement shortfalls (F-live-international_comparison-07), suggesting that even demographically-driven, non-policy contraction could generate similar transition frictions if left uncoordinated, a risk the proposal itself flags."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-international_comparison-07",
+      "F-live-international_comparison-02",
+      "F-live-international_comparison-06"
+    ],
+    "lens_ref": "L-live-international_comparison",
+    "opportunities": [
+      {
+        "en": "Uncoordinated demographic contraction could be compared post hoc to the Polish transition-shortfall pattern (F-live-international_comparison-07) to extract early-warning indicators for capacity mismatches",
+        "hu": "A koordinálatlan demográfiai összehúzódást utólag össze lehet hasonlítani a lengyel átmeneti hiánymintával (F-live-international_comparison-07), hogy kapacitás-eltérésekre vonatkozó korai figyelmeztető indikátorokat nyerjenek."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Passive contraction, being agnostic to admission criteria, avoids directly triggering the coaching/instrument-design distortions relevant to T1, and is not a comparative-policy mechanism subject to the transferability critique applied to active reforms",
+        "hu": "A felvételi kritériumokra közönyös passzív összehúzódás nem vált ki közvetlenül a T1-hez kapcsolódó korrepetálási/tesztdesign torzításokat, és nem összehasonlító politikai mechanizmus, amelyre az aktív reformokra irányuló átültethetőségi kritika vonatkozik"
+      }
+    ],
+    "threats": [
+      {
+        "en": "The Polish case demonstrates that even reasonably foreseeable capacity transitions, if unmanaged, can produce large-scale unplaced-student shortfalls (F-live-international_comparison-07); passive, unmanaged demographic contraction carries an analogous risk profile absent active coordination",
+        "hu": "A lengyel eset bemutatja, hogy még a racionálisan előre látható kapacitásátmenetek is, ha kezelés nélkül maradnak, nagyszámú elhelyezés nélkül maradt tanulóhiányt eredményezhetnek (F-live-international_comparison-07); a passzív, kezeletlen demográfiai zsugorodás hasonló kockázati profilt hordoz aktív koordináció hiányában."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "No comparable international demographic-contraction case (with or without policy coordination) is present in the evidence base to validate outcome relevance",
+        "hu": "A bizonyítékbázisban nincs olyan összehasonlítható nemzetközi demográfiai zsugorodási eset (akár politikai koordinációval, akár nélküle), amely érvényesítené az eredmények relevanciáját."
+      },
+      {
+        "en": "Passive contraction does nothing to address the internationally-flagged structural drivers of Hungary's exceptional inequality—early tracking's between-school concentration (F-live-international_comparison-02) and its ethnic-segregation entanglement (F-live-international_comparison-06)—so even if it shrinks track size, the comparative evidence suggests the inequality-generating mechanism itself would persist unchanged",
+        "hu": "A passzív szűkítés nem orvosolja a nemzetközileg jelzett strukturális hajtóerőket Magyarország kivételes egyenlőtlenségében—a korai szelekció iskolák közötti koncentrációját (F-live-international_comparison-02) és annak etnikai-szegregációs összefonódását (F-live-international_comparison-06)—így még ha csökken is a pályaméret, az összehasonlító bizonyítékok szerint maga az egyenlőtlenséget generáló mechanizmus változatlanul fennmaradna."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-international_comparison",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "44c58f2a6d4357517ddcf331cf4b032bb15c5ef811da0345aaf95bb77eb8eee7",
+  "topic": "korai-szelekcio"
+}

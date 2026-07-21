@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-demography-01",
+      "A-korai-szelekcio-demography-02",
+      "A-korai-szelekcio-demography-03",
+      "A-korai-szelekcio-demography-04",
+      "A-korai-szelekcio-demography-05"
+    ],
+    "claim": {
+      "en": "Long-run population projections (KSH/HDRI SEEMIG medium-variant) show continuous population decline through at least 2060 under all fertility and migration scenarios, with the under-20 population declining from ~2 million (2012) to approximately 1.4 million by 2060, meaning the school-age cohort available for all secondary tracks shrinks structurally through 2040 and beyond.",
+      "hu": "Hosszú távú népességvetítések (KSH/HDRI SEEMIG közép-forgatókönyv) folyamatos népességcsökkenést mutatnak legalább 2060-ig az összes termékenységi és migrációs forgatókönyv mellett, a 20 év alatti népesség mintegy 2 millióról (2012) körülbelül 1,4 millió felé csökken 2060-ra, vagyis az összes középiskolai szinten elérhető tanulói kohort szerkezetileg csökken 2040-ig és azon túl."
+    },
+    "context": {
+      "en": "Demographic decline through 2040 will force school-network consolidation and closure of small selective tracks independent of policy choice, but government's simultaneous use of score-threshold levers is accelerating selective-track contraction beyond what demographic decline alone would cause, concentrating remaining grammar-school slots among already-advantaged urban populations.",
+      "hu": "A demográfiai hanyatlás 2040-ig az iskolahálózat konszolidációjára és a kicsi szelektív szintek bezárására kényszerít a politikai választástól függetlenül, de a kormányzat egyidejű ponthatár-karvasút-alkalmazása felgyorsítja a szelektív-szint összehúzódását azon túl, amit a demográfiai hanyatlás egyedül okozna, a maradék gimnazium-helyeket már előnyben részesített városi lakosokra koncentrálva."
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-53cd2553d62d4c"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-demography-01",
+      "U-korai-szelekcio-demography-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-demography-08",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2066116fe2c74de4a4184f4d7a33f68e3bdae15fa82cc88fdee50673bf93104a",
+  "topic": "korai-szelekcio"
+}

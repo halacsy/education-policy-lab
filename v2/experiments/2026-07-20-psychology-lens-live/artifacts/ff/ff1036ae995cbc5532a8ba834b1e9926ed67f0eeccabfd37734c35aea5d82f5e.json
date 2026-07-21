@@ -1,0 +1,119 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02"
+    ],
+    "change_level": "practice",
+    "costs": [
+      {
+        "en": "Continued high administrative burden of running parallel tracking and monitoring systems without corrective action",
+        "hu": "A párhuzamos nyomonkövetési és monitorozási rendszerek működtetése intézkedés hiányában továbbra is magas adminisztratív terhet jelent"
+      },
+      {
+        "en": "Opportunity cost of forgone equity gains",
+        "hu": "Az elmaradt egyenlőségi nyereségek haszonáldozati költsége."
+      }
+    ],
+    "equity_impact": {
+      "en": "Negative by omission: highest-in-EU segregation (F-live-hungarian_education_system-02) and 53-point SES performance gap (F-live-portuguese_reform-03) persist unaddressed; disadvantaged students continue facing under 1-in-8 chance of attending school with high achievers.",
+      "hu": "Negatív kihagyásként: az EU-ban legmagasabb szegregáció (F-live-hungarian_education_system-02) és a 53 pontos SES teljesítménykülönbség (F-live-portuguese_reform-03) változatlanul kezeletlen marad; a hátrányos helyzetű diákok továbbra is kevesebb mint 1 az 8 eséllyel járnak olyan iskolába, ahol magas teljesítményű tanulók vannak."
+    },
+    "evidence_status": "strong",
+    "expected_benefits": [
+      {
+        "en": "Avoids near-term political mobilization and veto-player conflict (church schools, Fidesz opposition, divided unions)",
+        "hu": "Kikerüli a rövid távú politikai mozgósítást és a vétójátékos-konfliktust (egyházi iskolák, Fidesz-ellenzék, megosztott szakszervezetek)."
+      },
+      {
+        "en": "Preserves measured value-added gains for currently selected students",
+        "hu": "Megőrzi a jelenleg kiválasztott diákoknál mért hozzáadott érték-növekedéseket"
+      },
+      {
+        "en": "Avoids implementation costs and disruption risk seen in Poland's reversal",
+        "hu": "Elkerüli a bevezetési költségeket és a zavarkockázatot, amelyet Lengyelország visszafordulása mutatott"
+      }
+    ],
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-07",
+      "F-live-implementation_planning-04",
+      "F-live-hungarian_education_system-02",
+      "F-live-equity_and_social_mobility-03"
+    ],
+    "goal": {
+      "en": "Maintain current 6-/8-year gimnázium structure and admissions rules while tracking equity indicators, avoiding disruptive structural change absent political consensus.",
+      "hu": "Tartsa meg a jelenlegi 6-/8-year gimnáziumi struktúrát és felvételi szabályokat, miközben nyomon követi az egyenlőségi mutatókat, elkerülve a zavaró strukturális változást politikai konszenzus hiányában."
+    },
+    "implementation_steps": [
+      {
+        "action": {
+          "en": "Continue current admissions rules and publish existing National ABC/PISA disaggregated results without structural intervention",
+          "hu": "Folytatni a jelenlegi felvételi szabályokat és közzétenni a meglévő Országos ABC/PISA szétbontott eredményeket strukturális beavatkozás nélkül"
+        },
+        "actor": {
+          "en": "Ministry of Culture and Innovation / Ministry of Education",
+          "hu": "Kulturális és Innovációs Minisztérium / Oktatási Minisztérium"
+        },
+        "timeline": {
+          "en": "Ongoing, no defined end date",
+          "hu": "Folyamatban, nincs meghatározott befejezési dátum"
+        }
+      },
+      {
+        "action": {
+          "en": "Continue tracking segregation and value-added indicators using existing panel and PISA data",
+          "hu": "Folytassa a szegregáció és a hozzáadott érték mutatóinak nyomon követését a meglévő panel- és PISA-adatok felhasználásával"
+        },
+        "actor": {
+          "en": "Independent researchers (CEU, TARKI, Corvinus)",
+          "hu": "Független kutatók (CEU, TARKI, Corvinus)"
+        },
+        "timeline": {
+          "en": "Annual/biennial, ongoing",
+          "hu": "Éves/kétéves, folyamatos"
+        }
+      }
+    ],
+    "mechanisms": [
+      {
+        "en": "Existing centralized entrance-exam admissions continue unchanged, preserving current selection intensity",
+        "hu": "A meglévő központosított felvételi vizsga alapú bejutás változatlan marad, megőrizve a jelenlegi szelekciós intenzitást."
+      },
+      {
+        "en": "National ABC and PISA reporting infrastructure already requires schools to analyze outcomes by SES, providing a data feed without policy correction history",
+        "hu": "A nemzeti ABC és PISA jelentési infrastruktúra már megköveteli, hogy az iskolák a társadalmi-gazdasági státusz (SES) szerint elemezzék az eredményeket, így adatfolyamot biztosít politika-korrekciós előzmény nélkül."
+      }
+    ],
+    "origin": "live_generation",
+    "risks": [
+      {
+        "en": "Persistent or worsening segregation given demographic contraction and geographic concentration of tracks in urban areas",
+        "hu": "Tekintettel a demográfiai zsugorodásra és a tagozatok városi területeken való földrajzi koncentrációjára, a szegregáció tartós vagy súlyosbodó."
+      },
+      {
+        "en": "Continued erosion of legitimacy as ministerial rhetoric acknowledging problems without action increases public distrust",
+        "hu": "A legitimáció további eróziója: a minisztériumi retorika elismeri a problémákat, de intézkedés nélkül, ami növeli a nyilvánosság bizalmatlanságát"
+      },
+      {
+        "en": "PISA data has historically not translated into policy correction, suggesting monitoring alone is unlikely to alter trajectory",
+        "hu": "A PISA-adatok történelmileg nem fordultak át politikai korrekcióban, ami azt sugallja, hogy a puszta monitorozás valószínűleg nem változtatja meg a pályát."
+      }
+    ],
+    "title": {
+      "en": "Status quo with monitoring (passive counterfactual)",
+      "hu": "Status quo monitorozással (passzív kontrafaktuális)."
+    },
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a9e9365af0b23c7fb17a78e221c9ae385737d6efa5b916fbb287a17b5827cfc6",
+  "topic": "korai-szelekcio"
+}

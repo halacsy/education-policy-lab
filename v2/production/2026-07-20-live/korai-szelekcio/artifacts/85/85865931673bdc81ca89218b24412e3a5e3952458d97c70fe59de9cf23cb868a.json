@@ -1,0 +1,69 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal explicitly adopts the lens's central causal-attribution lesson: it argues that delay alone is insufficient and must be bundled with curriculum reform, teacher training, and anti-sorting catchment rules, directly citing the Finnish precedent where delay was one component of a coordinated package. This is the proposal most consonant with the lens's core finding that Portugal-style (and Finland-style) gains cannot be attributed to a single isolated lever. However, the proposal's own risk section concedes that unbundled delay may fail, and structural delay does not resolve pre-existing primary-school sorting or church/private informal selection, meaning even a well-designed bundle faces coverage gaps the lens evidence flags as persistent.",
+      "hu": "Ez a javaslat kifejezetten átveszi a lencse központi oksági-attribúciós tanulságát: azt állítja, hogy önmagában a késleltetés nem elegendő, és hogy azt tantermi reformmal, tanárképzéssel és a felvételi szegregációt csökkentő járáshatárokra vonatkozó szabályokkal kell csomagolni, közvetlenül hivatkozva a finn precedensre, ahol a késleltetés egy összefogott csomag egyik összetevője volt. Ez a javaslat áll a legközelebb a lencse alapvető megállapításához, miszerint a Portugália-stílusú (és Finnország-stílusú) nyereségek nem tulajdoníthatók egyetlen elszigetelt karra. Ugyanakkor a javaslat saját kockázati szakasza elismeri, hogy a külön-külön alkalmazott késleltetés megbukhat, és a strukturális késleltetés nem oldja meg a már meglévő általános iskolai szelektálást vagy az egyházi/magán informális kiválasztást, ami azt jelenti, hogy még egy jól megtervezett csomagnak is vannak lefedettségi rései, amelyeket a lencse bizonyítékai tartósnak jeleznek."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-05",
+      "F-live-portuguese_reform-06",
+      "F-live-portuguese_reform-08"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      {
+        "en": "Combining with T6's cross-maintainer gatekeeping could close the church/private loophole that would otherwise undermine uniform delay",
+        "hu": "A T6 kereszttartó fenntartói kapubezárással kombinálva bezárhatná az egyházi/magán kiskaput, amely különben aláásná az egységes elhalasztást."
+      },
+      {
+        "en": "Phased transition design explicitly informed by Polish 2017 failure mode increases the probability of avoiding a documented specific risk",
+        "hu": "A lengyel 2017-es hibamódból kifejezetten tanuló, fokozatos átmeneti terv növeli annak valószínűségét, hogy elkerüljenek egy dokumentált, konkrét kockázatot"
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Explicitly grounds its design in the comparative finding that structural delay works only when bundled with curricular and choice reform, directly operationalizing the lens's key causal-attribution caveat",
+        "hu": "Kifejezetten arra az összehasonlító megállapításra alapozza kialakítását, hogy a strukturális késleltetés csak akkor működik, ha tantervi és választási reformmal együtt alkalmazzák, ezzel közvetlenül operacionalizálva a lencse kulcsfontosságú oksági hozzárendelésére vonatkozó fenntartását."
+      },
+      {
+        "en": "Proactively designs against the Polish 2017 transition-shortfall risk via phased implementation, showing awareness of coordination failure modes documented in comparative evidence",
+        "hu": "Proaktívan tervez a lengyel 2017-es átmeneti hiánykockázat ellen fázisos bevezetés révén, jelezve az összehangolási hibamódok tudatosságát, amelyek összehasonlító bizonyítékokban dokumentáltak."
+      },
+      {
+        "en": "Attempts to resolve the free-choice/anti-sorting tension via explicit catchment rules rather than ignoring the primary-sorting mechanism",
+        "hu": "Próbálja megoldani a szabad választás/ellen-szelektálás feszültségét expliciten meghatározott beiskolázási szabályokkal ahelyett, hogy figyelmen kívül hagyná az elsődleges szelektálási mechanizmust."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Constitutional free-choice guarantees create genuine legal risk of partial or contested implementation of the anti-sorting catchment rules necessary for the bundle to function as designed",
+        "hu": "Az alkotmányos szabad iskolaválasztás-ígéretek valódi jogi kockázatot teremtenek a csomag működéséhez szükséges, szegregációt megakadályozó beiskolázási körzetekre vonatkozó szabályok részleges vagy vitatott végrehajtására."
+      },
+      {
+        "en": "Veto-player resistance (gimnázium directors) could produce an unbundled or partially reversed version of the reform, recreating the exact failure mode the lens evidence warns against",
+        "hu": "A vétójátékosok ellenállása (gimnáziumigazgatók) a reform szétszabdalt vagy részben visszafordított változatát eredményezheti, újrateremtve pontosan azt a hibamódot, amelyre a bizonyítékok figyelmeztetnek."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Even with bundling, the lens evidence shows Finland's own recent PISA decline and informal 'emphasized classes' sorting demonstrate that a delayed-tracking system does not guarantee durable equity or performance gains",
+        "hu": "Még az intézkedések összecsomagolása (bundling) esetén is az elemzési lencse bizonyítékai azt mutatják, hogy Finnország saját nemrégiben tapasztalt PISA-visszaesése és az informális 'emphasized classes' szelekciója azt jelzi, hogy a késleltetett szelekciós rendszer nem garantál tartós egyenlőséget vagy teljesítménynövekedést."
+      },
+      {
+        "en": "Church/private schools falling outside state maintainer jurisdiction could continue informal early selection, undermining the uniformity the reform is designed to achieve",
+        "hu": "Az állami fenntartó hatáskörén kívül eső egyházi/magániskolák folytathatják az informális korai szelekciót, ami aláássa a reform által elérni kívánt egységességet"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-portuguese_reform",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "f839c72dca1fed619a9294d48ac2d428ebc5e36edfbc912b16ab61b1d6669f18",
+  "topic": "korai-szelekcio"
+}

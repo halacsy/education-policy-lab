@@ -1,0 +1,38 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Municipal-level cost accounting study comparing realized (not projected) per-pupil expenditure, transport subsidy outlays, and capital maintenance costs before/after closure events in a matched sample of Hungarian districts; triangulate with KLIK/tankerület budget records.",
+      "hu": "Önkormányzati szintű költségelszámolási vizsgálat, amely összehasonlítja a tényleges (nem előre jelzett) egy tanulóra jutó kiadásokat, a szállítási támogatások kifizetéseit és a beruházási/karbantartási költségeket a bezárási események előtti és utáni időszakban egy illesztett magyarországi tankerületi mintában; triangulálás KLIK/tankerület költségvetési nyilvántartásokkal."
+    },
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t5",
+      "TP-live-t6",
+      "TP-live-t1"
+    ],
+    "question": {
+      "en": "What is the net fiscal balance (savings minus transport, capital, transition, and opportunity costs) of closing versus retaining a village primary school, conditional on school size, district, and region?",
+      "hu": "Milyen a nettó fiskális mérleg (megtakarítások mínusz szállítási, tőkeköltségek, átmeneti és alternatív költségek) egy falu általános iskola bezárása versus megtartása esetén, iskola méretétől, tankerülettől és régiótól függően?"
+    },
+    "uncertainty_refs": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-04",
+      "U-live-finnish_reform-03",
+      "U-live-demography-01"
+    ],
+    "why_it_matters": {
+      "en": "T2, T5, and T6 all rest on cost-saving assumptions that Finnish and Polish evidence suggests are often asserted but not verified; T1 and T3's viability also depend on whether retained small schools are fiscally sustainable under current formulas. Resolving this would determine whether default-closure or retention-oriented models have a real fiscal basis.",
+      "hu": "A T2, T5 és T6 költségmegtakarítási feltételezéseken alapul, amelyeket a finn és lengyel bizonyítékok szerint gyakran állítanak, de nem minden esetben igazolnak; a T1 és T3 megvalósíthatósága szintén attól függ, hogy a megtartott kisiskolák pénzügyileg fenntarthatók‑e a jelenlegi képletek mellett. Ennek tisztázása eldöntené, van‑e valós fiskális alapja az alapértelmezett bezárásnak vagy a megtartás‑orientált modelleknek."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-02",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5efb47d0812ac848154f2013182a9add3cee1ab92ac2ccc28663094b633b67e1",
+  "topic": "rural-school-closures"
+}

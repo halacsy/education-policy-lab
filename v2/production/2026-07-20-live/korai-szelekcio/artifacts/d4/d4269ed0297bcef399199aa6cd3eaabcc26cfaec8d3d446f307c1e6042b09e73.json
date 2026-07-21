@@ -1,0 +1,65 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal treats admission-mechanism redesign as an isolated fix within the existing 4/6/8-year architecture. The whole-system reform lens indicates this is precisely the kind of non-structural, single-lever intervention that comparative evidence suggests cannot substitute for coordinated structural change. Coaching-resistant exam redesign addresses one entry point but leaves untouched the primary-school choice sorting that precedes and independently drives segregation, and leaves Roma/regional equity gaps entirely unaddressed since these operate on dimensions (ethnicity, settlement type, early school-leaving) distinct from exam format.",
+      "hu": "Ez a javaslat a felvételi mechanizmus áttervezését izolált javításként kezeli a meglévő 4/6/8 éves architektúrán belül. A teljes rendszerre kiterjedő reform lencséje jelzi, hogy ez éppen az a nem-strukturális, egykaros beavatkozás, amelyről a komparatív bizonyítékok azt sugallják, hogy nem helyettesíti a koordinált strukturális változást. A coaching-ellenálló vizsgaátalakítás egy belépési pontot kezel, de érintetlenül hagyja az azt megelőző és önállóan a szegregációt vezérlő általános iskolai iskolaválasztási szelekciót, és a roma/regionális egyenlőségi réseket teljes egészében figyelmen kívül hagyja, mivel ezek olyan dimenziókon (etnicitás, településtípus, korai iskolaelhagyás) működnek, amelyek különböznek a vizsga formátumától."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-06",
+      "F-live-portuguese_reform-10",
+      "F-live-portuguese_reform-05"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      {
+        "en": "Could be combined with T3's anti-sorting catchment rules to jointly address both entry-exam bias and primary-sorting, better approximating the bundled reforms that comparative cases show are necessary",
+        "hu": "Összekapcsolható T3 kiszűrésellenes körzeti szabályaival, így együttesen kezelheti mind a felvételi vizsga torzító hatását, mind az általános iskolai szétosztást, jobban megközelítve azokat a csomagolt reformokat, amelyeket a komparatív esetek szükségesnek mutatnak."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Uses an existing administrative lever (exam redesign) without requiring new legal architecture, which is procedurally efficient even if substantively partial",
+        "hu": "Meglévő adminisztratív eszközt (vizsgatervezés átalakítása) használ, új jogi architektúra nélkül, ami eljárásilag hatékony, még ha tartalmilag részleges is."
+      },
+      {
+        "en": "Explicitly acknowledges its own limitation regarding geographic access gaps and non-applicant pools, showing awareness that admissions-mechanism fixes alone are insufficient",
+        "hu": "Kifejezetten elismeri saját korlátait a földrajzi hozzáférési hiányosságok és a nem jelentkezők köre tekintetében, jelezve annak felismerését, hogy a felvételi mechanizmusok egyedüli javítása nem elegendő."
+      }
+    ],
+    "threats": [
+      {
+        "en": "SES-proxy gaming by advantaged families with political access could hollow out the reform's intended equity effect, consistent with the lens's caution that non-structural quality/equity measures alone rarely achieve durable gains",
+        "hu": "A politikai hozzáféréssel bíró előnyben részesített családok által az SES-közvetítők manipulálása kiüresítheti a reform szándékolt esélyegyenlőségi hatását, összhangban azzal a megfigyeléssel, hogy a nem-szerkezeti minőségi/esélyegyenlőségi intézkedések önmagukban ritkán hoznak tartós eredményeket."
+      },
+      {
+        "en": "Coaching investment may simply migrate to new exam formats, reproducing the same SES-driven advantage the reform is meant to eliminate",
+        "hu": "A felkészítő (coaching) beruházások egyszerűen átmozdulhatnak az új vizsgatformátumok felé, reprodukálva ugyanazt a társadalmi-gazdasági helyzet (SES) által vezérelt előnyt, amelyet a reformnak ki kellene iktatnia."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Does not touch free school choice or primary-school sorting occurring before age 10, which the lens evidence identifies as an independent segregation driver distinct from formal tracking",
+        "hu": "Nem érinti a szabad iskolaválasztást vagy a 10 éves kor előtt zajló általános iskolai szelekciót, amelyet a vizsgálati lencse bizonyítékai önálló szegregációs hajtóerőként azonosít, különbözően a formális szelek­tálástól."
+      },
+      {
+        "en": "Fails to address Roma and regional equity gaps that operate through mechanisms (early school-leaving, village/regional disadvantage) unrelated to exam format",
+        "hu": "Nem foglalkozik a roma és regionális egyenlőségi rések kezelésével, amelyek olyan mechanizmusokon (early school-leaving, village/regional disadvantage) keresztül működnek, amelyek nem kapcsolódnak a vizsgaformátumhoz."
+      },
+      {
+        "en": "As a single isolated lever, it cannot achieve what comparative cases show requires bundling with curricular and choice-regulation reform",
+        "hu": "Mint egyetlen izolált beavatkozás, ez nem képes elérni azt, amit a komparatív esetek mutatnak: szükséges a tantervi és a választásszabályozási reformmal való együttes csomagolás."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-portuguese_reform",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "70ef53cc0b1199cdb22309ba6f9928849073d3bb8d6fb32e6e0403a9382f7e1c",
+  "topic": "korai-szelekcio"
+}

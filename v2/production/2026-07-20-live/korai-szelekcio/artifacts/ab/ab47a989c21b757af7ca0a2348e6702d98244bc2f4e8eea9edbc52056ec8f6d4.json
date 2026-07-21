@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal exploits existing discretionary ministerial authority over state-sector capacity, which is a legally available and low-friction lever. However, its governance reach is structurally partial: the Klebelsberg Centre's jurisdiction explicitly excludes church, foundation, and private-sector maintainers, meaning any capacity contraction achieved administratively in the state sector has no legal purchase on the segment of the system most rapidly growing its selective share.",
+      "hu": "A javaslat a meglévő, miniszteri mérlegelési jogkörre támaszkodik az állami szektor kapacitásával kapcsolatban, ami jogilag elérhető és alacsony súrlódású beavatkozási pont. Ugyanakkor kormányzási hatóköre strukturálisan részleges: a Klebelsberg Központ illetékessége kifejezetten kizárja az egyházi, alapítványi és magántulajdonban lévő fenntartókat, ami azt jelenti, hogy az állami szektorban adminisztratívan elért kapacitáscsökkenésnek nincs jogi hatása azokra a rendszer-szegmensekre, amelyek a leghamarabb növelik szelektív részesedésüket."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-legal_and_governance-07",
+      "F-live-legal_and_governance-09",
+      "F-live-legal_and_governance-04",
+      "F-live-legal_and_governance-06"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "The 2023 unified state employment framework across all provider types demonstrates a legal pathway by which cross-maintainer regulatory reach has been extended before, suggesting analogous extension of capacity-control authority is not without precedent (F-live-legal_and_governance-09)",
+        "hu": "A 2023-as egységes állami foglalkoztatási keretrendszer az összes fenntartótípust átfogva bemutat egy jogi utat, amelyen keresztül a fenntartók közötti szabályozási befolyás korábban már kiterjesztésre került, ami arra utal, hogy az analóg kapacitásszabályozó hatáskör kiterjesztése nem példa nélküli (F-live-legal_and_governance-09)."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Uses existing discretionary approval power already exercised (denial of new 6/8-year track requests), meaning no new statute or constitutional test is required (F-live-legal_and_governance-07 supports the existence of a defined jurisdiction to act within)",
+        "hu": "A javaslat a már gyakorolt meglévő mérlegelési jóváhagyási hatáskört használja (az új 6/8 évfolyamos képzési kérelmek elutasítása), ami azt jelenti, hogy nincs szükség új törvényre vagy alkotmányos tesztre (F-live-legal_and_governance-07 alátámasztja egy meghatározott illetékesség létezését, amelyen belül cselekedni lehet)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Legally partial contraction risks displacement of demand toward exempt maintainers, and because those maintainers operate under different accountability lines, this outcome could occur without any single authority being accountable for the net segregation effect (F-live-legal_and_governance-07)",
+        "hu": "Jogilag részleges zsugorodás kockázata, hogy a kereslet az egyes mentességgel működő fenntartók felé tolódik el, és mivel ezek a fenntartók eltérő elszámoltathatósági láncok alatt működnek, ez az eredmény bekövetkezhet úgy, hogy egyetlen hatóság sem vállal felelősséget a nettó szegregációs hatásért (F-live-legal_and_governance-07)."
+      },
+      {
+        "en": "Hungary's already outlier levels of between-school variation suggest a partial legal lever is unlikely to meaningfully alter an entrenched governance-level pattern (F-live-legal_and_governance-06)",
+        "hu": "Magyarország már így is kiugró iskolák közötti variációs szintjei azt sugallják, hogy egy részleges jogi eszköz valószínűleg nem lesz képes érdemben megváltoztatni egy berögzült kormányzati szintű mintát (F-live-legal_and_governance-06)."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "State-sector jurisdiction under Klebelsberg Centre and its 60 district sub-units explicitly excludes church, foundation, and purely private schools, creating a structural accountability gap since the lever cannot reach the fastest-growing selective segment (F-live-legal_and_governance-07)",
+        "hu": "A Klebelsberg Központ és 60 kerületi alárendelt egysége alatti állami szektor joghatósága kifejezetten kizárja az egyházi, alapítványi és tisztán magániskolákat, strukturális elszámoltathatósági rést teremtve, mivel a beavatkozási eszköz nem tud elérni a leggyorsabban növekvő szelekciós szektort (F-live-legal_and_governance-07)."
+      },
+      {
+        "en": "Contraction of state capacity alone leaves the underlying admission criteria and rights framework unchanged, so the equity-per-seat problem persists in whatever seats remain (consistent with the broader segregation pattern documented in F-live-legal_and_governance-04)",
+        "hu": "Csak az állami kapacitás összezsugorodása magában nem változtatja meg a háttérben lévő felvételi kritériumokat és jogi keretrendszert, így a férőhelyenkénti egyenlőtlenség problémája továbbra is fennáll a megmaradt férőhelyek esetében (összhangban a szélesebb szegregációs mintával, amelyet a F-live-legal_and_governance-04 dokumentum tárgyal)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-legal_and_governance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "64ab38ecdfc4502afd0f7ce0b763d6188d0c978fb19d9a4ce3aa7405e4b5fa87",
+  "topic": "korai-szelekcio"
+}

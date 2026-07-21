@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a network-planning perspective, this proposal redesigns admission mechanics without altering the geographic footprint of the 6/8-year network. Since selective schools remain concentrated in urban settlements and Budapest (F-live-school_network_planning-05), and the secondary network's proximity guarantee applies to generic secondary schools rather than selective clustered tracks (F-live-school_network_planning-06), an SES-weighted exam redesign does not by itself address distance-to-school access gaps. Capacity itself is untouched: the stagnant ~25,962 places (F-live-school_network_planning-03) remain the ceiling regardless of how the exam sorts within that ceiling.",
+      "hu": "Hálózattervezési szempontból ez a javaslat a felvételi mechanikák átdolgozását végzi anélkül, hogy megváltoztatná a 6/8-éves hálózat földrajzi lábnyomát. Mivel a szelektív iskolák továbbra is a városi településekre és Budapestre koncentrálódnak (F-live-school_network_planning-05), és a középfokú hálózat közelségi garanciája a generikus középiskolákra vonatkozik, nem pedig a szelektív klaszterezett pályákra (F-live-school_network_planning-06), egy SES-súlyozott vizsgaátdolgozás önmagában nem orvosolja az iskolához való távolsági hozzáférési hiányokat. A kapacitás maga érintetlen: a stagnáló ~25,962 férőhely (F-live-school_network_planning-03) továbbra is a felső határ marad, függetlenül attól, hogyan szortírozza a vizsga ezen a plafonon belül a tanulókat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Could be paired with geographic-access data to identify where SES-weighting would need supplementary transport or dormitory provision",
+        "hu": "Összekapcsolható földrajzi hozzáférési adatokkal, hogy azonosítsa, hol lenne szükség kiegészítő szállításra vagy kollégiumi elhelyezésre az SES-súlyozás mellett"
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Works within the existing centrally-administered exam infrastructure rather than requiring new school-network capacity or facilities",
+        "hu": "A meglévő központilag irányított vizsga-infrastruktúrán belül működik, ahelyett hogy új iskolahálózati kapacitást vagy létesítményeket igényelne."
+      },
+      {
+        "en": "Does not require reallocation of physical places, avoiding transport or capacity disruption",
+        "hu": "Nem igényel fizikai helyek átcsoportosítását, így elkerüli a szállítási vagy kapacitásbeli zavarokat."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Distance/access non-randomness (implied by geographic clustering, F-live-school_network_planning-05) could mean SES-index benefits are captured disproportionately by urban disadvantaged families while rural disadvantaged families still cannot reach a network node",
+        "hu": "A távolság/hozzáférés nem véletlenszerűsége (amelyet a földrajzi klasztereződés sugall, F-live-school_network_planning-05) azt jelentheti, hogy az SES-index szerinti előnyöket aránytalanul a városi hátrányos helyzetű családok foglalják le, míg a vidéki hátrányos helyzetű családok továbbra sem érnek el hálózati csomópontot."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Does not address the geographic concentration of six/eight-year gimnázium capacity in urban/Budapest areas (F-live-school_network_planning-05)",
+        "hu": "Nem tér ki a hat-/nyolc évfolyamos gimnázium kapacitásának földrajzi koncentrációjára a városi/Budapest területeken (F-live-school_network_planning-05)"
+      },
+      {
+        "en": "Leaves the stagnant capacity ceiling of ~25,962 places unchanged, so oversubscription pressure at flagship schools persists (F-live-school_network_planning-03)",
+        "hu": "Hagyja változatlanul a stagnáló kapacitásplafont (~25,962 férőhely), így a zászlóshajóiskoláknál fennmarad a túljelentkezési nyomás (F-live-school_network_planning-03)"
+      },
+      {
+        "en": "Feeder-school dilution dynamics (F-live-school_network_planning-07) are untouched since demand concentration on selective urban schools continues regardless of exam format",
+        "hu": "Az utánpótló iskolákat érintő hígulási dinamikák (F-live-school_network_planning-07) érintetlenek maradnak, mivel a kereslet továbbra is a szelektív városi iskolákra koncentrál, a vizsga formátumától függetlenül."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:04:41.725832Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-5e1c23aa6b64bc33",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "1b0fc5904ad68105488c6a6f6950a78b86ae7ba97bbf288ad627bf603f70ecd3",
+  "topic": "korai-szelekcio"
+}

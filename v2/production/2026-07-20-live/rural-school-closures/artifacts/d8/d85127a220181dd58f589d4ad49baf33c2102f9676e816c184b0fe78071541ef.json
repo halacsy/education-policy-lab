@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A default-closure-with-mitigation model is the option most aligned with the state's demonstrated preference for centralized cost control, but it directly confronts an organized opposition coalition: the 2022-2023 teacher/parent/student mobilization raised the political cost of reorganization generally, and any explicit closure-by-default framework is likely to be read by that coalition as formalizing exactly the outcome it mobilized against, even with equity mitigations attached. Its legitimacy depends heavily on whether transport and equity guarantees are credible given the current unresolved legal dispute over transport responsibility.",
+      "hu": "Az alapértelmezett bezárás + enyhítések modellje a leginkább összhangban áll az állam központosított költségkontroll demonstrált preferenciájával, de közvetlenül szembehelyezkedik egy szervezett ellenzéki koalícióval: a 2022–2023-as tanár/szülő/diák mozgalom általánosan növelte az átszervezés politikai költségét, és bármely kifejezett alapértelmezett bezárási keretet az a koalíció valószínűleg úgy fogja értelmezni, hogy formalizálja pontosan azt az eredményt, amely ellen mozgolódott, még akkor is, ha egyenlőségi enyhítések járnak vele. Legitimitása nagymértékben függ attól, hogy a szállítási és egyenlőségi garanciák mennyire hitelesek, tekintettel a jelenleg megoldatlan jogi vitára a szállítási felelősségről."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-political_feasibility-08",
+      "F-live-political_feasibility-07"
+    ],
+    "lens_ref": "L-live-political_feasibility",
+    "opportunities": [
+      {
+        "en": "Could be paired with existing free under-14 public transport infrastructure introduced in 2023 as a partial implementation base, potentially lowering the marginal political cost of guaranteeing transport",
+        "hu": "Párosítható a 2023-ban bevezetett, 14 év alattiak számára ingyenes tömegközlekedési infrastruktúrával mint részleges megvalósítási bázissal, ami potenciálisan csökkentheti a szállítás garantálásának marginális politikai költségét."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Explicit institutionalization of consolidation criteria, if paired with resolved transport-responsibility assignment, could increase transparency and reduce the discretionary, ad hoc character of current closure practice",
+        "hu": "A koncentrációs kritériumok explicit intézményesítése, ha párosul a közlekedési felelősség hozzárendelésének rendezésével, növelheti az átláthatóságot és csökkentheti a jelenlegi bezárási gyakorlat eseti, diszkrecionális jellegét."
+      }
+    ],
+    "threats": [
+      {
+        "en": "The scale and organization of the 2022-2023 teacher mobilization (50,000+ participants) demonstrates a coalition capable of raising the political cost of any reorganization framed as closure-first, regardless of attached mitigations",
+        "hu": "A 2022-2023-as pedagógus-mobilizáció mérete és szervezése (50,000+ résztvevő) azt mutatja, hogy létezik egy koalíció, amely képes növelni bármely, bezárás-első megközelítésként megfogalmazott átszervezés politikai költségét, a kapcsolt enyhítések ellenére."
+      },
+      {
+        "en": "A default-closure framing risks being politically read as codifying the disputed and contested outcome that recent local mobilizations (e.g., the 2025 Budapest case) have shown can be reversed under pressure, inviting sustained resistance rather than acceptance",
+        "hu": "A default-closure framing politikailag úgy olvasható, hogy kodifikálja azt a vitatott és megkérdőjelezett kimenetet, amelyet a legutóbbi helyi mobilizációk (e.g., the 2025 Budapest case) megmutattak, miszerint nyomás hatására visszafordítható, és ez tartós ellenállást vonhat maga után az elfogadás helyett."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Legal responsibility for pupil transport remains genuinely unresolved between the Interior Ministry and municipalities, undermining the credibility of any transport guarantee central to this proposal's legitimacy",
+        "hu": "A tanulószállítás jogi felelőssége továbbra is valóban rendezetlen a Belügyminisztérium és az önkormányzatok között, aláásva bármely, a javaslat legitimitásának központi elemét képező szállítási garancia hitelességét."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-political_feasibility",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e98fbbb27ec122b77185af14540261c3b08b7200fb5b9d39ed082f629bf3d2ab",
+  "topic": "rural-school-closures"
+}

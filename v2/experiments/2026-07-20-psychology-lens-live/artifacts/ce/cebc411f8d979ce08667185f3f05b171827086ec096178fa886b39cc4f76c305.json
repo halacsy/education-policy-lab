@@ -1,0 +1,38 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Simulation/microsimulation using existing enrollment and residential data to model plausible displacement scenarios, supplemented by qualitative interviews with school maintainers and parents on likely substitution behavior; where possible, exploit natural variation from past administrative desegregation episodes in Hungary as a quasi-experiment.",
+      "hu": "Szimuláció/mikroszimuláció meglévő beiratkozási és lakóhely-adatok alapján a valószínű kimozdulási forgatókönyvek modellezésére, kiegészítve kvalitatív interjúkkal a fenntartókkal és szülőkkel a valószínű helyettesítési magatartásról; ahol lehetséges, használják a magyarországi korábbi adminisztratív deszegregációs epizódok természetes variációját kvázi-kísérletként."
+    },
+    "proposal_refs": [
+      "TP-live-t2",
+      "TP-live-t4",
+      "TP-live-t6"
+    ],
+    "question": {
+      "en": "If the 6/8-year tracks were abolished or delayed without complementary reforms to school choice, maintainer exemptions, and teacher allocation, how much sorting behavior would displace into private/church schools, cross-municipal transfers, or tutoring-based selection rather than disappear?",
+      "hu": "Ha a 6/8 éves tagozatokat megszüntetnék vagy elhalasztanák kiegészítő iskolaválasztási, fenntartói mentességi és pedagógus‑elosztási reformok nélkül, milyen mértékben tolódna el a szelekció magatartása a magán/egyházfenntartású iskolákba, a települések közötti átiratkozásokba vagy a magántanulásra épülő kiválasztásba ahelyett, hogy megszűnne?"
+    },
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-02",
+      "U-live-legal_and_governance-02",
+      "U-live-political_feasibility-02",
+      "U-live-portuguese_reform-04",
+      "U-live-finnish_reform-02"
+    ],
+    "why_it_matters": {
+      "en": "This directly determines whether T2 or T6 alone can succeed, or whether they must be bundled with T4-style zoning/choice reform and T3-style admissions reform to avoid merely relocating segregation, as occurred in Finland and Sweden post-1990s.",
+      "hu": "Ez közvetlenül meghatározza, hogy a T2 vagy a T6 önállóan sikeres lehet‑e, vagy szükségük van‑e T4‑szerű zónázási/választási reformokkal és T3‑szerű felvételi reformokkal való csomagolásra, hogy elkerüljék a szeparáció puszta áthelyezését, ahogy az a 1990‑es évek utáni Finnországban és Svédországban történt."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-psychology-02",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "7a683d08df25d5c680e7063bbdd4653d35a18db618631f98bbc48bdf574a234a",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "At baseline, approximately 40% of Hungarian primary schools have zero students attempting selective-track entrance exams (60% in village schools), while better schools in county seats and Budapest experience class-size drops of 20-30% by grade 7 as students leave for gimnázium, indicating selective tracks function as urban/regional-center phenomenon with minimal rural uptake.",
+      "hu": "Kiindulási helyzetben mintegy 40% azoknak az általános iskoláknak, ahol egyetlen tanuló sem próbálkozik szelektív pályára történő felvételi vizsgával (kistelepülési iskolákban 60%), miközben a megyei székhelyeken és Budapesten a jobb iskolákban a 7. évfolyamra az osztálylétszámok 20–30%-kal csökkennek, ahogy a tanulók elvándorolnak a gimnáziumokba — ez azt mutatja, hogy a szelektív pályák elsősorban városi/régióközponti jelenség, vidéken alacsony a részvétel."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Data vintage and exact geographic scope not specified in research notes",
+        "hu": "Az adatok keletkezési ideje és a pontos földrajzi terjedelem nincs megadva a kutatási megjegyzésekben"
+      },
+      {
+        "en": "Rural/urban category boundary definitions may vary by settlement size classification",
+        "hu": "A vidéki/városi kategóriahatárok definíciói eltérhetnek a településméret szerinti besorolástól"
+      },
+      {
+        "en": "Mechanism of non-participation (family choice, access barriers, awareness) not differentiated",
+        "hu": "A nem részvétel mechanizmusát (családi választás, hozzáférési akadályok, tájékozottság) nem különböztetik meg."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-03",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a905625b3b43b5325af47712a8e051517ff42ba0fef8dae28c801f2efbfff027",
+  "topic": "korai-szelekcio"
+}

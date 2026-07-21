@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A reconciled measurement architecture is well-suited to disentangling the demographic and diagnostic-practice components of rising SEN identification, which the record shows are genuinely contested: the 6.7%→7.7% and 3.9%→6.2% rises in identification (2010-2020) are attributed variably to diagnostic awareness, social disparities, and workforce shortages, and cross-national OECD evidence suggests diagnostic-practice change is a major driver of comparable rises elsewhere. A single longitudinal series could distinguish true cohort-driven prevalence change from artifacts of definitional or diagnostic shifts, which is foundational for any subsequent planning.",
+      "hu": "Egy egyeztetett mérési architektúra jól alkalmas arra, hogy szétválassza a demográfiai és a diagnosztikai gyakorlat összetevőit a növekvő SEN-azonosításban, amelyet a nyilvántartás valóban vitatottnak mutat: az 6.7%→7.7% és a 3.9%→6.2% azonosítási növekedése (2010-2020) különbözőképpen tulajdonítható diagnosztikai tudatosságnak, társadalmi egyenlőtlenségeknek és munkaerőhiánynak, és a nemzetközi OECD-beli bizonyítékok azt sugallják, hogy a diagnosztikai gyakorlat változása jelentős mozgatórugó a hasonló növekedések mögött máshol. Egyetlen longitudinális sorozat meg tudná különböztetni az igazán kohorsz-vezérelt prevalencia-változást a definíciós vagy diagnosztikai eltolódások artifactumaitól, ami alapvető bármely későbbi tervezéshez."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-10"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Could incorporate regional disaggregation to map the pronounced North-South/East-West divide in child-population trends and disadvantage concentration, enabling geographically targeted planning",
+        "hu": "Tartalmazhatna regionális lebontást, hogy feltérképezze a gyermekpopuláció-trendek és a hátrány koncentrációja közötti kimondott észak–déli/kelet–nyugati megosztottságot, lehetővé téve a földrajzilag célzott tervezést"
+      },
+      {
+        "en": "Natural policy variation points (2018, 2020 rule changes) offer quasi-experimental leverage for decomposing diagnostic-practice effects from demographic effects",
+        "hu": "A természetes politikai variációs pontok (2018, 2020 szabályváltoztatások) kvázi-kísérleti lehetőséget kínálnak a diagnosztikai gyakorlat hatásainak a demográfiai hatásoktól való szétbontására"
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Directly targets the demographic/diagnostic decomposition problem raised by contested attribution of SEN rise between diagnostic awareness and social/workforce factors",
+        "hu": "Közvetlenül célozza azt a demográfiai/diagnosztikai dekompozíciós problémát, amelyet a sajátos nevelési igény (SEN) növekedésének vitatott attribúciója vet fel a diagnosztikai tudatosság és a társadalmi/munkaerőpiaci tényezők között"
+      },
+      {
+        "en": "Would allow separation of locked-in cohort decline effects from identification-rate artifacts, improving the evidentiary basis for planning horizon decisions",
+        "hu": "Lehetővé tenné a bebetonozódott kohorszcsökkenés hatásainak elkülönítését az azonosítási arányok artefaktumaitól, javítva ezzel a bizonyítéki alapot a tervezési időhorizont döntéseihez."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If reconciliation is not paired with regionally granular reporting, it may understate how differently cohort decline and identification interact across contracting rural areas versus high-disadvantage northeastern counties",
+        "hu": "Ha az egyeztetés nem párosul regionálisan részletes jelentéssel, alábecsülheti, hogy mennyire eltérően lép kölcsönhatásba a kohorszok fogyása és az azonosítás a zsugorodó vidéki területek és a kiemelten hátrányos északkeleti megyék között."
+      }
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      {
+        "en": "A measurement framework alone does not address the underlying cohort contraction or spatial maldistribution; it is an epistemic rather than structural intervention",
+        "hu": "Magában a mérési keretrendszer nem kezeli az alapul fekvő kohorsz-összehúzódást vagy a térbeli nem megfelelő eloszlást; inkább ismeretelméleti, mint strukturális beavatkozás."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-demography",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "9b29f366c578235a218f5f229ecdea93ed77dd214541188d4aa382d34189b1d5",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Reciprocal contracts directly engage cost incidence and incentive design by proposing to re-couple municipal commitment with state financing guarantees, which is conceptually well-matched to a public finance lens. However, Hungary's 2013 centralization removed the municipal fiscal capacity and bargaining power that make such contracts credible in France, and national funding formulas create structural pressure independent of any contractual override—meaning the proposal's own mechanism description acknowledges a funding-formula exception is required for viability. Absent this, the contract risks being a symbolic instrument imposing formal co-responsibility without matching devolved fiscal authority, effectively shifting reputational or administrative cost onto municipalities without resources.",
+      "hu": "A reciprok szerződések közvetlenül érintik a költségviselést és az ösztönzőtervezést azáltal, hogy újra összekapcsolnák a települési elköteleződést az állami finanszírozási garanciákkal, ami fogalmilag jól illeszkedik a közpénzügyi szemlélethez. Ugyanakkor Magyarország 2013-as centralizációja elvette azt a települési fiskális kapacitást és alkupozíciót, amely Franciaországban ilyen szerződéseket hitelessé tesz, és a nemzeti finanszírozási képletek olyan strukturális nyomást teremtenek, amelyek függetlenek bármely szerződéses felülírástól — vagyis a javaslat saját mechanizmusleírása is elismeri, hogy egy finanszírozási képlet-kivétel szükséges a megvalósíthatósághoz. Ennek hiányában a szerződés kockázata, hogy pusztán szimbolikus eszközzé válik, amely formális társfelelősséget ró a településekre anélkül, hogy hozzájuk kerülő fiskális hatáskört biztosítana, gyakorlatilag a hírnév- vagy adminisztratív költségek megterhelését jelentené olyan önkormányzatokra, amelyeknek nincsenek erőforrásaik."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-10",
+      "F-live-education_finance-03"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Could be structured to require explicit accounting of transportation cost offsets (F-live-education_finance-03) as a co-financing condition, improving value-for-money transparency",
+        "hu": "Megalkotható úgy, hogy a közlekedési költség-ellensúlyok (F-live-education_finance-03) explicit elszámolását együttfinanszírozási feltételként írja elő, javítva az ár-érték átláthatóságát"
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Explicitly designed around reciprocal cost/responsibility incidence rather than one-sided mandate",
+        "hu": "Kifejezetten a költségek/kötelezettségek kölcsönös megosztására lett tervezve, nem egyoldalú kötelezettségként"
+      },
+      {
+        "en": "Recognizes need for a funding-formula exception or guarantee, addressing rather than ignoring the structural fiscal pressure from national class-size and per-pupil formulas",
+        "hu": "Ismeri a finanszírozási képlet alóli kivétel vagy garancia szükségességét, így kezeli — ahelyett, hogy figyelmen kívül hagyná — a nemzeti osztályméret- és diákonkénti képletekből eredő strukturális pénzügyi nyomást."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If perceived as re-introducing municipal financial burden without matching devolved authority or funds, political and practical resistance may block adoption",
+        "hu": "Ha úgy értelmezik, hogy önkormányzati pénzügyi terhet vezet vissza anélkül, hogy ehhez arányos átruházott hatáskör vagy forrás járna, politikai és gyakorlati ellenállás megakadályozhatja a bevezetését."
+      },
+      {
+        "en": "Without enforcement mechanism, contract terms may not survive change in political administration, repeating governance-instability costs (F-live-education_finance-10)",
+        "hu": "Végrehajtási mechanizmus hiányában a szerződéses feltételek nem biztos, hogy túlélnek egy politikai adminisztrációváltást, ismételve a kormányzati instabilitás költségeit (F-live-education_finance-10)"
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Hungarian municipalities lack the fiscal capacity and legal standing of French communes, creating asymmetry that could render contracts symbolic rather than fiscally binding",
+        "hu": "A magyar önkormányzatok nem rendelkeznek a francia községek fiskális kapacitásával és jogi státuszával, ami olyan aszimmetriát teremt, hogy a szerződéseket szimbolikussá, nem pedig pénzügyileg kötelezővé teheti"
+      },
+      {
+        "en": "No precedent exists for binding state fiscal commitments at this scale, creating enforcement uncertainty over resource flows",
+        "hu": "Nincs precedens olyan kötelező állami fiskális elköteleződésre ebben a méretben, ami végrehajtási bizonytalanságot teremt a forrásáramlások tekintetében."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-education_finance",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "686338f91d761b772aae058d19fb386c20d75b4d296a52702fccf4238f1ad8bb",
+  "topic": "rural-school-closures"
+}

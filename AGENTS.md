@@ -88,6 +88,14 @@ python3 scripts/build_registry.py --check                 # knowledge freshness 
 
 ## Current state (2026-07-21)
 
+- **V2 SEMANTIC CONTENT IS CANONICALLY BILINGUAL AGAIN (D-58).** D-34 is
+  restored for the artifact DAG: every declared prose leaf is an exact
+  `{en, hu}` pair in schema 2.1.0, authored in one structured call in future
+  runs. English-only 2.0 records remain immutable predecessors; the one-time
+  retrofit creates audited bilingual successors without rerunning analysis.
+  The public site projects those pairs directly; the D-50 downstream
+  policy-content localizer is retired. UI message catalogs remain separate.
+
 - **V2 IS THE DEFAULT PUBLIC ATLAS (D-55).** The public site is generated from
   the two accepted, sourced production stores. Its primary audience is an
   interested person with no policy background: question → possible changes →

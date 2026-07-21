@@ -1,0 +1,40 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Quasi-experimental decomposition using variation in local track availability, school-choice regulations, and settlement-level demographic data; difference-in-differences exploiting regional differences in track density combined with school-level segregation indices (dissimilarity/Gorard indices); triangulate with the disputed Horn/TARKI vs PISA-comparative statistics to reconcile methodological divergence.",
+      "hu": "Kváziexperimentális dekompozíció a helyi tagozat-ellátottság, az iskolaválasztási szabályozás és településszintű demográfiai adatok változását használva; difference-in-differences elemzés a regionális tagozatsűrűségbeli eltérések kihasználásával, kombinálva iskolai szegregációs indexekkel (disszimilaritás/Gorard-indexek); trianguláció a vitatott Horn/TARKI és a PISA-összehasonlító statisztikák között a módszertani eltérés feloldására."
+    },
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t6"
+    ],
+    "question": {
+      "en": "What is the causal contribution of the 6/8-year gimnázium track structure itself—net of free school choice, residential sorting, church-school expansion, and selective commuting—to Hungary's EU-leading segregation levels?",
+      "hu": "Mekkora a 6/8 éves gimnáziumi tagozódás struktúrájának oksági hozzájárulása — a szabad iskolaválasztás, a lakóhelyi szelekció, az egyházi iskolák terjeszkedése és a szelektív bejárás hatásától megtisztítva — Magyarország EU-vezető szegregációs szintjeihez?"
+    },
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-polish_reform-01",
+      "U-live-equity_and_social_mobility-03",
+      "U-live-legal_and_governance-01",
+      "U-live-education_finance-02"
+    ],
+    "why_it_matters": {
+      "en": "This is the foundational empirical question underlying every proposed reform option; without decomposing the causal channels, policymakers cannot know whether structural reform (T3), capacity contraction (T2/T6), or non-structural measures (T1/T4) will actually move the segregation outcome, or whether gains will simply be displaced.",
+      "hu": "Ez az alapvető empirikus kérdés minden javasolt reformlehetőség mögött; a kauzális csatornák dekompozíciója nélkül a döntéshozók nem tudhatják, hogy a strukturális reform (T3), a kapacitáscsökkentés (T2/T6) vagy a nem strukturális intézkedések (T1/T4) valóban befolyásolják-e a szegregációt, vagy az eredmények csupán áthelyeződnek."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-01",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "9f3993bd697528b13006f530d5dd67fce56592ad210c37465c7ebbc9f5591ba6",
+  "topic": "korai-szelekcio"
+}

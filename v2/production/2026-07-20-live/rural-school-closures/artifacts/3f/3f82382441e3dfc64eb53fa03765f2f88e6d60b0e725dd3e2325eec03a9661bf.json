@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A structural grade-split model would require reclassifying school units and their legal status, since maintainer authority is currently centralized in district centers with directors appointed by the Minister rather than elected locally (F-live-legal_and_governance-02). No finding directly addresses the legal mechanics of splitting a single school's grade structure across sites, but the same 2016 restructuring architecture (59 district centers subordinate to a central agency) would presumably govern which entity manages the retained lower-grade sites and the consolidated upper-grade site, raising questions of accountability fragmentation. The lack of a dedicated legal closure procedure for demographic decline (F-live-legal_and_governance-04) is relevant here too, since decisions to convert (rather than close) a village school would likely proceed through the same undocumented administrative discretion, absent new statutory grounding for a",
+      "hu": "Egy strukturális évfolyam-szétválasztás modell megkövetelné az iskolai egységek és jogi státuszuk átminősítését, mivel a fenntartói hatalom jelenleg a központi ügynökség alá rendelt járási központokban van, amelyek igazgatóit a miniszter nevezi ki, nem pedig helyben választják (F-live-legal_and_governance-02). Egyetlen megállapítás sem foglalkozik közvetlenül annak jogi mechanikájával, hogyan lehet egyetlen iskola évfolyamszerkezetét több telephelyre szétosztani, de ugyanaz a 2016-os átszervezési architektúra (59 járási központ alárendelve egy központi ügynökségnek) feltehetően az irányító entitást határozná meg, amely a megtartott alsó évfolyamos telephelyeket és a konszolidált felső évfolyamos telephelyet kezeli, felvetve a felelősségmegoszlás fragmentálódásának kérdéseit. A demográfiai visszaesés miatti külön jogi bezárási eljárás hiánya (F-live-legal_and_governance-04) itt is releváns, mivel egy falusi iskola átalakításáról (a bezárás helyett) szóló döntések valószínűleg ugyanazon dokumentálatlan adminisztratív diszkreció szerint folynának, új jogszabályi alap nélkül egy"
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-04",
+      "F-live-legal_and_governance-08",
+      "F-live-legal_and_governance-09"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "Could be incorporated into the 2026 restructuring's stated goal of restoring some school-director and municipal input, if grade-split governance is explicitly designed into that reform (F-live-legal_and_governance-09)",
+        "hu": "Beépíthető lehet a 2026-os átszervezés kijelölt céljába — az igazgatói és önkormányzati beleszólás részleges visszaállításába —, ha az évfolyam-megosztás irányítása kifejezetten része lesz annak a reformnak (F-live-legal_and_governance-09)."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Retaining a village-based lower-grade site partially preserves local accountability structures that would otherwise be lost entirely under a full closure",
+        "hu": "Egy falusi alapú alsó tagozatos telephely megtartása részben megőrzi azokat a helyi elszámoltathatósági struktúrákat, amelyek egy teljes bezárás esetén teljesen elvesznének."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Absent codified protections, a future administration could reverse the grade-split unilaterally through the same discretionary administrative mechanism used for current closures, with no statutory barrier (F-live-legal_and_governance-04, F-live-legal_and_governance-08)",
+        "hu": "Ha nincsenek kódifikált védelmek, egy jövőbeni kormányzat egyoldalúan visszaállíthatná a tagozatfelosztást ugyanazzal a mérlegelésen alapuló adminisztratív mechanizmussal, amelyet a jelenlegi bezárásokhoz használnak, jogszabályi akadály nélkül (F-live-legal_and_governance-04, F-live-legal_and_governance-08)"
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "No existing statutory closure/conversion procedure exists to legally distinguish a grade-split conversion from a full 'temporary closure' decision, leaving conversions similarly vulnerable to ad hoc administrative discretion (F-live-legal_and_governance-04)",
+        "hu": "Nincs hatályos törvényi záró/átalakítási eljárás, amely jogilag megkülönböztetné a tagozatfelosztás miatti átalakítást egy teljes 'ideiglenes bezárás' döntéstől, így az átalakítások hasonlóan kiszolgáltatottak az ad hoc igazgatási mérlegelésnek (F-live-legal_and_governance-04)."
+      },
+      {
+        "en": "Centralized director appointment and advisory-only district councils mean local communities would have no formal legal authority over how a grade-split is designed or later reversed (F-live-legal_and_governance-02)",
+        "hu": "Az igazgatói kinevezés központosítása és a kizárólag tanácsadó jellegű járási tanácsok azt jelentik, hogy a helyi közösségeknek nem lenne formális jogi hatáskörük arra, hogyan tervezzék meg egy évfolyam-megosztás szerkezetét vagy hogyan fordítsák azt vissza később (F-live-legal_and_governance-02)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-legal_and_governance",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "9335b23c784edd640dca1fd73ac1fd695a7c180811d599ae530bf3d29a29e3f4",
+  "topic": "rural-school-closures"
+}

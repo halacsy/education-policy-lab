@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "Hungary exhibits the highest level of student segregation by socioeconomic advantage among EU/OECD countries (2022 PISA), and pupils in segregated schools are less likely to complete upper secondary education or enter tertiary education.",
+      "hu": "Magyarországon az EU/OECD-országok között a legmagasabb a tanulói szegregáció a társadalmi-gazdasági előny szerint (2022 PISA), és a szeparált iskolákban tanulók kevésbé valószínű, hogy befejezik a középfokú oktatást vagy felsőoktatásba lépnek."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Causal attribution (whether 6-/8-year selection structures *cause* segregation or channel pre-existing sorting demand) is contested and not resolved in available literature",
+        "hu": "Az okozati attribúció (hogy a 6-/8-year selection structures *cause* segregation vagy csupán a meglévő szelekciós keresletet tereli) vitatott, és a rendelkezésre álló irodalom nem döntötte el."
+      },
+      {
+        "en": "PISA data does not isolate the 6-/8-year track mechanism from other selection pathways (school choice, residential sorting, 4-year gimnázium intake)",
+        "hu": "A PISA-adatok nem izolálják a 6/8 éves tagozatos mechanizmust a többi szelekciós útvonaltól (iskolaválasztás, lakóhely szerinti szelekció, 4 éves gimnáziumi felvétel)."
+      },
+      {
+        "en": "Segregation outcome studies do not provide direct cost-benefit comparison with alternative track structures",
+        "hu": "A szegregációs kimeneteket vizsgáló tanulmányok nem nyújtanak közvetlen költség-haszon összehasonlítást az alternatív pályastruktúrákkal."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-03",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a3b64be40a82467f903fccaa097b6662aa06fd19c1ba0be1205d34efef6c0610",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Delaying tracking to 14+ would fundamentally restructure network geography and capacity by converting the currently bifurcated (primary/gimnázium) network into a unified lower-secondary phase. This is the proposal most directly implicating network-wide capacity and transport planning: the existing 880-school network is designed for proximity to generic secondary schools (F-live-school_network_planning-06), but a unified comprehensive phase at ages 10-14 would require redrawing catchment areas and potentially reallocating capacity away from concentrated urban gimnázium buildings (F-live-school_network_planning-05) toward broader, more geographically distributed provision. This is a large-scale network re-engineering task with significant transition risk.",
+      "hu": "A 14+ korhatárig történő követés késleltetése alapjaiban átszervezné a hálózati földrajzot és kapacitást azáltal, hogy a jelenleg kettéválasztott (alsó közép/gimnázium) hálózatot egységes alsó-középszintű (lower-secondary) szakaszzá alakítaná. Ez a javaslat közvetlenül érinti a hálózatszintű kapacitás- és közlekedéstervezést: a meglévő, 880 intézményből álló hálózatot úgy tervezték, hogy közelséget biztosítson a tipikus középfokú iskolákhoz (F-live-school_network_planning-06), de egy 10–14 éves korosztályra kiterjedő egységes átfogó szakasz újrajegyzést igényelne a beiskolázási területeken, és potenciálisan a koncentrált városi gimnáziumi épületekből (F-live-school_network_planning-05) a földrajzilag szélesebb, elosztott ellátás felé történő kapacitás-átcsoportosítást követelne meg. Ez egy nagy léptékű hálózatáttervezési feladat jelentős átmeneti kockázattal."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "A unified comprehensive phase could resolve the geographic stratification driven by path-dependent school size and founding history (F-live-school_network_planning-05)",
+        "hu": "Egy egységes átfogó szakasz megoldhatná a térbeli szegmentációt, amelyet az iskola méretének és alapítási történetének útfüggő jellege vezérel (F-live-school_network_planning-05)"
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Addresses the root cause of geographic sorting identified in this lens: concentration of selective capacity in urban/Budapest nodes (F-live-school_network_planning-05) versus the network's general proximity design for ordinary secondary schools (F-live-school_network_planning-06)",
+        "hu": "Kezeli a földrajzi szelekció gyökérokát, amit ebben a perspektívában azonosítottunk: a szelekciós kapacitás koncentrációja városi/Budapesti csomópontokban (F-live-school_network_planning-05) szemben a hálózat általános közelségi tervezésével a hagyományos középiskolák számára (F-live-school_network_planning-06)"
+      },
+      {
+        "en": "Would eliminate the feeder-school dilution dynamic (F-live-school_network_planning-07) since no early transfer point would exist to trigger departures",
+        "hu": "Megszüntetné a feeder-school dilution dinamikát (F-live-school_network_planning-07), mivel nem létezne korai átkerülési pont, amely kiváltaná a távozásokat."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Historic urban/rural capacity asymmetry (F-live-school_network_planning-05) could reassert itself informally even after formal delay, if catchment boundaries are not carefully redrawn",
+        "hu": "A történelmi városi/vidéki kapacitás-aszimmetria (F-live-school_network_planning-05) informálisan ismét érvényesülhet még formális késleltetés után is, ha a catchment boundaries nincs gondosan átrajzolva."
+      },
+      {
+        "en": "Feeder-school staffing dilution (F-live-school_network_planning-07) dynamics could reappear in a different form if any residual selective options remain at the network edges",
+        "hu": "A betápláló (feeder) iskolák személyzetének elvékonyodása (F-live-school_network_planning-07) dinamikája más formában újra megjelenhet, ha a hálózat szélén bármilyen maradék szelekciós opció fennmarad."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "No transition-phasing evidence specific to the Hungarian network's capacity is present in this lens's findings, leaving unclear how the network would absorb converted catchment demand",
+        "hu": "A lencse megállapításai között nincs átmeneti fázisos kapacitásra vonatkozó bizonyíték a magyar hálózat kapacitására vonatkozóan, így nem világos, a hálózat hogyan venné fel a konvertált beiskolázási keresletet"
+      },
+      {
+        "en": "Existing physical capacity stagnation (F-live-school_network_planning-03) suggests limited spare capacity exists to reabsorb students previously filtered into 6/8-year tracks without new construction or reallocation",
+        "hu": "A meglévő fizikai kapacitás stagnálása (F-live-school_network_planning-03) arra utal, hogy korlátozott tartalék kapacitás áll rendelkezésre ahhoz, hogy új építkezés vagy újraelosztás nélkül vissza tudja fogadni azokat a tanulókat, akiket korábban 6/8 éves képzési pályákra szűrtek"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a36a4e9d83519ef62b9026cd36ff8e429604c3da88d9026854cdd53695a84030",
+  "topic": "korai-szelekcio"
+}

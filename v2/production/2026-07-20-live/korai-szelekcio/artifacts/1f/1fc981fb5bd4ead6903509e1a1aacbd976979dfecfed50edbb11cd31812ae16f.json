@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03",
+      "A-live-school_network_planning-04"
+    ],
+    "claim": {
+      "en": "Physical capacity in six- and eight-year gimnáziums remained stagnant at approximately 25,962 students in 2024/2025 despite extreme oversubscription (flagship schools receiving 9–26 times more applicants than available places), with one education researcher attributing this to policy decisions redirecting students toward vocational training.",
+      "hu": "A hat‑ és nyolcosztályos gimnáziumok fizikai befogadóképessége 2024/2025‑ben mintegy 25 962 tanuló körül stagnált annak ellenére, hogy rendkívüli túljelentkezés mutatkozott (a meghatározó iskolák 9–26-szor több jelentkezőt kaptak, mint amennyi hely rendelkezésre állt); egy oktatáskutató ezt politikai döntések rovására írta, amelyek a tanulókat a szakiskolai képzés felé irányították."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The causal claim (policy-directed capacity stagnation vs. resource constraint) is attributed to a single interviewed researcher and not independently verified against Ministry budget or staffing documents",
+        "hu": "Az oksági állítást (a politika által vezérelt kapacitásstagnálás kontra forráskorlát) egyetlen interjúvolt kutatóhoz kötik, és nem ellenőrizték függetlenül a Minisztérium költségvetési vagy létszámdokumentumaival."
+      },
+      {
+        "en": "Oversubscription statistics are from a limited set of flagship schools; may not represent system-wide pattern",
+        "hu": "A túljelentkezési statisztikák egy szűk körű zászlóshajóiskolákra vonatkoznak; előfordulhat, hogy nem reprezentálják a teljes rendszer mintázatát."
+      },
+      {
+        "en": "No systematic audit of actual facility capacity constraints across all 6-/8-year gimnaziums",
+        "hu": "Nem készült szisztematikus audit az összes 6/8 évfolyamos gimnázium tényleges befogadóképesség-korlátairól."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-03",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "38e88a4a6425227c9cc375b2b6614252a8af1430cacbaa2acead80124ce243fb",
+  "topic": "korai-szelekcio"
+}

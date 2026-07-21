@@ -1,0 +1,38 @@
+{
+  "content": {
+    "answerability": "requires_new_data",
+    "decision_impact": "high",
+    "method": {
+      "en": "Segregation index (dissimilarity/isolation indices) comparison before and after consolidation events across a sample of Hungarian districts, disaggregated by consolidation type, paired with enrollment-flow tracking to church-run versus state schools.",
+      "hu": "Szegregációs mutatók (dissimilarity és isolation indexek) összehasonlítása az összevonási események előtti és utáni időszakban magyarországi tankerületek mintáján, bontva összevonási típus szerint; párosítva a beiskolázási áramlások követésével az egyházi fenntartású és az állami iskolák felé."
+    },
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5"
+    ],
+    "question": {
+      "en": "What is the net segregation effect of consolidating village schools into hub/urban schools—does it reduce isolated single-class segregation or increase it via non-Roma family flight to church or alternative schools—and does this vary by consolidation model (full closure, grade-split, networked hub)?",
+      "hu": "Mi a faluiskolák központi/városi iskolákkal való összevonásának nettó szegregációs hatása — csökkenti‑e az elszigetelt egyosztályos szegregációt, vagy növeli azt a nem roma családok egyházi vagy alternatív iskolák felé történő elvándorlása révén — és változik‑e ez a hatás az összevonási modell szerint (teljes bezárás, évfolyam‑megosztás, hálózati központ)?"
+    },
+    "uncertainty_refs": [
+      "U-live-hungarian_education_system-01",
+      "U-live-equity_and_social_mobility-01",
+      "U-live-portuguese_reform-02",
+      "U-live-implementation_planning-02"
+    ],
+    "why_it_matters": {
+      "en": "T1, T3, T4, and T5 all carry unresolved segregation risk claims; T5 explicitly targets equity mitigation but cannot be evaluated without knowing the actual sorting effect, and T3's age-based split may relocate rather than resolve sorting.",
+      "hu": "A T1, T3, T4 és T5 mind hordoznak megválaszolatlan kockázatállításokat a szegregáció tekintetében; a T5 kifejezetten az egyenlőtlenségek mérséklését célozza, de ezt nem lehet értékelni a tényleges szelekciós hatás ismerete nélkül, és a T3 korcsoport‑szerinti megosztása a szelekciót áthelyezheti, nem feltétlenül oldja meg."
+    }
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "RQ-live-production-05",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "research_question",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "228fc4942dc40a47333f27d06bbb8fc679b39f223c918296a02ba7b7455ece06",
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-equity_and_social_mobility-01",
+      "A-live-equity_and_social_mobility-02",
+      "A-live-equity_and_social_mobility-03",
+      "A-live-equity_and_social_mobility-04"
+    ],
+    "claim": {
+      "en": "Primary school enrollment in Hungary is declining nationally by approximately 4% per annum, with accelerated decline in rural areas due to youth migration to cities for employment",
+      "hu": "Az általános iskolai beiratkozások Magyarországon országosan évente mintegy 4%-kal csökkennek, a vidéki térségekben ez a csökkenés gyorsabb azzal, hogy a fiatalok munkavállalás miatt a városokba költöznek."
+    },
+    "context": {
+      "en": "Fresh live research through the Equity and social mobility lens",
+      "hu": "Friss, élő kutatás az egyenlőség és a társadalmi mobilitás szemszögéből"
+    },
+    "domain_tags": [
+      "equity_and_social_mobility"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Figure cited is from an older source and should be treated as indicative of long-term trend rather than current precise rate",
+        "hu": "A hivatkozott adat egy régebbi forrásból származik, és hosszú távú trendet jelzőnek kell tekinteni, nem pedig a jelenlegi pontos aránynak."
+      },
+      {
+        "en": "Enrollment decline is reported nationally but causal attribution to employment migration is inferred rather than directly measured",
+        "hu": "A beiratkozások csökkenését országosan jelentik, de a foglalkoztatási migrációnak tulajdonított oksági kapcsolat következtetésen alapul, nem közvetlen mérésen"
+      },
+      {
+        "en": "Regional variation in decline rates not fully quantified in available sources",
+        "hu": "A hanyatlási arányok regionális eltéréseit a rendelkezésre álló források nem teljesen számszerűsítik."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-equity_and_social_mobility-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-equity_and_social_mobility-01",
+      "U-live-equity_and_social_mobility-02",
+      "U-live-equity_and_social_mobility-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-equity_and_social_mobility-01",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "301ac6a102f60de65be8b684229bdd7add0e070660eb97869412a7cfa0383c70",
+  "topic": "rural-school-closures"
+}

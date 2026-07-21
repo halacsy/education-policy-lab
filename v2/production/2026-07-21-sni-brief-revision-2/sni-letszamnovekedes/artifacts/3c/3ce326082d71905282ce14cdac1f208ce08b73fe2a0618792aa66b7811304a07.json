@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a school-network-planning lens, the passive baseline is a feasible null option in the trivial sense that it requires no new network infrastructure, but the evidence base shows the existing network is already geographically strained and unevenly resourced, so 'no change' is not neutral in effect. Regional capacity gaps (Northeast Hungary lacking a training program until 2017, weak diagnostic/service access with long waiting lists) combine with rising and regionally variable identification (15.6% in Békés vs 6.2% in Borsod-Abaúj-Zemplén) to suggest drift will widen existing geographic access disparities rather than hold them constant.",
+      "hu": "Iskolahálózat-tervezési szemszögből a passzív kiindulóhelyzet triviális értelemben megvalósítható nulladik opció, mivel nem igényel új hálózati infrastruktúrát, de a bizonyítékbázis azt mutatja, hogy a meglévő hálózat már földrajzilag feszített és egyenetlenül erőforrásolt, így a „nem változtatás” nem semleges hatású. A regionális kapacitási hiányok (Északkelet-Magyarországon 2017-ig nem volt képzési program, gyenge diagnosztikai/szolgáltatási hozzáférés hosszú várólistákkal) egyesülnek a növekvő és regionálisan változó azonosítással (15,6% Békésben vs. 6,2% Borsod-Abaúj-Zemplénben), ami azt valószínűsíti, hogy a drift a meglévő földrajzi hozzáférési különbségeket szélesíteni fogja, nem pedig fenntartja azokat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-08"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Could inform future network-capacity planning by clarifying the trajectory of unmet need if monitored carefully.",
+        "hu": "Segítheti a jövőbeli hálózati kapacitástervezést, ha gondosan monitorozva tisztázza a kielégítetlen szükséglet pályáját."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Requires no new network buildout, so it avoids introducing new geographic-access or capacity risks in the short term.",
+        "hu": "Nem igényel új hálózatépítést, így rövid távon elkerüli új földrajzi hozzáférési vagy kapacitáskockázatok bevezetését."
+      },
+      {
+        "en": "Provides a documented baseline against which network strain (e.g., traveling specialist network coverage variance) can be measured over time.",
+        "hu": "Dokumentált bázist biztosít, amelyhez viszonyítva a hálózati terhelés (pl. a mozgó szakemberhálózat lefedettségének ingadozása) idővel mérhető."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Demographic decline combined with static specialist supply risks further service collapse in already underserved regions, compounding geographic inequity documented in the traveling specialist network variance.",
+        "hu": "A demográfiai visszaesés a statikus szakember-ellátással kombinálva további szolgáltatásösszeomlás kockázatát hordozza a már most is ellátatlan régiókban, súlyosbítva a vándorló szakember-hálózat varianciájában dokumentált földrajzi egyenlőtlenséget."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Static workforce numbers (approx. 7,253 specialist positions nationally) against continued or rising SNI counts imply capacity strain will worsen without intervention.",
+        "hu": "A munkaerő számának statikussága (approx. 7,253 szakértői állás országosan) a SNI számának folyamatos vagy növekvő melletti fennállása mellett arra utal, hogy a kapacitásfeszültség beavatkozás nélkül súlyosbodni fog."
+      },
+      {
+        "en": "Existing regional disparities in specialist training and service access (Northeast Hungary) are network-structural and will not self-correct absent policy action.",
+        "hu": "A szakemberképzés és szolgáltatáshoz való hozzáférés meglévő regionális egyenlőtlenségei (Northeast Hungary) hálózati-strukturális jellegűek, és politikaintézkedések hiányában nem fognak maguktól rendeződni."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "065e9b8986084dc04ca3151c7a4acf486243482f97be6355573750c2e6389ec1",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-demography-01",
+      "A-korai-szelekcio-demography-02",
+      "A-korai-szelekcio-demography-03",
+      "A-korai-szelekcio-demography-04",
+      "A-korai-szelekcio-demography-05"
+    ],
+    "claim": {
+      "en": "A demographic cliff is measurable one cohort ahead: Hungary currently has approximately 17,000 fewer one-year-olds than four-year-olds, equivalent to roughly 600–800 kindergarten/class-groups, meaning at least one hundred small-school's worth of children will vanish from the system within a few years.",
+      "hu": "Egy kohorttal előre mérhető a demográfiai szakadék: Magyarországon jelenleg mintegy 17 ezer kevesebb egyéves van, mint négyéves, ami körülbelül 600–800 óvodai/osztálycsoportnak felel meg, vagyis legalább száz apró iskola értékű gyermek tűnik el a rendszerből néhány éven belül."
+    },
+    "context": {
+      "en": "Demographic decline through 2040 will force school-network consolidation and closure of small selective tracks independent of policy choice, but government's simultaneous use of score-threshold levers is accelerating selective-track contraction beyond what demographic decline alone would cause, concentrating remaining grammar-school slots among already-advantaged urban populations.",
+      "hu": "A demográfiai hanyatlás 2040-ig az iskolahálózat konszolidációjára és a kicsi szelektív szintek bezárására kényszerít a politikai választástól függetlenül, de a kormányzat egyidejű ponthatár-karvasút-alkalmazása felgyorsítja a szelektív-szint összehúzódását azon túl, amit a demográfiai hanyatlás egyedül okozna, a maradék gimnazium-helyeket már előnyben részesített városi lakosokra koncentrálva."
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-0e0b7e024d0dc7"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-demography-01",
+      "U-korai-szelekcio-demography-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-demography-03",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "b3675e74b43788f94cb3a1815acc2b31cf7eaf0f86b870831fdb07b3f54e15a6",
+  "topic": "korai-szelekcio"
+}

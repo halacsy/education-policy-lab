@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-equity_and_social_mobility-01",
+      "A-korai-szelekcio-equity_and_social_mobility-02"
+    ],
+    "claim": {
+      "en": "Hungary has the highest socioeconomic school segregation in the EU, and the parent-education achievement gap (53 PISA points) is far above the EU average (33 points).",
+      "hu": "Magyarországon a legmagasabb az EU-ban a szocioökonómiai iskolai szegregáció, és a szülői iskolázottság szerinti teljesítménykülönbség (53 PISA-pont) messze az uniós átlag (33 pont) felett van."
+    },
+    "context": {
+      "en": "Early selection at 10–12 into 6/8-grade gimnaziums is a documented, non-trivial contributor to Hungary's exceptionally high SES/ethnic school segregation, but its pedagogical value-added is heterogeneous by track (stronger for 8-grade than 6-grade), so the equity case against early selection is stronger than the achievement case for it.",
+      "hu": "A 10–12 éves korban történő korai szétválogatás a 6/8 osztályos gimnaziumokba dokumentált, nem elhanyagolható tényezője Magyarország kiugróan magas SES/etnikai iskolai szegregációjának, de a pedagógiai hozzáadott értéke iskolatípus szerint heterogén (erősebb a nyolc-, mint a hatosztályos gimnaziumban), így az esélyegyenlőségi ellenérv erősebb, mint a teljesítmény melletti érv."
+    },
+    "domain_tags": [
+      "equity_and_social_mobility"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-b0f24ecc6e7253"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-equity_and_social_mobility-01",
+      "U-korai-szelekcio-equity_and_social_mobility-02",
+      "U-korai-szelekcio-equity_and_social_mobility-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-equity_and_social_mobility-02",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "14f2532b44c55a22b3e249b39941829c026f05e7d22679a3a0992dbd47b69fb0",
+  "topic": "korai-szelekcio"
+}

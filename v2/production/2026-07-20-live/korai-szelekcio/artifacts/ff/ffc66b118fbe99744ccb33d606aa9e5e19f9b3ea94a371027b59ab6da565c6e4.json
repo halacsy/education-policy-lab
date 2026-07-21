@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assessment": {
+      "en": "As a no-new-policy counterfactual, this proposal requires no coalition-building or legislative action at all and is politically costless to sustain in the sense that it involves no active decision exposed to organized resistance. Its political character is therefore one of default continuation rather than achieved reform, meaning it inherits and preserves the unaddressed political dynamics (director lobbying access, church-sector growth, elite demand for selective tracks) that currently sustain segregation, without providing any lever to contest them.",
+      "hu": "Mint új politikát nem tartalmazó ellenfaktuális forgatókönyv, ez a javaslat semmiféle koalícióépítést vagy törvényhozási lépést nem igényel, és politikailag költségmentesen fenntartható abban az értelemben, hogy nem jár aktív döntéssel, amely szervezett ellenállásnak lenne kitéve. Politikai jellege tehát a folyamatos alapértelmezésé, nem pedig elért reformé, ami azt jelenti, hogy örökli és fenntartja azokat a kezeletlen politikai dinamikákat (igazgatói lobbizó hozzáférés, egyházi szektor növekedése, elit igény a szelektív pályákra), amelyek jelenleg a szegregációt táplálják, anélkül hogy bármilyen eszközt adna azok megkérdőjelezésére."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-political_feasibility-06"
+    ],
+    "lens_ref": "L-live-political_feasibility",
+    "opportunities": [
+      {
+        "en": "Could serve as a politically low-risk baseline against which any future active reform could be benchmarked without prematurely triggering opposition mobilization",
+        "hu": "Politikailag alacsony kockázatú alapvonalat szolgálhatna, amelyhez viszonyítva bármely jövőbeni aktív reform értékelhető anélkül, hogy idő előtt kiváltaná az ellenzéki mozgósítást"
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Requires no legislative or administrative action, making it immune to legislative veto players or coalition-formation requirements by construction",
+        "hu": "Nem igényel törvényhozási vagy adminisztratív lépést, így konstrukciójánál fogva ellenáll a törvényhozói vétójátékosoknak vagy a koalícióalakítási követelményeknek."
+      },
+      {
+        "en": "Already observably underway (application shifts, capacity stagnation), meaning it carries no additional implementation or enactment risk beyond what already exists",
+        "hu": "Már észlelhetően folyamatban van (jelentkezési elmozdulások, kapacitás stagnálása), ami azt jelenti, hogy nem jelent további végrehajtási vagy érvényesítési kockázatot az amúgy is meglévőkön túl."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Uneven geographic impact could create new politically salient grievances (rural collapse vs. urban persistence) that mobilize opposition to *any* subsequent reform attempt, including favorable ones",
+        "hu": "Az egyenetlen földrajzi hatás új, politikailag érzékeny sérelmeket hozhat létre (vidéki összeomlás vs. városi megmaradás), amelyek mozgósíthatják az ellenkezést *bármilyen* későbbi reformkísérlet ellen, még a kedvezőek ellen is."
+      },
+      {
+        "en": "Because church-sector growth and Roma segregation are unaddressed, passive contraction could be publicly framed as government inaction, creating legitimacy risk distinct from the risks facing active proposals",
+        "hu": "Mivel az egyházi szektor növekedése és a romák szegregációja nincs kezelve, a passzív szűkítés nyilvánosan kormányzati tétlenségként értelmezhető, ami legitimációs kockázatot teremt, amely különbözik az aktív javaslatok kockázataitól."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Provides no mechanism to address the ideologically entrenched pro-stratification policy stance of the governing coalition or the political access enjoyed by director interest groups, leaving those dynamics fully intact",
+        "hu": "Nem nyújt mechanizmust a kormányzó koalíció ideológiailag elmélyült, rétegződést támogató politikai álláspontjának kezelésére, sem a vezetői érdekcsoportok által élvezett politikai hozzáférésre, így ezek a dinamikák változatlanok maradnak."
+      },
+      {
+        "en": "Passive and uncoordinated nature means politically salient disruptions (rural school closures, settlement-viability crises) could occur without any governance structure to manage public legitimacy concerns",
+        "hu": "A passzív és koordinálatlan jellege azt jelenti, hogy politikailag érzékeny zavarok (vidéki iskolabezárások, település‑életképességi válságok) előfordulhatnak anélkül, hogy bármilyen kormányzati struktúra kezelné a közvélemény legitimitási aggályait."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:04:41.725832Z",
+  "id": "AS-live-t5-political_feasibility",
+  "provenance_ref": "PV-bilingual-migration-5e1c23aa6b64bc33",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2dd2973a33d9027d9eebe29796dec7b4d00f8937c836b568fc29dbdec6f485b2",
+  "topic": "korai-szelekcio"
+}

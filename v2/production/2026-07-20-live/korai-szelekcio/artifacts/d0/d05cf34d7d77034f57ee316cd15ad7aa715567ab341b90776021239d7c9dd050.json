@@ -1,0 +1,69 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal operates entirely within existing legal architecture: it uses the already-centralized exam and the already-capped interview weighting, requiring no parliamentary action and no change to maintainer jurisdiction. It is thus the most administratively contained of the six proposals from a governance-authority standpoint, though it does not touch the deeper constitutional tension around school choice or the fragmented multi-maintainer landscape.",
+      "hu": "Ez a javaslat teljes mértékben a meglévő jogi architektúrán belül működik: a már központosított vizsgát és az interjú súlyozására vonatkozó már meglévő korlátozást használja, nem igényel országgyűlési intézkedést és nem változtat a fenntartói hatáskörön. Következésképp a hat kísérlet közül kormányzati-hatáskör szempontjából a leginkább adminisztratívan korlátozott, bár nem érinti az iskolaválasztás mélyebb alkotmányos feszültségét vagy a töredezett, többfenntartós tájat."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-02",
+      "F-live-legal_and_governance-03",
+      "F-live-legal_and_governance-04",
+      "F-live-legal_and_governance-06",
+      "F-live-legal_and_governance-07",
+      "F-live-legal_and_governance-08"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "Could be implemented via ministerial/regulatory action given the exam and interview-cap levers are already subordinate legal instruments rather than statute (F-live-legal_and_governance-03)",
+        "hu": "Miniszteri/szabályozási intézkedéssel is végrehajtható lenne, tekintettel arra, hogy a vizsga- és interjúkapacitásra vonatkozó eszközök már alárendelt jogi instrumentumok, nem törvények (F-live-legal_and_governance-03)"
+      },
+      {
+        "en": "Administrative feasibility may allow iterative adjustment without repeated legislative cycles, easing enforceability over time",
+        "hu": "Az adminisztratív kivitelezhetőség lehetővé teheti az iteratív kiigazítást ismételt törvényalkotási ciklusok nélkül, megkönnyítve a végrehajthatóságot az idő előrehaladtával"
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Relies on levers (centrally graded exam, capped interview weight) that already exist within current regulation, avoiding the need for primary legislation (F-live-legal_and_governance-03)",
+        "hu": "Olyan eszközökre támaszkodik (központilag javított vizsga, korlátozott súlyú interjú), amelyek már a jelenlegi szabályozásban léteznek, így nem igényelnek elsődleges jogalkotást (F-live-legal_and_governance-03)"
+      },
+      {
+        "en": "Because it preserves the 4/6/8-year structure, it avoids triggering the parliamentary-amendment threshold required for structural change (F-live-legal_and_governance-01)",
+        "hu": "Mivel megőrzi a 4/6/8 éves szerkezetet, elkerüli azt a parlamenti módosítási küszöböt, amely a strukturális változáshoz szükséges (F-live-legal_and_governance-01)"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Uneven governance reach: church, foundation, and private schools fall outside Klebelsberg Centre jurisdiction, so any exam redesign mandate may not bind all providers equally (F-live-legal_and_governance-07)",
+        "hu": "Egyenetlen kormányzati hatáskör: az egyházi, alapítványi és magániskolák kívül esnek a Klebelsberg Központ hatáskörén, ezért bármilyen vizsgareform-mandátum nem kötheti egyformán az összes szolgáltatót (F-live-legal_and_governance-07)."
+      },
+      {
+        "en": "Persistent extreme segregation and outlier selectivity levels suggest the underlying legal design (centralized ranking algorithm plus free choice) may continue producing sorting outcomes regardless of exam format changes (F-live-legal_and_governance-04, F-live-legal_and_governance-06)",
+        "hu": "A tartós szélsőséges szegregáció és a kiugró szelektivitási szintek arra utalnak, hogy az alapvető jogi tervezés (központosított rangsorolási algoritmus plusz szabad választás) továbbra is szelekciós kimeneteket eredményezhet a vizsgaformátum-változtatásoktól függetlenül (F-live-legal_and_governance-04, F-live-legal_and_governance-06)."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Does not address the constitutional free-choice guarantee or the segregation occurring at other selection junctures, leaving the deeper rights-design tension unresolved (F-live-legal_and_governance-02, F-live-legal_and_governance-08)",
+        "hu": "Nem kezeli az alkotmányos szabad választás garanciáját vagy az egyéb szelektálási pontokon kialakuló szegregációt, így a mélyebb jogi-tervezési feszültséget megoldatlanul hagyja (F-live-legal_and_governance-02, F-live-legal_and_governance-08)"
+      },
+      {
+        "en": "Reform is confined to a single selection point among four formal pre-higher-education junctures, limiting its systemic reach even if perfectly implemented (F-live-legal_and_governance-08)",
+        "hu": "A reform a felsőoktatás előtti négy formális elágazás közül egyetlen kiválasztási pontra korlátozódik, ami a rendszerre gyakorolt hatókörét korlátozza akkor is, ha tökéletesen megvalósítják (F-live-legal_and_governance-08)"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-legal_and_governance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "20db73b9d1f3298d956345110046b3ccd6f12a7073a57a3eb411a8fdb9e90a5e",
+  "topic": "korai-szelekcio"
+}

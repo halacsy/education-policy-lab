@@ -1,0 +1,65 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a network-planning lens, status quo maintenance neither addresses nor worsens the geographic concentration of 6-/8-year tracks in Budapest and regional centers, nor the contracting feeder network of 1,200+ settlements without schools. Monitoring alone does not alter the structural network conditions (geographic concentration, contracting primary feeder base, rural teacher shortages) that produce and sustain segregation.",
+      "hu": "Hálózattervezési szemszögből a status quo fenntartása sem kezeli, sem nem súlyosbítja a 6-/8 évfolyamos sávok földrajzi koncentrációját Budapestben és a regionális központokban, illetve a 1,200+ iskolával nem rendelkező települést magában foglaló beszállítói hálózat zsugorodását. Az önmagában végzett monitorozás nem változtatja meg azokat a strukturális hálózati feltételeket (földrajzi koncentráció, zsugorodó általános iskolai beszállítói bázis, vidéki tanárhiány), amelyek a szegregációt létrehozzák és fenntartják."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-06"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Existing ABC/PISA data feed could in principle be repurposed for future network-capacity planning even if unused now",
+        "hu": "A meglévő ABC/PISA adatszolgáltatás elvileg átirányítható jövőbeni hálózati kapacitástervezésre, még ha jelenleg nem is használják."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Requires no new network infrastructure or capacity investment, avoiding immediate transport or capacity strain",
+        "hu": "Nem igényel új hálózati infrastruktúrát vagy kapacitásbefektetést, így elkerüli a közlekedési vagy kapacitási azonnali terhelést."
+      },
+      {
+        "en": "Preserves existing one-hour public transport access design without disruption",
+        "hu": "Megőrzi a meglévő, egyórás tömegközlekedési hozzáférési tervet megszakítás nélkül"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued demographic contraction and rural teacher shortages could further erode feeder-network capacity absent intervention",
+        "hu": "A folyamatos demográfiai zsugorodás és a vidéki tanárhiány további mértékben gyengítheti az utánpótlási hálózat kapacitását beavatkozás hiányában"
+      },
+      {
+        "en": "Persistent geographic concentration likely deepens access disparities between urban and rural settlements over time",
+        "hu": "A tartós földrajzi koncentráció valószínűleg idővel mélyíti a hozzáférési egyenlőtlenségeket a városi és vidéki települések között."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Does nothing to address geographic concentration of gimnázium tracks in Budapest and regional centers",
+        "hu": "Nem oldja meg a gimnáziumi tagozatok földrajzi koncentrációját Budapesten és a regionális központokban"
+      },
+      {
+        "en": "Ignores the contracting feeder network (loss of 88 primary sites 2021-2024, 1,200+ settlements without institutions) from which selection cohorts are drawn",
+        "hu": "Figyelmen kívül hagyja a zsugorodó beiskolázó hálózatot (loss of 88 primary sites 2021-2024, 1,200+ settlements without institutions), ahonnan a kiválasztó kohorszok származnak."
+      },
+      {
+        "en": "Monitoring infrastructure has historically not translated into corrective network policy",
+        "hu": "A monitorozási infrastruktúra történetileg nem alakult át korrigáló hálózati politikává."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "276a87ae7b1255558d611176045970173ec295b9c7826b77a6feb91e094e65bd",
+  "topic": "korai-szelekcio"
+}

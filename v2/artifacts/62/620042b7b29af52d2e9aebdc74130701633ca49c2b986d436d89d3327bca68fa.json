@@ -1,0 +1,300 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-rural-school-closures-s1-01",
+      "A-rural-school-closures-s1-02",
+      "A-rural-school-closures-s1-03"
+    ],
+    "change_level": "organization",
+    "costs": [
+      {
+        "en": "Recurring multigrade teacher-training and in-service pedagogy support costs",
+        "hu": "Ismétlődő összevont-osztálytanítási képzési és folyamatos pedagógiai támogatási költségek"
+      },
+      {
+        "en": "Capital-maintenance and backlog costs of under-enrolled buildings (roof, heating, accessibility upgrades) often a binding driver of closure decisions if left unaddressed",
+        "hu": "Alultelt épületek tőkefenntartási és elmaradt karbantartási költségei (tetőjavítás, fűtés, akadálymentesítés), amelyek kezelés hiányában gyakran a bezárási döntések meghatározó tényezői"
+      },
+      {
+        "en": "Opportunity cost of maintaining spare capacity relative to potential consolidated-site investment",
+        "hu": "A szabad kapacitás fenntartásának alternatívaköltsége a lehetséges összevont telephelyi beruházással szemben"
+      },
+      {
+        "en": "Local negotiation and administrative transaction costs (per-settlement, case-by-case maintainer discussions)",
+        "hu": "Helyi alkufolyamatok és igazgatási tranzakciós költségek (településenkénti, eseti fenntartói tárgyalások)"
+      }
+    ],
+    "equity_impact": {
+      "en": "Likely reduces short-term travel-burden inequity for lower-SES and Roma families who currently benefit from local schooling, but this rests on weak evidence and untested assumptions about which families remain versus exit under 'white flight' dynamics documented elsewhere in the Hungarian system; without transparent enrollment thresholds or transport-cost data, the scenario cannot guarantee that the poorest villages retain viable multigrade staffing rather than drifting into de facto under-resourced status.",
+      "hu": "Feltehetően rövid távon csökkenti az alacsonyabb SES-helyzetű és roma családok utazási teher-egyenlőtlenségét, akik jelenleg a helyi oktatásból profitálnak, de ez gyenge bizonyítékon és nem tesztelt feltételezéseken alapul arról, mely családok maradnak, illetve lépnek ki a magyar rendszerben másutt dokumentált 'fehér elvándorlás' dinamikája mentén; átlátható beiskolázási küszöbök vagy szállítási költségadatok nélkül a forgatókönyv nem garantálja, hogy a legszegényebb falvak életképes összevont oktatói ellátást tartanak meg, ne pedig de facto alulforrásozott státuszba csússzanak."
+    },
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      {
+        "en": "Preserves the school's documented community-hub and place-identity function without requiring new legal or institutional structures.",
+        "hu": "Megőrzi az iskola dokumentált közösségi-csomóponti és helyi identitást megalapozó funkcióját anélkül, hogy új jogi vagy intézményi struktúrákra lenne szükség."
+      },
+      {
+        "en": "Avoids abrupt travel-burden increases for families, since children continue attending the local school rather than being reassigned under mandatory catchment rules.",
+        "hu": "Elkerüli a hirtelen megnövekedő utazási terhet a családok számára, mivel a gyerekek továbbra is a helyi iskolába járnak, nem kerülnek átirányításra a kötelező körzethatár-szabályok alapján."
+      },
+      {
+        "en": "Requires minimal upfront legal or administrative change, since multigrade classrooms and felmenő rendszer mechanisms are already codified and operational.",
+        "hu": "Minimális előzetes jogi vagy igazgatási változást igényel, mivel az összevont osztályok és a felmenő rendszer mechanizmusai már kodifikáltak és működnek."
+      }
+    ],
+    "finding_refs": [
+      "F-rural-school-closures-demography-01",
+      "F-rural-school-closures-demography-02",
+      "F-rural-school-closures-demography-03",
+      "F-rural-school-closures-demography-04",
+      "F-rural-school-closures-demography-05",
+      "F-rural-school-closures-demography-06",
+      "F-rural-school-closures-demography-07",
+      "F-rural-school-closures-demography-08",
+      "F-rural-school-closures-demography-09",
+      "F-rural-school-closures-demography-10",
+      "F-rural-school-closures-demography-11",
+      "F-rural-school-closures-demography-12",
+      "F-rural-school-closures-demography-13",
+      "F-rural-school-closures-demography-14",
+      "F-rural-school-closures-education_finance-01",
+      "F-rural-school-closures-education_finance-02",
+      "F-rural-school-closures-education_finance-03",
+      "F-rural-school-closures-education_finance-04",
+      "F-rural-school-closures-education_finance-05",
+      "F-rural-school-closures-education_finance-06",
+      "F-rural-school-closures-education_finance-07",
+      "F-rural-school-closures-education_finance-08",
+      "F-rural-school-closures-education_finance-09",
+      "F-rural-school-closures-education_finance-10",
+      "F-rural-school-closures-education_finance-11",
+      "F-rural-school-closures-education_finance-12",
+      "F-rural-school-closures-equity_and_social_mobility-01",
+      "F-rural-school-closures-equity_and_social_mobility-02",
+      "F-rural-school-closures-equity_and_social_mobility-03",
+      "F-rural-school-closures-equity_and_social_mobility-04",
+      "F-rural-school-closures-equity_and_social_mobility-05",
+      "F-rural-school-closures-equity_and_social_mobility-06",
+      "F-rural-school-closures-equity_and_social_mobility-07",
+      "F-rural-school-closures-equity_and_social_mobility-08",
+      "F-rural-school-closures-equity_and_social_mobility-09",
+      "F-rural-school-closures-finnish_reform-01",
+      "F-rural-school-closures-finnish_reform-02",
+      "F-rural-school-closures-finnish_reform-03",
+      "F-rural-school-closures-finnish_reform-04",
+      "F-rural-school-closures-finnish_reform-05",
+      "F-rural-school-closures-finnish_reform-06",
+      "F-rural-school-closures-finnish_reform-07",
+      "F-rural-school-closures-finnish_reform-08",
+      "F-rural-school-closures-finnish_reform-09",
+      "F-rural-school-closures-finnish_reform-10",
+      "F-rural-school-closures-finnish_reform-11",
+      "F-rural-school-closures-finnish_reform-12",
+      "F-rural-school-closures-finnish_reform-13",
+      "F-rural-school-closures-finnish_reform-14",
+      "F-rural-school-closures-finnish_reform-15",
+      "F-rural-school-closures-finnish_reform-16",
+      "F-rural-school-closures-hungarian_education_system-01",
+      "F-rural-school-closures-hungarian_education_system-02",
+      "F-rural-school-closures-hungarian_education_system-03",
+      "F-rural-school-closures-hungarian_education_system-04",
+      "F-rural-school-closures-hungarian_education_system-05",
+      "F-rural-school-closures-hungarian_education_system-06",
+      "F-rural-school-closures-hungarian_education_system-07",
+      "F-rural-school-closures-hungarian_education_system-08",
+      "F-rural-school-closures-hungarian_education_system-09",
+      "F-rural-school-closures-hungarian_education_system-10",
+      "F-rural-school-closures-hungarian_education_system-11",
+      "F-rural-school-closures-hungarian_education_system-12",
+      "F-rural-school-closures-hungarian_education_system-13",
+      "F-rural-school-closures-hungarian_education_system-14",
+      "F-rural-school-closures-hungarian_education_system-15",
+      "F-rural-school-closures-implementation_planning-01",
+      "F-rural-school-closures-implementation_planning-02",
+      "F-rural-school-closures-implementation_planning-03",
+      "F-rural-school-closures-implementation_planning-04",
+      "F-rural-school-closures-implementation_planning-05",
+      "F-rural-school-closures-implementation_planning-06",
+      "F-rural-school-closures-implementation_planning-07",
+      "F-rural-school-closures-international_comparison-01",
+      "F-rural-school-closures-international_comparison-02",
+      "F-rural-school-closures-international_comparison-03",
+      "F-rural-school-closures-international_comparison-04",
+      "F-rural-school-closures-international_comparison-05",
+      "F-rural-school-closures-international_comparison-06",
+      "F-rural-school-closures-international_comparison-07",
+      "F-rural-school-closures-international_comparison-08",
+      "F-rural-school-closures-international_comparison-09",
+      "F-rural-school-closures-legal_and_governance-01",
+      "F-rural-school-closures-legal_and_governance-02",
+      "F-rural-school-closures-legal_and_governance-03",
+      "F-rural-school-closures-legal_and_governance-04",
+      "F-rural-school-closures-legal_and_governance-05",
+      "F-rural-school-closures-legal_and_governance-06",
+      "F-rural-school-closures-legal_and_governance-07",
+      "F-rural-school-closures-legal_and_governance-08",
+      "F-rural-school-closures-legal_and_governance-09",
+      "F-rural-school-closures-legal_and_governance-10",
+      "F-rural-school-closures-legal_and_governance-11",
+      "F-rural-school-closures-legal_and_governance-12",
+      "F-rural-school-closures-polish_reform-01",
+      "F-rural-school-closures-polish_reform-02",
+      "F-rural-school-closures-polish_reform-03",
+      "F-rural-school-closures-polish_reform-04",
+      "F-rural-school-closures-polish_reform-05",
+      "F-rural-school-closures-polish_reform-06",
+      "F-rural-school-closures-polish_reform-07",
+      "F-rural-school-closures-polish_reform-08",
+      "F-rural-school-closures-polish_reform-09",
+      "F-rural-school-closures-polish_reform-10",
+      "F-rural-school-closures-polish_reform-11",
+      "F-rural-school-closures-polish_reform-12",
+      "F-rural-school-closures-polish_reform-13",
+      "F-rural-school-closures-polish_reform-14",
+      "F-rural-school-closures-polish_reform-15",
+      "F-rural-school-closures-polish_reform-16",
+      "F-rural-school-closures-polish_reform-17",
+      "F-rural-school-closures-polish_reform-18",
+      "F-rural-school-closures-polish_reform-19",
+      "F-rural-school-closures-polish_reform-20",
+      "F-rural-school-closures-political_feasibility-01",
+      "F-rural-school-closures-political_feasibility-02",
+      "F-rural-school-closures-political_feasibility-03",
+      "F-rural-school-closures-political_feasibility-04",
+      "F-rural-school-closures-political_feasibility-05",
+      "F-rural-school-closures-political_feasibility-06",
+      "F-rural-school-closures-political_feasibility-07",
+      "F-rural-school-closures-political_feasibility-08",
+      "F-rural-school-closures-political_feasibility-09",
+      "F-rural-school-closures-political_feasibility-10",
+      "F-rural-school-closures-political_feasibility-11",
+      "F-rural-school-closures-political_feasibility-12",
+      "F-rural-school-closures-political_feasibility-13",
+      "F-rural-school-closures-portuguese_reform-01",
+      "F-rural-school-closures-portuguese_reform-02",
+      "F-rural-school-closures-portuguese_reform-03",
+      "F-rural-school-closures-portuguese_reform-04",
+      "F-rural-school-closures-portuguese_reform-05",
+      "F-rural-school-closures-portuguese_reform-06",
+      "F-rural-school-closures-portuguese_reform-07",
+      "F-rural-school-closures-portuguese_reform-08",
+      "F-rural-school-closures-portuguese_reform-09",
+      "F-rural-school-closures-portuguese_reform-10",
+      "F-rural-school-closures-portuguese_reform-11",
+      "F-rural-school-closures-portuguese_reform-12",
+      "F-rural-school-closures-portuguese_reform-13",
+      "F-rural-school-closures-portuguese_reform-14",
+      "F-rural-school-closures-portuguese_reform-15",
+      "F-rural-school-closures-portuguese_reform-16",
+      "F-rural-school-closures-school_network_planning-01",
+      "F-rural-school-closures-school_network_planning-02",
+      "F-rural-school-closures-school_network_planning-03",
+      "F-rural-school-closures-school_network_planning-04",
+      "F-rural-school-closures-school_network_planning-05",
+      "F-rural-school-closures-school_network_planning-06",
+      "F-rural-school-closures-school_network_planning-07",
+      "F-rural-school-closures-school_network_planning-08",
+      "F-rural-school-closures-school_network_planning-09",
+      "F-rural-school-closures-school_network_planning-10",
+      "F-rural-school-closures-school_network_planning-11",
+      "F-rural-school-closures-school_network_planning-12",
+      "F-rural-school-closures-school_network_planning-13",
+      "F-rural-school-closures-school_network_planning-14",
+      "F-rural-school-closures-school_network_planning-15"
+    ],
+    "goal": {
+      "en": "Keep the existing municipal/state-maintained village school open as long as feasible, relying on multigrade classrooms, felmenő rendszer phase-out and ad hoc local negotiation without a national framework.",
+      "hu": "A meglévő önkormányzati/állami fenntartású falusi iskola nyitva tartása amíg lehetséges, összevont osztályokra, felmenő rendszerre és eseti helyi alkura támaszkodva, nemzeti keretrendszer nélkül."
+    },
+    "implementation_steps": [
+      {
+        "action": {
+          "en": "Undertake extended in-service multigrade-pedagogy training with realistic multi-year lead time, recognizing that upskilling sufficient teachers for quality multigrade instruction requires longer preparation than a single cycle.",
+          "hu": "Kiterjesztett, folyamatban lévő összevont-osztálytanítási képzésen vesznek részt, realisztikus, több évre szóló átfutási idővel, elismerve, hogy a minőségi összevont oktatáshoz elegendő tanár felkészítése hosszabb előkészítést igényel egy ciklusnál."
+        },
+        "actor": {
+          "en": "School leaders and teaching staff",
+          "hu": "Iskolavezetők és tanári kar"
+        },
+        "timeline": {
+          "en": "year 1-4, recurring",
+          "hu": "1-4. év, ismétlődő"
+        }
+      },
+      {
+        "action": {
+          "en": "Negotiate transparent, documented retention arrangements including enrollment and cost data disclosure to parents and local council.",
+          "hu": "Átlátható, dokumentált megtartási megállapodásokat tárgyalnak, beleértve a beiskolázási és költségadatok nyilvánosságra hozását a szülők és a helyi tanács felé."
+        },
+        "actor": {
+          "en": "Tankerület (district center) and municipality",
+          "hu": "Tankerületi központ és önkormányzat"
+        },
+        "timeline": {
+          "en": "year 1-2, ongoing",
+          "hu": "1-2. év, folyamatos"
+        }
+      },
+      {
+        "action": {
+          "en": "Clarify whether pre-2010 independent expert assessment requirements before closure remain in force, to standardize procedural protections.",
+          "hu": "Tisztázza, hogy a bezárás előtti, 2010 előtti független szakértői vizsgálati követelmények érvényben maradnak-e, az eljárási védelmek egységesítése céljából."
+        },
+        "actor": {
+          "en": "Ministry/EMMI",
+          "hu": "Minisztérium/EMMI"
+        },
+        "timeline": {
+          "en": "year 1",
+          "hu": "1. év"
+        }
+      }
+    ],
+    "legacy_scenario_id": "S1",
+    "mechanisms": [
+      {
+        "en": "Hungarian law already provides an administratively ready alternative to closure: multigrade (összevont) classrooms combining up to three (exceptionally four) consecutive grades, used in an estimated 200-300 schools nationally.",
+        "hu": "A magyar jog már ad egy közigazgatásilag kész alternatívát a bezárás helyett: az összevont osztályok legfeljebb három (kivételesen négy) egymást követő évfolyamot vonnak össze, becslések szerint 200-300 iskolában alkalmazva."
+      },
+      {
+        "en": "OFI research concludes that rural small-school pupil outcomes are broadly comparable to larger village schools and only moderately below urban schools once family socioeconomic background is controlled for, undermining pure efficiency arguments for closure.",
+        "hu": "Az OFI kutatása szerint a vidéki kisiskolák tanulói eredményei nagyjából megfelelnek a nagyobb falusi iskolákénak, és csak mérsékelten maradnak el a városi iskolákétól, ha a családi szocioökonómiai háttért kontrollként kezelik, ami aláássa a bezárás tisztán hatékonysági érveit."
+      },
+      {
+        "en": "The felmenő rendszer (grade-by-grade phase-in mechanism) is applied in practice to school reorganization to protect currently-enrolled student cohorts from mid-course disruption, with documented 2025 cases implementing closure-related splits across multiple school years.",
+        "hu": "A felmenő rendszert a gyakorlatban az iskolaátalakításokra is alkalmazzák, hogy a jelenleg beiratkozott tanulói kohorszokat megvédjék a féléven belüli megszakítástól; 2025-ös dokumentált esetek több tanéven át megosztott bezárás-jellegű átalakításokat mutatnak."
+      },
+      {
+        "en": "Small schools (under 150 pupils) comprise nearly one-third of municipal primary schools yet enroll fewer than 10% of all students, and researchers argue the cost differential alone does not constitute a serious system-wide efficiency problem.",
+        "hu": "A kisiskolák (150 tanuló alatt) az önkormányzati általános iskolák csaknem egyharmadát alkotják, de a tanulók kevesebb mint 10%-át oktatják, és a kutatók szerint a költségkülönbség önmagában nem jelent komoly rendszerszintű hatékonysági problémát."
+      }
+    ],
+    "risks": [
+      {
+        "en": "Chronic under-budgeting of the district (tankerület) system creates persistent fiscal pressure to consolidate regardless of stated 'protect as long as there is demand' policy, risking quiet erosion rather than open confrontation.",
+        "hu": "A tankerületi rendszer krónikus alulfinanszírozása tartós fiskális nyomást hoz létre a összevonásra, függetlenül a hivatalos 'megtartás, amíg van igény rá' politikától, ami csendes leépülés kockázatát hordozza nyílt konfliktus helyett."
+      },
+      {
+        "en": "Absence of a bright-line statutory threshold leaves retention decisions to discretionary tankerület judgment, which is politically reversible year to year and vulnerable to administration change.",
+        "hu": "Az egyértelmű törvényi küszöb hiánya a megtartási döntéseket a tankerület mérlegelésére hagyja, amely évről évre politikailag megfordítható és kormányzati változás esetén sérülékeny."
+      }
+    ],
+    "title": {
+      "en": "Status quo plus incremental adaptation",
+      "hu": "Status quo és fokozatos alkalmazkodás"
+    },
+    "uncertainty_refs": [
+      "U-rural-school-closures-s1-01",
+      "U-rural-school-closures-s1-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "TP-rural-school-closures-s1",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "8df23b91781aefdc4c3437e27dc850cc86379dacf9c7d71fb0d18778f6d2285d",
+  "topic": "rural-school-closures"
+}

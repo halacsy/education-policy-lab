@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Between 2010 and 2020, students identified with special educational needs in Hungary rose from 6.7% to 7.7% in primary education and from 3.9% to 6.2% in secondary education. The drivers are contested: partly attributed to greater diagnostic awareness and improved diagnostics, and partly to social disparities and workforce shortages.",
+      "hu": "2010 és 2020 között Magyarországon a sajátos nevelési igényű (SNI) tanulók aránya az általános iskolai oktatásban 6,7%-ról 7,7%-ra, a középfokú oktatásban 3,9%-ról 6,2%-ra nőtt. A növekedés mozgatórugói vitatottak: részben a diagnosztikai tudatosság és a diagnosztika javulásának tulajdonítják, részben társadalmi egyenlőtlenségeknek és munkaerőhiánynak."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Source does not quantitatively decompose 'real prevalence change' from 'diagnostic practice change'",
+        "hu": "A forrás nem bontja számszerűen a 'valódi előfordulási gyakoriságváltozást' és a 'diagnosztikai gyakorlatváltozást'"
+      },
+      {
+        "en": "Cannot distinguish whether the 1-2 percentage point rise reflects increased underlying conditions, improved detection, or relabeling of existing students",
+        "hu": "Nem lehet megkülönböztetni, hogy az 1-2 százalékpontos emelkedés a mögöttes állapotok növekedését, a jobb felismerést vagy a meglévő tanulók átcímkézését tükrözi-e."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-03",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "93c27eee1f3756de5f70b32010015cdfcac47e2602e072d682e9658a8cd2715d",
+  "topic": "sni-letszamnovekedes"
+}

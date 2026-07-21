@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-portuguese_reform-01",
+      "A-live-portuguese_reform-02",
+      "A-live-portuguese_reform-03",
+      "A-live-portuguese_reform-04"
+    ],
+    "claim": {
+      "en": "Hungary has higher between-school variance and lower share of top performers (9.3% vs. 12.6% OECD average) and higher share of low performers (28.1% vs. 23.0%) consistent with early-tracking systems, though not proven caused solely by tracking",
+      "hu": "Magyarországon nagyobb az iskolák közötti szórás és alacsonyabb a legjobb teljesítők aránya (9.3% vs. 12.6% OECD average), valamint magasabb a gyengén teljesítők aránya (28.1% vs. 23.0%), ami összhangban áll a korai szelekciós rendszerekkel, bár nem bizonyított, hogy ezt kizárólag a szelekció okozza."
+    },
+    "context": {
+      "en": "Fresh live research through the Portuguese system reform lens",
+      "hu": "Friss, aktuális kutatás a portugál rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "portuguese_reform"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Performance profiles are observational; causal attribution to tracking requires quasi-experimental or experimental design",
+        "hu": "A teljesítményprofilok megfigyeléses jellegűek; a sávosításnak (tracking) tulajdonított oksági magyarázathoz kvázi-kísérleti vagy kísérleti kutatási terv szükséges"
+      },
+      {
+        "en": "Variance patterns could reflect multiple institutional factors beyond selection age",
+        "hu": "A variancia-mintázatok több intézményi tényezőt is tükrözhetnek, nem csupán a kiválasztási életkort."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-portuguese_reform-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-portuguese_reform-01",
+      "U-live-portuguese_reform-02",
+      "U-live-portuguese_reform-03",
+      "U-live-portuguese_reform-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-portuguese_reform-03",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5de9e4c8f7cf285e30efb185afa39e058db67bd8a7fc3617966e422ec6eebff4",
+  "topic": "korai-szelekcio"
+}

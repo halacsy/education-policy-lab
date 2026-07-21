@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Finland's experience directly validates the value of decomposition analysis: post-2010 data show identification growth concentrated in the newly created 'intensified support' tier while the top tier remained flat, a pattern only visible because of consistent longitudinal categorization. This suggests reclassification effects, not just true prevalence change, can masquerade as headline growth — precisely the ambiguity TP-live-t2 aims to resolve for Hungary's divergent SNI/BTMN series. Finland's regional variation data (4%-13%) further show that national aggregates conceal locally driven administrative differences, reinforcing the case for granular, reconciled data architecture.",
+      "hu": "Finnország tapasztalata közvetlenül alátámasztja a dekompozíciós analízis értékét: a 2010 utáni adatok azt mutatják, hogy az azonosítási növekedés a frissen létrehozott 'intenzívebb támogatás' kategóriára koncentrálódott, míg a felső kategória stagnált, egy olyan minta, amely csak a következetes longitudinális kategorizáció miatt vált láthatóvá. Ez arra utal, hogy az újrakategorizálási hatások, nem csupán a valódi prevalencia-változás, úgy tűnhetnek, mint a főcím-növekedés — éppen az az ambiguitás, amelyet a TP-live-t2 célja feloldani a magyar SNI/BTMN eltérő sorozataival kapcsolatban. Finnország regionális variációs adatai (4%–13%) továbbá azt mutatják, hogy a nemzeti aggregátumok elfedik a lokálisan vezérelt adminisztratív különbségeket, megerősítve az érdemi, egyeztetett, részletes adatszerkezet szükségességét."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-finnish_reform-02",
+      "F-live-finnish_reform-04"
+    ],
+    "lens_ref": "L-live-finnish_reform",
+    "opportunities": [
+      {
+        "en": "Hungary could adopt Finland's before/after tier-level decomposition approach around its own 2018/2020 rule changes to identify reclassification versus true prevalence shifts",
+        "hu": "Magyarország átvállalhatná Finnország előtt/után szintenkénti dekompozíciós megközelítését a saját 2018/2020-as szabályváltozásai körül, hogy megkülönböztesse az átsorolásból fakadó és a valódi prevalencia-változásokat."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Finland's tier-specific breakdown (flat special-support tier, rising intensified-support tier) is a proof-of-concept that reconciled, disaggregated data can distinguish reclassification from genuine prevalence change",
+        "hu": "Finnország réteg-specifikus bontása (egyenletes speciális-támogatási réteg, növekvő intenzív-támogatási réteg) bizonyítja, hogy az összehangolt, diszaggregált adatok meg tudják különböztetni az átkategorizálást a valódi prevalencia-változástól"
+      },
+      {
+        "en": "Documented persistent regional variation in Finland after reform validates the need for sub-national breakdowns within any reconciled monitoring architecture",
+        "hu": "A reform utáni Finnországban dokumentált tartós regionális eltérések igazolják annak szükségességét, hogy bármely egyeztetett monitoring-architektúra tartalmazzon nemzeti szint alatti bontásokat"
+      }
+    ],
+    "threats": [
+      {
+        "en": "As in Finland, reconciled data may reveal that municipal/county-level variation is driven by administrative and fiscal incentives rather than need, which is politically sensitive to publish",
+        "hu": "Ahogy Finnországban is, az egyeztetett adatok feltárhatják, hogy az önkormányzati/megyei szintű eltéréseket adminisztratív és fiskális ösztönzők, nem pedig valós szükség indokolják, és ennek közzététele politikailag érzékeny lehet."
+      }
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      {
+        "en": "Finland's own case shows that even with harmonized categories, regional/municipal interpretation differences (4%-13%) persist and are not resolved by better measurement alone, so reconciliation may clarify but not eliminate definitional ambiguity",
+        "hu": "Finnország esete azt mutatja, hogy még harmonizált kategóriák esetén is fennmaradnak regionális/önkormányzati értelmezési különbségek (4%-13%), és ezeket önmagában a jobb mérés nem oldja meg, így az egyeztetés tisztázást hozhat, de nem szünteti meg a definíciós bizonytalanságot."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-finnish_reform",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "1beecf6a86534bb05cdcc36f8e8d48047241ea51453c385b85308bf840a48b19",
+  "topic": "sni-letszamnovekedes"
+}

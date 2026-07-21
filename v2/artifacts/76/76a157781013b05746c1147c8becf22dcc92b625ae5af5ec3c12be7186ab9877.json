@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-hungarian_education_system-01",
+      "A-rural-school-closures-hungarian_education_system-02",
+      "A-rural-school-closures-hungarian_education_system-03",
+      "A-rural-school-closures-hungarian_education_system-04",
+      "A-rural-school-closures-hungarian_education_system-05"
+    ],
+    "claim": {
+      "en": "Regulation 20/2012 EMMI §22(7)–(8) allows school principals to request home visits to verify de facto (életvitelszerű) residence in the catchment; refusal to allow at least one of two offered visit dates creates a presumption of non-residence justifying admission refusal.",
+      "hu": "A 20/2012 EMMI rendelet §22(7)–(8) lehetővé teszi, hogy az iskola igazgatói otthoni látogatásokat kérjenek az életvitelszerű lakcím igazolására; legalább két felajánlott látogatás közül legalább egynek a megtagadása a nem-lakcímhetőség vélelmét hozza létre, amely az felvétel megtagadásának indokául szolgálhat."
+    },
+    "context": {
+      "en": "The unavoidable contraction of rural primary school provision in Hungary must be managed through transparent, locally-led merger and maintainer-change mechanisms that prioritize pupil welfare, transport safety, and informed parental consent, rather than through top-down administrative consolidation that disconnects school governance from community voice and decision-making.",
+      "hu": "A magyar vidéki általános iskolai ellátás elkerülhetetlen összehúzódása transzparent, helyi szinten vezetett összevonási és fenntartóváltási mechanizmusokon keresztül kell, hogy történjen, amelyek a tanuló jólétét, az utazás biztonságát és a tájékozott szülői beleegyezést helyezik előtérbe, szemben a felülről lefelé irányuló közigazgatási konszolidációval, amely szétválasztja az iskola-irányítást a közösségi szóból és a döntéshozatalból."
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-a77ac7240044fe"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-hungarian_education_system-01",
+      "U-rural-school-closures-hungarian_education_system-02",
+      "U-rural-school-closures-hungarian_education_system-03",
+      "U-rural-school-closures-hungarian_education_system-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-hungarian_education_system-06",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "cc9435aaa647b8fe6aa867593bda65a4bc22b8568e6dd84a8bf9c70870569b5f",
+  "topic": "rural-school-closures"
+}

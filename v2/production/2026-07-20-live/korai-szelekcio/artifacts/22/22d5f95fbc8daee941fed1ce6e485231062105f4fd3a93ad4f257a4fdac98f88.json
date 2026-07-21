@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Hungarian-specific research by Horn and TARKI found that in micro-regions with accessible 8-year gimnázium, socioeconomic status correlates significantly more strongly with competency scores by grade 8 compared to regions without such tracks, suggesting early selection widens SES-linked outcome gaps within same locality over time.",
+      "hu": "Horn és a TÁRKI magyar-specifikus kutatása megállapította, hogy ott, ahol hozzáférhető a 8 éves gimnázium, a társadalmi-gazdasági státusz erősebben korrelál a kompetenciapontszámokkal a 8. évfolyamra, mint olyan régiókban, ahol ilyen tagozatok nincsenek, ami arra utal, hogy a korai szelekció idővel kiszélesíti az SES-hez kötődő eredménykülönbségeket ugyanazon településen belül."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Causal attribution between track availability and SES-outcome divergence not established; selection effects confound observed correlation",
+        "hu": "Az oksági hozzárendelés a pályalehetőség és a társadalmi‑gazdasági státusz (SES) kimenetei közötti eltérés között nincs megállapítva; szelekciós hatások összezavarják a megfigyelt korrelációt."
+      },
+      {
+        "en": "Comparison groups (micro-regions with vs. without 8-year track) may differ on unmeasured socioeconomic characteristics",
+        "hu": "Az összehasonlító csoportok (mikrorégiók 8 éves tagozattal vs. nélküli) eltérhetnek nem mérhető társadalmi-gazdasági jellemzőkben."
+      },
+      {
+        "en": "Time period and exact outcome measures not specified",
+        "hu": "Az időszak és a pontos eredményméretek not specified."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-06",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "8e69e8314923cbacb907a02faca9bff1d3546c81f8aad42bbfa7e0e2d132ec3d",
+  "topic": "korai-szelekcio"
+}

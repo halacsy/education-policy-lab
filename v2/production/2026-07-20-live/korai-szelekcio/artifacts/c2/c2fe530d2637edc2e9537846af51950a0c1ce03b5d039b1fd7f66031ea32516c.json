@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T2 has a clear existing administrative lever (discretionary approval refusal, threshold-setting) and a passive capacity ceiling already observed in practice, which suggests actor capacity for implementation exists without new legislation. However, its jurisdictional scope is explicitly partial: it cannot touch church, foundation, or private schools, which is precisely the segment documented as expanding selectively via admissions discretion and preferential funding. This creates a substitution risk that is structural rather than incidental, and the proposal as described contains no containment mechanism for that displacement, nor monitoring provisions to detect it in real time.",
+      "hu": "A T2-nek van egy egyértelmű meglévő adminisztratív karja (döntési jogkörrel történő jóváhagyás visszautasítása, küszöbérték-meghatározás), és a gyakorlatban már megfigyelt passzív kapacitási plafon arra utal, hogy a végrehajtáshoz szükséges szereplői kapacitás létezik jogszabálymódosítás nélkül. Ugyanakkor hatásköri körzete kifejezetten részleges: nem érintheti az egyházi, alapítványi vagy magániskolákat, amelyik pontosan az a szegmens, amelyről dokumentálták, hogy felvételi diszkréció és preferenciális finanszírozás révén szelektíven terjeszkedik. Ez strukturális helyettesítési kockázatot teremt, nem csupán véletlenszerűet, és a javaslat leírása nem tartalmaz sem olyan korlátozó mechanizmust erre az eltolódásra, sem monitoring rendelkezéseket annak valós idejű észlelésére."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-05"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Threshold changes are inherently incremental and reversible, offering a natural pilot/adjust cycle before full-scale application",
+        "hu": "A küszöbérték-változtatások természetüknél fogva fokozatosak és visszafordíthatók, lehetővé téve egy pilóta/kiigazítási ciklust a teljes körű alkalmazás előtt."
+      },
+      {
+        "en": "Could be sequenced alongside a cross-maintainer gatekeeping mechanism (as in T6) to close the jurisdictional gap",
+        "hu": "Ütemezhető párhuzamosan egy kereszttartó fenntartói kapubezáró mechanizmussal (mint a T6), hogy lezárja a joghatósági rést."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Uses an already-exercised ministerial discretionary power, indicating administrative capacity and legal precedent already exist for this lever",
+        "hu": "Egy már korábban alkalmazott minisztériumi mérlegelési jogkört használ, ami arra utal, hogy adminisztratív kapacitás és jogi precedens már létezik ehhez az intézkedéshez."
+      },
+      {
+        "en": "Recommended thresholds already function as a de facto capacity control, so tightening is an incremental adjustment to an existing mechanism rather than a novel one",
+        "hu": "A javasolt küszöbértékek már de facto kapacitásszabályozóként működnek, így azok szigorítása inkrementális módosítás egy meglévő mechanizmuson, nem pedig újszerű lépés"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Church and private schools, already growing in selective share, could absorb displaced demand and offset state-sector contraction entirely, negating the intended effect",
+        "hu": "Az egyházi és magániskolák, amelyek már növekvő szelekciós részesedéssel rendelkeznek, felszívhatják az elmozduló keresletet és teljesen ellensúlyozhatják az állami szektor összehúzódását, semmissé téve a kívánt hatást"
+      },
+      {
+        "en": "Raising thresholds could push marginal students into vocational tracks involuntarily, a foreseeable failure mode flagged by parent advocacy groups without described containment",
+        "hu": "A küszöbök emelése kényszerítheti a marginális tanulókat a szakmai/vegzettségi pályákra, előrelátható hibamód, amelyet a szülői érdekvédelmi csoportok jeleztek, de nincs leírt elhárítása."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Legal jurisdiction covers only the state-sector maintainer (Klebelsberg Centre), leaving church/foundation/private providers, where selective growth is concentrated, entirely outside the lever's reach",
+        "hu": "A joghatóság csak az állami fenntartóra (Klebelsberg Centre) terjed ki, így az egyházak/alapítványok/magánfenntartók — ahol a szelekciós növekedés koncentrálódik — teljesen kívül esnek a szabályozási eszköz hatáskörén."
+      },
+      {
+        "en": "No specified monitoring mechanism to track whether displaced demand shifts to church/private tracks, despite this being a documented and foreseeable displacement channel",
+        "hu": "Nincs meghatározott monitoringmechanizmus annak nyomon követésére, hogy az elmozdított kereslet átterelődik-e az egyházi/magán pályákra, pedig ez dokumentált és előre látható elmozdulási csatorna."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2444a97be510b6037612547717aea5c41fdb358173f67a3d367de2cfa96f3e1f",
+  "topic": "korai-szelekcio"
+}

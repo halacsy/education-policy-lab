@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The Finnish lens does not directly address grade-splitting or structural reorganization by grade tier, but its consolidation-shock evidence is directly relevant to T3's core assumption that older students can 'more feasibly' absorb travel to a consolidated upper-grade school. Finnish quasi-experimental evidence found that even cost-driven, non-performance-related consolidation produces measurable short-term achievement disruption independent of prior school quality, suggesting T3's projected mitigation of achievement harm (by preserving lower grades locally) may understate the disruption risk for the upper-grade cohort being consolidated. Additionally, Finland's experience shows consolidation can accelerate rather than merely follow demographic decline, a concern relevant to T3's partial-consolidation design since it moves upper-grade pupils into town schools and could produce similar depopulation feedback effects in the sending villages, even while lower grades remain.",
+      "hu": "A finn lencse nem foglalkozik közvetlenül az évfolyam-megosztással vagy az évfolyamszint szerinti strukturális átszervezéssel, de a konszolidációs sokk bizonyítéka közvetlenül releváns T3 alapfeltevéséhez, miszerint az idősebb tanulók „könnyebben” el tudják viselni az összevont felsőbb évfolyamra való utazást. Finnország kvázi-kísérleti bizonyítéka megállapította, hogy még a költségvezérelt, a teljesítménnyel nem összefüggő konszolidáció is mérhető rövid távú teljesítményzavart okoz a korábbi iskolaminőségtől függetlenül, ami azt sugallja, hogy T3 azon kivetített állítása — miszerint a felsőbb évfolyamok helyi megtartása mérsékli a teljesítménykárosodást — alulbecsülheti az összevonással érintett felsőbb évfolyamú kohorsz zavartságának kockázatát. Ezen túlmenően Finnország tapasztalata azt mutatja, hogy a konszolidáció gyorsíthatja is a demográfiai hanyatlást, nem csupán követheti azt; ez T3 részleges-konszolidációs tervével kapcsolatos aggály, mivel az felsőbb évfolyamos tanulókat városi iskolákba mozgatja, és a küldő falvakban hasonló elnéptelenedési visszacsatolási hatásokat idézhet elő, még akkor is, ha az alsóbb évfolyamok helyben maradnak."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-finnish_reform-05",
+      "F-live-finnish_reform-06"
+    ],
+    "lens_ref": "L-live-finnish_reform",
+    "opportunities": [
+      {
+        "en": "Retaining lower grades locally, informed by Finland's demonstrated harms of consolidation shock (F-live-finnish_reform-06), may partially shield the most disruption-sensitive younger cohort, a partial mitigation aligned with lens evidence.",
+        "hu": "Az alsóbb évfolyamok helyben tartása, amelyet a finn konszolidációs sokk által kimutatott károk indokolnak (F-live-finnish_reform-06), részben óvhatja a leginkább a zavarokra érzékeny fiatalabb kohorszot; ez részleges enyhítés, amely összhangban áll a vizsgálati lencséből származó bizonyítékokkal."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "No direct structural parallel exists in the Finnish evidence for grade-tiered consolidation, limiting positive transferability.",
+        "hu": "A finn bizonyítékok között nincs közvetlen strukturális párhuzam az évfolyamonkénti/tagozatos konszolidációra vonatkozóan, ami korlátozza a pozitív átültethetőséget."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If upper-grade consolidation triggers the same population decline dynamics documented in Finland (F-live-finnish_reform-05), T3's partial retention strategy may not prevent broader village decline despite preserving lower-grade buildings.",
+        "hu": "Ha a felsőbb évfolyamok konszolidációja ugyanazokat a népességcsökkenési dinamikákat indítja el, mint amelyeket Finnországban dokumentáltak (F-live-finnish_reform-05), a T3 részleges megtartási stratégiája nem feltétlenül akadályozza meg a tágabb falusi hanyatlást, még ha az alsóbb évfolyamok épületeit meg is őrzi."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Finnish evidence on pure consolidation shock (F-live-finnish_reform-06) suggests that T3's upper-grade consolidation will carry real short-term achievement costs for displaced students, a risk not fully addressed in T3's stated mechanisms.",
+        "hu": "A tiszta konszolidációs sokkkal kapcsolatos finn bizonyítékok (F-live-finnish_reform-06) azt sugallják, hogy a T3 felsőbb évfolyamok összevonása valódi, rövid távú teljesítményköltséget jelenthet az áthelyezett tanulók számára, egy olyan kockázatot, amelyet a T3 által megfogalmazott mechanizmusok nem kezelnek teljes mértékben."
+      },
+      {
+        "en": "Quasi-experimental evidence that closures accelerate local population decline (F-live-finnish_reform-05) raises doubt about T3's assumption that preserving only lower grades will fully protect village viability, since losing upper grades may still trigger the same depopulation dynamic.",
+        "hu": "A kvázi-kísérleti bizonyíték, miszerint a bezárások felgyorsítják a helyi népességfogyást (F-live-finnish_reform-05), kétségeket vet fel T3 azon feltevésével kapcsolatban, miszerint csak az alsóbb évfolyamok megtartása teljes mértékben megvédi a falu életképességét, mivel a felsőbb évfolyamok elvesztése ugyanazt az elnéptelenedési dinamikát elindíthatja."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-finnish_reform",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "1e902c04c8f372f0b8fccdf809dcaeb9aee84813ed4c0a85ebc95e1bfdc70b90",
+  "topic": "rural-school-closures"
+}

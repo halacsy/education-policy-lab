@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T6 has the strongest implementation-planning profile among the active proposals because it extends an already-exercised, precedent-bearing administrative power (documented refusals citing segregation risk) rather than creating a novel authority, and it explicitly targets the maintainer segment (church/private) that T2's jurisdiction cannot reach. This directly closes a capacity gap identified elsewhere in the evidence. Its principal weakness is that, as a preventive-only tool, it cannot address segregation from tracks already approved, and its legitimacy depends on consistent application, for which no monitoring or appeals mechanism is specified, an important gap given the same evidence base documents a disputed measurement baseline elsewhere.",
+      "hu": "A T6-nak van a legerősebb végrehajtástervezési profilja az aktív javaslatok között, mert kiterjeszt egy már gyakorolt, precedenssel alátámasztott adminisztratív hatáskört (dokumentált visszautasítások szegregációs kockázatra hivatkozva), ahelyett, hogy új hatalmat teremtene, és kifejezetten a fenntartói szegmensre (egyház/magán) céloz, amelyet a T2 joghatósága nem ér el. Ez közvetlenül zárja azokat a kapacitásréseket, amelyeket máshol a bizonyítékok azonosítanak. Fő gyengesége, hogy mint megelőző eszköz nem képes kezelni azokat a már jóváhagyott pályákból eredő szegregációkat, és legitimitása a következetes alkalmazáson múlik, amelyre nincs meghatározott monitoring- vagy fellebbezési mechanizmus — ez fontos hiányosság, tekintve, hogy ugyanaz a bizonyítékbázis máshol vitatott mérési alapvonalat dokumentál."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-05"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Could be piloted incrementally by applying a formalized test to pending applications before full codification, using the existing precedent cases as calibration examples",
+        "hu": "Fokozatosan pilotálható lenne azzal, hogy a formalizált tesztet a függőben lévő kérelmekre alkalmazzák a teljes kodifikáció előtt, az meglévő precedens eseteket kalibrációs példaként használva"
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Formalizes and generalizes an existing, documented administrative precedent (Tiszavasvári refusal) rather than inventing new legal authority, which strengthens near-term deliverability",
+        "hu": "Formalizálja és általánosítja egy létező, dokumentált adminisztratív precedenst (Tiszavasvári refusal) ahelyett, hogy új jogi hatalmat alkotna, ami erősíti a rövid távú megvalósíthatóságot."
+      },
+      {
+        "en": "A 2023 law already extended uniform state legal-status terms across maintainer types, providing a concrete legal channel for extending gatekeeping reach to church/private providers, closing the jurisdictional gap left by state-sector-only levers",
+        "hu": "Egy 2023-as törvény már kiterjesztette az állami egységes jogi státuszkifejezéseket a fenntartótípusok között, konkrét jogi csatornát biztosítva arra, hogy a kapuőrizeti/jogkört kiterjesszék az egyházi/magán szolgáltatókra, ezzel bezárva azt a joghatósági rést, amelyet az csak állami szektorral kapcsolatos eszközök hagytak maga után."
+      },
+      {
+        "en": "The Encs case provides a documented causal chain from expansion approval to local segregation, giving the proposal an evidence-based test case for defining a segregation-impact standard",
+        "hu": "Az Encs-ügy dokumentált ok-okozati láncot mutat a bővítés jóváhagyásától a helyi szegregációig, így a javaslat számára bizonyítékokra épülő tesztesetet ad egy szegregációs hatásstandard meghatározásához."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Church and private maintainers, partially exempt from state maintenance jurisdiction, may contest extension of ministerial discretion over their expansion decisions as institutional-autonomy infringement, risking legal challenge or non-compliance",
+        "hu": "Az állami fenntartói joghatóság alól részben mentesített egyházi és magánfenntartók vitathatják a minisztériumi diszkreció kiterjesztését a bővítési döntéseiket illetően intézményi autonómiába való beavatkozásként, ami jogi kihívás vagy nemteljesítés kockázatát hordozza."
+      },
+      {
+        "en": "Politically selective or inconsistent application could undermine the tool's legitimacy and invite accusations of arbitrary discretion, weakening its durability as a governance mechanism",
+        "hu": "A politikailag szelektív vagy következetlen alkalmazás alááshatja az eszköz legitimitását és önkényes diszkrecionális döntések vádját vonhatja maga után, gyengítve annak tartósságát kormányzási eszközként"
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "No monitoring or appeals framework is specified for ensuring consistent, non-arbitrary application of a discretionary segregation-impact test across cases and maintainers",
+        "hu": "Nincs megadva monitoring- vagy fellebbezési keretrendszer annak biztosítására, hogy a diszkrecionális szegregációs hatásteszt következetesen, nem önkényesen alkalmazható legyen az esetek és fenntartók között."
+      },
+      {
+        "en": "Purely preventive scope means it does not remediate segregation from already-approved tracks, limiting impact to marginal future growth only",
+        "hu": "A tisztán megelőző hatály azt jelenti, hogy nem szünteti meg a már jóváhagyott pályákból eredő szegregációt, így a hatása csak a jövőbeni marginális növekedésre korlátozódik."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "39bc10bfc5c6612aef9e2db3c907896b90374021cd21c9375c1c858cb0f80bd1",
+  "topic": "korai-szelekcio"
+}

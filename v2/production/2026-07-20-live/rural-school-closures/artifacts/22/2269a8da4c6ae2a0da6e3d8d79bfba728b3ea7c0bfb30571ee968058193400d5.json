@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Splitting grade structures partially addresses cost incidence by concentrating the highest-cost grades (upper primary, requiring subject specialists and more infrastructure) into larger units while retaining lower-cost, high-value proximity grades locally. This aligns with evidence that younger children bear the largest harms from commuting, making the mitigation of transport-related opportunity costs more targeted. But the proposal remains exposed to national class-size minimums that could still make retained lower-grade schools fiscally non-viable, and reversal risk (as in Poland 2017) generates severe adjustment costs — displaced teachers, unplaced cohorts — that constitute a distinct fiscal category from ordinary consolidation costs.",
+      "hu": "A évfolyamszerkezetek felbontása részben kezeli a költségviselést azzal, hogy a legdrágább évfolyamokat (felső tagozat, amely tantárgyszakosokat és több infrastruktúrát igényel) nagyobb egységekbe koncentrálja, miközben a költséghatékonyabb, de értékes, közelséget igénylő alsóbb évfolyamokat helyben tartja. Ez összhangban van azzal a bizonyítékkal, hogy a kisebb gyerekeket terhelik leginkább az ingázás hátrányai, így a közlekedéshez kapcsolódó lehetőségköltségek enyhítése célzottabbá válik. Ugyanakkor a javaslat továbbra is ki van téve az országos osztálylétszám-minimumoknak, amelyek még mindig fenntarthatatlanná tehetik a megőrzött alsóbb évfolyamú iskolákat, és a visszafordulás kockázata (ahogy ez Lengyelországban 2017-ben történt) súlyos kiigazítási költségeket eredményez — elhelyezetlen tanárok, el nem helyezett kohorszok — amelyek elkülönült fiskális kategóriát alkotnak a rendes konszolidációs költségektől."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-education_finance-02",
+      "F-live-education_finance-03"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "A staged/graded approach could be evaluated for whether it captures more of the claimed savings from upper-grade consolidation while avoiding the largest share of documented transport harms and offset costs",
+        "hu": "Megvizsgálható lenne egy lépcsőzetes/fokozatos megközelítés arra nézve, hogy mennyiben ragadja meg az a felsőbb évfolyamok konszolidációjából állított megtakarítások nagyobb részét, miközben elkerüli a dokumentált szállítási károk és pótlólagos költségek legnagyobb hányadát."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Targets fiscal and welfare costs more precisely by grade level rather than treating all pupils uniformly",
+        "hu": "A költségvetési és jóléti költségeket osztályszinten pontosabban célozza meg, ahelyett, hogy minden tanulót egyenlően kezelne."
+      },
+      {
+        "en": "Structural retention of lower grades may reduce the transportation cost offsets documented as reducing net consolidation savings (F-live-education_finance-03), since younger pupils are the largest transport-cost/harm group",
+        "hu": "Az alsó évfolyamok strukturális megtartása csökkentheti azokat a szállítási költségkompenzációkat, amelyeket nettó összevonási megtakarításokat csökkentő hatásként dokumentáltak (F-live-education_finance-03), mivel a fiatalabb tanulók jelentik a legnagyobb szállítási költség/ártalom csoportot."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Reversal risk, as demonstrated in Poland, creates concentrated fiscal costs (teacher displacement, cohort disruption) that are large and lumpy relative to gradual policy stability",
+        "hu": "A visszafordulás kockázata, ahogy azt Lengyelország bemutatja, koncentrált fiskális költségeket teremt (pedagógus-elmozdulás, kohorszok megszakítása), amelyek nagyok és egyenetlenül jelentkeznek a fokozatos politikai stabilitáshoz képest"
+      },
+      {
+        "en": "Multigrade teaching quality requirements imply additional teacher-training investment cost not currently budgeted, per the mechanism description",
+        "hu": "A többévfolyamos oktatás minőségi követelményei további pedagógusképzési beruházási költségeket implikálnak, amelyek jelenleg nincsenek a költségvetésben betervezve, a mechanizmus leírása szerint."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Retained lower-grade schools remain fiscally exposed to national class-size minimums regardless of structural reorganization (per mechanism description), a risk not resolved by this lens's evidence base",
+        "hu": "Az alsóbb évfolyamokat megtartó iskolák pénzügyi kitettsége a nemzeti osztálylétszám-minimumokkal szemben változatlan marad a strukturális átalakítástól függetlenül (a mechanizmus leírása szerint), egy olyan kockázat, amelyet ennek a szemléletnek a bizonyítékbázisa nem old meg."
+      },
+      {
+        "en": "Contested international evidence on whether consolidation produces net savings (F-live-education_finance-02) applies equally to the upper-grade consolidation component, so expected savings are uncertain",
+        "hu": "A konszolidáció nettó megtakarítást eredményez-e tekintetében vitatott nemzetközi bizonyítékok (F-live-education_finance-02) egyaránt érvényesek a felsőbb évfolyam konszolidációs komponensére, így a várható megtakarítások bizonytalanok"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-education_finance",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "65fb9a0c610c08d2433eba98dc1d830959a956f7622924b7d95c3d12345111af",
+  "topic": "rural-school-closures"
+}

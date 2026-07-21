@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T2's capacity-contraction approach resembles a partial, administrative-lever contraction rather than the full statutory restructuring Poland undertook in either 1999 or 2017. The Polish case demonstrates that structural mechanism matters: Poland's reforms changed the point of tracking itself, whereas T2 only shrinks the size of the pool subject to existing tracking rules, leaving the selection mechanism's distributional logic intact.",
+      "hu": "A T2 kapacitás-zsugorító megközelítése inkább részleges, adminisztratív eszközökön alapuló zsugorításra hasonlít, nem a lengyelországi 1999-es vagy 2017-es teljes törvényi átalakításokra. A lengyel példa azt mutatja, hogy a strukturális mechanizmus számít: Lengyelország reformjai maga a beiskolázás/szelekció pontját változtatták meg, míg a T2 csak a meglévő szelekciós szabályok alá tartozó halmaz nagyságát csökkenti, megtartva a kiválasztási mechanizmus elosztási logikáját."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05"
+    ],
+    "lens_ref": "L-live-polish_reform",
+    "opportunities": [
+      {
+        "en": "Being administratively reversible could allow phased or reversible piloting, unlike Poland's structural reforms which were difficult to unwind cleanly once implemented (F-live-polish_reform-04)",
+        "hu": "Az adminisztratívan visszafordítható jelleg lehetővé teheti a fokozatos vagy visszafordítható pilótaprogramot, ellentétben Poland's structural reforms which were difficult to unwind cleanly once implemented (F-live-polish_reform-04)"
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Administrative/discretionary levers (raising thresholds, capacity caps) avoid the need for primary legislation, reducing the kind of abrupt legal reversal risk seen in Poland's 2017 change (F-live-polish_reform-04)",
+        "hu": "Az adminisztratív/döntési eszközök (küszöbök emelése, kapacitáskorlátok) elkerülik az elsődleges jogalkotás szükségességét, csökkentve az olyan hirtelen jogi visszafordulás kockázatát, mint amelyet Lengyelország 2017-es változása mutat (F-live-polish_reform-04)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Because it is administratively driven, T2 lacks the durability that only statutory structural change provides; a future administration could reverse capacity constraints as easily as Poland reversed its comprehensive stage (F-live-polish_reform-04)",
+        "hu": "Mivel adminisztratívan vezérelt, a T2 nem rendelkezik azzal a tartóssággal, amelyet csak törvényileg szabályozott strukturális változás biztosít; egy jövőbeni kormányzat ugyanolyan könnyen visszafordíthatja a kapacitáskorlátokat, ahogy Lengyelország visszafordította a teljes szakaszát (F-live-polish_reform-04)."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Contraction without addressing the underlying selection criteria leaves in place the same distributional mechanism that Poland's structural (not just size) reform targeted, per the lens's distributional-effects criterion",
+        "hu": "A szűkítés az alapvető kiválasztási kritériumok kezelése nélkül meghagyja ugyanazt az elosztási mechanizmust, amelyet Lengyelország szerkezeti (nem csupán méretbeli) reformja célzott, a lencse elosztási hatáskritériuma szerint."
+      },
+      {
+        "en": "No sequencing model is proposed to manage the transition of displaced demand, an omission Poland's abrupt 2017 approach shows can produce acute short-term disruption if unmanaged (F-live-polish_reform-05)",
+        "hu": "A kimozdult kereslet átalakulásának kezelésére nincs javasolt ütemezési modell; ez a mulasztás — amint Lengyelország 2017-es hirtelen intézkedése is mutatja — kezeletlenül akut rövid távú zavarokat okozhat (F-live-polish_reform-05)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-polish_reform",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "503154fc2679feb5bd5d31bc84775f864b8b70286109ab2983adfb642f97ff92",
+  "topic": "korai-szelekcio"
+}

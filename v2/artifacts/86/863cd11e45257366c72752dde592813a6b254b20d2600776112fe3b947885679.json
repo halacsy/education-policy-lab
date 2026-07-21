@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-school_network_planning-01",
+      "A-korai-szelekcio-school_network_planning-02"
+    ],
+    "claim": {
+      "en": "Gimnázium enrollment reached 192,000 students (44.8% of all secondary enrollment) in 2024/25, with general-school enrollment continuing to decline while secondary and tertiary enrollment grew—consistent with shrinking cohorts at the 10-12 selection point.",
+      "hu": "A gimnáziumi tanulólétszám 2024/25-ben 192 000 fő (a teljes középfokú tanulólétszám 44,8%-a) volt, az általános iskolai tanulólétszám továbbra is csökkent, míg a középfokú és felsőfokú tanulólétszám nőtt—a 10-12 évesek szelekciós pontján való zsugorodásnak megfelelően."
+    },
+    "context": {
+      "en": "Physical school-network capacity is currently sufficient to sustain early selection almost anywhere; the genuine town-by-town feasibility bottleneck is the shrinking and unevenly distributed child population, combined with a maintainer and admissions design that concentrates selection into a minority of settlements.",
+      "hu": "A fizikai iskolahálózati kapacitás jelenleg szinte mindenhol elegendő a korai szelekció fenntartásához; a valódi településenkénti megvalósíthatósági szűk keresztmetszet a zsugorodó és egyenlőtlenül eloszló gyermeklétszám, valamint a fenntartói és felvételi rendszer, amely a szelekciót a települések kisebbségében koncentrálja."
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-e0319ec5157d10"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-school_network_planning-01",
+      "U-korai-szelekcio-school_network_planning-02",
+      "U-korai-szelekcio-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-school_network_planning-09",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "0433f8306bec900b3a15794c3ef23e14a128e44f2caa83612c80c05388cf9154",
+  "topic": "korai-szelekcio"
+}

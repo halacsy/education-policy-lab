@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T6 extends gatekeeping to church/private maintainers, which is fiscally significant because these providers are outside state capitation-cap jurisdiction and have grown substantially, absorbing selective demand without the same public funding-loss accountability that state-sector feeder schools face under F-live-education_finance-05. As a preventive/administrative tool it has low direct fiscal cost, but its value for money is limited to marginal future expansion — it does not redistribute existing resources to already-disadvantaged feeder schools nor address the achievement gap in F-live-education_finance-07, meaning its fiscal footprint, though efficient per action taken, is narrow in scope.",
+      "hu": "A T6 kiterjeszti az előszűrés hatókörét az egyházi/privát fenntartókra, ami fiskálisan jelentős, mert ezek a szolgáltatók kívül esnek az állami normatíva-korlát hatályán és jelentősen növekedtek, így szelektív keresletet vesznek fel anélkül, hogy ugyanolyan nyilvános finanszírozás-vesztés elszámoltathatóságnak felelnének meg, mint az állami szektor felvevő iskolái (F-live-education_finance-05). Prevenciós/igazgatási eszközként alacsony közvetlen fiskális költséggel jár, de az ár-érték hatékonysága korlátozott a jövőbeni margóterjeszkedésre: nem osztja át a meglévő erőforrásokat a már hátrányos helyzetű felvevő iskolákhoz, és nem kezeli a teljesítménybeli különbséget sem (F-live-education_finance-07), tehát fiskális lábnyoma, bár egy intézkedésre vetítve hatékony, célját tekintve szűk."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Extending gatekeeping across all maintainer types could, if paired with funding-incidence transparency requirements, expose the true fiscal cost of church/private selective growth relative to state-sector alternatives",
+        "hu": "A kapuőri (gatekeeping) mechanizmus kiterjesztése minden fenntartótípusra, ha párosul a finanszírozási terhelés átláthatóságára vonatkozó követelményekkel, feltárhatná az egyházi/ magán szelekciós növekedés valós költségét az állami szektor alternatíváihoz képest"
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Low direct fiscal cost: formalizes existing discretionary administrative power rather than creating new expenditure",
+        "hu": "Alacsony közvetlen költség: a meglévő mérlegelési jogkört formalizálja, ahelyett hogy új kiadást hozna létre."
+      },
+      {
+        "en": "Closes a jurisdictional gap where church/private growth (documented separately) escapes the capitation-based accountability mechanisms that make state-sector feeder-school losses visible under F-live-education_finance-05",
+        "hu": "Bezár egy joghatósági rést, ahol az egyházi/magán növekedés (documented separately) kikerüli a capitation-based elszámoltathatósági mechanizmusokat, amelyek az állami szektor feeder-school veszteségeit láthatóvá teszik az F-live-education_finance-05 szerint"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Without accompanying compensatory funding for existing feeder-school losses, blocking future expansion does not address the resource-incidence harm already embedded in the system by capitation-based competition (F-live-education_finance-05)",
+        "hu": "Ha nem jár vele kísérő kompenzációs finanszírozás a meglévő beiskolázó iskolák veszteségeire, a jövőbeni bővítés blokkolása nem orvosolja a normatíva-alapú verseny által a rendszerbe már beágyazott erőforrás-eloszlási kárt (F-live-education_finance-05)"
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Purely preventive scope means it cannot redress the already-existing resource losses to feeder schools from past selective expansions (F-live-education_finance-05)",
+        "hu": "A tisztán megelőző hatály azt jelenti, hogy nem képes orvosolni az ellátó/feeder iskolák már meglévő forráshiányát a múltbeli szelektív bővítések miatt (F-live-education_finance-05)."
+      },
+      {
+        "en": "No mechanism to redirect any freed-up or protected capitation resources toward the disadvantaged-achievement gap noted in F-live-education_finance-07",
+        "hu": "Nincs mechanizmus arra, hogy bármely felszabaduló vagy védett normatív (capitation) forrást az F-live-education_finance-07-ban megjegyzett hátrányos helyzethez kapcsolódó teljesítménybeli különbségre fordítsanak."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-education_finance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "62b9adc2990fa14c92b2adc83ca13959cbd8ba63e06ad75c2214973ceaab13b5",
+  "topic": "korai-szelekcio"
+}

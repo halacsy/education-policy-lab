@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Restructuring gatekeeping and category architecture interacts directly with network delivery: a single nationwide expert-committee model already produces multi-month waiting lists, and traveling specialist networks show wide capacity variance, with some unable to provide category-specific care locally. A shift to tiered support could reduce diagnosis-dependent bottlenecks, but the lens flags that comparative evidence (persistent Finnish municipal variance) suggests restructuring gatekeeping does not resolve underlying geographic capacity or resilience gaps, since network delivery ultimately still depends on physical specialist distribution.",
+      "hu": "A kapuszabályozás és a kategória-architektúra átalakítása közvetlenül hat a hálózati ellátásra: egyetlen országos szakértői bizottsági modell már több hónapos várólistákat eredményez, és az utazó szakemberhálózatok széles kapacitás-varianciát mutatnak, egyesek helyben nem képesek kategória-specifikus ellátást biztosítani. A fokozatos támogatásra való átállás csökkentheti a diagnózistól függő szűk keresztmetszeteket, de a lencse rámutat, hogy a komparatív bizonyíték (a finn önkormányzati tartós variancia) azt sugallja, hogy a kapuszabályozás átalakítása nem oldja meg a mögöttes földrajzi kapacitás- vagy rezilienciagapokat, mivel a hálózati ellátás végső soron mégis a fizikai szakembereloszlástól függ."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-08"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Could be paired with targeted specialist deployment to address both the gatekeeping bottleneck and the underlying capacity shortfall simultaneously.",
+        "hu": "Összekapcsolható célzott szakember-kirendeléssel, hogy egyidejűleg kezelje a kapuőr-szűk keresztmetszetet és a mögöttes kapacitáshiányt"
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Directly targets the documented single-gatekeeper bottleneck responsible for waiting-list strain across the traveling specialist network.",
+        "hu": "Közvetlenül célozza a dokumentált egykapus szűk keresztmetszetet, amely a várólista-terhelésért felelős az utazó szakértői hálózatban."
+      },
+      {
+        "en": "A tiered, non-categorical model could reduce dependence on formal diagnosis, potentially easing pressure on stretched assessment capacity in underserved regions.",
+        "hu": "A rétegzett, nem-kategorizáló modell csökkentheti a formális diagnózistól való függést, ami potenciálisan enyhítheti a túlterhelt értékelési kapacitásra nehezedő nyomást az ellátatlan régiókban."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Rapid, non-consensual restructuring (as in Poland) risks disrupting an already strained traveling-network infrastructure serving 30-50+ institutions per network.",
+        "hu": "A gyors, konszenzus nélküli átalakítás (ahogy Lengyelországban történt) kockáztatja egy már eleve megterhelt, hálózatonként 30-50+ intézményt kiszolgáló utazóhálózati infrastruktúra megbomlását."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Restructuring administrative gatekeeping does not by itself add specialist positions or resolve the documented inability of some traveling networks to provide sensory-disability or category-specific specialist care locally.",
+        "hu": "Az igazgatási kapuzárás átszervezése önmagában nem teremt szakértői pozíciókat, és nem oldja meg a dokumentált képtelenséget, hogy egyes utazó hálózatok helyben biztosítsanak érzékszervi fogyatékosságra vagy kategóriaspecifikus szakellátásra szakosodott ellátást."
+      },
+      {
+        "en": "Comparative evidence indicates persistent regional variance survives tiered-model transitions, suggesting Hungary's county-level network disparities (Northeast training gaps) may persist regardless of categorical redesign.",
+        "hu": "Az összehasonlító bizonyítékok azt jelzik, hogy a tartós regionális eltérések túlélnek réteges modellváltásokat, ami arra utal, hogy Magyarország megyei szintű hálózati különbségei (Northeast training gaps) a kategorizáció átalakításától függetlenül megmaradhatnak."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T19:04:41.725832Z",
+  "id": "AS-live-t3-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-7a76d5ea5ccb922b",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "86a449c952adafc44cc691fcccaaec62dd4b233fb361945ebdd545d6853e4211",
+  "topic": "sni-letszamnovekedes"
+}

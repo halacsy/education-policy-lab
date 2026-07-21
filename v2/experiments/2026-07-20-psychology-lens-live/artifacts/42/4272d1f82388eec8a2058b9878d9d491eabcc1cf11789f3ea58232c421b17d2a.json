@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal most explicitly engineers the Finnish lens's core lessons into its design: it tests comprehensive de-tracking (mirroring Finland's 1972-1977 shift) while explicitly building in the post-1990s lesson that de-tracking must be paired with choice/zoning controls to avoid Finland's and Sweden's later re-segregation. The piloting approach also directly addresses the confounding problem in the Finnish historical case (simultaneous teacher-training, curriculum, and welfare reforms) by attempting to isolate Hungary-specific effects. The main lens-relevant risk is durability, given comparable reforms (Poland) were reversed despite measured success, and pilot regions may not be representative of national conditions given Hungary's very different institutional starting point from Finland's.",
+      "hu": "Ez a javaslat a finn szemlélet alapvető tanulságait a legnyilvánvalóbban építi be: a terv a rendszeres pályaszeparálódás teljes megszüntetését (mirrorolva Finnország 1972–1977 közötti váltását) próbálja tesztelni, miközben kifejezetten figyelembe veszi a 1990-es évek utáni leckét, nevezetesen hogy a de-trackinget választási/zóna szabályozással kell párosítani, hogy elkerüljék Finnország és Svédország későbbi re-szegregációját. A pilotálási megközelítés közvetlenül kezeli a finn történelmi eset konfúzióját (egyszerre történt tanárképzés-, tanterv- és jóléti reformok) azzal, hogy megkísérli izolálni a Magyarország-specifikus hatásokat. A fő, a lencséhez kapcsolódó kockázat a tartósság, tekintettel arra, hogy összehasonlítható reformokat (Lengyelország) visszafordítottak a mért sikerek ellenére, és a pilot régiók nem biztos, hogy reprezentatívak a nemzeti feltételekre nézve, tekintettel Magyarország nagyon eltérő intézményi kiindulási pontjára Finnországhoz képest."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-finnish_reform-04",
+      "F-live-finnish_reform-05",
+      "F-live-finnish_reform-03",
+      "F-live-finnish_reform-07"
+    ],
+    "lens_ref": "L-live-finnish_reform",
+    "opportunities": [
+      {
+        "en": "A successful pilot with paired zoning/choice controls could generate Hungary-specific causal evidence bridging the gap between the historical Finnish case and Hungary's distinct institutional context, directly answering the lens's second question about erosion effects",
+        "hu": "Egy sikeres pilot, amely párosított területi szabályozást és választási kontrollokat alkalmaz, Magyarország-specifikus oksági bizonyítékot szolgáltathatna, áthidalva a történelmi finn eset és Magyarország sajátos intézményi kontextusa közötti szakadékot, és közvetlenül megválaszolva a lencse második kérdését az eróziós hatásokról."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Directly models the Finnish 1972-1977 comprehensive shift as its structural mechanism, aligning tracking-age reform with the lens's central historical case",
+        "hu": "Közvetlenül a finn 1972–1977 közötti átfogó váltást modellezi strukturális mechanizmusként, összhangba hozva a szelekció életkorára irányuló reformot az elemzési keret központi történelmi esetével."
+      },
+      {
+        "en": "Explicitly incorporates the post-1990s Finnish lesson that de-tracking requires paired choice/zoning guardrails, avoiding a key blind spot present in T2 and T6-adjacent designs",
+        "hu": "Kifejezetten beépíti a 1990-es évek utáni finn tanulságot, miszerint a pályák megszüntetése párhuzamos választási/övezeti korlátokat igényel, elkerülve ezzel egy kulcsfontosságú vakságot, amely jelen van a T2- és T6-hoz kapcsolódó tervezetekben."
+      },
+      {
+        "en": "Piloting design attempts to isolate causal effects from the confounds (teacher training, curriculum, welfare reforms) that limit generalizability of the original Finnish case to Hungary's different context",
+        "hu": "A kísérleti bevezetés célja, hogy elkülönítse a kauzális hatásokat azoktól a zavaró tényezőktől (pedagógusképzés, tanterv, jóléti reformok), amelyek korlátozzák az eredeti finn eset általánosíthatóságát Magyarország eltérő kontextusára."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Precedent from Poland's reversal after measured success suggests political durability remains a threat even with strong pilot evidence, consistent with the lens's durability criterion",
+        "hu": "A lengyel visszafordulás precedense a mért sikerek után azt sugallja, hogy a politikai tartósság továbbra is fenyegetést jelent még erős pilotbizonyíték esetén is, összhangban a szempont tartóssági kritériumával."
+      },
+      {
+        "en": "Non-representative volunteer pilot regions could limit the external validity needed to justify national scaling, a risk the lens's context-fit criterion would flag as significant",
+        "hu": "A nem reprezentatív, önkéntes pilot régiók korlátozhatják az országos kiterjesztés indoklásához szükséges külső érvényességet; ezt a kockázatot a szempont kontextus‑illeszkedési kritériuma jelentősnek jelölné."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Even a well-designed pilot cannot fully resolve the context-fit limitation, since Hungary's demographic, welfare-state, and teacher-workforce conditions differ substantially from 1970s Finland",
+        "hu": "Még egy jól megtervezett pilot sem oldhatja meg teljesen a kontextusalkalmassági korlátot, mivel Magyarország demográfiai, jóléti állami és tanármunkaerő-állapota lényegesen különbözik az 1970-es évek Finnországától."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-finnish_reform",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "80422a164a586b7c50de6ec98cc4a07d39329e4d19394e5415e708c55215dd34",
+  "topic": "korai-szelekcio"
+}

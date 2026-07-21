@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a demographic lens, the status quo preserves a small, geographically concentrated selective sector (2-3% of students, 85% selection-capable schools, urban-skewed distribution) precisely as birth cohorts contract sharply and 270 schools face enrollment-driven consolidation. Without intervention, the counterfactual is not stasis but intensification: shrinking cohorts will concentrate further in urban, elite tracks while ordinary and rural schools absorb disproportionate enrollment decline, deepening the already-extreme segregation pattern (71% between-school variance). Monitoring generates data but has no mechanism to alter the spatial or cohort trajectory.",
+      "hu": "Demográfiai szempontból a jelenlegi helyzet megőrzi a kis, földrajzilag koncentrált szelekciós szektort (a tanulók 2–3%-a, a 85%-nyi szelekciót képessé tevő iskolák aránya, városias eloszlás), éppen akkor, amikor a születési kohorszok élesen zsugorodnak és 270 iskola néz szembe beiskolázás-vezérelt összevonással. Beavatkozás hiányában a kontraffaktuális nem a stagnálás, hanem az intenzívebbé válás: a csökkenő kohorszok még inkább a városi, elitet szolgáló pályákra koncentrálódnak, míg a hétköznapi és vidéki iskolák aránytalanul nagy beiskolázás-csökkenést vesznek fel, elmélyítve a már amúgy is szélsőséges szegregációs mintát (71% iskolák közötti variancia). A monitorozás adatokat generál, de nincs mechanizmusa arra, hogy megváltoztassa a térbeli vagy kohorszdinamikát."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-05",
+      "F-live-demography-06"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Existing data infrastructure could in principle be repurposed for a future cohort-sensitive redistribution if political will emerges",
+        "hu": "A meglévő adatinfrastruktúra elvileg átstrukturálható egy jövőbeni, kohorszérzékeny újraelosztásra, ha politikai akarat megjelenik."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Avoids destabilizing an already fragile enrollment landscape amid the closure/consolidation wave",
+        "hu": "Elkerüli egy már amúgy is törékeny beiskolázási helyzet destabilizálását a bezárások/konzolidáció hulláma közepette."
+      },
+      {
+        "en": "Preserves planning continuity during a period of rapid demographic contraction where capacity for major structural change may be limited",
+        "hu": "Megőrzi a tervezési folytonosságot egy gyors demográfiai zsugorodás időszakában, amikor a nagy strukturális változtatásokra való kapacitás korlátozott lehet."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued cohort decline (20% birth-count fall in four years) will mechanically shrink the ordinary-school population faster than the insulated elite-track population, worsening relative segregation even absent any policy change",
+        "hu": "A folyamatos kohorszcsökkenés (a születésszám 20%-os visszaesése négy év alatt) mechanikusan gyorsabban zsugorítja a normál iskolák népességét, mint a szigetelt elitpályás intézményeket, súlyosbítva a relatív szegregációt még politikai változtatás nélkül is."
+      },
+      {
+        "en": "270 endangered small schools face consolidation pressure without any counterfactual policy addressing how declining cohorts are distributed between selective and non-selective tracks",
+        "hu": "270 veszélyeztetett kisiskola néz szembe összevonási nyomással, miközben nincs olyan kontrafaktuális politika, amely azt kezelné, hogy a csökkenő évfolyamok hogyan oszlanak meg a szelektív és a nem‑szelektív tagozatok között."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Provides no lever to counteract the geographic concentration of selective tracks (48% small towns, 25% county seats, 23% Budapest, only 3% villages) that insulates elite tracks from rural depopulation",
+        "hu": "Nem kínál eszközt arra, hogy ellensúlyozza a szelektív pályák földrajzi koncentrációját (48% kisvárosok, 25% megyei székhelyek, 23% Budapest, csak 3% községek), amely elszigeteli az elit pályákat a vidéki elnéptelenedéstől."
+      },
+      {
+        "en": "Historical precedent shows PISA/ABC data monitoring has not previously translated into policy correction, so the same infrastructure is unlikely to change trajectory now",
+        "hu": "A történelmi precedens azt mutatja, hogy a PISA/ABC adatok monitorozása korábban nem fordult át politikai korrekcióba, így ugyanaz az infrastruktúra most valószínűleg nem változtatja meg az irányt."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-demography",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "689a85ba0e61605e55f8eec415909a2ef9fb29b6184a56551632dcb99538afc8",
+  "topic": "korai-szelekcio"
+}

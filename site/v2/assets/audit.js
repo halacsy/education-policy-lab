@@ -543,6 +543,7 @@
       [language() === "hu" ? "Azonosítóminta" : "ID pattern", node.id_pattern || "—"],
       [language() === "hu" ? "Rekord ebben a futásban" : "Records in this run", String(databaseNode.count)],
       [language() === "hu" ? "Kapcsolattípus" : "Reference fields", String(node.references.length)],
+      [language() === "hu" ? "Kétnyelvű szövegútvonal" : "Bilingual prose paths", String((node.localized_paths || []).length)],
     ]));
 
     const refList = element("ul", "inspector-list");
@@ -567,15 +568,27 @@
     table.append(tbody); wrap.append(table);
     appendSection(language() === "hu" ? "Tartalmi mezők" : "Content fields", wrap);
 
+    if ((node.localized_paths || []).length) {
+      const localizedList = element("ul", "inspector-list");
+      node.localized_paths.forEach((path) => localizedList.append(
+        element("li", "", `${path} → {en, hu}`)
+      ));
+      appendSection(
+        language() === "hu" ? "Kanonikus kétnyelvű szövegmezők" : "Canonical bilingual prose fields",
+        localizedList,
+      );
+    }
+
     if (databaseMode && databaseNode.example) {
       const example = databaseNode.example;
       inspector.append(factList([
         [language() === "hu" ? "Példaazonosító" : "Example ID", example.id],
+        [language() === "hu" ? "Példa sémaverziója" : "Example schema version", example.schema_version],
         [language() === "hu" ? "Állapot" : "Status", example.status],
         [language() === "hu" ? "Bejövő / kimenő" : "Incoming / outgoing", `${example.incoming} / ${example.outgoing}`],
         [language() === "hu" ? "Lenyomat" : "Hash", example.hash.slice(0, 16) + "…"],
       ]));
-      appendSection(language() === "hu" ? "Valódi példa" : "Concrete example", element("p", "inspector-preview", example.preview));
+      appendSection(language() === "hu" ? "Valódi példa" : "Concrete example", element("p", "inspector-preview", local(example.preview)));
     }
   }
 
@@ -586,7 +599,7 @@
       const item = element("li");
       const heading = element("b", "", `${record.id} · ${local(schemaById.get(record.type)?.title || record.type)}`);
       item.append(heading);
-      item.append(element("span", "", record.preview));
+      item.append(element("span", "", local(record.preview)));
       list.append(item);
     });
     if (!list.childElementCount) list.append(element("li", "", emptyText));
@@ -666,7 +679,7 @@
       const finding = recordById.get(id);
       const item = element("li");
       item.append(element("b", "", `${id} · ${finding?.producer || "—"}`));
-      item.append(element("span", "", finding?.preview || ""));
+      item.append(element("span", "", finding ? local(finding.preview) : ""));
       findings.append(item);
     });
     appendSection(language() === "hu" ? "Mely kutatási eredményekből?" : "Which research findings feed it?", findings);

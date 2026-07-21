@@ -1,0 +1,56 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Reciprocal contracts presuppose municipal bargaining power and co-responsibility, but Hungarian school maintenance authority is held centrally by tankerületi centers for villages under 3,000 inhabitants, meaning municipalities lack the institutional standing the French model assumes. The proposal would need to be constructed as a state-initiated instrument rather than a genuine bilateral negotiation, which is a significant institutional adaptation. Additionally, national class-size and per-pupil funding formulas operate independently of governance form, so any contract lacking an explicit funding-formula exception would leave the core fiscal driver of closure untouched regardless of contractual commitments.",
+      "hu": "A kölcsönös szerződések feltételezik az önkormányzati alkuerőt és együttfelelősséget, de Magyarországon a kistelepülések (3 000 fő alatti) iskolafenntartói hatásköre a tankerületi központoknál összpontosul, ami azt jelenti, hogy az önkormányzatok nem rendelkeznek a francia modell által feltételezett intézményi státusszal. A javaslatot állami kezdeményezésű eszközként kellene megalkotni, nem pedig valódi kétoldalú tárgyalásként, ami jelentős intézményi alkalmazkodást igényel. Ezen túlmenően a nemzeti osztálylétszám- és egy tanulóra jutó finanszírozási képletek a működtetési formától függetlenül működnek, így bármely olyan szerződés, amely nem tartalmaz kifejezett kivételt a finanszírozási képletre, érintetlenül hagyná a bezárás mögötti alapvető fiskális hajtóerőt a szerződéses kötelezettségek ellenére."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-04"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could be layered onto the 2026 reform's plan to restore some municipal input, potentially giving municipalities a contractual role coincident with restored influence",
+        "hu": "Ráépíthető a 2026-os reform azon tervére, hogy visszaadjon bizonyos önkormányzati beleszólást, potenciálisan szerződéses szerepet adva az önkormányzatoknak egyidejűleg a visszaadott befolyással."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Correctly identifies that municipal authority was removed in the 2013 centralization and treats contract design as needing to be state-initiated rather than assuming municipal parity",
+        "hu": "Helyesen mutat rá, hogy az önkormányzati hatáskört a 2013-as központosítással elvették, és a szerződés-tervezést állami kezdeményezésűnek tekinti ahelyett, hogy önkormányzati egyenrangúságot feltételezne."
+      },
+      {
+        "en": "Explicitly recognizes that a funding-formula exception is required for effectiveness, engaging directly with the documented structural fiscal pressure mechanism",
+        "hu": "Kifejezetten elismeri, hogy a hatékonysághoz finanszírozási képlet kivételére van szükség, és közvetlenül foglalkozik a dokumentált strukturális fiskális nyomás mechanizmusával"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Without a binding funding-formula exception, minimum class-size and per-pupil thresholds continue to apply regardless of contract terms, potentially rendering commitments symbolic",
+        "hu": "Kötő erejű finanszírozási képlettől eltérő kivétel hiányában a minimális osztálylétszám- és egy főre jutó küszöbértékek a szerződés feltételeitől függetlenül továbbra is érvényesek, potenciálisan szimbolikussá téve a vállalásokat."
+      },
+      {
+        "en": "No existing precedent for binding state commitments of this kind within the current centralized structure, creating enforcement uncertainty",
+        "hu": "Nincs létező precedens az ilyen kötelező állami vállalásokra a jelenlegi centralizált struktúrán belül, ami végrehajtási bizonytalanságot teremt"
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Municipalities retain no formal maintenance authority over school closure, so a 'contract' between state and municipality operates outside the actual decision-making locus (tankerületi centers), creating an institutional mismatch between contracting party and authority holder",
+        "hu": "A településeknek nincs formális fenntartói hatáskörük az iskolabezárás felett, így az állam és a település közötti \"szerződés\" a tényleges döntéshozatali helyen (tankerületi központok) kívül működik, ami intézményi disszonanciát hoz létre a szerződő fél és a hatalommal rendelkező szerv között."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "86083818278c09439365bb22c773c6fcf872d67ef423bce6581591625d13e310",
+  "topic": "rural-school-closures"
+}

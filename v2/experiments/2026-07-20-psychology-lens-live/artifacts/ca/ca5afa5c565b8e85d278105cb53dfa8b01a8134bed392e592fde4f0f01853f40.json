@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A pilot approach interacts cautiously with existing institutions by not committing to national-scale change against the centralized admissions system (F-live-hungarian_education_system-03) or the 85% selective-school baseline (F-live-hungarian_education_system-01), instead testing an opt-in comprehensive model. This has strong institutional fit as an evaluation mechanism but limited system coverage by design, since it is explicitly a bounded regional test. It appropriately recognizes, in its own design, that geographic and choice-driven sorting (F-live-hungarian_education_system-06) could undermine a de-tracking pilot unless paired with zoning controls, which is institutionally sound reasoning but adds administrative complexity. The maintainer exemption structure (F-live-hungarian_education_system-05) is not addressed within the pilot's stated scope, meaning even a successful pilot would not test compatibility with the segregation channel tied to church/private school autonomy.",
+      "hu": "Egy pilot megközelítés óvatosan lép fel a meglévő intézményekkel szemben azáltal, hogy nem kötelezi el magát országos szintű változtatás mellett a központosított felvételi rendszerrel szemben (F-live-hungarian_education_system-03) vagy a 85%-os szelekciós iskola-alappal (F-live-hungarian_education_system-01), hanem egy opcionális, átfogó modellt tesztel. Ez erős intézményi illeszkedést mutat értékelési mechanizmusként, de szándékosan korlátozott rendszerlefedettséget eredményez, mivel kifejezetten határolt regionális tesztről van szó. A javaslat a saját tervezésében helyesen ismeri fel, hogy a földrajzi és választáson alapuló szelekció (F-live-hungarian_education_system-06) alááshat egy sávmentesítési pilotot, hacsak azt nem párosítják zónázási szabályokkal, ami intézményileg megalapozott érv, de adminisztratív bonyolultságot ad hozzá. A fenntartói mentességek rendszere (F-live-hungarian_education_system-05) nincs a pilot megadott hatókörébe bevonva, ami azt jelenti, hogy még egy sikeres pilot sem tesztelné a templom/privát iskolák autonómiájához kötődő szegregációs csatornával való kompatibilitást."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-05",
+      "F-live-hungarian_education_system-06"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could generate Hungary-specific institutional evidence distinguishing selection-mechanism effects from confounding geographic and choice factors before any national administrative commitment",
+        "hu": "Magyarország-specifikus intézményi bizonyítékot szolgáltathat, amely megkülönbözteti a szelekciós mechanizmusok hatásait a zavaró földrajzi és választási tényezőktől bármilyen nemzeti adminisztratív elköteleződés előtt."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Institutionally cautious design avoids premature disruption of national admissions governance while generating comparative evidence",
+        "hu": "Intézményileg óvatos kialakítás elkerüli a nemzeti felvételi kormányzás idő előtti megzavarását, miközben összehasonlító bizonyítékokat generál."
+      },
+      {
+        "en": "Explicitly anticipates that de-tracking without zoning/choice controls could fail against geographic sorting mechanisms already documented",
+        "hu": "Kifejezetten számol azzal, hogy a sávosítás megszüntetése zónázási/választási kontrollok nélkül megbukhat a már dokumentált földrajzi rendeződési mechanizmusokkal szemben."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Non-representative volunteer pilot regions limit generalizability to the national administrative and demographic contexts documented in the evidence, particularly rural vocational-track funneling",
+        "hu": "A nem reprezentatív, önkéntes alapon kiválasztott pilot régiók korlátozzák az eredmények országos közigazgatási és demográfiai kontextusokra való általánosíthatóságát a bizonyítékokban dokumentált módon, különös tekintettel a vidéki szakmai pályára terelésre."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Bounded pilot scope means system coverage of national-level selection statistics (85% selective schools) is not addressed even if successful",
+        "hu": "A korlátozott pilot-kiterjedés azt jelenti, hogy a rendszer nem kezeli a nemzeti szintű szelekciós statisztikák lefedettségét még siker esetén sem (85% selective schools)."
+      },
+      {
+        "en": "Maintainer exemption-based segregation is outside the pilot's design scope entirely",
+        "hu": "A fenntartói kivételeken alapuló elkülönítés teljes mértékben kívül esik a pilot tervezési hatókörén."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "9bdec3c22982ff0ba35e125be9514b1ac6d1db6283ca5dfc80c9f4c1464e43f9",
+  "topic": "korai-szelekcio"
+}

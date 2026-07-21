@@ -1,0 +1,53 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The passive-contraction baseline has no direct fiscal-policy content since it is a counterfactual, but the lens still applies to its underlying resource dynamics: demographic decline will mechanically shrink capitation revenue flows to peripheral schools regardless of policy, and this baseline is useful precisely because it clarifies what portion of contraction would occur without any deliberate reallocation of funding to address the feeder-school losses noted in F-live-education_finance-05 or the disadvantaged-achievement gap in F-live-education_finance-07. As a counterfactual it neither spends nor saves relative to other options but exposes that inaction leaves both funding-incidence and achievement-gap problems unaddressed while population-driven contraction proceeds unevenly.",
+      "hu": "A passzív-összehúzódás alapvonalának nincs közvetlen fiskálpolitikai tartalma, mivel kontrfaktuális, de a szemlélet mégis alkalmazandó a mögöttes erőforrás-dinamikára: a demográfiai visszaesés mechanikusan csökkenteni fogja a peremvidéki iskolákra jutó kapacitásfinanszírozási bevételeket politikától függetlenül, és ez az alapvonal éppen azért hasznos, mert tisztázza, hogy a zsugorodás mekkora része következne be anélkül, hogy bármilyen szándékos újraelosztási finanszírozást alkalmaznának a beszállítóiskolai veszteségek (F-live-education_finance-05) vagy a hátrányos teljesítménykülönbség (F-live-education_finance-07) kezelésére. Kontrfaktuálisként sem többletet, sem megtakarítást nem jelent más opciókhoz képest, de feltárja, hogy a tétlenség mind a finanszírozási teher-, mind a teljesítménykülönbség-problémákat kezeletlenül hagyja, miközben a népességvezérelt összehúzódás egyenetlenül halad előre."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-05",
+      "F-live-education_finance-06",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Could serve as a fiscal-neutral reference point that clarifies which portion of any future spending should be attributed to active policy value-added versus demographic drift",
+        "hu": "Pénzügyileg semleges referenciapontként szolgálhatna, amely tisztázza, hogy a jövőbeli kiadások mekkora része tulajdonítható aktív politikai hozzáadott értéknek, és mekkora demográfiai eltolódásnak."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Provides a fiscally cost-free baseline against which the resource commitments of active proposals (T1-T4) can be benchmarked",
+        "hu": "Költségvetésileg költségmentes kiindulópontot biztosít, amelyhez az aktív javaslatok (T1-T4) erőforrás-elszánását lehet viszonyítani."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Uneven geographic contraction could leave already-thin resource allocations (given Hungary's low overall spending share, F-live-education_finance-06) even more skewed between urban and rural systems without any corrective reallocation",
+        "hu": "A nem egyenletes földrajzi összehúzódás még inkább kiegyensúlyozatlanná teheti a már amúgy is szűk forrásallokációt (tekintve Magyarország alacsony összkiadási arányát, F-live-education_finance-06) a városi és vidéki rendszerek között, ha nincs semmiféle korrigáló átcsoportosítás."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Does nothing to correct the capitation funding/peer-effect loss mechanism harming feeder schools (F-live-education_finance-05), which will persist unaddressed regardless of demographic contraction",
+        "hu": "Nem tesz semmit a betápláló (feeder) iskolákat károsító fejkvóta‑finanszírozás/társhatás‑veszteség mechanizmus (F-live-education_finance-05) korrigálására, amely demográfiai zsugorodás esetén is kezeletlenül fog fennmaradni."
+      },
+      {
+        "en": "Does not allocate any resources toward closing the severe disadvantaged-student achievement gap documented in F-live-education_finance-07",
+        "hu": "Nem rendel forrásokat az F-live-education_finance-07 dokumentálta súlyos hátrányos helyzetű tanulói teljesítménykülönbség megszüntetésére."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-education_finance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c7db050a8e6a7a8946d75b555ed028c227905894e58b99007af312a4c92056af",
+  "topic": "korai-szelekcio"
+}

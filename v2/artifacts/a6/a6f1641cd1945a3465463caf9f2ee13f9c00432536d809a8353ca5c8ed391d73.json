@@ -1,0 +1,36 @@
+{
+  "content": {
+    "execution_id": "f3a4df122afeeceb6ee7ee75502b82c99f40a5a8eae77e47fcba38a85c93d6b4",
+    "generation_parameters": {
+      "analytical_rerun": false,
+      "semantic_change_allowed": false
+    },
+    "input_artifact_hashes": [
+      "0bd92b6c801546b7e215f0f688fbe104c706ce04b3720f3233675a04cff2cb68",
+      "2902d2d06e7b4b2bf8946126daca5cf1454eb1f6f6eea7540a26cf85c2f51619",
+      "7515572cf33c88c12119fc09b47118d707a72a30798fab976943d641801e4dde",
+      "ca5db1ef1a856563442213719dd8940da87d9a7d342d7c200b71f3a8dc872413"
+    ],
+    "model": "gpt-5-mini",
+    "node_id": "bilingual_migration",
+    "prompt_hash": "ef58be3ae3fd21d555559396c13cfecffb70eb4f7ac117bbce3ee2a475007387",
+    "provider": "openai",
+    "relevant_config_hash": "1d738640a9460c52c1c21bd2b75ea4544e119ebbadc2235e17ef2b91bf6830d9",
+    "role": "localizer",
+    "schema_hashes": {
+      "schemas/v2/bilingual.schema.json": "959fdffdaeded774cfb84515d633cae42ad14131ca94d5b620269f2784b1c8c1"
+    },
+    "spec_hashes": {
+      "config/v2/bilingual_fields.json": "3c7ba9bc692342da21d7d4af3ff6a51d186b7938d4f0cde55b8e613abc8517cf",
+      "scripts/migrate_v2_bilingual.py": "b4151dbc804c11db77bf22c3ec068602d46c4a65714bab122b4537f2bb3344c8"
+    }
+  },
+  "created_at": "2026-07-21T19:04:41.725832Z",
+  "id": "PV-bilingual-migration-f3a4df122afeeceb",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

@@ -7,6 +7,7 @@ from pathlib import Path
 
 from policy_lab.dag import NodeSpec, compute_cache_key
 from policy_lab.jsonio import content_hash
+from policy_lab.i18n import suspicious_identity
 from policy_lab.live.experiment import ArtifactDagRunner, PsychologyLensExperiment
 from policy_lab.schema_registry import SchemaRegistry, SchemaValidationError
 from policy_lab.store import ArtifactRepository, GraphIntegrityError
@@ -92,9 +93,8 @@ class SchemaRegistryTests(unittest.TestCase):
         self.schemas = SchemaRegistry(SCHEMA_DIR)
 
     def test_registers_versioned_record_schemas(self) -> None:
-        self.assertEqual(
-            self.schemas.available(),
-            (
+        available = set(self.schemas.available())
+        archive = {
                 ("approved_option_space", "2.0.0"),
                 ("assumption", "2.0.0"),
                 ("coverage_ledger", "2.0.0"),
@@ -117,7 +117,11 @@ class SchemaRegistryTests(unittest.TestCase):
                 ("transformation_family", "2.0.0"),
                 ("transformation_proposal", "2.0.0"),
                 ("uncertainty", "2.0.0"),
-            ),
+        }
+        self.assertTrue(archive.issubset(available))
+        self.assertEqual(
+            {record_type for record_type, version in available if version == "2.1.0"},
+            {record_type for record_type, _ in archive} - {"provenance"},
         )
 
     def test_rejects_unknown_fields(self) -> None:
@@ -134,6 +138,35 @@ class SchemaRegistryTests(unittest.TestCase):
         }
         with self.assertRaises(SchemaValidationError):
             self.schemas.validate(record)
+
+    def test_bilingual_schema_requires_and_accepts_exact_language_pairs(self) -> None:
+        record = finding_record()
+        record["schema_version"] = "2.1.0"
+        for field in ("claim", "population", "context", "time_scope"):
+            record["content"][field] = {
+                "en": record["content"][field],
+                "hu": f"HU: {record['content'][field]}",
+            }
+        record["content"]["limitations"] = [
+            {"en": value, "hu": f"HU: {value}"}
+            for value in record["content"]["limitations"]
+        ]
+        self.schemas.validate(record)
+
+        record["content"]["claim"] = "English-only claim"
+        with self.assertRaises(SchemaValidationError):
+            self.schemas.validate(record)
+
+    def test_long_unchanged_prose_is_flagged_but_citations_are_exempt(self) -> None:
+        copied = {
+            "en": "This long semantic statement was never translated into Hungarian.",
+            "hu": "This long semantic statement was never translated into Hungarian.",
+        }
+        self.assertTrue(suspicious_identity("finding", "claim", copied))
+        self.assertFalse(suspicious_identity("source", "title", copied))
+        self.assertFalse(suspicious_identity(
+            "decision_package", "evidence_appendix.*.sources.*.title", copied
+        ))
 
     def test_rejects_invalid_standard_format(self) -> None:
         record = source_record()

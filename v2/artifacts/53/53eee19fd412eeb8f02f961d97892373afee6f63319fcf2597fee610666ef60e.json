@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-school_network_planning-01",
+      "A-rural-school-closures-school_network_planning-02",
+      "A-rural-school-closures-school_network_planning-03",
+      "A-rural-school-closures-school_network_planning-04",
+      "A-rural-school-closures-school_network_planning-05",
+      "A-rural-school-closures-school_network_planning-06"
+    ],
+    "claim": {
+      "en": "Small schools (under 150 pupils) comprise nearly one-third of municipal primary schools yet enroll fewer than 10% of all students; below 100 pupils, class sizes are half and student-teacher ratios two-thirds of urban-school values, but this difference does not alone justify treating small-settlement schools as a serious efficiency problem.",
+      "hu": "A 150 fő alatti iskolák az önkormányzati általános iskolák majdnem egy harmadát teszik ki, de az összes tanuló kevesebb mint 10%-át nézik; 100 fő alatt az osztálylétszám fele, a tanuló-tanár arány kétharmada a városi értékeknek, de ez egymagában nem indokolja, hogy a kisvárosi iskolák méretgazdaságossági problémákat okozzanak."
+    },
+    "context": {
+      "en": "Rural primary-school closures in demographically collapsing villages of under 2,000 residents risk accelerating population decline by severing community cohesion and family-settlement decisions, and are justified primarily by per-pupil cost differences that do not constitute a serious system-wide efficiency problem, making alternative models (satellite campuses, mixed-grade instruction, or controlled consolidation with local hub-school retention) preferable to outright closure.",
+      "hu": "A 2000 fő alatti falvakban az általános iskolabezárások a közösség-összetartás és család-letelepedési döntések megsértésével felgyorsíthatják a népességcsökkenést, és elsősorban olyan tanulóenkénti költségkülönbségek alapján indokoltak, amelyek nem jelentenek komolyabb rendszersz intű hatékonyságvesztést, így az alternatív modellek (telephelyes fiókok, vegyes-évfolyam oktatás vagy kontrollált konszolidáció helyi hub-iskola megtartásával) előnyösebbek a teljes bezárás helyett."
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-a2ea2f1fcee66a"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-school_network_planning-01",
+      "U-rural-school-closures-school_network_planning-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-school_network_planning-11",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "ac9ed06b2daeb6dd39db73dabf97bfec9befc62215615fcf1f4800c711fa0823",
+  "topic": "rural-school-closures"
+}

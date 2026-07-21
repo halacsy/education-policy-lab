@@ -1,0 +1,67 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From an implementation-planning perspective, T1 uses an existing administrative lever (the centrally graded national exam and the regulated interview cap) rather than requiring new legal architecture, which improves near-term deliverability. However, the sequencing logic is incomplete: it targets the admissions instrument while leaving upstream non-application and geographic-access gaps unaddressed, meaning the mechanism cannot reach the populations most affected by sorting even if perfectly executed. No monitoring or adaptation loop is specified to detect coaching-market displacement to new exam formats, and the disputed statistics baseline elsewhere in the evidence base raises doubt about whether effects could be credibly monitored at all.",
+      "hu": "A végrehajtástervezés szempontjából a T1 egy meglévő adminisztratív kart (a központilag értékelt országos vizsga és a szabályozott interjúlimit) használja fel, ahelyett, hogy új jogi architektúrát igényelne, ami javítja a rövid távú kivitelezhetőséget. Ugyanakkor a szemléletbeli sorrendiség logikája hiányos: a felvételi eszközre céloz, miközben az upstream nem jelentkezés és földrajzi hozzáférés rések érintetlenek maradnak, ami azt jelenti, hogy a mechanizmus nem érheti el a legsúlyosabban a szelekció által érintett populációkat, még ha tökéletesen végrehajtanák is. Nem határoz meg monitoring- vagy adaptációs hurkot a coaching-piac áthelyeződésének észlelésére az új vizsgaformátumokra, és a bizonyítékbázis másrészeiben vitatott statisztikai alapvonalak kétségbe vonják, hogy az eredményeket egyáltalán hitelesen lehetne-e monitorozni."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-03"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Could be piloted at a subset of schools/exam administrations before national rollout, since the exam is already centrally graded",
+        "hu": "Kipróbálható egyes iskolák/ vizsgaadminisztrációk alhalmazán a nemzeti bevezetés előtt, mivel a vizsga már központilag javított"
+      },
+      {
+        "en": "Interview-weight reallocation could be tested incrementally within the existing 25% cap without new legislation",
+        "hu": "Az interjúk súlyozásának átcsoportosítása fokozatosan tesztelhető a meglévő 25%-os korláton belül, új jogszabály nélkül"
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Reform channel (exam redesign, interview weight reallocation) is administratively existing and centrally controlled, lowering legal/actor-capacity barriers to initiating a pilot",
+        "hu": "A reformcsatorna (vizsgatervezés átalakítása, interjú súlyozásának átcsoportosítása) adminisztratív szinten már létezik és központilag irányított, ami csökkenti a jogi/aktori kapacitásbeli akadályokat egy pilot elindításához."
+      },
+      {
+        "en": "Interview-weight cap already in regulation gives a bounded, low-risk lever to test incrementally",
+        "hu": "A szabályozásban már meglévő interjú-súlykorlátozás korlátos, alacsony kockázatú eszközt ad a fokozatos teszteléshez."
+      }
+    ],
+    "threats": [
+      {
+        "en": "SES-index proxies are contestable and could be captured or delegitimized by politically connected advantaged families, undermining monitoring integrity",
+        "hu": "Az SES-index proxyk vitathatók, és politikailag kapcsolódó, előnyben részesített családok általi befogás vagy delegitimálás tárgyai lehetnek, ami aláássa a monitoring integritását."
+      },
+      {
+        "en": "Absence of primary-school sorting reform means measured gains at the admissions gate could be offset by unmeasured upstream sorting, confounding evaluation",
+        "hu": "Az általános iskolai szelekció reformjának hiánya azt eredményezi, hogy a felvételi kapunál mért javulásokat felülírhatja a mérésen kívüli előzetes szelekció, ami összezavarja az értékelést."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "No mechanism to reach disadvantaged elementary schools that do not facilitate competition participation, so the intervention may not touch the non-applicant pool at all",
+        "hu": "Nincs mechanizmus a hátrányos helyzetű általános iskolák elérésére, amelyek nem segítik elő a pályázati részvételt, ezért a beavatkozás egyáltalán nem érintheti a nem pályázó körét."
+      },
+      {
+        "en": "Geographic clustering of 6/8-year schools in urban areas is not addressed by an admissions-criteria fix, leaving a structural access gap unmitigated",
+        "hu": "A városi területeken a 6/8-éves iskolák földrajzi klasztereződése nem orvosolható egy felvételi kritériumok módosításával, így egy strukturális hozzáférési rés megmarad."
+      },
+      {
+        "en": "No specified feedback loop to detect whether coaching investment displaces to new exam formats rather than being reduced",
+        "hu": "Nincs meghatározott visszacsatolási kör annak észlelésére, hogy a coachingba történő beruházás áttolódik-e az új vizsgaformátumokra ahelyett, hogy csökkenne"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "636b3c9566f6e07bd026fc044909b332fd913d9dc38aab60db422ebce4dfa7ea",
+  "topic": "korai-szelekcio"
+}

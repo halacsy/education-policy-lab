@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Because this proposal explicitly leaves the selection age and track structure unchanged, it does not alter network geography, capacity allocation, or transport requirements at all. From a network-planning lens it is largely orthogonal: the geographic concentration of selective capacity (F-live-school_network_planning-05), the network's proximity design for ordinary secondary schools (F-live-school_network_planning-06), and feeder-school dilution (F-live-school_network_planning-07) all persist unaltered. The lens's own limitation applies directly here: network feasibility (in this case, network non-disruption) does not establish whether compensatory funding achieves educational quality or equity gains, which is the proposal's actual target and lies outside this lens's competence.",
+      "hu": "Mivel ez a javaslat kifejezetten változatlanul hagyja a kiválasztási életkort és a pályarendszer szerkezetét, egyáltalán nem változtatja meg a hálózati földrajzot, a kapacitás-elosztást vagy a szállítási követelményeket. Hálózattervezési nézőpontból lényegében független: a szelekciós kapacitás földrajzi koncentrációja (F-live-school_network_planning-05), a hálózat közelségtervezése az általános középfokú iskolák esetében (F-live-school_network_planning-06), és az utánpótló iskolák hígulása (F-live-school_network_planning-07) mind változatlanul fennmarad. A lencse saját korlátja itt közvetlenül érvényes: a hálózati megvalósíthatóság (jelen esetben a hálózat nem-megszakítása) nem igazolja, hogy a kompenzáló finanszírozás eléri-e a tanítási minőségre vagy az egyenlőségre vonatkozó célokat, amelyek a javaslat tényleges céljai, és kívül esnek ezen a lencsén."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-07"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Because it is network-neutral, it could be layered onto any of the other proposals without conflicting with their capacity or geographic mechanisms",
+        "hu": "Mivel hálózat-semleges, rá lehet helyezni bármelyik másik javaslatra anélkül, hogy ütközne azok kapacitási vagy földrajzi mechanizmusaival"
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Requires no network restructuring, avoiding transition risk, capacity shortfalls, or transport disruption entirely",
+        "hu": "Nem igényel hálózat-átalakítást, így elkerüli az átmeneti kockázatokat, kapacitáshiányt vagy a közlekedési zavarokat"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Absent any network change, urban concentration and feeder dilution dynamics may continue to offset compensatory funding gains through continued outflow of higher-performing students",
+        "hu": "Ha nincs hálózatváltozás, a városi koncentráció és a beiskolázó intézmények elvékonyodásának dinamikája tovább ellensúlyozhatja a kompenzációs forrásnövekedést a jobb teljesítményű tanulók folyamatos elvándorlása révén."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Does not address geographic concentration of selective capacity (F-live-school_network_planning-05)",
+        "hu": "Nem tárgyalja a szelektív kapacitás földrajzi koncentrációját (F-live-school_network_planning-05)."
+      },
+      {
+        "en": "Does not relieve feeder-school dilution or staffing complications in upper primary grades (F-live-school_network_planning-07)",
+        "hu": "Nem enyhíti a beiskolázó iskolák létszámhígulását vagy a felső tagozatos évfolyamok személyzeti komplikációit (F-live-school_network_planning-07)."
+      },
+      {
+        "en": "Leaves the stagnant capacity ceiling (F-live-school_network_planning-03) and its associated oversubscription pressure fully in place",
+        "hu": "Teljes mértékben érvényben hagyja a stagnáló kapacitásplafont (F-live-school_network_planning-03) és a hozzá kapcsolódó túljelentkezési nyomást."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4ff7235197aded5003dc8df76d722d47f08573052a364978efb1d1fa2e59bb1e",
+  "topic": "korai-szelekcio"
+}

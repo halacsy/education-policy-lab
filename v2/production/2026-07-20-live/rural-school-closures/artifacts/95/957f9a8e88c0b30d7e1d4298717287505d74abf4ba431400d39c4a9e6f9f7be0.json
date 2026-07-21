@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03"
+    ],
+    "claim": {
+      "en": "School closures' effects on child academic outcomes are contested internationally. Negative-effect studies report test-score declines of 5.9% of a standard deviation and high-school dropout increases of 49–68 percentage points in Chile; Danish and Amsterdam studies find no negative impacts or effects that fade over time.",
+      "hu": "Az iskolabezárások hatásai a gyermekek iskolai eredményeire nemzetközileg vitatottak. A negatív hatást kimutató tanulmányok 5,9%-os standard deviációban mért teszteredmény-csökkenést és a chilei esetben 49–68 százalékponttal növekvő középiskolai lemorzsolódást jelentenek; dán és amszterdami vizsgálatok nem találnak negatív hatásokat, vagy olyan hatásokat, amelyek az idővel elhalványulnak."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "contested",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Evidence is split by country context (Denmark, Chile, Amsterdam) and closure type (accountability-driven vs. enrollment-driven)",
+        "hu": "A bizonyíték megoszlik országkörnyezet szerint (Denmark, Chile, Amsterdam) és bezárás típusa szerint (accountability-driven vs. enrollment-driven)."
+      },
+      {
+        "en": "No Hungarian-specific randomized or quasi-experimental evidence on academic outcomes of rural school closures",
+        "hu": "Nincsenek Magyarország-specifikus randomizált vagy kvázi-kísérleti bizonyítékok a vidéki iskolabezárások tanulmányi kimeneteleire."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-06",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "801b13660ad24934cc5b36359a508d4bc7b23104a3e8be667e5350d49624af88",
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A pilot approach is well suited to a genuine planning-horizon problem: given contested mechanisms (F-live-demography-04) and the risk that national reform could be reversed (as in Poland) or undermined by choice-driven re-segregation (as in Finland post-1990s), testing at regional scale before national rollout allows evidence-gathering under actual demographic conditions, including cohort contraction and geographic variation, before committing to irreversible restructuring.",
+      "hu": "A pilot megközelítés jól illeszkedik egy valódi tervezési-horizont problémához: tekintettel a vitatott mechanizmusokra (F-live-demography-04) és arra a kockázatra, hogy a nemzeti reform visszafordítható lehet (mint Lengyelországban) vagy a választási mechanizmusok által aláásott újraszegregációhoz vezethet (mint Finnországban az 1990-es évek után), a regionális skálán történő tesztelés lehetővé teszi a bizonyítékgyűjtést a tényleges demográfiai feltételek mellett, beleértve a kohorszzsugorodást és a földrajzi variációt, mielőtt visszafordíthatatlan átalakítás mellett köteleződnénk el."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-02",
+      "F-live-demography-03",
+      "F-live-demography-04",
+      "F-live-demography-06",
+      "F-live-demography-07"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Ongoing consolidation of 270 endangered schools provides natural candidate regions where comprehensive restructuring is already becoming necessary, allowing the pilot to align with existing demographic pressure rather than create new disruption",
+        "hu": "A 270 veszélyeztetett iskola folyamatban lévő összevonása természetes jelölt régiókat biztosít, ahol az átfogó átalakítás már szükségessé válik, lehetővé téve, hogy a pilot a meglévő demográfiai nyomással igazodjon, ahelyett, hogy új zavarokat teremtene."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Directly tests the contested causal mechanism (whether track structure itself vs. peer/family effects drives the 10% progress advantage) under real Hungarian demographic conditions rather than relying on cross-national analogy",
+        "hu": "Közvetlenül teszteli a vitatott oksági mechanizmust (hogy magának a pályaszerkezetnek van-e szerepe, vagy a kortárs-/családi hatásoknak köszönhető-e a 10%-os előrehaladási előny), valós magyar demográfiai körülmények között, a nemzetközi analógiára való támaszkodás helyett."
+      },
+      {
+        "en": "Explicit linkage to zoning/choice controls (T4) addresses the Finnish lesson that de-tracking alone is insufficient against geography-driven segregation, offering a more complete test of counterfactual policy design",
+        "hu": "A zónázási/választási szabályozásokhoz (T4) való kifejezett kapcsolódás kezelni próbálja a finn tapasztalat tanulságát, miszerint az osztályozás megszüntetése önmagában nem elegendő a földrajzi alapú szegregáció ellen, és így teljesebb próbát nyújt a kontrafaktuális politikai tervezés tesztelésére."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Low institutional durability precedent (Poland's reversal) suggests that even a demographically well-designed and successful pilot may not survive the political planning horizon required to scale nationally",
+        "hu": "Az intézményi tartósság alacsony precedense (Poland's reversal) azt sugallja, hogy még egy demográfiailag jól megtervezett és sikeres pilot sem biztos, hogy túléli azt a politikai tervezési horizontot, amely a nemzeti kiterjesztéshez szükséges."
+      },
+      {
+        "en": "Rapid cohort decline could compress the available window for meaningful before/after comparison, as comparison regions' baseline enrollment may itself be shifting rapidly during the pilot period",
+        "hu": "A kohorsz gyors csökkenése összeszoríthatja a jelentős előtte/utána összehasonlításhoz rendelkezésre álló időablakot, mivel a kontroll régiók kiindulási beiratkozási adatai maguk is gyorsan változhatnak a pilot időszaka alatt."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Volunteer pilot regions may not be demographically representative of the sharply uneven urban-rural distribution (48% small towns, 3% villages) of existing selective tracks, limiting generalizability of findings",
+        "hu": "Az önként jelentkező pilot régiók demográfiailag nem feltétlenül reprezentálják a meglévő szelekciós pályák élesen egyenetlen város–vidék megoszlását (48% kisváros, 3% község), ami korlátozza az eredmények általánosíthatóságát."
+      },
+      {
+        "en": "Pilot timescale risks being overtaken by the pace of cohort contraction (20% birth decline in four years), meaning results may arrive after the demographic conditions they were designed to address have shifted further",
+        "hu": "A pilot időtávja kockázatot hordoz, hogy felgyorsuló kohorsz-kontrakció ütemétől (20% születésszám-csökkenés négy év alatt) túlhaladható lesz, ami azt jelenti, hogy az eredmények akkor érkezhetnek, miután a tervezett intézkedések által kezelni kívánt demográfiai feltételek tovább elmozdultak."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-demography",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "84a527e85c4192faeb6682a80cf3fb7040bb13134a9e884a1eecb96b397b61d4",
+  "topic": "korai-szelekcio"
+}

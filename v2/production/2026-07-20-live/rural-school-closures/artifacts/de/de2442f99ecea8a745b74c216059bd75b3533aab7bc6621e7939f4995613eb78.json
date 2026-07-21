@@ -1,0 +1,53 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The Finnish lens is highly relevant to T5, since T5's default-closure-with-mitigation model is structurally closest to what Finland actually implemented, making Finnish evidence a strong empirical test case rather than an analogy. Findings directly speak to T5's core assumptions: quasi-experimental Finnish evidence shows closures can accelerate rather than merely follow depopulation, meaning T5's mitigation package (transport, funding transparency, equity support) addresses individual-level harms but may not offset community-level depopulation dynamics, a limitation T5 itself acknowledges. The Finnish consolidation-shock study directly validates T5's claim that transition support for displaced students must be distinct from general disadvantage funding, since even cost-driven, non-performance-related closures produced achievement disruption independent of prior school quality. Finland's unverified cost-saving claims caution against treating fiscal rationale for threshold-triggered closures as self-evidently sound, reinforcing T5's own noted uncertainty about consolidation savings.",
+      "hu": "A finn lencse rendkívül releváns T5 számára, mivel T5 alapértelmezett bezárás-és-enyhítés modellje szerkezetileg a leginkább hasonlít arra, amit Finnország ténylegesen végrehajtott, így a finn bizonyíték erős empirikus tesztesetnek tekinthető analógia helyett. Az eredmények közvetlenül szólnak T5 alapfeltevéseihez: Finnország kvázi-kísérleti bizonyítéka szerint a bezárások gyorsíthatják, nem csupán követhetik az elnéptelenedést, ami azt jelenti, hogy T5 enyhítési csomagja (közlekedés, átlátható finanszírozás, egyenlőségi támogatás) az egyéni szintű károkat kezeli, de nem feltétlenül képes ellensúlyozni a közösségi szintű elnéptelenedési dinamikát, amelyet maga T5 is elismer. A finn konszolidációs sokk tanulmánya közvetlenül igazolja T5 állítását, miszerint az elmozdult tanulók számára nyújtott átmeneti támogatásnak meg kell különböznie az általános hátránykezelési finanszírozástól, mivel még a költségvezérelt, teljesítménnyel nem összefüggő bezárások is teljesítményzavart eredményeztek a korábbi iskolaminőségtől függetlenül. Finnország költségmegtakarításra vonatkozó, ellenőrizetlen állításai óvatosságra intenek a küszöbérték-vezérelt bezárások fiskális indoklásának „önmagától értetődőnek” kezelésével kapcsolatban, megerősítve T5 saját megfogalmazott bizonytalanságát a konszolidációs megtakarítások tekintetében."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-finnish_reform-04",
+      "F-live-finnish_reform-05",
+      "F-live-finnish_reform-06"
+    ],
+    "lens_ref": "L-live-finnish_reform",
+    "opportunities": [
+      {
+        "en": "T5's cost-visibility and transparency provisions could be strengthened by requiring verified (not projected) savings, directly informed by the Finnish finding that claimed municipal savings were rarely rigorously checked (F-live-finnish_reform-04).",
+        "hu": "A T5 költség- és átláthatósági rendelkezései megerősíthetők azzal, hogy igazolt (not projected) megtakarításokat írnak elő, közvetlenül a finn megállapítás alapján, miszerint a bejelentett önkormányzati megtakarításokat ritkán ellenőrizték alaposan (F-live-finnish_reform-04)."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Direct empirical support for T5's inclusion of distinct transition support: Finnish quasi-experimental evidence isolates a genuine 'pure consolidation shock' independent of prior school quality (F-live-finnish_reform-06), validating the proposal's mechanism design.",
+        "hu": "Közvetlen empirikus támogatás T5 elkülönült átmeneti támogatásának bevonásához: finn kvázi-kísérleti bizonyítékok izolálnak egy valódi 'pure consolidation shock'-ot, amely független a korábbi iskolaminőségtől (F-live-finnish_reform-06), igazolva a javaslat mechanizmus-tervezését"
+      },
+      {
+        "en": "Finland's evidence that municipalities cited cost-saving without rigorous verification (F-live-finnish_reform-04) supports T5's acknowledgment of contested fiscal rationale for closures.",
+        "hu": "Finnország bizonyítékai, hogy az önkormányzatok megtakarításra hivatkoztak részletes igazolás nélkül (F-live-finnish_reform-04), alátámasztják a T5 elismerését a bezárások vitatott fiskális indoklásáról"
+      }
+    ],
+    "threats": [
+      {
+        "en": "If Hungary's demographic and settlement context resembles Finland's rural social-capital dynamics, T5's default-closure model risks the same accelerated-decline effect documented quasi-experimentally in Finland (F-live-finnish_reform-05), undermining the policy's core viability logic even with mitigation.",
+        "hu": "Ha Magyarország demográfiai és települési kontextusa hasonlít Finnország vidéki társadalmi tőke-dinamikájára, a T5 alapértelmezett bezárási modellje ugyanazt a Finnországban kvázi-kísérleti úton dokumentált felgyorsult hanyatlási hatást kockáztatja (F-live-finnish_reform-05), aláásva a politika alapvető életképességi logikáját még mérséklés esetén is."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Difference-in-differences evidence that Finnish rural communities declined more after closure than before (F-live-finnish_reform-05) directly challenges T5's premise that mitigation (transport, funding, equity support) can adequately offset consolidation harms, since the depopulation effect operates through community/social-capital channels not addressed by individual mitigations, a limitation T5 itself flags.",
+        "hu": "A különbségek-különbségek bizonyítékai szerint a finn vidéki közösségek a bezárások után nagyobb mértékben hanyatlottak, mint előtte (F-live-finnish_reform-05), ami közvetlenül kihívja a T5 azon premisszáját, miszerint a mérséklő intézkedések (szállítás, finanszírozás, egyenlőségi támogatás) elegendően kompenzálhatják a konszolidáció kárait, mivel az elnéptelenedési hatás a közösségi/társadalmi tőkén keresztül működik, amelyet az egyéni mérséklések nem kezelnek, amire maga T5 is felhívja a figyelmet."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-finnish_reform",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a5fe66bd6b1b3aa10f2d6fa4820fa021ce0a3ecfe871d2812e0428189bd5fd53",
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,51 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T2 operates purely on the supply side by tightening capacity thresholds in the state sector, which has fiscal appeal as a low-cost administrative lever, but it does not alter the capitation-driven incentive whereby feeder schools lose funding and peer effects when top students exit (F-live-education_finance-05). Because it only covers state-maintained schools, any demand displaced toward church/private providers would be fiscally exogenous to this proposal's calculus, and the underlying per-seat inequity in resource allocation is preserved for whatever selective seats remain.",
+      "hu": "A T2 tisztán a kínálati oldalon hat azáltal, hogy megszigorítja a kapacitási küszöböket az állami szektorban, ami fiskálisan vonzó, mint alacsony költségű adminisztratív kar; ugyanakkor nem változtatja meg azt a fejkvóta-vezérelt ösztönzést, amely szerint a küldő/továbbadó iskolák forrást és peer-hatásokat veszítenek, amikor a legjobb tanulók elmennek (F-live-education_finance-05). Mivel csak állami fenntartású iskolákra vonatkozik, bármilyen kereslet, amely az egyházi/magánszolgáltatók felé terelődik, fiskálisan exogén lesz e javaslat számítása szempontjából, és az ülésre jutó erőforrás-aránytalanság megmarad a megmaradó szelektív férőhelyek esetében."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-education_finance-05"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Reduced state-sector 6/8-year capacity could, in principle, free capitation funding for reallocation to comprehensive lower-secondary schools, though no such reallocation mechanism is specified",
+        "hu": "Az állami szektor 6/8 éves kapacitásának csökkenése elvileg felszabadíthatna capitatív finanszírozást a teljes értékű alsó középfokú iskolákhoz történő átcsoportosításhoz, bár ilyen átcsoportosítási mechanizmus nincs meghatározva."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Minimal direct fiscal cost, using existing administrative/threshold levers rather than new spending",
+        "hu": "Minimális közvetlen fiskális költség: meglévő adminisztratív/határértékeszközöket használ, új kiadások helyett"
+      }
+    ],
+    "threats": [
+      {
+        "en": "If demand shifts to church/private tracks, state fiscal savings from contraction may not translate into aggregate system savings or reduced inequity, since those maintainers are not covered by the same threshold levers",
+        "hu": "Ha a kereslet az egyházi/magán tagozatok felé tolódik, az állami pénzügyi megtakarítások a zsugorodásból nem feltétlenül fordulnak át az egész rendszerre kiterjedő megtakarításokká vagy csökkent egyenlőtlenséggé, mivel ezek a fenntartók nincsenek lefedve ugyanazokkal a küszöb- és szabályozási eszközökkel."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Does not address the capitation funding design that causes feeder schools to lose student revenue and peer-effect resources when students are selected away (F-live-education_finance-05)",
+        "hu": "Nem foglalkozik a fejkvóta-finanszírozás kialakításával, amely miatt a tápláló iskolák elveszítik a tanulói bevételt és a peer-effektusból adódó erőforrásokat, amikor a tanulókat kiválasztják (F-live-education_finance-05)"
+      },
+      {
+        "en": "Contraction of seat numbers does not change the cost/benefit incidence per remaining seat, so resource allocation between selective and comprehensive tracks remains as skewed as before for whichever students still gain admission",
+        "hu": "A férőhelyszámok összemorzsolódása nem változtatja meg az egy megmaradt férőhelyre jutó költség/haszon megoszlását, így az erőforrás-elosztás a szelektív és átfogó pályák között továbbra is ugyanolyan torz marad azoknál a tanulóknál, akik még bejutnak."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-education_finance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "7d26a892fd44dde9541ee94138907cb69326f93f05853ac427a25eb9d04122a0",
+  "topic": "korai-szelekcio"
+}

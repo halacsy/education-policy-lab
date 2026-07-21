@@ -11,11 +11,12 @@ from typing import Any, Iterable
 
 from policy_lab.dag import NodeExecutor, NodeSpec
 from policy_lab.jsonio import write_json
+from policy_lab.i18n import BILINGUAL_VERSION, is_localized_text, localized, text
 from policy_lab.schema_registry import SchemaRegistry
 from policy_lab.store import ArtifactRef, ArtifactRepository
 
 CREATED_AT = "2026-07-20T00:00:00Z"
-VERSION = "2.0.0"
+VERSION = BILINGUAL_VERSION
 
 
 def _english(value: Any, default: str = "Not specified in the v1 corpus.") -> str:
@@ -24,6 +25,43 @@ def _english(value: Any, default: str = "Not specified in the v1 corpus.") -> st
     if isinstance(value, str) and value.strip():
         return value.strip()
     return default
+
+
+def _language(
+    value: Any,
+    language: str,
+    default: str = "Not specified in the v1 corpus.",
+) -> str:
+    if is_localized_text(value):
+        return text(value, language).strip()
+    if isinstance(value, dict):
+        candidate = value.get(language) or value.get("en") or value.get("hu")
+        if isinstance(candidate, str) and candidate.strip():
+            return candidate.strip()
+    if isinstance(value, str) and value.strip():
+        return value.strip()
+    return default
+
+
+def _pair(
+    value: Any,
+    default_en: str = "Not specified in the v1 corpus.",
+    default_hu: str = "A v1 korpuszban nincs megadva.",
+) -> dict[str, str]:
+    """Preserve native v1 pairs; citations/proper names may be language-neutral."""
+
+    return localized(
+        _language(value, "en", default_en),
+        _language(value, "hu", default_hu),
+    )
+
+
+def _joined_pairs(values: Iterable[Any], separator: str = "; ") -> dict[str, str]:
+    values = list(values)
+    return localized(
+        separator.join(_language(value, "en") for value in values),
+        separator.join(_language(value, "hu") for value in values),
+    )
 
 
 def _slug(value: str) -> str:
@@ -216,7 +254,11 @@ class V1CorpusCompiler:
         return NodeSpec(
             name=name, version="1.0.0", input_types=inputs,
             output_types=outputs,
-            schema_files=tuple(f"schemas/v2/{name}" for name in schemas),
+            schema_files=(
+                *(f"schemas/v2/{name}" for name in schemas),
+                "schemas/v2/bilingual.schema.json",
+                "config/v2/bilingual_fields.json",
+            ),
             config_keys=("source_round", "topic"), role="deterministic",
         )
 
@@ -235,9 +277,12 @@ class V1CorpusCompiler:
                     artifact_id=artifact_id, record_type="assumption", topic=topic,
                     provenance_ref=provenance,
                     content={
-                        "statement": _english(item), "domain_tags": [domain],
+                        "statement": _pair(item), "domain_tags": [domain],
                         "testability": "partly_testable",
-                        "source_context": f"Migrated from v1 expert output: {expert_id}",
+                        "source_context": localized(
+                            f"Migrated from v1 expert output: {expert_id}",
+                            f"A v1 szakértői kimenetéből átemelve: {expert_id}",
+                        ),
                     },
                 ))
             uncertainty_ids = []
@@ -251,10 +296,10 @@ class V1CorpusCompiler:
                     artifact_id=artifact_id, record_type="uncertainty", topic=topic,
                     provenance_ref=provenance,
                     content={
-                        "question": _english(item.get("text", item)),
+                        "question": _pair(item.get("text", item)),
                         "uncertainty_type": "unknown",
                         "current_confidence": confidence,
-                        "reduction_path": _english(item.get("reduced_by")),
+                        "reduction_path": _pair(item.get("reduced_by")),
                     },
                 ))
             for index, finding in enumerate(output.get("findings", []), 1):
@@ -268,7 +313,7 @@ class V1CorpusCompiler:
                         artifact_id=source_id, record_type="source", topic=topic,
                         provenance_ref=provenance,
                         content={
-                            "title": source_text,
+                            "title": localized(source_text, source_text),
                             "url": url_match.group(0).rstrip(".,)") if url_match
                             else f"urn:epl:v1-source:{source_key}",
                             "source_type": "web_page" if url_match else "report",
@@ -285,15 +330,24 @@ class V1CorpusCompiler:
                     record_type="finding", topic=topic,
                     provenance_ref=provenance,
                     content={
-                        "claim": _english(finding.get("claim")), "kind": "fact",
+                        "claim": _pair(finding.get("claim")), "kind": "fact",
                         "domain_tags": [domain], "evidence_strength": strength,
                         "source_refs": [source_id],
-                        "population": "Population described in the migrated claim",
-                        "context": _english(output.get("position")),
-                        "time_scope": "As reported in the v1 source corpus",
+                        "population": localized(
+                            "Population described in the migrated claim",
+                            "Az átemelt állításban leírt populáció",
+                        ),
+                        "context": _pair(output.get("position")),
+                        "time_scope": localized(
+                            "As reported in the v1 source corpus",
+                            "A v1 forráskorpusz közlése szerint",
+                        ),
                         "transferability": "uncertain",
                         "limitations": [
-                            "The v1 source string was not re-verified during migration."
+                            localized(
+                                "The v1 source string was not re-verified during migration.",
+                                "A v1 forrásszöveget a migráció során nem ellenőriztük újra.",
+                            )
                         ],
                         "assumption_ids": assumption_ids,
                         "uncertainty_ids": uncertainty_ids,
@@ -317,10 +371,13 @@ class V1CorpusCompiler:
                     artifact_id=artifact_id, record_type="assumption", topic=topic,
                     provenance_ref=provenance,
                     content={
-                        "statement": _english(item),
+                        "statement": _pair(item),
                         "domain_tags": ["transformation_design"],
                         "testability": "partly_testable",
-                        "source_context": f"Migrated from v1 scenario {sid}",
+                        "source_context": localized(
+                            f"Migrated from v1 scenario {sid}",
+                            f"A(z) {sid} v1 forgatókönyvből átemelve",
+                        ),
                     },
                 ))
             uncertainty_ids = []
@@ -331,10 +388,13 @@ class V1CorpusCompiler:
                     artifact_id=artifact_id, record_type="uncertainty", topic=topic,
                     provenance_ref=provenance,
                     content={
-                        "question": _english(item),
+                        "question": _pair(item),
                         "uncertainty_type": "implementation",
                         "current_confidence": "low",
-                        "reduction_path": "Targeted research or a reversible pilot.",
+                        "reduction_path": localized(
+                            "Targeted research or a reversible pilot.",
+                            "Célzott kutatás vagy visszafordítható pilot.",
+                        ),
                     },
                 ))
             proposal_id = f"TP-{topic}-{sid.lower()}"
@@ -343,25 +403,26 @@ class V1CorpusCompiler:
                 artifact_id=proposal_id, record_type="transformation_proposal",
                 topic=topic, provenance_ref=provenance,
                 content={
-                    "title": title, "goal": _english(scenario.get("goal")),
+                    "title": _pair(scenario.get("title")),
+                    "goal": _pair(scenario.get("goal")),
                     "change_level": self._change_level(title),
                     "mechanisms": [
-                        _english(item.get("text", item))
+                        _pair(item.get("text", item))
                         for item in scenario.get("mechanism", [])
                     ],
                     "implementation_steps": [
-                        {"actor": _english(step.get("actor")),
-                         "action": _english(step.get("action")),
-                         "timeline": _english(step.get("timeline"))}
+                        {"actor": _pair(step.get("actor")),
+                         "action": _pair(step.get("action")),
+                         "timeline": _pair(step.get("timeline"))}
                         for step in scenario.get("implementation_steps", [])
                     ],
                     "expected_benefits": [
-                        _english(item.get("text", item))
+                        _pair(item.get("text", item))
                         for item in scenario.get("expected_benefits", [])
                     ],
-                    "costs": [_english(item) for item in scenario.get("cost_categories", [])],
-                    "risks": [_english(item) for item in scenario.get("political_risks", [])],
-                    "equity_impact": _english(scenario.get("equity_impact")),
+                    "costs": [_pair(item) for item in scenario.get("cost_categories", [])],
+                    "risks": [_pair(item) for item in scenario.get("political_risks", [])],
+                    "equity_impact": _pair(scenario.get("equity_impact")),
                     "evidence_status": scenario.get("evidence_status", {}).get(
                         "label", "unknown"
                     ),
@@ -376,13 +437,13 @@ class V1CorpusCompiler:
                 record_type="transformation_family", topic=topic,
                 provenance_ref=provenance,
                 content={
-                    "name": title,
-                    "system_problem": _english(scenario.get("goal")),
-                    "change_lever": "; ".join(
-                        _english(item.get("text", item))
+                    "name": _pair(scenario.get("title")),
+                    "system_problem": _pair(scenario.get("goal")),
+                    "change_lever": _joined_pairs(
+                        item.get("text", item)
                         for item in scenario.get("mechanism", [])[:2]
                     ),
-                    "boundary": _english(
+                    "boundary": _pair(
                         scenario.get("evidence_status", {}).get("note")
                     ),
                     "proposal_refs": [proposal_id],
@@ -402,15 +463,34 @@ class V1CorpusCompiler:
                 artifact_id=lens_id, record_type="lens_definition", topic=topic,
                 provenance_ref=provenance,
                 content={
-                    "name": expert_id.replace("_", " ").title(),
-                    "discipline": expert_id.replace("_", " "),
+                    "name": localized(
+                        expert_id.replace("_", " ").title(),
+                        expert_id.replace("_", " ").title(),
+                    ),
+                    "discipline": localized(
+                        expert_id.replace("_", " "),
+                        expert_id.replace("_", " "),
+                    ),
                     "questions": [
-                        f"What does {expert_id.replace('_', ' ')} reveal about this change?",
-                        "Which effects, limits, and implementation conditions matter?",
+                        localized(
+                            f"What does {expert_id.replace('_', ' ')} reveal about this change?",
+                            f"Mit mutat meg a(z) {expert_id.replace('_', ' ')} nézőpont erről a változásról?",
+                        ),
+                        localized(
+                            "Which effects, limits, and implementation conditions matter?",
+                            "Mely hatások, korlátok és megvalósítási feltételek lényegesek?",
+                        ),
                     ],
-                    "criteria": ["Evidence fit", "Expected effects", "Feasibility"],
+                    "criteria": [
+                        localized("Evidence fit", "Bizonyítékok illeszkedése"),
+                        localized("Expected effects", "Várható hatások"),
+                        localized("Feasibility", "Megvalósíthatóság"),
+                    ],
                     "limitations": [
-                        "This lens definition is inferred from a v1 expert role."
+                        localized(
+                            "This lens definition is inferred from a v1 expert role.",
+                            "Ezt a nézőpont-definíciót egy v1 szakértői szerepből vezettük le.",
+                        )
                     ],
                 },
             ))
@@ -419,12 +499,18 @@ class V1CorpusCompiler:
                 if f"-{expert_id}-" in artifact_id
             ]
             strengths = [
-                _english(item.get("claim")) for item in output.get("findings", [])[:2]
-            ] or ["No explicit strength was extractable from the v1 record."]
+                _pair(item.get("claim")) for item in output.get("findings", [])[:2]
+            ] or [localized(
+                "No explicit strength was extractable from the v1 record.",
+                "A v1 rekordból nem volt kinyerhető kifejezett erősség.",
+            )]
             weaknesses = [
-                _english(item.get("text", item))
+                _pair(item.get("text", item))
                 for item in output.get("uncertainties", [])[:2]
-            ] or ["The v1 record did not state a lens-specific limitation."]
+            ] or [localized(
+                "The v1 record did not state a lens-specific limitation.",
+                "A v1 rekord nem jelölt meg nézőpont-specifikus korlátot.",
+            )]
             for scenario in scenarios:
                 status = scenario.get("evidence_status", {}).get("label", "unknown")
                 verdict = {
@@ -439,19 +525,27 @@ class V1CorpusCompiler:
                     content={
                         "proposal_ref": f"TP-{topic}-{sid.lower()}",
                         "lens_ref": lens_id,
-                        "assessment": (
-                            f"Migrated lens reading for '{_english(scenario['title'])}'. "
-                            f"{_english(output.get('position'))}"
+                        "assessment": localized(
+                            f"Migrated lens reading for '{_language(scenario['title'], 'en')}'. "
+                            f"{_language(output.get('position'), 'en')}",
+                            f"Átemelt nézőpontértékelés ehhez: „{_language(scenario['title'], 'hu')}”. "
+                            f"{_language(output.get('position'), 'hu')}",
                         ),
                         "strengths": strengths,
                         "weaknesses": weaknesses,
                         "opportunities": [
-                            _english(item.get("text", item))
+                            _pair(item.get("text", item))
                             for item in scenario.get("expected_benefits", [])[:2]
-                        ] or ["No explicit opportunity was extractable."],
+                        ] or [localized(
+                            "No explicit opportunity was extractable.",
+                            "Nem volt kinyerhető kifejezett lehetőség.",
+                        )],
                         "threats": [
-                            _english(item) for item in scenario.get("political_risks", [])[:2]
-                        ] or ["No explicit threat was extractable."],
+                            _pair(item) for item in scenario.get("political_risks", [])[:2]
+                        ] or [localized(
+                            "No explicit threat was extractable.",
+                            "Nem volt kinyerhető kifejezett veszély.",
+                        )],
                         "verdict": verdict,
                         "confidence": "high" if status == "strong" else (
                             "medium" if status == "moderate" else "low"
@@ -479,10 +573,15 @@ class V1CorpusCompiler:
             }:
                 continue
             value = _english(cluster.get("value"))
+            value_hu = _language(cluster.get("value"), "hu")
             poles = re.split(r"\s+(?:versus|vs\.?|against)\s+", value, maxsplit=1,
                              flags=re.IGNORECASE)
+            poles_hu = re.split(r"\s+(?:kontra|szemben|vagy)\s+", value_hu, maxsplit=1,
+                                flags=re.IGNORECASE)
             if len(poles) < 2:
                 poles = [value, "A competing public value requiring human judgment"]
+            if len(poles_hu) < 2:
+                poles_hu = [value_hu, "Emberi mérlegelést igénylő versengő közérték"]
             scenario_id = cluster.get("scenario", "S1")
             dilemma_type = response if response in {
                 "value_conflict", "irreducible_tradeoff"
@@ -491,15 +590,21 @@ class V1CorpusCompiler:
                 artifact_id=f"D-{topic}-{cluster['id'].lower()}",
                 record_type="dilemma", topic=topic, provenance_ref=provenance,
                 content={
-                    "title": f"Decision tension {cluster['id']}: {scenario_id}",
-                    "tension": _english(cluster.get("claim")),
+                    "title": localized(
+                        f"Decision tension {cluster['id']}: {scenario_id}",
+                        f"Döntési feszültség {cluster['id']}: {scenario_id}",
+                    ),
+                    "tension": _pair(cluster.get("claim")),
                     "dilemma_type": dilemma_type,
-                    "value_poles": [pole.strip() for pole in poles[:2]],
-                    "affected_groups": [
-                        _english(item) for item in cluster.get("affected", [])
+                    "value_poles": [
+                        localized(en.strip(), hu.strip())
+                        for en, hu in zip(poles[:2], poles_hu[:2])
                     ],
-                    "decision_question": _english(cluster.get("value")),
-                    "evidence_boundary": _english(
+                    "affected_groups": [
+                        _pair(item) for item in cluster.get("affected", [])
+                    ],
+                    "decision_question": _pair(cluster.get("value")),
+                    "evidence_boundary": _pair(
                         cluster.get("empirical_uncertainty")
                     ),
                     "proposal_refs": [f"TP-{topic}-{scenario_id.lower()}"],
@@ -528,9 +633,15 @@ class V1CorpusCompiler:
                 record_type="research_question", topic=topic,
                 provenance_ref=provenance,
                 content={
-                    "question": question,
-                    "why_it_matters": "It can change the comparison of transformation choices.",
-                    "method": "Use the study or pilot design stated in the migrated v1 research agenda.",
+                    "question": _pair(item),
+                    "why_it_matters": localized(
+                        "It can change the comparison of transformation choices.",
+                        "Megváltoztathatja az átalakítási lehetőségek összehasonlítását.",
+                    ),
+                    "method": localized(
+                        "Use the study or pilot design stated in the migrated v1 research agenda.",
+                        "Az átemelt v1 kutatási agendában megjelölt vizsgálati vagy pilottervet kell használni.",
+                    ),
                     "decision_impact": "high" if index <= 3 else "medium",
                     "answerability": "requires_pilot" if "pilot" in question.lower()
                     else "requires_new_data",
@@ -553,17 +664,19 @@ class V1CorpusCompiler:
             record_type="decision_package", topic=topic,
             provenance_ref=provenance,
             content={
-                "title": _english(problem.get("title")),
-                "public_question": _english(problem.get("public_question")),
-                "summary": _english(brief.get("intro")),
+                "title": _pair(problem.get("title")),
+                "public_question": _pair(problem.get("public_question")),
+                "summary": _pair(brief.get("intro")),
                 "transformation_family_refs": ids("transformation_family"),
                 "proposal_refs": ids("transformation_proposal"),
                 "lens_assessment_refs": ids("lens_assessment"),
                 "dilemma_refs": ids("dilemma"),
                 "research_question_refs": ids("research_question"),
-                "migration_notice": (
+                "migration_notice": localized(
                     "Deterministically compiled from committed v1 artifacts; no "
-                    "claims or assessments were re-researched during migration."
+                    "claims or assessments were re-researched during migration.",
+                    "Rögzített v1 artifaktokból determinisztikusan összeállítva; "
+                    "a migráció során egyetlen állítást vagy értékelést sem kutattunk újra.",
                 ),
             },
         )]

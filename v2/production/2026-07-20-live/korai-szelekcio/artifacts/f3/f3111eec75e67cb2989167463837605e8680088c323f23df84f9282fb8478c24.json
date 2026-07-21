@@ -1,0 +1,69 @@
+{
+  "content": {
+    "affected_groups": [
+      {
+        "en": "students currently in already-segregated tracks",
+        "hu": "jelenleg már szegregált pályákon tanuló diákok"
+      },
+      {
+        "en": "future cohorts affected by new track approvals",
+        "hu": "az új képzési irányok jóváhagyása által érintett jövőbeli kohorszok"
+      },
+      {
+        "en": "policymakers balancing near-term vs long-term equity",
+        "hu": "döntéshozók, akik rövid távú és hosszú távú egyenlőség között mérlegelnek"
+      }
+    ],
+    "decision_question": {
+      "en": "Given finite political and administrative capacity, should reform prioritize preventing new segregation-generating expansion (cheap, feasible, but only marginal) or tackling the segregation embedded in the existing track structure (comprehensive, but costly and legally fraught)?",
+      "hu": "A rendelkezésre álló korlátozott politikai és adminisztratív kapacitás fényében a reform a jövőbeni, szegregációt gerjesztő bővítések megelőzésére (olcsó, kivitelezhető, de marginális hatású) vagy a meglévő pályaszerkezetbe beágyazódott szegregáció kezelésére (átfogó, de költséges és jogilag rizikós) összpontosítson?"
+    },
+    "dilemma_type": "irreducible_tradeoff",
+    "evidence_boundary": {
+      "en": "Evidence on segregation trends and the counterfactual growth trajectory of existing tracks can clarify how large the 'already-approved' stock problem is relative to future marginal growth, informing where marginal policy effort has more impact. It cannot settle whether preventing future harm is intrinsically as valuable as remedying existing harm — a normative weighting question.",
+      "hu": "A szegregációs trendekre és az egyes pályák ellenfaktuális növekedési pályájára vonatkozó bizonyítékok segíthetnek megbecsülni, mekkora az „már jóváhagyott” állomány problémája a jövőbeni marginális növekedéshez képest, és így hol van nagyobb hatása a marginális politikai erőfeszítésnek. Nem tudják azonban eldönteni, hogy önmagában a jövőbeni kár megelőzése ugyanolyan belső értékkel bír-e, mint a meglévő kár orvoslása — ez normatív súlyozási kérdés."
+    },
+    "finding_refs": [
+      "F-live-hungarian_education_system-07",
+      "F-live-hungarian_education_system-09",
+      "F-live-hungarian_education_system-04",
+      "F-live-hungarian_education_system-06"
+    ],
+    "origin": "live_generation",
+    "proposal_refs": [
+      "TP-live-t6",
+      "TP-live-t2",
+      "TP-live-t3"
+    ],
+    "tension": {
+      "en": "T6 (and T2) are explicitly preventive/marginal tools that block future segregation-generating expansion but do nothing to remediate segregation already embedded in existing approved tracks. A more remedial approach (T3's structural delay) addresses the existing stock of segregation but at much higher political/legal cost and implementation risk. This raises a genuine trade-off between limiting future harm cheaply versus addressing accumulated harm at high cost.",
+      "hu": "A T6 (és részben a T2) kifejezetten megelőző, marginális eszköz, amely a jövőbeni, szegregációt generáló bővítéseket tudja blokkolni, de nem orvosolja a már jóváhagyott, meglévő pályaszerkezetbe ágyazódott szegregációt. A remedialisabb megközelítés (T3 strukturális halasztás) viszont a meglévő szegregációs állományt célozza, de jóval nagyobb politikai/jogi költséggel és végrehajtási kockázattal jár. Ez valódi döntési dilemmát hoz: olcsón, a jövőben keletkező kár korlátozása, vagy drágábban a felhalmozódott kár kezelése."
+    },
+    "title": {
+      "en": "Preventive gatekeeping versus remediation of existing segregation",
+      "hu": "Megelőző kapuőrzés vs. a meglévő szegregáció orvoslása"
+    },
+    "value_poles": [
+      {
+        "en": "harm prevention at the margin",
+        "hu": "a károk marginális megelőzése"
+      },
+      {
+        "en": "remediation of existing inequity",
+        "hu": "a meglévő egyenlőtlenség orvoslása"
+      },
+      {
+        "en": "cost and feasibility of intervention",
+        "hu": "a beavatkozás költsége és megvalósíthatósága"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "D-live-production-03",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "dilemma",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5aa0921a62c05f07fb6b8317b2aec59277485d67f2dba6804f0f0875d9997fee",
+  "topic": "korai-szelekcio"
+}

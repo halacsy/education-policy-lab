@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The Finnish case strongly supports T6's core rationale: the finding that Finnish municipalities cited cost-saving as the primary closure rationale without rigorous verification is direct, strong-evidence support for T6's proposed registry tracking realized (not projected) savings before further consolidation reliance on cost claims. Finland's history also illustrates the value of tracking context-specific rather than internationally assumed outcomes, since the causal link between closures and depopulation is contested even across Nordic contexts and Finland's own quasi-experimental finding (accelerated decline) may not generalize, reinforcing T6's explicit call to track Hungary-specific outcomes rather than assume international findings transfer. However, Finland's case also cautions that evidence infrastructure alone did not prevent erosion of rural protections once political and fiscal pressures shifted in the 1990s, suggesting T6's information-only framework faces a durability risk analogous to Finland's reversible political protections.",
+      "hu": "A finn eset erősen alátámasztja T6 alapindoklását: a megállapítás, miszerint a finn önkormányzatok a költségmegtakarítást nevezték meg elsődleges bezárási indokként anélkül, hogy alapos verifikációt végeztek volna, közvetlen, erős bizonyíték T6 azon javaslatára, hogy egy nyilvántartást kell vezetni a megvalósult (nem csak a prognosztizált) megtakarításokról, mielőtt további konszolidációk a költségigényekre hivatkozva történnének. Finnország története azt is illusztrálja, hogy a kontextus-specifikus, nem pedig nemzetközileg feltételezett kimenetek nyomon követésének értéke, mivel a bezárások és az elnéptelenedés közötti oksági kapcsolat még a nordikus kontextusok között is vitatott, és Finnország kvázi-kísérleti megállapítása (gyorsított hanyatlás) nem feltétlenül általánosítható, megerősítve T6 expliciten megfogalmazott felhívását, hogy Magyarország-specifikus kimeneteket kövessenek, ne feltételezzék a nemzetközi eredmények automatikus átvitelét. Ugyanakkor Finnország esete azzal is óvatosságra int, hogy maga a bizonyítékinfrastruktúra sem akadályozta meg a vidéki védelmek erózióját, amint a politikai és fiskális nyomás az 1990-es években eltolódott, ami arra utal, hogy T6 információ-alapú kerete tartóssági kockázattal néz szembe, ami analóg a finn visszafordítható politikai védelmekkel."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-finnish_reform-04",
+      "F-live-finnish_reform-05",
+      "F-live-finnish_reform-02",
+      "F-live-finnish_reform-03"
+    ],
+    "lens_ref": "L-live-finnish_reform",
+    "opportunities": [
+      {
+        "en": "A national registry modeled on lessons from Finland's unverified savings problem (F-live-finnish_reform-04) could meaningfully improve Hungarian policy debate quality regardless of which structural model (T1-T5) is ultimately paired with it.",
+        "hu": "Egy nemzeti nyilvántartás, amely Finnország ellenőrizetlen megtakarítási problémájának tanulságaira épül (F-live-finnish_reform-04), érdemben javíthatná a magyar politikai vita minőségét függetlenül attól, hogy végül melyik strukturális modellt (T1–T5) párosítják hozzá."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Directly validates T6's registry-of-realized-savings mechanism: Finnish municipalities' unverified cost-saving claims for closures (F-live-finnish_reform-04) is precisely the evidentiary gap T6 aims to close.",
+        "hu": "Közvetlenül igazolja a T6 „megvalósult megtakarítások nyilvántartása” mechanizmusát: a finn önkormányzatok ellenőrizetlen bezárási költségmegtakarítási állításai (F-live-finnish_reform-04) pontosan az a bizonyíték-hiány, amelyet a T6 céloz meg."
+      },
+      {
+        "en": "Supports T6's call for context-specific rather than assumed-transferable outcome tracking, since Finland's quasi-experimental closure-accelerates-decline finding (F-live-finnish_reform-05) is itself a context-bound result that should not be assumed to generalize to Hungary, reinforcing methodological caution built into T6's design.",
+        "hu": "Támogatja a T6 azon felhívását, hogy az eredmények nyomon követése kontextus-specifikus legyen ahelyett, hogy átválthatónak tekintenénk; mivel a finn kvázi-kísérleti megállapítás, miszerint a bezárások felgyorsítják a hanyatlást (F-live-finnish_reform-05), önmagában kontextushoz kötött eredmény, amelyet nem szabad automatikusan Magyarországra általánosítani, megerősítve ezzel a T6 tervezésébe épített módszertani óvatosságot."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If Hungary follows the Finnish historical pattern where top-down political and fiscal decisions overrode technical or evidentiary considerations during the 1990s decentralization/recession period (F-live-finnish_reform-03), T6's information-only framework risks being sidelined despite sound design.",
+        "hu": "Ha Magyarország követi azt a finn történeti mintát, ahol a 1990-es évek decentralizációs/recessziós időszakában a felülről jövő politikai és fiskális döntések felülírták a műszaki vagy bizonyíték alapú megfontolásokat (F-live-finnish_reform-03), akkor a T6 kizárólag információra épülő kerete annak ellenére kockázatot hordoz, hogy jól megtervezett, mivel háttérbe szorulhat."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Finland's own reversible, politically contingent protections (F-live-finnish_reform-02) suggest that transparency/evidence infrastructure alone, without binding force, may be insufficient to prevent politically-driven overrides, a risk T6 already identifies for itself.",
+        "hu": "Finnország saját visszafordítható, politikailag feltételes védelmei (F-live-finnish_reform-02) azt sugallják, hogy önmagában a transzparencia/bizonyíték-infrastruktúra, kötőerő nélkül, elégtelen lehet a politikailag vezérelt felülírások megakadályozására, ami egy kockázat, amelyet a T6 már maga is azonosít."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-finnish_reform",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e6ba5dcfd52f29d808324d973d9302b6df12426b54a04659f9b4a64e137a81aa",
+  "topic": "rural-school-closures"
+}

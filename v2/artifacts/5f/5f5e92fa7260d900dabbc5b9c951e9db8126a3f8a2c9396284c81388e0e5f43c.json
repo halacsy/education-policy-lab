@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-demography-01",
+      "A-korai-szelekcio-demography-02",
+      "A-korai-szelekcio-demography-03",
+      "A-korai-szelekcio-demography-04",
+      "A-korai-szelekcio-demography-05"
+    ],
+    "claim": {
+      "en": "Government policy is using selection-track admission mechanics (minimum-score thresholds set by the Klebelsberg Center maintainer) to shrink the gimnázium track's share of cohort intake from approximately 40% toward 30% or lower, independent of demand; gimnázium enrollment share was flat-to-slightly-rising before this intervention.",
+      "hu": "A kormányzati politika a szelekciós iskolatípus-szerinti szétválogatás felvételi mechanizmusait (a Klebelsberg Központ fenntartó által meghatározott minimumponthatárok) használja a gimnázium kohort-arányának csökkentésére mintegy 40%-ról 30% felé vagy alacsonyabbra, az igylettől függetlenül; a gimnazisták aránya az intézkedés előtt stabil vagy enyhén emelkedő volt."
+    },
+    "context": {
+      "en": "Demographic decline through 2040 will force school-network consolidation and closure of small selective tracks independent of policy choice, but government's simultaneous use of score-threshold levers is accelerating selective-track contraction beyond what demographic decline alone would cause, concentrating remaining grammar-school slots among already-advantaged urban populations.",
+      "hu": "A demográfiai hanyatlás 2040-ig az iskolahálózat konszolidációjára és a kicsi szelektív szintek bezárására kényszerít a politikai választástól függetlenül, de a kormányzat egyidejű ponthatár-karvasút-alkalmazása felgyorsítja a szelektív-szint összehúzódását azon túl, amit a demográfiai hanyatlás egyedül okozna, a maradék gimnazium-helyeket már előnyben részesített városi lakosokra koncentrálva."
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-d3fa4f60a9deca"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-demography-01",
+      "U-korai-szelekcio-demography-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-demography-04",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "3c111257928eed068b036c7ff05f2b8abad293a66164fc660969023e667ecd50",
+  "topic": "korai-szelekcio"
+}

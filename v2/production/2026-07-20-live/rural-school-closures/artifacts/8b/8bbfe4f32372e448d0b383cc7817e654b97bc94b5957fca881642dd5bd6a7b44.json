@@ -1,0 +1,48 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The Polish lens applies indirectly here, primarily through the contested social-capital/population-decline evidence, since this proposal accepts closure as the default outcome under transparent criteria. Polish village-level studies suggesting smaller social-capital decline where schools were saved implies a countervailing consideration against default closure that the proposal's mitigation measures (transport, funding transparency, equity support) may not fully offset, since they address travel/financial burden but not the community-hub-loss mechanism identified in Polish evidence. However, this evidence is explicitly contested against Finnish and Swedish findings, so it cannot be treated as decisive. Poland's 2000-2016 closure wave (~3,300 schools) driven by demographic and economic factors is broadly analogous in structural logic to this proposal's default-closure trigger, suggesting the model is administratively plausible but offers no direct evidence on whether Hungarian-style mitigation measures would sufficiently offset the harms documented in Polish or comparator cases.",
+      "hu": "A lengyel szemlélet közvetetten alkalmazandó itt, elsősorban a vitatott társadalmi tőke/népességcsökkenés bizonyítékán keresztül, mivel ez a javaslat alapértelmezett eredményként elfogadja az iskola bezárását átlátható kritériumok mellett. A lengyel falusi szintű vizsgálatok arra utalnak, hogy kisebb volt a társadalmi tőke csökkenése, ha az iskolákat megmentették, ami ellenérvet jelent az alapértelmezett bezárás mellett, és amelyet a javaslat mérséklő intézkedései (szállítás, finanszírozási átláthatóság, egyenlőségi támogatás) nem feltétlenül ellensúlyoznak teljes mértékben, mivel ezek a utazási/pénzügyi terhet kezelik, de nem foglalkoznak a lengyel bizonyítékok által azonosított közösségi központ-vesztés mechanizmusával. Ugyanakkor ez a bizonyíték kifejezetten vitatott a finn és svéd eredményekkel szemben, így nem tekinthető döntőnek. Lengyelország 2000–2016 közötti bezárási hulláma (~3,300 iskola), amelyet demográfiai és gazdasági tényezők vezéreltek, strukturális logikájában széles körben analóg e javaslat alapértelmezett bezárási triggerével, ami azt jelzi, hogy a modell közigazgatásilag életszerű, de nincs közvetlen bizonyítéka arra, hogy a magyar típusú mérséklő intézkedések kellőképpen ellensúlyozzák a lengyel vagy összehasonlító esetekben dokumentált károkat."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-polish_reform-02",
+      "F-live-polish_reform-07"
+    ],
+    "lens_ref": "L-live-polish_reform",
+    "opportunities": [
+      {
+        "en": "Structured outcome tracking analogous to Polish village-level social-capital studies could help determine, ex post, whether Hungarian mitigation measures under this proposal successfully offset harms observed elsewhere",
+        "hu": "A lengyel faluszintű társadalmi tőke-vizsgálatokhoz hasonló strukturált eredménykövetés segíthet ex post megállapítani, hogy a javaslat szerinti magyar enyhítő intézkedések sikeresen ellensúlyozták-e máshol megfigyelt károkat."
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Poland's large-scale closure experience (~3,300 schools 2000-2016) demonstrates that a demographically-triggered default-closure approach is administratively implementable at scale (F-live-polish_reform-02)",
+        "hu": "Lengyelország nagyarányú bezárási tapasztalata (~3,300 iskola 2000-2016) azt bizonyítja, hogy egy demográfiai okok által kiváltott alapértelmezett bezárási megközelítés adminisztratív szempontból nagyléptékben megvalósítható (F-live-polish_reform-02)"
+      }
+    ],
+    "threats": [
+      {
+        "en": "If the contested Polish/Finnish/Swedish evidence trends toward confirming a causal closure-to-decline link in the Hungarian context, default closure even with mitigation could accelerate the depopulation this system is meant to serve, undermining the proposal's premise (F-live-polish_reform-07)",
+        "hu": "Ha a vitatott lengyel/finnek/svéd bizonyítékok arra utalnak, hogy a magyar kontextusban is igazolható oksági kapcsolat van az intézménybezárás és a hanyatlás között, akkor az alapértelmezett bezárás még mérsékléssel is felgyorsíthatja azt a népességfogyást, amelyet ez a rendszer hivatott kezelni, aláásva a javaslat premisszáját (F-live-polish_reform-07)."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Polish village-level evidence suggesting social-capital decline is smaller where schools are saved raises a specific concern not addressed by this proposal's transport/funding/equity mitigations, which target travel and financial burden rather than community-hub loss (F-live-polish_reform-07)",
+        "hu": "A lengyel települési szintű bizonyíték, amely arra utal, hogy a társadalmi tőke hanyatlása kisebb ott, ahol az iskolákat megmentették, egy konkrét aggályt vet fel, amelyet ez a javaslat nem kezel: a közlekedésre/finanszírozásra/egyensúlyra irányuló enyhítések a közösségi központok elvesztését nem célozzák meg (F-live-polish_reform-07)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-polish_reform",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "81612f9683cc5295cc0b6a0bfbcff87360e218bcd0ea60554e20cc411452c9a8",
+  "topic": "rural-school-closures"
+}

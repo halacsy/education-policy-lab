@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "System-level OECD indicators show Hungary has high between-school variance (third-highest among OECD countries), below-average within-school variance, 28.1% of students below proficiency Level 2 (vs. OECD average 23.0%), and socioeconomic background impact of 23.1% (vs. OECD average 14.8%), consistent with a tracked, academically sorted school architecture.",
+      "hu": "A rendszer-szintű OECD mutatók szerint Magyarországon magas az iskolák közötti variancia (az OECD-országok között a harmadik legmagasabb), az iskolán belüli variancia pedig átlag alatti; a tanulók 28,1%-a a 2. szint alatti szövegértési/kompetenciaszinten van (vs. OECD átlag 23,0%), és a szocioökonómiai háttér hatása 23,1% (vs. OECD átlag 14,8%), ami összhangban van egy tagolt, tanulmányi szempontból szelektív iskolaszerkezettel."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Between-school variance results from multiple factors (tracking, residential segregation, private/public mix, resource allocation) and cannot be attributed solely to selective-track system",
+        "hu": "Az iskolák közötti variancia több tényező eredménye (tracking/sávosítás, lakóhelyi szegregáció, magán/állami mix, erőforrás‑elosztás), és nem tulajdonítható kizárólag a szelekciós pályarendszernek."
+      },
+      {
+        "en": "Correlation between variance indicators and outcomes does not prove causal direction or relative policy impact",
+        "hu": "A varianciaindikátorok és kimenetek közötti korreláció nem bizonyítja az oksági irányt vagy a relatív politikai hatást."
+      },
+      {
+        "en": "OECD data are cross-sectional; longitudinal tracking of cohort trajectories not available",
+        "hu": "Az OECD adatai keresztmetszeti jellegűek; kohorszok pályáinak longitudinális követése nem érhető el."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-08"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-08",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4fc77ede384ab90a34c9c661524edabc9dd6e20933acc3c23b71107787653d39",
+  "topic": "korai-szelekcio"
+}

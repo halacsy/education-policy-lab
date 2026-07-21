@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This is the most structurally ambitious proposal and carries the highest implementation risk under this lens. It requires simultaneous redesign of category architecture and gatekeeping capacity, layered onto a system already showing documented bottlenecks (waiting lists, staff turnover, insufficient medical backup) and school-level informal safeguards that are neither audited nor standardized. Sequencing is unclear: it is not specified whether tiered support is piloted regionally before national rollout, and no mechanism is proposed to bring the sole nationwide expert-committee gatekeeper to adequate capacity before or during the transition.",
+      "hu": "Ez a leginkább szerkezetileg ambiciózus javaslat, és ennek megfelelően viseli a lencse szerinti legmagasabb végrehajtási kockázatot. Egyidejű kategória-architektúra és kapuőri kapacitás újratervezést igényel, egy olyan rendszerre rétegződve, amelyben dokumentált szűk keresztmetszetek vannak (várólisták, személyzetcsere, nem megfelelő orvosi háttér) és iskolai szintű informális biztosítékok, amelyek sem auditáltak, sem standardizáltak. A szekvencia nem egyértelmű: nincs meghatározva, hogy a fokozatos támogatást regionálisan pilotálják-e a nemzeti bevezetés előtt, és nincs javasolt mechanizmus arra, hogy az egyetlen országos szakértői bizottsági kapuőrt megfelelő kapacitásra juttassák a váltás előtt vagy alatt."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-02",
+      "F-live-implementation_planning-09",
+      "F-live-implementation_planning-04"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "A phased or regional pilot approach, rather than the wholesale national redesign implied, could allow the mechanism to be tested against real bottleneck data before full deployment",
+        "hu": "Egy fokozatos vagy regionális pilot megközelítés, a teljes nemzeti átalakítás helyett, lehetővé tenné a mechanizmus tesztelését valós torlódási adatok alapján a teljes bevezetés előtt."
+      }
+    ],
+    "proposal_ref": "TP-live-t3",
+    "strengths": [
+      {
+        "en": "Directly targets the documented bottleneck in the identify-assess-serve sequence caused by expert-committee capacity constraints (F-live-implementation_planning-03)",
+        "hu": "Közvetlenül célozza a dokumentált szűk keresztmetszetet az azonosítás-értékelés-ellátás folyamatában, amelyet a szakértői bizottság kapacitáskorlátai okoznak (F-live-implementation_planning-03)."
+      },
+      {
+        "en": "Decoupling support from categorical labeling could reduce the incentive dynamics tied to the 2017-2018 BTMN reclassification pattern, though that pattern remains contested (F-live-implementation_planning-02)",
+        "hu": "A támogatás leválasztása a kategórikus címkézésről csökkentheti a 2017–2018-as BTMN átminősítési mintához kötődő ösztönződinamikát, bár ez a minta vitatott marad (F-live-implementation_planning-02)"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Structural reform layered on top of a system with unresolved second-stage service failures (children not receiving prescribed therapy hours, F-live-implementation_planning-04) risks compounding rather than resolving delivery failure if capacity is not built first",
+        "hu": "A strukturális reform, amely egy olyan rendszerre épül, amelyben második szintű szolgáltatási hiányosságok nincsenek orvosolva (gyermekek nem kapják meg az előírt terápiás órákat, F-live-implementation_planning-04), kockázata, hogy az ellátás hibáját összetetté teszi ahelyett, hogy megoldaná, ha előbb nem építik ki a szükséges kapacitást."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No described sequencing plan for how a single nationwide gatekeeper is restructured or capacity-augmented without disrupting current service continuity",
+        "hu": "Nem ismert olyan ütemezési terv, amely leírná, hogyan lehetne egyetlen országos kapuintézményt átalakítani vagy kapacitással kiegészíteni anélkül, hogy a jelenlegi szolgáltatások folytonossága megszakadna"
+      },
+      {
+        "en": "The existing informal, non-uniform school-level self-limiting of SNI intake (F-live-implementation_planning-09) is not addressed as a factor that could undermine or interact unpredictably with a new tiered structure",
+        "hu": "A meglévő informális, nem egységes iskolai szintű SNI-felvétel önkorlátozása (F-live-implementation_planning-09) nincs kezelve mint olyan tényező, amely alááshatja vagy kiszámíthatatlanul kölcsönhatásba léphet az új többszintű struktúrával."
+      },
+      {
+        "en": "No safeguard is specified for containing failure if a tiered rollout produces the kind of large persistent regional variation seen elsewhere, given already documented capacity differences across regions",
+        "hu": "Nincs meghatározva olyan biztosíték a kudarc korlátozására, ha egy rétegenkénti bevezetés a máshol tapasztalt nagymértékű, tartós regionális eltéréseket eredményezné, figyelembe véve a térségek közötti már dokumentált kapacitáskülönbségeket."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t3-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "92bb40ca7f441ead5b1d219c1fae03bca2fe9cc5044c629eb5a8bed56ab624be",
+  "topic": "sni-letszamnovekedes"
+}

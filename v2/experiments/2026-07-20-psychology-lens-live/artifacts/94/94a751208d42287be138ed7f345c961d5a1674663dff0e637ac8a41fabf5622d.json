@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Approximately 270 schools nationally are currently endangered by low enrollment (under 80 students, averaging ~10 pupils per class), with consolidation/merger likely necessary; this closure wave is occurring in both rural areas and urban areas including Budapest, and policy focuses on protecting small-settlement demand rather than mandating closures.",
+      "hu": "Országosan hozzávetőlegesen 270 iskola van jelenleg alacsony létszám miatti veszélyben (kevesebb mint 80 tanuló, osztályonként átlagosan ~10 tanuló), és valószínűleg összevonás/egyesítés szükséges; ez a bezárási hullám mind vidéki, mind városi területeken, így Budapesten is zajlik, és a politika a kistelepülési kereslet védelmére összpontosít a bezárások kötelezővé tétele helyett."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The 270-school figure is stated as a 'first-wave' estimate but methodology for calculation not detailed",
+        "hu": "A 270 iskolás számot 'first-wave' becslésként adják meg, de a számítás módszertanát nem részletezik."
+      },
+      {
+        "en": "Current demand status of at-risk schools not quantified; 'protection as long as there is demand' is a policy intention, not a binding constraint",
+        "hu": "A veszélyeztetett iskolák jelenlegi kereslete nincs számszerűsítve; a 'védelem, amíg van kereslet' politikai szándék, nem kötelező érvényű korlát."
+      },
+      {
+        "en": "No projection of how many of these 270 schools are primary (exposed to declining cohorts) vs. secondary (potentially affected only later)",
+        "hu": "Nincs előrejelzés arról, hogy ezek közül a 270 iskolából hány elsődleges (exposed to declining cohorts) vs. másodlagos (potentially affected only later)."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-06",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "26a476f14f0159c14f422244b97ccb3a233a9045cde832d5b4409c59ba001f20",
+  "topic": "korai-szelekcio"
+}

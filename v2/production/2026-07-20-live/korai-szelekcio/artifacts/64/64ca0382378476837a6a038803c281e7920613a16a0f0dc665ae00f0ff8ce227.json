@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Cohort decline is structurally embedded for at least 20+ years due to dual mechanism: declining total fertility rate per woman combined with shrinking pool of reproductive-age women, independent of short-term behavioral fluctuations.",
+      "hu": "A kohorszcsökkenés szerkezetileg beágyazott és legalább 20 évre előre kiható, amelyet kettős mechanizmus táplál: a nőkönkénti teljes termékenységi arányszám csökkenése együtt a fogamzóképes korú nők állományának zsugorodásával, függetlenül a rövid távú viselkedési ingadozásoktól."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Long-term population projections contain inherent uncertainty beyond 10-15 years",
+        "hu": "A hosszú távú népesség-előrejelzések 10–15 éven túli időhorizonton inherens bizonytalanságot tartalmaznak"
+      },
+      {
+        "en": "Policy interventions (e.g., family support, migration policy) could alter maternal cohort size trajectory",
+        "hu": "A politikai beavatkozások (pl. családtámogatás, migrációs politika) megváltoztathatják az anyai kohorsz méretének alakulását"
+      },
+      {
+        "en": "Assumes no major exogenous demographic shocks",
+        "hu": "Feltételezi, hogy nincs jelentős exogén demográfiai sokk"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-02",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "766df7248d38da399e74103828e892873d74ebc5210b03a80c467c8ee6e7cb2c",
+  "topic": "korai-szelekcio"
+}

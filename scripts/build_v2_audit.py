@@ -13,10 +13,11 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSET_VERSION = "d57-brief-gate"
+ASSET_VERSION = "d58-bilingual"
 sys.path.insert(0, str(ROOT / "src"))
 
 from policy_lab.jsonio import content_hash  # noqa: E402
+from policy_lab.i18n import is_localized_text, load_field_map, text  # noqa: E402
 from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
 
@@ -179,15 +180,26 @@ def property_shape(prop: dict[str, Any]) -> str:
 def schema_catalog(registry: SchemaRegistry) -> dict[str, Any]:
     types = []
     edges: dict[tuple[str, str], dict[str, Any]] = {}
+    latest: dict[str, str] = {}
     for record_type, version in registry.available():
+        latest[record_type] = max(latest.get(record_type, version), version)
+    bilingual_paths = load_field_map(ROOT)
+    for record_type, version in sorted(latest.items()):
         schema = registry.schema_for(record_type, version)
         content = schema_content(schema)
         copy = TYPE_COPY.get(record_type, (record_type, record_type, "", ""))
         required = set(content.get("required", []))
-        fields = [
-            {"name": name, "shape": property_shape(prop), "required": name in required}
-            for name, prop in content.get("properties", {}).items()
-        ]
+        localized = bilingual_paths.get(record_type, ())
+        fields = []
+        for name, prop in content.get("properties", {}).items():
+            shape = property_shape(prop)
+            if name in localized:
+                shape = "localized_text{en,hu}"
+            elif f"{name}.*" in localized and prop.get("type") == "array":
+                shape = "localized_text{en,hu}[]"
+            fields.append({
+                "name": name, "shape": shape, "required": name in required,
+            })
         id_pattern = ""
         for part in schema.get("allOf", []):
             id_pattern = part.get("properties", {}).get("id", {}).get("pattern", id_pattern)
@@ -202,20 +214,33 @@ def schema_catalog(registry: SchemaRegistry) -> dict[str, Any]:
             "id": record_type, "version": version, "title": {"en": copy[0], "hu": copy[1]},
             "description": {"en": copy[2], "hu": copy[3]}, "schema_title": schema.get("title", record_type),
             "id_pattern": id_pattern, "fields": fields, "references": refs,
+            "localized_paths": list(localized),
         })
     return {"nodes": types, "edges": sorted(edges.values(), key=lambda item: (item["from"], item["to"]))}
 
 
-def record_preview(record: dict[str, Any]) -> str:
+def record_preview(record: dict[str, Any]) -> dict[str, str]:
     content = record.get("content", {})
     for name in PREVIEW_FIELDS.get(record["record_type"], ()):
         value = content.get(name)
+        if is_localized_text(value):
+            return {
+                "en": text(value, "en").strip()[:360],
+                "hu": text(value, "hu").strip()[:360],
+            }
         if isinstance(value, str) and value.strip():
-            return value.strip()[:360]
+            preview = value.strip()[:360]
+            return {"en": preview, "hu": preview}
     for value in content.values():
+        if is_localized_text(value):
+            return {
+                "en": text(value, "en").strip()[:360],
+                "hu": text(value, "hu").strip()[:360],
+            }
         if isinstance(value, str) and value.strip() and not value.startswith(("F-", "TP-", "AS-", "PV-")):
-            return value.strip()[:360]
-    return record["id"]
+            preview = value.strip()[:360]
+            return {"en": preview, "hu": preview}
+    return {"en": record["id"], "hu": record["id"]}
 
 
 def node_title(node_id: str) -> dict[str, str]:
@@ -373,12 +398,14 @@ def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
 
     record_by_hash = {digest: record for digest, record in stored}
     record_by_id = {record["id"]: (digest, record) for digest, record in stored}
-    exact_lenses = {
-        record["id"].removeprefix("L-live-"): record["content"]
-        for digest, record in stored
-        if record["record_type"] == "lens_definition"
-        and producer_by_hash.get(digest, "").startswith("root:lens_")
-    }
+    exact_lenses = {}
+    for digest, record in stored:
+        if record["record_type"] != "lens_definition" or not producer_by_hash.get(
+            digest, ""
+        ).startswith("root:lens_"):
+            continue
+        current_lens = repository.get_current(record["id"])
+        exact_lenses[record["id"].removeprefix("L-live-")] = current_lens["content"]
 
     def summarize_record(digest: str, record: dict[str, Any]) -> dict[str, Any]:
         refs = []
@@ -395,7 +422,7 @@ def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
             "hash": digest,
             "type": record["record_type"],
             "status": record["status"],
-            "preview": record_preview(record)[:360],
+            "preview": record_preview(record),
             "producer": producer_by_hash.get(digest),
             "provenance_ref": record.get("provenance_ref"),
             "references": refs,
@@ -415,30 +442,38 @@ def build_run(source: RunSource, registry: SchemaRegistry) -> dict[str, Any]:
             }
         return summary
 
+    # Execution inspection stays bound to the immutable RunPlan hashes above.
+    # The database view separately shows the current semantic successors,
+    # including D-58 bilingual retrofit records and their migration provenance.
+    current_stored = [
+        (content_hash(record), record)
+        for record in repository.list(topic=source.topic)
+    ]
     type_records: dict[str, list[tuple[str, dict[str, Any]]]] = defaultdict(list)
-    for digest, record in stored:
+    for digest, record in current_stored:
         type_records[record["record_type"]].append((digest, record))
 
     database_nodes = []
-    for schema_type, _ in registry.available():
+    for schema_type in sorted({record_type for record_type, _ in registry.available()}):
         rows = type_records.get(schema_type, [])
         example = None
         if rows:
             digest, record = sorted(rows, key=lambda pair: pair[1]["id"])[0]
             refs = registry.references(record)
             incoming = 0
-            for _, candidate in stored:
+            for _, candidate in current_stored:
                 incoming += sum(1 for ref in registry.references(candidate) if ref.target_id == record["id"])
             example = {
                 "id": record["id"], "hash": digest, "status": record["status"],
                 "preview": record_preview(record), "outgoing": len(refs), "incoming": incoming,
                 "created_at": record["created_at"], "provenance_ref": record.get("provenance_ref"),
+                "schema_version": record["schema_version"],
             }
         database_nodes.append({"id": schema_type, "count": len(rows), "example": example})
 
     database_edges: dict[tuple[str, str], int] = Counter()
-    known_ids = {record["id"] for _, record in stored}
-    for _, record in stored:
+    known_ids = {record["id"] for _, record in current_stored}
+    for _, record in current_stored:
         if record["record_type"] == "provenance":
             continue
         for ref in registry.references(record):

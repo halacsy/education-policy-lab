@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "artifact_schema_version": "2.1.0",
+  "languages": ["en", "hu"],
+  "record_types": {
+    "approved_option_space": ["directions.*.title", "directions.*.scope", "rejected_framings.*.framing", "rejected_framings.*.reason"],
+    "assumption": ["statement", "source_context"],
+    "coverage_ledger": ["entries.*.direction_title", "entries.*.rationale"],
+    "decision_package": ["title", "public_question", "summary", "evidence_appendix.*.claim", "evidence_appendix.*.sources.*.title", "migration_notice", "generation_notice"],
+    "decision_readiness": ["conditions.*", "rationale"],
+    "dilemma": ["title", "tension", "value_poles.*", "affected_groups.*", "decision_question", "evidence_boundary"],
+    "evaluation": ["strengths.*", "concerns.*"],
+    "finding": ["claim", "context", "limitations.*", "population", "time_scope"],
+    "human_gate_decision": ["rationale"],
+    "lens_assessment": ["assessment", "strengths.*", "weaknesses.*", "opportunities.*", "threats.*"],
+    "lens_definition": ["name", "discipline", "questions.*", "criteria.*", "limitations.*"],
+    "option_space_proposal": ["directions.*.title", "directions.*.scope", "rejected_framings.*.framing", "rejected_framings.*.reason", "derivation_notice"],
+    "policy_question": ["question", "submission_context", "research_directions.hypotheses_to_test.*", "research_directions.inquiry_priorities.*", "research_directions.candidate_response_domains.*", "approval_basis"],
+    "problem_brief": ["title", "public_question", "problem_statement", "learning_goals.*", "scope", "approval_basis"],
+    "problem_brief_decision": ["rationale"],
+    "problem_brief_proposal": ["title", "public_question", "problem_statement", "learning_goals.*", "scope", "framing_notes.*"],
+    "research_question": ["question", "why_it_matters", "method"],
+    "source": ["title"],
+    "transformation_family": ["name", "system_problem", "change_lever", "boundary"],
+    "transformation_proposal": ["title", "goal", "mechanisms.*", "implementation_steps.*.actor", "implementation_steps.*.action", "implementation_steps.*.timeline", "expected_benefits.*", "costs.*", "risks.*", "equity_impact"],
+    "uncertainty": ["question", "reduction_path"]
+  }
+}

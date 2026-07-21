@@ -1,0 +1,66 @@
+{
+  "content": {
+    "assessment": {
+      "en": "As an explicit no-new-policy baseline, passive demographic contraction shrinks the aggregate size of the selective track without altering its selection mechanism, access criteria, or the maintainer-type asymmetries driving segregation; from this lens it represents an uncontrolled natural experiment whose distributional consequences depend entirely on where contraction falls.",
+      "hu": "Kifejezetten „nincs új politika” alapvonalként a passzív demográfiai zsugorodás csökkenti a szelektív pálya összméretét anélkül, hogy megváltoztatná annak kiválasztási mechanizmusát, hozzáférési kritériumait vagy a szegregációt hajtó fenntartótípus-beli egyenlőtlenségeket; ebből a szemszögből ellenőrizetlen természetes kísérletnek tekinthető, amelynek elosztásbeli következményei teljes egészében attól függnek, hogy a zsugorodás hol következik be."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-02",
+      "F-live-equity_and_social_mobility-06",
+      "F-live-equity_and_social_mobility-07",
+      "F-live-equity_and_social_mobility-08"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      {
+        "en": "Could be leveraged to consolidate provision in ways that reduce, rather than worsen, geographic access disparities if paired with deliberate planning (F-live-equity_and_social_mobility-08)",
+        "hu": "Alkalmazható a szolgáltatások konszolidálására úgy, hogy a földrajzi hozzáférési egyenlőtlenségeket csökkentse, nem pedig súlyosbítsa, ha szándékos tervezéssel párosul (F-live-equity_and_social_mobility-08)"
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Provides an empirically grounded counterfactual against which the equity effects of active interventions can be measured",
+        "hu": "Empirikusan megalapozott ellenfaktumot nyújt, amelyhez viszonyítva az aktív beavatkozások méltányossági hatásai mérhetők."
+      },
+      {
+        "en": "Documents an already-operating structural trend (cohort decline, application shifts) that constrains how much marginal effect active policy can add",
+        "hu": "Dokumentál egy már működő strukturális trendet (kohorszcsökkenés, jelentkezési eltolódások), amely korlátozza, hogy mennyi marginális hatást tud hozzáadni az aktív politika"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Passive contraction is likely to be geographically uneven, potentially worsening rural-urban access disparities even as aggregate selective-track size shrinks, compounding existing geographic clustering of selective schools in urban areas (F-live-equity_and_social_mobility-08)",
+        "hu": "A passzív zsugorodás valószínűleg földrajzilag egyenetlen lesz, potenciálisan súlyosbítva a vidéki és városi hozzáférés közötti különbségeket még akkor is, ha az összesített szelektív pálya mérete csökken, ami tovább fokozza a szelektív iskolák városi területeken meglévő földrajzi klasztereződését (F-live-equity_and_social_mobility-08)."
+      },
+      {
+        "en": "Roma segregation and church-sector selective growth could persist or worsen entirely unaddressed under a no-policy baseline (F-live-equity_and_social_mobility-06, F-live-equity_and_social_mobility-07)",
+        "hu": "A roma szegregáció és az egyházi szektor szelektív növekedése a no-policy baseline alatt teljes mértékben megmaradhat vagy rosszabbodhat, kezeletlenül (F-live-equity_and_social_mobility-06, F-live-equity_and_social_mobility-07)."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Does nothing to address the core inequity-per-seat mechanism: SES-skewed access to remaining selective seats persists unchanged (F-live-equity_and_social_mobility-02)",
+        "hu": "Nem tesz semmit az egy ülésre jutó alapvető egyenlőtlenségi mechanizmus kezelése érdekében: a hátralévő szelektív helyekhez való, SES által torzított hozzáférés változatlanul fennmarad (F-live-equity_and_social_mobility-02)"
+      },
+      {
+        "en": "Does not touch Roma segregation, which is distinct from socioeconomic segregation and has been increasing structurally since 1989 (F-live-equity_and_social_mobility-06)",
+        "hu": "Nem érinti a Roma szegregációt, amely különbözik a társadalmi-gazdasági alapú szegregációtól, és amely 1989 óta strukturálisan növekszik (F-live-equity_and_social_mobility-06)"
+      },
+      {
+        "en": "Does not address church-sector growth, which is documented as amplifying segregation and selection independent of demographic pressure (F-live-equity_and_social_mobility-07)",
+        "hu": "Nem foglalkozik az egyházi szektor növekedésével, amely dokumentáltan erősíti a szeparációt és a szelekciót demográfiai nyomástól függetlenül (F-live-equity_and_social_mobility-07)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-equity_and_social_mobility",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4f0c42301749e7fe2c0dd27776d3b5c0467d8955ae3d6a525512d32af23378c5",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,22 @@
+{
+  "content": {
+    "current_confidence": "low",
+    "question": {
+      "en": "Does the presence of a primary school in a Hungarian village causally retard or accelerate depopulation, or do schools follow rather than precede community demographic trajectories?",
+      "hu": "Egy magyar faluban egy általános iskola jelenléte okszerűen lassítja vagy gyorsítja-e a népességcsökkenést, vagy az iskolák követik-e inkább, mintsem megelőzik a közösség demográfiai pályáit?"
+    },
+    "reduction_path": {
+      "en": "Implement instrumental variable or regression discontinuity design using school closure dates and eligibility thresholds (e.g., enrollment floors) as exogenous shocks; measure subsequent population change in closed-school villages versus non-closed control villages, controlling for pre-closure demographics and employment structure",
+      "hu": "Alkalmazzon instrumentális változó vagy regressziós diszkontinuitás-tervezést, használva az iskolabezárási dátumokat és jogosultsági küszöböket (pl. beiratkozási minimumok) exogén sokkokként; mérje a bezárt iskolájú falvakban a bezárás utáni népességváltozást a nem bezárt kontrollfalvakkal szemben, kontrollálva a bezárás előtti demográfiákat és a foglalkoztatási szerkezetet."
+    },
+    "uncertainty_type": "unknown"
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "U-live-equity_and_social_mobility-02",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "uncertainty",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "45ca8a621f75d2d2317a5b903a20de8bca147d7131f4325cc7d747c064309e6a",
+  "topic": "rural-school-closures"
+}

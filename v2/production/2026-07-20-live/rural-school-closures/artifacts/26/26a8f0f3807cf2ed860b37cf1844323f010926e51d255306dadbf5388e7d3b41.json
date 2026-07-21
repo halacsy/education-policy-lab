@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assessment": {
+      "en": "The proposal explicitly models itself on Scotland's presumption-against-closure mechanism (F-live-international_comparison-02), a strong, well-documented procedural safeguard. However, the international comparison lens reveals a critical implementation-similarity problem: Scotland's mechanism presumes municipal or local authority standing to contest closure decisions, whereas Hungary's 2013 centralization eliminated exactly this kind of local bargaining power by transferring management to KLIK (F-live-international_comparison-04). Wales's contrasting non-presumptive guidance model (F-live-international_comparison-05) shows that even among UK devolved nations, the presumption model is not universally adopted, suggesting contextual factors shape design choice. Transferability is therefore constrained not by comparability of the closure problem itself but by the absence of a local actor empowered to invoke the presumption in Hungary's governance structure.",
+      "hu": "A javaslat kifejezetten Skócia bezárás-ellenes feltevésén (presumption-against-closure) alapul (F-live-international_comparison-02), ami egy erős, jól dokumentált eljárási biztosíték. Azonban a nemzetközi összehasonlító lencse egy kritikus végrehajtási-hasonlósági problémára világít rá: Skócia mechanizmusa feltételezi, hogy a megyei vagy helyi hatóságnak joga van vitatni a bezárási döntéseket, míg Magyarország 2013-as centralizációja pontosan ezt a fajta helyi alkuerőt szüntette meg azzal, hogy az irányítást a tankerületekhez telepítette (F-live-international_comparison-04). Wales ellentétes, nem-feltételező útmutató-modellje (F-live-international_comparison-05) azt mutatja, hogy még az Egyesült Királyság devolválódott nemzetei között sem általánosan elfogadott a presumption-modell, ami azt sugallja, hogy a tervezési választást kontextuális tényezők alakítják. A transzferálhatóság tehát nem magát a bezárási problémát tételezi kérdésessé, hanem azt, hogy Magyarország kormányzati struktúrájában hiányzik az a helyi szereplő, aki jogosult lenne a presumption felhívására."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-international_comparison-02",
+      "F-live-international_comparison-04",
+      "F-live-international_comparison-05"
+    ],
+    "lens_ref": "L-live-international_comparison",
+    "opportunities": [
+      {
+        "en": "The 2013 centralization creates a clean single point of accountability where a presumption duty could be imposed centrally without needing multi-actor municipal buy-in, unlike Scotland's model",
+        "hu": "A 2013-as centralizáció egy tiszta, egyetlen elszámoltathatósági pontot hozott létre, ahol egy vélelmezési kötelezettség központilag kivethető anélkül, hogy több szereplős önkormányzati beleegyezésre lenne szükség, ellentétben Skócia modelljével."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Directly modeled on a strong-evidence mechanism (Scotland) with documented procedural requirements for alternatives assessment, educational benefit, community effect, and travel documentation (F-live-international_comparison-02)",
+        "hu": "Közvetlenül egy erős bizonyítékokkal alátámasztott mechanizmuson (Scotland) alapul, amely dokumentált eljárási követelményeket tartalmaz az alternatívák értékelésére, az oktatási előnyre, a közösségi hatásra és az utazási dokumentációra (F-live-international_comparison-02)"
+      },
+      {
+        "en": "Wales's alternative non-presumptive model (F-live-international_comparison-05) offers a fallback design if full presumption proves institutionally incompatible",
+        "hu": "Wales alternatív, nem-preszumptív modellje (F-live-international_comparison-05) tartaléktervet kínál arra az esetre, ha a teljes preszumptió intézményesen összeegyeztethetetlennek bizonyul."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Without genuine authority to halt closure vested somewhere, the procedural duty risks becoming a documentation exercise rather than a substantive safeguard (F-live-international_comparison-04)",
+        "hu": "Ha sehol nem ruháznak tényleges hatáskört a bezárás leállítására, a procedurális kötelezettség dokumentációs gyakorlatra kárhozhat a tényleges garancia helyett (F-live-international_comparison-04)."
+      },
+      {
+        "en": "Divergence between Scotland's and Wales's approaches suggests no single 'correct' transferable model exists even within comparable UK contexts, weakening the claim of a proven template",
+        "hu": "Skócia és Wales megközelítésének eltérése arra utal, hogy még összehasonlítható brit kontextuson belül sem létezik egyetlen 'helyes', átvihető modell, ami gyengíti az állítást egy bevált sablonról."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Scotland's and Wales's mechanisms both presume a local/devolved authority holding real decision-making power, a structural precondition absent in Hungary's centralized KLIK-successor system (F-live-international_comparison-04)",
+        "hu": "Skócia és Wales mechanizmusai egyaránt feltételezik, hogy a helyi/devolvált hatóság valós döntési jogkörrel rendelkezik, ami hiányzik Magyarország központosított KLIK‑utód rendszerében (F-live-international_comparison-04)."
+      },
+      {
+        "en": "Cross-country analogy from UK devolved contexts cannot substitute for Hungarian evidence on whether a procedural duty would function without matching local authority (lens limitation)",
+        "hu": "Az Egyesült Királyság devolválódott kontextusaiból származó országok közötti analógia nem helyettesítheti a magyar bizonyítékot arra vonatkozóan, hogy egy eljárási kötelezettség működne-e helyi hatósági illeszkedés nélkül (lens limitation)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-international_comparison",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "6a54790c1a017d30dc5e136483361725df65402d642dcdae253fc9d6b618d320",
+  "topic": "rural-school-closures"
+}

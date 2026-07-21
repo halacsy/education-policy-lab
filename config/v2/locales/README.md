@@ -5,13 +5,14 @@ The public v2 website is localized from the versioned `en.json` and
 of truth for navigation, interface labels, artifact names, enum values, and
 repeated technical terminology.
 
-The canonical policy records under `v2/` remain English-only. Localization is
-a downstream presentation concern: it must never change record identifiers,
-dependency hashes, or policy content. Topic prose already available in the
-legacy bilingual corpus is projected into the corresponding language view.
-The Hungarian catalog may also contain audited `content_replacements` for
-legacy loanwords. These replacements affect rendered text only; source
-artifacts remain byte-for-byte unchanged.
+Canonical semantic policy records use schema version 2.1.0 and store every
+declared prose leaf as one exact `{en, hu}` pair (D-58, restoring D-34).
+Identifiers, references, enum values, URLs, and provenance metadata remain
+language-neutral technical data. These catalogs localize only navigation,
+interface labels, artifact names, enum labels, and repeated technical terms;
+they do not carry policy-content translations. The website projects policy
+prose directly from the canonical record. The Hungarian catalog may also
+contain audited `content_replacements` for legacy loanwords at render time.
 
 Rules enforced by `scripts/verify_v2.py`:
 

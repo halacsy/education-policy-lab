@@ -1,0 +1,64 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Of all proposals, this one is most explicitly structured around the lens's core criteria: it proposes piloting before national rollout, includes a comparison-region design for monitoring, and its own mechanism description flags the need to pair with zoning controls (linking to T4) to avoid a known failure mode observed in Finland's later experience. This self-aware sequencing and failure-containment design is a distinguishing strength under this lens, though workforce capacity and pilot representativeness remain open gaps.",
+      "hu": "Minden javaslat közül ez a leginkább kifejezetten a szemlélet magkritériumai köré szervezett: pilotálást javasol a nemzeti bevezetés előtt, tartalmaz monitoringhoz összehasonlító régió-tervezést, és maga a mechanizmusleírás is rámutat arra, hogy párosítani kell zónázási kontrollokkal (kapcsolódva T4-hez), hogy elkerüljék egy ismert kudarcmódot, amelyet Finnország későbbi tapasztalataiban figyeltek meg. Ez az önreflektív sorrend- és kudarcmegfékező dizájn megkülönböztető erősség e szemlélet alatt, bár a munkaerő-kapacitás és a pilot reprezentativitása továbbra is nyitott hiányosságok."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-07"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Pilot design allows isolation of Hungary-specific effects from confounds that limited interpretability of Finnish and Polish precedents",
+        "hu": "A pilotterv lehetővé teszi a Magyarországra jellemző hatások elkülönítését azoktól a zavaró tényezőktől, amelyek korlátozták a finn és lengyel precedensek értelmezhetőségét."
+      },
+      {
+        "en": "Built-in linkage to zoning/choice controls (T4) creates a natural sequencing pathway toward a more failure-contained combined reform",
+        "hu": "A zónázási/választási kontrollokhoz (T4) beépített kapcsolódás természetes sorrendiséget teremt egy a kudarcokat jobban kordában tartó kombinált reform felé."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Explicit pilot-before-national-decision design directly satisfies the lens's pilotability and monitoring criteria",
+        "hu": "A kifejezett pilot előtti nemzeti döntésre épülő tervezés közvetlenül kielégíti a lencse pilotálhatóságra és monitorozásra vonatkozó kritériumait."
+      },
+      {
+        "en": "Mechanism description proactively identifies its own failure mode (choice-driven re-segregation absent zoning controls) and proposes linking to a complementary lever (T4), showing unusually strong ex-ante adaptation planning",
+        "hu": "A mechanizmusleírás előre azonosítja saját kudarci módját (választásvezérelt újbóli szeparáció zónázási szabályok hiányában) és javasolja a kapcsolódást egy kiegészítő eszközhöz (T4), ami rendkívül erős ex-ante alkalmazkodási tervezést jelez."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Even a successful, well-designed pilot faces low institutional durability precedent (Poland's reversal), meaning strong pilot evidence may not translate into sustained national policy adoption",
+        "hu": "Még egy sikeres, jól megtervezett pilotnak is alacsony az intézményi tartósság precedense (Lengyelország visszafordulása), ami azt jelenti, hogy az erős pilotbizonyíték nem feltétlenül fordul át tartós országos politikaalkalmazásba."
+      },
+      {
+        "en": "Centralized governance bottlenecks (F-live-implementation_planning-03) could still constrain how pilot findings are processed and acted upon at national level, limiting the practical value of the pilot's feedback loop",
+        "hu": "A központosított kormányzási szűk keresztmetszetek (F-live-implementation_planning-03) továbbra is korlátozhatják, hogy a pilot eredményeit hogyan dolgozzák fel és hogyan lépnek rá nemzeti szinten, ami csökkenti a pilot visszacsatolási körének gyakorlati értékét."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Same workforce capacity constraints identified for T2 apply to any comprehensive-schooling shift, even at pilot scale, since teacher deployment and training would need to shift within pilot regions (F-live-implementation_planning-07)",
+        "hu": "A T2-re azonos munkerő-kapacitási korlátok vonatkoznak bármely átfogó iskolai átállásra, még pilot méretekben is, mivel a tanárelosztásnak és képzésnek a pilot régiókon belül kellene átalakulnia (F-live-implementation_planning-07)."
+      },
+      {
+        "en": "Volunteering pilot regions may not be representative, limiting the pilot's ability to generate generalizable implementation lessons for national sequencing decisions",
+        "hu": "Az önkéntes pilotrégiók nem feltétlenül reprezentatívak, ami korlátozza, hogy a pilot által nyert megvalósítási tanulságok általánosíthatóak legyenek a nemzeti bevezetési sorrend meghatározásához."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "cee26bb3d6e0e928050565fdb105dae754385938d1aadb5d40317d45e6920e5c",
+  "topic": "korai-szelekcio"
+}

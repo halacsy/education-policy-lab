@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "The population of children aged 0-4 in Hungary is projected to decline by 5% between 2023 and 2033, representing a 'locked-in' demographic pipeline already born and distinct from future fertility uncertainty.",
+      "hu": "Magyarországon a 0–4 éves korosztály létszámát 2023 és 2033 között 5%-os csökkenésre prognosztizálják; ez egy már megszületett, „lezárt” demográfiai utánpótlást jelent, amely elkülönül a jövőbeli termékenység bizonytalanságától."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Projections assume no net migration; international mobility of families could alter actual cohorts",
+        "hu": "A prognózisok nettó migráció nélkül tételeznek fel; a családok nemzetközi mobilitása megváltoztathatja a tényleges kohorszokat"
+      },
+      {
+        "en": "Does not specify regional distribution of the projected decline",
+        "hu": "Nem adja meg a várható csökkenés regionális eloszlását."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-02",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "f9625a546ddcdfa6bf642a70aa66c6065bb74067bfeb2d079e36ea0642f3b62e",
+  "topic": "sni-letszamnovekedes"
+}

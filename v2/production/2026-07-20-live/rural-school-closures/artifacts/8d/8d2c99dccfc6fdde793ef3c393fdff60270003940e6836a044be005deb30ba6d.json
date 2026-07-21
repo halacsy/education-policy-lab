@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "A minority-language school bus program transports more than 500 Hungarian-minority students across 13 Transylvanian counties using vehicles seating 8–21 people, demonstrating a multi-village, route-based transport logistics model; direct applicability to domestic Hungarian rural consolidation is inferred but not confirmed.",
+      "hu": "Egy kisebbségi nyelvű iskolabusz-program több mint 500 erdélyi magyar kisebbségi tanulót szállít 13 erdélyi megyében 8–21 férőhelyes járművekkel, ami többfalu, útvonal-alapú szállítási logisztikai modellt mutat; ennek közvetlen alkalmazhatósága a hazai vidéki iskolaracionalizálásra feltételezhető, de nincs bizonyítva."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Cross-border context (Romania) differs from domestic Hungarian administrative structure",
+        "hu": "A határmenti kontextus (Románia) eltér a magyarországi belső közigazgatási struktúrától."
+      },
+      {
+        "en": "Ethnic-minority funding and legal framework not directly transferable to rural Hungarian village consolidation",
+        "hu": "Az etnikai kisebbségek finanszírozása és jogi kerete nem átültethető közvetlenül a magyar vidéki falvak összevonására."
+      },
+      {
+        "en": "Vehicle scale and routing model inferred as relevant rather than empirically tested for Hungarian domestic application",
+        "hu": "A járműméretezési és útvonaltervezési modellt relevánsnak feltételezik, nem pedig empirikusan tesztelik a magyarországi alkalmazásra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-08"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-08",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "694dd97b49bd45c5349d2b2c72f67c59f6a6e8624841eaaa6723e49a2139c449",
+  "topic": "rural-school-closures"
+}

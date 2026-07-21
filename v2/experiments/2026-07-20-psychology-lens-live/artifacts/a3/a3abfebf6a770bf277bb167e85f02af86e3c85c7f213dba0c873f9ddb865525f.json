@@ -1,0 +1,69 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A comprehensive de-tracking pilot combined with choice/zoning controls is the proposal most directly structured to test causal mechanisms rather than assume them, addressing both the early-tracking effect and the segregation channel operating through school choice. Evidence cautions that de-tracking alone is insufficient against choice-driven segregation absent institutional guardrails, which this proposal explicitly anticipates by linking to zoning reform (T4). Pilot non-representativeness and reversal risk (per Polish precedent) are legitimate threats to generalizability and durability of any equity gains found.",
+      "hu": "Egy átfogó pályafelszámolási pilot, amelyet választási/zónázási kontrollokkal kombinálnak, az a javaslat, amely leginkább úgy van felépítve, hogy kauzális mechanizmusokat teszteljen, ne feltételezzen: egyszerre kezeli a korai pályaszelekció hatását és az iskolaválasztáson keresztül működő szegregációs csatornát. A bizonyítékok óvatosságra intenek, hogy önmagában a pályafelszámolás nem elég a választásvezérelt szegregáció ellen intézményi biztosítékok nélkül, és ezt a javaslat kifejezetten anticipálja azzal, hogy a zónareformhoz (T4) kapcsolódik. A pilotok nem reprezentativitása és a visszafordulás kockázata (a lengyel precedens szerint) jogos fenyegetést jelentenek a bármilyen egyenlőségi nyereség általánosíthatósága és tartóssága szempontjából."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-01",
+      "F-live-equity_and_social_mobility-04",
+      "F-live-equity_and_social_mobility-02"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      {
+        "en": "Could generate Hungary-specific causal evidence resolving the contested question of whether track value-added is institutional or background-driven",
+        "hu": "Előállíthat kifejezetten Magyarországra vonatkozó kauzális bizonyítékot, amely eldöntené a vitatott kérdést, hogy a tagozatok hozzáadott értéke intézményi eredetű-e vagy a háttér által vezérelt."
+      },
+      {
+        "en": "Successful pairing with zoning controls could produce a replicable model addressing both tracking and segregation channels simultaneously",
+        "hu": "A zónázási szabályozásokkal való sikeres párosítás replikálható modellt eredményezhet, amely egyszerre kezeli a tagozódás és a szegregáció csatornáit."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Explicitly pairs de-tracking with choice/zoning controls, addressing both mechanisms (tracking and geographic/choice-driven segregation) evidence treats as related but distinct",
+        "hu": "Kifejezetten párosítja a de-tagozálást a választás-/zónázás-szabályozásokkal, egyszerre kezelve mindkét mechanizmust (a tagozást és a földrajzi/választás-vezérelt szeparációt), amelyeket a bizonyítékok kapcsolódónak, de különállónak tekintenek."
+      },
+      {
+        "en": "Designed to isolate Hungary-specific effects from confounding reforms, improving causal interpretability of results",
+        "hu": "Olyan módon tervezték, hogy a magyarországi hatásokat elkülönítse a zavaró reformoktól, javítva az eredmények oksági értelmezhetőségét."
+      },
+      {
+        "en": "Cross-national evidence found no significant efficiency losses from de-tracking, easing concern about achievement trade-offs",
+        "hu": "Nemzetközi összehasonlító bizonyítékok nem találtak jelentős hatékonyságcsökkenést a tagolás megszüntetéséből, ami csökkenti az aggodalmakat a teljesítmény-kompromisszumok miatt"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Evidence that school-choice deregulation reintroduces segregation even without formal tracking means an under-resourced pilot risks failing to demonstrate feasible equity gains",
+        "hu": "Az a bizonyíték, hogy az iskolaválasztás deregulációja a formális szelekció hiányában is visszaállíthatja a szeparációt, azt jelenti, hogy egy forráshiányos pilot kísérlet kockázata, hogy nem tud bizonyítani reálisan megvalósítható egyenlőségi eredményeket."
+      },
+      {
+        "en": "Institutional durability precedent (Polish reversal) suggests even positive pilot results may not survive political transition to national policy",
+        "hu": "Az intézményi tartósság precedense (lengyel visszafordulás) azt sugallja, hogy még a pozitív piloteredmények sem feltétlenül élik túl a politikai átmenetet a nemzeti politika szintjén."
+      },
+      {
+        "en": "Volunteer pilot regions may be unrepresentative, limiting confidence in extrapolated distributional effects",
+        "hu": "Az önkéntes pilotrégiók nem feltétlenül reprezentatívak, ami korlátozza a kinyert eloszlási hatások extrapolálásába vetett bizalmat."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Piloting delays national-scale equity benefit, leaving the currently documented severe SES-linked achievement gap and Roma dropout disparities unaddressed in non-pilot regions during the trial period",
+        "hu": "A kísérleti bevezetés késlelteti a nemzeti szintű egyenlőségi előnyt, és a próbaidőszak alatt a nem-kísérleti régiókban változatlanul kezeletlenül hagyja a jelenleg dokumentált súlyos, SES-hez kötődő teljesítménykülönbséget és a roma lemorzsolódási egyenlőtlenségeket."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-equity_and_social_mobility",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "02dfc529f42b775bd600d8458c56816de42b334959c6e0df6b9ccc087a3cfb91",
+  "topic": "korai-szelekcio"
+}

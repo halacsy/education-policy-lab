@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-education_finance-01",
+      "A-rural-school-closures-education_finance-02",
+      "A-rural-school-closures-education_finance-03",
+      "A-rural-school-closures-education_finance-04",
+      "A-rural-school-closures-education_finance-05",
+      "A-rural-school-closures-education_finance-06"
+    ],
+    "claim": {
+      "en": "Hungary's primary education school-site network declined from 3,609 sites (2021) to 3,521 sites (2024), while over 1,200 of 3,155 settlements now have no public educational institution.",
+      "hu": "Magyarország általános iskolai feladatellátási helyeinek száma 3609-ről (2021) 3521-re (2024) csökkent, és 3155 település közül több mint 1200-nak nincs már közoktatási intézménye."
+    },
+    "context": {
+      "en": "Closing small-village primary schools in depopulating Hungarian settlements is not justified as an efficiency measure on current evidence, because per-pupil cost premiums are economically defensible, learning outcomes do not suffer materially, and closure-induced local population loss and community harm systematically outweigh accounting savings.",
+      "hu": "A kistelepülési általános iskolák bezárása a depopulálódó magyar településeken nem indokolt hatékonyságnövelési intézkedésként a jelenlegi bizonyítékok alapján, mivel a per-capita költségprémium közgazdaságilag védhető, a tanulási kimenetelek anyagilag nem romlanak, és a bezárás által kiváltott helyi népességvesztés valamint közösségi sérülés szisztematikusan felülmúlja a költségvetési megtakarításokat."
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-757de1779e63a0"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-education_finance-01",
+      "U-rural-school-closures-education_finance-02",
+      "U-rural-school-closures-education_finance-03",
+      "U-rural-school-closures-education_finance-04",
+      "U-rural-school-closures-education_finance-05",
+      "U-rural-school-closures-education_finance-06"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-education_finance-01",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4395357c922251c109bf2bcfc6d84cddedc42df27fe2bcaa6c13db81cc28d104",
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,67 @@
+{
+  "content": {
+    "assessment": {
+      "en": "T6 is the proposal most directly aligned with implementation-planning criteria, as it is explicitly designed to supply the missing feedback loops, monitoring, and evidence base that other proposals (T1-T5) lack. It correctly diagnoses the central historical failure mode: Hungary's repeated cycles of school expansion and contraction were driven by top-down political decisions without institutionalized feedback mechanisms, and this proposal directly targets that gap with a registry and cost-visibility rules. However, the proposal's own risk section acknowledges the central implementation threat: an information-only framework may simply be overridden by political decision-making, exactly as occurred historically and in the Polish 2017 reversal, meaning the mechanism's success depends entirely on whether it is coupled to binding decision procedures elsewhere in the system.",
+      "hu": "A T6 a végrehajtás-tervezési kritériumokhoz a leginkább közvetlenül illeszkedő javaslat, mivel kifejezetten arra tervezték, hogy biztosítsa a hiányzó visszacsatolási hurkokat, monitorozást és bizonyítékbázist, amely gyakorlatilag hiányzik a többi javaslatból (T1–T5). Helyesen diagnosztizálja a központi történeti sikertelenségi módot: Magyarország iskolabővítési és -összevonási ciklusait ismételten felülről vezérelt politikai döntések hajtották intézményesített visszacsatolási mechanizmusok nélkül, és ez a javaslat közvetlenül a nyilvántartással és költségátláthatósági szabályokkal célozza meg ezt a hiányt. Ugyanakkor a javaslat saját kockázati része elismeri a központi végrehajtási fenyegetést: egy kizárólag információs keret egyszerűen felülírható lehet politikai döntéshozatal által, pontosan úgy, ahogy az történelmi szinten és a lengyel 2017-es visszafordítás esetében is megtörtént, ami azt jelenti, hogy a mechanizmus sikere teljes egészében azon múlik, hogy össze van-e kapcsolva a rendszer más részein kötelező döntési eljárásokkal."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-02"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Coupling the registry with any of T1, T3, or T5's procedural mechanisms could convert transparency into an actual constraint on decision-making, addressing the core implementation weakness of an information-only design.",
+        "hu": "A nyilvántartás összekapcsolása bármelyik T1, T3 vagy T5 eljárási mechanizmusával átalakíthatja az átláthatóságot tényleges döntéshozatali korláttá, kezelve az információ- csak tervezet alapvető végrehajtási gyengeségét"
+      },
+      {
+        "en": "Early establishment of Hungary-specific outcome tracking (e.g., on closure-depopulation linkage) could resolve some of the contested international evidence within a Hungarian-specific timeframe, informing later policy adaptation.",
+        "hu": "Magyarország-specifikus eredménykövetés korai felállítása (pl. a bezárás–elnéptelenedés kapcsolatára vonatkozóan) egyes vitatott nemzetközi bizonyítékokat magyarországi időkereten belül tisztázhat, és tájékoztathatja a későbbi politikai adaptációt."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Directly targets the documented absence of durable institutionalized feedback mechanisms across repeated historical cycles of Hungarian rural school contraction and expansion.",
+        "hu": "Közvetlenül célozza a dokumentált, tartós intézményesített visszacsatolási mechanizmusok hiányát a magyar vidéki iskolai összevonások és bővülések ismétlődő történeti ciklusai során."
+      },
+      {
+        "en": "Requires tracking of realized (not merely projected) cost savings and full inclusion of transportation cost offsets, addressing a documented gap in how consolidation fiscal rationale is currently presented.",
+        "hu": "Követeli a megvalósult (nem csupán előre jelzett) költségmegtakarítások nyomon követését és a szállítási költségkorrekciók teljes bevonását, ezzel kezelve egy dokumentált hiányosságot abban, hogyan kerül jelenleg bemutatásra a konszolidáció fiskális indoklása."
+      },
+      {
+        "en": "Explicitly proposes tracking Hungary-specific demographic-depopulation outcomes rather than assuming international findings transfer, appropriately treating that evidence as contested rather than settled.",
+        "hu": "Kifejezetten javasolja a Magyarországra jellemző demográfiai elnéptelenedés kimeneteinek nyomon követését ahelyett, hogy feltételezné a nemzetközi eredmények átvitelét; helyénvalóan kezeli ezeket a bizonyítékokat vitatottnak, nem pedig lezártnak."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Delay risk is explicit and significant: building evidence infrastructure takes time during which demographic pressures continue, and if not paired with interim action, the registry may only document a crisis it did not help avert.",
+        "hu": "A késleltetés kockázata kifejezett és jelentős: az evidenciainfrastruktúra kiépítése időt vesz igénybe, miközben a demográfiai nyomás folytatódik, és ha ezt nem párosítják köztes intézkedésekkel, a nyilvántartás csupán dokumentálhat egy válságot, amelyet nem segített megelőzni."
+      },
+      {
+        "en": "Historical precedent of political decisions overriding technical evidence, plus the Polish 2017 reversal despite positive evidence, suggests a material risk that this infrastructure will be built but not used at decision points.",
+        "hu": "A politikai döntések technikai bizonyítékokat felülíró történelmi precedense, valamint a lengyel 2017-es visszafordulás pozitív bizonyítékok ellenére érdemi kockázatot sejtet, hogy ez az infrastruktúra felépül, de a döntési pontokon nem fogják használni."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "As an information/transparency infrastructure, it carries no binding authority over the centralized decision-maker, so its practical effect depends entirely on voluntary uptake by an actor with a documented history of top-down, evidence-independent decisions.",
+        "hu": "Információs/átláthatósági infrastruktúraként nincs kényszerítő hatalma a centralizált döntéshozó felett, így gyakorlati hatása kizárólag egy olyan szereplő önkéntes átvételétől függ, amelynek dokumentált múltja van felülről érkező, bizonyítékfüggetlen döntésekben."
+      },
+      {
+        "en": "No described mechanism protects the registry from capture or selective publication, which would undermine the credibility this proposal depends on for influence.",
+        "hu": "Nincs leírt mechanizmus, amely megvédené a nyilvántartást a kisajátítástól vagy a szelektív publikálástól, ami aláásná annak hitelességét, amelyre ez a javaslat befolyása támaszkodik."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "94a5c19fe32937ee191d024a2fa49bb43cb7da0abadcb6f78f39dcbeb9780061",
+  "topic": "rural-school-closures"
+}

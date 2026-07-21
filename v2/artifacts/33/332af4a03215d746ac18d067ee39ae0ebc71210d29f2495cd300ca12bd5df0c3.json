@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-school_network_planning-01",
+      "A-korai-szelekcio-school_network_planning-02"
+    ],
+    "claim": {
+      "en": "Selection is not geographically uniform: approximately 40% of general schools nationally (60% in villages) send zero pupils to 6- or 8-year gimnázium tracks, while urban and county-seat schools lose 20-30% of each cohort.",
+      "hu": "A szelekció nem egyenletes településenként: az általános iskolák kb. 40%-ából (falun 60%-ából) senki nem jelentkezik hat- vagy nyolcosztályos gimnáziumba, míg megyeszékhelyi és nagyváros-iskolákból az évfolyam 20-30%-a elmegy."
+    },
+    "context": {
+      "en": "Physical school-network capacity is currently sufficient to sustain early selection almost anywhere; the genuine town-by-town feasibility bottleneck is the shrinking and unevenly distributed child population, combined with a maintainer and admissions design that concentrates selection into a minority of settlements.",
+      "hu": "A fizikai iskolahálózati kapacitás jelenleg szinte mindenhol elegendő a korai szelekció fenntartásához; a valódi településenkénti megvalósíthatósági szűk keresztmetszet a zsugorodó és egyenlőtlenül eloszló gyermeklétszám, valamint a fenntartói és felvételi rendszer, amely a szelekciót a települések kisebbségében koncentrálja."
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-f5f8fdeae8b8fa"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-school_network_planning-01",
+      "U-korai-szelekcio-school_network_planning-02",
+      "U-korai-szelekcio-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-school_network_planning-06",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "df161a53fffa85daca58835d6cc2cfaa3ba54dae7180c28e196edb1a673ae12e",
+  "topic": "korai-szelekcio"
+}

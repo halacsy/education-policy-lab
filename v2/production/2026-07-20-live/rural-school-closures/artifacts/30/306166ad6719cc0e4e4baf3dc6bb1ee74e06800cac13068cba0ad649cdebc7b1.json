@@ -1,0 +1,94 @@
+{
+  "content": {
+    "critical_attrition_count": 0,
+    "entries": [
+      {
+        "direction_id": "S1",
+        "direction_title": {
+          "en": "Status quo plus incremental adaptation",
+          "hu": "Status quo és fokozatos alkalmazkodás"
+        },
+        "proposal_refs": [
+          "TP-live-t6"
+        ],
+        "rationale": {
+          "en": "T6 explicitly documents and formalizes the no-new-policy/status-quo counterfactual (continuing ad hoc administrative practice) as the baseline against which the transparency framework's marginal value is assessed, incorporating the current reliance on informal negotiation, disputed transport responsibility, and absence of standing feedback mechanisms that characterize S1's status quo; it also references the demographic-cliff dynamic (F-live-demography-05) that makes indefinite passive retention untenable for some villages.",
+          "hu": "A T6 expliciten dokumentálja és formalizálja az új politikát/állapot-quo ellentétes esetet (az ad hoc adminisztratív gyakorlat folytatása) mint azt az alaphelyzetet, amelyhez viszonyítva a transzparencia keretrendszer marginális értékét mérik; beépíti az S1 státusz quót jellemző jelenlegi informális tárgyalásokra, vitatott szállítási felelősségre és a működő visszacsatolási mechanizmusok hiányára való támaszkodást; továbbá hivatkozik a demográfiai szakadék dinamikájára (F-live-demography-05), amely miatt a passzív, korlátlan megtartás egyes falvak számára tarthatatlan."
+        },
+        "status": "covered"
+      },
+      {
+        "direction_id": "S2",
+        "direction_title": {
+          "en": "Structural grade reorganization (lower grades stay, upper grades centralize)",
+          "hu": "Szerkezeti évfolyam-átalakítás (alsó tagozat marad, felső tagozat központosul)"
+        },
+        "proposal_refs": [
+          "TP-live-t3"
+        ],
+        "rationale": {
+          "en": "T3 directly implements the structural grade-split model (lower grades retained locally, upper grades consolidated centrally) following the Polish 1999 gimnazjum-pattern explicitly named in S2, including the associated transition-risk lessons from Poland's 2017 reversal.",
+          "hu": "A T3 közvetlenül megvalósítja a szerkezeti évfolyamszakaszolás modelljét (az alsó évfolyamok helyben maradnak, a felső évfolyamok központilag konszolidálódnak), a lengyel 1999-es gimnazjum-mintát követve, amelyet S2 név szerint megemlít, beleértve a lengyel 2017-es visszafordításból származó átmeneti kockázatokra vonatkozó leckéket is."
+        },
+        "status": "covered"
+      },
+      {
+        "direction_id": "S3",
+        "direction_title": {
+          "en": "Networked retention: clustering, association-run and multi-service hub models",
+          "hu": "Hálózatos megtartás: klaszterezés, egyesületi fenntartás és multifunkciós közösségi centrum modellek"
+        },
+        "proposal_refs": [
+          "TP-live-t2",
+          "TP-live-t4"
+        ],
+        "rationale": {
+          "en": "T2 implements the French-style reciprocal contract/RPI-adjacent negotiation mechanism for networked municipal retention, and T4 implements inter-municipal pedagogical clustering and multi-service hub conversion (Polish repurposing model), together covering the clustering, association-style, and multi-service-hub variants named in S3.",
+          "hu": "A T2 a francia stílusú kölcsönös szerződés/RPI-hez közeli tárgyalási mechanizmust valósítja meg a hálózatba szervezett önkormányzati megtartás érdekében, míg a T4 az önkormányzatok közötti pedagógiai klaszterezést és a többfunkciós központtá való átalakítást valósítja meg (lengyel átcélosítási modell), együttesen lefedve az S3-ban említett klaszterezés-, egyesülés-szerű és többfunkciós központ variánsokat."
+        },
+        "status": "covered"
+      },
+      {
+        "direction_id": "S4",
+        "direction_title": {
+          "en": "Consolidation with mitigation (closure as default, compensatory measures)",
+          "hu": "Összevonás enyhítő intézkedésekkel (megszüntetés alapesetben, kompenzációs eszközökkel)"
+        },
+        "proposal_refs": [
+          "TP-live-t5"
+        ],
+        "rationale": {
+          "en": "T5 implements consolidation-as-default paired with statutory transport guarantees, TEIP-style targeted support, and transparent cost/consultation rules, directly matching S4's compensatory-mitigation consolidation model.",
+          "hu": "A T5 az összevonást alapértelmezettként valósítja meg, párosítva törvényi szállítási garanciákkal, TEIP-stílusú célzott támogatással és átlátható költség/konsultációs szabályokkal, közvetlenül megfelelve az S4 kompenzáló-mitigáló összevonási modelljének."
+        },
+        "status": "covered"
+      },
+      {
+        "direction_id": "S5",
+        "direction_title": {
+          "en": "National systemic framework: transparency, thresholds and evidence infrastructure",
+          "hu": "Nemzeti szisztémás keretrendszer: átláthatóság, küszöbértékek és bizonyítéki infrastruktúra"
+        },
+        "proposal_refs": [
+          "TP-live-t6",
+          "TP-live-t1"
+        ],
+        "rationale": {
+          "en": "T6 is the core national evidence/transparency/threshold/registry infrastructure specified in S5; T1 complements it by codifying the procedural (alternatives-assessment, presumption-against-closure, appeal) dimension of a national framework that informs rather than dictates local closure decisions, together covering S5's transparency-plus-procedural-safeguard scope.",
+          "hu": "A T6 az S5‑ben meghatározott országos bizonyíték‑/átláthatósági/ küszöb‑/nyilvántartási infrastruktúra magja; a T1 kiegészíti azt azáltal, hogy kodifikálja a procedurális (alternatívák értékelése, bezárás ellen való vélelmezés, fellebbezés) dimenzióját egy olyan országos keretnek, amely informálja, de nem diktálja a helyi bezárási döntéseket, így együtt lefedve S5 átláthatóság‑plusz‑procedurális garancia hatókörét."
+        },
+        "status": "covered"
+      }
+    ],
+    "gate_basis": "approved_frames",
+    "verdict": "complete"
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "CL-live-approved-frames",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "coverage_ledger",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "577b87fa9161622579854821f710fbbabc7b74d6720ba03cfdbeea7efb2fb5bd",
+  "topic": "rural-school-closures"
+}

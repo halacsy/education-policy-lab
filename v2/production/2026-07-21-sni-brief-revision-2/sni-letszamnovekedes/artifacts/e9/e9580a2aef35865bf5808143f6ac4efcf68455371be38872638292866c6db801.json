@@ -1,0 +1,55 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Shifting finance architecture away from diagnosis-gated multipliers touches governance and accountability more than fundamental legal authority, since funding formulas are typically adjustable via administrative/financial regulation rather than requiring wholesale amendment of SNI status law. Stronger conditionality tying grants to documented service delivery would improve accountability and enforceability, directly addressing weak current conditionality, but the underlying incentive theory remains untested against Hungarian evidence.",
+      "hu": "A finanszírozási architektúra elmozdítása a diagnózishoz kötött szorzóktól inkább a kormányzásra és elszámoltathatóságra hat, mintsem az alapvető jogi hatáskörre, mivel a finanszírozási képletek tipikusan adminisztratív/pénzügyi szabályozással igazíthatók, és nem feltétlenül igényelnek teljes körű módosítást az SNI státusz törvényében. Az erősebb kondicionalitás, amely a támogatásokat a dokumentált szolgáltatásnyújtáshoz köti, javítaná az elszámoltathatóságot és enforceability-t, közvetlenül kezelve a jelenlegi gyenge kondicionalitást, de az alapul fekvő ösztönzéselmélet magyar bizonyítékokkal még nem tesztelt."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-legal_and_governance-07"
+    ],
+    "lens_ref": "L-live-legal_and_governance",
+    "opportunities": [
+      {
+        "en": "Stricter delivery-based conditionality could be paired with monitoring infrastructure to enforce actual receipt of legally prescribed habilitation/therapy hours",
+        "hu": "A szigorúbb teljesítés alapú feltételrendszer párosítható ellenőrzési infrastruktúrával annak érdekében, hogy kikényszerítsék a jogilag előírt habilitációs/terápiás órák tényleges igénybevételét."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Improved conditionality directly targets a documented accountability gap: SNI-linked grants and the 2-3x pupil-count multiplier currently lack strong enforcement tying funds to actual service delivery",
+        "hu": "A javított feltételrendszer közvetlenül egy dokumentált elszámoltathatósági rést céloz meg: az SNI-hez kötött támogatások és a 2-3x tanulószám-szorzó jelenleg nem kapcsolják erősen a forrásokat a tényleges szolgáltatásnyújtáshoz"
+      },
+      {
+        "en": "Funding-formula change is more administratively tractable than restructuring the categorical/legal-status architecture itself",
+        "hu": "A finanszírozási képlet megváltoztatása adminisztratív szempontból kezelhetőbb, mint maga a kategorizációs/jogállási architektúra átalakítása"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Removing diagnosis-linked funding without corresponding legal change to entitlement structures could create a mismatch between formal SNI/BTMN legal status and actual resource allocation, generating new accountability ambiguities",
+        "hu": "A diagnózishoz kötött finanszírozás eltörlése a jogosultsági struktúrákhoz kapcsolódó jogi változás nélkül eltérést idézhet elő a formális SNI/BTMN jogi státusz és a tényleges erőforrás-elosztás között, új elszámoltathatósági kétértelműségeket teremtve."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "No causal evidence links Hungary's specific financing mechanism to the identification rise, so the legal-governance rationale rests on plausible but unproven incentive theory",
+        "hu": "Nincs ok-okozati bizonyíték arra, hogy Magyarország konkrét finanszírozási mechanizmusa összefüggene a diagnosztizálások növekedésével, így a jogi–kormányzati indoklás valószínű, de bizonyítatlan ösztönzőelméleten nyugszik"
+      },
+      {
+        "en": "Poland's contrasting trajectory (expansion rather than removal of disability-weighted funding) shows no convergent governance model exists to validate this approach",
+        "hu": "Lengyelország ellentétes pályája (a fogyatékosság‑súlyozott finanszírozás bővítése a megszüntetés helyett) azt jelzi, hogy nincs konvergens kormányzati modell, amely igazolná ezt a megközelítést."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-legal_and_governance",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "3b8708bb2dcad776198d5cf3156ea40382b649409e529e13b6249cfc2fffaa82",
+  "topic": "sni-letszamnovekedes"
+}

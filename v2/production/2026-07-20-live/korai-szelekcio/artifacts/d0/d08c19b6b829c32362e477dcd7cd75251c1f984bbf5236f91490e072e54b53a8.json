@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a public-finance perspective, T1 targets the demand-side capital advantage (F-live-education_finance-02) that lets higher-SES families outcompete for gimnázium seats, but it does not touch the capitation funding structure that penalizes feeder schools (F-live-education_finance-05) nor generates new state expenditure — its costs are largely administrative (exam redesign) rather than fiscal. Value for money is plausible if coaching-resistant design reduces private-market arbitrage, but the underlying resource flow that disadvantages non-selective schools remains fully intact, so the proposal's fiscal footprint is narrow relative to the scale of the problem it targets.",
+      "hu": "Költségvetési-pénzügyi nézőpontból a T1 a keresleti oldali tőkeelőnyt célozza (F-live-education_finance-02), amely lehetővé teszi, hogy a magasabb SES-ú családok versenyelőnyhöz jussanak a gimnáziumi helyekért, de nem érinti azt a kapacitás-alapú (capitation) finanszírozási szerkezetet, amely bünteti a kibocsátó iskolákat (F-live-education_finance-05), és nem generál új állami kiadást — költségei nagyrészt adminisztratívak (vizsgaáttervezés), nem fiskálisak. Az ár-érték arány valószínűsíthető, ha a coaching-ellenálló dizájn csökkenti a magánpiaci arbitrázst, de az alapvető erőforrás-áramlás, amely hátrányos helyzetbe hozza a nem szelekciós iskolákat, teljes egészében érintetlen marad, így a javaslat fiskális lábnyoma szűk a célzott probléma léptékéhez képest."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-education_finance-02",
+      "F-live-education_finance-05"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Could be paired with targeted subsidy for coaching-resistant test-prep access in disadvantaged feeder schools at marginal cost",
+        "hu": "Párosítható célzott támogatással coaching-resistant tesztfelkészítéshez való hozzáférés biztosítására a hátrányos helyzetű feeder-iskolákban marginális költségen"
+      },
+      {
+        "en": "Reallocating administrative resources from interview components (already capped at 25%) could be fiscally neutral while shifting incentive structure",
+        "hu": "Az adminisztratív erőforrások átcsoportosítása az interjús komponensekről (már 25%-ban korlátozva) fiskálisan semleges lehet, miközben az ösztönzési szerkezetet megváltoztatja."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Low fiscal cost since it repurposes an existing centrally-graded exam infrastructure rather than creating new spending lines",
+        "hu": "Alacsony fiskális költség, mivel egy meglévő központilag értékelt vizsga-infrastruktúrát hasznosít újra, ahelyett hogy új kiadási sorokat hozna létre"
+      },
+      {
+        "en": "Directly addresses the capital/coaching-market mechanism through which SES translates into seat capture (F-live-education_finance-02)",
+        "hu": "Közvetlenül érinti azt a tőke/korrepetálási piac mechanizmust, amelyen keresztül a társadalmi-gazdasági státusz (SES) felvételi helyek megszerzéséhez vezet (F-live-education_finance-02)."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Absent compensatory funding, feeder schools continue to lose both capitation revenue and peer effects regardless of admissions redesign, so the underlying fiscal incentive to poach top students via 6/8-year tracks is undiminished",
+        "hu": "Kártalanító források hiányában a tápláló iskolák továbbra is elveszítik mind a normatív finanszírozást, mind a peer-hatásokat a felvételi átalakítástól függetlenül, így az az alapvető fiskális ösztönző, hogy a 6/8 éves pályákon keresztül felső tanulókat „csábítsanak el”, nem csökken."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Leaves the capitation-based funding penalty on feeder schools entirely unaddressed, so the resource-loss incentive structure driving schools to compete for high-performers persists (F-live-education_finance-05)",
+        "hu": "Teljesen érintetlenül hagyja a beküldő iskolákra vonatkozó fejkvóta-alapú finanszírozási büntetést, így az erőforrás-veszteség miatti ösztönzőszerkezet, amely a jó tanulókért folytatott iskolai versenyt hajtja, továbbra is fennmarad (F-live-education_finance-05)"
+      },
+      {
+        "en": "No fiscal mechanism to reach disadvantaged elementary schools that do not facilitate entry-competition participation at all, meaning zero cost is spent on the non-applicant pool (F-live-education_finance-02)",
+        "hu": "Nincs olyan fiskális mechanizmus, amely elérné azokat a hátrányos helyzetű általános iskolákat, amelyek egyáltalán nem teszik lehetővé a belépési versenyt, vagyis a nem pályázó körre nulla forrás kerül (F-live-education_finance-02)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "92a1b99f3f419f48f0de0f0d922a2f1672f81b5a25cd6048529227395ff5a3d2",
+  "topic": "korai-szelekcio"
+}

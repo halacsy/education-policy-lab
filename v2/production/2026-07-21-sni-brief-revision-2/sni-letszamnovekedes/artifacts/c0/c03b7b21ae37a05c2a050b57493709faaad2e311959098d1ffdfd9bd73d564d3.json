@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "Recorded SEN prevalence varies dramatically by county, ranging from 15.6% of students in Békés county to 6.2% in Borsod-Abaúj-Zemplén county.",
+      "hu": "A regisztrált SNI-elterjedtség megyénként jelentősen eltér: Békés megyében a tanulók 15,6%-a, míg Borsod-Abaúj-Zemplén megyében 6,2%-a szerepel SNI-státussal."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Researchers explicitly caution that regional differences may reflect diagnostic and support-system quality/access rather than true underlying need variation",
+        "hu": "A kutatók kifejezetten óvatosságra intenek, hogy a regionális különbségek a valódi szükségletbeli eltérések helyett a diagnosztikai és támogatórendszer minőségét/hozzáférhetőségét tükrözhetik."
+      },
+      {
+        "en": "Low recorded prevalence does not definitively indicate fewer SNI children; it may indicate under-identification due to service gaps, making raw prevalence rates unsuitable as sole planning demand metrics",
+        "hu": "Az alacsony regisztrált prevalencia nem jelenti feltétlenül azt, hogy kevesebb SNI-gyermek van; utalhat az ellátási hiányok miatti alulazonosításra, ezért a nyers prevalenciaszintek nem alkalmasak egyedüli tervezési keresleti mutatóként."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-03",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "df5a6f07344a2a16ad957aa3d4a65048ba2f216427da2820a2d362a6670c639a",
+  "topic": "sni-letszamnovekedes"
+}

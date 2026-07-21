@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "By 2024, more than 1,200 of 3,155 Hungarian settlements had no public educational institutions, and primary education sites fell from 3,609 to 3,521 between 2021 and 2024, indicating a contracting feeder network from which 5th/7th-grade selection cohorts must be drawn.",
+      "hu": "2024-re a 3 155 magyar településből több mint 1 200-nak nem volt köznevelési intézménye, és az általános iskolai helyszínek száma 2021 és 2024 között 3 609-ről 3 521-re csökkent, ami egy beszállító hálózat zsugorodását jelzi, amelyből az 5./7. évfolyamos felvételi kohorszoknak ki kell kerülniük."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Data is aggregate across all primary schools, not disaggregated by school type or gimnázium feed-rate",
+        "hu": "Az adatok összevontak minden általános iskolára nézve; nincsenek lebontva iskola­típus vagy a gimnáziumba áramlás aránya szerint."
+      },
+      {
+        "en": "Causal drivers of closure (demographic decline, consolidation policy, resource allocation) are not specified",
+        "hu": "A bezárások oksági mozgatórugói (demográfiai csökkenés, konszolidációs politika, erőforrás-allokáció) nincsenek megadva."
+      },
+      {
+        "en": "Impact on 6-/8-year track recruitment specifically is inferred, not directly measured",
+        "hu": "A 6-/8 évfolyamos tagozatok toborzására gyakorolt hatást következtették, nem mérték közvetlenül."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-02",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4be93fc1651c331629d153d829f083545e8f72a76ad5a3276cc69c0cd606453f",
+  "topic": "korai-szelekcio"
+}

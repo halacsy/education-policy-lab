@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "As an explicit no-policy counterfactual, this proposal is not a reform bundle at all, which is directly relevant to the lens's causal-attribution question: any observed contraction or performance change under this baseline cannot be attributed to policy design, since it is driven purely by demographic mechanics. The lens is well-suited to flag that this baseline, while methodologically useful for isolating the causal contribution of active interventions (T1-T4, T6), does not itself constitute or substitute for whole-system reform, and its own risk section concedes Roma segregation and church-sector selective growth are unaddressed.",
+      "hu": "Mint expliciten nem-politikai kontrafaktuális, ez a javaslat valójában nem reformcsomag, ami közvetlenül releváns a szemlélet oksági hozzárendelési kérdéséhez: bármely megfigyelt zsugorodás vagy teljesítményváltozás ezen alapvonal mellett nem tulajdonítható politikai tervezésnek, mivel kizárólag demográfiai mechanikák vezérlik. A szemlélet jól alkalmas arra, hogy kiemelje: ez a kiindulóhelyzet, bár módszertanilag hasznos az aktív beavatkozások (T1–T4, T6) okozati hozzájárulásának elkülönítésére, önmagában nem jelent vagy helyettesít egész rendszert érintő reformot, és a saját kockázati része elismeri, hogy a roma-szegregáció és az egyházi szektor szelektív növekedése változatlanul megoldatlan marad."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-10",
+      "F-live-portuguese_reform-06"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      {
+        "en": "Serves as the necessary comparison baseline against which the causal contribution of T1-T4/T6 can be isolated, strengthening the evidentiary basis for evaluating those proposals",
+        "hu": "Szükséges összehasonlító bázisként szolgál, amelyhez viszonyítva a T1–T4/T6 okozati hozzájárulása izolálható, erősítve e javaslatok értékelésének bizonyítékát"
+      }
+    ],
+    "proposal_ref": "TP-live-t5",
+    "strengths": [
+      {
+        "en": "Provides a methodologically necessary counterfactual for causal attribution when evaluating other proposals, directly serving the lens's own causal-attribution criterion",
+        "hu": "Módszertanilag szükséges kontrafaktuális viszonyítási alapot biztosít az oksági attribúcióhoz más javaslatok értékelésekor, közvetlenül szolgálva a lencse saját oksági-attribúciós kritériumát"
+      },
+      {
+        "en": "Demographic mechanisms (cohort decline, class-size thresholds) are well-documented as durable structural trends operating independently of policy choice, making the baseline empirically grounded",
+        "hu": "A demográfiai mechanizmusok (kohorszcsökkenés, osztálylétszám-küszöbök) jól dokumentált, tartós strukturális trendek, amelyek a politikai döntéstől függetlenül működnek, így a kiinduló helyzet empirikusan megalapozott"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Uncoordinated closures could trigger settlement-viability disruption without any phased management, a risk structurally similar to (if smaller than) the Polish transition-cost pattern",
+        "hu": "A koordinálatlan bezárások település-élhetőségre gyakorolt zavarokat idézhetnek elő fázisos menedzsment nélkül; ez a kockázat szerkezetileg hasonló a lengyel átmeneti költség mintázathoz (bár kisebb lehet)."
+      },
+      {
+        "en": "Absence of active policy means none of the documented segregation mechanisms (tracking, church growth, Roma exclusion) are addressed, so this baseline cannot be mistaken for a reform achieving the stated equity goal",
+        "hu": "Az aktív politika hiánya azt jelenti, hogy a dokumentált szegregációs mechanizmusok egyike sem kerül kezelve (szelektív pályák, egyházi növekedés, roma kizárás), ezért ezt az alapállapotot nem szabad összetéveszteni azzal, hogy egy reform eléri a kijelölt egyenlőségi célt."
+      }
+    ],
+    "verdict": "insufficient_evidence",
+    "weaknesses": [
+      {
+        "en": "Passive contraction is geographically uneven and could worsen geographic equity even as aggregate selective-track size shrinks, contradicting any implicit assumption that shrinkage alone improves equity",
+        "hu": "A passzív zsugorodás földrajzilag egyenetlen, és ronthatja a földrajzi egyenlőséget akkor is, ha az összesített szelektív pályaméret csökken, ellentmondva bármely implicit feltételezésnek, miszerint önmagában a zsugorodás javítja az egyenlőséget"
+      },
+      {
+        "en": "Roma segregation and church-sector selective growth are not addressed at all, meaning the equity gaps most clearly documented in the evidence base persist or could worsen under this baseline",
+        "hu": "A roma szegregációt és az egyházi szektor szelektív növekedését egyáltalán nem kezelik, ami azt jelenti, hogy a bizonyítékokban legvilágosabban dokumentált egyenlőtlenségi hézagok fennmaradnak, vagy tovább romolhatnak ezen alapforgatókönyv mellett."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t5-portuguese_reform",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "301fe0b4ce2451ce5c5ef2328cbe63ddd73fa51918ef8d1716ed04a6dac67e56",
+  "topic": "korai-szelekcio"
+}

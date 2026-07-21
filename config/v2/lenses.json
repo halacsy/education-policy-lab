@@ -1,101 +1,565 @@
 {
-  "architecture_version": "2.0.0",
+  "architecture_version": "2.1.0",
   "lenses": [
     {
       "id": "hungarian_education_system",
-      "name": "Hungarian education system",
-      "discipline": "education system analysis",
-      "questions": ["How does the proposal interact with current Hungarian institutions?", "Which existing selection, access, or governance mechanisms remain unchanged?"],
-      "criteria": ["institutional fit", "system coverage", "unintended sorting", "administrative compatibility"],
-      "limitations": ["Institutional description does not establish causal impact."]
+      "name": {
+        "en": "Hungarian education system",
+        "hu": "magyar oktatási rendszer"
+      },
+      "discipline": {
+        "en": "education system analysis",
+        "hu": "oktatási rendszer-elemzés"
+      },
+      "questions": [
+        {
+          "en": "How does the proposal interact with current Hungarian institutions?",
+          "hu": "Hogyan lép kölcsönhatásba a javaslat a jelenlegi magyar intézményekkel?"
+        },
+        {
+          "en": "Which existing selection, access, or governance mechanisms remain unchanged?",
+          "hu": "Mely meglévő kiválasztási, hozzáférési vagy irányítási mechanizmusok maradnak változatlanok?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "institutional fit",
+          "hu": "intézményi illeszkedés"
+        },
+        {
+          "en": "system coverage",
+          "hu": "rendszer lefedettsége"
+        },
+        {
+          "en": "unintended sorting",
+          "hu": "nem szándékos szelekció"
+        },
+        {
+          "en": "administrative compatibility",
+          "hu": "adminisztratív kompatibilitás"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Institutional description does not establish causal impact.",
+          "hu": "Az intézményi leírás nem bizonyít oksági hatást."
+        }
+      ]
     },
     {
       "id": "international_comparison",
-      "name": "International comparison",
-      "discipline": "comparative education policy",
-      "questions": ["Where has a comparable mechanism been attempted?", "Which contextual differences constrain transfer?"],
-      "criteria": ["comparability", "transferability", "implementation similarity", "outcome relevance"],
-      "limitations": ["Cross-country analogy cannot substitute for Hungarian causal evidence."]
+      "name": {
+        "en": "International comparison",
+        "hu": "Nemzetközi összehasonlítás"
+      },
+      "discipline": {
+        "en": "comparative education policy",
+        "hu": "összehasonlító oktatáspolitika"
+      },
+      "questions": [
+        {
+          "en": "Where has a comparable mechanism been attempted?",
+          "hu": "Hol próbáltak ki hasonló mechanizmust?"
+        },
+        {
+          "en": "Which contextual differences constrain transfer?",
+          "hu": "Mely kontextuális különbségek korlátozzák az átvitelt?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "comparability",
+          "hu": "összehasonlíthatóság"
+        },
+        {
+          "en": "transferability",
+          "hu": "átvihetőség"
+        },
+        {
+          "en": "implementation similarity",
+          "hu": "megvalósítási hasonlóság"
+        },
+        {
+          "en": "outcome relevance",
+          "hu": "eredmény relevanciája"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Cross-country analogy cannot substitute for Hungarian causal evidence.",
+          "hu": "Az országok közötti analógia nem helyettesítheti a magyarországi kauzális bizonyítékot."
+        }
+      ]
     },
     {
       "id": "finnish_reform",
-      "name": "Finnish system reform",
-      "discipline": "whole-system reform analysis",
-      "questions": ["What does the Finnish comprehensive-school experience imply?", "Which later erosion or school-choice effects matter?"],
-      "criteria": ["tracking age", "comprehensive provision", "political durability", "context fit"],
-      "limitations": ["Finland's institutional and demographic context differs from Hungary's."]
+      "name": {
+        "en": "Finnish system reform",
+        "hu": "Finn rendszerreform"
+      },
+      "discipline": {
+        "en": "whole-system reform analysis",
+        "hu": "rendszerszintű reformelemzés"
+      },
+      "questions": [
+        {
+          "en": "What does the Finnish comprehensive-school experience imply?",
+          "hu": "Mit sugall a finn komprehenzív (egységes) iskolarendszer tapasztalata?"
+        },
+        {
+          "en": "Which later erosion or school-choice effects matter?",
+          "hu": "Mely későbbi eróziós vagy iskolaválasztási hatások számítanak?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "tracking age",
+          "hu": "nyomon követés kora"
+        },
+        {
+          "en": "comprehensive provision",
+          "hu": "átfogó ellátás"
+        },
+        {
+          "en": "political durability",
+          "hu": "politikai tartósság"
+        },
+        {
+          "en": "context fit",
+          "hu": "kontextushoz való illeszkedés"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Finland's institutional and demographic context differs from Hungary's.",
+          "hu": "Finnország intézményi és demográfiai kontextusa különbözik Magyarországétól."
+        }
+      ]
     },
     {
       "id": "polish_reform",
-      "name": "Polish system reform",
-      "discipline": "whole-system reform analysis",
-      "questions": ["What does Poland's structural reorganization imply?", "What do reversal and implementation history reveal?"],
-      "criteria": ["structural mechanism", "distributional effects", "reversibility", "implementation sequence"],
-      "limitations": ["Polish outcome estimates and political history are not directly portable."]
+      "name": {
+        "en": "Polish system reform",
+        "hu": "lengyel rendszerreform"
+      },
+      "discipline": {
+        "en": "whole-system reform analysis",
+        "hu": "rendszerszintű reformelemzés"
+      },
+      "questions": [
+        {
+          "en": "What does Poland's structural reorganization imply?",
+          "hu": "Mit jelent Lengyelország szerkezeti átalakítása?"
+        },
+        {
+          "en": "What do reversal and implementation history reveal?",
+          "hu": "Mit árul el a visszafordítás és a megvalósítás története?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "structural mechanism",
+          "hu": "szerkezeti mechanizmus"
+        },
+        {
+          "en": "distributional effects",
+          "hu": "elosztási hatások"
+        },
+        {
+          "en": "reversibility",
+          "hu": "visszafordíthatóság"
+        },
+        {
+          "en": "implementation sequence",
+          "hu": "végrehajtási sorrend"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Polish outcome estimates and political history are not directly portable.",
+          "hu": "A lengyel eredménybecslések és politikai történelem nem vihetők át közvetlenül."
+        }
+      ]
     },
     {
       "id": "portuguese_reform",
-      "name": "Portuguese system reform",
-      "discipline": "whole-system reform analysis",
-      "questions": ["Can non-structural quality and equity measures achieve the stated goal?", "Which coordinated reforms were necessary?"],
-      "criteria": ["policy bundle", "quality levelling", "equity", "causal attribution"],
-      "limitations": ["Portugal's gains cannot be attributed to one isolated intervention."]
+      "name": {
+        "en": "Portuguese system reform",
+        "hu": "portugál rendszerreform"
+      },
+      "discipline": {
+        "en": "whole-system reform analysis",
+        "hu": "rendszerszintű reformelemzés"
+      },
+      "questions": [
+        {
+          "en": "Can non-structural quality and equity measures achieve the stated goal?",
+          "hu": "Elérhetik-e a nem strukturális minőség- és esélyegyenlőségi intézkedések a kitűzött célt?"
+        },
+        {
+          "en": "Which coordinated reforms were necessary?",
+          "hu": "Milyen koordinált reformokra volt szükség?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "policy bundle",
+          "hu": "intézkedéscsomag"
+        },
+        {
+          "en": "quality levelling",
+          "hu": "minőségkiegyenlítés"
+        },
+        {
+          "en": "equity",
+          "hu": "méltányosság"
+        },
+        {
+          "en": "causal attribution",
+          "hu": "ok-okozati attribúció"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Portugal's gains cannot be attributed to one isolated intervention.",
+          "hu": "Portugália eredményei nem tulajdoníthatók egyetlen elszigetelt beavatkozásnak."
+        }
+      ]
     },
     {
       "id": "equity_and_social_mobility",
-      "name": "Equity and social mobility",
-      "discipline": "education inequality research",
-      "questions": ["Who gains and who loses access, quality, and future options?", "Does the proposal reduce or relocate sorting?"],
-      "criteria": ["distributional impact", "access", "segregation", "mobility", "intersectional risk"],
-      "limitations": ["Equity effects depend on implementation details and baseline measurement."]
+      "name": {
+        "en": "Equity and social mobility",
+        "hu": "Méltányosság és társadalmi mobilitás"
+      },
+      "discipline": {
+        "en": "education inequality research",
+        "hu": "oktatási egyenlőtlenség-kutatás"
+      },
+      "questions": [
+        {
+          "en": "Who gains and who loses access, quality, and future options?",
+          "hu": "Ki nyer és ki veszít hozzáférésben, minőségben és jövőbeli lehetőségekben?"
+        },
+        {
+          "en": "Does the proposal reduce or relocate sorting?",
+          "hu": "A javaslat csökkenti vagy áthelyezi-e a szelekciót?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "distributional impact",
+          "hu": "elosztásbeli hatás"
+        },
+        {
+          "en": "access",
+          "hu": "hozzáférés"
+        },
+        {
+          "en": "segregation",
+          "hu": "szegregáció"
+        },
+        {
+          "en": "mobility",
+          "hu": "mobilitás"
+        },
+        {
+          "en": "intersectional risk",
+          "hu": "intersekcionális kockázat"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Equity effects depend on implementation details and baseline measurement.",
+          "hu": "Az egyenlőségi hatások a végrehajtás részleteitől és a kiindulási mérésmódtól függenek."
+        }
+      ]
     },
     {
       "id": "demography",
-      "name": "Demography",
-      "discipline": "population and cohort analysis",
-      "questions": ["How do cohort decline and geography change viability?", "Which effects would occur without the proposal?"],
-      "criteria": ["cohort trajectory", "spatial distribution", "counterfactual contraction", "planning horizon"],
-      "limitations": ["Population projections do not determine the normative response."]
+      "name": {
+        "en": "Demography",
+        "hu": "Demográfia"
+      },
+      "discipline": {
+        "en": "population and cohort analysis",
+        "hu": "népesség- és kohortelemzés"
+      },
+      "questions": [
+        {
+          "en": "How do cohort decline and geography change viability?",
+          "hu": "Hogyan befolyásolja a kohorszcsökkenés és a földrajzi elhelyezkedés a fenntarthatóságot?"
+        },
+        {
+          "en": "Which effects would occur without the proposal?",
+          "hu": "Milyen hatások következnének be a javaslat nélkül?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "cohort trajectory",
+          "hu": "kohorsz pályája"
+        },
+        {
+          "en": "spatial distribution",
+          "hu": "térbeli eloszlás"
+        },
+        {
+          "en": "counterfactual contraction",
+          "hu": "kontrafaktuális szűkítés"
+        },
+        {
+          "en": "planning horizon",
+          "hu": "tervezési időhorizont"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Population projections do not determine the normative response.",
+          "hu": "A népesség-előrejelzések nem határozzák meg a normatív választ."
+        }
+      ]
     },
     {
       "id": "school_network_planning",
-      "name": "School network planning",
-      "discipline": "education infrastructure planning",
-      "questions": ["Can the school network deliver the proposal geographically?", "What access, transport, and capacity constraints arise?"],
-      "criteria": ["geographic access", "capacity", "transport", "network resilience"],
-      "limitations": ["Network feasibility does not by itself establish educational quality."]
+      "name": {
+        "en": "School network planning",
+        "hu": "iskolahálózat-tervezés"
+      },
+      "discipline": {
+        "en": "education infrastructure planning",
+        "hu": "oktatási infrastruktúra-tervezés"
+      },
+      "questions": [
+        {
+          "en": "Can the school network deliver the proposal geographically?",
+          "hu": "Képes-e az iskolahálózat földrajzilag biztosítani a javaslat végrehajtását?"
+        },
+        {
+          "en": "What access, transport, and capacity constraints arise?",
+          "hu": "Milyen hozzáférési, szállítási és kapacitásbeli korlátok merülnek fel?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "geographic access",
+          "hu": "földrajzi elérhetőség"
+        },
+        {
+          "en": "capacity",
+          "hu": "kapacitás"
+        },
+        {
+          "en": "transport",
+          "hu": "szállítás"
+        },
+        {
+          "en": "network resilience",
+          "hu": "hálózati ellenállóképesség"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Network feasibility does not by itself establish educational quality.",
+          "hu": "A hálózati megvalósíthatóság önmagában nem bizonyítja az oktatási minőséget"
+        }
+      ]
     },
     {
       "id": "education_finance",
-      "name": "Education finance",
-      "discipline": "public finance and education economics",
-      "questions": ["What resources, opportunity costs, and incentives does the proposal create?", "Are benefits and costs distributed differently?"],
-      "criteria": ["fiscal magnitude", "cost incidence", "incentives", "affordability", "value for money"],
-      "limitations": ["The committed corpus lacks complete proposal-level cost estimates."]
+      "name": {
+        "en": "Education finance",
+        "hu": "oktatási finanszírozás"
+      },
+      "discipline": {
+        "en": "public finance and education economics",
+        "hu": "közfinanszírozás és oktatásgazdaságtan"
+      },
+      "questions": [
+        {
+          "en": "What resources, opportunity costs, and incentives does the proposal create?",
+          "hu": "Milyen erőforrásokat, alternatív költségeket és ösztönzőket teremt a javaslat?"
+        },
+        {
+          "en": "Are benefits and costs distributed differently?",
+          "hu": "A hasznok és költségek eltérően oszlanak meg?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "fiscal magnitude",
+          "hu": "költségvetési nagyságrend"
+        },
+        {
+          "en": "cost incidence",
+          "hu": "költségviselés"
+        },
+        {
+          "en": "incentives",
+          "hu": "ösztönzők"
+        },
+        {
+          "en": "affordability",
+          "hu": "megfizethetőség"
+        },
+        {
+          "en": "value for money",
+          "hu": "ár-érték arány"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "The committed corpus lacks complete proposal-level cost estimates.",
+          "hu": "A committed corpus nem tartalmaz complete proposal-level cost estimates."
+        }
+      ]
     },
     {
       "id": "legal_and_governance",
-      "name": "Legal and governance",
-      "discipline": "education law and public governance",
-      "questions": ["Which legal authority and governance changes are required?", "What rights, autonomy, and accountability conflicts arise?"],
-      "criteria": ["legal authority", "rights compatibility", "maintainer autonomy", "accountability", "enforceability"],
-      "limitations": ["This lens is policy analysis, not formal legal advice."]
+      "name": {
+        "en": "Legal and governance",
+        "hu": "jogi és kormányzati"
+      },
+      "discipline": {
+        "en": "education law and public governance",
+        "hu": "oktatási jog és közigazgatás"
+      },
+      "questions": [
+        {
+          "en": "Which legal authority and governance changes are required?",
+          "hu": "Milyen jogi hatáskör- és kormányzati változások szükségesek?"
+        },
+        {
+          "en": "What rights, autonomy, and accountability conflicts arise?",
+          "hu": "Milyen jog-, autonómia- és elszámoltathatósági konfliktusok merülnek fel?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "legal authority",
+          "hu": "jogi hatáskör"
+        },
+        {
+          "en": "rights compatibility",
+          "hu": "jogokkal való összeegyeztethetőség"
+        },
+        {
+          "en": "maintainer autonomy",
+          "hu": "fenntartói autonómia"
+        },
+        {
+          "en": "accountability",
+          "hu": "elszámoltathatóság"
+        },
+        {
+          "en": "enforceability",
+          "hu": "végrehajthatóság"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "This lens is policy analysis, not formal legal advice.",
+          "hu": "Ez a nézőpont politikaelemzés; nem formális jogi tanácsadás."
+        }
+      ]
     },
     {
       "id": "political_feasibility",
-      "name": "Political feasibility",
-      "discipline": "political economy of reform",
-      "questions": ["Which coalitions can enact and sustain the proposal?", "How exposed is it to reversal or strategic resistance?"],
-      "criteria": ["coalition support", "opposition intensity", "reversal risk", "public legitimacy"],
-      "limitations": ["Political forecasts are time-sensitive and intrinsically uncertain."]
+      "name": {
+        "en": "Political feasibility",
+        "hu": "politikai megvalósíthatóság"
+      },
+      "discipline": {
+        "en": "political economy of reform",
+        "hu": "a reform politikai gazdaságtana"
+      },
+      "questions": [
+        {
+          "en": "Which coalitions can enact and sustain the proposal?",
+          "hu": "Mely koalíciók képesek bevezetni és fenntartani a javaslatot?"
+        },
+        {
+          "en": "How exposed is it to reversal or strategic resistance?",
+          "hu": "Mennyire van kitéve a javaslat visszavonásnak vagy stratégiai ellenállásnak?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "coalition support",
+          "hu": "koalíciós támogatás"
+        },
+        {
+          "en": "opposition intensity",
+          "hu": "ellenállás intenzitása"
+        },
+        {
+          "en": "reversal risk",
+          "hu": "visszafordítás kockázata"
+        },
+        {
+          "en": "public legitimacy",
+          "hu": "társadalmi legitimitás"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Political forecasts are time-sensitive and intrinsically uncertain.",
+          "hu": "A politikai előrejelzések időérzékenyek és lényegüknél fogva bizonytalanok."
+        }
+      ]
     },
     {
       "id": "implementation_planning",
-      "name": "Implementation planning",
-      "discipline": "public-sector change and implementation science",
-      "questions": ["Can actors deliver the mechanism in the proposed sequence?", "Which capabilities, feedback loops, and safeguards are missing?"],
-      "criteria": ["actor capacity", "sequencing", "pilotability", "monitoring", "adaptation", "failure containment"],
-      "limitations": ["Implementation readiness cannot be inferred from policy intent alone."]
+      "name": {
+        "en": "Implementation planning",
+        "hu": "végrehajtás megtervezése"
+      },
+      "discipline": {
+        "en": "public-sector change and implementation science",
+        "hu": "közszféra átalakulása és a megvalósításkutatás"
+      },
+      "questions": [
+        {
+          "en": "Can actors deliver the mechanism in the proposed sequence?",
+          "hu": "Képesek-e a szereplők a mechanizmust a javasolt sorrendben végrehajtani?"
+        },
+        {
+          "en": "Which capabilities, feedback loops, and safeguards are missing?",
+          "hu": "Mely képességek, feedback loops és safeguards hiányoznak?"
+        }
+      ],
+      "criteria": [
+        {
+          "en": "actor capacity",
+          "hu": "szereplői kapacitás"
+        },
+        {
+          "en": "sequencing",
+          "hu": "sorrendiség"
+        },
+        {
+          "en": "pilotability",
+          "hu": "pilotálhatóság"
+        },
+        {
+          "en": "monitoring",
+          "hu": "nyomon követés"
+        },
+        {
+          "en": "adaptation",
+          "hu": "alkalmazkodás"
+        },
+        {
+          "en": "failure containment",
+          "hu": "kudarcok kordában tartása"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Implementation readiness cannot be inferred from policy intent alone.",
+          "hu": "A végrehajtásra való felkészültség nem következtethető kizárólag a politikai szándékból."
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a demographic lens, the passive baseline is analytically useful as a counterfactual but structurally inadequate as a policy stance given locked-in cohort contraction and an aging, spatially maldistributed workforce. The 0-4 population decline of 5% by 2033 is already determined by births that have occurred, meaning the school-age pipeline shrinkage through the 2030s is a near-certainty independent of any SEN policy choice. Simultaneously, the teaching workforce is aging (half aged 50+) and thin in exactly the underserved rural and northeastern areas where child disadvantage concentration is highest, so static capacity interacting with uneven regional decline risks compounding rather than resolving service gaps.",
+      "hu": "Demográfiai szemszögből a passzív alapállás analitikailag hasznos ellenfaktuálisként, de strukturálisan elégtelen politikaállás a már rögzült kohorszzsűkítés és az öregedő, térben egyenetlenül elosztott munkaerő miatt. A 0–4 éves korcsoport 2033-ig várható 5%-os csökkenése már a lezajlott gyermekvállalásokból következik, ami azt jelenti, hogy a 2030-as évek iskoláskorú utánpótlásának zsugorodása szinte bizonyos, függetlenül bármilyen SEN policy choice-tól. Ugyanakkor a pedagógusállomány öregszik (a munkavállalók fele 50 év feletti), és pontosan azokban a kevésbé ellátott vidéki és északkeleti területeken vékony, ahol a gyermekhátrány koncentrációja a legnagyobb, tehát a statikus kapacitás és az egyenetlen regionális csökkenés együttese a szolgáltatási hiányokat inkább felerősítheti, mintsem orvosolhatná."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-06",
+      "F-live-demography-10"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Could be reframed as a structured monitoring exercise using the locked-in 0-4 cohort data to project region-specific capacity shortfalls over a 10-year planning horizon",
+        "hu": "Újrafogalmazható strukturált monitorozási gyakorlatként, amely a rögzített 0–4 éves kohorszadatokat használja régióspecifikus kapacitáshiányok előrejelzésére egy 10 éves tervezési időhorizonton."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Explicitly frames itself as a counterfactual, which is the correct demographic analytic device for isolating cohort-driven effects from policy-driven effects",
+        "hu": "Kifejezetten kontrafaktuálisként fogalmazza meg magát, ami a helyes demográfiai elemzési eszköz a kohorszok által vezérelt hatások és a politikai intézkedések által vezérelt hatások elkülönítésére."
+      },
+      {
+        "en": "Acknowledges that demographic decline interacting with static gatekeeping and workforce capacity is a documented risk pathway",
+        "hu": "Elismeri, hogy a demográfiai visszaesés, amely kölcsönhatásba lép a statikus beléptetési mechanizmusokkal és a munkaerő-kapacitással, dokumentált kockázati útvonal."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued interaction of shrinking cohorts with an aging, geographically concentrated workforce (half 50+, under-7.2% under 30) could produce accelerated rural service collapse well before any future policy could respond",
+        "hu": "A fogyó évfolyamok folyamatos kölcsönhatása az öregedő, földrajzilag koncentrált munkaerővel (a dolgozók fele 50+, kevesebb mint 7,2% 30 év alatt) a vidéki szolgáltatások gyorsított összeomlását eredményezheti jóval azelőtt, hogy bármely jövőbeni politika reagálni tudna."
+      },
+      {
+        "en": "Northeastern high-disadvantage counties combined with static specialist numbers face compounding risk absent any planning response",
+        "hu": "A kelet–északkeleti, erősen hátrányos helyzetű megyék statikus szakemberlétszámmal együttesen halmozódó kockázatnak vannak kitéve tervezési válasz hiányában."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Treats 'observation' as a neutral option when cohort trajectories are already locked in for at least a decade, meaning inaction has determinate demographic consequences rather than being a true null condition",
+        "hu": "Az 'észlelés' (observation) semleges opcióként kezeli, miközben a kohorszok pályái legalább egy évtizedre már rögzítve vannak, ami azt jelenti, hogy a tétlenség meghatározott demográfiai következményekkel jár, nem pedig valódi nullkondíció."
+      },
+      {
+        "en": "Does not engage with the pronounced spatial unevenness of decline (10-30% contraction in some regions vs. high disadvantage concentration in others), which means a uniform non-intervention baseline will have highly non-uniform regional effects",
+        "hu": "Nem foglalkozik a hanyatlás kifejezett térbeli egyenetlenségével (egyes régiókban 10–30%-os zsugorodás vs. máshol a hátrányok erős koncentrációja), ami azt jelenti, hogy egy egységes nem-beavatkozó alapvonal rendkívül nem-egységes regionális hatásokkal fog járni."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-demography",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "9d0ba470e0d64802cf8690bf2fc0f703524c0f8af61469b89b11fcaecc08613e",
+  "topic": "sni-letszamnovekedes"
+}

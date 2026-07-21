@@ -1,0 +1,60 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal directly targets the monitoring and feedback-loop gap that implementation science treats as a precondition for adaptive management. It is well-sequenced as a foundational, low-risk first step (data before structural reform) and is highly pilotable since it does not require frontline behavior change, only administrative/statistical coordination. However, actor capacity to execute decomposition analysis and reconcile divergent series is not established in the evidence, and the proposal's own risk framing acknowledges that political will to act on findings is a separate, unaddressed capability.",
+      "hu": "A javaslat közvetlenül célozza azt a monitorozási és visszacsatolási hiányt, amelyet az implementációs tudomány az adaptív menedzsment előfeltételének tekint. Jól ütemezett mint alapvető, alacsony kockázatú első lépés (adatok a strukturális reform előtt), és kivitelezhető pilotként, mivel nem igényel frontvonalbeli viselkedésváltozást, csak adminisztratív/statisztikai koordinációt. Ugyanakkor a szereplők azon képessége, hogy dekompozíciós analízist végezzenek és egyeztessék az eltérő sorozatokat, a bizonyítékokban nincs megállapítva, és a javaslat saját kockázati keretezése is elismeri, hogy a megállapítások alapján való cselekvés politikai akarata külön, meg nem válaszolt képesség."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-01",
+      "F-live-implementation_planning-02"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Could use the 2018 BTMN grading-exemption reform and 2020 readiness rule change as natural experiments for decomposition, as the proposal itself notes, strengthening causal inference",
+        "hu": "Használhatná a 2018-as BTMN minősítés-mentességi reformot és a 2020-as készültségi szabályváltozást mint természetes kísérleteket a dekompozícióhoz, amint azt maga a javaslat is megjegyzi, erősítve az oksági következtetést."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Directly closes the documented monitoring gap where a single reconciled statistical series does not exist across years and levels (F-live-implementation_planning-01)",
+        "hu": "Közvetlenül bezárja a dokumentált monitorozási hiányt ott, ahol egyetlen egyeztetett statisztikai sor sem létezik az évek és szintek között (F-live-implementation_planning-01)"
+      },
+      {
+        "en": "Sequencing logic is sound: establishing a shared evidence base before attempting structural or financial reform reduces risk of misdiagnosing the problem",
+        "hu": "A sorrendiség logikája helytálló: közös bizonyítékbázis létrehozása a strukturális vagy pénzügyi reform kísérlete előtt csökkenti a probléma félrediagnosztizálásának kockázatát."
+      },
+      {
+        "en": "High pilotability since it is a technical/statistical undertaking rather than a frontline service change, limiting failure-containment risk",
+        "hu": "Magas pilotálhatóság, mivel ez elsősorban műszaki/statisztikai jellegű vállalkozás, nem pedig első vonalbeli szolgáltatásváltozás, így korlátozott a hibák elszigetelésének kockázata"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Even if data reconciliation succeeds, there is no guaranteed downstream actor or process committed to acting on findings, risking a well-executed monitoring system with no policy consequence",
+        "hu": "Még ha az adatok egyeztetése sikerül is, nincs garantált olyan további szereplő vagy folyamat, amely elkötelezett lenne a megállapítások alapján történő intézkedésre, így fennáll annak a kockázata, hogy jól kivitelezett monitoringrendszernek nem lesz politikai következménye."
+      }
+    ],
+    "verdict": "supports",
+    "weaknesses": [
+      {
+        "en": "No described mechanism for building the technical/statistical capacity or authority needed to reconcile fragmented series and enforce a single public standard",
+        "hu": "Nincs leírt mechanizmus a technikai/statisztikai kapacitás vagy hatósági jogosultság kiépítésére, amely szükséges lenne a feldarabolt sorozatok egyeztetéséhez és egyetlen nyilvános sztenderd érvényesítéséhez."
+      },
+      {
+        "en": "The proposal does not specify safeguards for what happens if decomposition analysis produces contested findings, given documented sharp disagreement over whether reclassification incentives drove SNI growth (F-live-implementation_planning-02, contested)",
+        "hu": "A javaslat nem határoz meg garanciákat arra az esetre, ha a dekompozíciós elemzés vitatott megállapításra jutna, tekintettel arra a dokumentált éles nézeteltérésre, hogy a reklasszifikációs ösztönzők hajtották-e az SNI növekedését (F-live-implementation_planning-02, contested)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "558be399dacb468a425f3e5af057db354322083e650c16bda267086a634c3881",
+  "topic": "sni-letszamnovekedes"
+}

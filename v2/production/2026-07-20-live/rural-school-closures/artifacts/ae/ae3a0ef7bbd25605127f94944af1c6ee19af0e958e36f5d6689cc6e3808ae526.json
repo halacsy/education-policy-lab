@@ -1,0 +1,69 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From an implementation-planning lens, T1 proposes a procedural safeguard (presumption-against-closure with mandatory alternatives assessment) layered onto a governance structure where the actor with closure authority is a centralized state body, not the municipalities or communities the safeguard is meant to empower. The proposal correctly identifies the 2026 governance reform as a legislative vehicle, but sequencing is fragile: a documentation duty imposed on the same centralized actor that currently exercises unchecked discretion, without an independent body to enforce or adjudicate the assessment, risks becoming a paperwork exercise rather than a binding constraint. There is no described monitoring or appeals infrastructure to detect non-compliance, and Hungary's own history shows consultation mechanisms were curtailed after 2010 and stakeholder warnings in 2016 produced no formal consultation channel, suggesting weak institutional appetite for exactly this kind of procedural check.",
+      "hu": "Implementációs tervezési lencséből nézve T1 egy eljárási biztosítékot javasol (alapesetben a bezárás ellen, kötelező alternatívák értékelésével) egy olyan kormányzati struktúrára rétegzetten, ahol a bezárási jogosultsággal rendelkező szereplő egy központosított állami testület, nem pedig azok az önkormányzatok vagy közösségek, akiket a biztosíték hatékonysága hivatott megerősíteni. A javaslat helyesen azonosítja a 2026-os kormányzati reformot mint törvényhozási járművet, de a sorrendiség törékeny: egy dokumentációs kötelezettség kiszabása ugyanarra a központosított szereplőre, amely jelenleg ellenőrizetlen diszkrecionális hatalmat gyakorol, független végrehajtó vagy ítélkező szerv hiányában kockázatot jelenthet, hogy ez pusztán papírmunkává válik a kötelező korlátozás helyett. Nincs leírt monitoring- vagy fellebbezési infrastruktúra a nemmegfelelés észlelésére, és Magyarország saját története azt mutatja, hogy a konzultációs mechanizmusokat 2010 után korlátozták, és a 2016-os figyelmeztetések sem vezettek formális konzultációs csatornához, ami azt jelzi, hogy gyenge az intézményi hajlandóság éppen az effajta eljárási ellenőrzésre."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-01",
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-10"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "The 2026 reform's restoration of some principal/municipal input could be extended to include statutory rights of appeal or independent review, closing the monitoring gap.",
+        "hu": "A 2026-os reform által visszaadott bizonyos igazgatói/önkormányzati beleszólást kiterjeszthetik úgy, hogy törvényi fellebbezési jogokat vagy független felülvizsgálatot is biztosítson, ezzel lezárva a monitorozási rést."
+      },
+      {
+        "en": "A phased pilot in a subset of centrally-administered districts could test whether the documentation duty changes actual outcomes before national rollout.",
+        "hu": "Egy fokozatos, központilag igazgatott kerületek egy részét érintő pilotprogram tesztelhetné, hogy a dokumentációs kötelezettség megváltoztatja‑e a tényleges kimeneteleket, mielőtt országos bevezetésre kerülne."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Uses an existing legislative vehicle (2026 reform) rather than requiring a wholly new statute, improving sequencing feasibility.",
+        "hu": "Meglévő jogalkotási eszközt használ (2026 reform) ahelyett, hogy teljesen új törvényt igényelne, ami javítja a végrehajtás ütemezhetőségét."
+      },
+      {
+        "en": "Targets a documented gap: closures currently proceed via administrative action without a dedicated statutory procedure.",
+        "hu": "Egy dokumentált hiányt céloz: a bezárások jelenleg közigazgatási intézkedés útján zajlanak dedikált törvényi eljárás hiányában."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Centralized authorities have institutional incentive to preserve administrative discretion, creating political resistance to any binding (rather than symbolic) constraint.",
+        "hu": "A centralizált hatóságok intézményi ösztönzővel rendelkeznek az adminisztratív mérlegelési jog megőrzésére, ami politikai ellenállást szül bármely kötelező (szimbolikus helyett) korlátozással szemben."
+      },
+      {
+        "en": "Without a feedback/monitoring mechanism, inconsistent application across regions is likely given no precedent for standardized enforcement.",
+        "hu": "Visszacsatolási/monitorozási mechanizmus hiányában valószínű a régiók közötti következetlen alkalmazás, mivel nincs precedens a szabványosított végrehajtásra."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "No independent oversight or appeals body is specified to enforce the presumption, so the safeguard could operate as documentation-only rather than a real constraint on the centralized decision-maker.",
+        "hu": "Nincs megjelölve független felügyeleti vagy fellebbviteli szerv, amely érvényesítené a vélelmet, így a védőintézkedés dokumentációs jellegűként működhet a központosított döntéshozóval szemben való valódi korlátozás helyett."
+      },
+      {
+        "en": "Historical precedent (2016 stakeholder warnings producing no formal consultation mechanism) suggests low institutional readiness to operationalize procedural safeguards even when drafted.",
+        "hu": "A történelmi precedens (2016-os érdekelt felek figyelmeztetései, amelyek nem vezettek formális konzultációs mechanizmushoz) alacsony intézményi felkészültségre utal a procedurális biztosítékok operacionalizálására még akkor is, ha azokat megfogalmazták."
+      },
+      {
+        "en": "Post-2010 curtailment of stakeholder-consultation architecture removes the procedural infrastructure (consultation bodies, feedback channels) that a presumption-against-closure duty would normally rely on.",
+        "hu": "A 2010 utáni érintetti konzultációs architektúra visszavágása eltávolította azt az eljárásbeli infrastruktúrát (konzultációs testületek, visszajelzési csatornák), amelyre egy bezárás elleni vélelmen alapuló kötelezettség normálisan támaszkodna."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5e54217144b590d597ca93bc31e6592545b0d082286750038d0d91ade568b4a1",
+  "topic": "rural-school-closures"
+}

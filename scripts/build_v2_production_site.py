@@ -13,11 +13,11 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from policy_lab.jsonio import content_hash  # noqa: E402
+from policy_lab.i18n import BILINGUAL_VERSION, is_localized_text  # noqa: E402
 from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
 
-ASSET_VERSION = "d55"
+ASSET_VERSION = "d58"
 OUT = ROOT / "site"
 QUESTION_OUT = OUT / "questions"
 
@@ -57,6 +57,14 @@ def bi(english: Any, hungarian: Any, tag: str = "span") -> str:
         f'<{tag} class="lang lang-hu" lang="hu">{esc(localized)}</{tag}>'
         f'<{tag} class="lang lang-en" lang="en">{esc(english)}</{tag}>'
     )
+
+
+def semantic(value: Any, tag: str = "span") -> str:
+    """Render one canonical D-34 semantic leaf in both languages."""
+
+    if not is_localized_text(value):
+        raise ValueError(f"Public semantic text is not an exact {{en, hu}} pair: {value!r}")
+    return bi(value["en"], value["hu"], tag)
 
 
 def ui(key: str, tag: str = "span") -> str:
@@ -108,32 +116,26 @@ def dataset(topic: str, schemas: SchemaRegistry) -> dict[str, Any]:
     manifest = load(root / "production_manifest.json")
     summary = manifest["summary"]
     package = repository.get_current(summary["package_ref"])
-    bundle = load(root / "localization" / "hu.json")
-    if bundle["source_package_hash"] != content_hash(package):
-        raise ValueError(f"Stale localization bundle: {topic}")
+    if package["schema_version"] != BILINGUAL_VERSION:
+        raise ValueError(f"Published package is not canonical bilingual v2.1: {topic}")
     topic_data = load(ROOT / "topics" / topic / "topic.json")
-    if "problem_brief" not in topic_data:
-        briefs = repository.list(record_type="problem_brief")
-        if len(briefs) != 1:
-            raise ValueError(f"Expected one admitted problem brief for {topic}, found {len(briefs)}")
+    briefs = repository.list(record_type="problem_brief")
+    if len(briefs) == 1:
         brief = briefs[0]
+        if brief["schema_version"] != BILINGUAL_VERSION:
+            raise ValueError(f"Published problem brief is not canonical bilingual v2.1: {topic}")
         content = brief["content"]
-        translations = bundle["translations"]
-
-        def localized(field: str, value: str, index: int | None = None) -> dict[str, str]:
-            suffix = f".{field}" if index is None else f".{field}.{index}"
-            return {"en": value, "hu": translations[f"{brief['id']}{suffix}"]}
-
-        topic_data["problem_brief"] = {
-            "title": localized("title", content["title"]),
-            "public_question": localized("public_question", content["public_question"]),
-            "problem_statement": localized("problem_statement", content["problem_statement"]),
-            "learning_goals": [
-                localized("learning_goals", goal, index)
-                for index, goal in enumerate(content["learning_goals"])
-            ],
-            "scope": localized("scope", content["scope"]),
-        }
+    elif not briefs and "problem_brief" in topic_data:
+        # The two pre-RunPlan production stores admitted their already-bilingual
+        # topic brief outside the artifact database. D-58 does not invent a
+        # retroactive root record; it keeps using that exact admitted source.
+        content = topic_data["problem_brief"]
+    else:
+        raise ValueError(f"Expected one admitted problem brief for {topic}, found {len(briefs)}")
+    topic_data["problem_brief"] = {
+        field: content[field]
+        for field in ("title", "public_question", "problem_statement", "learning_goals", "scope")
+    }
     return {
         "topic": topic_data,
         "repo": repository,
@@ -141,21 +143,13 @@ def dataset(topic: str, schemas: SchemaRegistry) -> dict[str, Any]:
         "package": package,
         "evaluation": repository.get_current(summary["evaluation_ref"]),
         "readiness": repository.get_current(summary["readiness_ref"]),
-        "tr": bundle["translations"],
     }
 
 
-def tx(data: dict[str, Any], key: str, english: str) -> str:
-    try:
-        return bi(english, data["tr"][key])
-    except KeyError as error:
-        raise KeyError(f"Missing public localization: {key}") from error
-
-
-def list_bi(data: dict[str, Any], record: dict[str, Any], field: str) -> str:
+def list_bi(record: dict[str, Any], field: str) -> str:
     return "".join(
-        f"<li>{tx(data, f'{record['id']}.{field}.{index}', text)}</li>"
-        for index, text in enumerate(record["content"].get(field, []))
+        f"<li>{semantic(value)}</li>"
+        for value in record["content"].get(field, [])
     )
 
 
@@ -218,31 +212,21 @@ def render_topic(data: dict[str, Any]) -> str:
         content = proposal["content"]
         proposal_id = proposal["id"]
         steps = "".join(
-            f"<li><time>{tx(data, f'{proposal_id}.implementation_steps.{index}.timeline', step['timeline'])}</time><b>{tx(data, f'{proposal_id}.implementation_steps.{index}.actor', step['actor'])}</b><p>{tx(data, f'{proposal_id}.implementation_steps.{index}.action', step['action'])}</p></li>"
-            for index, step in enumerate(content["implementation_steps"])
+            f"<li><time>{semantic(step['timeline'])}</time><b>{semantic(step['actor'])}</b><p>{semantic(step['action'])}</p></li>"
+            for step in content["implementation_steps"]
         )
-        cards.append(f'''<article class="proposal-sheet"><header><div class="proposal-code">{esc(proposal_id.split('-')[-1].upper())}<small>{ui('public_site.proposal_short')}</small></div><div><h2>{tx(data, proposal_id+'.title', content['title'])}</h2><p class="proposal-goal">{tx(data, proposal_id+'.goal', content['goal'])}</p></div><span class="evidence evidence-{esc(content['evidence_status'])}">{bi(content['evidence_status'], msg('hu','enum.evidence.'+content['evidence_status']))}</span></header><details class="proposal-detail"><summary>{ui('public_site.proposal_details')}</summary><div class="proposal-grid"><section><h3>{ui('production.mechanisms')}</h3><ol class="mechanisms">{list_bi(data, proposal, 'mechanisms')}</ol></section><section><h3>{ui('production.implementation')}</h3><ol class="timeline">{steps}</ol></section></div><div class="proposal-grid"><section><h3>{ui('production.benefits')}</h3><ul>{list_bi(data,proposal,'expected_benefits')}</ul><h3>{ui('production.equity')}</h3><p>{tx(data,proposal_id+'.equity_impact',content['equity_impact'])}</p></section><section><h3>{ui('production.costs')}</h3><ul>{list_bi(data,proposal,'costs')}</ul><h3>{ui('production.risks')}</h3><ul>{list_bi(data,proposal,'risks')}</ul></section></div></details></article>''')
-
-    frame_hu = {
-        frame["id"]: frame["title"]["hu"]
-        for frame in topic.get("frames", {}).get("scenarios", [])
-    }
-
-    def coverage_title_hu(index: int, entry: dict[str, Any]) -> str:
-        if entry["direction_id"] in frame_hu:
-            return frame_hu[entry["direction_id"]]
-        return data["tr"][f"{coverage['id']}.entries.{index}.direction_title"]
+        cards.append(f'''<article class="proposal-sheet"><header><div class="proposal-code">{esc(proposal_id.split('-')[-1].upper())}<small>{ui('public_site.proposal_short')}</small></div><div><h2>{semantic(content['title'])}</h2><p class="proposal-goal">{semantic(content['goal'])}</p></div><span class="evidence evidence-{esc(content['evidence_status'])}">{bi(content['evidence_status'], msg('hu','enum.evidence.'+content['evidence_status']))}</span></header><details class="proposal-detail"><summary>{ui('public_site.proposal_details')}</summary><div class="proposal-grid"><section><h3>{ui('production.mechanisms')}</h3><ol class="mechanisms">{list_bi(proposal, 'mechanisms')}</ol></section><section><h3>{ui('production.implementation')}</h3><ol class="timeline">{steps}</ol></section></div><div class="proposal-grid"><section><h3>{ui('production.benefits')}</h3><ul>{list_bi(proposal,'expected_benefits')}</ul><h3>{ui('production.equity')}</h3><p>{semantic(content['equity_impact'])}</p></section><section><h3>{ui('production.costs')}</h3><ul>{list_bi(proposal,'costs')}</ul><h3>{ui('production.risks')}</h3><ul>{list_bi(proposal,'risks')}</ul></section></div></details></article>''')
 
     coverage_items = "".join(
-        f"<li><b>{entry['direction_id']}</b> {bi(entry['direction_title'], coverage_title_hu(index, entry))} → {esc(', '.join(entry['proposal_refs']))}</li>"
-        for index, entry in enumerate(coverage["content"]["entries"])
+        f"<li><b>{entry['direction_id']}</b> {semantic(entry['direction_title'])} → {esc(', '.join(entry['proposal_refs']))}</li>"
+        for entry in coverage["content"]["entries"]
     )
     dilemma_cards = "".join(
-        f'''<article class="dilemma"><span>{bi(record['content']['dilemma_type'],msg('hu','enum.dilemma_type.'+record['content']['dilemma_type']))}</span><h4>{tx(data,record['id']+'.title',record['content']['title'])}</h4><p>{tx(data,record['id']+'.tension',record['content']['tension'])}</p><small>{tx(data,record['id']+'.evidence_boundary',record['content']['evidence_boundary'])}</small></article>'''
+        f'''<article class="dilemma"><span>{bi(record['content']['dilemma_type'],msg('hu','enum.dilemma_type.'+record['content']['dilemma_type']))}</span><h4>{semantic(record['content']['title'])}</h4><p>{semantic(record['content']['tension'])}</p><small>{semantic(record['content']['evidence_boundary'])}</small></article>'''
         for record in dilemmas
     )
     research_items = "".join(
-        f"<li><b>{tx(data,record['id']+'.question',record['content']['question'])}</b><p>{tx(data,record['id']+'.why_it_matters',record['content']['why_it_matters'])}</p></li>"
+        f"<li><b>{semantic(record['content']['question'])}</b><p>{semantic(record['content']['why_it_matters'])}</p></li>"
         for record in questions
     )
     learning_goals = "".join(
@@ -251,20 +235,20 @@ def render_topic(data: dict[str, Any]) -> str:
 
     def source_links(entry: dict[str, Any]) -> str:
         return " · ".join(
-            f'<a href="{esc(source["url"])}">{bi(source["title"], msg("hu", "production.sources") + " " + str(index))}</a>'
+            f'<a href="{esc(source["url"])}">{semantic(source["title"], "cite")}</a>'
             if source["url"].startswith("http")
-            else bi(source["title"], msg("hu", "production.sources") + " " + str(index))
-            for index, source in enumerate(entry["sources"], 1)
+            else semantic(source["title"], "cite")
+            for source in entry["sources"]
         )
 
     appendix = "".join(
-        f"<li><b>{esc(entry['finding_ref'])}</b> {tx(data,entry['finding_ref']+'.claim',entry['claim'])}<div>{source_links(entry)}</div></li>"
+        f"<li><b>{esc(entry['finding_ref'])}</b> {semantic(entry['claim'])}<div>{source_links(entry)}</div></li>"
         for entry in package["content"]["evidence_appendix"]
     )
-    concerns = list_bi(data, data["evaluation"], "concerns")
+    concerns = list_bi(data["evaluation"], "concerns")
     matrix = render_perspective_matrix(data, proposals)
 
-    return f'''<section class="topic-hero blueprint-grid"><div><p class="eyebrow">{ui('public_site.topic_eyebrow')}</p><h1>{bi(problem['public_question']['en'],problem['public_question']['hu'])}</h1><p class="hero-deck">{bi(problem['problem_statement']['en'],problem['problem_statement']['hu'])}</p></div><div class="topic-stats"><span><b>{len(proposals)}</b>{ui('public_site.proposal_count')}</span><span><b>{summary['counts']['finding']}</b>{ui('production.fresh_findings')}</span><span><b>{len(dilemmas)}</b>{ui('public_site.dilemma_count')}</span></div></section><aside class="migration-note"><b>{ui('production.readiness')}</b>{ui('production.ready_with_conditions')} · {ui('production.external_gate')}</aside>{change_spine()}<section class="comparison-section split" id="overview"><div><p class="eyebrow">01 / {ui('public_site.problem_title')}</p><h2>{ui('public_site.problem_title')}</h2><p class="result-lead">{bi(problem['problem_statement']['en'],problem['problem_statement']['hu'])}</p></div><div><h3>{ui('public_site.learning_title')}</h3><ul>{learning_goals}</ul></div><details class="full-summary"><summary>{ui('public_site.full_summary')}</summary><p>{tx(data,package['id']+'.summary',package['content']['summary'])}</p></details></section><section class="proposal-stack" id="options"><div class="section-heading"><div><p class="eyebrow">02 / {ui('production.proposals')}</p><h2>{ui('production.proposals')}</h2></div></div>{''.join(cards)}</section>{matrix}<section class="comparison-section"><h2>{ui('production.coverage')}</h2><ul>{coverage_items}</ul></section><section class="comparison-section decisions" id="dilemmas"><p class="eyebrow">04 / {ui('production.dilemmas')}</p><h2>{ui('production.dilemmas')}</h2>{dilemma_cards}</section><section class="comparison-section" id="research"><p class="eyebrow">05 / {ui('production.research')}</p><h2>{ui('production.research')}</h2><ol class="research-list">{research_items}</ol></section><section class="comparison-section"><h2>{ui('production.conditions')}</h2><ul>{concerns}</ul></section><section class="comparison-section" id="evidence"><details><summary><h2>{ui('production.evidence')} · {len(package['content']['evidence_appendix'])}</h2></summary><p>{ui('public_site.sources_note')}</p><ol class="research-list">{appendix}</ol></details></section>'''
+    return f'''<section class="topic-hero blueprint-grid"><div><p class="eyebrow">{ui('public_site.topic_eyebrow')}</p><h1>{semantic(problem['public_question'])}</h1><p class="hero-deck">{semantic(problem['problem_statement'])}</p></div><div class="topic-stats"><span><b>{len(proposals)}</b>{ui('public_site.proposal_count')}</span><span><b>{summary['counts']['finding']}</b>{ui('production.fresh_findings')}</span><span><b>{len(dilemmas)}</b>{ui('public_site.dilemma_count')}</span></div></section><aside class="migration-note"><b>{ui('production.readiness')}</b>{ui('production.ready_with_conditions')} · {ui('production.external_gate')}</aside>{change_spine()}<section class="comparison-section split" id="overview"><div><p class="eyebrow">01 / {ui('public_site.problem_title')}</p><h2>{ui('public_site.problem_title')}</h2><p class="result-lead">{semantic(problem['problem_statement'])}</p></div><div><h3>{ui('public_site.learning_title')}</h3><ul>{learning_goals}</ul></div><details class="full-summary"><summary>{ui('public_site.full_summary')}</summary><p>{semantic(package['content']['summary'])}</p></details></section><section class="proposal-stack" id="options"><div class="section-heading"><div><p class="eyebrow">02 / {ui('production.proposals')}</p><h2>{ui('production.proposals')}</h2></div></div>{''.join(cards)}</section>{matrix}<section class="comparison-section"><h2>{ui('production.coverage')}</h2><ul>{coverage_items}</ul></section><section class="comparison-section decisions" id="dilemmas"><p class="eyebrow">04 / {ui('production.dilemmas')}</p><h2>{ui('production.dilemmas')}</h2>{dilemma_cards}</section><section class="comparison-section" id="research"><p class="eyebrow">05 / {ui('production.research')}</p><h2>{ui('production.research')}</h2><ol class="research-list">{research_items}</ol></section><section class="comparison-section"><h2>{ui('production.conditions')}</h2><ul>{concerns}</ul></section><section class="comparison-section" id="evidence"><details><summary><h2>{ui('production.evidence')} · {len(package['content']['evidence_appendix'])}</h2></summary><p>{ui('public_site.sources_note')}</p><ol class="research-list">{appendix}</ol></details></section>'''
 
 
 def render_home(data: dict[str, dict[str, Any]]) -> str:

@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-education_finance-01",
+      "A-korai-szelekcio-education_finance-02"
+    ],
+    "claim": {
+      "en": "Peer-reviewed and institute-level literature concludes early tracking at age 10-12 in Hungary exacerbates social inequality, with track access driven more by family background than test scores.",
+      "hu": "A szakirodalom szerint a 10-12 éves kori korai szelekció Magyarországon fokozza a társadalmi egyenlőtlenséget, és a tagozatba kerülést inkább a családi háttér, mint a tesztpontszám határozza meg."
+    },
+    "context": {
+      "en": "Given Hungary's already-highest-in-EU school segregation, any policy alternative to age 10-12 korai szelekció should be judged primarily by whether it reduces SES-based sorting at intake, not only by whether it preserves the apparent ~10% pedagogical value-added advantage for admitted students.",
+      "hu": "Mivel Magyarországon már most az EU legmagasabb iskolai szegregációja áll fenn, minden, a 10-12 éves kori korai szelekcióra adott szakpolitikai alternatívát elsősorban aszerint kell megítélni, hogy csökkenti-e a felvételi szociális szelekcióját, nem csupán aszerint, hogy megőrzi-e a felvett tanulók látszólagos ~10%-os fejlődési előnyét."
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-e3f96a94b27951"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-education_finance-01",
+      "U-korai-szelekcio-education_finance-02",
+      "U-korai-szelekcio-education_finance-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-education_finance-05",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "15f503845449052d80cdef77721432f12b60b86cfd880d83ce374dbff24dc430",
+  "topic": "korai-szelekcio"
+}

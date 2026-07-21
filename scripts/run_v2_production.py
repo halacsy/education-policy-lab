@@ -12,8 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-# Provider selection must precede lab.llm import. D-37 keeps generator and
-# judge families different; these are the accepted live-v2 provider families.
+# Provider selection must precede lab.llm import. D-58 restores D-34 native
+# bilingual generation while retaining the cross-family generator/judge gate.
 os.environ["GENERATOR_PROVIDER"] = "anthropic"
 os.environ["JUDGE_PROVIDER"] = "openai"
 os.environ.setdefault("OPENAI_MODEL", "gpt-5-mini")
@@ -54,10 +54,15 @@ def main() -> int:
                 "problem brief" if exc.gate_id == "approve_problem_brief"
                 else "option space"
             )
-            rationale_hint = (
+            rationale_hint_en = (
                 "WHY THIS BRIEF IS A SOUND RESEARCH CONTRACT"
                 if exc.gate_id == "approve_problem_brief"
                 else "WHY THIS OPTION SPACE IS COMPLETE"
+            )
+            rationale_hint_hu = (
+                "MIÉRT MEGALAPOZOTT KUTATÁSI SZERZŐDÉS EZ A PROBLÉMAFELVETÉS"
+                if exc.gate_id == "approve_problem_brief"
+                else "MIÉRT TELJES EZ AZ OPCIÓTÉR"
             )
             print(
                 "\nProduction run paused at the declared human gate.\n"
@@ -67,7 +72,8 @@ def main() -> int:
                 "Approve only after reviewing the exact candidate:\n"
                 f"  .venv/bin/python scripts/v2_gate.py {gate_command} --topic {topic} "
                 f"--run-tag {args.run_tag} --candidate-hash {exc.candidate_hash} "
-                f"--decided-by YOUR_NAME --rationale '{rationale_hint}'\n"
+                f"--decided-by YOUR_NAME --rationale-en '{rationale_hint_en}' "
+                f"--rationale-hu '{rationale_hint_hu}'\n"
                 "Then relaunch the same production command.",
                 file=sys.stderr,
             )

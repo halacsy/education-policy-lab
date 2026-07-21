@@ -1,0 +1,68 @@
+{
+  "content": {
+    "affected_groups": [
+      {
+        "en": "university-educated / higher-SES families using coaching",
+        "hu": "egyetemi végzettségű / magasabb társadalmi-gazdasági státuszú családok, amelyek coachingot vesznek igénybe"
+      },
+      {
+        "en": "disadvantaged families without coaching access",
+        "hu": "coachinghoz nem hozzáférő hátrányos helyzetű családok"
+      },
+      {
+        "en": "rural non-applicant students",
+        "hu": "vidéki, nem pályázó tanulók"
+      },
+      {
+        "en": "the private tutoring/coaching market",
+        "hu": "magánoktatási és felkészítő piac"
+      }
+    ],
+    "decision_question": {
+      "en": "Will redesigning the admission exam to resist coaching durably reduce SES-driven sorting, or will investment simply shift to new coaching strategies targeting the redesigned format, leaving the underlying inequity intact?",
+      "hu": "Tartósan csökkenti-e a társadalmi-gazdasági helyzet által vezérelt szelekciót a korrepetícióra ellenálló felvételi vizsga áttervezése, vagy az érintettek egyszerűen új, a megújított formátumra szabott felkészítési stratégiákba fektetnek, így az alapvető egyenlőtlenség megmarad?"
+    },
+    "dilemma_type": "empirical_open_question",
+    "evidence_boundary": {
+      "en": "Monitoring coaching-market behavior and outcome composition before and after a redesigned exam could show whether advantage migrates to new instruments, and cross-national comparisons of coaching-resistant exam designs elsewhere could offer indirect evidence. It cannot establish whether it is fair, per se, for any admission system to use scarce selective seats as a rationing device in the first place — a separate value question about the legitimacy of early selection itself.",
+      "hu": "A felkészítési piac viselkedésének és a felvételi eredmények összetételének megfigyelése a vizsga áttervezése előtt és után megmutathatja, hogy az előny áthelyeződik-e új eszközökre, és más országok korrepetíció-álló vizsgatervezeteinek összehasonlítása közvetett bizonyítékot adhat. Nem dönthet viszont arról, hogy önmagában igazságos-e bármely felvételi rendszernek ritka, szelektív helyeket elosztási eszközként használnia — ez külön értékvita a korai szelekció legitimitásáról."
+    },
+    "finding_refs": [
+      "F-live-hungarian_education_system-05",
+      "F-live-finnish_reform-07",
+      "F-live-finnish_reform-08",
+      "F-live-education_finance-02",
+      "F-live-political_feasibility-07"
+    ],
+    "origin": "live_generation",
+    "proposal_refs": [
+      "TP-live-t1"
+    ],
+    "tension": {
+      "en": "Redesigning the entry exam to be coaching-resistant (T1) directly targets a documented private-tutoring advantage concentrated among university-educated parents, which is a plausible fairness gain. However, evidence from Finland's 'emphasized classes' and Hungary's own selection literature suggests advantage tends to migrate to whatever new screening instrument is introduced rather than disappearing, raising an empirical question about whether this is a durable fix or a temporary displacement of the same underlying sorting dynamic.",
+      "hu": "A felvételi vizsga úgy történő áttervezése, hogy ellenálljon a magántanári felkészítésnek (T1), közvetlenül célozza a dokumentált, elsősorban felsőfokú végzettségű szülőkhöz kötődő magánoktatási előnyt, ami ésszerű igazságossági nyereséget ígér. Ugyanakkor a finn „kiemelt osztályok” és a magyar szelekciós irodalom tapasztalatai arra utalnak, hogy az előny hajlamos átterjedni az új szűrőeszközre ahelyett, hogy eltűnne, így empirikus kérdés, hogy ez tartós megoldás-e, vagy csupán azonos alapvető rendeződési dinamikák ideiglenes eltolódása."
+    },
+    "title": {
+      "en": "Admission-instrument redesign: fairness through coaching-resistance versus displacement of advantage",
+      "hu": "Felvételi eszköz újratervezése: igazságosság korrepetíció-állósággal vagy az előny eltolódása"
+    },
+    "value_poles": [
+      {
+        "en": "fairness of admission instruments",
+        "hu": "a felvételi eszközök igazságossága"
+      },
+      {
+        "en": "durability versus displacement of advantage",
+        "hu": "az előny tartóssága vs. eltolódása"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "D-live-production-06",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "dilemma",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "d55613b27cf0d231c79c7b261837b88c56e85df2e393eaf84960fd40c63ce8fb",
+  "topic": "korai-szelekcio"
+}

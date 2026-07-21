@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assessment": {
+      "en": "From a fiscal and incentive standpoint, status quo monitoring is nearly costless in direct fiscal terms since it changes no funding flows or admissions mechanisms, but this apparent affordability masks a hidden opportunity cost: continued misallocation of already-equal per-pupil resources (F-live-education_finance-07) toward a system that concentrates advantage (F-live-education_finance-04) without corrective incentive change. The scale is modest (F-live-education_finance-01), so the direct fiscal exposure is small, but the value-for-money case is weak because monitoring infrastructure exists without a policy-correction track record.",
+      "hu": "Fiskális és ösztönző szempontból a status quo felügyelete közvetlen fiskális értelemben gyakorlatilag költségmentes, mivel nem változtat finanszírozási áramlásokat vagy felvételi mechanizmusokat, de ez a látszólagos megfizethetőség eltakarta rejtett alternatív költséget: az egyenlő per tanuló források folyamatos téves allokációját (F-live-education_finance-07) egy olyan rendszer felé, amely koncentrálja az előnyöket (F-live-education_finance-04) korrekciós ösztönzési változtatás nélkül. A skála szerény (F-live-education_finance-01), így a közvetlen fiskális kitettség kicsi, de a költséghatékonysági érv gyenge, mert a monitoring infrastruktúra létezik anélkül, hogy politikai korrekciós pályákat igazolna."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-education_finance-01",
+      "F-live-education_finance-04",
+      "F-live-education_finance-07"
+    ],
+    "lens_ref": "L-live-education_finance",
+    "opportunities": [
+      {
+        "en": "Low-cost data infrastructure could be repurposed for future costed reforms without new investment",
+        "hu": "Az olcsó adat-infrastruktúra új beruházás nélkül átcsoportosítható jövőbeni, költségigényes reformokhoz."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "No new fiscal outlay required to maintain current admissions and funding structure",
+        "hu": "A jelenlegi felvételi és finanszírozási struktúra fenntartásához nincs szükség új pénzügyi kiadásra."
+      },
+      {
+        "en": "Existing PISA/National ABC reporting infrastructure provides a low-cost data feed on SES-linked outcomes",
+        "hu": "A meglévő PISA/National ABC jelentési infrastruktúra alacsony költségű adatszolgáltatást biztosít a SES-hez kapcsolódó kimenetekről."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Historical precedent that PISA/monitoring data has not translated into policy correction suggests continued fiscal drift toward entrenched misallocation",
+        "hu": "A történelmi precedens, miszerint a PISA/monitoring adatok nem fordultak politikai korrekcióvá, arra utal, hogy a fiskális sodródás az elmélyült hibás erőforrás-elosztás felé folytatódhat."
+      },
+      {
+        "en": "Demographic contraction and geographic concentration risk increasing the per-pupil cost of maintaining segregated elite capacity relative to shrinking comprehensive enrollment",
+        "hu": "A demográfiai zsugorodás és a földrajzi koncentráció növelheti az elkülönített elitkapacitás fenntartásának egy tanulóra jutó költségét a csökkenő átfogó beiskolázáshoz képest."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Identical per-pupil financing across advantaged and disadvantaged schools already fails to correct for private-tutoring-driven access gaps, and monitoring alone does not change this incidence",
+        "hu": "A hátrányos és előnyös helyzetű iskolákban azonos tanulónkénti finanszírozás már nem korrigálja a magánkorrepetálás által okozott hozzáférési réseket, és önmagában a monitoring nem változtat ezen."
+      },
+      {
+        "en": "Small system scale (22,000-25,000 students) means the equity distortion is concentrated but persistent, offering poor value for money relative to its social cost",
+        "hu": "A kicsi rendszerméret (22,000-25,000 tanuló) azt jelenti, hogy az egyenlőtlenségi torzítás koncentrálódik, de tartós, és társadalmi költségéhez képest gyenge költséghatékonyságot kínál."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-education_finance",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "49d94278dfedd832ee8b79737ab71ac23395102957affaede1f62b7aef7c5cfa",
+  "topic": "korai-szelekcio"
+}

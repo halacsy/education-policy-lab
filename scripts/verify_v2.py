@@ -20,6 +20,10 @@ sys.path.insert(0, str(ROOT / "src"))
 from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
 from policy_lab.jsonio import content_hash  # noqa: E402
+from policy_lab.i18n import (  # noqa: E402
+    BILINGUAL_VERSION, load_field_map, suspicious_identity, text,
+    values_at_path,
+)
 
 
 class LinkParser(HTMLParser):
@@ -51,7 +55,7 @@ class HungarianTextParser(HTMLParser):
         attributes = dict(attrs)
         classes = (attributes.get("class") or "").split()
         inherited = self.skip_stack[-1] if self.skip_stack else False
-        skip = inherited or attributes.get("lang") == "en" or "lang-en" in classes or tag in {"script", "style"}
+        skip = inherited or attributes.get("lang") == "en" or "lang-en" in classes or tag in {"script", "style", "cite"}
         if tag not in self.VOID_TAGS:
             self.skip_stack.append(skip)
 
@@ -142,16 +146,6 @@ def verify_localization(site_root: Path) -> tuple[int, int]:
     return len(message_sets["hu"]), checked_pages
 
 
-def has_language_object(value: object) -> bool:
-    if isinstance(value, dict):
-        if "en" in value or "hu" in value:
-            return True
-        return any(has_language_object(item) for item in value.values())
-    if isinstance(value, list):
-        return any(has_language_object(item) for item in value)
-    return False
-
-
 def verify_links(site_root: Path) -> int:
     checked = 0
     for page in site_root.rglob("*.html"):
@@ -170,6 +164,32 @@ def verify_links(site_root: Path) -> int:
     return checked
 
 
+def verify_bilingual_records(records: list[dict], label: str) -> None:
+    field_map = load_field_map(ROOT)
+    non_bilingual = [
+        record["id"] for record in records
+        if record["record_type"] in field_map
+        and record["schema_version"] != BILINGUAL_VERSION
+    ]
+    if non_bilingual:
+        raise AssertionError(
+            f"{label} semantic artifacts are not canonical bilingual v2.1: "
+            f"{non_bilingual[:5]}"
+        )
+    copied = []
+    for record in records:
+        if record["record_type"] not in field_map:
+            continue
+        for path in field_map[record["record_type"]]:
+            for parent, key in values_at_path(record["content"], path):
+                if suspicious_identity(record["record_type"], path, parent[key]):
+                    copied.append(f"{record['id']}.{path}")
+    if copied:
+        raise AssertionError(
+            f"{label} contains long unchanged English/Hungarian prose: {copied[:5]}"
+        )
+
+
 def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
     root = ROOT / "v2" / "experiments" / "2026-07-20-psychology-lens-live"
     repository = ArtifactRepository(root, schemas)
@@ -178,6 +198,8 @@ def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
         "DP-live-psychology", "EV-live-psychology",
     )
     repository.validate_graph(live_roots)
+    live_records = repository.list()
+    verify_bilingual_records(live_records, "Psychology experiment")
     comparison = json.loads((root / "comparison.json").read_text(encoding="utf-8"))
     if not comparison["transformation_hashes_identical"]:
         raise AssertionError("Psychology treatment changed the transformation portfolio")
@@ -198,7 +220,7 @@ def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
     if comparison["treatment_execution"]["cache_hits"] < 26:
         raise AssertionError("Psychology treatment did not localize dependencies")
     for arm in ("baseline", "psychology"):
-        words = len(repository.get_current(f"DP-live-{arm}")["content"]["summary"].split())
+        words = len(text(repository.get_current(f"DP-live-{arm}")["content"]["summary"], "en").split())
         if not 500 <= words <= 900:
             raise AssertionError(f"{arm} package has {words} words; expected 500-900")
     calls = [
@@ -210,7 +232,7 @@ def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
         raise AssertionError("Live experiment must use Anthropic generation and OpenAI judging")
     if any(item.get("backend") == "mock" for item in calls):
         raise AssertionError("Live experiment contains a mock backend call")
-    return len(repository.list()), len(calls)
+    return len(live_records), len(calls)
 
 
 def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
@@ -270,7 +292,7 @@ def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
         package = repository.get_current(summary["package_ref"])
         if len(package["content"]["evidence_appendix"]) < 1:
             raise AssertionError(f"Evidence appendix is empty for {item['topic']}")
-        if package["content"]["summary"].count("[F-") < summary["counts"]["transformation_proposal"]:
+        if text(package["content"]["summary"], "en").count("[F-") < summary["counts"]["transformation_proposal"]:
             raise AssertionError(f"Inline claim-to-source carriage failed for {item['topic']}")
 
         readiness = repository.get_current(summary["readiness_ref"])["content"]
@@ -279,11 +301,7 @@ def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
         if readiness["human_external_use_gate"] != "pending":
             raise AssertionError(f"Machine output bypassed the human external-use gate for {item['topic']}")
 
-        bundle = json.loads((topic_root / "localization" / "hu.json").read_text(encoding="utf-8"))
-        if bundle["locale"] != "hu" or bundle["source_package_hash"] != content_hash(package):
-            raise AssertionError(f"Hungarian localization is not hash-bound to the current package for {item['topic']}")
-        if not bundle["translations"]:
-            raise AssertionError(f"Hungarian localization bundle is empty for {item['topic']}")
+        verify_bilingual_records(records, f"Published {item['topic']}")
 
         calls = [
             json.loads(line)
@@ -431,10 +449,13 @@ def main() -> int:
     )
     repository.validate_graph(roots)
     records = repository.list()
-    if any(has_language_object(record["content"]) for record in records):
-        raise AssertionError("Canonical v2 JSON contains a bilingual en/hu object")
-    if len(records) != 1014:
-        raise AssertionError(f"Expected 1014 current artifacts, found {len(records)}")
+    bilingual_types = load_field_map(ROOT)
+    semantic_records = [record for record in records if record["record_type"] in bilingual_types]
+    verify_bilingual_records(records, "Canonical v2")
+    if len(semantic_records) != 1002:
+        raise AssertionError(
+            f"Expected 1002 current semantic artifacts, found {len(semantic_records)}"
+        )
     for topic in catalog["topics"]:
         node_dir = ROOT / "v2" / "runs" / topic["run_id"] / "nodes"
         if len(list(node_dir.glob("*.json"))) != 6:
@@ -445,7 +466,7 @@ def main() -> int:
     production_topics, production_artifacts, production_calls = verify_production_runs(schemas)
     print(f"PASS schemas: {len(schemas.available())} versioned record types")
     print(f"PASS graph: {len(records)} current artifacts, {len(roots)} decision roots")
-    print("PASS language boundary: no en/hu objects in canonical artifact content")
+    print("PASS language contract: every current semantic artifact is canonical bilingual v2.1")
     print("PASS runs: 2 topics × 6 node manifests")
     print(f"PASS site: {checked_links} local links/assets resolved")
     print(f"PASS localization: {localized_messages} paired messages, {localized_pages} Hungarian pages free of raw UI terms")
@@ -453,7 +474,7 @@ def main() -> int:
     print(
         f"PASS production: {production_topics} topics, {production_artifacts} current artifacts, "
         f"{production_calls} audited calls; legacy runs remain explicitly incomplete, "
-        "fresh runs require an exact RunPlan and hash-bound human gate"
+        "fresh runs require an exact RunPlan, bilingual semantic records, and hash-bound human gate"
     )
     return 0
 

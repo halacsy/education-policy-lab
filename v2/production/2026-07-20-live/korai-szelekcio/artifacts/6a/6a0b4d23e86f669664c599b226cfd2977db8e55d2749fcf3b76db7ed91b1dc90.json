@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-international_comparison-01",
+      "A-live-international_comparison-02",
+      "A-live-international_comparison-03"
+    ],
+    "claim": {
+      "en": "Hungary's system combines early academic tracking with unrestricted free school choice and student commuting; towns with higher student commuting to chosen schools show stronger inter-school inequalities, suggesting that the selection mechanism in Hungary is not tracking alone but the interaction of tracking with choice—a bundled institutional context not present in the same form in Germany or comprehensive Nordic systems.",
+      "hu": "A magyar rendszerben a korai tanulmányi szelekció szabad iskolaválasztással és a tanulók ingázásának lehetőségével párosul; azokban a városokban, ahol több tanuló ingázik a választott iskolába, erősebbek az iskolák közötti egyenlőtlenségek, ami arra utal, hogy a szelekciós mechanizmus nem pusztán a szelekció maga, hanem a szelekció és az iskolaválasztás kölcsönhatása — egy olyan együtt járó intézményi környezet, amely nem fordul elő ugyanolyan formában például Németországban vagy a nordikus átfogó rendszerekben."
+    },
+    "context": {
+      "en": "Fresh live research through the International comparison lens",
+      "hu": "Friss, naprakész kutatás a nemzetközi összehasonlítás szemszögéből"
+    },
+    "domain_tags": [
+      "international_comparison"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The causal direction (does choice amplify inequality caused by tracking, or do existing inequalities drive choice patterns?) is not definitively established.",
+        "hu": "Az oksági irány (a választás felerősíti-e a tagolás okozta egyenlőtlenséget, vagy a meglévő egyenlőtlenségek formálják-e a választási mintákat?) nem állapítható meg egyértelműen."
+      },
+      {
+        "en": "Germany's federal system and recommendation-based assignment also involve choice variations, so the claim that the tracking-plus-choice bundle is unique to Hungary requires more precise comparative specification.",
+        "hu": "Németország szövetségi rendszere és ajánlásalapú elosztása szintén választási variációkat tartalmaz, ezért az az állítás, hogy a szelekció-plusz-választás csomag egyedül Magyarországra jellemző, pontosabb összehasonlító megfogalmazást igényel."
+      },
+      {
+        "en": "Isolating the effect of tracking age from the effect of free choice would require Hungarian-specific quasi-experimental evidence not cited in the notes.",
+        "hu": "A szelektálás életkorának hatását a szabad választás hatásától elkülöníteni magyarországi, kvázi-kísérleti bizonyítékot igényelne, amelyre a megjegyzések nem hivatkoznak."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-international_comparison-09"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-international_comparison-01",
+      "U-live-international_comparison-02",
+      "U-live-international_comparison-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-international_comparison-09",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "ac621e50050bf132ad586b78172005e1389ae6e20315803e681adb7813aa6258",
+  "topic": "korai-szelekcio"
+}

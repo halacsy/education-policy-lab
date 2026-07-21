@@ -1,0 +1,1741 @@
+{
+  "content": {
+    "coverage_ledger_refs": [
+      "CL-live-approved-frames"
+    ],
+    "dilemma_refs": [
+      "D-live-production-01",
+      "D-live-production-02",
+      "D-live-production-03",
+      "D-live-production-04",
+      "D-live-production-05",
+      "D-live-production-06"
+    ],
+    "evidence_appendix": [
+      {
+        "claim": {
+          "en": "Hungary's birth cohort has collapsed from 93,000 births in 2021 to approximately 72,000-73,000 in 2025, a decline of 22% over four years, directly shrinking the child population available to sustain village-level school cohorts.",
+          "hu": "Magyarország születési évjárata 2021-ben 93 000 születésről 2025-re mintegy 72 000–73 000-re zuhant, négy év alatt 22%-os csökkenést jelentve, ami közvetlenül szűkíti a falusi iskolai évfolyamok feltöltéséhez rendelkezésre álló gyereklétszámot."
+        },
+        "finding_ref": "F-live-demography-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-demography-01",
+            "title": {
+              "en": "Hungarian Central Statistical Office (KSH) – Birth Statistics 2021–2025",
+              "hu": "Központi Statisztikai Hivatal (KSH) – Születési statisztikák 2021–2025"
+            },
+            "url": "https://www.ksh.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Total fertility rate in Hungary has fallen to 1.31 children per woman in 2025, down from 1.39 in 2024 and far below the 2.1 replacement level, with regional variation: Zala County experienced a 25% birth decline in H1 2024 compared to H1 2021, versus 22% in Budapest.",
+          "hu": "A teljes termékenységi arányszám Magyarországon 2025-re 1.31 gyermekre esett nőnként, 2024-ben 1.39 volt, és jóval elmarad a 2.1-es reprodukciós szinttől; területi különbségek is vannak: Zala megyében a 2024 első félévében a születések 25%-kal csökkentek az 2021 első félévéhez képest, míg Budapesten 22%-os volt a csökkenés."
+        },
+        "finding_ref": "F-live-demography-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-demography-02",
+            "title": {
+              "en": "Hungarian Central Statistical Office (KSH) – Fertility Rate and Regional Birth Data",
+              "hu": "Központi Statisztikai Hivatal (KSH) – termékenységi arányszám és regionális születési adatok"
+            },
+            "url": "https://www.ksh.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "One-third of Hungary's settlements have populations below 500 inhabitants; 645 localities have populations below 300, and 114 of those have under-18 populations below 10 percent. Economic assessment judges these villages unlikely to survive without significant development programs.",
+          "hu": "A magyar települések egyharmadának lakossága 500 fő alatti; 645 településen kevesebb mint 300 fő él, és ezek közül 114-ben a 18 év alattiak aránya 10% alatti. Gazdasági értékelés szerint ezek a falvak fejlesztési programok nélkül valószínűleg nem maradnak fenn."
+        },
+        "finding_ref": "F-live-demography-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-demography-03",
+            "title": {
+              "en": "KSH Regional Atlas; GKI Economic Research Assessment",
+              "hu": "KSH Regionális Atlasz; GKI Gazdaságkutató értékelése"
+            },
+            "url": "https://www.ksh.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Age-structure divergence is acute and geographically clustered: 91 municipalities have average age under 35, while 42 municipalities have average age above 50 (primarily in Vas and Zala counties). The share of Hungarians under age 18 fell from 18% (2010) to 16% (2020).",
+          "hu": "Az életkori szerkezet eltérései élesek és földrajzilag klasztereződnek: 91 település átlagéletkora 35 év alatt van, míg 42 településé több mint 50 év (elsősorban Vas és Zala megyékben). A 18 év alattiak aránya 2010-ről 18%-ról 2020-ra 16%-ra esett."
+        },
+        "finding_ref": "F-live-demography-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-demography-04",
+            "title": {
+              "en": "Hungarian Regional Demographics – 2010–2020 Census Analysis",
+              "hu": "Magyar regionális demográfia – 2010–2020 népszámlálási elemzés"
+            },
+            "url": "https://www.ksh.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "In the smallest settlements, school viability does not decline gradually but can reach a zero-enrollment cliff. Garab (44 residents) closed its primary school because no children remained; the last birth in that village occurred nine years prior to reporting.",
+          "hu": "A legkisebb településeken az iskolafenntarthatóság nem fokozatosan romlik, hanem előfordulhat, hogy hirtelen nullafős beiratkozási szakadék következik be. Garab (44 lakos) bezárta az általános iskoláját, mert nem maradt egyetlen gyermek sem; a településen az utolsó születés a jelentés szerint kilenc évvel korábban történt."
+        },
+        "finding_ref": "F-live-demography-05",
+        "sources": [
+          {
+            "source_ref": "SRC-live-demography-05",
+            "title": {
+              "en": "Field reporting – Village of Garab case study",
+              "hu": "Helyszíni jelentés – Garab falu esettanulmány"
+            },
+            "url": "urn:epl:live-source:src-live-demography-05"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Rural school closures are causally linked to accelerated local population decline in a Danish quasi-experimental study: a 7.6 percentage point population decline over 10 years post-closure, with effects emerging as delayed impact (statistically significant from year 6 onward) via social capital and housing-market lock-in mechanisms.",
+          "hu": "Egy dán kvázi-kísérleti vizsgálat szerint a vidéki iskolabezárások okszerűen gyorsítják a helyi népességcsökkenést: a bezárást követő 10 év alatt 7,6 százalékpontos népességcsökkenést mértek, a hatások késleltetetten jelentkeztek (statisztikailag jelentősek a 6. évtől), mechanizmusaik között szerepel a társadalmi tőke gyengülése és a lakáspiaci beragadás."
+        },
+        "finding_ref": "F-live-demography-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-demography-07",
+            "title": {
+              "en": "Danish difference-in-differences study of rural school closures (2010–2011 cohort)",
+              "hu": "Dán difference-in-differences vizsgálat a vidéki iskolabezárásokról (2010–2011 kohorsz)."
+            },
+            "url": "urn:epl:live-source:src-live-demography-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary exhibits negative demographic momentum with youth cohorts contracted to 14.4% of the population, presaging structural fiscal and staffing pressures that constrain school-network decisions across regions independent of whether individual schools remain open.",
+          "hu": "Magyarországon negatív demográfiai lendület figyelhető meg: a fiatal (18 év alatti) korosztályok aránya 14,4%-ra zsugorodott, ami strukturális költségvetési és munkaerő-ellátási nyomást vetít előre, és régiónként korlátozza az iskolahálózati döntéseket függetlenül attól, hogy egyes iskolák nyitva maradnak-e."
+        },
+        "finding_ref": "F-live-demography-09",
+        "sources": [
+          {
+            "source_ref": "SRC-live-demography-09",
+            "title": {
+              "en": "Hungarian Demographic Structure and Fiscal Impact Analysis",
+              "hu": "Magyar demográfiai szerkezet és fiskális hatáselemzés"
+            },
+            "url": "urn:epl:live-source:src-live-demography-09"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "International evidence on whether school consolidation produces per-pupil cost savings is contested: rural New York studies show 31.5-61.7% net savings after adjustment costs, but multi-state U.S. research found no statistically significant relationship between enrollment and per-pupil cost, and a Texas study of 20 consolidated districts found no post-consolidation savings.",
+          "hu": "A nemzetközi bizonyítékok vitatottak arra nézve, hogy az iskolakonszolidáció egy tanulóra vetített költségmegtakarítást eredményez-e: vidéki New York-i tanulmányok 31,5–61,7%-os nettó megtakarítást mutatnak a kiigazítási költségek után, míg több államot lefedő amerikai kutatások nem találtak statisztikailag szignifikáns összefüggést a tanulólétszám és az egy tanulóra jutó költség között, és egy texasi, 20 összevont tankerületet vizsgáló tanulmány sem talált utólagos megtakarítást."
+        },
+        "finding_ref": "F-live-education_finance-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-education_finance-02",
+            "title": {
+              "en": "Duncombe & Yinger (2003, 2005); Jewell (1989); Texas consolidation analysis",
+              "hu": "Duncombe & Yinger (2003, 2005); Jewell (1989); Texas konszolidációs elemzés"
+            },
+            "url": "urn:epl:live-source:src-live-education_finance-02"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "School consolidation produces transportation cost offsets that reduce net fiscal savings: small/sparse districts systematically spend more on student transportation and federal transportation funds per pupil, creating an opportunity cost rarely fully counted in closure proposals.",
+          "hu": "Az iskolakonszolidációhoz kapcsolódóan felmerülő szállítási költségek ellensúlyozzák a megtakarítást: a kis, ritkán lakott járások rendszeresen többet költenek tanulói szállításra és szövetségi (federal) szállítási támogatásra egy tanulóra vetítve, ami egy olyan alternatív költségelem, amit a bezárási javaslatok ritkán számolnak teljeskörűen."
+        },
+        "finding_ref": "F-live-education_finance-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-education_finance-03",
+            "title": {
+              "en": "U.S. rural education economics literature on transportation burden",
+              "hu": "Az U.S. rural education economics irodalom a transportation burden témájában."
+            },
+            "url": "urn:epl:live-source:src-live-education_finance-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Evidence on whether school closure causes further population decline is genuinely mixed: studies in Saxony and Sweden find no significant connection between closure and depopulation, while a Finnish difference-in-differences study (2010-2018) found closures were associated with greater subsequent population decrease than pre-closure trends.",
+          "hu": "Az, hogy az iskolabezárás további népességcsökkenést okoz-e, valóban vegyes bizonyítékokkal alátámasztott: Szászországban és Svédországban végzett kutatások nem találtak szignifikáns kapcsolatot bezárás és elnéptelenedés között, míg egy finn különbség-különbség (difference-in-differences) vizsgálat (2010–2018) azt jelezte, hogy a bezárások a bezárást megelőző trendeknél nagyobb későbbi népességcsökkenéssel voltak összefüggésben."
+        },
+        "finding_ref": "F-live-education_finance-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-education_finance-04",
+            "title": {
+              "en": "Barakat (2014, 2015); Amcoff (2012); Finnish closure study (2010-2018)",
+              "hu": "Barakat (2014, 2015); Amcoff (2012); finn bezárási tanulmány (2010-2018)"
+            },
+            "url": "urn:epl:live-source:src-live-education_finance-04"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "School closure/retention decisions carry distributional consequences for ethnic and socioeconomic groups: village segregation via 'white flight' of non-Roma pupils to other schools is documented, Roma children constitute 45% of students in segregated schools or classrooms nationally, and consolidation/closure removes local options most accessible to poorer and Roma families with lower mobility.",
+          "hu": "Az iskolabezárás/megőrzés döntéseinek elosztási következményei vannak etnikai és társadalmi‑gazdasági csoportokra: dokumentált a falusi szegregáció, amikor a nem roma tanulók „fehérek elvándorlása” ('white flight') miatt más iskolákba kerülnek; a roma gyermekek aránya a szegregált iskolákban vagy osztályokban országosan 45%; a konszolidáció vagy bezárás pedig megszünteti azokat a helyi lehetőségeket, amelyek a mobilitás szempontjából korlátozottabb, szegényebb és roma családok számára voltak a leginkább elérhetők."
+        },
+        "finding_ref": "F-live-education_finance-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-education_finance-06",
+            "title": {
+              "en": "Humanium ECtHR documentation; Hungarian education segregation studies",
+              "hu": "Humanium ECtHR dokumentáció; magyarországi oktatási szegregációs tanulmányok"
+            },
+            "url": "urn:epl:live-source:src-live-education_finance-06"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary's per-pupil spending is comparatively low internationally at approximately $7,115 USD equivalent (rank 25 of 29 OECD/partner countries, 2022), constraining fiscal slack available to subsidize higher per-pupil overhead costs of small rural schools.",
+          "hu": "Magyarországon az egy tanulóra jutó kiadások nemzetközi összehasonlításban viszonylag alacsonyak, nagyjából 7 115 USD-nek megfelelő összeg (2022-ben a 29 OECD/partnerország közül a 25. helyen), ami korlátozza azt a fiskális mozgásteret, amely a kis vidéki iskolák magasabb egy tanulóra jutó általános költségeit támogatná."
+        },
+        "finding_ref": "F-live-education_finance-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-education_finance-07",
+            "title": {
+              "en": "OECD education spending comparison (2022)",
+              "hu": "OECD oktatási kiadások összehasonlítása (2022)"
+            },
+            "url": "urn:epl:live-source:src-live-education_finance-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Governance system instability itself generates resource costs distinct from demographic drivers: the system oscillated between decentralization (pre-2013), centralization (2013), and partial re-decentralization (2017+), with each transition creating adjustment costs in staff, administration, and capital planning regardless of closure/retention decisions.",
+          "hu": "A kormányzati rendszer instabilitása önmagában is forrásigényt generál, függetlenül a demográfiai hatásoktól: a rendszer a decentralizáció (2013 előtti időszak), a centralizáció (2013) és a részleges újradecentralizáció (2017+) között ingadozott, és minden átmenet személyzeti, adminisztratív és beruházástervezési igazodási költségeket eredményezett, függetlenül attól, hogy bezárásról vagy megtartásról döntöttek."
+        },
+        "finding_ref": "F-live-education_finance-10",
+        "sources": [
+          {
+            "source_ref": "SRC-live-education_finance-10",
+            "title": {
+              "en": "Hungarian school governance timeline (municipal → KLIK → district centres reform sequence)",
+              "hu": "Magyar iskolai irányítási idővonal (önkormányzati → KLIK → district centres reform sequence)"
+            },
+            "url": "urn:epl:live-source:src-live-education_finance-10"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Primary school enrollment in Hungary is declining nationally by approximately 4% per annum, with accelerated decline in rural areas due to youth migration to cities for employment",
+          "hu": "Az általános iskolai beiratkozások Magyarországon országosan évente mintegy 4%-kal csökkennek, a vidéki térségekben ez a csökkenés gyorsabb azzal, hogy a fiatalok munkavállalás miatt a városokba költöznek."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-01",
+            "title": {
+              "en": "Hungarian education statistics and rural migration trends",
+              "hu": "A magyar oktatási statisztikák és a vidéki migrációs tendenciák"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-01"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary operates a centralized primary and secondary school system since 2013, with the Klebelsberg School Maintainer Centre and 58 deconcentrated school district directorates controlling all public school closures and staffing, with school directors appointed by the education minister",
+          "hu": "Magyarország 2013 óta központosított alap- és középfokú iskolarendszert működtet: a Klebelsberg Intézményfenntartó Központ (KLIK) és 58 dekoncentrált tankerületi igazgatóság gyakorolja az állami iskolák bezárására és személyzeti kérdéseire vonatkozó hatáskört, az intézményvezetőket pedig az oktatásért felelős miniszter nevezi ki."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-02",
+            "title": {
+              "en": "Hungarian school centralization and governance structure post-2013",
+              "hu": "A magyar iskolák centralizációja és irányítási struktúrája 2013 után"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-02"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Some segregated village schools in Hungary have been transferred to church maintainers rather than closed, with churches taking over schools and government potentially avoiding responsibility for segregation problems",
+          "hu": "Néhány szegregált falusi iskola Magyarországon bezárás helyett egyházi fenntartókhoz került át; az egyházak átvették az iskolákat, és így a kormányzat potenciálisan elkerülheti a szegregációs problémák miatti felelősségvállalást."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-03",
+            "title": {
+              "en": "Church takeover of segregated schools in Hungary - campaigner reporting",
+              "hu": "A szegregált iskolák egyházi átvétele Magyarországon – kampányolók jelentése szerint"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Church schools in Hungary serve a more socioeconomically advantaged student intake on average compared to public schools, with family-background status index of 0.18 in church schools versus minus 0.05 in public schools at grade 6 in 2017",
+          "hu": "Az egyházi iskolák Magyarországon átlagosan társadalmilag és gazdaságilag kedvezőbb családi háttérrel rendelkező tanulókat vonzanak az állami iskolákhoz képest: 2017-ben a 6. évfolyamon a családi háttér státuszindexe az egyházi iskolákban 0.18 volt, míg az állami iskolákban −0.05."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-04",
+            "title": {
+              "en": "Hungarian church and public school composition analysis 2017",
+              "hu": "Magyar egyházi és állami iskolák összetételének elemzése, 2017"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-04"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Keeping multiple small village schools open historically limited within-school segregation but did not prevent between-settlement segregation, while territorial concentration of Roma population is increasing ghetto schools primarily in villages, with about half located in North-East Hungary",
+          "hu": "Több kis községi iskola egyidejű fenntartása történelmileg korlátozta az iskolán belüli szegregációt, de nem akadályozta meg a települések közötti elkülönülést; a roma népesség területi koncentrációja viszont gettósodó iskolákat eredményez, elsősorban falvakban, amelyek körülbelül fele Északkelet‑Magyarországon található."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-05",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-05",
+            "title": {
+              "en": "Kertesi and colleagues segregation analysis; Hungarian education equity research",
+              "hu": "Kertesi és munkatársai szegregációs elemzése; a magyar oktatás egyenlőségkutatása"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-05"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Villages with primary schools do not show clearly better socioeconomic conditions overall—they demonstrate better demographic performance and partly better living/infrastructural conditions, but worse employment and welfare characteristics compared to villages without schools",
+          "hu": "Az általános iskolával rendelkező falvak összességében nem mutatnak egyértelműen jobb szocioökonómiai helyzetet: jobb demográfiai teljesítményt és részben kedvezőbb lakhatási/infrastrukturális viszonyokat mutatnak, ugyanakkor rosszabb foglalkoztatottsági és jóléti jellemzők jellemzik őket az iskolával nem rendelkező településekhez képest."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-06",
+            "title": {
+              "en": "Hungarian Central Statistical Office village-level analysis; Hungary-Romania comparative school study",
+              "hu": "Központi Statisztikai Hivatal településszintű elemzés; Magyarország–Románia összehasonlító iskolatanulmánya"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-06"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary exhibits the largest urban-rural gap in education outcomes of all OECD countries before accounting for socioeconomic status, with some regions showing over 70% disadvantaged children and rural settlements in Western Transdanubia, Southern Baranya, and Northern Hungary recording institutional decline",
+          "hu": "Magyarországon az OECD‑országok között a legnagyobb város–vidék különbség tapasztalható a tanulmányi eredményekben, ha nem vesszük figyelembe a szocioökonómiai státuszt; egyes régiókban a hátrányos helyzetű gyermekek aránya meghaladja a 70%-ot, és Nyugat‑Dunántúl, Dél‑Baranya valamint Észak‑Magyarország vidéki településein intézményi hanyatlás figyelhető meg."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-07",
+            "title": {
+              "en": "EU Monitor 2019; OECD education outcomes; Hungarian regional decline data 2020s",
+              "hu": "EU Monitor 2019; OECD oktatási eredmények; magyar regionális hanyatlási adatok 2020s"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Early school leaving rates are sharply higher in least-developed regions, villages, and among Roma populations (58.7% for Roma versus 9.3% for non-Roma in 2023), establishing unequal baseline future options before any closure policy",
+          "hu": "A korai iskolaelhagyás aránya jóval magasabb a legfejletlenebb térségekben, a falvakban és a roma népesség körében (2023-ban roma: 58.7% vs. nem roma: 9.3%), így a bezárási politikák előtt már egyenlőtlen kiindulóhelyzet határozza meg a jövőbeli lehetőségeket."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-08",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-08",
+            "title": {
+              "en": "EU Monitor education equity data 2023",
+              "hu": "EU Monitor: oktatásbeli esélyegyenlőségi adatok 2023"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-08"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Teacher shortages are greatest in rural areas, with proportion of unqualified teachers in disadvantaged schools 2-3 times higher than in non-disadvantaged schools, and nationally half of all teachers are 50 or older while only 7.2% are under 30 in 2024/2025",
+          "hu": "A pedagógushiány a vidéki területeken a legsúlyosabb: a hátrányos helyzetű iskolákban az alulképzett tanárok aránya 2–3‑szor magasabb, mint a nem hátrányos helyzetű intézményekben; országosan a pedagógusok fele 50 éves vagy annál idősebb, miközben 2024/2025‑ben csak 7.2% van 30 év alatt."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-09",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-09",
+            "title": {
+              "en": "Hungarian teacher workforce composition and qualification analysis 2024",
+              "hu": "A magyar tanári munkaerő összetételének és képesítéseinek elemzése, 2024"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-09"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Rural school bus commutes in general rural education literature exceed 30 minutes on average and are longer than urban counterparts, with longer commutes associated with skipped breakfast, lower grades, poorer fitness, fewer social activities, and worse study habits, disproportionately burdening lower-income households",
+          "hu": "A vidéki iskolabuszos ingázásról szóló szakirodalom szerint az átlagos utazási idő vidéken általában meghaladja a 30 percet, és hosszabb, mint a városi viszonyok; a hosszabb utazások összefüggnek reggeli kihagyásával, alacsonyabb tanulmányi eredményekkel, rosszabb erőnléttel, kevesebb szociális tevékenységgel és rosszabb tanulási szokásokkal, ami aránytalanul nehezíti meg az alacsonyabb jövedelmű háztartások helyzetét."
+        },
+        "finding_ref": "F-live-equity_and_social_mobility-10",
+        "sources": [
+          {
+            "source_ref": "SRC-live-equity_and_social_mobility-10",
+            "title": {
+              "en": "Journal of Rural Studies and general rural education research on commute burden",
+              "hu": "Journal of Rural Studies és általános vidéki oktatáskutatás a bejárás terhével kapcsolatban"
+            },
+            "url": "urn:epl:live-source:src-live-equity_and_social_mobility-10"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "The Finnish comprehensive school reform of 1972–1977 was deliberately piloted first in rural areas as proof-of-concept for equality before scaling to urban regions, treating rural viability as a precondition of system legitimacy rather than a residual problem.",
+          "hu": "A finn 1972–1977 közötti általános iskolai reformot szándékosan vidéki területeken kezdték el kipróbálni, mint egyenlőségre vonatkozó bizonyítékot, mielőtt a városi régiókra kiterjesztették volna: a vidéki fenntarthatóságot a rendszer legitimitásának előfeltételének tekintették, nem pusztán maradékproblémának."
+        },
+        "finding_ref": "F-live-finnish_reform-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-finnish_reform-01",
+            "title": {
+              "en": "Finnish comprehensive school reform implementation sequence (1972–1977)",
+              "hu": "Finn átfogó iskolareform végrehajtási sorrendje (1972–1977)"
+            },
+            "url": "https://oph.fi/en/statistics-and-publications/publications"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Finnish state policy maintained exceptionally low pupil minimums for rural schools during the 1980s economic growth period, a reversible political choice not an automatic feature of the comprehensive model, enabling temporary protection of small schools.",
+          "hu": "A finn állami politika az 1980‑as évek gazdasági növekedése idején kivételesen alacsonyan tartotta a vidéki iskolákra vonatkozó minimális tanulólétszámokat — ez visszafordítható politikai döntés volt, nem a peruskoulu‑modell automatikus sajátossága, és lehetővé tette a kis iskolák ideiglenes védelmét."
+        },
+        "finding_ref": "F-live-finnish_reform-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-finnish_reform-02",
+            "title": {
+              "en": "Finnish rural school network maintenance via pupil-minimum adjustment (1980s)",
+              "hu": "Finnország vidéki iskolahálózatának fenntartása tanulólétszám-minimumok igazításával (1980-as évek)"
+            },
+            "url": "https://oph.fi/en/statistics-and-publications/publications"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "During 1995–2003, the number of small rural Finnish primary schools with fewer than 50 pupils decreased dramatically, coinciding with municipal decentralization and the 1990s recession.",
+          "hu": "1995 és 2003 között drámai mértékben csökkent a 50 főnél kevesebb tanulót oktató finn kis vidéki általános iskolák száma; ez egybeesett az önkormányzati decentralizációval és a 1990‑es évekbeli recesszióval."
+        },
+        "finding_ref": "F-live-finnish_reform-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-finnish_reform-03",
+            "title": {
+              "en": "Finnish rural school closure trends post-decentralization (1995–2003)",
+              "hu": "Finn vidéki iskolabezárások trendjei decentralizáció után (1995–2003)"
+            },
+            "url": "https://oph.fi/en/statistics-and-publications/publications"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Municipalities reported cost-saving as the primary rationale for rural school closures in Finland, citing per-pupil costs that can be twice as high in smaller schools, but few rigorous follow-up studies have verified whether municipalities actually realized claimed savings.",
+          "hu": "Az önkormányzatok a költségmegtakarítást jelölték meg a vidéki iskolabezárások elsődleges indokaként Finnországban, és azt hangsúlyozták, hogy a tanulónkénti költségek kisebb iskolákban akár kétszer olyan magasak lehetnek; kevés szigorú követéses vizsgálat igazolta azonban, hogy az önkormányzatok valóban realizálták‑e a vallott megtakarításokat."
+        },
+        "finding_ref": "F-live-finnish_reform-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-finnish_reform-04",
+            "title": {
+              "en": "Finnish municipal school closure cost-justification (1990s–2000s)",
+              "hu": "Finn önkormányzati iskolabezárások költségalapú indoklása (1990-es–2000-es évek)"
+            },
+            "url": "https://oph.fi/en/statistics-and-publications/publications"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Quasi-experimental difference-in-differences regression analysis with matching methods (2010–2018 period) found that Finnish rural community population declined *more* after school closure than before, suggesting closures accelerate rather than merely follow demographic decline.",
+          "hu": "Kvázikísérleti differencia‑az‑differenciák (difference‑in‑differences) regressziós elemzés párosítással (2010–2018 időszak) azt találta, hogy a finn vidéki közösségek népessége az iskola bezárása után *inkább* csökkent, mint előtt, ami arra utal, hogy a bezárások felgyorsítják, nem csupán követik a demográfiai hanyatlást."
+        },
+        "finding_ref": "F-live-finnish_reform-05",
+        "sources": [
+          {
+            "source_ref": "SRC-live-finnish_reform-05",
+            "title": {
+              "en": "Finnish school closure and community population decline (DID/matching study, 2010–2018)",
+              "hu": "Finn iskolabezárások és a közösség népességcsökkenése (DID/matching study, 2010–2018)"
+            },
+            "url": "https://oph.fi/en/statistics-and-publications/publications"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "A quasi-experimental study of 600 students displaced from rural Finnish schools closed for cost reasons (not performance failure) in 1999–2000 found measurable short-term achievement disruption from consolidation itself, isolating the 'pure consolidation shock' independent of prior school quality.",
+          "hu": "Egy kvázikísérleti vizsgálatban 1999–2000‑ben költségokokból bezárt vidéki iskolákból áthelyezett 600 diákot vizsgáltak; a konszolidáció önmagából adódóan mérhető rövid távú teljesítményzavart okozott, izolálva a konszolidáció „tiszta sokkját” a korábbi iskolaminőségtől függetlenül."
+        },
+        "finding_ref": "F-live-finnish_reform-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-finnish_reform-06",
+            "title": {
+              "en": "Finnish school consolidation displacement effect (cost-driven closures, 1999–2000)",
+              "hu": "Finn iskolakonszolidáció elmozdulási hatása (költségvezérelt bezárások, 1999–2000)"
+            },
+            "url": "https://oph.fi/en/statistics-and-publications/publications"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "School choice and decentralization in Finland (1990s onward) are associated with rising school segregation in metropolitan areas, but the causal weighting between choice-driven enrollment patterns versus residential sorting remains contested among Finnish scholars.",
+          "hu": "Finnországban a választás és a decentralizáció (a 1990‑es évektől kezdődően) összefügg a nagyvárosi térségekben növekvő iskolai szegregációval, de a felvételi mintákból fakadó választási hatások és a lakóhelyi szelekció közötti oksági arány vitatott a finn kutatók körében."
+        },
+        "finding_ref": "F-live-finnish_reform-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-finnish_reform-07",
+            "title": {
+              "en": "Finnish school choice and segregation debate (Helsinki metropolitan area)",
+              "hu": "Finnországi iskolaválasztás és szegregáció vita (Helsinki agglomeráció)"
+            },
+            "url": "https://oph.fi/en/statistics-and-publications/publications"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "School maintenance authority for villages under 3,000 inhabitants is held by tankerületi centers (school district centers), not by municipal governments, eliminating village-level formal authority over school closure decisions.",
+          "hu": "A 3,000 lakosnál kisebb települések iskolafenntartói joga a tankerületi központoknál van, nem az önkormányzatoknál, így a falvaknak nincs formális helyi döntési joguk az iskolabezárásokat illetően."
+        },
+        "finding_ref": "F-live-hungarian_education_system-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-hungarian_education_system-01",
+            "title": {
+              "en": "Hungarian school governance centralization (2013-2016 Klebelsberg Intézményfenntartó Központ and tankerület restructuring)",
+              "hu": "A magyar iskolafenntartás központosítása (2013–2016: Klebelsberg Intézményfenntartó Központ és tankerületi átalakítás)"
+            },
+            "url": "urn:epl:live-source:src-live-hungarian_education_system-01"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Tankerületi centers continue to apply efficiency and enrollment ratios as criteria for closing small village schools, as documented in 2022 closure decisions in the Sopron region.",
+          "hu": "A tankerületi központok továbbra is hatékonysági és létszámmutatókat alkalmaznak a kis községi iskolák bezárásának indoklására, amit a Sopron környéki 2022‑es bezárási döntések is dokumentálnak."
+        },
+        "finding_ref": "F-live-hungarian_education_system-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-hungarian_education_system-03",
+            "title": {
+              "en": "Sopron Tankerület Center closure decisions and resident responses (Babót, Osli, Agyagosszergény)",
+              "hu": "A soproni tankerületi központ bezárási döntései és a lakosság reakciói (Babót, Osli, Agyagosszergény)."
+            },
+            "url": "urn:epl:live-source:src-live-hungarian_education_system-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "National class-size and per-pupil funding formulas create structural fiscal pressure on small village schools independent of governance structure, with minimum class sizes (14-27 students for primary grades) and funding reductions when enrollment falls below legal maximum thresholds.",
+          "hu": "A nemzeti osztálylétszám‑ és tanulónkénti finanszírozási képletek strukturális fiskális nyomást gyakorolnak a kis községi iskolákra a kormányzati struktúrától függetlenül: vannak minimális osztálylétszám‑előírások (14–27 tanuló az alapfokú évfolyamoknál), és finanszírozáscsökkenés következik be, ha a beiratkozások a jogszabályban meghatározott határérték alattra esnek."
+        },
+        "finding_ref": "F-live-hungarian_education_system-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-hungarian_education_system-04",
+            "title": {
+              "en": "Annex 4 of Act CXC of 2011 on National Public Education; June tankerület leaders discussion on funding-hour impacts",
+              "hu": "Act CXC of 2011 on National Public Education, Annex 4; júniusi tankerületi vezetők megbeszélése a finanszírozási óraszám hatásairól"
+            },
+            "url": "urn:epl:live-source:src-live-hungarian_education_system-04"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "As of 2024, more than 1,200 of Hungary's 3,155 settlements (38%) have no public educational institution, raising territorial equity concerns within a context of 3.4% national population decline over the prior decade.",
+          "hu": "2024‑ben Magyarország 3,155 településéből több mint 1,200‑nak nincs nyilvános oktatási intézménye (38%), ami területi egyenlőségre vonatkozó aggályokat vet fel abban a kontextusban, hogy az ország népessége az előző évtizedben 3.4%-kal csökkent."
+        },
+        "finding_ref": "F-live-hungarian_education_system-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-hungarian_education_system-06",
+            "title": {
+              "en": "2022 Hungarian Census; settlement-level educational infrastructure audit (2024)",
+              "hu": "2022-es magyar népszámlálás; települési szintű oktatási infrastruktúra-átvizsgálat (2024)"
+            },
+            "url": "urn:epl:live-source:src-live-hungarian_education_system-06"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "An incoming 2026 governance reform will restructure but not abolish the tankerület system, with plans to restore principal autonomy and municipal input while retaining centralized multi-tier authority over closure decisions.",
+          "hu": "A 2026‑ra tervezett kormányzati átalakítás a tankerületi rendszert átalakítja, de nem szünteti meg: a tervek szerint visszaállítják az intézményvezetők autonómiáját és növelik az önkormányzati beleszólást, miközben megtartják a központosított, többszintű döntési hatáskört a bezárási ügyekben."
+        },
+        "finding_ref": "F-live-hungarian_education_system-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-hungarian_education_system-07",
+            "title": {
+              "en": "2026 Hungarian government education reform statements and party program",
+              "hu": "2026 magyar kormány oktatásreform-nyilatkozatai és pártprogram"
+            },
+            "url": "urn:epl:live-source:src-live-hungarian_education_system-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Kindergarten coverage gaps (31% of municipalities with no kindergarten in 2022) mirror and compound primary-school access problems in the same small villages, governed by the same national framework with enrollment thresholds (8-child minimum) rather than local discretion.",
+          "hu": "A bölcsődei/óvodai ellátottság hiányosságai (2022‑ben a települések 31%-ának nem volt óvodája) tükrözik és súlyosbítják az ugyanazon kis falvakban tapasztalható általános iskolai hozzáférési problémákat; mindkettőt ugyanaz a nemzeti szabályrendszer kormányozza, amely beíratási küszöböket ír elő (8 gyermekes minimum) a helyi mérlegelés helyett."
+        },
+        "finding_ref": "F-live-hungarian_education_system-08",
+        "sources": [
+          {
+            "source_ref": "SRC-live-hungarian_education_system-08",
+            "title": {
+              "en": "2022 Hungarian kindergarten infrastructure assessment",
+              "hu": "2022. évi magyar óvodai infrastruktúra-felmérés"
+            },
+            "url": "urn:epl:live-source:src-live-hungarian_education_system-08"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "School closure and merger decision authority in Hungary is vested in a centralized state actor (Klebelsberg Center) rather than municipalities or local communities, which constrains the feasibility of locally-sequenced intervention mechanisms.",
+          "hu": "Magyarországon az iskolabezárási és egyesítési döntési jogot egy központosított állami szereplő, a Klebelsberg Központ gyakorolja, nem az önkormányzatok vagy a helyi közösségek, ami korlátozza a helyileg ütemezett beavatkozási mechanizmusok kivitelezhetőségét."
+        },
+        "finding_ref": "F-live-implementation_planning-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-implementation_planning-01",
+            "title": {
+              "en": "Hungarian centralization of school governance (2013 onwards)",
+              "hu": "Magyar iskolai kormányzás központosítása (2013-tól)"
+            },
+            "url": "urn:epl:live-source:src-live-implementation_planning-01"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary has experienced repeated historical cycles of rural school expansion and contraction (interwar expansion, Stalinist demolition 1948+, 1970s rationalization) without establishing a durable institutionalized feedback mechanism, suggesting past sequences were driven by top-down political decisions rather than standing demographic-trigger rules.",
+          "hu": "Magyarországon ismétlődő történelmi ciklusok jellemezték a vidéki iskolák bővülését és bezárását (a két világháború közötti terjeszkedés, a sztálini bezárások 1948 után, a 1970-es évek racionalizációja), miközben nem épült ki tartós, intézményesített visszacsatolási mechanizmus; ez arra utal, hogy a korábbi folyamatokat inkább felülről irányított politikai döntések, semmint állandó, demográfiai küszöbértékeken alapuló szabályok vezérelték."
+        },
+        "finding_ref": "F-live-implementation_planning-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-implementation_planning-02",
+            "title": {
+              "en": "Historical cycles of Hungarian rural school policy (interwar, Stalinist, 1970s, 1960s farmstead school closures)",
+              "hu": "A magyar vidéki iskolapolitika történeti ciklusai (két világháború közötti, sztálinista, 1970-es évek, 1960-as évek tanyai iskolabezárásai)"
+            },
+            "url": "urn:epl:live-source:src-live-implementation_planning-02"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "In 2016, school directors and county self-government associations explicitly flagged risks of closure or consolidation via centralized school-center formation, but no formal consultation or appeals mechanism was reported to exist at that time.",
+          "hu": "2016-ban az iskolavezetők és a megyei önkormányzati egyesületek kifejezetten felhívták a figyelmet a bezárás vagy összevonás kockázataira a központosított tankerületi központok létrehozása kapcsán, azonban akkor nem számoltak be semmilyen formális egyeztetési vagy fellebbezési mechanizmus meglétéről."
+        },
+        "finding_ref": "F-live-implementation_planning-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-implementation_planning-03",
+            "title": {
+              "en": "2016 ministry consultation gap on school consolidation",
+              "hu": "2016 minisztériumi konzultációs hiány az iskolakonszolidációról"
+            },
+            "url": "urn:epl:live-source:src-live-implementation_planning-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary's population has declined by nearly 8% since 1990, with projections indicating a further 13% decline by 2050, but this decline is spatially uneven, with North-Eastern, South-Western, and Western regions experiencing more acute depopulation than national average.",
+          "hu": "Magyarország népessége 1990 óta közel 8%-kal csökkent, és előrejelzések további mintegy 13%-os csökkenést jeleznek 2050-ig; a visszaesés azonban területileg nem egyenletes: az ország északkeleti, délnyugati és nyugati térségeiben élesebb elnéptelenedés figyelhető meg, mint az országos átlag."
+        },
+        "finding_ref": "F-live-implementation_planning-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-implementation_planning-04",
+            "title": {
+              "en": "Hungarian depopulation trends and regional variation (KSH demographic data, 2023 projections)",
+              "hu": "Magyar elnéptelenedési trendek és regionális különbségek (KSH demográfiai adatok, 2023-as előrejelzések)"
+            },
+            "url": "urn:epl:live-source:src-live-implementation_planning-04"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "International legal safeguards for segregation prevention (ECtHR 2013 judgment on special-school segregation, 2023 Piliscsaba village-school judgment) have not been effectively enforced domestically over a decade, as the Committee of Ministers monitoring has not closed the 2013 case despite repeated non-closure findings.",
+          "hu": "A szegregáció megelőzésére vonatkozó nemzetközi jogi garanciák (Európai Emberi Jogi Bíróság 2013-as ítélete a speciális iskolák szerinti elkülönítésről, valamint a 2023-as piliscsabai falusi iskola-ügy) nem érvényesültek hatékonyan hazai szinten több mint egy évtizeden át: a Miniszterek Bizottsága ellenőrző eljárása nem zárta le a 2013-as ügyet, annak ismételten megállapított lezáratlansága ellenére."
+        },
+        "finding_ref": "F-live-implementation_planning-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-implementation_planning-07",
+            "title": {
+              "en": "ECtHR segregation judgments (2013, 2023) and Committee of Ministers monitoring",
+              "hu": "ECtHR szegregációs ítéletek (2013, 2023) és a Miniszterek Bizottságának monitoringja"
+            },
+            "url": "urn:epl:live-source:src-live-implementation_planning-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "The Hungarian teaching workforce is ageing (50% of teachers are age 50+, only 7.2% under 30) and is experiencing documented attrition, particularly in schools serving ethnic-minority students, with a 2023 Status Law change permitting involuntary teacher transfers to address shortages.",
+          "hu": "A magyar pedagógusállomány elöregedőben van (a pedagógusok 50%-a 50 éves vagy idősebb, mindössze 7,2% 30 év alatti), és dokumentált elvándorlást mutat, különösen az etnikai kisebbségekhez tartozó tanulókat ellátó iskolákban; 2023-ban a Státustörvény módosítása lehetővé tette pedagógusok kötelező áthelyezését a hiányok kezelésére."
+        },
+        "finding_ref": "F-live-implementation_planning-08",
+        "sources": [
+          {
+            "source_ref": "SRC-live-implementation_planning-08",
+            "title": {
+              "en": "Hungarian teacher demographics and labor-relations reform (2024/2025 academic year; July 2023 Status Law)",
+              "hu": "Magyar tanári demográfia és munkaügyi reform (2024/2025 tanév; July 2023 Status Law)"
+            },
+            "url": "urn:epl:live-source:src-live-implementation_planning-08"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "While free public transport for children up to age 14 was introduced in March 2023, rural and small-settlement transport frequencies remain limited, particularly in North-Eastern, South-Western, and Western Hungary—regions that overlap with areas of highest demographic depopulation.",
+          "hu": "Bár a 14 év alatti gyermekek számára ingyenes tömegközlekedést 2023 márciusában vezették be, a vidéki és kis települések közlekedési gyakorisága továbbra is korlátozott, különösen az ország északkeleti, délnyugati és nyugati térségeiben — ezek a régiók jelentős átfedést mutatnak a legintenzívebb demográfiai elnéptelenedéssel sújtott területekkel."
+        },
+        "finding_ref": "F-live-implementation_planning-09",
+        "sources": [
+          {
+            "source_ref": "SRC-live-implementation_planning-09",
+            "title": {
+              "en": "Hungarian transport tariff reform (March 2023) and rural transit coverage (KSH analysis)",
+              "hu": "Magyar közlekedési díjreform (March 2023) és vidéki tömegközlekedési lefedettség (KSH analysis)"
+            },
+            "url": "urn:epl:live-source:src-live-implementation_planning-09"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Institutionalized stakeholder-consultation mechanisms in Hungarian school governance were suspended or curtailed after 2010 as part of broader centralization, affecting the procedural architecture available for local-level input in school-network rationalization decisions.",
+          "hu": "A magyar iskolakormányzás intézményesített érdekelti egyeztetési mechanizmusai a 2010 utáni széleskörű centralizáció részeként felfüggesztésre vagy korlátozásra kerültek, ami gyengítette a helyi szintű beleszólás lehetőségeit az iskolahálózat-racionalizációs döntésekben."
+        },
+        "finding_ref": "F-live-implementation_planning-10",
+        "sources": [
+          {
+            "source_ref": "SRC-live-implementation_planning-10",
+            "title": {
+              "en": "Hungarian education centralization and stakeholder-consultation curtailment post-2010",
+              "hu": "A magyar oktatás centralizációja és az érintettek konzultációjának korlátozása 2010 után"
+            },
+            "url": "urn:epl:live-source:src-live-implementation_planning-10"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "School closures in depopulating rural areas are followed by accelerated local depopulation rather than simply resulting from pre-existing demographic decline, based on difference-in-differences regression modelling of Finnish municipalities 2010–2018 and corroborating evidence from Saxony",
+          "hu": "A depopuláló vidéki térségekben történt iskolabezárások után gyorsuló helyi elnéptelenedés következett be, nem csupán a meglévő demográfiai hanyatlás folytatásaként — ezt mutatja a finn önkormányzatokra 2010–2018 között alkalmazott difference-in-differences regressziós modell és a szászországi megerősítő bizonyítékok."
+        },
+        "finding_ref": "F-live-international_comparison-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-01",
+            "title": {
+              "en": "Lehtonen (2021); Sørensen et al. (2021) systematic review on depopulation and rural school closure",
+              "hu": "Lehtonen (2021); Sørensen et al. (2021) szisztematikus áttekintése a népességfogyásról és vidéki iskolabezárásokról"
+            },
+            "url": "https://doi.org/10.1080/00131881.2021.1872041"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Scotland's 'presumption against rural school closure' (Children and Young People Scotland Act 2014) requires education authorities to formally assess alternatives to closure, including steps that would avoid closure entirely, and to document likely educational benefits, community effects, and travelling arrangements",
+          "hu": "Skóciában a „presumption against rural school closure” elve (Children and Young People Scotland Act 2014) megköveteli, hogy az oktatási hatóságok formálisan értékeljék a bezárás alternatíváit, beleértve azokat a lépéseket is, amelyek teljesen elkerülhetik a bezárást, és dokumentálják a várható pedagógiai előnyöket, a közösségre gyakorolt hatásokat és a közlekedési megoldásokat."
+        },
+        "finding_ref": "F-live-international_comparison-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-02",
+            "title": {
+              "en": "Children and Young People (Scotland) Act 2014, section 11A; Scottish government guidance on rural school closure (2010 Act revised)",
+              "hu": "Children and Young People (Scotland) Act 2014, section 11A; a skót kormány iránymutatása a vidéki iskolabezárásról (2010 Act felülvizsgálva)."
+            },
+            "url": "https://www.legislation.gov.uk/asp/2014/8/part/2/chapter/1"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "France's conventions ruralité establish reciprocal three-year contracts between State (via rector and prefect) and local elected officials (mayors' associations, departmental councils), in which the State maintains teaching posts and staffing allowances while municipalities commit to reorganizing school networks, with co-financing available via rural territorial equipment grants",
+          "hu": "Franciaországban a 'conventions ruralité' kölcsönös, hároméves megállapodásokat hoznak létre az állam (a rektor és a prefektus közreműködésével) és a helyi választott képviselők (polgármesteri egyesületek, megyei tanácsok) között: az állam fenntartja a pedagógusállásokat és a létszámfinanszírozást, míg az önkormányzatok vállalják az iskolahálózat átszervezését; társbefizetésre lehetőség van vidéki területi berendezési támogatások formájában."
+        },
+        "finding_ref": "F-live-international_comparison-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-03",
+            "title": {
+              "en": "French education inspection-general study on conventions ruralité 2010–2019; Senate report on rural education contracting",
+              "hu": "Francia inspection générale tanulmány a 'conventions ruralité' 2010–2019 közötti időszakról; szenátusi jelentés a vidéki oktatás szerződéses megoldásairól"
+            },
+            "url": "https://www.senat.fr/rap/r21-038/r21-038_mono.html"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary's 2013 centralization via the Public Education Act transferred school management, budgeting, staffing and curriculum control from municipalities to the central Klebelsberg Institution Maintenance Centre (KLIK), eliminating the municipal bargaining power and budget autonomy that most European closure-prevention mechanisms presume",
+          "hu": "A 2013-as központosítás a Köznevelési törvény révén áthelyezte az iskolavezetést, költségvetési felelősséget, személyügyi és tantervi kontrollt az önkormányzatoktól a Klebelsberg Intézményfenntartó Központhoz (KLIK), ezzel megszüntetve azt az önkormányzati alkupozíciót és költségvetési autonómiát, amelyre a legtöbb európai bezárás-megelőző mechanizmus épít."
+        },
+        "finding_ref": "F-live-international_comparison-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-04",
+            "title": {
+              "en": "Hungarian Public Education Act 2013; contemporary reporting on KLIK centralization and teacher employment",
+              "hu": "2013. évi köznevelési törvény; a KLIK centralizációjáról és a tanárok foglalkoztatásáról szóló kortárs beszámolók"
+            },
+            "url": "https://net.jogtar.hu/jogszabaly?docid=A1100012.TV"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Wales adopted a non-presumptive guidance model for rural school closures, requiring consideration of alternatives such as school federation rather than a legal presumption against closure, contrasting with Scotland's and England's presumption-based approaches",
+          "hu": "Wales nem feltételező iránymutatásos modellt alkalmaz a vidéki iskolabezárásoknál: jogi preszumpció helyett kötelezően mérlegelik az alternatívákat, például az iskolák federálását, ellentétben Skócia és Anglia preszumptív megközelítésével."
+        },
+        "finding_ref": "F-live-international_comparison-05",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-05",
+            "title": {
+              "en": "Welsh government guidance on rural school closures and federation models (2013 comparative briefing)",
+              "hu": "A walesi kormány iránymutatása a vidéki iskolabezárásokról és a federációs modellekről (2013 comparative briefing)"
+            },
+            "url": "https://gov.wales/sites/default/files/policy_papers/2018-11/151110schoolsclosuresguidance.pdf"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "School closures in Sweden (2013–2020) demonstrated measurable negative political effects: closures decreased trust in municipal politicians and reduced electoral support for incumbents, with effects most pronounced for left-leaning parties, suggesting political costs may drive local resistance to closures independent of educational rationale",
+          "hu": "Svédországban történt iskolabezárások (2013–2020) mérhető negatív politikai hatásokkal jártak: csökkent a bizalom a helyi politikusok iránt és csökkent a kormányzó pártok támogatottsága a választásokon, különösen a baloldali pártoknál, ami arra utal, hogy a politikai költségek független tényezőként erős ellenállást generálhatnak a bezárásokkal szemben az oktatáspolitikai érvek mellett."
+        },
+        "finding_ref": "F-live-international_comparison-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-06",
+            "title": {
+              "en": "Swedish geocoded dataset study of rural school closures 2013–2020 and electoral effects",
+              "hu": "Svéd, geokódolt adatkészletet használó tanulmány a vidéki iskolabezárásokról 2013–2020 és azok választási hatásairól"
+            },
+            "url": "https://doi.org/10.1080/0034523X.2020.1806201"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "In Hungary, community mobilization through the NGO 'Human Chain for Rural Schools' and village-level protests (Erdőkürt case) contested school closures in the absence of formal legal protections, while in Poland, village-level protests in 2000 resulted in mixed outcomes: two of four schools were saved and two closed",
+          "hu": "Magyarországon a 'Lánchíd a vidék iskoláiért' jellegű civil mozgalmak és falusi tiltakozások (Erdőkürt esete) pereskedéssel és közösségi akciókkal próbálták megtámadni az iskolabezárásokat formális jogi védelmek hiányában; Lengyelországban az ezredforduló körüli falusi tiltakozások vegyes eredményt hoztak: négy iskolai ügyből kettőt megmentettek, kettőt bezártak."
+        },
+        "finding_ref": "F-live-international_comparison-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-07",
+            "title": {
+              "en": "Hungarian case study (Erdőkürt); Polish multiple-case study of four villages (2000 protests)",
+              "hu": "Magyar esettanulmány (Erdőkürt); lengyel többeset-tanulmány négy faluról (2000. évi tiltakozások)"
+            },
+            "url": "https://doi.org/10.1080/14681366.2015.1054509"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Austria's documented policy approach to unavoidable rural school closures emphasizes 'gestures of reconciliation'—managing social aftermath through building repurposing, commemorative ceremonies, and negotiated closure timing—rather than preventing closure, representing a distinct logic from closure-prevention mechanisms in Scotland or France",
+          "hu": "Ausztria dokumentált politikája a feltétlenül elkerülhetetlen vidéki iskolabezárások kezelésére a kárpótlás és megbékélés gesztusaira helyezi a hangsúlyt — épületek hasznosítása, emlékező rendezvények és a bezárás időzítésének tárgyalása — ahelyett, hogy maga a bezárás megakadályozására törekedne; ez más logikát tükröz, mint Skócia vagy Franciaország megközelítése."
+        },
+        "finding_ref": "F-live-international_comparison-08",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-08",
+            "title": {
+              "en": "Literature on 'Gestures of reconciliation: the case of small primary school closures in rural Austria'",
+              "hu": "Irodalom: 'Gestures of reconciliation: the case of small primary school closures in rural Austria'"
+            },
+            "url": "https://doi.org/10.1080/01425680701840701"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Systematic review of rural depopulation policy explicitly notes that almost all literature covers only European regions and that all reviewed policies target depopulation reduction as a quantitative variable, but no study addresses qualitative aspects of depopulation reduction, limiting scalability and validation for non-European contexts",
+          "hu": "Egy rendszerszintű áttekintés a vidéki elnéptelenedés politikáiról megjegyzi, hogy a vizsgált irodalom szinte kivétel nélkül európai térségekre korlátozódik, és hogy a feltárt politikák mind a depopuláció mennyiségi csökkentését célozzák; egyetlen tanulmány sem foglalkozik a depopuláció minőségi aspektusaival, ami korlátozza az intézkedések skálázhatóságát és érvényesíthetőségét nem-európai kontextusokra."
+        },
+        "finding_ref": "F-live-international_comparison-10",
+        "sources": [
+          {
+            "source_ref": "SRC-live-international_comparison-10",
+            "title": {
+              "en": "Systematic review on rural depopulation and school closure (scope limitation caveat)",
+              "hu": "Szisztematikus áttekintés a vidéki elnéptelenedésről és az iskolabezárásról (a hatókör korlátozottságára vonatkozó megjegyzés)."
+            },
+            "url": "https://doi.org/10.1080/00131881.2021.1872041"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Until 2013, Hungarian primary schools were maintained by municipalities; Act CXC of 2011 centralized this duty to a state agency (Klebelsberg School Maintainer Centre) effective 1 January 2013, terminating schools as separate legal entities and merging them into KLIK.",
+          "hu": "2013-ig a magyar általános iskolákat az önkormányzatok tartották fenn; a 2011. évi CXC. törvény alapján ezt a feladatot 2013. január 1-jétől állami szervre, a Klebelsberg Intézményfenntartó Központra (KLIK) helyezték át, megszüntetve az iskolák önálló jogi személyiségét és beolvasztva őket a KLIK rendszerébe."
+        },
+        "finding_ref": "F-live-legal_and_governance-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-01",
+            "title": {
+              "en": "Hungarian Act CXC of 2011 on National Public Education; structural reform documentation",
+              "hu": "2011. évi CXC. törvény a nemzeti köznevelésről; strukturális reform dokumentációja"
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-01"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Government Decree 134/2016 restructured maintainer authority by creating 59 school district centers (tankerületi központok) subordinate to KLIK, with district councils having only advisory input and school directors appointed by the Minister of Education, not selected locally.",
+          "hu": "A 134/2016. (..) kormányrendelet átalakította az intézményfenntartói struktúrát: 59 tankerületi központot hoztak létre, amelyek a KLIK-nek alárendelve működnek; a tankerületi tanácsok csupán tanácsadó szerepet kaptak, az iskolák igazgatóit pedig nem a helyi közösség választja, hanem az oktatásért felelős miniszter nevezi ki."
+        },
+        "finding_ref": "F-live-legal_and_governance-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-02",
+            "title": {
+              "en": "Government Decree 134/2016; KLIK administrative restructuring (2017)",
+              "hu": "134/2016. kormányrendelet; KLIK igazgatási átalakítása (2017)"
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-02"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "As of Government Decree 182/2022, the Ministry of Interior (not an education ministry) became responsible for oversight of public education, including the Klebelsberg Center and school district system.",
+          "hu": "A 182/2022. (..) kormányrendelet értelmében a köznevelés felügyeletéért — beleértve a Klebelsberg Központot és a tankerületi rendszert — a Belügyminisztérium lett a felelős, nem egy külön oktatási tárca."
+        },
+        "finding_ref": "F-live-legal_and_governance-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-03",
+            "title": {
+              "en": "Government Decree 182/2022 (V.24.); Hungarian government reshuffle 2022",
+              "hu": "182/2022. (V.24.) kormányrendelet; a magyar kormány átalakítása 2022"
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Small village schools are closed administratively via 'temporary closure' or 'suspension of educational activity' decisions by school district centers citing low enrollment and cost, without evidence of a dedicated statutory closure procedure specific to demographic decline.",
+          "hu": "A kis falusi iskolák adminisztratív úton, a tankerületi központok által hozott 'ideiglenes szünetelés' vagy 'nevelési‑oktatási tevékenység felfüggesztése' határozatokkal szűnnek meg, indoklásként általában alacsony gyermeklétszámot és költséghatékonysági okokat jelölnek meg; nincs bizonyíték arra, hogy létezne kifejezetten demográfiai elnéptelenedésre szabott, önálló törvényi bezárási eljárás."
+        },
+        "finding_ref": "F-live-legal_and_governance-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-04",
+            "title": {
+              "en": "Sopron District Center statements (2022); Debrecen school district reporting (2024)",
+              "hu": "Sopron járási központ nyilatkozatai (2022); Debreceni iskolakerület jelentései (2024)"
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-04"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "The legal responsibility for organizing pupil transport to consolidated schools is disputed: the Interior Ministry states it is a municipal duty, but an ombudsman inquiry found the legal environment does not clearly assign this obligation to either the municipality or the school district.",
+          "hu": "A tanulók összevont iskolába történő szállításának jogi felelőssége vitatott: a Belügyminisztérium szerint ez önkormányzati feladat, ugyanakkor az ombudsmani vizsgálat megállapította, hogy a jogi környezet nem rendeli egyértelműen sem az önkormányzathoz, sem a tankerülethez ezt a kötelezettséget."
+        },
+        "finding_ref": "F-live-legal_and_governance-05",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-05",
+            "title": {
+              "en": "Interior Ministry Communications Department statement; Deputy Ombudsman inquiry (Tiszavasvár/Bűd case)",
+              "hu": "Belügyminisztérium Kommunikációs Főosztályának nyilatkozata; az ombudsman-helyettes vizsgálata (Tiszavasvár/Bűd ügy)"
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-05"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "When a church actor seeks to assume maintainer rights of a state-run school, more than half of parents must support the transfer, per the state secretary's procedural statement; uptake of this safeguard for village schools threatened by depopulation has not been evidenced.",
+          "hu": "Ha egy egyházi szereplő állami fenntartású iskola fenntartói jogainak átvételére törekszik, az államtitkári eljárásrend szerint a szülők több mint felének támogatnia kell az átadást; ennek a védőmechanizmusnak a vidéki, elnéptelenedéssel fenyegetett iskolák esetében való alkalmazásáról azonban nincs bizonyíték."
+        },
+        "finding_ref": "F-live-legal_and_governance-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-06",
+            "title": {
+              "en": "State secretariat for public education procedural statement; Act CLXXIX of 2011 on minority rights",
+              "hu": "A köznevelésért felelős államtitkárság eljárásra vonatkozó állásfoglalása; Act CLXXIX of 2011 on minority rights."
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-06"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "National minority self-governments can become school maintainers under Act CLXXIX of 2011 where 75% of students receive minority education; as of September 2012, three schools had been transferred to the National Roma Self-Government, but uptake remains limited.",
+          "hu": "A nemzeti kisebbségi önkormányzatok az 2011. évi CLXXIX. törvény alapján fenntartóvá válhatnak, ha a tanulók 75%-a kisebbségi oktatásban részesül; 2012 szeptemberéig három iskola került át az Országos Cigány Önkormányzathoz, ám az átvételek száma korlátozott maradt."
+        },
+        "finding_ref": "F-live-legal_and_governance-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-07",
+            "title": {
+              "en": "Act CLXXIX of 2011 on rights of minorities; National Roma Self-Government records (2012)",
+              "hu": "2011. évi CLXXIX. törvény a kisebbségek jogairól; Országos Roma Önkormányzat nyilvántartásai (2012)."
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Closure and merger decisions by school district centers have been reversed through political-administrative intervention after public protest, without formal legal appeal, indicating an informal accountability channel not codified in statutory procedure.",
+          "hu": "Az iskolaösszevonási és bezárási döntéseket a tankerületi/kerületi központok részéről közvélemény-tiltakozás után politikai–igazgatási beavatkozással visszavonták jogorvoslat nélkül, ami egy jogszabályban nem rögzített, informális elszámoltathatósági csatornát jelez."
+        },
+        "finding_ref": "F-live-legal_and_governance-08",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-08",
+            "title": {
+              "en": "Budapest school closure case (2025–2026); county government commissioner intervention; district municipal education committee opposition",
+              "hu": "Budapesti iskola bezárási ügy (2025–2026); megyei kormánymegbízotti beavatkozás; kerületi önkormányzati oktatási bizottság ellenállása"
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-08"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "As of May 2026, the Hungarian government reportedly plans a structural overhaul (not abolition) of the Klebelsberg Center and school-district system to restore school-director autonomy and municipal/local community input, citing daily operational dysfunction (e.g., inability to hire substitute teachers or approve lightbulb replacement without district permission).",
+          "hu": "2026 májusa szerint a kormány állítólag a Klebelsberg Központ és a tankerületi rendszer strukturális átalakítását tervezi (nem megszüntetését), az igazgatói autonómia és az önkormányzati/helyi közösségi beleszólás visszaállítása érdekében, napi működési zavarokra hivatkozva (pl. helyettes tanár felvétele vagy egy villanykörte kicserélése sem lehetséges tankerületi engedély nélkül)."
+        },
+        "finding_ref": "F-live-legal_and_governance-09",
+        "sources": [
+          {
+            "source_ref": "SRC-live-legal_and_governance-09",
+            "title": {
+              "en": "Government spokesperson statement (May 2026); reported structural reform plans",
+              "hu": "Kormányzati szóvivői nyilatkozat (2026. május); jelentett strukturális reformtervek"
+            },
+            "url": "urn:epl:live-source:src-live-legal_and_governance-09"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Poland's 1993 decentralization transferred school management to municipalities (gminas), creating fiscal exposure that made small rural schools vulnerable to local closure decisions rather than national policy direction.",
+          "hu": "Lengyelország 1993-as decentralizációja a közoktatás fenntartását az önkormányzatokhoz (gminákhoz) telepítette, ami fiskális kitettséget teremtett: a kis vidéki iskolák így helyi bezárási döntéseknek váltak kiszolgáltatottakká a nemzeti szintű politika irányítása helyett."
+        },
+        "finding_ref": "F-live-polish_reform-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-polish_reform-01",
+            "title": {
+              "en": "Polish Ministry of National Education decentralization and school governance transfer, 1989–1993",
+              "hu": "A lengyel Nemzeti Oktatásügyi Minisztérium decentralizációja és az iskolai irányítás átruházása, 1989–1993."
+            },
+            "url": "https://en.wikipedia.org/wiki/Education_in_Poland#History"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Approximately 3,300 Polish schools closed during 2000–2016, with declining fertility and migration cited as primary drivers, combined with economic reasons as direct closure justifications at local level.",
+          "hu": "2000 és 2016 között mintegy 3 300 lengyel iskola szűnt meg; a csökkenő termékenységet és a migrációt jelölték meg elsődleges okként, miközben a helyi szintű bezárási indoklásokban gazdasági okok szerepeltek közvetlen magyarázatként."
+        },
+        "finding_ref": "F-live-polish_reform-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-polish_reform-02",
+            "title": {
+              "en": "Polish school closures 2000–2016: Demographic and economic drivers",
+              "hu": "Lengyel iskolabezárások 2000–2016: demográfiai és gazdasági hajtóerők"
+            },
+            "url": "urn:epl:live-source:src-live-polish_reform-02"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Poland's 1999 gimnazjum reform (creating larger lower-secondary schools with expanded catchment areas) functioned as a structural reorganization lever distinct from simple closure, consolidating pupil access across neighbouring villages while formally preserving some primary buildings.",
+          "hu": "A lengyel 1999-es gimnáziumi reform — nagyobb, kiterjesztett beiskolázási területű alsó középiskolák létrehozása — strukturális átszervező eszközként működött, nem puszta bezárásként: konszolidálta a tanulói hozzáférést szomszédos falvak között, miközben formálisan több alapfokú épület megőrzését is lehetővé tette."
+        },
+        "finding_ref": "F-live-polish_reform-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-polish_reform-03",
+            "title": {
+              "en": "Polish grade-structure reform and rural school network reorganization, 1999",
+              "hu": "A lengyel évfolyamszerkezet-reform és a vidéki iskolahálózat átszervezése, 1999"
+            },
+            "url": "urn:epl:live-source:src-live-polish_reform-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Poland's 2017 reversal of the gimnazjum reform (returning to eight-year primary schools) was explicitly political and populist in rationale, disregarding positive PISA outcomes and labour-market evidence supporting the 1999 reform.",
+          "hu": "A 2017-es lengyel döntés a gimnáziumi rendszer visszafordításáról (visszatérés a nyolcosztályos általános iskolához) nyíltan politikai és populista indíttatású volt, figyelmen kívül hagyva a 1999-es reformot alátámasztó pozitív PISA‑eredményeket és munkaerőpiaci bizonyítékokat."
+        },
+        "finding_ref": "F-live-polish_reform-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-polish_reform-04",
+            "title": {
+              "en": "Polish education reform reversal 2017: Political rationale vs. evidence",
+              "hu": "A lengyel oktatási reform visszafordítása 2017-ben: politikai indoklás vs. bizonyítékok"
+            },
+            "url": "urn:epl:live-source:src-live-polish_reform-04"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Poland's 2017 reform reversal implementation caused acute disruption: closure of ~7,000 junior high schools, potential displacement of 10,000 teachers, and a double-cohort bottleneck in high-school admissions (e.g., 3,173 students unplaced in Warsaw alone).",
+          "hu": "A 2017-es reformvisszafordítás végrehajtása éles zavarokat okozott: mintegy 7 000 kisgimnázium bezárása, körülbelül 10 000 tanár elhelyezési problémája és kettős évfolyam miatti torlódás a középiskolai felvételnél (például csak Varsóban 3 173 tanuló maradt elhelyezés nélkül)."
+        },
+        "finding_ref": "F-live-polish_reform-05",
+        "sources": [
+          {
+            "source_ref": "SRC-live-polish_reform-05",
+            "title": {
+              "en": "Polish education reform reversal 2017: Implementation disruption and transition costs",
+              "hu": "A lengyel oktatáspolitikai reform visszafordítása 2017-ben: végrehajtási zavarok és átmeneti költségek"
+            },
+            "url": "urn:epl:live-source:src-live-polish_reform-05"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Poland's 2025 draft legislation on small schools proposes repurposing infrastructure (e.g., crèches, community services) rather than binary closure, framing rural schools as social/cultural centres and adapting to demographic change while protecting proximity to family home.",
+          "hu": "A lengyel 2025‑ös kisiskolákról szóló jogszabálytervezet az infrastruktúra átalakítását javasolja (például bölcsődévé vagy közösségi szolgáltatások helyszínévé alakítva) a bináris bezárás helyett, a vidéki iskolákat társadalmi és kulturális központként értelmezve, alkalmazkodva a demográfiai változásokhoz és védve a családi otthonhoz való közelséget."
+        },
+        "finding_ref": "F-live-polish_reform-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-polish_reform-06",
+            "title": {
+              "en": "Polish small schools draft legislation 2025",
+              "hu": "Lengyel kisiskolákat célzó törvénytervezet (2025)"
+            },
+            "url": "urn:epl:live-source:src-live-polish_reform-06"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Cross-national causal evidence on school closure and population decline is contested: Polish village-level studies found smaller structural social-capital decline where schools were saved, while Finnish and Swedish studies found school closure correlated with or unrelated to population decline respectively.",
+          "hu": "A nemzetközi bizonyítékok az iskolabezárás és a népességcsökkenés oksági kapcsolatáról vitatottak: lengyel települési vizsgálatok szerint kisebb volt a strukturális társadalmi tőke csökkenése azokban a falvakban, ahol megmentették az iskolát, míg egyes finn tanulmányok bezárással való korrelációt találtak, svéd kutatások pedig nem mutattak összefüggést."
+        },
+        "finding_ref": "F-live-polish_reform-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-polish_reform-07",
+            "title": {
+              "en": "Causal effects of school closure on rural depopulation: Comparative evidence",
+              "hu": "Az iskolabezárások oksági hatásai a vidéki elnéptelenedésre: összehasonlító bizonyítékok"
+            },
+            "url": "urn:epl:live-source:src-live-polish_reform-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Since 2013, municipalities lost formal authority over school maintenance to a central agency (KLIK), shifting closure/keep-open decisions from locally accountable mayors to a national bureaucracy nominally insulated from village-level electoral pressure.",
+          "hu": "2013 óta az önkormányzatok elveszítették az iskolafenntartás feletti formális hatáskörüket, amikor azt egy központi ügynökséghez (KLIK) telepítették; ennek következtében a bezárásról vagy megőrzésről szóló döntések a helyben elszámoltatható polgármesterektől egy országos, elvileg a helyi választói nyomástól védett bürokráciához kerültek."
+        },
+        "finding_ref": "F-live-political_feasibility-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-political_feasibility-01",
+            "title": {
+              "en": "Act CXC on National Public Education (2011) and KLIK establishment (2013)",
+              "hu": "A nemzeti köznevelésről szóló 2011. évi CXC. törvény és a KLIK létrehozása (2013)."
+            },
+            "url": "https://net.jogtar.hu/jogszabaly?docid=a1100cxc.ogi"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Church takeover of village schools is an established alternative-operator coalition for keeping schools nominally open; expansion of denominational sector grew 60% (2001-2011) and a further 47% (2011-2014) in small towns and villages.",
+          "hu": "Az egyházi fenntartás átvétele bevett alternatív működtetői megoldásként szolgál a falusi iskolák formális nyitva tartásának megőrzésére; a felekezeti intézményrendszer 2001–2011 között 60%-kal, majd 2011–2014 között további 47%-kal bővült a kisvárosokban és falvakban."
+        },
+        "finding_ref": "F-live-political_feasibility-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-political_feasibility-02",
+            "title": {
+              "en": "TÁRKI Societal Report; education ministry amendment records",
+              "hu": "TÁRKI társadalmi jelentés; oktatási minisztérium módosítási nyilvántartásai"
+            },
+            "url": "https://www.tarki.hu/en/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "A documented case study shows local coalitions can save a school, but success is contingent on rare social capital (bonding and bridging networks within villages).",
+          "hu": "Egy dokumentált esettanulmány szerint a helyi koalíciók képesek megmenteni egy iskolát, de a siker ritka társadalmi tőke meglétén múlik (az összetartó—bonding és a hídépítő—bridging hálózatok jelenlétén)."
+        },
+        "finding_ref": "F-live-political_feasibility-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-political_feasibility-03",
+            "title": {
+              "en": "Peer-reviewed Hungarian village case study on school-rescue operations",
+              "hu": "Lektorált magyar falusi esettanulmány az iskolák megmentéséről"
+            },
+            "url": "urn:epl:live-source:src-live-political_feasibility-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary's Magyar Falu Program (Village Program) has provided 600 localities with 10 billion forints (EUR 28.3 million) for communal development, and PM Orbán has personally framed rural revival as a governing narrative.",
+          "hu": "A Magyar Falu Program mintegy 600 település számára biztosított 10 milliárd forintot (kb. 28,3 millió EUR) közösségi fejlesztésekre, és Orbán Viktor miniszterelnök személyesen is a vidék újjáéledését tette a kormányzati narratíva részévé."
+        },
+        "finding_ref": "F-live-political_feasibility-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-political_feasibility-04",
+            "title": {
+              "en": "Hungarian Village Program funding records; PM Orbán statements",
+              "hu": "Magyar Falu Program finanszírozási nyilvántartásai; Orbán miniszterelnök kijelentései"
+            },
+            "url": "https://magyarorszag.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "KLIK centralization was justified on cost-equalization grounds but has produced documented budget failures: KLIK has been in deficit since its first year despite receiving billions of forints annually, and previously better-off urban schools experienced substantial funding declines.",
+          "hu": "A KLIK‑centralizációt költségkiegyenlítési céllal indokolták, de dokumentált költségvetési problémákat eredményezett: a KLIK már az első évtől deficites volt annak ellenére, hogy évente több milliárd forintot kapott, és korábban jobban finanszírozott városi iskolák jelentős forráscsökkenést szenvedtek el."
+        },
+        "finding_ref": "F-live-political_feasibility-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-political_feasibility-06",
+            "title": {
+              "en": "KLIK solvency records; education funding analysis",
+              "hu": "KLIK fizetőképességi nyilvántartások; oktatásfinanszírozási elemzés"
+            },
+            "url": "https://www.klikk.gov.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "A 2025 Budapest case shows that central district-level school-merger decisions can be reversed after local mobilization (4,000-signature petition and two demonstrations), when a district centre withdrew its reorganization proposal.",
+          "hu": "Egy 2025‑ös budapesti eset azt mutatja, hogy a központi, tankerületi szintű iskolai összevonási döntések visszavonhatók helyi mobilizáció hatására (4 000 aláírásos petíció és két tüntetés), amikor a tankerületi központ visszavonta az átszervezési javaslatát."
+        },
+        "finding_ref": "F-live-political_feasibility-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-political_feasibility-07",
+            "title": {
+              "en": "Budapest district school authority (Külső-Pesti Tankerületi Központ) reorganization reversal",
+              "hu": "Budapest kerületi iskolafenntartó (Külső-Pesti Tankerületi Központ) átszervezésének visszafordítása."
+            },
+            "url": "urn:epl:live-source:src-live-political_feasibility-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "A nationwide teacher mobilization in 2022-2023 created a union/parent/student coalition (October 2022 demonstrations drew 50,000+ participants) opposing government education policy, raising the political cost of any school reorganization.",
+          "hu": "A 2022–2023-as országos pedagógusmozgalom egy szakszervezeti–szülői–diák koalíciót hozott létre (a 2022. októberi tüntetésekre több mint 50 000 résztvevő vonult ki), amely ellenzi a kormány oktatáspolitikáját és növeli bármilyen iskolaszervezési intézkedés politikai költségét."
+        },
+        "finding_ref": "F-live-political_feasibility-08",
+        "sources": [
+          {
+            "source_ref": "SRC-live-political_feasibility-08",
+            "title": {
+              "en": "Hungarian teacher union (PDSZ) campaigns; 2022 education protests",
+              "hu": "Magyar tanárszakszervezet (PDSZ) kampányai; 2022. évi oktatásügyi tüntetések"
+            },
+            "url": "https://www.pdsz.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Long-run Hungarian evidence shows rural school-network size has swung repeatedly across political regimes: communist-era centralization (1950s-1970s) reduced primary schools from 6,000+ to 4,200 in 10 years; church schools were reduced from 4,100+ to ten after nationalization.",
+          "hu": "Hosszú távú magyar adatok azt mutatják, hogy a vidéki iskolahálózat mérete politikai rendszerek mentén ismétlődően ingadozott: a kommunista korszak centralizációja (1950‑es–1970‑es évek) tíz év alatt az általános iskolák számát több mint 6 000‑ről 4 200‑ra csökkentette; az egyházi iskolák száma pedig az államosítást követően több mint 4 100‑ról tízre esett vissza."
+        },
+        "finding_ref": "F-live-political_feasibility-09",
+        "sources": [
+          {
+            "source_ref": "SRC-live-political_feasibility-09",
+            "title": {
+              "en": "Hungarian historical education records; Communist-era education policy",
+              "hu": "Magyar történelmi oktatási feljegyzések; a kommunista korszak oktatáspolitikája"
+            },
+            "url": "urn:epl:live-source:src-live-political_feasibility-09"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary centralized school governance and maintenance in 2013 under KLIK, then restructured again in 2017 to 58-60 school district centres, removing local municipal control over small-village school viability decisions and separating villages from ordinary municipal funding logic.",
+          "hu": "Magyarországon 2013-ban központosították az iskolafenntartást és -irányítást a KLIK alatt, majd 2017-ben 58–60 iskolakörzeti központra szervezték át, megszüntetve a helyi önkormányzatok döntési jogát a kistelepülési iskolák fennmaradásáról, és elszakítva a falvakat az önkormányzati finanszírozás szokásos logikájától."
+        },
+        "finding_ref": "F-live-portuguese_reform-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-portuguese_reform-01",
+            "title": {
+              "en": "Hungarian Public Education Act 2013 and school maintenance restructuring",
+              "hu": "A magyar közoktatási törvény (2013) és az iskolafenntartás átszervezése"
+            },
+            "url": "urn:epl:live-source:src-live-portuguese_reform-01"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Disadvantaged children are increasingly concentrated in rural settlements, with up to 94% disadvantage rates in certain rural settlements, driven partly by spatial selectivity, catchment policies, and school closures in peripheral areas.",
+          "hu": "A hátrányos helyzetű gyermekek egyre inkább a vidéki településeken koncentrálódnak; egyes vidéki településeken a hátrányos helyzet aránya akár 94%-os is lehet, amelyet részben térségi szelekció, beiskolázási körzetek politikái és perifériás területeken történt iskolabezárások hajtanak."
+        },
+        "finding_ref": "F-live-portuguese_reform-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-portuguese_reform-03",
+            "title": {
+              "en": "Settlement-level clustering study 2021-2024 on Hungarian depopulation types",
+              "hu": "Településszintű klaszterelemzés 2021-2024 a magyar elnéptelenedési típusokról"
+            },
+            "url": "urn:epl:live-source:src-live-portuguese_reform-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungarian primary teachers earn 34% less than tertiary-educated workers (OECD comparison: 17% less), and a 32% average salary increase was implemented in early 2024, but Hungary continues to face severe teacher shortage and aging workforce.",
+          "hu": "A magyar általános iskolai tanárok bére 34%-kal elmarad a felsőfokú végzettségű munkavállalók átlagától (OECD-összehasonlítás: 17%-kal kevesebb); 2024 elején átlagosan 32%-os béremelést vezettek be, de Magyarország továbbra is súlyos pedagógushiánnyal és elöregedő tanárállománnyal küzd."
+        },
+        "finding_ref": "F-live-portuguese_reform-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-portuguese_reform-04",
+            "title": {
+              "en": "OECD teacher salary comparisons and Hungarian education workforce data",
+              "hu": "OECD tanári fizetések összehasonlítása és a magyar oktatási munkaerő adatai"
+            },
+            "url": "urn:epl:live-source:src-live-portuguese_reform-04"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Multigrade and mixed-age teaching models in Chile (Puentes Educativos) and Norway show quality potential when supported by deliberate teacher training, cross-school networks, and professional learning communities, but these are non-Hungarian systems.",
+          "hu": "A chilei Puentes Educativos és a norvég többévfolyamos/vegyes életkorú oktatási modellek minőségi potenciált mutatnak, ha célzott pedagógusképzéssel, iskolák közti hálózatokkal és szakmai tanulóközösségekkel támogatják őket, azonban ezek nem magyar rendszerek."
+        },
+        "finding_ref": "F-live-portuguese_reform-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-portuguese_reform-07",
+            "title": {
+              "en": "Comparative pedagogy: multigrade teaching in Chile and Norway",
+              "hu": "Komparatív pedagógia: vegyes évfolyamú oktatás Chilében és Norvégiában."
+            },
+            "url": "urn:epl:live-source:src-live-portuguese_reform-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Church-run schools in Hungary have doubled since 2010, enjoy student-selection freedom and greater autonomy, whereas state-run schools must accept all catchment students; this potentially concentrates disadvantage in remaining state village schools.",
+          "hu": "Magyarországon az egyházi fenntartású iskolák száma 2010 óta megduplázódott; ezek az intézmények szabadabb diák-kiválasztási lehetőséggel és nagyobb autonómiával rendelkeznek, míg az állami iskoláknak kötelességük fogadni a körzetükbe tartozó tanulókat; ez a folyamat a hátrányos helyzet koncentrálódásához vezethet a megmaradt állami falusi iskolákban."
+        },
+        "finding_ref": "F-live-portuguese_reform-08",
+        "sources": [
+          {
+            "source_ref": "SRC-live-portuguese_reform-08",
+            "title": {
+              "en": "Hungarian church-school expansion and enrollment trends",
+              "hu": "A magyar egyházi iskolahálózat bővülése és a beiratkozási tendenciák"
+            },
+            "url": "urn:epl:live-source:src-live-portuguese_reform-08"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "European Court of Human Rights ruled in Szolcsán v. Hungary (2023) that Roma segregation in schools breaches discrimination prohibition; EU infringement proceedings ongoing since 2016; catchment-based school network decisions are subject to non-discrimination legal constraints.",
+          "hu": "Az Emberi Jogok Európai Bírósága 2023-ban a Szolcsán kontra Magyarország ügyben kimondta, hogy a roma gyerekek iskolai szegregációja sérti a diszkrimináció tilalmát; az Európai Bizottság 2016 óta folytat Magyarországgal szemben kötelezettségszegési eljárást; a körzetekre épülő iskolahálózat-tervezésre is vonatkoznak a nem megkülönböztetésre alapozott jogi korlátok."
+        },
+        "finding_ref": "F-live-portuguese_reform-09",
+        "sources": [
+          {
+            "source_ref": "SRC-live-portuguese_reform-09",
+            "title": {
+              "en": "Szolcsán v. Hungary (2023) and EU infringement proceedings",
+              "hu": "Szolcsán v. Hungary (2023) és EU jogsértési eljárások"
+            },
+            "url": "urn:epl:live-source:src-live-portuguese_reform-09"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "A single documented case (Erdőkürt village school) shows uneven local social capital and bonding/bridging networks determined school survival, suggesting community-reliant non-structural strategies would produce uneven outcomes rather than uniform solutions across villages.",
+          "hu": "Egy dokumentált eset (Erdőkürt falusi iskola) azt mutatja, hogy a helyi társadalmi tőke, valamint az összetartó (bonding) és a kapcsolati/híd (bridging) hálózatok egyenlőtlen eloszlása határozta meg az iskola túlélését; ez arra utal, hogy közösségre támaszkodó, nem strukturális stratégiák településenként eltérő eredményeket hoznának, nem egységes megoldást."
+        },
+        "finding_ref": "F-live-portuguese_reform-10",
+        "sources": [
+          {
+            "source_ref": "SRC-live-portuguese_reform-10",
+            "title": {
+              "en": "Erdőkürt case study on social capital and rural school retention",
+              "hu": "Erdőkürt esettanulmány a társadalmi tőke és a vidéki iskolai megtartás témájában"
+            },
+            "url": "urn:epl:live-source:src-live-portuguese_reform-10"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary's population declined by 334,000 individuals (3.4%) over the decade preceding the 2022 census, the largest inter-census drop on record, directly shrinking the school-age cohort feeding rural primary schools nationwide.",
+          "hu": "A 2022-es népszámlálás előtti tíz évben Magyarország népessége 334 000 fővel (3,4%-kal) csökkent, ez a legnagyobb, regisztrált népességvesztés két népszámlálás közötti időszakban, és közvetlenül szűkítette azt az iskoláskorú kohorszot, amely a vidéki általános iskolákat ellátja."
+        },
+        "finding_ref": "F-live-school_network_planning-01",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-01",
+            "title": {
+              "en": "Hungarian Central Statistical Office (KSH) 2022 Census",
+              "hu": "Magyar Központi Statisztikai Hivatal (KSH) 2022. népszámlálás"
+            },
+            "url": "https://www.ksh.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Nearly 18% of Hungary's population lived in the capital, almost 53% in towns, and 30% in villages as of 1 January 2024; migration gains in villages declined significantly from 2023 onward, reversing a pandemic-era counter-urbanization trend.",
+          "hu": "2024. január 1-jei adatok szerint a magyar lakosság közel 18%-a élt a fővárosban, majdnem 53%-a városokban és 30%-a falvakban; a falvakba irányuló vándorlási nyereség 2023-tól jelentősen csökkent, megfordítva a járvány idején megfigyelt vissza-városiasodás elleni tendencia egy részét."
+        },
+        "finding_ref": "F-live-school_network_planning-02",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-02",
+            "title": {
+              "en": "Hungarian Central Statistical Office (KSH) 2024 Population Distribution and Migration Data",
+              "hu": "Központi Statisztikai Hivatal (KSH) 2024 népesség-eloszlási és migrációs adatok"
+            },
+            "url": "https://www.ksh.hu/"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Hungary's primary school network contracted from above 6,000 schools to nearly 4,200 in a 10-year period (1960s–70s) under Communist-era rationalization policy, establishing historical precedent for top-down network consolidation independent of demographic demand alone.",
+          "hu": "Az 1960–70-es években a kommunista korszakra jellemző racionalizációs politika hatására a magyar általános iskolahálózat tíz év alatt több mint 6000 iskoláról közel 4200-ra zsugorodott, precedenst teremtve a felülről vezérelt hálózat-konszolidációnak, amely nem kizárólag demográfiai keresleten alapult."
+        },
+        "finding_ref": "F-live-school_network_planning-03",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-03",
+            "title": {
+              "en": "Hungarian Education History: School Rationalization (1960s–70s)",
+              "hu": "A magyar oktatás története: az iskolák racionalizálása (1960-as–1970-es évek)"
+            },
+            "url": "urn:epl:live-source:src-live-school_network_planning-03"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Since 2013, school maintenance has been centralized under the Public Education Act; the Klebelsberg Institution Maintenance Centre (KLIK) controls finances, teacher employment, and curriculum across 198 school districts, removing municipal authority over closure and merger decisions.",
+          "hu": "2013 óta a köznevelésről szóló törvény hatályba lépésével centralizálták az iskolafenntartást; a Klebelsberg Intézményfenntartó Központ (KLIK) a pénzügyeket, a pedagógusok alkalmazását és bizonyos tantervi ügyeket 198 iskolakörzetben felügyeli, ezzel megvonva a helyi önkormányzatoktól a bezárásra és egyesítésre vonatkozó döntési jogkört."
+        },
+        "finding_ref": "F-live-school_network_planning-04",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-04",
+            "title": {
+              "en": "Hungarian Public Education Act 2013 and KLIK Administrative Structure",
+              "hu": "A magyar közoktatási törvény (2013) és a KLIK igazgatási szerkezete"
+            },
+            "url": "urn:epl:live-source:src-live-school_network_planning-04"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "A 2007 wave of rural school closures and mergers in Hungary, including cases in Nógrád county (Mátraszőlős, Erdőkürt), showed closure cascades where neighboring villages with enrollments of 35–65 pupils operated mixed-year classes, with nearby surviving schools facing 'association pressure' (társulás) as child numbers fell.",
+          "hu": "2007-ben lezajlott egy hullám vidéki iskolabezárásokból és egyesítésekből, többek között Nógrád megyében (Mátraszőlős, Erdőkürt), amely bezárási kaszkádokat mutatott: a szomszédos falvak 35–65 fős létszámokkal vegyes évfolyamos osztályokat működtettek, miközben a közeli túlélő iskolákra a gyerekszám csökkenésével 'társulási nyomás' nehezedett."
+        },
+        "finding_ref": "F-live-school_network_planning-05",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-05",
+            "title": {
+              "en": "2007 Hungarian Rural School Closure Wave; Human Chain for Rural Schools NGO Campaign",
+              "hu": "2007-es magyar vidéki iskolabezárási hullám; Human Chain for Rural Schools civil szervezet kampánya."
+            },
+            "url": "urn:epl:live-source:src-live-school_network_planning-05"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Comparative international research on school closure and population decline is contested: a Finnish DID/matching study (2010–2018) found population decreased more after closure, but Barakat (2015, 2014) in Saxony and Amcoff (2012) in Sweden found no significant causal link; a 2022 study found only 17% of residents in municipalities without an elementary school considered its absence a major shortcoming.",
+          "hu": "Az iskolabezárások és népességfogyás összehasonlító nemzetközi kutatása vitatott: egy finn, differencia‑az‑átlagon (DID) és illesztéses módszerrel végzett vizsgálat (2010–2018) a bezárást követően nagyobb népességcsökkenést talált, míg Barakat (2014, 2015) Szászországban és Amcoff (2012) Svédországban nem talált jelentős oksági összefüggést; egy 2022-es kutatás szerint pedig azokban a településekben, ahol nincs általános iskola, csak a lakosok 17%-a tartotta ezt súlyos hiányosságnak."
+        },
+        "finding_ref": "F-live-school_network_planning-06",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-06",
+            "title": {
+              "en": "Comparative European School Closure and Population Studies (Finland, Saxony, Sweden); Bernard, Joukl, Vítková 2022",
+              "hu": "Összehasonlító európai iskolabezárási és népességvizsgálatok (Finnország, Szászország, Svédország); Bernard, Joukl, Vítková 2022"
+            },
+            "url": "urn:epl:live-source:src-live-school_network_planning-06"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Rural areas in Hungary's North-Eastern, South-Western, and Western regions have uneven public transport access; frequency and scheduling in small settlements make public transport impractical for daily school commutes, with a significant gap between Budapest and rural areas in barrier-free transport infrastructure development.",
+          "hu": "Magyarország északkeleti, délnyugati és nyugati vidéki térségeiben egyenetlen a közösségi közlekedéshez való hozzáférés; a kis települések menetrendi és járatsűrűségi korlátai miatt a tömegközlekedés sok esetben nem alkalmas napi iskolába járásra, továbbá jelentős különbség van Budapest és a vidéki területek között az akadálymentes közlekedési infrastruktúra fejlesztésében."
+        },
+        "finding_ref": "F-live-school_network_planning-07",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-07",
+            "title": {
+              "en": "Hungarian Rural Transport Infrastructure Assessment",
+              "hu": "Magyar vidéki közlekedési infrastruktúra értékelése"
+            },
+            "url": "urn:epl:live-source:src-live-school_network_planning-07"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "A minority-language school bus program transports more than 500 Hungarian-minority students across 13 Transylvanian counties using vehicles seating 8–21 people, demonstrating a multi-village, route-based transport logistics model; direct applicability to domestic Hungarian rural consolidation is inferred but not confirmed.",
+          "hu": "Egy kisebbségi nyelvű iskolabusz-program több mint 500 erdélyi magyar kisebbségi tanulót szállít 13 erdélyi megyében 8–21 férőhelyes járművekkel, ami többfalu, útvonal-alapú szállítási logisztikai modellt mutat; ennek közvetlen alkalmazhatósága a hazai vidéki iskolaracionalizálásra feltételezhető, de nincs bizonyítva."
+        },
+        "finding_ref": "F-live-school_network_planning-08",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-08",
+            "title": {
+              "en": "Transylvanian Hungarian-Minority School Transport Scheme 2024–2025",
+              "hu": "Erdélyi magyar kisebbségi iskolabuszprogram (2024–2025)"
+            },
+            "url": "urn:epl:live-source:src-live-school_network_planning-08"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "In a Hungarian micro-region, settlements with disproportionately high Roma population shares exhibited corresponding school-level Roma enrollment disparities; neighboring settlements perceived successful schools' pupil 'pull' as a threat to their own enrollment, creating informal inter-municipal competition that distorts simple geographic-efficiency models.",
+          "hu": "Egy magyar mikrorégióban a települések, ahol arányaiban nagy a roma lakosság, az iskolai roma beiskolázásban is arányosan magas eltéréseket mutattak; a szomszédos települések a sikeres iskolák 'vonzását' fenyegetésként élték meg, ami informális önkormányzatok közti versenyt teremtett és torzítja az egyszerű földrajzi hatékonysági modelleket."
+        },
+        "finding_ref": "F-live-school_network_planning-09",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-09",
+            "title": {
+              "en": "Ethnic Segregation and School Network Dynamics in Hungarian Micro-Regions",
+              "hu": "Etnikai szegregáció és az iskolahálózat dinamikája a magyar mikrorégiókban"
+            },
+            "url": "urn:epl:live-source:src-live-school_network_planning-09"
+          }
+        ]
+      },
+      {
+        "claim": {
+          "en": "Across multiple European countries including Finland, municipalities have targeted rural schools with low enrollment for closure citing cost-cutting and out-migration, with Hungarian literature noting that closures in marginalized areas often intensified social isolation and ethnic segregation; however, the causal link between closure and further population decline remains contested.",
+          "hu": "Több európai országban, köztük Finnországban, az önkormányzatok gyakran zártak be alacsony létszámú vidéki iskolákat költségcsökkentésre és elvándorlásra hivatkozva; a magyar szakirodalom megjegyzi, hogy a marginalizált területeken az iskolabezárások gyakran fokozzák a társadalmi elszigeteltséget és az etnikai szegregációt, ugyanakkor az, hogy a bezárás további népességcsökkenést okoz-e, továbbra is vitatott."
+        },
+        "finding_ref": "F-live-school_network_planning-10",
+        "sources": [
+          {
+            "source_ref": "SRC-live-school_network_planning-10",
+            "title": {
+              "en": "European Municipal School Closure Policy and Rural Community Disintegration (Finland comparative study)",
+              "hu": "Európai önkormányzati iskolabezárási politika és vidéki közösségek szétesése (Finnország összehasonlító tanulmánya)"
+            },
+            "url": "urn:epl:live-source:src-live-school_network_planning-10"
+          }
+        ]
+      }
+    ],
+    "generation_notice": {
+      "en": "Fresh live v2 production replicate using the admitted lens registry. Generator=anthropic; judge=openai; human external-use gate remains pending.",
+      "hu": "A Fresh live v2 gyártásának reprodukciója the admitted lens registry használatával. Generator=anthropic; judge=openai; human external-use gate remains pending."
+    },
+    "lens_assessment_refs": [
+      "AS-live-t1-demography",
+      "AS-live-t1-education_finance",
+      "AS-live-t1-equity_and_social_mobility",
+      "AS-live-t1-finnish_reform",
+      "AS-live-t1-hungarian_education_system",
+      "AS-live-t1-implementation_planning",
+      "AS-live-t1-international_comparison",
+      "AS-live-t1-legal_and_governance",
+      "AS-live-t1-polish_reform",
+      "AS-live-t1-political_feasibility",
+      "AS-live-t1-portuguese_reform",
+      "AS-live-t1-school_network_planning",
+      "AS-live-t2-demography",
+      "AS-live-t2-education_finance",
+      "AS-live-t2-equity_and_social_mobility",
+      "AS-live-t2-finnish_reform",
+      "AS-live-t2-hungarian_education_system",
+      "AS-live-t2-implementation_planning",
+      "AS-live-t2-international_comparison",
+      "AS-live-t2-legal_and_governance",
+      "AS-live-t2-polish_reform",
+      "AS-live-t2-political_feasibility",
+      "AS-live-t2-portuguese_reform",
+      "AS-live-t2-school_network_planning",
+      "AS-live-t3-demography",
+      "AS-live-t3-education_finance",
+      "AS-live-t3-equity_and_social_mobility",
+      "AS-live-t3-finnish_reform",
+      "AS-live-t3-hungarian_education_system",
+      "AS-live-t3-implementation_planning",
+      "AS-live-t3-international_comparison",
+      "AS-live-t3-legal_and_governance",
+      "AS-live-t3-polish_reform",
+      "AS-live-t3-political_feasibility",
+      "AS-live-t3-portuguese_reform",
+      "AS-live-t3-school_network_planning",
+      "AS-live-t4-demography",
+      "AS-live-t4-education_finance",
+      "AS-live-t4-equity_and_social_mobility",
+      "AS-live-t4-finnish_reform",
+      "AS-live-t4-hungarian_education_system",
+      "AS-live-t4-implementation_planning",
+      "AS-live-t4-international_comparison",
+      "AS-live-t4-legal_and_governance",
+      "AS-live-t4-polish_reform",
+      "AS-live-t4-political_feasibility",
+      "AS-live-t4-portuguese_reform",
+      "AS-live-t4-school_network_planning",
+      "AS-live-t5-demography",
+      "AS-live-t5-education_finance",
+      "AS-live-t5-equity_and_social_mobility",
+      "AS-live-t5-finnish_reform",
+      "AS-live-t5-hungarian_education_system",
+      "AS-live-t5-implementation_planning",
+      "AS-live-t5-international_comparison",
+      "AS-live-t5-legal_and_governance",
+      "AS-live-t5-polish_reform",
+      "AS-live-t5-political_feasibility",
+      "AS-live-t5-portuguese_reform",
+      "AS-live-t5-school_network_planning",
+      "AS-live-t6-demography",
+      "AS-live-t6-education_finance",
+      "AS-live-t6-equity_and_social_mobility",
+      "AS-live-t6-finnish_reform",
+      "AS-live-t6-hungarian_education_system",
+      "AS-live-t6-implementation_planning",
+      "AS-live-t6-international_comparison",
+      "AS-live-t6-legal_and_governance",
+      "AS-live-t6-polish_reform",
+      "AS-live-t6-political_feasibility",
+      "AS-live-t6-portuguese_reform",
+      "AS-live-t6-school_network_planning"
+    ],
+    "proposal_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5",
+      "TP-live-t6"
+    ],
+    "public_question": {
+      "en": "What should happen to primary schools in depopulating villages?",
+      "hu": "Mi legyen az elnéptelenedő falvak kisiskoláival?"
+    },
+    "research_question_refs": [
+      "RQ-live-production-01",
+      "RQ-live-production-02",
+      "RQ-live-production-03",
+      "RQ-live-production-04",
+      "RQ-live-production-05",
+      "RQ-live-production-06",
+      "RQ-live-production-07",
+      "RQ-live-production-08",
+      "RQ-live-production-09",
+      "RQ-live-production-10"
+    ],
+    "summary": {
+      "en": "Hungary's village primary schools sit inside a governance structure where maintenance authority rests with centralized tankerületi centers rather than municipalities [F-live-hungarian_education_system-01], closures proceed via undocumented administrative acts rather than a dedicated statutory procedure [F-live-legal_and_governance-04], and 38% of settlements already lack any public educational institution [F-live-hungarian_education_system-06]. Six transformation options define the option space, distinguished by where they intervene and what they leave unresolved.\n\nT1 (presumption-against-closure) and T2 (reciprocal state-municipality contracts) both add procedural friction before closure without transferring decision authority. T1 replicates Scotland's mandatory-alternatives-assessment model [F-live-international_comparison-02], but Scotland's mechanism presumes a local actor with standing to invoke it—standing Hungary's 2013 centralization eliminated [F-live-international_comparison-04]. T2 replicates France's conventions ruralité [F-live-international_comparison-03], but French communes retain fiscal and legal standing Hungarian municipalities lack after centralization [F-live-legal_and_governance-01][F-live-legal_and_governance-02]. Both risk becoming formalities unless paired with genuine veto power or an independent oversight body, since existing closure reversals occur only through informal political intervention, not codified appeal [F-live-legal_and_governance-08][F-live-political_feasibility-07].\n\nT3 (grade-split: village lower grades, centralized upper grades) and T4 (networked clusters/multi-service hubs) operate at the structural/pedagogical rather than authority level. T3 follows Poland's 1999 gimnazjum logic [F-live-polish_reform-03], targeting the empirically supported finding that younger children suffer most from long commutes [F-live-equity_and_social_mobility-10], but Poland's 2017 reversal—politically driven despite positive PISA and labour-market evidence—caused severe disruption (7,000 schools closed, 10,000 teachers displaced) [F-live-polish_reform-04][F-live-polish_reform-05], flagging high reversal risk. T4 draws on French clustering [F-live-international_comparison-03] and Poland's 2025 draft repurposing legislation [F-live-polish_reform-06], but its only Hungarian precedent (Erdőkürt) succeeded through rare, unevenly distributed local social capital [F-live-portuguese_reform-10], an empirical uncertainty about whether formal structures can substitute for it.\n\nT5 (default closure with mitigation) and T6 (evidence/transparency infrastructure) accept different baselines. T5 treats closure as default where enrollment thresholds are unmet, compensating via transport and equity support—directly relevant given transport-responsibility is currently legally unresolved between the Interior Ministry and municipalities [F-live-legal_and_governance-05], and given Roma children's 45% share of segregated-school enrollment [F-live-education_finance-06]. But whether closure itself accelerates depopulation is a genuine empirical uncertainty: Danish evidence finds a causal 7.6-point population decline over ten years [F-live-demography-07], Finnish quasi-experimental evidence corroborates acceleration [F-live-finnish_reform-05][F-live-finnish_reform-06], while Saxon and Swedish studies find no link [F-live-education_finance-04]. T6 proposes a national viability registry and cost-visibility rules to resolve exactly this kind of contested evidence, including unverified consolidation-savings claims [F-live-education_finance-02][F-live-finnish_reform-04] and routinely undercounted transport cost offsets [F-live-education_finance-03]. It is the most institutionally compatible with the status quo since it requires no authority transfer, but Hungary's own history of top-down political decisions overriding technical evidence—as in Poland's 2017 reversal [F-live-polish_reform-04]—is a value/political question about whether information alone changes behavior, not merely an empirical one.\n\nMaterial disciplinary mechanisms threading through all options include: the national class-size and per-pupil funding formula that creates fiscal pressure independent of governance form [F-live-hungarian_education_system-04]; the zero-enrollment cliff observed in the smallest settlements [F-live-demography-05] amid a 22% birth-cohort collapse since 2021 [F-live-demography-01]; the 2026 tankerület restructuring as a legislative vehicle that preserves rather than abolishes centralized authority [F-live-hungarian_education_system-07]; and documented inter-municipal competition over pupil enrollment that could undermine voluntary cooperation models [F-live-school_network_planning-09].\n\nDecision-makers must choose between: procedural safeguard versus genuine authority transfer; protecting the youngest children locally versus resolving structural contraction; individual-level mitigation versus community-level preservation; and building evidence infrastructure now versus acting under demographic time pressure. The research most likely to change this choice concerns whether closure causally drives depopulation in the Hungarian context specifically, whether the 2026 reform alters funding penalties or grants any local standing in closure decisions, and whether a codified presumption would actually bind the same centralized authority currently exercising discretion.",
+      "hu": "Magyarországon a kistelepülési általános iskolák egy olyan irányítási struktúrában működnek, ahol a fenntartói/üzemeltetési jogkör a központosított tankerületi központoknál van az önkormányzatok helyett [F-live-hungarian_education_system-01], a bezárások pedig nem egy erre a demográfiai kihívásra szabott törvényi eljárás mentén, hanem nem dokumentált adminisztratív intézkedésekkel zajlanak [F-live-legal_and_governance-04], és a települések 38%-ában már egyáltalán nincs köznevelési intézmény [F-live-hungarian_education_system-06]. Hat átalakítási lehetőség határozza meg az opcióteret, amelyek abban különböznek, hogy hol avatkoznak be és mit hagynak rendezetlenül.\n\nAz T1 (bezárásellenes vélelem) és T2 (állam–önkormányzat kölcsönös szerződései) egyaránt eljárási súrlódást visznek be a bezárás elé, de nem ruháznak át döntési hatáskört. A T1 a skóciai kötelező alternatívavizsgálati modellt követi [F-live-international_comparison-02], ám Skóciában feltételezhetően létezik helyi jogosult szereplő, aki kezdeményezheti ezt — olyan jogosultság, amelyet a magyar 2013-as központosítás felszámolt [F-live-international_comparison-04]. A T2 a francia conventions ruralité mintájára épít [F-live-international_comparison-03], de a francia községek megőriznek olyan pénzügyi és jogi jogosultságokat, amelyek a magyar önkormányzatoknak a központosítás után nincsenek meg [F-live-legal_and_governance-01] [F-live-legal_and_governance-02]. Mindkettő formalitássá válhat, hacsak nem párosul valódi vétójoggal vagy független felügyeleti testülettel, mert a meglévő bezárás-visszavonások csak informális politikai beavatkozáson keresztül történnek, nem kodifikált jogorvoslat útján [F-live-legal_and_governance-08] [F-live-political_feasibility-07].\n\nA T3 (évfolyam-megosztás: helyben az alsó évfolyamok, központosítva a felsőbbek) és a T4 (hálózatos klaszterek/többszolgáltatású hubok) inkább szerkezeti/pedagógiai szinten hatnak, nem a hatalmi szint átadásán. A T3 a lengyel 1999-es gimnáziumi logikát követi [F-live-polish_reform-03], és a bizonyítékok alapján azokra az eredményekre céloz, hogy a fiatalabb gyerekeket sújtják leginkább a hosszú ingázások [F-live-equity_and_social_mobility-10], ugyanakkor a lengyel 2017-es visszafordítás — politikailag vezérelt, a PISA- és munkaerőpiaci eredmények ellenére — súlyos zavarokat okozott (7 000 iskola bezárása, 10 000 tanár elmozdítása) [F-live-polish_reform-04] [F-live-polish_reform-05], ami magas visszafordítási kockázatra figyelmeztet. A T4 a francia klaszteres megoldásokra [F-live-international_comparison-03] és a lengyel 2025-ös újrafelhasználási tervezetre támaszkodik [F-live-polish_reform-06], de egyetlen magyar precedens (Erdőkürt) csak ritka, egyenlőtlenül eloszló helyi társadalmi tőkével tudott sikeres lenni [F-live-portuguese_reform-10], így kétséges, hogy a formális struktúrák helyettesíteni tudják-e ezt a tőkét.\n\nA T5 (bezárás alapértelmezettként, kiegészítő enyhítő intézkedésekkel) és a T6 (bizonyíték- és átláthatósági infrastruktúra) eltérő kiindulópontokat fogadnak el. A T5 a beiratkozási küszöbök elégtelensége esetén bezárást tekint alapértelmezettnek, és azt közlekedési, valamint igazságossági támogatással kompenzálná — ami közvetlenül releváns, mert a közlekedés felelőssége jogilag jelenleg rendezetlen a Belügyminisztérium és az önkormányzatok között [F-live-legal_and_governance-05], továbbá a roma gyerekek aránya a szegregált iskolai beiratkozásokon belül 45% [F-live-education_finance-06]. Az azonban empirikusan bizonytalan, hogy maga a bezárás felgyorsítja-e a népességcsökkenést: dán bizonyíték egy tíz éves időtávon 7,6 százalékpontos népességcsökkenést mutat ki [F-live-demography-07], finn kvázi-kísérleti eredmények is gyorsítást találnak [F-live-finnish_reform-05] [F-live-finnish_reform-06], míg szászországi és svéd tanulmányok nem találnak összefüggést [F-live-education_finance-04]. A T6 egy országos életképességi nyilvántartást és költségátláthatósági szabályokat javasol az ilyen vitatott bizonyítékok tisztázására, beleértve a konszolidációs megtakarításokra vonatkozó, gyakran ellenőrizetlen állításokat [F-live-education_finance-02] és a rendszeresen alulbecsült közlekedési költség-kiigazításokat [F-live-education_finance-03]. Ez a leginkább intézményesen kompatibilis a státuss quóval, mert nem igényel hatáskör-átadást, ugyanakkor Magyarország saját története, amelyben felülről vezérelt politikai döntések felülírták a szakmai bizonyítékokat — mint a lengyel 2017-es visszafordítás példája [F-live-polish_reform-04] — inkább értékelési/politikai kérdést vet fel arról, hogy önmagában az információ változtatja-e a magatartást.\n\nMinden opciót átszövik olyan tényleges kényszerítő mechanizmusok, mint a nemzeti osztálylétszám- és normatívaformula, amely független fiskális nyomást teremt a fenntartás formájától [F-live-hungarian_education_system-04]; a legkisebb településeken megfigyelhető nulla-beíratkozási „szakadék” [F-live-demography-05] egy 2021 óta tartó 22%-os születési létszámcsökkenet közepette [F-live-demography-01]; a 2026-os tankerületi átalakítás, amely törvényi javaslatként a központosított hatalom megőrzését szolgálja a megszüntetés helyett [F-live-hungarian_education_system-07]; valamint a tanulólétszámokért folytatott önkormányzati versengés dokumentált esetei, amelyek alááshatják az önkéntes együttműködési modelleket [F-live-school_network_planning-09].\n\nA döntéshozóknak választaniuk kell: eljárási garancia és tényleges hatáskör-átruházás között; a legkisebbek helybeni védelme és a strukturális zsugorodás rendezése között; egyéni szintű enyhítés és közösségszintű megőrzés között; valamint a bizonyítékalapú infrastruktúra kiépítése most és a demográfiai időnyomás alatti cselekvés között. A kutatás, amely leginkább befolyásolhatná ezt a választást, az, hogy a bezárás okszerűen gyorsítja-e a népességcsökkenést kifejezetten a magyar kontextusban, hogy a 2026-os reform változtat-e a finanszírozási hátrányokon vagy ad-e helyi részvételi jogosultságot a bezárási döntésekben, és hogy egy kodifikált vélelem valóban kötelezővé tenne-e ugyanazon központosított hatóság számára, amely ma diszkrecionálisan dönt."
+    },
+    "title": {
+      "en": "The Future of Rural Primary Schools",
+      "hu": "A Kisiskolák Jövője Vidéken"
+    },
+    "transformation_family_refs": [
+      "TF-live-t1",
+      "TF-live-t2",
+      "TF-live-t3",
+      "TF-live-t4",
+      "TF-live-t5",
+      "TF-live-t6"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "DP-live-production",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "decision_package",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "da9ce51866eb078f75891562ac87ec66d027632c94d70804da4fab4343364f12",
+  "topic": "rural-school-closures"
+}

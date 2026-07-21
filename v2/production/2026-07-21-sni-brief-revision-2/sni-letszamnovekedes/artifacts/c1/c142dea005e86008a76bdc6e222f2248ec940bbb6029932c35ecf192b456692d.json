@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-polish_reform-01",
+      "A-live-polish_reform-02",
+      "A-live-polish_reform-03"
+    ],
+    "claim": {
+      "en": "Poland's reported special educational needs identification for autism increased 30% in a single year (2022/2023 school year to 82,199 children), with regional increases exceeding 1,000% in some provinces, and the male-to-female diagnostic ratio declined from 4.56 (2012) to 2.99 (2023), suggesting improved recognition of autism in females",
+      "hu": "Lengyelországban az autizmus miatt megállapított SNI-azonosítás egy év alatt 30%-kal nőtt (a 2022/2023-as tanévre 82 199 gyermekre), egyes tartományokban pedig a növekedés meghaladta az 1 000%-ot. A fiú/lány diagnosztikai arány 4,56-ról (2012) 2,99-re (2023) csökkent, ami arra utal, hogy a lányok autizmusának felismerése javult."
+    },
+    "context": {
+      "en": "Fresh live research through the Polish system reform lens",
+      "hu": "Friss, aktuális kutatás a lengyel rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "polish_reform"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The causal attribution to real prevalence increase versus improved diagnostics versus finance incentive effects is explicitly contested in the source itself",
+        "hu": "A kauzális attribúció — valódi prevalencia-növekedés, javult diagnosztika vagy pénzügyi ösztönzőhatások között — az adott forrásban maga is kifejezetten vitatott."
+      },
+      {
+        "en": "Baseline year 2012 figures (18,924) and 2022/23 figures (82,199) may not use identical diagnostic categories, preventing direct prevalence comparison",
+        "hu": "A 2012-es bázisév adatai (18,924) és a 2022/23-as adatok (82,199) előfordulhat, hogy nem azonos diagnosztikai kategóriákat használnak, ami megakadályozza a közvetlen prevalencia-összehasonlítást."
+      },
+      {
+        "en": "Regional variation data does not explain underlying drivers (assessment capacity, awareness, funding changes, diagnostic criteria shifts)",
+        "hu": "A regionális eltéréseket bemutató adatok nem magyarázzák a mögöttes tényezőket (értékelési kapacitás, tudatosság, finanszírozás-változások, diagnosztikai kritériumok eltolódása)."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-polish_reform-08"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-polish_reform-01",
+      "U-live-polish_reform-02",
+      "U-live-polish_reform-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-polish_reform-08",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "46163f7cb047e4c03af932b572a32f1c17ce8c3a2b41653dbbe4f5c2a9517544",
+  "topic": "sni-letszamnovekedes"
+}

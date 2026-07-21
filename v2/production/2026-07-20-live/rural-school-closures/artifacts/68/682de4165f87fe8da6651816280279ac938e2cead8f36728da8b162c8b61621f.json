@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A viability registry and cost-visibility framework is institutionally compatible with the existing centralized structure since it does not require redistributing closure authority away from tankerületi centers; it instead proposes an information layer alongside whichever decision-making structure persists. This is consistent with the observed historical pattern of top-down political decisions (rather than standing demographic-trigger rules) driving Hungary's rural school expansion/contraction cycles, meaning the proposal directly targets a documented absence of institutionalized feedback mechanisms. However, because tankerületi centers already apply efficiency/enrollment criteria without an independent evidence base, a non-mandating registry could be produced and simply not used to alter closure decisions, especially given that similar authority is retained even under the 2026 reform.",
+      "hu": "Egy életképességi nyilvántartás és költség-átláthatósági keret intézményesen kompatibilis a meglévő centralizált struktúrával, mivel nem igényli a bezárási jogkör átruházását a tankerületi központoktól; ehelyett egy információs réteget javasol a megmaradó döntési struktúra mellé. Ez összhangban áll a megfigyelt történelmi mintával, miszerint Magyarország vidéki iskola-bővülési/kontrakciós ciklusait felülről vezérelt politikai döntések (nem pedig állandó demográfiai triggerek) hajtották, tehát a javaslat közvetlenül egy dokumentált intézményi visszacsatolási mechanizmus hiányára céloz. Ugyanakkor mivel a tankerületi központok már most is alkalmaznak hatékonysági/benyomulási kritériumokat független bizonyítékbázis nélkül, egy nem kötelező nyilvántartás előállítható és egyszerűen figyelmen kívül hagyható a bezárási döntések módosításakor, különösen tekintettel arra, hogy hasonló jogkör megmarad még a 2026-os reform keretei között is."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-hungarian_education_system-03",
+      "F-live-hungarian_education_system-06",
+      "F-live-hungarian_education_system-07"
+    ],
+    "lens_ref": "L-live-hungarian_education_system",
+    "opportunities": [
+      {
+        "en": "Could be attached to the 2026 governance reform as a complementary transparency layer without requiring separate authority restructuring",
+        "hu": "Hozzákapcsolható lehet a 2026-os irányítási reformhoz mint kiegészítő átláthatósági réteg anélkül, hogy külön hatósági szerkezetátalakítást igényelne."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Directly addresses a documented institutional gap: the absence of a durable, standing evidence/feedback mechanism, as historical rural school cycles were driven by top-down political decisions rather than demographic-trigger rules",
+        "hu": "Közvetlenül kezeli egy dokumentált intézményi hiányt: a tartós, állandó bizonyíték/visszacsatolási mechanizmus hiányát, mivel a történelmi vidéki iskolaciklusokat felülről irányuló politikai döntések, nem pedig demográfiai kiváltó szabályok hajtották."
+      },
+      {
+        "en": "Does not require redistributing existing tankerületi authority, making it structurally compatible with both current governance and the 2026 reform's retained centralized multi-tier structure",
+        "hu": "Nem követeli meg a meglévő tankerületi hatáskör újraelosztását, ezért strukturálisan kompatibilis mind a jelenlegi kormányzással, mind a 2026-os reform által megtartott központosított többszintű struktúrával"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Given the historical pattern of top-down political decisions overriding technical evidence, an information-only registry risks being produced but not integrated into actual tankerületi decision-making, especially absent any change to who holds closure authority",
+        "hu": "Tekintettel a történelmi mintára, miszerint a felülről jövő politikai döntések felülírják a technikai bizonyítékokat, egy kizárólag információs nyilvántartás kockázata, hogy előállítják, de nem integrálják a tényleges tankerületi döntéshozatalba, különösen ha nem változik, ki birtokolja a bezárási hatáskört."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "As a non-mandating framework, it has no mechanism to compel tankerületi centers to alter their existing efficiency/enrollment-ratio-based closure practice even if the registry reveals unfavorable outcomes",
+        "hu": "Nem-kötelező jellegű keretrendszerként nincs mechanizmusa arra, hogy kötelezze a tankerületi központokat meglévő hatékonyság/beiratkozási arányon alapuló bezárási gyakorlatuk megváltoztatására, még akkor sem, ha a nyilvántartás kedvezőtlen eredményeket tár fel."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-hungarian_education_system",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "08f1418d87638e24711531778807419ef3e72a71baca4d1ffdfbacc807b192ab",
+  "topic": "rural-school-closures"
+}

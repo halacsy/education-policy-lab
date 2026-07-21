@@ -1,0 +1,67 @@
+{
+  "content": {
+    "concerns": [
+      {
+        "en": "Transformations are conceptually clear but often lack operational detail (who exactly would implement T1–T5, statutory text examples, budgetary implications, enforcement mechanisms, timelines).",
+        "hu": "A koncepcionális átalakulások világosak, de gyakran hiányzik az operatív részletezés (ki pontosan hajtaná végre a T1–T5-öt, törvényszöveg-minták, költségvetési hatások, végrehajtási és érvényesítési mechanizmusok, ütemezés)."
+      },
+      {
+        "en": "Some causal inferences rest on non-Hungarian studies; the package flags this uncertainty but does not supply Hungary-specific quasi-experimental evidence (necessary for decision confidence).",
+        "hu": "Néhány oksági következtetés nem magyarországi tanulmányokra épül; a csomag felhívja erre a bizonytalanságra a figyelmet, de nem szolgáltat Magyarország-specifikus kvázi-kísérleti bizonyítékot (ami döntési magabiztossághoz szükséges)."
+      },
+      {
+        "en": "Cost and fiscal impact estimates (net savings, transport offsets, staffing implications) are discussed qualitatively but absent quantitatively, limiting short-term budgeting decisions.",
+        "hu": "A költség- és fiskális hatásbecslések (nettó megtakarítások, szállítási költségkompenzációk, személyzeti következmények) kvalitatívan tárgyaltak, de hiányoznak a mennyiségi számítások, ami korlátozza a rövid távú költségvetési döntéseket."
+      },
+      {
+        "en": "Stakeholder mapping and political feasibility analysis is present in high-level form but needs concrete actor incentives and veto points (e.g., ministerial incentives, party politics, church maintainers) to be decision-operational.",
+        "hu": "Az érintetti feltérképezés és a politikai megvalósíthatósági elemzés magas szintű formában rendelkezésre áll, de hiányoznak a konkrét szereplői ösztönzők és döntési vétópontok (pl. minisztériumi ösztönzők, pártpolitikai viszonyok, egyházi fenntartók), amelyek szükségesek ahhoz, hogy a javaslat döntésvégrehajtható legyen."
+      },
+      {
+        "en": "A few referenced items use URNs or terse summaries; while auditable, the package sometimes presumes the reader will accept the cited study’s generalizability rather than unpacking key methods/limitations.",
+        "hu": "Néhány hivatkozott dokumentum URN-t vagy tömör összefoglalót használ; bár ellenőrizhetőek, a csomag időnként abból indul ki, hogy az olvasó elfogadja a hivatkozott vizsgálat általánosíthatóságát anélkül, hogy kifejtené a kulcsfontosságú módszertani sajátosságokat és korlátokat."
+      }
+    ],
+    "dimensions": {
+      "artifact_integrity": 9,
+      "decision_usefulness": 7,
+      "dilemma_clarity": 9,
+      "evidence_discipline": 8,
+      "lens_traceability": 8,
+      "transformation_specificity": 6
+    },
+    "package_ref": "DP-live-production",
+    "strengths": [
+      {
+        "en": "Clear mapping of a policy option space (T1–T6) linked to specific governance levers and trade-offs.",
+        "hu": "A lehetőségek tiszta feltérképezése (T1–T6), amely konkrét kormányzati beavatkozási pontokhoz és kompromisszumokhoz kapcsolódik."
+      },
+      {
+        "en": "Extensive, auditable citation practice: inline finding IDs consistently map to appendix claims with URIs/URNs.",
+        "hu": "Kiterjedt, ellenőrizhető hivatkozási gyakorlat: az inline megállapítás-azonosítók következetesen az appendix állításaihoz kapcsolódnak URI/URN-ekkel."
+      },
+      {
+        "en": "Explicit separation of empirical uncertainty and value/political choices; includes concrete research questions likely to change decisions.",
+        "hu": "Kifejezett szétválasztása az empirikus bizonytalanságnak és az értékválasztásoknak; konkrét kutatási kérdéseket tartalmaz, amelyek valószínűleg változtatnának a döntéseken."
+      },
+      {
+        "en": "Cross-national comparisons and historical precedents are used defensibly to highlight mechanism risks (e.g., Poland, Finland, Scotland).",
+        "hu": "Nemzetközi összehasonlítások és történelmi precedensek védhető módon használatosak a mechanizmus-kockázatok kiemelésére (pl. Lengyelország, Finnország, Skócia)."
+      },
+      {
+        "en": "Dilemmas are clearly stated, with attention to distributional effects (Roma, rural disadvantage) and implementation constraints (tankerület structure, transport responsibility).",
+        "hu": "A dilemmák egyértelműen megfogalmazottak, figyelemmel az elosztási hatásokra (roma közösségek, vidéki hátrányok) és a végrehajtási korlátokra (tankerületi struktúra, szállítási felelősség)."
+      }
+    ],
+    "total": 7.833,
+    "verdict": "accept_with_caveats"
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "EV-live-production",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "evaluation",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "f5b112c8892f2041fb5255819bc290badd5d4f709371c0a9df9f8ea79f16b739",
+  "topic": "rural-school-closures"
+}

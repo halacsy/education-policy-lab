@@ -1,0 +1,49 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Poland's financing architecture directly contradicts the proposal's incentive theory in an important respect: rather than removing diagnosis-gated multipliers, Poland expanded its disability-weighted per-pupil system (weights 1.4 to 9.5) and increased subvention amounts (14% rise 2023-2024) independent of prevalence changes, while also centralizing diagnostic gatekeeping away from schools. This shows diagnosis-linked funding and rising identification/funding levels are not simply causally coupled in the way the proposal's theory implies, and that a system can retain (even strengthen) diagnosis-gated financing while separately managing gatekeeping through independent centralized authorities. This is a genuinely contested point: Poland's case does not prove census-based reform would fail elsewhere, but it demonstrates that diagnosis-gated financing and its expansion are not universally linked to runaway over-identification, weakening the generalizability of the proposal's core mechanism assumption.",
+      "hu": "Lengyelország finanszírozási architektúrája egy fontos tekintetben közvetlenül ellentmond a javaslat ösztönelméletének: a diagnózis-vezérelt multiplikátorok eltörlése helyett Lengyelország kiterjesztette a fogyatékosságsúlyozott tanulónkénti rendszert (súlyok 1,4-től 9,5-ig) és növelte a szubvenciós összegeket (14%-os emelkedés 2023–2024), függetlenül a prevalencia-változásoktól, miközben a diagnosztikai kapuzatot is központosította az iskoláktól távol. Ez azt mutatja, hogy a diagnózishoz kötött finanszírozás és a növekvő azonosítás/finanszírozási szintek nem egyszerűen okszerűen összekapcsoltak úgy, ahogy a javaslat elmélete sugallja, és hogy egy rendszer megtarthatja (sőt erősítheti) a diagnózis-vezérelt finanszírozást, miközben a kapuzást külön, független központosított hatóságokon keresztül kezeli. Ez valóban vitatott pont: Lengyelország esete nem bizonyítja, hogy az állandó alapú reform máshol meghiúsulna, de példát mutat arra, hogy a diagnózis-vezérelt finanszírozás és annak kiterjesztése nem feltétlenül kapcsolódik automatikusan a túlindexáláshoz, ami gyengíti a javaslat magmechanizmusának általánosíthatóságát."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-polish_reform-03",
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05"
+    ],
+    "lens_ref": "L-live-polish_reform",
+    "opportunities": [
+      {
+        "en": "Poland's 2025 shift from 'subwencja oświatowa' to 'kwota potrzeus oświatowych' shows algorithmic financing formulas can be restructured relatively rapidly (implementation within a defined timeline), offering a technical precedent for formula redesign processes, though not for the specific census-based direction proposed",
+        "hu": "Lengyelország 2025-ös váltása a 'subwencja oświatowa'-ról a 'kwota potrzeus oświatowych'-ra azt mutatja, hogy az algoritmikus finanszírozási formulák viszonylag gyorsan átalakíthatók (megvalósítás meghatározott ütemterv szerint), ami technikai precedenst kínál a formula-újrarendezési folyamatokhoz, bár nem a javasolt népszámlálás-alapú irányhoz."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Poland's centralized gatekeeping structure, separate from school-level financial incentives, illustrates one way diagnosis-linked funding can coexist with controlled gatekeeping without triggering the specific over-identification dynamic the proposal seeks to prevent",
+        "hu": "Lengyelország centralizált kapuőri (gatekeeping) struktúrája, amely elkülönül az iskolai szintű pénzügyi ösztönzőktől, illusztrálja, hogy a diagnózishoz kötött finanszírozás hogyan élhet együtt a kontrollált kapuőrzéssel anélkül, hogy kiváltaná azt a túlzott azonosítási dinamikát, amelyet a javaslat meg akar előzni."
+      }
+    ],
+    "threats": [
+      {
+        "en": "If diagnosis-gated financing is retained or expanded as in Poland, and this proves administratively durable and politically acceptable, it undermines the case that shifting away from diagnosis-gated systems is a necessary or even common reform pathway, per the proposal's own acknowledged tension with Polish evidence",
+        "hu": "Ha a diagnózis-vezérelt finanszírozást úgy tartják meg vagy terjesztik ki, mint Lengyelországban, és ez adminisztratív szempontból tartósnak és politikailag elfogadhatónak bizonyul, az aláássa azt az állítást, hogy a diagnózis-vezérelt rendszertől való elmozdulás szükséges vagy akár gyakori reformirány, összhangban a javaslat által is elismert feszültséggel a lengyel bizonyítékokkal."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Poland's evidence directly contradicts the proposal's premise that diagnosis-gated financing structurally drives over-identification: Poland expanded its diagnosis-weighted funding formula and increased subventions independent of prevalence, without necessarily linking this to runaway identification growth by design",
+        "hu": "A lengyel bizonyítékok közvetlenül ellentmondanak annak a kiinduló feltevésnek, hogy a diagnózis-vezérelt finanszírozás strukturálisan hajtja a túlazonosítást: Lengyelország kiterjesztette a diagnózis-súlyozott finanszírozási képletét és növelte a támogatásokat a prevalenciától függetlenül, anélkül, hogy ezt szükségszerűen a tervezett mértékű azonosítási robbanáshoz kötötte volna."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-polish_reform",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "d826180ff597c3bac21d47cae786b7fbe20b3606ec3b5ae63c05bab597db820a",
+  "topic": "sni-letszamnovekedes"
+}

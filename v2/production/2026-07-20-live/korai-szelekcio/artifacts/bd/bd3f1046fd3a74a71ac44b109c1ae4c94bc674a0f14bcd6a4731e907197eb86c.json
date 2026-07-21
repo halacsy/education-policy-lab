@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal's threshold-tightening mechanism is demographically consonant with an already-operating contraction dynamic: physical capacity has stagnated near ~26,000 students even amid oversubscription, suggesting the passive ceiling this proposal seeks to formalize is already partially in place. However, the proposal's jurisdictional limitation to the state sector interacts poorly with the geographically uneven cohort decline pattern: rural settlements in Western Transdanubia, Southern Baranya, and Northern Hungary already show severe, region-specific contraction (10-30%, down to 50-70 school-age children in some settlements), independent of national trends. Raising thresholds nationally, without regional differentiation, risks a mismatch between where administrative capacity caps bind and where demographic viability constraints (the 26-34 statutory class-size band) already bind mechanically. The state-sector-only jurisdiction also means church/private schools, which are demographically insulated from this lever, could absorb displaced demand differentially by region.",
+      "hu": "A küszöbszigorító mechanizmus demográfiailag összhangban áll egy már működő összehúzódási dinamikával: a fizikai kapacitás körülbelül ~26 000 tanuló közelében stagnált még a túljelentkezés közepette is, ami arra utal, hogy az a passzív plafon, amelyet ez a javaslat formalizálni kíván, részben már fennáll. Ugyanakkor a javaslat állami szektorra korlátozásának joghatósági korlátai rosszul lépnek kölcsönhatásba a kohorszcsökkenés földrajzilag egyenetlen mintázatával: a nyugat-dunántúli, dél-baranyai és észak-magyarországi falvakban már súlyos, régióspecifikus összehúzódás zajlik (10–30%, egyes településeken 50–70 iskoláskorú gyermekre csökkenve), függetlenül a nemzeti trendektől. A küszöbértékek országos emelése, regionális differenciálás nélkül, kockázatot jelent arra nézve, hogy eltérés lesz az adminisztratív kapacitáskorlátok azon helye és a demográfiai életképességi korlátok (a 26–34 fős törvényi osztálylétszám-sáv) azon helye között, ahol mechanikusan már kötik a dolgokat. Az állami szektorra korlátozott joghatóság továbbá azt jelenti, hogy az egyházi/privát iskolák, amelyek demográfiailag e karról részben védettek, régiónként eltérően elnyelhetik az elmozduló keresletet."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-04",
+      "F-live-demography-05",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Could be refined with region-specific thresholds informed by local cohort trajectories rather than a single national dial",
+        "hu": "Finomítható régiónkénti küszöbökkel, amelyeket a helyi kohorszok pályái támasztanak alá ahelyett, hogy egyetlen országos szabályt alkalmaznának"
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Formalizing an existing discretionary lever tracks the reality that capacity has already plateaued, suggesting administrative capacity constraints are demographically informed already",
+        "hu": "Egy meglévő diszkrecionális eszköz formalizálása tükrözi azt a valóságot, hogy a kapacitás már platózott, ami arra utal, hogy az adminisztratív kapacitáskorlátok már demográfiailag megalapozottak."
+      },
+      {
+        "en": "Aligns with counterfactual contraction already underway, potentially smoothing rather than fighting the trend",
+        "hu": "Összhangban áll a már folyamatban lévő kontrafaktuális összehúzódással, ami potenciálisan kisimíthatja a trendet ahelyett, hogy ellene hatna."
+      }
+    ],
+    "threats": [
+      {
+        "en": "National cohort decline (F-live-demography-01, F-live-demography-02) combined with aging, rural-shortage-prone teacher workforce (F-live-demography-09) means state-sector contraction alone may simply relocate rather than resolve the viability problem, with rural areas facing compounding constraints this proposal does not target",
+        "hu": "A nemzeti cohort csökkenése (F-live-demography-01, F-live-demography-02) együtt az elöregedő, vidéki hiánnyal fenyegetett pedagógus-állománnyal (F-live-demography-09) azt jelenti, hogy az állami szektor zsugorodása önmagában valószínűleg csak áthelyezné, nem pedig megoldaná a fenntarthatósági problémát, miközben a vidéki területek többrétű korlátokkal néznek szembe, amelyeket ez a javaslat nem céloz."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Uniform threshold-raising does not account for the sharply uneven spatial distribution of cohort decline documented across specific regions (F-live-demography-04), risking mismatched pressure in already-fragile rural systems where the statutory class-size floor (F-live-demography-05) is the binding constraint, not the recommended threshold",
+        "hu": "Az egységes küszöbérték-emelés nem veszi figyelembe a kohorszcsökkenés erősen egyenetlen térbeli eloszlását, amelyet adott régiókra vonatkozóan dokumentálnak (F-live-demography-04), és így nem megfelelő nyomást eredményezhet már eleve sérülékeny vidéki rendszerekben, ahol a kötő korlát a jogszabályban rögzített osztálylétszám-felső/alsó korlát (F-live-demography-05), nem pedig a javasolt küszöb."
+      },
+      {
+        "en": "Excludes church/private schools from the contraction lever, precisely where demographic pressure could be redirected rather than absorbed",
+        "hu": "Kizárja az egyházi/magán iskolákat a zsugorodási eszköztárból, éppen ott, ahol a demográfiai nyomás átirányítható lenne ahelyett, hogy felszívódna"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-demography",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "472f83dde6b3a11a800c4e7c182d0090f5fe438c1b3c99a4db47a89b2a288068",
+  "topic": "korai-szelekcio"
+}

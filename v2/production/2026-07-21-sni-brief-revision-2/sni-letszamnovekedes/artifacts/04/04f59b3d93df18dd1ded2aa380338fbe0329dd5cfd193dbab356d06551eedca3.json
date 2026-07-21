@@ -1,0 +1,70 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A passive baseline is analytically useful as a counterfactual but from an equity lens it institutionalizes present harms: continued opaque SEN growth (F-live-equity_and_social_mobility-01, F-live-equity_and_social_mobility-02) under contested causal explanations (F-live-equity_and_social_mobility-03), persistent regional specialist shortages that fall hardest on already-underserved counties (F-live-equity_and_social_mobility-05), and continued interaction of free school choice with Roma segregation dynamics (F-live-equity_and_social_mobility-07, F-live-equity_and_social_mobility-08). Doing nothing does not freeze the status quo; it allows sorting mechanisms already in motion to continue reallocating access and quality along existing lines, particularly given the documented shift of SNI status from an inclusion lever to an exclusionary admissions factor (F-live-equity_and_social_mobility-04, F-live-equity_and_social_mobility-10).",
+      "hu": "A passzív baseline analitikailag hasznos kontra-faktuálként, de egyenlőségi lencséből intézményesíti a jelenlegi kárt: folytatódó, átláthatatlan SNI-növekedés (F-live-equity_and_social_mobility-01, F-live-equity_and_social_mobility-02) vitatott oksági magyarázatok mellett (F-live-equity_and_social_mobility-03), tartós regionális szakemberhiányok, amelyek a már ellátatlan megyékre esnek leginkább (F-live-equity_and_social_mobility-05), és a szabad iskolaválasztás kölcsönhatása a roma szegregáció dinamikájával (F-live-equity_and_social_mobility-07, F-live-equity_and_social_mobility-08). A semmittevés nem fagyasztja be a status quót; lehetővé teszi, hogy a már mozgásban lévő szelekciós mechanizmusok továbbra is a hozzáférést és a minőséget a meglévő vonalak mentén újraelosszák, különösen tekintettel arra a dokumentált elmozdulásra, hogy az SNI-státusz inkluzív eszközből kizáró jellegű felvételi tényezővé vált (F-live-equity_and_social_mobility-04, F-live-equity_and_social_mobility-10)."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-01",
+      "F-live-equity_and_social_mobility-02",
+      "F-live-equity_and_social_mobility-03",
+      "F-live-equity_and_social_mobility-04",
+      "F-live-equity_and_social_mobility-05",
+      "F-live-equity_and_social_mobility-07",
+      "F-live-equity_and_social_mobility-08",
+      "F-live-equity_and_social_mobility-10"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      {
+        "en": "Could be paired with independent monitoring to at least document worsening distributional trends for future action",
+        "hu": "Összekapcsolható független monitorozással, hogy legalább dokumentálja a romló eloszlási trendeket a jövőbeli intézkedésekhez."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Provides a transparent counterfactual against which distributional harms of inaction can be measured",
+        "hu": "Átlátható ellenvalóságot (counterfactual) biztosít, amelyhez viszonyítva a tétlenség elosztási kárait mérni lehet"
+      },
+      {
+        "en": "Avoids introducing new implementation-driven equity risks since no structural change occurs",
+        "hu": "Nem vezet be új, megvalósítástól függő egyenlőségi kockázatokat, mivel nem történik strukturális változás."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Continued interaction of free school choice and Roma overrepresentation in referral/segregation channels may deepen without any corrective mechanism",
+        "hu": "A szabad iskolaválasztás és a beutalási/szegregációs csatornákban a roma túlreprezentáltság további kölcsönhatása korrekciós mechanizmus nélkül mélyülhet."
+      },
+      {
+        "en": "Demographic and workforce drift could increase de facto segregation by resource capacity rather than need",
+        "hu": "A demográfiai és munkaerő-eltolódás növelheti a tényleges szegregációt a szükséglet helyett a forráskapacitás alapján."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Allows continued unexplained SEN growth, especially in the fastest-growing BTMN-adjacent subcategory, without addressing underlying drivers",
+        "hu": "Lehetővé teszi a magyarázatlan SEN-növekedés folytatódását, különösen a leggyorsabban növekvő, BTMN-hez közeli alcsoportban, anélkül, hogy a mögöttes hajtóerőket kezelné."
+      },
+      {
+        "en": "Leaves regionally concentrated workforce shortages unaddressed, compounding access gaps for underserved counties",
+        "hu": "Nem kezeli a regionálisan koncentrálódó munkaerőhiányt, ami tovább súlyosbítja a szolgáltatásokkal alulellátott megyékhez való hozzáférési hiányosságokat"
+      },
+      {
+        "en": "Does not interrupt the documented drift of SNI status from inclusion-enabling to exclusion-enabling in admissions",
+        "hu": "Nem szakítja meg a dokumentált elmozdulást, amely szerint az SNI-státusz a befogadást lehetővé tevő szerepből a kizárást lehetővé tevő szerep felé tolódik a felvételi eljárásokban."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-equity_and_social_mobility",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c764790fba2f0ed14fc14e33376471b212fca54f7eceec47bcfc14eb74c6b1b7",
+  "topic": "sni-letszamnovekedes"
+}

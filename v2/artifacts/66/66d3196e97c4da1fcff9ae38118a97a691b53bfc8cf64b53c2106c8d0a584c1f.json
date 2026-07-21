@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-rural-school-closures-implementation_planning-01",
+      "A-rural-school-closures-implementation_planning-02"
+    ],
+    "claim": {
+      "en": "Teacher shortages in Hungary are structurally concentrated in rural and disadvantaged schools, with 2–3 times higher rates of unqualified teachers than in non-disadvantaged schools, and half of all teachers nationally are now 50 or older.",
+      "hu": "A magyar pedagógushiány szerkezetileg a vidéki és hátrányos helyzetű iskolákra összpontosul, ahol a képzetlen tanárok aránya 2–3-szor magasabb, mint a nem hátrányos helyzetű iskolákban, és az összes pedagógus fele már 50 éves vagy idősebb."
+    },
+    "context": {
+      "en": "Any rural school consolidation policy should be sequenced around the 2027–2030 demographic decline window using per-settlement differentiated criteria and mandatory transport lead times, rather than pursued as a blanket teacher-shortage rationalization, since evidence shows small schools are not the shortage's primary driver.",
+      "hu": "A vidéki iskola-összevonási politikát a 2027–2030-as demográfiai csökkenési időszakhoz kell ütemezni, településenkénti differenciált kritériumokkal és kötelező szállítási felkészülési idővel, nem pedig átfogó tanárhiány-racionalizálásként, mivel a bizonyítékok szerint a kisiskolák nem a hiány fő okozói."
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-rural-school-closures-b1ea5d43c91f8e"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-rural-school-closures-implementation_planning-01",
+      "U-rural-school-closures-implementation_planning-02",
+      "U-rural-school-closures-implementation_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-rural-school-closures-implementation_planning-01",
+  "provenance_ref": "PV-bilingual-migration-2e014d8322e9daad",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2f907aaa814dbf07d4d3a389a94580946165237693ab4cb43fdc03b3a64d20b7",
+  "topic": "rural-school-closures"
+}

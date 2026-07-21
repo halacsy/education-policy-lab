@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-equity_and_social_mobility-01",
+      "A-live-equity_and_social_mobility-02",
+      "A-live-equity_and_social_mobility-03",
+      "A-live-equity_and_social_mobility-04"
+    ],
+    "claim": {
+      "en": "Church schools in Hungary serve a more socioeconomically advantaged student intake on average compared to public schools, with family-background status index of 0.18 in church schools versus minus 0.05 in public schools at grade 6 in 2017",
+      "hu": "Az egyházi iskolák Magyarországon átlagosan társadalmilag és gazdaságilag kedvezőbb családi háttérrel rendelkező tanulókat vonzanak az állami iskolákhoz képest: 2017-ben a 6. évfolyamon a családi háttér státuszindexe az egyházi iskolákban 0.18 volt, míg az állami iskolákban −0.05."
+    },
+    "context": {
+      "en": "Fresh live research through the Equity and social mobility lens",
+      "hu": "Friss, élő kutatás az egyenlőség és a társadalmi mobilitás szemszögéből"
+    },
+    "domain_tags": [
+      "equity_and_social_mobility"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Data point is from single year (2017) and may not reflect current composition",
+        "hu": "Az adatpont egyetlen évből származik (2017), és előfordulhat, hogy nem tükrözi a jelenlegi összetételt."
+      },
+      {
+        "en": "Index construction and threshold for 'advantaged' status not fully specified",
+        "hu": "Az index felépítése és a „kedvező helyzetű” státusz küszöbe nincs teljesen meghatározva"
+      },
+      {
+        "en": "Causal mechanism for differential intake (selection, location, affordability) not determined",
+        "hu": "A különböző beiskolázási arányok (kiválasztás, földrajzi elhelyezkedés, megfizethetőség) oksági mechanizmusa nincs meghatározva"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-equity_and_social_mobility-04"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-equity_and_social_mobility-01",
+      "U-live-equity_and_social_mobility-02",
+      "U-live-equity_and_social_mobility-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-equity_and_social_mobility-04",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "dfbbc8b0d23eb9beb0595a0a7b999b58991ad3e5c6d1066b4929edc1d69c099a",
+  "topic": "rural-school-closures"
+}

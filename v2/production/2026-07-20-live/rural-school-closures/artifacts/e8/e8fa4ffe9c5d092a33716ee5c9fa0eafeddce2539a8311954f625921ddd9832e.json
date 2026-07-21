@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A transparency and evidence-registry framework does not itself alter geographic access, capacity, or transport arrangements; from this lens its value is instrumental, providing the data infrastructure (settlement-level demographic trends, transport-responsibility gaps, cost realization) needed to evaluate any structural model's network feasibility, contingent on political will to use it.",
+      "hu": "Egy átláthatósági és bizonyíték-nyilvántartási keret önmagában nem változtatja meg a földrajzi hozzáférést, kapacitást vagy a szállítási megoldásokat; ebből a nézőpontból eszközjellegű értéke az, hogy megadja a döntéshozáshoz szükséges adat-infrastruktúrát (települési szintű demográfiai trendek, szállítási felelősségi hézagok, költségek realizációja), amely bármely strukturális modell hálózati kivitelezhetőségét értékelni tudja, feltéve, hogy megvan a politikai akarat azt felhasználni."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-03",
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-06",
+      "F-live-school_network_planning-04"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Could incorporate population distribution data (capital/town/village shares, migration reversal trends) directly into viability thresholds, making the registry geographically granular rather than purely fiscal",
+        "hu": "Be lehetne építeni a népesség-eloszlási adatokat (főváros/város/falu arányok, migrációs visszafordulási trendek) közvetlenül a fenntarthatósági küszöbökbe, így a nyilvántartás földrajzilag részletesebb lenne, nem csupán fiskális"
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Directly proposes tracking realized cost savings and full transport cost offsets, addressing gaps identified in disputed transport-responsibility assignment and contested consolidation savings evidence",
+        "hu": "Közvetlenül javasolja a ténylegesen megvalósult költségmegtakarítások és a teljes szállítási költség-kompenzációk nyomon követését, kezelve a vitatott szállítási felelősség-elosztásnál és a konszolidációs megtakarításokra vonatkozó megkérdőjelezett bizonyítékoknál azonosított hiányosságokat"
+      },
+      {
+        "en": "Explicitly commits to tracking Hungary-specific closure-population outcomes rather than assuming international findings (which are themselves contested across Finland, Denmark, Saxony, Sweden) transfer directly",
+        "hu": "Kifejezetten elkötelezi magát amellett, hogy Magyarország-specifikus iskolabezárási populációeredményeket követ, ahelyett hogy feltételezné a nemzetközi eredmények (amelyek maguk is vitatottak Finnországban, Dániában, Szászországban, Svédországban) közvetlen átvitelét"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Delay risk is real: establishing evidence infrastructure takes time while the school-age cohort continues shrinking nationwide, meaning the network keeps changing during the framework's build-out",
+        "hu": "A halasztás kockázata valós: a bizonyítékinfrastruktúra kiépítése időt vesz igénybe, miközben az iskoláskorú kohorsz országosan tovább zsugorodik, ami azt jelenti, hogy a hálózat a keretrendszer kiépítése közben is folyamatosan változik."
+      },
+      {
+        "en": "Registry could be rendered moot if centralized authorities continue to make closure decisions administratively without dedicated statutory triggers, as historically observed",
+        "hu": "A nyilvántartás lényegtelenné válhat, ha a központosított hatóságok továbbra is adminisztratívan hozzák meg a bezárási döntéseket dedikált törvényi kiváltók nélkül, ahogy azt történelmileg megfigyelték."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "An information framework does not by itself resolve any geographic, capacity, or transport constraint; it is a precondition for informed decisions rather than a network intervention",
+        "hu": "Egy információs keret önmagában nem oldja meg sem a földrajzi, sem a kapacitási, sem a közlekedési korlátokat; inkább előfeltétele a megalapozott döntéseknek, mintsem hálózati beavatkozás."
+      },
+      {
+        "en": "Historical pattern shows large-scale network contraction (from over 6,000 to nearly 4,200 schools) was driven by top-down political decisions independent of demographic-trigger rules, suggesting an evidence registry may be bypassed by similar future political decisions",
+        "hu": "A történelmi mintázat azt mutatja, hogy a nagyszabású hálózati zsugorodást (több mint 6 000-ről közel 4 200 iskolára) felülről irányított politikai döntések hajtották, amelyek függetlenek voltak a demográfiai riasztási szabályoktól; ez arra utal, hogy egy bizonyíték-nyilvántartást hasonló jövőbeli politikai döntések megkerülhetnek."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "ecd618e8988b5c4292ead61ea2f39fe9ff27f6fd0e525afcb501b28a2694693e",
+  "topic": "rural-school-closures"
+}

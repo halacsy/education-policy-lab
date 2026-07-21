@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Anti-segregation and cross-domain alignment intersects with network planning primarily through school-choice and settlement-level composition effects rather than direct capacity or transport mechanics. Extreme within-locality segregation (20%-80% disadvantaged-pupil concentration ranges) shows that network geography alone does not determine access equity; institutional selectivity and choice behavior shape which children reach which schools independent of physical network structure. This is a genuine network-resilience concern but is largely outside what capacity/transport metrics alone can capture, consistent with the lens's limitation that network feasibility does not establish educational quality or equity outcomes.",
+      "hu": "A szegregáció-ellenesség és a kereszt-domain összehangolás elsősorban a hálózattervezéssel való metszéspontot az iskolaválasztásra és a településszintű összetétel hatásaira helyezi, nem pedig közvetlen kapacitás- vagy közlekedési mechanikákra. A helyi szegregáció szélsőséges mértéke (20%–80% lemaradós-pupilla koncentrációs tartományok) azt mutatja, hogy mag a hálózat földrajza önmagában nem határozza meg a hozzáférési egyenlőséget; az intézményi szelektivitás és a választási viselkedés alakítja, hogy mely gyerekek mely iskolákhoz jutnak hozzá a fizikai hálózati struktúrától függetlenül. Ez valódi hálózati-reziliencia aggályt jelent, de nagyrészt kívül esik azon, amit pusztán kapacitás-/közlekedési mutatók képesek megragadni, összhangban a lencse korlátozásával, miszerint a hálózati kivitelezhetőség nem állítja biztosan az oktatási minőséget vagy egyenlőségkimeneteket."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-school_network_planning-04",
+      "F-live-school_network_planning-09",
+      "F-live-school_network_planning-10"
+    ],
+    "lens_ref": "L-live-school_network_planning",
+    "opportunities": [
+      {
+        "en": "Coordination mechanisms could align rural network consolidation decisions with anti-segregation goals if capacity and access data are integrated into the review process.",
+        "hu": "A koordinációs mechanizmusok összehangolhatják a vidéki hálózat konszolidációs döntéseit a szegregációellenes célokkal, ha a kapacitás és hozzáférés adatai beépülnek az áttekintési folyamatba."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Directly engages documented extreme segregation variance within single localities, a network-composition issue not resolvable by capacity expansion alone.",
+        "hu": "Közvetlenül foglalkozik egyetlen településen belüli dokumentált extrém szeparációs varianciával, amely hálózatösszetételi probléma és önmagában kapacitásbővítéssel nem orvosolható."
+      },
+      {
+        "en": "Recognizes that the 2020 school-readiness rule change had measurable network-wide effects on SNI growth, providing a precedent for anticipating cross-domain interaction effects on the network.",
+        "hu": "Elismeri, hogy a 2020-as iskolaérettségi szabályváltozás mérhető hálózati hatással járt az SNI növekedésére, precedenst adva arra, hogy számítsunk kereszt-domain kölcsönhatási hatásokra a hálózaton"
+      }
+    ],
+    "threats": [
+      {
+        "en": "Historical institutional resistance to structural reform (documented since 2013) and continuing private/church school growth driven by trust erosion suggest that network-level coordination may be insufficient against demand-side exit behavior that operates independently of school-network structure.",
+        "hu": "A strukturális reformokkal szembeni történelmi intézményi ellenállás (2013 óta dokumentált) és a bizalom eróziója által hajtott magán/egyháziskolai növekedés azt jelzi, hogy a hálózati szintű koordináció nem feltétlenül lesz elegendő az iskolahálózati struktúrától függetlenül működő keresleti-oldali kilépési viselkedés elleni küzdelemben."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "The lens's core metrics (geographic access, capacity, transport) do not directly address the covert admissions practices and parental mobility responses driving segregation, since these are behavioral/institutional rather than infrastructural in nature.",
+        "hu": "A lencse alapmutatói (földrajzi hozzáférés, kapacitás, közlekedés) nem kezelik közvetlenül a rejtett felvételi gyakorlatokat és a szülői mobilitás-válaszokat, amelyek a szegregációt táplálják, mivel ezek viselkedési/intézményi jellegűek, nem infrastrukturálisak."
+      },
+      {
+        "en": "Multiply disadvantaged children's unmet and undiagnosed needs suggest that segregation and identification gaps are intertwined with data blind spots not resolved by network coordination mechanisms alone.",
+        "hu": "A többszörösen hátrányos helyzetű gyermekek kielégítetlen és fel nem ismert szükségletei azt sugallják, hogy a szegregáció és az azonosítási hiányosságok összefonódnak olyan adatszakadékokkal, amelyeket önmagukban a hálózati koordinációs mechanizmusok nem oldanak meg."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-school_network_planning",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "df4cde4fca159a69c3c0e9068ea2d74d6246f1223f8932af69c42abd3478d6d6",
+  "topic": "sni-letszamnovekedes"
+}

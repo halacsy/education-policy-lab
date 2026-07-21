@@ -1,0 +1,70 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Migrated lens reading for 'Demographically-driven passive contraction (status-quo baseline)'. Given Hungary's already-highest-in-EU school segregation, any policy alternative to age 10-12 korai szelekció should be judged primarily by whether it reduces SES-based sorting at intake, not only by whether it preserves the apparent ~10% pedagogical value-added advantage for admitted students.",
+      "hu": "Áthelyezett lencseolvasat a 'Demographically-driven passive contraction (status-quo baseline)'. Tekintettel arra, hogy Magyarországon már így is az EU-n belül a legmagasabb az iskolai szegregáció, bármely, a 10–12 éves korban történő korai szelekció alternatívájaként felvetett politika elsődlegesen azt kell, hogy mérje, csökkenti-e a bevételnél az SES-alapú szétválogatást, és nem csak azt, hogy megőrzi-e a felvett tanulók számára látszólagos ~10%-os pedagógiai value-added előnyt."
+    },
+    "confidence": "high",
+    "finding_refs": [
+      "F-korai-szelekcio-education_finance-01",
+      "F-korai-szelekcio-education_finance-02",
+      "F-korai-szelekcio-education_finance-03",
+      "F-korai-szelekcio-education_finance-04",
+      "F-korai-szelekcio-education_finance-05",
+      "F-korai-szelekcio-education_finance-06",
+      "F-korai-szelekcio-education_finance-07",
+      "F-korai-szelekcio-education_finance-08"
+    ],
+    "lens_ref": "L-korai-szelekcio-education_finance",
+    "opportunities": [
+      {
+        "en": "Provides a clean counterfactual baseline against which the incremental effects of S1-S4 can be measured, isolating policy-driven change from demographically-driven change.",
+        "hu": "Tiszta ellentétes-eseti viszonyítási alapot ad, amelyhez az S1-S4 fokozatos hatásai mérhetők, elkülönítve a szakpolitika-vezérelt változást a demográfiailag vezérelt változástól."
+      },
+      {
+        "en": "Reduces the absolute number of selective-track places over time simply through cohort shrinkage, without requiring any legislative or administrative action, avoiding all the implementation and reversal risks documented for S1-S4.",
+        "hu": "Idővel csökkenti a szelektív tagozati helyek abszolút számát egyszerűen az évfolyam-zsugorodás révén, bármilyen törvényhozási vagy administratív cselekvés nélkül, elkerülve az S1-S4-nél dokumentált összes végrehajtási és visszafordítási kockázatot."
+      }
+    ],
+    "proposal_ref": "TP-korai-szelekcio-s5",
+    "strengths": [
+      {
+        "en": "Hungarian 6/8-year gimnázium students show roughly 10% larger competency gains than similar-ability, similar-background peers in 4-year gimnázium, per new statistical-model research controlling for family background.",
+        "hu": "Az új, családi hátteret is kontrolláló statisztikai modellek szerint a 6/8 évfolyamos gimnáziumok tanulói mintegy 10%-kal nagyobb kompetenciafejlődést mutatnak, mint a hasonló képességű és hátterű négyosztályos gimnazista társaik."
+      },
+      {
+        "en": "Only about 8% of a school-age cohort attends 6- or 8-year gimnázium tracks, making this a small but disproportionately contested segment of the system.",
+        "hu": "Egy évfolyam tanulóinak mindössze kb. 8%-a jár 6 vagy 8 évfolyamos gimnáziumba, tehát a rendszer kis, de aránytalanul vitatott szegmenséről van szó."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Politically the path of least resistance, since it requires no legislative action and therefore faces no direct Fidesz culture-war framing risk, but this apparent political safety is itself a risk: it allows policymakers to avoid the equity problem indefinitely while claiming demographic forces are 'naturally' solving selectivity, when the evidence shows government is simultaneously using score thresholds (S2) as an active supply lever layered atop passive contraction.",
+        "hu": "Politikailag a legkisebb ellenállás útja, mivel nem igényel törvényhozási cselekvést, és így nem szembesül közvetlen Fidesz kultúrharcos keretezési kockázattal, de ez a látszólagos politikai biztonság önmagában kockázat: lehetővé teszi a döntéshozók számára, hogy határozatlan ideig elkerüljék a méltányossági problémát, míg azt állítják, hogy a demográfiai erők 'természetesen' megoldják a szelektivitást, amikor a bizonyítékok azt mutatják, hogy a kormány egyidejűleg ponthatárokat (S2) használ aktív kínálati eszközként a passzív szűkülésre rétegezve."
+      },
+      {
+        "en": "Absence of active intervention risks EU-level criticism given the European Commission's explicit 2025 finding that Hungary's system amplifies social and economic inequalities, potentially triggering funds-conditionality pressure regardless of demographic trends.",
+        "hu": "Az aktív beavatkozás hiánya kockázatot jelent az EU szintű kritika tekintetében, tekintve az Európai Bizottság 2025-ös kifejezett megállapítását, hogy Magyarország rendszere felerősíti a társadalmi és gazdasági egyenlőtlenségeket, ami potenciálisan finanszírozási feltételességi nyomást indíthat el a demográfiai trendektől függetlenül."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Whether the ~10% value-added estimate reflects genuine school effect versus unmeasured peer-composition or teacher-sorting confounds remains unresolved.",
+        "hu": "Nem tisztázott, hogy a ~10%-os hozzáadott-érték-becslés valódi iskolai hatást tükröz-e, vagy nem mért kortárs-összetételi és tanárkiválasztási torzító tényezőket."
+      },
+      {
+        "en": "The magnitude of church-school funding advantage (if any) relative to state schools remains contested and unresolved by available sources.",
+        "hu": "Az egyházi fenntartású iskolák esetleges finanszírozási előnyének mértéke az állami iskolákhoz képest a rendelkezésre álló források alapján vitatott és eldöntetlen marad."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-korai-szelekcio-s5-education_finance",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "4df875e5c4cbde4f7c336da21b94c101757ca369e1874076e610aada5ff54243",
+  "topic": "korai-szelekcio"
+}

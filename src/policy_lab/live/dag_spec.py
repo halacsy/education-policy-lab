@@ -7,12 +7,16 @@ from typing import Iterable
 from policy_lab.dag.spec import DagNode, DagSpec, InputBinding, RootPort
 
 
-VERSION = "3.0.0"
+VERSION = "3.1.0"
 EVIDENCE_TYPES = ("source", "finding", "assumption", "uncertainty")
 
 
 def _schemas(*names: str) -> tuple[str, ...]:
-    return tuple(f"schemas/v2/{name}.schema.json" for name in names)
+    return (
+        *(f"schemas/v2/{name}.schema.json" for name in names),
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json",
+    )
 
 
 def _node(

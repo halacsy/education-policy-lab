@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal isolates a distinct causal channel (zoning/choice/legal exemptions) from track-admissions reform, which in principle allows more modular, containable implementation steps (e.g., discrete legal review of maintainer exemptions). But the lens flags that municipal planning autonomy — the actor capacity needed for zoning-level intervention — has itself been curtailed by centralization, creating a capacity mismatch between the proposed local levers and the current governance structure.",
+      "hu": "Ez a javaslat elkülönít egy külön oksági csatornát (zónázás/választás/jogi mentességek) a sávos-felvételi reformtól, ami elvileg lehetővé teszi modulárisabb, kontrollálhatóbb végrehajtási lépéseket (pl. a fenntartói mentességek külön jogi felülvizsgálata). De a szemlélet rávilágít arra, hogy az önkormányzati tervezési autonómia — az a szereplői képesség, amelyre a zónaszintű beavatkozáshoz szükség van — maga is csökkent a centralizáció által, ami kapacitás-eltérést teremt a javasolt helyi eszközök és a jelenlegi kormányzati szerkezet között."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-implementation_planning-03"
+    ],
+    "lens_ref": "L-live-implementation_planning",
+    "opportunities": [
+      {
+        "en": "Legal review of maintainer exemptions could proceed as a contained pilot-scale action independent of broader systemic capacity constraints",
+        "hu": "A fenntartói mentességek jogi felülvizsgálata zártkörű, pilot-jellegű intézkedésként haladhat előre, a szélesebb rendszerkapacitási korlátoktól függetlenül."
+      },
+      {
+        "en": "Could be sequenced ahead of admissions or de-tracking reforms as a lower-risk first step, testing institutional appetite for structural change",
+        "hu": "Beütemezhető a felvételi vagy a pályaszeparáció (tracking) megszüntetésére irányuló reformok elé, mint alacsonyabb kockázatú első lépés, amely teszteli az intézményi hajlandóságot a strukturális változásra."
+      }
+    ],
+    "proposal_ref": "TP-live-t4",
+    "strengths": [
+      {
+        "en": "Legal lever (review of anti-discrimination exemptions) is a discrete, boundable implementation unit distinct from broader admissions reform, aiding sequencing clarity",
+        "hu": "A jogi kar (a diszkriminációs mentességek felülvizsgálata) egy elkülöníthető, határolható végrehajtási egység, amely különbözik a szélesebb felvételi reformtól, és segíti a sorrendiség tisztázását."
+      },
+      {
+        "en": "Precedent exists for administrative desegregation rules producing at least temporary measurable effects, demonstrating some proof-of-concept deliverability",
+        "hu": "Létezik precedens arra, hogy adminisztratív deszegregációs szabályok legalább ideiglenes mérhető hatásokat eredményeztek, ez bizonyos proof‑of‑concept kivitelezhetőséget mutat."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Legal challenge risk given prior Curia rulings favoring maintainer exemption, creating a specific containment failure mode if litigation reverses gains",
+        "hu": "Jogi kockázat peres megtámadásra a korábbi Kúria-ítéletek miatt, amelyek a fenntartói mentességet kedvezményezték; ez egy specifikus konténment-hiba módot hoz létre, ha a peres eljárás visszafordítaná az elért eredményeket."
+      },
+      {
+        "en": "Governance mismatch between where zoning authority formally sits (local) and where planning capacity has been concentrated (central) threatens delivery even if the legal lever is nominally available",
+        "hu": "A kormányzásbeli eltérés — miszerint a zónázási hatáskör formálisan helyi szinten van, miközben a tervezési kapacitás központilag koncentrálódott — veszélyezteti a végrehajtást még akkor is, ha a jogi eszköz névlegesen rendelkezésre áll."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Centralization under KLIK has curtailed municipal planning autonomy, directly undermining the local-actor capacity this proposal's zoning mechanism depends on (F-live-implementation_planning-03)",
+        "hu": "A KLIK alatti központosítás visszavette a helyi tervezési autonómiát, közvetlenül aláásva azt a helyi szereplői kapacitást, amelyre ennek a javaslatnak a körzetesítési mechanizmusa támaszkodik (F-live-implementation_planning-03)."
+      },
+      {
+        "en": "Prior administrative desegregation measures stagnated mid-decade, indicating no durable adaptation loop was previously established for this type of lever",
+        "hu": "A korábbi közigazgatási deszegregációs intézkedések az évtized közepén stagnáltak, ami azt jelzi, hogy ehhez a típusú eszközhöz korábban nem alakult ki tartós adaptációs kör."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t4-implementation_planning",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "3198731ca0955fc171f855771640fcb901e05ebbdcd80238db64bdc3ecc77850",
+  "topic": "korai-szelekcio"
+}

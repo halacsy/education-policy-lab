@@ -1,5 +1,5 @@
 {
-  "architecture_version": "2.0.0",
+  "architecture_version": "2.1.0",
   "origin": {
     "pull_request": 29,
     "head_commit": "9edd324063c104ad25448c932c0c7ee742cb1d35",
@@ -7,67 +7,157 @@
   },
   "lens": {
     "id": "educational_psychology",
-    "name": "Educational psychology",
-    "discipline": "learning science and the social psychology of educational sorting",
+    "name": {
+      "en": "Educational psychology",
+      "hu": "Oktatáspszichológia"
+    },
+    "discipline": {
+      "en": "learning science and the social psychology of educational sorting",
+      "hu": "a tanulástudomány és az oktatási szelekció társaslélektana"
+    },
     "questions": [
-      "How might the proposal affect learning, cognitive load, motivation, self-regulation, academic self-concept, identity, and aspiration?",
-      "Do selection, ranking, labeling, or reference-group mechanisms create psychological benefits or costs for selected and non-selected students?",
-      "Which claimed mechanisms are robust, context-dependent, or contested?"
+      {
+        "en": "How might the proposal affect learning, cognitive load, motivation, self-regulation, academic self-concept, identity, and aspiration?",
+        "hu": "Hogyan befolyásolhatná a javaslat a tanulást, a kognitív terhelést, a motivációt, az önszabályozást, az iskolai önképet, az identitást és a törekvéseket?"
+      },
+      {
+        "en": "Do selection, ranking, labeling, or reference-group mechanisms create psychological benefits or costs for selected and non-selected students?",
+        "hu": "Kiválasztási, rangsorolási, címkézési vagy referenciacsoport-mechanizmusok teremtenek-e pszichológiai előnyöket vagy hátrányokat a kiválasztott és a nem kiválasztott tanulók számára?"
+      },
+      {
+        "en": "Which claimed mechanisms are robust, context-dependent, or contested?",
+        "hu": "Mely állított mechanizmusok robusztusak, kontextusfüggők vagy vitatottak?"
+      }
     ],
     "criteria": [
-      "learning-mechanism plausibility",
-      "cognitive-load fit",
-      "motivation and self-regulation",
-      "academic self-concept and big-fish-little-pond effects",
-      "labeling and expectancy effects",
-      "goal orientation",
-      "developmental timing",
-      "evidence replication and scope"
+      {
+        "en": "learning-mechanism plausibility",
+        "hu": "tanulási mechanizmusok valószerűsége"
+      },
+      {
+        "en": "cognitive-load fit",
+        "hu": "a kognitív terheléshez való illeszkedés"
+      },
+      {
+        "en": "motivation and self-regulation",
+        "hu": "motiváció és önszabályozás"
+      },
+      {
+        "en": "academic self-concept and big-fish-little-pond effects",
+        "hu": "Akadémiai önkép és a nagyhal–kistó hatás"
+      },
+      {
+        "en": "labeling and expectancy effects",
+        "hu": "címkézés és elváráseffektusok"
+      },
+      {
+        "en": "goal orientation",
+        "hu": "célorientáció"
+      },
+      {
+        "en": "developmental timing",
+        "hu": "fejlődési időzítés"
+      },
+      {
+        "en": "evidence replication and scope",
+        "hu": "evidencia replikációja és hatóköre"
+      }
     ],
     "limitations": [
-      "Big-fish-little-pond effects are robust at group level but do not determine any individual student's outcome.",
-      "Labeling and teacher-expectancy effects are contested in magnitude.",
-      "Stereotype-threat effects are contested, affected by publication bias, and must not be generalized beyond the tested population and domain.",
-      "Growth-mindset intervention effects are small and heterogeneous; the lens must not treat them as a universal remedy.",
-      "Psychological effects must not be used to override legal, fiscal, equity, or democratic value judgments."
+      {
+        "en": "Big-fish-little-pond effects are robust at group level but do not determine any individual student's outcome.",
+        "hu": "A \"nagyhal–kistó\" hatások csoportszinten robosztusak, de nem határozzák meg egyetlen tanuló egyéni eredményét sem."
+      },
+      {
+        "en": "Labeling and teacher-expectancy effects are contested in magnitude.",
+        "hu": "a címkézés és a tanári elvárások hatásának mértéke vitatott"
+      },
+      {
+        "en": "Stereotype-threat effects are contested, affected by publication bias, and must not be generalized beyond the tested population and domain.",
+        "hu": "A sztereotípia-fenyegetés hatásai vitatottak, ki vannak téve publikációs torzításnak, és nem szabad őket általánosítani a tesztelt populáción és területen túl."
+      },
+      {
+        "en": "Growth-mindset intervention effects are small and heterogeneous; the lens must not treat them as a universal remedy.",
+        "hu": "A growth-mindset-intervenciók hatásai kicsik és heterogének; a megközelítés ne tekintse őket univerzális gyógyírnak."
+      },
+      {
+        "en": "Psychological effects must not be used to override legal, fiscal, equity, or democratic value judgments.",
+        "hu": "A pszichológiai hatásokat nem szabad arra felhasználni, hogy felülírjanak jogi, pénzügyi, esélyegyenlőségi vagy demokratikus értékítéleteket."
+      }
     ]
   },
   "evidence_notes": [
     {
       "id": "big_fish_little_pond",
-      "claim": "Equally able students tend to develop lower academic self-concept in higher-achieving selective environments, a robust cross-national reference-group effect with implications for aspiration.",
+      "claim": {
+        "en": "Equally able students tend to develop lower academic self-concept in higher-achieving selective environments, a robust cross-national reference-group effect with implications for aspiration.",
+        "hu": "Hasonló képességű diákok hajlamosak alacsonyabb iskolai énképet kialakítani a magasabb teljesítményű, szelekciós környezetekben; ez egy erős, nemzetek közötti referenciacsoport-hatás, amely hatással van a törekvésekre."
+      },
       "evidence_strength": "strong",
-      "source": "Marsh and subsequent cross-national replications, including PISA samples"
+      "source": {
+        "en": "Marsh and subsequent cross-national replications, including PISA samples",
+        "hu": "Marsh és az azt követő nemzetközi replikációk, beleértve a PISA-mintákat"
+      }
     },
     {
       "id": "labeling_effects",
-      "claim": "Teacher-expectancy and labeling effects exist but are contested in magnitude; average effects are smaller than early Pygmalion claims and may be larger for stigmatized or low-SES students.",
+      "claim": {
+        "en": "Teacher-expectancy and labeling effects exist but are contested in magnitude; average effects are smaller than early Pygmalion claims and may be larger for stigmatized or low-SES students.",
+        "hu": "A tanári elvárás- és címkézési hatások léteznek, de nagyságukat vitatják; az átlagos hatások kisebbek, mint a korai Pygmalion-állítások, és nagyobbak lehetnek megbélyegzett vagy alacsony SES-ű diákok esetében."
+      },
       "evidence_strength": "contested",
-      "source": "Rosenthal and Jacobson (1968) and later replication literature"
+      "source": {
+        "en": "Rosenthal and Jacobson (1968) and later replication literature",
+        "hu": "Rosenthal és Jacobson (1968) és későbbi replikációs irodalom"
+      }
     },
     {
       "id": "stereotype_threat",
-      "claim": "Stereotype-threat effects in performance settings are generally smaller and less robust than early literature suggested and show evidence of publication bias.",
+      "claim": {
+        "en": "Stereotype-threat effects in performance settings are generally smaller and less robust than early literature suggested and show evidence of publication bias.",
+        "hu": "A teljesítményhelyzetekben megfigyelt sztereotípia‑fenyegetettség (stereotype‑threat) hatásai általában kisebbek és kevésbé robusztusak, mint amit a korai irodalom sugallt, és a publikációs torzulásra (publication bias) utaló bizonyítékokat mutatnak."
+      },
       "evidence_strength": "contested",
-      "source": "Flore and Wicherts (2015); Shewach, Sackett and Quigley (2019)"
+      "source": {
+        "en": "Flore and Wicherts (2015); Shewach, Sackett and Quigley (2019)",
+        "hu": "Flore és Wicherts (2015); Shewach, Sackett és Quigley (2019)"
+      }
     },
     {
       "id": "goal_orientation",
-      "claim": "Structures emphasizing ranking and selection can promote performance orientation and fear of failure, while mastery orientation is associated with persistence; developmental timing matters.",
+      "claim": {
+        "en": "Structures emphasizing ranking and selection can promote performance orientation and fear of failure, while mastery orientation is associated with persistence; developmental timing matters.",
+        "hu": "A rangsorolást és szelekciót hangsúlyozó struktúrák elősegíthetik a teljesítményorientációt és a kudarctól való félelmet, míg az elsajátítási orientáció kitartással társul; a fejlődési időzítés számít."
+      },
       "evidence_strength": "moderate",
-      "source": "Dweck and Elliot goal-orientation literature"
+      "source": {
+        "en": "Dweck and Elliot goal-orientation literature",
+        "hu": "Dweck és Elliot célorientációs irodalma"
+      }
     },
     {
       "id": "self_determination",
-      "claim": "Autonomy, competence, and relatedness support more self-determined motivation; controlling environments can undermine it.",
+      "claim": {
+        "en": "Autonomy, competence, and relatedness support more self-determined motivation; controlling environments can undermine it.",
+        "hu": "Az autonómia, a kompetencia és a kapcsolódás támogatják az önmeghatározottabb motivációt; a kontrolláló környezetek alááshatják azt."
+      },
       "evidence_strength": "strong",
-      "source": "Self-Determination Theory research program"
+      "source": {
+        "en": "Self-Determination Theory research program",
+        "hu": "Önmeghatározás-elmélet kutatási program"
+      }
     },
     {
       "id": "growth_mindset",
-      "claim": "Average effects of growth-mindset interventions on academic achievement are small and heterogeneous, so they should not be proposed as a structural substitute.",
+      "claim": {
+        "en": "Average effects of growth-mindset interventions on academic achievement are small and heterogeneous, so they should not be proposed as a structural substitute.",
+        "hu": "A növekedésorientált szemléletet (growth‑mindset) célzó intervenciók átlagos hatása az iskolai teljesítményre kicsi és heterogén, ezért nem javasolt ezeket strukturális helyettesítőként alkalmazni."
+      },
       "evidence_strength": "contested",
-      "source": "Sisk et al. (2018) meta-analysis and subsequent debate"
+      "source": {
+        "en": "Sisk et al. (2018) meta-analysis and subsequent debate",
+        "hu": "Sisk et al. (2018) metaanalízise és az azt követő vita"
+      }
     }
   ]
 }

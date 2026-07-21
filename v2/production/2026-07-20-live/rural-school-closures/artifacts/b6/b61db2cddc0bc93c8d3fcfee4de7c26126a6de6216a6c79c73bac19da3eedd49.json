@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A transparency and evidence infrastructure is the proposal best positioned to correctly frame the demographic questions this lens raises, particularly by explicitly tracking Hungary-specific outcomes rather than assuming international findings (e.g., the contested closure-depopulation link) transfer directly. Its core limitation from this lens is temporal: it establishes machinery for future decisions while the underlying cohort collapse and zero-enrollment cliffs continue unaddressed during the buildout period, and an information framework carries no independent capacity to alter cohort trajectories or spatial distribution.",
+      "hu": "Az átláthatósági és bizonyíték-infrastruktúra az a javaslat, amely legjobban alkalmas arra, hogy helyesen keretezze a demográfiai kérdéseket, amelyeket ez a lencse felvet, különösen azáltal, hogy kifejezetten Magyarország-specifikus eredményeket követ nyomon ahelyett, hogy feltételezné az nemzetközi megállapítások (pl. a vitatott bezárás–elnéptelenedés összefüggés) közvetlen átüthetőségét. Ennek a lencséből fakadó fő korlátja időbeli: a szerkezet gépezetét a jövőbeli döntésekhez állítja fel, miközben az alapul fekvő kohorsz-összeomlás és a zéró-beiratkozás szakadékok a kiépítés időszaka alatt megoldatlanul maradnak, és egy információs rendszer önmagában nem képes módosítani a kohorszok pályáit vagy a térbeli eloszlást."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-05",
+      "F-live-demography-07",
+      "F-live-demography-09"
+    ],
+    "lens_ref": "L-live-demography",
+    "opportunities": [
+      {
+        "en": "Registry design could formally incorporate a demographic planning horizon (e.g., using cohort projections from current TFR and birth-decline trends) so that decisions anticipate rather than react to the enrollment cliff",
+        "hu": "A nyilvántartás tervezése formálisan beépíthetne egy demográfiai tervezési időhorizontot (pl. kohort-előrejelzések alkalmazásával a jelenlegi TFR és a születésszám-csökkenési trendek alapján), így a döntések inkább előre jeleznék, mint reagálnának a beiratkozási szakadékra."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Explicitly commits to tracking Hungary-specific outcomes rather than importing contested international evidence on closure-depopulation links, appropriately treating that evidence as unresolved rather than settled",
+        "hu": "Kifejezetten elkötelezett amellett, hogy magyarországi specifikus eredményeket kövessen nyomon ahelyett, hogy vitatott nemzetközi bizonyítékokat importálna a bezárás–elnéptelenedés összefüggéseiről, és megfelelően kezeli ezeket a bizonyítékokat rendezetlennek, nem lezártnak"
+      },
+      {
+        "en": "A registry-based approach could formally incorporate cohort-decline and age-structure divergence data (e.g., the 91 vs. 42 municipality split) into future viability determinations, improving the evidentiary basis for whichever structural model is chosen",
+        "hu": "Egy nyilvántartásalapú megközelítés formálisan beépíthetné a kohorsz-csökkenésre és korstruktúra-eltérésekre vonatkozó adatokat (pl. a 91 vs. 42 település megoszlást) a jövőbeni életképességi megállapításokba, javítva azt a bizonyíték-alapot, amelyre bármely választott strukturális modell támaszkodik."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Historical pattern of top-down political decisions overriding technical evidence suggests demographic data alone will not determine outcomes, consistent with this lens's own limitation that population projections do not dictate the normative response",
+        "hu": "A felülről vezérelt politikai döntések történelmi mintázata, amelyek felülírják a technikai bizonyítékokat, azt sugallja, hogy önmagában a demográfiai adatok nem fogják meghatározni az eredményeket, ami összhangban van e megközelítés saját korlátjával: a népesség-előrejelzések nem írják elő a normatív választ."
+      },
+      {
+        "en": "Given the pace of cohort contraction (22% over four years), a purely observational framework risks documenting collapse rather than informing timely intervention",
+        "hu": "Tekintettel a kohorszzsugorodás ütemére (22% négy év alatt), a pusztán megfigyeléses keret kockázata, hogy a összeomlást dokumentálja ahelyett, hogy időben informálna beavatkozásról."
+      }
+    ],
+    "verdict": "neutral",
+    "weaknesses": [
+      {
+        "en": "Does not itself alter cohort trajectory, spatial distribution, or the zero-enrollment cliff already documented in the smallest settlements",
+        "hu": "Önmagában nem változtatja meg a kohort pályáját, térbeli eloszlását, illetve azt a nullabeiratkozási szakadékot, amelyet már a legkisebb településeken dokumentáltak."
+      },
+      {
+        "en": "Establishing evidence infrastructure takes time, during which the fastest-declining cohorts continue contracting past the point of any registry-informed intervention",
+        "hu": "A bizonyíték‑infrastruktúra kiépítése időigényes, és ezalatt a leggyorsabban csökkenő kohorszok tovább zsugorodnak azon a ponton is túl, amikor bármilyen nyilvántartás‑alapú beavatkozás még hatékony lehet"
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-demography",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "3f5d3e1bc5008a294a7de38e9a2ef4b9b727209db2119fcb7b6fae3e2e97aabc",
+  "topic": "rural-school-closures"
+}

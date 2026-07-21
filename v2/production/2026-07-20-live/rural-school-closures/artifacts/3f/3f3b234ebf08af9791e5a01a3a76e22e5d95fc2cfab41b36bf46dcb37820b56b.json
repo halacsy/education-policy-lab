@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "Hungary's population declined by 334,000 individuals (3.4%) over the decade preceding the 2022 census, the largest inter-census drop on record, directly shrinking the school-age cohort feeding rural primary schools nationwide.",
+      "hu": "A 2022-es népszámlálás előtti tíz évben Magyarország népessége 334 000 fővel (3,4%-kal) csökkent, ez a legnagyobb, regisztrált népességvesztés két népszámlálás közötti időszakban, és közvetlenül szűkítette azt az iskoláskorú kohorszot, amely a vidéki általános iskolákat ellátja."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Aggregate national figure does not specify rural/village-specific birth-rate trajectories",
+        "hu": "Az aggregált országos adat nem határozza meg külön a vidéki/falusi specifikus születési pályákat"
+      },
+      {
+        "en": "Does not account for internal migration redistribution within the cohort",
+        "hu": "Nem számol a kohoron belüli belső migráció újraeloszlásával"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-01",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "a0adbf9812d87793bfe9ff68e8691debc952dbd62a20e1ec6cb70fa0ef83138d",
+  "topic": "rural-school-closures"
+}

@@ -14,7 +14,13 @@ def array(items: dict[str, Any], minimum: int = 1, maximum: int | None = None) -
     }
 
 
-TEXT = {"type": "string", "minLength": 1}
+TEXT_VALUE = {"type": "string", "minLength": 1}
+TEXT = {
+    "type": "object",
+    "additionalProperties": False,
+    "properties": {"en": TEXT_VALUE, "hu": TEXT_VALUE},
+    "required": ["en", "hu"],
+}
 STRENGTH = {"type": "string", "enum": ["strong", "moderate", "weak", "contested"]}
 
 
@@ -26,7 +32,7 @@ PROBLEM_BRIEF_OUTPUT = {
         "problem_statement": TEXT,
         "learning_goals": array(TEXT, 3, 7),
         "scope": TEXT,
-        "seed_sources": array(TEXT, 0, 12),
+        "seed_sources": array(TEXT_VALUE, 0, 12),
         "framing_notes": array(TEXT, 1, 7),
     },
     "required": [
@@ -42,7 +48,7 @@ RESEARCH_OUTPUT = {
             "type": "object", "additionalProperties": False,
             "properties": {
                 "claim": TEXT, "evidence_strength": STRENGTH,
-                "source_title": TEXT, "source_url": TEXT,
+                "source_title": TEXT, "source_url": TEXT_VALUE,
                 "limitations": array(TEXT, 1, 3),
             },
             "required": ["claim", "evidence_strength", "source_title", "source_url", "limitations"],

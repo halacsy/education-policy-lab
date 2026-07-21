@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assessment": {
+      "en": "Viewed through the Polish reform lens, T1 is a within-structure calibration reform (adjusting admission mechanics, not the tracking point itself), analogous to tinkering with selection criteria rather than the structural age-of-selection question that dominated Poland's 1999 and 2017 reforms. The lens's core mechanism criterion (structural mechanism, distributional effects, reversibility, implementation sequence) suggests this proposal leaves the actual sorting architecture untouched, which the Polish case implies is where the largest distributional effects originate.",
+      "hu": "A lengyel reform-nézőponton keresztül vizsgálva a T1 a struktúrán belüli kalibrációs reform (a felvételi mechanikák igazítása, nem maga a szelekciós pont), analóg azzal, mintha a kiválasztási kritériumokkal babrálna ahelyett, hogy a strukturális szelekciós kor kérdését célozná, amely a lengyel 1999-es és 2017-es reformokat jellemezte. A nézőpont központi mechanizmus-kritériuma (strukturális mechanizmus, elosztási hatások, visszafordíthatóság, végrehajtási sorrend) azt sugallja, hogy ez a javaslat érintetlenül hagyja a tényleges szortírozási architektúrát, amelyről a lengyel eset arra utal, hogy ott keletkeznek a legnagyobb elosztási hatások."
+    },
+    "confidence": "low",
+    "finding_refs": [
+      "F-live-polish_reform-03",
+      "F-live-polish_reform-04",
+      "F-live-polish_reform-05",
+      "F-live-polish_reform-07"
+    ],
+    "lens_ref": "L-live-polish_reform",
+    "opportunities": [
+      {
+        "en": "A low-reversibility, incremental reform of this kind avoids the kind of politically volatile whiplash Poland experienced, potentially offering durable, low-conflict implementation",
+        "hu": "Egy ilyen, alacsony visszafordíthatóságú, fokozatos reform elkerüli a Lengyelország által átélt politikailag ingatag kilengést, és potenciálisan tartós, alacsony konfliktussal járó végrehajtást tesz lehetővé."
+      }
+    ],
+    "proposal_ref": "TP-live-t1",
+    "strengths": [
+      {
+        "en": "Because it does not alter the legal tracking structure, it carries low reversal risk of the kind that devastated Poland's 2017 transition (F-live-polish_reform-04, F-live-polish_reform-05)",
+        "hu": "Mivel nem változtatja meg a jogi szelektálási struktúrát, alacsony a visszafordulás kockázata az olyan típusú eseményre, amely 2017-ben Lengyelország átmenetét tönkretette (F-live-polish_reform-04, F-live-polish_reform-05)."
+      },
+      {
+        "en": "No implementation-sequencing risk analogous to Poland's abrupt 10-month reversal, since no cohort transition or school closures are required (F-live-polish_reform-04)",
+        "hu": "Nincs olyan megvalósítási ütemezési kockázat, amely analóg lenne Lengyelország hirtelen, 10 hónapos visszafordulásával, mivel nem szükséges kohort-átmenet vagy iskolabezárás (F-live-polish_reform-04)"
+      }
+    ],
+    "threats": [
+      {
+        "en": "If the underlying tracking structure remains a stronger driver of inequality than admission-mechanism details, as Polish structural findings suggest, T1 risks being a distributional band-aid rather than addressing root sorting causes (F-live-polish_reform-03)",
+        "hu": "Ha az alapvető szelekciós/sávos szerkezet erősebb egyenlőtlenségkeltő tényező marad, mint a felvételi mechanizmus részletei, ahogy a lengyel strukturális eredmények sugallják, akkor a T1 kockázata az, hogy csak elosztási kötszer lesz, ahelyett hogy a válogatás alapvető okait kezelné (F-live-polish_reform-03)."
+      }
+    ],
+    "verdict": "cautions",
+    "weaknesses": [
+      {
+        "en": "Poland's evidence suggests the largest distributional gains came from changing the structural tracking point itself (comprehensive lower-secondary stage), not from adjusting admission criteria within an unchanged structure (F-live-polish_reform-03)",
+        "hu": "Lengyelországi bizonyítékok arra utalnak, hogy a legnagyobb elosztási nyereségek magából a strukturális szelektálási pont megváltoztatásából származtak (az átfogó alsóközépfokú szakasz), nem pedig a felvételi kritériumok változtatásából egy változatlan struktúrán belül (F-live-polish_reform-03)."
+      },
+      {
+        "en": "Exam redesign alone does not address the segregation mechanisms that operate independently of formal selection criteria, an issue paralleled by Poland's need for structural rather than merely procedural change (F-live-polish_reform-07)",
+        "hu": "Maguk a vizsgák áttervezése nem orvosolja azokat a szegregációs mechanizmusokat, amelyek a formális kiválasztási kritériumoktól függetlenül működnek; ezt a problémát párhuzamba állítja Lengyelország szükségessége arra, hogy strukturális, nem csupán eljárásbeli változtatás történjen (F-live-polish_reform-07)."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t1-polish_reform",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "22e9bdc25373ede63498f28c3e2804f3d492b829fa8331bb0c9803592b148260",
+  "topic": "korai-szelekcio"
+}

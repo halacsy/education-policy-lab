@@ -1,0 +1,58 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-finnish_reform-01",
+      "A-live-finnish_reform-02",
+      "A-live-finnish_reform-03"
+    ],
+    "claim": {
+      "en": "Quasi-experimental difference-in-differences regression analysis with matching methods (2010–2018 period) found that Finnish rural community population declined *more* after school closure than before, suggesting closures accelerate rather than merely follow demographic decline.",
+      "hu": "Kvázikísérleti differencia‑az‑differenciák (difference‑in‑differences) regressziós elemzés párosítással (2010–2018 időszak) azt találta, hogy a finn vidéki közösségek népessége az iskola bezárása után *inkább* csökkent, mint előtt, ami arra utal, hogy a bezárások felgyorsítják, nem csupán követik a demográfiai hanyatlást."
+    },
+    "context": {
+      "en": "Fresh live research through the Finnish system reform lens",
+      "hu": "Friss, aktuális kutatás a finn rendszereform szemszögéből"
+    },
+    "domain_tags": [
+      "finnish_reform"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Analysis period is 8 years; longer-run effects (15+ years) unknown",
+        "hu": "Az elemzési időszak 8 év; a hosszabb távú hatások (15+ év) ismeretlenek"
+      },
+      {
+        "en": "Causal mechanism (loss of institutional anchor vs. parental out-migration triggered by closure news) not disaggregated; reverse causality partially controlled but not fully eliminated",
+        "hu": "Ok-okozati mechanizmus (intézményi horgony elvesztése vs. a bezárás hírére kiváltott szülői elvándorlás) nincs szétválasztva; a fordított okság részben kontrollált, de nem teljesen eliminált."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-finnish_reform-05"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-finnish_reform-01",
+      "U-live-finnish_reform-02",
+      "U-live-finnish_reform-03",
+      "U-live-finnish_reform-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-finnish_reform-05",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2605aea6011c7470229d8a2fe5fb86217f30c39b70a07140e0e8f0f611edbcd8",
+  "topic": "rural-school-closures"
+}

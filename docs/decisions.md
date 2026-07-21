@@ -837,3 +837,24 @@ bound to the exact proposal hash. Relaunching after approval reuses the
 unchanged draft and starts the first research node; changing the draft hash
 invalidates the earlier decision. Existing topics with an already approved
 brief remain valid roots and do not acquire a fictitious retroactive gate.
+
+**D-58 — V2 semantic artifacts return to D-34 bilingual-by-construction
+(2026-07-21, owner correction).** D-37's English-only canonical-content rule
+and D-50–D-52's downstream policy-content localization path are superseded as
+active architecture. Stable identifiers, enum values, reference fields, URLs,
+and provenance metadata remain language-neutral technical data; every prose
+leaf listed in `config/v2/bilingual_fields.json` is instead one exact,
+non-empty `{en, hu}` value in the canonical artifact. Artifact schema version
+2.1.0 enforces those pairs and validates their English projection against the
+unchanged strict 2.0.0 record schemas. Future LLM nodes author both languages
+inside the same constrained response, as required by D-34; there is no
+separate translation node in the analytical or publication DAG.
+
+Existing English-only artifacts and their immutable RunPlans are not rewritten
+or analytically rerun. An explicit one-time migration creates 2.1.0 successor
+records, linked through `supersedes`, with separate `localizer` provenance that
+identifies retrospective translation. The predecessor retains the original
+generator provenance. Human decision records remain bound to the exact
+bilingual candidate-successor hash. The public site and audit view project
+`en` or `hu` directly from the canonical record; old localization bundles may
+remain as historical evidence but are no longer a runtime dependency.

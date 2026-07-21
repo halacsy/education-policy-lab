@@ -1,0 +1,52 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-korai-szelekcio-school_network_planning-01",
+      "A-korai-szelekcio-school_network_planning-02"
+    ],
+    "claim": {
+      "en": "Birth numbers are falling faster than previously expected—5,979 in October 2025, fertility rate 1.31—meaning the school-age intake base for any selection scenario continues to shrink.",
+      "hu": "A születésszám a várt tempónál gyorsabban csökken—2025 októberében 5979 gyermek született, a termékenységi arányszám 1,31—vagyis bármely szelekciós forgatókönyv beiskolázási bázisa folyamatosan zsugorodik."
+    },
+    "context": {
+      "en": "Physical school-network capacity is currently sufficient to sustain early selection almost anywhere; the genuine town-by-town feasibility bottleneck is the shrinking and unevenly distributed child population, combined with a maintainer and admissions design that concentrates selection into a minority of settlements.",
+      "hu": "A fizikai iskolahálózati kapacitás jelenleg szinte mindenhol elegendő a korai szelekció fenntartásához; a valódi településenkénti megvalósíthatósági szűk keresztmetszet a zsugorodó és egyenlőtlenül eloszló gyermeklétszám, valamint a fenntartói és felvételi rendszer, amely a szelekciót a települések kisebbségében koncentrálja."
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The v1 source string was not re-verified during migration.",
+        "hu": "A v1 forráskarakterláncot a migráció során nem ellenőrizték újra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the migrated claim",
+      "hu": "Az átvitt állításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-korai-szelekcio-9f4ad37804179c"
+    ],
+    "time_scope": {
+      "en": "As reported in the v1 source corpus",
+      "hu": "Ahogy a v1 forráskorpusz jelentette"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-korai-szelekcio-school_network_planning-01",
+      "U-korai-szelekcio-school_network_planning-02",
+      "U-korai-szelekcio-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-korai-szelekcio-school_network_planning-04",
+  "provenance_ref": "PV-bilingual-migration-fb16878a842c9650",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "f125ab7b5e48220875f3b62668499d1f44f07fb6854e92eb1906a53683be2055",
+  "topic": "korai-szelekcio"
+}

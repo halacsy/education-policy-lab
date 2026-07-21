@@ -1,0 +1,158 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t5-01",
+      "A-live-t5-02",
+      "A-live-t5-03"
+    ],
+    "change_level": "system",
+    "costs": [
+      {
+        "en": "Foregone equity gains that active intervention could have captured during the same window",
+        "hu": "Elmaradt egyenlőségi előnyök, amelyeket egy aktív beavatkozás ugyanebben az időkeretben elérhetett volna."
+      },
+      {
+        "en": "Continued high segregation and SES achievement gaps persisting without correction (F-live-hungarian_education_system-06, F-live-international_comparison-03)",
+        "hu": "A magas szegregáció és a társadalmi–gazdasági státusz szerinti teljesítménykülönbségek tartós fennmaradása korrekció nélkül (F-live-hungarian_education_system-06, F-live-international_comparison-03)."
+      },
+      {
+        "en": "Risk of uncoordinated, crisis-driven local closures rather than planned consolidation, particularly harming rural settlement viability (F-live-school_network_planning-10)",
+        "hu": "Kockázat arra, hogy összehangolatlan, krízisvezérelt helyi bezárások történnek tervezett konszolidáció helyett, ami különösen károsíthatja a vidéki települések működőképességét (F-live-school_network_planning-10)."
+      }
+    ],
+    "equity_impact": {
+      "en": "Passive contraction reduces the absolute scale of the selective track over time but does so unevenly (concentrated in rural/low-density areas already showing minimal uptake), leaving urban segregation and Roma/ethnic segregation dynamics largely untouched; it is a scale-reduction mechanism, not an equity-targeting mechanism, and should be treated as the null baseline rather than a policy solution.",
+      "hu": "A passzív zsugorodás idővel csökkenti a szelekciós pálya abszolút méretét, de ezt egyenlőtlenül teszi (a csökkenés elsősorban vidéki/alacsony népsűrűségű területeken koncentrálódik, ahol amúgy is minimális a részvétel), miközben a városi és a roma/etnikai szegregációs dinamika nagyrészt érintetlen marad; ez tehát egy méretcsökkentő mechanizmus, nem pedig egy egyenlőségre irányuló eszköz, és politikai alapként, nem megoldásként kell kezelni."
+    },
+    "evidence_status": "strong",
+    "expected_benefits": [
+      {
+        "en": "Requires no new legislation, political capital, or administrative redesign",
+        "hu": "Nem igényel új jogszabályt, politikai tőkét vagy közigazgatási átalakítást."
+      },
+      {
+        "en": "Provides a necessary evidence baseline for evaluating whether active interventions (T1-T4) outperform passive demographic effects alone",
+        "hu": "Szükséges bizonyíték-alapvonalat biztosít annak értékeléséhez, hogy az aktív beavatkozások (T1–T4) felülmúlják-e önmagukban a passzív demográfiai hatásokat."
+      },
+      {
+        "en": "Avoids Polish-style abrupt-transition disruption since no discrete reform event occurs",
+        "hu": "Elkerüli a lengyelországihoz hasonló hirtelen átmeneti zavarokat, mivel nem történik egyetlen jól körülhatárolt reformesemény."
+      }
+    ],
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-demography-05",
+      "F-live-demography-04",
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-03",
+      "F-live-demography-09",
+      "F-live-implementation_planning-07",
+      "F-live-school_network_planning-10",
+      "F-live-demography-03",
+      "F-live-school_network_planning-05"
+    ],
+    "goal": {
+      "en": "Establish the explicit no-new-policy counterfactual in which shrinking birth cohorts mechanically force network consolidation and shrink the selective track's absolute size, against which active interventions (T1-T4) are measured.",
+      "hu": "Határozza meg az explicit „nincs új politika” ellenpéldát, amelyben a csökkenő születéslétszámok mechanikusan kényszerítik az iskolahálózat konszolidációját és csökkentik a szelekciós pálya abszolút méretét; ez lesz az a viszonyítási alap, amellyel az aktív beavatkozásokat (T1–T4) mérik."
+    },
+    "implementation_steps": [
+      {
+        "action": {
+          "en": "Continue current legal, admissions, and capacity settings unchanged; monitor cohort-driven attrition of rural/peripheral 6/8-year provision as it occurs",
+          "hu": "A jelenlegi jogi, felvételi és kapacitás-beállítások változatlanul hagyása; a kohorszok okozta apadást a vidéki/perifériás 6/8 éves képzési kínálatban folyamatosan nyomon követni."
+        },
+        "actor": {
+          "en": "Ministry of Education (no-action baseline)",
+          "hu": "Oktatási Minisztérium (nincs beavatkozás — alapforgatókönyv)"
+        },
+        "timeline": {
+          "en": "Ongoing, Years 1-10",
+          "hu": "Folyamatos, 1–10. év"
+        }
+      },
+      {
+        "action": {
+          "en": "Respond ad hoc to individual school viability crises (e.g., approve/deny class formation) as cohorts fall below statutory minimums, without a systematic consolidation plan",
+          "hu": "Ad hoc reagálás az egyes iskolai működőképességi válságokra (pl. osztályindítás jóváhagyása/visszautasítása), ahogy a kohorszok a törvényi minimum alá csökkennek, rendszerszerű konszolidációs terv nélkül."
+        },
+        "actor": {
+          "en": "Klebelsberg Centre district sub-units (reactive only)",
+          "hu": "Klebelsberg Központ tankerületi egységei (csak reaktív jelleggel)"
+        },
+        "timeline": {
+          "en": "Ongoing",
+          "hu": "Folyamatos"
+        }
+      },
+      {
+        "action": {
+          "en": "Track and publish the passive contraction trajectory as a counterfactual baseline against any future active reform proposal",
+          "hu": "A passzív összehúzódás pályájának nyomon követése és közzététele mint kontrafaktuális alapvonal bármely jövőbeli aktív reformjavaslattal szemben."
+        },
+        "actor": {
+          "en": "Statistical/monitoring bodies",
+          "hu": "Statisztikai és monitorozó szervezetek"
+        },
+        "timeline": {
+          "en": "Years 1-5",
+          "hu": "1–5. év"
+        }
+      }
+    ],
+    "mechanisms": [
+      {
+        "en": "Cohort decline is structurally embedded for 20+ years via both falling fertility and a shrinking pool of reproductive-age women, meaning the contraction pressure is not a short-term fluctuation but a durable structural trend (F-live-demography-01, F-live-demography-02).",
+        "hu": "A kohorszok mérete több mint 20 éve strukturálisan csökken a születésszám apadása és a termékeny korú nők állományának zsugorodása révén, tehát a visszaesés nem rövid távú ingadozás, hanem tartós szerkezeti trend (F-live-demography-01, F-live-demography-02)."
+      },
+      {
+        "en": "Statutory minimum class-size rules (26 minimum, 34 maximum) create a mechanical threshold below which forming even a single viable gimnázium intake class becomes numerically untenable in shrinking localities, independent of any policy choice (F-live-demography-05).",
+        "hu": "A jogszabályban rögzített minimum osztálylétszám-szabályok (min. 26, max. 34) mechanikus küszöböt hoznak létre, amely alatt egyetlen életképes gimnáziumi felvételi osztály indítása is numerikusan tarthatatlanná válik a fogyó településeken, függetlenül minden politikai döntéstől (F-live-demography-05)."
+      },
+      {
+        "en": "Rural settlements in specific regions already show 10-30% child-population contraction with some settlements down to 50-70 school-age children total, showing the mechanism is already operating in the current system without new policy (F-live-demography-04).",
+        "hu": "Bizonyos régiók vidéki településein már 10–30%-os gyermekszám-csökkenés látható, egyes településeken pedig összesen csak 50–70 iskoláskorú gyermek maradt, ami azt mutatja, hogy a mechanizmus a jelenlegi rendszerben, új politika nélkül is működik (F-live-demography-04)."
+      },
+      {
+        "en": "Applications data already show an emerging shift (6-year applications +11%, 8-year applications -14% in 2026) and stagnant physical capacity despite oversubscription, indicating passive market/demographic adjustment is already underway within the unchanged legal structure (F-live-school_network_planning-02, F-live-school_network_planning-03).",
+        "hu": "A jelentkezési adatok már elmozdulást mutatnak (6 évesekre jelentkezések +11%, 8 évesekre -14% 2026-ban), és a fizikai kapacitás elmaradottsága túljelentkezés mellett arra utal, hogy passzív piaci/demográfiai alkalmazkodás zajlik az érintetlen jogi keretek között (F-live-school_network_planning-02, F-live-school_network_planning-03)."
+      },
+      {
+        "en": "Aging teacher workforce (50% age 50+, only 7.2% under 30) with rural/disadvantaged shortages compounds the passive contraction pressure on peripheral selective provision without requiring active policy (F-live-demography-09, F-live-implementation_planning-07).",
+        "hu": "Az elöregedő pedagógusállomány (50% 50 év felett, csak 7,2% 30 év alatti), valamint a vidéki/hátrányos területeken tapasztalható hiány növeli a peremvidéki, szelektív kínálat passzív összehúzódását anélkül, hogy ehhez aktív politika szükséges lenne (F-live-demography-09, F-live-implementation_planning-07)."
+      }
+    ],
+    "origin": "live_generation",
+    "risks": [
+      {
+        "en": "Passive contraction is geographically uneven: urban/Budapest selective capacity may persist largely intact while rural provision collapses, potentially worsening geographic equity even as aggregate track size shrinks (F-live-demography-03, F-live-school_network_planning-05)",
+        "hu": "A passzív zsugorodás földrajzilag egyenlőtlen: a városi/Budapesti szelekciós kapacitás nagyjából épen maradhat, miközben a vidéki ellátás összeomlik, ami a pályaselekció összmérete csökkenése mellett is a földrajzi egyenlőtlenségeket súlyosbíthatja (F-live-demography-03, F-live-school_network_planning-05)"
+      },
+      {
+        "en": "Uncoordinated closures could trigger settlement-viability consequences and unplanned disruption similar in kind (though smaller in scale) to the Polish transition-cost pattern, absent any phased management (F-live-school_network_planning-10, F-live-international_comparison-07)",
+        "hu": "Az összehangolatlan iskolabezárások település-fenntarthatósági következményeket és előre nem tervezett zavarokat idézhetnek elő, amelyek jellegükben hasonlóak (bár kisebb mértékűek) a lengyel átmeneti költségmintához, ha nincs fokozatos, fázisokra bontott intézkedés (F-live-school_network_planning-10, F-live-international_comparison-07)"
+      },
+      {
+        "en": "Roma segregation and church-sector selective growth are not addressed at all by passive demographic contraction and could persist or worsen even as overall track size shrinks (F-live-equity_and_social_mobility-07, F-live-polish_reform-08)",
+        "hu": "A passzív demográfiai zsugorodás egyáltalán nem kezeli a romák elkülönülését és az egyházi fenntartók szelekciós növekedését, amelyek a pályaméret általános csökkenése mellett is fennmaradhatnak vagy romolhatnak (F-live-equity_and_social_mobility-07, F-live-polish_reform-08)"
+      }
+    ],
+    "title": {
+      "en": "Demographically-driven passive contraction baseline (no new policy)",
+      "hu": "Demográfiailag vezérelt passzív zsugorodás – alapvonal (nincs új intézkedés)"
+    },
+    "uncertainty_refs": [
+      "U-live-t5-01",
+      "U-live-t5-02",
+      "U-live-t5-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "TP-live-t5",
+  "provenance_ref": "PV-bilingual-migration-a8c573c9192e21eb",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "5d355094f22bc6c8bf48842baf7074e4feb0cbb460b56b1dc80f0453539c63f8",
+  "topic": "korai-szelekcio"
+}

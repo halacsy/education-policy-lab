@@ -1,0 +1,66 @@
+{
+  "content": {
+    "candidate_first_move_refs": [
+      "TP-live-t1",
+      "TP-live-t2",
+      "TP-live-t3",
+      "TP-live-t4",
+      "TP-live-t5",
+      "TP-live-t6"
+    ],
+    "conditions": [
+      {
+        "en": "Transformations are conceptually clear but often lack operational detail (who exactly would implement T1–T5, statutory text examples, budgetary implications, enforcement mechanisms, timelines).",
+        "hu": "A koncepcionális átalakulások világosak, de gyakran hiányzik az operatív részletezés (ki pontosan hajtaná végre a T1–T5-öt, törvényszöveg-minták, költségvetési hatások, végrehajtási és érvényesítési mechanizmusok, ütemezés)."
+      },
+      {
+        "en": "Some causal inferences rest on non-Hungarian studies; the package flags this uncertainty but does not supply Hungary-specific quasi-experimental evidence (necessary for decision confidence).",
+        "hu": "Néhány oksági következtetés nem magyarországi tanulmányokra épül; a csomag felhívja erre a bizonytalanságra a figyelmet, de nem szolgáltat Magyarország-specifikus kvázi-kísérleti bizonyítékot (ami döntési magabiztossághoz szükséges)."
+      },
+      {
+        "en": "Cost and fiscal impact estimates (net savings, transport offsets, staffing implications) are discussed qualitatively but absent quantitatively, limiting short-term budgeting decisions.",
+        "hu": "A költség- és fiskális hatásbecslések (nettó megtakarítások, szállítási költségkompenzációk, személyzeti következmények) kvalitatívan tárgyaltak, de hiányoznak a mennyiségi számítások, ami korlátozza a rövid távú költségvetési döntéseket."
+      },
+      {
+        "en": "Stakeholder mapping and political feasibility analysis is present in high-level form but needs concrete actor incentives and veto points (e.g., ministerial incentives, party politics, church maintainers) to be decision-operational.",
+        "hu": "Az érintetti feltérképezés és a politikai megvalósíthatósági elemzés magas szintű formában rendelkezésre áll, de hiányoznak a konkrét szereplői ösztönzők és döntési vétópontok (pl. minisztériumi ösztönzők, pártpolitikai viszonyok, egyházi fenntartók), amelyek szükségesek ahhoz, hogy a javaslat döntésvégrehajtható legyen."
+      },
+      {
+        "en": "A few referenced items use URNs or terse summaries; while auditable, the package sometimes presumes the reader will accept the cited study’s generalizability rather than unpacking key methods/limitations.",
+        "hu": "Néhány hivatkozott dokumentum URN-t vagy tömör összefoglalót használ; bár ellenőrizhetőek, a csomag időnként abból indul ki, hogy az olvasó elfogadja a hivatkozott vizsgálat általánosíthatóságát anélkül, hogy kifejtené a kulcsfontosságú módszertani sajátosságokat és korlátokat."
+      }
+    ],
+    "evaluation_ref": "EV-live-production",
+    "human_external_use_gate": "pending",
+    "package_ref": "DP-live-production",
+    "priority_research_question_refs": [
+      "RQ-live-production-01",
+      "RQ-live-production-02",
+      "RQ-live-production-03",
+      "RQ-live-production-04",
+      "RQ-live-production-05",
+      "RQ-live-production-08"
+    ],
+    "rationale": {
+      "en": "The cross-family evaluation accepted the package for human review; the external-use gate remains a human decision.",
+      "hu": "A cross-family értékelés emberi felülvizsgálatra elfogadta a csomagot; a külső felhasználás engedélyezéséről szóló döntés továbbra is emberi mérlegelés marad."
+    },
+    "unresolved_dilemma_refs": [
+      "D-live-production-01",
+      "D-live-production-02",
+      "D-live-production-03",
+      "D-live-production-04",
+      "D-live-production-05",
+      "D-live-production-06"
+    ],
+    "verdict": "ready_with_conditions"
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "DR-live-production",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "decision_readiness",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "c26cc53ea7623e1f6227bca30905ab40d451f522bc1ef4349b24876c74f312be",
+  "topic": "rural-school-closures"
+}

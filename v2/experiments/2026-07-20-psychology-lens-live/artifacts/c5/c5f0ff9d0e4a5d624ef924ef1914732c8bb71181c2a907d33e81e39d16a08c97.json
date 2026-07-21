@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assessment": {
+      "en": "This proposal most directly embodies the lens's core teaching: it explicitly treats causal attribution as a live problem requiring a pilot design, acknowledges that comprehensive-schooling gains elsewhere were confounded by simultaneous teacher-training, curriculum, and welfare reforms, and proposes pairing de-tracking with choice/zoning controls rather than isolating a single lever. This is the closest match to a 'coordinated reforms are necessary' design.",
+      "hu": "Ez a javaslat a legközvetlenebbül testesíti meg a szemlélet alapvető tanulságát: nyíltan kezeli az oksági attribúciót mint élő problémát, amely pilot-tervezést követel, elismeri, hogy máshol az átfogó iskolázás során elért nyereségeket egyidejű tanárképzési, tantervi és jóléti reformok zavarták, és azt javasolja, hogy a sávok megszüntetését választási/zónázási korlátozásokkal párosítsák ahelyett, hogy egyetlen kart különítsék el. Ez áll közelebb a 'koordinált reformok szükségesek' típusú tervezethez."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-portuguese_reform-01"
+    ],
+    "lens_ref": "L-live-portuguese_reform",
+    "opportunities": [
+      {
+        "en": "Could generate Hungary-specific causal evidence currently absent, directly responding to the lens's demand that gains not be attributed to one isolated intervention without testing",
+        "hu": "Képes lehet előállítani Magyarország-specifikus, jelenleg hiányzó ok-okozati bizonyítékot, közvetlenül reagálva a szempont követelésére, hogy a nyereségeket ne egyetlen izolált beavatkozásnak tulajdonítsák tesztelés nélkül."
+      },
+      {
+        "en": "If successful, could inform a subsequently coordinated national bundle combining T2, T3, and T4 elements",
+        "hu": "Ha sikeres, informálhat egy később koordinált, T2, T3 és T4 elemeket kombináló nemzeti csomagot."
+      }
+    ],
+    "proposal_ref": "TP-live-t6",
+    "strengths": [
+      {
+        "en": "Explicitly designed to test rather than assume causal attribution, directly addressing the lens's stated limitation about isolating single interventions",
+        "hu": "Kifejezetten úgy tervezték, hogy teszteljen, ahelyett, hogy ok-okozati hozzárendelést feltételezne; közvetlenül kezeli az elemzési lencse megfogalmazott korlátját az egyetlen beavatkozás izolálására vonatkozóan."
+      },
+      {
+        "en": "Proposes pairing de-tracking with zoning/choice controls (linking to T4), reflecting recognition that a policy bundle rather than a single lever is likely necessary",
+        "hu": "A pályák megszüntetését övezeti/választási korlátozásokkal javasolja párosítani (kapcsolódva a T4-hez), tükrözve annak felismerését, hogy valószínűleg egy politikai csomagra, nem pedig egyetlen intézkedésre van szükség."
+      },
+      {
+        "en": "Addresses the structural funnel (F-live-portuguese_reform-01) at its root rather than mitigating downstream effects",
+        "hu": "A strukturális tölcsért (F-live-portuguese_reform-01) annak gyökerénél kezeli, ahelyett hogy csak a leáramló hatásokat mérsékelné."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Institutional durability risk (cited in the proposal itself) means even a methodologically sound pilot demonstrating positive effects may not survive political reversal, echoing the lens's causal-attribution caveat: a successful pilot still would not guarantee that a national rollout replicates the same bundle of conditions",
+        "hu": "Az intézményi tartósság kockázata (amelyet maga a javaslat is hivatkozik) azt jelenti, hogy még egy módszertanilag megalapozott pilot, amely pozitív hatásokat mutat, sem feltétlenül éli túl a politikai visszafordítást; ez visszhangozza a lencse oksági attribúcióra vonatkozó figyelmeztetését: egy sikeres pilot még nem garantálja, hogy egy országos bevezetés ugyanazt a feltételcsomagot reprodukálja."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "As a regional pilot, findings may not generalize; the proposal itself flags non-representativeness of volunteer regions as a limitation on external validity",
+        "hu": "Regionális pilotként az eredmények nem feltétlenül általánosíthatók; a javaslat maga is felhívja a figyelmet az önkéntes régiók nem reprezentativitására, mint a külső érvényesség korlátjára."
+      },
+      {
+        "en": "Relies on non-Hungarian historical evidence (Finnish, Polish) for its comparative baseline rather than the supplied Hungary-specific findings, so its evidentiary anchoring to the lens findings is comparatively indirect apart from the tracking funnel finding",
+        "hu": "Nem magyar történeti bizonyítékokra támaszkodik (finn, lengyel) az összehasonlítási kiindulópontként ahelyett, hogy a rendelkezésre álló Magyarország-specifikus eredményeket használta volna, így a bizonyítékalapozása a lencse megállapításaihoz viszonyítva viszonylag indirekt, a sávos szelekciós csatorna megállapításán kívül."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t6-portuguese_reform",
+  "provenance_ref": "PV-bilingual-migration-36c604b13d4cb636",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "81224ee2e6bba8f0413c60e7030b004dd2924bde720f759d69327bd174a3285f",
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03"
+    ],
+    "claim": {
+      "en": "In the smallest settlements, school viability does not decline gradually but can reach a zero-enrollment cliff. Garab (44 residents) closed its primary school because no children remained; the last birth in that village occurred nine years prior to reporting.",
+      "hu": "A legkisebb településeken az iskolafenntarthatóság nem fokozatosan romlik, hanem előfordulhat, hogy hirtelen nullafős beiratkozási szakadék következik be. Garab (44 lakos) bezárta az általános iskoláját, mert nem maradt egyetlen gyermek sem; a településen az utolsó születés a jelentés szerint kilenc évvel korábban történt."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Single case study; does not establish systematic threshold below which closure becomes inevitable",
+        "hu": "Egyetlen esettanulmány; nem bizonyítja azt a rendszerszintű küszöböt, amely alatt a bezárás elkerülhetetlenné válik"
+      },
+      {
+        "en": "No data on whether Garab residents with school-age children migrated out or were never present to begin with",
+        "hu": "Nincs adat arról, hogy Garab lakosai, akik iskoláskorú gyermekekkel rendelkeznek, elköltöztek-e, vagy soha nem is voltak jelen"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-05"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-05",
+  "provenance_ref": "PV-bilingual-migration-b0443b073c675a0a",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "18499e6879cb967befd9a57f86d01cc1238524817d2eb7f0e48e35f8b31ebdb6",
+  "topic": "rural-school-closures"
+}

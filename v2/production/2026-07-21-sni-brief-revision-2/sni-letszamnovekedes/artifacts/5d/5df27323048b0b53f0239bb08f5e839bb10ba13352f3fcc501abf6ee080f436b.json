@@ -1,0 +1,67 @@
+{
+  "content": {
+    "assessment": {
+      "en": "A reconciled measurement architecture directly targets a foundational equity problem: without disentangling diagnostic-practice change, incentive effects, and true prevalence, distributional claims about who gains or loses access cannot be evaluated (F-live-equity_and_social_mobility-01, F-live-equity_and_social_mobility-03, F-live-equity_and_social_mobility-09). It would also let researchers test whether SNI functions as an inclusive or exclusionary sorting mechanism (F-live-equity_and_social_mobility-04) and would enable tracking of downstream tracking/placement effects that are currently an evidence gap (F-live-equity_and_social_mobility-10). Its equity value is diagnostic rather than corrective: better data does not by itself change access, though it is a necessary precursor to targeted equity remedies.",
+      "hu": "Az egységesített mérési architektúra közvetlenül egy alapvető egyenlőségi problémára céloz: diagnosztikai gyakorlatváltozás, ösztönzőhatások és a tényleges előfordulás szétválasztása nélkül az elosztási állítások arról, hogy ki nyer vagy veszít a hozzáférésben, nem értékelhetők (F-live-equity_and_social_mobility-01, F-live-equity_and_social_mobility-03, F-live-equity_and_social_mobility-09). Emellett lehetővé tenné a kutatók számára annak tesztelését, hogy az SNI inkluzív-e vagy kizáró szelekciós mechanizmusként működik (F-live-equity_and_social_mobility-04), továbbá nyomon követhetővé tenné az alatta lévő továbbkövetési/elhelyezési hatásokat, amelyek jelenleg bizonyítékhiányban vannak (F-live-equity_and_social_mobility-10). Egyenlőségi értéke inkább diagnosztikus, mint korrekciós: a jobb adatok önmagukban nem változtatnak a hozzáférésen, bár szükséges előfeltételt jelentenek a célzott egyenlőségi orvoslásokhoz."
+    },
+    "confidence": "medium",
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-01",
+      "F-live-equity_and_social_mobility-03",
+      "F-live-equity_and_social_mobility-04",
+      "F-live-equity_and_social_mobility-09",
+      "F-live-equity_and_social_mobility-10"
+    ],
+    "lens_ref": "L-live-equity_and_social_mobility",
+    "opportunities": [
+      {
+        "en": "Could enable longitudinal tracking of tracking/placement trajectories, closing the acknowledged evidence gap on distributional outcomes",
+        "hu": "Lehetővé teheti a beiskolázási/elhelyezési pályák longitudinális nyomon követését, ezzel csökkentve a megoszlási kimenetekre vonatkozó, elismert bizonyítékhiányt."
+      },
+      {
+        "en": "Provides an evidence base for evaluating Roma overrepresentation trends beyond the historical 2007-2020 window",
+        "hu": "Bizonyítékbázist nyújt a roma túlképviselet trendjeinek értékeléséhez a történelmi 2007-2020-as időszakon túl."
+      }
+    ],
+    "proposal_ref": "TP-live-t2",
+    "strengths": [
+      {
+        "en": "Addresses the well-documented fragmentation and inconsistency of SEN measurement bases that obscures who is being classified and why",
+        "hu": "Foglalkozik a jól dokumentált SEN mérési alapok fragmentáltságával és következetlenségével, amelyek elhomályosítják, hogy kit és miért sorolnak be"
+      },
+      {
+        "en": "Creates the empirical basis needed to test contested explanations (readiness rules vs diagnostic modernization) with actual policy-variation identification",
+        "hu": "Megteremti a szükséges empirikus alapot a vitatott magyarázatok (felkészültségi szabályok vs diagnosztikai modernizáció) teszteléséhez valós politikai variációk azonosításával."
+      },
+      {
+        "en": "Could surface exclusionary use of SNI status in admissions currently masked by aggregate data",
+        "hu": "Felszínre hozhatja az SNI-státusz felvételi során történő kizáró jellegű alkalmazását, amelyet jelenleg aggregált adatok takarnak."
+      }
+    ],
+    "threats": [
+      {
+        "en": "Without linked accountability or funding reform, transparency could remain symbolic while underlying sorting mechanisms persist unchanged",
+        "hu": "Ha nincs hozzá kapcsolt elszámoltathatósági vagy finanszírozási reform, az átláthatóság szimbolikus maradhat, miközben a mögöttes szelekciós mechanizmusok változatlanul fennmaradnak."
+      }
+    ],
+    "verdict": "supports_with_conditions",
+    "weaknesses": [
+      {
+        "en": "Monitoring alone does not redistribute resources or interrupt segregation-linked identification patterns",
+        "hu": "Önmagában a monitoring nem osztja újra az erőforrásokat és nem szakítja meg a szegregációhoz kötődő azonosítási mintákat."
+      },
+      {
+        "en": "Risk that politically inconvenient findings on over-identification incentives are suppressed or diluted, blunting equity value",
+        "hu": "Fennáll a kockázat, hogy a politikailag kényelmetlen megállapításokat a túl-azonosítás ösztönzőiről elnyomják vagy higítják, csökkentve ezzel az egyenlőségi értéket."
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "AS-live-t2-equity_and_social_mobility",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "lens_assessment",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "6a38e5cb7ab37c1d1570d5ab759e406f0375d4c4d45267fc3e5d433568b4a482",
+  "topic": "sni-letszamnovekedes"
+}
