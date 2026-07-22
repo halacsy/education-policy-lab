@@ -8,6 +8,7 @@ import hashlib
 import json
 import re
 import sys
+import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -20,6 +21,14 @@ sys.path.insert(0, str(ROOT / "src"))
 from policy_lab.schema_registry import SchemaRegistry  # noqa: E402
 from policy_lab.store import ArtifactRepository  # noqa: E402
 from policy_lab.jsonio import content_hash  # noqa: E402
+from policy_lab.render import (  # noqa: E402
+    PUBLIC_RECORD_TYPES,
+    canonical_url,
+    href_between,
+    record_index_route,
+    record_route,
+    topic_route,
+)
 from policy_lab.i18n import (  # noqa: E402
     BILINGUAL_VERSION, load_field_map, suspicious_identity, text,
     values_at_path,
@@ -67,6 +76,25 @@ class HungarianTextParser(HTMLParser):
     def handle_data(self, data: str) -> None:
         if not (self.skip_stack and self.skip_stack[-1]) and data.strip():
             self.text.append(" ".join(data.split()))
+
+
+class RecordPageParser(HTMLParser):
+    """Collect the identity contract and links of one generated record page."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.html_attrs: dict[str, str] = {}
+        self.canonical: str | None = None
+        self.links: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = {key: value or "" for key, value in attrs}
+        if tag == "html":
+            self.html_attrs = attributes
+        if tag == "link" and attributes.get("rel") == "canonical":
+            self.canonical = attributes.get("href")
+        if tag == "a" and attributes.get("href"):
+            self.links.append(attributes["href"])
 
 
 def flatten_messages(value: object, prefix: str = "") -> dict[str, str]:
@@ -163,6 +191,113 @@ def verify_links(site_root: Path) -> int:
                 raise AssertionError(f"Broken local link in {page}: {link}")
             checked += 1
     return checked
+
+
+def verify_canonical_record_pages(schemas: SchemaRegistry) -> tuple[int, int]:
+    """Require one stable, self-identifying page for every public semantic record."""
+
+    publication = json.loads(
+        (ROOT / "config" / "v2" / "publication.json").read_text(encoding="utf-8")
+    )
+    site_url = publication.get("site_url")
+    if not isinstance(site_url, str) or not site_url.startswith("https://"):
+        raise AssertionError("Publication manifest requires an absolute HTTPS site_url")
+
+    public_types = set(PUBLIC_RECORD_TYPES) - {"canonical_claim"}
+    expected_pages: dict[str, dict] = {}
+    expected_sitemap_routes = {"index.html"}
+    for item in publication["topics"]:
+        topic = item["topic"]
+        root = ROOT / "v2" / "production" / item["run_tag"] / topic
+        repository = ArtifactRepository(root, schemas)
+        records = repository.list()
+        records_by_id = {record["id"]: record for record in records}
+        expected_sitemap_routes.add(topic_route(topic))
+        expected_sitemap_routes.add(record_index_route(topic))
+        for record in records:
+            if record["record_type"] not in public_types:
+                continue
+            route = record_route(topic, record["record_type"], record["id"])
+            if route in expected_pages:
+                raise AssertionError(f"Two semantic records resolve to one public route: {route}")
+            expected_pages[route] = record
+            expected_sitemap_routes.add(route)
+
+        index_path = ROOT / "site" / record_index_route(topic)
+        if not index_path.exists():
+            raise AssertionError(f"Missing canonical record index: {index_path}")
+        index_parser = LinkParser()
+        index_parser.feed(index_path.read_text(encoding="utf-8"))
+        index_route = record_index_route(topic)
+        expected_index_links = {
+            href_between(index_route, route)
+            for route in expected_pages
+            if route.startswith(f"questions/{topic}/")
+        }
+        missing_index_links = expected_index_links - set(index_parser.links)
+        if missing_index_links:
+            raise AssertionError(
+                f"Canonical record index omits {len(missing_index_links)} pages for {topic}"
+            )
+
+        for route, record in list(expected_pages.items()):
+            if record["topic"] != topic:
+                continue
+            page_path = ROOT / "site" / route
+            if not page_path.exists():
+                raise AssertionError(f"Missing canonical page for {record['id']}: {route}")
+            parser = RecordPageParser()
+            parser.feed(page_path.read_text(encoding="utf-8"))
+            expected_attrs = {
+                "data-record-id": record["id"],
+                "data-record-type": record["record_type"],
+                "data-record-topic": topic,
+                "data-record-content-hash": content_hash(record),
+            }
+            for attribute, expected in expected_attrs.items():
+                if parser.html_attrs.get(attribute) != expected:
+                    raise AssertionError(
+                        f"Record identity mismatch in {route}: {attribute}"
+                    )
+            expected_canonical = canonical_url(site_url, route)
+            if parser.canonical != expected_canonical:
+                raise AssertionError(f"Wrong canonical URL in {route}: {parser.canonical}")
+
+            for reference in schemas.references(record):
+                target = records_by_id.get(reference.target_id)
+                if target is None or target["record_type"] not in public_types:
+                    continue
+                target_route = record_route(topic, target["record_type"], target["id"])
+                expected_href = href_between(route, target_route)
+                if expected_href not in parser.links:
+                    raise AssertionError(
+                        f"Typed public reference is not linked: {record['id']} -> {target['id']}"
+                    )
+
+    actual_record_routes = {
+        str(path.relative_to(ROOT / "site")).replace("\\", "/")
+        for item in publication["topics"]
+        for path in (ROOT / "site" / "questions" / item["topic"]).glob("*/*.html")
+    }
+    if actual_record_routes != set(expected_pages):
+        missing = sorted(set(expected_pages) - actual_record_routes)
+        stale = sorted(actual_record_routes - set(expected_pages))
+        raise AssertionError(f"Canonical page coverage differs: missing={missing[:3]}, stale={stale[:3]}")
+
+    sitemap_root = ET.parse(ROOT / "site" / "sitemap.xml").getroot()
+    namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    actual_sitemap = {
+        element.text for element in sitemap_root.findall("sm:url/sm:loc", namespace)
+    }
+    expected_sitemap = {
+        canonical_url(site_url, route) for route in expected_sitemap_routes
+    }
+    if actual_sitemap != expected_sitemap:
+        raise AssertionError(
+            f"Sitemap differs from publication boundary: expected {len(expected_sitemap)}, "
+            f"found {len(actual_sitemap)}"
+        )
+    return len(expected_pages), len(expected_sitemap)
 
 
 def verify_bilingual_records(records: list[dict], label: str) -> None:
@@ -484,6 +619,7 @@ def main() -> int:
         node_dir = ROOT / "v2" / "runs" / topic["run_id"] / "nodes"
         if len(list(node_dir.glob("*.json"))) != 6:
             raise AssertionError(f"Expected six node manifests for {topic['topic']}")
+    canonical_pages, sitemap_urls = verify_canonical_record_pages(schemas)
     checked_links = verify_links(ROOT / "site")
     localized_messages, localized_pages = verify_localization(ROOT / "site")
     live_artifacts, live_calls = verify_live_experiment(schemas)
@@ -492,6 +628,10 @@ def main() -> int:
     print(f"PASS graph: {len(records)} current artifacts, {len(roots)} decision roots")
     print("PASS language contract: every current semantic artifact is canonical bilingual v2.1")
     print("PASS runs: 2 topics × 6 node manifests")
+    print(
+        f"PASS canonical pages: {canonical_pages} typed records have stable URLs; "
+        f"sitemap has {sitemap_urls} exact publication URLs"
+    )
     print(f"PASS site: {checked_links} local links/assets resolved")
     print(f"PASS localization: {localized_messages} paired messages, {localized_pages} Hungarian pages free of raw UI terms")
     print(f"PASS live experiment: {live_artifacts} current artifacts, {live_calls} audited calls, position carriage green")

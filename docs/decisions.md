@@ -907,3 +907,27 @@ existing 3.1 production artifacts remain immutable and valid. The independent
 verifier recomputes both exact identity sets and critical-attrition counts for
 all future 3.2 production runs. A live 3.2 acceptance run is still required
 before replacing the currently published 3.1 results.
+
+**D-61 — Every public claim, proposal, and question has a stable semantic-ID
+URL (2026-07-22).** The public Atlas no longer exposes typed records only as
+fragments embedded in a topic dossier. Each published `finding`,
+`transformation_proposal`, `option_space_proposal`, `problem_brief_proposal`,
+`policy_question`, `problem_brief`, `research_question`, and `dilemma` receives
+one generated page under its topic and record collection. Routes use the
+language-neutral topic slug and semantic id, not mutable translated title
+text. A separate `canonical_claim` collection is reserved for architecture
+3.2; until a 3.2 run crosses the publication boundary, a finding page is the
+canonical public address of its atomic claim and does not fabricate a claim
+artifact absent from the published store.
+
+Every record page projects the exact bilingual canonical content, exposes the
+current content hash and immutable `supersedes` history, links public typed
+dependencies in both directions, and links the corresponding production audit
+view. Topic dossiers link their proposals, dilemmas, research questions, and
+evidence appendix to these pages; a per-topic record index makes the complete
+published set navigable. `config/v2/publication.json` owns the absolute Pages
+base URL. The build emits exact canonical metadata and a sitemap, while
+`verify_v2.py` derives expected page coverage from the publication stores and
+fails on missing, stale, colliding, misidentified, unlinked, or unsitemapped
+records. The pages remain a deterministic generated projection; canonical JSON
+and the publication manifest remain the source of truth.
