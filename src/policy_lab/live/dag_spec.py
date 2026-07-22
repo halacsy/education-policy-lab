@@ -7,7 +7,7 @@ from typing import Iterable
 from policy_lab.dag.spec import DagNode, DagSpec, InputBinding, RootPort
 
 
-VERSION = "3.1.0"
+VERSION = "3.2.0"
 EVIDENCE_TYPES = ("source", "finding", "assumption", "uncertainty")
 
 
@@ -147,23 +147,62 @@ def build_policy_analysis_dag(
     )
     research_ids = tuple(node.id for node in research_nodes)
 
-    option_space = _node(
-        "derive_option_space",
+    normalize_evidence = _node(
+        "normalize_evidence",
         kind="llm",
         role="generator",
-        stage="option_space",
-        title="Derive option space",
+        stage="evidence_normalization",
+        title="Normalize evidence",
         description=(
-            "Derive candidate transformation directions from the complete "
-            "fresh research record before any direction is approved."
+            "Turn atomic findings into bounded canonical claims and explicit "
+            "evidence conflicts, with an exact disposition for every finding."
         ),
-        handler="derive_option_space",
+        handler="normalize_evidence",
         inputs=(
             InputBinding("problem", (problem_source,), ("problem_brief",), maximum=1),
             InputBinding("evidence", research_ids, ("finding", "assumption", "uncertainty")),
         ),
-        outputs=("option_space_proposal",),
-        schemas=_schemas("option_space_proposal"),
+        outputs=("canonical_claim", "evidence_conflict", "coverage_ledger"),
+        schemas=_schemas("canonical_claim", "evidence_conflict", "coverage_ledger"),
+        generation_parameters=(("max_tokens", 30000),),
+    )
+    option_seeds = _node(
+        "derive_option_seeds",
+        kind="llm",
+        role="generator",
+        stage="option_seeds",
+        title="Derive option seeds",
+        description=(
+            "Derive possible change levers from normalized claims and conflicts "
+            "without yet clustering them into policy directions."
+        ),
+        handler="derive_option_seeds",
+        inputs=(
+            InputBinding("problem", (problem_source,), ("problem_brief",), maximum=1),
+            InputBinding("normalized", ("normalize_evidence",), ("canonical_claim", "evidence_conflict")),
+            InputBinding("evidence", research_ids, ("finding", "assumption", "uncertainty")),
+        ),
+        outputs=("option_seed",),
+        schemas=_schemas("option_seed"),
+        generation_parameters=(("max_tokens", 16000),),
+    )
+    option_space = _node(
+        "cluster_option_seeds",
+        kind="llm",
+        role="generator",
+        stage="option_space",
+        title="Cluster option seeds",
+        description=(
+            "Cluster the complete option-seed set into candidate directions and "
+            "record an exact disposition for every seed before human approval."
+        ),
+        handler="cluster_option_seeds",
+        inputs=(
+            InputBinding("problem", (problem_source,), ("problem_brief",), maximum=1),
+            InputBinding("seeds", ("derive_option_seeds",), ("option_seed",)),
+        ),
+        outputs=("option_space_proposal", "coverage_ledger"),
+        schemas=_schemas("option_space_proposal", "coverage_ledger"),
         generation_parameters=(("max_tokens", 12000),),
     )
     gate = _node(
@@ -178,7 +217,7 @@ def build_policy_analysis_dag(
         ),
         handler="approve_option_space",
         inputs=(
-            InputBinding("candidate", ("derive_option_space",), ("option_space_proposal",), maximum=1),
+            InputBinding("candidate", ("cluster_option_seeds",), ("option_space_proposal",), maximum=1),
         ),
         outputs=("human_gate_decision", "approved_option_space"),
         schemas=_schemas("human_gate_decision", "approved_option_space"),
@@ -199,6 +238,8 @@ def build_policy_analysis_dag(
         inputs=(
             InputBinding("problem", (problem_source,), ("problem_brief",), maximum=1),
             InputBinding("evidence", research_ids, ("finding", "assumption", "uncertainty")),
+            InputBinding("normalized", ("normalize_evidence",), ("canonical_claim", "evidence_conflict")),
+            InputBinding("option_seeds", ("derive_option_seeds",), ("option_seed",)),
             InputBinding("option_space", ("approve_option_space",), ("approved_option_space",), maximum=1),
         ),
         outputs=(
@@ -326,7 +367,8 @@ def build_policy_analysis_dag(
         version=VERSION,
         roots=tuple(roots),
         nodes=(
-            *brief_nodes, *research_nodes, option_space, gate, transformations,
+            *brief_nodes, *research_nodes, normalize_evidence, option_seeds,
+            option_space, gate, transformations,
             *assessment_nodes, dilemmas, agenda, package, evaluation, readiness,
         ),
     )

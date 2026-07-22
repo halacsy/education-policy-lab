@@ -20,9 +20,14 @@
                 "id": {"type": "string", "pattern": "^S[1-9][0-9]*$"},
                 "title": {"type": "string", "minLength": 1},
                 "scope": {"type": "string", "minLength": 1},
-                "finding_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}}
+                "finding_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}},
+                "option_seed_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^OSD-[A-Za-z0-9._-]+$"}}
               },
-              "required": ["id", "title", "scope", "finding_refs"]
+              "required": ["id", "title", "scope"],
+              "oneOf": [
+                {"required": ["finding_refs"], "not": {"required": ["option_seed_refs"]}},
+                {"required": ["option_seed_refs"], "not": {"required": ["finding_refs"]}}
+              ]
             }
           },
           "rejected_framings": {
@@ -32,9 +37,14 @@
               "properties": {
                 "framing": {"type": "string", "minLength": 1},
                 "reason": {"type": "string", "minLength": 1},
-                "finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}}
+                "finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}},
+                "option_seed_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^OSD-[A-Za-z0-9._-]+$"}}
               },
-              "required": ["framing", "reason", "finding_refs"]
+              "required": ["framing", "reason"],
+              "oneOf": [
+                {"required": ["finding_refs"], "not": {"required": ["option_seed_refs"]}},
+                {"required": ["option_seed_refs"], "not": {"required": ["finding_refs"]}}
+              ]
             }
           },
           "derivation_notice": {"type": "string", "minLength": 1}
@@ -46,7 +56,9 @@
   "x-artifact-references": [
     {"path": "/provenance_ref", "record_type": "provenance"},
     {"path": "/content/directions/*/finding_refs/*", "record_type": "finding"},
-    {"path": "/content/rejected_framings/*/finding_refs/*", "record_type": "finding"}
+    {"path": "/content/rejected_framings/*/finding_refs/*", "record_type": "finding"},
+    {"path": "/content/directions/*/option_seed_refs/*", "record_type": "option_seed"},
+    {"path": "/content/rejected_framings/*/option_seed_refs/*", "record_type": "option_seed"}
   ],
   "x-record-type": "option_space_proposal",
   "x-schema-version": "2.0.0"

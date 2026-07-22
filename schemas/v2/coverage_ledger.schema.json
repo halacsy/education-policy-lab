@@ -9,33 +9,83 @@
       "schema_version": {"const": "2.0.0"},
       "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
       "content": {
-        "type": "object", "additionalProperties": false,
-        "properties": {
-          "gate_basis": {"enum": ["approved_frames", "approved_option_space"]},
-          "entries": {
-            "type": "array", "minItems": 1,
-            "items": {
-              "type": "object", "additionalProperties": false,
-              "properties": {
-                "direction_id": {"type": "string", "pattern": "^S[0-9]+$"},
-                "direction_title": {"type": "string", "minLength": 1},
-                "status": {"const": "covered"},
-                "proposal_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"}},
-                "rationale": {"type": "string", "minLength": 1}
-              },
-              "required": ["direction_id", "direction_title", "status", "proposal_refs", "rationale"]
-            }
+        "oneOf": [
+          {
+            "type": "object", "additionalProperties": false,
+            "properties": {
+              "gate_basis": {"enum": ["approved_frames", "approved_option_space"]},
+              "entries": {"type": "array", "minItems": 1, "items": {
+                "type": "object", "additionalProperties": false,
+                "properties": {
+                  "direction_id": {"type": "string", "pattern": "^S[0-9]+$"},
+                  "direction_title": {"type": "string", "minLength": 1},
+                  "status": {"const": "covered"},
+                  "proposal_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"}},
+                  "rationale": {"type": "string", "minLength": 1}
+                },
+                "required": ["direction_id", "direction_title", "status", "proposal_refs", "rationale"]
+              }},
+              "critical_attrition_count": {"const": 0},
+              "verdict": {"const": "complete"}
+            },
+            "required": ["gate_basis", "entries", "critical_attrition_count", "verdict"]
           },
-          "critical_attrition_count": {"const": 0},
-          "verdict": {"const": "complete"}
-        },
-        "required": ["gate_basis", "entries", "critical_attrition_count", "verdict"]
+          {
+            "type": "object", "additionalProperties": false,
+            "properties": {
+              "gate_basis": {"const": "evidence_normalization"},
+              "entries": {"type": "array", "minItems": 1, "items": {
+                "type": "object", "additionalProperties": false,
+                "properties": {
+                  "finding_ref": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"},
+                  "status": {"enum": ["carried_forward", "duplicate_of", "context_only", "conflict_recorded", "assumption_only", "out_of_scope", "rejected", "needs_review"]},
+                  "canonical_claim_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CC-[A-Za-z0-9._-]+$"}},
+                  "evidence_conflict_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^EC-[A-Za-z0-9._-]+$"}},
+                  "duplicate_of_ref": {"type": ["string", "null"], "pattern": "^F-[A-Za-z0-9._-]+$"},
+                  "critical": {"type": "boolean"},
+                  "rationale": {"type": "string", "minLength": 1}
+                },
+                "required": ["finding_ref", "status", "canonical_claim_refs", "evidence_conflict_refs", "duplicate_of_ref", "critical", "rationale"]
+              }},
+              "critical_attrition_count": {"type": "integer", "minimum": 0},
+              "verdict": {"enum": ["complete", "incomplete"]}
+            },
+            "required": ["gate_basis", "entries", "critical_attrition_count", "verdict"]
+          },
+          {
+            "type": "object", "additionalProperties": false,
+            "properties": {
+              "gate_basis": {"const": "option_seed_clustering"},
+              "entries": {"type": "array", "minItems": 1, "items": {
+                "type": "object", "additionalProperties": false,
+                "properties": {
+                  "option_seed_ref": {"type": "string", "pattern": "^OSD-[A-Za-z0-9._-]+$"},
+                  "status": {"enum": ["clustered_into", "merged_with", "retained_as_counterfactual", "rejected", "out_of_scope", "human_review"]},
+                  "direction_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^S[0-9]+$"}},
+                  "merged_into_ref": {"type": ["string", "null"], "pattern": "^OSD-[A-Za-z0-9._-]+$"},
+                  "critical": {"type": "boolean"},
+                  "rationale": {"type": "string", "minLength": 1}
+                },
+                "required": ["option_seed_ref", "status", "direction_ids", "merged_into_ref", "critical", "rationale"]
+              }},
+              "critical_attrition_count": {"type": "integer", "minimum": 0},
+              "verdict": {"enum": ["complete", "incomplete"]}
+            },
+            "required": ["gate_basis", "entries", "critical_attrition_count", "verdict"]
+          }
+        ]
       }
     }}
   ],
   "x-artifact-references": [
     {"path": "/provenance_ref", "record_type": "provenance"},
-    {"path": "/content/entries/*/proposal_refs/*", "record_type": "transformation_proposal"}
+    {"path": "/content/entries/*/proposal_refs/*", "record_type": "transformation_proposal"},
+    {"path": "/content/entries/*/finding_ref", "record_type": "finding"},
+    {"path": "/content/entries/*/canonical_claim_refs/*", "record_type": "canonical_claim"},
+    {"path": "/content/entries/*/evidence_conflict_refs/*", "record_type": "evidence_conflict"},
+    {"path": "/content/entries/*/duplicate_of_ref", "record_type": "finding"},
+    {"path": "/content/entries/*/option_seed_ref", "record_type": "option_seed"},
+    {"path": "/content/entries/*/merged_into_ref", "record_type": "option_seed"}
   ],
   "x-record-type": "coverage_ledger",
   "x-schema-version": "2.0.0"

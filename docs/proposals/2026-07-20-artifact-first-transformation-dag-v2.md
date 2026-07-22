@@ -910,7 +910,9 @@ substantive claims; it may only select, order, and link existing records.
 1. The system decomposes the problem into research questions.
 2. Research nodes run in parallel according to the lens catalog.
 3. Every search is captured in a `SourceSnapshot`.
-4. Research produces findings, assumptions, uncertainties, and option seeds.
+4. Research produces findings, assumptions, and uncertainties.
+5. A separate normalized-evidence layer derives option seeds only after every
+   finding has an explicit disposition.
 
 ### 15.3 Evidence normalization
 
@@ -1809,7 +1811,7 @@ V2 is ready for its first public release when:
 - [ ] the schema registry is versioned and every schema change has an explicit
   migration;
 - [x] graph verification enforces reference integrity and lifecycle rules;
-- [ ] every finding and option seed has a coverage-ledger disposition;
+- [x] every finding and option seed has a coverage-ledger disposition (D-60);
 - [x] there is no expert position, holder majority, or modeled stakeholder
   voice;
 - [x] educational psychology and multiple other lenses operate successfully;

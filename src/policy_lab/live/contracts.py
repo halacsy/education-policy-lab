@@ -95,9 +95,147 @@ def option_space_output(finding_ids: list[str]) -> dict[str, Any]:
     }
 
 
-def transformation_output(finding_ids: list[str], direction_ids: list[str] | None = None) -> dict[str, Any]:
-    direction_ids = direction_ids or []
+def evidence_normalization_output(
+    finding_ids: list[str], assumption_ids: list[str], uncertainty_ids: list[str]
+) -> dict[str, Any]:
+    """Normalize atomic findings without allowing any finding to disappear."""
+
+    finding_ref = {"type": "string", "enum": finding_ids}
+    assumption_ref = {"type": "string", "enum": assumption_ids}
+    uncertainty_ref = {"type": "string", "enum": uncertainty_ids}
     return {
+        "type": "object", "additionalProperties": False,
+        "properties": {
+            "claims": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "key": {"type": "string", "pattern": "^C[1-9][0-9]*$"},
+                    "statement": TEXT,
+                    "claim_type": {"type": "string", "enum": ["descriptive", "causal", "mechanistic", "forecasting"]},
+                    "population": TEXT, "context": TEXT, "time_scope": TEXT,
+                    "evidence_strength": STRENGTH,
+                    "transferability": {"type": "string", "enum": ["direct", "conditional", "analogy_only", "not_transferable"]},
+                    "supporting_finding_refs": array(finding_ref, 1, 30),
+                    "contradicting_finding_refs": array(finding_ref, 0, 30),
+                    "assumption_refs": array(assumption_ref, 0, 20),
+                    "uncertainty_refs": array(uncertainty_ref, 0, 20),
+                },
+                "required": ["key", "statement", "claim_type", "population", "context", "time_scope", "evidence_strength", "transferability", "supporting_finding_refs", "contradicting_finding_refs", "assumption_refs", "uncertainty_refs"],
+            }, 1, 60),
+            "conflicts": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "key": {"type": "string", "pattern": "^E[1-9][0-9]*$"},
+                    "title": TEXT,
+                    "conflict_type": {"type": "string", "enum": ["direct_contradiction", "context_dependence", "measurement_difference", "temporal_change", "causal_interpretation", "population_difference", "transferability"]},
+                    "description": TEXT,
+                    "resolvability": {"type": "string", "enum": ["answerable_now", "requires_new_data", "context_specific", "not_empirically_resolvable"]},
+                    "research_question": TEXT, "decision_relevance": TEXT,
+                    "finding_refs": array(finding_ref, 1, 20),
+                    "claim_keys": array({"type": "string", "pattern": "^C[1-9][0-9]*$"}, 1, 10),
+                },
+                "required": ["key", "title", "conflict_type", "description", "resolvability", "research_question", "decision_relevance", "finding_refs", "claim_keys"],
+            }, 0, 30),
+            "coverage": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "finding_ref": finding_ref,
+                    "status": {"type": "string", "enum": ["carried_forward", "duplicate_of", "context_only", "conflict_recorded", "assumption_only", "out_of_scope", "rejected", "needs_review"]},
+                    "claim_keys": array({"type": "string", "pattern": "^C[1-9][0-9]*$"}, 0, 20),
+                    "conflict_keys": array({"type": "string", "pattern": "^E[1-9][0-9]*$"}, 0, 20),
+                    "duplicate_of_refs": array(finding_ref, 0, 1),
+                    "critical": {"type": "boolean"},
+                    "rationale": TEXT,
+                },
+                "required": ["finding_ref", "status", "claim_keys", "conflict_keys", "duplicate_of_refs", "critical", "rationale"],
+            }, len(finding_ids), len(finding_ids)),
+        },
+        "required": ["claims", "conflicts", "coverage"],
+    }
+
+
+def option_seed_output(
+    claim_ids: list[str], conflict_ids: list[str], finding_ids: list[str],
+    assumption_ids: list[str], uncertainty_ids: list[str],
+) -> dict[str, Any]:
+    """Provider contract for evidence-derived levers before clustering."""
+
+    conflict_ref = (
+        {"type": "string", "enum": conflict_ids}
+        if conflict_ids
+        else {"type": "string", "pattern": "^EC-[A-Za-z0-9._-]+$"}
+    )
+    return {
+        "type": "object", "additionalProperties": False,
+        "properties": {
+            "seeds": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "key": {"type": "string", "pattern": "^O[1-9][0-9]*$"},
+                    "title": TEXT, "system_problem": TEXT, "change_lever": TEXT,
+                    "scope": TEXT,
+                    "seed_type": {"type": "string", "enum": ["structural", "regulatory", "funding", "organizational", "practice", "information", "counterfactual"]},
+                    "canonical_claim_refs": array({"type": "string", "enum": claim_ids}, 1, 20),
+                    "evidence_conflict_refs": array(conflict_ref, 0, 10),
+                    "finding_refs": array({"type": "string", "enum": finding_ids}, 1, 30),
+                    "assumption_refs": array({"type": "string", "enum": assumption_ids}, 0, 20),
+                    "uncertainty_refs": array({"type": "string", "enum": uncertainty_ids}, 0, 20),
+                },
+                "required": ["key", "title", "system_problem", "change_lever", "scope", "seed_type", "canonical_claim_refs", "evidence_conflict_refs", "finding_refs", "assumption_refs", "uncertainty_refs"],
+            }, 4, 20),
+        },
+        "required": ["seeds"],
+    }
+
+
+def clustered_option_space_output(seed_ids: list[str]) -> dict[str, Any]:
+    """Cluster every option seed into a bounded candidate option space."""
+
+    seed_ref = {"type": "string", "enum": seed_ids}
+    return {
+        "type": "object", "additionalProperties": False,
+        "properties": {
+            "directions": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "id": {"type": "string", "pattern": "^S[1-7]$"},
+                    "title": TEXT, "scope": TEXT,
+                    "option_seed_refs": array(seed_ref, 1, 20),
+                },
+                "required": ["id", "title", "scope", "option_seed_refs"],
+            }, 2, 7),
+            "rejected_framings": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "framing": TEXT, "reason": TEXT,
+                    "option_seed_refs": array(seed_ref, 0, 20),
+                },
+                "required": ["framing", "reason", "option_seed_refs"],
+            }, 1, 7),
+            "coverage": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "option_seed_ref": seed_ref,
+                    "status": {"type": "string", "enum": ["clustered_into", "merged_with", "retained_as_counterfactual", "rejected", "out_of_scope", "human_review"]},
+                    "direction_ids": array({"type": "string", "pattern": "^S[1-7]$"}, 0, 7),
+                    "merged_into_refs": array(seed_ref, 0, 1),
+                    "critical": {"type": "boolean"},
+                    "rationale": TEXT,
+                },
+                "required": ["option_seed_ref", "status", "direction_ids", "merged_into_refs", "critical", "rationale"],
+            }, len(seed_ids), len(seed_ids)),
+        },
+        "required": ["directions", "rejected_framings", "coverage"],
+    }
+
+
+def transformation_output(
+    finding_ids: list[str], direction_ids: list[str] | None = None,
+    canonical_claim_ids: list[str] | None = None,
+) -> dict[str, Any]:
+    direction_ids = direction_ids or []
+    canonical_claim_ids = canonical_claim_ids or []
+    contract = {
         "type": "object", "additionalProperties": False,
         "properties": {
             "proposals": array({
@@ -134,6 +272,13 @@ def transformation_output(finding_ids: list[str], direction_ids: list[str] | Non
         },
         "required": ["proposals", "coverage"],
     }
+    if canonical_claim_ids:
+        proposal = contract["properties"]["proposals"]["items"]
+        proposal["properties"]["canonical_claim_refs"] = array(
+            {"type": "string", "enum": canonical_claim_ids}, 1, 20
+        )
+        proposal["required"].append("canonical_claim_refs")
+    return contract
 
 
 def assessment_output(proposal_ids: list[str], finding_ids: list[str]) -> dict[str, Any]:

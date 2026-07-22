@@ -1,0 +1,39 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/option_seed.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^OSD-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "option_seed"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "title": {"type": "string", "minLength": 1},
+          "system_problem": {"type": "string", "minLength": 1},
+          "change_lever": {"type": "string", "minLength": 1},
+          "scope": {"type": "string", "minLength": 1},
+          "seed_type": {"enum": ["structural", "regulatory", "funding", "organizational", "practice", "information", "counterfactual"]},
+          "canonical_claim_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^CC-[A-Za-z0-9._-]+$"}},
+          "evidence_conflict_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^EC-[A-Za-z0-9._-]+$"}},
+          "finding_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}},
+          "assumption_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^A-[A-Za-z0-9._-]+$"}},
+          "uncertainty_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^U-[A-Za-z0-9._-]+$"}}
+        },
+        "required": ["title", "system_problem", "change_lever", "scope", "seed_type", "canonical_claim_refs", "evidence_conflict_refs", "finding_refs", "assumption_refs", "uncertainty_refs"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/canonical_claim_refs/*", "record_type": "canonical_claim"},
+    {"path": "/content/evidence_conflict_refs/*", "record_type": "evidence_conflict"},
+    {"path": "/content/finding_refs/*", "record_type": "finding"},
+    {"path": "/content/assumption_refs/*", "record_type": "assumption"},
+    {"path": "/content/uncertainty_refs/*", "record_type": "uncertainty"}
+  ],
+  "x-record-type": "option_seed",
+  "x-schema-version": "2.0.0"
+}

@@ -22,6 +22,7 @@
           "equity_impact": {"type": "string", "minLength": 1},
           "evidence_status": {"enum": ["strong", "moderate", "weak", "contested", "unknown"]},
           "finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}},
+          "canonical_claim_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CC-[A-Za-z0-9._-]+$"}},
           "assumption_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^A-[A-Za-z0-9._-]+$"}},
           "uncertainty_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^U-[A-Za-z0-9._-]+$"}},
           "legacy_scenario_id": {"type": "string", "pattern": "^S[0-9]+$"},
@@ -34,6 +35,7 @@
   "x-artifact-references": [
     {"path": "/provenance_ref", "record_type": "provenance"},
     {"path": "/content/finding_refs/*", "record_type": "finding"},
+    {"path": "/content/canonical_claim_refs/*", "record_type": "canonical_claim"},
     {"path": "/content/assumption_refs/*", "record_type": "assumption"},
     {"path": "/content/uncertainty_refs/*", "record_type": "uncertainty"}
   ],

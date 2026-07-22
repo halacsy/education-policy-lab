@@ -262,19 +262,51 @@ class ArtifactDagRunner:
             outputs[node_id] = refs
             self._report_node(run_dir, node_id)
 
-        node_id = "derive_option_space"
+        node_id = "normalize_evidence"
         node = plan.node(node_id)
         inputs = plan.resolve_inputs(node_id, outputs)
-        option_refs = executor.run(
+        normalized_refs = executor.run(
             node.node_spec(),
             inputs=inputs,
             relevant_config=common_config,
             provider=node.provider,
             model=node.model,
             generation_parameters=dict(node.generation_parameters),
-            prompt_hash=self._contract_hash("derive_option_space_v1"),
-            builder=lambda pv: self._option_space_records(
+            prompt_hash=self._contract_hash("normalize_evidence_v1"),
+            builder=lambda pv: self._normalize_evidence_records(
                 inputs["problem"][0], inputs["evidence"], pv,
+                node=node_id, run_dir=run_dir, arm=arm,
+            ),
+        )
+        outputs[node_id] = normalized_refs
+        self._report_node(run_dir, node_id)
+
+        node_id = "derive_option_seeds"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        seed_refs = executor.run(
+            node.node_spec(), inputs=inputs, relevant_config=common_config,
+            provider=node.provider, model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("derive_option_seeds_v1"),
+            builder=lambda pv: self._option_seed_records(
+                inputs["problem"][0], inputs["normalized"], inputs["evidence"], pv,
+                node=node_id, run_dir=run_dir, arm=arm,
+            ),
+        )
+        outputs[node_id] = seed_refs
+        self._report_node(run_dir, node_id)
+
+        node_id = "cluster_option_seeds"
+        node = plan.node(node_id)
+        inputs = plan.resolve_inputs(node_id, outputs)
+        option_refs = executor.run(
+            node.node_spec(), inputs=inputs, relevant_config=common_config,
+            provider=node.provider, model=node.model,
+            generation_parameters=dict(node.generation_parameters),
+            prompt_hash=self._contract_hash("cluster_option_seeds_v1"),
+            builder=lambda pv: self._cluster_option_seed_records(
+                inputs["problem"][0], inputs["seeds"], pv,
                 node=node_id, run_dir=run_dir, arm=arm,
             ),
         )
@@ -314,6 +346,10 @@ class ArtifactDagRunner:
         finding_refs = tuple(
             ref for ref in inputs["evidence"] if ref.record_type == "finding"
         )
+        canonical_claim_refs = tuple(
+            ref for ref in inputs["normalized"]
+            if ref.record_type == "canonical_claim"
+        )
         transformation_refs = executor.run(
             node.node_spec(),
             inputs=inputs,
@@ -325,6 +361,7 @@ class ArtifactDagRunner:
             builder=lambda pv: self._transformation_records(
                 finding_refs, pv, node=node_id, run_dir=run_dir, arm=arm,
                 problem=problem, option_space=approved,
+                canonical_claim_refs=canonical_claim_refs,
             ),
         )
         outputs[node_id] = transformation_refs
@@ -1353,17 +1390,314 @@ Produce 2-7 materially distinct direction families with sequential ids S1..Sn. E
             },
         )]
 
+    def _normalize_evidence_records(
+        self,
+        problem_ref: ArtifactRef,
+        evidence_refs: tuple[ArtifactRef, ...],
+        provenance: str,
+        *,
+        node: str,
+        run_dir: Path,
+        arm: str,
+    ) -> list[dict[str, Any]]:
+        """Create bounded claims and conflicts with exact finding coverage."""
+
+        problem = self.repository.get_by_hash(problem_ref.content_hash)["content"]
+        by_type = {
+            record_type: [
+                self.repository.get_by_hash(ref.content_hash)
+                for ref in evidence_refs if ref.record_type == record_type
+            ]
+            for record_type in ("finding", "assumption", "uncertainty")
+        }
+        digest = "\n".join(
+            f"- {record['id']} [{record['content']['evidence_strength']}]: "
+            f"{self._english(record['content']['claim'])} | "
+            f"population={self._english(record['content']['population'])}; "
+            f"context={self._english(record['content']['context'])}; "
+            f"time={self._english(record['content']['time_scope'])}"
+            for record in by_type["finding"]
+        )
+        prompt = self._header("normalize_evidence", "evidence_normalizer") + f"""
+Normalize the complete atomic finding set for this approved problem. Merge only genuinely equivalent claims. Preserve population, context, time, method, causal status, transferability, and evidence strength. Record contradictions and apparent contradictions explicitly; do not average them away.
+
+PUBLIC QUESTION: {self._english(problem['public_question'])}
+PROBLEM: {self._english(problem['problem_statement'])}
+
+FINDINGS:
+{digest}
+
+Produce sequential claim keys C1..Cn and conflict keys E1..En. A conflict must cite at least two findings. Return exactly one coverage entry for every supplied finding id and no others. Every claim or conflict reference must be mirrored in that finding's coverage entry. `carried_forward` requires a claim; `conflict_recorded` requires a conflict; `duplicate_of` requires exactly one different finding. A critical finding may not be rejected, placed out of scope, or left for review. No expert identity or authority is part of the normalized claim.
+"""
+        finding_ids = [record["id"] for record in by_type["finding"]]
+        result = self._call_structured_counted(
+            prompt,
+            contracts.evidence_normalization_output(
+                finding_ids,
+                [record["id"] for record in by_type["assumption"]],
+                [record["id"] for record in by_type["uncertainty"]],
+            ),
+            role="generator", max_tokens=30000, arm=arm, node=node,
+            run_dir=run_dir, suffix="generate",
+            constraints={
+                "claims": (1, 60), "conflicts": (0, 30),
+                "coverage": (len(finding_ids), len(finding_ids)),
+            },
+        )
+        claims = result["claims"]
+        conflicts = result["conflicts"]
+        claim_keys = [item["key"] for item in claims]
+        conflict_keys = [item["key"] for item in conflicts]
+        if claim_keys != [f"C{i}" for i in range(1, len(claims) + 1)]:
+            raise ValueError(f"Canonical claim keys must be sequential: {claim_keys}")
+        if conflict_keys != [f"E{i}" for i in range(1, len(conflicts) + 1)]:
+            raise ValueError(f"Evidence conflict keys must be sequential: {conflict_keys}")
+        coverage = {entry["finding_ref"]: entry for entry in result["coverage"]}
+        if len(coverage) != len(result["coverage"]) or set(coverage) != set(finding_ids):
+            raise ValueError(
+                "Finding coverage must contain every input exactly once: "
+                f"expected={sorted(finding_ids)}, got={sorted(coverage)}"
+            )
+        known_claims = set(claim_keys)
+        known_conflicts = set(conflict_keys)
+        for entry in coverage.values():
+            unknown_claims = set(entry["claim_keys"]) - known_claims
+            unknown_conflicts = set(entry["conflict_keys"]) - known_conflicts
+            if unknown_claims or unknown_conflicts:
+                raise ValueError(
+                    f"Coverage {entry['finding_ref']} cites unknown normalized outputs"
+                )
+            if entry["status"] == "carried_forward" and not entry["claim_keys"]:
+                raise ValueError(f"{entry['finding_ref']} is carried forward without a claim")
+            if entry["status"] == "conflict_recorded" and not entry["conflict_keys"]:
+                raise ValueError(f"{entry['finding_ref']} records no conflict")
+            if entry["status"] == "duplicate_of" and (
+                len(entry["duplicate_of_refs"]) != 1
+                or entry["duplicate_of_refs"][0] == entry["finding_ref"]
+            ):
+                raise ValueError(f"{entry['finding_ref']} has an invalid duplicate disposition")
+            if entry["critical"] and entry["status"] in {"rejected", "out_of_scope", "needs_review"}:
+                raise ValueError(f"Critical finding attrition at {entry['finding_ref']}")
+        for claim in claims:
+            for finding_id in set(claim["supporting_finding_refs"] + claim["contradicting_finding_refs"]):
+                if claim["key"] not in coverage[finding_id]["claim_keys"]:
+                    raise ValueError(f"Coverage omits {claim['key']} for {finding_id}")
+        for conflict in conflicts:
+            self._require_count(conflict["finding_refs"], 2, 20, f"{conflict['key']}.finding_refs")
+            unknown = set(conflict["claim_keys"]) - known_claims
+            if unknown:
+                raise ValueError(f"{conflict['key']} cites unknown claims: {sorted(unknown)}")
+            for finding_id in conflict["finding_refs"]:
+                if conflict["key"] not in coverage[finding_id]["conflict_keys"]:
+                    raise ValueError(f"Coverage omits {conflict['key']} for {finding_id}")
+
+        claim_ids = {item["key"]: f"CC-live-{item['key'].lower()}" for item in claims}
+        conflict_ids = {item["key"]: f"EC-live-{item['key'].lower()}" for item in conflicts}
+        records: list[dict[str, Any]] = []
+        for item in claims:
+            records.append(self._record(claim_ids[item["key"]], "canonical_claim", provenance, {
+                key: value for key, value in item.items() if key != "key"
+            }))
+        for item in conflicts:
+            records.append(self._record(conflict_ids[item["key"]], "evidence_conflict", provenance, {
+                **{key: value for key, value in item.items() if key not in {"key", "claim_keys"}},
+                "canonical_claim_refs": [claim_ids[key] for key in item["claim_keys"]],
+            }))
+        records.append(self._record("CL-live-evidence-normalization", "coverage_ledger", provenance, {
+            "gate_basis": "evidence_normalization",
+            "entries": [
+                {
+                    "finding_ref": entry["finding_ref"],
+                    "status": entry["status"],
+                    "canonical_claim_refs": [claim_ids[key] for key in entry["claim_keys"]],
+                    "evidence_conflict_refs": [conflict_ids[key] for key in entry["conflict_keys"]],
+                    "duplicate_of_ref": entry["duplicate_of_refs"][0] if entry["duplicate_of_refs"] else None,
+                    "critical": entry["critical"],
+                    "rationale": entry["rationale"],
+                }
+                for entry in result["coverage"]
+            ],
+            "critical_attrition_count": 0,
+            "verdict": "complete",
+        }))
+        return records
+
+    def _option_seed_records(
+        self, problem_ref: ArtifactRef, normalized_refs: tuple[ArtifactRef, ...],
+        evidence_refs: tuple[ArtifactRef, ...], provenance: str, *, node: str,
+        run_dir: Path, arm: str,
+    ) -> list[dict[str, Any]]:
+        """Derive unclustered possible change levers from normalized evidence."""
+
+        problem = self.repository.get_by_hash(problem_ref.content_hash)["content"]
+        records = [self.repository.get_by_hash(ref.content_hash) for ref in normalized_refs]
+        claims = [record for record in records if record["record_type"] == "canonical_claim"]
+        conflicts = [record for record in records if record["record_type"] == "evidence_conflict"]
+        evidence = [self.repository.get_by_hash(ref.content_hash) for ref in evidence_refs]
+        claim_digest = "\n".join(
+            f"- {record['id']} [{record['content']['evidence_strength']}]: {self._english(record['content']['statement'])}"
+            for record in claims
+        )
+        conflict_digest = "\n".join(
+            f"- {record['id']} [{record['content']['resolvability']}]: {self._english(record['content']['description'])}"
+            for record in conflicts
+        ) or "- None recorded"
+        prompt = self._header("derive_option_seeds", "option_seed_architect") + f"""
+Derive 4-20 possible education-system change levers from the normalized evidence. These are option seeds, not recommendations and not yet clustered policy directions. Include a counterfactual seed when decision-relevant. Keep empirical support, assumptions, uncertainties, and evidence conflicts explicit. Do not use knowledge outside the supplied artifacts.
+
+PUBLIC QUESTION: {self._english(problem['public_question'])}
+CANONICAL CLAIMS:
+{claim_digest}
+
+EVIDENCE CONFLICTS:
+{conflict_digest}
+
+Return sequential keys O1..On. Every seed must cite at least one canonical claim and one underlying finding.
+"""
+        by_type = {
+            record_type: [record["id"] for record in evidence if record["record_type"] == record_type]
+            for record_type in ("finding", "assumption", "uncertainty")
+        }
+        result = self._call_structured_counted(
+            prompt, contracts.option_seed_output(
+                [record["id"] for record in claims],
+                [record["id"] for record in conflicts],
+                by_type["finding"], by_type["assumption"], by_type["uncertainty"],
+            ),
+            role="generator", max_tokens=16000, arm=arm, node=node,
+            run_dir=run_dir, suffix="generate", constraints={"seeds": (4, 20)},
+        )
+        keys = [item["key"] for item in result["seeds"]]
+        if keys != [f"O{i}" for i in range(1, len(keys) + 1)]:
+            raise ValueError(f"Option seed keys must be sequential: {keys}")
+        allowed_refs = {
+            "canonical_claim_refs": {record["id"] for record in claims},
+            "evidence_conflict_refs": {record["id"] for record in conflicts},
+            "finding_refs": set(by_type["finding"]),
+            "assumption_refs": set(by_type["assumption"]),
+            "uncertainty_refs": set(by_type["uncertainty"]),
+        }
+        for item in result["seeds"]:
+            for field, allowed in allowed_refs.items():
+                unknown = set(item[field]) - allowed
+                if unknown:
+                    raise ValueError(
+                        f"Option seed {item['key']} cites unknown {field}: "
+                        f"{sorted(unknown)}"
+                    )
+        return [
+            self._record(f"OSD-live-{item['key'].lower()}", "option_seed", provenance, {
+                key: value for key, value in item.items() if key != "key"
+            })
+            for item in result["seeds"]
+        ]
+
+    def _cluster_option_seed_records(
+        self, problem_ref: ArtifactRef, seed_refs: tuple[ArtifactRef, ...],
+        provenance: str, *, node: str, run_dir: Path, arm: str,
+    ) -> list[dict[str, Any]]:
+        """Cluster option seeds and prove that none disappeared silently."""
+
+        problem = self.repository.get_by_hash(problem_ref.content_hash)["content"]
+        seeds = [self.repository.get_by_hash(ref.content_hash) for ref in seed_refs]
+        digest = "\n".join(
+            f"- {record['id']} [{record['content']['seed_type']}]: "
+            f"{self._english(record['content']['title'])} — {self._english(record['content']['scope'])}"
+            for record in seeds
+        )
+        prompt = self._header("cluster_option_seeds", "option_space_architect") + f"""
+Cluster the complete option-seed set into 2-7 materially distinct candidate directions. This remains a pre-approval option-space proposal, not a recommendation. Preserve counterfactuals and meaningful minority directions. Return one exact disposition for every option seed and no others; critical seeds may not be rejected, placed out of scope, or left for human review.
+
+PUBLIC QUESTION: {self._english(problem['public_question'])}
+OPTION SEEDS:
+{digest}
+
+Use sequential direction ids S1..Sn. `clustered_into` and `retained_as_counterfactual` require at least one direction id. `merged_with` requires exactly one different seed. Every direction must cite its seed artifacts. Record at least one considered-but-rejected framing.
+"""
+        seed_ids = [record["id"] for record in seeds]
+        result = self._call_structured_counted(
+            prompt, contracts.clustered_option_space_output(seed_ids),
+            role="generator", max_tokens=12000, arm=arm, node=node,
+            run_dir=run_dir, suffix="generate",
+            constraints={
+                "directions": (2, 7), "rejected_framings": (1, 7),
+                "coverage": (len(seed_ids), len(seed_ids)),
+            },
+        )
+        direction_ids = [item["id"] for item in result["directions"]]
+        if direction_ids != [f"S{i}" for i in range(1, len(direction_ids) + 1)]:
+            raise ValueError(f"Option-space direction ids must be sequential: {direction_ids}")
+        coverage = {entry["option_seed_ref"]: entry for entry in result["coverage"]}
+        if len(coverage) != len(result["coverage"]) or set(coverage) != set(seed_ids):
+            raise ValueError(
+                "Option-seed coverage must contain every seed exactly once: "
+                f"expected={sorted(seed_ids)}, got={sorted(coverage)}"
+            )
+        known_directions = set(direction_ids)
+        for entry in coverage.values():
+            if set(entry["direction_ids"]) - known_directions:
+                raise ValueError(f"{entry['option_seed_ref']} cites an unknown direction")
+            if entry["status"] in {"clustered_into", "retained_as_counterfactual"} and not entry["direction_ids"]:
+                raise ValueError(f"{entry['option_seed_ref']} is retained without a direction")
+            if entry["status"] == "merged_with" and (
+                len(entry["merged_into_refs"]) != 1
+                or entry["merged_into_refs"][0] == entry["option_seed_ref"]
+            ):
+                raise ValueError(f"{entry['option_seed_ref']} has an invalid merge disposition")
+            if entry["critical"] and entry["status"] in {"rejected", "out_of_scope", "human_review"}:
+                raise ValueError(f"Critical option-seed attrition at {entry['option_seed_ref']}")
+        for direction in result["directions"]:
+            for seed_id in direction["option_seed_refs"]:
+                if direction["id"] not in coverage[seed_id]["direction_ids"]:
+                    raise ValueError(f"Coverage omits {direction['id']} for {seed_id}")
+
+        proposal = self._record(f"OS-live-{self.topic}", "option_space_proposal", provenance, {
+            "directions": result["directions"],
+            "rejected_framings": result["rejected_framings"],
+            "derivation_notice": localized(
+                "Clustered only from the complete option-seed artifacts declared by the run plan; pending an explicit human gate.",
+                "Kizárólag a futási tervben deklarált teljes opciómag-készletből klaszterezve; explicit emberi kapudöntésre vár.",
+            ),
+        })
+        ledger = self._record("CL-live-option-seeds", "coverage_ledger", provenance, {
+            "gate_basis": "option_seed_clustering",
+            "entries": [
+                {
+                    "option_seed_ref": entry["option_seed_ref"],
+                    "status": entry["status"],
+                    "direction_ids": entry["direction_ids"],
+                    "merged_into_ref": entry["merged_into_refs"][0] if entry["merged_into_refs"] else None,
+                    "critical": entry["critical"],
+                    "rationale": entry["rationale"],
+                }
+                for entry in result["coverage"]
+            ],
+            "critical_attrition_count": 0,
+            "verdict": "complete",
+        })
+        return [proposal, ledger]
+
     def _transformation_records(
         self, finding_refs: tuple[ArtifactRef, ...], provenance: str, *,
         node: str, run_dir: Path, arm: str,
         problem: dict[str, Any] | None = None,
         option_space: dict[str, Any] | None = None,
+        canonical_claim_refs: tuple[ArtifactRef, ...] = (),
     ) -> list[dict[str, Any]]:
         findings = [self.repository.get_by_hash(ref.content_hash) for ref in finding_refs]
         digest = "\n".join(
             f"- {record['id']} [{record['content']['evidence_strength']}; {', '.join(record['content']['domain_tags'])}]: {self._english(record['content']['claim'])}"
             for record in findings
         )
+        normalized_claims = [
+            self.repository.get_by_hash(ref.content_hash)
+            for ref in canonical_claim_refs
+        ]
+        normalized_digest = "\n".join(
+            f"- {record['id']} [{record['content']['evidence_strength']}]: "
+            f"{self._english(record['content']['statement'])}"
+            for record in normalized_claims
+        ) or "- No canonical-claim layer is available in this legacy run."
         problem = problem or self.topic_data["problem_brief"]
         frames = option_space["directions"] if option_space else self.topic_data["frames"]["scenarios"]
         frame_digest = "\n".join(
@@ -1380,14 +1714,18 @@ SCOPE: {self._english(problem['scope'])}
 EVIDENCE RECORD:
 {digest}
 
+NORMALIZED CLAIMS:
+{normalized_digest}
+
 HUMAN-APPROVED COVERAGE DIRECTIONS:
 {frame_digest}
 
-Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a content-retention gate, not titles that must be copied: every S-id must map to at least one substantive proposal, while proposals may cover multiple directions or add a genuinely new direction. Include an explicit no-new-policy or passive-change counterfactual when decision-relevant. Every empirical mechanism must cite finding ids. Keep evidence, assumptions, uncertainties, value choices, and implementation steps separate. Do not attribute content to experts. Do not use knowledge outside the supplied findings. Each family may contain one proposal in this first live slice, but its system problem, lever, and boundary must be explicit. Return one coverage entry for every S-id and no others.
+Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a content-retention gate, not titles that must be copied: every S-id must map to at least one substantive proposal, while proposals may cover multiple directions or add a genuinely new direction. Include an explicit no-new-policy or passive-change counterfactual when decision-relevant. Every empirical mechanism must cite finding ids. When normalized claims are available, every proposal must also cite at least one supplied canonical-claim id. Keep evidence, assumptions, uncertainties, value choices, and implementation steps separate. Do not attribute content to experts. Do not use knowledge outside the supplied findings. Each family may contain one proposal in this first live slice, but its system problem, lever, and boundary must be explicit. Return one coverage entry for every S-id and no others.
 """
         result = self._call_structured_counted(
             prompt, contracts.transformation_output(
-                [ref.id for ref in finding_refs], [frame["id"] for frame in frames]
+                [ref.id for ref in finding_refs], [frame["id"] for frame in frames],
+                [ref.id for ref in canonical_claim_refs],
             ),
             role="generator", max_tokens=30000, arm=arm, node=node,
             run_dir=run_dir, suffix="generate", constraints={
@@ -1397,6 +1735,9 @@ Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a 
                 ("proposals", "mechanisms"): (2, 5),
                 ("proposals", "implementation_steps"): (2, 6),
                 ("proposals", "finding_refs"): (2, 20),
+                ("proposals", "canonical_claim_refs"): (
+                    1 if canonical_claim_refs else 0, 20
+                ),
             },
         )
         proposals = sorted(result["proposals"], key=lambda item: int(item["key"][1:]))
@@ -1445,6 +1786,10 @@ Produce 4-6 materially distinct proposals T1..Tn. The approved directions are a 
                 "expected_benefits": item["expected_benefits"], "costs": item["costs"],
                 "risks": item["risks"], "equity_impact": item["equity_impact"],
                 "evidence_status": item["evidence_status"], "finding_refs": item["finding_refs"],
+                **(
+                    {"canonical_claim_refs": item["canonical_claim_refs"]}
+                    if canonical_claim_refs else {}
+                ),
                 "assumption_refs": assumption_ids, "uncertainty_refs": uncertainty_ids,
                 "origin": "live_generation",
             }))
@@ -2327,6 +2672,18 @@ Score only what is visible. Treat an inline finding id as auditable only when th
             "derive_option_space_v1": (
                 cls._option_space_records,
                 contracts.option_space_output,
+            ),
+            "normalize_evidence_v1": (
+                cls._normalize_evidence_records,
+                contracts.evidence_normalization_output,
+            ),
+            "derive_option_seeds_v1": (
+                cls._option_seed_records,
+                contracts.option_seed_output,
+            ),
+            "cluster_option_seeds_v1": (
+                cls._cluster_option_seed_records,
+                contracts.clustered_option_space_output,
             ),
             "baseline_lens_registry_v1": (cls._baseline_lens_records, None),
             "psychology_lens_pr29": (cls._psychology_lens_records, None),

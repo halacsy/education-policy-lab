@@ -24,6 +24,7 @@ from policy_lab.i18n import (  # noqa: E402
     BILINGUAL_VERSION, load_field_map, suspicious_identity, text,
     values_at_path,
 )
+from policy_lab.coverage import validate_exact_coverage  # noqa: E402
 
 
 class LinkParser(HTMLParser):
@@ -288,6 +289,29 @@ def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
             raise AssertionError(f"Approved-frame coverage gate failed for {item['topic']}")
         if actual_directions != expected_directions:
             raise AssertionError(f"Approved-frame identities differ for {item['topic']}")
+
+        if manifest.get("architecture_version") == "3.2.0":
+            normalization = repository.get_current(
+                "CL-live-evidence-normalization"
+            )["content"]
+            finding_ids = {
+                record["id"] for record in repository.list(record_type="finding")
+            }
+            validate_exact_coverage(
+                normalization, finding_ids, basis="evidence_normalization"
+            )
+            seed_records = repository.list(record_type="option_seed")
+            seed_coverage = repository.get_current("CL-live-option-seeds")["content"]
+            validate_exact_coverage(
+                seed_coverage, {record["id"] for record in seed_records},
+                basis="option_seed_clustering",
+                direction_ids=expected_directions,
+            )
+            proposals = repository.list(record_type="transformation_proposal")
+            if any(not proposal["content"].get("canonical_claim_refs") for proposal in proposals):
+                raise AssertionError(
+                    f"A transformation bypassed normalized claims for {item['topic']}"
+                )
 
         package = repository.get_current(summary["package_ref"])
         if len(package["content"]["evidence_appendix"]) < 1:

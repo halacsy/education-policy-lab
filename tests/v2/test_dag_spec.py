@@ -45,12 +45,14 @@ class DagSpecTests(unittest.TestCase):
         dag = build_policy_analysis_dag(lenses)
         dag.validate()
 
-        self.assertEqual(dag.version, "3.1.0")
+        self.assertEqual(dag.version, "3.2.0")
         self.assertEqual(len(dag.roots), 3)
-        self.assertEqual(len(dag.nodes), 12)
-        self.assertEqual(dag.nodes[2].id, "derive_option_space")
-        self.assertEqual(dag.nodes[3].id, "approve_option_space")
-        self.assertEqual(dag.nodes[3].kind, "human_gate")
+        self.assertEqual(len(dag.nodes), 14)
+        self.assertEqual(dag.nodes[2].id, "normalize_evidence")
+        self.assertEqual(dag.nodes[3].id, "derive_option_seeds")
+        self.assertEqual(dag.nodes[4].id, "cluster_option_seeds")
+        self.assertEqual(dag.nodes[5].id, "approve_option_space")
+        self.assertEqual(dag.nodes[5].kind, "human_gate")
         transformation = next(
             node for node in dag.nodes if node.id == "derive_transformations"
         )
@@ -92,7 +94,7 @@ class DagSpecTests(unittest.TestCase):
 
         self.assertEqual(len(dag.roots), 3)
         self.assertEqual(dag.roots[0].name, "policy_question")
-        self.assertEqual(len(dag.nodes), 14)
+        self.assertEqual(len(dag.nodes), 16)
         self.assertEqual(dag.nodes[0].id, "draft_problem_brief")
         self.assertEqual(dag.nodes[1].id, "approve_problem_brief")
         self.assertEqual(dag.nodes[1].kind, "human_gate")
@@ -135,7 +137,7 @@ class DagSpecTests(unittest.TestCase):
             ref("U-test", "uncertainty", "f"),
         )
         inputs = plan.resolve_inputs(
-            "derive_option_space", {"research_legal": research_outputs}
+            "normalize_evidence", {"research_legal": research_outputs}
         )
         self.assertEqual(
             {item.record_type for item in inputs["evidence"]},
@@ -159,7 +161,7 @@ class DagSpecTests(unittest.TestCase):
             self.assertEqual(problem["status"], "admitted")
             self.assertEqual(problem["record_type"], "problem_brief")
             self.assertEqual(len(roots), 13)
-            self.assertEqual(len(plan.nodes), 32)
+            self.assertEqual(len(plan.nodes), 34)
 
     def test_raw_question_runner_materializes_question_not_problem_brief(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -191,7 +193,7 @@ class DagSpecTests(unittest.TestCase):
             )
             self.assertNotIn("problem_brief", roots)
             self.assertEqual(len(roots), 13)
-            self.assertEqual(len(plan.nodes), 34)
+            self.assertEqual(len(plan.nodes), 36)
 
     def test_human_gate_is_bound_to_one_exact_candidate_hash(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

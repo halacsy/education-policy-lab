@@ -880,3 +880,30 @@ and logged while deficits are filled by a separate one-item contract; and a
 real structured-output truncation receives one bounded, separately recorded
 token escalation. None of these mechanisms hand-edits an artifact, weakens a
 schema, or permits a different answer to overwrite an immutable attempt.
+
+**D-60 — Evidence normalization and option-seed coverage are explicit DAG
+gates (2026-07-22).** Architecture 3.2 no longer derives the option space
+directly from raw findings. After all research branches complete,
+`normalize_evidence` produces bounded `canonical_claim` records and explicit
+`evidence_conflict` records. Every input finding must occur exactly once in a
+typed coverage ledger with an auditable disposition. A critical finding may
+not be rejected, moved out of scope, or left for review; such attrition fails
+the node instead of producing a nominally complete result.
+
+`derive_option_seeds` then turns normalized claims and conflicts into
+unclustered possible change levers. `cluster_option_seeds` creates the
+candidate option-space proposal and a second exact coverage ledger. Every seed
+must be clustered, merged, retained as a counterfactual, or explicitly
+disposed; critical rejection, out-of-scope routing, or unresolved human review
+fails the gate. The existing human approval remains bound to the exact
+candidate hash. Transformation proposals retain underlying finding references
+and additionally cite canonical claims, so normalization adds a traceable
+semantic layer without erasing the source audit trail.
+
+The three new semantic record types use the existing canonical bilingual 2.1
+overlay. The 2.0 archive schemas for option-space, approved-option-space,
+transformation, and coverage records gain backwards-compatible alternatives;
+existing 3.1 production artifacts remain immutable and valid. The independent
+verifier recomputes both exact identity sets and critical-attrition counts for
+all future 3.2 production runs. A live 3.2 acceptance run is still required
+before replacing the currently published 3.1 results.
