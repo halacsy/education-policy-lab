@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-portuguese_reform-01",
+      "A-live-portuguese_reform-02",
+      "A-live-portuguese_reform-03"
+    ],
+    "claim": {
+      "en": "Students from higher socioeconomic status backgrounds are more likely to attend early-selective academic tracks (6- and 8-year gymnázium) even when previous test scores are statistically controlled for, suggesting selection operates beyond pure academic merit.",
+      "hu": "A magasabb szocioökonómiai státuszú háttérből származó diákok nagyobb valószínűséggel járnak korai kiválasztásos akadémikus pályákba (6 és 8 éves gimnázium), még akkor is, ha az előző teszteredmények statisztikai kontrollon keresztül kezeltek, ami azt sugallja, hogy a kiválasztás a tiszta akadémiai érdem felül működik."
+    },
+    "context": {
+      "en": "Fresh live research through the Portuguese system reform lens",
+      "hu": "Friss, élő kutatás a(z) portugál rendszerreform nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "portuguese_reform"
+    ],
+    "evidence_strength": "moderate",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The authors of the primary source (Horn 2013) self-flagged endogeneity problems in the causal identification; results appear directionally consistent across cohorts but the magnitude of selection bias varies by subject and cohort, limiting the generalizability of point estimates.",
+        "hu": "Az elsődleges forrás szerzői (Horn 2013) önként jeleztek endogenitási problémákat az okozati azonosításban; az eredmények kohortonként és alanyonként konzisztensnek tűnnek, de a kiválasztási torzítás nagysága tárgy és kohorta szerint változik, ami korlátozza a pontbecslések általánosíthatóságát."
+      },
+      {
+        "en": "Observed socioeconomic enrollment differences may reflect unmeasured prior advantages (parental networks, test preparation, residential sorting into feeder schools) not fully captured in pre-selection test scores.",
+        "hu": "A megfigyelt szocioökonómiai felvételben mutatkozó eltérések tükrözhetik a meg nem mért korábbi előnyöket (szülői hálózatok, tesztfelkészítés, a szülőiskolákat szolgáltató iskolákba való lakcímhöz kötött osztályozás), amelyeket nem rögzítik teljes mértékben az előzetes kiválasztási tesztpontszámok."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-portuguese_reform-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-portuguese_reform-01",
+      "U-live-portuguese_reform-02",
+      "U-live-portuguese_reform-03"
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "F-live-portuguese_reform-03",
+  "provenance_ref": "PV-research_portuguese_reform-112fc386e8b10ce8",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

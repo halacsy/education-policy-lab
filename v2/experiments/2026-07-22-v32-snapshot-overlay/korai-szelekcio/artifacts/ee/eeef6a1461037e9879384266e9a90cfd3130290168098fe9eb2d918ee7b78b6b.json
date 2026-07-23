@@ -1,0 +1,51 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "7d61f2a9620920ed96a1bd436cc41cf8eeaa21c90068837a0da58c05fece7cc1",
+        "response_hash": "b616881c3b51be817f284002f83b8cb8cba013ffcba49a768cd568669db4fbe8",
+        "stage": "search",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "7e6fc7f6a05c12b640e98c857f4f1935a541bf37c04a9f8547735ae39a432b4d",
+        "response_hash": "698cd4878f3bcf072330eb0b9cb29d23dad089aa0064308ac8cee82803f3abca",
+        "stage": "analysis",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "09024fbff7ec40bc0cb6cbe286f9c4e1408b46dd22b9c95206b1128dd85498c2",
+    "generation_parameters": {
+      "analysis_max_tokens": 16000,
+      "search_max_tokens": 10000
+    },
+    "input_artifact_hashes": [
+      "82019026a89953532de847713b8d494a3547fcec7b2e545366e2c1a3c010a06b",
+      "cbb7c166ad3a8a66872010b792b5259ccc155b8e3a9fbc1144a8a96b702b7501"
+    ],
+    "model": "anthropic-task-ladder",
+    "node_id": "research_hungarian_education_system",
+    "prompt_hash": "4a3c2037df3353d1d5e0b5a43f6e06ed0a346b1b45d7c66fc9da6a3765670826",
+    "provider": "anthropic",
+    "relevant_config_hash": "e0f6174821f8f52320426a39f22017014059c5b35b4b499a2044dfde01c14a7b",
+    "role": "research",
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "e40ee46c32dce0bcd827fba36ab560cb5123aead8f2635d651a4a9662bdc92db",
+      "schemas/v2/assumption.schema.json": "a2c90cb84524046f123b798eeafcbe30a872987b4f63a19ba25467b0a22fcec2",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/finding.schema.json": "7f08de87a5b809e4ebbdeb42e6c2265b5686984c0b71a01af896fea5cb670729",
+      "schemas/v2/source.schema.json": "0beda71026c753e0dcff6875401aa70ffd52fdbb6e81e9d68d9b1035b9dd085f",
+      "schemas/v2/uncertainty.schema.json": "e1e32dd216fcaa6af59322ed1fb36aed2bee508d91c17d3879d3daec28c9edd4"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "PV-research_hungarian_education_system-09024fbff7ec40bc",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "97c530fe5b9aa1084f3bce55ab4a15b8997114ba899f042ebb1e7207afb5c009",
+  "topic": "korai-szelekcio"
+}

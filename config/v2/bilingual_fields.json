@@ -4,6 +4,7 @@
   "languages": ["en", "hu"],
   "record_types": {
     "approved_option_space": ["directions.*.title", "directions.*.scope", "rejected_framings.*.framing", "rejected_framings.*.reason"],
+    "architecture_overlay": ["seed_entries.*.rationale", "direction_entries.*.rationale", "conflict_entries.*.rationale", "limitation"],
     "assumption": ["statement", "source_context"],
     "canonical_claim": ["statement", "population", "context", "time_scope"],
     "coverage_ledger": ["entries.*.direction_title", "entries.*.rationale"],

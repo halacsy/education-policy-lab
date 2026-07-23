@@ -1410,42 +1410,43 @@ Produce 2-7 materially distinct direction families with sequential ids S1..Sn. E
             ]
             for record_type in ("finding", "assumption", "uncertainty")
         }
-        digest = "\n".join(
-            f"- {record['id']} [{record['content']['evidence_strength']}]: "
-            f"{self._english(record['content']['claim'])} | "
-            f"population={self._english(record['content']['population'])}; "
-            f"context={self._english(record['content']['context'])}; "
-            f"time={self._english(record['content']['time_scope'])}"
-            for record in by_type["finding"]
-        )
-        prompt = self._header("normalize_evidence", "evidence_normalizer") + f"""
-Normalize the complete atomic finding set for this approved problem. Merge only genuinely equivalent claims. Preserve population, context, time, method, causal status, transferability, and evidence strength. Record contradictions and apparent contradictions explicitly; do not average them away.
-
-PUBLIC QUESTION: {self._english(problem['public_question'])}
-PROBLEM: {self._english(problem['problem_statement'])}
-
-FINDINGS:
-{digest}
-
-Produce sequential claim keys C1..Cn and conflict keys E1..En. A conflict must cite at least two findings. Return exactly one coverage entry for every supplied finding id and no others. Every claim or conflict reference must be mirrored in that finding's coverage entry. `carried_forward` requires a claim; `conflict_recorded` requires a conflict; `duplicate_of` requires exactly one different finding. A critical finding may not be rejected, placed out of scope, or left for review. No expert identity or authority is part of the normalized claim.
-"""
         finding_ids = [record["id"] for record in by_type["finding"]]
-        result = self._call_structured_counted(
-            prompt,
-            contracts.evidence_normalization_output(
-                finding_ids,
-                [record["id"] for record in by_type["assumption"]],
-                [record["id"] for record in by_type["uncertainty"]],
-            ),
-            role="generator", max_tokens=30000, arm=arm, node=node,
-            run_dir=run_dir, suffix="generate",
-            constraints={
-                "claims": (1, 60), "conflicts": (0, 30),
-                "coverage": (len(finding_ids), len(finding_ids)),
-            },
-        )
+        if len(finding_ids) > 60:
+            result = self._normalize_evidence_sharded(
+                problem, by_type, node=node, run_dir=run_dir, arm=arm,
+            )
+        else:
+            result = self._request_evidence_normalization(
+                problem, by_type["finding"], by_type["assumption"],
+                by_type["uncertainty"], node=node, run_dir=run_dir, arm=arm,
+                suffix="generate",
+            )
         claims = result["claims"]
         conflicts = result["conflicts"]
+        normalization_actions = []
+        reference_fields = (
+            (claims, "claims", (
+                "supporting_finding_refs", "contradicting_finding_refs",
+                "assumption_refs", "uncertainty_refs",
+            )),
+            (conflicts, "conflicts", ("finding_refs", "claim_keys")),
+            (result["coverage"], "coverage", (
+                "claim_keys", "conflict_keys", "duplicate_of_refs",
+            )),
+        )
+        for items, collection, fields in reference_fields:
+            for index, item in enumerate(items, 1):
+                for field in fields:
+                    before = item[field]
+                    after = list(dict.fromkeys(before))
+                    if before == after:
+                        continue
+                    item[field] = after
+                    normalization_actions.append({
+                        "field": f"{collection}[{index}].{field}",
+                        "action": "deduplicate_redundant_references",
+                        "before_count": len(before), "after_count": len(after),
+                    })
         claim_keys = [item["key"] for item in claims]
         conflict_keys = [item["key"] for item in conflicts]
         if claim_keys != [f"C{i}" for i in range(1, len(claims) + 1)]:
@@ -1458,8 +1459,86 @@ Produce sequential claim keys C1..Cn and conflict keys E1..En. A conflict must c
                 "Finding coverage must contain every input exactly once: "
                 f"expected={sorted(finding_ids)}, got={sorted(coverage)}"
             )
+        claimed_findings = {
+            finding_id
+            for claim in claims
+            for finding_id in (
+                claim["supporting_finding_refs"]
+                + claim["contradicting_finding_refs"]
+            )
+        }
+        finding_by_id = {
+            record["id"]: record for record in by_type["finding"]
+        }
+        transferability_map = {
+            "high": "direct", "medium": "conditional",
+            "uncertain": "conditional", "low": "analogy_only",
+            "not_applicable": "not_transferable",
+        }
+        for entry in result["coverage"]:
+            finding_id = entry["finding_ref"]
+            if entry["status"] != "carried_forward" or finding_id in claimed_findings:
+                continue
+            source_finding = finding_by_id[finding_id]["content"]
+            fallback_key = f"C{len(claims) + 1}"
+            claims.append({
+                "key": fallback_key,
+                "statement": source_finding["claim"],
+                "claim_type": "descriptive",
+                "population": source_finding["population"],
+                "context": source_finding["context"],
+                "time_scope": source_finding["time_scope"],
+                "evidence_strength": source_finding["evidence_strength"],
+                "transferability": transferability_map[
+                    source_finding["transferability"]
+                ],
+                "supporting_finding_refs": [finding_id],
+                "contradicting_finding_refs": [],
+                "assumption_refs": source_finding["assumption_ids"],
+                "uncertainty_refs": source_finding["uncertainty_ids"],
+            })
+            claimed_findings.add(finding_id)
+            normalization_actions.append({
+                "field": f"claims.{fallback_key}",
+                "action": "synthesize_lossless_atomic_fallback_claim",
+                "finding_ref": finding_id,
+            })
+        claim_keys = [item["key"] for item in claims]
         known_claims = set(claim_keys)
         known_conflicts = set(conflict_keys)
+        derived_claim_keys = {finding_id: [] for finding_id in finding_ids}
+        derived_conflict_keys = {finding_id: [] for finding_id in finding_ids}
+        for claim in claims:
+            for finding_id in dict.fromkeys(
+                claim["supporting_finding_refs"] + claim["contradicting_finding_refs"]
+            ):
+                derived_claim_keys[finding_id].append(claim["key"])
+        for conflict in conflicts:
+            for finding_id in conflict["finding_refs"]:
+                derived_conflict_keys[finding_id].append(conflict["key"])
+        for entry in result["coverage"]:
+            finding_id = entry["finding_ref"]
+            expected_claims = derived_claim_keys[finding_id]
+            expected_conflicts = derived_conflict_keys[finding_id]
+            if (
+                entry["claim_keys"] != expected_claims
+                or entry["conflict_keys"] != expected_conflicts
+            ):
+                normalization_actions.append({
+                    "field": f"coverage.{finding_id}",
+                    "action": "derive_redundant_reverse_references",
+                    "claim_keys_before": entry["claim_keys"],
+                    "claim_keys_after": expected_claims,
+                    "conflict_keys_before": entry["conflict_keys"],
+                    "conflict_keys_after": expected_conflicts,
+                })
+                entry["claim_keys"] = expected_claims
+                entry["conflict_keys"] = expected_conflicts
+        if normalization_actions:
+            self._record_semantic_normalizations(
+                run_dir, arm=arm, node=node, attempt=1,
+                actions=normalization_actions,
+            )
         for entry in coverage.values():
             unknown_claims = set(entry["claim_keys"]) - known_claims
             unknown_conflicts = set(entry["conflict_keys"]) - known_conflicts
@@ -1521,6 +1600,263 @@ Produce sequential claim keys C1..Cn and conflict keys E1..En. A conflict must c
             "verdict": "complete",
         }))
         return records
+
+    def _request_evidence_normalization(
+        self, problem: dict[str, Any], findings: list[dict[str, Any]],
+        assumptions: list[dict[str, Any]], uncertainties: list[dict[str, Any]],
+        *, node: str, run_dir: Path, arm: str, suffix: str,
+    ) -> dict[str, Any]:
+        """Normalize one bounded finding shard with exact local coverage."""
+
+        digest = "\n".join(
+            f"- {record['id']} [{record['content']['evidence_strength']}]: "
+            f"{self._english(record['content']['claim'])} | "
+            f"population={self._english(record['content']['population'])}; "
+            f"context={self._english(record['content']['context'])}; "
+            f"time={self._english(record['content']['time_scope'])}"
+            for record in findings
+        )
+        prompt = self._header("normalize_evidence", "evidence_normalizer") + f"""
+Normalize the complete atomic finding set for this approved problem. Merge only genuinely equivalent claims. Preserve population, context, time, method, causal status, transferability, and evidence strength. Record contradictions and apparent contradictions explicitly; do not average them away.
+
+PUBLIC QUESTION: {self._english(problem['public_question'])}
+PROBLEM: {self._english(problem['problem_statement'])}
+
+FINDINGS:
+{digest}
+
+Produce sequential claim keys C1..Cn and conflict keys E1..En. A conflict must cite at least two findings. Return exactly one coverage entry for every supplied finding id and no others. Every claim or conflict reference must be mirrored in that finding's coverage entry. `carried_forward` requires a claim; `conflict_recorded` requires a conflict; `duplicate_of` requires exactly one different finding. A critical finding may not be rejected, placed out of scope, or left for review. No expert identity or authority is part of the normalized claim.
+"""
+        finding_ids = [record["id"] for record in findings]
+        return self._call_structured_counted(
+            prompt,
+            contracts.evidence_normalization_output(
+                finding_ids,
+                [record["id"] for record in assumptions],
+                [record["id"] for record in uncertainties],
+            ),
+            role="generator", max_tokens=24000, arm=arm, node=node,
+            run_dir=run_dir, suffix=suffix,
+            constraints={
+                "claims": (1, 60), "conflicts": (0, 30),
+                "coverage": (len(finding_ids), len(finding_ids)),
+            },
+        )
+
+    def _normalize_evidence_sharded(
+        self, problem: dict[str, Any], by_type: dict[str, list[dict[str, Any]]],
+        *, node: str, run_dir: Path, arm: str,
+    ) -> dict[str, Any]:
+        """Normalize large snapshots in bounded shards plus global conflict pass.
+
+        Shards prevent a complete coverage ledger from exceeding provider output
+        limits. Claim identities are made global deterministically; a separate
+        reconciliation call can only add conflicts whose claims span shards.
+        The final caller still applies one exact all-finding coverage gate.
+        """
+
+        shard_size = 40
+        findings = by_type["finding"]
+        merged: dict[str, list[dict[str, Any]]] = {
+            "claims": [], "conflicts": [], "coverage": [],
+        }
+        actions: list[dict[str, Any]] = []
+        claim_shards: dict[str, int] = {}
+        local_conflict_signatures: set[tuple[str, ...]] = set()
+        for shard_index, start in enumerate(range(0, len(findings), shard_size), 1):
+            result = self._request_evidence_normalization(
+                problem, findings[start:start + shard_size],
+                by_type["assumption"], by_type["uncertainty"],
+                node=node, run_dir=run_dir, arm=arm,
+                suffix=f"generate-shard-{shard_index:02d}",
+            )
+            claim_map: dict[str, str] = {}
+            for claim in result["claims"]:
+                global_key = f"C{len(merged['claims']) + 1}"
+                claim_map[claim["key"]] = global_key
+                claim["key"] = global_key
+                claim_shards[global_key] = shard_index
+                merged["claims"].append(claim)
+            conflict_map: dict[str, str] = {}
+            for conflict in result["conflicts"]:
+                source_key = conflict["key"]
+                conflict["finding_refs"] = list(dict.fromkeys(
+                    conflict["finding_refs"]
+                ))
+                if len(conflict["finding_refs"]) < 2:
+                    conflict_map[source_key] = ""
+                    actions.append({
+                        "field": f"shard_{shard_index}.{source_key}",
+                        "action": "drop_single_finding_pseudo_conflict",
+                        "finding_refs": conflict["finding_refs"],
+                    })
+                    continue
+                global_key = f"E{len(merged['conflicts']) + 1}"
+                conflict_map[source_key] = global_key
+                conflict["key"] = global_key
+                conflict["claim_keys"] = [
+                    claim_map[key] for key in conflict["claim_keys"]
+                ]
+                local_conflict_signatures.add(tuple(sorted(conflict["finding_refs"])))
+                merged["conflicts"].append(conflict)
+            for entry in result["coverage"]:
+                entry["claim_keys"] = [claim_map[key] for key in entry["claim_keys"]]
+                entry["conflict_keys"] = [
+                    conflict_map[key] for key in entry["conflict_keys"]
+                    if conflict_map.get(key)
+                ]
+                if entry["status"] == "conflict_recorded" and not entry["conflict_keys"]:
+                    actions.append({
+                        "field": f"coverage.{entry['finding_ref']}",
+                        "action": "retain_finding_after_pseudo_conflict_removal",
+                        "status_before": "conflict_recorded",
+                        "status_after": "carried_forward",
+                    })
+                    entry["status"] = "carried_forward"
+                merged["coverage"].append(entry)
+
+        claim_digest = "\n".join(
+            f"- {claim['key']} [shard {claim_shards[claim['key']]}] "
+            f"findings={','.join(claim['supporting_finding_refs'] + claim['contradicting_finding_refs'])}: "
+            f"{self._english(claim['statement'])} | "
+            f"population={self._english(claim['population'])}; "
+            f"context={self._english(claim['context'])}; "
+            f"time={self._english(claim['time_scope'])}"
+            for claim in merged["claims"]
+        )
+        prompt = self._header(
+            "normalize_evidence_cross_shard", "evidence_normalizer"
+        ) + f"""
+Reconcile bounded claims that were normalized in separate execution shards.
+
+MERGE GROUPS: Group only genuinely equivalent claims that express the same bounded proposition for the same population, context, time and causal status. Every merge group must span at least two shard numbers. A claim may occur in at most one group. Do not merge merely related findings, mechanisms with outcomes, or findings whose scope differs.
+
+CONFLICTS: Detect material evidence conflicts that were invisible inside the bounded shards. Every conflict must cite at least two supplied claims from at least two shard numbers and at least two of their exact finding ids. Do not repeat a within-shard conflict. Context, population, measurement, time, causal interpretation, and transferability differences are conflicts to preserve when decision-relevant; do not average them away.
+
+Do not invent claims or findings. Return empty collections where no cross-shard merge or conflict is warranted.
+
+PUBLIC QUESTION: {self._english(problem['public_question'])}
+CANONICAL CLAIMS:
+{claim_digest}
+"""
+        reconciliation = self._call_structured_counted(
+            prompt,
+            contracts.cross_shard_reconciliation_output(
+                [record["id"] for record in findings],
+                [claim["key"] for claim in merged["claims"]],
+            ),
+            role="generator", max_tokens=12000, arm=arm, node=node,
+            run_dir=run_dir, suffix="reconcile-cross-shard",
+            constraints={"merge_groups": (0, 30), "conflicts": (0, 20)},
+        )
+        claims_by_key = {claim["key"]: claim for claim in merged["claims"]}
+        claimed_for_merge: set[str] = set()
+        collapse_to: dict[str, str] = {}
+        strength_rank = {
+            "strong": 0, "moderate": 1, "weak": 2, "contested": 3,
+        }
+        transfer_rank = {
+            "direct": 0, "conditional": 1,
+            "analogy_only": 2, "not_transferable": 3,
+        }
+        for group in reconciliation["merge_groups"]:
+            keys = list(dict.fromkeys(group["claim_keys"]))
+            shards = {claim_shards[key] for key in keys}
+            claim_types = {claims_by_key[key]["claim_type"] for key in keys}
+            if (
+                len(keys) < 2 or len(shards) < 2 or len(claim_types) != 1
+                or claimed_for_merge.intersection(keys)
+            ):
+                actions.append({
+                    "field": "cross_shard_merge_groups",
+                    "action": "drop_invalid_or_overlapping_merge_group",
+                    "claim_keys": keys,
+                })
+                continue
+            representative = min(keys, key=lambda key: int(key[1:]))
+            target = claims_by_key[representative]
+            members = [claims_by_key[key] for key in keys]
+            for field in (
+                "supporting_finding_refs", "contradicting_finding_refs",
+                "assumption_refs", "uncertainty_refs",
+            ):
+                target[field] = list(dict.fromkeys(
+                    value for member in members for value in member[field]
+                ))
+            target["evidence_strength"] = max(
+                (member["evidence_strength"] for member in members),
+                key=strength_rank.__getitem__,
+            )
+            target["transferability"] = max(
+                (member["transferability"] for member in members),
+                key=transfer_rank.__getitem__,
+            )
+            for key in keys:
+                collapse_to[key] = representative
+            claimed_for_merge.update(keys)
+            actions.append({
+                "field": "cross_shard_merge_groups",
+                "action": "merge_equivalent_cross_shard_claims",
+                "representative": representative,
+                "claim_keys": keys,
+                "rationale": group["rationale"],
+            })
+        retained_claims = [
+            claim for claim in merged["claims"]
+            if collapse_to.get(claim["key"], claim["key"]) == claim["key"]
+        ]
+        renumber = {
+            claim["key"]: f"C{index}"
+            for index, claim in enumerate(retained_claims, 1)
+        }
+        final_claim_key = {
+            key: renumber[collapse_to.get(key, key)]
+            for key in claims_by_key
+        }
+        for claim in retained_claims:
+            claim["key"] = renumber[claim["key"]]
+        merged["claims"] = retained_claims
+        for conflict in merged["conflicts"]:
+            conflict["claim_keys"] = list(dict.fromkeys(
+                final_claim_key[key] for key in conflict["claim_keys"]
+            ))
+        for entry in merged["coverage"]:
+            entry["claim_keys"] = list(dict.fromkeys(
+                final_claim_key[key] for key in entry["claim_keys"]
+            ))
+
+        for conflict in reconciliation["conflicts"]:
+            signature = tuple(sorted(dict.fromkeys(conflict["finding_refs"])))
+            shards = {claim_shards[key] for key in conflict["claim_keys"]}
+            if len(shards) < 2 or signature in local_conflict_signatures:
+                actions.append({
+                    "field": "cross_shard_conflicts",
+                    "action": "drop_non_cross_shard_or_duplicate_conflict",
+                    "finding_refs": list(signature),
+                })
+                continue
+            conflict["key"] = f"E{len(merged['conflicts']) + 1}"
+            conflict["finding_refs"] = list(signature)
+            conflict["claim_keys"] = list(dict.fromkeys(
+                final_claim_key[key] for key in conflict["claim_keys"]
+            ))
+            local_conflict_signatures.add(signature)
+            merged["conflicts"].append(conflict)
+        if actions:
+            self._record_semantic_normalizations(
+                run_dir, arm=arm, node=node, attempt=1, actions=actions,
+            )
+        self._record_semantic_normalizations(
+            run_dir, arm=arm, node=node, attempt=1,
+            actions=[{
+                "field": "findings",
+                "action": "normalize_in_bounded_shards_with_global_equivalence_and_conflict_reconciliation",
+                "finding_count": len(findings),
+                "shard_count": (len(findings) + shard_size - 1) // shard_size,
+                "shard_size": shard_size,
+            }],
+        )
+        return merged
 
     def _option_seed_records(
         self, problem_ref: ArtifactRef, normalized_refs: tuple[ArtifactRef, ...],
@@ -2317,7 +2653,21 @@ Score only what is visible. Treat an inline finding id as auditable only when th
                 and response_path.exists()
                 and prompt_path.read_bytes() == prompt_bytes
             ):
-                return json.loads(response_path.read_text(encoding="utf-8"))
+                response = response_path.read_bytes()
+                current = (
+                    json.loads(current_path.read_text(encoding="utf-8"))
+                    if current_path.exists()
+                    else None
+                )
+                if current and current["execution_id"] != execution_id:
+                    # A code-level cache-key change may still produce the exact
+                    # same prompt. Adopt that immutable response into the
+                    # current execution so output provenance names the attempt
+                    # it actually replayed instead of leaving an audit gap.
+                    ArtifactDagRunner._persist_attempt(
+                        run_dir, node, stage, prompt, response, "json"
+                    )
+                return json.loads(response)
         return None
 
     def _call_structured_counted(

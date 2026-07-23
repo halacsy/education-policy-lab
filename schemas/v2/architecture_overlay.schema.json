@@ -1,0 +1,99 @@
+{
+  "$id": "https://education-policy-lab.example/schemas/v2/architecture_overlay.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {"$ref": "https://education-policy-lab.example/schemas/v2/common.schema.json#/$defs/record_envelope"},
+    {"properties": {
+      "id": {"pattern": "^OV-[A-Za-z0-9._-]+$"},
+      "record_type": {"const": "architecture_overlay"},
+      "schema_version": {"const": "2.0.0"},
+      "provenance_ref": {"type": "string", "pattern": "^PV-[A-Za-z0-9._-]+$"},
+      "content": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "mode": {"const": "trace_overlap"},
+          "source_architecture_version": {"const": "3.1.0"},
+          "source_run_tag": {"type": "string", "minLength": 1},
+          "source_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_run_plan_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "legacy_option_space_ref": {"type": "string", "pattern": "^AO-[A-Za-z0-9._-]+$"},
+          "new_option_space_ref": {"type": "string", "pattern": "^OS-[A-Za-z0-9._-]+$"},
+          "normalization_coverage_ref": {"type": "string", "pattern": "^CL-[A-Za-z0-9._-]+$"},
+          "seed_coverage_ref": {"type": "string", "pattern": "^CL-[A-Za-z0-9._-]+$"},
+          "seed_entries": {
+            "type": "array", "minItems": 1,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "properties": {
+                "option_seed_ref": {"type": "string", "pattern": "^OSD-[A-Za-z0-9._-]+$"},
+                "status": {"enum": ["covered_by_proposal", "legacy_direction_only", "uncovered"]},
+                "legacy_direction_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^S[0-9]+$"}},
+                "legacy_proposal_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"}},
+                "overlap_finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}},
+                "rationale": {"type": "string", "minLength": 1}
+              },
+              "required": ["option_seed_ref", "status", "legacy_direction_ids", "legacy_proposal_refs", "overlap_finding_refs", "rationale"]
+            }
+          },
+          "direction_entries": {
+            "type": "array", "minItems": 2,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "properties": {
+                "direction_id": {"type": "string", "pattern": "^S[0-9]+$"},
+                "status": {"enum": ["covered_by_proposal", "legacy_direction_only", "novel_gap"]},
+                "legacy_direction_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^S[0-9]+$"}},
+                "legacy_proposal_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"}},
+                "overlap_finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}},
+                "rationale": {"type": "string", "minLength": 1}
+              },
+              "required": ["direction_id", "status", "legacy_direction_ids", "legacy_proposal_refs", "overlap_finding_refs", "rationale"]
+            }
+          },
+          "conflict_entries": {
+            "type": "array",
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "properties": {
+                "evidence_conflict_ref": {"type": "string", "pattern": "^EC-[A-Za-z0-9._-]+$"},
+                "status": {"enum": ["touches_legacy_proposal", "no_legacy_proposal"]},
+                "legacy_proposal_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^TP-[A-Za-z0-9._-]+$"}},
+                "overlap_finding_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^F-[A-Za-z0-9._-]+$"}},
+                "rationale": {"type": "string", "minLength": 1}
+              },
+              "required": ["evidence_conflict_ref", "status", "legacy_proposal_refs", "overlap_finding_refs", "rationale"]
+            }
+          },
+          "summary": {
+            "type": "object", "additionalProperties": false,
+            "properties": {
+              "seed_count": {"type": "integer", "minimum": 1},
+              "uncovered_seed_count": {"type": "integer", "minimum": 0},
+              "new_direction_count": {"type": "integer", "minimum": 2},
+              "novel_gap_count": {"type": "integer", "minimum": 0},
+              "evidence_conflict_count": {"type": "integer", "minimum": 0},
+              "conflicts_without_legacy_proposal_count": {"type": "integer", "minimum": 0}
+            },
+            "required": ["seed_count", "uncovered_seed_count", "new_direction_count", "novel_gap_count", "evidence_conflict_count", "conflicts_without_legacy_proposal_count"]
+          },
+          "limitation": {"type": "string", "minLength": 1}
+        },
+        "required": ["mode", "source_architecture_version", "source_run_tag", "source_manifest_hash", "source_run_plan_hash", "legacy_option_space_ref", "new_option_space_ref", "normalization_coverage_ref", "seed_coverage_ref", "seed_entries", "direction_entries", "conflict_entries", "summary", "limitation"]
+      }
+    }}
+  ],
+  "x-artifact-references": [
+    {"path": "/provenance_ref", "record_type": "provenance"},
+    {"path": "/content/legacy_option_space_ref", "record_type": "approved_option_space"},
+    {"path": "/content/new_option_space_ref", "record_type": "option_space_proposal"},
+    {"path": "/content/normalization_coverage_ref", "record_type": "coverage_ledger"},
+    {"path": "/content/seed_coverage_ref", "record_type": "coverage_ledger"},
+    {"path": "/content/seed_entries/*/option_seed_ref", "record_type": "option_seed"},
+    {"path": "/content/seed_entries/*/legacy_proposal_refs/*", "record_type": "transformation_proposal"},
+    {"path": "/content/direction_entries/*/legacy_proposal_refs/*", "record_type": "transformation_proposal"},
+    {"path": "/content/conflict_entries/*/evidence_conflict_ref", "record_type": "evidence_conflict"},
+    {"path": "/content/conflict_entries/*/legacy_proposal_refs/*", "record_type": "transformation_proposal"}
+  ],
+  "x-record-type": "architecture_overlay",
+  "x-schema-version": "2.0.0"
+}

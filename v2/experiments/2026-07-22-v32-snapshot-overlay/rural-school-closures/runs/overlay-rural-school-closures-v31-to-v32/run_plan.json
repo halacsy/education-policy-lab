@@ -1,0 +1,1414 @@
+{
+  "dag_id": "policy_analysis_snapshot_overlay",
+  "dag_version": "3.2.0-overlay.1",
+  "edges": [
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "normalize_evidence"
+    },
+    {
+      "binding": "evidence",
+      "from": "root:research_snapshot",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "normalize_evidence"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "derive_option_seeds"
+    },
+    {
+      "binding": "normalized",
+      "from": "normalize_evidence",
+      "record_types": [
+        "canonical_claim",
+        "evidence_conflict"
+      ],
+      "to": "derive_option_seeds"
+    },
+    {
+      "binding": "evidence",
+      "from": "root:research_snapshot",
+      "record_types": [
+        "finding",
+        "assumption",
+        "uncertainty"
+      ],
+      "to": "derive_option_seeds"
+    },
+    {
+      "binding": "problem",
+      "from": "root:problem_brief",
+      "record_types": [
+        "problem_brief"
+      ],
+      "to": "cluster_option_seeds"
+    },
+    {
+      "binding": "seeds",
+      "from": "derive_option_seeds",
+      "record_types": [
+        "option_seed"
+      ],
+      "to": "cluster_option_seeds"
+    },
+    {
+      "binding": "normalized",
+      "from": "normalize_evidence",
+      "record_types": [
+        "evidence_conflict",
+        "coverage_ledger"
+      ],
+      "to": "compare_to_v31"
+    },
+    {
+      "binding": "seeds",
+      "from": "derive_option_seeds",
+      "record_types": [
+        "option_seed"
+      ],
+      "to": "compare_to_v31"
+    },
+    {
+      "binding": "candidate",
+      "from": "cluster_option_seeds",
+      "record_types": [
+        "option_space_proposal",
+        "coverage_ledger"
+      ],
+      "to": "compare_to_v31"
+    },
+    {
+      "binding": "legacy_option_space",
+      "from": "root:legacy_option_space",
+      "record_types": [
+        "approved_option_space"
+      ],
+      "to": "compare_to_v31"
+    },
+    {
+      "binding": "legacy_proposals",
+      "from": "root:legacy_proposals",
+      "record_types": [
+        "transformation_proposal"
+      ],
+      "to": "compare_to_v31"
+    }
+  ],
+  "nodes": [
+    {
+      "config_keys": [],
+      "description": "Architecture-3.2 overlay node over exact architecture-3.1 snapshot roots; it never mutates the source store.",
+      "generation_parameters": {
+        "max_tokens": 30000
+      },
+      "handler": "normalize_evidence",
+      "id": "normalize_evidence",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding",
+            "assumption",
+            "uncertainty"
+          ],
+          "sources": [
+            "root:research_snapshot"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "canonical_claim",
+        "evidence_conflict",
+        "coverage_ledger"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/canonical_claim.schema.json",
+        "schemas/v2/evidence_conflict.schema.json",
+        "schemas/v2/coverage_ledger.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "architecture_overlay",
+      "title": "Normalize Evidence",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Architecture-3.2 overlay node over exact architecture-3.1 snapshot roots; it never mutates the source store.",
+      "generation_parameters": {
+        "max_tokens": 16000
+      },
+      "handler": "derive_option_seeds",
+      "id": "derive_option_seeds",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "normalized",
+          "record_types": [
+            "canonical_claim",
+            "evidence_conflict"
+          ],
+          "sources": [
+            "normalize_evidence"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "evidence",
+          "record_types": [
+            "finding",
+            "assumption",
+            "uncertainty"
+          ],
+          "sources": [
+            "root:research_snapshot"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "option_seed"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/option_seed.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "architecture_overlay",
+      "title": "Derive Option Seeds",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Architecture-3.2 overlay node over exact architecture-3.1 snapshot roots; it never mutates the source store.",
+      "generation_parameters": {
+        "max_tokens": 12000
+      },
+      "handler": "cluster_option_seeds",
+      "id": "cluster_option_seeds",
+      "inputs": [
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "problem",
+          "record_types": [
+            "problem_brief"
+          ],
+          "sources": [
+            "root:problem_brief"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "seeds",
+          "record_types": [
+            "option_seed"
+          ],
+          "sources": [
+            "derive_option_seeds"
+          ]
+        }
+      ],
+      "kind": "llm",
+      "model": "claude-sonnet-5",
+      "output_types": [
+        "option_space_proposal",
+        "coverage_ledger"
+      ],
+      "provider": "anthropic",
+      "role": "generator",
+      "schema_files": [
+        "schemas/v2/option_space_proposal.schema.json",
+        "schemas/v2/coverage_ledger.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "architecture_overlay",
+      "title": "Cluster Option Seeds",
+      "version": "1.0.0"
+    },
+    {
+      "config_keys": [],
+      "description": "Architecture-3.2 overlay node over exact architecture-3.1 snapshot roots; it never mutates the source store.",
+      "generation_parameters": {},
+      "handler": "compare_to_v31",
+      "id": "compare_to_v31",
+      "inputs": [
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "normalized",
+          "record_types": [
+            "evidence_conflict",
+            "coverage_ledger"
+          ],
+          "sources": [
+            "normalize_evidence"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "seeds",
+          "record_types": [
+            "option_seed"
+          ],
+          "sources": [
+            "derive_option_seeds"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "candidate",
+          "record_types": [
+            "option_space_proposal",
+            "coverage_ledger"
+          ],
+          "sources": [
+            "cluster_option_seeds"
+          ]
+        },
+        {
+          "maximum": 1,
+          "minimum": 1,
+          "name": "legacy_option_space",
+          "record_types": [
+            "approved_option_space"
+          ],
+          "sources": [
+            "root:legacy_option_space"
+          ]
+        },
+        {
+          "maximum": null,
+          "minimum": 1,
+          "name": "legacy_proposals",
+          "record_types": [
+            "transformation_proposal"
+          ],
+          "sources": [
+            "root:legacy_proposals"
+          ]
+        }
+      ],
+      "kind": "deterministic",
+      "model": "deterministic-1.0.0",
+      "output_types": [
+        "architecture_overlay"
+      ],
+      "provider": "local",
+      "role": "deterministic",
+      "schema_files": [
+        "schemas/v2/architecture_overlay.schema.json",
+        "schemas/v2/bilingual.schema.json",
+        "config/v2/bilingual_fields.json"
+      ],
+      "spec_files": [],
+      "stage": "architecture_overlay",
+      "title": "Compare To V31",
+      "version": "1.0.0"
+    }
+  ],
+  "roots": {
+    "legacy_option_space": [
+      {
+        "content_hash": "92050fdf667a0d00e490c82029619cd59dc9dbee990efcef0b0b86e5853be378",
+        "id": "AO-live-rural-school-closures",
+        "record_type": "approved_option_space"
+      }
+    ],
+    "legacy_proposals": [
+      {
+        "content_hash": "675f000698995ab0d89577bdd2a00d764a3e509a4cd388200c87d859133d3cb2",
+        "id": "TP-live-t1",
+        "record_type": "transformation_proposal"
+      },
+      {
+        "content_hash": "56653e88700bd35f1252af411a0a8a3100847d6ceebd78a67af1cc53e0d8ded0",
+        "id": "TP-live-t2",
+        "record_type": "transformation_proposal"
+      },
+      {
+        "content_hash": "0b9f6d9409caacf083ede4344cfb261c4346d66eb7358c09a6272a7bacbf287d",
+        "id": "TP-live-t3",
+        "record_type": "transformation_proposal"
+      },
+      {
+        "content_hash": "4b4c41ea099f3545343e001162b823c6decba595daf53b0291263c1fe4c1dea8",
+        "id": "TP-live-t4",
+        "record_type": "transformation_proposal"
+      },
+      {
+        "content_hash": "77f26ace6e756feeed76f2905b19d9358e0c64dbeb5fa430cf71556bdaa16878",
+        "id": "TP-live-t5",
+        "record_type": "transformation_proposal"
+      },
+      {
+        "content_hash": "b35c0f6f50a420b9d33491ac92ed4c42cb6348aab6ea8c9e1109c840b486b5e7",
+        "id": "TP-live-t6",
+        "record_type": "transformation_proposal"
+      }
+    ],
+    "problem_brief": [
+      {
+        "content_hash": "f263c5c501c08244f924e6f84f2ef804a8a93b3f4b240e1f02f04f39977165db",
+        "id": "PB-rural-school-closures",
+        "record_type": "problem_brief"
+      }
+    ],
+    "research_snapshot": [
+      {
+        "content_hash": "c7287a21c8d63840411e13ce40de0365ba080cf94e337bfb4e494f986f3899b8",
+        "id": "A-live-demography-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "c6ab579ba162727491b125cb282a8d557abf9c23b1e059b9251bf5780a22c9ad",
+        "id": "A-live-demography-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "c23a3b907e36db744e64614f0a69e0c6f7c534c22e14072c316c4c925c96d4a0",
+        "id": "A-live-demography-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "2413eee8afc5bbdc5bf5027302f89dda4c2f9b56f746c3c46069631528a17f05",
+        "id": "A-live-demography-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "9b20b50954a18ce0b64185020be8aed4e6847c6fcf2420bfda5bac61951f7a13",
+        "id": "U-live-demography-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "715b19c590b947763c1d51d0374c2888a303567a6b03a9a39496df407cd22267",
+        "id": "U-live-demography-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "47a73b600cd1f84058c027a64d1dac205a6aa908dd28c6e7137ec6d3ca4d6b90",
+        "id": "U-live-demography-03",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "d5470623e6d8577dea433501b089df05d0de2deb318878d193b1c15530504dd2",
+        "id": "F-live-demography-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "6ff28d78e469ddac785af1fbbdb93dab05d6a3ce6b5c972f208e49518929dc91",
+        "id": "F-live-demography-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "8fb392e80c0ea40bfd3209f66aa0dda3d6b166d86f56529197e0a64604c8162a",
+        "id": "F-live-demography-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "a784ce8ef4cf54ed2251e1ee6de06f028a48f418147eac4664a8943d95e3a701",
+        "id": "F-live-demography-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "9d251e21bc0355e4b5204944655f3cc258ba60291614b3ef9d9098f5b3add73a",
+        "id": "F-live-demography-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "f50e780fee2fa50e94e0c10c942173f7cbda2bf6e77d911539bb40ace71c71cd",
+        "id": "F-live-demography-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "915865277237929126f71ae635681031d21fde177d5781a37fdc7ea977ede30a",
+        "id": "F-live-demography-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "4fcb1776e1e8746db96d8becf17ec859d6a4e99cdadc48446c460ca876774c68",
+        "id": "F-live-demography-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "1d3710232e7917f7c4ee7907f832c10c0f228f8b2fc475f1298297f5a4d87b2e",
+        "id": "F-live-demography-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "7f0cda5ce368784cfee1f70536548676a5eb80ab869e88c92c47bf36c38c15cf",
+        "id": "F-live-demography-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "d939dc55894004b83882f2efc195ad5550f2535cf734140a542dd9507c484219",
+        "id": "A-live-education_finance-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "805ebf04e8de877ab67d04f53a5b3a7fa4d6a0d6ce1cca897340a8eb3200934a",
+        "id": "A-live-education_finance-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "e5dce30fd3c4b075eda349a50e407f916241c81bd330808ba44ec080f8ee0271",
+        "id": "A-live-education_finance-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "a6b293a673eb51326e921dc2273e35045f2cee9a2de78f8a9d92dee8f039b662",
+        "id": "A-live-education_finance-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "4343a75bb73c54178381a4f7293808b9c5c8e5fb3616ed08e1a4cd9454d2f4ff",
+        "id": "U-live-education_finance-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "bc56ae87a0577ee6ee3d9baa4606ce8eb6dce66ee62d8d2d5429c90dfc9afba5",
+        "id": "U-live-education_finance-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "ffae86f025cd0e57aa732cf6c040d1772c69350988c9a70d5d6fdc4ed80c2baa",
+        "id": "F-live-education_finance-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "6e7994c528a68aac7d12ed088d8be74e45d2e60d8cb2820bece420387ca94d8e",
+        "id": "F-live-education_finance-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "6b677824a2cf873ad06c99210b4315473c13641b3952fd44d33f782eb27b6e8b",
+        "id": "F-live-education_finance-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "4c794c5db690a03a3ddd67a5fb6e62214bd58c9108156322d28481018e5a87e2",
+        "id": "F-live-education_finance-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "7562e45018b0788bda5f3a500af8e0f7577658fd2d6fc5a45afb37e00abb4c31",
+        "id": "F-live-education_finance-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "1ddf0b35f6fa78419f1f4d5f752f32e8e7c9c311079ffcd6a36357301b9f5321",
+        "id": "F-live-education_finance-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "85205401cb2efee68133dcef4ed16fea59b3962e05e4c8c9cbff554ba05b76e0",
+        "id": "F-live-education_finance-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "067f59094db5ac01c5b893ea7fb98e86aaa017fc0f060f236130cd73f9707d4c",
+        "id": "F-live-education_finance-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "84ac76535b219a1128c8b5785aca4d634528b5057602d15702e33b2b2a361409",
+        "id": "F-live-education_finance-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "894badf90c70b1767202adcd10582978ab13ab485232d491ae2ff6878c3eeda0",
+        "id": "F-live-education_finance-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "57822f6cc8631ba3db8e1a0dcf1c6a9ed6d042e2e04954d68aa96f697d6b5b21",
+        "id": "A-live-equity_and_social_mobility-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "aa4e5f0a8468986fb82b94e9efbd48c73e2299c536803b9c5740e1d840811312",
+        "id": "A-live-equity_and_social_mobility-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "8ab8d30dbc068be863cc3efd747efca7677c0e65a4d073c92a6e39a84df99dde",
+        "id": "A-live-equity_and_social_mobility-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "5214ec395794440058a69fc4108e30857f90178be3eee6a5f1ece136fcb1ce26",
+        "id": "A-live-equity_and_social_mobility-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "172a4a5df437d73793c0aeeb53c6c9655dea0a8537b3f52e4755dac65bacf197",
+        "id": "U-live-equity_and_social_mobility-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "b06fa8f01c5d2cb771d59a41ab77f28fbe7aefa8b7079f7b494dfd43f72b5de4",
+        "id": "U-live-equity_and_social_mobility-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "9e59d7042bfc51374a43bc7a6157e8795b07e3327e72ec2887a79b7784ac9655",
+        "id": "F-live-equity_and_social_mobility-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "82cbf9f95467fa4b643f11bde87a70c71fc6699d4e728e2b8e0ba75926a1c5ac",
+        "id": "F-live-equity_and_social_mobility-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "a02a6869f89ccc5ce61264c329ac18684434539c03513c83715c80ec3ac650de",
+        "id": "F-live-equity_and_social_mobility-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "ebab6387fa080b7ca2532b5407376418dfc9fe0b4d053c44117d98001aef7041",
+        "id": "F-live-equity_and_social_mobility-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "b9a4a8b49196cf26732846f7d240f33597b8096270be14be7ef1e866bcdc9c93",
+        "id": "F-live-equity_and_social_mobility-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "1c2f4252edf4a87688ff90470e1f90fdd7bf4856e8db077bcc1d4b4f4225ca35",
+        "id": "F-live-equity_and_social_mobility-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "a1741663aa6aa635172b906599f59a9abeafc991d380f6d0b90e6a07e235989c",
+        "id": "F-live-equity_and_social_mobility-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "d5594ff9989bba5cb46577f2631e1c9a29d98d32ff1421c8a2794bebdbc67c1b",
+        "id": "F-live-equity_and_social_mobility-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "130de434bc1932e5862d67adddae34a5917ade6dc88dc47f31f2828379c82c58",
+        "id": "F-live-equity_and_social_mobility-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "61cde06cc01930abd47514f3f5483c5ae73dc5dedf0b91821d06ffba01d60303",
+        "id": "F-live-equity_and_social_mobility-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "0e3de8034f0fb049ec52ec923fe18949bd9be2e6b25697cfe93539226d252487",
+        "id": "A-live-finnish_reform-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "ff1f56c4c16546e131daffe144dce90fc0a6cbfe8a6fba1e960ea0b97024c472",
+        "id": "A-live-finnish_reform-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "fb6f0e0ca4950322f935a048d693c0f509c80f472a1c6784efe5c8da4d3a5f0a",
+        "id": "A-live-finnish_reform-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "936087aed1d5aa0c9afb5ee8475965581ee9e786bcd73bd9c0f74545548c2441",
+        "id": "A-live-finnish_reform-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "7d54e898ce5f590e7f885111b54e2aaa7e8d2c880f3a73adddcf441d2da34005",
+        "id": "U-live-finnish_reform-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "6e33525956847499004bfacb00e746e87547c65728f34d8853fdfbe37814f5c5",
+        "id": "U-live-finnish_reform-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "87cd9cfb3a1216d4406182394cc6ceaadaf75f44e42577c5331ad9cbe44d92e7",
+        "id": "U-live-finnish_reform-03",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "66c6e705ea4bc4971361db25a87e522f5e920c0da3046346a2d860490d0ced58",
+        "id": "U-live-finnish_reform-04",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "a92661d61b091d33a40a73fc16e95f722e99682a13d51a88238f598803c694de",
+        "id": "F-live-finnish_reform-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "88f0c1d8b251753ad65422f05a1999d490eefa1e9e28ee5d919d62956280e17f",
+        "id": "F-live-finnish_reform-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "b827d65aacfff6d923ea2b9d205b43c76b8f5a9353168110b53b6d234207dfba",
+        "id": "F-live-finnish_reform-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "1ff8d24ea7e9e29b7aeb3624c1252b56e71f68f6f5493011b2325144cbbf8c97",
+        "id": "F-live-finnish_reform-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "5648c15f7cf4306d4300c931d31226b473d7199ad99743ef8c14ef4d5caf1d38",
+        "id": "F-live-finnish_reform-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "b2340c970a6ad6e1371fa5cfb65b9fa90aeda103df40dad7957f54263f23a820",
+        "id": "F-live-finnish_reform-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "0db1cb16a83939decc09fa8c7675a837da83315247ad2af70025f4d0eb16b55d",
+        "id": "F-live-finnish_reform-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "0cdbd21de0700aafb950d2453d3a8575353bcefd93954a3de528143dbe8a6e2e",
+        "id": "F-live-finnish_reform-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "e779a454ee6cdaf3517beb3fd9be3f8eb6994bb25679f30f78184e9b1f37cab2",
+        "id": "F-live-finnish_reform-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "ac14762d5cb3ccd471577319edd73addee633bcc8e5e2ab7186d79a5d1e4b585",
+        "id": "F-live-finnish_reform-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "003614fe9f3802a18c8f63d34f026521b9cb9daa81252da2136bd2028336ebc9",
+        "id": "A-live-hungarian_education_system-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "b74a717bd71c2e1df75377d912ccf8e5bd19e8a87a31e3f4be4ed70baaac1933",
+        "id": "A-live-hungarian_education_system-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "c63d2744388c5f0a6bc0cdb41ec2154f48661706a3f32ef5f8711cbd9470ac6b",
+        "id": "A-live-hungarian_education_system-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "200fefaa84bdb8c8e3de0fdbdd77a5af80c568ad4d18981de114871f96c73acf",
+        "id": "A-live-hungarian_education_system-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "d1ceb8736464bb2aaadaf8a5b59f89548b1882533a4d8427d7504ab33c0f873c",
+        "id": "U-live-hungarian_education_system-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "5c79ad8a85bb93ba6030955acf3dd6b329545ba708b5781e6c44563db60b2aaa",
+        "id": "U-live-hungarian_education_system-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "97089d65aa6c33310c025ddf6015f29c725fa7855a57bc1b76ba348fe6661db0",
+        "id": "U-live-hungarian_education_system-03",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "e52b9e2f61f42bff2937cd32091ae5b5fad3b77253e1f65e44c9a315e34284bb",
+        "id": "F-live-hungarian_education_system-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "11969ca37e3b201331a0d6c108c65bc9e5ed6d690a38dbadaf42c0925ca5581f",
+        "id": "F-live-hungarian_education_system-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "63e1d3933e3c52ea07d344618911732ef79fbf43e41493b758e381faa700c883",
+        "id": "F-live-hungarian_education_system-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "dc67ad5ac87b98807745ccf6ae951dbb28300b362571462bfa2a949a9f465fe6",
+        "id": "F-live-hungarian_education_system-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "8c39c6c29e4168f30436942e1ae9c0ba02e308961c0a44f6d9e334c552a2b63e",
+        "id": "F-live-hungarian_education_system-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "85732b8fb6f1b076298eec4293d8183942425a5c856ecc7132f567e1e4a95b84",
+        "id": "F-live-hungarian_education_system-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "f18a1d9b74e66291c319e73ddb733eacd5b00b27d6f9954906ff144faafd1d17",
+        "id": "F-live-hungarian_education_system-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "a3ce154aa2fb8b5c23fd3c19b64f077c7da4fa848fd8527310d1f3621a86e5f8",
+        "id": "F-live-hungarian_education_system-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "520e976f65bef9012dd4a202d2b1cb1f6d4b7ae0a5b2d43add656b57f752f65e",
+        "id": "F-live-hungarian_education_system-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "b8995b7558174ded4ebd0dfa32d16242b998233dbeb300db778e476160070ee1",
+        "id": "F-live-hungarian_education_system-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "51117448427fee001ba4fef8149d9f444454734415a38f5a2bb05a25a856d89d",
+        "id": "A-live-implementation_planning-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "0e14199ccd21a3aee73c18c169b1d88ee6b9745a8aaaeb60c7d2081728a9fab0",
+        "id": "A-live-implementation_planning-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "54a2546d033e3a33b2e522a4483b4ae499a25e4fb4fa5e2143b28c3ce6ae669a",
+        "id": "A-live-implementation_planning-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "9a03d29509bc86ee4431278b3a49d779a7e9895f4ee4f50489510ac42985cfaf",
+        "id": "A-live-implementation_planning-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "9200068457b5cc62ce31fd283de9030476c6130b960caf76fe54b47029ecb3fc",
+        "id": "U-live-implementation_planning-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "574dcc885bfb002bf29a0eed3582058e5c3c3b6694e73315319ad3fa67645f8a",
+        "id": "U-live-implementation_planning-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "3aaa5000703292c7b58152c332f0a9595c2c342a3bf93378d16b5f83c077eeb9",
+        "id": "U-live-implementation_planning-03",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "1e8efc0b6aabe042b4b6063e5c771b71fa0135a23888dd9f03de141a742380c8",
+        "id": "U-live-implementation_planning-04",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "ea85fc766ff771225fc94c8e1a4a9e5bcb761543ca5861261395f43fa4e5588c",
+        "id": "F-live-implementation_planning-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "0b2d3f44557ff62a3ffe8eff06ba0ab2d8821d0884cc8130843c9d1050b91d9b",
+        "id": "F-live-implementation_planning-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "0744989145dcd3b9202f9239e1e519762d2c96428e65468b4c3d6606334263f3",
+        "id": "F-live-implementation_planning-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "4ba478edb9eb44eb9a78097720bbad49aa96865d0cbd5884b38a7c420148ea09",
+        "id": "F-live-implementation_planning-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "617683edb860b981f571e9c0164a8bdce815ca887cc4b56d9a76505f9c12d1f7",
+        "id": "F-live-implementation_planning-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "a03233203e766bb2a75333109f82e36a8cb73e08d411b7b35d2446c96b61bb78",
+        "id": "F-live-implementation_planning-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "8a71c699d01f26e34c6c81cbd2064221b799cd278d4303cb431a3a0122cf2dc0",
+        "id": "F-live-implementation_planning-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "b819f9772f26144cc349026ddd9dfe11660d45c325ddff0d4842eeb092b8ce8b",
+        "id": "F-live-implementation_planning-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "7ceeb90336e40b5ad0c096eb577e51d632ed8f5769f65c5adec0d17b78f04c46",
+        "id": "F-live-implementation_planning-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "08a23f33eeb9c29747b2c70629c199985077930453f9f6089c5c45f71864c39c",
+        "id": "F-live-implementation_planning-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "3705de4bf70edcdd96ec104c208354d7702383be16082220b7493f12b51390e0",
+        "id": "A-live-international_comparison-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "6e81f80869e3932ed33391046e137afe28af9ac37082357759300e5b6a7c7b14",
+        "id": "A-live-international_comparison-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "7f7bf73ba8535a4cf9f679219eb2fc6ab119a44bd11a687657526e13982626b2",
+        "id": "A-live-international_comparison-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "257e3838a970b4aa53c5eb0a27deb6c4c3fe0429ec4aa0a3d84f828528e18537",
+        "id": "A-live-international_comparison-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "24a2be572d7a279217e719a4ab04b2fae841ef64d40b43706c563d482e0c4032",
+        "id": "U-live-international_comparison-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "f4b64c7513971634098cb82047ff5e5aeb12883fc2007428427bfca44bc467c1",
+        "id": "U-live-international_comparison-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "1e466eaae4decd2e5e691fbc1cd0e9b480ab9743c63f80e3e69c72858cdccc5e",
+        "id": "F-live-international_comparison-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "838ae62a9702d13d433449e681f9609dfa2fe5ea7a476d50ca1a4c9e27459ad6",
+        "id": "F-live-international_comparison-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "6ef3f06fedb3e6723122635f2de46ae63793f4b0f8818d4f827f6d5df6553404",
+        "id": "F-live-international_comparison-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "04d7b5f89964dfb0530a72a832ec9038198148d89ffcc6c856a8ebc42f8887f9",
+        "id": "F-live-international_comparison-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "04f43ebeb6dc4366caab9f2415669541925424f807c3eabd510593182b2a77dd",
+        "id": "F-live-international_comparison-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "999dee21d99cc6efd1b1e89332c5088d7c4c62bfd51b671bb7287ae51342fb4b",
+        "id": "F-live-international_comparison-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "b49696704becad195c3eb4c525a24144291c73b61379dff1a8533696bcb2f84f",
+        "id": "F-live-international_comparison-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "ce432a4b375ad794857dc7c22194b186cb503e7dfeac3ca93740f7e462b8a696",
+        "id": "F-live-international_comparison-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "0a00053da6b549f7e8c948e949172504166c8da8e0871cc02115133e7cb0280f",
+        "id": "F-live-international_comparison-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "190ecab9b1951593b8d5142d397dc938f2f122796205daa50704f167c25b481e",
+        "id": "F-live-international_comparison-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "f7ba1490eba2bc90ddf740084dd37a022340d94abb74044acd6373a79ceb73d4",
+        "id": "A-live-legal_and_governance-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "4671870e3704fd3902c653add61d08fd1f1a9f1ccda57e3be09a1d785432e947",
+        "id": "A-live-legal_and_governance-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "b818ff7a7ea74ccf3085b600682512e4be736a1ae5a860d7a6ede8281af2b690",
+        "id": "A-live-legal_and_governance-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "3fefb274cf4f57f0c711061e44034260170f56dd8835ded89c7a9b6bf63c9e56",
+        "id": "A-live-legal_and_governance-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "922c16a2b33c13b4dadc6e5a6ed02eb81ca48c0ec38eaebb2b70b5ad175f4985",
+        "id": "U-live-legal_and_governance-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "3f60016b65c8f44e650d3cf6355f9126d9b21b5b68dbeddd9e5c184b3c2c8905",
+        "id": "U-live-legal_and_governance-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "f9fe67c7e81937e5f06ad75c2317fa54df84181b71acf0b296bf5794fcf5d29c",
+        "id": "F-live-legal_and_governance-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "41c6a3adcb16ead2e270a1bf4de4827c68bb6f364637e278d6e2f12c890632a2",
+        "id": "F-live-legal_and_governance-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "553add1e06cb3dfe95a128cac0ee8a746996b6ee8dfabdba73666691569f6cde",
+        "id": "F-live-legal_and_governance-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "ee82ba90c9bab4ab9e3a9bdd36c3c9dc3b6ffaedbaddc70aa2ca71a1c52e627f",
+        "id": "F-live-legal_and_governance-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "b34d3392032638da7762d22ae411f4ee85719e0611c09579ce42a53cc62825b2",
+        "id": "F-live-legal_and_governance-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "fab1ec1f71d213b6d3820ca739668057efb233fc9aaeabbf30200c66da181e88",
+        "id": "F-live-legal_and_governance-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "038a295e8b9f8a6b3c1701e4be8fd711110deada8d6f452554e17c87f29590ad",
+        "id": "F-live-legal_and_governance-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "564d0f4cf855ce050f5c78b56e9a0440c688f5a1392203ece05b907acef0b2b2",
+        "id": "F-live-legal_and_governance-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "acfd4e1ed30ab163941556223da7e395b3a455c1dd4031fb9d2b96a549ae8419",
+        "id": "F-live-legal_and_governance-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "a531b86c3743fa8b064ff68c04521658aaef2d781d96093f5a45f8a666373585",
+        "id": "F-live-legal_and_governance-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "811eeb5ee9bf7fd00392daa7ee97b8f14c46559fee928e4d3ccf6db890a9d3af",
+        "id": "A-live-polish_reform-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "d5fc1077b55b3a4fc147448f5230d519acd671afca43ad09333fe2923f50c7d4",
+        "id": "A-live-polish_reform-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "0a560fd808ff15dd689d2426ba6d67b39eeec0fcbd6f7b4a8ffcd1f972e2bfed",
+        "id": "A-live-polish_reform-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "918db3d148addb9b06981bd9a64aa905ca0868713d652b44161c763e105e9254",
+        "id": "A-live-polish_reform-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "ebf6c6b326519bb6983044d8627445d6031d7fa28e9b0a14865ae6b5d85d283e",
+        "id": "U-live-polish_reform-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "27a149d28b266de116a641785c440aca7478e46bdb7d25b566325b7e949a0514",
+        "id": "U-live-polish_reform-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "4811eb6e7b323b430d6184865e3c24ccdf668702036be55cc6f2966e24caf995",
+        "id": "U-live-polish_reform-03",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "6d7138eb718244026f5052e9cdef81a620f8e1ea0696b7aa1a2591c5761fd6b8",
+        "id": "U-live-polish_reform-04",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "4a9fd44cd01fdaa7f00067ddf72dbffbdf393640b43da39d3697bc62f54223d8",
+        "id": "F-live-polish_reform-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "bcba2cc4e655d0f74e8df6f1c07f4e9b118a2eea1c4dd7b71fd9f443ae4c17a9",
+        "id": "F-live-polish_reform-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "e4dfccfc980ee92e0059770dcca3789e567996f43718ef9f3b9cc80afff699f5",
+        "id": "F-live-polish_reform-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "0cf09bdae679a6757de46d3981d94e9da7e91bf0706a2121fcb960f5e073956e",
+        "id": "F-live-polish_reform-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "d25e398c029b43bb4aaceedd3acbef066d8ce1d096d5300a768b741fdbb9f0ec",
+        "id": "F-live-polish_reform-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "3379b71f204ec05d231a7d26b09c28e0e6f4767b03632466fb25581130d313d1",
+        "id": "F-live-polish_reform-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "9abe898a489c0de5b24dcfb79b1741f2302fd43c3f27ccc02e66cd9918f96bfd",
+        "id": "F-live-polish_reform-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "7816651798db758230b1510fecfde744560bd00e8479f6b7731c61749b54ad2d",
+        "id": "F-live-polish_reform-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "c8d7d56f3879065b80f3c166da3fe7ee32c5109641214605c5bb8cf5d5793ebf",
+        "id": "F-live-polish_reform-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "4cab1cbf98c5fea8cdf7b28751cd7ad287f7c3755e9c091293d535dde67833eb",
+        "id": "F-live-polish_reform-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "2c3638c9e415db924b9eb6255504c5113b912aa6ac1555f9f88f86d086cb87ce",
+        "id": "A-live-political_feasibility-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "7261e6a2ccdd87595022a6b9eab718271658dfe8d6b7a3e6fb0d36372fffc629",
+        "id": "A-live-political_feasibility-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "a1eed534de99a2cbfc25e8eb57aaa962c67e0febec9bf28688c45eb5a24b0b72",
+        "id": "A-live-political_feasibility-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "076e5a535819a5e0c721b3ce63b6f901904fa5ddb0698ce902cb69b99ccc3afd",
+        "id": "U-live-political_feasibility-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "7f1f2685ff5082028c29b22d79bc2d88738643d454af42ee32e0483eedd85a64",
+        "id": "U-live-political_feasibility-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "c11d57c6f9cf84be745ffefb740a1d31639b057a1b9062381a5fd7f0eccd799e",
+        "id": "F-live-political_feasibility-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "115def9e7e658a9cdf72cfd11823c12e5b22fb940478d6fae3751749b2600b9f",
+        "id": "F-live-political_feasibility-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "bf9fb74ddb99d05000fec48648a6944031fd7b487e7cadba70745074b0dc122b",
+        "id": "F-live-political_feasibility-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "39d62b1aba67d2b0d91bd147bde13300d86f00689d4356fffab71ead2b8fbf55",
+        "id": "F-live-political_feasibility-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "e67169934f63b0a1895b56f144069687ad66de71bd64d2b16b58e1d63bba9111",
+        "id": "F-live-political_feasibility-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "40d3df1d9803b99a6b60744301a8e155e70ea568cf46d7c68dfe9267b7f50b47",
+        "id": "F-live-political_feasibility-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "fff2b8d2870ff12fc8d9f3e8fa9f49d68b4b941ef974a78063b52f01c760447b",
+        "id": "F-live-political_feasibility-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "fc108d22f427e1e6e3c7d84c62cee086abd8b778104e15ccfaaf60fc521d8558",
+        "id": "F-live-political_feasibility-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "9647044fa459204d15e427bd88d59c4e50b98b65d43ca3f65464ada8389dd638",
+        "id": "F-live-political_feasibility-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "66eae32a6d39c4e5a260f2d27924c96fd482aa42fc115941e3f6e1402fc3c990",
+        "id": "F-live-political_feasibility-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "6eaf17ffe5cc3f11556fee657261640e90aa6fe26eff0f47d5fe00c6e12b67d8",
+        "id": "A-live-portuguese_reform-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "775e6c759dc9662eee090c27fd9dc87d3f80c65f1a9f80830e31dbd6f4a87a4c",
+        "id": "A-live-portuguese_reform-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "ed3841b367a8332b0cbdfecb11a9970a5519685193f7d872d90c9eebbe3a67ce",
+        "id": "A-live-portuguese_reform-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "17a647c139f8e3b7e2769e1ce7425a4749c266cca54a695a7aed165c231d3bb1",
+        "id": "A-live-portuguese_reform-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "e6c82c255ddd5edebd1ca1f8d3dc1bf0b827d237d1a312c892b1abf654ebb7c9",
+        "id": "U-live-portuguese_reform-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "56b1e187d3b0f6d399d8cac7817b7683ebe2eadc0fecd5d4a3caa8e44096dc05",
+        "id": "U-live-portuguese_reform-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "2ef497ff7d77c1e7831abcfdbdc79d401b84a6557061a6345aceff15d4f2f347",
+        "id": "U-live-portuguese_reform-03",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "b32c626453726516dc220c4cf62a8ff4b38e2e56d101067f7f2c1ccf108162c6",
+        "id": "F-live-portuguese_reform-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "cec265798e7b6e404815487b779639b62f900f16cf2ce2974a55adf4f174c945",
+        "id": "F-live-portuguese_reform-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "3c28de65168b6bbce3cdcbbc823d4996c14617f426555298e3415c4b04f513e3",
+        "id": "F-live-portuguese_reform-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "6968585b105d6c0cb66031caa870cd514ed879c0f151eb5809ee51c464e8611f",
+        "id": "F-live-portuguese_reform-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "fed3eca1c742507e195dfdd580b79407c2a42a94bc492e4a6728b498c3e43104",
+        "id": "F-live-portuguese_reform-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "89b5b758f5fd8cd9f61bde24c64f0e19ea701bc2f849371b1115cabb1b5f982c",
+        "id": "F-live-portuguese_reform-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "fb0a27cd23525ed8f5f35219c108db732997386772db09a09afa97942c1aba8c",
+        "id": "F-live-portuguese_reform-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "c25a559fd9aa8759ecb4bc565df7f6af09d7caf5a558cced53a72f14a0c57e4b",
+        "id": "F-live-portuguese_reform-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "d6dc4c3213f643ad32b7bfef2308fea437e4f26485170c9b3e9e8e3a2c3d45e4",
+        "id": "F-live-portuguese_reform-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "4c39ff4660f7bd1347d46d01645eb20d1ae1aae6df14e40d30fdc53d2f0bffaf",
+        "id": "F-live-portuguese_reform-10",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "a3132d53061ccff79c7fc37b37de9c233c6a84177df137e1647e53f70dabe4a1",
+        "id": "A-live-school_network_planning-01",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "bedf5985a780c3523db94a745eb5f39428e14f4866876183d587a75d1cc3cc55",
+        "id": "A-live-school_network_planning-02",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "1ff826c1a0fd340bd94ae1c4403c870ee6989a18af331dec73d7250b6610a60a",
+        "id": "A-live-school_network_planning-03",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "8c98cfa9d6e06265a4cf4335d45561d101bf7a0dd4fdf22ae0117f799feb7a83",
+        "id": "A-live-school_network_planning-04",
+        "record_type": "assumption"
+      },
+      {
+        "content_hash": "a7bc2fdd937a6c305b43c6e3cd3304eb88b13319db5b3955111506c0c0459e6e",
+        "id": "U-live-school_network_planning-01",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "a8a491d070ca7c499661367457a4f7415d5c104bc0a861617ceb6a912a3565db",
+        "id": "U-live-school_network_planning-02",
+        "record_type": "uncertainty"
+      },
+      {
+        "content_hash": "bc9809603ef09a5f1adbb67bb12798352ee996ef3665a8e654cc806cc2e76ab8",
+        "id": "F-live-school_network_planning-01",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "68c222f32b58066739904003ef9e45499b2a1674ee0e2e2d09b631f8ebea2bd1",
+        "id": "F-live-school_network_planning-02",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "29a47e6fb8c2eb8d5381a4172e123de8f900cedeb7819e655694fa58fd2096b8",
+        "id": "F-live-school_network_planning-03",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "581171285b3adccc28341755f53b1cd762a300d69a465497783bfd509704fe6b",
+        "id": "F-live-school_network_planning-04",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "e8b863b902d5b7f2ef9d996fe92e7412f85e07b16c40f014759c800fa9e843ec",
+        "id": "F-live-school_network_planning-05",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "b72054cbf462b8a9708f75c84bdf93a6f23d7d8920e8c502e4cdaa032d9baeee",
+        "id": "F-live-school_network_planning-06",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "62c544e807c83dd923853e803353ca36fa68b721d9b861ea7e92fcd5820f0bcf",
+        "id": "F-live-school_network_planning-07",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "41c9ac27fb7ebb60ae4e5ec314b4deea4c78c29b161da053467cd7e541bd0291",
+        "id": "F-live-school_network_planning-08",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "d5e729cc7bdbfb547d6d960c4ca4b5d131d27d26d2771a8ecbb6fc6b17e968f7",
+        "id": "F-live-school_network_planning-09",
+        "record_type": "finding"
+      },
+      {
+        "content_hash": "0ad409b23f0fa62390c5fe40a96024a77629db7299bfdd8adf0eeadd861a39cf",
+        "id": "F-live-school_network_planning-10",
+        "record_type": "finding"
+      }
+    ]
+  },
+  "schema_version": "1.0.0",
+  "topic": "rural-school-closures"
+}

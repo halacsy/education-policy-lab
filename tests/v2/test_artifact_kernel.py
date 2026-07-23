@@ -96,6 +96,7 @@ class SchemaRegistryTests(unittest.TestCase):
         available = set(self.schemas.available())
         archive = {
                 ("approved_option_space", "2.0.0"),
+                ("architecture_overlay", "2.0.0"),
                 ("assumption", "2.0.0"),
                 ("canonical_claim", "2.0.0"),
                 ("coverage_ledger", "2.0.0"),

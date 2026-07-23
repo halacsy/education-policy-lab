@@ -154,6 +154,59 @@ def evidence_normalization_output(
     }
 
 
+def cross_shard_reconciliation_output(
+    finding_ids: list[str], claim_keys: list[str]
+) -> dict[str, Any]:
+    """Bounded equivalence/conflict reconciliation across evidence shards."""
+
+    return {
+        "type": "object", "additionalProperties": False,
+        "properties": {
+            "merge_groups": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "claim_keys": array(
+                        {"type": "string", "enum": claim_keys}, 2, 10
+                    ),
+                    "rationale": TEXT,
+                },
+                "required": ["claim_keys", "rationale"],
+            }, 0, 30),
+            "conflicts": array({
+                "type": "object", "additionalProperties": False,
+                "properties": {
+                    "title": TEXT,
+                    "conflict_type": {"type": "string", "enum": [
+                        "direct_contradiction", "context_dependence",
+                        "measurement_difference", "temporal_change",
+                        "causal_interpretation", "population_difference",
+                        "transferability",
+                    ]},
+                    "description": TEXT,
+                    "resolvability": {"type": "string", "enum": [
+                        "answerable_now", "requires_new_data",
+                        "context_specific", "not_empirically_resolvable",
+                    ]},
+                    "research_question": TEXT,
+                    "decision_relevance": TEXT,
+                    "finding_refs": array(
+                        {"type": "string", "enum": finding_ids}, 2, 20
+                    ),
+                    "claim_keys": array(
+                        {"type": "string", "enum": claim_keys}, 2, 10
+                    ),
+                },
+                "required": [
+                    "title", "conflict_type", "description", "resolvability",
+                    "research_question", "decision_relevance", "finding_refs",
+                    "claim_keys",
+                ],
+            }, 0, 20),
+        },
+        "required": ["merge_groups", "conflicts"],
+    }
+
+
 def option_seed_output(
     claim_ids: list[str], conflict_ids: list[str], finding_ids: list[str],
     assumption_ids: list[str], uncertainty_ids: list[str],

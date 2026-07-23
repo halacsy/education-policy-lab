@@ -1,0 +1,686 @@
+{
+  "seeds": [
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-01",
+        "A-live-international_comparison-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c38",
+        "CC-live-c42",
+        "CC-live-c5",
+        "CC-live-c43"
+      ],
+      "change_lever": {
+        "en": "Adopt a Scotland/Wales-style statutory presumption against rural closure combined with a mandatory 'strong positive case' evidentiary test and a small-and-rural schools grant, shifting the burden of proof onto closure decisions.",
+        "hu": "Skócia/Wales-mintájú törvényi vélelem bevezetése a vidéki bezárás ellen, kötelező 'erős pozitív indok' bizonyítási teszttel és kis- és vidéki iskolák támogatási alapjával, a bizonyítási terhet a bezárási döntésekre helyezve."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e3",
+        "EC-live-e9"
+      ],
+      "finding_refs": [
+        "F-live-international_comparison-08",
+        "F-live-legal_and_governance-01",
+        "F-live-legal_and_governance-03"
+      ],
+      "key": "O1",
+      "scope": {
+        "en": "National regulatory change affecting closure procedures for all sub-3,000-population settlement schools.",
+        "hu": "Országos szabályozási változás, amely a 3000 fő alatti települések összes iskolájának bezárási eljárását érinti."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Closure and reorganization decisions are formally centralized in the tankerület with weak local and parental voice, and 'keep the school open' is not a legally neutral default; there is no institutional-level right protecting a particular local school.",
+        "hu": "A bezárási és átszervezési döntések formálisan a tankerületben központosítottak, gyenge helyi és szülői beleszólással, és az 'iskola nyitva tartása' nem jogsemleges alapérték; nincs intézményi szintű jog, amely egy konkrét helyi iskolát védene."
+      },
+      "title": {
+        "en": "Legal presumption against rural school closure with a 'strong positive case' test",
+        "hu": "Törvényi vélelem a vidéki iskolabezárás ellen, 'erős pozitív indok' teszttel"
+      },
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-01",
+        "U-live-international_comparison-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-school_network_planning-01",
+        "A-live-international_comparison-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c4",
+        "CC-live-c34",
+        "CC-live-c38",
+        "CC-live-c8",
+        "CC-live-c30"
+      ],
+      "change_lever": {
+        "en": "Adopt a Norway-style standardized minimum-size target (e.g. 100-450 pupils) with statutory maximum bus-commute limits (e.g. 30 minutes), consolidating below-threshold schools while legally guaranteeing transport.",
+        "hu": "Norvég-mintájú szabványosított minimális iskolaméret-cél (pl. 100-450 tanuló) bevezetése törvényi maximális buszos utazási limitekkel (pl. 30 perc), a küszöb alatti iskolák összevonásával, a szállítás törvényi garantálása mellett."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e3",
+        "EC-live-e11"
+      ],
+      "finding_refs": [
+        "F-live-international_comparison-07",
+        "F-live-hungarian_education_system-04",
+        "F-live-school_network_planning-01"
+      ],
+      "key": "O2",
+      "scope": {
+        "en": "National structural reform of the primary school network with transport financing implications.",
+        "hu": "Az általános iskolai hálózat országos strukturális reformja szállításfinanszírozási vonzatokkal."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Hungary's school system is unusually fragmented, with over half of primary schools below 150 pupils and hundreds of villages below viability thresholds, straining funding and staffing.",
+        "hu": "A magyar iskolarendszer szokatlanul széttöredezett, az általános iskolák több mint fele 150 tanuló alatti, és több száz falu az életképességi küszöb alatt van, ami feszíti a finanszírozást és a személyzetet."
+      },
+      "title": {
+        "en": "Standardized minimum-size threshold with guaranteed bus transport",
+        "hu": "Szabványosított minimális iskolaméret-küszöb garantált buszos szállítással"
+      },
+      "uncertainty_refs": [
+        "U-live-school_network_planning-01",
+        "U-live-international_comparison-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-school_network_planning-02",
+        "A-live-implementation_planning-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c53",
+        "CC-live-c7",
+        "CC-live-c9",
+        "CC-live-c66"
+      ],
+      "change_lever": {
+        "en": "Retain lower primary grades (I-III) locally with guaranteed enrollment and transport upper grades (IV-VIII) to consolidated schools, repurposing freed capacity as community facilities.",
+        "hu": "Az alsó tagozat (I-III.) helyben tartása garantált beiratkozással, a felső tagozat (IV-VIII.) összevont iskolákba szállítása, a felszabaduló kapacitás közösségi célú újrahasznosításával."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e11"
+      ],
+      "finding_refs": [
+        "F-live-school_network_planning-05",
+        "F-live-hungarian_education_system-07",
+        "F-live-implementation_planning-03"
+      ],
+      "key": "O3",
+      "scope": {
+        "en": "Structural network-design option applicable to depopulating villages above minimal cohort size.",
+        "hu": "Strukturális hálózattervezési lehetőség a minimális kohorszméret feletti elnéptelenedő falvakra."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Binary open/close decisions ignore intermediate options; full closure imposes documented family burdens while full retention is unsustainable given cohort decline and staffing shortages.",
+        "hu": "A bináris nyit/zár döntések figyelmen kívül hagyják a köztes lehetőségeket; a teljes bezárás dokumentált családi terheket ró, míg a teljes fenntartás fenntarthatatlan a kohorszcsökkenés és személyzethiány miatt."
+      },
+      "title": {
+        "en": "Split-model: retain lower grades locally, transport upper grades",
+        "hu": "Osztott modell: alsó tagozat helyben, felső tagozat szállítással"
+      },
+      "uncertainty_refs": [
+        "U-live-school_network_planning-02",
+        "U-live-implementation_planning-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-international_comparison-03",
+        "A-live-equity_and_social_mobility-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c65",
+        "CC-live-c64",
+        "CC-live-c33",
+        "CC-live-c17",
+        "CC-live-c47"
+      ],
+      "change_lever": {
+        "en": "Deploy OECD-identified non-closure interventions—multigrade pedagogy, rural teacher networks, and technology-mediated knowledge-sharing—to sustain small-school quality without consolidation.",
+        "hu": "Az OECD által azonosított bezárás nélküli beavatkozások bevetése—összevont osztályos pedagógia, vidéki tanári hálózatok és technológiával közvetített tudásmegosztás—a kisiskolai minőség fenntartására összevonás nélkül."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e7"
+      ],
+      "finding_refs": [
+        "F-live-international_comparison-01",
+        "F-live-hungarian_education_system-03",
+        "F-live-equity_and_social_mobility-04"
+      ],
+      "key": "O4",
+      "scope": {
+        "en": "Practice-level intervention targeting quality in retained small rural schools nationwide.",
+        "hu": "Gyakorlati szintű beavatkozás a megtartott kis vidéki iskolák minőségének célzására országosan."
+      },
+      "seed_type": "practice",
+      "system_problem": {
+        "en": "Rural schools face the largest OECD urban-rural outcome gap and acute teacher shortages, but closure imposes social costs and some village schools are 'resilient' relative to SES; quality is contested.",
+        "hu": "A vidéki iskolák a legnagyobb OECD városi-vidéki eredménykülönbséggel és súlyos tanárhiánnyal küzdenek, de a bezárás társadalmi költségekkel jár, és egyes falusi iskolák a szociális háttérhez képest 'reziliensek'; a minőség vitatott."
+      },
+      "title": {
+        "en": "Non-closure quality interventions for small rural schools",
+        "hu": "Bezárás nélküli minőségi beavatkozások kis vidéki iskolákban"
+      },
+      "uncertainty_refs": [
+        "U-live-international_comparison-01",
+        "U-live-equity_and_social_mobility-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01",
+        "A-live-education_finance-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c57",
+        "CC-live-c33",
+        "CC-live-c17",
+        "CC-live-c49",
+        "CC-live-c58"
+      ],
+      "change_lever": {
+        "en": "Introduce targeted rural teacher incentives (salary supplements, qualification pathways, placement networks) to close the unqualified-teacher gap and stabilize staffing in retained rural schools.",
+        "hu": "Célzott vidéki tanári ösztönzők bevezetése (bérkiegészítés, képzési utak, elhelyezési hálózatok) a képesítetlen tanár-rés megszüntetésére és a megtartott vidéki iskolák személyzetének stabilizálására."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-hungarian_education_system-03",
+        "F-live-polish_reform-08",
+        "F-live-equity_and_social_mobility-04"
+      ],
+      "key": "O5",
+      "scope": {
+        "en": "National organizational/funding intervention on teacher workforce for rural schools.",
+        "hu": "Országos szervezeti/finanszírozási beavatkozás a vidéki iskolák tanári munkaerejére."
+      },
+      "seed_type": "organizational",
+      "system_problem": {
+        "en": "A structural teacher-supply crisis—~6,200 annual retirements, half of primary teachers 50+, only 7.2% under 30, 60% resignation within 3-4 years, and 2-3x higher unqualified shares in disadvantaged rural schools—threatens any retention policy independent of closure decisions.",
+        "hu": "Egy strukturális tanár-utánpótlási válság—évi ~6200 nyugdíjazás, az általános iskolai tanárok fele 50+, csak 7,2% 30 alatti, 60% lemondás 3-4 éven belül, és 2-3-szor magasabb képesítetlen arány a hátrányos vidéki iskolákban—veszélyeztet bármely megtartási politikát a bezárási döntésektől függetlenül."
+      },
+      "title": {
+        "en": "Rural teacher-supply strategy to make 'keep open' feasible",
+        "hu": "Vidéki tanár-utánpótlási stratégia a 'nyitva tartás' megvalósíthatóságáért"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-01",
+        "U-live-education_finance-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-school_network_planning-03",
+        "A-live-demography-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c41",
+        "CC-live-c13",
+        "CC-live-c46",
+        "CC-live-c31",
+        "CC-live-c56"
+      ],
+      "change_lever": {
+        "en": "Build a named demographic early-warning safeguard linking fertility/migration microdata to real-time district network planning, enabling proactive rather than reactive decisions.",
+        "hu": "Egy megnevezett demográfiai korai előrejelző védelmi mechanizmus kiépítése, amely a termékenységi/migrációs mikroadatokat valós idejű tankerületi hálózattervezéshez köti, lehetővé téve a proaktív, nem reaktív döntéseket."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-school_network_planning-04",
+        "F-live-polish_reform-05",
+        "F-live-demography-02"
+      ],
+      "key": "O6",
+      "scope": {
+        "en": "National information/governance infrastructure for school-network planning.",
+        "hu": "Országos információs/kormányzati infrastruktúra az iskolahálózat-tervezéshez."
+      },
+      "seed_type": "information",
+      "system_problem": {
+        "en": "No systematic institutional early-warning mechanism links demographic microdata to proactive tankerület-level network planning; identification of school-less settlements is only post-hoc, and closures are framed as budget-driven despite demographic roots.",
+        "hu": "Nincs szisztematikus intézményi korai előrejelző mechanizmus, amely a demográfiai mikroadatokat a tankerületi szintű proaktív hálózattervezéshez kapcsolná; az iskola nélküli települések azonosítása csak utólagos, és a bezárásokat költségvetési indokkal keretezik a demográfiai gyökerek ellenére."
+      },
+      "title": {
+        "en": "Demographic early-warning system for proactive network planning",
+        "hu": "Demográfiai korai előrejelző rendszer proaktív hálózattervezéshez"
+      },
+      "uncertainty_refs": [
+        "U-live-school_network_planning-01",
+        "U-live-demography-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-02",
+        "A-live-hungarian_education_system-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c27",
+        "CC-live-c25",
+        "CC-live-c62",
+        "CC-live-c43",
+        "CC-live-c54"
+      ],
+      "change_lever": {
+        "en": "Restore elected-municipal authority (or binding co-decision) over school-network changes, resolving the ownership/operation split and strengthening local democratic accountability.",
+        "hu": "A választott önkormányzati hatáskör (vagy kötelező társdöntés) helyreállítása az iskolahálózati változások felett, feloldva a tulajdon/működtetés kettősséget és erősítve a helyi demokratikus elszámoltathatóságot."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e12"
+      ],
+      "finding_refs": [
+        "F-live-legal_and_governance-02",
+        "F-live-hungarian_education_system-05",
+        "F-live-legal_and_governance-08"
+      ],
+      "key": "O7",
+      "scope": {
+        "en": "National governance restructuring of school maintenance authority.",
+        "hu": "Az iskolafenntartói hatáskör országos kormányzati átalakítása."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Governance is split between municipal building ownership and central teacher employment, creating accountability ambiguity; the 2017 re-decentralization was deconcentration not devolution, and parents have only informal post-hoc recourse.",
+        "hu": "A kormányzás megosztott az önkormányzati épülettulajdon és a központi tanári foglalkoztatás között, elszámoltathatósági homályt teremtve; a 2017-es re-decentralizáció dekoncentráció volt, nem devolúció, és a szülőknek csak informális utólagos jogorvoslatuk van."
+      },
+      "title": {
+        "en": "Re-municipalization or elected local voice in closure decisions",
+        "hu": "Re-municipalizáció vagy választott helyi beleszólás a bezárási döntésekbe"
+      },
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-01",
+        "U-live-hungarian_education_system-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-equity_and_social_mobility-02",
+        "A-live-legal_and_governance-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c18",
+        "CC-live-c15",
+        "CC-live-c16",
+        "CC-live-c60",
+        "CC-live-c32"
+      ],
+      "change_lever": {
+        "en": "Use desegregation criteria as an explicit trigger and design constraint in closure/consolidation, pairing closure of segregated single-option schools with guaranteed integrated placement and transport.",
+        "hu": "A deszegregációs kritériumok kifejezett kiváltó okként és tervezési korlátként való alkalmazása a bezárásnál/összevonásnál, a szegregált egyetlen-lehetőség iskolák bezárását garantált integrált elhelyezéssel és szállítással párosítva."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e9"
+      ],
+      "finding_refs": [
+        "F-live-legal_and_governance-04",
+        "F-live-equity_and_social_mobility-02",
+        "F-live-equity_and_social_mobility-07"
+      ],
+      "key": "O8",
+      "scope": {
+        "en": "Regulatory reform intersecting closure policy with anti-segregation law.",
+        "hu": "Szabályozási reform, amely a bezárási politikát összekapcsolja a szegregációellenes joggal."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Keeping a small single-option school open can constitute unlawful racial segregation (ECtHR Piliscsaba, Nyíregyháza), while free choice with catchment enrollment drives socioeconomic and Roma sorting between settlements, and court-ordered closures face durable local resistance.",
+        "hu": "Egy kis, egyetlen lehetőséget jelentő iskola nyitva tartása jogellenes faji szegregációt jelenthet (EJEB Piliscsaba, Nyíregyháza), miközben a körzeti beiratkozással párosuló szabad választás szociális és roma szétválogatást hajt települések között, és a bíróság által elrendelt bezárások tartós helyi ellenállásba ütköznek."
+      },
+      "title": {
+        "en": "Desegregation-conditioned closure and access design",
+        "hu": "Deszegregációhoz kötött bezárás és hozzáférés-tervezés"
+      },
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-01",
+        "U-live-legal_and_governance-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-education_finance-02",
+        "A-live-finnish_reform-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c48",
+        "CC-live-c6",
+        "CC-live-c19",
+        "CC-live-c24",
+        "CC-live-c49"
+      ],
+      "change_lever": {
+        "en": "Replace per-pupil funding for small rural schools with a Finnish-style non-earmarked, remoteness- and demographics-adjusted subsidy covering fixed costs, transport and salaries.",
+        "hu": "A kis vidéki iskolák tanulónkénti finanszírozásának felváltása finn-mintájú, nem címzett, távolság- és demográfia-korrigált támogatással, amely fedezi a fix költségeket, a szállítást és a béreket."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e11",
+        "EC-live-e12"
+      ],
+      "finding_refs": [
+        "F-live-education_finance-01",
+        "F-live-finnish_reform-06",
+        "F-live-education_finance-08"
+      ],
+      "key": "O9",
+      "scope": {
+        "en": "National funding-formula reform for small rural schools.",
+        "hu": "Országos finanszírozásiképlet-reform a kis vidéki iskolák számára."
+      },
+      "seed_type": "funding",
+      "system_problem": {
+        "en": "Per-pupil financing creates structural incentives to consolidate because formulas underfund small schools' fixed costs; KLIK centralization produced systematic under-budgeting and solvency problems.",
+        "hu": "A tanulónkénti finanszírozás strukturális ösztönzőket teremt az összevonásra, mert a képletek alulfinanszírozzák a kisiskolák fix költségeit; a KLIK-központosítás szisztematikus alulköltségvetést és fizetőképességi problémákat okozott."
+      },
+      "title": {
+        "en": "Non-selective remoteness-weighted state funding for small schools",
+        "hu": "Nem szelektív, távolság-súlyozott állami finanszírozás a kisiskoláknak"
+      },
+      "uncertainty_refs": [
+        "U-live-education_finance-01",
+        "U-live-finnish_reform-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-02",
+        "A-live-equity_and_social_mobility-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c24",
+        "CC-live-c21",
+        "CC-live-c36",
+        "CC-live-c52",
+        "CC-live-c59"
+      ],
+      "change_lever": {
+        "en": "Enable and part-fund community-managed school models and provide standardized support tools for local mobilization to preserve viable village schools.",
+        "hu": "A közösség által működtetett iskolamodellek engedélyezése és részleges finanszírozása, valamint szabványosított támogatási eszközök biztosítása a helyi mozgósításhoz az életképes falusi iskolák megőrzésére."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e4",
+        "EC-live-e8"
+      ],
+      "finding_refs": [
+        "F-live-finnish_reform-07",
+        "F-live-equity_and_social_mobility-05",
+        "F-live-implementation_planning-08"
+      ],
+      "key": "O10",
+      "scope": {
+        "en": "Organizational option empowering local agency in threatened villages.",
+        "hu": "Szervezeti lehetőség a helyi cselekvőképesség erősítésére a veszélyeztetett falvakban."
+      },
+      "seed_type": "organizational",
+      "system_problem": {
+        "en": "Under identical funding rules local civic responses diverge (Asikkala closed schools, Tiistenjoki kept one open); small schools function as community hubs, and community-managed schools show smaller social-capital declines, but mobilization is localized and resource-intensive.",
+        "hu": "Azonos finanszírozási szabályok mellett a helyi civil válaszok eltérnek (Asikkala bezárt, Tiistenjoki nyitva tartott); a kisiskolák közösségi központként működnek, és a közösség által működtetett iskolák kisebb társadalmitőke-csökkenést mutatnak, de a mozgósítás lokalizált és erőforrás-igényes."
+      },
+      "title": {
+        "en": "Community-managed schools and civic mobilization support",
+        "hu": "Közösség által működtetett iskolák és civil mozgósítás támogatása"
+      },
+      "uncertainty_refs": [
+        "U-live-finnish_reform-02",
+        "U-live-equity_and_social_mobility-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-school_network_planning-04",
+        "A-live-demography-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c40",
+        "CC-live-c61",
+        "CC-live-c44",
+        "CC-live-c12"
+      ],
+      "change_lever": {
+        "en": "Condition rural-development infrastructure funding on integrated demographic and education-network forecasts to avoid stranded investment and align building reuse with realistic enrollment.",
+        "hu": "A vidékfejlesztési infrastruktúra-finanszírozás integrált demográfiai és oktatáshálózati előrejelzésekhez kötése a bennragadt beruházások elkerülésére és az épület-újrahasznosítás reális beiratkozáshoz igazítására."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-school_network_planning-07",
+        "F-live-demography-06",
+        "F-live-implementation_planning-06"
+      ],
+      "key": "O11",
+      "scope": {
+        "en": "Cross-sectoral funding-coordination option.",
+        "hu": "Ágazatközi finanszírozás-koordinációs lehetőség."
+      },
+      "seed_type": "funding",
+      "system_problem": {
+        "en": "Rural-development spending (Magyar Falu Program) does not reliably reverse enrollment-driven closure and often follows or substitutes for it, with renovated schools closing for lack of children, indicating poor coordination between network planning and rural funding.",
+        "hu": "A vidékfejlesztési kiadások (Magyar Falu Program) nem fordítják meg megbízhatóan a beiratkozás-vezérelt bezárást, gyakran követik vagy helyettesítik azt, felújított iskolák zárnak be gyerekhiány miatt, ami rossz koordinációra utal a hálózattervezés és a vidékfejlesztési finanszírozás között."
+      },
+      "title": {
+        "en": "Coordinated education-network and rural-development funding",
+        "hu": "Összehangolt oktatáshálózati és vidékfejlesztési finanszírozás"
+      },
+      "uncertainty_refs": [
+        "U-live-school_network_planning-02",
+        "U-live-demography-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-implementation_planning-02",
+        "A-live-legal_and_governance-04"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c9",
+        "CC-live-c30",
+        "CC-live-c8",
+        "CC-live-c66",
+        "CC-live-c42"
+      ],
+      "change_lever": {
+        "en": "Where closure is unavoidable, mandate a managed-closure protocol with automatically enforced, funded school transport and family-support measures rather than complaint-triggered provision.",
+        "hu": "Ahol a bezárás elkerülhetetlen, kötelező menedzselt bezárási protokoll bevezetése automatikusan kikényszerített, finanszírozott iskolabusszal és családtámogató intézkedésekkel, nem panasz-alapú biztosítással."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e11"
+      ],
+      "finding_refs": [
+        "F-live-implementation_planning-03",
+        "F-live-legal_and_governance-06",
+        "F-live-international_comparison-06"
+      ],
+      "key": "O12",
+      "scope": {
+        "en": "Regulatory standard for closure execution and access continuity.",
+        "hu": "Szabályozási standard a bezárás végrehajtására és a hozzáférés folytonosságára."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Closure imposes documented family burdens (longer/riskier commutes, lost after-school participation), transport duty falls on the maintainer but is not automatically fulfilled (Tiszavasvári/Bűd dispute), and consolidation savings exclude transport.",
+        "hu": "A bezárás dokumentált családi terheket ró (hosszabb/kockázatosabb utazás, elveszett délutáni részvétel), a szállítási kötelezettség a fenntartót terheli, de nem teljesül automatikusan (Tiszavasvári/Bűd vita), és az összevonási megtakarítások nem tartalmazzák a szállítást."
+      },
+      "title": {
+        "en": "Managed closure with guaranteed transport and enforceable duty",
+        "hu": "Menedzselt bezárás garantált szállítással és kikényszeríthető kötelezettséggel"
+      },
+      "uncertainty_refs": [
+        "U-live-implementation_planning-02",
+        "U-live-legal_and_governance-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-01",
+        "A-live-hungarian_education_system-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c28",
+        "CC-live-c29",
+        "CC-live-c55",
+        "CC-live-c26"
+      ],
+      "change_lever": {
+        "en": "Strengthen transparency, secular-alternative guarantees, and informed-consent standards around church takeovers so the formal parental veto reflects genuine choice in single-school settlements.",
+        "hu": "Az átláthatóság, a világi alternatíva garanciái és a tájékozott beleegyezés standardjainak erősítése az egyházi átvételek körül, hogy a formális szülői vétó valódi választást tükrözzön az egyetlen iskolával rendelkező településeken."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e10"
+      ],
+      "finding_refs": [
+        "F-live-legal_and_governance-05",
+        "F-live-hungarian_education_system-09",
+        "F-live-equity_and_social_mobility-09"
+      ],
+      "key": "O13",
+      "scope": {
+        "en": "Regulatory safeguard on maintainer-model change in small settlements.",
+        "hu": "Szabályozási garancia a fenntartói modell váltására a kis településeken."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Parents hold a formal veto over church-school transfer, but in single-school villages transfer can function as a de facto reduction in educational choice even with the building open; church schools have larger autonomy and more advantageous financing and have doubled since 2010.",
+        "hu": "A szülők formális vétójoggal rendelkeznek az egyházi iskolaátadás felett, de az egyetlen iskolával rendelkező falvakban az átadás de facto csökkentheti az oktatási választást akkor is, ha az épület nyitva marad; az egyházi iskolák nagyobb autonómiával és előnyösebb finanszírozással rendelkeznek, és számuk 2010 óta megduplázódott."
+      },
+      "title": {
+        "en": "Safeguards on church-school transfer to protect real choice",
+        "hu": "Egyházi iskolaátadás garanciái a valós választás védelmére"
+      },
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-02",
+        "U-live-hungarian_education_system-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-02",
+        "A-live-implementation_planning-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c43",
+        "CC-live-c5",
+        "CC-live-c35",
+        "CC-live-c36"
+      ],
+      "change_lever": {
+        "en": "Establish binding consultation, appeal, and structured-response mechanisms giving affected communities enforceable procedural rights in closure/reorganization decisions.",
+        "hu": "Kötelező konzultációs, fellebbezési és strukturált-válasz mechanizmusok létrehozása, amelyek az érintett közösségeknek kikényszeríthető eljárási jogokat biztosítanak a bezárási/átszervezési döntésekben."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e4"
+      ],
+      "finding_refs": [
+        "F-live-legal_and_governance-07",
+        "F-live-implementation_planning-08",
+        "F-live-implementation_planning-07"
+      ],
+      "key": "O14",
+      "scope": {
+        "en": "Governance/regulatory reform of participation rights.",
+        "hu": "A részvételi jogok kormányzati/szabályozási reformja."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Oversight is weak: the Education Rights Commissioner and Deputy Ombudsman can recommend but not reverse closures, reorganization is administrative with only informal recourse, and a UN Special Rapporteur documented weak participation and no structured governmental response.",
+        "hu": "A felügyelet gyenge: az oktatási jogok biztosa és az ombudsmanhelyettes ajánlhat, de nem fordíthatja vissza a bezárásokat, az átszervezés adminisztratív, csak informális jogorvoslattal, és egy ENSZ különmegbízott gyenge részvételt és strukturált kormányzati válasz hiányát dokumentálta."
+      },
+      "title": {
+        "en": "Strengthened participation and oversight rights in closure",
+        "hu": "Megerősített részvételi és felügyeleti jogok a bezárásnál"
+      },
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-01",
+        "U-live-implementation_planning-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-demography-03",
+        "A-live-polish_reform-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c46",
+        "CC-live-c44",
+        "CC-live-c31",
+        "CC-live-c63",
+        "CC-live-c61"
+      ],
+      "change_lever": {
+        "en": "Take no dedicated policy action and allow closures to follow demographic drift with ad hoc building reuse, as the baseline against which active options are compared.",
+        "hu": "Nem hozni dedikált szakpolitikai intézkedést, és hagyni, hogy a bezárások a demográfiai sodródást kövessék eseti épület-újrahasznosítással, mint alapvonal, amelyhez az aktív lehetőségeket mérik."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e1",
+        "EC-live-e2",
+        "EC-live-e5"
+      ],
+      "finding_refs": [
+        "F-live-demography-03",
+        "F-live-polish_reform-05",
+        "F-live-school_network_planning-09"
+      ],
+      "key": "O15",
+      "scope": {
+        "en": "Counterfactual baseline for the national rural school network.",
+        "hu": "Kontrafaktuális alapvonal az országos vidéki iskolahálózatra."
+      },
+      "seed_type": "counterfactual",
+      "system_problem": {
+        "en": "Demographic decline, not explicit central policy, is the primary closure driver; without intervention institutional thinning continues (1,200+ settlements already without an educational institution, net school contraction 3,609→3,521 in 2021-2024), with buildings adaptively repurposed as in Garab.",
+        "hu": "A demográfiai hanyatlás, nem a kifejezett központi politika a fő bezárási hajtóerő; beavatkozás nélkül az intézményi ritkulás folytatódik (1200+ település már oktatási intézmény nélkül, nettó iskolacsökkenés 3609→3521 2021-2024 között), az épületek adaptív újrahasznosításával, mint Garabon."
+      },
+      "title": {
+        "en": "Counterfactual: no dedicated intervention (demographic drift)",
+        "hu": "Kontrafaktuális: dedikált beavatkozás nélkül (demográfiai sodródás)"
+      },
+      "uncertainty_refs": [
+        "U-live-demography-03",
+        "U-live-polish_reform-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-polish_reform-02",
+        "A-live-implementation_planning-04"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c50",
+        "CC-live-c51",
+        "CC-live-c39",
+        "CC-live-c13"
+      ],
+      "change_lever": {
+        "en": "Commit to phased, evidence-gated network changes with transition planning and cross-cycle stability, explicitly avoiding politically-driven abrupt reversals.",
+        "hu": "Ütemezett, bizonyíték-alapú hálózati változások melletti elköteleződés átmeneti tervezéssel és ciklusokon átívelő stabilitással, kifejezetten elkerülve a politikailag vezérelt hirtelen visszafordításokat."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e3"
+      ],
+      "finding_refs": [
+        "F-live-polish_reform-06",
+        "F-live-polish_reform-07",
+        "F-live-international_comparison-10"
+      ],
+      "key": "O16",
+      "scope": {
+        "en": "Implementation-design principle for any structural reform.",
+        "hu": "Megvalósítás-tervezési elv bármely strukturális reformhoz."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Structural reform reversals can be driven by political/reputational motives rather than performance data, and abrupt reversals produce acute transitional harms (Poland's 2017 double-cohort bottleneck, 3,173 unplaced Warsaw students, ~80% teacher strike), while China's consolidate-then-reverse cycle shows instability costs.",
+        "hu": "A strukturális reformvisszafordításokat politikai/reputációs motívumok hajthatják teljesítményadatok helyett, és a hirtelen visszafordítások akut átmeneti károkat okoznak (Lengyelország 2017-es kettős kohorsz szűk keresztmetszete, 3173 elhelyezetlen varsói diák, ~80%-os tanársztrájk), miközben Kína összevon-majd-visszafordít ciklusa instabilitási költségeket mutat."
+      },
+      "title": {
+        "en": "Avoid abrupt structural reversals; phase network change",
+        "hu": "A hirtelen strukturális visszafordítások elkerülése; a hálózati változás ütemezése"
+      },
+      "uncertainty_refs": [
+        "U-live-polish_reform-02",
+        "U-live-implementation_planning-04"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-implementation_planning-01",
+      "A-live-implementation_planning-02",
+      "A-live-implementation_planning-03",
+      "A-live-implementation_planning-04"
+    ],
+    "claim": {
+      "en": "EU and OECD monitoring data show that Hungary has the largest urban–rural education-outcome gap of all OECD countries even before accounting for socioeconomic status, with teacher shortages most pronounced in rural areas where the share of unqualified teachers in disadvantaged schools is 2–3 times higher than in non-disadvantaged schools, and with half of all primary teachers aged 50 or older in 2024/2025 while only 7.2% were under 30, creating an ageing workforce and rural supply crisis that poses a binding constraint on any policy assuming staffing of retained rural schools.",
+      "hu": "Az EU és OECD monitorizálási adatai azt mutatják, hogy Magyarországon az OECD-államok közül a legnagyobb város–vidéki oktatási eredmény-szakadék van, még szocioökonómiai státusz figyelembevétele előtt is, a tanárhiány vidéki területeken a legsúlyosabb, ahol a hátrányos helyzetű iskolákban a nem képzett tanárok aránya 2–3-szor nagyobb, mint a nem hátrányos helyzetű iskolákban, és az összes alsó tagozatos tanár fele 50 év feletti 2024/2025-ben, miközben csak 7,2% volt 30 év alatti, ami egy öregedő munkaerőt és vidéki ellátási válságot teremt, amely binding korlátként működik minden olyan szakpolitikánál, amely megmaradt vidéki iskolák személyzetét feltételezi."
+    },
+    "context": {
+      "en": "Fresh live research through the Implementation planning lens",
+      "hu": "Friss, élő kutatás a(z) végrehajtás megtervezése nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "While the data on teacher age and qualification gaps is current (2024/2025), the causal pathways from these staffing constraints to specific rural school closure or consolidation outcomes are not explicitly modeled in the source data.",
+        "hu": "Bár a tanár-kor és képzettségi-hiány adatai aktuálisak (2024/2025), az ezekből az ellátási korlátokból konkrét vidéki iskolabezárás vagy konszolidáció kimeneteleire vezető oksági útvonalak nincsenek explicit módon modellezve a forrásadatokban."
+      },
+      {
+        "en": "No data provided on the effectiveness or feasibility of recruitment and retention programs aimed at younger teachers in rural settings, limiting understanding of whether this constraint can be relaxed through policy intervention.",
+        "hu": "Nincs adat a vidéki vidéki beállításban fiatalabb tanárok toborzásra és megtartására irányuló programok hatékonyságáról vagy megvalósíthatóságáról, ami korlátozza annak megértését, hogy ez a korlátozás lehet-e enyhítve a politika beavatkozásán keresztül."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-implementation_planning-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-implementation_planning-01",
+      "U-live-implementation_planning-02",
+      "U-live-implementation_planning-03",
+      "U-live-implementation_planning-04"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-implementation_planning-06",
+  "provenance_ref": "PV-research_implementation_planning-d628d38343476e94",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

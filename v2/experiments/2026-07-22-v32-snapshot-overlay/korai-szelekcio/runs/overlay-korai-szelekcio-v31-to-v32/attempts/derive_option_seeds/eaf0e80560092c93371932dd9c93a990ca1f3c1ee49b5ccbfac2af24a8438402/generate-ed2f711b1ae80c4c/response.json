@@ -1,0 +1,648 @@
+{
+  "seeds": [
+    {
+      "assumption_refs": [
+        "A-live-polish_reform-01",
+        "A-live-finnish_reform-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c4",
+        "CC-live-c10",
+        "CC-live-c20",
+        "CC-live-c22"
+      ],
+      "change_lever": {
+        "en": "Legislatively abolish the 6/8-year tracks, delaying academic/vocational tracking to end of comprehensive schooling, following the Polish 1999 and Finnish 1972–77 detracking model with accompanying curriculum/assessment reform.",
+        "hu": "Törvényileg megszüntetni a 6/8 osztályos tagozatokat, a szakmai/akadémiai szelekciót az általános képzés végére halasztva, a lengyel 1999-es és finn 1972–77-es detracking modell nyomán, párhuzamos tanterv- és értékelési reformmal."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e2"
+      ],
+      "finding_refs": [
+        "F-live-polish_reform-01",
+        "F-live-finnish_reform-01",
+        "F-live-hungarian_education_system-01",
+        "F-live-international_comparison-01"
+      ],
+      "key": "O1",
+      "scope": {
+        "en": "National structural reform of secondary-school entry age and track architecture.",
+        "hu": "A középiskolai belépési kor és tagozatszerkezet országos strukturális reformja."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Hungary operates one of the earliest and most selective tracking systems in the developed world, selecting at ages 10 and 12, with the EU's highest socioeconomic school segregation and cross-national evidence that early tracking widens inequality with no clear mean-performance benefit.",
+        "hu": "Magyarország a fejlett világ egyik legkorábbi és legszelektívebb rendszerét működteti, 10 és 12 éves korban szelektál, az EU legmagasabb szocioökonómiai iskolai szegregációjával, és a nemzetközi bizonyítékok szerint a korai szelekció növeli az egyenlőtlenséget anélkül, hogy egyértelmű átlagteljesítmény-előnyt hozna."
+      },
+      "title": {
+        "en": "Abolish 6- and 8-year gimnázium tracks (full detracking to age 14/15)",
+        "hu": "A 6 és 8 osztályos gimnáziumi tagozatok megszüntetése (teljes detracking 14/15 éves korig)"
+      },
+      "uncertainty_refs": [
+        "U-live-polish_reform-01",
+        "U-live-finnish_reform-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-equity_and_social_mobility-01",
+        "A-live-political_feasibility-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c6",
+        "CC-live-c15",
+        "CC-live-c22",
+        "CC-live-c19"
+      ],
+      "change_lever": {
+        "en": "Reform admissions (e.g. lottery among qualified, quota for disadvantaged pupils, blind assessment) to reduce SES sorting while keeping the track structure — matching the government's reframing from abolition to 'admissions review'.",
+        "hu": "A felvételi reformja (pl. sorsolás a rátermettek között, hátrányos helyzetűek kvótája, anonim értékelés) a státuszalapú szortírozás csökkentésére a szerkezet megtartása mellett — összhangban a kormány 'felvételi felülvizsgálat' irányú átfogalmazásával."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-hungarian_education_system-02",
+        "F-live-equity_and_social_mobility-01",
+        "F-live-political_feasibility-01"
+      ],
+      "key": "O2",
+      "scope": {
+        "en": "National reform of the standardized admissions exam and selection rules.",
+        "hu": "A központi felvételi vizsga és a szelekciós szabályok országos reformja."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Selection functions partly as socioeconomic sorting: SES predicts track entry more strongly than prior scores, families invest heavy cultural/financial capital, and flagship urban programs are oversubscribed 9.4–9.7× while peripheral seats go unfilled.",
+        "hu": "A szelekció részben szocioökonómiai szortírozásként működik: a társadalmi státusz erősebben jelzi előre a bekerülést, mint a korábbi eredmények, a családok jelentős kulturális/anyagi tőkét fektetnek be, és a városi zászlóshajó-programok 9,4–9,7-szeresen túljelentkezettek, míg a peremterületeken helyek maradnak üresen."
+      },
+      "title": {
+        "en": "Retain tracks but reform the admissions/selection mechanism",
+        "hu": "A tagozatok megtartása, de a felvételi/szelekciós mechanizmus reformja"
+      },
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-01",
+        "U-live-political_feasibility-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-demography-01",
+        "A-live-school_network_planning-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c1",
+        "CC-live-c16",
+        "CC-live-c15",
+        "CC-live-c32"
+      ],
+      "change_lever": {
+        "en": "Use demographic decline to cap or gradually reduce selective seats, prioritizing consolidation where selection ratios collapse, rather than through explicit abolition.",
+        "hu": "A demográfiai csökkenés kihasználása a szelektív helyek plafonozására vagy fokozatos csökkentésére, ott konszolidálva, ahol a szelekciós arányok összeomlanak, kifejezett megszüntetés helyett."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-demography-01",
+        "F-live-school_network_planning-01",
+        "F-live-hungarian_education_system-03"
+      ],
+      "key": "O3",
+      "scope": {
+        "en": "National capacity-planning and school-network policy tied to demographic projections.",
+        "hu": "Demográfiai előrejelzésekhez kötött országos kapacitástervezési és iskolahálózati politika."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Birth cohorts are shrinking (births ~72,000 in 2025, TFR 1.31) while 6/8-year capacity has stayed constant for years, so selection ratios would fall in shrinking/rural areas (undermining the excellence rationale) while intensifying status competition in Budapest growth nodes.",
+        "hu": "A születési kohorszok zsugorodnak (kb. 72 000 születés 2025-ben, TFR 1,31), miközben a 6/8 osztályos kapacitás évek óta változatlan, így a szelekciós arányok a zsugorodó/vidéki térségekben csökkennének (aláásva a kiválósági érvet), miközben a budapesti növekedési csomópontokban erősödne a státuszverseny."
+      },
+      "title": {
+        "en": "Demographic-driven capacity freeze / managed contraction of selective seats",
+        "hu": "Demográfiai vezérelt kapacitásbefagyasztás / a szelektív helyek szabályozott csökkentése"
+      },
+      "uncertainty_refs": [
+        "U-live-demography-01",
+        "U-live-school_network_planning-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-polish_reform-02",
+        "A-live-international_comparison-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c4",
+        "CC-live-c10",
+        "CC-live-c14",
+        "CC-live-c20"
+      ],
+      "change_lever": {
+        "en": "Eliminate the age-10 (8-year) entry while retaining a delayed (e.g. 6-year at age 12) academic track, reducing the earliest-selection harm.",
+        "hu": "A 10 éves kori (8 osztályos) belépés megszüntetése egy késleltetett (pl. 12 éves kori 6 osztályos) akadémiai tagozat megtartása mellett, csökkentve a legkorábbi szelekció ártalmát."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e2"
+      ],
+      "finding_refs": [
+        "F-live-polish_reform-02",
+        "F-live-international_comparison-02",
+        "F-live-hungarian_education_system-04"
+      ],
+      "key": "O4",
+      "scope": {
+        "en": "National reform of track entry ages.",
+        "hu": "A tagozatbelépési korok országos reformja."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Selection at age 10 (8-year) is among the earliest globally; between-school variance exceeds Austria, Germany, Lithuania and the Netherlands, and meta-analytic evidence links age-10 tracking specifically to widened inequality.",
+        "hu": "A 10 éves kori szelekció (8 osztályos) globálisan az egyik legkorábbi; az iskolák közötti szórás meghaladja Ausztriáét, Németországét, Litvániáét és Hollandiáét, és a metaanalitikus bizonyítékok a 10 éves kori szelekciót konkrétan az egyenlőtlenség növekedéséhez kötik."
+      },
+      "title": {
+        "en": "Delay tracking start age without abolishing the track type",
+        "hu": "A szelekció kezdő korának kitolása a tagozattípus megszüntetése nélkül"
+      },
+      "uncertainty_refs": [
+        "U-live-polish_reform-02",
+        "U-live-international_comparison-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01",
+        "A-live-international_comparison-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c7",
+        "CC-live-c26",
+        "CC-live-c29"
+      ],
+      "change_lever": {
+        "en": "Build in later inter-track transfer, second-chance routes, and scale non-selective comprehensive models (e.g. AKG-type) as an alternative to structural abolition.",
+        "hu": "Későbbi tagozatközi átjárás, második esély útvonalak beépítése és nem szelektív komprehenzív modellek (pl. AKG-típus) skálázása a strukturális megszüntetés alternatívájaként."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-hungarian_education_system-05",
+        "F-live-international_comparison-03",
+        "F-live-equity_and_social_mobility-02"
+      ],
+      "key": "O5",
+      "scope": {
+        "en": "National permeability rules and model-school expansion.",
+        "hu": "Országos átjárhatósági szabályok és mintaiskolák bővítése."
+      },
+      "seed_type": "practice",
+      "system_problem": {
+        "en": "Creaming concentrates disadvantaged and Roma pupils and less-qualified teachers in non-selective schools, and Hungary lacks documented Germany-style flexibilities (grade repetition, later transfer) that could mitigate early-selection harm.",
+        "hu": "A lefölözés a hátrányos helyzetű és roma tanulókat, valamint a kevésbé képzett tanárokat a nem szelektív iskolákba koncentrálja, és Magyarországon nincsenek dokumentált németországi típusú rugalmasságok (évismétlés, későbbi átjárás), amelyek enyhíthetnék a korai szelekció ártalmát."
+      },
+      "title": {
+        "en": "Strengthen inter-track permeability and comprehensive alternatives",
+        "hu": "A tagozatok közötti átjárhatóság és a komprehenzív alternatívák erősítése"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-01",
+        "U-live-international_comparison-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-01",
+        "A-live-equity_and_social_mobility-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c18",
+        "CC-live-c31",
+        "CC-live-c8"
+      ],
+      "change_lever": {
+        "en": "Assign explicit integration/monitoring mandates and segregation-linked accountability to the maintainer, independent of the track question, to satisfy ECtHR obligations.",
+        "hu": "Kifejezett integrációs/monitorozási megbízás és szegregációhoz kötött elszámoltathatóság hozzárendelése a fenntartóhoz, a tagozatkérdéstől függetlenül, az EJEB-kötelezettségek teljesítésére."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-legal_and_governance-01",
+        "F-live-hungarian_education_system-06",
+        "F-live-equity_and_social_mobility-03"
+      ],
+      "key": "O6",
+      "scope": {
+        "en": "National governance/legal reform of school maintenance.",
+        "hu": "Az iskolafenntartás országos irányítási/jogi reformja."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Since 2013 the Klebelsberg Center centralized maintenance but explicitly states it has no duty to promote integration or monitor segregation, and the ECtHR Szolcsán ruling obligates Hungary to develop anti-segregation policy.",
+        "hu": "2013 óta a Klebelsberg Központ központosította a fenntartást, de kifejezetten kijelenti, hogy nincs kötelezettsége az integráció előmozdítására vagy a szegregáció monitorozására, és a strasbourgi Szolcsán-ítélet kötelezi Magyarországot szegregációellenes politika kidolgozására."
+      },
+      "title": {
+        "en": "Close the desegregation accountability gap in centralized governance",
+        "hu": "A szegregációs elszámoltathatósági hiány felszámolása a központosított irányításban"
+      },
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-01",
+        "U-live-equity_and_social_mobility-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-demography-02",
+        "A-live-school_network_planning-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c2",
+        "CC-live-c3",
+        "CC-live-c8",
+        "CC-live-c17"
+      ],
+      "change_lever": {
+        "en": "Target access and transport/dormitory support so that track and secondary access do not depend on urban residence, addressing residential-catchment segregation channels.",
+        "hu": "Célzott hozzáférés- és utaztatási/kollégiumi támogatás, hogy a tagozat és a középiskolai hozzáférés ne függjön a városi lakóhelytől, kezelve a lakóhelyi-körzeti szegregációs csatornákat."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-demography-02",
+        "F-live-school_network_planning-02",
+        "F-live-equity_and_social_mobility-04"
+      ],
+      "key": "O7",
+      "scope": {
+        "en": "Regional/territorial access policy.",
+        "hu": "Regionális/területi hozzáférési politika."
+      },
+      "seed_type": "funding",
+      "system_problem": {
+        "en": "Child-population trends are polarized; over 1,200 of 3,155 settlements have no public educational institution and selective supply is overwhelmingly urban with only ~8 in villages, raising territorial equity concerns.",
+        "hu": "A gyermeknépesség-trendek polarizáltak; a 3155 településből több mint 1200-ban nincs közoktatási intézmény, és a szelektív kínálat túlnyomórészt városi, csak kb. 8 falusi, ami területi méltányossági aggályokat vet fel."
+      },
+      "title": {
+        "en": "Territorial-equity intervention for secondary-school access",
+        "hu": "Területi méltányossági beavatkozás a középiskolai hozzáférésért"
+      },
+      "uncertainty_refs": [
+        "U-live-demography-02",
+        "U-live-school_network_planning-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-02",
+        "A-live-equity_and_social_mobility-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c17",
+        "CC-live-c19",
+        "CC-live-c8",
+        "CC-live-c5"
+      ],
+      "change_lever": {
+        "en": "Restrict principal-level gatekeeping/records-based admission and add catchment-balancing rules, targeting segregation channels beyond the 6/8-year mechanism.",
+        "hu": "Az igazgatói szintű kapuőrzés/adatlapos felvétel korlátozása és körzet-kiegyenlítő szabályok bevezetése, a 6/8 osztályos mechanizmuson túli szegregációs csatornákat célozva."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-legal_and_governance-02",
+        "F-live-equity_and_social_mobility-05",
+        "F-live-international_comparison-04"
+      ],
+      "key": "O8",
+      "scope": {
+        "en": "National regulation of primary-school choice and admission discretion.",
+        "hu": "Az általános iskolaválasztás és felvételi diszkréció országos szabályozása."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Segregation arises from multiple channels; free primary school choice with school discretion to select pupils independently drives between-school variance even in comprehensive systems (Sweden, Finland), and Fundamental Law tension gives schools complete selection discretion.",
+        "hu": "A szegregáció több csatornából ered; a szabad általános iskolaválasztás az iskola tanulóválasztási diszkréciójával önmagában is növeli az iskolák közötti szórást még komprehenzív rendszerekben is (Svédország, Finnország), és az Alaptörvényi feszültség teljes szelekciós diszkréciót ad az iskoláknak."
+      },
+      "title": {
+        "en": "Constrain free-school-choice and principal gatekeeping as segregation drivers",
+        "hu": "A szabad iskolaválasztás és az igazgatói kapuőrzés korlátozása mint szegregációs hajtóerők"
+      },
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-02",
+        "U-live-equity_and_social_mobility-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-implementation_planning-01",
+        "A-live-political_feasibility-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c23",
+        "CC-live-c21",
+        "CC-live-c19",
+        "CC-live-c22"
+      ],
+      "change_lever": {
+        "en": "Sequence any reform through maintainer/church consultation and phased transition to secure durability and avoid reversal, rather than rapid structural imposition.",
+        "hu": "Bármely reform ütemezése fenntartói/egyházi konzultáción és fokozatos átmeneten keresztül a tartósság biztosítására és a visszafordítás elkerülésére, gyors strukturális kényszerítés helyett."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-implementation_planning-01",
+        "F-live-political_feasibility-02",
+        "F-live-legal_and_governance-03"
+      ],
+      "key": "O9",
+      "scope": {
+        "en": "Implementation-governance design for track reform.",
+        "hu": "A tagozatreform megvalósítás-irányítási kialakítása."
+      },
+      "seed_type": "organizational",
+      "system_problem": {
+        "en": "Many selective gymnasia are church- or foundation-run; churches can take over public schools with 50%+ parental signatures while keeping state funding; unions are internally fragmented; and structural reforms are recurrently reversed independent of empirical success.",
+        "hu": "Sok szelektív gimnáziumot egyházak vagy alapítványok tartanak fenn; az egyházak 50%+ szülői aláírással átvehetnek állami iskolákat állami finanszírozás megtartásával; a szakszervezetek belül megosztottak; és a strukturális reformokat empirikus sikertől függetlenül visszavonják."
+      },
+      "title": {
+        "en": "Reform via maintainer buy-in and phased consultation",
+        "hu": "Reform a fenntartói egyetértésen és fokozatos konzultáción keresztül"
+      },
+      "uncertainty_refs": [
+        "U-live-implementation_planning-01",
+        "U-live-political_feasibility-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-polish_reform-01",
+        "A-live-implementation_planning-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c24",
+        "CC-live-c32",
+        "CC-live-c20"
+      ],
+      "change_lever": {
+        "en": "Design capacity buffers, transitional cohorts and staged implementation to avoid double-cohort/enrollment shocks accompanying any track restructuring.",
+        "hu": "Kapacitástartalékok, átmeneti kohorszok és szakaszos megvalósítás tervezése a tagozatátalakítást kísérő dupla-kohorsz/beiratkozási sokkok elkerülésére."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-polish_reform-03",
+        "F-live-implementation_planning-02",
+        "F-live-school_network_planning-03"
+      ],
+      "key": "O10",
+      "scope": {
+        "en": "Transition and implementation planning.",
+        "hu": "Átmeneti és megvalósítási tervezés."
+      },
+      "seed_type": "organizational",
+      "system_problem": {
+        "en": "Poland's 2017 reform caused a one-year implementation shock with capacity mismatches (3,173 Warsaw students not gaining secondary admission), and Hungarian rural consolidation in the 2000s sparked strong resistance, illustrating disruption risks.",
+        "hu": "A lengyel 2017-es reform egyéves megvalósítási sokkot okozott kapacitásbeli eltérésekkel (3173 varsói tanuló nem jutott középiskolai helyhez), és a magyarországi vidéki konszolidáció a 2000-es években erős ellenállást váltott ki, jelezve a zavarási kockázatokat."
+      },
+      "title": {
+        "en": "Manage transition/enrollment-shock risk in any structural change",
+        "hu": "Az átmeneti/beiratkozási sokk kockázatának kezelése minden strukturális változásban"
+      },
+      "uncertainty_refs": [
+        "U-live-polish_reform-03",
+        "U-live-implementation_planning-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-02",
+        "A-live-polish_reform-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c20",
+        "CC-live-c28",
+        "CC-live-c10"
+      ],
+      "change_lever": {
+        "en": "Any structural change must bundle curriculum standards, teacher support and assessment reform, distinguishing between-school structural change from within-school ability grouping.",
+        "hu": "Bármely strukturális változásnak tanterv-standardokat, tanári támogatást és értékelési reformot kell magában foglalnia, megkülönböztetve az iskolák közötti strukturális változást az iskolán belüli képesség szerinti csoportosítástól."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e2"
+      ],
+      "finding_refs": [
+        "F-live-finnish_reform-02",
+        "F-live-polish_reform-04",
+        "F-live-implementation_planning-03"
+      ],
+      "key": "O11",
+      "scope": {
+        "en": "National curriculum and assessment reform package.",
+        "hu": "Országos tanterv- és értékelési reformcsomag."
+      },
+      "seed_type": "practice",
+      "system_problem": {
+        "en": "Successful detracking in Poland and Finland was accompanied by parallel curriculum/assessment reform rather than structural change alone, and de-streaming within schools is a distinct mechanism often conflated with structural reform.",
+        "hu": "A sikeres detracking Lengyelországban és Finnországban párhuzamos tanterv-/értékelési reformmal járt együtt, nem pusztán strukturális változással, és az iskolán belüli de-streaming külön mechanizmus, amelyet gyakran összekevernek a strukturális reformmal."
+      },
+      "title": {
+        "en": "Couple detracking with curriculum and assessment reform",
+        "hu": "A detracking összekapcsolása tanterv- és értékelési reformmal"
+      },
+      "uncertainty_refs": [
+        "U-live-finnish_reform-01",
+        "U-live-polish_reform-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-equity_and_social_mobility-01",
+        "A-live-education_finance-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c30",
+        "CC-live-c9",
+        "CC-live-c5"
+      ],
+      "change_lever": {
+        "en": "Scale up and adequately fund targeted equity/compensatory programs as a non-structural alternative or complement, acknowledging these alone have not shifted the segregation hierarchy.",
+        "hu": "Célzott méltányossági/kompenzációs programok bővítése és megfelelő finanszírozása nem strukturális alternatívaként vagy kiegészítőként, elismerve, hogy önmagukban nem változtatták meg a szegregációs hierarchiát."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-equity_and_social_mobility-06",
+        "F-live-hungarian_education_system-07",
+        "F-live-education_finance-01"
+      ],
+      "key": "O12",
+      "scope": {
+        "en": "National equity-program funding policy.",
+        "hu": "Országos méltányossági program finanszírozási politika."
+      },
+      "seed_type": "funding",
+      "system_problem": {
+        "en": "Early-2000s equity programs (IPR, Útravaló, Arany János, Tanoda) became marginal underfunded overlays; the 2021–2030 strategy does not name the 6/8-year mechanism; early school leaving (10.3% in 2024) exceeds EU targets; Hungary retained highest EU segregation through 2022.",
+        "hu": "A 2000-es évek eleji méltányossági programok (IPR, Útravaló, Arany János, Tanoda) marginális, alulfinanszírozott rátétekké váltak; a 2021–2030-as stratégia nem nevezi meg a 6/8 osztályos mechanizmust; a korai iskolaelhagyás (10,3% 2024-ben) meghaladja az EU-célt; Magyarország 2022-ig megtartotta a legmagasabb EU-szegregációt."
+      },
+      "title": {
+        "en": "Revive and adequately fund non-structural equity programs",
+        "hu": "A nem strukturális méltányossági programok újraélesztése és megfelelő finanszírozása"
+      },
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-02",
+        "U-live-education_finance-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-02",
+        "A-live-international_comparison-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c11",
+        "CC-live-c12",
+        "CC-live-c33"
+      ],
+      "change_lever": {
+        "en": "Fund a Hungary-specific identification study decomposing segregation channels and track value-added before enacting structural change (information-first counterfactual to immediate reform).",
+        "hu": "Magyarország-specifikus azonosítási tanulmány finanszírozása a szegregációs csatornák és a tagozat hozzáadott értékének felbontására, mielőtt strukturális változást hoznának (információ-előre ellentét az azonnali reformmal)."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e1",
+        "EC-live-e3"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-08",
+        "F-live-international_comparison-05",
+        "F-live-equity_and_social_mobility-07"
+      ],
+      "key": "O13",
+      "scope": {
+        "en": "Research/evidence-generation mandate.",
+        "hu": "Kutatási/bizonyíték-előállítási megbízás."
+      },
+      "seed_type": "information",
+      "system_problem": {
+        "en": "The isolated causal effect of the 6/8-year track (distinct from general tracking, choice and residential segregation) has not been identified for Hungary; value-added evidence is contested (panel/World Bank vs competency-test/CEU findings) with unresolved selection-bias disputes.",
+        "hu": "A 6/8 osztályos tagozat elkülönített oksági hatását (az általános szelekciótól, választástól és lakóhelyi szegregációtól elkülönítve) nem azonosították Magyarországra; a hozzáadott érték bizonyítékai vitatottak (panel/Világbank vs kompetenciamérés/CEU eredmények), megoldatlan szelekciós-torzítási vitákkal."
+      },
+      "title": {
+        "en": "Commission Hungary-specific causal research before deciding",
+        "hu": "Magyarország-specifikus oksági kutatás megrendelése döntés előtt"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-02",
+        "U-live-international_comparison-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-political_feasibility-03",
+        "A-live-hungarian_education_system-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c21",
+        "CC-live-c25",
+        "CC-live-c14",
+        "CC-live-c34"
+      ],
+      "change_lever": {
+        "en": "Retain the tracks as-is, treating reform costs/reversal risk and persistent parental demand as outweighing equity gains — the explicit no-change baseline against which other seeds are compared.",
+        "hu": "A tagozatok jelenlegi formában való megtartása, a reform költségeit/visszafordítási kockázatát és a tartós szülői keresletet a méltányossági nyereségnél nagyobbnak tekintve — a kifejezett változatlansági alapvonal, amelyhez a többi opció mérhető."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e1"
+      ],
+      "finding_refs": [
+        "F-live-political_feasibility-03",
+        "F-live-hungarian_education_system-09",
+        "F-live-equity_and_social_mobility-08"
+      ],
+      "key": "O14",
+      "scope": {
+        "en": "System-wide no-change baseline.",
+        "hu": "Rendszerszintű változatlansági alapvonal."
+      },
+      "seed_type": "counterfactual",
+      "system_problem": {
+        "en": "Structural reforms are recurrently contested and reversible independent of empirical success (Poland reversed 1999 reform, Austria blocked); no organized mass constituency specifically against the tracks has been tested; and demand persists (six-year demand rose 11%, including among Roma/working-class parents seeking selective exit).",
+        "hu": "A strukturális reformok visszatérően vitatottak és visszafordíthatók az empirikus sikertől függetlenül (Lengyelország visszavonta az 1999-es reformot, Ausztria blokkolta); nem tesztelték a tagozatok elleni szervezett tömegbázist; és a kereslet fennmarad (a hatosztályos kereslet 11%-kal nőtt, roma/munkásosztálybeli szülők között is)."
+      },
+      "title": {
+        "en": "Counterfactual: retain 6/8-year tracks unchanged (status quo)",
+        "hu": "Ellentét: a 6/8 osztályos tagozatok változatlan megtartása (status quo)"
+      },
+      "uncertainty_refs": [
+        "U-live-political_feasibility-01",
+        "U-live-hungarian_education_system-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-school_network_planning-03",
+        "A-live-demography-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c27",
+        "CC-live-c3",
+        "CC-live-c15"
+      ],
+      "change_lever": {
+        "en": "Differentiate reform by institutional origin/settlement type, potentially converting vocational-origin tracks back or consolidating them separately from elite urban programs.",
+        "hu": "A reform differenciálása intézményi eredet/településtípus szerint, esetleg a szakképzési eredetű tagozatok visszaalakítása vagy külön konszolidálása az elit városi programoktól."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-school_network_planning-04",
+        "F-live-hungarian_education_system-10",
+        "F-live-demography-03"
+      ],
+      "key": "O15",
+      "scope": {
+        "en": "Segmented school-network planning by origin type.",
+        "hu": "Szegmentált iskolahálózati tervezés eredettípus szerint."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Institutional origins differ by settlement: in small towns 38 of 50 documented 6/8-year programs were former vocational schools that switched tracks, while Budapest programs arose from primary/traditional gimnáziums, implying uniform reform may misfit local contexts.",
+        "hu": "Az intézményi eredet településenként eltér: kisvárosokban a dokumentált 50 program közül 38 korábbi szakiskola volt, amely tagozatot váltott, míg a budapesti programok általános/hagyományos gimnáziumokból jöttek létre, ami arra utal, hogy az egységes reform rosszul illeszkedhet a helyi kontextusokhoz."
+      },
+      "title": {
+        "en": "Address small-town vocational-origin tracks distinctly",
+        "hu": "A kisvárosi szakképzési eredetű tagozatok elkülönített kezelése"
+      },
+      "uncertainty_refs": [
+        "U-live-school_network_planning-03",
+        "U-live-demography-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-political_feasibility-04",
+        "A-live-implementation_planning-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c22",
+        "CC-live-c21",
+        "CC-live-c13"
+      ],
+      "change_lever": {
+        "en": "Pursue cross-party/constitutional settlement and phased legitimacy-building to reduce reversibility, rather than relying on a supermajority alone.",
+        "hu": "Pártközi/alkotmányos megegyezés és fokozatos legitimitásépítés a visszafordíthatóság csökkentésére, ahelyett hogy pusztán a kétharmadra támaszkodnának."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-political_feasibility-04",
+        "F-live-implementation_planning-04",
+        "F-live-finnish_reform-03"
+      ],
+      "key": "O16",
+      "scope": {
+        "en": "Political-feasibility and durability design.",
+        "hu": "Politikai megvalósíthatósági és tartóssági kialakítás."
+      },
+      "seed_type": "organizational",
+      "system_problem": {
+        "en": "The track status is high-salience and polarized (Tisza signaled review then reframed; Fidesz framed reform as totalitarian imposition), and Hungary shows historical cyclicality of selection/deselection since 1945, so any reform risks reversal at the next government change.",
+        "hu": "A tagozatok státusza nagy jelentőségű és polarizált (a Tisza felülvizsgálatot jelzett, majd átfogalmazta; a Fidesz totalitárius rákényszerítésként keretezte), és Magyarországon 1945 óta történelmi ciklikusság mutatkozik a szelekcióban/deszelekcióban, így bármely reform kockáztatja a következő kormányváltáskori visszafordítást."
+      },
+      "title": {
+        "en": "Build political durability through cross-party settlement",
+        "hu": "Politikai tartósság kiépítése pártközi megegyezéssel"
+      },
+      "uncertainty_refs": [
+        "U-live-political_feasibility-02",
+        "U-live-implementation_planning-02"
+      ]
+    }
+  ]
+}

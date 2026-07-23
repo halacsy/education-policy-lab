@@ -371,6 +371,156 @@ def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
     return len(live_records), len(calls)
 
 
+def verify_snapshot_overlays(schemas: SchemaRegistry) -> tuple[int, int, int]:
+    """Validate the two isolated 3.1 -> 3.2 snapshot-overlay experiments."""
+
+    experiment_root = (
+        ROOT / "v2" / "experiments" / "2026-07-22-v32-snapshot-overlay"
+    )
+    expected_topics = {"korai-szelekcio", "rural-school-closures"}
+    actual_topics = {
+        path.name for path in experiment_root.iterdir()
+        if path.is_dir() and (path / "overlay_manifest.json").exists()
+    }
+    if actual_topics != expected_topics:
+        raise AssertionError(
+            f"Snapshot-overlay topic coverage differs: {sorted(actual_topics)}"
+        )
+
+    artifact_count = 0
+    call_count = 0
+    for topic in sorted(expected_topics):
+        topic_root = experiment_root / topic
+        manifest = json.loads(
+            (topic_root / "overlay_manifest.json").read_text(encoding="utf-8")
+        )
+        if (
+            manifest["architecture_version"] != "3.2.0-overlay.1"
+            or manifest["base_architecture_version"] != "3.2.0"
+            or manifest["topic"] != topic
+        ):
+            raise AssertionError(f"Snapshot-overlay identity differs for {topic}")
+        repository = ArtifactRepository(topic_root, schemas)
+        repository.validate_graph((manifest["overlay_ref"],))
+        records = repository.list()
+        artifact_count += len(records)
+        verify_bilingual_records(records, f"Snapshot overlay {topic}")
+
+        overlay = repository.get_current(manifest["overlay_ref"])
+        if content_hash(overlay) != manifest["overlay_hash"]:
+            raise AssertionError(f"Snapshot-overlay root hash differs for {topic}")
+        content = overlay["content"]
+        source_root = (
+            ROOT / "v2" / "production" / content["source_run_tag"] / topic
+        )
+        source_manifest = json.loads(
+            (source_root / "production_manifest.json").read_text(encoding="utf-8")
+        )
+        source_plan = json.loads(
+            (source_root / source_manifest["run_plan"]["path"]).read_text(
+                encoding="utf-8"
+            )
+        )
+        if (
+            content_hash(source_manifest) != content["source_manifest_hash"]
+            or content_hash(source_plan) != content["source_run_plan_hash"]
+            or content["source_manifest_hash"] != manifest["source"]["manifest_hash"]
+            or content["source_run_plan_hash"] != manifest["source"]["run_plan_hash"]
+        ):
+            raise AssertionError(f"Snapshot-overlay source binding differs for {topic}")
+
+        plan_path = topic_root / manifest["run_plan"]["path"]
+        plan = json.loads(plan_path.read_text(encoding="utf-8"))
+        plan_hash = content_hash(plan)
+        if (
+            plan_hash != manifest["run_plan"]["content_hash"]
+            or plan["dag_version"] != manifest["architecture_version"]
+        ):
+            raise AssertionError(f"Snapshot-overlay RunPlan differs for {topic}")
+        run_dir = topic_root / "runs" / manifest["run_id"]
+        node_manifests = {
+            path.stem: json.loads(path.read_text(encoding="utf-8"))
+            for path in (run_dir / "nodes").glob("*.json")
+        }
+        node_specs = {node["id"]: node for node in plan["nodes"]}
+        declared_nodes = set(node_specs)
+        if set(node_manifests) != declared_nodes or len(declared_nodes) != 4:
+            raise AssertionError(f"Snapshot-overlay execution is incomplete for {topic}")
+        for node_id, node_manifest in node_manifests.items():
+            if node_manifest["run_plan_hash"] != plan_hash:
+                raise AssertionError(f"Overlay node {node_id} has wrong RunPlan")
+            for ref in node_manifest["output_artifacts"]:
+                record = repository.get_by_hash(ref["content_hash"])
+                if (record["id"], record["record_type"]) != (
+                    ref["id"], ref["record_type"]
+                ):
+                    raise AssertionError(f"Overlay output differs at {topic}.{node_id}")
+                provenance = repository.get_current(record["provenance_ref"])["content"]
+                if provenance.get("run_plan_hash") != plan_hash:
+                    raise AssertionError(
+                        f"Overlay artifact has wrong RunPlan at {topic}.{record['id']}"
+                    )
+                if node_specs[node_id]["kind"] == "llm":
+                    _verify_attempts(run_dir, node_id, provenance)
+
+        normalization = repository.get_current(
+            content["normalization_coverage_ref"]
+        )["content"]
+        source_research_manifests = [
+            json.loads(path.read_text(encoding="utf-8"))
+            for path in (
+                source_root / "runs" / source_manifest["run_id"] / "nodes"
+            ).glob("research_*.json")
+        ]
+        source_findings = {
+            ref["id"]
+            for node_manifest in source_research_manifests
+            for ref in node_manifest["output_artifacts"]
+            if ref["record_type"] == "finding"
+        }
+        validate_exact_coverage(
+            normalization, source_findings, basis="evidence_normalization"
+        )
+        seeds = repository.list(record_type="option_seed")
+        seed_ids = {record["id"] for record in seeds}
+        candidate = repository.get_current(content["new_option_space_ref"])
+        direction_ids = {
+            direction["id"] for direction in candidate["content"]["directions"]
+        }
+        seed_coverage = repository.get_current(content["seed_coverage_ref"])["content"]
+        validate_exact_coverage(
+            seed_coverage, seed_ids, basis="option_seed_clustering",
+            direction_ids=direction_ids,
+        )
+        conflicts = repository.list(record_type="evidence_conflict")
+        if (
+            {entry["option_seed_ref"] for entry in content["seed_entries"]} != seed_ids
+            or {entry["direction_id"] for entry in content["direction_entries"]}
+            != direction_ids
+            or {entry["evidence_conflict_ref"] for entry in content["conflict_entries"]}
+            != {record["id"] for record in conflicts}
+        ):
+            raise AssertionError(f"Snapshot-overlay comparison coverage differs for {topic}")
+
+        calls = [
+            json.loads(line)
+            for line in (topic_root / "backend_calls.jsonl").read_text(
+                encoding="utf-8"
+            ).splitlines()
+            if line.strip()
+        ]
+        call_count += len(calls)
+        if not calls or any(call.get("backend") == "mock" for call in calls):
+            raise AssertionError(f"Snapshot overlay has invalid backend calls for {topic}")
+        successful_providers = {
+            call.get("provider") for call in calls
+            if call.get("backend") != "failed"
+        }
+        if successful_providers != {"anthropic"}:
+            raise AssertionError(f"Snapshot overlay used an undeclared provider for {topic}")
+    return len(expected_topics), artifact_count, call_count
+
+
 def verify_production_runs(schemas: SchemaRegistry) -> tuple[int, int, int]:
     """Validate every explicitly published production DAG and its publication boundary."""
 
@@ -623,6 +773,7 @@ def main() -> int:
     checked_links = verify_links(ROOT / "site")
     localized_messages, localized_pages = verify_localization(ROOT / "site")
     live_artifacts, live_calls = verify_live_experiment(schemas)
+    overlay_topics, overlay_artifacts, overlay_calls = verify_snapshot_overlays(schemas)
     production_topics, production_artifacts, production_calls = verify_production_runs(schemas)
     print(f"PASS schemas: {len(schemas.available())} versioned record types")
     print(f"PASS graph: {len(records)} current artifacts, {len(roots)} decision roots")
@@ -635,6 +786,10 @@ def main() -> int:
     print(f"PASS site: {checked_links} local links/assets resolved")
     print(f"PASS localization: {localized_messages} paired messages, {localized_pages} Hungarian pages free of raw UI terms")
     print(f"PASS live experiment: {live_artifacts} current artifacts, {live_calls} audited calls, position carriage green")
+    print(
+        f"PASS snapshot overlays: {overlay_topics} topics, {overlay_artifacts} current "
+        f"artifacts, {overlay_calls} audited calls; exact source and coverage bindings green"
+    )
     print(
         f"PASS production: {production_topics} topics, {production_artifacts} current artifacts, "
         f"{production_calls} audited calls; legacy runs remain explicitly incomplete, "

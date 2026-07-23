@@ -931,3 +931,41 @@ base URL. The build emits exact canonical metadata and a sitemap, while
 fails on missing, stale, colliding, misidentified, unlinked, or unsitemapped
 records. The pages remain a deterministic generated projection; canonical JSON
 and the publication manifest remain the source of truth.
+
+**D-62 — Architecture upgrades reuse admitted evidence through a separate
+snapshot-overlay DAG, never an in-place migration (2026-07-22).** A 3.1 result
+cannot be relabelled as 3.2 because the new normalization, option-seed, and
+clustering steps are analytical model calls and a new option-space candidate
+cannot inherit the old human decision. It is nevertheless wasteful to repeat
+unchanged web research merely to evaluate the architectural delta. The first
+upgrade experiment therefore treats the exact 3.1 problem brief and twelve
+research-node outputs as immutable, hash-bound roots of a distinct
+`3.2.0-overlay.1` RunPlan.
+
+The overlay imports only the transitive typed closure required by those roots
+and by the legacy approved option space and proposals. It then executes
+`normalize_evidence` → `derive_option_seeds` → `cluster_option_seeds` and a
+deterministic `compare_to_v31` node. The comparison reports shared exact
+finding lineage between new seeds/directions/conflicts and old directions or
+proposals. It explicitly does not claim semantic equivalence, current evidence
+freshness, policy quality, human approval, or a new production decision
+package. Overlay artifacts use separate semantic ids and remain outside the
+public publication manifest.
+
+A later continuation run may admit the same evidence snapshot, obtain a new
+hash-bound option-space decision, and rerun transformations and every dependent
+assessment and decision artifact. It may not reuse the old gate, package, or
+evaluation as if they depended on the new candidate. A full fresh-research run
+remains the acceptance standard when source freshness is decision-critical.
+
+The first live overlay also establishes a bounded execution rule for evidence
+normalization. A single bilingual response for 120 findings exceeded the
+provider's 45,000-token retry ceiling. Snapshots above 60 findings are therefore
+normalized in ordered shards of at most 40 findings, followed by a separate
+global pass that reconciles genuinely equivalent claims and may add conflicts
+spanning multiple shards. Accepted merge groups must be non-overlapping, retain
+the most conservative evidence-strength and transferability labels, and unite
+every underlying reference; claim and conflict identities are then renumbered
+deterministically. One final ledger must still cover the complete, undivided
+finding set exactly. Sharding is an execution detail, not a relaxation of the
+normalization or coverage contract.

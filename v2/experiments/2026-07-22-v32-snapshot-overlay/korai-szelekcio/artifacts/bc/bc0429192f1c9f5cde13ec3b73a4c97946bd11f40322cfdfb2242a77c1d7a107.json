@@ -1,0 +1,49 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-demography-01",
+      "A-live-school_network_planning-01"
+    ],
+    "canonical_claim_refs": [
+      "CC-live-c1",
+      "CC-live-c16",
+      "CC-live-c15",
+      "CC-live-c32"
+    ],
+    "change_lever": {
+      "en": "Use demographic decline to cap or gradually reduce selective seats, prioritizing consolidation where selection ratios collapse, rather than through explicit abolition.",
+      "hu": "A demográfiai csökkenés kihasználása a szelektív helyek plafonozására vagy fokozatos csökkentésére, ott konszolidálva, ahol a szelekciós arányok összeomlanak, kifejezett megszüntetés helyett."
+    },
+    "evidence_conflict_refs": [],
+    "finding_refs": [
+      "F-live-demography-01",
+      "F-live-school_network_planning-01",
+      "F-live-hungarian_education_system-03"
+    ],
+    "scope": {
+      "en": "National capacity-planning and school-network policy tied to demographic projections.",
+      "hu": "Demográfiai előrejelzésekhez kötött országos kapacitástervezési és iskolahálózati politika."
+    },
+    "seed_type": "structural",
+    "system_problem": {
+      "en": "Birth cohorts are shrinking (births ~72,000 in 2025, TFR 1.31) while 6/8-year capacity has stayed constant for years, so selection ratios would fall in shrinking/rural areas (undermining the excellence rationale) while intensifying status competition in Budapest growth nodes.",
+      "hu": "A születési kohorszok zsugorodnak (kb. 72 000 születés 2025-ben, TFR 1,31), miközben a 6/8 osztályos kapacitás évek óta változatlan, így a szelekciós arányok a zsugorodó/vidéki térségekben csökkennének (aláásva a kiválósági érvet), miközben a budapesti növekedési csomópontokban erősödne a státuszverseny."
+    },
+    "title": {
+      "en": "Demographic-driven capacity freeze / managed contraction of selective seats",
+      "hu": "Demográfiai vezérelt kapacitásbefagyasztás / a szelektív helyek szabályozott csökkentése"
+    },
+    "uncertainty_refs": [
+      "U-live-demography-01",
+      "U-live-school_network_planning-01"
+    ]
+  },
+  "created_at": "2026-07-22T20:18:12.223158Z",
+  "id": "OSD-live-o3",
+  "provenance_ref": "PV-derive_option_seeds-eaf0e80560092c93",
+  "record_type": "option_seed",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

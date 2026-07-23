@@ -1,0 +1,54 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-demography-03",
+      "A-live-polish_reform-01"
+    ],
+    "canonical_claim_refs": [
+      "CC-live-c46",
+      "CC-live-c44",
+      "CC-live-c31",
+      "CC-live-c63",
+      "CC-live-c61"
+    ],
+    "change_lever": {
+      "en": "Take no dedicated policy action and allow closures to follow demographic drift with ad hoc building reuse, as the baseline against which active options are compared.",
+      "hu": "Nem hozni dedikált szakpolitikai intézkedést, és hagyni, hogy a bezárások a demográfiai sodródást kövessék eseti épület-újrahasznosítással, mint alapvonal, amelyhez az aktív lehetőségeket mérik."
+    },
+    "evidence_conflict_refs": [
+      "EC-live-e1",
+      "EC-live-e2",
+      "EC-live-e5"
+    ],
+    "finding_refs": [
+      "F-live-demography-03",
+      "F-live-polish_reform-05",
+      "F-live-school_network_planning-09"
+    ],
+    "scope": {
+      "en": "Counterfactual baseline for the national rural school network.",
+      "hu": "Kontrafaktuális alapvonal az országos vidéki iskolahálózatra."
+    },
+    "seed_type": "counterfactual",
+    "system_problem": {
+      "en": "Demographic decline, not explicit central policy, is the primary closure driver; without intervention institutional thinning continues (1,200+ settlements already without an educational institution, net school contraction 3,609→3,521 in 2021-2024), with buildings adaptively repurposed as in Garab.",
+      "hu": "A demográfiai hanyatlás, nem a kifejezett központi politika a fő bezárási hajtóerő; beavatkozás nélkül az intézményi ritkulás folytatódik (1200+ település már oktatási intézmény nélkül, nettó iskolacsökkenés 3609→3521 2021-2024 között), az épületek adaptív újrahasznosításával, mint Garabon."
+    },
+    "title": {
+      "en": "Counterfactual: no dedicated intervention (demographic drift)",
+      "hu": "Kontrafaktuális: dedikált beavatkozás nélkül (demográfiai sodródás)"
+    },
+    "uncertainty_refs": [
+      "U-live-demography-03",
+      "U-live-polish_reform-01"
+    ]
+  },
+  "created_at": "2026-07-22T20:42:17.882443Z",
+  "id": "OSD-live-o15",
+  "provenance_ref": "PV-derive_option_seeds-201cf235922ebed8",
+  "record_type": "option_seed",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

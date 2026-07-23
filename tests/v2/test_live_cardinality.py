@@ -41,10 +41,19 @@ class LiveCardinalityRepairTests(unittest.TestCase):
                 run_dir, "research", "analysis", prompt,
                 canonical_json_bytes(response), "json",
             )
+            current.write_text(
+                '{"execution_id":"changed-cache-key"}', encoding="utf-8"
+            )
 
             recovered = ArtifactDagRunner._recover_structured_attempt(
                 run_dir, "research", "analysis", prompt
             )
+            adopted_index = (
+                run_dir / "attempts" / "research" / "changed-cache-key"
+                / "index.jsonl"
+            )
+            self.assertTrue(adopted_index.exists())
+            self.assertIn("analysis", adopted_index.read_text(encoding="utf-8"))
 
         self.assertEqual(response, recovered)
 

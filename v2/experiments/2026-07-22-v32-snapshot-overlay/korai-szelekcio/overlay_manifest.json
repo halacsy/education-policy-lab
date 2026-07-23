@@ -1,0 +1,29 @@
+{
+  "architecture_version": "3.2.0-overlay.1",
+  "base_architecture_version": "3.2.0",
+  "completed_at": "2026-07-22T20:42:17.559255Z",
+  "overlay_hash": "dea0c5028273e4608aed4d69e71a9fedb74908e953e3094f296a5159406b8f2c",
+  "overlay_ref": "OV-korai-szelekcio-v31-to-v32",
+  "run_id": "overlay-korai-szelekcio-v31-to-v32",
+  "run_plan": {
+    "content_hash": "6a85267262387b25fce03d9d97d3ad545c60f8c50c32363e0b360e5bf594891c",
+    "path": "runs/overlay-korai-szelekcio-v31-to-v32/run_plan.json"
+  },
+  "source": {
+    "architecture_version": "3.1.0",
+    "imported_artifact_count": 360,
+    "manifest_hash": "1583451833c852c221694be687f8ae8e3a047bd8032f1ff332a31ac93d781651",
+    "research_artifact_count": 186,
+    "run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "run_tag": "2026-07-21-v3-bilingual"
+  },
+  "summary": {
+    "conflicts_without_legacy_proposal_count": 2,
+    "evidence_conflict_count": 3,
+    "new_direction_count": 7,
+    "novel_gap_count": 0,
+    "seed_count": 16,
+    "uncovered_seed_count": 4
+  },
+  "topic": "korai-szelekcio"
+}

@@ -1,0 +1,1340 @@
+{
+  "claims": [
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "National demographic trend",
+        "hu": "Országos demográfiai trend"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C1",
+      "population": {
+        "en": "Hungary national population",
+        "hu": "Magyarország teljes népessége"
+      },
+      "statement": {
+        "en": "Hungary's fertility rate declined to 1.38 in 2024 (projected 1.31 in 2025), a 22% drop from the 2021 peak, with only 77,500 births in 2024—the lowest on record and a 9.1% fall from 2023.",
+        "hu": "Magyarország termékenységi rátája 2024-ben 1,38-ra csökkent (2025-re 1,31 a becslés), ami 22%-os visszaesés a 2021-es csúcshoz képest, mindössze 77 500 születéssel 2024-ben – a valaha mért legalacsonyabb, 9,1%-os csökkenés 2023-hoz képest."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-01",
+        "F-live-education_finance-01"
+      ],
+      "time_scope": {
+        "en": "2021–2025",
+        "hu": "2021–2025"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-demography-01"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "National settlement demography",
+        "hu": "Országos településdemográfia"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C2",
+      "population": {
+        "en": "Hungarian settlements, especially small villages",
+        "hu": "Magyar települések, különösen kis falvak"
+      },
+      "statement": {
+        "en": "Hungary's settlement structure is fragmented and geographically bifurcated: 645 localities have populations below 300, 114 have under-18 shares below 10%, and aging is concentrated in small remote villages (notably Vas and Zala counties), with the under-18 share falling from 18% to 16% between 2010 and 2020.",
+        "hu": "Magyarország településszerkezete széttöredezett és földrajzilag kettéosztott: 645 településnek 300 fő alatti a lakossága, 114-ben a 18 év alattiak aránya 10% alatti, az elöregedés kis, távoli falvakban (különösen Vas és Zala megyében) koncentrálódik, a 18 év alattiak aránya pedig 2010 és 2020 között 18%-ról 16%-ra csökkent."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-02",
+        "F-live-demography-03"
+      ],
+      "time_scope": {
+        "en": "2010–2024",
+        "hu": "2010–2024"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-demography-02"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Regional demographic variation",
+        "hu": "Regionális demográfiai eltérés"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C3",
+      "population": {
+        "en": "Rural Hungarian settlements",
+        "hu": "Vidéki magyar települések"
+      },
+      "statement": {
+        "en": "Rural depopulation in Hungary is geographically uneven: national rural decline has slowed overall (nearly 30% of population still lived in villages in 2024), yet individual settlements like Lasztonya lost over 40% in five years, with decline concentrated in Baranya and low-density Northern Hungary where child population fell 10–30%, often coinciding with school closure or downgrading.",
+        "hu": "A vidéki elnéptelenedés Magyarországon földrajzilag egyenetlen: az országos vidéki csökkenés összességében lassult (2024-ben a lakosság közel 30%-a még falvakban élt), egyes települések azonban, mint Lasztonya, öt év alatt több mint 40%-ot vesztettek, a csökkenés Baranyában és Észak-Magyarország alacsony népsűrűségű részein koncentrálódik, ahol a gyermeknépesség 10–30%-kal csökkent, gyakran iskolabezárással vagy leépítéssel egyidejűleg."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-02",
+        "F-live-equity_and_social_mobility-09"
+      ],
+      "time_scope": {
+        "en": "Recent five-year window through 2024",
+        "hu": "A 2024-ig tartó legutóbbi ötéves időszak"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-demography-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "National school network structure",
+        "hu": "Országos iskolahálózati szerkezet"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C4",
+      "population": {
+        "en": "Hungarian primary schools in small settlements",
+        "hu": "Kis településeken lévő magyar általános iskolák"
+      },
+      "statement": {
+        "en": "Hungary's school system is unusually fragmented: over half of primary/lower-secondary schools had fewer than 150 pupils in 2020/2021, and merged multi-grade classes (spanning 2–4 grades) are permitted and concentrated in settlements below 3,000 residents, indicating the consolidation viability threshold.",
+        "hu": "Magyarország iskolarendszere szokatlanul széttöredezett: az általános és alsó középfokú iskolák több mint felében 150-nél kevesebb tanuló volt 2020/2021-ben, az összevont (2–4 évfolyamot átfogó) osztályok pedig engedélyezettek és 3000 fő alatti településeken koncentrálódnak, jelezve az összevonás életképességi küszöbét."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-04",
+        "F-live-equity_and_social_mobility-01"
+      ],
+      "time_scope": {
+        "en": "As of 2020/2021",
+        "hu": "2020/2021 állapot szerint"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": []
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "National education governance",
+        "hu": "Országos oktatásirányítás"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C5",
+      "population": {
+        "en": "Hungarian public schools and their governance",
+        "hu": "Magyar közoktatási intézmények és fenntartásuk"
+      },
+      "statement": {
+        "en": "Hungary centralized public school governance from municipalities to the state in 2013 (KLIK), making the state employer of all pedagogical staff; it partially decentralized in 2017 to 60 school district centres, and closure/reorganization decisions are formally centralized, substantially reducing municipal and parental voice.",
+        "hu": "Magyarország 2013-ban a közoktatás fenntartását az önkormányzatoktól az államhoz központosította (KLIK), amelynek keretében az állam lett az összes pedagógus munkáltatója; 2017-ben részlegesen decentralizálták 60 tankerületi központra, a bezárási/átszervezési döntések formálisan központosítottak, jelentősen csökkentve az önkormányzati és szülői beleszólást."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-10",
+        "F-live-education_finance-03",
+        "F-live-equity_and_social_mobility-08"
+      ],
+      "time_scope": {
+        "en": "2013–2017 onward",
+        "hu": "2013–2017-től"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-01"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "causal",
+      "context": {
+        "en": "National education finance after 2013 reform",
+        "hu": "Országos oktatásfinanszírozás a 2013-as reform után"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C6",
+      "population": {
+        "en": "Hungarian public schools under KLIK",
+        "hu": "KLIK alá tartozó magyar közoktatási intézmények"
+      },
+      "statement": {
+        "en": "The KLIK centralization aimed to equalize disparities but produced systematic under-budgeting: while smaller municipal schools' constraints were addressed, funding for previously better-off urban schools declined and recurring solvency problems forced spending cuts to mandatory minimums.",
+        "hu": "A KLIK-központosítás célja az egyenlőtlenségek kiegyenlítése volt, de rendszerszintű alulfinanszírozást eredményezett: bár a kisebb önkormányzati iskolák nehézségeit kezelte, a korábban jobb helyzetű városi iskolák finanszírozása csökkent, a visszatérő fizetőképességi problémák pedig a kiadások kötelező minimumra csökkentésére kényszerítettek."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-04"
+      ],
+      "time_scope": {
+        "en": "2013 onward",
+        "hu": "2013-tól"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-education_finance-01"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Historical Hungarian school restructuring",
+        "hu": "Történeti magyar iskolaátszervezés"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C7",
+      "population": {
+        "en": "Small rural Hungarian schools",
+        "hu": "Kis vidéki magyar iskolák"
+      },
+      "statement": {
+        "en": "Hungary historically avoided formal closures by reducing parallel classes and using multi-grade teaching—a middle-path strategy lowering the enrollment threshold to keep schools open; in one restructuring wave ~10% of small schools closed while ~30–35% were amalgamated under a central unit with continued local operation.",
+        "hu": "Magyarország történelmileg elkerülte a formális bezárásokat a párhuzamos osztályok csökkentésével és összevont oktatással – ez egy középutas stratégia, amely csökkenti az iskola nyitva tartásához szükséges beiratkozási küszöböt; egy átszervezési hullámban a kisiskolák ~10%-a bezárt, míg ~30–35%-át összevonták egy központi egység alatt, folytatólagos helyi működéssel."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-05",
+        "F-live-education_finance-07",
+        "F-live-education_finance-10"
+      ],
+      "time_scope": {
+        "en": "Historical through ~2012",
+        "hu": "Történeti, kb. 2012-ig"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-international_comparison-01"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "Cross-national consolidation economics",
+        "hu": "Nemzetközi összevonási közgazdaságtan"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C8",
+      "population": {
+        "en": "Consolidating school districts (U.S. and cross-national)",
+        "hu": "Összevonó iskolakörzetek (amerikai és nemzetközi)"
+      },
+      "statement": {
+        "en": "School consolidation yields real but partial and contested economies of scale: U.S. studies show per-pupil operating spending falls ~61.7% when merging two 300-pupil districts and ~49.6% for two 1,500-pupil districts (savings in instruction/administration), but no economies for transportation, with a U-shaped size-cost curve and possible underestimation of large-school costs.",
+        "hu": "Az iskolaösszevonás valós, de részleges és vitatott méretgazdaságosságot hoz: amerikai kutatások szerint az egy tanulóra jutó működési kiadás ~61,7%-kal csökken két 300 fős körzet összevonásakor és ~49,6%-kal két 1500 fősnél (megtakarítás az oktatásban/adminisztrációban), de a szállításnál nincs megtakarítás, U-alakú méret-költség görbével és a nagyiskolák költségeinek lehetséges alulbecslésével."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-06"
+      ],
+      "time_scope": {
+        "en": "As reported by cited studies",
+        "hu": "A hivatkozott tanulmányok szerint"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-international_comparison-01"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "causal",
+      "context": {
+        "en": "Rural school closure impacts",
+        "hu": "Vidéki iskolabezárás hatásai"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C9",
+      "population": {
+        "en": "Rural families and communities (Sweden, Eastern Europe)",
+        "hu": "Vidéki családok és közösségek (Svédország, Kelet-Európa)"
+      },
+      "statement": {
+        "en": "Closing schools imposes documented burdens on families in rural contexts: longer and riskier commutes, reduced after-school participation, loss of social networks and everyday flexibility, and loss of a major local employer/social center, with municipal councils valuing closures more positively than affected residents.",
+        "hu": "Az iskolabezárás dokumentált terheket ró a családokra vidéki környezetben: hosszabb és kockázatosabb utazás, csökkent tanórán kívüli részvétel, a társadalmi hálózatok és a mindennapi rugalmasság elvesztése, valamint egy fontos helyi munkáltató/társadalmi központ elvesztése, miközben az önkormányzati testületek pozitívabban értékelik a bezárásokat, mint az érintett lakosok."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-06",
+        "F-live-demography-08"
+      ],
+      "time_scope": {
+        "en": "As reported by cited studies",
+        "hu": "A hivatkozott tanulmányok szerint"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-international_comparison-02"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "causal",
+      "context": {
+        "en": "Closure achievement effects",
+        "hu": "Bezárás tanulmányi hatásai"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C10",
+      "population": {
+        "en": "Students displaced by school closures (Denmark, Finland)",
+        "hu": "Iskolabezárás miatt áthelyezett tanulók (Dánia, Finnország)"
+      },
+      "statement": {
+        "en": "Achievement effects of school closure on displaced students are adverse but transitional: a Danish quasi-experiment found short-run detriments concentrated on students from the smallest schools that weakened over time; a Finnish natural experiment on ~600 cost-driven closures leaves effect direction/magnitude unverified.",
+        "hu": "Az iskolabezárás tanulmányi hatása az áthelyezett tanulókra káros, de átmeneti: egy dán kvázi-kísérlet szerint a rövid távú károk a legkisebb iskolák tanulóinál koncentrálódtak és idővel gyengültek; egy finn természetes kísérlet ~600 költségvezérelt bezárásról a hatás irányát/nagyságát nem igazolja."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-07",
+        "F-live-finnish_reform-06"
+      ],
+      "time_scope": {
+        "en": "1999–2000 (Finland); as reported (Denmark)",
+        "hu": "1999–2000 (Finnország); a jelentés szerint (Dánia)"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-01"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "causal",
+      "context": {
+        "en": "Closure–depopulation feedback",
+        "hu": "Bezárás–elnéptelenedés visszacsatolás"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "contested",
+      "key": "C11",
+      "population": {
+        "en": "Communities experiencing school closure (Finland, Saxony, Sweden)",
+        "hu": "Iskolabezárást átélő közösségek (Finnország, Szászország, Svédország)"
+      },
+      "statement": {
+        "en": "The causal effect of school closure on community population decline is empirically contested: a Finnish DID study (2010–2018) found accelerated post-closure population decline (worse in rural areas), while Saxony and Sweden studies found no significant causal connection, with municipal-level analysis possibly masking settlement-level effects.",
+        "hu": "Az iskolabezárás oksági hatása a közösségi népességcsökkenésre empirikusan vitatott: egy finn DID-tanulmány (2010–2018) gyorsuló bezárás utáni népességcsökkenést talált (vidéken súlyosabb), míg szászországi és svéd tanulmányok nem találtak jelentős oksági kapcsolatot, a települési szintű hatásokat esetleg elfedő önkormányzati szintű elemzéssel."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-08",
+        "F-live-equity_and_social_mobility-06",
+        "F-live-finnish_reform-05"
+      ],
+      "time_scope": {
+        "en": "2010–2018 and comparators",
+        "hu": "2010–2018 és összehasonlítók"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-02",
+        "U-live-equity_and_social_mobility-01"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "School presence and village outcomes",
+        "hu": "Iskola jelenléte és falusi eredmények"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C12",
+      "population": {
+        "en": "Hungarian villages with schools",
+        "hu": "Iskolával rendelkező magyar falvak"
+      },
+      "statement": {
+        "en": "In Hungary, village schools correlate with somewhat better demographic and infrastructural conditions but not improved employment or welfare; this mixed, non-causal association means school presence does not prove keeping it open will prevent economic decline.",
+        "hu": "Magyarországon a falusi iskolák valamivel jobb demográfiai és infrastrukturális feltételekkel korrelálnak, de nem jobb foglalkoztatási vagy jóléti mutatókkal; ez a vegyes, nem oksági összefüggés azt jelenti, hogy az iskola jelenléte nem bizonyítja, hogy nyitva tartása megakadályozza a gazdasági hanyatlást."
+      },
+      "supporting_finding_refs": [
+        "F-live-equity_and_social_mobility-07"
+      ],
+      "time_scope": {
+        "en": "As reported by cited research",
+        "hu": "A hivatkozott kutatás szerint"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-political_feasibility-01"
+      ],
+      "claim_type": "mechanistic",
+      "context": {
+        "en": "Political economy of closure justification",
+        "hu": "A bezárás igazolásának politikai gazdaságtana"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C13",
+      "population": {
+        "en": "Closure decision framing (Poland, Hungary)",
+        "hu": "Bezárási döntések keretezése (Lengyelország, Magyarország)"
+      },
+      "statement": {
+        "en": "Decision-makers often frame closures as budget-driven even when demographic decline is the root cause: analysis of ~3,300 Polish closures (2000–2016) found fertility plus migration reduced pupil numbers, yet economic reasons were cited as the direct cause, and a Hungarian teachers' union warned in 2026 that national demographic collapse requires system-wide restructuring not to be decided within political communication campaigns.",
+        "hu": "A döntéshozók gyakran költségvezéreltként tüntetik fel a bezárásokat, még ha a demográfiai hanyatlás a gyökér-ok is: ~3300 lengyel bezárás elemzése (2000–2016) szerint a termékenység és a migráció csökkentette a tanulószámot, mégis gazdasági okokat jelöltek meg közvetlen okként, egy magyar tanári szakszervezet pedig 2026-ban figyelmeztetett, hogy az országos demográfiai összeomlás rendszerszintű átalakítást igényel, amelyet nem politikai kommunikációs kampányokban kell eldönteni."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-09",
+        "F-live-demography-05"
+      ],
+      "time_scope": {
+        "en": "2000–2016 (Poland); 2026 (Hungary)",
+        "hu": "2000–2016 (Lengyelország); 2026 (Magyarország)"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-political_feasibility-01"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Carpathian Basin analogy",
+        "hu": "Kárpát-medencei analógia"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C14",
+      "population": {
+        "en": "Minority Hungarian villages in Romania",
+        "hu": "Kisebbségi magyar falvak Romániában"
+      },
+      "statement": {
+        "en": "When cohort decline in dispersed villages proceeds without local preservation measures, institutional centralization/closure is the documented pattern: minority Hungarian communities in Romania's Carpathian Basin have seen low-enrollment schools close or be administratively eliminated over 15–20 years.",
+        "hu": "Amikor a szórvány falvakban a korosztályi csökkenés helyi megőrző intézkedések nélkül halad, az intézményi központosítás/bezárás a dokumentált minta: a romániai Kárpát-medence kisebbségi magyar közösségeiben az alacsony beiratkozású iskolák 15–20 év alatt bezártak vagy adminisztratívan megszűntek."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-09"
+      ],
+      "time_scope": {
+        "en": "Past 15–20 years",
+        "hu": "Az elmúlt 15–20 év"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": []
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "mechanistic",
+      "context": {
+        "en": "Segregation dynamics",
+        "hu": "Szegregációs dinamika"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C15",
+      "population": {
+        "en": "Small rural Hungarian schools",
+        "hu": "Kis vidéki magyar iskolák"
+      },
+      "statement": {
+        "en": "Hungary's small-school preservation reduced within-school segregation but is associated with strong between-settlement segregation: one-class-per-grade village schools cannot stream internally, so sorting occurs between schools/settlements, potentially substituting between-school for within-school ethnic segregation.",
+        "hu": "Magyarország kisiskola-megőrzése csökkentette az iskolán belüli szegregációt, de erős települések közötti szegregációval jár: az évfolyamonként egyosztályos falusi iskolák nem tudnak belső sávozást, így a szelekció iskolák/települések között történik, potenciálisan az iskolán belüli helyett iskolák közötti etnikai szegregációt eredményezve."
+      },
+      "supporting_finding_refs": [
+        "F-live-equity_and_social_mobility-03"
+      ],
+      "time_scope": {
+        "en": "As reported by cited research",
+        "hu": "A hivatkozott kutatás szerint"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": []
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "mechanistic",
+      "context": {
+        "en": "National sorting mechanism",
+        "hu": "Országos szelekciós mechanizmus"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C16",
+      "population": {
+        "en": "Hungarian primary students and families",
+        "hu": "Magyar általános iskolás tanulók és családok"
+      },
+      "statement": {
+        "en": "Free school choice with mandatory catchment enrollment drives socioeconomically stratified sorting: about one-third of students commute outside their catchment, with ~50% of high-status students commuting vs. <25% of low-status, and low-status/Roma commuters typically reaching lower-quality schools than their catchment (Pécs case).",
+        "hu": "A szabad iskolaválasztás kötelező körzeti beiratkozással társadalmi-gazdaságilag rétegzett szelekciót eredményez: a tanulók kb. egyharmada körzeten kívülre jár, a magas státuszúak ~50%-a, míg az alacsony státuszúak <25%-a ingázik, és az alacsony státuszú/roma ingázók jellemzően rosszabb minőségű iskolába jutnak, mint a körzetük (pécsi eset)."
+      },
+      "supporting_finding_refs": [
+        "F-live-equity_and_social_mobility-04",
+        "F-live-equity_and_social_mobility-05"
+      ],
+      "time_scope": {
+        "en": "As reported by cited research",
+        "hu": "A hivatkozott kutatás szerint"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": []
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "National teacher supply and equity",
+        "hu": "Országos tanárellátottság és méltányosság"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C17",
+      "population": {
+        "en": "Hungarian rural/disadvantaged and urban growth schools",
+        "hu": "Magyar vidéki/hátrányos és városi növekedési iskolák"
+      },
+      "statement": {
+        "en": "Rural and disadvantaged Hungarian schools face acute persistent teacher shortages independent of closure policy: the unqualified-teacher proportion is 2–3 times higher than in non-disadvantaged schools, with 20–25% of language, math and science teachers lacking subject qualifications; disadvantaged declining rural areas concentrate disadvantaged children up to 94% while urban growth areas face rising child-teacher ratios up to 24:1.",
+        "hu": "A vidéki és hátrányos helyzetű magyar iskolák akut, tartós tanárhiánnyal küzdenek a bezárási politikától függetlenül: a képesítés nélküli tanárok aránya 2–3-szor magasabb, mint a nem hátrányos iskolákban, a nyelv-, matematika- és természettudomány-tanárok 20–25%-a nem rendelkezik szaktárgyi képesítéssel; a hátrányos, hanyatló vidéki területeken a hátrányos gyermekek akár 94%-ban koncentrálódnak, míg a városi növekedési területeken a gyermek-tanár arány akár 24:1-re emelkedik."
+      },
+      "supporting_finding_refs": [
+        "F-live-equity_and_social_mobility-02",
+        "F-live-equity_and_social_mobility-09"
+      ],
+      "time_scope": {
+        "en": "2021–2024",
+        "hu": "2021–2024"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": []
+    },
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Legal framework on closure/desegregation",
+        "hu": "Bezárásra/deszegregációra vonatkozó jogi keret"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C18",
+      "population": {
+        "en": "Hungarian settlements with segregation configurations",
+        "hu": "Szegregációs elrendezésű magyar települések"
+      },
+      "statement": {
+        "en": "In Hungary 'keep the school open' is not a legally neutral default: the European Court of Human Rights ordered closure/desegregation in Piliscsaba and flagged Nyíregyháza as unlawfully segregated, ruling that a small local school's de facto role as the only option for Roma families can constitute racial segregation.",
+        "hu": "Magyarországon az 'iskola nyitva tartása' nem jogilag semleges alapállapot: az Emberi Jogok Európai Bírósága elrendelte a bezárást/deszegregációt Piliscsabán, és jogellenesen szegregáltnak minősítette a nyíregyházi iskolát, kimondva, hogy egy kis helyi iskola de facto egyetlen lehetőségként betöltött szerepe a roma családok számára faji szegregációt valósíthat meg."
+      },
+      "supporting_finding_refs": [
+        "F-live-equity_and_social_mobility-10"
+      ],
+      "time_scope": {
+        "en": "As reported by cited rulings",
+        "hu": "A hivatkozott ítéletek szerint"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-01"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "Finnish 1970s reform",
+        "hu": "Finn 1970-es évekbeli reform"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C19",
+      "population": {
+        "en": "Rural Finnish schools during comprehensive reform",
+        "hu": "Vidéki finn iskolák az általános reform idején"
+      },
+      "statement": {
+        "en": "The 1972–1977 Finnish comprehensive school reform accelerated rather than prevented rural closures (begun in the late 1960s due to birth-rate decline, economic restructuring and better roads), and was financed by heavy non-selective state subsidy (education budget share rising 9.1%→16.9% of budget 1960–1975, covering 81–90% of salaries and 84–93% of transport/accommodation).",
+        "hu": "Az 1972–1977-es finn általános iskolai (peruskoulu) reform inkább gyorsította, mint megakadályozta a vidéki bezárásokat (amelyek az 1960-as évek végén indultak a születésszám csökkenése, gazdasági szerkezetváltás és jobb utak miatt), és nagymértékű, nem szelektív állami támogatásból finanszírozták (az oktatás költségvetési részesedése 9,1%-ról 16,9%-ra nőtt 1960–1975 között, fedezve a fizetések 81–90%-át és a szállítás/elhelyezés 84–93%-át)."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-01",
+        "F-live-finnish_reform-02"
+      ],
+      "time_scope": {
+        "en": "Late 1960s–1977",
+        "hu": "1960-as évek vége–1977"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-03"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Finnish closure regimes",
+        "hu": "Finn bezárási rendszerek"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C20",
+      "population": {
+        "en": "Small rural Finnish schools",
+        "hu": "Kis vidéki finn iskolák"
+      },
+      "statement": {
+        "en": "Finnish rural school closures occurred in separable regimes: a distinct wave in the late 1980s–early 1990s driven by municipal fiscal retrenchment during the depression radically weakened the small-school network, distinct from the 1970s reform-era pattern.",
+        "hu": "A finn vidéki iskolabezárások elkülöníthető rendszerekben zajlottak: egy külön hullám az 1980-as évek végén–1990-es évek elején a válság alatti önkormányzati megszorítások miatt radikálisan meggyengítette a kisiskola-hálózatot, elkülönülve az 1970-es évekbeli reformkori mintától."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-04"
+      ],
+      "time_scope": {
+        "en": "Late 1980s–1990s",
+        "hu": "1980-as évek vége–1990-es évek"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": []
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Social capital function",
+        "hu": "Társadalmi tőke funkció"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C21",
+      "population": {
+        "en": "Rural communities with small schools (Finland)",
+        "hu": "Kis iskolával rendelkező vidéki közösségek (Finnország)"
+      },
+      "statement": {
+        "en": "Small rural schools function as community hubs producing and maintaining local social capital beyond instruction, a value emphasized especially after closures—confirmed by Finnish social-capital-framework research.",
+        "hu": "A kis vidéki iskolák közösségi központként működnek, amelyek az oktatáson túl helyi társadalmi tőkét termelnek és tartanak fenn – ezt az értéket különösen a bezárások után hangsúlyozzák, amit finn társadalmitőke-keretű kutatás is megerősít."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-03"
+      ],
+      "time_scope": {
+        "en": "As reported by cited research",
+        "hu": "A hivatkozott kutatás szerint"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": []
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "causal",
+      "context": {
+        "en": "Finnish choice and equity outcomes",
+        "hu": "Finn választás és méltányossági eredmények"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C22",
+      "population": {
+        "en": "Finnish schoolchildren, especially urban",
+        "hu": "Finn iskolások, különösen városiak"
+      },
+      "statement": {
+        "en": "Finnish school-choice policy from the 1990s onward is associated with growing school segregation through middle-class parental choice, fragmenting the previously egalitarian comprehensive system (esp. urban Helsinki/Espoo lower-secondary), while PISA equity deteriorated: migrant pupils nearly three years behind in 2018 literacy and the OECD's largest migrant/non-migrant gap.",
+        "hu": "Az 1990-es évektől bevezetett finn iskolaválasztási politika a középosztálybeli szülői választáson keresztül növekvő iskolai szegregációval jár, széttöredezve a korábban egalitárius általános rendszert (különösen a városi Helsinki/Espoo alsó középfokán), miközben a PISA-méltányosság romlott: a migráns tanulók 2018-ban közel három évvel elmaradtak írásbeliségben, és az OECD legnagyobb migráns/nem migráns szakadéka mutatható ki."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-07",
+        "F-live-finnish_reform-08"
+      ],
+      "time_scope": {
+        "en": "1990s–2018",
+        "hu": "1990-es évek–2018"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-04"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-demography-01"
+      ],
+      "claim_type": "forecasting",
+      "context": {
+        "en": "Demographic projection",
+        "hu": "Demográfiai előrejelzés"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C23",
+      "population": {
+        "en": "Finnish elementary schools and pupils",
+        "hu": "Finn általános iskolák és tanulók"
+      },
+      "statement": {
+        "en": "A 2025 Finnish ministry-commissioned report projects the number of elementary schools could halve by the end of the next decade with ~100,000 fewer pupils by 2040, some areas losing local provision; the projection depends heavily on immigration assumptions, with non-native-background children under 15 projected to grow ~86,000 by 2040.",
+        "hu": "Egy 2025-ös finn minisztériumi megbízásból készült jelentés szerint az általános iskolák száma a következő évtized végére megfeleződhet, ~100 000-rel kevesebb tanulóval 2040-ig, egyes területek elveszítve a helyi ellátást; a projekció erősen függ a bevándorlási feltevésektől, a 15 év alatti nem őshonos hátterű gyermekek száma 2040-ig ~86 000-rel nőhet."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-09"
+      ],
+      "time_scope": {
+        "en": "Through 2040",
+        "hu": "2040-ig"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-demography-01"
+      ]
+    },
+    {
+      "assumption_refs": [],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Municipal fiscal and civic response",
+        "hu": "Önkormányzati pénzügyi és civil válasz"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C24",
+      "population": {
+        "en": "Finnish municipalities (Asikkala, Tiistenjoki)",
+        "hu": "Finn önkormányzatok (Asikkala, Tiistenjoki)"
+      },
+      "statement": {
+        "en": "Under identical Finnish funding rules (~75% municipal, ~25% non-earmarked state, adjusted for remoteness/demographics) local civic responses diverge: Asikkala proposed closing three of six schools to save €1.8 million, while Tiistenjoki mobilized residents to attract families and keep a threatened 40-pupil school open—showing community agency shapes outcomes.",
+        "hu": "Azonos finn finanszírozási szabályok mellett (~75% önkormányzati, ~25% nem célzott állami, a távolság/demográfia szerint kiigazítva) a helyi civil válaszok eltérnek: Asikkala hat iskolájából három bezárását javasolta 1,8 millió euró megtakarítására, míg Tiistenjoki mozgósította a lakosokat, hogy családokat vonzzon és nyitva tartson egy veszélyeztetett 40 fős iskolát – ez mutatja, hogy a közösségi cselekvőképesség formálja az eredményeket."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-10"
+      ],
+      "time_scope": {
+        "en": "Contemporary case examples",
+        "hu": "Kortárs esetpéldák"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-02"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "claim_keys": [
+        "C11"
+      ],
+      "conflict_type": "causal_interpretation",
+      "decision_relevance": {
+        "en": "Determines whether closure decisions risk triggering a self-reinforcing depopulation spiral in Hungarian villages.",
+        "hu": "Meghatározza, hogy a bezárási döntések önerősítő elnéptelenedési spirált indíthatnak-e el magyar falvakban."
+      },
+      "description": {
+        "en": "Finnish DID evidence (F-live-education_finance-08, F-live-finnish_reform-05) finds accelerated post-closure population decline, while Saxony and Sweden studies within F-live-equity_and_social_mobility-06 find no significant causal connection; municipal-level analysis may mask settlement-level effects.",
+        "hu": "A finn DID-bizonyítékok (F-live-education_finance-08, F-live-finnish_reform-05) gyorsuló bezárás utáni népességcsökkenést találnak, míg az F-live-equity_and_social_mobility-06 szászországi és svéd tanulmányai nem találnak jelentős oksági kapcsolatot; az önkormányzati szintű elemzés elfedheti a települési szintű hatásokat."
+      },
+      "finding_refs": [
+        "F-live-education_finance-08",
+        "F-live-equity_and_social_mobility-06",
+        "F-live-finnish_reform-05"
+      ],
+      "key": "E1",
+      "research_question": {
+        "en": "Under what settlement conditions does school closure causally accelerate population decline, and at what geographic granularity?",
+        "hu": "Milyen települési feltételek mellett gyorsítja oksági módon az iskolabezárás a népességcsökkenést, és milyen földrajzi felbontásban?"
+      },
+      "resolvability": "requires_new_data",
+      "title": {
+        "en": "Does school closure cause community population decline?",
+        "hu": "Okoz-e az iskolabezárás közösségi népességcsökkenést?"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "claim_keys": [
+        "C1"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-01",
+      "rationale": {
+        "en": "Core fertility/birth data merged with F-live-education_finance-01.",
+        "hu": "Alap termékenységi/születési adat összevonva az F-live-education_finance-01-gyel."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C2"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-02",
+      "rationale": {
+        "en": "Settlement fragmentation and bifurcation.",
+        "hu": "Településszerkezeti töredezettség és kettéosztottság."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C2"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-03",
+      "rationale": {
+        "en": "Aging concentration in remote villages merged into C2.",
+        "hu": "Az elöregedés koncentrációja távoli falvakban a C2-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C4"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-04",
+      "rationale": {
+        "en": "Merged-class legal mechanism and viability threshold.",
+        "hu": "Összevont osztály jogi mechanizmus és életképességi küszöb."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C13"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-05",
+      "rationale": {
+        "en": "Union warning on system-wide restructuring supports framing claim.",
+        "hu": "Szakszervezeti figyelmeztetés a rendszerszintű átalakításról a keretezési állítást támasztja."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C9"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-06",
+      "rationale": {
+        "en": "Swedish family-burden evidence merged into C9.",
+        "hu": "Svéd családi teher bizonyíték a C9-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C10"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-07",
+      "rationale": {
+        "en": "Danish transitional achievement effect.",
+        "hu": "Dán átmeneti tanulmányi hatás."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C9"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-08",
+      "rationale": {
+        "en": "Eastern European commute/social burdens merged into C9.",
+        "hu": "Kelet-európai utazási/társadalmi terhek a C9-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C14"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-09",
+      "rationale": {
+        "en": "Carpathian Basin closure pattern.",
+        "hu": "Kárpát-medencei bezárási minta."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C5"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-10",
+      "rationale": {
+        "en": "Governance centralization merged with education_finance-03 and equity-08.",
+        "hu": "Irányítási központosítás összevonva az education_finance-03 és equity-08 findingokkal."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C1"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-01",
+      "rationale": {
+        "en": "Birth/fertility and 30% village share merged into C1.",
+        "hu": "Születési/termékenységi és 30%-os falusi arány a C1-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C3"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-02",
+      "rationale": {
+        "en": "Uneven rural depopulation.",
+        "hu": "Egyenetlen vidéki elnéptelenedés."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C5"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-03",
+      "rationale": {
+        "en": "KLIK takeover merged into governance claim C5.",
+        "hu": "KLIK-átvétel az irányítási C5-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C6"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-04",
+      "rationale": {
+        "en": "KLIK under-budgeting outcome.",
+        "hu": "KLIK alulfinanszírozási eredmény."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C7"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-05",
+      "rationale": {
+        "en": "Parallel-class reduction strategy merged into C7.",
+        "hu": "Párhuzamos osztály csökkentési stratégia a C7-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C8"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-06",
+      "rationale": {
+        "en": "Economies of scale evidence.",
+        "hu": "Méretgazdaságossági bizonyíték."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C7"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-07",
+      "rationale": {
+        "en": "Multi-grade middle-path strategy merged into C7.",
+        "hu": "Összevont oktatás középutas stratégia a C7-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C11"
+      ],
+      "conflict_keys": [
+        "E1"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-08",
+      "rationale": {
+        "en": "Finnish DID feedback loop, part of contested E1.",
+        "hu": "Finn DID visszacsatolás, a vitatott E1 része."
+      },
+      "status": "conflict_recorded"
+    },
+    {
+      "claim_keys": [
+        "C13"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-09",
+      "rationale": {
+        "en": "Polish closures framing decoupling.",
+        "hu": "Lengyel bezárások keretezési szétválasztás."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C7"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-10",
+      "rationale": {
+        "en": "Amalgamation intermediate outcome merged into C7.",
+        "hu": "Összevonás mint köztes eredmény a C7-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C4"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-01",
+      "rationale": {
+        "en": "Fragmentation and <150 pupil share merged into C4.",
+        "hu": "Töredezettség és <150 tanulós arány a C4-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C17"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-02",
+      "rationale": {
+        "en": "Teacher shortage evidence.",
+        "hu": "Tanárhiány bizonyíték."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C15"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-03",
+      "rationale": {
+        "en": "Between-settlement segregation mechanism.",
+        "hu": "Települések közötti szegregációs mechanizmus."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C16"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-04",
+      "rationale": {
+        "en": "Stratified commuting mechanism.",
+        "hu": "Rétegzett ingázási mechanizmus."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C16"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-05",
+      "rationale": {
+        "en": "Pécs low-status commuter quality merged into C16.",
+        "hu": "Pécsi alacsony státuszú ingázók minősége a C16-ba olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C11"
+      ],
+      "conflict_keys": [
+        "E1"
+      ],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-06",
+      "rationale": {
+        "en": "Explicitly contested closure–depopulation causality, anchors E1.",
+        "hu": "Kifejezetten vitatott bezárás–elnéptelenedés oksági kapcsolat, az E1 alapja."
+      },
+      "status": "conflict_recorded"
+    },
+    {
+      "claim_keys": [
+        "C12"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-07",
+      "rationale": {
+        "en": "Mixed non-causal school-village association.",
+        "hu": "Vegyes, nem oksági iskola-falu összefüggés."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C5"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-08",
+      "rationale": {
+        "en": "KLIK governance authority merged into C5.",
+        "hu": "KLIK irányítási hatáskör a C5-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C3",
+        "C17"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-09",
+      "rationale": {
+        "en": "Territorial types feed both regional variation and capacity claims.",
+        "hu": "A területi típusok mind a regionális eltérés, mind a kapacitás állításokat táplálják."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C18"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-10",
+      "rationale": {
+        "en": "ECtHR desegregation rulings.",
+        "hu": "EJEB deszegregációs ítéletek."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C19"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-01",
+      "rationale": {
+        "en": "Reform accelerated closures merged with financing into C19.",
+        "hu": "A reform gyorsította a bezárásokat, a finanszírozással a C19-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C19"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-02",
+      "rationale": {
+        "en": "Financing details merged into C19.",
+        "hu": "Finanszírozási részletek a C19-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C21"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-03",
+      "rationale": {
+        "en": "Social capital hub function.",
+        "hu": "Társadalmi tőke központ funkció."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C20"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-04",
+      "rationale": {
+        "en": "Separable 1990s fiscal closure regime.",
+        "hu": "Elkülöníthető 1990-es évekbeli fiskális bezárási rendszer."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C11"
+      ],
+      "conflict_keys": [
+        "E1"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-05",
+      "rationale": {
+        "en": "Finnish DID depopulation risk, part of E1.",
+        "hu": "Finn DID elnéptelenedési kockázat, az E1 része."
+      },
+      "status": "conflict_recorded"
+    },
+    {
+      "claim_keys": [
+        "C10"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-06",
+      "rationale": {
+        "en": "Finnish natural experiment achievement (unverified) merged into C10.",
+        "hu": "Finn természetes kísérlet tanulmányi (igazolatlan) hatása a C10-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C22"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-07",
+      "rationale": {
+        "en": "Choice-driven segregation merged into C22.",
+        "hu": "Választásvezérelt szegregáció a C22-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C22"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-08",
+      "rationale": {
+        "en": "PISA equity deterioration merged into C22.",
+        "hu": "PISA méltányosság romlása a C22-be olvasztva."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C23"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-09",
+      "rationale": {
+        "en": "2025 halving projection dependent on immigration.",
+        "hu": "2025-ös megfeleződési előrejelzés bevándorlástól függő."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C24"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-10",
+      "rationale": {
+        "en": "Municipal fiscal architecture and divergent civic responses.",
+        "hu": "Önkormányzati fiskális felépítés és eltérő civil válaszok."
+      },
+      "status": "carried_forward"
+    }
+  ]
+}

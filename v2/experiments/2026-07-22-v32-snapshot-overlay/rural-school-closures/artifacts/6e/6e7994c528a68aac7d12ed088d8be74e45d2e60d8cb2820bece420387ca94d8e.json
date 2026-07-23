@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-education_finance-01",
+      "A-live-education_finance-02",
+      "A-live-education_finance-03",
+      "A-live-education_finance-04"
+    ],
+    "claim": {
+      "en": "Rural depopulation in Hungary is geographically uneven. While national rural depopulation has slowed overall, individual settlements such as Lasztonya lost over 40% of population in five years. Academic mapping shows stagnation or decline concentrated in Baranya and low-density parts of Northern Hungary, where child population contracted 10–30%, often coinciding with school closure or downgrading.",
+      "hu": "A Magyarország vidéki depopulációja földrajzilag egyenletlen. Míg az országos vidéki depopuláció lassult, az olyan települések, mint Lasztonya 40%-nál nagyobb népességvesztést szenvedtek öt év alatt. Az akadémiai térképezés az Baranya és Észak-Magyarország kis sűrűségű területeire koncentrálódó stagnálást vagy csökkenést mutat, ahol a gyermekpopuláció 10–30%-kal csökkent, gyakran iskolazárással vagy visszaminősítéssel párhuzamosan."
+    },
+    "context": {
+      "en": "Fresh live research through the Education finance lens",
+      "hu": "Friss, élő kutatás a(z) oktatási finanszírozás nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Exact source and time-period boundaries for the 40% figure in Lasztonya not fully specified; regional mapping studies are from secondary sources and require primary verification.",
+        "hu": "A Lasztonya 40%-os adat pontos forrása és időperiódusa nem teljes mértékben meghatározott; a regionális térképezési tanulmányok másodlagos forrásokból származnak és elsődleges ellenőrzést igényelnek."
+      },
+      {
+        "en": "Correlation between child population decline and school closure does not establish causal direction (whether closure drives depopulation or depopulation causes closure).",
+        "hu": "A gyermekpopuláció csökkenése és az iskolazárás közötti korreláció nem állapítja meg az okság irányát (az iskolazárás okozza-e a depopulációt vagy a depopuláció az iskolazárást)."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-education_finance-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-02"
+    ]
+  },
+  "created_at": "2026-07-21T21:08:31.820364Z",
+  "id": "F-live-education_finance-02",
+  "provenance_ref": "PV-research_education_finance-8952009a100f54f9",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-implementation_planning-01",
+      "A-live-implementation_planning-02",
+      "A-live-implementation_planning-03",
+      "A-live-implementation_planning-04"
+    ],
+    "claim": {
+      "en": "A World Bank analysis citing PISA 2012 data asserts that tracking has a causal effect on student performance in Hungary; conversely, Hungary's incoming education minister (an education sociologist) argues that competency-test data show no greater progress in 6/8-year gymnasia than in general schools, and that higher entry performance reflects pre-selection rather than value-added, framing the system as elite self-segregation rather than educational benefit.",
+      "hu": "A PISA 2012 adatokra hivatkozó Világbank-elemzés azt állítja, hogy a pályaválasztásnak okozati hatása van a tanulói teljesítményre Magyarországon; ezzel szemben Magyarország bejövő oktatási minisztere (oktatási szociológus) azt állítja, hogy a kompetenciamérés adatai nem mutatnak nagyobb előrehaladást a 6/8 éves gimnazistáknál, mint az általános iskolákban, és hogy a magasabb bejutási teljesítmény az előkiválasztást tükrözi, nem pedig az érték hozzáadást, a rendszert elitista szegregációként definiálva az oktatási előny helyett."
+    },
+    "context": {
+      "en": "Fresh live research through the Implementation planning lens",
+      "hu": "Friss, élő kutatás a(z) végrehajtás megtervezése nézőpontján keresztül"
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "contested",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The two readings invoke overlapping data sources (PISA, national competency tests) but differ in causal identification method, isolate-versus-aggregate comparison logic, and in how pre-selection bias is accounted for; no jointly accepted meta-analysis or Bayesian synthesis resolving this disagreement was located in provided sources.",
+        "hu": "A két olvasási mód átfedő adatforrásokra hivatkozik (PISA, nemzeti kompetenciamérés), de eltérnek az okságazonosítás módszerében, az izolált versus aggregált összehasonlítási logikában, és abban, hogyan veszik figyelembe az előkiválasztási torzítást; az ebben az ellentmondásban nem található közösen elfogadott metaanalízis vagy Bayesi szintézis az adott forrásokban."
+      },
+      {
+        "en": "The World Bank causal-effect claim is dated (2012 PISA cycle); the minister's interpretation is stated in public remarks (June 2026) without yet-published peer-reviewed empirical rebuttal or alternative analysis from the minister's office in provided materials.",
+        "hu": "A Világbank oksági hatás állítása időben korábbi (2012 PISA ciklus); a miniszter értelmezése nyilvános megjegyzésekben (2026. június) van kimondva, még nem publikált társadalomtudományi vizsgálat vagy a miniszter hivatalának alternatív elemzése nélkül az adott anyagokban."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-implementation_planning-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás közlése szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-implementation_planning-01",
+      "U-live-implementation_planning-02"
+    ]
+  },
+  "created_at": "2026-07-21T19:11:41.287438Z",
+  "id": "F-live-implementation_planning-03",
+  "provenance_ref": "PV-research_implementation_planning-08af5c4a535801ab",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

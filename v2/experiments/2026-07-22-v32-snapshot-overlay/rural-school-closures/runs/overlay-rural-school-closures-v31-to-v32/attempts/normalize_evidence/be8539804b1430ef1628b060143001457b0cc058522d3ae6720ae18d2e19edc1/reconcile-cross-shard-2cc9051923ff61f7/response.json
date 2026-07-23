@@ -1,0 +1,329 @@
+{
+  "conflicts": [
+    {
+      "claim_keys": [
+        "C11",
+        "C21",
+        "C57",
+        "C70"
+      ],
+      "conflict_type": "causal_interpretation",
+      "decision_relevance": {
+        "en": "Whether retaining a school is a viable anti-depopulation lever versus an unavoidable adjustment determines the entire policy premise for depopulating villages.",
+        "hu": "Az, hogy az iskola megtartása életképes elnéptelenedés-ellenes eszköz-e vagy elkerülhetetlen alkalmazkodás, meghatározza az elnéptelenedő falvakra vonatkozó teljes szakpolitikai premisszát."
+      },
+      "description": {
+        "en": "The synthesized claims present the causality as contested but also include the Finnish DID finding of accelerated post-closure decline alongside null findings from Saxony/Sweden. C21 and C57 further assert positive value of school retention for social capital and economic activity, which sits in tension with the null-effect studies treating closure as symptom not cause.",
+        "hu": "A szintetizált állítások vitatottként mutatják be az okságot, de tartalmazzák a finn DID felgyorsult bezárás utáni csökkenést a szászországi/svéd nullhatás mellett. A C21 és C57 továbbá az iskolamegtartás pozitív értékét állítja a társadalmi tőkére és gazdasági aktivitásra nézve, ami feszültségben van a bezárást tünetként, nem okként kezelő nullhatás-vizsgálatokkal."
+      },
+      "finding_refs": [
+        "F-live-finnish_reform-05",
+        "F-live-finnish_reform-03",
+        "F-live-polish_reform-08"
+      ],
+      "research_question": {
+        "en": "Under what settlement-size and regional conditions does school closure causally accelerate depopulation versus merely tracking pre-existing decline?",
+        "hu": "Mely településméret- és regionális feltételek mellett gyorsítja a bezárás oksági módon az elnéptelenedést, szemben azzal, amikor csak a meglévő csökkenést követi?"
+      },
+      "resolvability": "context_specific",
+      "title": {
+        "en": "Does school closure cause community depopulation, or merely reflect it?",
+        "hu": "A bezárás okozza-e a közösség elnéptelenedését, vagy csak tükrözi azt?"
+      }
+    },
+    {
+      "claim_keys": [
+        "C75",
+        "C34",
+        "C76"
+      ],
+      "conflict_type": "measurement_difference",
+      "decision_relevance": {
+        "en": "If small schools can be resilient, closure on quality grounds is unjustified; if uniformly weaker, consolidation may serve pupils better.",
+        "hu": "Ha a kis iskolák rezilienek lehetnek, a minőségi alapú bezárás indokolatlan; ha egyöntetűen gyengébbek, a konszolidáció jobban szolgálhatja a tanulókat."
+      },
+      "description": {
+        "en": "C75 explicitly reports contested quality: one source finds rural schools lower on all measures, while a peer-reviewed study using 2013 data finds village schools more likely to be 'resilient.' C34 frames the largest OECD urban-rural gap, while C76 argues non-closure interventions can sustain quality. These differ on whether small rural schools are inherently lower-quality.",
+        "hu": "A C75 kifejezetten vitatott minőséget közöl: egy forrás szerint a vidéki iskolák minden mutatóban alacsonyabbak, míg egy 2013-as adatokat használó lektorált tanulmány szerint a falusi iskolák nagyobb valószínűséggel 'rezilienek'. A C34 a legnagyobb OECD város-vidék szakadékot mutatja, míg a C76 szerint bezárás nélküli beavatkozások fenntarthatják a minőséget. Ezek eltérnek abban, hogy a kis vidéki iskolák eleve gyengébb minőségűek-e."
+      },
+      "finding_refs": [
+        "F-live-portuguese_reform-07",
+        "F-live-implementation_planning-06",
+        "F-live-portuguese_reform-10"
+      ],
+      "research_question": {
+        "en": "Controlling for SES, do Hungarian village schools underperform or outperform predicted outcomes, and does restricted school choice drive the difference?",
+        "hu": "SES-re kontrollálva alul- vagy felülteljesítik-e a magyar falusi iskolák a várt eredményeket, és a korlátozott iskolaválasztás vezérli-e a különbséget?"
+      },
+      "resolvability": "answerable_now",
+      "title": {
+        "en": "Small/village school quality: uniformly lower or resilient?",
+        "hu": "Kis/falusi iskolák minősége: egyöntetűen alacsonyabb vagy reziliens?"
+      }
+    },
+    {
+      "claim_keys": [
+        "C39",
+        "C9",
+        "C21"
+      ],
+      "conflict_type": "measurement_difference",
+      "decision_relevance": {
+        "en": "Consultation design determines whether communities can block closures; if symbolic preferences dominate stated views, decisions may over- or under-value retention.",
+        "hu": "A konzultáció kialakítása dönti el, blokkolhatják-e a közösségek a bezárásokat; ha a szimbolikus preferenciák dominálnak, a döntések túl- vagy alulértékelhetik a megtartást."
+      },
+      "description": {
+        "en": "C39 (Czech) reports only 17% of residents in school-less municipalities view its absence as a major shortcoming, implying stated preferences overweight symbolic attachment. C9 and C21 document substantial real burdens and social-capital value of school presence. This is a tension between stated/symbolic and revealed/experienced valuations across contexts.",
+        "hu": "A C39 (cseh) szerint az iskola nélküli településeken csak a lakosok 17%-a tekinti az iskola hiányát komoly hiányosságnak, ami arra utal, hogy a kinyilvánított preferenciák túlértékelik a szimbolikus kötődést. A C9 és C21 jelentős valós terheket és társadalmi tőkeértéket dokumentál. Ez feszültség a kinyilvánított/szimbolikus és a feltárt/megélt értékelés között, eltérő kontextusokban."
+      },
+      "finding_refs": [
+        "F-live-implementation_planning-08",
+        "F-live-demography-06",
+        "F-live-finnish_reform-03"
+      ],
+      "research_question": {
+        "en": "How should consultation mechanisms weigh symbolic attachment against measured post-closure burdens when designing closure decisions?",
+        "hu": "Hogyan súlyozzák a konzultációs mechanizmusok a szimbolikus kötődést a mért bezárás utáni terhekkel szemben a bezárási döntések tervezésekor?"
+      },
+      "resolvability": "context_specific",
+      "title": {
+        "en": "Symbolic vs. revealed value of keeping a village school",
+        "hu": "A falusi iskola megtartásának szimbolikus vs. feltárt értéke"
+      }
+    },
+    {
+      "claim_keys": [
+        "C18",
+        "C68",
+        "C67",
+        "C66"
+      ],
+      "conflict_type": "direct_contradiction",
+      "decision_relevance": {
+        "en": "Determines whether 'keep open' is even legally available in segregated contexts, directly shaping permissible policy options.",
+        "hu": "Meghatározza, hogy a 'tartsuk nyitva' jogilag egyáltalán elérhető-e szegregált kontextusokban, közvetlenül alakítva a megengedett szakpolitikai lehetőségeket."
+      },
+      "description": {
+        "en": "C18/C68 establish that keeping a small single-option school open can constitute unlawful racial segregation requiring closure/desegregation (ECtHR Piliscsaba). C67 documents durable local resistance to court-ordered closures. This conflicts with the preservation-oriented premise and with community-resistance value framings (C40/C66) that treat keeping schools open as the goal.",
+        "hu": "A C18/C68 megállapítja, hogy egy kis, egyetlen lehetőséget kínáló iskola nyitva tartása jogellenes faji szegregációt jelenthet, amely bezárást/deszegregációt igényel (EJEB Piliscsaba). A C67 tartós helyi ellenállást dokumentál a bíróság által elrendelt bezárásokkal szemben. Ez ütközik a megtartás-orientált premisszával és a közösségi ellenállást értékelő keretezésekkel (C40/C66)."
+      },
+      "finding_refs": [
+        "F-live-equity_and_social_mobility-10",
+        "F-live-portuguese_reform-06",
+        "F-live-political_feasibility-07"
+      ],
+      "research_question": {
+        "en": "In single-school segregated villages, when does keeping a school open violate anti-segregation law and override preservation and community-resistance rationales?",
+        "hu": "Egyetlen iskolával rendelkező szegregált falvakban mikor sérti a szegregációellenes jogot az iskola nyitva tartása, felülírva a megtartási és közösségi ellenállási érveket?"
+      },
+      "resolvability": "context_specific",
+      "title": {
+        "en": "'Keep the school open' as default vs. legal desegregation mandate",
+        "hu": "'Tartsuk nyitva az iskolát' alapértelmezés vs. jogi deszegregációs kötelezettség"
+      }
+    },
+    {
+      "claim_keys": [
+        "C29",
+        "C61"
+      ],
+      "conflict_type": "context_dependence",
+      "decision_relevance": {
+        "en": "Church takeover is a proposed depopulation-response pathway; whether it preserves or erodes parental choice affects its legitimacy.",
+        "hu": "Az egyházi átvétel javasolt elnéptelenedés-kezelési út; az, hogy megőrzi vagy erodálja a szülői választást, befolyásolja legitimitását."
+      },
+      "description": {
+        "en": "C29 emphasizes parents retain a formal veto over church-school transfer (cannot proceed without majority support). C61 argues that in single-school villages church transfer functions as a de facto reduction in educational choice even with the building open. These frame the same pathway with opposite implications for real parental agency.",
+        "hu": "A C29 hangsúlyozza, hogy a szülők formális vétóval rendelkeznek az egyházi átadás felett (többségi támogatás nélkül nem lehet). A C61 szerint egyiskolás falvakban az egyházi átadás a nyitva maradó épület mellett is a választás tényleges szűkülését jelenti. Ugyanazt az utat ellentétes következtetésekkel keretezik a valós szülői mozgástérre nézve."
+      },
+      "finding_refs": [
+        "F-live-hungarian_education_system-03",
+        "F-live-polish_reform-10",
+        "F-live-political_feasibility-03"
+      ],
+      "research_question": {
+        "en": "In single-school settlements, does the formal parental veto over church transfer translate into meaningful choice, or is it nullified by absence of alternatives?",
+        "hu": "Egyiskolás településeken a formális szülői vétó érdemi választássá válik-e, vagy az alternatívák hiánya semmissé teszi?"
+      },
+      "resolvability": "answerable_now",
+      "title": {
+        "en": "Church takeover: parental veto vs. de facto reduction of choice",
+        "hu": "Egyházi átvétel: szülői vétó vs. a választás tényleges szűkülése"
+      }
+    },
+    {
+      "claim_keys": [
+        "C8",
+        "C36"
+      ],
+      "conflict_type": "transferability",
+      "decision_relevance": {
+        "en": "Cost-savings claims are a primary rationale for closure; if they don't transfer, the efficiency case for closing depopulating-village schools weakens.",
+        "hu": "A megtakarítási állítások a bezárás fő indoka; ha nem vihetők át, gyengül a hatékonysági érv az elnéptelenedő falusi iskolák bezárása mellett."
+      },
+      "description": {
+        "en": "C8 reports large U.S. per-pupil savings from merging districts but with no transport economies and possible underestimation of large-school costs. C36 shows a 100-student threshold would eliminate 500+ village schools that cannot survive even via consolidation, implying limited feasibility of savings in dispersed Hungarian geography. The transferability of consolidation economics to depopulated Hungarian regions is contested.",
+        "hu": "A C8 nagy amerikai egy főre jutó megtakarításokat közöl körzetek összevonásából, de szállítási megtakarítás nélkül és a nagy iskolák költségeinek lehetséges alulbecslésével. A C36 szerint egy 100 fős küszöb 500+ falusi iskolát szüntetne meg, amelyek összevonással sem életképesek, ami korlátozza a megtakarítások megvalósíthatóságát a szórt magyar földrajzban. A konszolidációs gazdaságosság átvihetősége vitatott."
+      },
+      "finding_refs": [
+        "F-live-education_finance-06",
+        "F-live-implementation_planning-04"
+      ],
+      "research_question": {
+        "en": "Do consolidation cost savings observed in U.S./cross-national studies materialize in Hungary's dispersed rural geography once transport and coverage losses are included?",
+        "hu": "Az amerikai/nemzetközi tanulmányokban megfigyelt konszolidációs megtakarítások megvalósulnak-e Magyarország szórt vidéki földrajzában, ha a szállítási és lefedettségi veszteségeket is beszámítjuk?"
+      },
+      "resolvability": "requires_new_data",
+      "title": {
+        "en": "Consolidation cost savings vs. limited/underestimated economies",
+        "hu": "Konszolidációs megtakarítások vs. korlátozott/alulbecsült gazdaságosság"
+      }
+    },
+    {
+      "claim_keys": [
+        "C6",
+        "C60",
+        "C42"
+      ],
+      "conflict_type": "causal_interpretation",
+      "decision_relevance": {
+        "en": "Whether re-municipalization or continued centralization better protects rural schools depends on resolving this incentive question.",
+        "hu": "Az, hogy az újra-önkormányzatiasítás vagy a további központosítás védi jobban a vidéki iskolákat, e ösztönzési kérdés megválaszolásán múlik."
+      },
+      "description": {
+        "en": "C6/C60 present the 2013 KLIK centralization as aiming to equalize disparities. C42 argues historically centralized resource-allocation regimes in Hungary correlated with unprecedented small rural-school attrition, suggesting centralization structurally disadvantages rural-school maintenance. These conflict on whether centralization helps or harms small rural schools.",
+        "hu": "A C6/C60 a 2013-as KLIK-központosítást az egyenlőtlenségek kiegyenlítésének céljaként mutatja be. A C42 szerint a történelmileg központosított erőforrás-elosztási rendszerek Magyarországon példátlan kis vidéki iskolai leépüléssel korreláltak, ami arra utal, hogy a központosítás strukturálisan hátráltatja a vidéki iskolák fenntartását. Ellentmondanak abban, hogy a központosítás segíti vagy károsítja a kis vidéki iskolákat."
+      },
+      "finding_refs": [
+        "F-live-education_finance-04",
+        "F-live-legal_and_governance-10",
+        "F-live-portuguese_reform-04"
+      ],
+      "research_question": {
+        "en": "Does centralized governance systematically increase or decrease small rural school attrition compared with local maintenance in Hungary?",
+        "hu": "A központosított irányítás rendszerszerűen növeli vagy csökkenti-e a kis vidéki iskolák leépülését a helyi fenntartáshoz képest Magyarországon?"
+      },
+      "resolvability": "context_specific",
+      "title": {
+        "en": "Centralization equalization goal vs. incentive to shed rural schools",
+        "hu": "Központosítás egyenlősítési célja vs. vidéki iskolák leépítésének ösztönzője"
+      }
+    }
+  ],
+  "merge_groups": [
+    {
+      "claim_keys": [
+        "C5",
+        "C25",
+        "C59"
+      ],
+      "rationale": {
+        "en": "All three describe the 2013 KLIK/Klebelsberg centralization of Hungarian public school governance from municipalities to the state, with the same formal centralization of closure decisions. Same population, context and time.",
+        "hu": "Mindhárom a magyar közoktatás 2013-as KLIK/Klebelsberg-központosítását írja le, amely az önkormányzatoktól az államhoz helyezte a fenntartást, ugyanazzal a formális központosított bezárási döntéshozatallal. Azonos populáció, kontextus és idő."
+      }
+    },
+    {
+      "claim_keys": [
+        "C6",
+        "C60"
+      ],
+      "rationale": {
+        "en": "Both assess the outcomes of the 2013 KLIK centralization, describing that the equalization goal produced under-budgeting/inoperability (e.g. teachers buying supplies). Same population, context and time.",
+        "hu": "Mindkettő a 2013-as KLIK-központosítás eredményeit értékeli, leírva, hogy az egyenlősítési cél alulfinanszírozottságot/működésképtelenséget okozott (pl. tanárok maguk vették a kellékeket). Azonos populáció, kontextus és idő."
+      }
+    },
+    {
+      "claim_keys": [
+        "C7",
+        "C41",
+        "C72"
+      ],
+      "rationale": {
+        "en": "All describe the Hungarian historical trajectory of the rural school network: intact until 2004 through targeted support, then 2004–2008 amalgamations halving independent units, prior to centralization. Same population, context, time.",
+        "hu": "Mindegyik a magyar vidéki iskolahálózat történeti pályáját írja le: 2004-ig célzott támogatással érintetlen, majd a 2004–2008-as összevonások megfelezték az önálló egységeket, a központosítás előtt. Azonos populáció, kontextus, idő."
+      }
+    },
+    {
+      "claim_keys": [
+        "C11",
+        "C37",
+        "C70"
+      ],
+      "rationale": {
+        "en": "All three state the identical contested-causality finding: Finnish DID (2010–2018) found accelerated post-closure decline while Saxony/Sweden (and others) found no significant connection, concluding closure-causes-depopulation is unconfirmed. Same bounded proposition across shards.",
+        "hu": "Mindhárom ugyanazt a vitatott oksági megállapítást fogalmazza meg: a finn DID (2010–2018) felgyorsult bezárás utáni csökkenést talált, míg Szászország/Svédország (és mások) nem talált szignifikáns kapcsolatot, azaz a bezárás-okozta-elnéptelenedés nem igazolt. Azonos körülhatárolt állítás a szeletek között."
+      }
+    },
+    {
+      "claim_keys": [
+        "C12",
+        "C38"
+      ],
+      "rationale": {
+        "en": "Both report the same ambiguous village-level finding: schools associated with better demographic/infrastructure but not better employment/welfare, non-causal. Same population, context.",
+        "hu": "Mindkettő ugyanazt a kétértelmű falusi szintű megállapítást közli: az iskola jobb demográfiai/infrastrukturális, de nem jobb foglalkoztatási/jóléti mutatókkal jár, nem oksági. Azonos populáció, kontextus."
+      }
+    },
+    {
+      "claim_keys": [
+        "C13",
+        "C51"
+      ],
+      "rationale": {
+        "en": "Both draw on the ~3,300 Polish closures (2000–2016) to argue demographic decline, not central closure policy, drives closures. Same population and time.",
+        "hu": "Mindkettő a ~3300 lengyel bezárásra (2000–2016) támaszkodik annak alátámasztására, hogy a demográfiai csökkenés, nem a központi bezárási politika a fő ok. Azonos populáció és idő."
+      }
+    },
+    {
+      "claim_keys": [
+        "C15",
+        "C74"
+      ],
+      "rationale": {
+        "en": "Both state the same structural segregation proposition: one-class-per-grade small rural schools constrain within-school segregation but permit between-school/village-level segregation. Same population and context.",
+        "hu": "Mindkettő ugyanazt a strukturális szegregációs állítást fogalmazza meg: az évfolyamonként egyosztályos kis vidéki iskolák korlátozzák az iskolán belüli szegregációt, de megengedik az iskolák/falvak közöttit. Azonos populáció és kontextus."
+      }
+    },
+    {
+      "claim_keys": [
+        "C4",
+        "C35"
+      ],
+      "rationale": {
+        "en": "Both describe multi-grade (összevont) classes as a legally sanctioned tool concentrated in small settlements (below 3,000), used as a consolidation adaptation. Same population and context.",
+        "hu": "Mindkettő a többosztályos (összevont) osztályokat mint jogszabályilag engedélyezett, kis településeken (3000 alatt) koncentrált, konszolidációs alkalmazkodási eszközt írja le. Azonos populáció és kontextus."
+      }
+    },
+    {
+      "claim_keys": [
+        "C32",
+        "C62"
+      ],
+      "rationale": {
+        "en": "Both report the identical statistic: over 1,200 of 3,155 Hungarian settlements had no public educational institution by 2024, and 31% lacked kindergarten in 2022. Same population, context, time.",
+        "hu": "Mindkettő ugyanazt a statisztikát közli: 2024-re a 3155 magyar településből több mint 1200-ban nem volt közoktatási intézmény, és 2022-ben 31%-ban nem volt óvoda. Azonos populáció, kontextus, idő."
+      }
+    },
+    {
+      "claim_keys": [
+        "C17",
+        "C34",
+        "C64"
+      ],
+      "rationale": {
+        "en": "All describe the Hungarian rural teacher-supply crisis with the same figures: unqualified-teacher shares 2–3x higher in disadvantaged schools, ~50% of primary teachers 50+ and 7.2% under 30 in 2024/25, as a binding staffing constraint. Same population, context, time.",
+        "hu": "Mindegyik a magyar vidéki tanárellátási válságot írja le azonos adatokkal: a képesítetlen tanárok aránya 2–3-szoros a hátrányos iskolákban, a tanárok ~50%-a 50+ és 7,2%-a 30 alatti 2024/25-ben, mint kötelező személyzeti korlát. Azonos populáció, kontextus, idő."
+      }
+    },
+    {
+      "claim_keys": [
+        "C18",
+        "C68"
+      ],
+      "rationale": {
+        "en": "Both cite the ECtHR Piliscsaba (Jókai Mór) judgment finding racial segregation of Roma pupils and mandating desegregation. Same population and context.",
+        "hu": "Mindkettő az EJEB piliscsabai (Jókai Mór) ítéletét idézi, amely a roma tanulók faji szegregációját állapította meg és deszegregációt írt elő. Azonos populáció és kontextus."
+      }
+    }
+  ]
+}

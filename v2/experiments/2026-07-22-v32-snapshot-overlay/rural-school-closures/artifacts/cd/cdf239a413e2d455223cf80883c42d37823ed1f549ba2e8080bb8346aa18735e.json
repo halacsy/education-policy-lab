@@ -1,0 +1,43 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-demography-01",
+      "A-live-school_network_planning-01"
+    ],
+    "claim_type": "descriptive",
+    "context": {
+      "en": "Recent Hungarian school network trends",
+      "hu": "Legutóbbi magyar iskolahálózati trendek"
+    },
+    "contradicting_finding_refs": [],
+    "evidence_strength": "strong",
+    "population": {
+      "en": "Hungarian primary-education institutions",
+      "hu": "Magyar általános oktatási intézmények"
+    },
+    "statement": {
+      "en": "The Hungarian primary school network has continued a slow net contraction: institutions providing primary education (ISCED 1-2) fell from 3,609 to 3,521 between 2021 and 2024 (~88 net fewer), often coinciding with regional child-population declines of 10-30% (e.g. Baranya, Northern Hungary).",
+      "hu": "A magyar általános iskolai hálózat lassú nettó zsugorodást folytatott: az általános oktatást (ISCED 1-2) nyújtó intézmények száma 3609-ről 3521-re csökkent 2021 és 2024 között (~88-cal kevesebb nettó), gyakran egybeesve a 10-30%-os regionális gyermeknépesség-csökkenéssel (pl. Baranya, Észak-Magyarország)."
+    },
+    "supporting_finding_refs": [
+      "F-live-school_network_planning-02",
+      "F-live-school_network_planning-03"
+    ],
+    "time_scope": {
+      "en": "2021-2024",
+      "hu": "2021-2024"
+    },
+    "transferability": "direct",
+    "uncertainty_refs": [
+      "U-live-demography-01"
+    ]
+  },
+  "created_at": "2026-07-22T20:42:17.882443Z",
+  "id": "CC-live-c63",
+  "provenance_ref": "PV-normalize_evidence-be8539804b1430ef",
+  "record_type": "canonical_claim",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "rural-school-closures"
+}

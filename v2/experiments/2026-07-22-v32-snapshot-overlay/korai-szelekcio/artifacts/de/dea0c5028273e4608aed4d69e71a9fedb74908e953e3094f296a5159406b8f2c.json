@@ -1,0 +1,468 @@
+{
+  "content": {
+    "conflict_entries": [
+      {
+        "evidence_conflict_ref": "EC-live-e1",
+        "legacy_proposal_refs": [],
+        "overlap_finding_refs": [],
+        "rationale": {
+          "en": "The conflict touches 0 legacy proposals through 0 exact finding ids.",
+          "hu": "A konfliktus 0 régi javaslatot érint 0 pontos findingazonosítón keresztül."
+        },
+        "status": "no_legacy_proposal"
+      },
+      {
+        "evidence_conflict_ref": "EC-live-e2",
+        "legacy_proposal_refs": [
+          "TP-live-t2",
+          "TP-live-t3"
+        ],
+        "overlap_finding_refs": [
+          "F-live-finnish_reform-04",
+          "F-live-polish_reform-06"
+        ],
+        "rationale": {
+          "en": "The conflict touches 2 legacy proposals through 2 exact finding ids.",
+          "hu": "A konfliktus 2 régi javaslatot érint 2 pontos findingazonosítón keresztül."
+        },
+        "status": "touches_legacy_proposal"
+      },
+      {
+        "evidence_conflict_ref": "EC-live-e3",
+        "legacy_proposal_refs": [],
+        "overlap_finding_refs": [],
+        "rationale": {
+          "en": "The conflict touches 0 legacy proposals through 0 exact finding ids.",
+          "hu": "A konfliktus 0 régi javaslatot érint 0 pontos findingazonosítón keresztül."
+        },
+        "status": "no_legacy_proposal"
+      }
+    ],
+    "direction_entries": [
+      {
+        "direction_id": "S1",
+        "legacy_direction_ids": [
+          "S2",
+          "S3"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t2"
+        ],
+        "overlap_finding_refs": [
+          "F-live-finnish_reform-01",
+          "F-live-finnish_reform-02",
+          "F-live-hungarian_education_system-01"
+        ],
+        "rationale": {
+          "en": "The new direction shares exact finding lineage with 1 legacy proposals and 2 legacy directions.",
+          "hu": "Az új irány pontos finding-nyomvonala 1 régi javaslattal és 2 régi iránnyal közös."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "direction_id": "S2",
+        "legacy_direction_ids": [
+          "S1",
+          "S3",
+          "S5"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t2"
+        ],
+        "overlap_finding_refs": [
+          "F-live-equity_and_social_mobility-01",
+          "F-live-hungarian_education_system-02",
+          "F-live-international_comparison-04",
+          "F-live-legal_and_governance-02"
+        ],
+        "rationale": {
+          "en": "The new direction shares exact finding lineage with 1 legacy proposals and 3 legacy directions.",
+          "hu": "Az új irány pontos finding-nyomvonala 1 régi javaslattal és 3 régi iránnyal közös."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "direction_id": "S3",
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [
+          "TP-live-t1",
+          "TP-live-t2",
+          "TP-live-t4"
+        ],
+        "overlap_finding_refs": [
+          "F-live-hungarian_education_system-05",
+          "F-live-international_comparison-03"
+        ],
+        "rationale": {
+          "en": "The new direction shares exact finding lineage with 3 legacy proposals and 0 legacy directions.",
+          "hu": "Az új irány pontos finding-nyomvonala 3 régi javaslattal és 0 régi iránnyal közös."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "direction_id": "S4",
+        "legacy_direction_ids": [
+          "S1",
+          "S4",
+          "S5",
+          "S6"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t1",
+          "TP-live-t4",
+          "TP-live-t5"
+        ],
+        "overlap_finding_refs": [
+          "F-live-demography-02",
+          "F-live-demography-03",
+          "F-live-hungarian_education_system-06",
+          "F-live-school_network_planning-02",
+          "F-live-school_network_planning-04"
+        ],
+        "rationale": {
+          "en": "The new direction shares exact finding lineage with 3 legacy proposals and 4 legacy directions.",
+          "hu": "Az új irány pontos finding-nyomvonala 3 régi javaslattal és 4 régi iránnyal közös."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "direction_id": "S5",
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [
+          "TP-live-t4"
+        ],
+        "overlap_finding_refs": [
+          "F-live-legal_and_governance-03"
+        ],
+        "rationale": {
+          "en": "The new direction shares exact finding lineage with 1 legacy proposals and 0 legacy directions.",
+          "hu": "Az új irány pontos finding-nyomvonala 1 régi javaslattal és 0 régi iránnyal közös."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "direction_id": "S6",
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [
+          "TP-live-t1"
+        ],
+        "overlap_finding_refs": [
+          "F-live-demography-01"
+        ],
+        "rationale": {
+          "en": "The new direction shares exact finding lineage with 1 legacy proposals and 0 legacy directions.",
+          "hu": "Az új irány pontos finding-nyomvonala 1 régi javaslattal és 0 régi iránnyal közös."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "direction_id": "S7",
+        "legacy_direction_ids": [
+          "S3",
+          "S4",
+          "S7"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t3",
+          "TP-live-t4",
+          "TP-live-t5"
+        ],
+        "overlap_finding_refs": [
+          "F-live-equity_and_social_mobility-07",
+          "F-live-hungarian_education_system-09",
+          "F-live-international_comparison-05"
+        ],
+        "rationale": {
+          "en": "The new direction shares exact finding lineage with 3 legacy proposals and 3 legacy directions.",
+          "hu": "Az új irány pontos finding-nyomvonala 3 régi javaslattal és 3 régi iránnyal közös."
+        },
+        "status": "covered_by_proposal"
+      }
+    ],
+    "legacy_option_space_ref": "AO-live-korai-szelekcio",
+    "limitation": {
+      "en": "This overlay measures shared exact finding lineage, not semantic equivalence, current evidence freshness, or policy quality. It is an internal architecture comparison and not a new production decision package.",
+      "hu": "Ez az overlay a pontos finding-nyomvonal közösségét méri, nem a szemantikai azonosságot, a bizonyítékok jelenlegi frissességét vagy a szakpolitikai minőséget. Belső architektúra-összehasonlítás, nem új produkciós döntési csomag."
+    },
+    "mode": "trace_overlap",
+    "new_option_space_ref": "OS-overlay-korai-szelekcio",
+    "normalization_coverage_ref": "CL-live-evidence-normalization",
+    "seed_coverage_ref": "CL-overlay-option-seeds",
+    "seed_entries": [
+      {
+        "legacy_direction_ids": [
+          "S2",
+          "S3"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t2"
+        ],
+        "option_seed_ref": "OSD-live-o1",
+        "overlap_finding_refs": [
+          "F-live-finnish_reform-01",
+          "F-live-hungarian_education_system-01"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 1 legacy proposals and 2 legacy directions through 2 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 1 régi javaslatot és 2 régi irányt talált 2 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [
+          "S1",
+          "S3"
+        ],
+        "legacy_proposal_refs": [],
+        "option_seed_ref": "OSD-live-o2",
+        "overlap_finding_refs": [
+          "F-live-equity_and_social_mobility-01",
+          "F-live-hungarian_education_system-02"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 0 legacy proposals and 2 legacy directions through 2 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 0 régi javaslatot és 2 régi irányt talált 2 pontos findingazonosítón keresztül."
+        },
+        "status": "legacy_direction_only"
+      },
+      {
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [
+          "TP-live-t1"
+        ],
+        "option_seed_ref": "OSD-live-o3",
+        "overlap_finding_refs": [
+          "F-live-demography-01"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 1 legacy proposals and 0 legacy directions through 1 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 1 régi javaslatot és 0 régi irányt talált 1 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [],
+        "option_seed_ref": "OSD-live-o4",
+        "overlap_finding_refs": [],
+        "rationale": {
+          "en": "Trace overlap found 0 legacy proposals and 0 legacy directions through 0 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 0 régi javaslatot és 0 régi irányt talált 0 pontos findingazonosítón keresztül."
+        },
+        "status": "uncovered"
+      },
+      {
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [
+          "TP-live-t1",
+          "TP-live-t2",
+          "TP-live-t4"
+        ],
+        "option_seed_ref": "OSD-live-o5",
+        "overlap_finding_refs": [
+          "F-live-hungarian_education_system-05",
+          "F-live-international_comparison-03"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 3 legacy proposals and 0 legacy directions through 2 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 3 régi javaslatot és 0 régi irányt talált 2 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [
+          "S4",
+          "S5"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t4"
+        ],
+        "option_seed_ref": "OSD-live-o6",
+        "overlap_finding_refs": [
+          "F-live-hungarian_education_system-06"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 1 legacy proposals and 2 legacy directions through 1 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 1 régi javaslatot és 2 régi irányt talált 1 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [
+          "S1",
+          "S6"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t1"
+        ],
+        "option_seed_ref": "OSD-live-o7",
+        "overlap_finding_refs": [
+          "F-live-demography-02",
+          "F-live-school_network_planning-02"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 1 legacy proposals and 2 legacy directions through 2 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 1 régi javaslatot és 2 régi irányt talált 2 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [
+          "S5"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t2"
+        ],
+        "option_seed_ref": "OSD-live-o8",
+        "overlap_finding_refs": [
+          "F-live-international_comparison-04",
+          "F-live-legal_and_governance-02"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 1 legacy proposals and 1 legacy directions through 2 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 1 régi javaslatot és 1 régi irányt talált 2 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [
+          "TP-live-t4"
+        ],
+        "option_seed_ref": "OSD-live-o9",
+        "overlap_finding_refs": [
+          "F-live-legal_and_governance-03"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 1 legacy proposals and 0 legacy directions through 1 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 1 régi javaslatot és 0 régi irányt talált 1 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [],
+        "option_seed_ref": "OSD-live-o10",
+        "overlap_finding_refs": [],
+        "rationale": {
+          "en": "Trace overlap found 0 legacy proposals and 0 legacy directions through 0 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 0 régi javaslatot és 0 régi irányt talált 0 pontos findingazonosítón keresztül."
+        },
+        "status": "uncovered"
+      },
+      {
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [
+          "TP-live-t2"
+        ],
+        "option_seed_ref": "OSD-live-o11",
+        "overlap_finding_refs": [
+          "F-live-finnish_reform-02"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 1 legacy proposals and 0 legacy directions through 1 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 1 régi javaslatot és 0 régi irányt talált 1 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [],
+        "option_seed_ref": "OSD-live-o12",
+        "overlap_finding_refs": [],
+        "rationale": {
+          "en": "Trace overlap found 0 legacy proposals and 0 legacy directions through 0 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 0 régi javaslatot és 0 régi irányt talált 0 pontos findingazonosítón keresztül."
+        },
+        "status": "uncovered"
+      },
+      {
+        "legacy_direction_ids": [
+          "S3",
+          "S4"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t3",
+          "TP-live-t4"
+        ],
+        "option_seed_ref": "OSD-live-o13",
+        "overlap_finding_refs": [
+          "F-live-equity_and_social_mobility-07",
+          "F-live-international_comparison-05"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 2 legacy proposals and 2 legacy directions through 2 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 2 régi javaslatot és 2 régi irányt talált 2 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [
+          "S7"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t5"
+        ],
+        "option_seed_ref": "OSD-live-o14",
+        "overlap_finding_refs": [
+          "F-live-hungarian_education_system-09"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 1 legacy proposals and 1 legacy directions through 1 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 1 régi javaslatot és 1 régi irányt talált 1 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [
+          "S6"
+        ],
+        "legacy_proposal_refs": [
+          "TP-live-t1",
+          "TP-live-t5"
+        ],
+        "option_seed_ref": "OSD-live-o15",
+        "overlap_finding_refs": [
+          "F-live-demography-03",
+          "F-live-school_network_planning-04"
+        ],
+        "rationale": {
+          "en": "Trace overlap found 2 legacy proposals and 1 legacy directions through 2 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 2 régi javaslatot és 1 régi irányt talált 2 pontos findingazonosítón keresztül."
+        },
+        "status": "covered_by_proposal"
+      },
+      {
+        "legacy_direction_ids": [],
+        "legacy_proposal_refs": [],
+        "option_seed_ref": "OSD-live-o16",
+        "overlap_finding_refs": [],
+        "rationale": {
+          "en": "Trace overlap found 0 legacy proposals and 0 legacy directions through 0 exact finding ids.",
+          "hu": "A nyomvonal-átfedés 0 régi javaslatot és 0 régi irányt talált 0 pontos findingazonosítón keresztül."
+        },
+        "status": "uncovered"
+      }
+    ],
+    "source_architecture_version": "3.1.0",
+    "source_manifest_hash": "1583451833c852c221694be687f8ae8e3a047bd8032f1ff332a31ac93d781651",
+    "source_run_plan_hash": "9f413a7d2fb6a9a7fd36aa03403bbfdbeeb4e641726c70afddefdfee8099099b",
+    "source_run_tag": "2026-07-21-v3-bilingual",
+    "summary": {
+      "conflicts_without_legacy_proposal_count": 2,
+      "evidence_conflict_count": 3,
+      "new_direction_count": 7,
+      "novel_gap_count": 0,
+      "seed_count": 16,
+      "uncovered_seed_count": 4
+    }
+  },
+  "created_at": "2026-07-22T20:18:12.223158Z",
+  "id": "OV-korai-szelekcio-v31-to-v32",
+  "provenance_ref": "PV-compare_to_v31-d50245b32e10c3aa",
+  "record_type": "architecture_overlay",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "korai-szelekcio"
+}

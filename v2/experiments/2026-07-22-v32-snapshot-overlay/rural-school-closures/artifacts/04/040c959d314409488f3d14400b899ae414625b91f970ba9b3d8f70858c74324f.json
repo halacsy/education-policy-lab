@@ -1,0 +1,57 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "75843194c3d660f287bdc802f930a94193a71e08e27171529b4b5799ba742242",
+        "response_hash": "aebb01961a39b1715309ff32f5eff5b08f68edf0092b183a9cafabe3d2d5353f",
+        "stage": "generate",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "d097bb29a7a6c3463148a796ab34bf9c0020f5d43c23ce1fed4a47a56cc2e778",
+    "generation_parameters": {
+      "max_tokens": 12000
+    },
+    "input_artifact_hashes": [
+      "0b13ee6c44c88bb8660577f0f4a7f9393b7cace3b18dde44286bbb5a3eb6792a",
+      "286ade5bf13cb2419a20fff00db2496fc8dff9d2b8a632a6f8982bb51928f409",
+      "33968c0c16135ba136174cb4fced57a5b8713822359e8ed045ad95f6abdec8dc",
+      "34e63dc981873cd2c8e9887cfe1dc0bd5496d318ea6da441248e05119ad1b240",
+      "4d0039d3095242aaa0c3b0a27f8abc7e6e960aa7542b95696a74c7fe49e72bf2",
+      "55c55fddb37c48a993e018f4172c252116e26ac8c4b4ec39c84134e160167254",
+      "6ce3bf3d600ea43714a4e993a67d7a89bd87e82f368421d31feaec406a2a0246",
+      "71d4a56f76bfc44045508a8428eece3640117cb8ebbbcce7dbc093d501ffcc48",
+      "72f0135b2500c38a68fd1538b4a7522e3e205fa26ae919e1a2d634642a32c634",
+      "8ebfd619d540b17cead3dad684995ed3f9885277ea21121a21808c10e8db4a79",
+      "a2ffa763ca2a191b980c5cb11892b42dc2b10612db42d3b11f263f8751d3e72e",
+      "b33cbda47f5f5dab68fa741a928d541583f3e32423f04e3db93b76fec264c3a4",
+      "bce27384874eb0d0ab6decdad990f20ba555e0b73e73b74e0f423e6ce22803ce",
+      "cbd2221ce31fdf4cab682084697e59c5bc71a4461c20ae6bf73d8e19e0349e98",
+      "d89dc42c2cec9ea29d4c2a3b3811733e016ac81f220e37c619148dceea2e5aed",
+      "eb01c0cae1bd2b6cf3ccc8cc656321dd74a8e228c611c868c5f72ecf4b9e0fbb",
+      "f263c5c501c08244f924e6f84f2ef804a8a93b3f4b240e1f02f04f39977165db"
+    ],
+    "model": "claude-sonnet-5",
+    "node_id": "cluster_option_seeds",
+    "prompt_hash": "0ee9407709aef359ece48cfc69ae9deb57e304698897167c9f22af5287392e3f",
+    "provider": "anthropic",
+    "relevant_config_hash": "e241d43bf971d0763d3a9edb9b52968d98474c0d6a4bb13f15acabd2fac73604",
+    "role": "generator",
+    "run_plan_hash": "a6e3a3477949aea672121f8bfbfd29264abea05d8ad69da4cf20f3b3d3200af6",
+    "schema_hashes": {
+      "config/v2/bilingual_fields.json": "ae4a70470d64f64208cfeadf6181708316870169497fcde4ffa3b506d04fa1a1",
+      "schemas/v2/bilingual.schema.json": "d5123974e73dcc0b76258c13772b24e3709ff08c32020d180c77890cef9fdc4b",
+      "schemas/v2/coverage_ledger.schema.json": "26fdb2dc314c598b1b141820a94a2699619e065a1e55cabdedca316d8527a0c8",
+      "schemas/v2/option_space_proposal.schema.json": "d089ebaf6a4713dd4445a2c4519329875c5274d3644b89504911278b7f9da3b6"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-22T20:42:17.882443Z",
+  "id": "PV-cluster_option_seeds-d097bb29a7a6c346",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "0d4dab48c0736f26c258e6c6d7e2eee0296c2686d27e0f64f00b4ea07f2962cd",
+  "topic": "rural-school-closures"
+}
