@@ -821,8 +821,9 @@ Rules:
 - Seed sources are pointers only; never infer their contents.
 - Treat human hypotheses as questions to test and response domains as areas to
   examine; do not convert either into facts or approved solutions.
-- Preserve the requested links among service capacity, classroom experience,
-  parental school choice, institutional sorting, and inequality.
+- Preserve relationships explicitly requested in the human research directions,
+  but do not import relationships, premises, or response domains from any other
+  topic.
 - Framing notes must make the important interpretation choices visible to the human reviewer.
 """
         result = self._call_structured_counted(

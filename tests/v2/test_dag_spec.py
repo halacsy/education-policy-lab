@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import inspect
 import tempfile
 import unittest
 from datetime import datetime, timezone
@@ -40,6 +41,17 @@ def pair(english: str, hungarian: str | None = None) -> dict[str, str]:
 
 
 class DagSpecTests(unittest.TestCase):
+    def test_problem_brief_prompt_is_topic_generic(self) -> None:
+        source = inspect.getsource(
+            ArtifactDagRunner._problem_brief_proposal_records
+        )
+        self.assertIn(
+            "do not import relationships, premises, or response domains "
+            "from any other",
+            source,
+        )
+        self.assertNotIn("parental school choice", source)
+
     def test_live_dag_is_explicit_and_contains_human_gate(self) -> None:
         lenses = ("legal", "finance")
         dag = build_policy_analysis_dag(lenses)
