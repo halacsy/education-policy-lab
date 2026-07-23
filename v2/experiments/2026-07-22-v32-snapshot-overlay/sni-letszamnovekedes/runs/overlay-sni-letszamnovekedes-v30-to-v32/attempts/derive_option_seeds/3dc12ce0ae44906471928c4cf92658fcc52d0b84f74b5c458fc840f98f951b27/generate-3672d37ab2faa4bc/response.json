@@ -1,0 +1,600 @@
+{
+  "seeds": [
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-01",
+        "A-live-hungarian_education_system-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c40",
+        "CC-live-c41",
+        "CC-live-c43",
+        "CC-live-c17",
+        "CC-live-c6"
+      ],
+      "change_lever": {
+        "en": "Redesign the categorization framework to decouple support access from formal labeling, following non-categorical models (Wales' Additional Learning Needs, Finland's tiered support).",
+        "hu": "A kategorizálási keret újratervezése a támogatáshoz való hozzáférés és a formális címkézés szétválasztásával, nem kategorizáló modellek (walesi Additional Learning Needs, finn háromszintű támogatás) alapján."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e1",
+        "EC-live-e4",
+        "EC-live-e8"
+      ],
+      "finding_refs": [
+        "F-live-finnish_reform-01",
+        "F-live-international_comparison-01",
+        "F-live-hungarian_education_system-01"
+      ],
+      "key": "O1",
+      "scope": {
+        "en": "National definitional and legal framework for SEN/SNI/BTMN classification.",
+        "hu": "Az SNI/BTMN-besorolás nemzeti definíciós és jogi kerete."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Hungary's diagnosis-gated SNI/BTMN categorization ties support to labels, and identification rates are highly sensitive to definitional architecture rather than true prevalence.",
+        "hu": "A magyar, diagnózishoz kötött SNI/BTMN-kategorizálás a támogatást a címkékhez köti, és az azonosítási arányok inkább a definíciós felépítéstől, mint a valódi prevalenciától függenek."
+      },
+      "title": {
+        "en": "Reform SEN categorization architecture toward needs-based, non-diagnosis-gated support",
+        "hu": "Az SNI-kategorizálás átalakítása szükségletalapú, nem diagnózishoz kötött támogatás felé"
+      },
+      "uncertainty_refs": [
+        "U-live-finnish_reform-01",
+        "U-live-international_comparison-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-education_finance-01",
+        "A-live-polish_reform-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c7",
+        "CC-live-c29",
+        "CC-live-c53",
+        "CC-live-c54"
+      ],
+      "change_lever": {
+        "en": "Shift SEN financing from diagnosis-gated per-pupil weighting toward census-based or needs-based allocation, as in Finland's 2010 reform.",
+        "hu": "Az SNI-finanszírozás áthelyezése a diagnózishoz kötött fejkvóta-súlyozásról létszám- vagy szükségletalapú allokációra, a finn 2010-es reform mintájára."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e5",
+        "EC-live-e2"
+      ],
+      "finding_refs": [
+        "F-live-education_finance-01",
+        "F-live-polish_reform-01",
+        "F-live-finnish_reform-02"
+      ],
+      "key": "O2",
+      "scope": {
+        "en": "National education finance architecture for special-needs provision.",
+        "hu": "A sajátos nevelési igényű ellátás nemzeti oktatásfinanszírozási felépítése."
+      },
+      "seed_type": "funding",
+      "system_problem": {
+        "en": "Hungary's 2x-3x per-capita normative multipliers for SNI students create potential fiscal incentives to classify, while census-based systems remove that incentive.",
+        "hu": "A magyar 2x-3x-os SNI-fejkvóta-szorzók potenciális fiskális ösztönzést teremtenek a besorolásra, míg a létszámalapú rendszerek megszüntetik ezt az ösztönzőt."
+      },
+      "title": {
+        "en": "Reform SNI-linked per-pupil funding incentives",
+        "hu": "Az SNI-hez kötött fejkvóta-ösztönzők reformja"
+      },
+      "uncertainty_refs": [
+        "U-live-education_finance-01",
+        "U-live-polish_reform-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-02",
+        "A-live-implementation_planning-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c8",
+        "CC-live-c9",
+        "CC-live-c58",
+        "CC-live-c59",
+        "CC-live-c60",
+        "CC-live-c61"
+      ],
+      "change_lever": {
+        "en": "Increase practicing specialist supply and target incentives to underserved regions, addressing the gap between degree enrollment and practice entry.",
+        "hu": "A gyakorló szakemberek számának növelése és célzott ösztönzők az ellátatlan régiókba, a diplomaszerzés és a szakmába lépés közötti szakadék kezelésével."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e13"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-02",
+        "F-live-demography-01",
+        "F-live-implementation_planning-01"
+      ],
+      "key": "O3",
+      "scope": {
+        "en": "National teacher/specialist workforce policy with regional targeting.",
+        "hu": "Regionálisan célzott nemzeti pedagógus- és szakértői munkaerő-politika."
+      },
+      "seed_type": "organizational",
+      "system_problem": {
+        "en": "Hungary's specialist workforce is aging, geographically concentrated, and inadequate to meet growing SEN demand, with acute rural/disadvantaged shortages.",
+        "hu": "A magyar szakértői munkaerő elöregedő, földrajzilag koncentrált és nem elegendő a növekvő SNI-igény kielégítésére, akut vidéki/hátrányos helyzetű hiányokkal."
+      },
+      "title": {
+        "en": "Expand and redistribute the specialist and teaching workforce",
+        "hu": "A szakértői és pedagógusi munkaerő bővítése és újraelosztása"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-01",
+        "U-live-implementation_planning-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-03",
+        "A-live-legal_and_governance-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c13",
+        "CC-live-c25",
+        "CC-live-c24",
+        "CC-live-c27",
+        "CC-live-c51"
+      ],
+      "change_lever": {
+        "en": "Reorganize assessment services to separate evaluation from therapy provision and reduce waiting lists at the identify-assess-serve bottleneck.",
+        "hu": "A vizsgálati szolgálatok újraszervezése az értékelés és a terápiás ellátás szétválasztásával és a várólisták csökkentésével az azonosítás-vizsgálat-ellátás szűk keresztmetszeténél."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-hungarian_education_system-03",
+        "F-live-legal_and_governance-01",
+        "F-live-implementation_planning-02"
+      ],
+      "key": "O4",
+      "scope": {
+        "en": "Organizational design of county/district expert committees and pedagogical services.",
+        "hu": "A megyei/járási szakértői bizottságok és pedagógiai szolgálatok szervezeti felépítése."
+      },
+      "seed_type": "organizational",
+      "system_problem": {
+        "en": "The pedagógiai szakszolgálat faces multi-month waiting lists, and expert-committee evaluations crowd out direct therapeutic care; 2013 centralization shifted time toward paperwork.",
+        "hu": "A pedagógiai szakszolgálat több hónapos várólistákkal küzd, a szakértői bizottsági vizsgálatok kiszorítják a közvetlen terápiás ellátást; a 2013-as centralizáció az adminisztráció felé tolta az időt."
+      },
+      "title": {
+        "en": "Restructure diagnostic/assessment capacity to clear bottlenecks",
+        "hu": "A diagnosztikai/vizsgálati kapacitás átalakítása a szűk keresztmetszetek felszámolására"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-02",
+        "U-live-legal_and_governance-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-implementation_planning-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c26",
+        "CC-live-c10",
+        "CC-live-c62",
+        "CC-live-c77"
+      ],
+      "change_lever": {
+        "en": "Establish accountability and delivery mechanisms ensuring prescribed therapy hours are actually provided, monitored against expert opinions.",
+        "hu": "Elszámoltathatósági és ellátási mechanizmusok létrehozása, amelyek biztosítják az előírt terápiás órák tényleges nyújtását, a szakvéleményekhez mérten ellenőrizve."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e3"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-04",
+        "F-live-implementation_planning-03"
+      ],
+      "key": "O5",
+      "scope": {
+        "en": "Service delivery and monitoring across mainstream and specialist provision.",
+        "hu": "Az ellátás nyújtása és ellenőrzése az integrált és a szakértői ellátásban."
+      },
+      "seed_type": "practice",
+      "system_problem": {
+        "en": "After assessment, children frequently do not receive the legally prescribed habilitation and therapy hours specified in expert opinions, a distinct second-stage implementation failure.",
+        "hu": "A vizsgálat után a gyermekek gyakran nem kapják meg a szakvéleményben előírt habilitációs és terápiás órákat, ami különálló, második szakaszbeli végrehajtási kudarc."
+      },
+      "title": {
+        "en": "Close the assessment-to-service gap for prescribed therapy hours",
+        "hu": "A vizsgálat és ellátás közötti rés bezárása az előírt terápiás órák terén"
+      },
+      "uncertainty_refs": [
+        "U-live-implementation_planning-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-02",
+        "A-live-hungarian_education_system-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c33",
+        "CC-live-c34",
+        "CC-live-c63",
+        "CC-live-c17",
+        "CC-live-c19"
+      ],
+      "change_lever": {
+        "en": "Introduce tiered in-class support with co-teaching and expand EGYMI resource-centre capacity to strengthen mainstream teacher capacity.",
+        "hu": "Szintezett osztálytermi támogatás bevezetése páros tanítással és az EGYMI erőforrásközpontok kapacitásának bővítése az integráló pedagógusok kapacitásának erősítésére."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e3"
+      ],
+      "finding_refs": [
+        "F-live-finnish_reform-03",
+        "F-live-hungarian_education_system-05",
+        "F-live-implementation_planning-04"
+      ],
+      "key": "O6",
+      "scope": {
+        "en": "Classroom-level support model and mainstream inclusion infrastructure.",
+        "hu": "Osztálytermi szintű támogatási modell és integrációs infrastruktúra."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Hungarian classrooms of ~24 pupils with one generalist teacher lack the dual-teacher and dedicated special-education co-teaching infrastructure central to tiered models.",
+        "hu": "A ~24 fős magyar osztályok egyetlen általános pedagógussal nélkülözik a szintezett modellek középpontjában álló páros tanítási és dedikált gyógypedagógiai infrastruktúrát."
+      },
+      "title": {
+        "en": "Build tiered mainstream support infrastructure (co-teaching)",
+        "hu": "Szintezett integrált támogatási infrastruktúra kiépítése (páros tanítás)"
+      },
+      "uncertainty_refs": [
+        "U-live-finnish_reform-02",
+        "U-live-hungarian_education_system-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c44",
+        "CC-live-c48",
+        "CC-live-c22",
+        "CC-live-c50",
+        "CC-live-c15",
+        "CC-live-c65"
+      ],
+      "change_lever": {
+        "en": "Create a harmonized longitudinal SEN data series and add safeguarded disaggregated monitoring to detect misclassification and distributional effects.",
+        "hu": "Egységesített longitudinális SNI-idősor létrehozása és garanciákkal védett bontott monitoring hozzáadása a téves besorolás és eloszlási hatások kimutatására."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e7",
+        "EC-live-e11",
+        "EC-live-e12",
+        "EC-live-e6"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-06",
+        "F-live-equity_and_social_mobility-01"
+      ],
+      "key": "O7",
+      "scope": {
+        "en": "National education statistics and monitoring infrastructure.",
+        "hu": "Nemzeti oktatásstatisztikai és monitoring-infrastruktúra."
+      },
+      "seed_type": "information",
+      "system_problem": {
+        "en": "The SEN rise lacks a single reconciled public statistical series by consistent definition across years and levels, creating a monitoring and feedback-loop gap; ethnically-disaggregated data is not collected.",
+        "hu": "Az SNI-növekedésnél hiányzik egyetlen egyeztetett nyilvános statisztikai idősor konzisztens definícióval évek és szintek szerint, ami monitoring- és visszacsatolási rést teremt; etnikailag bontott adat nem gyűjtött."
+      },
+      "title": {
+        "en": "Establish a harmonized SEN monitoring and data system",
+        "hu": "Egységesített SNI-monitoring és adatrendszer létrehozása"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-01",
+        "U-live-equity_and_social_mobility-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-equity_and_social_mobility-01",
+        "A-live-legal_and_governance-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c14",
+        "CC-live-c36",
+        "CC-live-c37",
+        "CC-live-c38",
+        "CC-live-c66",
+        "CC-live-c67",
+        "CC-live-c68"
+      ],
+      "change_lever": {
+        "en": "Introduce anti-segregation safeguards in assessment and admissions to break the labeling-to-segregation pathway, addressing legal non-compliance.",
+        "hu": "Szegregációellenes garanciák bevezetése a vizsgálatban és felvételben a címkézés-szegregáció útvonal megszakítására, kezelve a jogi meg nem felelést."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e6",
+        "EC-live-e9"
+      ],
+      "finding_refs": [
+        "F-live-equity_and_social_mobility-02",
+        "F-live-legal_and_governance-02",
+        "F-live-equity_and_social_mobility-03"
+      ],
+      "key": "O8",
+      "scope": {
+        "en": "Assessment procedures, admissions rules, and anti-segregation enforcement.",
+        "hu": "Vizsgálati eljárások, felvételi szabályok és szegregációellenes végrehajtás."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "SEN/BTMN labeling interacts with free school choice to deepen segregation, with documented ethnic-based diagnostic discrimination and Roma overrepresentation, plus unresolved ECtHR and EU legal findings.",
+        "hu": "Az SNI/BTMN-címkézés a szabad iskolaválasztással kölcsönhatva mélyíti a szegregációt, dokumentált etnikai alapú diagnosztikai diszkriminációval és roma felülreprezentáltsággal, valamint lezáratlan EJEB- és uniós jogi megállapításokkal."
+      },
+      "title": {
+        "en": "Address SEN-labeling interaction with school segregation",
+        "hu": "Az SNI-címkézés és iskolai szegregáció kölcsönhatásának kezelése"
+      },
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-02",
+        "U-live-legal_and_governance-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-02"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c3",
+        "CC-live-c5",
+        "CC-live-c23",
+        "CC-live-c32",
+        "CC-live-c28"
+      ],
+      "change_lever": {
+        "en": "Reassess school-entry-age and deferral rules and their diagnostic effects, adjusting readiness assessment to reduce entry-driven identification.",
+        "hu": "Az iskolakezdési-kor és halasztási szabályok, valamint diagnosztikai hatásaik újraértékelése, az iskolaérettségi vizsgálat módosítása a beiskolázás-vezérelt azonosítás csökkentésére."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e1",
+        "EC-live-e4",
+        "EC-live-e5",
+        "EC-live-e10"
+      ],
+      "finding_refs": [
+        "F-live-hungarian_education_system-07",
+        "F-live-implementation_planning-05"
+      ],
+      "key": "O9",
+      "scope": {
+        "en": "School-entry policy and its interaction with SEN identification.",
+        "hu": "Az iskolakezdési politika és annak kölcsönhatása az SNI-azonosítással."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Tightened school-readiness rules and mandatory enrollment at six are cited as plausible non-exclusive drivers of SEN growth, with a sharp preschool-to-school-age BTMN discontinuity.",
+        "hu": "A szigorított iskolaérettségi szabályok és a hatéves kori kötelező beiskolázás az SNI-növekedés valószínű, nem kizárólagos hajtóerőiként említettek, éles óvodáskor-iskoláskor BTMN-diszkontinuitással."
+      },
+      "title": {
+        "en": "Review adjacent school-entry-age and readiness rules",
+        "hu": "A szomszédos iskolakezdési-kor és iskolaérettségi szabályok felülvizsgálata"
+      },
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-demography-01",
+        "A-live-school_network_planning-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c1",
+        "CC-live-c11",
+        "CC-live-c12",
+        "CC-live-c10"
+      ],
+      "change_lever": {
+        "en": "Use the demographic window to plan school-network consolidation that preserves SEN provision capacity and avoids new segregation.",
+        "hu": "A demográfiai ablak kihasználása olyan iskolahálózat-konszolidáció tervezésére, amely megőrzi az SNI-ellátási kapacitást és elkerüli az új szegregációt."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-demography-02",
+        "F-live-school_network_planning-01",
+        "F-live-demography-03"
+      ],
+      "key": "O10",
+      "scope": {
+        "en": "National and regional school-network planning.",
+        "hu": "Nemzeti és regionális iskolahálózat-tervezés."
+      },
+      "seed_type": "structural",
+      "system_problem": {
+        "en": "Births fell 22% meaning smaller cohorts from 2028, while past decline was met by cutting parallel sections producing small single-class rural schools that cannot separate tracks, with uneven regional contraction.",
+        "hu": "A születések 22%-kal csökkentek, ami 2028-tól kisebb évfolyamokat jelent, míg a korábbi csökkenést párhuzamos osztályok megszüntetésével kezelték, kis egyosztályos vidéki iskolákat eredményezve, egyenetlen regionális visszaeséssel."
+      },
+      "title": {
+        "en": "Align school-network planning with demographic decline",
+        "hu": "Az iskolahálózat-tervezés összehangolása a demográfiai csökkenéssel"
+      },
+      "uncertainty_refs": [
+        "U-live-demography-01",
+        "U-live-school_network_planning-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-01",
+        "A-live-equity_and_social_mobility-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c30",
+        "CC-live-c31",
+        "CC-live-c24",
+        "CC-live-c66"
+      ],
+      "change_lever": {
+        "en": "Reform appeal procedures and consent safeguards to protect procedural rights, especially for disadvantaged families.",
+        "hu": "A fellebbezési eljárások és hozzájárulási garanciák reformja az eljárási jogok védelmére, különösen a hátrányos helyzetű családok esetében."
+      },
+      "evidence_conflict_refs": [],
+      "finding_refs": [
+        "F-live-legal_and_governance-03",
+        "F-live-equity_and_social_mobility-04"
+      ],
+      "key": "O11",
+      "scope": {
+        "en": "Legal procedure for SEN assessment, consent, and review.",
+        "hu": "Az SNI-vizsgálat, hozzájárulás és felülvizsgálat jogi eljárása."
+      },
+      "seed_type": "regulatory",
+      "system_problem": {
+        "en": "Appeal is time-limited (15 days) and administrative rather than judicial, institutional override allows assessment without consent, and deprived parents often lack awareness of procedural rights.",
+        "hu": "A fellebbezés időben korlátozott (15 nap) és adminisztratív, nem bírósági, az intézményi felülbírálat lehetővé teszi a hozzájárulás nélküli vizsgálatot, és a hátrányos helyzetű szülők gyakran nem ismerik eljárási jogaikat."
+      },
+      "title": {
+        "en": "Strengthen procedural rights and appeal in SEN assessment",
+        "hu": "Az eljárási jogok és fellebbezés erősítése az SNI-vizsgálatban"
+      },
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-polish_reform-02",
+        "A-live-political_feasibility-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c45",
+        "CC-live-c72",
+        "CC-live-c73",
+        "CC-live-c74",
+        "CC-live-c1"
+      ],
+      "change_lever": {
+        "en": "Deliberately avoid large-scale structural change, relying on demographic decline and incremental practice adjustment as the baseline against which options are judged.",
+        "hu": "A nagyszabású strukturális változás szándékos elkerülése, a demográfiai csökkenésre és fokozatos gyakorlati kiigazításra támaszkodva alapesetként, amelyhez a lehetőségeket mérik."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e14"
+      ],
+      "finding_refs": [
+        "F-live-polish_reform-02",
+        "F-live-political_feasibility-01",
+        "F-live-demography-04"
+      ],
+      "key": "O12",
+      "scope": {
+        "en": "System-wide status-quo baseline for comparison.",
+        "hu": "Rendszerszintű status quo alapeset összehasonlításhoz."
+      },
+      "seed_type": "counterfactual",
+      "system_problem": {
+        "en": "Structural reform carries documented risks: Poland's rapid low-consensus 2016-17 reform caused a double-cohort crunch and 80% school strike, and reversal contribution to PISA decline is contested.",
+        "hu": "A strukturális reform dokumentált kockázatokat hordoz: Lengyelország gyors, alacsony konszenzusú 2016-17-es reformja kettős évfolyam-torlódást és 80%-os iskolasztrájkot okozott, a PISA-hanyatláshoz való hozzájárulás vitatott."
+      },
+      "title": {
+        "en": "Counterfactual: maintain current system without structural reform",
+        "hu": "Ellenpélda: a jelenlegi rendszer fenntartása strukturális reform nélkül"
+      },
+      "uncertainty_refs": [
+        "U-live-polish_reform-01",
+        "U-live-political_feasibility-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-portuguese_reform-01",
+        "A-live-international_comparison-01"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c55",
+        "CC-live-c56",
+        "CC-live-c4",
+        "CC-live-c41",
+        "CC-live-c52"
+      ],
+      "change_lever": {
+        "en": "Design category changes with anticipatory review mechanisms (as Portugal's 2007 population review) to control unintended identification surges.",
+        "hu": "A kategóriaváltások megtervezése előretekintő felülvizsgálati mechanizmusokkal (mint Portugália 2007-es populációs felülvizsgálata) a nem szándékolt azonosítási ugrások kontrollálására."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e11"
+      ],
+      "finding_refs": [
+        "F-live-polish_reform-03",
+        "F-live-portuguese_reform-01",
+        "F-live-international_comparison-02"
+      ],
+      "key": "O13",
+      "scope": {
+        "en": "Comparative-learning input to any Hungarian categorization reform.",
+        "hu": "Összehasonlító tanulási input bármely magyar kategorizálási reformhoz."
+      },
+      "seed_type": "information",
+      "system_problem": {
+        "en": "Category or diagnostic changes produce large recorded surges independent of true prevalence, as in Poland's 30% one-year autism rise and Portugal's fivefold increase after its 2003 amendment.",
+        "hu": "A kategória- vagy diagnosztikai változások nagy regisztrált ugrásokat okoznak a valódi prevalenciától függetlenül, mint Lengyelország 30%-os egyéves autizmus-növekedése és Portugália ötszörös növekedése a 2003-as módosítás után."
+      },
+      "title": {
+        "en": "Learn from category-change surges in comparator systems",
+        "hu": "Tanulás a kategóriaváltás okozta ugrásokból az összehasonlító rendszerekben"
+      },
+      "uncertainty_refs": [
+        "U-live-portuguese_reform-01",
+        "U-live-international_comparison-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-political_feasibility-02",
+        "A-live-implementation_planning-03"
+      ],
+      "canonical_claim_refs": [
+        "CC-live-c75",
+        "CC-live-c76",
+        "CC-live-c72",
+        "CC-live-c64",
+        "CC-live-c21"
+      ],
+      "change_lever": {
+        "en": "Sequence any SEN reform with stakeholder consultation and phased implementation to secure feasibility and avoid implementation harms.",
+        "hu": "Bármely SNI-reform ütemezése érintetti konzultációval és szakaszos végrehajtással a megvalósíthatóság biztosítására és a végrehajtási károk elkerülésére."
+      },
+      "evidence_conflict_refs": [
+        "EC-live-e14"
+      ],
+      "finding_refs": [
+        "F-live-political_feasibility-02",
+        "F-live-implementation_planning-06",
+        "F-live-legal_and_governance-04"
+      ],
+      "key": "O14",
+      "scope": {
+        "en": "Governance and implementation process for reform.",
+        "hu": "A reform kormányzási és végrehajtási folyamata."
+      },
+      "seed_type": "organizational",
+      "system_problem": {
+        "en": "Hungary enacted a unified teacher status law without adequate union consultation and restricted strike rights; low-consensus rapid reform elsewhere produced strikes and harm, and EU conditionality has not targeted SEN/education.",
+        "hu": "Magyarország megfelelő szakszervezeti konzultáció nélkül fogadott el egységes pedagógus-státusztörvényt és korlátozta a sztrájkjogot; másutt az alacsony konszenzusú gyors reform sztrájkokat és károkat okozott, az uniós feltételesség pedig nem célozta az SNI/oktatást."
+      },
+      "title": {
+        "en": "Sequence reform for political feasibility and consultation",
+        "hu": "A reform ütemezése a politikai megvalósíthatóság és konzultáció érdekében"
+      },
+      "uncertainty_refs": [
+        "U-live-political_feasibility-02",
+        "U-live-implementation_planning-03"
+      ]
+    }
+  ]
+}

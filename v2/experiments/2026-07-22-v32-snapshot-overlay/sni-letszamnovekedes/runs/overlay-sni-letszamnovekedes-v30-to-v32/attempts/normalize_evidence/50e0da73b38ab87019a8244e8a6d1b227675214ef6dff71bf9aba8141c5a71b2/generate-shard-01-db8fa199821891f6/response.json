@@ -1,0 +1,1387 @@
+{
+  "claims": [
+    {
+      "assumption_refs": [
+        "A-live-demography-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "National demographic trends",
+        "hu": "Országos demográfiai trendek"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C1",
+      "population": {
+        "en": "Children born in Hungary and entering school",
+        "hu": "Magyarországon született, iskolába lépő gyermekek"
+      },
+      "statement": {
+        "en": "Hungary's annual births fell 22% from a 2021 peak of 93,000 to 72,000 in 2025, with total fertility rate at 1.31, meaning school cohorts from 2028 onward will be materially smaller regardless of SEN policy.",
+        "hu": "Magyarország éves születésszáma 22%-kal csökkent a 2021-es 93 000-es csúcsról 72 000-re 2025-ben, a teljes termékenységi arányszám 1,31, ami azt jelenti, hogy a 2028-tól iskolába lépő korosztályok érdemben kisebbek lesznek, függetlenül a SNI-politikától."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-01",
+        "F-live-demography-02"
+      ],
+      "time_scope": {
+        "en": "2021–2025, projected to 2028+",
+        "hu": "2021–2025, 2028+ előrejelzés"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-demography-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "National SEN/SNI identification statistics",
+        "hu": "Országos SNI-azonosítási statisztikák"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C2",
+      "population": {
+        "en": "Primary and secondary students in Hungary",
+        "hu": "Magyarországi általános és középiskolai tanulók"
+      },
+      "statement": {
+        "en": "Recorded SEN/SNI identification in Hungary has risen substantially over roughly two decades: primary-education SEN rose from 6.7% (2010) to nearly 10% (2024/25), SNI enrollment grew ~40% over 20 years reaching 112,007 in 2024/25, and an increase of ~28,000 students occurred over ten years.",
+        "hu": "A regisztrált SNI-azonosítás Magyarországon jelentősen nőtt mintegy két évtized alatt: az általános iskolai SNI 6,7%-ról (2010) közel 10%-ra (2024/25) emelkedett, az SNI-beiratkozás 20 év alatt ~40%-kal nőtt, 2024/25-ben elérve a 112 007 főt, és tíz év alatt ~28 000 fős növekedés történt."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-03",
+        "F-live-education_finance-01",
+        "F-live-equity_and_social_mobility-01"
+      ],
+      "time_scope": {
+        "en": "2004/05–2024/25",
+        "hu": "2004/05–2024/25"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-02"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "Contested causal attribution of identification trend",
+        "hu": "Az azonosítási trend vitatott oksági magyarázata"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "contested",
+      "key": "C3",
+      "population": {
+        "en": "Students identified with SEN/SNI in Hungary",
+        "hu": "SNI-vel azonosított magyarországi tanulók"
+      },
+      "statement": {
+        "en": "The drivers of rising SEN identification in Hungary are contested: official accounts attribute growth partly to improved diagnostics and awareness, while independent analyses attribute substantial weight to mandatory school enrollment from age six and stricter school-readiness assessments (2018), social disparities, and workforce shortages.",
+        "hu": "A növekvő SNI-azonosítás okai vitatottak: a hivatalos magyarázat részben a jobb diagnosztikának és tudatosságnak tulajdonítja, míg független elemzések jelentős súlyt tulajdonítanak a hatéves kori kötelező beiskolázásnak és a szigorúbb iskolaérettségi vizsgálatoknak (2018), a társadalmi egyenlőtlenségeknek és a szakemberhiánynak."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-03",
+        "F-live-equity_and_social_mobility-03",
+        "F-live-education_finance-03"
+      ],
+      "time_scope": {
+        "en": "2010–2025",
+        "hu": "2010–2025"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-international_comparison-01"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "Autism diagnostic trends",
+        "hu": "Autizmus-diagnosztikai trendek"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C4",
+      "population": {
+        "en": "Children with autism diagnoses in Hungary and comparable OECD systems",
+        "hu": "Autizmussal diagnosztizált gyermekek Magyarországon és hasonló OECD-rendszerekben"
+      },
+      "statement": {
+        "en": "Autism spectrum disorder registrations among Hungarian children tripled to quadrupled between 2013 and 2023/24 (conflicting figures ~3,000→~10,000–11,700), consistent with cross-national OECD evidence attributing such two- to fourfold increases largely to improved detection rather than true prevalence change.",
+        "hu": "Az autizmus spektrumzavar-regisztrációk magyar gyermekek körében háromszorosukra-négyszeresükre nőttek 2013 és 2023/24 között (eltérő adatok ~3 000→~10 000–11 700), összhangban az OECD nemzetközi bizonyítékaival, amely az ilyen két-négyszeres növekedést nagyrészt a jobb felismerésnek, nem a valós prevalencia változásának tulajdonítja."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-05",
+        "F-live-education_finance-02",
+        "F-live-education_finance-03"
+      ],
+      "time_scope": {
+        "en": "~15 years, 2013–2023/24",
+        "hu": "~15 év, 2013–2023/24"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-education_finance-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Subcategory composition of SEN growth",
+        "hu": "Az SNI-növekedés alkategória-összetétele"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C5",
+      "population": {
+        "en": "BTMN/SEN-classified children in Hungary",
+        "hu": "BTMN/SNI-besorolású gyermekek Magyarországon"
+      },
+      "statement": {
+        "en": "The fastest-growing SEN subcategory in Hungary is BTMN/BTMN-adjacent (severe learning, attention, or behaviour-regulation disorder), ~45,300 students in 2021/22 (~69% of integrated SEN, ~50% ten-year growth), with a sharp age discontinuity (2.1% preschool vs 9.5% school-age in 2018/19) suggesting school-entry academic and behavioural demands drive identification.",
+        "hu": "A leggyorsabban növekvő SNI-alkategória Magyarországon a BTMN/BTMN-közeli (súlyos tanulási, figyelem- vagy viselkedésszabályozási zavar), ~45 300 tanuló 2021/22-ben (az integrált SNI ~69%-a, ~50% tízéves növekedés), éles életkori törésponttal (2,1% óvodás vs 9,5% iskoláskorú 2018/19-ben), ami arra utal, hogy az iskolakezdés tanulmányi és viselkedési követelményei hajtják az azonosítást."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-04",
+        "F-live-equity_and_social_mobility-02"
+      ],
+      "time_scope": {
+        "en": "2018/19–2021/22",
+        "hu": "2018/19–2021/22"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-03"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Category definitions and administrative function",
+        "hu": "Kategória-definíciók és adminisztratív funkció"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C6",
+      "population": {
+        "en": "SNI/BTMN-classified students in Hungary",
+        "hu": "SNI/BTMN-besorolású tanulók Magyarországon"
+      },
+      "statement": {
+        "en": "SNI and BTMN are distinct categories: SNI learning disorders involve neurological/nervous-system deviation while BTMN involves pedagogical and psychological factors without neurological deviation, and SNI functions substantially as a financing and service-eligibility category rather than a strictly clinical diagnosis.",
+        "hu": "Az SNI és a BTMN különböző kategóriák: az SNI tanulási zavarok neurológiai/idegrendszeri eltéréssel járnak, míg a BTMN pedagógiai és pszichológiai tényezőket foglal magában neurológiai eltérés nélkül, és az SNI jelentős részben finanszírozási és szolgáltatásjogosultsági kategóriaként, nem szigorúan klinikai diagnózisként működik."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-05",
+        "F-live-equity_and_social_mobility-04"
+      ],
+      "time_scope": {
+        "en": "Current classification system",
+        "hu": "Jelenlegi besorolási rendszer"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-hungarian_education_system-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-education_finance-01"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "Finance incentives in SEN classification",
+        "hu": "Finanszírozási ösztönzők az SNI-besorolásban"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C7",
+      "population": {
+        "en": "School systems with SEN funding rules (Hungary, Finland, cross-national)",
+        "hu": "SNI-finanszírozási szabályokkal rendelkező iskolarendszerek (Magyarország, Finnország, nemzetközi)"
+      },
+      "statement": {
+        "en": "Financing structures create incentives that can inflate or deflate SEN identification: Hungary's per-capita normative multipliers (2x–3x) for SNI students create potential fiscal incentive to classify, while non-census-based funding correlates with increased provision and census-based systems (as in Finland's 2010 reform) remove that incentive.",
+        "hu": "A finanszírozási struktúrák olyan ösztönzőket teremtenek, amelyek felfelé vagy lefelé torzíthatják az SNI-azonosítást: Magyarország fejkvótás normatív szorzói (2x–3x) az SNI-tanulókra potenciális fiskális ösztönzőt teremtenek a besorolásra, míg a nem népszámlálás-alapú finanszírozás magasabb ellátással korrelál, és a népszámlálás-alapú rendszerek (mint Finnország 2010-es reformja) megszüntetik ezt az ösztönzőt."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-08",
+        "F-live-finnish_reform-03",
+        "F-live-equity_and_social_mobility-04"
+      ],
+      "time_scope": {
+        "en": "Historical to present",
+        "hu": "Történetitől a jelenig"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-education_finance-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Workforce capacity relative to SEN demand",
+        "hu": "Munkaerő-kapacitás a SNI-igényhez viszonyítva"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C8",
+      "population": {
+        "en": "Teaching and specialist workforce in Hungary",
+        "hu": "Tanári és szakemberi munkaerő Magyarországon"
+      },
+      "statement": {
+        "en": "Hungary's teaching and specialist workforce is aging, geographically concentrated, and inadequate to meet growing SEN demand: half of teachers were 50+ in 2024/25, shortages are worst in rural/disadvantaged areas, and specialist vacancies concentrate regionally (45 in Budapest vs 2–3 in rural counties).",
+        "hu": "Magyarország tanári és szakemberi munkaereje öregszik, földrajzilag koncentrált és elégtelen a növekvő SNI-igény kielégítésére: a tanárok fele 50 év feletti volt 2024/25-ben, a hiány a vidéki/hátrányos térségekben a legnagyobb, és a szakemberhiány regionálisan koncentrálódik (45 Budapesten vs 2–3 vidéki megyékben)."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-06",
+        "F-live-demography-07",
+        "F-live-equity_and_social_mobility-05"
+      ],
+      "time_scope": {
+        "en": "2024/2025",
+        "hu": "2024/2025"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-demography-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Workforce pipeline analysis",
+        "hu": "Munkaerő-utánpótlás elemzése"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C9",
+      "population": {
+        "en": "Special-education degree students in Hungary",
+        "hu": "Gyógypedagógiai képzésben részt vevő hallgatók Magyarországon"
+      },
+      "statement": {
+        "en": "Rising special-education degree enrollment in Hungary (2,944 first-choice applicants 2024; up to 3,768 by 2026, +15%) does not directly translate into practicing workforce supply: reportedly only ~one-fifth enter the profession, and many correspondence-program students are parents of affected children unlikely to practice.",
+        "hu": "A gyógypedagógiai képzés növekvő beiratkozása Magyarországon (2 944 első helyes jelentkező 2024-ben; akár 3 768 2026-ra, +15%) nem fordítható közvetlenül gyakorló munkaerő-kínálatra: jelentések szerint csak ~egyötödük lép a pályára, és sok levelező hallgató érintett gyermekek szülője, akik valószínűleg nem gyakorolják a szakmát."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-07",
+        "F-live-equity_and_social_mobility-05"
+      ],
+      "time_scope": {
+        "en": "2024–2026",
+        "hu": "2024–2026"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-education_finance-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Integration practice and capacity",
+        "hu": "Integrációs gyakorlat és kapacitás"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C10",
+      "population": {
+        "en": "Integrated SEN students and mainstream schools in Hungary",
+        "hu": "Integrált SNI-tanulók és többségi iskolák Magyarországon"
+      },
+      "statement": {
+        "en": "Most SEN students in Hungary (73%, ~51,000) are educated in integrated mainstream settings, but institutions face increasing challenges: 83.6% of surveyed teachers observed rising numbers needing developmental support, and placement decisions are shaped as much by institutional resource capacity and structure as by student characteristics.",
+        "hu": "A legtöbb SNI-tanuló Magyarországon (73%, ~51 000) integrált, többségi környezetben tanul, de az intézmények egyre nagyobb kihívásokkal szembesülnek: a megkérdezett tanárok 83,6%-a növekvő fejlesztési igényt figyelt meg, és az elhelyezési döntéseket ugyanúgy alakítja az intézményi erőforrás-kapacitás és -struktúra, mint a tanulói jellemzők."
+      },
+      "supporting_finding_refs": [
+        "F-live-equity_and_social_mobility-06",
+        "F-live-demography-04"
+      ],
+      "time_scope": {
+        "en": "~2023–2025",
+        "hu": "~2023–2025"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-school_network_planning-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "School network structure and financing history",
+        "hu": "Iskolahálózati struktúra és finanszírozástörténet"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C11",
+      "population": {
+        "en": "Rural and small primary schools in Hungary",
+        "hu": "Vidéki és kis általános iskolák Magyarországon"
+      },
+      "statement": {
+        "en": "Structural features of Hungary's school network constrain SEN provision: enrollment decline was historically met by reducing parallel class sections rather than closing schools, producing many small single-class rural schools that cannot separate pupils into parallel tracks, while local financing shifted from 80–90% to 50–70% central coverage.",
+        "hu": "A magyar iskolahálózat strukturális jellemzői korlátozzák a SNI-ellátást: a létszámcsökkenésre történelmileg párhuzamos osztályok megszüntetésével, nem iskolabezárással reagáltak, sok kis, egyosztályos vidéki iskolát létrehozva, amelyek nem tudják párhuzamos sávokra bontani a tanulókat, miközben a helyi finanszírozás a 80–90%-os központi fedezetről 50–70%-ra csökkent."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-08",
+        "F-live-demography-09"
+      ],
+      "time_scope": {
+        "en": "1990s–present",
+        "hu": "1990-es évek–jelen"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-school_network_planning-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-demography-02"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Regional demographic and disadvantage distribution",
+        "hu": "Regionális demográfiai és hátrányeloszlás"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C12",
+      "population": {
+        "en": "Regional child populations in Hungary",
+        "hu": "Regionális gyermeknépesség Magyarországon"
+      },
+      "statement": {
+        "en": "Child-population and disadvantage trends in Hungary are spatially uneven: some rural regions (Western Transdanubia, Southern Baranya, Northern Hungary) contracted 10–30% over four years, while Northeastern counties show high disadvantage concentrations (70–92% child disadvantage in some settlements), with pronounced North-South and East-West divides.",
+        "hu": "A gyermeknépesség és a hátrány trendjei Magyarországon térben egyenetlenek: egyes vidéki régiók (Nyugat-Dunántúl, Dél-Baranya, Észak-Magyarország) négy év alatt 10–30%-kal zsugorodtak, míg az északkeleti megyék magas hátránykoncentrációt mutatnak (egyes településeken 70–92% gyermekhátrány), kifejezett észak-déli és kelet-nyugati megosztottsággal."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-10"
+      ],
+      "time_scope": {
+        "en": "Recent four-year period",
+        "hu": "Közelmúltbeli négyéves időszak"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-demography-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-hungarian_education_system-03"
+      ],
+      "claim_type": "mechanistic",
+      "context": {
+        "en": "Assessment vs therapy resource allocation",
+        "hu": "Vizsgálati vs terápiás erőforrás-elosztás"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C13",
+      "population": {
+        "en": "Educational counseling services in Hungary",
+        "hu": "Magyarországi pedagógiai szakszolgálatok"
+      },
+      "statement": {
+        "en": "Specialist assessment capacity in Hungary's pedagógiai szakszolgálat is increasingly consumed by BTMN/SNI expert-committee evaluations, crowding out direct therapeutic and remedial care time.",
+        "hu": "A magyar pedagógiai szakszolgálat szakértői kapacitását egyre inkább a BTMN/SNI szakértői bizottsági vizsgálatok kötik le, kiszorítva a közvetlen terápiás és fejlesztő ellátás idejét."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-06"
+      ],
+      "time_scope": {
+        "en": "Current",
+        "hu": "Jelenlegi"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-education_finance-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-equity_and_social_mobility-01"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "Segregation risk from labeling and school choice",
+        "hu": "A címkézésből és iskolaválasztásból eredő szegregációs kockázat"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C14",
+      "population": {
+        "en": "Disadvantaged and Roma students in Hungarian schools",
+        "hu": "Hátrányos helyzetű és roma tanulók magyar iskolákban"
+      },
+      "statement": {
+        "en": "There is a documented structural risk that SEN/BTMN labeling interacts with free school choice to deepen segregation in Hungary: administrative categories have historically created segregation pathways (e.g., 'Bridge classes' for Roma), Roma students were overrepresented in SEN classification with a 50–75% threshold effect, and school-switching significantly alters ethnic composition.",
+        "hu": "Dokumentált strukturális kockázat, hogy az SNI/BTMN-címkézés a szabad iskolaválasztással kölcsönhatva mélyíti a szegregációt Magyarországon: az adminisztratív kategóriák történelmileg szegregációs útvonalakat teremtettek (pl. 'Híd-osztályok' a romáknak), a roma tanulók felülreprezentáltak voltak az SNI-besorolásban 50–75%-os küszöbhatással, és az iskolaváltás jelentősen módosítja az etnikai összetételt."
+      },
+      "supporting_finding_refs": [
+        "F-live-education_finance-09",
+        "F-live-equity_and_social_mobility-07",
+        "F-live-equity_and_social_mobility-08"
+      ],
+      "time_scope": {
+        "en": "2007–2020 evidence, ongoing risk",
+        "hu": "2007–2020 bizonyíték, folyamatos kockázat"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-equity_and_social_mobility-02"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "Admissions dynamics and distributional outcomes",
+        "hu": "Felvételi dinamika és eloszlási kimenetek"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "weak",
+      "key": "C15",
+      "population": {
+        "en": "SNI-classified students in Hungary",
+        "hu": "SNI-besorolású tanulók Magyarországon"
+      },
+      "statement": {
+        "en": "SNI status in Hungary appears to be shifting from a historical enrollment advantage (higher normative funding pre-2013) to an exclusionary factor in admissions as institutional financing fails to support extra resources; the longitudinal distributional consequences for educational trajectories remain unquantified and a priority evidence gap.",
+        "hu": "Az SNI-státusz Magyarországon a történelmi beiratkozási előnyből (magasabb normatív finanszírozás 2013 előtt) a felvételi kirekesztő tényezőjévé látszik átalakulni, mivel az intézményi finanszírozás nem támogatja a többleterőforrásokat; a hosszú távú eloszlási következmények az oktatási pályákra mérésre nem kerültek, és prioritásos bizonyítékhiányt jelentenek."
+      },
+      "supporting_finding_refs": [
+        "F-live-equity_and_social_mobility-04",
+        "F-live-equity_and_social_mobility-10"
+      ],
+      "time_scope": {
+        "en": "Pre-2013 to present, longitudinal outcomes unknown",
+        "hu": "2013 előttitől a jelenig, hosszú távú kimenetek ismeretlenek"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-equity_and_social_mobility-04"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-international_comparison-02"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Over-diagnosis critique and comparability limits",
+        "hu": "Túldiagnosztizálási kritika és összehasonlíthatósági korlátok"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C16",
+      "population": {
+        "en": "Children classified with learning disorders in Hungary",
+        "hu": "Tanulási zavarral besorolt gyermekek Magyarországon"
+      },
+      "statement": {
+        "en": "A 'domestic over-diagnosis' critique holds that the number of children classified with learning disorders in Hungary is 'irrationally high', and international comparison with OECD countries is methodologically problematic because Hungary's diagnostic and service-provision system differs structurally and uses different definitional principles.",
+        "hu": "Egy 'hazai túldiagnosztizálási' kritika szerint a tanulási zavarral besorolt gyermekek száma Magyarországon 'irracionálisan magas', és az OECD-országokkal való nemzetközi összehasonlítás módszertanilag problémás, mert Magyarország diagnosztikai és szolgáltatási rendszere strukturálisan eltér és más definíciós elveket használ."
+      },
+      "supporting_finding_refs": [
+        "F-live-equity_and_social_mobility-09"
+      ],
+      "time_scope": {
+        "en": "Current scholarship",
+        "hu": "Jelenlegi szakirodalom"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-international_comparison-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-01"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "Finnish tiered support reform outcomes",
+        "hu": "Finn többszintű támogatási reform eredményei"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "strong",
+      "key": "C17",
+      "population": {
+        "en": "Comprehensive-school pupils in Finland",
+        "hu": "Finn alapfokú iskolai tanulók"
+      },
+      "statement": {
+        "en": "Finland's 2010–2011 three-tiered support reform (general, intensified, special) was a direct response to rising SEN identification; post-reform growth concentrated in the new 'intensified' tier (2.8%→12.2% by 2020) while 'special support' stayed flat (~8.5–9.0%), indicating reclassification into a new category rather than uniform acceleration.",
+        "hu": "Finnország 2010–2011-es háromszintű támogatási reformja (általános, felerősített, speciális) közvetlen válasz volt a növekvő SNI-azonosításra; a reform utáni növekedés az új 'felerősített' szinten koncentrálódott (2,8%→12,2% 2020-ra), míg a 'speciális támogatás' változatlan maradt (~8,5–9,0%), ami inkább egy új kategóriába való átsorolást, mint egységes gyorsulást jelez."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-01",
+        "F-live-finnish_reform-02"
+      ],
+      "time_scope": {
+        "en": "2010–2020",
+        "hu": "2010–2020"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-01"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-02"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Local variation and integration gap",
+        "hu": "Helyi eltérés és integrációs szakadék"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C18",
+      "population": {
+        "en": "Special-support pupils across Finnish municipalities",
+        "hu": "Speciális támogatású tanulók a finn önkormányzatokban"
+      },
+      "statement": {
+        "en": "National SEN identification figures mask large local variation and gaps between headline inclusion tiers and actual mainstream integration: Finnish special-support rates ranged 4–13% across regions after reform, and only 23% of Tier 3 students were fully included in general classrooms.",
+        "hu": "A nemzeti SNI-azonosítási adatok nagy helyi eltéréseket és a fejléc-inklúziós szintek és a tényleges többségi integráció közötti szakadékokat takarnak el: a finn speciális támogatási arányok a reform után 4–13% között mozogtak régiónként, és a 3. szintű tanulóknak csak 23%-a volt teljesen integrálva általános osztályokba."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-04",
+        "F-live-finnish_reform-05"
+      ],
+      "time_scope": {
+        "en": "Post-2010",
+        "hu": "2010 után"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-02"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Teacher experience of integration",
+        "hu": "Tanári tapasztalat az integrációról"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C19",
+      "population": {
+        "en": "Teachers in Finnish tiered support system",
+        "hu": "Tanárok a finn többszintű támogatási rendszerben"
+      },
+      "statement": {
+        "en": "Teachers in tiered/integrated support systems report positive overall assessment but persistent challenges — documentation burden, insufficient time to support all pupils in mixed classes, and in some municipalities cost-saving motives driving tier assignment over pedagogical rationale.",
+        "hu": "A többszintű/integrált támogatási rendszerekben dolgozó tanárok összességében pozitívan értékelnek, de tartós kihívásokról számolnak be — dokumentációs teher, elégtelen idő minden tanuló támogatására vegyes osztályokban, és egyes önkormányzatokban a szintbesorolást pedagógiai indok helyett költségtakarékossági motívumok vezérlik."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-06"
+      ],
+      "time_scope": {
+        "en": "Post-2010",
+        "hu": "2010 után"
+      },
+      "transferability": "analogy_only",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-finnish_reform-03",
+        "A-live-equity_and_social_mobility-01"
+      ],
+      "claim_type": "causal",
+      "context": {
+        "en": "School choice and compositional sorting",
+        "hu": "Iskolaválasztás és összetételi szelektálódás"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C20",
+      "population": {
+        "en": "School populations under choice-based systems (Finland, Hungary)",
+        "hu": "Iskolai népesség választás-alapú rendszerekben (Finnország, Magyarország)"
+      },
+      "statement": {
+        "en": "School choice interacts with student sorting and SEN status to fragment school composition in both Finland and Hungary: Finnish choice enables higher-SES parents to select selective classes, coincides with partial reversal of equity gains since ~2000, and SEN/support-tier status interacts with school intake; Hungarian free choice independently drives compositional sorting.",
+        "hu": "Az iskolaválasztás kölcsönhatásba lép a tanulói szelektálódással és az SNI-státusszal, széttöredezve az iskolai összetételt Finnországban és Magyarországon egyaránt: a finn választás lehetővé teszi a magasabb státuszú szülőknek a szelektív osztályok választását, egybeesik az egyenlőségi eredmények részleges visszafordulásával ~2000 óta, és az SNI/támogatási szint kölcsönhatásba lép az iskolai felvétellel; a magyar szabad választás önállóan hajtja az összetételi szelektálódást."
+      },
+      "supporting_finding_refs": [
+        "F-live-finnish_reform-07",
+        "F-live-finnish_reform-08",
+        "F-live-finnish_reform-09",
+        "F-live-finnish_reform-10",
+        "F-live-equity_and_social_mobility-08"
+      ],
+      "time_scope": {
+        "en": "~2000–present",
+        "hu": "~2000–jelen"
+      },
+      "transferability": "conditional",
+      "uncertainty_refs": [
+        "U-live-finnish_reform-04",
+        "U-live-equity_and_social_mobility-03"
+      ]
+    },
+    {
+      "assumption_refs": [
+        "A-live-legal_and_governance-01"
+      ],
+      "claim_type": "descriptive",
+      "context": {
+        "en": "Policy concern review",
+        "hu": "Szakpolitikai aggály-felülvizsgálat"
+      },
+      "contradicting_finding_refs": [],
+      "evidence_strength": "moderate",
+      "key": "C21",
+      "population": {
+        "en": "Hungarian public education system and SEN students",
+        "hu": "Magyar közoktatási rendszer és SNI-tanulók"
+      },
+      "statement": {
+        "en": "Independent and international review identified unresolved SEN-related policy concerns in Hungary — inadequate teacher training and specialist support (doctors, sign-language interpreters), bigger classes, segregation, curriculum assessment, and equitable funding — warning of a 'hollowing out' of public education and deepening inequalities.",
+        "hu": "Független és nemzetközi felülvizsgálat megoldatlan SNI-hez kapcsolódó szakpolitikai aggályokat azonosított Magyarországon — elégtelen tanárképzés és szakemberi támogatás (orvosok, jelnyelvi tolmácsok), nagyobb osztályok, szegregáció, tantervi értékelés és méltányos finanszírozás —, figyelmeztetve a közoktatás 'kiüresedésére' és az egyenlőtlenségek mélyülésére."
+      },
+      "supporting_finding_refs": [
+        "F-live-demography-07",
+        "F-live-education_finance-10"
+      ],
+      "time_scope": {
+        "en": "2025",
+        "hu": "2025"
+      },
+      "transferability": "direct",
+      "uncertainty_refs": [
+        "U-live-legal_and_governance-01"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "claim_keys": [
+        "C3",
+        "C4",
+        "C16"
+      ],
+      "conflict_type": "causal_interpretation",
+      "decision_relevance": {
+        "en": "The correct policy response (diagnostic reform, enrollment-age adjustment, resource expansion, or finance redesign) depends on which driver dominates.",
+        "hu": "A helyes szakpolitikai válasz (diagnosztikai reform, beiskolázási kor módosítása, erőforrás-bővítés vagy finanszírozási újratervezés) attól függ, melyik ok dominál."
+      },
+      "description": {
+        "en": "Some findings attribute rising SEN/autism identification largely to improved diagnostics and awareness (official accounts, OECD analogy), while others attribute substantial causal weight to policy changes (mandatory enrollment at six, stricter 2018 school-readiness assessments), social disparities, workforce shortages, and 'irrationally high' over-diagnosis. The magnitude split is disputed and not resolvable by averaging.",
+        "hu": "Egyes megállapítások a növekvő SNI/autizmus-azonosítást nagyrészt a jobb diagnosztikának és tudatosságnak tulajdonítják (hivatalos beszámolók, OECD-analógia), míg mások jelentős oksági súlyt tulajdonítanak szakpolitikai változásoknak (hatéves kori kötelező beiskolázás, szigorúbb 2018-as iskolaérettségi vizsgálatok), társadalmi egyenlőtlenségeknek, szakemberhiánynak és az 'irracionálisan magas' túldiagnosztizálásnak. A nagyságrendi megoszlás vitatott, és nem oldható fel átlagolással."
+      },
+      "finding_refs": [
+        "F-live-demography-03",
+        "F-live-demography-05",
+        "F-live-education_finance-03",
+        "F-live-equity_and_social_mobility-03",
+        "F-live-equity_and_social_mobility-09"
+      ],
+      "key": "E1",
+      "research_question": {
+        "en": "What share of Hungary's measured SEN/BTMN identification increase is attributable to diagnostic-practice change versus enrollment/readiness policy, social factors, and financing incentives?",
+        "hu": "Magyarország mért SNI/BTMN-azonosítási növekedésének mekkora hányada tulajdonítható a diagnosztikai gyakorlat változásának a beiskolázási/érettségi politikával, társadalmi tényezőkkel és finanszírozási ösztönzőkkel szemben?"
+      },
+      "resolvability": "requires_new_data",
+      "title": {
+        "en": "Diagnostic-practice change vs real driver change behind rising SEN identification",
+        "hu": "Diagnosztikai gyakorlat változása vs valós okváltozás a növekvő SNI-azonosítás mögött"
+      }
+    },
+    {
+      "claim_keys": [
+        "C7",
+        "C15"
+      ],
+      "conflict_type": "temporal_change",
+      "decision_relevance": {
+        "en": "Finance redesign must account for whether current rules over- or under-identify students, informing whether census-based allocation is appropriate.",
+        "hu": "A finanszírozási újratervezésnek figyelembe kell vennie, hogy a jelenlegi szabályok túl- vagy alulazonosítanak-e tanulókat, ami befolyásolja, hogy a népszámlálás-alapú elosztás megfelelő-e."
+      },
+      "description": {
+        "en": "Findings describe opposite fiscal effects of SNI classification: pre-2013 higher per-capita funding created an incentive to identify/enroll students (inclusion-inflating), while more recent reports say SNI status has become an exclusionary factor in admissions as financing fails to cover extra resources. The two coexist as a temporal shift, not a contradiction to be averaged.",
+        "hu": "A megállapítások az SNI-besorolás ellentétes fiskális hatásait írják le: a 2013 előtti magasabb fejkvótás finanszírozás ösztönözte a tanulók azonosítását/beiratkozását (inklúziót növelő), míg újabb jelentések szerint az SNI-státusz kirekesztő tényezővé vált a felvételinél, mivel a finanszírozás nem fedezi a többleterőforrásokat. A kettő időbeli eltolódásként létezik együtt, nem átlagolandó ellentmondásként."
+      },
+      "finding_refs": [
+        "F-live-education_finance-08",
+        "F-live-equity_and_social_mobility-04",
+        "F-live-finnish_reform-03"
+      ],
+      "key": "E2",
+      "research_question": {
+        "en": "How have financing rule changes altered the direction of SNI classification incentives over time in Hungary, and what is the current net effect on identification and admissions?",
+        "hu": "Hogyan változtatták meg a finanszírozási szabályok az SNI-besorolási ösztönzők irányát az idők során Magyarországon, és mi a jelenlegi nettó hatás az azonosításra és a felvételire?"
+      },
+      "resolvability": "context_specific",
+      "title": {
+        "en": "SNI financing as inclusion incentive vs exclusion factor",
+        "hu": "Az SNI-finanszírozás mint inklúziós ösztönző vs kirekesztő tényező"
+      }
+    },
+    {
+      "claim_keys": [
+        "C10",
+        "C18"
+      ],
+      "conflict_type": "measurement_difference",
+      "decision_relevance": {
+        "en": "Overstated integration figures could mask unmet need and misdirect resource planning.",
+        "hu": "A túlbecsült integrációs adatok elrejthetik a kielégítetlen igényt és félreirányíthatják az erőforrás-tervezést."
+      },
+      "description": {
+        "en": "Hungary reports 73% of SEN students in integrated settings, while Finnish data show only 23% of top-tier students fully included in general classrooms. This reflects a measurement difference between administrative placement categories and actual classroom inclusion, cautioning that headline percentages may overstate real integration.",
+        "hu": "Magyarország a SNI-tanulók 73%-át jelenti integrált környezetben, míg a finn adatok szerint a legfelső szintű tanulóknak csak 23%-a van teljesen integrálva általános osztályokba. Ez mérési különbséget tükröz az adminisztratív elhelyezési kategóriák és a tényleges osztálytermi inklúzió között, óva intve attól, hogy a fejléc-százalékok túlbecsülhetik a valós integrációt."
+      },
+      "finding_refs": [
+        "F-live-equity_and_social_mobility-06",
+        "F-live-finnish_reform-05"
+      ],
+      "key": "E3",
+      "research_question": {
+        "en": "What proportion of Hungary's 'integrated' SEN students are actually taught in mainstream classrooms versus separate arrangements within nominally integrated institutions?",
+        "hu": "Magyarország 'integrált' SNI-tanulóinak mekkora hányadát tanítják ténylegesen többségi osztályokban a névlegesen integrált intézményeken belüli elkülönített megoldásokkal szemben?"
+      },
+      "resolvability": "requires_new_data",
+      "title": {
+        "en": "Headline integration rates vs actual mainstream inclusion",
+        "hu": "Fejléc-integrációs arányok vs tényleges többségi inklúzió"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "claim_keys": [
+        "C1"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-01",
+      "rationale": {
+        "en": "Birth collapse is a core structural fact carried into C1.",
+        "hu": "A születésszám-összeomlás alapvető strukturális tény, C1-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C1"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-02",
+      "rationale": {
+        "en": "Locked-in 0-4 decline supports the cohort-shrinkage claim.",
+        "hu": "A rögzült 0-4 éves csökkenés alátámasztja a korosztály-zsugorodási állítást."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C2",
+        "C3"
+      ],
+      "conflict_keys": [
+        "E1"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-03",
+      "rationale": {
+        "en": "Documents the identification rise and contested drivers.",
+        "hu": "Dokumentálja az azonosítási növekedést és a vitatott okokat."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C10"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-04",
+      "rationale": {
+        "en": "Teacher survey supports integration-challenge claim.",
+        "hu": "A tanári felmérés alátámasztja az integrációs kihívás állítását."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C4"
+      ],
+      "conflict_keys": [
+        "E1"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-05",
+      "rationale": {
+        "en": "OECD autism evidence anchors diagnostic-driver interpretation and conflict E1.",
+        "hu": "Az OECD autizmus-bizonyíték rögzíti a diagnosztikai okértelmezést és az E1 konfliktust."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C8"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-06",
+      "rationale": {
+        "en": "Workforce aging/geography is core to capacity claim C8.",
+        "hu": "A munkaerő öregedése/földrajza a C8 kapacitásállítás lényege."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C8",
+        "C21"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-07",
+      "rationale": {
+        "en": "Links SEN growth to inadequate support and policy concerns.",
+        "hu": "Összekapcsolja a SNI-növekedést az elégtelen támogatással és szakpolitikai aggályokkal."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C11"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-08",
+      "rationale": {
+        "en": "Single-class rural school structure constrains provision, core to C11.",
+        "hu": "Az egyosztályos vidéki iskolaszerkezet korlátozza az ellátást, a C11 lényege."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C11"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-09",
+      "rationale": {
+        "en": "Financing deterioration supports fiscal-pressure element of C11.",
+        "hu": "A finanszírozás romlása alátámasztja a C11 fiskális nyomás elemét."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C12"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-demography-10",
+      "rationale": {
+        "en": "Regional unevenness carried into C12.",
+        "hu": "A regionális egyenetlenség C12-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C2"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-01",
+      "rationale": {
+        "en": "Core SNI enrollment magnitude carried into C2.",
+        "hu": "Az alapvető SNI-beiratkozási nagyságrend C2-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C4"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-02",
+      "rationale": {
+        "en": "Autism registration figures support C4 including conflicting counts.",
+        "hu": "Az autizmus-regisztrációs adatok alátámasztják C4-et, beleértve az ellentmondó számokat."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C4",
+        "C3"
+      ],
+      "conflict_keys": [
+        "E1"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-03",
+      "rationale": {
+        "en": "Diagnostic-change interpretation supports C4 and feeds conflict E1.",
+        "hu": "A diagnosztikai változás értelmezése alátámasztja C4-et és táplálja az E1 konfliktust."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C5"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-04",
+      "rationale": {
+        "en": "BTMN age discontinuity carried into C5.",
+        "hu": "A BTMN életkori töréspontja C5-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C6"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-05",
+      "rationale": {
+        "en": "Category distinction carried into C6.",
+        "hu": "A kategória-megkülönböztetés C6-ba beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C13"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-06",
+      "rationale": {
+        "en": "Assessment crowding out therapy carried into C13.",
+        "hu": "A vizsgálat kiszorítja a terápiát, C13-ba beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C9"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-07",
+      "rationale": {
+        "en": "Training-to-workforce gap carried into C9.",
+        "hu": "A képzés–munkaerő szakadék C9-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C7"
+      ],
+      "conflict_keys": [
+        "E2"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-08",
+      "rationale": {
+        "en": "Funding multiplier incentive anchors C7 and conflict E2.",
+        "hu": "A finanszírozási szorzó ösztönzője rögzíti C7-et és az E2 konfliktust."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C14"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-09",
+      "rationale": {
+        "en": "Bridge-class segregation precedent carried into C14.",
+        "hu": "A Híd-osztály szegregációs precedens C14-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C21"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-education_finance-10",
+      "rationale": {
+        "en": "Policy-concern review carried into C21.",
+        "hu": "A szakpolitikai aggály-felülvizsgálat C21-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C2"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-01",
+      "rationale": {
+        "en": "SEN totals and baseline definition variance carried into C2.",
+        "hu": "A SNI-összesítések és a báziseltérés C2-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C5"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-02",
+      "rationale": {
+        "en": "BTMN-adjacent subcategory growth carried into C5.",
+        "hu": "A BTMN-közeli alkategória növekedése C5-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C3"
+      ],
+      "conflict_keys": [
+        "E1"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-03",
+      "rationale": {
+        "en": "Independent driver attribution central to C3 and conflict E1.",
+        "hu": "A független ok-tulajdonítás központi C3-hoz és az E1 konfliktushoz."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C6",
+        "C7",
+        "C15"
+      ],
+      "conflict_keys": [
+        "E2"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-04",
+      "rationale": {
+        "en": "Financing/eligibility role and temporal shift feed C6, C7, C15, E2.",
+        "hu": "A finanszírozási/jogosultsági szerep és időbeli eltolódás táplálja C6, C7, C15, E2 elemeket."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C8",
+        "C9"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-05",
+      "rationale": {
+        "en": "Regional specialist shortage and pipeline caveat carried into C8 and C9.",
+        "hu": "A regionális szakemberhiány és utánpótlás-figyelmeztetés C8-ba és C9-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C10"
+      ],
+      "conflict_keys": [
+        "E3"
+      ],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-06",
+      "rationale": {
+        "en": "Integration rate and capacity claim central to C10 and conflict E3.",
+        "hu": "Az integrációs arány és kapacitás állítás központi C10-hez és az E3 konfliktushoz."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C14"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-07",
+      "rationale": {
+        "en": "Roma overrepresentation and threshold effect carried into C14.",
+        "hu": "A roma felülreprezentáltság és küszöbhatás C14-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C14",
+        "C20"
+      ],
+      "conflict_keys": [],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-08",
+      "rationale": {
+        "en": "School-choice sorting evidence central to C14 and C20.",
+        "hu": "Az iskolaválasztási szelektálódás bizonyítéka központi C14-hez és C20-hoz."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C16"
+      ],
+      "conflict_keys": [
+        "E1"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-09",
+      "rationale": {
+        "en": "Over-diagnosis critique and comparability limits carried into C16 and E1.",
+        "hu": "A túldiagnosztizálási kritika és összehasonlíthatósági korlátok C16-ba és E1-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C15"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-equity_and_social_mobility-10",
+      "rationale": {
+        "en": "Distributional-outcome gap carried into C15.",
+        "hu": "Az eloszlási kimenet-hiány C15-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C17"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-01",
+      "rationale": {
+        "en": "Tiered reform design carried into C17.",
+        "hu": "A többszintű reform kialakítása C17-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C17"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-02",
+      "rationale": {
+        "en": "Reclassification pattern carried into C17.",
+        "hu": "Az átsorolási minta C17-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C7"
+      ],
+      "conflict_keys": [
+        "E2"
+      ],
+      "critical": true,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-03",
+      "rationale": {
+        "en": "Census vs non-census funding effect central to C7 and E2.",
+        "hu": "A népszámlálás-alapú vs nem-alapú finanszírozás hatása központi C7-hez és E2-höz."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C18"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-04",
+      "rationale": {
+        "en": "Regional variation carried into C18.",
+        "hu": "A regionális eltérés C18-ba beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C18"
+      ],
+      "conflict_keys": [
+        "E3"
+      ],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-05",
+      "rationale": {
+        "en": "Actual inclusion gap central to C18 and conflict E3.",
+        "hu": "A tényleges inklúziós szakadék központi C18-hoz és az E3 konfliktushoz."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C19"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-06",
+      "rationale": {
+        "en": "Teacher experience carried into C19.",
+        "hu": "A tanári tapasztalat C19-be beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C20"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-07",
+      "rationale": {
+        "en": "Equity reversal coinciding with choice carried into C20.",
+        "hu": "Az egyenlőségi visszafordulás választással egybeesve C20-ba beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C20"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-08",
+      "rationale": {
+        "en": "Selective sorting by SES carried into C20.",
+        "hu": "A státusz szerinti szelektív szelektálódás C20-ba beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C20"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-09",
+      "rationale": {
+        "en": "Support-tier/school-intake intersection carried into C20.",
+        "hu": "A támogatási szint/iskolai felvétel metszéspontja C20-ba beépítve."
+      },
+      "status": "carried_forward"
+    },
+    {
+      "claim_keys": [
+        "C20"
+      ],
+      "conflict_keys": [],
+      "critical": false,
+      "duplicate_of_refs": [],
+      "finding_ref": "F-live-finnish_reform-10",
+      "rationale": {
+        "en": "Residential-to-school segregation transmission carried into C20.",
+        "hu": "A lakóhelyi–iskolai szegregáció átvitele C20-ba beépítve."
+      },
+      "status": "carried_forward"
+    }
+  ]
+}

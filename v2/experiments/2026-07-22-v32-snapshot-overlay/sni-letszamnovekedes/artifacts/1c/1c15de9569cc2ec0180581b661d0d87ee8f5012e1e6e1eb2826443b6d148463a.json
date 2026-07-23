@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "Over the past 20 years, the number of SNI students in Hungary has increased by 40%, with autism spectrum disorder (ASD) identification rising from 30 registered students in 2001 to 9,737 by 2023—a threefold increase over the past decade.",
+      "hu": "Az elmúlt 20 évben a SNI-azonosítással rendelkező tanulók száma Magyarországon 40%-kal nőtt, az autizmus spektrum zavar (ASD) azonosítása 2001-ben 30 regisztrált tanulóról 2023-ra 9 737-re emelkedett — ez a szám a múlt évtizedben háromszoros növekedést jelez."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Sources indicate the surge reflects both true prevalence change and improved diagnostic methods, but do not quantify the relative contribution of each factor",
+        "hu": "A források szerint a növekedés mind a valódi prevalenciaváltozást, mind a javuló diagnosztikai módszereket tükrözi, de nem számszerűsítik az egyes tényezők relatív hozzájárulását."
+      },
+      {
+        "en": "Causal attribution between improved diagnosis and rising numbers is an inference rather than a settled finding",
+        "hu": "Az ok-okozati hozzárendelés a javuló diagnózis és a növekvő számok között következtetés, nem pedig megerősített megállapítás."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-02",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "463e5762485ad7aecc92a32daa95e7cfbc919bc7267647eac2270110c29f891e",
+  "topic": "sni-letszamnovekedes"
+}

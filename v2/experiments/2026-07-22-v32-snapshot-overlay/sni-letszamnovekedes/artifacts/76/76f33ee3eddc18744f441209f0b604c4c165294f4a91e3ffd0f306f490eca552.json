@@ -1,0 +1,40 @@
+{
+  "content": {
+    "canonical_claim_refs": [
+      "CC-live-c4",
+      "CC-live-c47",
+      "CC-live-c48"
+    ],
+    "conflict_type": "measurement_difference",
+    "decision_relevance": {
+      "en": "A reconciled series is prerequisite for credible trend monitoring and for deciding whether specialist capacity targets are proportionate to actual identified need.",
+      "hu": "Az egyeztetett sorozat előfeltétele a hiteles trendmonitorozásnak és annak eldöntésének, hogy a szakértői kapacitáscélok arányban állnak-e a tényleges azonosított igénnyel."
+    },
+    "description": {
+      "en": "C4 reports autism registrations tripling to quadrupling to ~10,000–11,700 by 2023/24 and explicitly notes conflicting figures, while C51 reports autism identification rising from ~30 in 2001 to nearly 9,737 by 2023. C52 confirms metrics use different reference periods/sources unreconciled into a single series. These are measurement discrepancies in the same underlying phenomenon.",
+      "hu": "C4 az autizmus-regisztrációk három-négyszeresére növekedését jelenti ~10 000–11 700-ra 2023/24-re, kifejezetten megjegyezve az ellentmondó adatokat, míg C51 az autizmus-azonosítás növekedését jelenti ~30-ról (2001) közel 9 737-re (2023). C52 megerősíti, hogy a mutatók eltérő referenciaidőszakokat/forrásokat használnak, egyetlen sorozatba nem egyeztetve. Ezek mérési eltérések ugyanazon jelenségben."
+    },
+    "finding_refs": [
+      "F-live-demography-05",
+      "F-live-school_network_planning-01",
+      "F-live-school_network_planning-02"
+    ],
+    "research_question": {
+      "en": "Can a single reconciled autism identification time series for Hungary be constructed by aligning KSH counts across consistent definitions and years?",
+      "hu": "Létrehozható-e egyetlen egyeztetett autizmus-azonosítási idősor Magyarországra a KSH-adatok egységes definíciók és évek szerinti összehangolásával?"
+    },
+    "resolvability": "answerable_now",
+    "title": {
+      "en": "Conflicting autism identification counts for Hungary",
+      "hu": "Ellentmondó autizmus-azonosítási számok Magyarországon"
+    }
+  },
+  "created_at": "2026-07-23T11:25:10.544575Z",
+  "id": "EC-live-e11",
+  "provenance_ref": "PV-normalize_evidence-50e0da73b38ab870",
+  "record_type": "evidence_conflict",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

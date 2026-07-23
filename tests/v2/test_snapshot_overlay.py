@@ -10,6 +10,7 @@ from policy_lab.live.overlay import (
     build_snapshot_overlay_dag,
     build_trace_overlap_content,
     import_transitive_closure,
+    select_source_snapshot,
     select_v31_snapshot,
 )
 from policy_lab.schema_registry import SchemaRegistry
@@ -18,6 +19,10 @@ from policy_lab.store import ArtifactRef, ArtifactRepository
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "v2" / "production" / "2026-07-21-v3-bilingual" / "korai-szelekcio"
+SNI_SOURCE = (
+    ROOT / "v2" / "production" / "2026-07-21-sni-brief-revision-2"
+    / "sni-letszamnovekedes"
+)
 
 
 def pair(en: str) -> dict[str, str]:
@@ -207,10 +212,53 @@ class SnapshotOverlayTests(unittest.TestCase):
             self.assertGreater(copied, len(snapshot.seed_refs()))
             target.validate_graph()
 
+    def test_selects_v30_human_approved_problem_brief_and_research(self) -> None:
+        source, snapshot = select_source_snapshot(
+            SNI_SOURCE, "2026-07-21-sni-brief-revision-2"
+        )
+        self.assertEqual(snapshot.source_architecture_version, "3.0.0")
+        self.assertEqual(
+            snapshot.source_run_plan_hash,
+            "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+        )
+        self.assertEqual(snapshot.problem_ref.id, "PB-sni-letszamnovekedes")
+        self.assertEqual(
+            snapshot.problem_ref.content_hash,
+            "20b6773d7df18e2689f13f4784a9aac729a99e6bd8deb841d74567a445e91293",
+        )
+        self.assertEqual(
+            len([
+                ref for ref in snapshot.evidence_refs
+                if ref.record_type == "finding"
+            ]),
+            119,
+        )
+        self.assertEqual(len(snapshot.legacy_proposal_refs), 6)
+        with tempfile.TemporaryDirectory() as directory:
+            target = ArtifactRepository(
+                directory, SchemaRegistry(ROOT / "schemas" / "v2")
+            )
+            copied = import_transitive_closure(
+                source, target, snapshot.seed_refs()
+            )
+            self.assertGreater(copied, len(snapshot.seed_refs()))
+            self.assertEqual(
+                target.get_current("PB-sni-letszamnovekedes")[
+                    "schema_version"
+                ],
+                "2.1.0",
+            )
+            self.assertTrue(all(
+                target.get_current(ref.id)["schema_version"] == "2.1.0"
+                for ref in snapshot.evidence_refs
+            ))
+            target.validate_graph()
+
     def test_trace_overlap_exposes_uncovered_seed_and_conflict(self) -> None:
         marker = "a" * 64
         snapshot = SnapshotSelection(
             source_root=Path("/source"), source_run_tag="source-tag",
+            source_architecture_version="3.1.0",
             source_manifest_hash=marker, source_run_plan_hash="b" * 64,
             problem_ref=ArtifactRef("PB-test", "problem_brief", marker, Path("/pb")),
             evidence_refs=(),

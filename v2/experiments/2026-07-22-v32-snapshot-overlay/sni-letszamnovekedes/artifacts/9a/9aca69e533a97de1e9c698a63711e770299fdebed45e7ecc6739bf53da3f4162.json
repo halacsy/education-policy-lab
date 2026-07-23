@@ -1,0 +1,75 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t5-01",
+      "A-live-t5-02"
+    ],
+    "change_level": "organization",
+    "costs": [
+      "Substantial recurrent salary and infrastructure investment, particularly for rural and northeastern regions",
+      "Workforce pipeline development has multi-year lag before regional shortages are resolved"
+    ],
+    "equity_impact": "Directly targets the regions with the most acute shortages (Northeastern counties, rural Transdanubia) which also show the highest disadvantage concentrations, potentially reducing the compounding of specialist scarcity and socioeconomic disadvantage; risk of continued urban-rural gap if incentives are insufficiently targeted",
+    "evidence_status": "strong",
+    "expected_benefits": [
+      "Directly addresses the UN Special Rapporteur finding that specialist support has not kept pace with rising SEN identification",
+      "Closes the documented second-stage implementation failure where assessed children do not receive prescribed services"
+    ],
+    "finding_refs": [
+      "F-live-hungarian_education_system-05",
+      "F-live-equity_and_social_mobility-05",
+      "F-live-portuguese_reform-04",
+      "F-live-implementation_planning-03",
+      "F-live-implementation_planning-04",
+      "F-live-education_finance-07",
+      "F-live-school_network_planning-05",
+      "F-live-school_network_planning-06",
+      "F-live-demography-06"
+    ],
+    "goal": "Close the gap between rising numbers of identified and assessed children and the specialist workforce and support infrastructure available to serve them, with priority targeting of underserved regions",
+    "implementation_steps": [
+      {
+        "action": "Design regional deployment incentive scheme (relocation grants, salary premiums) targeted at documented shortage districts",
+        "actor": "Ministry of Education / Human Resources ministry",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Track and report workforce-entry rates of special-education graduates, distinguishing practicing teachers from parent-enrollees, to correct the current supply-signal distortion",
+        "actor": "Teacher-training institutions",
+        "timeline": "Year 1, ongoing"
+      },
+      {
+        "action": "Implement audit mechanism to monitor whether prescribed therapy/habilitation hours are actually delivered post-assessment",
+        "actor": "Pedagógiai szakszolgálat and school districts",
+        "timeline": "Years 1–2"
+      },
+      {
+        "action": "Expand and standardize network coverage capacity, prioritizing regions currently unable to provide category-specific specialist care",
+        "actor": "Regional traveling specialist networks",
+        "timeline": "Years 2–3"
+      }
+    ],
+    "mechanisms": [
+      "Regionally targeted recruitment and retention incentives for gyógypedagógus positions in underserved areas (e.g., northeastern counties with zero specialists in some districts), addressing the documented mismatch between rising enrollment and practicing workforce supply",
+      "Investment in co-teaching and traveling specialist-network infrastructure modeled on evidenced capacity gaps, alongside monitoring of whether assessed children actually receive legally prescribed habilitation and therapy hours"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Rising enrollment in special-education training does not guarantee proportional increase in practicing workforce, given documented low completion/entry rates",
+      "Broader teacher salary reforms may not specifically address specialist shortages if not targeted, since no source quantifies whether general raises reach specialist supply"
+    ],
+    "title": "National specialist workforce and support-capacity expansion program",
+    "uncertainty_refs": [
+      "U-live-t5-01",
+      "U-live-t5-02"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "TP-live-t5",
+  "provenance_ref": "PV-derive_transformations-6264602c133b0150",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

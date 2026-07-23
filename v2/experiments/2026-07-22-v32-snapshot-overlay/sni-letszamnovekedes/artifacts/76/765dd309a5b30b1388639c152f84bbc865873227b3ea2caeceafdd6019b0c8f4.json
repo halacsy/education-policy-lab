@@ -1,0 +1,127 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t2-01",
+      "A-live-t2-02"
+    ],
+    "change_level": "governance",
+    "costs": [
+      {
+        "en": "Statistical reconciliation and decomposition research requires sustained analytic investment and access to administrative microdata",
+        "hu": "A statisztikai egyeztetés és a dekompozíciós kutatás tartós analitikai befektetést és hozzáférést igényel az adminisztratív mikroadatokhoz."
+      },
+      {
+        "en": "Risk of political sensitivity around ethnically disaggregated data collection given historical avoidance (F-live-legal_and_governance-10)",
+        "hu": "Kockázata annak, hogy az etnikai bontású adatok gyűjtése politikailag érzékeny területté válik a történelmi elkerülés miatt (F-live-legal_and_governance-10)."
+      }
+    ],
+    "equity_impact": {
+      "en": "Directly enables detection of Roma misclassification and county-level inequities that are currently obscured by inconsistent reporting, a precondition for any equity-targeted remedy, though data collection itself does not redistribute resources",
+      "hu": "Közvetlenül lehetővé teszi a roma téves besorolások és a megyei szintű egyenlőtlenségek feltárását, amelyeket jelenleg az inkonzisztens jelentések elfednek; ez előfeltétele bármilyen egyenlőség-orientált beavatkozásnak, ugyanakkor maga az adatgyűjtés nem eredményez erőforrások átcsoportosítását."
+    },
+    "evidence_status": "strong",
+    "expected_benefits": [
+      {
+        "en": "Enables evidence-based targeting of subsequent capacity, finance, or gatekeeping reforms rather than acting on contested or unaudited figures",
+        "hu": "Lehetővé teszi, hogy a későbbi kapacitás-, finanszírozási vagy kapuzási reformokat bizonyítékokon alapuló célzással hajtsák végre, a vitatott vagy ellenőrizetlen számok helyett."
+      },
+      {
+        "en": "Provides the EU Commission and ECtHR monitoring bodies with the disaggregated ethnic and regional data currently missing, potentially unblocking infringement resolution",
+        "hu": "Biztosítja az Európai Bizottság és az EJEB monitoring szervei számára a jelenleg hiányzó, etnikai és regionális bontású adatokat, ami potenciálisan elősegítheti a jogsértési eljárások rendezését."
+      }
+    ],
+    "finding_refs": [
+      "F-live-implementation_planning-01",
+      "F-live-hungarian_education_system-01",
+      "F-live-equity_and_social_mobility-01",
+      "F-live-equity_and_social_mobility-03",
+      "F-live-legal_and_governance-10",
+      "F-live-school_network_planning-04"
+    ],
+    "goal": {
+      "en": "Establish a single, harmonized, publicly auditable statistical series and monitoring framework that disentangles prevalence change from diagnostic-practice, access, and incentive effects across SNI, BTMN, and adjacent categories",
+      "hu": "Egyetlen, harmonizált, nyilvánosan ellenőrizhető statisztikai idősor és monitorozási keret létrehozása, amely szétválasztja a prevalencia-változást a diagnosztikai gyakorlat, a hozzáférés és az ösztönzőhatások tényezőit az SNI, BTMN és kapcsolódó kategóriákban"
+    },
+    "implementation_steps": [
+      {
+        "action": {
+          "en": "Publish a single reconciled time series with explicit definitional notes bridging pre- and post-2018/2020 rule changes",
+          "hu": "Közzétenni egyetlen, egyeztetett idősorozatot expliciten megfogalmazott definíciós megjegyzésekkel, amelyek összekapcsolják a 2018/2020 előtti és utáni szabályváltozásokat."
+        },
+        "actor": {
+          "en": "KSH and Ministry responsible for education statistics",
+          "hu": "Központi Statisztikai Hivatal (KSH) és az oktatási statisztikákért felelős minisztérium"
+        },
+        "timeline": {
+          "en": "12–18 months",
+          "hu": "12–18 hónap"
+        }
+      },
+      {
+        "action": {
+          "en": "Conduct decomposition analysis using county-level variation and policy-timing discontinuities to estimate relative contribution of drivers",
+          "hu": "Dekompozíciós elemzés elvégzése megyei szintű variációk és a politikaidőzítés diszkontinuitásainak felhasználásával az egyes hajtóerők relatív hozzájárulásának becslése érdekében."
+        },
+        "actor": {
+          "en": "Independent research consortium (commissioned)",
+          "hu": "Megbízott, független kutatókonzorcium"
+        },
+        "timeline": {
+          "en": "18–24 months",
+          "hu": "18–24 hónap"
+        }
+      },
+      {
+        "action": {
+          "en": "Establish an annual public monitoring report disaggregating SNI/BTMN trends by category, county, gender, and cohort",
+          "hu": "Éves nyilvános monitoringjelentés létrehozása, amely kategória, megye, nem és kohorsz szerint bontva követi az SNI/BTMN tendenciákat."
+        },
+        "actor": {
+          "en": "Ministry oversight body",
+          "hu": "Minisztériumi felügyeleti szerv"
+        },
+        "timeline": {
+          "en": "From year 2 onward, annually",
+          "hu": "A 2. évtől kezdődően évente"
+        }
+      }
+    ],
+    "mechanisms": [
+      {
+        "en": "Reconciliation of divergent existing series (e.g., 92,800→97,300 vs. 112,060 vs. 69,000 figures using different bases) into one definitionally consistent longitudinal dataset, as the current fragmentation is documented across multiple independent findings",
+        "hu": "Eltérő meglévő adatsorok egyeztetése (pl. 92,800→97,300 vs. 112,060 vs. 69,000, különböző bázisokkal) egy fogalmilag konzisztens longitudinális adattorrá, mivel a jelenlegi töredezettség több független megállapításban dokumentált."
+      },
+      {
+        "en": "Decomposition analysis separating the contribution of school-readiness rule changes, category redefinition (e.g., BTMN grading-exemption reform), and diagnostic-practice shifts from true prevalence change, using natural policy variation such as the 2018 and 2020 rule changes as identification points",
+        "hu": "Dekompozíciós elemzés, amely elkülöníti az iskolára alkalmasság/játékosság szabályváltozásainak, a kategória-újraértelmezésnek (pl. a BTMN osztályozás alóli mentességre vonatkozó reform) és a diagnosztikai gyakorlat eltolódásainak hozzájárulását a tényleges prevalenciaváltozástól, természetes politikai variációkat — például a 2018-as és 2020-as szabályváltozásokat — használva azonosítási pontként."
+      }
+    ],
+    "origin": "live_generation",
+    "risks": [
+      {
+        "en": "Without political commitment to act on findings, reconciled data alone may not change outcomes",
+        "hu": "Politikai elköteleződés hiányában az egyeztetett adatok önmagukban nem biztos, hogy megváltoztatják a helyzetet vagy az eredményeket."
+      },
+      {
+        "en": "Data reconciliation could reveal politically inconvenient patterns (e.g., incentive-driven over-identification) that face resistance to publication",
+        "hu": "Az adatok egyeztetése politikailag kényelmetlen mintákat tárhat fel (pl. ösztönzőkből fakadó túlazonosítás), amelyek publikálásuk esetén ellenállásba ütközhetnek."
+      }
+    ],
+    "title": {
+      "en": "Build a reconciled national SEN measurement and monitoring architecture",
+      "hu": "Egységes, összehangolt nemzeti SNI mérési és monitorozási rendszer kialakítása"
+    },
+    "uncertainty_refs": [
+      "U-live-t2-01",
+      "U-live-t2-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "TP-live-t2",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "9db7dc1bd8bd099111291aebefdb649fee52cf865981700801eca1f9a182e438",
+  "topic": "sni-letszamnovekedes"
+}

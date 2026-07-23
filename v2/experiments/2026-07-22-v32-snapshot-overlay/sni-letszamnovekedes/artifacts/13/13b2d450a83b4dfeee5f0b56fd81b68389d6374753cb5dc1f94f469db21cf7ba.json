@@ -1,0 +1,62 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-equity_and_social_mobility-01",
+      "A-live-equity_and_social_mobility-02",
+      "A-live-equity_and_social_mobility-03"
+    ],
+    "claim": {
+      "en": "Official explanation attributes SEN growth 'partly' to modernization of diagnostic tools, but independent experts (clinical psychologist, teachers' union, 2025 reports) dispute that diagnostic modernization alone explains the magnitude; instead they attribute substantial causal weight to mandatory school enrollment from age six and stricter school-readiness assessments implemented in 2018, with acceleration post-2020.",
+      "hu": "A hivatalos magyarázat részben a diagnosztikai eszközök korszerűsítésére vezeti vissza az SNI-növekedést, de független szakértők (klinikus pszichológus, tanárok szakszervezete, 2025-ös jelentések) vitatják, hogy a diagnosztika modernizálása önmagában megmagyarázná a mértéket; jelentős okaiknak tekintik a hatéves kortól kötelező iskolakezdést és a 2018-ban bevezetett szigorúbb iskolaérettségi vizsgálatokat, a növekedés 2020 után felgyorsult."
+    },
+    "context": {
+      "en": "Fresh live research through the Equity and social mobility lens",
+      "hu": "Friss, élő kutatás az egyenlőség és a társadalmi mobilitás szemszögéből"
+    },
+    "domain_tags": [
+      "equity_and_social_mobility"
+    ],
+    "evidence_strength": "contested",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Competing causal narratives (diagnostic improvement vs. policy-driven administrative change vs. real prevalence increase) have not been formally decomposed or modeled",
+        "hu": "Versengő oksági narratívákat (diagnosztikai javulás vs. politikai eredetű adminisztratív változás vs. valódi prevalencia növekedés) formálisan nem bontottak le és nem modellezték."
+      },
+      {
+        "en": "claims about school-readiness rules and enrollment policy timing lack quantified impact estimates",
+        "hu": "Az iskolára való alkalmasság szabályaira és a beiratkozási politika ütemezésére vonatkozó állítások számszerűsített hatásbecsléseket nélkülöznek"
+      },
+      {
+        "en": "COVID-era distance learning cited as compounding factor but not independently measured",
+        "hu": "A COVID-korszak távoktatását összetettítő tényezőként említik, de nem mérték függetlenül."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-equity_and_social_mobility-03"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-equity_and_social_mobility-01",
+      "U-live-equity_and_social_mobility-02",
+      "U-live-equity_and_social_mobility-03",
+      "U-live-equity_and_social_mobility-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-equity_and_social_mobility-03",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "6993b2bd0fb6d029f3915591b8e516f3f333f93ca785e759cd3cf910acdc5d57",
+  "topic": "sni-letszamnovekedes"
+}

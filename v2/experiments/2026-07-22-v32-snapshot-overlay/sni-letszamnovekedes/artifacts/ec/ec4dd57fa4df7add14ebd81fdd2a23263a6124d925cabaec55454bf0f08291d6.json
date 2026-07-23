@@ -1,0 +1,112 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t1-01",
+      "A-live-t1-02"
+    ],
+    "change_level": "system",
+    "costs": [
+      {
+        "en": "Continued workforce shortages and regional maldistribution persist unaddressed (F-live-hungarian_education_system-05, F-live-legal_and_governance-08)",
+        "hu": "A munkaerőhiányok és a regionális megoszlás egyenlőtlenségei továbbra is kezeletlenül maradnak (F-live-hungarian_education_system-05, F-live-legal_and_governance-08)"
+      },
+      {
+        "en": "Continued fiscal squeeze on local governments and rural schools compounds without mitigation (F-live-demography-09)",
+        "hu": "A helyi önkormányzatokra és a vidéki iskolákra nehezedő pénzügyi nyomás további súlyosbodása enyhítés nélkül (F-live-demography-09)"
+      }
+    ],
+    "equity_impact": {
+      "en": "Passive drift is very unlikely to be equity-neutral: existing evidence shows regional disparities (2.6-fold county variation), Roma over-classification, and unresolved segregation litigation would continue on their current trajectory absent intervention, plausibly deepening inequality",
+      "hu": "A passzív elmozdulás nagyon valószínűtlenül lesz esélyegyenlőség-semleges: a meglévő bizonyítékok megyei eltéréseket mutatnak (2,6-szoros megyei különbség), roma túlklasszifikációt és megoldatlan szegregációs jogvitahelyzeteket, amelyek beavatkozás nélkül valószínűleg mélyítik az egyenlőtlenséget"
+    },
+    "evidence_status": "strong",
+    "expected_benefits": [
+      {
+        "en": "Provides an explicit, evidence-grounded counterfactual against which any future policy proposal's marginal value can be assessed",
+        "hu": "Explicit, bizonyítékokon alapuló kontra-faktuális biztosítása, amellyel bármely jövőbeli politika marginális értéke mérhetővé válik"
+      },
+      {
+        "en": "Avoids the risk of premature or poorly evidenced intervention given contested causal attribution of the identification rise",
+        "hu": "Elkerüli az idő előtti vagy gyengén megalapozott beavatkozás kockázatát, tekintettel az azonosítás növekedésének vitatott ok-okozati magyarázataira"
+      }
+    ],
+    "finding_refs": [
+      "F-live-hungarian_education_system-01",
+      "F-live-demography-01",
+      "F-live-demography-02",
+      "F-live-legal_and_governance-01",
+      "F-live-legal_and_governance-09"
+    ],
+    "goal": {
+      "en": "Establish a rigorous counterfactual describing what happens to identification rates, capacity strain, and inequality if no policy changes are made to identification, gatekeeping, finance, or placement rules",
+      "hu": "Részletes, megalapozott kontra-faktuális felállítása arra vonatkozóan, mi történik az azonosítási arányokkal, a kapacitás-terheléssel és az egyenlőtlenséggel, ha nem változtatnak az azonosítási, jogosultsági, finanszírozási vagy elhelyezési szabályokon"
+    },
+    "implementation_steps": [
+      {
+        "action": {
+          "en": "Continue existing statistical reporting cadence for SNI/BTMN counts without procedural change",
+          "hu": "Folytatni az SNI/BTMN-összesítések jelenlegi statisztikai közlésének ütemét procedurális változtatás nélkül"
+        },
+        "actor": {
+          "en": "Ministry of Interior (education) and KSH",
+          "hu": "Belügyminisztérium (oktatási ügyek) és KSH"
+        },
+        "timeline": {
+          "en": "Ongoing, no new mandate",
+          "hu": "Folyamatos, új felhatalmazás nélkül"
+        }
+      },
+      {
+        "action": {
+          "en": "Track and publish trend projections assuming current rules persist, for use as a comparison baseline in future evaluations",
+          "hu": "Nyomon követni és közzétenni trendelőrejelzéseket az aktuális szabályok fennmaradásának feltételezésével, összehasonlító alapként a későbbi értékelésekhez"
+        },
+        "actor": {
+          "en": "Independent research bodies",
+          "hu": "Független kutatóintézetek"
+        },
+        "timeline": {
+          "en": "Within 12 months, then annually",
+          "hu": "12 hónapon belül, majd évente"
+        }
+      }
+    ],
+    "mechanisms": [
+      {
+        "en": "Continued interaction of demographic decline (shrinking cohorts) with static gatekeeping capacity and workforce numbers, as documented in the record",
+        "hu": "A demográfiai visszaesés (csökkenő kohorszok) és a változatlan jogosultsági kapacitás és szakemberszám továbbélő kölcsönhatása, ahogy azt a nyilvántartás dokumentálja"
+      },
+      {
+        "en": "Persistence of existing finance architecture (per-pupil multipliers, task-based financing) and category definitions absent reform, continuing current incentive structures unchanged",
+        "hu": "A meglévő finanszírozási architektúra (tanulónkénti többszörözők, feladatfinanszírozás) és kategória-definíciók reform hiányában történő fennmaradása, így az ösztönzőstruktúrák változatlanul maradnak"
+      }
+    ],
+    "origin": "live_generation",
+    "risks": [
+      {
+        "en": "Unresolved ECtHR and EU infringement obligations remain outstanding, risking further legal and financial exposure (F-live-legal_and_governance-09, F-live-political_feasibility-06, F-live-political_feasibility-09)",
+        "hu": "A megoldatlan EJEB- és uniós megsértési kötelezettségek fennmaradnak, további jogi és pénzügyi kitettséget eredményezve (F-live-legal_and_governance-09, F-live-political_feasibility-06, F-live-political_feasibility-09)"
+      },
+      {
+        "en": "Demographic decline combined with static specialist numbers could produce further regional service collapse, particularly in northeastern counties (F-live-demography-01, F-live-school_network_planning-05)",
+        "hu": "A demográfiai visszaesés és a változatlan szakemberszám kombinációja további regionális szolgáltatásösszeomláshoz vezethet, különösen az északkeleti megyékben (F-live-demography-01, F-live-school_network_planning-05)"
+      }
+    ],
+    "title": {
+      "en": "Passive baseline: no new SEN policy, observe demographic and system drift",
+      "hu": "Passzív alapforgatókönyv: új SNI-politika nélkül megfigyelni a demográfiai és rendszerszintű eltolódást"
+    },
+    "uncertainty_refs": [
+      "U-live-t1-01",
+      "U-live-t1-02"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "TP-live-t1",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "606cbaa5766977aee2399e8928077ad6988f7158116b1914d87d308780530481",
+  "topic": "sni-letszamnovekedes"
+}

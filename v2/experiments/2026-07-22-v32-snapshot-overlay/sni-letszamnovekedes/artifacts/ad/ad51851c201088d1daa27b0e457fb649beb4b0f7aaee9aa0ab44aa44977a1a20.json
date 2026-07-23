@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03"
+    ],
+    "claim": {
+      "en": "The expert committee system (pedagógiai szakszolgálat) operates as a sole nationwide gatekeeper for both SNI determination and BTMN designation, with authority to recommend integrated versus segregated placement, but this gatekeeping structure has not been restructured despite rising caseloads and documented waiting lists of several months for diagnostic assessment.",
+      "hu": "Az expertbizottsági rendszer (pedagógiai szakszolgálat) országos egységes kapu-szerepet tölt be mind az SNI-megállapítás, mind a BTMN-besorolás terén, és jogosult javasolni integrált vagy szegregált elhelyezést; ezt a kapu-szerepet azonban nem alakították át, miközben az esetszámok növekedtek és több hónapos várólistákat dokumentáltak a diagnosztikai vizsgálatoknál."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Gatekeeping capacity constraints are documented in professional testimony (manifesto) rather than independent audit",
+        "hu": "A kapuőrzési kapacitáskorlátokat szakmai tanúvallomások (manifesto) dokumentálják, nem független audit."
+      },
+      {
+        "en": "No quantified system-wide metric of assessment bottleneck duration is provided",
+        "hu": "Nincs megadva számszerű, rendszerszintű mutató az értékelési torlódás időtartamára vonatkozóan."
+      },
+      {
+        "en": "Whether the expert committee's unchanged structure is a causal driver of rising identification rates versus a passive processing channel is not established",
+        "hu": "Nem bizonyított, hogy a szakértői bizottság változatlan struktúrája okozati tényezője-e az azonosítási arányok növekedésének, vagy csupán egy passzív feldolgozó csatorna."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-04"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-04",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "2a7fcd33efe69dac1221f910bb857206768cf255d219dbd5325f5f1a5ee5e632",
+  "topic": "sni-letszamnovekedes"
+}

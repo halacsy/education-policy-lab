@@ -1,0 +1,67 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t2-01",
+      "A-live-t2-02"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Statistical reconciliation and decomposition research requires sustained analytic investment and access to administrative microdata",
+      "Risk of political sensitivity around ethnically disaggregated data collection given historical avoidance (F-live-legal_and_governance-10)"
+    ],
+    "equity_impact": "Directly enables detection of Roma misclassification and county-level inequities that are currently obscured by inconsistent reporting, a precondition for any equity-targeted remedy, though data collection itself does not redistribute resources",
+    "evidence_status": "strong",
+    "expected_benefits": [
+      "Enables evidence-based targeting of subsequent capacity, finance, or gatekeeping reforms rather than acting on contested or unaudited figures",
+      "Provides the EU Commission and ECtHR monitoring bodies with the disaggregated ethnic and regional data currently missing, potentially unblocking infringement resolution"
+    ],
+    "finding_refs": [
+      "F-live-implementation_planning-01",
+      "F-live-hungarian_education_system-01",
+      "F-live-equity_and_social_mobility-01",
+      "F-live-equity_and_social_mobility-03",
+      "F-live-legal_and_governance-10",
+      "F-live-school_network_planning-04"
+    ],
+    "goal": "Establish a single, harmonized, publicly auditable statistical series and monitoring framework that disentangles prevalence change from diagnostic-practice, access, and incentive effects across SNI, BTMN, and adjacent categories",
+    "implementation_steps": [
+      {
+        "action": "Publish a single reconciled time series with explicit definitional notes bridging pre- and post-2018/2020 rule changes",
+        "actor": "KSH and Ministry responsible for education statistics",
+        "timeline": "12–18 months"
+      },
+      {
+        "action": "Conduct decomposition analysis using county-level variation and policy-timing discontinuities to estimate relative contribution of drivers",
+        "actor": "Independent research consortium (commissioned)",
+        "timeline": "18–24 months"
+      },
+      {
+        "action": "Establish an annual public monitoring report disaggregating SNI/BTMN trends by category, county, gender, and cohort",
+        "actor": "Ministry oversight body",
+        "timeline": "From year 2 onward, annually"
+      }
+    ],
+    "mechanisms": [
+      "Reconciliation of divergent existing series (e.g., 92,800→97,300 vs. 112,060 vs. 69,000 figures using different bases) into one definitionally consistent longitudinal dataset, as the current fragmentation is documented across multiple independent findings",
+      "Decomposition analysis separating the contribution of school-readiness rule changes, category redefinition (e.g., BTMN grading-exemption reform), and diagnostic-practice shifts from true prevalence change, using natural policy variation such as the 2018 and 2020 rule changes as identification points"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "Without political commitment to act on findings, reconciled data alone may not change outcomes",
+      "Data reconciliation could reveal politically inconvenient patterns (e.g., incentive-driven over-identification) that face resistance to publication"
+    ],
+    "title": "Build a reconciled national SEN measurement and monitoring architecture",
+    "uncertainty_refs": [
+      "U-live-t2-01",
+      "U-live-t2-02"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "TP-live-t2",
+  "provenance_ref": "PV-derive_transformations-6264602c133b0150",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

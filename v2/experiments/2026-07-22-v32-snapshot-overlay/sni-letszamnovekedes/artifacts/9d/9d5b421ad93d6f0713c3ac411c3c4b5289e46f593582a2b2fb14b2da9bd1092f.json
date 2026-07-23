@@ -1,0 +1,61 @@
+{
+  "content": {
+    "attempts": [
+      {
+        "prompt_hash": "fe76cd7f3808644bc5bbc4a62796e55cb4477fad8feec5b5afb73e6fa22412ce",
+        "response_hash": "519c02fa6c30b2b772561957b511cc9b1c0940807073b0cd30eea7cfed53720c",
+        "stage": "search",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "14d12be197b21a63011d1e119a6a14c34cadcd87a89f3b3818cdc2132b37d26b",
+        "response_hash": "3ae7d078a9fdd3ae2e80610149fc05913fe716bb259c9cf28277158cdb791ded",
+        "stage": "analysis",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "1b3515b298a279ba181c48212025de9e4d516e4a68161d5a13e2066c328b8d19",
+        "response_hash": "69bf106dc3ba0c64c31fedd2b45c8cb7c059bd0b87bdf1380d7c9f624a61cf65",
+        "stage": "analysis-semantic-retry-1",
+        "status": "completed"
+      },
+      {
+        "prompt_hash": "1b3515b298a279ba181c48212025de9e4d516e4a68161d5a13e2066c328b8d19",
+        "response_hash": "c2c268ac48d9fa89a8deae6623409b5c075b56d654bf80115591690fb5df00a8",
+        "stage": "analysis-semantic-retry-2",
+        "status": "completed"
+      }
+    ],
+    "execution_id": "1dc850207acfe746955624d7407859d84e8fa2a38ae985beff1fe92d7fce46be",
+    "generation_parameters": {
+      "analysis_max_tokens": 16000,
+      "search_max_tokens": 10000
+    },
+    "input_artifact_hashes": [
+      "20b6773d7df18e2689f13f4784a9aac729a99e6bd8deb841d74567a445e91293",
+      "7e24780e8bfdd8d6062f2271f166ce5d91968cf91ec6af1fbbf0f74d021efce0"
+    ],
+    "model": "anthropic-task-ladder",
+    "node_id": "research_political_feasibility",
+    "prompt_hash": "349e232c1c4ea501269825fb7f6cbeef209ffecf45757db331b31ad02142bb7b",
+    "provider": "anthropic",
+    "relevant_config_hash": "88d71494b6fa642e277c317242d186fcc36fa4354c6822229afa3da33e57f1e9",
+    "role": "research",
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "schema_hashes": {
+      "schemas/v2/assumption.schema.json": "a2c90cb84524046f123b798eeafcbe30a872987b4f63a19ba25467b0a22fcec2",
+      "schemas/v2/finding.schema.json": "7f08de87a5b809e4ebbdeb42e6c2265b5686984c0b71a01af896fea5cb670729",
+      "schemas/v2/source.schema.json": "0beda71026c753e0dcff6875401aa70ffd52fdbb6e81e9d68d9b1035b9dd085f",
+      "schemas/v2/uncertainty.schema.json": "e1e32dd216fcaa6af59322ed1fb36aed2bee508d91c17d3879d3daec28c9edd4"
+    },
+    "spec_hashes": {}
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "PV-research_political_feasibility-1dc850207acfe746",
+  "provenance_ref": null,
+  "record_type": "provenance",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": "077f70603070a5711ea3a95f5508e8d5322ffd917f9b6f443f6903441b9e25b3",
+  "topic": "sni-letszamnovekedes"
+}

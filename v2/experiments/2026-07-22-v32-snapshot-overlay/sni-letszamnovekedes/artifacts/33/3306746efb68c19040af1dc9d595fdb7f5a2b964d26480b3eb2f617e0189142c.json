@@ -1,0 +1,68 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-t4-01",
+      "A-live-t4-02"
+    ],
+    "change_level": "governance",
+    "costs": [
+      "Transition costs and potential short-term funding disruption for institutions currently reliant on diagnosis-linked multipliers",
+      "Risk of underfunding actual support needs if census-based allocation is not calibrated to real regional demand"
+    ],
+    "equity_impact": "Could reduce a documented channel of incentive-driven over-identification, particularly relevant to reports that SNI status increasingly functions as exclusionary in admissions where institutional financing fails to support extra resources; but census-based allocation risks underserving genuinely high-need regions unless carefully calibrated to existing county-level disparities",
+    "evidence_status": "moderate",
+    "expected_benefits": [
+      "Reduced fiscal incentive for schools facing enrollment decline to classify students as SNI to offset revenue loss, addressing a documented theoretical risk",
+      "Alignment with international precedent (Finland's 2010 shift to census-based allocation coinciding with reduced full-time special placement)"
+    ],
+    "finding_refs": [
+      "F-live-equity_and_social_mobility-04",
+      "F-live-legal_and_governance-07",
+      "F-live-education_finance-08",
+      "F-live-finnish_reform-03",
+      "F-live-polish_reform-03",
+      "F-live-polish_reform-04",
+      "F-live-implementation_planning-06"
+    ],
+    "goal": "Reduce identification-linked fiscal incentives by redesigning per-pupil funding multipliers and normative financing so that support resources are not contingent on formal diagnostic classification",
+    "implementation_steps": [
+      {
+        "action": "Commission an incentive-impact analysis of current per-pupil multiplier and task-based financing structure",
+        "actor": "Ministry of Finance and Ministry of Education",
+        "timeline": "Year 1"
+      },
+      {
+        "action": "Draft amendments transitioning a defined share of SNI-linked funding toward census/needs-based allocation, piloted in selected counties",
+        "actor": "Legislature",
+        "timeline": "Years 1–2"
+      },
+      {
+        "action": "Establish conditionality audits linking supplementary grants to verified service delivery outcomes",
+        "actor": "National Audit Office or equivalent",
+        "timeline": "Years 2–3"
+      }
+    ],
+    "mechanisms": [
+      "Replacement or supplementation of diagnosis-triggered per-pupil multipliers with census-based or population-level allocation formulas, following the evidenced pattern that census-based systems remove fiscal incentives to over-identify while non-census systems correlate with rising identification",
+      "Introduction of stricter accountability requirements tying supplementary SNI grants to documented local service delivery rather than headcount alone, addressing the finding that weak conditionality currently limits the grants' effectiveness"
+    ],
+    "origin": "live_generation",
+    "risks": [
+      "No causal evidence currently links Hungary's specific financing mechanism to the documented identification rise, so the intervention rests on a plausible but untested incentive theory",
+      "Poland's contrasting experience shows disability-weighted per-pupil funding was expanded rather than removed, with subventions rising independent of prevalence, suggesting funding redesign choices are not universally convergent"
+    ],
+    "title": "Shift SEN finance architecture from diagnosis-gated to needs/census-based allocation",
+    "uncertainty_refs": [
+      "U-live-t4-01",
+      "U-live-t4-02"
+    ]
+  },
+  "created_at": "2026-07-21T16:17:15.321080Z",
+  "id": "TP-live-t4",
+  "provenance_ref": "PV-derive_transformations-6264602c133b0150",
+  "record_type": "transformation_proposal",
+  "schema_version": "2.0.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

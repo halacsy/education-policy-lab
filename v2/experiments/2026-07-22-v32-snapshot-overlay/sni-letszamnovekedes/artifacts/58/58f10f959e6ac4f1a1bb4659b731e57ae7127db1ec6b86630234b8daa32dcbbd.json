@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-implementation_planning-01",
+      "A-live-implementation_planning-02",
+      "A-live-implementation_planning-03",
+      "A-live-implementation_planning-04"
+    ],
+    "claim": {
+      "en": "The documented rise in SNI identification in Hungary (cited as 40% growth over 20 years) lacks a single reconciled public statistical series by consistent definition across years and education levels, creating a monitoring and feedback-loop gap for policymakers.",
+      "hu": "Az SNI‑azonosítás Magyarországon tapasztalt növekedését (források szerint 20 év alatt mintegy 40% növekedés) nem övezi egy, évek és iskolafokozatok között következetes definícióval vezetett, egységes közérdekű statisztikai sor, ami monitoring‑ és visszacsatolási hiányt okoz a döntéshozók számára."
+    },
+    "context": {
+      "en": "Fresh live research through the Implementation planning lens",
+      "hu": "Friss, naprakész kutatás a végrehajtási tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "implementation_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "The 40% figure originates from an industry conference source (private development-center CEO) rather than independent statistical office analysis",
+        "hu": "A 40%-os adat egy iparági konferenciaforrásból származik (magán fejlesztőközpont vezérigazgatója), nem pedig a független statisztikai hivatal elemzéséből."
+      },
+      {
+        "en": "Divergent cited counts (104,865 vs. 69,000 vs. 92,845) lack published reconciliation showing which cover different education levels or years",
+        "hu": "Az eltérő hivatkozott számok (104,865 vs. 69,000 vs. 92,845) esetében hiányzik a közzétett egyeztetés, amely megmutatná, melyek fednek le különböző oktatási szinteket vagy éveket"
+      },
+      {
+        "en": "No independent audit of the KSH data comparability across reporting periods was found",
+        "hu": "Nem találtunk független ellenőrzést a KSH adatok jelentési periódusok közötti összehasonlíthatóságáról."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-implementation_planning-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-implementation_planning-01",
+      "U-live-implementation_planning-02",
+      "U-live-implementation_planning-03",
+      "U-live-implementation_planning-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-implementation_planning-01",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "b9df955028dd259a4a3bf57e7267bfa22e30ea548d3fa08d473859fc0a6d6f30",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,49 @@
+{
+  "content": {
+    "assumption_refs": [
+      "A-live-demography-01",
+      "A-live-school_network_planning-01"
+    ],
+    "canonical_claim_refs": [
+      "CC-live-c1",
+      "CC-live-c11",
+      "CC-live-c12",
+      "CC-live-c10"
+    ],
+    "change_lever": {
+      "en": "Use the demographic window to plan school-network consolidation that preserves SEN provision capacity and avoids new segregation.",
+      "hu": "A demográfiai ablak kihasználása olyan iskolahálózat-konszolidáció tervezésére, amely megőrzi az SNI-ellátási kapacitást és elkerüli az új szegregációt."
+    },
+    "evidence_conflict_refs": [],
+    "finding_refs": [
+      "F-live-demography-02",
+      "F-live-school_network_planning-01",
+      "F-live-demography-03"
+    ],
+    "scope": {
+      "en": "National and regional school-network planning.",
+      "hu": "Nemzeti és regionális iskolahálózat-tervezés."
+    },
+    "seed_type": "structural",
+    "system_problem": {
+      "en": "Births fell 22% meaning smaller cohorts from 2028, while past decline was met by cutting parallel sections producing small single-class rural schools that cannot separate tracks, with uneven regional contraction.",
+      "hu": "A születések 22%-kal csökkentek, ami 2028-tól kisebb évfolyamokat jelent, míg a korábbi csökkenést párhuzamos osztályok megszüntetésével kezelték, kis egyosztályos vidéki iskolákat eredményezve, egyenetlen regionális visszaeséssel."
+    },
+    "title": {
+      "en": "Align school-network planning with demographic decline",
+      "hu": "Az iskolahálózat-tervezés összehangolása a demográfiai csökkenéssel"
+    },
+    "uncertainty_refs": [
+      "U-live-demography-01",
+      "U-live-school_network_planning-01"
+    ]
+  },
+  "created_at": "2026-07-23T11:25:10.544575Z",
+  "id": "OSD-live-o10",
+  "provenance_ref": "PV-derive_option_seeds-3dc12ce0ae449064",
+  "record_type": "option_seed",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": null,
+  "topic": "sni-letszamnovekedes"
+}

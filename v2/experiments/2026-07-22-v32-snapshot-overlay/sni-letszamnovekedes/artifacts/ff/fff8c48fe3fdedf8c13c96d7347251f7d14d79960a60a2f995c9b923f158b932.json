@@ -1,0 +1,63 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "A 2023 survey of 121 Hungarian primary teachers found that 83.6% reported an increase in students requiring developmental support, with teachers graduating in 2010 or later more likely to have encountered SEN students.",
+      "hu": "Egy 2023-as, 121 magyar általános iskolai tanár körében végzett felmérés szerint a tanárok 83,6%-a azt jelezte, hogy nőtt a fejlesztést igénylő tanulók száma; a 2010-ben vagy később végzettek nagyobb valószínűséggel találkoztak SNI-diákokkal."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "weak",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Based on perceived prevalence (subject to awareness and labeling bias), not population-based incidence measurement",
+        "hu": "Észlelt elterjedtségen alapul (subject to awareness and labeling bias), nem populáción alapuló incidenciamérés"
+      },
+      {
+        "en": "Small sample size (121 teachers) not representative at national level",
+        "hu": "Kis minta (121 tanár), nem reprezentatív országos szinten"
+      },
+      {
+        "en": "Cannot be treated as independent confirmation of a 'real' rise in SEN incidence",
+        "hu": "Nem kezelhető független megerősítésként a SEN előfordulásának 'valódi' növekedésére"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-04"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-04",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "45f1ed558159c1ca0793480ad3d419c687f6618684144417adaf5dd064d47d21",
+  "topic": "sni-letszamnovekedes"
+}

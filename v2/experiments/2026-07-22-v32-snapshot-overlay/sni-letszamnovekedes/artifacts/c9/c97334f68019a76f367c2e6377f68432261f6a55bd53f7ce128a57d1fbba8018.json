@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-hungarian_education_system-01",
+      "A-live-hungarian_education_system-02",
+      "A-live-hungarian_education_system-03"
+    ],
+    "claim": {
+      "en": "The number of children identified as SNI (special educational needs) in Hungary grew from 92,800 to 97,300 in a single year (2021/2022), representing the largest year-on-year increase in at least 12 years, and the 2023/2024 figure reached approximately 63,000 or 8.8% of primary-school pupils, with a 40% rise over the preceding 20 years.",
+      "hu": "Magyarországon a sajátos nevelési igényű (SNI) gyermekek száma egy év alatt 92 800-ról 97 300-ra nőtt (2021/2022), ami legalább 12 év legnagyobb éves növekedése; a 2023/2024-es adat mintegy 63 000 főt tett ki, ami az általános iskolai tanulók körében 8,8%-nak felel meg, és ez közel 40%-os emelkedést jelent az elmúlt 20 évhez képest."
+    },
+    "context": {
+      "en": "Fresh live research through the Hungarian education system lens",
+      "hu": "Friss, aktuális kutatás a magyar oktatási rendszer szemszögéből"
+    },
+    "domain_tags": [
+      "hungarian_education_system"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Figures come from journalistic aggregation rather than a single unified official time series",
+        "hu": "A számok újságírói összegzésből származnak, nem egyetlen egységes hivatalos idősorozatból."
+      },
+      {
+        "en": "Category definitions and boundaries may have shifted across reporting years",
+        "hu": "A kategória-meghatározások és határok eltolódhattak az egyes beszámolási években"
+      },
+      {
+        "en": "Base-year comparability is not independently verified in these sources",
+        "hu": "Az alapév összehasonlíthatóságát ezekben a forrásokban nem ellenőrizték függetlenül."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-hungarian_education_system-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-hungarian_education_system-01",
+      "U-live-hungarian_education_system-02",
+      "U-live-hungarian_education_system-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-hungarian_education_system-01",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "590a023a5e0bbe14fa9451583ee9da44aa8358c76f66cf3e485a3749c585c398",
+  "topic": "sni-letszamnovekedes"
+}

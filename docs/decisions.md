@@ -933,14 +933,31 @@ records. The pages remain a deterministic generated projection; canonical JSON
 and the publication manifest remain the source of truth.
 
 **D-62 — Architecture upgrades reuse admitted evidence through a separate
-snapshot-overlay DAG, never an in-place migration (2026-07-22).** A 3.1 result
-cannot be relabelled as 3.2 because the new normalization, option-seed, and
+snapshot-overlay DAG, never an in-place migration (2026-07-22; extended
+2026-07-23).** A 3.0 or 3.1 result cannot be relabelled as 3.2 because the new
+normalization, option-seed, and
 clustering steps are analytical model calls and a new option-space candidate
 cannot inherit the old human decision. It is nevertheless wasteful to repeat
 unchanged web research merely to evaluate the architectural delta. The first
-upgrade experiment therefore treats the exact 3.1 problem brief and twelve
+upgrade experiment therefore treats the exact source problem brief and twelve
 research-node outputs as immutable, hash-bound roots of a distinct
 `3.2.0-overlay.1` RunPlan.
+
+For a 3.1 source, the problem brief is admitted directly from the source
+RunPlan root. For a 3.0 source, whose RunPlan starts from a policy question,
+the overlay admits the exact `problem_brief` output of the
+`approve_problem_brief` human-gate node. The source node manifest must carry
+the same RunPlan hash recorded by the production manifest. This preserves the
+full question → proposal → human decision → accepted-brief lineage without
+pretending that the accepted brief was a 3.0 root.
+
+The exact node-output hash remains the analytical input even when a later
+audited localization record supersedes it. The isolated overlay store must
+also import the complete immutable successor chain, so the same canonical
+bilingual record that is current in production remains current in the
+overlay. This does not rewrite or reinterpret the node output: the RunPlan
+continues to bind the original hash, while `supersedes` proves the public
+projection lineage.
 
 The overlay imports only the transitive typed closure required by those roots
 and by the legacy approved option space and proposals. It then executes

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run an internal architecture-3.2 overlay over published 3.1 snapshots."""
+"""Run an internal architecture-3.2 overlay over published 3.0/3.1 snapshots."""
 
 from __future__ import annotations
 
@@ -19,20 +19,34 @@ from lab import llm  # noqa: E402
 from policy_lab.live.overlay import SnapshotOverlayRunner  # noqa: E402
 
 
-DEFAULT_TOPICS = ("korai-szelekcio", "rural-school-closures")
-DEFAULT_SOURCE_TAG = "2026-07-21-v3-bilingual"
+DEFAULT_TOPICS = (
+    "korai-szelekcio",
+    "rural-school-closures",
+    "sni-letszamnovekedes",
+)
+DEFAULT_SOURCE_TAGS = {
+    "korai-szelekcio": "2026-07-21-v3-bilingual",
+    "rural-school-closures": "2026-07-21-v3-bilingual",
+    "sni-letszamnovekedes": "2026-07-21-sni-brief-revision-2",
+}
 DEFAULT_OUTPUT_TAG = "2026-07-22-v32-snapshot-overlay"
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
-            "Reuse exact architecture-3.1 research artifacts and run only the "
+            "Reuse exact architecture-3.0/3.1 research artifacts and run only the "
             "3.2 normalization, option-seed, clustering, and trace comparison nodes."
         )
     )
     parser.add_argument("--topic", action="append", dest="topics")
-    parser.add_argument("--source-run-tag", default=DEFAULT_SOURCE_TAG)
+    parser.add_argument(
+        "--source-run-tag",
+        help=(
+            "Override the publication-derived source tag for every selected "
+            "topic. By default each topic uses its own published run tag."
+        ),
+    )
     parser.add_argument("--output-tag", default=DEFAULT_OUTPUT_TAG)
     parser.add_argument(
         "--output-root", type=Path,
@@ -48,7 +62,12 @@ def main() -> int:
     args = parser.parse_args()
     topics = tuple(args.topics or DEFAULT_TOPICS)
     for topic in topics:
-        source_root = ROOT / "v2" / "production" / args.source_run_tag / topic
+        source_run_tag = args.source_run_tag or DEFAULT_SOURCE_TAGS.get(topic)
+        if source_run_tag is None:
+            raise SystemExit(
+                f"No default source run tag for {topic}; pass --source-run-tag"
+            )
+        source_root = ROOT / "v2" / "production" / source_run_tag / topic
         if not source_root.exists():
             raise SystemExit(f"Missing source production store: {source_root}")
         output_root = args.output_root / args.output_tag / topic
@@ -60,7 +79,7 @@ def main() -> int:
             print(f"REPAIRED {topic}: exact attempt provenance", flush=True)
             continue
         manifest = runner.run_overlay(
-            source_root=source_root, source_run_tag=args.source_run_tag,
+            source_root=source_root, source_run_tag=source_run_tag,
         )
         summary = manifest["summary"]
         print(

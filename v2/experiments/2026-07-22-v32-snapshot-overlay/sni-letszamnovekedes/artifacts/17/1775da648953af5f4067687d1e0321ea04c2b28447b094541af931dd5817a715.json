@@ -1,0 +1,218 @@
+{
+  "content": {
+    "derivation_notice": {
+      "en": "Derived only from the exact fresh finding artifacts declared by the run plan; pending an explicit human gate.",
+      "hu": "Csak a futtatási terv által deklarált pontos, friss megállapítási artefaktumokból származik; egyértelmű emberi jóváhagyásra vár."
+    },
+    "directions": [
+      {
+        "finding_refs": [
+          "F-live-legal_and_governance-01",
+          "F-live-demography-01",
+          "F-live-demography-02",
+          "F-live-demography-06",
+          "F-live-implementation_planning-01",
+          "F-live-equity_and_social_mobility-04"
+        ],
+        "id": "S1",
+        "scope": {
+          "en": "Characterize what happens if identification, gatekeeping, finance, and placement rules are left unchanged while demographic decline and workforce aging continue. Bounded to describing drift and its distributional consequences; does not propose intervention.",
+          "hu": "Jellemezni, mi történik, ha az azonosítási, kapuőrizeti, finanszírozási és elhelyezési szabályok változatlanok maradnak, miközben a demográfiai hanyatlás és a munkaerő elöregedése folytatódik. Korlátozott a leírás arra, hogy bemutassa a sodródást és annak eloszlási következményeit; nem javasol beavatkozást."
+        },
+        "title": {
+          "en": "Baseline: no new SEN policy, observe passive trajectory",
+          "hu": "Alapvonal: nincs új SNI‑politika, a passzív pálya megfigyelése"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-implementation_planning-01",
+          "F-live-hungarian_education_system-01",
+          "F-live-hungarian_education_system-02",
+          "F-live-international_comparison-02",
+          "F-live-international_comparison-03",
+          "F-live-equity_and_social_mobility-03",
+          "F-live-equity_and_social_mobility-09",
+          "F-live-school_network_planning-03"
+        ],
+        "id": "S2",
+        "scope": {
+          "en": "Focus on measurement: reconciling inconsistent statistical series, disentangling prevalence change from diagnostic-practice, access, and incentive effects, and testing county variation. Bounded to evidence and monitoring architecture, not on changing service or placement rules.",
+          "hu": "Fókusz a mérésen: ellentmondó statisztikai sorok egyeztetése, a prevalencia-változás szétválasztása a diagnosztikai gyakorlat, a hozzáférés és az ösztönzőhatásoktól, valamint a megyei variációk tesztelése. Korlátozva a bizonyítékokra és a monitoring-architektúrára, nem a szolgáltatási vagy elhelyezési szabályok megváltoztatására."
+        },
+        "title": {
+          "en": "Verify and reconcile the identification trend and its drivers",
+          "hu": "Az azonosítási trend és hajtóerőinek ellenőrzése és egyeztetése"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-hungarian_education_system-03",
+          "F-live-hungarian_education_system-04",
+          "F-live-international_comparison-06",
+          "F-live-international_comparison-07",
+          "F-live-finnish_reform-01",
+          "F-live-finnish_reform-02",
+          "F-live-legal_and_governance-03",
+          "F-live-legal_and_governance-04",
+          "F-live-implementation_planning-02"
+        ],
+        "id": "S3",
+        "scope": {
+          "en": "Options touching the definitional and diagnostic structure — SNI/BTMN category boundaries, expert-committee gatekeeping, waiting lists, and non-categorical/tiered alternatives. Bounded to how identification is defined and adjudicated, drawing on comparative reforms as transferability-tested evidence only.",
+          "hu": "Olyan opciók, amelyek érintik a definíciós és diagnosztikai struktúrát — SNI/BTMN kategóriahatárok, szakértői bizottságok kapuja, várólisták és a nem-kategóriás/többszintű alternatívák. Korlátozódnak arra, hogy hogyan definiálják és bírálják el az azonosítást, csupán az összehasonlító reformokra mint átvihetőségüket tesztelő bizonyítékokra támaszkodva."
+        },
+        "title": {
+          "en": "Redesign category and gatekeeping architecture",
+          "hu": "A kategória‑ és beléptetési mechanizmusok áttervezése"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-education_finance-08",
+          "F-live-legal_and_governance-07",
+          "F-live-international_comparison-04",
+          "F-live-international_comparison-05",
+          "F-live-international_comparison-08",
+          "F-live-finnish_reform-03",
+          "F-live-polish_reform-03",
+          "F-live-polish_reform-04",
+          "F-live-implementation_planning-06"
+        ],
+        "id": "S4",
+        "scope": {
+          "en": "Options addressing per-pupil weighting, normative multipliers, and census- versus diagnosis-gated allocation as drivers of identification. Bounded to funding-design mechanisms and their incentive effects, not to service delivery capacity itself.",
+          "hu": "Lehetőségek az egy tanulóra jutó súlyozás, a normatív szorzók és a népszámlálás- versus diagnózis-alapú elosztás, mint azonosítást hajtó tényezők kezelésére. Ezek a javaslatok a finanszírozás-tervezési mechanizmusokra és azok ösztönzőhatásaira korlátozódnak, nem magára a szolgáltatásnyújtási kapacitásra."
+        },
+        "title": {
+          "en": "Realign finance incentives away from diagnosis-gated funding",
+          "hu": "A finanszírozási ösztönzők igazítása a diagnózishoz kötött finanszírozás helyett"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-hungarian_education_system-05",
+          "F-live-portuguese_reform-03",
+          "F-live-portuguese_reform-04",
+          "F-live-equity_and_social_mobility-05",
+          "F-live-equity_and_social_mobility-06",
+          "F-live-school_network_planning-05",
+          "F-live-school_network_planning-06",
+          "F-live-school_network_planning-08",
+          "F-live-implementation_planning-04",
+          "F-live-international_comparison-10",
+          "F-live-demography-07"
+        ],
+        "id": "S5",
+        "scope": {
+          "en": "Options addressing gyógypedagógus shortages, regional maldistribution, traveling networks, co-teaching infrastructure, teacher readiness, and the assess-to-serve gap. Bounded to workforce and support-delivery capacity, not to identification rules or finance formulas.",
+          "hu": "Lehetőségek a gyógypedagógus-hiány, a regionális eloszlási egyenlőtlenségek, az utazó hálózatok, az együttoktatási infrastruktúra, a tanárkészség és az értékelés és szolgáltatás közötti hézag kezelésére. Ezek a megoldások a munkaerőre és a támogatásszolgáltatási kapacitásra korlátozódnak, nem az azonosítási szabályokra vagy finanszírozási képletekre."
+        },
+        "title": {
+          "en": "Build specialist and mainstream support capacity",
+          "hu": "Szakellátási és többségi támogatási kapacitás kiépítése"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-hungarian_education_system-06",
+          "F-live-hungarian_education_system-07",
+          "F-live-equity_and_social_mobility-08",
+          "F-live-implementation_planning-08",
+          "F-live-political_feasibility-08",
+          "F-live-legal_and_governance-09",
+          "F-live-legal_and_governance-10",
+          "F-live-finnish_reform-08",
+          "F-live-school_network_planning-10",
+          "F-live-education_finance-09"
+        ],
+        "id": "S6",
+        "scope": {
+          "en": "Options confronting how SEN identification interacts with free school choice, parental mobility, institutional selectivity, and Roma over-classification to reshape school composition. Bounded to compositional-sorting and anti-segregation mechanisms, including legal-accountability obligations.",
+          "hu": "Lehetőségek arra vonatkozóan, hogy a SEN-azonosítás hogyan lép kölcsönhatásba a szabad iskolaválasztással, a szülői mobilitással, az intézményi szelektivitással és a roma túlbesorolással az iskolai összetétel átalakítása érdekében. Ezek a lehetőségek a kompozíciós szelektálásra és a deszegregációs mechanizmusokra korlátozódnak, ideértve a jogi elszámoltathatósági kötelezettségeket is."
+        },
+        "title": {
+          "en": "Address sorting, school choice, and segregation interaction",
+          "hu": "A szelekció, a szülői iskolaválasztás és a szegregáció kölcsönhatásainak kezelése"
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-hungarian_education_system-08",
+          "F-live-school_network_planning-04",
+          "F-live-education_finance-04",
+          "F-live-demography-08",
+          "F-live-portuguese_reform-09",
+          "F-live-equity_and_social_mobility-03",
+          "F-live-school_network_planning-09"
+        ],
+        "id": "S7",
+        "scope": {
+          "en": "Options recognizing that non-SEN policies — school-readiness/entry-age rules, rural school-network structure, private/church school growth — measurably move SEN identification and capacity. Bounded to coordinating these adjacent levers, not to SEN-specific rule changes covered elsewhere.",
+          "hu": "Olyan opciók, amelyek elismerik, hogy a nem-SEN politikaeszközök — iskolaérettségi/iskolaéretlenségi belépési szabályok, vidéki iskolahálózati struktúra, magán/egyháziskolák növekedése — mérhetően befolyásolják a SEN-azonosítást és kapacitást. Korlátozódnak arra, hogy ezekkel a kapcsolódó eszközökkel koordináljanak, nem pedig azokra a SEN-specifikus szabályváltoztatásokra, amelyek máshol szerepelnek."
+        },
+        "title": {
+          "en": "Coordinate adjacent-domain policy levers affecting identification",
+          "hu": "Az azonosítást befolyásoló kapcsolódó politikaterületek eszközeinek összehangolása"
+        }
+      }
+    ],
+    "rejected_framings": [
+      {
+        "finding_refs": [
+          "F-live-finnish_reform-04",
+          "F-live-finnish_reform-05",
+          "F-live-finnish_reform-06",
+          "F-live-international_comparison-07"
+        ],
+        "framing": {
+          "en": "Adopt Finland's tiered support model as the recommended solution for Hungary",
+          "hu": "Finnország többszintű támogatási modelljének átvétele, mint Magyarországra ajánlott megoldás"
+        },
+        "reason": {
+          "en": "Out of scope: the brief forbids endorsing international models as solutions and requires explicit transferability tests. Finnish evidence itself shows persistent regional variation, low actual inclusion of Tier 3 students, documentation burden, and cost-driven tier assignment — so presenting it as a ready answer would prejudge outcomes.",
+          "hu": "Kívül esik a hatáskörön: a rövid ismertető tiltja nemzetközi minták automatikus támogatását megoldásként és expliciten megköveteli az átültethetőségi teszteket. Maga a finn bizonyíték is tartós regionális eltérést, a 3. szintű (Tier 3) tanulók alacsony tényleges befogadását, adminisztratív dokumentációs terhet és költségvezérelt szintbesorolást mutat — ezért kész válaszként való bemutatása előre eldöntené az eredményeket."
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-equity_and_social_mobility-03",
+          "F-live-equity_and_social_mobility-09",
+          "F-live-polish_reform-02",
+          "F-live-polish_reform-06",
+          "F-live-polish_reform-07"
+        ],
+        "framing": {
+          "en": "Treat the identification rise as established over-diagnosis requiring caps or tightening",
+          "hu": "Az azonosítás növekedését megalapozott túldiagnosztizálásként kell kezelni, amely kvótákat vagy szigorítást tesz szükségessé."
+        },
+        "reason": {
+          "en": "Prejudges causation the brief requires research to verify; magnitude, continuity, and drivers are contested, and Polish structural rollback shows abrupt reversal produces implementation chaos rather than resolution. Framing as confirmed over-diagnosis would collapse the option space prematurely.",
+          "hu": "Az állítás előre elítéli az okságot, amit a rövid ismertetőnek kutatással kellene igazolnia; a nagyság, folytonosság és mozgatórugók vitatottak, és a lengyel strukturális visszafordítás azt mutatja, hogy a hirtelen visszafordítás végrehajtási káoszt, nem megoldást eredményez. Ha túldiagnózisként megerősítettként keretezzük, az túl korán szűkítené a lehetőségek terét."
+        }
+      },
+      {
+        "finding_refs": [
+          "F-live-equity_and_social_mobility-04",
+          "F-live-legal_and_governance-04"
+        ],
+        "framing": {
+          "en": "Frame the issue primarily as a clinical diagnostic-protocol problem",
+          "hu": "A kérdést elsősorban klinikai diagnosztikai protokollproblémaként kell keretezni"
+        },
+        "reason": {
+          "en": "Clinical diagnostic protocol design is explicitly out of scope; evidence indicates classification functions as a financing/service-eligibility and administrative category rather than a purely clinical determination, so a clinical framing misrepresents the decision-relevant terrain.",
+          "hu": "A klinikai diagnosztikai protokoll tervezése kifejezetten kívül esik a hatáskörön; a bizonyítékok arra utalnak, hogy a besorolás finanszírozási/szolgáltatás-jogosultsági és adminisztratív kategóriaként működik, nem pedig tisztán klinikai megállapításként, így a klinikai keretezés félrevezetően írja le a döntéshozatal szempontjából releváns terepet."
+        }
+      }
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "OS-live-sni-letszamnovekedes",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "option_space_proposal",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "e68a9b7748da7185befaf8accfd9c6252b4fa090b5a92531cfad3af9048195f1",
+  "topic": "sni-letszamnovekedes"
+}

@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Hungary's annual birth numbers have collapsed from a peak of 93,000 in 2021 to 72,000 in 2025 (22% decline), with total fertility rate falling to 1.31 children per woman, the lowest in 14 years. Any cohorts entering school from 2028 onward will be materially smaller than cohorts a decade earlier, independent of special educational needs policy.",
+      "hu": "Magyarország éves születésszáma 2021 csúcsáról 93,000-ről 2025-re 72,000-re zuhant (22%-os csökkenés), a teljes termékenységi arányszám 1,31 gyermekre esett, ami 14 év legalsóbb értéke. A 2028-tól iskolába lépő kohorszok lényegesen kisebbek lesznek, mint egy évtizeddel korábbi társaik, függetlenül az SNI-politikától."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Based on preliminary 2025 data; future fertility trends remain uncertain",
+        "hu": "2025 előzetes adataira alapoz; a jövőbeli termékenységi trendek továbbra is bizonytalanok"
+      },
+      {
+        "en": "Mechanical demographic fact does not determine policy response or enrollment outcomes",
+        "hu": "A mechanikus demográfiai tényező nem határozza meg a politikai reakciót vagy a beiratkozási eredményeket."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-01",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "497c6251a6ae9040998ddcb1d7677f3444d5a51f29c75d5b1599a45fe119d33a",
+  "topic": "sni-letszamnovekedes"
+}

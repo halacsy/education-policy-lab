@@ -1,0 +1,57 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-school_network_planning-01",
+      "A-live-school_network_planning-02",
+      "A-live-school_network_planning-03"
+    ],
+    "claim": {
+      "en": "The number of children identified with special educational needs (SNI) in Hungary exceeded 69,000 in the 2025/2026 school year according to KSH (Central Statistical Office) data, with a broader count across all education levels reaching nearly 120,000.",
+      "hu": "A KSH adatai szerint a 2025/2026-os tanévben Magyarországon a sajátos nevelési igényű (SNI) gyermekek száma meghaladta a 69 000-et, míg az összes oktatási szintet átfogó, szélesebb szám közel 120 000 volt."
+    },
+    "context": {
+      "en": "Fresh live research through the School network planning lens",
+      "hu": "Friss, aktuális kutatás az iskolahálózat-tervezés szemszögéből"
+    },
+    "domain_tags": [
+      "school_network_planning"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Different sources use varying denominators (general-school-only vs. full system), making cross-source comparisons problematic",
+        "hu": "Különböző források eltérő nevezőket használnak (csak általános iskola vs. teljes rendszer), ami megnehezíti a források közötti összehasonlítást."
+      },
+      {
+        "en": "The 69,000 vs. 120,000 discrepancy reflects definitional scope rather than measurement error, requiring clarification of which population serves planning purposes",
+        "hu": "A 69,000 vs. 120,000 közötti eltérés a definíciós terjedelemből adódik, nem mérési hibából, ezért tisztázni kell, hogy melyik populáció szolgál tervezési célokra."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-school_network_planning-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-school_network_planning-01",
+      "U-live-school_network_planning-02",
+      "U-live-school_network_planning-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-school_network_planning-01",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "f5be12b99efca6782559d26d0f7560b81776a6cfc484ab67249c5e8fc5fb3ec3",
+  "topic": "sni-letszamnovekedes"
+}

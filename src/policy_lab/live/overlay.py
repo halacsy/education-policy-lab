@@ -1,4 +1,4 @@
-"""Audited architecture-3.2 overlay over an immutable 3.1 evidence snapshot."""
+"""Audited architecture-3.2 overlay over an immutable 3.0/3.1 snapshot."""
 
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ def _node(
         id=node_id, version="1.0.0", kind=kind, role=role,
         stage="architecture_overlay", title=node_id.replace("_", " ").title(),
         description=(
-            "Architecture-3.2 overlay node over exact architecture-3.1 "
+            "Architecture-3.2 overlay node over exact source-architecture "
             "snapshot roots; it never mutates the source store."
         ),
         handler=handler, inputs=inputs, output_types=outputs,
@@ -115,6 +115,7 @@ class SnapshotSelection:
 
     source_root: Path
     source_run_tag: str
+    source_architecture_version: str
     source_manifest_hash: str
     source_run_plan_hash: str
     problem_ref: ArtifactRef
@@ -137,10 +138,37 @@ class SnapshotSelection:
         )
 
 
-def select_v31_snapshot(
+def _manifest_output_ref(
+    repository: ArtifactRepository, run_dir: Path, node_id: str,
+    record_type: str, run_plan_hash: str,
+) -> ArtifactRef:
+    """Resolve one exact typed output through its source node manifest."""
+
+    node_manifest = ArtifactDagRunner._load(
+        run_dir / "nodes" / f"{node_id}.json"
+    )
+    if node_manifest.get("run_plan_hash") != run_plan_hash:
+        raise ValueError(f"Source node manifest has wrong RunPlan at {node_id}")
+    matches = [
+        item for item in node_manifest["output_artifacts"]
+        if item["record_type"] == record_type
+    ]
+    if len(matches) != 1:
+        raise ValueError(
+            f"Source node {node_id} must emit exactly one {record_type}, "
+            f"got {len(matches)}"
+        )
+    item = matches[0]
+    ref = repository.ref_by_hash(item["content_hash"])
+    if (ref.id, ref.record_type) != (item["id"], item["record_type"]):
+        raise ValueError(f"Source node manifest differs from artifact at {node_id}")
+    return ref
+
+
+def select_source_snapshot(
     source_root: str | Path, source_run_tag: str,
 ) -> tuple[ArtifactRepository, SnapshotSelection]:
-    """Resolve exact 3.1 research outputs and comparison roots from a store."""
+    """Resolve exact 3.0/3.1 research and comparison roots from a store."""
 
     source_root = Path(source_root)
     from policy_lab.schema_registry import SchemaRegistry
@@ -153,21 +181,34 @@ def select_v31_snapshot(
     repository = ArtifactRepository(source_root, schemas)
     manifest_path = source_root / "production_manifest.json"
     manifest = ArtifactDagRunner._load(manifest_path)
-    if manifest.get("architecture_version") != "3.1.0":
+    source_architecture_version = manifest.get("architecture_version")
+    if source_architecture_version not in {"3.0.0", "3.1.0"}:
         raise ValueError(
-            f"Snapshot overlay requires architecture 3.1.0, got "
-            f"{manifest.get('architecture_version')}"
+            "Snapshot overlay requires architecture 3.0.0 or 3.1.0, got "
+            f"{source_architecture_version}"
         )
     plan_path = source_root / manifest["run_plan"]["path"]
     plan = ArtifactDagRunner._load(plan_path)
     if content_hash(plan) != manifest["run_plan"]["content_hash"]:
         raise ValueError("Source RunPlan hash differs from production manifest")
-    problem_meta = plan["roots"]["problem_brief"]
-    if len(problem_meta) != 1:
-        raise ValueError("3.1 snapshot must contain exactly one problem brief root")
-    problem_ref = repository.ref_by_hash(problem_meta[0]["content_hash"])
 
     run_dir = source_root / "runs" / manifest["run_id"]
+    if source_architecture_version == "3.1.0":
+        problem_meta = plan["roots"].get("problem_brief", [])
+        if len(problem_meta) != 1:
+            raise ValueError(
+                "3.1 snapshot must contain exactly one problem brief root"
+            )
+        problem_ref = repository.ref_by_hash(problem_meta[0]["content_hash"])
+    else:
+        # Architecture 3.0 starts from a raw policy question. The admitted
+        # problem brief is therefore selected through the human-gate node
+        # manifest, whose RunPlan binding is checked above and below.
+        problem_ref = _manifest_output_ref(
+            repository, run_dir, "approve_problem_brief", "problem_brief",
+            content_hash(plan),
+        )
+
     evidence_refs: list[ArtifactRef] = []
     research_nodes = sorted(
         node["id"] for node in plan["nodes"] if node["id"].startswith("research_")
@@ -176,6 +217,10 @@ def select_v31_snapshot(
         raise ValueError(f"3.1 snapshot requires 12 research nodes, got {len(research_nodes)}")
     for node_id in research_nodes:
         node_manifest = ArtifactDagRunner._load(run_dir / "nodes" / f"{node_id}.json")
+        if node_manifest.get("run_plan_hash") != content_hash(plan):
+            raise ValueError(
+                f"Source node manifest has wrong RunPlan at {node_id}"
+            )
         for item in node_manifest["output_artifacts"]:
             if item["record_type"] not in EVIDENCE_TYPES:
                 continue
@@ -195,6 +240,7 @@ def select_v31_snapshot(
     )
     selection = SnapshotSelection(
         source_root=source_root, source_run_tag=source_run_tag,
+        source_architecture_version=source_architecture_version,
         source_manifest_hash=content_hash(manifest),
         source_run_plan_hash=content_hash(plan), problem_ref=problem_ref,
         evidence_refs=tuple(evidence_refs), legacy_option_ref=legacy_option_ref,
@@ -203,11 +249,32 @@ def select_v31_snapshot(
     return repository, selection
 
 
+def select_v31_snapshot(
+    source_root: str | Path, source_run_tag: str,
+) -> tuple[ArtifactRepository, SnapshotSelection]:
+    """Backward-compatible name for the version-aware snapshot selector."""
+
+    repository, selection = select_source_snapshot(source_root, source_run_tag)
+    if selection.source_architecture_version != "3.1.0":
+        raise ValueError(
+            "select_v31_snapshot requires architecture 3.1.0, got "
+            f"{selection.source_architecture_version}"
+        )
+    return repository, selection
+
+
 def import_transitive_closure(
     source: ArtifactRepository, target: ArtifactRepository,
     refs: Iterable[ArtifactRef],
 ) -> int:
-    """Copy exact immutable records and all typed/lineage dependencies."""
+    """Copy exact inputs, typed dependencies, and audited successor chains.
+
+    A source node manifest can legitimately point to an immutable monolingual
+    predecessor while the published store exposes an audited bilingual
+    successor. The overlay still binds the predecessor hash as its exact
+    analytical input, but its isolated store must also preserve the complete
+    successor chain so the same canonical current record remains current.
+    """
 
     records = source.list(include_superseded=True)
     by_hash = {content_hash(record): record for record in records}
@@ -215,7 +282,17 @@ def import_transitive_closure(
     for record in records:
         versions_by_id.setdefault(record["id"], []).append(record)
     current_by_id: dict[str, dict[str, Any]] = {}
+    successor_by_hash: dict[str, dict[str, Any]] = {}
     for record_id, versions in versions_by_id.items():
+        for record in versions:
+            predecessor = record.get("supersedes")
+            if predecessor is None:
+                continue
+            if predecessor in successor_by_hash:
+                raise ValueError(
+                    f"Source snapshot has branching successors for {predecessor}"
+                )
+            successor_by_hash[predecessor] = record
         superseded = {
             record["supersedes"] for record in versions
             if record.get("supersedes") is not None
@@ -245,6 +322,9 @@ def import_transitive_closure(
         predecessor = record.get("supersedes")
         if predecessor:
             pending.append(predecessor)
+        successor = successor_by_hash.get(digest)
+        if successor is not None:
+            pending.append(content_hash(successor))
         for reference in source.schemas.references(record):
             try:
                 dependency = current_by_id[reference.target_id]
@@ -349,7 +429,7 @@ def build_trace_overlap_content(
 
     return {
         "mode": "trace_overlap",
-        "source_architecture_version": "3.1.0",
+        "source_architecture_version": source.source_architecture_version,
         "source_run_tag": source.source_run_tag,
         "source_manifest_hash": source.source_manifest_hash,
         "source_run_plan_hash": source.source_run_plan_hash,
@@ -378,7 +458,7 @@ def build_trace_overlap_content(
 
 
 class SnapshotOverlayRunner(ArtifactDagRunner):
-    """Run only the new 3.2 middle layer over exact 3.1 roots."""
+    """Run only the new 3.2 middle layer over exact 3.0/3.1 roots."""
 
     def repair_existing_attempt_provenance(self) -> dict[str, Any]:
         """Repair exact-attempt carriage without executing any DAG node."""
@@ -400,13 +480,16 @@ class SnapshotOverlayRunner(ArtifactDagRunner):
         return manifest
 
     def run_overlay(self, *, source_root: str | Path, source_run_tag: str) -> dict[str, Any]:
-        source_repository, snapshot = select_v31_snapshot(source_root, source_run_tag)
+        source_repository, snapshot = select_source_snapshot(
+            source_root, source_run_tag
+        )
         imported = import_transitive_closure(
             source_repository, self.repository, snapshot.seed_refs()
         )
         dag = build_snapshot_overlay_dag()
         plan = dag.compile(topic=self.topic, root_artifacts=snapshot.roots())
-        run_id = f"overlay-{self.topic}-v31-to-v32"
+        source_short = snapshot.source_architecture_version.replace(".", "")[:2]
+        run_id = f"overlay-{self.topic}-v{source_short}-to-v32"
         run_dir = self.output_root / "runs" / run_id
         plan_path = run_dir / "run_plan.json"
         if plan_path.exists():
@@ -524,7 +607,8 @@ class SnapshotOverlayRunner(ArtifactDagRunner):
                 seed_coverage_ref=seed_ledger["id"],
             )
             return [self._record(
-                f"OV-{self.topic}-v31-to-v32", "architecture_overlay",
+                f"OV-{self.topic}-v{source_short}-to-v32",
+                "architecture_overlay",
                 provenance, content,
             )]
 
@@ -554,7 +638,7 @@ class SnapshotOverlayRunner(ArtifactDagRunner):
             "topic": self.topic, "run_id": run_id,
             "run_plan": {"content_hash": plan.hash, "path": f"runs/{run_id}/run_plan.json"},
             "source": {
-                "architecture_version": "3.1.0",
+                "architecture_version": snapshot.source_architecture_version,
                 "run_tag": source_run_tag,
                 "manifest_hash": snapshot.source_manifest_hash,
                 "run_plan_hash": snapshot.source_run_plan_hash,

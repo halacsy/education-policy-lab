@@ -1,0 +1,59 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-demography-01",
+      "A-live-demography-02",
+      "A-live-demography-03",
+      "A-live-demography-04"
+    ],
+    "claim": {
+      "en": "Hungary's teaching workforce is aging and geographically concentrated: half of all teachers in 2024/2025 were aged 50 or older with only 7.2% under 30. Teacher shortages are greatest in rural areas, where the proportion of unqualified teachers in disadvantaged schools is 2-3 times higher than in non-disadvantaged schools.",
+      "hu": "A magyar tanári kar elöregedett és földrajzilag koncentrált: a 2024/2025-ös tanévben a tanárok fele 50 éves vagy idősebb volt, és csak 7,2% volt 30 év alatti. A tanárellátási hiányok leginkább a vidéki térségekben érvényesülnek, ahol a hátrányos helyzetű iskolákban a képesítetlen tanárok aránya 2–3-szor magasabb, mint a nem hátrányos iskolákban."
+    },
+    "context": {
+      "en": "Fresh live research through the Demography lens",
+      "hu": "Friss, élő kutatás a demográfia szemszögéből"
+    },
+    "domain_tags": [
+      "demography"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Describes current capacity constraints but does not measure adequacy relative to projected SEN identification trends",
+        "hu": "Leírja a jelenlegi kapacitási korlátokat, de nem méri az alkalmasságot a várható SNI-azonosítási trendekhez viszonyítva."
+      },
+      {
+        "en": "Does not quantify specialist gaps (speech therapists, sign language interpreters, etc.) separately from general teacher shortages",
+        "hu": "Nem számszerűsíti külön a szakemberhiányokat (logopédusok, jelnyelvi tolmácsok stb.) a tanárhiánytól elkülönítve"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-demography-06"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-demography-01",
+      "U-live-demography-02",
+      "U-live-demography-03",
+      "U-live-demography-04"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-demography-06",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "7f6ec3596804d96084156ce7bcd2886a5e52d9b0e2d471b79a29d5a91c86d584",
+  "topic": "sni-letszamnovekedes"
+}

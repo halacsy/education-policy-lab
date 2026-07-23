@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-legal_and_governance-01",
+      "A-live-legal_and_governance-02",
+      "A-live-legal_and_governance-03"
+    ],
+    "claim": {
+      "en": "Hungarian SNI population grew continuously from 2012/13 onwards, with documented acceleration from 2021/22: KSH data report 112,007 SNI children in 2022/23 (up from 107,421 prior year) and 104,865 in 2023/24 (up 5,277 from prior year), representing approximately 40% growth over 20 years.",
+      "hu": "Az SNI-állomány Magyarországon 2012/13-tól folyamatosan nőtt, és 2021/22-től dokumentáltan felgyorsult: a KSH adatai 112 007 SNI-gyermekről számolnak be 2022/23-ban (előző évben 107 421), illetve 104 865-ről 2023/24-ben (az előző évhez képest +5 277), ami hozzávetőlegesen 40%-os növekedést jelent 20 év alatt."
+    },
+    "context": {
+      "en": "Fresh live research through the Legal and governance lens",
+      "hu": "Friss, aktuális kutatás jogi és kormányzati szemszögből"
+    },
+    "domain_tags": [
+      "legal_and_governance"
+    ],
+    "evidence_strength": "strong",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Absolute totals differ across sources depending on scope/definition (63k primary-school-only vs. 105-112k all levels)",
+        "hu": "Az abszolút összesítések forrásonként eltérnek a hatókör/definíció függvényében (63k primary-school-only vs. 105-112k all levels)"
+      },
+      {
+        "en": "No causal driver of growth is statistically established — multiple competing factors plausible",
+        "hu": "Nem állapítottak meg statisztikailag okozati növekedési hajtóerőt — több, egymással versengő tényező is elképzelhető."
+      },
+      {
+        "en": "Methodological inconsistency across reporting streams makes year-on-year micro-comparisons less reliable",
+        "hu": "A jelentési áramok közötti módszertani inkonzisztencia miatt az évről évre történő mikro-összehasonlítások kevésbé megbízhatóak."
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-legal_and_governance-01"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-legal_and_governance-01",
+      "U-live-legal_and_governance-02",
+      "U-live-legal_and_governance-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-legal_and_governance-01",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "3ceb93951d43f9ba1d6460edf46fcddea1fa36bce9365213d2e1feb8ca1fb3f9",
+  "topic": "sni-letszamnovekedes"
+}

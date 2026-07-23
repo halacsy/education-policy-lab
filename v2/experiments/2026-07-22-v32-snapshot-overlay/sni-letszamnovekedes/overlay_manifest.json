@@ -1,0 +1,29 @@
+{
+  "architecture_version": "3.2.0-overlay.1",
+  "base_architecture_version": "3.2.0",
+  "completed_at": "2026-07-23T11:57:37.563664Z",
+  "overlay_hash": "ca75f1878a3da425771cd1086fbaa18b4e839f75571c1b6bf2b22230395f031f",
+  "overlay_ref": "OV-sni-letszamnovekedes-v30-to-v32",
+  "run_id": "overlay-sni-letszamnovekedes-v30-to-v32",
+  "run_plan": {
+    "content_hash": "7c1352addca72cab3bd6284a01722de506e4dd52ea3293aa8d6f560f6592d9be",
+    "path": "runs/overlay-sni-letszamnovekedes-v30-to-v32/run_plan.json"
+  },
+  "source": {
+    "architecture_version": "3.0.0",
+    "imported_artifact_count": 746,
+    "manifest_hash": "1f5dc4eda9cdfd5bb90b908cbd1bd13b1a606bc88bc3e03bd8658236d500a7ad",
+    "research_artifact_count": 200,
+    "run_plan_hash": "d362cf93d6cce4558b5890d554a57183be564c8924c536e62a1e2b493f9f313c",
+    "run_tag": "2026-07-21-sni-brief-revision-2"
+  },
+  "summary": {
+    "conflicts_without_legacy_proposal_count": 5,
+    "evidence_conflict_count": 14,
+    "new_direction_count": 7,
+    "novel_gap_count": 1,
+    "seed_count": 14,
+    "uncovered_seed_count": 1
+  },
+  "topic": "sni-letszamnovekedes"
+}

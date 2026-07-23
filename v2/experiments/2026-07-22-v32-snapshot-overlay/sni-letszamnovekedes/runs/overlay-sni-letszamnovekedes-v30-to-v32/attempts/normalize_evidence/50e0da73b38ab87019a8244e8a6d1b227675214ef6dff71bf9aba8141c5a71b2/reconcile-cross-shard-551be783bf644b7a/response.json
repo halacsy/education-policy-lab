@@ -1,0 +1,252 @@
+{
+  "conflicts": [
+    {
+      "claim_keys": [
+        "C3",
+        "C62",
+        "C45"
+      ],
+      "conflict_type": "causal_interpretation",
+      "decision_relevance": {
+        "en": "If policy/incentive effects dominate, Hungary should reform financing and assessment rules; if genuine detection improvement dominates, capacity expansion is the priority.",
+        "hu": "Ha a szakpolitikai/ösztönző hatások dominálnak, Magyarországnak a finanszírozást és értékelési szabályokat kell reformálnia; ha valódi felismerésjavulás dominál, a kapacitásbővítés a prioritás."
+      },
+      "description": {
+        "en": "C3 frames the drivers as genuinely contested between improved diagnostics/awareness and structural policy factors (school-entry age, stricter readiness assessments, incentives). C62 attributes part of the rise to awareness and improved diagnostics but flags that this rests on small qualitative research (21 teachers, one region) lacking population-level causal tests. C4/C45 assert improved detection largely explains autism increases. These reflect divergent causal interpretations of the same trend with differing evidence strength.",
+        "hu": "C3 a mozgatórugókat valóban vitatottként mutatja be a jobb diagnosztika/tudatosság és a strukturális szakpolitikai tényezők (iskolakezdési kor, szigorúbb érettségi vizsgálatok, ösztönzők) között. C62 a növekedés egy részét a tudatosságnak és a jobb diagnosztikának tulajdonítja, de jelzi, hogy ez kis kvalitatív kutatáson (21 tanár, egy régió) alapul, populációszintű oksági tesztek nélkül. C4/C45 szerint a jobb felismerés nagyrészt magyarázza az autizmus növekedését. Ezek ugyanazon trend eltérő oksági értelmezéseit tükrözik, eltérő bizonyítékerővel."
+      },
+      "finding_refs": [
+        "F-live-demography-03",
+        "F-live-portuguese_reform-10",
+        "F-live-international_comparison-03"
+      ],
+      "research_question": {
+        "en": "What share of Hungary's SEN identification rise is attributable to improved diagnostics/awareness versus policy changes (school-entry age, assessment exemption reform) and financial incentives, tested at population level?",
+        "hu": "A magyar SEN-azonosítás növekedésének mekkora hányada tulajdonítható a jobb diagnosztikának/tudatosságnak, szemben a szakpolitikai változásokkal (iskolakezdési kor, értékelés-mentesség reform) és pénzügyi ösztönzőkkel, populációszinten tesztelve?"
+      },
+      "resolvability": "requires_new_data",
+      "title": {
+        "en": "Contested drivers of rising SEN identification: diagnostics vs policy/incentive effects",
+        "hu": "A növekvő SEN-azonosítás vitatott mozgatórugói: diagnosztika vs szakpolitikai/ösztönző hatások"
+      }
+    },
+    {
+      "claim_keys": [
+        "C4",
+        "C51",
+        "C52"
+      ],
+      "conflict_type": "measurement_difference",
+      "decision_relevance": {
+        "en": "A reconciled series is prerequisite for credible trend monitoring and for deciding whether specialist capacity targets are proportionate to actual identified need.",
+        "hu": "Az egyeztetett sorozat előfeltétele a hiteles trendmonitorozásnak és annak eldöntésének, hogy a szakértői kapacitáscélok arányban állnak-e a tényleges azonosított igénnyel."
+      },
+      "description": {
+        "en": "C4 reports autism registrations tripling to quadrupling to ~10,000–11,700 by 2023/24 and explicitly notes conflicting figures, while C51 reports autism identification rising from ~30 in 2001 to nearly 9,737 by 2023. C52 confirms metrics use different reference periods/sources unreconciled into a single series. These are measurement discrepancies in the same underlying phenomenon.",
+        "hu": "C4 az autizmus-regisztrációk három-négyszeresére növekedését jelenti ~10 000–11 700-ra 2023/24-re, kifejezetten megjegyezve az ellentmondó adatokat, míg C51 az autizmus-azonosítás növekedését jelenti ~30-ról (2001) közel 9 737-re (2023). C52 megerősíti, hogy a mutatók eltérő referenciaidőszakokat/forrásokat használnak, egyetlen sorozatba nem egyeztetve. Ezek mérési eltérések ugyanazon jelenségben."
+      },
+      "finding_refs": [
+        "F-live-demography-05",
+        "F-live-school_network_planning-01",
+        "F-live-school_network_planning-02"
+      ],
+      "research_question": {
+        "en": "Can a single reconciled autism identification time series for Hungary be constructed by aligning KSH counts across consistent definitions and years?",
+        "hu": "Létrehozható-e egyetlen egyeztetett autizmus-azonosítási idősor Magyarországra a KSH-adatok egységes definíciók és évek szerinti összehangolásával?"
+      },
+      "resolvability": "answerable_now",
+      "title": {
+        "en": "Conflicting autism identification counts for Hungary",
+        "hu": "Ellentmondó autizmus-azonosítási számok Magyarországon"
+      }
+    },
+    {
+      "claim_keys": [
+        "C24",
+        "C54"
+      ],
+      "conflict_type": "measurement_difference",
+      "decision_relevance": {
+        "en": "Accurate county figures are needed to target specialist deployment and to distinguish over-identification hotspots from unmet-need regions.",
+        "hu": "A pontos megyei adatok szükségesek a szakértői elosztás célzásához és a túlazonosítási gócpontok megkülönböztetéséhez az ellátatlan igényű régióktól."
+      },
+      "description": {
+        "en": "C24 states county-level identification ranges 5.4% to 14% (a 2.6-fold spread) and highlights Borsod as illustrative, while C54 gives about 15.6% in Békés to 6.2% in Borsod-Abaúj-Zemplén. The ranges and endpoint counties differ, reflecting different data cuts of the same sub-national variation.",
+        "hu": "C24 szerint a megyei szintű azonosítás 5,4% és 14% között mozog (2,6-szeres szórás), míg C54 kb. 15,6%-ot ad meg Békésben és 6,2%-ot Borsod-Abaúj-Zemplénben. A tartományok és a szélső megyék eltérnek, ugyanazon szubnacionális eltérés különböző adatvágásait tükrözve."
+      },
+      "finding_refs": [
+        "F-live-hungarian_education_system-02",
+        "F-live-school_network_planning-03"
+      ],
+      "research_question": {
+        "en": "What is the definitive county-level SEN prevalence distribution in Hungary using a single consistent definition and year?",
+        "hu": "Mi a végleges megyei szintű SEN-előfordulási eloszlás Magyarországon egyetlen egységes definíció és év alapján?"
+      },
+      "resolvability": "answerable_now",
+      "title": {
+        "en": "Divergent county-level SEN prevalence figures for Hungary",
+        "hu": "Eltérő megyei szintű SEN-előfordulási adatok Magyarországon"
+      }
+    },
+    {
+      "claim_keys": [
+        "C30",
+        "C31"
+      ],
+      "conflict_type": "causal_interpretation",
+      "decision_relevance": {
+        "en": "If incentives drive classification, removing the exemption asymmetry and revising funding multipliers would reduce artificial identification pressure.",
+        "hu": "Ha az ösztönzők vezérlik a besorolást, a mentességi aszimmetria megszüntetése és a finanszírozási szorzók módosítása csökkentené a mesterséges azonosítási nyomást."
+      },
+      "description": {
+        "en": "C30 describes the 2017-18 'lex Taigetosz' reform creating a documented reclassification mechanism toward SNI while noting whether it materially increased SNI numbers is sharply contested. C31 states funding architecture could theoretically incentivize over-identification but no causal evidence links it to the documented rise. These present competing incentive mechanisms whose causal role is unresolved.",
+        "hu": "C30 a 2017-18-as 'lex Taigetosz' reformot úgy írja le, hogy dokumentált átsorolási mechanizmust hoz létre az SNI felé, megjegyezve, hogy erősen vitatott, vajon lényegesen növelte-e az SNI-számokat. C31 szerint a finanszírozási architektúra elméletileg ösztönözhetné a túlazonosítást, de nincs oksági bizonyíték, amely a dokumentált növekedéshez kötné. Ezek versengő ösztönzőmechanizmusokat mutatnak be, amelyek oksági szerepe megoldatlan."
+      },
+      "finding_refs": [
+        "F-live-implementation_planning-02",
+        "F-live-implementation_planning-06",
+        "F-live-legal_and_governance-07"
+      ],
+      "research_question": {
+        "en": "Did the 2017-18 assessment-exemption reform and the 2-3x funding multiplier causally increase SNI classification in Hungary, controlling for other drivers?",
+        "hu": "A 2017-18-as értékelés-mentességi reform és a 2-3x finanszírozási szorzó oksági módon növelte-e az SNI-besorolást Magyarországon, más mozgatórugókat kontrollálva?"
+      },
+      "resolvability": "requires_new_data",
+      "title": {
+        "en": "Whether assessment-exemption reform materially increased SNI numbers",
+        "hu": "Az értékelés-mentességi reform lényegesen növelte-e az SNI-számokat"
+      }
+    },
+    {
+      "claim_keys": [
+        "C8",
+        "C63"
+      ],
+      "conflict_type": "measurement_difference",
+      "decision_relevance": {
+        "en": "Determines whether the policy priority is total workforce expansion or geographic redistribution of existing specialists.",
+        "hu": "Meghatározza, hogy a szakpolitikai prioritás a teljes munkaerő bővítése vagy a meglévő szakértők földrajzi újraelosztása."
+      },
+      "description": {
+        "en": "C8 and C35 characterize the specialist workforce as inadequate and shrinking with acute shortages, whereas C63 reports specialist numbers roughly doubled from 2010 to ~2023 while still showing shortages (39.6 students per teacher in one county). The apparent tension between 'doubling' and 'shortage' reflects different framings and baselines of the same workforce.",
+        "hu": "C8 és C35 a szakértői munkaerőt elégtelennek és zsugorodónak jellemzi súlyos hiányokkal, míg C63 szerint a szakértők száma nagyjából megduplázódott 2010-től ~2023-ig, ám továbbra is hiányt mutat (39,6 diák tanáronként egy megyében). A 'megduplázódás' és a 'hiány' közötti látszólagos feszültség ugyanazon munkaerő eltérő keretezését és bázisait tükrözi."
+      },
+      "finding_refs": [
+        "F-live-demography-06",
+        "F-live-hungarian_education_system-05",
+        "F-live-political_feasibility-05"
+      ],
+      "research_question": {
+        "en": "What is the net specialist-workforce trend and current per-pupil ratio in Hungary by region, reconciling absolute growth with local shortage measures?",
+        "hu": "Mi a nettó szakértői munkaerő-trend és a jelenlegi tanulónkénti arány Magyarországon régiónként, összeegyeztetve az abszolút növekedést a helyi hiánymutatókkal?"
+      },
+      "resolvability": "answerable_now",
+      "title": {
+        "en": "Conflicting specialist workforce trajectory: shortage vs doubling",
+        "hu": "Ellentmondó szakértői munkaerő-pálya: hiány vs megduplázódás"
+      }
+    },
+    {
+      "claim_keys": [
+        "C49",
+        "C78",
+        "C80"
+      ],
+      "conflict_type": "transferability",
+      "decision_relevance": {
+        "en": "Bears directly on whether Hungary should pursue structural reform of its SEN/school system and how to sequence it to avoid crises.",
+        "hu": "Közvetlenül érinti, hogy Magyarországnak meg kell-e reformálnia SEN/iskolarendszerét strukturálisan és hogyan ütemezze azt a válságok elkerülésére."
+      },
+      "description": {
+        "en": "C49 presents Poland's 2016-17 reversal as evidence that large-scale school-structure reversals are politically executable, while C78 documents the same reform generating severe implementation harms (double-cohort crunch, 80% school strike) and C80 notes contested links to PISA decline. The same case supports both 'reforms are feasible' and 'reforms cause harm' framings, relevant to whether Hungary should attempt structural reform.",
+        "hu": "C49 a lengyel 2016-17-es visszafordítást bizonyítékként mutatja be arra, hogy a nagyszabású iskolaszerkezeti visszafordítások politikailag kivitelezhetők, míg C78 ugyanazt a reformot súlyos végrehajtási károkat okozóként dokumentálja (kettős évfolyam-torlódás, 80%-os iskolasztrájk), C80 pedig vitatott kapcsolatot jelez a PISA-hanyatlással. Ugyanaz az eset alátámasztja mind a 'reformok kivitelezhetők', mind a 'reformok kárt okoznak' keretezést, ami releváns abban, hogy Magyarországnak meg kell-e kísérelnie a strukturális reformot."
+      },
+      "finding_refs": [
+        "F-live-polish_reform-01",
+        "F-live-polish_reform-06",
+        "F-live-polish_reform-10"
+      ],
+      "research_question": {
+        "en": "Under what implementation conditions (consensus, phasing, capacity) can structural education reform be executed without the harms observed in Poland, and are these transferable to Hungary?",
+        "hu": "Milyen végrehajtási feltételek mellett (konszenzus, ütemezés, kapacitás) hajtható végre strukturális oktatási reform a Lengyelországban megfigyelt károk nélkül, és ezek átvihetők-e Magyarországra?"
+      },
+      "resolvability": "context_specific",
+      "title": {
+        "en": "Transferability of structural reform: political executability vs implementation harm",
+        "hu": "A strukturális reform átvihetősége: politikai kivitelezhetőség vs végrehajtási kár"
+      }
+    }
+  ],
+  "merge_groups": [
+    {
+      "claim_keys": [
+        "C2",
+        "C22"
+      ],
+      "rationale": {
+        "en": "Both claim the same bounded proposition: recorded SNI/SEN identification in Hungary grew roughly 40% over ~20 years reaching ~112,007, across the same population and time span from different shards.",
+        "hu": "Mindkettő ugyanazt a korlátozott állítást fogalmazza meg: a nyilvántartott SNI/SEN azonosítás Magyarországon nagyjából 40%-kal nőtt kb. 20 év alatt, elérve a ~112 007-et, azonos populációra és időszakra vonatkozóan, két különböző shardból."
+      }
+    },
+    {
+      "claim_keys": [
+        "C5",
+        "C23"
+      ],
+      "rationale": {
+        "en": "Both describe the same bounded proposition: SEN/SNI growth is concentrated in severe learning/attention/behaviour-regulation disorders (~66-69% of the category) rather than classic disability categories, for Hungarian SNI/BTMN students.",
+        "hu": "Mindkettő ugyanazt a korlátozott állítást írja le: az SEN/SNI növekedés a súlyos tanulási/figyelmi/viselkedésszabályozási zavarokra koncentrálódik (a kategória ~66-69%-a), nem a klasszikus fogyatékossági kategóriákra, a magyar SNI/BTMN tanulók esetében."
+      }
+    },
+    {
+      "claim_keys": [
+        "C4",
+        "C45"
+      ],
+      "rationale": {
+        "en": "Both express the same bounded proposition: autism diagnoses rose two- to fourfold over ~15 years and OECD evidence attributes this largely to improved detection rather than true prevalence change.",
+        "hu": "Mindkettő ugyanazt a korlátozott állítást fejezi ki: az autizmus-diagnózisok két-négyszeresére emelkedtek ~15 év alatt, és az OECD-bizonyítékok ezt nagyrészt a jobb felismerésnek, nem a valós előfordulási arány változásának tulajdonítják."
+      }
+    },
+    {
+      "claim_keys": [
+        "C8",
+        "C35"
+      ],
+      "rationale": {
+        "en": "Both state the same bounded proposition about geographically acute special-education teacher shortages (45 Budapest positions vs near-zero rural/northeastern) alongside rising degree applications (~15%), for the Hungarian workforce in 2024/25-2026.",
+        "hu": "Mindkettő ugyanazt a korlátozott állítást fogalmazza meg a földrajzilag súlyos gyógypedagógus-hiányról (45 budapesti állás vs közel nulla vidéki/északkeleti), a diplomajelentkezések növekedésével együtt (~15%), a magyar munkaerőre nézve 2024/25-2026-ban."
+      }
+    },
+    {
+      "claim_keys": [
+        "C14",
+        "C72"
+      ],
+      "rationale": {
+        "en": "Both express the same bounded proposition: the 50-75% Romani school threshold effect drives greater SEN testing/diagnosis and referral to segregated classes in Hungary.",
+        "hu": "Mindkettő ugyanazt a korlátozott állítást fejezi ki: az 50-75%-os roma iskolai küszöbhatás fokozott SEN-tesztelést/diagnózist és szegregált osztályokba irányítást eredményez Magyarországon."
+      }
+    },
+    {
+      "claim_keys": [
+        "C34",
+        "C61"
+      ],
+      "rationale": {
+        "en": "Both express the same bounded proposition: the January 2020 tightening of school-readiness/deferral rules is a plausible but contested driver of part of the SNI rise from 2021/2022.",
+        "hu": "Mindkettő ugyanazt a korlátozott állítást fejezi ki: a 2020. januári iskolaérettségi/halasztási szabályok szigorítása az SNI-növekedés egy részének valószínű, de vitatott mozgatórugója 2021/2022-től."
+      }
+    },
+    {
+      "claim_keys": [
+        "C21",
+        "C64"
+      ],
+      "rationale": {
+        "en": "Both express the same bounded 2025 policy-review proposition: SEN growth has outpaced teacher training and specialist support (doctors, sign-language interpreters), with bigger classes and equity concerns in Hungary.",
+        "hu": "Mindkettő ugyanazt a korlátozott 2025-ös szakpolitikai értékelési állítást fejezi ki: az SEN-növekedés meghaladta a tanárképzést és a szakértői támogatást (orvosok, jelnyelvi tolmácsok), nagyobb osztályokkal és méltányossági aggályokkal Magyarországon."
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "content": {
+    "assumption_ids": [
+      "A-live-education_finance-01",
+      "A-live-education_finance-02",
+      "A-live-education_finance-03"
+    ],
+    "claim": {
+      "en": "Autism spectrum disorder registrations among Hungarian children nearly tripled to quadrupled between 2013 and 2023/24, with conflicting source figures reporting either 3,319→9,737 or 3,061→11,685 depending on reference population",
+      "hu": "Az autizmus spektrumzavarral regisztrált magyar gyermekek száma 2013 és 2023/24 között közel három- vagy négyszeresére emelkedett, a források ellentmondó adatai alapján vagy 3,319→9,737, vagy 3,061→11,685 közötti növekedést jelezve, a referencia népességtől függően."
+    },
+    "context": {
+      "en": "Fresh live research through the Education finance lens",
+      "hu": "Friss, naprakész kutatás az oktatásfinanszírozás szemszögéből"
+    },
+    "domain_tags": [
+      "education_finance"
+    ],
+    "evidence_strength": "contested",
+    "kind": "fact",
+    "limitations": [
+      {
+        "en": "Two KSH-sourced figures disagree on both base values and endpoints, indicating either calendar-year versus school-year definitional differences or data-vintage inconsistency",
+        "hu": "Két KSH-forrású adat eltér mind a kiinduló értékekben, mind a végpontokban, ami vagy naptári év és tanév szerinti definíciós különbségekre, vagy az adatok korából eredő inkonzisztenciára utal."
+      },
+      {
+        "en": "Exact multiplier (threefold vs. fourfold) and interpretation remain unresolved",
+        "hu": "A pontos multiplikátor (háromszoros vs. négyszeres) és az értelmezése megoldatlan marad."
+      },
+      {
+        "en": "No single authoritative KSH release URL identified in search",
+        "hu": "A keresés során nem azonosítottunk egyetlen irányadó KSH-közlemény URL-jét sem"
+      }
+    ],
+    "population": {
+      "en": "Population described in the cited finding",
+      "hu": "A hivatkozott megállapításban leírt populáció"
+    },
+    "source_refs": [
+      "SRC-live-education_finance-02"
+    ],
+    "time_scope": {
+      "en": "As reported by the cited source",
+      "hu": "A hivatkozott forrás szerint"
+    },
+    "transferability": "uncertain",
+    "uncertainty_ids": [
+      "U-live-education_finance-01",
+      "U-live-education_finance-02",
+      "U-live-education_finance-03"
+    ]
+  },
+  "created_at": "2026-07-21T18:54:58.433208Z",
+  "id": "F-live-education_finance-02",
+  "provenance_ref": "PV-bilingual-migration-149b2ca8bd398928",
+  "record_type": "finding",
+  "schema_version": "2.1.0",
+  "status": "candidate",
+  "supersedes": "ff88da1bb35f6428d6746dae83c403deb92de30c0bdb1068273caf8dd4ae0de3",
+  "topic": "sni-letszamnovekedes"
+}

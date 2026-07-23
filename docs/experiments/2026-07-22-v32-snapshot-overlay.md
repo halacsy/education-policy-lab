@@ -1,28 +1,42 @@
-# Architecture 3.2 snapshot overlay over 3.1 production evidence
+# Architecture 3.2 snapshot overlay over 3.0/3.1 production evidence
 
 Date: 2026-07-22–23
-Status: complete; both live overlays and independent verification passed
+Status: complete; all three live overlays and independent verification passed
 
 ## Question
 
 Can the architecture-3.2 normalization and option-space layers be evaluated
-without repeating the unchanged and expensive architecture-3.1 web-research
-branches?
+without repeating the unchanged and expensive architecture-3.0/3.1
+web-research branches?
 
 ## Design
 
-The experiment runs on the two published 3.1 topics:
+The experiment runs on all three published topics:
 
 - `korai-szelekcio`;
-- `rural-school-closures`.
+- `rural-school-closures`;
+- `sni-letszamnovekedes`.
+
+The first two source stores use architecture 3.1, where the admitted problem
+brief is a RunPlan root. The SNI source uses architecture 3.0, where a raw
+policy question is the root and the admitted problem brief is the exact output
+of `approve_problem_brief`. The overlay verifies that human-gate node manifest
+against the production RunPlan hash before admitting the brief.
+
+The SNI node manifests predate the canonical bilingual retrofit and therefore
+bind immutable 2.0 English predecessors. Those exact hashes remain the
+analytical inputs. The isolated store additionally imports each complete
+audited `supersedes` chain, preserving the same bilingual 2.1 current records
+as production without synthesizing a new translation or changing the RunPlan.
 
 For each topic, the overlay binds these exact roots:
 
-- the admitted problem-brief hash from the source RunPlan;
+- the admitted problem-brief hash from the source RunPlan root or verified
+  human-gate output;
 - every finding, assumption, and uncertainty hash emitted by the twelve
   research-node manifests;
-- the current 3.1 approved option-space artifact;
-- the current 3.1 transformation proposals.
+- the current source approved option-space artifact;
+- the current source transformation proposals.
 
 The source artifacts and their typed provenance/source closure are copied byte
 for byte into an isolated experiment store. The overlay never writes to the
@@ -50,7 +64,7 @@ semantic similarity. Its output distinguishes:
 
 This is an architecture comparison, not a 3.2 production result. The new
 candidate option space is not human-approved. Evidence freshness remains that
-of the source 3.1 run. No old human gate, assessment, decision package, or
+of the source run. No old human gate, assessment, decision package, or
 evaluation is re-labelled or reused as a descendant of the new candidate.
 
 If the overlay reveals material gaps, the next experiment is a 3.2
@@ -70,12 +84,13 @@ Outputs are written below
 
 ## Live execution
 
-The overlay skipped 63 web-research calls from the two source runs: 35 for
-`korai-szelekcio` and 28 for `rural-school-closures`. Those calls represented
-about USD 9.69 in the source-run pricing report. They were not converted or
-rewritten: their exact output hashes became overlay roots.
+The overlay skipped 95 web-research calls from the three source runs: 35 for
+`korai-szelekcio`, 28 for `rural-school-closures`, and 32 for
+`sni-letszamnovekedes`. Those calls represented about USD 15.14 under the
+repository price table. They were not converted or rewritten: their exact
+output hashes became overlay roots.
 
-The new middle layer used nine successful Anthropic calls. One additional
+The new middle layer used fifteen successful Anthropic calls. One additional
 connection attempt failed inside a network-restricted sandbox and is retained
 in the rural call log. The final node manifests are complete and contain no
 mock calls.
@@ -84,11 +99,12 @@ mock calls.
 |---|---:|---:|---:|---:|---:|---:|---:|
 | `korai-szelekcio` | 115 | 34 | 3 | 16 | 7 | 4 | 0 |
 | `rural-school-closures` | 120 | 67 | 12 | 16 | 7 | 4 | 2 |
+| `sni-letszamnovekedes` | 119 | 77 | 14 | 14 | 7 | 1 | 1 |
 
 The overlay calls cost about USD 1.53 for early selection and USD 2.52 for
-rural schools under the repository price table. These are costs of the new
-3.2 analysis and would also exist in a fresh 3.2 run; the avoided work is the
-unchanged research layer.
+rural schools, and USD 2.53 for SNI under the repository price table. These
+are costs of the new 3.2 analysis and would also exist in a fresh 3.2 run; the
+avoided work is the unchanged research layer.
 
 ### Early selection
 
@@ -123,6 +139,32 @@ finding: the old option space carried many substantive interventions, but it
 did not preserve the baseline and anticipatory-planning branches as explicit
 top-level alternatives.
 
+### SNI identification growth
+
+The candidate contains fourteen seeds and seven directions. Thirteen seeds
+share exact finding lineage with at least one old direction or proposal. The
+only uncovered seed is the explicit counterfactual of retaining the current
+system without structural reform; it forms the only novel-gap direction. This
+is an exact-trace result, not a claim that the old package never discussed
+incrementalism semantically.
+
+The other six directions make the intervention space easier to inspect:
+
+- needs-based classification, financing incentives, and procedural rights;
+- diagnostic-capacity and service-delivery bottlenecks;
+- workforce and mainstream inclusion infrastructure;
+- harmonized monitoring and learning from comparator category changes;
+- segregation, school-entry, and demographic school-network interactions;
+- consultation, sequencing, and implementation governance.
+
+The normalization layer produced fourteen explicit evidence conflicts, five
+of which touch no legacy proposal through exact finding ids. They preserve
+questions that the old architecture could mention but not represent as
+first-class objects: competing explanations of identification growth,
+incompatible headline counts, integration versus actual inclusion, fiscal
+incentives, segregation estimates, specialist-workforce trajectories, and the
+transferability risks of rapid structural reform.
+
 ### Normalization scaling finding
 
 The original single-response rural normalization exceeded the provider's
@@ -140,18 +182,20 @@ coverage.
 
 ## Conclusion
 
-Simulating 3.2 from a 3.1 run is meaningful when the research question and
-evidence freshness boundary are unchanged. The safe unit of reuse is the exact
-problem brief plus the exact research artifacts—not the old option-space gate,
-proposals, assessments or decision package.
+Simulating 3.2 from a 3.0 or 3.1 run is meaningful when the research question
+and evidence freshness boundary are unchanged. The safe unit of reuse is the
+exact admitted problem brief plus the exact research artifacts—not the old
+option-space gate, proposals, assessments or decision package. For a 3.0
+source, admission of the brief must be proven through the human-gate node
+manifest rather than inferred from the RunPlan roots.
 
 The experiment supports a staged upgrade:
 
-1. bind the admitted 3.1 evidence snapshot as immutable roots;
+1. bind the admitted source evidence snapshot as immutable roots;
 2. rerun normalization, option seeds and option-space clustering;
 3. inspect the deterministic trace comparison;
 4. if the new candidate is to become operational, obtain a new hash-bound
    human approval and rerun every downstream dependent.
 
-The two overlay candidates remain internal. They do not replace the published
-3.1 results and are not decision-ready production packages.
+The three overlay candidates remain internal. They do not replace the
+published 3.0/3.1 results and are not decision-ready production packages.

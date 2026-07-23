@@ -372,12 +372,16 @@ def verify_live_experiment(schemas: SchemaRegistry) -> tuple[int, int]:
 
 
 def verify_snapshot_overlays(schemas: SchemaRegistry) -> tuple[int, int, int]:
-    """Validate the two isolated 3.1 -> 3.2 snapshot-overlay experiments."""
+    """Validate all isolated 3.0/3.1 -> 3.2 snapshot-overlay experiments."""
 
     experiment_root = (
         ROOT / "v2" / "experiments" / "2026-07-22-v32-snapshot-overlay"
     )
-    expected_topics = {"korai-szelekcio", "rural-school-closures"}
+    expected_topics = {
+        "korai-szelekcio",
+        "rural-school-closures",
+        "sni-letszamnovekedes",
+    }
     actual_topics = {
         path.name for path in experiment_root.iterdir()
         if path.is_dir() and (path / "overlay_manifest.json").exists()
@@ -424,8 +428,12 @@ def verify_snapshot_overlays(schemas: SchemaRegistry) -> tuple[int, int, int]:
         if (
             content_hash(source_manifest) != content["source_manifest_hash"]
             or content_hash(source_plan) != content["source_run_plan_hash"]
+            or source_manifest["architecture_version"]
+            != content["source_architecture_version"]
             or content["source_manifest_hash"] != manifest["source"]["manifest_hash"]
             or content["source_run_plan_hash"] != manifest["source"]["run_plan_hash"]
+            or content["source_architecture_version"]
+            != manifest["source"]["architecture_version"]
         ):
             raise AssertionError(f"Snapshot-overlay source binding differs for {topic}")
 
